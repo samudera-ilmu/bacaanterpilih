@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #fdfcf8;
+  color: #222;
+  max-width: 680px;
+  margin: auto;
+  padding: 24px 16px 80px;
+  line-height: 1.75;
+  font-size: 18px;
+}
+
+/* JUDUL */
+h1 {
+  font-size: 1.8em;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+h2 {
+  font-size: 1.4em;
+  margin-top: 2em;
+}
+
+/* PARAGRAF */
+p {
+  margin: 0 0 1.2em;
+}
+
+/* LINK */
+a {
+  color: #2a5db0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* NAV */
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 0.9em;
+}
+
+/* DAFTAR BUKU */
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 32px;
+}
+
+.book-list li {
+  margin-bottom: 20px;
+}
+
+/* DROP CAP */
+p:first-of-type::first-letter {
+  font-size: 3em;
+  float: left;
+  line-height: 1;
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+/* PEMISAH */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 48px 0;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  body {
+    font-size: 17px;
+    padding: 20px 14px 60px;
+  }
+}

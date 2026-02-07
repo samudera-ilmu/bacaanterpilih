@@ -1,0 +1,13 @@
+# ===== EXCLUDE FOLDER =====
+000_master/
+001_input/
+
+# ===== EXCLUDE FILE =====
+z.py
+
+# ===== OPTIONAL (aman buat python & windows) =====
+__pycache__/
+*.pyc
+*.log
+Thumbs.db
+.DS_Store
