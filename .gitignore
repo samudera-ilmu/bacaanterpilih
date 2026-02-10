@@ -4,6 +4,7 @@
 
 # ===== EXCLUDE FILE =====
 z.py
+sitemap.py
 
 # ===== OPTIONAL (aman buat python & windows) =====
 __pycache__/
