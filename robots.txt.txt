@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bacaanterpilih.pages.dev/sitemap.xml
