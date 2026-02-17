@@ -5,9 +5,84 @@
   <meta name="google-site-verification" content="Y60enN9F4Wdp3LriUqlH_LhtK6liNteT6lKE5d8YTdE" />
   <title>Perpustakaan Buku Digital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JCYRN8385S');
+  </script>
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f5f5f5;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --card: #1a1d24;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 760px;
+  margin: auto;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+h1 {
+  text-align: center;
+}
+
+.book-list {
+  list-style: none;
+  padding: 0;
+}
+
+.book-list li {
+  margin: 12px 0;
+}
+
+.book-list a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--card);
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.2s;
+}
+
+.book-list a:hover {
+  transform: translateY(-2px);
+}
+
+/* Toggle button */
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  background: var(--card);
+  padding: 8px 12px;
+  border-radius: 8px;
+  user-select: none;
+}
+</style>
+
 </head>
 <body>
+
+<div class="toggle" onclick="toggleDark()">🌙</div>
 
 <h1>📚 Perpustakaan Buku Digital</h1>
 
@@ -17,98 +92,48 @@ Dibuat untuk dibaca pelan-pelan, seperti buku.
 </p>
 
 <ul class="book-list">
-  <li>
-    <a href="fabel_aesop/index.html">
-      <strong>1. Fabel Aesop</strong><br>
-      <small>Aesop</small>
-    </a>
-  </li>
 
-  <li>
-    <a href="cara_hidup_dalam_24_jam_sehari/index.html">
-      <strong>2. Cara hidup dalam 24 Jam Sehari</strong><br>
-      <small>Arnold Bennett</small>
-    </a>
-  </li>
+  <li><a href="fabel_aesop/index.html"><strong>1. Fabel Aesop</strong><br><small>Aesop</small></a></li>
 
-  <li>
-    <a href="middlemarch/index.html">
-      <strong>3. Middlemarch</strong><br>
-      <small>George Eliot</small>
-    </a>
-  </li>
+  <li><a href="cara_hidup_dalam_24_jam_sehari/index.html"><strong>2. Cara hidup dalam 24 Jam Sehari</strong><br><small>Arnold Bennett</small></a></li>
 
-  <li>
-    <a href="petualangan_count_fathom_lengkap/index.html">
-      <strong>4. Petualangan Ferdinand Count Fathom — Lengkap</strong><br>
-      <small>T. Smollett</small>
-    </a>
-  </li>
+  <li><a href="middlemarch/index.html"><strong>3. Middlemarch</strong><br><small>George Eliot</small></a></li>
 
-  <li>
-    <a href="frankenstein_prometheus_modern/index.html">
-      <strong>5. Frankenstein atau Prometheus Modern</strong><br>
-      <small>Mary Wollstonecraft Shelley</small>
-    </a>
-  </li>
+  <li><a href="petualangan_count_fathom_lengkap/index.html"><strong>4. Petualangan Ferdinand Count Fathom — Lengkap</strong><br><small>T. Smollett</small></a></li>
 
-  <li>
-    <a href="kisah_kisah_begitu_saja/index.html">
-      <strong>6. Kisah Kisah Begitu Saja</strong><br>
-      <small>Rudyard Kipling</small>
-    </a>
-  </li>
+  <li><a href="frankenstein_prometheus_modern/index.html"><strong>5. Frankenstein atau Prometheus Modern</strong><br><small>Mary Wollstonecraft Shelley</small></a></li>
 
-  <li>
-    <a href="bantuan_diri/index.html">
-      <strong>7. Bantuan Diri</strong><br>
-      <small>Samuel Smiles</small>
-    </a>
-  </li>
+  <li><a href="kisah_kisah_begitu_saja/index.html"><strong>6. Kisah Kisah Begitu Saja</strong><br><small>Rudyard Kipling</small></a></li>
 
-  <li>
-    <a href="pengakuan_al_ghazali/index.html">
-      <strong>8. Pengakuan Al Ghazali</strong><br>
-      <small>Al Ghazali</small>
-    </a>
-  </li>
+  <li><a href="bantuan_diri/index.html"><strong>7. Bantuan Diri</strong><br><small>Samuel Smiles</small></a></li>
 
-  <li>
-    <a href="kenangan_operator_saham/index.html">
-      <strong>9. Kenangan Seorang Operator Saham</strong><br>
-      <small>Edwin Lefevre</small>
-    </a>
-  </li>
+  <li><a href="pengakuan_al_ghazali/index.html"><strong>8. Pengakuan Al Ghazali</strong><br><small>Al Ghazali</small></a></li>
 
-  <li>
-    <a href="keliling_dunia_dalam_80_hari/index.html">
-      <strong>10. Keliling Dunia dalam 80 Hari</strong><br>
-      <small>Jules Verne</small>
-    </a>
-  </li>
+  <li><a href="kenangan_operator_saham/index.html"><strong>9. Kenangan Seorang Operator Saham</strong><br><small>Edwin Lefevre</small></a></li>
 
-  <li>
-    <a href="perjalanan_kedalam_perut_bumi/index.html">
-      <strong>11. Perjalanan ke Dalam Perut Bumi</strong><br>
-      <small>Jules Verne</small>
-    </a>
-  </li>
+  <li><a href="keliling_dunia_dalam_80_hari/index.html"><strong>10. Keliling Dunia dalam 80 Hari</strong><br><small>Jules Verne</small></a></li>
 
-  <li>
-    <a href="wuthering_heights/index.html">
-      <strong>12. Wuthering Heights</strong><br>
-      <small>Emily Brontë</small>
-    </a>
-  </li>
+  <li><a href="perjalanan_kedalam_perut_bumi/index.html"><strong>11. Perjalanan ke Dalam Perut Bumi</strong><br><small>Jules Verne</small></a></li>
 
-  <li>
-    <a href="karakter/index.html">
-      <strong>13. Karakter</strong><br>
-      <small>Samuel Smiles</small>
-    </a>
-  </li>
+  <li><a href="wuthering_heights/index.html"><strong>12. Wuthering Heights</strong><br><small>Emily Brontë</small></a></li>
+
+  <li><a href="karakter/index.html"><strong>13. Karakter</strong><br><small>Samuel Smiles</small></a></li>
 
 </ul>
+
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("darkmode", document.body.classList.contains("dark"));
+}
+
+// Load saved mode
+if (localStorage.getItem("darkmode") === "true") {
+  document.body.classList.add("dark");
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.body.classList.add("dark");
+}
+</script>
 
 </body>
 </html>
