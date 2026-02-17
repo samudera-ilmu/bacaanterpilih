@@ -5,39 +5,176 @@
 <title>BAB XIX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XIX - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XIX</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>SAYA TIDAK TAHU kapan atau oleh siapa kata "manipulasi" pertama kali digunakan sehubungan dengan apa yang sebenarnya tidak lebih dari proses perdagangan umum yang diterapkan pada penjualan sekuritas dalam jumlah besar di Bursa Efek. Memanipulasi pasar untuk memfasilitasi pembelian saham murah yang ingin diakumulasikan juga merupakan manipulasi. Tetapi itu berbeda. Mungkin tidak perlu sampai melakukan praktik ilegal, tetapi akan sulit untuk menghindari melakukan apa yang oleh sebagian orang dianggap tidak sah. Bagaimana Anda akan membeli sejumlah besar saham di pasar bullish tanpa menaikkan harga sendiri? Itulah masalahnya. Bagaimana cara menyelesaikannya? Itu bergantung pada begitu banyak hal sehingga Anda tidak dapat memberikan solusi umum kecuali Anda mengatakan: mungkin melalui manipulasi yang sangat cerdik. Misalnya? Nah, itu akan bergantung pada kondisi. Anda tidak dapat memberikan jawaban yang lebih tepat dari itu. Saya sangat tertarik pada semua aspek bisnis saya, dan tentu saja saya belajar dari pengalaman orang lain maupun dari pengalaman saya sendiri. Tetapi sangat sulit untuk mempelajari cara memanipulasi saham saat ini dari cerita-cerita yang diceritakan tentang percakapan di kantor pialang setelah penutupan pasar. Sebagian besar trik, alat, dan cara-cara di masa lalu sudah usang dan tidak berguna; atau ilegal dan tidak praktis. Aturan dan kondisi Bursa Saham telah berubah, dan cerita—bahkan cerita yang detail dan akurat—tentang apa yang dapat dilakukan Daniel Drew atau Jacob Little atau Jay Gould lima puluh atau tujuh puluh lima tahun yang lalu hampir tidak layak untuk didengarkan. Manipulator saat ini tidak perlu lagi mempertimbangkan apa yang mereka lakukan dan bagaimana mereka melakukannya, sama seperti seorang kadet di West Point tidak perlu mempelajari panahan seperti yang dipraktikkan oleh orang-orang zaman dahulu untuk meningkatkan pengetahuan kerjanya tentang balistik. Di sisi lain, ada keuntungan dalam mempelajari faktor-faktor manusia—kemudahan manusia mempercayai apa pun yang mereka sukai; dan bagaimana mereka membiarkan diri mereka—bahkan mendorong diri mereka sendiri—untuk dipengaruhi oleh keserakahan mereka atau oleh biaya uang dari kecerobohan orang awam. Rasa takut dan harapan tetap sama; oleh karena itu, studi tentang psikologi spekulan sama berharganya seperti sebelumnya. Senjata berubah, tetapi strategi tetap strategi, di Bursa Saham New York seperti di medan perang. Saya pikir ringkasan paling jelas dari keseluruhan hal ini diungkapkan oleh Thomas F. Woodlock ketika ia menyatakan: “Prinsip-prinsip spekulasi saham yang sukses didasarkan pada anggapan bahwa orang akan terus melakukan kesalahan yang telah mereka lakukan di masa lalu di masa mendatang.” Pada masa booming, yaitu ketika masyarakat berada di pasar dalam jumlah terbesar, tidak pernah ada kebutuhan akan kehati-hatian, sehingga tidak ada gunanya membuang waktu untuk membahas manipulasi atau spekulasi selama masa-masa tersebut; itu seperti mencoba menemukan perbedaan tetesan hujan yang jatuh secara bersamaan di atap yang sama di seberang jalan. Orang yang mudah tertipu selalu mencoba mendapatkan sesuatu secara cuma-cuma, dan daya tarik dalam semua masa booming selalu terang-terangan pada naluri berjudi yang dipicu oleh keserakahan dan didorong oleh kemakmuran yang meluas. Orang-orang yang mencari uang mudah selalu membayar untuk hak istimewa membuktikan secara meyakinkan bahwa uang itu tidak dapat ditemukan di bumi yang kotor ini. Awalnya, ketika saya mendengarkan kisah-kisah tentang kesepakatan dan tipu daya zaman dulu , saya berpikir bahwa orang-orang lebih mudah tertipu pada tahun 1860-an dan 70-an daripada pada tahun 1900-an. Namun saya yakin akan membaca di surat kabar pada hari itu juga atau keesokan harinya sesuatu tentang skema Ponzi terbaru atau kebangkrutan beberapa pialang yang curang dan tentang jutaan uang korban yang hilang bergabung dengan mayoritas tabungan yang lenyap. Ketika saya pertama kali datang ke New York, terjadi kehebohan besar tentang penjualan fiktif dan pesanan berpasangan, meskipun praktik-praktik tersebut dilarang oleh Bursa Saham. Terkadang, praktik pencucian saham terlalu kasar untuk menipu siapa pun. Para pialang tidak ragu-ragu mengatakan bahwa "pencucian sedang berlangsung" setiap kali seseorang mencoba mencuci saham tertentu, dan, seperti yang telah saya katakan sebelumnya, lebih dari sekali mereka melakukan apa yang secara terang-terangan disebut sebagai "aksi pasar gelap," ketika sebuah saham ditawarkan turun dua atau tiga poin dalam sekejap hanya untuk menetapkan penurunan pada data dan menghabiskan banyak pedagang kecil yang memegang saham tersebut di pasar gelap. Adapun pesanan berpasangan, selalu digunakan dengan beberapa keraguan karena kesulitan dalam mengoordinasikan dan menyinkronkan operasi oleh pialang, karena semua bisnis semacam itu bertentangan dengan aturan Bursa Saham. Beberapa tahun lalu, seorang operator terkenal membatalkan bagian penjualan tetapi tidak bagian pembelian dari pesanan yang cocok, dan hasilnya adalah seorang pialang yang tidak bersalah menaikkan harga sekitar dua puluh lima poin dalam beberapa menit, hanya untuk melihatnya turun dengan kecepatan yang sama segera setelah pembeliannya berhenti. Tujuan awalnya adalah untuk menciptakan kesan aktivitas. Bisnis yang buruk, bermain dengan senjata yang tidak dapat diandalkan seperti itu. Anda lihat, Anda tidak dapat mempercayai pialang terbaik Anda—tidak jika Anda ingin mereka tetap menjadi anggota Bursa Saham New York. Kemudian juga, pajak telah membuat semua praktik yang melibatkan transaksi fiktif jauh lebih mahal daripada di masa lalu. Definisi manipulasi dalam kamus mencakup manuver di tikungan. Nah, manuver di tikungan bisa jadi hasil manipulasi atau hasil pembelian kompetitif, seperti misalnya manuver di tikungan Northern Pacific pada 9 Mei 1901, yang jelas bukan manipulasi. Manuver di tikungan Stutz itu mahal bagi semua pihak yang terlibat, baik dari segi uang maupun prestise. Dan itu pun bukan manuver yang sengaja direkayasa. Faktanya, sangat sedikit dari bisnis jual beli saham besar yang menguntungkan bagi para insinyurnya. Kedua bisnis jual beli saham di Harlem milik Commodore Vanderbilt menghasilkan keuntungan besar, tetapi pria tua itu memang pantas mendapatkan jutaan dolar yang ia hasilkan dari banyak aksi jual beli saham pendek, anggota legislatif dan anggota dewan kota yang korup yang mencoba menipunya. Di sisi lain, Jay Gould merugi di bisnis jual beli saham pendeknya di Northwestern. Deacon SV White menghasilkan satu juta dolar di bisnis jual beli saham pendeknya di Lackawanna, tetapi Jim Keene kehilangan satu juta dolar dalam kesepakatan Hannibal & St. Joe. Keberhasilan finansial suatu bisnis jual beli saham pendek tentu saja bergantung pada pemasaran aset yang terkumpul dengan harga lebih tinggi dari biaya, dan minat jual beli saham pendek harus cukup besar agar hal itu dapat terjadi dengan mudah. Dulu saya bertanya-tanya mengapa praktik "pojok" begitu populer di kalangan para pelaku pasar besar setengah abad yang lalu. Mereka adalah orang-orang yang cakap dan berpengalaman, waspada dan tidak mudah percaya pada kedermawanan sesama pedagang. Namun mereka seringkali tertipu dengan frekuensi yang mencengangkan. Seorang pialang tua yang bijak pernah mengatakan kepada saya bahwa semua pelaku pasar besar di tahun 60-an dan 70-an memiliki satu ambisi, yaitu untuk melakukan "pojok". Dalam banyak kasus, ini adalah buah dari kesombongan; dalam kasus lain, dari keinginan untuk balas dendam. Bagaimanapun, ditunjuk sebagai orang yang berhasil melakukan "pojok" pada kenyataannya adalah pengakuan atas kecerdasan, keberanian, dan kekayaan. Itu memberi si pelaku "pojok" hak untuk bersikap angkuh. Dia menerima pujian dari rekan-rekannya sebagai sesuatu yang sepenuhnya layak. Lebih dari sekadar keuntungan uang yang mendorong para pelaku "pojok" untuk melakukan yang terbaik. Itu adalah kompleks kesombongan yang muncul di antara para pelaku pasar yang berhati dingin. Dahulu kala, anjing memang memakan anjing dengan lahap dan mudah. Kurasa aku sudah pernah memberitahumu bahwa aku berhasil lolos dari tekanan lebih dari sekali, bukan karena memiliki firasat pasar saham yang misterius, tetapi karena aku umumnya bisa mengetahui saat karakter pembelian saham membuat tindakanku untuk melakukan short selling menjadi tidak bijaksana. Aku melakukan ini dengan uji akal sehat, yang pasti juga pernah dicoba di masa lalu. Daniel Drew tua sering menekan para spekulan dan membuat mereka membayar harga tinggi untuk saham Erie yang mereka jual short selling kepadanya. Dia sendiri pernah ditekan oleh Komodor Vanderbilt di Erie, dan ketika Drew tua memohon ampun , Komodor dengan muram mengutip bait abadi dari Beruang Besar:</p>
 <p>Orang yang menjual apa yang bukan miliknya Harus membelinya kembali atau masuk penjara .</p>

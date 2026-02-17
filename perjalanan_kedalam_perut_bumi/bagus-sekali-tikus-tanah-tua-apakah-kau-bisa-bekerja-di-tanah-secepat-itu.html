@@ -5,39 +5,176 @@
 <title>BAGUS SEKALI, TIKUS TANAH TUA! APAKAH KAU BISA BEKERJA DI TANAH SECEPAT ITU?</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAGUS SEKALI, TIKUS TANAH TUA! APAKAH KAU BISA BEKERJA DI TANAH SECEPAT ITU? - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAGUS SEKALI, TIKUS TANAH TUA! APAKAH KAU BISA BEKERJA DI TANAH SECEPAT ITU?</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Keesokan harinya kami telah melupakan semua penderitaan kami. Awalnya, saya heran mengapa saya tidak lagi haus, dan saya ingin menanyakan alasannya. Jawabannya datang dari gemericik aliran sungai di kaki saya. Kami sarapan, dan minum air chalybeate yang sangat enak ini. Aku merasa jauh lebih kuat, dan benar-benar bertekad untuk melanjutkan perjalanan. Mengapa orang yang begitu yakin seperti pamanku, yang didampingi oleh pemandu yang rajin seperti Hans, dan ditemani oleh keponakan yang begitu bertekad sepertiku, tidak bisa mencapai kesuksesan akhir? Begitulah rencana-rencana luar biasa yang berjuang untuk menguasai diriku. Jika aku ditawari untuk kembali ke puncak Snæfell, aku pasti akan menolaknya dengan marah. Untungnya, yang harus kami lakukan hanyalah turun. "Ayo kita mulai!" teriakku, membangkitkan gema dari rongga-rongga bumi yang melengkung. Pada hari Kamis, pukul 8 pagi, kami memulai perjalanan lagi. Terowongan granit yang berkelok-kelok dari sisi ke sisi membawa kami melewati tikungan tak terduga, dan hampir tampak seperti labirin; tetapi, secara keseluruhan, arahnya tampak ke arah tenggara. Paman saya tak henti-hentinya melihat kompasnya, untuk menghitung jarak yang telah kami lalui. Lorong itu sedikit miring dari garis horizontal, hampir tidak lebih dari dua inci dalam satu depa, dan aliran air mengalir lembut di kaki kami. Aku membandingkannya dengan sosok peri ramah yang membimbing kami di bawah tanah, dan membelai dengan tanganku sosok peri air yang lembut, yang suaranya menenangkan menemani langkah kami. Dengan semangatku yang pulih, gagasan-gagasan mitologis ini seolah datang tanpa diundang. Adapun paman saya, dia mulai menggerutu menentang jalan horizontal. Dia paling menyukai jalan vertikal; tetapi jalan ini terasa sangat panjang, dan alih-alih meluncur di sepanjang sisi miring seperti yang sedang kami lakukan sekarang, dia lebih suka turun mengikuti jari-jari bumi. Tetapi tidak ada pilihan lain, dan selama kami mendekati pusat, kami merasa tidak boleh mengeluh. Dari waktu ke waktu, jalan yang lebih curam muncul; naiad kami kemudian mulai terhuyung-huyung di depan kami dengan gumaman yang lebih serak, dan kami turun bersamanya ke kedalaman yang lebih besar. Secara keseluruhan, hari itu dan hari berikutnya kami membuat kemajuan yang cukup besar secara horizontal, tetapi sangat sedikit secara vertikal. Pada Jumat malam, tanggal 10 Juli, menurut perhitungan kami, kami berada tiga puluh liga di sebelah tenggara Rejkavik, dan pada kedalaman dua setengah liga. Di kaki kami kini terbentang jurang yang mengerikan. Namun, pamanku tidak gentar, dan ia bertepuk tangan melihat curamnya turunan itu. "Ini akan membawa kita jauh," serunya, "dan tanpa banyak kesulitan; karena tonjolan-tonjolan di batu itu membentuk tangga yang cukup besar." Tali-tali itu diikat sedemikian rupa oleh Hans untuk mencegah kecelakaan, dan penurunan pun dimulai. Saya hampir tidak bisa menyebutnya berbahaya, karena saya mulai terbiasa dengan jenis latihan ini. Sumur, atau jurang ini, adalah celah sempit di massa granit, yang oleh para ahli geologi disebut 'patahan,' dan disebabkan oleh pendinginan yang tidak merata dari bola bumi. Jika dulunya tempat ini merupakan jalur bagi material erupsi yang dilontarkan oleh Snæfell, saya masih tidak mengerti mengapa tidak ada jejak yang tersisa dari jalur tersebut. Kami terus menuruni semacam tangga spiral, yang tampaknya hampir dibuat oleh tangan manusia. Setiap seperempat jam kami terpaksa berhenti, untuk beristirahat sejenak dan memulihkan tenaga. Kemudian kami duduk di atas pecahan batu, dan kami mengobrol sambil makan dan minum dari aliran air. Tentu saja, melalui patahan ini, Sungai Hansbach mengalir deras seperti air terjun, dan kehilangan sebagian volumenya; tetapi masih cukup dan berlebih untuk memuaskan dahaga kami. Selain itu, ketika kemiringannya menjadi lebih landai, tentu saja sungai itu akan kembali mengalir dengan tenang. Pada saat ini, sungai itu mengingatkan saya pada paman saya yang terhormat, dalam seringnya ia marah dan tidak sabar, sementara di bawahnya sungai itu mengalir dengan tenang seperti pemburu Islandia. Pada tanggal 6 dan 7 Juli, kami terus mengikuti lekukan spiral sumur yang unik ini, menembus jarak sebenarnya tidak lebih dari dua liga; tetapi terbawa hingga kedalaman lima liga di bawah permukaan laut. Namun pada tanggal 8, sekitar tengah hari, patahan tersebut mengambil kemiringan yang jauh lebih landai ke arah tenggara, sekitar empat puluh lima derajat. Kemudian jalan menjadi sangat mudah dan monoton. Tidak mungkin sebaliknya, karena tidak ada pemandangan yang dapat mengubah tahapan perjalanan kami. Pada hari Rabu, tanggal 15, kami berada tujuh liga di bawah tanah, dan telah menempuh perjalanan sejauh lima puluh liga dari Snæfell. Meskipun kami lelah, kesehatan kami sempurna, dan kotak obat belum sempat dibuka. Paman saya mencatat setiap jam indikasi kompas, kronometer, aneroid, dan termometer—sama persis dengan yang telah ia publikasikan dalam laporan ilmiahnya tentang perjalanan kami. Oleh karena itu, tidak sulit untuk mengetahui dengan tepat di mana kami berada. Ketika ia memberi tahu saya bahwa kami telah menempuh jarak lima puluh liga secara horizontal, saya tidak dapat menahan seruan keheranan, membayangkan bahwa kami telah lama meninggalkan Islandia di belakang kami. "Ada apa?" serunya. "Saya berpikir bahwa jika perhitungan Anda benar, kita sudah tidak lagi berada di bawah kekuasaan Islandia." "Apakah kamu berpikir begitu?" "Saya tidak salah," kataku, dan sambil memeriksa peta, saya menambahkan, "Kita telah melewati Tanjung Portland, dan lima puluh liga itu membawa kita ke bawah hamparan samudra yang luas." "Di bawah laut," pamanku mengulangi, sambil menggosok-gosok tangannya dengan gembira. "Mungkinkah?" kataku. "Apakah lautan terbentang di atas kepala kita?" "Tentu saja, Axel. Apa yang lebih alami dari itu? Bukankah di Newcastle ada tambang batu bara yang membentang jauh di bawah laut?" Memang mudah bagi Profesor untuk menyebut ini begitu sederhana, tetapi saya merasa tidak nyaman membayangkan samudra tak terbatas membentang di atas kepala saya. Namun, sebenarnya tidak terlalu penting apakah itu dataran dan pegunungan yang menutupi kepala kami, atau gelombang Atlantik, selama kami terlindungi oleh granit yang kokoh. Dan, selain itu, saya mulai terbiasa dengan gagasan ini; karena terowongan itu, yang kadang lurus, kadang berkelok-kelok tak menentu dalam kemiringannya maupun belokannya, tetapi selalu mempertahankan arah tenggara, dan selalu semakin dalam, secara bertahap membawa kami ke kedalaman yang sangat besar. Empat hari kemudian, Sabtu, 18 Juli, pada malam hari, kami tiba di semacam gua yang luas; dan di sinilah paman saya membayar upah mingguan Hans, dan disepakati bahwa hari berikutnya, Minggu, akan menjadi hari istirahat.</p>
 

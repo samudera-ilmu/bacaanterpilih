@@ -5,39 +5,176 @@
 <title>BAB XX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XX - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XX</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Untuk mencegah bahaya ancaman ini terwujud, Tuan Linton menugaskan saya untuk membawa anak laki-laki itu pulang lebih awal, dengan kuda poni Catherine; dan, katanya—"Karena kita sekarang tidak akan memiliki pengaruh atas nasibnya, baik atau buruk, Anda tidak boleh mengatakan apa pun tentang ke mana dia pergi kepada putri saya: dia tidak dapat berhubungan dengannya lagi setelah ini, dan lebih baik baginya untuk tetap tidak mengetahui keberadaannya; agar dia tidak gelisah, dan ingin mengunjungi Heights. Katakan saja padanya bahwa ayahnya tiba-tiba memanggilnya, dan dia terpaksa meninggalkan kita." Linton sangat enggan dibangunkan dari tempat tidurnya pukul lima pagi, dan terkejut ketika diberitahu bahwa ia harus bersiap untuk perjalanan selanjutnya; tetapi saya melunakkan masalah itu dengan menyatakan bahwa ia akan menghabiskan waktu bersama ayahnya, Tuan Heathcliff, yang sangat ingin bertemu dengannya sehingga ia tidak ingin menunda kesenangan itu sampai ia pulih dari perjalanannya yang baru saja usai. “Ayahku!” serunya, dengan kebingungan yang aneh. “Ibu tidak pernah memberitahuku bahwa aku punya ayah. Di mana dia tinggal? Aku lebih suka tinggal bersama paman.” “Dia tinggal agak jauh dari Grange,” jawabku; “tepat di balik bukit-bukit itu: tidak terlalu jauh, tetapi kamu bisa berjalan kaki ke sini ketika kamu sudah sehat. Dan kamu seharusnya senang pulang dan menemuinya. Kamu harus berusaha mencintainya, seperti kamu mencintai ibumu, dan kemudian dia akan mencintaimu.” “Tapi kenapa aku belum pernah mendengar tentang dia sebelumnya?” tanya Linton. “Kenapa ibu dan dia tidak tinggal bersama, seperti orang lain?” “Dia ada urusan bisnis yang membuatnya tetap di utara,” jawabku, “dan kesehatan ibumu mengharuskannya tinggal di selatan.” “Dan mengapa Ibu tidak pernah bercerita tentang dia kepadaku?” tanya anak itu dengan gigih. “Ia sering berbicara tentang paman, dan aku sudah lama menyayanginya. Bagaimana aku bisa menyayangi ayah? Aku tidak mengenalnya.” “Oh, semua anak menyayangi orang tua mereka,” kataku. “Mungkin ibumu berpikir kau ingin bersamanya jika ia sering menyebut namanya kepadamu. Ayo kita bergegas. Berkendara pagi-pagi di pagi yang indah seperti ini jauh lebih baik daripada tidur satu jam lebih lama.” “Apakah dia akan ikut bersama kita,” tanyanya, “gadis kecil yang kulihat kemarin?” “Bukan sekarang,” jawabku. “Apakah itu paman?” lanjutnya. “Tidak, aku akan menjadi temanmu di sana,” kataku. Linton bersandar di bantalnya dan terlelap dalam selimut cokelat. “Aku tidak mau pergi tanpa paman,” teriaknya akhirnya: “Aku tidak tahu ke mana paman akan membawaku.” Aku mencoba membujuknya tentang kenakalan menunjukkan keengganan untuk bertemu ayahnya; namun dia dengan keras kepala menolak untuk berdandan, dan aku harus meminta bantuan majikanku untuk membujuknya bangun dari tempat tidur. Anak malang itu akhirnya berhasil diturunkan, dengan beberapa jaminan palsu bahwa ketidakhadirannya akan singkat: bahwa Tuan Edgar dan Cathy akan mengunjunginya, dan janji-janji lain yang sama-sama tidak berdasar, yang kubuat dan ulangi secara berkala sepanjang perjalanan. Udara segar beraroma bunga heather, sinar matahari yang cerah, dan derap lembut Minny, meredakan kesedihannya setelah beberapa saat. Dia mulai mengajukan pertanyaan tentang rumah barunya, dan penghuninya, dengan minat dan semangat yang lebih besar. “Apakah Wuthering Heights seindah Thrushcross Grange?” tanyanya, sambil menoleh untuk melirik sekali lagi ke lembah, dari mana kabut tipis membubung dan membentuk awan berbulu di tepi langit biru. “Rumah itu tidak terlalu tersembunyi di antara pepohonan,” jawabku, “dan ukurannya tidak terlalu besar, tetapi kau bisa melihat pemandangan pedesaan yang indah di sekelilingnya; dan udaranya lebih sehat—lebih segar dan kering. Mungkin kau akan menganggap bangunan itu tua dan gelap pada awalnya; meskipun itu rumah yang layak: yang terbaik kedua di lingkungan sekitar. Dan kau akan menikmati jalan-jalan yang menyenangkan di padang rumput. Hareton Earnshaw—yaitu, sepupu Nona Cathy yang lain, dan juga sepupumu—akan menunjukkan semua tempat terindah; dan kau bisa membawa buku saat cuaca bagus, dan menjadikan lembah hijau sebagai tempat belajarmu; dan, sesekali, pamanmu mungkin akan bergabung denganmu berjalan-jalan: dia memang sering berjalan-jalan di perbukitan.” “Lalu seperti apa ayahku?” tanyanya. “Apakah dia muda dan tampan seperti paman?” “Dia masih muda,” kataku; “tetapi dia berambut dan bermata hitam, dan tampak lebih tegas; dan dia lebih tinggi dan lebih besar secara keseluruhan. Mungkin pada awalnya dia tidak akan tampak begitu lembut dan baik hati bagimu, karena itu bukan sifatnya: namun, ingatlah, bersikaplah jujur dan ramah padanya; dan tentu saja dia akan lebih menyayangimu daripada paman mana pun, karena kamu adalah anaknya sendiri.” “Rambut dan mata hitam!” gumam Linton. “Aku tidak bisa menyukainya. Kalau begitu, aku tidak seperti dia, kan?” “Tidak banyak,” jawabku: sama sekali tidak, pikirku, sambil menatap dengan menyesal wajah pucat dan tubuh kurus temanku, serta matanya yang besar dan lesu—mata ibunya, kecuali jika kepekaan yang menyedihkan sesaat menyalakannya, mata itu tidak memiliki sedikit pun jejak semangatnya yang cemerlang. “Aneh sekali dia tidak pernah datang mengunjungi mama dan aku!” gumamnya. “Apakah dia pernah melihatku? Jika iya, pasti aku masih bayi. Aku tidak ingat satu pun hal tentang dia!” “Wah, Tuan Linton,” kataku, “tiga ratus mil itu jarak yang sangat jauh; dan sepuluh tahun terasa sangat berbeda lamanya bagi orang dewasa dibandingkan dengan apa yang terjadi padamu. Mungkin Tuan Heathcliff bermaksud pergi dari musim panas ke musim panas berikutnya, tetapi tidak pernah menemukan kesempatan yang tepat; dan sekarang sudah terlambat. Jangan ganggu dia dengan pertanyaan tentang hal itu: itu hanya akan mengganggunya, tanpa ada gunanya.” Anak laki-laki itu sepenuhnya tenggelam dalam pikirannya sendiri selama sisa perjalanan, sampai kami berhenti di depan gerbang taman rumah pertanian. Aku mengamati untuk menangkap kesannya di wajahnya. Dia mengamati bagian depan yang diukir dan kisi-kisi berbingkai rendah, semak gooseberry yang jarang dan pohon cemara yang bengkok, dengan penuh perhatian, lalu menggelengkan kepalanya: perasaan pribadinya sama sekali tidak menyetujui tampilan luar tempat tinggal barunya. Tetapi dia cukup bijaksana untuk menunda mengeluh: mungkin ada kompensasi di dalam. Sebelum dia turun dari kuda, aku pergi dan membuka pintu. Saat itu pukul setengah tujuh; keluarga itu baru saja selesai sarapan: pelayan sedang membersihkan dan mengelap meja. Joseph berdiri di samping kursi tuannya menceritakan beberapa kisah tentang kuda pincang; dan Hareton sedang bersiap untuk pergi ke ladang jerami. “Halo, Nelly!” kata Tuan Heathcliff ketika melihatku. “Aku khawatir aku harus turun dan mengambil barang-barangku sendiri. Kau sudah membawanya, ya? Mari kita lihat apa yang bisa kita lakukan dengannya.” Ia bangkit dan melangkah ke pintu: Hareton dan Joseph mengikutinya dengan rasa ingin tahu yang besar. Linton yang malang mengamati wajah ketiga orang itu dengan mata ketakutan. “Tentu saja,” kata Joseph setelah memeriksa kuburan, “dia telah bertukar tempat denganmu, Tuan, dan itu pacarnya!” Heathcliff, setelah menatap putranya hingga kebingungan, tertawa mengejek. “Ya Tuhan! Cantik sekali! Sungguh makhluk yang indah dan menawan!” serunya. “Bukankah mereka membesarkannya dengan siput dan susu asam, Nelly? Oh, sialan! Ini lebih buruk dari yang kuduga—dan iblis tahu aku tidak optimis!” Aku menyuruh anak yang gemetar dan kebingungan itu turun dan masuk. Ia tidak sepenuhnya memahami arti ucapan ayahnya, atau apakah ucapan itu ditujukan kepadanya: bahkan, ia belum yakin bahwa orang asing yang muram dan mencibir itu adalah ayahnya. Tetapi ia berpegangan padaku dengan rasa takut yang semakin besar; dan ketika Tuan Heathcliff duduk dan menyuruhnya "kemarilah," ia menyembunyikan wajahnya di bahuku dan menangis. “Tut, tut!” kata Heathcliff, mengulurkan tangan dan menyeretnya dengan kasar di antara lututnya, lalu mengangkat kepalanya dengan dagunya. “Jangan macam-macam! Kami tidak akan menyakitimu, Linton—bukankah itu namamu? Kau sepenuhnya anak ibumu! Di mana bagianku atas dirimu, dasar ayam betina yang lemah?” Ia melepas topi anak laki-laki itu dan menyisir rambut ikal pirang tebalnya ke belakang, meraba lengan ramping dan jari-jari kecilnya; selama pemeriksaan itu Linton berhenti menangis, dan mengangkat mata birunya yang besar untuk mengamati inspektur tersebut. “Apakah kau mengenalku?” tanya Heathcliff, setelah memastikan bahwa semua anggota tubuh itu sama-sama lemah dan rapuh. “Tidak,” kata Linton, dengan tatapan kosong penuh ketakutan. “Kurasa kau pernah mendengar tentangku?” “Tidak,” jawabnya lagi. “Tidak! Sungguh memalukan ibumu, tidak pernah membangkitkan rasa sayangmu kepadaku sebagai anak! Kau adalah anakku, akan kukatakan padamu; dan ibumu adalah wanita jalang yang jahat karena membiarkanmu tidak mengetahui seperti apa ayahmu. Sekarang, jangan meringis, dan jangan memerah! Meskipun agak menyedihkan melihat kau bukan berdarah putih. Jadilah anak yang baik; dan aku akan melakukan yang terbaik untukmu. Nelly, jika kau lelah, kau boleh duduk; jika tidak, pulanglah. Kurasa kau akan melaporkan apa yang kau dengar dan lihat kepada petugas di Grange; dan masalah ini tidak akan terselesaikan selama kau masih berlama-lama di sini.” “Baiklah,” jawabku, “semoga Anda bersikap baik kepada anak itu, Tuan Heathcliff, atau Anda tidak akan bisa merawatnya lama; dan dialah satu-satunya kerabat Anda di dunia ini, yang akan Anda kenal selamanya—ingatlah.” “Aku akan bersikap sangat baik padanya, kau tak perlu takut,” katanya sambil tertawa. “Hanya saja, jangan ada orang lain yang bersikap baik padanya: aku cemburu karena memonopoli kasih sayangnya. Dan, untuk memulai kebaikanku, Joseph, bawakan sarapan untuk anak itu. Hareton, dasar anak nakal, pergilah bekerja. Ya, Nell,” tambahnya, setelah mereka pergi, “anakku adalah calon pemilik tempatmu, dan aku tidak ingin dia mati sampai aku yakin akan menjadi penerusnya. Lagipula, dia anakku , dan aku ingin merasakan kemenangan melihat keturunanku menjadi penguasa yang adil atas tanah mereka; anakku mempekerjakan anak-anak mereka untuk menggarap tanah ayah mereka dengan upah. Itulah satu-satunya pertimbangan yang dapat membuatku menoleransi anak itu: aku membencinya karena dirinya sendiri, dan membencinya karena kenangan yang dia hidupkan kembali! Tetapi pertimbangan itu sudah cukup: dia aman bersamaku, dan akan dirawat dengan hati-hati seperti tuanmu merawat miliknya sendiri. Aku punya kamar di lantai atas, dilengkapi dengan perabotan yang bagus untuknya; aku juga telah mempekerjakan seorang tutor, untuk datang tiga kali seminggu, dari jarak dua puluh mil, untuk mengajarinya apa pun yang ingin dia pelajari. Aku telah Saya memerintahkan Hareton untuk mematuhinya: dan sebenarnya saya telah mengatur semuanya dengan tujuan untuk mempertahankan sifat unggul dan sopan santunnya, di atas rekan-rekannya. Namun, saya menyesal bahwa dia begitu tidak pantas mendapatkan semua usaha ini: jika saya menginginkan berkah apa pun di dunia ini, itu adalah menemukan dia sebagai objek kebanggaan yang layak; dan saya sangat kecewa dengan si brengsek berwajah pucat dan merengek itu!” Saat ia sedang berbicara, Joseph kembali membawa baskom berisi bubur susu, dan meletakkannya di depan Linton: yang mengaduk-aduk makanan sederhana itu dengan ekspresi jijik, dan menegaskan bahwa ia tidak bisa memakannya. Aku melihat pelayan tua itu turut merasakan penghinaan tuannya terhadap anak itu; meskipun ia terpaksa menyimpan perasaan itu di dalam hatinya, karena Heathcliff jelas bermaksud agar bawahannya menghormatinya. “Tidak bisa memakannya?” ulangnya, menatap wajah Linton, dan meredam suaranya menjadi bisikan, karena takut didengar orang lain. “Tapi Tuan Hareton tidak pernah makan apa pun selain itu ketika dia masih kecil; dan apa yang cukup baik untuknya, cukup baik juga untukmu, kurasa!” “Aku tidak mau memakannya!” jawab Linton dengan ketus. “Singkirkan itu.” Joseph dengan marah merebut makanan itu dan membawanya kepada kami. “Apakah ada yang salah dengan makanannya?” tanyanya, sambil menyodorkan nampan ke depan hidung Heathcliff. “Apa yang menyebabkan mereka sakit?” katanya. “Wah!” jawab Joseph, “anak manis itu bilang dia tidak bisa memakannya. Tapi kurasa itu benar! Ibunya memang begitu—kami hampir terlalu kotor untuk menabur jagung demi membuat roti untuknya.” “Jangan sebut-sebut ibunya padaku,” kata sang majikan dengan marah. “Berikan dia sesuatu yang bisa dia makan, itu saja. Apa makanan biasanya, Nelly?” Saya menyarankan susu rebus atau teh; dan pengurus rumah tangga menerima instruksi untuk menyiapkannya. Ayo, pikirku, sifat egois ayahnya mungkin akan menambah kenyamanannya. Ia menyadari kondisi tubuhnya yang lemah, dan perlunya memperlakukannya dengan baik. Aku akan menghibur Tuan Edgar dengan memberitahukannya tentang perubahan suasana hati Heathcliff. Karena tidak ada alasan untuk berlama-lama, aku menyelinap keluar, sementara Linton sedang dengan malu-malu menolak rayuan seekor anjing gembala yang ramah. Tetapi ia terlalu waspada untuk ditipu: saat aku menutup pintu, aku mendengar teriakan, dan pengulangan kata-kata yang panik— “Jangan tinggalkan aku! Aku tidak akan tinggal di sini! Aku tidak akan tinggal di sini!” Kemudian palang pintu diangkat dan jatuh: mereka tidak mengizinkannya keluar. Aku menaiki Minny, dan mendorongnya untuk berlari kecil; dan begitulah tugas singkatku sebagai penjaga berakhir.</p>
 

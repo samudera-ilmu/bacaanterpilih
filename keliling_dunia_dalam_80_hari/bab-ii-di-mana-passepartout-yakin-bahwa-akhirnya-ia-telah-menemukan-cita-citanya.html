@@ -5,39 +5,176 @@
 <title>BAB II. DI MANA PASSEPARTOUT YAKIN BAHWA AKHIRNYA IA TELAH MENEMUKAN CITA-CITANYA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB II. DI MANA PASSEPARTOUT YAKIN BAHWA AKHIRNYA IA TELAH MENEMUKAN CITA-CITANYA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB II. DI MANA PASSEPARTOUT YAKIN BAHWA AKHIRNYA IA TELAH MENEMUKAN CITA-CITANYA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Faith,” gumam Passepartout, agak gugup, “Aku pernah melihat orang-orang di Madame Tussaud's yang seceria majikan baruku ini!” Perlu dicatat bahwa "orang-orang" di Madame Tussaud terbuat dari lilin, dan banyak dikunjungi di London; ucapan adalah satu-satunya hal yang kurang untuk membuat mereka tampak seperti manusia. Selama wawancara singkatnya dengan Tuan Fogg, Passepartout telah mengamatinya dengan saksama. Ia tampak seperti pria berusia sekitar empat puluh tahun, dengan fitur wajah yang halus dan tampan, serta postur tubuh yang tinggi dan proporsional; rambut dan kumisnya tipis, dahinya rata dan tidak berkerut, wajahnya agak pucat, giginya indah. Raut wajahnya memiliki apa yang oleh para ahli fisiognomi disebut "ketenangan dalam bertindak," suatu kualitas dari mereka yang bertindak daripada berbicara. Tenang dan tenang, dengan mata yang jernih, Tuan Fogg tampak sebagai tipe sempurna dari ketenangan Inggris yang telah digambarkan dengan sangat terampil oleh Angelica Kauffmann di atas kanvas. Dilihat dalam berbagai fase kehidupan sehari-harinya, ia memberikan kesan sebagai sosok yang sangat seimbang, setepat kronometer Leroy. Phileas Fogg memang merupakan personifikasi ketelitian, dan ini terlihat bahkan dalam ekspresi tangan dan kakinya; karena pada manusia, seperti halnya pada hewan, anggota tubuh itu sendiri mengekspresikan hasrat. Ia sangat teliti sehingga tidak pernah terburu-buru, selalu siap, dan hemat dalam langkah dan gerakannya. Ia tidak pernah mengambil satu langkah pun terlalu banyak, dan selalu menuju tujuannya melalui jalan pintas terpendek; ia tidak membuat gerakan yang berlebihan, dan tidak pernah terlihat gelisah atau resah. Ia adalah orang yang paling teliti di dunia, namun selalu sampai di tujuannya tepat pada saat yang tepat. Dia hidup sendirian, dan bisa dibilang, terisolasi dari segala hubungan sosial; dan karena dia tahu bahwa di dunia ini gesekan harus diperhitungkan, dan gesekan itu menghambat, dia tidak pernah bergaul dengan siapa pun. Adapun Passepartout, ia adalah seorang warga Paris sejati. Sejak meninggalkan negaranya untuk pergi ke Inggris, bekerja sebagai pelayan, ia sia-sia mencari majikan yang sesuai dengan hatinya. Passepartout sama sekali bukan salah satu dari orang-orang bodoh yang digambarkan oleh Molière dengan tatapan berani dan hidung terangkat tinggi; ia adalah orang yang jujur, dengan wajah yang menyenangkan, bibir sedikit menonjol, lembut dan suka membantu, dengan kepala bulat yang bagus, seperti yang ingin kita lihat pada seorang teman. Matanya biru, kulitnya kemerahan, sosoknya agak gemuk dan tegap, tubuhnya berotot, dan kekuatan fisiknya berkembang sepenuhnya berkat latihan di masa mudanya. Rambut cokelatnya agak acak-acakan; karena, sementara para pematung kuno dikatakan mengetahui delapan belas metode menata rambut Minerva, Passepartout hanya mengenal satu cara menata rambutnya sendiri: tiga sapuan sisir bergigi besar menyelesaikan penampilannya. Akan gegabah untuk memprediksi bagaimana sifat Passepartout yang lincah akan cocok dengan Tuan Fogg. Mustahil untuk mengatakan apakah pelayan baru itu akan menjadi semetodis yang diinginkan tuannya; hanya pengalaman yang dapat menjawab pertanyaan itu. Passepartout pernah menjadi semacam gelandangan di masa mudanya, dan sekarang mendambakan ketenangan; tetapi sejauh ini ia gagal menemukannya, meskipun ia telah bekerja di sepuluh rumah di Inggris. Tetapi ia tidak dapat menetap di salah satu rumah tersebut; dengan kesal, ia mendapati tuannya selalu berubah-ubah dan tidak teratur, terus-menerus berkeliling negeri, atau mencari petualangan. Tuannya yang terakhir, Lord Longferry muda, Anggota Parlemen, setelah menghabiskan malamnya di kedai-kedai Haymarket, terlalu sering diantar pulang di pagi hari dengan digendong polisi. Passepartout, yang ingin menghormati pria yang dilayaninya, memberanikan diri untuk sedikit menegur perilaku tersebut; yang, karena tidak diterima dengan baik, ia pun pergi. Setelah mendengar bahwa Tuan Phileas Fogg sedang mencari seorang pelayan, dan bahwa hidupnya sangat teratur tanpa gangguan, bahwa ia tidak pernah bepergian atau menginap di luar rumah, ia yakin bahwa inilah tempat yang dicarinya. Ia pun datang dan diterima, seperti yang telah diceritakan. Tepat pukul setengah sebelas, Passepartout mendapati dirinya sendirian di rumah di Saville Row. Ia segera memulai inspeksi, menjelajahinya dari ruang bawah tanah hingga loteng. Rumah besar yang bersih, tertata rapi, dan megah itu membuatnya senang; baginya rumah itu seperti cangkang siput, diterangi dan dihangatkan oleh gas, yang cukup untuk kedua tujuan tersebut. Ketika Passepartout mencapai lantai dua, ia langsung mengenali ruangan yang akan ditempatinya, dan ia merasa puas dengannya. Bel listrik dan pipa komunikasi memungkinkan komunikasi dengan lantai bawah; sementara di atas perapian terdapat jam listrik, persis seperti yang ada di kamar tidur Tuan Fogg, keduanya berdetak pada detik yang sama pada saat yang bersamaan. "Bagus, itu sudah cukup," kata Passepartout dalam hati. Tiba-tiba ia melihat, tergantung di atas jam, sebuah kartu yang, setelah diperiksa, ternyata adalah jadwal kegiatan harian rumah tersebut. Jadwal itu mencakup semua yang dibutuhkan dari pelayan, mulai pukul delapan pagi, tepat pada jam berapa Phileas Fogg bangun, hingga pukul setengah sebelas, ketika ia meninggalkan rumah untuk pergi ke Klub Reformasi—semua detail pelayanan, teh dan roti panggang pukul 8 lewat 23 menit, air untuk bercukur pukul 9 lewat 37 menit, dan berdandan pukul 10 kurang 20 menit. Semua hal yang harus dilakukan dari pukul setengah sebelas pagi hingga tengah malam, jam di mana pria yang teratur itu beristirahat, telah diatur dan direncanakan. Lemari pakaian Tuan Fogg sangat lengkap dan berkelas. Setiap pasang celana, jas, dan rompi diberi nomor, yang menunjukkan waktu dan musim di mana pakaian tersebut harus dikenakan; dan sistem yang sama diterapkan pada sepatu tuannya. Singkatnya, rumah di Saville Row, yang pastinya merupakan tempat yang penuh kekacauan dan keresahan di bawah pemerintahan Sheridan yang terkenal namun boros, adalah perwujudan ideal dari kenyamanan, ketenangan, dan keteraturan. Tidak ada ruang belajar, dan tidak ada buku, yang sama sekali tidak berguna bagi Tuan Fogg; karena di Reform College, dua perpustakaan, satu untuk literatur umum dan yang lainnya untuk hukum dan politik, tersedia untuknya. Sebuah brankas berukuran sedang berdiri di kamar tidurnya, dibangun sedemikian rupa sehingga tahan api dan juga pencuri; tetapi Passepartout tidak menemukan senjata atau alat berburu di mana pun; semuanya menunjukkan kebiasaan yang paling tenang dan damai. Setelah mengamati rumah itu dari atas sampai bawah, ia menggosok-gosok tangannya, senyum lebar menghiasi wajahnya, dan berkata dengan gembira, “Ini persis seperti yang saya inginkan! Ah, kita akan akur , Tuan Fogg dan saya! Sungguh pria yang ramah dan teratur! Benar-benar seperti mesin; yah, saya tidak keberatan melayani mesin.”</p>
 

@@ -5,39 +5,176 @@
 <title>TERSESAT DI DALAM PERUT BUMI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="TERSESAT DI DALAM PERUT BUMI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>TERSESAT DI DALAM PERUT BUMI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Menggambarkan keputusasaanku sungguh mustahil. Tak ada kata-kata yang mampu mengungkapkannya. Aku terkubur hidup-hidup, dengan prospek mati kelaparan dan kehausan di depan mata. Secara mekanis aku menyapu tanah dengan tanganku. Betapa kering dan kerasnya batu itu bagiku! Tetapi bagaimana aku bisa meninggalkan aliran sungai itu? Karena sungguh mengerikan bahwa sungai itu tidak lagi mengalir di sisiku. Kemudian aku mengerti alasan keheningan yang menakutkan itu, ketika untuk terakhir kalinya aku mendengarkan apakah ada suara dari teman-temanku yang dapat terdengar. Pada saat aku meninggalkan jalan yang benar, aku tidak menyadari hilangnya sungai itu. Jelas bahwa pada saat itu sebuah penyimpangan telah muncul di hadapanku, sementara Hansbach, mengikuti keanehan kemiringan lain, telah membawa teman-temanku pergi ke kedalaman yang tidak diketahui. Bagaimana aku bisa kembali? Tidak ada jejak langkah mereka atau jejakku sendiri, karena kaki itu tidak meninggalkan bekas di lantai granit. Aku memutar otak mencari solusi untuk masalah yang mustahil ini. Satu kata menggambarkan posisiku. Tersesat! Tersesat di kedalaman yang tak terukur! Tiga puluh liga bebatuan seolah menekan pundakku dengan tekanan yang mengerikan. Aku merasa remuk. Aku mencoba menghubungkan kembali ide-ideku dengan hal-hal di permukaan bumi. Aku hampir tidak berhasil. Hamburg, rumah di Königstrasse, Gräuben-ku yang malang, seluruh dunia yang sibuk di bawahnya aku berkelana, berlalu dengan cepat dan membingungkan di hadapan ingatanku yang ketakutan. Aku dapat menghidupkan kembali dengan nyata semua kejadian perjalanan kami, Islandia, M. Fridrikssen, Snæfell. Aku berkata pada diriku sendiri bahwa jika, dalam posisi seperti sekarang ini, aku cukup bodoh untuk berpegang pada secercah harapan, itu akan menjadi kegilaan, dan hal terbaik yang dapat kulakukan adalah putus asa. Kekuatan manusia apa yang mampu mengembalikan aku ke cahaya matahari dengan memisahkan lengkungan-lengkungan batu besar yang menyatu di atas kepalaku, saling menopang dengan kekuatan yang tak tertembus? Siapa yang mampu menempatkan kakiku di jalan yang benar, dan membawaku kembali ke kelompokku? "Oh, pamanku!" seruan itu keluar dari bibirku dengan nada putus asa. Itulah satu-satunya kata celaan saya, karena saya tahu betapa besar penderitaannya dalam mencari saya, di mana pun dia berada. Ketika aku menyadari diriku begitu jauh dari segala pertolongan duniawi, aku memohon pertolongan surgawi. Kenangan masa kecilku, kenangan akan ibuku, yang hanya kukenal di masa kecilku yang masih sangat muda, kembali menghampiriku, dan aku berlutut berdoa memohon pertolongan Ilahi yang sama sekali tidak layak kudapatkan. Kembalinya kepercayaan pada pemeliharaan Tuhan ini meredakan gejolak ketakutan saya, dan saya mampu memusatkan seluruh kekuatan kecerdasan saya pada situasi saya. Aku membawa bekal untuk tiga hari dan termosku penuh. Tapi aku tidak bisa sendirian terlalu lama. Haruskah aku naik atau turun? Tentu saja, naik; terus menerus naik. Maka aku harus sampai di titik di mana aku meninggalkan aliran sungai, di tikungan jalan yang menentukan itu. Dengan aliran sungai di kakiku, aku bisa berharap untuk kembali ke puncak Snæfell. Mengapa aku tidak memikirkan itu lebih awal? Jelas ada peluang untuk selamat di sini. Tugas yang paling mendesak adalah menemukan kembali aliran Sungai Hansbach. Aku bangkit, dan bersandar pada tongkatku yang berujung besi, aku menaiki galeri. Lerengnya agak curam. Aku berjalan terus tanpa harapan tetapi tanpa keraguan, seperti orang yang telah mengambil keputusan. Selama setengah jam saya tidak menemui halangan. Saya mencoba mengenali jalan saya berdasarkan bentuk terowongan, tonjolan batuan tertentu, dan susunan retakan. Tetapi tidak ada tanda khusus yang muncul, dan saya segera menyadari bahwa lorong ini tidak dapat membawa saya kembali ke titik balik. Lorong itu berakhir tiba-tiba. Saya menabrak dinding yang tak tembus, dan jatuh tersungkur di atas batu. Keputusasaan yang tak terungkapkan kemudian mencekamku. Aku terbaring terpukul, ngeri! Harapan terakhirku hancur berkeping-keping di dinding granit ini.</p>
 <p>Tersesat di labirin ini, yang liku-likunya saling bersilangan ke segala arah, tak ada gunanya lagi memikirkan pelarian. Di sini aku harus mati dengan kematian yang paling mengerikan. Dan, anehnya, terlintas dalam pikiranku bahwa ketika suatu hari nanti sisa-sisa tubuhku yang membatu ditemukan tiga puluh liga di bawah permukaan di perut bumi, penemuan itu mungkin akan memicu diskusi ilmiah yang serius. Aku mencoba berbicara dengan lantang, tetapi hanya suara serak yang keluar dari bibirku yang kering. Aku terengah-engah. Di tengah penderitaanku, teror baru mencekamku. Saat jatuh, lampuku salah posisi. Aku tidak bisa memperbaikinya, dan cahayanya semakin redup dan akan segera padam sepenuhnya. Aku menatap dengan getir arus bercahaya yang semakin melemah di dalam kumparan kawat. Sekumpulan bayangan redup yang bergerak tampak perlahan membentang di dinding yang semakin gelap. Aku hampir tak berani memejamkan mata sejenak, karena takut kehilangan secercah cahaya berharga ini. Setiap saat cahaya itu seolah akan lenyap dan kegelapan pekat akan datang menyelimutiku dengan nyata. Secercah cahaya terakhir yang bergetar melesat lemah ke atas. Aku mengamatinya dengan gemetar dan cemas; aku menyerapnya seolah-olah aku bisa menyimpannya, memusatkan seluruh kekuatan mataku padanya, seolah-olah pada sensasi cahaya terakhir yang akan pernah mereka alami, dan sesaat kemudian aku terbaring dalam kegelapan pekat, gelap gulita, dan tak terduga. Jeritan kesengsaraan yang mengerikan keluar dari mulutku. Di bumi, di tengah malam yang paling gelap sekalipun, cahaya tidak pernah sepenuhnya meninggalkan fungsinya. Cahaya itu masih samar dan menyebar, tetapi sekecil apa pun, mata tetap dapat menangkapnya. Di sini tidak ada satu atom pun; kegelapan total membuatku benar-benar buta. Lalu aku mulai kehilangan akal sehat. Aku bangkit dengan tangan terentang di depanku, berusaha dengan susah payah meraba jalan. Aku mulai berlari liar, bergegas menembus labirin yang tak berujung, terus menurun, terus berlari menembus lapisan kerak bumi yang tebal, penghuni yang berjuang di antara 'patahan' geologis, menangis, berteriak, menjerit, segera memar karena kontak dengan batu yang bergerigi, jatuh dan bangkit lagi berdarah, mencoba meminum darah yang menutupi wajahku, dan bahkan menunggu batu untuk menghancurkan tengkorakku. Aku tak akan pernah tahu ke mana karier gilaku membawaku. Setelah beberapa jam berlalu, tak diragukan lagi karena kelelahan, aku jatuh seperti gumpalan tak bernyawa di kaki tembok, dan kehilangan kesadaran sepenuhnya.</p>

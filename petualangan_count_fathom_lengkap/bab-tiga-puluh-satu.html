@@ -5,39 +5,176 @@
 <title>BAB TIGA PULUH SATU</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB TIGA PULUH SATU - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB TIGA PULUH SATU</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Secara tak sengaja ia bertemu dengan teman lamanya, yang dengannya ia mengadakan konferensi, dan memperbarui perjanjian. Tokoh utama kita, setelah mendapatkan bahan yang tepat untuk waktu bersenang-senangnya, berpikir sudah saatnya untuk mempelajari tempat yang telah ia pilih sebagai lokasi petualangannya, dan dengan tujuan itu ia melakukan beberapa kunjungan ke berbagai bagian kota, di mana terdapat hiburan atau pendidikan yang dapat ditemukan. Namun, ia selalu, pada kesempatan-kesempatan ini, tampil dengan pakaian biasa yang sederhana, untuk menghindari keanehan, dan tidak pernah pergi dua kali ke kedai kopi yang sama, agar identitasnya tidak dikenali kemudian, jika ia kemudian menonjol di mata publik dalam bidang yang lebih tinggi. Dalam perjalanannya kembali dari salah satu ekspedisi tersebut, saat ia melewati Ludgate, matanya tiba-tiba bertemu dengan penampakan teman lamanya, orang Tyrol, yang, menyadari dirinya terjebak dalam kesulitan, memanfaatkan keadaan, dan, berlari menghampiri petualang kita dengan ekspresi penuh semangat dan gembira, memeluknya, seperti seorang teman tersayang yang secara kebetulan ia temukan setelah perpisahan yang sangat panjang dan tidak menyenangkan. Fathom, yang kejeniusannya tak pernah mengecewakannya dalam keadaan darurat seperti itu, bukannya menerima sapaan tersebut dengan ancaman dan celaan yang pantas diterima orang lain, malah membalas sapaan itu dengan kehangatan yang sama, dan benar-benar gembira bertemu dengan seseorang yang mungkin dengan satu atau lain cara dapat menebus pengkhianatan dari perilakunya sebelumnya. Pria Tyrol itu, yang bernama Ratchcali, senang dengan sambutannya, dan mengusulkan agar mereka pergi ke kedai berikutnya, di mana mereka baru saja menempati sebuah ruangan, lalu ia berbicara kepada teman lamanya dengan kata-kata ini:— “Tuan Fathom, dengan cara Anda yang jujur dan ramah dalam memperlakukan seseorang yang telah berbuat salah kepada Anda, saya semakin yakin akan kebijaksanaan Anda, yang sering saya kagumi; oleh karena itu, saya tidak akan mencoba meminta maaf atas perilaku saya pada perpisahan terakhir kita; tetapi hanya ingin meyakinkan Anda bahwa pertemuan ini dapat menguntungkan kita bersama, jika kita sekarang kembali menjalin persatuan tanpa syarat, yang ikatannya akan segera kita temukan sebagai kepentingan dan keinginan kita untuk dipertahankan. Untuk bagian saya sendiri, seiring dengan matangnya penilaian saya oleh pengalaman, demikian pula sentimen saya telah berubah sejak pertemuan terakhir kita. Saya telah melihat banyak panen yang melimpah hilang karena kurangnya rekan kerja di kebun anggur; dan saya lebih dari sekali menjadi korban persekongkolan yang dapat saya lawan dengan bantuan satu orang pembantu yang cakap. Memang, saya dapat membuktikan apa yang saya tuduhkan dengan demonstrasi matematis; dan saya percaya tidak seorang pun akan berpura-pura menyangkal bahwa dua kepala lebih baik daripada satu, dalam semua kasus yang membutuhkan kebijaksanaan dan pertimbangan.” Ferdinand mau tak mau mengakui kewarasan pengamatannya, dan segera menyetujui usulannya tentang aliansi baru; ia ingin mengetahui bagaimana perilakunya di panggung Inggris, dan skema yang akan ditawarkannya untuk keuntungan bersama mereka. Pada saat yang sama, ia bertekad dalam hatinya untuk mengawasi tindakannya di masa depan dengan sangat ketat, sehingga akan menggagalkan rencana apa pun yang mungkin ia miliki di kemudian hari, untuk mengulangi lelucon yang telah berhasil ia lakukan padanya, dalam perjalanan mereka dari tepi Sungai Rhine. “Setelah meninggalkanmu di Bar-le-duc,” lanjut orang Tyrol itu, “aku terus bepergian tanpa henti, hingga tiba di Frankfurt am Maine, di mana aku menyamar sebagai seorang ksatria Prancis, dan melancarkan beberapa serangan hebat, yang bahkan kau sendiri tidak akan menganggapnya tidak pantas untuk kecerdasanmu; dan keberhasilanku semakin menyenangkan, karena operasiku terutama dilakukan terhadap musuh-musuh agama kita. Tetapi kemakmuranku tidak berlangsung lama. Karena mereka tidak dapat menggagalkanku dengan senjataku sendiri, mereka membentuk konspirasi terkutuk, yang menyebabkan aku tidak hanya kehilangan semua hasil kerja kerasku, tetapi juga menghadapi bahaya terbesar dalam hidupku. Aku telah memesan beberapa perhiasan yang kupinjam dari teman baikku Fathom untuk dipasang ulang dengan gaya yang modis, dan segera setelah itu aku memiliki kesempatan untuk menjual salah satunya, dengan keuntungan besar, kepada salah satu anggota persaudaraan, yang menawarkan harga luar biasa untuk batu permata itu, dengan tujuan untuk menghancurkanku. Kurang dari dua puluh empat jam setelah transaksi ini, aku ditangkap oleh petugas keadilan. atas sumpah pembeli, yang berjanji untuk membuktikan saya bersalah melakukan penipuan, dengan menjual kerikil Saxon sebagai berlian asli; dan tuduhan ini sebenarnya benar; karena perubahan itu telah dengan cerdik dilakukan terhadap saya oleh penjual perhiasan, yang sendiri terlibat dalam konspirasi tersebut. “Seandainya hati nurani saya bersih dari tuduhan lain, mungkin saya akan mendasarkan perkara saya pada keadilan dan perlindungan hukum; tetapi saya memperkirakan bahwa persidangan akan menimbulkan penyelidikan, yang sama sekali tidak ingin saya ikuti, dan karena itu terpaksa berkompromi, dengan mengorbankan hampir seluruh kekayaan saya. Namun, kesepakatan ini tidak dilakukan secara diam-diam, sehingga reputasi saya tercoreng dan kredibilitas saya hancur; sehingga saya terpaksa melepaskan perlengkapan sesekali saya, dan bekerja sebagai buruh harian untuk seorang pengrajin batu permata, pekerjaan yang pernah saya lakukan di masa muda saya. Di posisi yang tidak jelas ini, saya bekerja dengan sangat tekun, sampai saya menguasai pengetahuan tentang batu permata, serta berbagai metode untuk memajangnya dengan sebaik-baiknya; dan setelah, dengan kerja keras dan kecerdasan, mendapatkan sebidang kecil tanah, saya berangkat ke kerajaan ini, yang untungnya saya tiba sekitar empat bulan yang lalu; dan sungguh, Inggris adalah surga bagi para seniman dalam profesi kami.” “Orang mungkin membayangkan bahwa alam telah menciptakan penduduknya untuk menopang dan menghibur para petualang seperti Anda dan saya. Bukan berarti penduduk pulau ini menyambut semua orang asing tanpa pandang bulu. Sebaliknya, mereka mewarisi dari nenek moyang mereka prasangka yang tidak masuk akal terhadap semua bangsa di dunia; dan ketika seorang Inggris kebetulan bertengkar dengan orang asing, istilah celaan pertama yang digunakannya adalah nama negara lawannya, yang dicirikan oleh beberapa julukan yang menghina, seperti orang Prancis yang cerewet, kera Italia, babi Jerman, dan orang Belanda yang buas; bahkan, prasangka nasional mereka dipertahankan bahkan terhadap orang-orang yang bersatu dengan mereka di bawah hukum dan pemerintahan yang sama; karena tidak ada yang lebih umum daripada mendengar mereka berseru melawan sesama warga negara mereka, dengan ungkapan orang Skotlandia yang miskin, dan orang Irlandia yang kurang ajar. Namun prasangka ini tidak akan pernah gagal menimpa setiap orang asing yang memiliki bakat biasa; karena ia akan selalu menemukan kesempatan untuk bercakap-cakap dengan mereka di kedai kopi dan tempat-tempat umum. Meskipun mereka mengaku bersikap tertutup, yang, ngomong-ngomong, sangat luar biasa sehingga saya mengenal beberapa orang yang telah tinggal selama dua puluh tahun di rumah yang sama tanpa bertukar sepatah kata pun dengan tetangga sebelah mereka; namun, asalkan dia dapat berbicara dengan bijaksana, dan menjaga sikap seorang pria terhormat, dalam percakapan sesekali itu, perilakunya akan jauh lebih menyenangkan, karena akan mengecewakan harapan orang yang memiliki prasangka buruk terhadapnya. Ketika seorang asing telah melewati batas ini, yang selalu terjadi, dia akan dengan mudah memasuki pelabuhan kebaikan hati orang Inggris; karena rasa kesal itu bukanlah pribadi atau penuh dendam, melainkan lebih bersifat menghina dan nasional; sehingga, sementara dia meremehkan suatu bangsa secara keseluruhan, seorang individu dari komunitas itu sendiri dapat menjadi salah satu favorit utamanya. “Orang Inggris pada umumnya jujur dan berintegritas, oleh karena itu tidak curiga dan mudah percaya. Mereka terlalu sibuk dengan urusan mereka sendiri untuk ikut campur dalam perilaku tetangga mereka, dan terlalu acuh tak acuh, dalam hal watak, untuk tertarik pada apa yang mereka anggap asing bagi urusan mereka sendiri. Mereka kaya dan pedagang, akibatnya dermawan dan suka berpetualang, dan begitu mudah mempercayai perkataan seseorang tentang pentingnya dirinya, sehingga mereka membiarkan diri mereka menjadi mangsa sekelompok penipu yang ceroboh, yang akan kelaparan karena kurangnya kecerdasan di negara lain mana pun di dunia ini. Karena ini adalah gambaran yang benar tentang karakter Inggris, sejauh yang dapat saya amati dan pelajari, Anda akan dengan mudah memahami keuntungan yang dapat diperoleh darinya, berkat seni yang sangat Anda kuasai;—prospek yang besar dan tak terbatas terbentang di hadapan saya! Sesungguhnya, saya memandang kerajaan yang kaya ini sebagai lahan luas dan subur, tempat kita para petualang dapat mencari mangsa, tanpa hambatan atau gangguan. Karena begitu cemburu penduduk asli Kebebasan mereka, sehingga mereka tidak akan tahan terhadap pengekangan polisi yang diperlukan, dan seorang seniman yang cakap dapat memperkaya dirinya sendiri dengan hasil rampasan mereka, tanpa risiko menarik perhatian hakim, atau menanggung hukuman sekecil apa pun dari hukum. “Singkatnya, metropolis ini adalah sebuah penyamaran besar, di mana seorang yang pandai berstrategi dapat mengenakan seribu penyamaran berbeda, tanpa bahaya terdeteksi. Ada berbagai macam wujud yang digunakan oleh kami, para ksatria industri, untuk tampil di London. Seseorang menyelinap ke rumah bangsawan sebagai pelayan pribadi, dan dalam beberapa bulan memimpin seluruh keluarga. Yang lain menampilkan dirinya kepada publik sebagai ahli atau operator gigi; dan dengan jaminan dan pernyataan tertulis, yang memberikan kesaksian tentang penyembuhan luar biasa yang tidak pernah dilakukan, ia menaiki kereta kudanya, dan meminta sumbangan dari seluruh kota. Yang ketiga mengaku sebagai komposer musik, serta pemain musik, dan dengan beberapa permainan biola yang unik, ia berhasil masuk ke dalam manajemen konser pribadi dan publik. Dan yang keempat langsung muncul dengan segala kemegahan kereta kuda yang meriah, dengan gelar dan sebutan seorang bangsawan asing. Belum lagi para perencana kelas bawah, yang mengambil karakter-karakter seperti penari, ahli anggar, dan petugas penyambut tamu Prancis, atau, dengan meninggalkan agama mereka, berusaha untuk mendapatkan penghidupan. “Salah satu dari peran ini akan menguntungkan aktor yang cakap; dan, karena Anda sama-sama memenuhi syarat untuk semuanya, Anda dapat memilih yang paling sesuai dengan kecenderungan Anda sendiri. Meskipun, menurut pendapat saya, Anda dirancang oleh alam untuk bersinar di dunia besar, yang, bagaimanapun, adalah ladang terluas bagi orang-orang jenius; karena permainannya lebih dalam, dan orang-orang kelas atas, yang sebagian besar lebih bodoh, malas, sombong, dan berubah-ubah daripada orang-orang yang lebih rendah dari mereka, akibatnya lebih mudah ditipu; selain itu, moral mereka umumnya begitu longgar, sehingga, ketika seorang pria dari persaudaraan kita ketahuan menjalankan profesinya, penghinaan mereka terhadap keahliannya adalah satu-satunya aib yang dideritanya.” Tokoh utama kita sangat senang dengan lukisan ini, sehingga ia ingin sekali membaca aslinya, dan sebelum kedua sahabat ini berpisah, mereka menyelesaikan semua rencana kampanye. Pada malam yang sama, Ratchcali menyewa penginapan mewah untuk Count Fathom di ujung kota, dan melengkapi pakaian serta seragamnya dari hasil rampasan di Monmouth Street; ia juga merekrut seorang pelayan dan seorang kepala pelayan lagi untuk melayaninya, dan mengirimkan beberapa peti besar ke apartemen, yang konon berisi barang bawaan bangsawan asing ini, meskipun sebenarnya isinya hanya kayu biasa. Keesokan harinya, petualang kita menempati tempat tinggal barunya, setelah menyerahkan tugas mengusir Elenor yang malang kepada temannya dan rekannya. Elenor begitu terkejut dengan pesan tak terduga itu sehingga ia pingsan; dan ketika ia sadar kembali dan merenungkan kondisinya yang menyedihkan, ia dilanda kesedihan dan keputusasaan yang sangat hebat, yang menyebabkan otaknya kacau sedemikian rupa sehingga ia menjadi marah dan kehilangan akal sehat, dan atas saran dan bantuan orang-orang Tyrol, ia dibawa ke rumah sakit Bethlem; di mana kita akan meninggalkannya untuk sementara waktu, dengan senang hati kehilangan akal sehatnya.</p>
 

@@ -5,39 +5,176 @@
 <title>BAB V.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB V. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB V.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Mahasiswa yang rajin belajar umumnya menderita penyakit seperti batuk, pilek, pilek, kakeksia, bradipepsia, mata buruk, batu ginjal, kolik, penyakit kulit kasar, batuk berdahak, vertigo, perut kembung, TBC, dan semua penyakit yang disebabkan oleh terlalu banyak duduk: mereka kebanyakan kurus, kering, pucat… dan semua itu karena usaha yang berlebihan dan belajar yang luar biasa. Jika Anda tidak percaya akan kebenaran ini, lihatlah karya-karya Tostatus dan Thomas Aquinas yang hebat; dan katakan kepada saya apakah orang-orang itu berusaha keras.”—BURTON'S Anatomy of Melancholy , P. I, s. 2. Ini adalah surat dari Bapak Casaubon. Nona Brooke tersayang,—Saya mendapat izin dari wali Anda untuk berbicara kepada Anda tentang suatu hal yang sangat saya pedulikan. Saya harap saya tidak salah dalam mengenali kesamaan yang lebih dalam daripada sekadar hubungan perkenalan, karena kesadaran akan kebutuhan dalam hidup saya sendiri muncul bersamaan dengan kemungkinan saya berkenalan dengan Anda. Karena pada jam pertama bertemu Anda, saya mendapat kesan tentang kesesuaian Anda yang luar biasa dan mungkin eksklusif untuk memenuhi kebutuhan itu (yang, dapat saya katakan, terkait dengan aktivitas kasih sayang yang bahkan kesibukan pekerjaan yang terlalu istimewa untuk ditinggalkan pun tidak dapat menyembunyikannya tanpa gangguan); dan setiap kesempatan pengamatan berikutnya telah memberikan kesan tersebut kedalaman tambahan dengan meyakinkan saya lebih tegas tentang kesesuaian yang telah saya bayangkan sebelumnya, dan dengan demikian membangkitkan lebih tegas kasih sayang yang baru saja saya sebutkan. Percakapan kita, menurut saya, telah cukup menjelaskan kepada Anda corak hidup dan tujuan saya: corak yang, saya sadari, tidak cocok untuk pikiran kebanyakan orang. Tetapi saya telah melihat dalam diri Anda ketinggian pemikiran dan kemampuan pengabdian, yang sampai sekarang belum saya bayangkan akan sesuai baik dengan masa muda yang penuh semangat maupun dengan keanggunan seksual yang dapat dikatakan sekaligus memenangkan dan memberikan keistimewaan ketika dikombinasikan, seperti yang terlihat jelas pada diri Anda, dengan kualitas mental yang telah disebutkan di atas. Saya akui, di luar harapan saya untuk bertemu dengan kombinasi langka dari unsur-unsur yang solid dan menarik ini, yang mampu membantu dalam pekerjaan yang lebih berat dan memberikan pesona pada waktu-waktu luang; dan seandainya saya tidak bertemu dengan Anda (yang, sekali lagi saya katakan, saya harap bukan kebetulan semata-mata karena kebutuhan yang telah ditentukan, tetapi terkait secara ilahi sebagai tahapan menuju penyelesaian rencana hidup), saya mungkin akan terus hidup sampai akhir tanpa upaya apa pun untuk meringankan kesendirian saya dengan ikatan perkawinan. Demikianlah, Nona Brooke tersayang, pernyataan yang tepat tentang perasaan saya; dan saya mengandalkan kemurahan hati Anda untuk memberanikan diri bertanya sejauh mana perasaan Anda sendiri dapat menguatkan firasat bahagia saya. Diterima oleh Anda sebagai suami dan pelindung kesejahteraan Anda di dunia ini, saya anggap sebagai anugerah ilahi tertinggi. Sebagai balasannya, setidaknya saya dapat menawarkan kasih sayang yang belum pernah terbuang, dan pengabdian setia pada kehidupan yang, betapapun singkatnya, tidak memiliki halaman-halaman masa lalu yang, jika Anda memilih untuk membukanya, akan Anda temukan catatan yang dapat menyebabkan Anda merasa pahit atau malu. Saya menantikan ungkapan perasaan Anda dengan kecemasan yang seharusnya (jika mungkin) dialihkan oleh kebijaksanaan dengan usaha yang lebih berat dari biasanya. Tetapi dalam hal pengalaman ini saya masih muda, dan dalam menantikan kemungkinan yang tidak menguntungkan, saya tidak dapat tidak merasa bahwa pasrah pada kesendirian akan lebih sulit setelah penerangan harapan yang sementara. Bagaimanapun juga, saya tetaplah, Hormat saya dengan penuh pengabdian, EDWARD CASAUBON. Dorothea gemetar saat membaca surat ini; lalu ia berlutut, menutupi wajahnya dengan kain, dan terisak. Ia tidak dapat berdoa: di bawah luapan emosi yang khidmat di mana pikiran menjadi kabur dan gambaran melayang tak menentu, ia hanya bisa menyerahkan dirinya, dengan perasaan seperti anak kecil, ke pangkuan kesadaran ilahi yang menopang dirinya sendiri. Ia tetap dalam posisi itu sampai tiba waktunya untuk bersiap makan malam. Bagaimana mungkin terlintas dalam pikirannya untuk memeriksa surat itu, untuk melihatnya secara kritis sebagai ungkapan cinta? Seluruh jiwanya dikuasai oleh kenyataan bahwa kehidupan yang lebih penuh sedang terbentang di hadapannya: dia adalah seorang pemula yang akan memasuki tingkat inisiasi yang lebih tinggi. Dia akan memiliki ruang untuk energi-energi yang bergejolak dengan gelisah di bawah kegelapan dan tekanan ketidaktahuannya sendiri serta kesewenang-wenangan kecil dari kebiasaan dunia. Kini ia dapat mengabdikan dirinya pada tugas-tugas besar namun pasti; kini ia diizinkan untuk hidup terus-menerus dalam cahaya pikiran yang dapat ia hormati. Harapan ini tidak terlepas dari pancaran kegembiraan yang membanggakan—kejutan gembira seorang gadis muda karena ia dipilih oleh pria yang telah ia kagumi. Semua gairah Dorothea disalurkan melalui pikiran yang berjuang menuju kehidupan ideal; pancaran masa gadisnya yang telah berubah jatuh pada objek pertama yang berada dalam jangkauannya. Dorongan yang mengubah kecenderungan menjadi tekad diperkuat oleh peristiwa-peristiwa kecil hari itu yang telah membangkitkan ketidakpuasannya terhadap kondisi kehidupan nyatanya. Setelah makan malam, ketika Celia memainkan "air, dengan variasi," semacam melodi kecil yang melambangkan bagian estetika dari pendidikan para gadis muda, Dorothea pergi ke kamarnya untuk menjawab surat Tuan Casaubon. Mengapa dia harus menunda jawabannya? Dia menulisnya tiga kali, bukan karena dia ingin mengubah kata-katanya, tetapi karena tulisan tangannya sangat tidak pasti, dan dia tidak tahan jika Tuan Casaubon menganggap tulisan tangannya buruk dan tidak terbaca. Dia merasa tertantang untuk menulis dengan tulisan tangan di mana setiap huruf dapat dibedakan tanpa banyak tebakan, dan dia bermaksud untuk memanfaatkan kemampuan ini sebaik-baiknya, untuk menyelamatkan mata Tuan Casaubon. Tiga kali dia menulis. TUAN CASAUBON YANG TERCINTA,—Saya sangat berterima kasih kepada Anda karena telah mencintai saya, dan menganggap saya layak menjadi istri Anda. Saya tidak dapat mengharapkan kebahagiaan yang lebih baik daripada kebahagiaan bersama Anda. Jika saya mengatakan lebih banyak, itu hanya akan menjadi hal yang sama yang ditulis lebih panjang lebar, karena sekarang saya tidak dapat memikirkan hal lain selain agar saya dapat menjalani hidup dengan bahagia. Dengan penuh hormat, DOROTHEA BROOKE. Kemudian di malam hari, ia mengikuti pamannya ke perpustakaan untuk memberikan surat itu kepadanya, agar ia dapat mengirimkannya di pagi hari. Pamannya terkejut, tetapi keterkejutannya hanya berlangsung beberapa saat, di mana ia menggeser-geser berbagai benda di meja tulisnya, dan akhirnya berdiri membelakangi perapian, kacamatanya di hidung, sambil melihat alamat surat Dorothea. “Apakah kau sudah cukup memikirkannya, sayangku?” akhirnya dia bertanya. “Tidak perlu berpikir lama, paman. Aku tidak tahu apa pun yang membuatku ragu. Jika aku berubah pikiran, itu pasti karena sesuatu yang penting dan benar-benar baru bagiku.” “Ah!—jadi kau sudah menerimanya? Berarti Chettam tidak punya kesempatan? Apakah Chettam telah menyinggung perasaanmu—menyinggung perasaanmu, kau tahu? Apa yang tidak kau sukai dari Chettam?” “Tidak ada satu pun hal yang kusukai darinya,” kata Dorothea, agak terburu-buru. Tuan Brooke menengadahkan kepala dan bahunya ke belakang seolah-olah seseorang telah melemparkan rudal ringan ke arahnya. Dorothea segera merasa menyesal, dan berkata— “Maksudku dari sudut pandang seorang suami. Kurasa dia sangat baik—benar-benar sangat peduli dengan pondok-pondok itu. Pria yang bermaksud baik.” “Tapi kau harus punya anak yang berpendidikan, dan hal semacam itu? Yah, itu sedikit ada dalam keluarga kita. Aku sendiri juga punya—kecintaan pada pengetahuan, dan ingin tahu tentang segala hal—terlalu berlebihan—itu membawaku terlalu jauh; meskipun hal semacam itu jarang terjadi pada garis keturunan perempuan; atau itu terjadi di bawah permukaan seperti sungai-sungai di Yunani, kau tahu—itu muncul pada anak laki-laki. Anak laki-laki yang cerdas, ibu yang cerdas. Aku pernah sangat terlibat dalam hal itu. Namun, sayangku, aku selalu mengatakan bahwa orang harus melakukan apa yang mereka sukai dalam hal-hal ini, sampai batas tertentu. Sebagai walimu, aku tidak bisa menyetujui perjodohan yang buruk. Tapi Casaubon cukup baik: posisinya bagus. Aku khawatir Chettam akan terluka, dan Nyonya Cadwallader akan menyalahkanku.” Malam itu, tentu saja, Celia tidak tahu apa yang telah terjadi. Dia menganggap sikap linglung Dorothea, dan bukti tangisan lebih lanjut sejak mereka sampai di rumah, disebabkan oleh kemarahannya tentang Sir James Chettam dan bangunan-bangunan itu, dan berhati-hati untuk tidak menyinggung perasaan lebih lanjut: setelah mengatakan apa yang ingin dia katakan, Celia tidak ingin kembali membahas topik yang tidak menyenangkan. Sejak kecil, sifatnya adalah tidak pernah bertengkar dengan siapa pun—hanya mengamati dengan heran bahwa mereka bertengkar dengannya, dan tampak seperti ayam jantan; kemudian dia siap bermain permainan tali dengan mereka setiap kali mereka kembali tenang. Dan mengenai Dorothea, selalu menjadi kebiasaannya untuk menemukan kesalahan dalam kata-kata saudara perempuannya, meskipun Celia dalam hati membantah bahwa dia selalu mengatakan apa adanya, dan tidak lebih: dia tidak pernah dan tidak pernah bisa merangkai kata-kata dari kepalanya sendiri. Tetapi yang terbaik dari Dodo adalah, dia tidak marah terlalu lama. Meskipun mereka hampir tidak berbicara satu sama lain sepanjang malam, namun ketika Celia menghentikan pekerjaannya, berniat untuk tidur—suatu kebiasaan yang selalu ia lakukan jauh lebih awal—Dorothea, yang duduk di bangku rendah, tidak dapat menyibukkan diri kecuali dalam meditasi, berkata dengan intonasi merdu yang pada saat-saat perasaan mendalam namun tenang membuat ucapannya seperti resitatif yang indah— “Celia, sayang, kemarilah dan cium aku,” katanya sambil merentangkan kedua tangannya. Celia berlutut untuk mendapatkan posisi yang tepat dan memberikan ciuman kupu-kupu kecilnya, sementara Dorothea melingkarinya dengan lembut dan menekan bibirnya dengan serius di setiap pipinya secara bergantian. “Jangan duduk, Dodo, kau pucat sekali malam ini: segera tidur,” kata Celia dengan nada nyaman, tanpa sedikit pun rasa iba. “Tidak, sayang, aku sangat, sangat bahagia,” kata Dorothea dengan penuh semangat. “Baguslah,” pikir Celia. “Tapi betapa anehnya Dodo beralih dari satu ekstrem ke ekstrem lainnya.” Keesokan harinya, saat makan siang, kepala pelayan sambil memberikan sesuatu kepada Tuan Brooke berkata, “Jonas telah kembali, Tuan, dan membawa surat ini.” Tuan Brooke membaca surat itu, lalu sambil mengangguk ke arah Dorothea, berkata, “Casaubon, sayangku: dia akan datang untuk makan malam; dia tidak menunggu untuk menulis lebih banyak—tidak menunggu, kau tahu.” Bagi Celia, mungkin tidak tampak aneh jika tamu makan malam diumumkan kepada saudara perempuannya sebelumnya, tetapi, matanya mengikuti arah yang sama dengan pamannya, ia terkejut dengan efek aneh pengumuman itu pada Dorothea. Seolah-olah sesuatu seperti pantulan sayap putih yang diterangi matahari telah melintas di wajahnya, berakhir dengan salah satu rona merah pipinya yang jarang terjadi. Untuk pertama kalinya terlintas di benak Celia bahwa mungkin ada sesuatu yang lebih antara Tuan Casaubon dan saudara perempuannya daripada sekadar kesenangannya dalam obrolan buku dan kesenangannya mendengarkan. Hingga saat ini, ia menganggap kekagumannya pada kenalan yang "jelek" dan terpelajar ini sama dengan kekagumannya pada Monsieur Liret di Lausanne, yang juga jelek dan terpelajar. Dorothea tidak pernah bosan mendengarkan Monsieur Liret tua ketika kaki Celia sedingin mungkin, dan ketika sungguh mengerikan melihat kulit kepalanya yang botak bergerak-gerak. Mengapa kemudian antusiasmenya tidak meluas kepada Tuan Casaubon dengan cara yang sama seperti kepada Monsieur Liret? Dan tampaknya semua orang terpelajar memiliki pandangan layaknya seorang guru terhadap kaum muda. Namun kini Celia benar-benar terkejut dengan kecurigaan yang tiba-tiba muncul di benaknya. Ia jarang terkejut seperti ini, kecepatan pengamatannya yang luar biasa terhadap serangkaian tanda biasanya mempersiapkannya untuk mengharapkan peristiwa-peristiwa lahiriah yang menarik perhatiannya. Bukan berarti ia sekarang membayangkan Tuan Casaubon sudah menjadi kekasihnya: ia hanya mulai merasa jijik dengan kemungkinan bahwa apa pun dalam pikiran Dorothea dapat mengarah pada hal seperti itu. Inilah sesuatu yang benar-benar mengganggunya tentang Dodo: tidak menerima Sir James Chettam memang tidak masalah, tetapi gagasan untuk menikahi Tuan Casaubon! Celia merasakan semacam rasa malu bercampur dengan rasa geli. Tetapi mungkin Dodo, jika ia benar-benar hampir melakukan hal yang berlebihan, dapat dibujuk untuk mengurungkan niatnya: pengalaman sering menunjukkan bahwa sifatnya yang mudah terpengaruh dapat dimanfaatkan. Hari itu lembap, dan mereka tidak akan berjalan-jalan di luar, jadi mereka berdua pergi ke ruang duduk mereka; Dan di sana Celia mengamati bahwa Dorothea, alih-alih duduk dengan tekun dan penuh minat seperti biasanya pada suatu pekerjaan, malah hanya menyandarkan sikunya pada sebuah buku yang terbuka dan memandang ke luar jendela ke arah pohon cedar besar yang diselimuti kabut. Ia sendiri telah mulai membuat mainan untuk anak-anak pendeta, dan tidak akan terburu-buru memulai suatu hal. Dorothea sebenarnya berpikir bahwa sebaiknya Celia mengetahui perubahan penting dalam posisi Tuan Casaubon sejak terakhir kali beliau berada di rumah: rasanya tidak adil membiarkannya tidak mengetahui apa yang pasti akan memengaruhi sikapnya terhadapnya; tetapi mustahil untuk tidak ragu memberitahunya. Dorothea menuduh dirinya sendiri agak picik dalam rasa takut ini: baginya selalu menjijikkan untuk memiliki sedikit rasa takut atau keraguan tentang tindakannya, tetapi saat ini ia mencari bantuan tertinggi yang mungkin agar ia tidak takut akan sifat kasar dari prosa Celia yang agak sensual. Lamunannya terputus, dan kesulitan pengambilan keputusan hilang, oleh suara Celia yang kecil dan agak serak yang berbicara dengan nada biasanya, sebuah komentar sampingan atau "ngomong-ngomong." “Apakah ada orang lain yang akan makan malam selain Tuan Casaubon?” “Setahu saya tidak ada.” “Semoga ada orang lain. Kalau begitu, aku tidak akan mendengar dia makan supnya seperti itu.” “Apa yang luar biasa dari kebiasaannya makan sup?” “Sungguh, Dodo, tidakkah kau dengar bagaimana dia menggesekkan sendoknya? Dan dia selalu berkedip sebelum berbicara. Aku tidak tahu apakah Locke berkedip, tapi aku yakin aku merasa kasihan pada orang-orang yang duduk di seberangnya jika dia melakukannya.” “Celia,” kata Dorothea dengan nada serius dan tegas, “tolong jangan lagi membuat pengamatan seperti itu.” “Kenapa tidak? Itu semua benar,” jawab Celia, yang memiliki alasan untuk tetap bertahan, meskipun ia mulai sedikit takut. “Banyak hal yang benar yang hanya diamati oleh pikiran orang awam.” “Kalau begitu, menurutku pikiran orang biasa pasti cukup berguna. Kurasa sayang sekali ibu Tuan Casaubon tidak memiliki pikiran yang lebih biasa: dia mungkin bisa mengajarinya dengan lebih baik.” Celia dalam hati ketakutan, dan siap untuk melarikan diri, setelah melontarkan kata-kata yang tidak berdasar ini. Perasaan Dorothea telah menumpuk menjadi longsoran, dan tidak ada persiapan lebih lanjut yang bisa dilakukan. “Sudah sepatutnya kukatakan padamu, Celia, bahwa aku bertunangan dengan Tuan Casaubon.” Mungkin Celia belum pernah sepucat ini sebelumnya. Boneka kertas yang sedang dibuatnya pasti akan terluka kakinya, jika bukan karena kehati-hatiannya yang selalu menjaga apa pun yang dipegangnya. Ia segera meletakkan boneka rapuh itu, dan duduk diam selama beberapa saat. Saat ia berbicara, air mata mulai menggenang. “Oh, Dodo, kuharap kau akan bahagia.” Kelembutan seorang kakak perempuannya tak bisa tidak mengalahkan perasaan lain saat ini, dan ketakutannya adalah ketakutan akan kasih sayang. Dorothea masih merasa sakit hati dan gelisah. “Jadi, sudah diputuskan?” tanya Celia dengan nada kagum. “Dan paman tahu?” “Saya telah menerima tawaran Tuan Casaubon. Paman saya membawakan surat yang berisi tawaran itu; dia sudah mengetahuinya sebelumnya.” “Maafkan aku, kalau aku mengatakan sesuatu yang menyakitimu, Dodo,” kata Celia sambil sedikit terisak. Ia tak pernah menyangka akan merasa seperti ini. Ada sesuatu yang bernuansa duka cita dalam keseluruhan kejadian ini, dan Tuan Casaubon tampaknya adalah pendeta yang memimpin upacara, yang tentangnya akan tidak pantas untuk berkomentar. “Tenang saja, Kitty, jangan bersedih. Kita seharusnya tidak pernah mengagumi orang yang sama. Aku sering menyinggung perasaan dengan cara yang sama; aku cenderung berbicara terlalu keras tentang orang-orang yang tidak kusukai.” Terlepas dari kemurahan hati ini, Dorothea masih merasa sakit hati: mungkin lebih karena kekaguman Celia yang tertahan daripada kritik-kritik kecilnya. Tentu saja, seluruh dunia di sekitar Tipton tidak akan bersimpati dengan pernikahan ini. Dorothea tidak mengenal siapa pun yang berpikir seperti dia tentang kehidupan dan tujuan-tujuan terbaiknya. Namun demikian, sebelum malam berakhir, ia sangat bahagia. Dalam percakapan empat mata selama satu jam dengan Tuan Casaubon, ia berbicara kepadanya dengan lebih bebas daripada yang pernah ia rasakan sebelumnya, bahkan mencurahkan kegembiraannya atas gagasan untuk mengabdikan dirinya kepadanya, dan mempelajari bagaimana ia dapat berbagi dan memajukan semua tujuan besarnya. Tuan Casaubon tersentuh dengan kegembiraan yang tak terduga (pria mana yang tidak?) atas semangat polos dan tak terkendali seperti anak kecil ini: ia tidak terkejut (kekasih mana yang akan terkejut?) bahwa ia menjadi objeknya. “Nona muda tersayang—Nona Brooke—Dorothea!” katanya, sambil menggenggam tangannya, “ini adalah kebahagiaan yang lebih besar dari yang pernah kubayangkan akan kudapatkan. Bahwa aku akan bertemu dengan pikiran dan pribadi yang begitu kaya akan perpaduan keindahan yang dapat membuat pernikahan menjadi sesuatu yang diinginkan, sungguh jauh dari bayanganku. Kau memiliki semua—bahkan lebih dari semua—kualitas yang selalu kuanggap sebagai keunggulan khas seorang wanita. Pesona besar kaummu adalah kemampuannya untuk menunjukkan kasih sayang yang tulus dan penuh pengorbanan, dan di sinilah kita melihat kesesuaiannya untuk melengkapi dan menyempurnakan kehidupan kita sendiri. Hingga kini aku hanya mengenal sedikit kesenangan, kecuali yang bersifat keras: kepuasanku adalah kepuasan seorang mahasiswi yang kesepian. Aku kurang tertarik untuk memetik bunga yang akan layu di tanganku, tetapi sekarang aku akan memetiknya dengan penuh semangat, untuk meletakkannya di dadamu.” Tak ada pidato yang lebih jujur dalam maksudnya: retorika dingin di akhir pidato itu sama tulusnya dengan gonggongan anjing, atau suara gagak yang sedang birahi. Bukankah gegabah untuk menyimpulkan bahwa tidak ada gairah di balik soneta-soneta untuk Delia yang terdengar seperti musik mandolin yang tipis? Iman Dorothea melengkapi semua yang tampaknya tidak terucapkan dalam kata-kata Tuan Casaubon: orang percaya mana yang melihat kelalaian atau ketidaktepatan yang mengganggu? Teks, baik itu teks nabi atau penyair, berkembang untuk apa pun yang dapat kita masukkan ke dalamnya, dan bahkan tata bahasanya yang buruk pun luhur. “Saya sangat bodoh—Anda pasti akan heran dengan ketidaktahuan saya,” kata Dorothea. “Saya memiliki begitu banyak pemikiran yang mungkin keliru; dan sekarang saya akan dapat menceritakan semuanya kepada Anda, dan menanyakan pendapat Anda tentang hal itu. Tetapi,” tambahnya, dengan imajinasi cepat tentang kemungkinan perasaan Tuan Casaubon, “saya tidak akan terlalu merepotkan Anda; hanya jika Anda bersedia mendengarkan saya. Anda pasti sering lelah mengejar topik-topik yang Anda bahas sendiri. Saya akan mendapatkan cukup banyak manfaat jika Anda mau mengajak saya ke sana.” “Bagaimana aku bisa bertahan di jalan mana pun tanpa kehadiranmu?” kata Tuan Casaubon, mencium keningnya yang tulus, dan merasa bahwa surga telah menganugerahinya berkah dalam segala hal yang sesuai dengan kebutuhannya yang unik. Ia tanpa sadar terpengaruh oleh pesona alam yang sama sekali tanpa perhitungan tersembunyi, baik untuk efek langsung maupun untuk tujuan yang lebih jauh. Inilah yang membuat Dorothea begitu kekanak-kanakan, dan, menurut beberapa orang, begitu bodoh, dengan semua kecerdasannya yang terkenal; misalnya, dalam kasus ini, ia menjatuhkan diri, secara metaforis, di kaki Tuan Casaubon, dan mencium tali sepatunya yang ketinggalan zaman seolah-olah ia adalah seorang Paus Protestan. Ia sama sekali tidak mengajari Tuan Casaubon untuk bertanya apakah ia cukup baik untuknya, tetapi hanya bertanya pada dirinya sendiri dengan cemas bagaimana ia bisa cukup baik untuk Tuan Casaubon. Sebelum ia pergi keesokan harinya, telah diputuskan bahwa pernikahan akan berlangsung dalam waktu enam minggu. Mengapa tidak? Rumah Tuan Casaubon sudah siap. Itu bukanlah rumah pendeta, melainkan sebuah rumah besar yang cukup luas, dengan lahan yang cukup luas. Rumah pendeta itu dihuni oleh seorang kurator, yang melakukan semua tugas kecuali berkhotbah di pagi hari.</p>
 

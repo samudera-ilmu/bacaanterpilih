@@ -5,39 +5,176 @@
 <title>BAB VIII</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB VIII - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB VIII</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Pada pagi hari yang cerah di bulan Juni, bayi mungil pertamaku yang cantik, dan yang terakhir dari keturunan Earnshaw kuno, lahir. Kami sedang sibuk dengan jerami di ladang yang jauh, ketika gadis yang biasanya membawakan sarapan kami datang berlari satu jam lebih awal melintasi padang rumput dan menyusuri jalan setapak, memanggilku sambil berlari. “Oh, anak yang hebat!” serunya terengah-engah. “Anak laki-laki terbaik yang pernah ada! Tapi dokter bilang Nyonya harus pergi: katanya Nyonya menderita TBC selama beberapa bulan ini. Aku dengar dia memberi tahu Tuan Hindley: dan sekarang dia tidak punya apa-apa untuk merawatnya, dan dia akan mati sebelum musim dingin. Kau harus pulang segera. Kau harus merawatnya, Nelly: memberinya makan gula dan susu, dan menjaganya siang dan malam. Aku berharap aku jadi kau, karena itu akan menjadi milikmu sepenuhnya ketika Nyonya sudah tiada!” “Tapi apakah dia sakit parah?” tanyaku, sambil melemparkan garpu rumputku dan mengikatkan penutup kepalaku. “Kurasa memang begitu; namun ia tampak berani,” jawab gadis itu, “dan ia berbicara seolah-olah ia berharap bisa melihat bayi itu tumbuh menjadi seorang pria. Ia sangat gembira, bayi itu sangat cantik! Jika aku jadi dia, aku yakin aku tidak akan mati: aku akan sembuh hanya dengan melihatnya, terlepas dari Kenneth. Aku benar-benar marah padanya. Nyonya Archer membawa bayi itu ke tuan rumah, dan wajahnya baru saja mulai berseri-seri, ketika si tua bangka itu maju dan berkata—'Earnshaw, sungguh suatu berkah istrimu masih hidup dan meninggalkanmu putra ini. Ketika ia lahir, aku yakin kita tidak akan bisa memeliharanya lama; dan sekarang, aku harus memberitahumu, musim dingin mungkin akan mengakhiri hidupnya. Jangan terlalu mempedulikan dan mengkhawatirkannya: itu tidak bisa dihindari. Dan lagi pula, seharusnya kau tahu lebih baik daripada memilih gadis yang begitu gegabah!'” “Lalu apa jawaban sang guru?” tanyaku. “Kurasa dia mengumpat: tapi aku tak memperdulikannya, aku sangat ingin melihat bayi itu,” dan dia mulai lagi menggambarkannya dengan penuh antusias. Aku, yang sama antusiasnya dengan dia, bergegas pulang untuk mengaguminya, dari pihakku; meskipun aku sangat sedih untuk Hindley. Dia hanya punya tempat di hatinya untuk dua idola—istrinya dan dirinya sendiri: dia menyayangi keduanya, dan memuja salah satunya, dan aku tak bisa membayangkan bagaimana dia akan menanggung kehilangan itu. Ketika kami sampai di Wuthering Heights, dia berdiri di depan pintu; dan, saat saya masuk, saya bertanya, "bagaimana kabar bayinya?" “Hampir siap untuk berlarian, Nell!” jawabnya sambil tersenyum ceria. “Dan selingkuhannya?” saya memberanikan diri bertanya; “kata dokter dia—” “Sialan dokter itu!” sela dia, wajahnya memerah. “Frances benar sekali: dia akan sembuh total minggu depan. Apakah kau akan naik ke atas? Katakan padanya bahwa aku akan datang, jika dia berjanji untuk tidak bicara. Aku meninggalkannya karena dia tidak mau diam; dan dia harus—katakan padanya Tuan Kenneth bilang dia harus diam.” Saya menyampaikan pesan ini kepada Ny. Earnshaw; dia tampak bersemangat, dan menjawab dengan riang, “Aku hampir tidak mengucapkan sepatah kata pun, Ellen, dan dia sudah keluar dua kali sambil menangis. Baiklah, katakanlah aku berjanji tidak akan bicara: tetapi itu tidak mengikatku untuk tidak menertawakannya!” Kasihan sekali! Hingga seminggu sebelum kematiannya, jantungnya yang riang itu tak pernah berhenti berdetak; dan suaminya dengan gigih, bahkan dengan marah, menegaskan bahwa kesehatannya membaik setiap hari. Ketika Kenneth memperingatkannya bahwa obat-obatannya tidak berguna pada tahap penyakit itu, dan dia tidak perlu lagi mengeluarkan biaya untuk merawatnya, dia menjawab, “Aku tahu kau tidak perlu—dia sehat—dia tidak membutuhkan perawatan lagi darimu! Dia tidak pernah menderita TBC. Itu hanya demam; dan sudah sembuh: denyut nadinya sekarang sama lambatnya dengan denyut nadiku, dan pipinya pun dingin.” Dia menceritakan kisah yang sama kepada istrinya, dan istrinya tampaknya mempercayainya; tetapi suatu malam, saat bersandar di bahunya, ketika hendak mengatakan bahwa dia pikir dia akan bisa bangun besok, tiba-tiba dia terserang batuk—batuk yang sangat ringan—dia mengangkatnya ke dalam pelukannya; istrinya meletakkan kedua tangannya di leher suaminya, wajahnya berubah, dan dia meninggal. Seperti yang diantisipasi gadis itu, anak Hareton sepenuhnya jatuh ke tangan saya. Tuan Earnshaw, selama ia melihatnya sehat dan tidak pernah mendengarnya menangis, merasa puas, sejauh menyangkut dirinya. Untuk dirinya sendiri, ia menjadi putus asa: kesedihannya adalah jenis kesedihan yang tidak dapat diratapi. Ia tidak menangis atau berdoa; ia mengutuk dan menantang: mencaci maki Tuhan dan manusia, dan menyerahkan dirinya pada kesenangan yang tak terkendali. Para pelayan tidak tahan dengan perilaku tirani dan jahatnya: Joseph dan saya adalah satu-satunya dua orang yang mau tinggal. Saya tidak tega meninggalkan tanggung jawab saya; dan selain itu, Anda tahu, saya pernah menjadi saudara angkatnya, dan lebih mudah memaafkan perilakunya daripada orang asing. Joseph tetap tinggal untuk menindas para penyewa dan buruh; dan karena itu adalah panggilannya untuk berada di tempat di mana ia memiliki banyak kejahatan untuk ditegur. Perilaku buruk dan teman-teman yang buruk dari sang majikan menjadi contoh yang buruk bagi Catherine dan Heathcliff. Perlakuan sang majikan terhadap Heathcliff cukup untuk mengubah orang suci menjadi iblis. Dan, sungguh, tampaknya anak laki-laki itu dirasuki sesuatu yang jahat pada masa itu. Dia senang menyaksikan Hindley merendahkan dirinya sendiri hingga tak dapat diselamatkan; dan setiap hari semakin terkenal karena kekesalan dan keganasannya yang buas. Aku tak bisa membayangkan betapa mengerikannya rumah kami. Pendeta berhenti berkunjung, dan akhirnya tidak ada orang baik yang mendekati kami; kecuali kunjungan Edgar Linton ke Nona Cathy mungkin merupakan pengecualian. Pada usia lima belas tahun, dia adalah ratu pedesaan; dia tak tertandingi; dan dia memang tumbuh menjadi makhluk yang angkuh dan keras kepala! Aku akui aku tidak menyukainya setelah masa kanak-kanak berlalu; dan aku sering mengganggunya dengan mencoba menurunkan kesombongannya: meskipun dia tidak pernah membenciku. Dia memiliki keteguhan yang luar biasa terhadap ikatan lama: bahkan Heathcliff tetap memegang kendali atas kasih sayangnya tanpa berubah; Dan Linton muda, dengan segala kesombongannya, merasa sulit untuk memberikan kesan yang sama mendalamnya. Dia adalah mantan majikan saya: itu potretnya di atas perapian. Dulu tergantung di satu sisi, dan potret istrinya di sisi lain; tetapi potret istrinya telah dipindahkan, kalau tidak, Anda mungkin bisa melihat seperti apa dia. Bisakah Anda melihatnya? Nyonya Dean mengangkat lilin, dan saya melihat wajah berwajah lembut, sangat mirip dengan wanita muda di Heights, tetapi lebih termenung dan ramah dalam ekspresinya. Itu membentuk gambaran yang manis. Rambut pirang panjangnya sedikit keriting di pelipis; matanya besar dan serius; sosoknya hampir terlalu anggun. Saya tidak heran bagaimana Catherine Earnshaw bisa melupakan teman pertamanya demi orang seperti itu. Saya sangat heran bagaimana dia, dengan keinginan untuk sesuai dengan kepribadiannya, bisa membayangkan gambaran saya tentang Catherine Earnshaw. “Potret yang sangat menyenangkan,” ujarku kepada pengurus rumah. “Seperti apa potretnya?” “Ya,” jawabnya; “tetapi dia terlihat lebih baik ketika sedang bersemangat; itulah raut wajahnya sehari-hari: dia kurang bersemangat secara umum.” Catherine tetap menjalin hubungan baik dengan keluarga Linton sejak lima minggu tinggal di antara mereka; dan karena ia tidak tergoda untuk menunjukkan sisi kasarnya di hadapan mereka, dan merasa malu bersikap tidak sopan di tempat ia selalu mendapat keramahan, ia tanpa sadar menipu wanita dan pria tua itu dengan keramahannya yang cerdik; mendapatkan kekaguman Isabella, dan hati serta jiwa saudara laki-lakinya: pencapaian yang membuatnya tersanjung sejak awal—karena ia penuh ambisi—dan membuatnya mengadopsi karakter ganda tanpa bermaksud menipu siapa pun. Di tempat di mana ia mendengar Heathcliff disebut sebagai "preman muda yang vulgar," dan "lebih buruk daripada binatang buas," ia berhati-hati untuk tidak bertindak seperti dia; tetapi di rumah ia tidak terlalu ingin mempraktikkan kesopanan yang hanya akan ditertawakan, dan menahan sifatnya yang sulit diatur ketika hal itu tidak akan memberinya pujian atau penghargaan. Tuan Edgar jarang sekali berani mengunjungi Wuthering Heights secara terbuka. Ia takut akan reputasi Earnshaw, dan menghindari bertemu dengannya; namun ia selalu diterima dengan upaya terbaik kami untuk bersikap sopan: sang majikan sendiri menghindari menyinggung perasaannya, karena tahu mengapa ia datang; dan jika ia tidak bisa bersikap ramah, ia akan menjauh. Saya rasa kehadirannya di sana tidak menyenangkan bagi Catherine; ia tidak licik, tidak pernah bersikap genit, dan jelas keberatan jika kedua temannya bertemu; karena ketika Heathcliff menyatakan penghinaan terhadap Linton di hadapannya, ia tidak bisa setengah setuju, seperti yang dilakukannya saat Heathcliff tidak ada; dan ketika Linton menunjukkan rasa jijik dan antipati terhadap Heathcliff, ia tidak berani mengabaikan perasaannya, seolah-olah penghinaan terhadap teman bermainnya hampir tidak berarti baginya. Saya sering tertawa melihat kebingungan dan masalah tak terhitungnya, yang dengan sia-sia ia coba sembunyikan dari ejekan saya. Kedengarannya tidak baik: tetapi dia begitu sombong, sehingga benar-benar tidak mungkin untuk mengasihani kesusahannya, sampai dia ditegur dan menjadi lebih rendah hati. Akhirnya, dia memberanikan diri untuk mengaku dan mempercayakan semuanya kepadaku: tidak ada orang lain yang bisa dia jadikan penasihat. Tuan Hindley pergi dari rumah suatu sore, dan Heathcliff dengan berani mengambil cuti karena hal itu. Saat itu ia berusia enam belas tahun, saya rasa, dan tanpa memiliki paras yang buruk, atau kekurangan kecerdasan, ia berhasil memberikan kesan menjijikkan baik secara batin maupun lahiriah yang tidak lagi terlihat pada penampilannya saat ini. Pertama-tama, pada saat itu ia telah kehilangan manfaat pendidikan awalnya: kerja keras terus-menerus, yang dimulai sejak dini dan diakhiri terlambat, telah memadamkan rasa ingin tahu yang pernah dimilikinya dalam mengejar pengetahuan, dan kecintaan pada buku atau pembelajaran. Rasa superioritas masa kecilnya, yang ditanamkan kepadanya oleh kebaikan Tuan Earnshaw tua, telah memudar. Ia berjuang lama untuk mempertahankan kesetaraan dengan Catherine dalam studinya, dan menyerah dengan penyesalan yang mendalam namun diam: tetapi ia menyerah sepenuhnya; dan tidak ada yang bisa membujuknya untuk mengambil langkah ke arah peningkatan, ketika ia menyadari bahwa ia pasti akan tenggelam di bawah level sebelumnya. Kemudian penampilan fisiknya selaras dengan kemerosotan mental: ia memiliki gaya berjalan yang membungkuk dan penampilan yang hina; wataknya yang pendiam secara alami menjadi berlebihan hingga hampir idiotis, yaitu sikap murung dan antisosial; dan tampaknya ia menikmati kesenangan yang suram dalam membangkitkan rasa jijik daripada penghargaan dari sedikit kenalannya. Catherine dan dia tetap menjadi teman setia bahkan saat dia beristirahat dari pekerjaannya; tetapi dia telah berhenti mengungkapkan rasa sukanya pada Catherine dengan kata-kata, dan menjauh dengan curiga dan marah dari belaian kekanak-kanakan Catherine, seolah-olah menyadari bahwa tidak akan ada kepuasan dalam mencurahkan kasih sayang seperti itu kepadanya. Pada kesempatan yang disebutkan sebelumnya, dia datang ke rumah untuk mengumumkan niatnya untuk tidak melakukan apa pun, sementara saya membantu Nona Cathy mengatur gaunnya: dia tidak memperhitungkan bahwa dia akan bermalas-malasan; dan membayangkan dia akan memiliki seluruh rumah untuk dirinya sendiri, dia berhasil, dengan cara tertentu, memberi tahu Tuan Edgar tentang ketidakhadiran saudara laki-lakinya, dan kemudian bersiap untuk menerimanya. “Cathy, apakah kamu sibuk siang ini?” tanya Heathcliff. “Apakah kamu akan pergi ke mana pun?” “Tidak, sedang hujan,” jawabnya. “Lalu, mengapa kau mengenakan gaun sutra itu?” tanyanya. “Semoga tidak ada orang yang datang ke sini?” “Setahu saya tidak,” gumam Nona itu, “tapi seharusnya kau sudah berada di lapangan sekarang, Heathcliff. Sudah satu jam lewat waktu makan siang; kukira kau sudah pergi.” “Hindley jarang sekali membebaskan kami dari kehadirannya yang menyebalkan,” ujar bocah itu. “Aku tidak akan bekerja lagi hari ini: aku akan tinggal bersamamu.” “Oh, tapi Joseph akan menceritakan semuanya,” sarannya; “sebaiknya kau pergi!” “Joseph sedang memuat kapur di sisi lain Penistone Crags; itu akan memakan waktu hingga gelap, dan dia tidak akan pernah tahu.” Setelah berkata demikian, ia berjalan santai ke perapian dan duduk. Catherine berpikir sejenak, dengan alis berkerut—ia merasa perlu untuk memperlancar jalan bagi sebuah gangguan. “Isabella dan Edgar Linton berencana datang sore ini,” katanya, di akhir mengheningkan cipta selama satu menit. “Karena hujan, aku hampir tidak mengharapkan mereka; tetapi mereka mungkin datang, dan jika mereka datang, kau berisiko dimarahi tanpa alasan.” “Suruh Ellen bilang kau sudah bertunangan, Cathy,” desaknya; “jangan usir aku demi teman-temanmu yang menyedihkan dan bodoh itu! Kadang-kadang aku hampir mengeluh tentang mereka—tapi aku tidak akan—” “Maksudnya apa?” seru Catherine, menatapnya dengan wajah gelisah. “Oh, Nelly!” tambahnya dengan kesal, sambil menarik kepalanya menjauh dari tanganku, “kau menyisir rambutku sampai tidak keriting lagi! Cukup; biarkan aku sendiri. Apa yang kau keluhkan, Heathcliff?” “Tidak apa-apa—lihat saja almanak di dinding itu;” dia menunjuk ke selembar kertas berbingkai yang tergantung di dekat jendela, dan melanjutkan, “Tanda silang itu untuk malam-malam yang kau habiskan bersama keluarga Linton, titik-titik itu untuk malam-malam yang kau habiskan bersamaku. Kau lihat? Aku sudah menandai setiap hari.” “Ya—sangat bodoh: seolah-olah aku memperhatikannya!” jawab Catherine dengan nada kesal. “Lalu, apa gunanya?” “Untuk menunjukkan bahwa saya memang memperhatikan,” kata Heathcliff. “Lalu, apakah aku harus selalu duduk bersamamu?” tanyanya, semakin kesal. “Apa gunanya bagiku? Apa yang kau bicarakan? Kau mungkin bodoh, atau kekanak-kanakan, untuk apa pun yang kau katakan untuk menghiburku, atau untuk apa pun yang kau lakukan!” “Kau tidak pernah bilang sebelumnya bahwa aku terlalu sedikit bicara, atau bahwa kau tidak menyukai kehadiranku, Cathy!” seru Heathcliff dengan sangat gelisah. “Ini bukan perusahaan sama sekali, ketika orang-orang tidak tahu apa-apa dan tidak mengatakan apa-apa,” gumamnya. Temannya bangkit, tetapi ia tidak punya waktu untuk mengungkapkan perasaannya lebih lanjut, karena terdengar derap kaki kuda di atas ubin, dan setelah mengetuk dengan lembut, Linton muda masuk, wajahnya berseri-seri gembira atas panggilan tak terduga yang diterimanya. Tak diragukan lagi Catherine memperhatikan perbedaan antara teman-temannya, saat yang satu masuk dan yang lain keluar. Kontrasnya seperti apa yang Anda lihat ketika menukar daerah perbukitan tandus dan berbatu dengan lembah subur yang indah; dan suara serta sapaannya sangat berlawanan seperti penampilannya. Ia memiliki cara berbicara yang manis dan lembut, dan mengucapkan kata-katanya seperti Anda: itu kurang kasar daripada cara kita berbicara di sini, dan lebih lembut. “Aku datang tidak terlalu cepat, kan?” katanya sambil melirikku: aku baru saja mulai mengelap piring, dan merapikan beberapa laci di ujung lemari. “Tidak,” jawab Catherine. “Apa yang kau lakukan di situ, Nelly?” “Ini pekerjaan saya, Nona,” jawab saya. (Tuan Hindley telah memberi saya arahan untuk menjadikan Linton sebagai pihak ketiga dalam setiap kunjungan pribadi yang ia pilih.) Dia melangkah ke belakangku dan berbisik dengan kesal, “Singkirkan dirimu dan kain lapmu; ketika ada tamu di rumah, para pelayan tidak mulai menggosok dan membersihkan di ruangan tempat mereka berada!” “Ini kesempatan bagus, sekarang tuan sedang pergi,” jawabku lantang: “dia tidak suka aku gelisah memikirkan hal-hal ini di hadapannya. Aku yakin Tuan Edgar akan memaafkanku.” “Aku benci kau gelisah di hadapanku ,” seru wanita muda itu dengan angkuh, tidak memberi tamunya waktu untuk berbicara: dia belum bisa menenangkan diri sejak perselisihan kecil dengan Heathcliff. “Saya minta maaf, Nona Catherine,” jawab saya; dan saya melanjutkan pekerjaan saya dengan tekun. Ia, mengira Edgar tidak bisa melihatnya, merebut kain itu dari tanganku, dan mencubit lenganku dengan sangat keras dan lama. Aku sudah bilang aku tidak mencintainya, dan malah menikmati mempermalukan harga dirinya sesekali: lagipula, ia sangat menyakitiku; jadi aku bangkit dari lututku, dan berteriak, “Oh, Nona, itu trik yang jahat! Anda tidak berhak mencubit saya, dan saya tidak akan menolerirnya.” “Aku tidak menyentuhmu, dasar makhluk pembohong!” teriaknya, jari-jarinya gatal ingin mengulangi perbuatan itu, dan telinganya merah padam karena marah. Dia tidak pernah mampu menyembunyikan amarahnya, itu selalu membuat seluruh wajahnya memerah. “Lalu, apa itu?” balasku, sambil menunjukkan bukti berwarna ungu untuk membantahnya. Dia menghentakkan kakinya, ragu sejenak, lalu, didorong tak tertahankan oleh kenakalan dalam dirinya, menampar pipiku: sebuah tamparan menyengat yang membuat kedua mataku berair. “Catherine, sayang! Catherine!” sela Linton, sangat terkejut dengan kesalahan ganda berupa kebohongan dan kekerasan yang telah dilakukan idolanya. “Keluar dari ruangan ini, Ellen!” ulangnya, gemetaran di sekujur tubuhnya. Hareton kecil, yang selalu mengikutiku ke mana-mana, dan duduk di dekatku di lantai, saat melihatku menangis mulai menangis sendiri, dan terisak-isak mengeluh tentang "bibi Cathy yang jahat," yang membuat bibinya marah: ia mencengkeram bahunya, dan mengguncangnya sampai anak malang itu memucat, dan Edgar tanpa berpikir panjang memegang tangannya untuk melepaskannya. Dalam sekejap salah satu tangannya terlepas, dan pemuda yang terkejut itu merasakannya dipukulkan ke telinganya sendiri dengan cara yang tidak bisa disalahartikan sebagai lelucon. Ia mundur dengan cemas. Aku mengangkat Hareton dalam pelukanku, dan berjalan ke dapur bersamanya, membiarkan pintu komunikasi tetap terbuka, karena aku ingin melihat bagaimana mereka akan menyelesaikan perselisihan mereka. Tamu yang tersinggung itu bergerak ke tempat ia meletakkan topinya, pucat dan bibirnya gemetar. “Benar sekali!” kataku dalam hati. “Ambil peringatan ini dan pergilah! Merupakan suatu kebaikan membiarkanmu melihat sekilas watak aslinya.” “Kau mau pergi ke mana?” tanya Catherine sambil mendekati pintu. Dia membelokkan mobilnya ke samping, dan mencoba menyalip. “Kamu tidak boleh pergi!” serunya dengan penuh semangat. “Aku harus dan akan melakukannya!” jawabnya dengan suara lirih. “Tidak,” ia bersikeras, sambil memegang gagang pintu; “belum, Edgar Linton: duduklah; kau tidak akan meninggalkanku dalam keadaan marah seperti itu. Aku akan menderita sepanjang malam, dan aku tidak akan menderita karenamu!” “Bolehkah saya tetap tinggal setelah Anda memukul saya?” tanya Linton. Catherine bisu. “Kau telah membuatku takut dan malu padamu,” lanjutnya; “Aku tidak akan datang ke sini lagi!” Matanya mulai berkilauan dan kelopak matanya berbinar. “Dan kau telah mengatakan kebohongan yang disengaja!” katanya. “Aku tidak melakukannya!” serunya, setelah berhasil berbicara; “Aku tidak melakukan apa pun dengan sengaja. Baiklah, pergilah—menjauhlah! Dan sekarang aku akan menangis—aku akan menangis sampai sakit!” Ia berlutut di samping sebuah kursi, dan mulai menangis dengan sungguh-sungguh. Edgar tetap teguh pada pendiriannya hingga ke istana; di sana ia berlama-lama. Aku memutuskan untuk menyemangatinya. “Nona itu sangat bandel, Tuan,” seruku. “Sama buruknya dengan anak yang bermasalah: sebaiknya Anda pulang, kalau tidak dia akan sakit, dan itu hanya akan membuat kita sedih.” Makhluk lembut itu memandang dengan curiga melalui jendela: ia memiliki kekuatan untuk pergi seperti seekor kucing yang meninggalkan tikus yang setengah mati, atau burung yang setengah dimakan. Ah, pikirku, tidak akan ada yang bisa menyelamatkannya: ia sudah ditakdirkan, dan terbang menuju nasibnya! Dan memang demikianlah yang terjadi: ia berbalik tiba-tiba, bergegas masuk ke rumah lagi, menutup pintu di belakangnya; dan ketika aku masuk beberapa saat kemudian untuk memberi tahu mereka bahwa Earnshaw telah pulang dalam keadaan mabuk berat, siap untuk membuat kekacauan di seluruh rumah (kondisi pikirannya yang biasa dalam keadaan seperti itu), aku melihat pertengkaran itu justru telah mempererat keintiman—telah menghancurkan benteng-benteng rasa malu masa muda, dan memungkinkan mereka untuk meninggalkan penyamaran persahabatan, dan mengakui diri mereka sebagai sepasang kekasih. Kabar kedatangan Tuan Hindley membuat Linton segera menaiki kudanya, dan Catherine ke kamarnya. Aku pergi untuk menyembunyikan Hareton kecil, dan untuk mengambil peluru dari senapan berburu milik tuan, yang sering ia mainkan dalam kegembiraannya yang berlebihan, membahayakan nyawa siapa pun yang memprovokasi, atau bahkan menarik perhatiannya terlalu banyak; dan aku telah menemukan rencana untuk mengambilnya, agar ia tidak terlalu banyak menimbulkan kerusakan jika ia sampai menembakkan senapan itu.</p>
 

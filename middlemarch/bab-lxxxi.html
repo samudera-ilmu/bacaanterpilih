@@ -5,39 +5,176 @@
 <title>BAB LXXXI.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LXXXI. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LXXXI.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Du Erde warst auch nacht beständig, Dan athmest neu erquickt zu meinen Füssen, Beginnest schon mit Lust mich zu umgeben, You regst and rührst ein kräftiges Beschliessen Zum höchsten Dasein immerfort zu streben . — Faust: 2r Theil. Ketika Dorothea kembali berada di depan pintu Lydgate berbicara dengan Martha, ia berada di ruangan di dekatnya dengan pintu sedikit terbuka, bersiap untuk keluar. Ia mendengar suara Dorothea, dan segera menghampirinya. “Apakah menurutmu Nyonya Lydgate bisa menerima saya pagi ini?” katanya, setelah berpikir bahwa akan lebih baik untuk tidak menyinggung kunjungan sebelumnya sama sekali. “Aku yakin dia akan senang,” kata Lydgate, menekan pikirannya tentang penampilan Dorothea, yang sama berubahnya dengan Rosamond, “jika kau bersedia masuk dan membiarkan aku memberitahunya bahwa kau ada di sini. Dia tidak begitu sehat sejak kau datang kemarin, tetapi dia lebih baik pagi ini, dan aku pikir kemungkinan besar dia akan terhibur dengan melihatmu lagi.” Jelas bahwa Lydgate, seperti yang Dorothea duga, tidak tahu apa-apa tentang keadaan kunjungannya kemarin; bahkan, dia tampaknya mengira bahwa Dorothea telah melaksanakannya sesuai dengan niatnya. Dorothea telah menyiapkan catatan kecil meminta Rosamond untuk menemuinya, yang akan dia berikan kepada pelayan jika pelayan itu tidak menghalangi, tetapi sekarang dia sangat cemas tentang akibat dari pengumuman Rosamond. Setelah menuntunnya ke ruang tamu, ia berhenti sejenak untuk mengambil surat dari sakunya dan memberikannya ke tangannya, sambil berkata, “Aku menulis ini tadi malam, dan hendak membawanya ke Lowick saat berkuda. Ketika seseorang bersyukur atas sesuatu yang terlalu baik untuk diucapkan terima kasih biasa, menulis lebih memuaskan daripada berbicara—setidaknya seseorang tidak akan menyadari betapa tidak memadainya kata-kata itu.” Wajah Dorothea berseri-seri. “Justru akulah yang paling patut berterima kasih, karena kau telah mengizinkanku menggantikan posisi itu. Kau sudah menyetujuinya ?” katanya, tiba-tiba ragu. “Ya, ceknya akan dikirimkan ke Bulstrode hari ini.” Ia tak berkata apa-apa lagi, tetapi naik ke atas menemui Rosamond, yang baru saja selesai berdandan, dan duduk dengan lesu sambil memikirkan apa yang harus dilakukannya selanjutnya. Kebiasaan rajinnya dalam hal-hal kecil, bahkan di masa-masa sedihnya, mendorongnya untuk memulai semacam pekerjaan, yang ia kerjakan dengan lambat atau terhenti karena kurang minat. Ia tampak sakit, tetapi telah kembali tenang seperti biasanya, dan Lydgate takut mengganggunya dengan pertanyaan apa pun. Ia telah memberitahunya tentang surat Dorothea yang berisi cek tersebut, dan setelah itu ia berkata, “Ladislaw sudah datang, Rosy; ia duduk bersamaku tadi malam; kurasa ia akan datang lagi hari ini. Kupikir ia tampak agak babak belur dan depresi.” Dan Rosamond tidak menjawab. Kemudian, ketika ia mendekat, ia berkata kepadanya dengan sangat lembut, “Rosy, sayang, Nyonya Casaubon datang menemuimu lagi; kau pasti ingin bertemu dengannya, bukan?” Bahwa ia tersipu dan menunjukkan gerakan agak terkejut tidak mengejutkannya setelah kegelisahan yang ditimbulkan oleh pertemuan kemarin—kegelisahan yang bermanfaat, pikirnya, karena tampaknya hal itu membuatnya kembali menoleh kepadanya. Rosamond tidak berani menolak. Ia tidak berani menyinggung fakta kemarin dengan nada suaranya. Mengapa Nyonya Casaubon datang lagi? Jawabannya adalah kekosongan yang hanya bisa diisi Rosamond dengan rasa takut, karena kata-kata Will Ladislaw yang menyakitkan telah membuat setiap pikiran tentang Dorothea terasa sangat perih baginya. Meskipun demikian, dalam ketidakpastian yang memalukan itu, ia tidak berani berbuat apa-apa selain menurut. Ia tidak mengatakan ya, tetapi ia bangkit dan membiarkan Lydgate menyampirkan selendang tipis di bahunya, sementara Lydgate berkata, “Aku akan segera keluar.” Kemudian sesuatu terlintas di benaknya yang mendorongnya untuk berkata, “Tolong beri tahu Martha agar tidak membawa orang lain ke ruang tamu.” Dan Lydgate menyetujui, berpikir bahwa ia sepenuhnya memahami keinginan ini. Ia menuntunnya ke pintu ruang tamu, lalu berbalik, sambil berkata dalam hati bahwa ia adalah suami yang agak ceroboh karena bergantung pada pengaruh wanita lain untuk mendapatkan kepercayaan istrinya. Rosamond, sambil melilitkan selendang lembutnya saat berjalan menuju Dorothea, dalam hati membungkus jiwanya dengan sikap dingin dan penuh kehati-hatian. Apakah Nyonya Casaubon datang untuk mengatakan sesuatu kepadanya tentang Will? Jika ya, itu adalah suatu tindakan yang membuat Rosamond kesal; dan dia mempersiapkan diri untuk menanggapi setiap kata dengan ketenangan yang sopan. Will telah melukai harga dirinya terlalu parah sehingga dia tidak merasa menyesal terhadap Will dan Dorothea: luka yang dideritanya sendiri tampak jauh lebih besar. Dorothea bukan hanya wanita yang "diutamakan", tetapi juga memiliki keuntungan yang luar biasa karena menjadi dermawan Lydgate; dan dalam pandangan Rosamond yang bingung dan penuh penderitaan, tampaknya Nyonya Casaubon ini—wanita yang mendominasi dalam segala hal yang menyangkut dirinya—pasti datang sekarang dengan perasaan memiliki keuntungan, dan dengan permusuhan yang mendorongnya untuk menggunakannya. Memang, bukan hanya Rosamond, tetapi siapa pun, yang mengetahui fakta-fakta luar dari kasus ini, dan bukan hanya inspirasi sederhana yang mendorong Dorothea bertindak, mungkin akan bertanya-tanya mengapa dia datang. Tampak seperti hantu cantik dirinya sendiri, tubuhnya yang ramping dan anggun terbungkus selendang putih lembutnya, mulut dan pipinya yang bulat seperti bayi tak pelak lagi menunjukkan kelembutan dan kepolosan, Rosamond berhenti tiga meter dari tamunya dan membungkuk. Tetapi Dorothea, yang telah melepas sarung tangannya, karena dorongan yang tak pernah bisa ia tolak ketika ia menginginkan rasa kebebasan, maju ke depan, dan dengan wajahnya yang penuh kesedihan namun manis, mengulurkan tangannya. Rosamond tak bisa menghindari tatapannya, tak bisa menghindari meletakkan tangan kecilnya ke tangan Dorothea, yang menggenggamnya dengan kelembutan keibuan; dan seketika keraguan akan prasangkanya sendiri mulai muncul dalam dirinya. Mata Rosamond cepat mengenali wajah; ia melihat bahwa wajah Ny. Casaubon tampak pucat dan berubah sejak kemarin, namun lembut, dan seperti kelembutan tangannya yang mantap. Namun Dorothea terlalu mengandalkan kekuatannya sendiri: kejernihan dan intensitas tindakan mentalnya pagi ini merupakan kelanjutan dari kegembiraan gugup yang membuat tubuhnya sangat sensitif seperti kristal Venesia terbaik; dan saat memandang Rosamond, tiba-tiba hatinya berdebar kencang, dan ia tidak mampu berbicara—seluruh usahanya dibutuhkan untuk menahan air mata. Ia berhasil melakukannya, dan emosi itu hanya melintas di wajahnya seperti isak tangis; tetapi hal itu menambah kesan Rosamond bahwa keadaan pikiran Nyonya Casaubon pasti sangat berbeda dari apa yang ia bayangkan. Jadi mereka duduk tanpa basa-basi di dua kursi yang kebetulan paling dekat, dan kebetulan juga berdekatan; meskipun Rosamond awalnya berpikir bahwa ia harus duduk agak jauh dari Nyonya Casaubon. Tetapi ia berhenti memikirkan bagaimana semuanya akan berakhir—hanya bertanya-tanya apa yang akan terjadi. Dan Dorothea mulai berbicara dengan sangat sederhana, semakin mantap seiring berjalannya waktu. “Kemarin saya ada urusan yang belum selesai; itulah sebabnya saya kembali ke sini secepat ini. Anda tidak akan menganggap saya terlalu merepotkan ketika saya memberi tahu Anda bahwa saya datang untuk berbicara kepada Anda tentang ketidakadilan yang telah ditunjukkan kepada Tuan Lydgate. Ini akan menghibur Anda—bukan begitu?—untuk mengetahui banyak hal tentang dia, sehingga dia mungkin tidak suka berbicara tentang dirinya sendiri hanya karena itu untuk membela dirinya sendiri dan demi kehormatannya. Anda pasti ingin tahu bahwa suami Anda memiliki teman-teman yang baik, yang tidak pernah berhenti percaya pada karakter luhurnya? Anda akan membiarkan saya berbicara tentang ini tanpa berpikir bahwa saya mengambil keuntungan?” Nada ramah dan memohon yang seolah mengalir dengan kemurahan hati tanpa mempedulikan semua fakta yang telah memenuhi pikiran Rosamond sebagai dasar penghalang dan kebencian antara dirinya dan wanita ini, terasa menenangkan seperti aliran air hangat yang meredakan ketakutannya. Tentu saja Nyonya Casaubon memiliki fakta-fakta itu dalam pikirannya, tetapi dia tidak akan membicarakan apa pun yang berkaitan dengan itu. Rasa lega itu terlalu besar bagi Rosamond untuk merasakan hal lain saat itu. Dia menjawab dengan manis, dalam ketenangan jiwanya yang baru— “Aku tahu kau sudah bersikap sangat baik. Aku ingin mendengar apa pun yang akan kau katakan kepadaku tentang Tertius.” “Dua hari yang lalu,” kata Dorothea, “ketika saya memintanya datang ke Lowick untuk memberikan pendapatnya tentang urusan Rumah Sakit, dia menceritakan semuanya tentang perilaku dan perasaannya dalam peristiwa menyedihkan ini yang telah membuat orang-orang yang tidak tahu apa-apa mencurigainya. Alasan dia menceritakannya adalah karena saya sangat berani dan bertanya kepadanya. Saya percaya bahwa dia tidak pernah bertindak tidak terhormat, dan saya memohon kepadanya untuk menceritakan kisahnya. Dia mengaku kepada saya bahwa dia belum pernah menceritakannya sebelumnya, bahkan kepada Anda, karena dia sangat tidak suka mengatakan, 'Saya tidak salah,' seolah-olah itu adalah bukti, padahal ada orang-orang yang bersalah yang akan mengatakan demikian. Sebenarnya, dia tidak tahu apa-apa tentang pria bernama Raffles ini, atau bahwa ada rahasia buruk tentangnya; dan dia berpikir bahwa Tuan Bulstrode menawarinya uang karena dia menyesal, karena kebaikan, telah menolaknya sebelumnya. Semua kekhawatirannya tentang pasiennya adalah untuk memperlakukannya dengan benar, dan dia sedikit tidak nyaman karena kasus itu tidak berakhir seperti yang dia harapkan; tetapi dia berpikir saat itu dan masih berpikir bahwa mungkin tidak ada yang salah dalam hal itu.” Siapa pun bisa berperan. Dan saya sudah memberi tahu Tuan Farebrother, Tuan Brooke, dan Sir James Chettam: mereka semua percaya pada suami Anda. Itu akan menghibur Anda, bukan? Itu akan memberi Anda keberanian?” Wajah Dorothea menjadi bersemangat, dan saat senyum itu terpancar pada Rosamond yang berada sangat dekat dengannya, ia merasakan semacam rasa malu dan canggung di hadapan seorang atasan, di hadapan semangat yang tak tergoyahkan itu. Ia berkata, dengan malu-malu dan pipi memerah, "Terima kasih: Anda sangat baik." “Dan dia merasa bahwa dia telah melakukan kesalahan besar karena tidak menceritakan semuanya kepadamu. Tapi kau akan memaafkannya. Itu karena dia merasa lebih peduli dengan kebahagiaanmu daripada apa pun—dia merasa hidupnya terikat dengan hidupmu, dan itu menyakitinya lebih dari apa pun, bahwa kemalangannya harus menyakitimu. Dia bisa berbicara kepadaku karena aku orang yang acuh tak acuh. Dan kemudian aku bertanya kepadanya apakah aku boleh datang menemuimu; karena aku sangat prihatin dengan masalahnya dan masalahmu. Itulah mengapa aku datang kemarin, dan mengapa aku datang hari ini. Kesulitan sangat sulit ditanggung, bukan?— Bagaimana kita bisa hidup dan berpikir bahwa seseorang memiliki masalah—masalah yang sangat berat—dan kita bisa membantu mereka, dan tidak pernah mencoba?” Dorothea, yang sepenuhnya terbawa oleh perasaan yang diungkapkannya, melupakan segalanya kecuali bahwa ia berbicara dari lubuk hatinya yang terdalam karena cobaan yang dialaminya sendiri kepada Rosamond. Emosi itu semakin meresap ke dalam ucapannya, hingga nadanya terasa sampai ke tulang sumsum, seperti jeritan lirih dari makhluk yang menderita dalam kegelapan. Dan tanpa sadar ia kembali meletakkan tangannya pada tangan kecil yang sebelumnya telah ia genggam. Rosamond, dengan rasa sakit yang luar biasa, seolah-olah luka di dalam dirinya telah ditusuk, tiba-tiba menangis histeris seperti yang dilakukannya sehari sebelumnya ketika ia berpegangan pada suaminya. Dorothea yang malang merasakan gelombang besar kesedihannya sendiri kembali menghampirinya—pikirannya tertuju pada kemungkinan peran Will Ladislaw dalam kekacauan mental Rosamond. Ia mulai takut bahwa ia tidak akan mampu menahan diri hingga akhir pertemuan ini, dan sementara tangannya masih berada di pangkuan Rosamond, meskipun tangan yang berada di bawahnya telah ditarik, ia berjuang melawan isak tangisnya yang semakin kuat. Ia mencoba mengendalikan diri dengan pikiran bahwa ini mungkin menjadi titik balik dalam tiga kehidupan—bukan dalam hidupnya sendiri; tidak, di sana hal yang tak dapat diubah telah terjadi, tetapi—dalam tiga kehidupan yang bersentuhan dengan hidupnya dengan kedekatan bahaya dan kesusahan yang khidmat. Makhluk rapuh yang menangis di dekatnya—mungkin masih ada waktu untuk menyelamatkannya dari penderitaan ikatan palsu yang tidak sesuai; Dan momen ini tidak seperti momen lainnya: dia dan Rosamond tidak akan pernah bisa bersama lagi dengan kesadaran yang sama mendebarkannya seperti kemarin. Dia merasa hubungan di antara mereka cukup unik sehingga memberinya pengaruh yang unik, meskipun dia tidak menyadari bahwa cara perasaannya terlibat sepenuhnya diketahui oleh Nyonya Lydgate. Ini adalah krisis yang lebih baru dalam pengalaman Rosamond daripada yang bahkan dapat dibayangkan Dorothea: dia mengalami guncangan besar pertama yang telah menghancurkan dunia mimpinya di mana dia dengan mudah percaya diri dan kritis terhadap orang lain; dan manifestasi perasaan yang aneh dan tak terduga ini pada seorang wanita yang didekatinya dengan rasa jijik dan takut, sebagai seseorang yang pasti memiliki kebencian cemburu terhadapnya, membuat jiwanya semakin goyah dengan perasaan bahwa dia telah berjalan di dunia yang tidak dikenal yang baru saja menerobos masuk ke dalam dirinya. Ketika tenggorokan Rosamond yang berkedut mulai tenang, dan dia melepaskan saputangan yang digunakannya untuk menutupi wajahnya, matanya bertemu dengan mata Dorothea dengan tatapan tak berdaya seolah-olah mereka adalah bunga biru. Apa gunanya memikirkan perilaku setelah tangisan ini? Dan Dorothea tampak hampir kekanak-kanakan, dengan jejak air mata yang terabaikan. Harga diri telah runtuh di antara keduanya. “Kami tadi membicarakan suamimu,” kata Dorothea dengan sedikit malu-malu. “Kupikir raut wajahnya berubah sedih karena penderitaan beberapa hari yang lalu. Aku sudah tidak bertemu dengannya selama beberapa minggu terakhir. Dia bilang dia merasa sangat kesepian selama cobaan ini; tapi kupikir dia akan lebih tabah jika dia bisa lebih terbuka padamu.” “Tertius sangat marah dan tidak sabar jika aku mengatakan sesuatu,” kata Rosamond, membayangkan bahwa dia telah mengeluhkannya kepada Dorothea. “Dia seharusnya tidak heran jika aku keberatan berbicara dengannya tentang hal-hal yang menyakitkan.” “Dia menyalahkan dirinya sendiri karena tidak berbicara,” kata Dorothea. “Yang dia katakan tentangmu adalah, bahwa dia tidak akan bahagia melakukan apa pun yang membuatmu tidak bahagia—bahwa pernikahannya tentu saja merupakan ikatan yang harus memengaruhi pilihannya tentang segala hal; dan karena alasan itu dia menolak usulanku agar dia tetap berada di Rumah Sakit, karena itu akan mengikatnya untuk tinggal di Middlemarch, dan dia tidak akan melakukan apa pun yang akan menyakitkanmu. Dia bisa mengatakan itu kepadaku, karena dia tahu bahwa aku telah mengalami banyak cobaan dalam pernikahanku, karena penyakit suamiku, yang menghambat rencananya dan membuatnya sedih; dan dia tahu bahwa aku telah merasakan betapa sulitnya selalu berjalan dalam ketakutan akan menyakiti orang lain yang terikat pada kita.” Dorothea menunggu sebentar; ia melihat sedikit rasa senang terpancar di wajah Rosamond. Tetapi tidak ada jawaban, dan ia melanjutkan, dengan getaran yang semakin kuat, “Pernikahan sangat berbeda dari segalanya. Ada sesuatu yang bahkan mengerikan dalam kedekatan yang dibawanya. Bahkan jika kita mencintai orang lain lebih dari—daripada pasangan kita, itu tidak akan ada gunanya”—Dorothea yang malang, dalam kecemasannya yang berdebar-debar, hanya bisa mengucapkan kata-katanya dengan terbata-bata—“Maksudku, pernikahan menghabiskan semua kekuatan kita untuk memberi atau menerima kebahagiaan dalam jenis cinta itu. Aku tahu itu mungkin sangat berharga—tetapi itu membunuh pernikahan kita—dan kemudian pernikahan itu tetap bersama kita seperti sebuah pembunuhan—dan segalanya hilang. Dan kemudian suami kita—jika dia mencintai dan mempercayai kita, dan kita tidak membantunya, tetapi malah mengutuk hidupnya—” Suaranya menjadi sangat rendah: ada rasa takut yang menyelimutinya karena terlalu lancang, dan berbicara seolah-olah dirinya sendiri adalah kesempurnaan yang sedang menegur kesalahan. Ia terlalu sibuk dengan kecemasannya sendiri, sehingga tidak menyadari bahwa Rosamond juga gemetar; dan dipenuhi kebutuhan untuk mengungkapkan rasa simpati daripada teguran, ia meletakkan tangannya di atas tangan Rosamond, dan berkata dengan lebih cepat dan gelisah, —“Aku tahu, aku tahu bahwa perasaan itu mungkin sangat berharga—perasaan itu telah mencengkeram kita tanpa kita sadari—rasanya sangat berat, mungkin terasa seperti kematian untuk berpisah dengannya—dan kita lemah—aku lemah—” Gelombang kesedihannya sendiri, yang darinya ia berjuang untuk menyelamatkan orang lain, menerjang Dorothea dengan kekuatan yang menaklukkan. Ia berhenti dalam kegelisahan tanpa kata-kata, tidak menangis, tetapi merasa seolah-olah ia sedang dicengkeram dari dalam. Wajahnya menjadi pucat pasi, bibirnya gemetar, dan ia menekan tangannya tanpa daya pada tangan yang tergeletak di bawahnya. Rosamond, yang diliputi emosi yang lebih kuat dari dirinya sendiri—terdorong dalam gerakan baru yang memberi segala sesuatu aspek baru, mengerikan, dan tak terdefinisi—tidak dapat menemukan kata-kata, tetapi tanpa sadar ia menempelkan bibirnya ke dahi Dorothea yang sangat dekat dengannya, dan kemudian selama satu menit kedua wanita itu berpelukan seolah-olah mereka telah mengalami kecelakaan kapal. “Kau sedang memikirkan sesuatu yang tidak benar,” kata Rosamond, dengan suara setengah berbisik penuh harap, sementara ia masih merasakan pelukan Dorothea—didorong oleh kebutuhan misterius untuk membebaskan dirinya dari sesuatu yang menindasnya seolah-olah itu adalah rasa bersalah yang diwariskan dari darah. Mereka beranjak menjauh, saling memandang. “Saat kau datang kemarin—situasinya tidak seperti yang kau bayangkan,” kata Rosamond dengan nada yang sama. Dorothea menunjukkan ekspresi terkejut dan penuh perhatian. Ia mengharapkan pembelaan untuk Rosamond sendiri. “Dia bercerita padaku bagaimana dia mencintai wanita lain, agar aku tahu dia tidak akan pernah mencintaiku,” kata Rosamond, semakin terburu-buru saat melanjutkan. “Dan sekarang aku pikir dia membenciku karena—karena kau salah paham kemarin. Dia bilang karena aku kau akan berpikir buruk tentangnya—berpikir bahwa dia orang yang munafik. Tapi itu tidak akan terjadi karena aku. Dia tidak pernah mencintaiku—aku tahu dia tidak—dia selalu meremehkanku. Dia bilang kemarin bahwa tidak ada wanita lain yang berarti baginya selain kau. Kesalahan atas apa yang terjadi sepenuhnya adalah milikku. Dia bilang dia tidak akan pernah bisa menjelaskan kepadamu—karena aku. Dia bilang kau tidak akan pernah berpikir baik tentangnya lagi. Tapi sekarang aku sudah memberitahumu, dan dia tidak bisa menyalahkanku lagi.” Rosamond telah mencurahkan isi hatinya di bawah dorongan yang belum pernah ia kenal sebelumnya. Ia memulai pengakuannya di bawah pengaruh emosi Dorothea yang menenangkan; dan saat ia melanjutkan, ia menyadari bahwa ia sedang menolak celaan Will, yang masih seperti luka tusukan pisau di dalam dirinya. Rasa jijik yang dirasakan Dorothea terlalu kuat untuk disebut sukacita. Itu adalah kekacauan di mana ketegangan mengerikan dari malam dan pagi hari menciptakan rasa sakit yang tak tertahankan:—ia hanya dapat menyadari bahwa ini akan menjadi sukacita ketika ia telah pulih dari kemampuan untuk merasakannya. Kesadaran langsungnya adalah simpati yang sangat besar tanpa hambatan; ia merawat Rosamond tanpa kesulitan sekarang, dan menanggapi dengan sungguh-sungguh kata-kata terakhirnya— “Tidak, dia tidak bisa lagi menc reproachmu.” Dengan kecenderungannya yang biasa untuk melebih-lebihkan kebaikan orang lain, ia merasakan luapan hati yang besar terhadap Rosamond, atas upaya murah hati yang telah membebaskannya dari penderitaan, tanpa memperhitungkan bahwa upaya itu adalah refleks dari energinya sendiri. Setelah mereka terdiam sejenak, ia berkata— “Apakah kamu tidak menyesal aku datang pagi ini?” “Tidak, kau sangat baik padaku,” kata Rosamond. “Aku tidak menyangka kau akan sebaik itu. Aku sangat tidak bahagia. Sekarang aku tidak bahagia. Semuanya begitu menyedihkan.” “Tetapi hari-hari yang lebih baik akan datang. Suamimu akan dihargai dengan sepatutnya. Dan dia bergantung padamu untuk kenyamanan. Dia paling mencintaimu. Kehilangan terburuk adalah kehilangan itu—dan kau belum kehilangan itu,” kata Dorothea. Dia berusaha menepis pikiran yang terlalu kuat tentang kelegaan yang dirasakannya sendiri, agar dia tidak gagal mendapatkan tanda bahwa kasih sayang Rosamond kembali tertuju pada suaminya. “Jadi, Tertius tidak menyalahkan saya?” tanya Rosamond, kini mengerti bahwa Lydgate bisa saja mengatakan apa pun kepada Nyonya Casaubon, dan bahwa ia jelas berbeda dari wanita lain. Mungkin ada sedikit rasa iri dalam pertanyaan itu. Senyum mulai tersungging di wajah Dorothea saat ia berkata— “Tidak, sungguh! Bagaimana mungkin kau membayangkannya?” Namun, pintu terbuka, dan Lydgate masuk. “Saya kembali sebagai dokter,” katanya. “Setelah saya pergi, saya dihantui oleh dua wajah pucat: Nyonya Casaubon tampak sama membutuhkan perawatan seperti Anda, Rosy. Dan saya merasa belum menjalankan tugas saya dengan meninggalkan kalian berdua; jadi setelah saya ke rumah Coleman, saya pulang. Saya perhatikan Anda sedang berjalan, Nyonya Casaubon, dan langit telah berubah—saya rasa mungkin akan hujan. Bolehkah saya mengirim seseorang untuk memesan kereta Anda untuk menjemput Anda?” “Oh, tidak! Aku kuat: aku butuh jalan-jalan,” kata Dorothea, bangkit dengan wajah penuh semangat. “Aku dan Nyonya Lydgate sudah banyak mengobrol, dan sudah waktunya aku pergi. Aku selalu dituduh terlalu banyak bicara dan terlalu banyak bicara.” Dia mengulurkan tangannya kepada Rosamond, dan mereka mengucapkan selamat tinggal dengan tulus dan tenang tanpa ciuman atau ungkapan emosi lainnya: ada terlalu banyak emosi serius di antara mereka sehingga mereka tidak dapat menggunakan tanda-tanda itu secara dangkal. Saat Lydgate mengantarnya ke pintu, dia tidak mengatakan apa pun tentang Rosamond, tetapi menceritakan tentang Tuan Farebrother dan teman-teman lain yang telah mendengarkan ceritanya dengan penuh kepercayaan. Ketika dia kembali ke Rosamond, wanita itu sudah menjatuhkan diri di sofa, dengan kelelahan yang pasrah. “Nah, Rosy,” katanya, berdiri di dekatnya dan menyentuh rambutnya, “apa pendapatmu tentang Nyonya Casaubon sekarang setelah kau begitu sering melihatnya?” “Kurasa dia pasti lebih baik dari siapa pun,” kata Rosamond, “dan dia sangat cantik. Jika kau sering berbicara dengannya, kau akan semakin tidak puas denganku!” Lydgate tertawa mendengar kata "sering itu." "Tapi apakah itu membuatmu tidak terlalu tidak puas denganku?" “Kurasa begitu,” kata Rosamond, menatap wajahnya. “Betapa berat matamu, Tertius—dan sisir rambutmu ke belakang.” Ia mengangkat tangannya yang besar dan putih untuk menuruti perintahnya, dan merasa bersyukur atas sedikit perhatian yang diberikan kepadanya. Khayalan Rosamond yang malang telah kembali dengan sangat menyakitkan—cukup lemah untuk berlindung di bawah tempat perlindungan lama yang dibenci. Dan tempat perlindungan itu masih ada: Lydgate telah menerima nasibnya yang terbatas dengan pasrah yang menyedihkan. Ia telah memilih makhluk rapuh ini, dan telah memikul beban hidupnya di pundaknya. Ia harus berjalan sekuat tenaga, membawa beban itu dengan menyedihkan.</p>
 

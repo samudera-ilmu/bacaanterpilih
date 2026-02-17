@@ -5,39 +5,176 @@
 <title>AKHIR.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="AKHIR. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>AKHIR.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Setiap batasan adalah awal sekaligus akhir. Siapa yang dapat meninggalkan kehidupan muda setelah lama bersama mereka, dan tidak ingin tahu apa yang terjadi pada mereka di tahun-tahun berikutnya? Karena sebagian kecil kehidupan, betapapun tipikalnya, bukanlah sampel dari jalinan yang sempurna: janji mungkin tidak ditepati, dan awal yang penuh semangat mungkin diikuti oleh kemunduran; potensi terpendam mungkin menemukan kesempatan yang telah lama ditunggu-tunggu; kesalahan masa lalu mungkin mendorong pemulihan yang besar. Pernikahan, yang telah menjadi dasar begitu banyak narasi, masih merupakan awal yang agung, seperti halnya bagi Adam dan Hawa, yang berbulan madu di Eden, tetapi memiliki anak pertama mereka di antara duri dan semak berduri di padang gurun. Pernikahan masih merupakan awal dari kisah epik rumah tangga—penaklukan bertahap atau kehilangan yang tak terhindarkan dari persatuan yang utuh yang menjadikan bertambahnya usia sebagai puncaknya, dan masa tua sebagai panen kenangan manis bersama. Sebagian berangkat, seperti para Tentara Salib di masa lalu, dengan perlengkapan penuh harapan dan antusiasme yang gemilang, namun hancur di tengah jalan, kehilangan kesabaran satu sama lain dan terhadap dunia. Semua orang yang menyayangi Fred Vincy dan Mary Garth pasti ingin tahu bahwa keduanya tidak mengalami kegagalan, melainkan mencapai kebahagiaan bersama yang solid. Fred mengejutkan tetangganya dalam berbagai hal. Ia menjadi cukup terkenal di wilayahnya sebagai petani yang berwawasan teori dan praktik, dan menghasilkan sebuah karya tentang "Budidaya Tanaman Hijau dan Ekonomi Pakan Ternak" yang membuatnya mendapat pujian tinggi di pertemuan-pertemuan pertanian. Di Middlemarch, kekaguman lebih tertahan: sebagian besar orang di sana cenderung percaya bahwa jasa kepenulisan Fred disebabkan oleh istrinya, karena mereka tidak pernah menyangka Fred Vincy akan menulis tentang lobak dan mangel-wurzel. Namun ketika Mary menulis sebuah buku kecil untuk anak-anaknya, yang berjudul “Kisah-Kisah Tokoh-Tokoh Besar, diambil dari Plutarch,” dan mencetaknya serta menerbitkannya melalui Gripp & Co., Middlemarch, setiap orang di kota itu bersedia memberikan penghargaan atas karya ini kepada Fred, dengan menyatakan bahwa ia pernah kuliah di Universitas, “tempat studi tentang zaman kuno dilakukan,” dan mungkin bisa menjadi seorang pendeta jika ia mau. Dengan cara ini menjadi jelas bahwa Middlemarch tidak pernah tertipu, dan tidak perlu memuji siapa pun karena menulis sebuah buku, karena itu selalu dilakukan oleh orang lain. Selain itu, Fred tetap teguh dan tak tergoyahkan. Beberapa tahun setelah pernikahannya, ia mengatakan kepada Mary bahwa kebahagiaannya sebagian berkat Farebrother, yang memberinya dorongan kuat pada saat yang tepat. Saya tidak dapat mengatakan bahwa ia tidak pernah lagi tertipu oleh harapannya: hasil panen atau keuntungan penjualan ternak biasanya di bawah perkiraannya; dan ia selalu cenderung percaya bahwa ia dapat menghasilkan uang dengan membeli kuda yang ternyata buruk—meskipun, Mary mengamati, ini tentu saja kesalahan kuda, bukan kesalahan penilaian Fred. Ia tetap mencintai olahraga berkuda, tetapi ia jarang mengizinkan dirinya berburu seharian; dan ketika ia melakukannya, sungguh luar biasa bahwa ia rela ditertawakan karena pengecut di pagar, seolah-olah melihat Mary dan anak-anak laki-laki duduk di gerbang berpalang lima, atau menunjukkan kepala keriting mereka di antara pagar dan parit. Ada tiga anak laki-laki: Mary tidak merasa tidak puas karena ia hanya melahirkan anak laki-laki; dan ketika Fred ingin memiliki anak perempuan seperti dirinya, ia berkata sambil tertawa, "itu akan menjadi cobaan yang terlalu berat bagi ibumu." Nyonya Vincy di usia senjanya, dan dengan berkurangnya kehebatan dalam mengurus rumah tangga, sangat terhibur oleh kesadarannya bahwa setidaknya dua dari anak laki-laki Fred adalah Vincy sejati, dan tidak "mencerminkan ciri-ciri keluarga Garth." Tetapi Mary diam-diam bersukacita karena anak bungsu dari ketiganya sangat mirip dengan ayahnya ketika ia mengenakan jaket bundar, dan menunjukkan ketepatan sasaran yang luar biasa dalam bermain kelereng, atau dalam melempar batu untuk menjatuhkan buah pir yang matang. Ben dan Letty Garth, yang menjadi paman dan bibi sebelum mereka memasuki usia remaja, sering berdebat tentang apakah keponakan laki-laki atau perempuan lebih diinginkan; Ben berpendapat bahwa jelas anak perempuan kurang berguna daripada anak laki-laki, jika tidak, mereka tidak akan selalu mengenakan rok, yang menunjukkan betapa sedikitnya peran mereka; kemudian Letty, yang banyak berargumen dari buku, marah dan menjawab bahwa Tuhan membuat pakaian dari kulit binatang untuk Adam dan Hawa—juga terlintas di benaknya bahwa di Timur, para pria juga mengenakan rok. Tetapi argumen terakhir ini, yang mengaburkan keagungan argumen sebelumnya, sudah terlalu banyak, karena Ben menjawab dengan menghina, "Semakin bodoh mereka!" dan segera bertanya kepada ibunya apakah anak laki-laki tidak lebih baik daripada anak perempuan. Nyonya Garth menyatakan bahwa keduanya sama-sama nakal, tetapi anak laki-laki tidak diragukan lagi lebih kuat, dapat berlari lebih cepat, dan melempar dengan lebih tepat ke jarak yang lebih jauh. Dengan kalimat yang seperti ramalan ini, Ben merasa puas, tanpa mempermasalahkan kenakalannya; Namun Letty tersinggung, perasaan superioritasnya lebih kuat daripada kekuatan ototnya. Fred tidak pernah menjadi kaya—harapannya tidak membuatnya mengharapkan hal itu; tetapi ia secara bertahap menabung cukup untuk menjadi pemilik ternak dan perabotan di Stone Court, dan pekerjaan yang diberikan Tuan Garth kepadanya membantunya melewati masa-masa sulit yang selalu dialami para petani. Mary, di masa keibuannya, menjadi sekokoh ibunya; tetapi, tidak seperti ibunya, ia memberikan sedikit pendidikan formal kepada anak-anaknya, sehingga Nyonya Garth khawatir mereka tidak akan pernah memiliki dasar yang kuat dalam tata bahasa dan geografi. Meskipun demikian, mereka ternyata cukup cerdas ketika bersekolah; mungkin, karena mereka sangat menyukai kebersamaan dengan ibu mereka. Ketika Fred pulang berkuda di malam musim dingin, ia memiliki bayangan yang menyenangkan tentang perapian yang terang di ruang tamu berpanel kayu, dan merasa kasihan pada pria lain yang tidak bisa memiliki Mary sebagai istri mereka; terutama pada Tuan Farebrother. "Dia sepuluh kali lebih pantas untukmu daripada aku," kata Fred sekarang dengan murah hati kepadanya. "Tentu saja," jawab Mary; “Dan karena alasan itu, dia bisa berbuat lebih baik tanpaku. Tapi kau—aku ngeri membayangkan apa jadinya dirimu—seorang pendeta yang terlilit hutang untuk sewa kuda dan sapu tangan katun!” Setelah diselidiki, mungkin akan ditemukan bahwa Fred dan Mary masih mendiami Stone Court—bahwa tanaman merambat masih menebarkan buih bunganya di atas tembok batu yang indah ke ladang tempat pohon kenari berdiri berjejer rapi—dan bahwa pada hari-hari cerah, kedua kekasih yang pertama kali bertunangan dengan cincin payung itu dapat terlihat dengan tenang berambut putih di jendela terbuka tempat Mary Garth, pada masa Peter Featherstone tua, sering diperintahkan untuk mengawasi Tuan Lydgate. Rambut Lydgate tidak pernah beruban. Ia meninggal dunia pada usia lima puluh tahun, meninggalkan istri dan anak-anaknya yang ditanggung oleh asuransi jiwa yang besar. Ia telah memperoleh praktik yang sangat baik, bergantian, sesuai musim, antara London dan tempat pemandian di Benua Eropa; setelah menulis sebuah risalah tentang Gout, penyakit yang banyak diuntungkan oleh kekayaan. Keahliannya diandalkan oleh banyak pasien yang membayar, tetapi ia selalu menganggap dirinya gagal: ia belum melakukan apa yang pernah ingin dilakukannya. Kenalannya menganggapnya patut dic羡慕 karena memiliki istri yang begitu menawan, dan tidak ada yang terjadi untuk menggoyahkan pendapat mereka. Rosamond tidak pernah melakukan kesalahan yang membahayakan lagi. Ia hanya terus bersikap lembut, teguh dalam penilaiannya, cenderung menasihati suaminya, dan mampu menggagalkannya dengan strategi. Seiring berjalannya waktu, ia semakin jarang menentangnya, sehingga Rosamond menyimpulkan bahwa ia telah belajar menghargai pendapatnya; Di sisi lain, ia memiliki keyakinan yang lebih mendalam tentang bakatnya sekarang karena ia memperoleh penghasilan yang baik, dan alih-alih sangkar yang terancam di Bride Street, ia menyediakan sangkar yang penuh bunga dan hiasan emas, cocok untuk burung cendrawasih yang menyerupainya. Singkatnya, Lydgate adalah apa yang disebut sebagai pria yang sukses. Tetapi ia meninggal sebelum waktunya karena difteri, dan Rosamond kemudian menikahi seorang dokter tua dan kaya, yang menyayangi keempat anaknya. Ia menampilkan penampilan yang sangat cantik bersama putri-putrinya, berkendara dengan kereta kudanya, dan sering berbicara tentang kebahagiaannya sebagai "hadiah"—ia tidak mengatakan untuk apa, tetapi mungkin ia bermaksud bahwa itu adalah hadiah atas kesabarannya terhadap Tertius, yang temperamennya tidak pernah sempurna, dan hingga akhir hayatnya sesekali melontarkan kata-kata pahit yang lebih berkesan daripada tanda-tanda penyesalannya. Suatu kali ia menyebutnya sebagai tanaman basilnya; dan ketika ia meminta penjelasan, ia mengatakan bahwa basil adalah tanaman yang tumbuh subur di otak orang yang dibunuh. Rosamond memiliki jawaban yang tenang tetapi tegas untuk ucapan-ucapan seperti itu. Lalu mengapa ia memilihnya? Sayang sekali dia tidak memiliki Nyonya Ladislaw, yang selalu dipujinya dan dilebih-lebihkan darinya. Dan demikianlah percakapan berakhir dengan keuntungan di pihak Rosamond. Tetapi tidak adil jika tidak mengatakan, bahwa dia tidak pernah mengucapkan sepatah kata pun untuk meremehkan Dorothea, selalu mengingat dengan khidmat kemurahan hati yang telah membantunya di saat-saat paling sulit dalam hidupnya. Dorothea sendiri tidak pernah bermimpi dipuji melebihi wanita lain, merasa bahwa selalu ada sesuatu yang lebih baik yang bisa dia lakukan, seandainya saja dia lebih baik dan lebih berpengetahuan. Namun, dia tidak pernah menyesal telah melepaskan kedudukan dan kekayaannya untuk menikahi Will Ladislaw, dan Will akan merasa sangat malu dan sedih jika dia menyesal. Mereka terikat satu sama lain oleh cinta yang lebih kuat daripada dorongan apa pun yang dapat merusaknya. Tidak ada kehidupan yang mungkin bagi Dorothea tanpa dipenuhi emosi, dan sekarang dia memiliki kehidupan yang juga dipenuhi dengan aktivitas bermanfaat yang tidak perlu dia temukan dan tentukan sendiri dengan susah payah. Will menjadi tokoh publik yang bersemangat, bekerja dengan baik pada masa-masa ketika reformasi dimulai dengan harapan muda akan kebaikan segera yang telah banyak terhambat di zaman kita, dan akhirnya terpilih kembali ke Parlemen oleh daerah pemilihan yang membayar pengeluarannya. Dorothea tidak menginginkan apa pun yang lebih baik, karena ketidakadilan masih ada, selain suaminya berada di tengah perjuangan melawan ketidakadilan tersebut, dan dia dapat memberikan bantuan sebagai seorang istri. Banyak orang yang mengenalnya menganggap sayang bahwa sosok yang begitu berharga dan langka harus terserap ke dalam kehidupan orang lain, dan hanya dikenal di kalangan tertentu sebagai istri dan ibu. Tetapi tidak seorang pun menyatakan secara pasti apa lagi yang seharusnya ia lakukan—bahkan Sir James Chettam pun tidak, yang hanya memberikan saran negatif bahwa ia seharusnya tidak menikahi Will Ladislaw. Namun, pendapatnya ini tidak menyebabkan keterasingan yang berkepanjangan; dan cara keluarga itu dipersatukan kembali merupakan ciri khas semua pihak yang terlibat. Tuan Brooke tidak dapat menahan keinginan untuk berkorespondensi dengan Will dan Dorothea; dan suatu pagi ketika tulisannya sangat lancar mengenai prospek Reformasi Kota, tulisan itu berlanjut menjadi undangan ke Grange, yang, setelah ditulis, tidak dapat dihilangkan dengan biaya yang lebih rendah daripada pengorbanan (yang hampir tidak terbayangkan) seluruh surat berharga itu. Selama berbulan-bulan korespondensi ini, Tuan Brooke terus-menerus, dalam pembicaraannya dengan Sir James Chettam, menduga atau mengisyaratkan bahwa niat untuk memutus hak waris masih dipertahankan; dan pada hari ketika tulisannya memberikan undangan yang berani itu, ia pergi ke Freshitt secara khusus untuk menyatakan bahwa ia memiliki pemahaman yang lebih kuat dari sebelumnya tentang alasan untuk mengambil langkah energik itu sebagai tindakan pencegahan terhadap kemungkinan adanya campuran darah rendah pada ahli waris keluarga Brooke. Namun pagi itu, sesuatu yang menggembirakan telah terjadi di Aula. Sebuah surat telah sampai kepada Celia yang membuatnya menangis tanpa suara saat membacanya; dan ketika Sir James, yang tidak terbiasa melihatnya menangis, bertanya dengan cemas apa yang terjadi, ia pun menangis tersedu-sedu, tangisan yang belum pernah didengar Sir James sebelumnya. “Dorothea punya anak laki-laki. Dan kau tidak mengizinkanku pergi menemuinya. Dan aku yakin dia ingin bertemu denganku. Dan dia tidak akan tahu harus berbuat apa dengan bayinya—dia akan melakukan hal-hal yang salah dengannya. Dan mereka mengira dia akan meninggal. Ini sangat mengerikan! Bayangkan jika itu aku dan Arthur kecil, dan Dodo terhalang untuk datang menemuiku! Kuharap kau tidak terlalu kejam, James!” “Ya ampun, Celia!” kata Sir James, sangat gelisah, “apa yang kau inginkan? Aku akan melakukan apa pun yang kau suka. Aku akan mengantarmu ke kota besok jika kau menginginkannya.” Dan Celia memang menginginkannya. Setelah itu, Tuan Brooke datang, dan bertemu dengan Baronet di halaman, lalu mulai mengobrol dengannya tanpa mengetahui berita tersebut, yang entah mengapa Sir James tidak ingin segera memberitahukannya. Tetapi ketika masalah hak waris dibahas dengan cara yang biasa, dia berkata, “Tuan yang terhormat, bukan hak saya untuk mendikte Anda, tetapi saya sendiri lebih suka membiarkan hal itu apa adanya. Saya lebih suka membiarkan semuanya tetap seperti semula.” Tuan Brooke merasa sangat terkejut sehingga ia tidak langsung menyadari betapa leganya ia karena merasa tidak diharapkan melakukan sesuatu secara khusus. Mengingat kecenderungan hati Celia, tak dapat dihindari bahwa Sir James akan menyetujui rekonsiliasi dengan Dorothea dan suaminya. Di mana wanita saling mencintai, pria belajar untuk menekan rasa saling tidak suka mereka. Sir James tidak pernah menyukai Ladislaw, dan Will selalu lebih suka jika kehadiran Sir James bercampur dengan jenis orang lain: mereka berada dalam hubungan toleransi timbal balik yang hanya menjadi mudah ketika Dorothea dan Celia hadir. Menjadi hal yang sudah disepakati bahwa Tuan dan Nyonya Ladislaw setidaknya harus berkunjung dua kali setahun ke Grange, dan secara bertahap muncullah sekelompok kecil sepupu di Freshitt yang senang bermain dengan kedua sepupu yang mengunjungi Tipton seolah-olah darah kedua sepupu ini tidak tercampur secara mencurigakan. Tuan Brooke hidup hingga usia lanjut, dan hartanya diwarisi oleh putra Dorothea, yang mungkin bisa mewakili Middlemarch, tetapi menolak karena berpikir bahwa pendapatnya tidak akan mudah dibungkam jika ia tetap berada di luar rumah. Sir James tidak pernah berhenti menganggap pernikahan kedua Dorothea sebagai sebuah kesalahan; dan memang hal ini tetap menjadi tradisi mengenainya di Middlemarch, di mana ia digambarkan kepada generasi muda sebagai gadis baik yang menikahi seorang pendeta yang sakit-sakitan, cukup tua untuk menjadi ayahnya, dan dalam waktu kurang lebih setahun setelah kematian suaminya, ia melepaskan hartanya untuk menikahi sepupunya —cukup muda untuk menjadi putranya, tanpa harta benda, dan bukan dari keluarga bangsawan. Mereka yang belum pernah melihat Dorothea biasanya berpendapat bahwa ia bukanlah "wanita yang baik," jika tidak, ia tidak akan menikahi salah satu dari mereka. Tentu saja, tindakan-tindakan penting dalam hidupnya itu bukanlah hal yang ideal dan indah. Itu adalah hasil campuran dari dorongan muda dan mulia yang berjuang di tengah kondisi negara sosial yang tidak sempurna, di mana perasaan yang besar seringkali mengambil wujud kesalahan, dan iman yang besar mengambil wujud ilusi. Karena tidak ada makhluk yang keberadaan batinnya begitu kuat sehingga tidak sangat ditentukan oleh apa yang ada di luarnya. Theresa yang baru hampir tidak akan memiliki kesempatan untuk mereformasi kehidupan biara, sama seperti Antigone yang baru tidak akan menghabiskan kesalehan heroiknya untuk berani melakukan segalanya demi pemakaman saudara laki-lakinya: media tempat perbuatan-perbuatan penuh semangat mereka terbentuk telah hilang selamanya. Tetapi kita, orang-orang yang tidak berarti, dengan kata-kata dan tindakan kita sehari-hari sedang mempersiapkan kehidupan banyak Dorothea, beberapa di antaranya mungkin menghadirkan pengorbanan yang jauh lebih menyedihkan daripada Dorothea yang kisahnya kita ketahui. Jiwa halusnya masih memancarkan kebaikan, meskipun tidak terlihat secara luas. Sifatnya yang utuh, seperti sungai yang kekuatannya dipatahkan oleh Cyrus, mengalir ke saluran-saluran yang tidak terkenal di bumi. Tetapi pengaruh keberadaannya pada orang-orang di sekitarnya sangat luas: karena kebaikan dunia yang terus berkembang sebagian bergantung pada tindakan-tindakan yang tidak tercatat dalam sejarah; dan bahwa keadaan kita tidak seburuk yang seharusnya, sebagian disebabkan oleh banyaknya orang yang hidup setia dalam kehidupan tersembunyi, dan beristirahat di makam-makam yang tidak dikunjungi.</p>
 

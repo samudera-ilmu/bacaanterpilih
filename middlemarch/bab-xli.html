@@ -5,39 +5,176 @@
 <title>BAB XLI.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XLI. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XLI.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Dengan bersikap angkuh aku takkan pernah berhasil, karena hujan turun setiap hari. — Twelfth Night Transaksi yang disebut oleh Caleb Garth sebagai transaksi yang telah terjadi antara Tuan Bulstrode dan Tuan Joshua Rigg Featherstone mengenai tanah yang berdekatan dengan Stone Court, telah menyebabkan pertukaran satu atau dua surat antara kedua tokoh tersebut. Siapa yang dapat mengatakan apa efek dari tulisan? Jika kebetulan terukir di batu, meskipun tergeletak terbalik selama berabad-abad di pantai yang terlupakan, atau "beristirahat dengan tenang di bawah genderang dan derap langkah banyak penaklukan," mungkin akhirnya akan mengungkap rahasia perebutan kekuasaan dan skandal lain yang digosipkan tentang kerajaan-kerajaan zaman dahulu:—dunia ini tampaknya merupakan galeri bisikan yang besar. Kondisi seperti itu sering kali terwakili secara rinci dalam kehidupan kita yang singkat. Sebagaimana batu yang telah ditendang oleh generasi badut mungkin mendapatkan efek kecil yang aneh di bawah mata seorang cendekiawan, yang melalui kerja kerasnya akhirnya dapat menentukan tanggal invasi dan membuka rahasia agama, demikian pula sedikit tinta dan kertas yang telah lama menjadi pembungkus atau penutup yang tidak berbahaya akhirnya dapat terungkap di bawah sepasang mata yang memiliki pengetahuan yang cukup untuk mengubahnya menjadi awal dari sebuah bencana. Bagi Uriel yang mengamati perkembangan sejarah planet dari matahari, satu hasil akan sama kebetulannya dengan hasil lainnya. Setelah membuat perbandingan yang agak muluk ini, saya merasa kurang gelisah untuk menarik perhatian pada keberadaan orang-orang rendahan yang campur tangannya, betapapun kecilnya keinginan kita, sangat menentukan jalannya dunia. Tentu akan lebih baik jika kita dapat membantu mengurangi jumlah mereka, dan mungkin sesuatu dapat dilakukan dengan tidak sembarangan memberi kesempatan pada keberadaan mereka. Secara sosial, Joshua Rigg umumnya akan dianggap sebagai orang yang tidak dibutuhkan. Tetapi mereka yang seperti Peter Featherstone tidak pernah diminta untuk membuat salinan diri mereka sendiri, adalah orang-orang terakhir yang menunggu permintaan seperti itu, baik dalam bentuk prosa maupun puisi. Salinan dalam kasus ini lebih mirip dengan ibunya, yang fitur wajahnya seperti katak, disertai dengan pipi yang segar dan sosok yang berisi, sangat menarik bagi sebagian pengagum. Hasilnya terkadang adalah seorang pria berwajah katak, yang tentu saja tidak diinginkan oleh makhluk cerdas mana pun. Terutama ketika ia tiba-tiba ditampilkan untuk menggagalkan harapan orang lain—aspek terendah di mana orang yang tidak dibutuhkan secara sosial dapat menampilkan dirinya. Namun, sifat-sifat rendah Tuan Rigg Featherstone semuanya bersifat tenang dan suka minum air. Dari pagi hingga larut malam, ia selalu rapi, bersih, dan tenang seperti katak yang menyerupainya, dan Peter tua diam-diam tertawa kecil membayangkan sosok yang hampir lebih perhitungan, dan jauh lebih tenang, daripada dirinya sendiri. Saya akan menambahkan bahwa kuku jarinya dirawat dengan sangat teliti, dan ia bermaksud menikahi seorang wanita muda terdidik (yang belum ditentukan) yang berpenampilan menarik, dan yang koneksinya, dalam cara kelas menengah yang mapan, tak terbantahkan. Dengan demikian, kuku dan kesopanannya sebanding dengan kebanyakan pria terhormat; meskipun ambisinya hanya dididik oleh kesempatan sebagai juru tulis dan akuntan di perusahaan-perusahaan komersial kecil di pelabuhan. Ia menganggap keluarga Featherstone yang tinggal di pedesaan sebagai orang-orang yang sangat sederhana dan tidak masuk akal, dan mereka pada gilirannya menganggap "didikannya" di kota pelabuhan sebagai sesuatu yang berlebihan dari keanehan bahwa saudara mereka, Peter, dan terlebih lagi harta milik Peter, seharusnya memiliki barang-barang seperti itu. Taman dan jalan setapak berkerikil, seperti yang terlihat dari dua jendela ruang tamu berpanel kayu di Stone Court, tidak pernah seindah sekarang, ketika Tuan Rigg Featherstone berdiri, dengan tangan di belakang punggungnya, memandang ke halaman ini sebagai tuannya. Tetapi tampaknya diragukan apakah ia memandang untuk tujuan kontemplasi atau untuk membelakangi seseorang yang berdiri di tengah ruangan, dengan kaki terentang cukup lebar dan tangan di saku celananya: seseorang yang dalam segala hal kontras dengan Rigg yang rapi dan tenang. Ia adalah seorang pria yang jelas-jelas akan berusia enam puluh tahun, sangat merah dan berbulu, dengan banyak uban di kumisnya yang lebat dan rambut keritingnya yang tebal, tubuh yang agak gemuk yang memperlihatkan kekurangan pada jahitan pakaiannya yang agak usang, dan sikap seorang yang sombong, yang akan berusaha untuk menarik perhatian bahkan di pertunjukan kembang api, menganggap komentarnya sendiri tentang penampilan orang lain kemungkinan akan lebih menarik daripada pertunjukan itu sendiri. Namanya John Raffles, dan terkadang ia dengan bercanda menulis WAG setelah tanda tangannya, sambil menambahkan bahwa ia pernah diajar oleh Leonard Lamb dari Finsbury yang menulis BA setelah namanya, dan bahwa Raffles-lah yang memulai lelucon menyebut kepala sekolah terkenal itu Ba-Lamb. Begitulah penampilan dan kepribadian Tuan Raffles, yang keduanya tampak memiliki aroma usang kamar-kamar pelancong di hotel-hotel komersial pada periode itu. “Ayolah, Josh,” katanya dengan suara berat dan bergemuruh, “lihatlah dari sudut pandang ini: ibumu yang malang akan segera memasuki usia senja, dan kau mampu membeli sesuatu yang bagus sekarang untuk membuatnya nyaman.” “Tidak selama kau masih hidup. Tidak ada yang akan membuatnya nyaman selama kau masih hidup,” jawab Rigg dengan suara tinggi dan dinginnya. “Apa yang kuberikan padanya, akan kau ambil.” “Kau menyimpan dendam padaku, Josh, aku tahu itu. Tapi ayolah—sebagai sesama manusia—tanpa basa-basi—sedikit modal mungkin bisa membantuku menjadikan toko ini bisnis yang bagus. Perdagangan tembakau sedang berkembang. Aku akan merugikan diriku sendiri jika tidak melakukan yang terbaik. Aku harus tekun seperti kutu pada bulu domba demi diriku sendiri. Aku harus selalu siap siaga. Dan tidak ada yang akan membuat ibumu yang malang lebih bahagia. Aku sudah cukup lama menjalani masa mudaku yang liar—usiaku sudah lima puluh lima tahun. Aku ingin menetap di sudut perapianku. Dan jika aku menekuni perdagangan tembakau, aku bisa mengerahkan kecerdasan dan pengalaman yang tidak akan mudah ditemukan di tempat lain. Aku tidak ingin mengganggumu terus-menerus, tetapi ingin semuanya berjalan dengan benar. Pertimbangkan itu, Josh—sebagai sesama manusia—dan demi ibumu yang malang, agar hidupnya lebih mudah. Aku selalu menyayangi wanita tua itu, demi Tuhan!” “Sudah selesai?” tanya Tuan Rigg pelan, tanpa mengalihkan pandangan dari jendela. “Ya, sudah ,” kata Raffles, sambil memegang topinya yang berada di depannya di atas meja, dan mendorongnya dengan gaya berpidato. “Kalau begitu dengarkan aku. Semakin banyak kau bicara, semakin sedikit aku akan mempercayainya. Semakin kau ingin aku melakukan sesuatu, semakin banyak alasan bagiku untuk tidak pernah melakukannya. Apa kau pikir aku akan melupakan kau menendangku saat aku masih kecil, dan memakan semua makanan terbaik dariku dan ibuku? Apa kau pikir aku melupakan kau selalu pulang untuk menjual dan mengantongi semuanya, lalu pergi lagi meninggalkan kami dalam kesulitan? Aku akan senang melihatmu dicambuk di belakang gerobak. Ibuku bodoh terhadapmu: dia tidak berhak memberiku ayah mertua, dan dia telah dihukum karenanya. Dia akan menerima uang saku mingguan dan tidak lebih: dan itu akan dihentikan jika kau berani datang ke tempat ini lagi, atau datang ke negara ini lagi setelahku. Lain kali kau muncul di dalam gerbang ini, kau akan diusir dengan anjing dan cambuk kusir.” Saat Rigg mengucapkan kata-kata terakhirnya, ia berbalik dan menatap Raffles dengan mata tajamnya yang membeku. Kontrasnya sangat mencolok, seperti yang mungkin terjadi delapan belas tahun sebelumnya, ketika Rigg adalah seorang anak laki-laki yang sangat tidak menarik dan mudah ditendang, dan Raffles adalah Adonis yang agak kekar di bar dan ruang belakang. Tetapi sekarang keuntungan ada di pihak Rigg, dan para pendengar percakapan ini mungkin mengharapkan Raffles akan mundur dengan sikap seperti anjing yang kalah. Sama sekali tidak. Ia membuat mimik muka yang biasa ia lakukan setiap kali ia "kalah" dalam permainan; kemudian tertawa, dan mengeluarkan botol brendi dari sakunya. “Ayo, Josh,” katanya dengan nada membujuk, “berikan aku sesendok brendi, dan satu koin emas untuk ongkos pulang, dan aku akan pergi. Demi kehormatan! Aku akan pergi secepat kilat, demi Tuhan!” “Ingat,” kata Rigg sambil mengeluarkan seikat kunci, “jika aku bertemu kau lagi, aku tak akan berbicara denganmu. Aku tak punya kau, sama seperti aku tak punya gagak; dan jika kau ingin punya aku, kau tak akan mendapatkan apa pun selain reputasi sebagai dirimu yang sebenarnya—bajingan yang pendendam, kurang ajar, dan suka menindas.” “Sayang sekali, Josh,” kata Raffles, sambil berpura-pura menggaruk kepalanya dan mengerutkan alisnya seolah bingung. “Aku sangat menyayangimu; demi Tuhan, aku sangat menyayangimu! Tidak ada yang lebih kusukai daripada mengganggumu—kau sangat mirip dengan ibumu, dan aku harus melakukannya tanpa itu. Tapi brendi dan uang emas itu murah.” Ia menghentakkan botol itu ke depan dan Rigg pergi ke lemari kayu ek tua yang bagus dengan kunci-kuncinya. Tetapi Raffles telah mengingatkan dirinya sendiri melalui gerakannya dengan botol itu bahwa botol itu telah terlepas dari penutup kulitnya, dan melihat selembar kertas terlipat yang jatuh di dalam lemari, ia mengambilnya dan menyelipkannya di bawah kulit agar botol kaca itu menjadi kokoh. Saat itu Rigg maju dengan sebotol brendi, mengisi botolnya, dan menyerahkan satu koin emas kepada Raffles, tanpa memandang atau berbicara kepadanya. Setelah mengunci kembali lemari, ia berjalan ke jendela dan menatap keluar dengan tatapan tanpa ekspresi seperti yang dilakukannya di awal wawancara, sementara Raffles mengambil sedikit uang dari botol, menutupnya, dan memasukkannya ke saku sampingnya dengan sangat lambat, sambil meringis ke arah punggung anak tirinya. “Selamat tinggal, Josh—dan semoga selamanya!” kata Raffles, sambil menoleh ke belakang saat membuka pintu. Rigg melihatnya meninggalkan pekarangan dan memasuki jalan setapak. Hari yang kelabu telah berubah menjadi gerimis ringan, yang menyegarkan pagar tanaman dan tepi berumput di pinggir jalan, dan mempercepat para pekerja yang sedang memuat tumpukan jagung terakhir. Raffles, berjalan dengan langkah gelisah seperti seorang pengangguran kota yang terpaksa melakukan perjalanan pedesaan dengan berjalan kaki, tampak tidak sesuai di tengah kesunyian dan kesibukan pedesaan yang lembap ini seolah-olah dia adalah seekor babon yang melarikan diri dari kebun binatang. Tetapi tidak ada yang menatapnya kecuali anak sapi yang sudah lama disapih, dan tidak ada yang menunjukkan ketidaksukaan terhadap penampilannya kecuali tikus air kecil yang berdesir menjauh saat dia mendekat. Ia cukup beruntung ketika sampai di jalan raya dan disusul oleh kereta pos, yang membawanya ke Brassing; dan di sana ia menaiki kereta api yang baru dibangun, sambil berkata kepada sesama penumpang bahwa ia menganggap kereta api itu sudah cukup berpengalaman setelah melewati Huskisson. Tuan Raffles dalam banyak kesempatan mempertahankan sikap seolah-olah telah dididik di akademi, dan mampu, jika ia mau, untuk bergaul dengan baik di mana pun; memang, tidak ada seorang pun dari sesamanya yang tidak ia rasa pantas untuk diejek dan disiksa, dengan percaya diri akan hiburan yang diberikannya kepada seluruh rombongan. Ia memainkan peran ini dengan semangat yang sama seolah-olah perjalanannya telah sepenuhnya berhasil, sesekali menggunakan botol minumnya. Kertas yang ia gunakan untuk menyangga botol itu adalah surat yang ditandatangani Nicholas Bulstrode , tetapi Raffles sepertinya tidak akan mengganggunya dari posisinya yang berguna saat ini.</p>
 

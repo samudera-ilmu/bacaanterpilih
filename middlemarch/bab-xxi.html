@@ -5,39 +5,176 @@
 <title>BAB XXI.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXI. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXI.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Hire facounde eke full womanly and plain, No contrefeted termes had she To semen wise.” —CHAUCER. Begitulah Dorothea mulai terisak-isak begitu ia sendirian. Namun, ia segera terbangun oleh ketukan di pintu, yang membuatnya buru-buru mengeringkan air matanya sebelum berkata, "Masuklah." Tantripp membawa kartu, dan mengatakan bahwa ada seorang pria yang menunggu di lobi. Kurir itu mengatakan kepadanya bahwa hanya Nyonya Casaubon yang ada di rumah, tetapi ia mengatakan bahwa ia adalah kerabat Tuan Casaubon: maukah ia menemuinya? “Ya,” kata Dorothea tanpa ragu; “antar dia ke ruang tamu.” Kesan utamanya tentang Ladislaw muda adalah ketika ia bertemu dengannya di Lowick, ia menyadari kemurahan hati Tuan Casaubon terhadapnya, dan juga bahwa ia tertarik pada keraguannya sendiri tentang kariernya. Ia peka terhadap apa pun yang memberinya kesempatan untuk bersimpati secara aktif, dan pada saat ini tampaknya kunjungan itu datang untuk mengguncangnya dari ketidakpuasan yang berpusat pada dirinya sendiri—untuk mengingatkannya akan kebaikan suaminya, dan membuatnya merasa bahwa ia sekarang berhak menjadi penolongnya dalam segala perbuatan baik. Ia menunggu satu atau dua menit, tetapi ketika ia masuk ke ruangan sebelah, ada cukup tanda bahwa ia telah menangis sehingga wajahnya yang terbuka tampak lebih muda dan menarik dari biasanya. Ia menemui Ladislaw dengan senyum ramah yang tulus dan tanpa kesombongan, dan mengulurkan tangannya kepadanya. Ia lebih tua beberapa tahun, tetapi pada saat itu ia tampak jauh lebih muda, karena wajahnya yang bersih tiba-tiba memerah, dan ia berbicara dengan rasa malu yang sangat berbeda dengan sikap acuh tak acuhnya terhadap teman prianya, sementara Dorothea menjadi semakin tenang dengan keinginan yang penuh keheranan untuk membuatnya merasa nyaman. “Saya tidak tahu bahwa Anda dan Tuan Casaubon berada di Roma, sampai pagi ini, ketika saya melihat Anda di Museum Vatikan,” katanya. “Saya langsung mengenali Anda—tetapi—maksud saya, saya menyimpulkan bahwa alamat Tuan Casaubon dapat ditemukan di Poste Restante, dan saya ingin menyampaikan salam hormat saya kepada beliau dan Anda sesegera mungkin.” “Silakan duduk. Dia tidak ada di sini sekarang, tetapi saya yakin dia akan senang mendengar kabar darimu,” kata Dorothea, duduk tanpa berpikir di antara perapian dan cahaya jendela tinggi, dan menunjuk ke kursi di seberangnya, dengan ketenangan seorang ibu rumah tangga yang baik hati. Tanda-tanda kesedihan kekanak-kanakan di wajahnya semakin mencolok. “Tuan Casaubon sangat sibuk; tetapi kamu akan meninggalkan alamatmu—bukan begitu?—dan dia akan menulis surat kepadamu.” “Anda sangat baik,” kata Ladislaw, mulai kehilangan rasa malunya karena tertarik mengamati tanda-tanda tangisan yang telah mengubah wajahnya. “Alamat saya ada di kartu nama saya. Tetapi jika Anda mengizinkan, saya akan datang lagi besok pada jam-jam ketika Tuan Casaubon kemungkinan besar berada di rumah.” “Ia pergi membaca di Perpustakaan Vatikan setiap hari, dan Anda hampir tidak bisa bertemu dengannya kecuali dengan membuat janji terlebih dahulu. Terutama sekarang. Kita akan segera meninggalkan Roma, dan ia sangat sibuk. Biasanya ia pergi hampir dari sarapan sampai makan malam. Tapi saya yakin ia ingin Anda makan malam bersama kami.” Will Ladislaw terdiam beberapa saat. Ia tidak pernah menyukai Tuan Casaubon, dan jika bukan karena rasa kewajiban, ia pasti akan menertawakannya sebagai Kelelawar yang sok berilmu. Tetapi gagasan tentang cendekiawan tua yang kering kerontang ini, sang pengulas penjelasan-penjelasan kecil yang sama pentingnya dengan stok barang antik palsu yang disimpan di ruang belakang pedagang, yang pertama-tama berhasil menikahi wanita muda yang menggemaskan ini, lalu menghabiskan bulan madunya jauh darinya, meraba-raba hal-hal yang sia-sia dan berjamur (Will memang cenderung melebih-lebihkan)—gambaran tiba-tiba ini membangkitkan semacam rasa jijik yang menggelikan dalam dirinya: ia terbagi antara dorongan untuk tertawa terbahak-bahak dan dorongan yang sama tidak tepatnya untuk melontarkan cercaan yang menghina. Sejenak ia merasa bahwa perjuangan itu menyebabkan ekspresi wajahnya yang bergerak menjadi aneh dan terdistorsi, tetapi dengan usaha keras ia berhasil mengubahnya menjadi senyum riang yang tidak lebih mengganggu. Dorothea bertanya-tanya; tetapi senyum itu tak tertahankan, dan terpancar kembali dari wajahnya juga. Senyum Will Ladislaw sangat menawan, kecuali jika Anda marah padanya sebelumnya: itu adalah pancaran cahaya batin yang menerangi kulit transparan serta mata, dan bermain-main di setiap lekukan dan garis seolah-olah Ariel sedang menyentuhnya dengan pesona baru, dan selamanya menghilangkan jejak kemurungan. Pantulan senyum itu pasti juga mengandung sedikit keceriaan, bahkan di bawah bulu mata gelap yang masih basah, saat Dorothea bertanya, "Ada sesuatu yang membuatmu geli?" “Ya,” kata Will, dengan cepat mencari sumber informasi. “Aku sedang memikirkan sosokku saat pertama kali melihatmu, ketika kau menghancurkan sketsa burukku dengan kritikmu.” “Kritik saya?” tanya Dorothea, semakin bertanya-tanya. “Tentu bukan. Saya selalu merasa sangat kurang pengetahuan tentang melukis.” “Aku menduga kau tahu banyak hal, kau tahu persis apa yang paling menyakitkan. Kau bilang—kurasa kau tidak mengingatnya seperti aku—bahwa hubungan sketsaku dengan alam sama sekali tersembunyi darimu. Setidaknya, kau mengisyaratkan itu.” Will sekarang bisa tertawa sekaligus tersenyum. “Itu memang kebodohanku,” kata Dorothea, mengagumi humor Will yang baik. “Aku pasti mengatakan itu hanya karena aku tidak pernah bisa melihat keindahan dalam lukisan-lukisan yang menurut pamanku dianggap sangat bagus oleh semua juri. Dan aku telah berkeliling dengan kebodohan yang sama di Roma. Hanya ada sedikit lukisan yang benar-benar bisa kunikmati. Awalnya, ketika aku memasuki ruangan yang dindingnya dipenuhi lukisan dinding, atau lukisan langka, aku merasakan semacam kekaguman—seperti anak kecil yang hadir di upacara-upacara besar di mana ada jubah-jubah megah dan prosesi; aku merasa berada di hadapan kehidupan yang lebih tinggi daripada kehidupanku sendiri. Tetapi ketika aku mulai memeriksa lukisan-lukisan itu satu per satu, kehidupan di dalamnya hilang, atau menjadi sesuatu yang keras dan aneh bagiku. Itu pasti kebodohanku sendiri. Aku melihat begitu banyak hal sekaligus, dan tidak memahami setengahnya. Itu selalu membuat seseorang merasa bodoh. Sangat menyakitkan untuk diberitahu bahwa sesuatu itu sangat bagus dan tidak dapat merasakan bahwa itu bagus—sesuatu seperti menjadi buta, sementara orang-orang berbicara tentang langit.” “Oh, ada banyak hal dalam kepekaan terhadap seni yang harus diperoleh,” kata Will. (Sekarang mustahil untuk meragukan kejujuran pengakuan Dorothea.) “Seni adalah bahasa kuno dengan banyak gaya buatan yang dibuat-buat, dan terkadang kesenangan utama yang didapat dari mengetahuinya hanyalah perasaan mengetahui itu sendiri. Saya sangat menikmati seni dari semua jenis di sini; tetapi saya kira jika saya dapat memilah-milah kenikmatan saya, saya akan menemukan bahwa itu terdiri dari banyak benang yang berbeda. Ada sesuatu dalam melukis sedikit sendiri, dan memiliki gambaran tentang prosesnya.” “Maksudmu mungkin ingin menjadi pelukis?” kata Dorothea, dengan minat yang baru. “Maksudmu menjadikan melukis sebagai profesimu? Tuan Casaubon akan senang mendengar bahwa kau telah memilih profesi.” “Tidak, oh tidak,” kata Will dengan sedikit dingin. “Aku sudah memutuskan untuk menolaknya. Hidup seperti itu terlalu berat sebelah. Aku sudah sering bertemu dengan seniman Jerman di sini: aku melakukan perjalanan dari Frankfurt bersama salah satu dari mereka. Beberapa di antaranya orang-orang hebat, bahkan brilian—tetapi aku tidak ingin terjebak dalam cara pandang mereka yang sepenuhnya berfokus pada dunia dari sudut pandang studio.” “Itu bisa saya mengerti,” kata Dorothea dengan ramah. “Dan di Roma tampaknya ada begitu banyak hal yang lebih dibutuhkan di dunia daripada lukisan. Tetapi jika Anda memiliki bakat melukis, bukankah tepat untuk menjadikannya sebagai pedoman? Mungkin Anda bisa membuat karya yang lebih baik daripada ini—atau berbeda, sehingga tidak akan ada begitu banyak lukisan yang hampir semuanya sama di tempat yang sama.” Kesederhanaan ini tak perlu diragukan lagi, dan Will pun terpikat olehnya sehingga ia menjadi jujur. “Seseorang harus memiliki kejeniusan yang sangat langka untuk melakukan perubahan semacam itu. Saya khawatir kejeniusan saya bahkan tidak akan mampu melakukan dengan baik apa yang telah dilakukan sebelumnya, setidaknya tidak cukup baik untuk membuatnya bermanfaat. Dan saya tidak akan pernah berhasil dalam hal apa pun dengan kerja keras. Jika sesuatu tidak mudah bagi saya, saya tidak akan pernah mendapatkannya.” “Aku dengar Tuan Casaubon mengatakan bahwa dia menyesali kurangnya kesabaranmu,” kata Dorothea lembut. Dia agak terkejut dengan cara berpikirmu yang menganggap seluruh hidup sebagai liburan. “Ya, saya tahu pendapat Tuan Casaubon. Saya dan beliau berbeda pendapat.” Sedikit nada meremehkan dalam jawaban tergesa-gesa itu menyinggung perasaan Dorothea. Ia menjadi lebih peka terhadap Tuan Casaubon karena masalah yang dialaminya pagi itu. “Tentu saja kalian berbeda,” katanya, dengan agak bangga. “Saya tidak bermaksud membandingkan kalian: kekuatan ketekunan dan kerja keras seperti yang dimiliki Tuan Casaubon bukanlah hal yang umum.” Will melihat bahwa Dorothea tersinggung, tetapi ini hanya menambah dorongan pada kekesalan baru dari ketidaksukaannya yang terpendam terhadap Tuan Casaubon. Terlalu tak tertahankan bahwa Dorothea harus memuja suami ini: kelemahan seperti itu pada seorang wanita tidak menyenangkan bagi pria mana pun kecuali suami yang bersangkutan. Manusia mudah tergoda untuk merenggut nyawa dari kemuliaan tetangga mereka yang sedang bersinar, dan berpikir bahwa pembunuhan seperti itu bukanlah pembunuhan. “Tidak, tentu saja tidak,” jawabnya dengan cepat. “Oleh karena itu, sangat disayangkan jika hal itu dibuang begitu saja, seperti banyak karya ilmiah Inggris lainnya, karena kurangnya pengetahuan tentang apa yang dilakukan oleh negara-negara lain di dunia. Jika Tuan Casaubon membaca bahasa Jerman, ia akan menghemat banyak kesulitan.” “Aku tidak mengerti maksudmu,” kata Dorothea, terkejut dan cemas. “Maksud saya,” kata Will dengan santai, “bahwa orang Jerman telah memimpin dalam penyelidikan sejarah, dan mereka menertawakan hasil yang diperoleh dengan meraba-raba di hutan dengan jangka saku sementara mereka telah membangun jalan yang bagus. Ketika saya bersama Tuan Casaubon, saya melihat bahwa dia sangat keras kepala dalam hal itu: hampir terpaksa baginya untuk membaca risalah berbahasa Latin yang ditulis oleh seorang Jerman. Saya sangat menyesal.” Will hanya berpikir untuk mencubitnya dengan keras agar menghilangkan kerja keras yang dibanggakannya itu, dan tidak mampu membayangkan bagaimana Dorothea akan terluka. Tuan Ladislaw muda sendiri sama sekali tidak mendalami karya-karya penulis Jerman; tetapi tidak dibutuhkan banyak kemampuan untuk mengasihani kekurangan orang lain. Dorothea yang malang merasakan kesedihan mendalam memikirkan bahwa jerih payah suaminya mungkin sia-sia, yang membuatnya tak punya energi lagi untuk memikirkan apakah kerabat mudanya yang sangat berhutang budi kepadanya seharusnya tidak menahan pengamatannya. Ia bahkan tak berbicara, hanya duduk memandang tangannya, tenggelam dalam kesedihan pikiran itu. Namun, Will, setelah memberikan cubitan yang mematikan itu, merasa agak malu, membayangkan dari keheningan Dorothea bahwa dia telah menyinggung perasaannya lebih jauh; dan juga merasa bersalah karena telah mencabut bulu ekor dari seorang dermawan. “Saya sangat menyesalinya,” lanjutnya, mengikuti pola biasa dari celaan hingga pujian yang tidak tulus, “karena rasa terima kasih dan hormat saya kepada sepupu saya. Hal itu tidak akan begitu berarti pada seseorang yang bakat dan karakternya kurang menonjol.” Dorothea mengangkat matanya, lebih berbinar dari biasanya karena perasaan gembira, dan berkata dengan nada sedih, “Betapa aku berharap aku belajar bahasa Jerman ketika berada di Lausanne! Ada banyak guru bahasa Jerman. Tapi sekarang aku tidak bisa berguna.” Ada secercah cahaya baru, namun tetap misterius, bagi Will dalam kata-kata terakhir Dorothea. Pertanyaan bagaimana ia bisa menerima Tuan Casaubon—yang telah ia abaikan ketika pertama kali melihatnya dengan mengatakan bahwa ia pasti tidak menyenangkan meskipun penampilannya baik—kini tidak dapat dijawab dengan cara yang singkat dan mudah. Apa pun sifatnya, ia bukanlah orang yang tidak menyenangkan. Ia bukanlah orang yang cerdas secara dingin dan satir secara tidak langsung, tetapi sangat sederhana dan penuh perasaan. Ia adalah malaikat yang terpikat. Akan menjadi kenikmatan yang unik untuk menunggu dan mengamati fragmen-fragmen merdu di mana hati dan jiwanya terungkap begitu langsung dan tulus. Harpa Aeolia kembali terlintas dalam pikirannya. Dia pasti telah menciptakan kisah romantis orisinal untuk dirinya sendiri dalam pernikahan ini. Dan jika Tuan Casaubon adalah seekor naga yang membawanya ke sarangnya dengan cakarnya begitu saja dan tanpa prosedur hukum, akan menjadi tindakan kepahlawanan yang tak terhindarkan untuk membebaskannya dan bersujud di kakinya. Tetapi dia adalah sesuatu yang lebih sulit dikendalikan daripada seekor naga: dia adalah seorang dermawan dengan masyarakat kolektif di belakangnya, dan pada saat itu dia memasuki ruangan dengan segala kesopanan dan sikapnya yang tak tercela, sementara Dorothea tampak bersemangat dengan rasa khawatir dan penyesalan yang baru muncul, dan Will tampak bersemangat dengan spekulasi kekagumannya tentang perasaannya. Tuan Casaubon merasakan kejutan yang sama sekali tidak bercampur dengan kegembiraan, tetapi ia tidak menyimpang dari kesopanan sapaannya yang biasa, ketika Will bangkit dan menjelaskan kehadirannya. Tuan Casaubon kurang bahagia dari biasanya, dan ini mungkin membuatnya tampak lebih muram dan pucat; jika tidak, efek tersebut mungkin dengan mudah dihasilkan oleh kontras penampilan sepupunya yang masih muda. Kesan pertama saat melihat Will adalah keceriaan yang cerah, yang menambah ketidakpastian ekspresi wajahnya yang berubah-ubah. Tentu saja, fitur wajahnya pun berubah bentuk, rahangnya terkadang tampak besar dan terkadang kecil; dan riak kecil di hidungnya adalah persiapan untuk metamorfosis. Ketika ia menoleh dengan cepat, rambutnya tampak memancarkan cahaya, dan beberapa orang mengira mereka melihat kejeniusan yang jelas dalam kilauan ini. Sebaliknya, Tuan Casaubon berdiri tanpa pancaran cahaya. Saat mata Dorothea tertuju cemas pada suaminya, mungkin ia tidak sepenuhnya mengabaikan kontras tersebut, tetapi hal itu hanya bercampur dengan penyebab lain yang membuatnya lebih menyadari kekhawatiran baru atas nasib suaminya, yang merupakan awal mula rasa iba dan kelembutan yang dipicu oleh kenyataan hidup suaminya dan bukan oleh mimpinya sendiri. Namun, kehadiran Will di sana justru memberinya kebebasan yang lebih besar; kesetaraan Will yang masih muda sangat menyenangkan, dan mungkin juga keterbukaannya terhadap keyakinan. Ia merasa sangat membutuhkan seseorang untuk diajak bicara, dan ia belum pernah melihat siapa pun yang tampak begitu cepat dan mudah dipengaruhi, begitu mungkin memahami segalanya. Tuan Casaubon sangat berharap Will menghabiskan waktunya dengan bermanfaat dan menyenangkan di Roma—ia mengira Will berniat untuk tetap tinggal di Jerman Selatan—tetapi memohon agar Will datang dan makan malam besok, ketika ia dapat mengobrol lebih banyak: saat ini ia agak lelah. Ladislaw mengerti, dan menerima undangan itu, lalu segera berpamitan. Mata Dorothea mengikuti suaminya dengan cemas, sementara suaminya duduk lelah di ujung sofa, menyandarkan siku untuk menopang kepalanya dan menatap lantai. Sedikit memerah, dan dengan mata berbinar, ia duduk di sampingnya, dan berkata— “Maafkan saya karena berbicara terlalu terburu-buru kepada Anda pagi ini. Saya salah. Saya khawatir saya telah menyakiti Anda dan membuat hari Anda lebih berat.” “Aku senang kau merasakan hal itu, sayangku,” kata Tuan Casaubon. Ia berbicara pelan dan sedikit menundukkan kepala, tetapi masih ada perasaan gelisah di matanya saat ia menatapnya. “Tapi kau memaafkanku?” kata Dorothea, sambil terisak. Karena membutuhkan ungkapan perasaan, ia siap melebih-lebihkan kesalahannya sendiri. Tidakkah cinta akan melihat penyesalan yang kembali dari jauh, dan memeluknya serta menciumnya? “Dorothea sayangku—'yang tidak puas dengan pertobatannya, bukanlah dari surga maupun bumi:'—kau tidak menganggapku pantas diasingkan dengan hukuman seberat itu,” kata Tuan Casaubon, berusaha keras untuk menyampaikan pernyataan yang tegas, dan juga tersenyum tipis. Dorothea terdiam, tetapi setetes air mata yang muncul bersama isak tangisnya terus menetes. “Kau tampak bersemangat, sayangku. Dan aku juga merasakan beberapa konsekuensi tidak menyenangkan dari terlalu banyak gangguan mental,” kata Tuan Casaubon. Sebenarnya, ia berniat mengatakan kepadanya bahwa seharusnya ia tidak menerima Ladislaw muda saat ia tidak ada: tetapi ia menahan diri, sebagian karena merasa tidak pantas untuk menyampaikan keluhan baru pada saat pengakuan penyesalannya, sebagian karena ia ingin menghindari kegelisahan lebih lanjut dalam dirinya sendiri melalui ucapan, dan sebagian karena ia terlalu bangga untuk menunjukkan kecemburuan yang tidak begitu tercurah pada rekan-rekan cendekiawannya sehingga tidak ada yang tersisa untuk diarahkan ke arah lain. Ada semacam kecemburuan yang tidak membutuhkan banyak api: itu bukanlah gairah, tetapi penyakit yang tumbuh dalam keputusasaan yang mendung dan lembap dari egoisme yang gelisah. “Kurasa sudah waktunya kita berpakaian,” tambahnya sambil melihat arlojinya. Mereka berdua berdiri, dan tidak pernah ada lagi pembicaraan di antara mereka tentang apa yang telah terjadi hari itu. Namun Dorothea mengingatnya hingga akhir dengan kejelasan yang sama seperti kita semua mengingat momen-momen penting dalam pengalaman kita ketika suatu harapan yang berharga sirna, atau ketika suatu motivasi baru muncul. Hari ini ia mulai menyadari bahwa ia telah berada di bawah ilusi liar karena mengharapkan tanggapan atas perasaannya dari Tuan Casaubon, dan ia merasakan firasat bahwa mungkin ada kesadaran yang menyedihkan dalam hidup Tuan Casaubon yang menimbulkan kebutuhan yang sama besarnya di pihaknya seperti di pihaknya sendiri. Kita semua terlahir dalam kebodohan moral, menganggap dunia sebagai sumber makanan bagi diri kita yang tertinggi: Dorothea sejak dini mulai keluar dari kebodohan itu, namun baginya lebih mudah membayangkan bagaimana ia akan mengabdikan dirinya kepada Tuan Casaubon, dan menjadi bijak dan kuat dalam kekuatan dan kebijaksanaannya, daripada memahami dengan kejelasan yang bukan lagi refleksi tetapi perasaan—sebuah gagasan yang diwujudkan kembali pada keintiman indrawi, seperti kekokohan objek—bahwa ia memiliki pusat diri yang setara, dari mana cahaya dan bayangan harus selalu jatuh dengan perbedaan tertentu.</p>
 

@@ -5,39 +5,176 @@
 <title>BAB LXXXVI.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LXXXVI. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LXXXVI.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>"Le cœur se sature d'amour comme d'un sel divin qui le melestarikan; de là l'incorruptible adhérence de ceux qui se sont aimés dès l'aube de la vie, et la fraîcheur des vielles amours prolongées. Aku ada sebagai embaumement d'amour. C'est de Daphnis et Chloé que sont faits Philémon et Baucis. Ini vieillesse-là, kemiripan antara kamu dan aurore.”—VICTOR HUGO: L'homme qui rit . Nyonya Garth, mendengar Caleb memasuki lorong sekitar waktu minum teh, membuka pintu ruang tamu dan berkata, “Kau di sini, Caleb. Sudah makan malam?” (Waktu makan Tuan Garth sangat dikesampingkan demi “urusan bisnis.”) “Oh ya, makan malam yang enak—daging kambing dingin dan entah apa lagi. Di mana Mary?” “Di taman bersama Letty, kurasa.” “Fred belum datang?” “Tidak. Apa kau mau keluar lagi tanpa minum teh, Caleb?” kata Ny. Garth, melihat suaminya yang linglung itu mengenakan kembali topi yang baru saja dilepasnya. “Tidak, tidak; aku hanya akan menemui Mary sebentar.” Mary berada di sudut taman yang berumput, tempat ayunan tergantung tinggi di antara dua pohon pir. Ia mengenakan sapu tangan merah muda yang diikatkan di kepalanya, sedikit menutupi matanya dari sinar matahari yang menyengat, sambil mengayunkan Letty dengan riang, yang tertawa dan berteriak histeris. Melihat ayahnya, Mary meninggalkan ayunan dan menghampirinya, menyingkirkan saputangan merah mudanya dan tersenyum dari kejauhan dengan senyum spontan penuh kasih sayang. “Aku datang mencarimu, Mary,” kata Tuan Garth. “Mari kita berjalan-jalan sebentar.” Mary tahu betul bahwa ayahnya memiliki sesuatu yang khusus untuk dikatakan: alisnya membentuk sudut yang menyedihkan, dan ada keseriusan yang lembut dalam suaranya: hal-hal ini telah menjadi pertanda baginya ketika dia seusia Letty. Dia merangkul lengan ayahnya, dan mereka berbelok di sepanjang deretan pohon kenari. “Akan butuh waktu yang cukup lama sebelum kau bisa menikah, Mary,” kata ayahnya, tanpa memandanginya, melainkan ujung tongkat yang dipegangnya di tangan satunya. “Bukan saat yang menyedihkan, ayah—aku bermaksud untuk bersenang-senang,” kata Mary sambil tertawa. “Aku sudah melajang dan bersenang-senang selama dua puluh empat tahun lebih: kurasa tidak akan selama itu lagi.” Kemudian, setelah jeda sejenak, dia berkata dengan lebih serius, menundukkan wajahnya di depan ayahnya, “Jika ayah puas dengan Fred?” Caleb mengerutkan bibirnya dan memalingkan kepalanya dengan bijaksana. “Ayah, Ayah memang memujinya Rabu lalu. Ayah bilang dia punya pemahaman yang luar biasa tentang saham, dan jeli dalam menilai sesuatu.” “Benarkah?” kata Caleb, agak licik. “Ya, aku sudah mencatat semuanya, termasuk tanggalnya, anno Domini , dan semuanya,” kata Mary. “Ayah suka segala sesuatunya tercatat rapi. Dan perilakunya terhadap Ayah juga sangat baik; dia sangat menghormati Ayah; dan tidak mungkin ada orang yang memiliki temperamen sebaik Fred.” “Ah, ah; kau ingin membujukku agar menganggapnya sebagai pasangan yang cocok.” “Tidak, sungguh tidak, ayah. Aku tidak mencintainya karena dia adalah jodoh yang baik.” “Lalu, untuk apa?” “Oh, sayang, karena aku selalu mencintainya. Aku tidak akan pernah suka memarahi orang lain seperti dia; dan itu adalah hal yang perlu dipertimbangkan dalam diri seorang suami.” “Jadi, pikiranmu sudah mantap, Mary?” tanya Caleb, kembali ke nada bicaranya yang semula. “Tidak ada keinginan lain lagi mengingat keadaan akhir-akhir ini?” (Caleb bermaksud banyak hal dalam ungkapan yang samar itu;) “karena, lebih baik terlambat daripada tidak sama sekali. Seorang wanita tidak boleh memaksakan hatinya—itu tidak akan memberi manfaat apa pun bagi seorang pria.” “Perasaanku tidak berubah, ayah,” kata Mary dengan tenang. “Aku akan setia kepada Fred selama dia setia kepadaku. Kurasa kita berdua tidak akan bisa saling meninggalkan, atau menyukai orang lain lebih dari siapa pun, betapapun kita mengagumi mereka. Itu akan membuat perbedaan yang terlalu besar bagi kita—seperti melihat semua tempat lama berubah, dan mengganti nama untuk semuanya. Kita harus menunggu satu sama lain untuk waktu yang lama; tetapi Fred tahu itu.” Alih-alih langsung berbicara, Caleb berdiri diam dan menancapkan tongkatnya di jalan setapak berumput. Kemudian dia berkata, dengan nada emosional, “Baiklah, aku punya sedikit berita. Bagaimana menurutmu jika Fred akan tinggal di Stone Court, dan mengelola lahan di sana?” “Bagaimana mungkin itu terjadi, ayah?” tanya Mary dengan heran. “Dia akan mengurusnya untuk bibinya, Bulstrode. Wanita malang itu telah memohon dan berdoa kepadaku. Dia ingin berbuat baik untuk anak laki-laki itu, dan itu mungkin hal yang bagus untuknya. Dengan menabung, dia bisa secara bertahap membeli ternak, dan dia memiliki bakat dalam bertani.” “Oh, Fred pasti akan sangat senang! Ini terlalu bagus untuk dipercaya.” “Ah, tapi ingat,” kata Caleb, sambil menolehkan kepalanya dengan nada peringatan, “aku harus memikulnya dan bertanggung jawab, serta mengurus semuanya; dan itu akan sedikit membuat ibumu sedih, meskipun dia mungkin tidak mengatakannya. Fred harus berhati-hati.” “Mungkin ini terlalu berlebihan, ayah,” kata Mary, kegembiraannya terhenti. “Tidak akan ada kebahagiaan jika aku mendatangkan masalah baru bagimu.” “Tidak, tidak; bekerja adalah kesenanganku, Nak, selama itu tidak membuat ibumu kesal. Dan kemudian, jika kau dan Fred menikah,” di sini suara Caleb sedikit bergetar, “dia akan stabil dan hemat; dan kau mewarisi kecerdasan ibumu, dan kecerdasanku juga, dalam cara seorang wanita; dan kau akan menjaganya tetap tertib. Dia akan datang nanti, jadi aku ingin memberitahumu dulu, karena kupikir kau ingin memberitahunya sendiri . Setelah itu, aku bisa membicarakannya baik-baik dengannya, dan kita bisa membahas bisnis dan hal-hal lainnya.” “Oh, ayahku tersayang!” seru Mary, sambil melingkarkan tangannya di leher ayahnya, sementara ayahnya menundukkan kepala dengan tenang, rela dibelai. “Aku ingin tahu apakah ada gadis lain yang menganggap ayahnya pria terbaik di dunia!” “Omong kosong, Nak; kau akan mengira suamimu lebih baik.” “Mustahil,” kata Mary, kembali ke nada bicaranya yang biasa; “para suami adalah golongan pria yang lebih rendah, yang perlu diatur.” Ketika mereka memasuki rumah bersama Letty, yang berlari untuk bergabung dengan mereka, Mary melihat Fred di gerbang kebun, dan pergi menemuinya. “Betapa bagusnya pakaianmu, dasar pemuda boros!” kata Mary, sementara Fred berdiri diam dan mengangkat topinya ke arahnya dengan formalitas yang jenaka. “Kau tidak belajar berhemat.” “Sayang sekali, Mary,” kata Fred. “Lihat saja ujung manset jas ini! Hanya dengan menyikat rambut dengan baik aku terlihat rapi. Aku sedang menabung untuk tiga setelan jas—satu untuk jas pernikahan.” “Kau akan terlihat sangat lucu!—seperti seorang pria dalam buku mode kuno.” “Oh tidak, mereka akan menyimpannya selama dua tahun.” “Dua tahun! Bersikaplah realistis, Fred,” kata Mary sambil berbalik dan berjalan. “Jangan menumbuhkan harapan yang muluk-muluk.” “Kenapa tidak? Kita bisa hidup lebih baik dengan foto-foto bagus daripada foto-foto yang tidak bagus. Jika kita tidak bisa menikah dalam dua tahun, kebenaran yang sebenarnya akan cukup menyakitkan ketika tiba.” “Saya pernah mendengar kisah tentang seorang pemuda yang pernah menumbuhkan harapan yang muluk-muluk, dan hal itu malah merugikannya.” “Mary, jika kau punya kabar buruk untuk kukatakan, aku akan kabur; aku akan masuk ke rumah menemui Tuan Garth. Semangatku sudah hancur. Ayahku sangat sedih—rumah tidak seperti biasanya. Aku tidak tahan lagi mendengar kabar buruk.” “Apakah Anda akan menyebutnya kabar buruk jika diberitahu bahwa Anda akan tinggal di Stone Court, mengelola pertanian, dan sangat berhati-hati, serta menabung setiap tahun hingga semua ternak dan perabotan menjadi milik Anda sendiri, dan Anda menjadi tokoh pertanian yang terkemuka, seperti yang dikatakan Tuan Borthrop Trumbull—agak gemuk, saya khawatir, dan kemampuan berbahasa Yunani dan Latin Anda sudah sangat menurun karena cuaca?” “Kau tidak bermaksud apa-apa selain omong kosong, Mary?” kata Fred, meskipun sedikit memerah. “Itulah yang baru saja ayahku ceritakan tentang apa yang mungkin terjadi, dan dia tidak pernah bicara omong kosong,” kata Mary, sambil menatap Fred, sementara Fred menggenggam tangannya saat mereka berjalan, hingga terasa agak sakit; tetapi dia tidak akan mengeluh. “Oh, kalau begitu aku bisa jadi pria yang sangat baik, Mary, dan kita bisa langsung menikah.” “Jangan terburu-buru, Tuan; bagaimana Anda tahu bahwa saya tidak lebih suka menunda pernikahan kita selama beberapa tahun? Itu akan memberi Anda waktu untuk berbuat nakal, dan kemudian jika saya lebih menyukai orang lain, saya akan punya alasan untuk meninggalkan Anda.” “Jangan bercanda, Mary,” kata Fred dengan penuh perasaan. “Katakan padaku dengan serius bahwa semua ini benar, dan bahwa kau bahagia karenanya—karena kau paling mencintaiku.” “Semua itu benar, Fred, dan aku bahagia karenanya—karena aku paling mencintaimu,” kata Mary, dengan nada patuh seperti sedang membacakan sesuatu. Mereka berlama-lama di ambang pintu di bawah beranda beratap curam, dan Fred hampir berbisik berkata— “Saat kita pertama kali bertunangan, dengan cincin payung itu, Mary, dulu kau—” Semangat sukacita mulai terpancar lebih jelas di mata Mary, tetapi Ben yang malang datang berlari ke pintu dengan Brownie menggonggong di belakangnya, dan, sambil menabrak mereka, berkata— “Fred dan Mary! Apakah kalian akan masuk?—atau bolehkah aku makan kue kalian?”</p>
 

@@ -5,39 +5,176 @@
 <title>BAB VI. DI MANA FIX, SANG DETEKTIF, MENGKHIANATI KETIDAKSABARAN YANG SANGAT ALAMI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB VI. DI MANA FIX, SANG DETEKTIF, MENGKHIANATI KETIDAKSABARAN YANG SANGAT ALAMI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB VI. DI MANA FIX, SANG DETEKTIF, MENGKHIANATI KETIDAKSABARAN YANG SANGAT ALAMI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Keadaan di balik pengiriman telegraf tentang Phileas Fogg ini adalah sebagai berikut: Kapal uap “Mongolia,” milik Peninsular and Oriental Company, terbuat dari besi, berbobot dua ribu delapan ratus ton, dan bertenaga lima ratus tenaga kuda, dijadwalkan tiba pukul sebelas pagi pada hari Rabu, 9 Oktober, di Suez. “Mongolia” secara teratur berlayar antara Brindisi dan Bombay melalui Terusan Suez, dan merupakan salah satu kapal uap tercepat milik perusahaan tersebut, selalu mencapai kecepatan lebih dari sepuluh knot per jam antara Brindisi dan Suez, dan sembilan setengah knot antara Suez dan Bombay. Dua orang pria berjalan-jalan di sepanjang dermaga, di antara kerumunan penduduk asli dan orang asing yang singgah di desa yang dulunya terpencil ini—kini, berkat usaha M. Lesseps, telah menjadi kota yang berkembang pesat. Salah satunya adalah konsul Inggris di Suez, yang, terlepas dari ramalan Pemerintah Inggris, dan prediksi buruk Stephenson, terbiasa melihat, dari jendela kantornya, kapal-kapal Inggris setiap hari bolak-balik di kanal besar, yang mempersingkat rute memutar lama dari Inggris ke India melalui Tanjung Harapan setidaknya setengahnya. Yang lainnya adalah sosok kecil dan kurus, dengan wajah gugup dan cerdas, dan mata cerah yang mengintip dari balik alis yang terus-menerus digerakkannya. Dia baru saja menunjukkan tanda-tanda ketidaksabaran yang jelas, mondar-mandir dengan gugup, dan tidak mampu berdiri diam sejenak. Ini adalah Fix, salah satu detektif yang telah dikirim dari Inggris untuk mencari perampok bank; Tugasnya adalah mengawasi dengan saksama setiap penumpang yang tiba di Suez, dan menyelidiki semua orang yang tampak mencurigakan, atau memiliki kemiripan dengan deskripsi penjahat yang telah ia terima dua hari sebelumnya dari markas polisi di London. Detektif itu jelas terinspirasi oleh harapan untuk mendapatkan hadiah besar yang akan menjadi imbalan atas keberhasilannya, dan menunggu dengan ketidaksabaran yang luar biasa, yang mudah dipahami, kedatangan kapal uap "Mongolia." “Jadi, kata Anda, konsul,” tanyanya untuk yang kedua puluh kalinya, “kapal uap ini tidak pernah terlambat?” “Tidak, Tuan Fix,” jawab konsul. “Kapal itu telah dipesan kemarin di Port Said, dan sisa perjalanan tidak menjadi masalah bagi kapal seperti itu. Saya ulangi bahwa 'Mongolia' telah menyelesaikan perjalanan lebih cepat dari waktu yang dipersyaratkan oleh peraturan perusahaan, dan memenangkan hadiah yang diberikan untuk kecepatan tertinggi.” “Apakah dia datang langsung dari Brindisi?” “Langsung dari Brindisi; dia mengangkut surat-surat India di sana, dan dia berangkat dari sana hari Sabtu pukul lima sore. Bersabarlah, Tuan Fix; dia tidak akan terlambat. Tapi sungguh, saya tidak mengerti bagaimana, dari deskripsi yang Anda miliki, Anda dapat mengenali orang yang Anda cari, bahkan jika dia berada di atas kapal 'Mongolia'.” “Seseorang lebih merasakan kehadiran orang-orang ini, konsul, daripada mengenali mereka. Anda harus memiliki daya tarik untuk mengenali mereka, dan daya tarik itu seperti indra keenam yang menggabungkan pendengaran, penglihatan, dan penciuman. Saya telah menangkap lebih dari satu orang seperti ini selama masa tugas saya, dan, jika pencuri saya ada di kapal, saya akan bertanggung jawab; dia tidak akan lolos dari genggaman saya.” “Saya harap begitu, Tuan Fix, karena itu adalah perampokan besar.” “Perampokan yang luar biasa, konsul; lima puluh lima ribu pound! Kita jarang mendapatkan rezeki nomplok seperti ini. Para pencuri sekarang semakin hina! Seseorang digantung hanya karena segenggam shilling!” “Tuan Fix,” kata konsul itu, “Saya suka cara bicara Anda, dan berharap Anda akan berhasil; tetapi saya khawatir Anda akan mendapati hal itu jauh dari mudah. Tidakkah Anda lihat, deskripsi yang Anda miliki di sana memiliki kemiripan yang luar biasa dengan orang jujur?” “Konsul,” ujar detektif itu dengan tegas, “perampok besar selalu tampak seperti orang jujur. Orang-orang yang berwajah licik hanya punya satu jalan keluar, yaitu tetap jujur; kalau tidak, mereka akan langsung ditangkap. Yang artistik adalah menyingkap wajah jujur; memang bukan tugas mudah, saya akui, tapi itu adalah seni yang sesungguhnya.” Rupanya, Tuan Fix tidak kekurangan sedikit pun rasa percaya diri. Sedikit demi sedikit pemandangan di dermaga menjadi semakin ramai; para pelaut dari berbagai negara, pedagang, makelar kapal, porter, petani, sibuk mondar-mandir seolah-olah kapal uap itu akan segera tiba. Cuacanya cerah, dan agak dingin. Menara-menara masjid kota menjulang di atas rumah-rumah dalam sinar matahari yang redup. Sebuah dermaga, sepanjang sekitar dua ribu yard, membentang ke perairan lepas pantai. Sejumlah perahu nelayan dan perahu pesisir, beberapa di antaranya masih mempertahankan bentuk fantastis kapal-kapal kuno, terlihat di Laut Merah. Saat melewati keramaian, Fix, sesuai kebiasaannya, mengamati orang-orang yang lewat dengan pandangan tajam dan cepat. Sekarang sudah pukul setengah sebelas. “Kapal uapnya tidak kunjung datang!” serunya, saat jam pelabuhan berdentang. “Dia pasti sudah tidak jauh lagi,” jawab temannya. “Berapa lama dia akan berhenti di Suez?” “Empat jam; cukup lama untuk mengisi bahan bakar batubaranya. Jarak dari Suez ke Aden, di ujung Laut Merah, adalah seribu tiga ratus sepuluh mil, dan kapal itu harus mengisi pasokan batubara baru.” “Dan apakah dia langsung pergi dari Suez ke Bombay?” “Tanpa memasukkan apa pun ke mana pun.” “Bagus!” kata Fix. “Jika perampok itu ada di atas kapal, dia pasti akan turun di Suez, agar bisa mencapai koloni Belanda atau Prancis di Asia melalui rute lain. Dia seharusnya tahu bahwa dia tidak akan aman satu jam pun di India, yang merupakan wilayah Inggris.” “Kecuali,” bantah konsul itu, “dia sangat cerdik. Anda tahu, penjahat Inggris selalu lebih mudah disembunyikan di London daripada di tempat lain.” Pengamatan ini memberi detektif bahan renungan, dan sementara itu konsul pergi ke kantornya. Fix, yang ditinggal sendirian, lebih tidak sabar dari sebelumnya, karena memiliki firasat bahwa perampok itu berada di atas kapal "Mongolia." Jika dia memang meninggalkan London dengan maksud mencapai Dunia Baru, dia tentu akan mengambil rute melalui India, yang kurang diawasi dan lebih sulit diawasi daripada rute Atlantik. Tetapi renungan Fix segera ter interrupted oleh serangkaian peluit tajam, yang mengumumkan kedatangan "Mongolia." Para porter dan petani bergegas ke dermaga, dan selusin perahu berangkat dari pantai untuk menemui kapal uap itu. Tak lama kemudian lambung kapal yang raksasa itu muncul melewati antara tepian sungai, dan pukul sebelas berbunyi saat kapal itu berlabuh di jalan. Kapal itu membawa sejumlah penumpang yang tidak biasa, beberapa di antaranya tetap di dek untuk mengamati panorama kota yang indah, sementara sebagian besar turun dengan perahu, dan mendarat di dermaga. Fix mengambil posisi, dan dengan cermat memeriksa setiap wajah dan sosok yang muncul. Tak lama kemudian, salah satu penumpang, setelah dengan gigih menerobos kerumunan porter yang mendesak, menghampirinya dan dengan sopan bertanya apakah ia dapat menunjukkan konsulat Inggris, sambil menunjukkan paspor yang ingin ia visa . Fix secara naluriah mengambil paspor itu, dan dengan cepat membaca deskripsi pemiliknya. Sebuah gerakan terkejut hampir tak disadarinya, karena deskripsi di paspor itu identik dengan deskripsi perampok bank yang telah ia terima dari Scotland Yard. “Apakah ini paspor Anda?” tanyanya. “Tidak, ini milik tuanku.” “Dan tuanmu adalah—” “Dia tetap berada di atas kapal.” “Namun, ia harus datang langsung ke kantor konsul untuk membuktikan identitasnya.” “Oh, apakah itu perlu?” “Sangat penting.” “Lalu di mana konsulatnya?” “Di sana, di sudut alun-alun,” kata Fix, sambil menunjuk ke sebuah rumah yang berjarak dua ratus langkah. “Aku akan pergi memanggil tuanku, yang pasti tidak akan senang jika diganggu.” Penumpang itu membungkuk kepada Fix, lalu kembali ke kapal uap.</p>
 

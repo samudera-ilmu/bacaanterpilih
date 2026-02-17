@@ -5,39 +5,176 @@
 <title>BAB XVI. DI MANA FIX SEPERTINYA TIDAK MEMAHAMI SAMA SEKALI APA YANG DIKATAKAN KEPADANYA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XVI. DI MANA FIX SEPERTINYA TIDAK MEMAHAMI SAMA SEKALI APA YANG DIKATAKAN KEPADANYA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XVI. DI MANA FIX SEPERTINYA TIDAK MEMAHAMI SAMA SEKALI APA YANG DIKATAKAN KEPADANYA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kapal “Rangoon”—salah satu kapal milik Peninsular and Oriental Company yang berlayar di laut Cina dan Jepang—adalah kapal uap berbaling-baling, terbuat dari besi, dengan berat sekitar seribu tujuh ratus tujuh puluh ton, dan mesin berkekuatan empat ratus tenaga kuda. Kapal ini secepat “Mongolia”, tetapi tidak senyaman “Mongolia”, dan Aouda tidak mendapatkan kenyamanan yang diinginkan Phileas Fogg di atas kapal tersebut. Namun, perjalanan dari Calcutta ke Hong Kong hanya menempuh jarak sekitar tiga ribu lima ratus mil, memakan waktu sepuluh hingga dua belas hari, dan wanita muda itu tidak sulit untuk dipuaskan. Selama hari-hari pertama perjalanan, Aouda semakin mengenal pelindungnya, dan terus-menerus menunjukkan rasa terima kasihnya yang mendalam atas apa yang telah dilakukannya. Pria yang tenang itu mendengarkannya, setidaknya secara kasat mata, dengan dingin, baik suara maupun sikapnya tidak menunjukkan emosi sedikit pun; tetapi ia tampaknya selalu memperhatikan agar tidak ada kekurangan dalam kenyamanan Aouda. Ia mengunjunginya secara teratur setiap hari pada jam-jam tertentu, bukan untuk berbicara sendiri, melainkan untuk duduk dan mendengarkannya berbicara. Ia memperlakukannya dengan kesopanan yang sangat ketat, tetapi dengan ketelitian seperti robot, yang gerakannya telah diatur untuk tujuan ini. Aouda tidak sepenuhnya tahu harus berbuat apa terhadapnya, meskipun Passepartout telah memberinya beberapa petunjuk tentang keanehan tuannya, dan membuatnya tersenyum dengan menceritakan tentang taruhan yang mengirimnya berkeliling dunia. Bagaimanapun, ia berutang nyawa kepada Phileas Fogg, dan ia selalu memandangnya melalui rasa terima kasihnya yang mendalam. Aouda membenarkan narasi pemandu Parsee tentang kisah hidupnya yang mengharukan. Ia memang berasal dari ras asli India yang tertinggi. Banyak pedagang Parsee telah menghasilkan kekayaan besar di sana dengan berdagang kapas; dan salah satunya, Sir Jametsee Jeejeebhoy, diangkat menjadi baronet oleh pemerintah Inggris. Aouda adalah kerabat dari orang hebat ini, dan sepupunya, Jeejeeh, yang ingin ia temui di Hong Kong. Apakah ia akan menemukan pelindung dalam dirinya, ia tidak tahu; tetapi Tuan Fogg berusaha menenangkan kekhawatirannya, dan meyakinkannya bahwa semuanya akan diatur secara matematis—ia menggunakan kata itu—dengan tepat. Aouda menatapnya dengan mata besarnya, "jernih seperti danau suci Himalaya"; tetapi Fogg yang keras kepala, tetap pendiam seperti biasanya, tampaknya sama sekali tidak ingin menceburkan diri ke dalam danau ini. Beberapa hari pertama pelayaran berjalan lancar, di tengah cuaca yang baik dan angin yang menguntungkan, dan mereka segera melihat Kepulauan Andaman yang besar, pulau utama di Teluk Benggala, dengan Puncak Pelana yang indah, setinggi dua ribu empat ratus kaki, menjulang di atas perairan. Kapal uap itu melaju di dekat pantai, tetapi orang-orang Papua yang biadab, yang berada di tingkatan manusia terendah, tetapi bukan, seperti yang telah diklaim, kanibal, tidak muncul. Panorama kepulauan itu, saat kapal berlayar melewatinya, sungguh menakjubkan. Hutan-hutan luas yang terdiri dari pohon palem, pinang, bambu, jati, mimosa raksasa, dan pakis yang menyerupai pohon menutupi latar depan, sementara di belakang, garis-garis anggun pegunungan terukir di langit; dan di sepanjang pantai berkerumun ribuan burung layang-layang berharga yang sarangnya menyediakan hidangan mewah untuk meja-meja Kerajaan Surgawi. Namun, pemandangan beragam yang ditawarkan oleh Kepulauan Andaman segera terlewati, dan "Rangoon" dengan cepat mendekati Selat Malaka, yang memberikan akses ke Laut Cina. Apa yang dilakukan detektif Fix, yang begitu malangnya berpindah-pindah dari satu negara ke negara lain, selama ini? Ia berhasil naik ke kapal "Rangoon" di Kalkuta tanpa terlihat oleh Passepartout, setelah meninggalkan perintah bahwa, jika surat perintah itu tiba, surat itu harus diteruskan kepadanya di Hong Kong; dan ia berharap untuk menyembunyikan kehadirannya hingga akhir perjalanan. Akan sulit untuk menjelaskan mengapa ia berada di kapal tanpa membangkitkan kecurigaan Passepartout, yang mengira ia masih berada di Bombay. Namun, keadaan memaksanya untuk memperbarui perkenalannya dengan pelayan yang berharga itu, seperti yang akan terlihat. Semua harapan dan keinginan detektif itu kini terpusat di Hong Kong; karena persinggahan kapal uap di Singapura akan terlalu singkat untuk memungkinkannya mengambil langkah apa pun di sana. Penangkapan harus dilakukan di Hong Kong, atau perampok itu mungkin akan lolos darinya selamanya. Hong Kong adalah wilayah Inggris terakhir yang akan diinjaknya; di luar itu, Tiongkok, Jepang, Amerika menawarkan perlindungan yang hampir pasti bagi Fogg. Jika surat perintah akhirnya muncul di Hong Kong, Fix dapat menangkapnya dan menyerahkannya ke polisi setempat, dan tidak akan ada masalah lebih lanjut. Tetapi di luar Hong Kong, surat perintah sederhana tidak akan berguna; surat perintah ekstradisi akan diperlukan, dan itu akan mengakibatkan penundaan dan hambatan, yang akan dimanfaatkan oleh si bajingan untuk menghindari keadilan. Fix merenungkan kemungkinan-kemungkinan ini selama berjam-jam yang dihabiskannya di kabinnya, dan terus mengulanginya dalam hati, “Sekarang, entah surat perintah itu ada di Hong Kong, yang dalam hal ini saya akan menangkap orang saya, atau tidak ada di sana; dan kali ini mutlak perlu bagi saya untuk menunda keberangkatannya. Saya telah gagal di Bombay, dan saya telah gagal di Calcutta; jika saya gagal di Hong Kong, reputasi saya akan hancur: Berapa pun biayanya, saya harus berhasil! Tetapi bagaimana saya akan mencegah keberangkatannya, jika itu ternyata menjadi upaya terakhir saya?” Fix memutuskan bahwa, jika keadaan terburuk terjadi, dia akan menjadikan Passepartout sebagai orang kepercayaannya, dan memberitahunya seperti apa sebenarnya majikannya. Dia sangat yakin bahwa Passepartout bukanlah kaki tangan Fogg. Pelayan itu, yang tercerahkan oleh pengungkapannya, dan takut dirinya sendiri terlibat dalam kejahatan, pasti akan menjadi sekutu detektif tersebut. Tetapi metode ini berbahaya, hanya boleh digunakan ketika semua cara lain telah gagal. Sepatah kata dari Passepartout kepada majikannya akan menghancurkan semuanya. Karena itu, detektif tersebut berada dalam kesulitan besar. Tetapi tiba-tiba sebuah ide baru muncul di benaknya. Kehadiran Aouda di kapal “Rangoon,” bersama Phileas Fogg, memberinya bahan renungan baru. Siapakah wanita ini? Kombinasi peristiwa apa yang membuatnya menjadi teman perjalanan Fogg? Mereka jelas bertemu di suatu tempat antara Bombay dan Calcutta; tetapi di mana? Apakah mereka bertemu secara tidak sengaja, atau apakah Fogg sengaja pergi ke pedalaman untuk mencari gadis yang menawan ini? Fix cukup bingung. Dia bertanya pada dirinya sendiri apakah tidak ada kawin lari yang jahat; dan gagasan ini begitu membekas di benaknya sehingga dia memutuskan untuk memanfaatkan dugaan intrik tersebut. Terlepas apakah wanita muda itu sudah menikah atau belum, dia akan mampu menciptakan kesulitan bagi Tuan Fogg di Hong Kong sehingga dia tidak dapat lolos dengan membayar sejumlah uang. Namun, bisakah dia menunggu sampai mereka tiba di Hong Kong? Fogg punya kebiasaan buruk berpindah dari satu kapal ke kapal lain, dan sebelum sesuatu bisa dilakukan, dia mungkin sudah berlayar lagi menuju Yokohama. Fix memutuskan bahwa ia harus memperingatkan pihak berwenang Inggris, dan memberi sinyal kepada "Rangoon" sebelum kedatangannya. Ini mudah dilakukan, karena kapal uap itu berhenti di Singapura, dari sana terdapat kabel telegraf ke Hong Kong. Selain itu, sebelum bertindak lebih tegas, ia akhirnya memutuskan untuk menanyai Passepartout. Tidak akan sulit untuk membuatnya berbicara; dan, karena tidak ada waktu untuk disia-siakan, Fix bersiap untuk memperkenalkan dirinya. Saat itu tanggal 30 Oktober, dan keesokan harinya kapal “Rangoon” dijadwalkan tiba di Singapura. Fix keluar dari kabinnya dan pergi ke dek. Passepartout sedang mondar-mandir di bagian depan kapal uap. Detektif itu bergegas maju dengan ekspresi sangat terkejut, dan berseru, "Kau di sini, di 'Rangoon'?" “Apa, Monsieur Fix, Anda ada di dalam pesawat?” tanya Passepartout dengan sangat terkejut, mengenali rekannya dari kapal “Mongolia”. “Wah, aku meninggalkanmu di Bombay, dan sekarang kau di sini, dalam perjalanan ke Hong Kong! Apakah kau juga akan berkeliling dunia?” “Tidak, tidak,” jawab Fix; “Aku akan singgah di Hong Kong—setidaknya untuk beberapa hari.” “Hmm!” kata Passepartout, yang tampak bingung sesaat. “Tapi bagaimana mungkin aku belum melihatmu di kapal sejak kita meninggalkan Kalkuta?” “Oh, sedikit mabuk laut—saya sudah berdiam di tempat tidur saya. Teluk Bengal tidak cocok dengan saya seperti Samudra Hindia. Dan bagaimana kabar Tuan Fogg?” “Sebaik dan setepat biasanya, tidak pernah terlambat sehari pun! Tapi, Monsieur Fix, Anda tidak tahu bahwa kami membawa seorang wanita muda bersama kami.” “Seorang wanita muda?” jawab detektif itu, tampaknya tidak mengerti apa yang dikatakan. Passepartout kemudian menceritakan sejarah Aouda, kejadian di pagoda Bombay, pembelian gajah seharga dua ribu pound, penyelamatan, penangkapan, dan hukuman dari pengadilan Calcutta, serta pembebasan Tuan Fogg dan dirinya sendiri dengan jaminan. Fix, yang mengetahui peristiwa terakhir tersebut, tampaknya sama sekali tidak mengetahui semua yang diceritakan Passepartout; dan Passepartout merasa senang menemukan pendengar yang begitu tertarik. “Tetapi apakah tuanmu bermaksud membawa wanita muda ini ke Eropa?” “Tidak sama sekali. Kami hanya akan menempatkannya di bawah perlindungan salah satu kerabatnya, seorang pedagang kaya di Hong Kong.” “Tidak ada yang bisa dilakukan di sana,” kata Fix dalam hati, menyembunyikan kekecewaannya. “Segelas gin, Tuan Passepartout?” “Dengan senang hati, Monsieur Fix. Setidaknya kita harus minum bersama di atas kapal 'Rangoon'.”</p>
 

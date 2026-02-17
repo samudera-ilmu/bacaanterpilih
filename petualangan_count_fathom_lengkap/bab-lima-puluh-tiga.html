@@ -5,39 +5,176 @@
 <title>BAB LIMA PULUH TIGA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LIMA PULUH TIGA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LIMA PULUH TIGA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>memperoleh pekerjaan sebagai akibat dari keguguran yang beruntung. Namun, perbuatan buruk ini, bukannya mencapai tujuannya, malah memberikan efek yang sebaliknya. Sebab, akibat dari cercaannya, beberapa hari kemudian ia dipanggil untuk menangani istri seorang pedagang, yang dengan saleh berharap bahwa praktiknya tidak akan memfitnah Nona Biddy. Pasien tersebut telah lama menderita komplikasi penyakit, dan karena nyawanya tidak dalam bahaya langsung, Dokter Fathom tidak terburu-buru untuk mengambil tindakan tegas; sampai sang suami menjadi tidak sabar karena penundaan, dan begitu jelas dalam petunjuknya sehingga tidak mungkin salah paham, petualang kita memutuskan untuk melakukan sesuatu yang efektif untuk kepuasannya, dan meresepkan obat yang sangat keras, yang menurutnya pasti akan menyenangkan majikannya, atau menghasilkan perubahan pada konstitusi wanita itu, yang akan membuat heboh di dunia, dan membawa peningkatan baru bagi ketenarannya. Berpegang pada prinsip-prinsip ini, ia tidak mungkin kecewa. Obat itu bekerja dengan sangat hebat, hingga membuat pasien berada dalam kondisi kritis, dan pedagang itu bahkan telah memanggil seorang pengurus jenazah; ketika, setelah serangkaian pingsan dan kejang-kejang, alam akhirnya menang, sehingga obat dan penyakit itu pun hilang sekaligus; namun suami yang baik hati itu sangat terpengaruh oleh penderitaan yang dialami istrinya akibat obat tersebut, sehingga, meskipun efeknya adalah kesembuhan total, ia tidak akan pernah tahan melihat Fathom lagi di masa mendatang, atau bahkan mendengar namanya disebut, tanpa menunjukkan rasa ngeri dan marah. Bahkan, ia tidak ragu untuk menegaskan, bahwa seandainya petualang kita memiliki sedikit saja rasa kemanusiaan, ia akan membiarkan wanita malang itu pergi dengan tenang, daripada memulihkannya dengan mengorbankan kecemasan dan siksaan seperti itu. Di sisi lain, kesembuhan luar biasa ini digembar-gemborkan oleh wanita baik hati dan para penggosipnya, dengan berlebihan sedemikian rupa sehingga menimbulkan keheranan publik, dan bertepatan dengan laporan keguguran terakhirnya yang membuatnya menjadi bahan pembicaraan universal. Ketika seorang dokter menjadi buah bibir di kota, ia biasanya menyelesaikan lebih dari setengah pekerjaannya, meskipun reputasinya sepenuhnya bergantung pada malpraktiknya; sedemikian rupa sehingga beberapa anggota fakultas pernah mengeluh bahwa mereka tidak pernah beruntung dituduh melakukan pembunuhan di depan umum; dan sudah diketahui bahwa seorang empiris terkenal di zaman kita tidak pernah mencapai kekayaan dan reputasi yang besar sampai setelah ia diserang di media cetak, dan terbukti telah menghancurkan sejumlah besar spesies manusia. Kesuksesan yang dibangun di atas fondasi seperti itu, oleh seorang pengikut Plato, dan beberapa moralis modern, akan dikaitkan dengan kebajikan dan kemurahan hati bawaan manusia, yang secara alami mendukung tujuan yang perlu dilindungi. Namun saya, yang gagasan tentang keunggulan manusia tidak begitu luhur, cenderung percaya bahwa hal itu disebabkan oleh semangat kesombongan dan kontradiksi, yang setidaknya sama universalnya, jika bukan sama alaminya, dengan rasa moral yang begitu diperjuangkan oleh para filsuf ideal tersebut. Orang jahat yang paling terkenal pun sering kali menemukan pembenarannya dalam prinsip-prinsip kebencian dan cinta diri ini. Karena di mana pun karakternya menjadi bahan diskusi, biasanya ada seseorang yang hadir, yang, entah karena ingin terlihat istimewa, atau iri kepada para penuduh, membela dirinya, dan berusaha untuk membatalkan pasal-pasal tuduhan terhadapnya, sampai ia terprovokasi oleh pertengkaran, dan terburu-buru mengambil tindakan yang lebih efektif untuk keuntungannya sendiri. Jika manfaat seperti itu diperoleh oleh mereka yang tidak memiliki jasa nyata untuk diandalkan, tentu saja pahlawan kita tidak mungkin tidak menuai sesuatu yang luar biasa dari perdebatan yang sekarang ia timbulkan; karena, dengan penyembuhan ajaib yang telah ia lakukan, semua teman pasiennya, semua musuh suaminya, semua orang yang iri kepada lawannya yang lain, tertarik untuk membantunya, tidak termasuk para pengagum yang mungkin tertarik karena rasa ingin tahu dan terkejut akan kasusnya. Dengan demikian, diiringi tepuk tangan meriah, ketenarannya segera menyebar ke seluruh penjuru ibu kota besar ini. Surat kabar dipenuhi pujian untuknya; dan untuk menjaga perhatian publik, para utusannya, baik pria maupun wanita, berkumpul di berbagai kedai kopi, perusahaan, dan klub, di mana mereka tidak lupa mengomentari berita-berita tersebut. Kejadian yang menguntungkan seperti itu saja sudah cukup untuk melambungkan keberuntungan seseorang. Dalam beberapa hari, ia dipanggil untuk merawat seorang wanita lain yang menderita penyakit yang sama yang telah berhasil ia atasi, dan wanita itu merasa terbantu oleh nasihatnya. Kenalannya secara alami meluas di antara para pengunjung dan sekutu pasiennya; ia direkomendasikan dari keluarga ke keluarga; biaya jasanya mulai berlipat ganda; berbagai macam pelayan muncul setiap hari di depan pintunya; Ia menghentikan sandiwara pura-puranya, dan memandang situasi saat ini sebagai gelombang keberuntungan dalam hidupnya, yang menurut Shakespeare, jika dimanfaatkan sepenuhnya, akan membawa keberuntungan. Ia memutuskan untuk tidak menyia-nyiakan kesempatan itu dan menekuni praktiknya dengan sangat tekun, sehingga kemungkinan besar ia akan menjadi yang terbaik di antara semua pesaingnya, seandainya ia tidak terbentur batu karang yang sama yang telah menghancurkan harapannya sebelumnya. Sebelumnya kita telah membahas tentang nafsu birahi yang membara dalam diri petualang kita, dan dengan segala filsafat dan kehati-hatiannya, ia hampir tidak dapat mengendalikannya. Oleh karena itu, pembaca tidak akan terlalu terkejut mengetahui bahwa, dalam menjalankan profesinya, ia menjalin hubungan intim dengan istri seorang pendeta, yang ia rawat sebagai dokter, dan yang kesucian perkawinannya ia taklukkan dengan upaya panjang dan tekun dari seni tipu dayanya, sementara pikirannya melemah karena sakit, dan suaminya pergi ke luar untuk urusan-urusan pentingnya. Pasien malang ini, yang merupakan wanita dengan penampilan menyenangkan dan percakapan yang hidup, menjadi korban dari rasa aman dan kesombongannya sendiri; kurangnya kesehatan telah membatasinya pada kehidupan yang tidak aktif, dan imajinasinya yang aktif dan gelisah, ia menghabiskan waktu berjam-jam untuk membaca yang biasanya dihabiskan wanita muda lainnya untuk bersosialisasi dan bersenang-senang, tetapi, karena studinya tidak diawasi oleh siapa pun yang memiliki selera, ia memanjakan imajinasinya sendiri tanpa metode atau kepatutan. The Spectator mengajarinya menjadi seorang kritikus dan filsuf; Dari pementasan drama, ia belajar puisi dan kecerdasan, dan memperoleh pengetahuan tentang kehidupan dari buku-buku sejarah dan petualangan. Dengan bekal pengetahuan ini, dan dikaruniai oleh alam dengan semangat yang luar biasa, ia meremehkan kaum wanita dan mencari pergaulan dengan kaum pria, di antara mereka ia berpikir bakatnya dapat ditampilkan dengan lebih terhormat, sepenuhnya yakin akan kebajikan dan kebijaksanaannya sendiri, yang memungkinkannya untuk menantang semua tipu daya mereka. Dengan kualifikasi tersebut, di saat yang sulit, ia meminta nasihat petualang kita untuk suatu penyakit yang telah lama dideritanya, dan menemukan kesembuhan berkat keahliannya yang sangat membuatnya menyukainya. Ia tidak hanya senang dengan sikapnya yang ramah, tetapi juga dengan pengobatannya, dan merasa terhibur dengan percakapannya, sehingga perkenalan mereka berkembang menjadi keakraban, di mana ia menyadari kelemahan wanita itu, dan karena terpikat oleh penampilannya, ia merayunya hingga ia melupakan semua kehati-hatiannya. Keistimewaan karakternya memberinya kesempatan untuk menjebak wanita itu, dan, memanfaatkan kelesuan, kemalasan, dan ketidakwaspadaan jiwa yang melemahkan kewaspadaan jiwa, ia, setelah lama memperhatikan dan tekun, menemukan cara untuk menghancurkan kedamaian wanita itu. Meskipun ia menguasai kesuciannya, ia tidak dapat menenangkan hati nuraninya, yang terus-menerus mencelanya karena melanggar sumpah pernikahan; dan sang suami pun tidak luput dari celaan yang ditimbulkan oleh penyesalan dan pertobatannya. Kecemasan batin ini, yang bekerja sama dengan penyakitnya, dan mungkin juga dengan obat-obatan yang diresepkannya, membawanya ke ambang kematian; ketika suaminya kembali dari kerajaan tetangga, atas permintaannya yang sungguh-sungguh, ia menyampaikan informasi dari teman-temannya yang telah menulis surat kepadanya tentang kondisi istrinya yang sangat kritis. Pria baik itu sangat menderita ketika ia melihat dirinya berada di ambang kehilangan seorang istri yang selalu ia cintai dengan sepenuh hati; tetapi bagaimana perasaannya ketika istrinya, memanfaatkan kesempatan pertama saat ia sendirian dengannya, mengatakan hal ini kepadanya: “Sekarang aku bergegas menuju kematian yang tak seorang pun manusia fana terhindar darinya, dan meskipun prospek masa depan sama sekali suram dan tidak pasti, hati nuraniku tidak akan membiarkanku terjun ke keabadian tanpa mencurahkan isi hatiku, dan, dengan pengakuan yang tulus, melakukan semua penebusan yang kumampu atas rasa tidak tahu terima kasih yang telah kulakukan, dan kesalahan yang telah kulakukan terhadap suami yang berbudi luhur, yang tidak pernah memberi alasan untuk mengeluh. Kau terheran-heran mendengar pendahuluan ini, tetapi celakalah! betapa terkejutnya kau ketika aku mengakui bahwa aku telah mengkhianatimu saat kau tidak ada, bahwa aku telah melanggar perintah Tuhan dan sumpah pernikahanku, dan jatuh dari kebanggaan dan kepercayaan akan kebajikan ke keadaan kejahatan yang paling hina; ya, aku telah tidak setia pada ranjangmu, telah menjadi korban rayuan jahat seorang penjahat, yang memanfaatkan saat-saat lemah dan lengahku. Pahamilah si bajingan yang telah melukai kehormatanmu dan menghancurkan kepolosanku yang tidak curiga. Aku tidak punya alasan untuk membela diri.” Bukan hanya pengurangan hukuman atas kejahatan saya, tetapi juga penyesalan yang paling tulus dari lubuk hati, dan meskipun, pada saat lain, saya tidak dapat mengharapkan pengampunan Anda, namun, karena sekarang saya mendekati akhir hayat, saya percaya pada kemanusiaan dan kemurahan hati Anda untuk pengampunan yang akan meringankan kesedihan jiwa saya, dan doa-doa yang saya harap akan memberi saya hak untuk mendapatkan rahmat di takhta kasih karunia.” Suami yang malang itu begitu diliputi kesedihan dan kebingungan atas ucapan tak terduga ini sehingga ia tidak dapat menenangkan diri hingga setelah beberapa menit, ketika dengan erangan hampa ia berkata, “Aku tidak akan,” katanya, “memperparah penderitaanmu dengan menyalahkanmu atas kesalahanku, meskipun perilakumu hanyalah balasan buruk atas semua kelembutan dan penghargaanku. Aku menganggapnya sebagai ujian kesabaran Kristenku, dan menanggung kemalangan ini dengan pasrah; sementara itu, aku memaafkanmu dari lubuk hatiku, dan dengan sungguh-sungguh berdoa agar pertobatanmu diterima oleh Bapa yang Maha Pengasih.” Setelah berkata demikian, ia mendekati sisi tempat tidur istrinya, dan memeluknya sebagai tanda ketulusannya. Apakah kebaikan hati yang murah hati ini memberikan ketenangan pada jiwanya yang cenderung pada kenyamanan dan penyegaran tubuhnya, yang hampir habis karena penyakit dan gangguan, yang pasti adalah bahwa sejak hari itu ia mulai berjuang melawan penyakitnya dengan upaya yang mengejutkan, dan setiap jamnya semakin membaik, hingga kesehatannya pulih sepenuhnya. Pemulihan ini jauh melampaui harapan sang suami, sehingga ia mulai merenungkan kejadian itu dengan sangat serius, dan bahkan menyesal karena terlalu terburu-buru memaafkan kesalahan istrinya; karena, meskipun ia tidak dapat menahan rasa ibanya kepada seorang yang sedang sekarat dan bertobat, ia sama sekali tidak menyukai gagasan untuk hidup bersama, seperti biasa, dengan seorang istri yang telah mengakui sendiri kesalahannya dalam melanggar perjanjian perkawinan; oleh karena itu, ia menganggap pernyataannya tidak lebih dari pengampunan sementara, yang akan berlaku dengan syarat kematian istrinya segera, dan, dalam waktu singkat, tidak hanya menyampaikan perasaannya tentang hal ini kepada istrinya, tetapi juga menjauhkan diri dari istrinya, mendapatkan bukti dari pelayannya, yang telah menjadi orang kepercayaan istrinya dalam perselingkuhannya dengan Fathom, dan segera memulai penuntutan terhadap petualang kita, yang perilakunya terhadap istrinya tidak ia abaikan, dengan segala keadaan yang memberatkan. Dengan cara ini, nama dokter tersebut menjadi begitu terkenal sehingga setiap pria takut menerimanya masuk ke rumah mereka, dan setiap wanita malu meminta nasihatnya.</p>
 

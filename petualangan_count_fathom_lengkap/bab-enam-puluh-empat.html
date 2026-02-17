@@ -5,39 +5,176 @@
 <title>BAB ENAM PULUH EMPAT</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB ENAM PULUH EMPAT - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB ENAM PULUH EMPAT</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>misteri terungkap—sebuah pengakuan lain, yang, semoga, pembaca tidak dapat memprediksinya. Wanita Prancis itu kemudian menjelaskan seluruh misteri kematian Monimia, sebagai strategi yang telah ia rencanakan bersama pendeta dan dokter, untuk menggagalkan rencana jahat Fathom, yang tampaknya bertekad untuk mendukung klaim palsunya dengan cara sumpah palsu dan penipuan, yang akan sangat sulit mereka hindari. Ia mengamati bahwa dokter sebenarnya telah putus asa dengan nyawa Monimia, dan baru setelah ia sendiri mengetahui prognosisnya, ia menulis surat kepada Renaldo, yang ia percayakan kepada Nyonya Clement, dengan permohonan yang sungguh-sungguh agar surat itu tidak dikirim sampai setelah kematiannya. Tetapi wanita itu, karena percaya bahwa Pangeran telah dikhianati oleh orang kepercayaannya yang khianat, mengirimkan surat itu tanpa sepengetahuan Monimia, yang kesehatannya pulih berkat perawatan tak kenal lelah dari dokter, dan nasihat bijak dari pendeta, yang membuatnya kembali berdamai dengan kehidupan. Singkatnya, kejahatan Fathom telah menanamkan secercah harapan padanya bahwa Renaldo mungkin masih tidak bersalah; dan gagasan itu sedikit banyak berkontribusi pada kesembuhannya. Surat itu telah menjawab harapan terbesar mereka dengan sangat efektif, dengan membawa kembali Renaldo sebagai teladan keteguhan dan cinta, sehingga para sekutu, sebagai akibat dari kesedihan Renaldo yang mendalam, merencanakan pertemuan ini sebagai cara paling menarik untuk menyatukan kembali dua kekasih yang berbudi luhur; untuk tujuan itu, pendeta yang baik hati telah memilih gerejanya sendiri, dan mengizinkan mereka menggunakan ruang sakristi, di mana mereka sekarang disuguhi hidangan kecil namun elegan. Melvil mendengar detail singkat ini dengan sukacita dan kekaguman yang sama. Ia mencurahkan rasa terima kasihnya kepada para penyelamat kebahagiaannya.—"Gereja ini," katanya, "mulai sekarang akan mendapatkan dua kali lipat rasa hormatku; orang suci ini, kuharap, akan menyelesaikan pekerjaan amal yang telah ia mulai, dengan mengikat ikatan kebahagiaan kita, yang hanya kematian yang mampu melepaskannya." Kemudian beralih ke objek yang menjadi bintang perhatiannya, "Bukankah aku terlalu melebih-lebihkan," katanya, "hubunganku dengan Monimia yang cantik?" Ia tidak menjawab secara verbal; tetapi menjawab dengan tatapan tegas, lebih fasih daripada semua kekuatan retorika dan pidato. Bahasa ini, yang universal dalam dunia cinta, ia pahami dengan sempurna, dan, sebagai tanda kemampuan itu, ia mengukuhkan persetujuan yang telah ia berikan dengan senyumannya, dengan ciuman yang tercetak di dahinya yang halus. Untuk menghilangkan gagasan-gagasan menarik ini, yang jika dibiarkan terlalu lama, dapat membahayakan kewarasannya, Nyonya Clement memintanya untuk menghibur para tamu dengan detail tentang apa yang telah terjadi padanya dalam perjalanan terakhirnya ke kerajaan, dan Monimia menyatakan keinginan untuk mengetahui, khususnya, hasil dari perselisihannya dengan Pangeran Trebasi, yang, ia tahu, telah merebut tahta ayahnya. Karena diminta demikian, ia tidak dapat menolak untuk memuaskan rasa ingin tahu dan keprihatinan mereka. Ia menjelaskan kewajibannya kepada orang Yahudi yang dermawan itu; menceritakan langkah-langkah yang telah diambilnya di Wina untuk mendapatkan kembali warisannya; memberi tahu mereka tentang pertemuannya yang bahagia dengan ayah mertuanya; tentang pembebasan dan pernikahan saudara perempuannya; tentang bahaya yang mengancam nyawanya karena berita kematian Monimia; dan, terakhir, tentang petualangannya dengan para bandit, untuk membela seorang pria yang, kemudian ia pahami, telah dirampok dengan cara yang paling keji dan biadab oleh Fathom. Ia juga, yang membuat semua yang hadir, dan terutama kekasihnya, terkejut, menyampaikan beberapa hal, yang akan terungkap pada waktunya. Tubuh Monimia yang lembut dan lelah karena adegan yang telah ia mainkan, serta pikirannya yang dipenuhi kabar gembira setelah bergabung dalam ucapan selamat atas keberuntungan Renaldo, meminta izin untuk beristirahat agar dapat memulihkan semangatnya yang lelah; dan karena malam telah berlalu cukup larut, ia diantar oleh kekasihnya ke kereta Nyonya Clement yang telah menunggu, di mana rombongan lainnya juga naik, dan mereka dibawa ke rumah wanita baik itu, di mana, setelah mereka diundang makan malam, dan Melvil diminta untuk membawa Don Diego dan orang Yahudi itu bersama mereka, mereka berpamitan satu sama lain, dan kembali ke penginapan masing-masing dengan perasaan gembira dan puas. Adapun Renaldo, kegembiraannya masih bercampur dengan kekhawatiran, bahwa semua yang telah dilihat dan didengarnya hanyalah khayalan belaka, yang ditimbulkan oleh semacam delusi riang dari imajinasi yang kacau. Sementara dadanya mengalami emosi yang hebat namun membahagiakan berupa kegembiraan dan kekaguman, temannya dari Kastilia itu menghabiskan malam dengan merenungkan malapetakanya sendiri, dan dalam peninjauan serius dan keras terhadap perilakunya sendiri. Dia membandingkan perilakunya sendiri dengan perilaku pemuda Hungaria itu, dan mendapati dirinya begitu ringan dalam skala tersebut, sehingga dia memukul dadanya dengan keras, berseru dengan penuh penyesalan: “Pangeran Melvil punya alasan untuk berduka; Don Diego untuk putus asa. Kemalangannya berasal dari kejahatan umat manusia; kemalanganku adalah buah dari kegilaanku sendiri. Ia meratapi kehilangan seorang kekasih, yang menjadi korban tipu daya seorang pengkhianat licik. Ia cantik, berbudi luhur, terampil, dan penuh kasih sayang; ia dipenuhi dengan kepekaan dan cinta. Tak diragukan lagi hatinya pasti sangat menderita; perilakunya menunjukkan betapa pedihnya kesedihannya; matanya selalu berlinang air mata; dadanya dipenuhi desahan; ia telah menempuh lima ratus liga dalam ziarah ke makamnya; setiap malam ia mengunjungi ruang bawah tanah yang suram tempat ia sekarang beristirahat; makamnya yang sunyi adalah tempat tidurnya; ia berbicara dengan kegelapan dan orang mati, sampai setiap lorong yang sepi menggemakan kesedihannya. Apa penebusannya, seandainya ia berada dalam situasi sepertiku! seandainya ia sadar telah membunuh seorang istri tercinta dan putri kesayangannya! Ah, celaka!—ah, pembunuhan kejam!—apa yang telah terjadi pada mereka Para korban terkasih, apa yang pantas mereka terima atas nasib seperti itu? Bukankah mereka selalu lembut dan patuh, selalu bertujuan untuk memberimu kepuasan dan kesenangan? Katakanlah, Serafina jatuh cinta pada seorang petani; katakanlah, dia telah merosot dari kehormatan rasnya. Kecenderungan itu tidak disengaja; mungkin orang asing itu setara dengannya dalam silsilah dan nilai. Seandainya mereka ditanyai dengan adil, mereka mungkin dapat membenarkan, setidaknya memaafkan, perilaku yang tampak begitu kriminal; atau seandainya mereka mengakui kesalahan itu, dan memohon pengampunan—Oh, monster biadab aku ini! Apakah semua suami—apakah semua ayah telah padam di hatiku? Bagaimana kesalahanku sendiri akan diampuni, jika aku menolak untuk memaafkan kelemahan darahku sendiri—mereka yang paling kusayangi? Namun alam memohon dengan kuat untuk mereka!—Hatiku meledak saat aku mengirim mereka ke alam kematian. Aku gila karena dendam! Aku dipandu oleh prinsip biadab yang secara keliru kita sebut kehormatan. “Hantu terkutuk! yang menyandang gelar palsu, dan menyesatkan bangsa kita yang malang! Apakah terhormat untuk bersembunyi seperti seorang pembunuh, dan menusukkan belati rahasia ke jantung seseorang yang malang, yang telah menimbulkan kecemburuan atau kecurigaanku yang tak berdasar, tanpa memberinya kesempatan yang dinikmati oleh penjahat terburuk sekalipun? Atau apakah terhormat untuk meracuni dua wanita yang tak berdaya, seorang istri yang penyayang, seorang putri yang baik hati, yang bahkan hanya dengan cemberut pun hampir akan hancur?—Oh! ini adalah pengecut, kebrutalan, amarah dan balas dendam yang lahir dari neraka! Surga tidak memiliki belas kasihan untuk mengampuni kesalahan yang begitu mengerikan. Siapa yang memberimu kekuasaan, bajingan bejat! atas nyawa orang-orang yang telah Tuhan tempatkan sebagai rekan percobaanmu;—atas orang-orang yang telah Dia kirim untuk menghibur dan membantumu; untuk meringankan semua kekhawatiranmu, dan melancarkan jalan hidup yang kasar dan tidak rata? Oh! aku ditakdirkan untuk terus-menerus merasa ngeri dan menyesal! Jika penderitaan dapat menebus kesalahan yang begitu besar, aku telah merasakannya dalam Sangat ekstrem. Seperti burung nasar abadi, ia memangsa hatiku;—kesedihan telah kuikat; aku memeluk pasangan yang berlimpah itu ke jiwaku;—tidak akan pernah, ah! tidak akan pernah kita berpisah; karena segera setelah namaku bersinar tanpa dibayangi tuduhan pengkhianatan yang kini menggantung di atasnya, aku akan mengabdikan diriku pada pertobatan dan kesengsaraan. Trotoar yang dingin dan lembap akan menjadi tempat tidurku; pakaianku akan berupa kain karung; ladang akan menyediakan rerumputan untuk makananku; sungai akan memuaskan dahagaku; menit-menit akan dihitung oleh rintihanku; malam akan menjadi saksi ratapan kesedihanku, sampai Surga, karena kasihan pada penderitaanku, membebaskanku dari pertobatan yang kutanggung. Mungkin para santo yang telah kubunuh akan memohonkan pengampunanku.” Begitulah ratapan duka yang dialami oleh orang Kastilia yang malang itu sepanjang malam; ia belum sempat beristirahat ketika Renaldo memasuki kamarnya, memperlihatkan kilatan kegilaan dan kegembiraan di wajahnya yang membuatnya takjub; karena, sampai saat itu, ia belum pernah melihat wajahnya tanpa kesedihan. “Maafkan gangguan mendadak ini, temanku,” seru Melvil, “Aku tak bisa lagi menahan diri untuk tidak menceritakan kepadamu tentang perubahan besar dan tak terduga yang malam ini telah menghilangkan semua kesedihanku dan mengembalikanku pada kebahagiaan yang tak terkatakan. Monimia hidup!—Monimia yang cantik, lembut, dan berbudi luhur hidup, dan tersenyum pada sumpahku! Malam ini aku menyelamatkannya dari kubur. Aku memeluknya; aku menempelkan bibirnya yang hangat dan lezat ke bibirku! Oh, aku pusing karena kenikmatan yang tak tertahankan!” Don Diego bingung dengan pernyataan ini, yang dianggapnya sebagai akibat dari gangguan otak. Dia tidak pernah ragu bahwa kesedihan Renaldo akhirnya telah mengalahkan akal sehatnya, dan bahwa kata-katanya hanyalah akibat dari kegilaan semata. Sembari merenungkan hal yang menyedihkan ini, Sang Pangeran menenangkan raut wajahnya, dan, dengan detail yang ringkas dan saling terkait, menjelaskan seluruh misteri kebahagiaannya, yang membuat orang Spanyol itu takjub tak terlukiskan, yang meneteskan air mata kepuasan, dan mendekap orang Hongaria itu ke dadanya, “Oh anakku,” katanya, “kau lihatlah ganjaran apa yang Surga siapkan bagi mereka yang menempuh jalan kebajikan sejati; jalan-jalan yang darinya aku sendiri telah tersesat secara fatal oleh uap yang tidak setia, yang telah menggoda langkahku, dan meninggalkanku dalam kegelapan jurang kesengsaraan. Wanita cantik yang kau gambarkan ini, dulunya adalah Serafina-ku, kaya akan setiap keanggunan pikiran dan tubuh yang dapat diberikan alam. Seandainya Surga berkenan memberkatinya dengan kekasih seperti Renaldo! tetapi tidak lagi, panah yang tak dapat ditarik kembali telah melesat. Aku tidak akan menodai kenikmatanmu dengan desahanku yang sia-sia!” Melvil meyakinkan ayah yang berduka ini, bahwa tidak ada kesenangan atau hobi yang akan begitu menyita pikirannya, sehingga ia tidak akan pernah menemukan waktu untuk bersimpati dan bersahabat. Ia menyampaikan undangan Nyonya Clement, dan bersikeras agar ia memenuhi undangan tersebut, agar ia memiliki kesempatan untuk melihat dan menyetujui objek hasratnya. “Saya tidak dapat menolak permintaan Count de Melvil,” jawab orang Spanyol itu, “dan akan tidak berterima kasih jika saya menolak kehormatan yang Anda usulkan. Saya akui saya diliputi keinginan untuk melihat seorang wanita muda, yang kesempurnaannya telah saya lihat tercermin dalam kesedihan Anda; rasa ingin tahu saya juga tertarik karena wanita lembut yang humanis itu, yang kemurahan hatinya yang luar biasa melindungi kebajikan seperti itu dalam kesusahan; tetapi watak saya menular, dan saya khawatir, akan mengganggu kemeriahan umum teman-teman Anda.” Melvil tidak mau menerima penolakan, dan setelah mendapatkan persetujuannya, ia pergi ke rumah Joshua, yang wajahnya tampak perlahan-lahan berubah menjadi ekspresi sukacita dan kejutan yang luar biasa, saat ia mengetahui keadaan peristiwa yang menakjubkan ini. Ia dengan setia berjanji untuk menemui Count pada waktu yang telah ditentukan, dan, sementara itu, dengan sungguh-sungguh mendesaknya untuk beristirahat, agar menenangkan kegelisahan hatinya, yang pasti sangat bergejolak pada kesempatan ini. Saran itu bermanfaat, dan Renaldo memutuskan untuk mengikutinya. Ia kembali ke penginapannya dan berbaring; tetapi, meskipun lelah, tidur tak kunjung datang, seluruh pikirannya terus bergerak karena ide-ide yang begitu cepat memenuhi imajinasinya. Meskipun demikian, meskipun pikirannya terus bergejolak, tubuhnya terasa segar, dan ia bangun di pagi hari dengan lebih tenang dan bersemangat daripada yang ia rasakan selama berbulan-bulan. Setiap saat hatinya berdebar dengan kegembiraan baru, ketika ia merasa berada di ambang memiliki semua yang disayangi dan dicintai jiwanya; ia mengenakan penampilan dan pakaiannya yang paling ceria; bersikeras agar orang Kastilia melakukan hal yang sama untuk acara tersebut; dan perubahan pakaian tersebut menghasilkan perubahan yang begitu menguntungkan pada penampilan Don Diego, sehingga ketika Joshua tiba pada waktu yang ditentukan, ia hampir tidak dapat mengenali wajahnya, dan memujinya dengan sangat sopan atas peningkatan penampilannya. Memang benar, orang Spanyol itu adalah sosok dengan penampilan yang sangat menarik dan tingkah laku yang mulia; dan seandainya kesedihan tidak menambah keseriusan alaminya, sehingga sedikit mengganggu simetri wajahnya, ia akan tampak seperti pria dengan wajah yang sangat ramah dan menawan. Mereka berangkat dengan kereta orang Yahudi menuju rumah Nyonya Clement, dan diantar ke sebuah ruangan, di mana mereka menemukan pendeta dan dokter bersama wanita itu, yang diperkenalkan oleh Melvil kepada Don Diego dan orang Yahudi tersebut. Sebelum mereka duduk, Renaldo menanyakan kesehatan Monimia, dan diarahkan ke ruangan sebelah oleh Nyonya Clement, yang mengizinkannya pergi ke sana dan mengantarnya ke tempat duduk mereka. Ia segera memanfaatkan izin ini. Ia menghilang dalam sekejap, dan selama ketidakhadirannya yang singkat, Don Diego merasa sangat gelisah. Pipinya memerah bergantian; uap dingin seolah menggigil di sarafnya; dan dadanya terasa berdebar kencang. Nyonya Clement memperhatikan kegelisahannya, dan dengan ramah menanyakan penyebabnya; lalu ia menjawab, “Saya sangat tertarik dengan apa yang menyangkut Pangeran de Melvil, dan imajinasi saya begitu terpesona dengan kesempurnaan Monimia, sehingga saya, seolah-olah, tersiksa karena harapan; namun rasa ingin tahu saya sebelumnya tidak pernah menimbulkan gejolak seperti yang sekarang mengguncang dada saya.” Belum selesai ia mengucapkan kata-kata itu, pintu terbuka kembali dan Renaldo membawa masuk sosok yang anggun dan cantik itu, yang saat melihatnya, wajah orang Israel itu berubah menjadi tatapan kagum. Tetapi jika kekaguman Joshua begitu besar, bagaimana perasaan orang Kastilia itu, ketika, pada gadis yatim piatu yang cantik itu, ia melihat ciri-ciri Serafina yang telah lama hilang! Perasaannya tak terlukiskan. Orang tua yang penuh kasih sayang, yang bahkan kasih sayangnya sampai terasa menyakitkan, tidak merasakan separuh pun kebahagiaan seperti itu ketika ia secara tak terduga menyelamatkan anak kesayangannya dari gelombang yang menelan atau kobaran api yang melahap. Harapan Zelos telah padam sepenuhnya. Hatinya terus-menerus terkoyak oleh kesedihan dan penyesalan, mencelanya sebagai pembunuh Serafina. Oleh karena itu, ia merasakan kebahagiaan tambahan sebagai seorang ayah yang terbebas dari rasa bersalah atas pembunuhan yang begitu mengerikan. Sarafnya terlalu terguncang oleh pengakuan mendadak ini, sehingga ia tidak mampu menunjukkan perasaan jiwanya dengan tanda-tanda lahiriah. Ia tidak tersentak, juga tidak mengangkat tangan sebagai tanda terkejut; ia tidak bergerak dari tempat ia berdiri; tetapi, menatap tajam ke arah sosok cantik itu, ia tetap tak bergerak, sampai wanita itu, mendekat bersama kekasihnya, jatuh di kakinya, dan sambil memegang lututnya, berseru, "Bolehkah aku memanggilmu ayah?" Guncangan hebat ini membangkitkan kesadarannya; keringat dingin membasahi dahinya; lututnya mulai gemetar; ia jatuh ke lantai, dan memeluknya erat-erat, berseru, “Oh alam! Oh Serafina! Takdir yang Maha Pengasih! Jalan-Mu tak terduga.” Sambil berkata demikian, ia memeluk lehernya dan menangis tersedu-sedu. Air mata sukacita mengalir di dadanya yang seputih salju, yang bergetar karena kegembiraan yang tak terungkapkan. Mata Renaldo pun berlinang air mata. Pipi Nyonya Clement pun tak kering dalam keadaan ini; ia berlutut di samping Serafina, menciumnya dengan penuh kasih sayang seorang ibu, dan dengan tangan terangkat memuja Kekuatan yang telah menetapkan peristiwa yang diberkati ini. Pendeta dan dokter itu turut merasakan kegembiraan yang sama; Adapun Yosua, tetesan kebaikan sejati mengalir dari matanya, seperti minyak di janggut Harun, sementara ia melompat-lompat di sekitar ruangan dalam ekstasi yang canggung, dan dengan suara yang menyerupai suara serak suku bertelinga panjang, berseru, “Wahai bapa Abraham! Adegan yang begitu mengharukan belum pernah terjadi sejak Yusuf menyatakan dirinya kepada saudara-saudaranya di Mesir.” Don Diego, setelah menemukan kata-kata untuk meluapkan perasaannya, melanjutkan dengan nada seperti ini: “Oh, anakku sayang! Menemukanmu kembali seperti ini, setelah perpisahan kita yang terakhir yang menyedihkan, sungguh menakjubkan! Ajaib! Terpujilah hati nuraniku yang maha baik. Bukankah aku adalah pembunuh keji yang mengorbankan istri dan putriku untuk motif jahat, yang disebut kehormatan secara keliru? Meskipun aku semakin terlibat dalam sebuah misteri, yang sangat ingin kudengar penjelasannya.” “Itulah tugasku,” seru Renaldo, “tetapi pertama-tama izinkan aku memohon restumu atas hasratku pada Serafina yang tak tertandingi. Kau sudah tahu perasaan kami berdua; dan meskipun aku mengakui bahwa memiliki sosok yang begitu berharga dan cantik akan menjadi imbalan yang jauh melampaui jasa yang dapat kupertanggungjawabkan, namun, karena aku beruntung dapat membangkitkan gairah yang sama dengannya, aku berharap dapat menuai dari kemurahan hatimu di sini, apa yang tidak dapat kuharapkan dari jasaku sendiri; dan kami hadir, dengan harapan akan persetujuan dan berkat ayahmu.” “Seandainya dia lebih cantik, baik, dan lembut daripada sekarang,” jawab orang Kastilia itu, “dan menurut pengamatan saya yang bias, tidak ada seorang pun yang pernah tampak lebih cantik dan menarik di bumi ini, saya akan menyetujui hakmu atas hatinya, dan merekomendasikanmu kepada senyumannya, dengan semua pengaruh dan kekuatan seorang ayah. Ya, putriku! Kegembiraanku pada kesempatan ini bertambah tak terhingga dengan mengetahui ikatan kasih sayang yang lembut yang mengikatmu dengan pemuda yang menyenangkan ini; seorang pemuda yang keberanian dan kemurahan hatinya yang luar biasa telah memberiku hidup dan penghidupan, bersama dengan kegembiraan yang tak terungkapkan yang kini memenuhi dadaku. Nikmatilah, anak-anakku, buah bahagia dari kasih sayang timbal balik kalian. Semoga Surga, yang dengan murah hati telah membimbing kalian melalui labirin kebingungan dan kesedihan, menuju pemandangan hari-hari bahagia yang menakjubkan ini, memanjakan kalian dengan aliran kebahagiaan murni yang tak terputus, yang merupakan harapan, dan seharusnya menjadi anugerah kebajikan, seperti milik kalian!” Setelah berkata demikian, ia menggenggam tangan mereka dan memeluk mereka dengan penuh kasih sayang dan kepuasan, yang menyebar ke setiap orang yang hadir, yang dengan sungguh-sungguh memohon kepada Kekuatan Yang Mahakuasa untuk pasangan yang sedang dimabuk cinta ini. Setelah gejolak emosi itu sedikit mereda, dan orang Kastilia itu duduk di antara Renaldo dan pengantinnya yang cantik, ia dengan sopan meminta izin kepada Nyonya Clement, memohon agar ia diizinkan untuk menuntut pemenuhan janji Sang Pangeran, agar ia dapat segera mengetahui keadaan nasibnya sendiri yang sangat ingin ia ketahui. Setelah wanita itu meyakinkannya bahwa dia dan seluruh rombongan akan senang mendengar rangkuman tersebut, orang Spanyol itu, berbicara kepada Melvil, “Demi Tuhan!” katanya, “bagaimana mungkin kau menggantikan saingan itu, yang menjadi korban kebencianku, setelah ia memikat hati Serafina? Karena, tentu saja, kasih sayang yang ia sebarkan di dadanya pasti telah lama bertahan setelah kematiannya.” “Saingan itu,” jawab Count, “yang menimbulkan ketidakpuasanmu, tidak lain adalah Renaldo.” Dengan kata-kata ini, ia memasang penutup mata sutra hitam yang disediakan untuk tujuan itu di salah satu matanya, dan menoleh ke arah Don Diego, pria itu tersentak keheranan, berseru, “Ya Tuhan! Wajah Orlando yang kubunuh! Ini lebih menakjubkan lagi!”</p>
 

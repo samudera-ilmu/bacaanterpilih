@@ -5,39 +5,176 @@
 <title>BAGAIMANA UNTA MENDAPATKAN PUNUKNYA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAGAIMANA UNTA MENDAPATKAN PUNUKNYA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAGAIMANA UNTA MENDAPATKAN PUNUKNYA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Nah, ini dia kisah selanjutnya, dan menceritakan bagaimana unta itu mendapatkan punuknya yang besar. Pada awal zaman, ketika dunia masih begitu baru dan segala isinya, dan Hewan-hewan baru mulai bekerja untuk Manusia, hiduplah seekor Unta, dan ia tinggal di tengah Gurun yang Meraung karena ia tidak mau bekerja; dan lagipula, ia sendiri adalah seorang yang suka melolong. Jadi ia memakan ranting, duri, pohon tamaris, rumput liar, dan tanaman berduri, sangat malas dan tidak berguna; dan ketika ada yang berbicara kepadanya, ia hanya berkata 'Humph!' Hanya 'Humph!' dan tidak lebih. Kemudian pada Senin pagi, Kuda itu mendatanginya, dengan pelana di punggungnya dan kekang di mulutnya, dan berkata, 'Unta, oh Unta, keluarlah dan berlari kecil seperti kami yang lain.' 'Hmph!' kata Unta; lalu Kuda pergi dan menceritakan hal itu kepada Manusia. Tak lama kemudian, anjing itu datang kepadanya dengan sebatang tongkat di mulutnya, dan berkata, 'Unta, oh Unta, ayo ambil dan bawa barang seperti kami.' 'Hmph!' kata Unta; lalu Anjing itu pergi dan menceritakan hal itu kepada Manusia. Lalu lembu itu datang kepadanya, dengan kuk di lehernya dan berkata, 'Unta, oh Unta, kemarilah dan bajaklah seperti kami yang lain.' 'Hmph!' kata Unta; lalu Sapi jantan pergi dan menceritakan hal itu kepada Manusia. Di penghujung hari, Pria itu memanggil Kuda, Anjing, dan Sapi bersama-sama, dan berkata, 'Tiga, oh Tiga, aku sangat kasihan pada kalian (dengan dunia yang begitu baru); tetapi makhluk berbadan besar di Gurun itu tidak bisa bekerja, atau dia pasti sudah berada di sini sekarang, jadi aku akan membiarkannya saja, dan kalian harus bekerja dua kali lipat untuk menggantinya.' Hal itu membuat Ketiganya sangat marah (dengan dunia yang begitu baru), dan mereka mengadakan pertemuan, dan perundingan , dan pertemuan besar di tepi Gurun; dan Unta datang sambil mengunyah rumput susu dengan sangat malas, dan menertawakan mereka. Kemudian ia berkata 'Hmph!' dan pergi lagi. Tak lama kemudian, datanglah Jin yang bertanggung jawab atas seluruh gurun, berguling-guling dalam kepulan debu (Jin selalu bepergian seperti itu karena itu adalah sihir), dan dia berhenti untuk berbincang dan berdiskusi dengan Ketiganya. 'Jin Penguasa Segala Gurun,' kata Kuda itu, 'apakah pantas bagi siapa pun untuk bermalas-malasan, padahal dunia ini masih baru dan penuh dengan hal-hal baru?' 'Tentu tidak,' kata Jin itu. 'Nah,' kata Kuda itu, 'ada makhluk di tengah Gurun Melolongmu (dan dia sendiri juga seorang Melolong) dengan leher panjang dan kaki panjang, dan dia belum melakukan pekerjaan apa pun sejak Senin pagi. Dia tidak mau berlari kecil.' 'Wah!' kata Jin itu sambil bersiul, 'itulah Unta-ku, demi semua emas di Arabia! Apa katanya tentang itu?' "Dia bilang 'Hmph!'" kata Anjing itu; "dan dia tidak mau mengambil dan membawa barang." 'Apakah dia mengatakan hal lain?' 'Hanya "Hmph!"; dan dia tidak mau membajak,' kata Sapi Jantan itu. 'Bagus sekali,' kata Jin itu. 'Aku akan menghajarnya jika kau mau menunggu sebentar.' Jin itu menggulung dirinya dalam jubah debunya, dan mengambil arah melintasi gurun, dan menemukan Unta itu sangat malas, menatap bayangannya sendiri di genangan air. 'Sahabatku yang panjang dan bersemangat,' kata Jin itu, 'apa yang kudengar tentangmu yang tidak bekerja, padahal dunia ini masih baru?' 'Hmph!' kata Unta. Jin itu duduk, dengan dagunya di tangannya, dan mulai memikirkan Sihir Agung, sementara Unta itu memandang bayangannya sendiri di genangan air. 'Kau telah memberi Ketiganya pekerjaan tambahan sejak Senin pagi, semua itu karena 'kemalasanmu yang menyiksa',' kata Jin itu; dan dia terus memikirkan Sihir, sambil menopang dagunya dengan tangan. 'Hmph!' kata Unta. 'Sebaiknya aku jangan mengulanginya lagi kalau aku jadi kau,' kata Jin itu; 'kau mungkin akan mengulanginya terlalu sering. Bubbles, aku ingin kau bekerja.' Dan unta itu berkata 'Humph!' lagi; tetapi begitu ia mengucapkannya, ia melihat punggungnya, yang sangat dibanggakannya, menggembung dan menggembung menjadi dengusan besar yang menggelegar. 'Kau lihat itu?' kata Jin itu. 'Itu adalah akibat dari kemalasanmu sendiri karena tidak bekerja. Hari ini Kamis, dan kau belum bekerja sejak Senin, saat pekerjaan dimulai. Sekarang kau harus bekerja.' 'Bagaimana mungkin,' kata Unta, 'dengan punuk di punggungku ini?' 'Itu semua ada tujuannya,' kata Jin itu, 'semua karena kau melewatkan tiga hari itu. Sekarang kau bisa bekerja selama tiga hari tanpa makan, karena kau bisa hidup dengan bungkukmu; dan jangan pernah bilang aku tidak pernah berbuat apa pun untukmu. Keluarlah dari Gurun dan pergilah ke Tiga, dan bersikaplah baik. Bangkitkan dirimu!' Dan Unta itu mendengus, lengkap dengan dengusannya, lalu pergi bergabung dengan Ketiganya. Dan sejak hari itu hingga sekarang, Unta selalu membentak (sekarang kita menyebutnya 'punuk', agar tidak menyakiti perasaannya); tetapi ia belum pernah mengejar ketinggalan tiga hari yang terlewatkan di awal dunia, dan ia belum pernah belajar bagaimana berperilaku.</p>
 <p>Punuk unta adalah benjolan jelek yang mungkin bisa Anda lihat di kebun binatang; tetapi lebih jelek lagi adalah punuk yang kita dapatkan karena terlalu sedikit aktivitas.</p>

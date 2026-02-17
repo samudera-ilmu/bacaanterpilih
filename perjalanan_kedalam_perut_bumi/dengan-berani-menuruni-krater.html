@@ -5,39 +5,176 @@
 <title>DENGAN BERANI MENURUNI KRATER</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="DENGAN BERANI MENURUNI KRATER - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>DENGAN BERANI MENURUNI KRATER</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Makan malam dilahap dengan cepat, dan rombongan kecil itu beristirahat seadanya. Ranjangnya keras, tempat berlindungnya tidak terlalu kokoh, dan posisi kami cukup mengkhawatirkan, berada lima ribu kaki di atas permukaan laut. Namun saya tidur sangat nyenyak; itu adalah salah satu malam terbaik yang pernah saya alami, dan saya bahkan tidak bermimpi. Pagi berikutnya kami terbangun setengah membeku karena udara yang sangat dingin, tetapi dengan cahaya matahari yang indah. Aku bangkit dari tempat tidurku yang terbuat dari batu granit dan keluar untuk menikmati pemandangan menakjubkan yang terbentang di hadapanku. Aku berdiri di puncak paling selatan dari pegunungan Snæfell. Jangkauan pandangan mata meliputi seluruh pulau. Berdasarkan hukum optik yang berlaku di semua ketinggian, tepian tampak terangkat dan pusatnya cekung. Seolah-olah salah satu peta timbul Helbesmer terbentang di kakiku. Aku bisa melihat lembah-lembah dalam yang saling berpotongan ke segala arah, tebing-tebing curam seperti dinding rendah, danau-danau yang menyusut menjadi kolam, sungai-sungai yang menyempit menjadi aliran kecil. Di sebelah kananku terdapat gletser yang tak terhitung jumlahnya dan puncak-puncak yang tak terhitung banyaknya, beberapa diselimuti awan asap yang lembut. Permukaan bergelombang dari pegunungan yang tak berujung ini, yang puncaknya tertutup lapisan salju, mengingatkan kita pada laut yang berbadai. Jika aku melihat ke arah barat, di sana terbentang lautan dalam segala kemegahannya, seperti kelanjutan dari puncak-puncak yang berkelompok itu. Mata hampir tidak bisa membedakan di mana punggung bukit bersalju berakhir dan gelombang berbusa dimulai. Aku pun terhanyut dalam ekstasi luar biasa yang ditimbulkan oleh semua puncak tinggi dalam pikiran; dan kini tanpa rasa pusing, karena aku mulai terbiasa dengan aspek-aspek luhur alam ini. Mataku yang silau dimandikan oleh pancaran sinar matahari yang terang. Aku lupa di mana dan siapa aku, untuk menjalani kehidupan peri dan silf, ciptaan khayalan dari takhayul Skandinavia. Aku merasa mabuk dengan kenikmatan luhur dari ketinggian tanpa memikirkan jurang dalam yang akan segera menceburkanku. Tetapi aku tersadar kembali pada kenyataan oleh kedatangan Hans dan Profesor, yang bergabung denganku di puncak. Pamanku menunjukiku di ujung barat sebuah uap tipis atau kabut, yang menyerupai daratan, yang membatasi cakrawala perairan di kejauhan. "Greenland!" katanya. "Greenland?" seruku. "Ya; kita hanya berjarak tiga puluh lima liga dari sana; dan selama pencairan es, beruang putih, yang terbawa oleh ladang es dari utara, bahkan sampai ke Islandia. Tapi abaikan saja itu. Di sinilah kita berada di puncak Snæfell dan di sini ada dua puncak, satu di utara dan satu di selatan. Hans akan memberi tahu kita nama puncak tempat kita berdiri sekarang." Menanggapi pertanyaan tersebut, Hans menjawab: "Scartaris." Pamanku melirikku dengan penuh kemenangan. "Sekarang kita ke kawahnya!" serunya. Kawah Snæfell menyerupai kerucut terbalik, dengan lubangnya berdiameter sekitar setengah liga. Kedalamannya tampak sekitar dua ribu kaki. Bayangkan penampakan waduk seperti itu, penuh dan meluap dengan api cair di tengah gemuruh guntur. Bagian bawah corong itu berdiameter sekitar 250 kaki, sehingga lereng yang landai memungkinkan bagian bawahnya dapat dicapai tanpa banyak kesulitan. Tanpa sadar saya membandingkan seluruh kawah itu dengan sebuah mortir besar yang berdiri tegak, dan perbandingan itu membuat saya sangat ketakutan. "Sungguh gila," pikirku, "untuk turun ke dalam mortir, mungkin mortir yang sudah terisi peluru, lalu ditembakkan ke udara dalam sekejap!" Namun aku tidak mencoba untuk mundur. Hans dengan tenang kembali memimpin, dan aku mengikutinya tanpa berkata apa-apa. Untuk mempermudah penurunan, Hans menuruni kerucut gunung berapi itu melalui jalur spiral. Rute kami berada di tengah-tengah bebatuan erupsi, beberapa di antaranya, yang terlepas dari dasarnya, meluncur deras menuruni jurang, dan dalam jatuhnya menimbulkan gema yang luar biasa karena keras dan tajamnya suara yang dihasilkan. Di beberapa bagian kerucut terdapat gletser. Di sini Hans maju dengan sangat hati-hati, meraba-raba jalannya dengan tongkat berujung besi, untuk menemukan celah-celah di dalamnya. Di bagian yang sangat berbahaya, kami terpaksa saling mengikatkan diri dengan tali panjang, agar siapa pun yang kehilangan pijakan dapat ditopang oleh rekan-rekannya. Formasi yang kokoh ini bijaksana, tetapi tidak menghilangkan semua bahaya. Namun, terlepas dari kesulitan menuruni lereng curam yang tidak dikenal oleh pemandu, perjalanan tersebut berhasil diselesaikan tanpa kecelakaan, kecuali hilangnya seutas tali yang terlepas dari tangan seorang warga Islandia dan mengambil jalan terpendek menuju dasar jurang. Saat tengah hari kami tiba. Aku mengangkat kepala dan melihat tepat di atasku celah atas kerucut gunung berapi, membingkai sedikit langit dengan keliling yang sangat kecil, tetapi hampir bulat sempurna. Tepat di tepinya tampak puncak Saris yang bersalju, berdiri tegak dan jelas di tengah ruang angkasa yang tak berujung. Di dasar kawah terdapat tiga cerobong, yang melaluinya, dalam letusannya, Snæfell telah mengeluarkan api dan lava dari tungku pusatnya. Masing-masing cerobong ini berdiameter seratus kaki. Cerobong-cerobong itu menganga di depan kami tepat di jalur kami. Saya tidak berani melihat ke bawah salah satu dari mereka. Tetapi Profesor Liedenbrock dengan tergesa-gesa mengamati ketiga cerobong itu; dia terengah-engah, berlari dari satu ke yang lain, memberi isyarat, dan mengucapkan ungkapan-ungkapan yang tidak jelas. Hans dan rekan-rekannya, yang duduk di atas bebatuan lava yang lepas, memandanginya dengan rasa heran yang tak terhingga, dan mungkin mengira dia adalah orang gila yang melarikan diri. Tiba-tiba pamanku berteriak. Kupikir kakinya pasti terpeleset dan dia jatuh ke salah satu lubang. Tapi, tidak; aku melihatnya, dengan tangan terentang dan kaki terentang lebar, berdiri tegak di depan sebuah batu granit yang berada di tengah kawah, persis seperti alas yang siap menerima patung Pluto. Dia berdiri seperti orang yang tercengang, tetapi keterkejutannya segera berganti menjadi kegembiraan yang luar biasa. "Axel, Axel," teriaknya. "Kemarilah, kemarilah!" Aku berlari. Hans dan orang-orang Islandia itu tidak bergerak sedikit pun. "Lihat!" teriak Profesor. Dan, ikut merasakan keheranannya, tetapi kurasa bukan kegembiraannya, aku membaca di sisi barat balok itu, dalam aksara Rune, yang setengah lapuk dimakan waktu, nama terkutuk tiga kali ini: [Pada titik ini muncul teks Rune] "Arne Saknussemm!" jawab pamanku. "Apakah kau masih ragu?" Aku tak menjawab; dan aku kembali dalam diam ke tempat dudukku di atas lava dalam keadaan kebingungan yang tak terkatakan. Inilah bukti yang sangat kuat. Entah berapa lama aku tenggelam dalam renungan yang menyiksa itu, aku tak tahu; yang kutahu hanyalah, ketika mengangkat kepalaku lagi, aku hanya melihat pamanku dan Hans di dasar kawah. Orang-orang Islandia telah dibubarkan, dan mereka sekarang sedang menuruni lereng luar Snæfell untuk kembali ke Stapi. Hans tidur nyenyak di kaki sebuah batu, di hamparan lava, tempat ia menemukan tempat tidur yang nyaman; tetapi pamanku mondar-mandir di dasar kawah seperti binatang buas di dalam sangkar. Aku tidak punya keinginan maupun kekuatan untuk bangun, dan mengikuti contoh pemandu, aku pun tertidur dengan perasaan tidak bahagia, membayangkan aku bisa mendengar suara-suara menakutkan atau merasakan getaran di dalam ceruk gunung itu. Demikianlah malam pertama di kawah itu berlalu. Keesokan paginya, langit kelabu, tebal, dan berawan tampak menyelimuti puncak gunung berapi itu. Awalnya aku tidak tahu hal ini dari penampakan alam, tetapi aku mengetahuinya karena amarah pamanku yang meluap-luap. Aku segera mengetahui penyebabnya, dan harapan kembali muncul di hatiku. Karena alasan ini. Dari tiga jalan yang terbuka di hadapan kita, satu telah dilalui oleh Saknussemm. Petunjuk dari orang Islandia terpelajar yang tersirat dalam kriptogram tersebut, menunjukkan fakta bahwa bayangan Scartaris menyentuh jalan tertentu itu pada akhir bulan Juni. Oleh karena itu, puncak yang tajam itu dapat dianggap sebagai gnomon dari jam matahari raksasa, yang bayangannya pada hari tertentu akan menunjukkan jalan menuju pusat bumi. Sekarang, tidak ada matahari, tidak ada bayangan, dan karena itu tidak ada pemandu. Saat itu tanggal 25 Juni. Jika matahari tertutup awan selama enam hari, kita harus menunda kunjungan kita hingga tahun depan. Kemampuan deskripsi saya yang terbatas akan gagal, jika saya mencoba menggambarkan ketidaksabaran Profesor yang marah. Hari berlalu, dan tidak ada bayangan yang muncul di dasar kawah. Hans tidak bergerak dari tempat yang telah dipilihnya; namun dia pasti bertanya-tanya apa yang sedang kami tunggu, jika dia memang bertanya pada dirinya sendiri sesuatu. Paman saya tidak mengucapkan sepatah kata pun kepada saya. Tatapannya, yang selalu mengarah ke atas, hilang di ruang kelabu dan berkabut di luar sana. Pada tanggal 26 belum ada apa-apa. Hujan bercampur salju turun sepanjang hari. Hans membangun gubuk dari pecahan lava. Aku merasakan kesenangan yang jahat saat menyaksikan ribuan aliran dan air terjun yang mengalir deras dari sisi kerucut, dan deru terus-menerus yang memekakkan telinga yang ditimbulkan oleh setiap batu yang ditabraknya. Kemarahan pamanku tak mengenal batas. Itu cukup untuk membuat orang yang lebih lembut darinya pun jengkel; karena kemarahannya hampir meledak di pelabuhan. Namun Surga tidak pernah mengirimkan kesedihan murni, dan bagi Profesor Liedenbrock ada kepuasan yang sebanding dengan kecemasan putus asa yang dialaminya. Keesokan harinya langit kembali mendung; tetapi pada tanggal 29 Juni, hari kedua terakhir bulan itu, dengan pergantian bulan datanglah perubahan cuaca. Matahari memancarkan cahaya yang melimpah ke kawah. Setiap bukit kecil, setiap batu dan kerikil, setiap permukaan yang menonjol, mendapat bagiannya dari pancaran cahaya yang terang, dan menaungi tanah dengan bayangannya. Di antara semuanya, Scartaris menampakkan bayangannya yang runcing dan bersudut yang mulai bergerak perlahan ke arah yang berlawanan dengan arah bola bercahaya itu. Pamanku juga menoleh, dan mengikutinya. Pada tengah hari, saat intensitasnya paling rendah, hujan turun dan jatuh perlahan di tepi cerobong asap tengah. "Itu dia! Itu dia!" teriak Profesor. "Sekarang kita menuju pusat dunia!" tambahnya dalam bahasa Denmark. Aku menatap Hans, untuk mendengar apa yang akan dia katakan. " Forüt! " jawabnya dengan tenang. "Maju!" jawab pamanku. Saat itu pukul satu lewat tiga belas menit.</p>
 

@@ -5,39 +5,176 @@
 <title>BAB DUA PULUH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB DUA PULUH - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB DUA PULUH</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Dia menyusun strategi tetapi mendapati dirinya digagalkan—melanjutkan perjalanannya, dan diterjang badai dahsyat. Dalam perjalanan ini, Ferdinand, yang tidak pernah kekurangan kemampuan politiknya, mengadakan pertemuan rahasia dengan pikirannya sendiri, tidak hanya mengenai rencana tindakannya di masa depan, tetapi juga mengenai rekannya, yang kesetiaan dan ketaatannya mulai diragukan sehingga membuatnya mengurungkan niat untuk melanjutkan rencana yang awalnya melibatkan orang-orang Tyrol; karena ia baru-baru ini mengamati rekannya mempraktikkan keahliannya di antara para perwira Prancis, dengan keserakahan dan kurangnya kehati-hatian, yang menunjukkan keberanian yang berbahaya, serta nafsu yang besar untuk memperoleh kekayaan, yang suatu saat nanti mungkin akan dilampiaskan pada teman-temannya sendiri. Dengan kata lain, petualang kita takut bahwa rekannya akan memanfaatkan pengetahuannya tentang jalan dan negara-negara yang mereka lalui, dan, setelah mengambil barang-barang berharganya, karena keakraban yang ada di antara mereka, meninggalkannya suatu pagi tanpa upacara perpisahan resmi. Karena curiga, ia memutuskan untuk mengantisipasi niat orang-orang Tyrol dengan pergi secara tiba-tiba; dan rencana ini benar-benar ia laksanakan setibanya di Bar-le-duc, di mana disepakati mereka akan beristirahat dan memulihkan diri dari kelelahan berkuda yang berat selama sehari. Oleh karena itu, Ferdinand, memanfaatkan ketidakhadiran temannya—karena orang-orang Tyrol telah berjalan-jalan untuk melihat kota—menemukan cara untuk menyewa seorang petani, yang berjanji untuk mengantarnya melalui jalan kecil hingga Chalons, dan bersama pemandunya ia berangkat dengan menunggang kuda, setelah melunasi tagihan, meninggalkan selembar kertas kosong yang disegel dalam bentuk surat, ditujukan kepada temannya, dan menyematkan sepasang tas kulit di belakang pelana kudanya, tempat perhiasan dan uang tunainya biasanya disimpan. Saking bersemangatnya sang pahlawan untuk meninggalkan orang-orang Tyrol di kejauhan, ia berkuda sepanjang malam dengan kecepatan konstan tanpa berhenti, dan keesokan paginya mendapati dirinya berada di sebuah desa yang berjarak tiga belas liga dari bagian mana pun dari rute yang awalnya ia dan temannya putuskan untuk tempuh. Di sini, karena mengira dirinya telah terbebas dari penyebab semua kekhawatirannya, ia memutuskan untuk bersembunyi selama beberapa hari, agar tidak berisiko bertemu secara tidak sengaja di jalan dengan orang yang telah ia tinggalkan; dan karenanya ia menyewa sebuah kamar, tempat ia beristirahat, meminta pemandunya untuk membangunkannya ketika makan malam sudah siap. Setelah menikmati tidur yang sangat nyenyak, dengan tas-tasnya di bawah bantal, ia dipanggil, sesuai arahannya, dan makan dengan sangat lahap, dengan ketenangan dan kepuasan batin yang besar. Pada sore hari ia menghibur dirinya dengan pertanda baik dan prospek ideal tentang keberuntungannya di masa depan, dan, di tengah-tengah jamuan makan imajiner ini, ia diliputi keinginan untuk mewujudkan kebahagiaannya, dan memanjakan matanya dengan buah dari kesuksesan yang selama ini menyertai usahanya. Dengan semangat yang membara ini, ia membuka tempat penyimpanan itu, dan, wahai pembaca! Apa yang ada dalam pikirannya, ketika, sebagai pengganti anting-anting dan kalung Nona Melvil, rantai emas milik orang Jerman itu, berbagai perhiasan berharga, rampasan dari berbagai penipuan, dan sekitar dua ratus ducat uang tunai, ia hanya menemukan seikat paku berkarat, yang disusun sedemikian rupa sehingga berat dan ukurannya menyerupai barang-barang bergerak yang telah hilang?</p>
 <p>Tidak dapat diasumsikan bahwa petualang kita membuat penemuan ini tanpa emosi. Jika keselamatan abadi umat manusia dapat dibeli dengan sepersepuluh dari hartanya, ia akan meninggalkan seluruh spesies dalam keadaan tercela, daripada menebusnya dengan harga itu, kecuali jika ia melihat keuntungan nyata bagi kepentingannya sendiri dalam kesepakatan tersebut. Oleh karena itu, orang dapat dengan mudah membayangkan betapa pasrahnya ia menanggung kehilangan segalanya, dan melihat dirinya direduksi dari kemakmuran sedemikian rupa menjadi keharusan untuk bergantung pada sekitar dua puluh ducat, dan beberapa keping perak, yang ia bawa di sakunya, untuk biaya perjalanannya. Betapapun pahitnya pil ini untuk ditelan, ia cukup menguasai rasa malunya sehingga dapat mencernanya dengan lapang dada. Kecermatannya sendiri segera menunjukkan saluran tempat kemalangan ini mengalir kepadanya; Ia segera menyalahkan orang-orang Tyrol atas musibah tersebut, dan tanpa ragu bahwa ia telah melarikan diri dengan rampasan perang menyeberangi Sungai Rhine, ke suatu tempat yang ia tahu Fathom tidak akan mengikutinya, ia membuat keputusan yang menyedihkan untuk segera melanjutkan perjalanannya ke Paris, agar ia dapat, dengan segala kemudahan, mengganti kerugian yang telah dideritanya. Mengenai sekutunya, dugaannya benar-benar tepat; petualang itu, meskipun jauh lebih rendah dari pahlawan kita dalam hal kejeniusan dan daya cipta, jelas memiliki keunggulan dalam hal usia dan pengalaman; dia tidak asing dengan kualifikasi Fathom, yang sering dia saksikan keberhasilannya. Dia tahu Fathom adalah seorang ekonom yang sangat hemat, oleh karena itu dia menyimpulkan bahwa keuangannya layak diperiksa; dan, berdasarkan prinsip-prinsip seorang penipu ulung, dia meringankan beban Fathom, dengan asumsi bahwa dengan melakukan itu, dia hanya mencegah Ferdinand melakukan tragedi yang sama padanya, jika kesempatan itu datang sesuai keinginannya. Oleh karena itu, ia telah merencanakan tindakannya dengan ketangkasan seorang pengacara berpengalaman, dan, memanfaatkan kesempatan itu, sementara sang pahlawan kita, yang kelelahan karena perjalanan, terbaring dalam tidur nyenyak, ia merobek jahitan kotak penyimpanan kulit itu, mengeluarkan isinya, memasukkan bungkusan paku yang telah ia siapkan untuk tujuan tersebut, dan kemudian memperbaiki kerusakan itu dengan sangat hati-hati. Seandainya kejeniusan Fathom mendorongnya untuk memeriksa barang-barangnya keesokan paginya, orang-orang Tyrol, kemungkinan besar, akan mempertahankan harta miliknya dengan kekuatan senjata; karena keberanian pribadinya jauh lebih teguh daripada petualang kita, dan dia menyadari keunggulannya dalam hal ini; tetapi keberuntungannya mencegah penjelasan seperti itu. Segera setelah makan siang, dia memanfaatkan pengetahuannya, dan, pergi ke bagian kota yang terpencil, berangkat dengan kereta pos menuju Luneville, sementara pahlawan kita sedang merencanakan pelariannya sendiri. Pemahaman Fathom cukup untuk memahami keseluruhan petualangan ini, segera setelah kekecewaannya memberi ruang bagi kebijaksanaannya; ia pun tidak membiarkan tekadnya goyah di bawah cobaan itu; sebaliknya, ia meninggalkan desa pada sore itu juga, di bawah bimbingan pemandunya, dan mendapati dirinya tersesat di tengah hutan, jauh dari permukiman manusia. Kegelapan malam, kesunyian dan kesunyian tempat itu, bayangan samar pepohonan yang muncul di setiap sisi, "merentangkan cabang-cabangnya yang luar biasa melintasi kegelapan," bersekongkol, dengan kesedihan jiwa yang disebabkan oleh kehilangannya, untuk mengganggu imajinasinya, dan membangkitkan hantu-hantu aneh dalam benaknya. Meskipun ia tidak secara alami percaya takhayul, pikirannya mulai diliputi kengerian yang mengerikan, yang secara bertahap mengalahkan semua penghiburan akal dan filsafat; hatinya pun tidak terbebas dari ketakutan akan pembunuhan. Untuk menghilangkan lamunan yang tidak menyenangkan ini, ia meminta bantuan pemandu wisatanya, yang menghiburnya dengan kisah berbagai pelancong yang telah dirampok dan dibunuh oleh para penjahat, yang tempat persembunyiannya berada di ceruk hutan itu. Di tengah percakapan ini, yang sama sekali tidak meningkatkan semangat sang pahlawan, konduktor membuat alasan untuk tertinggal, sementara sang pengembara berlari kecil dengan harapan akan segera bergabung kembali dengannya dalam beberapa menit. Namun, harapannya pupus; suara derap kaki kuda lain secara bertahap semakin samar, dan akhirnya menghilang sama sekali. Khawatir dengan keadaan ini, Fathom berhenti di tengah jalan, dan mendengarkan dengan penuh perhatian; tetapi pendengarannya hanya disambut oleh desiran suram pepohonan, yang seolah-olah meramalkan badai yang akan datang. Sesuai dengan itu, langit tampak lebih suram, kilat mulai menyambar, guntur bergemuruh, dan badai, yang meninggikan suaranya menjadi raungan yang dahsyat, turun dalam curah hujan yang deras. Dalam keadaan darurat ini, ketabahan sang pahlawan kita hampir sepenuhnya terkikis. Begitu banyak keadaan berbahaya dan menyedihkan yang terjadi bersamaan dapat membuat hati yang paling tabah sekalipun gentar; kesan apa yang pasti ditimbulkan pada pikiran Ferdinand, yang sama sekali bukan orang yang berani menantang rasa takut! Bahkan, ia hampir kehilangan kemampuan berpikirnya, dan benar-benar ketakutan, sebelum ia dapat mengumpulkan dirinya sendiri untuk meninggalkan jalan dan mencari perlindungan di antara semak-semak yang mengelilinginya. Setelah berkuda beberapa furlong ke dalam hutan, ia mengambil posisi di bawah sekelompok pohon tinggi yang melindunginya dari badai, dan dalam posisi itu ia berunding dalam hatinya untuk mempertimbangkan perjalanan selanjutnya. Ia meyakinkan dirinya sendiri bahwa pemandunya telah meninggalkannya untuk sementara waktu, untuk memberikan informasi tentang seorang pelancong kepada beberapa geng perampok yang terkait dengannya; dan bahwa ia pasti akan menjadi mangsa para bandit itu, kecuali jika ia cukup beruntung untuk menghindari pencarian mereka dan melepaskan diri dari labirin hutan. Diliputi kekhawatiran ini, ia memutuskan untuk menyerahkan dirinya pada belas kasihan badai, sebagai pilihan terburuk di antara dua keburukan, dan menerobos langsung melalui celah yang berkelok-kelok, sampai ia terbebas dari hutan. Untuk tujuan ini, ia membelokkan kepala kudanya ke arah yang berlawanan dengan jalan raya yang telah ditinggalkannya, dengan anggapan bahwa para perampok akan mengikuti jejak itu untuk mencarinya, dan bahwa mereka tidak akan pernah membayangkan ia meninggalkan jalan raya untuk melintasi hutan yang tidak dikenal, di tengah kegelapan malam yang begitu riuh. Setelah melanjutkan perjalanannya melewati serangkaian hutan, rawa, duri, dan semak belukar, yang tidak hanya melukai pakaiannya, tetapi juga kulitnya, sementara setiap sarafnya gemetar karena cemas dan takut, akhirnya ia mencapai dataran terbuka. Melanjutkan perjalanannya, dengan harapan akan sampai di sebuah desa di mana nyawanya akan aman, ia melihat cahaya lampu di kejauhan, yang dianggapnya sebagai bintang keberuntungannya. Ia pun berkuda menuju cahaya itu dengan kecepatan penuh, dan tiba di pintu sebuah pondok terpencil. Seorang wanita tua menyambutnya dengan ramah, dan mengerti bahwa ia adalah seorang pengembara yang kebingungan. Ketika ia mengetahui dari nyonya rumahnya bahwa tidak ada rumah lain dalam radius tiga liga; bahwa ia dapat menyediakan tempat tidur yang layak, dan tempat berteduh serta pakan gandum untuk kudanya, ia bersyukur kepada Tuhan atas keberuntungannya menemukan tempat tinggal sederhana ini, dan memutuskan untuk bermalam di bawah perlindungan wanita tua itu, yang memberitahunya bahwa suaminya, seorang pembuat kayu bakar, telah pergi ke kota terdekat untuk menjual barang dagangannya; dan kemungkinan besar ia tidak akan kembali hingga pagi berikutnya karena malam yang penuh badai. Ferdinand mengajukan seribu pertanyaan licik kepada wanita tua itu, dan ia menjawab dengan begitu jujur dan sederhana sehingga ia menyimpulkan bahwa dirinya aman; dan, setelah disuguhi sepiring telur dan daging asap, ia meminta agar wanita itu mengantarnya ke kamar tempat ia berencana untuk beristirahat. Ia pun diantar naik melalui semacam tangga ke sebuah ruangan yang dilengkapi dengan tempat tidur berdiri, dan hampir setengahnya dipenuhi dengan tumpukan jerami. Ia tampak sangat senang dengan penginapannya, yang sebenarnya melebihi harapannya; dan pemilik penginapan yang baik hati, memperingatkannya agar tidak mendekatkan lilin ke bahan yang mudah terbakar, kemudian berpamitan dan mengunci pintu dari luar.</p>

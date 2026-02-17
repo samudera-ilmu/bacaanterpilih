@@ -5,39 +5,176 @@
 <title>PENCARIAN KEBENARAN GHAZZALI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="PENCARIAN KEBENARAN GHAZZALI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>PENCARIAN KEBENARAN GHAZZALI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“ Dengan nama Tuhan Yang Maha Pengasih. ” Kata sang Imam Ghazzali : Maha Suci Allah, yang pujian-Nya patut didahulukan dalam setiap tulisan dan setiap ucapan! Semoga rahmat Allah tercurah kepada Nabi Muhammad dan Rasul-Nya, kepada keluarga dan para sahabatnya, yang dengan petunjuk-Nya kesalahan dapat dihindari! Wahai saudara seiman, engkau telah memintaku untuk menjelaskan tujuan dan misteri ilmu-ilmu agama, batas-batas dan kedalaman doktrin-doktrin teologis. Engkau ingin mengetahui pengalamanku dalam mengurai kebenaran yang hilang dalam campuran sekte dan perbedaan pemikiran, dan bagaimana aku berani mendaki dari tingkat kepercayaan tradisional yang rendah ke puncak kepastian tertinggi. Engkau ingin mengetahui apa yang telah kupinjam, pertama-tama dari teologi skolastik; dan kedua dari metode Ta'limites , yang dalam mencari kebenaran, bertumpu pada otoritas seorang pemimpin; dan mengapa, ketiga, aku telah terdorong untuk menolak sistem-sistem filosofis; dan akhirnya, apa yang telah kuterima dari doktrin Sufi, dan keseluruhan kebenaran yang telah kukumpulkan dalam mempelajari setiap variasi pendapat. Engkau bertanya kepadaku mengapa, setelah mengundurkan diri dari jabatan mengajar di Bagdad yang menarik banyak pendengar, aku, lama kemudian, menerima jabatan serupa di Nishapur. Karena saya yakin akan ketulusan yang mendorong pertanyaan Anda, saya akan menjawabnya sambil memohon pertolongan dan perlindungan Tuhan. Ketahuilah, saudara-saudaraku (semoga Allah membimbing kalian ke jalan yang benar), bahwa perbedaan keyakinan dan agama, serta beragam doktrin dan sekte yang memecah belah manusia, bagaikan samudra yang dalam yang dipenuhi bangkai kapal, yang hanya sedikit yang selamat. Memang benar, setiap sekte meyakini dirinya memiliki kebenaran dan keselamatan, “setiap kelompok,” sebagaimana Al-Qur'an katakan, “bergembira dengan keyakinannya sendiri”; tetapi sebagaimana yang dikatakan oleh pemimpin para rasul, yang perkataannya selalu benar, “umatku akan terpecah menjadi lebih dari tujuh puluh sekte, yang hanya satu yang akan diselamatkan.” Ramalan ini, seperti semua ramalan Nabi lainnya, pasti akan terpenuhi. Sejak masa remaja, yaitu sebelum mencapai usia dua puluh tahun hingga saat ini ketika saya telah melewati usia lima puluh tahun, saya telah menjelajahi samudra yang luas ini; saya dengan berani telah menjelajahi kedalamannya, dan, seperti penyelam yang teguh, saya telah menembus kegelapannya dan menantang bahaya serta jurangnya. Saya telah menginterogasi kepercayaan setiap sekte dan meneliti misteri setiap doktrin, untuk memisahkan kebenaran dari kesalahan dan ortodoksi dari bid'ah. Saya belum pernah bertemu seseorang yang mempertahankan makna tersembunyi Al-Qur'an tanpa menyelidiki hakikat kepercayaannya, atau pendukung makna lahiriahnya tanpa menyelidiki hasil dari doktrinnya. Tidak ada filsuf yang sistemnya belum saya pahami, atau teolog yang seluk-beluk doktrinnya belum saya ikuti. Sufisme tidak memiliki rahasia yang belum saya selami; penyembah Tuhan yang taat telah mengungkapkan kepada saya tujuan dari laku tapa-nya; seorang ateis tidak mampu menyembunyikan dari saya alasan sebenarnya dari ketidakpercayaannya. Dahaga akan pengetahuan telah melekat dalam diri saya sejak usia dini; itu seperti sifat kedua yang ditanamkan oleh Tuhan, tanpa kehendak dari pihak saya. Begitu saya keluar dari masa kanak-kanak, saya telah mematahkan belenggu tradisi dan membebaskan diri dari kepercayaan turun-temurun. Setelah memperhatikan betapa mudahnya anak-anak Kristen menjadi Kristen, dan anak-anak Muslim memeluk Islam, dan juga mengingat pepatah tradisional yang dinisbahkan kepada Nabi, “Setiap anak memiliki benih Islam di dalam dirinya, kemudian orang tuanya menjadikannya Yahudi, Kristen, atau Zoroaster,” saya tergerak oleh keinginan yang kuat untuk mempelajari apa disposisi bawaan ini dalam diri anak, sifat kepercayaan yang secara kebetulan dipaksakan kepadanya oleh otoritas orang tua dan majikannya, dan akhirnya keyakinan yang tidak beralasan yang ia peroleh dari instruksi mereka. Terpukau oleh kontradiksi yang saya temui dalam upaya untuk memisahkan kebenaran dan kesalahan dari pendapat-pendapat ini, saya terdorong untuk merenungkan hal berikut: “Karena pencarian kebenaran adalah tujuan yang saya tetapkan untuk diri saya sendiri, pertama-tama saya harus memastikan apa dasar dari kepastian.” Selanjutnya, saya menyadari bahwa kepastian adalah pengetahuan yang jelas dan lengkap tentang segala sesuatu, pengetahuan yang tidak menyisakan ruang untuk keraguan atau kemungkinan kesalahan dan dugaan, sehingga tidak ada ruang lagi dalam pikiran bagi kesalahan untuk masuk. Dalam hal ini, perlu bahwa pikiran, yang diperkuat terhadap semua kemungkinan tersesat, harus memiliki keyakinan yang begitu kuat sehingga, misalnya, jika seseorang yang memiliki kekuatan untuk mengubah batu menjadi emas, atau tongkat menjadi ular, mencoba untuk menggoyahkan dasar-dasar kepastian ini, keyakinan itu akan tetap teguh dan tak tergoyahkan. Misalnya, anggaplah seorang pria datang dan berkata kepada saya, yang sangat yakin bahwa sepuluh lebih besar dari tiga, “Tidak; sebaliknya, tiga lebih besar dari sepuluh, dan untuk membuktikannya, saya mengubah tongkat ini menjadi ular, ” dan seandainya dia benar-benar melakukannya, saya tetap akan yakin akan kepalsuan pernyataannya, dan meskipun mukjizatnya mungkin membangkitkan kekaguman saya, itu tidak akan menimbulkan keraguan sedikit pun dalam keyakinan saya. Kemudian saya mengerti bahwa semua bentuk pengetahuan yang tidak menyatukan kondisi-kondisi ini (kebal terhadap keraguan, dll.) tidak layak dipercaya, karena pengetahuan tersebut tidak berada di luar jangkauan keraguan, dan apa yang tidak kebal terhadap keraguan tidak dapat menjadi kepastian.</p>
 

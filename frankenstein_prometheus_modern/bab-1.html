@@ -5,39 +5,176 @@
 <title>BAB 1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB 1 - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB 1</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Saya lahir di Jenewa, dan keluarga saya adalah salah satu keluarga paling terhormat di republik itu. Leluhur saya telah lama menjadi penasihat dan pengurus, dan ayah saya telah menduduki beberapa jabatan publik dengan kehormatan dan reputasi yang baik. Ia dihormati oleh semua orang yang mengenalnya karena integritas dan perhatiannya yang tak kenal lelah terhadap urusan publik. Ia menghabiskan masa mudanya selalu sibuk dengan urusan negaranya; berbagai keadaan telah mencegahnya menikah di usia muda, dan baru di usia senja ia menjadi suami dan ayah dari sebuah keluarga. Karena keadaan pernikahannya menggambarkan karakternya, saya tidak dapat menahan diri untuk menceritakannya. Salah satu teman terdekatnya adalah seorang pedagang yang, dari keadaan makmur, jatuh miskin karena berbagai kemalangan. Pria ini, yang bernama Beaufort, memiliki watak yang sombong dan keras kepala dan tidak tahan hidup dalam kemiskinan dan terlupakan di negara yang sama tempat ia sebelumnya terkenal karena pangkat dan kemegahannya. Oleh karena itu, setelah melunasi hutangnya dengan cara yang paling terhormat, ia mundur bersama putrinya ke kota Lucerne, di mana ia hidup tanpa dikenal dan dalam kesengsaraan. Ayah saya menyayangi Beaufort dengan persahabatan yang tulus dan sangat sedih atas pengunduran dirinya dalam keadaan yang tidak menguntungkan ini. Ia sangat menyesalkan kesombongan palsu yang menyeBABkan temannya berperilaku yang sama sekali tidak pantas untuk kasih sayang yang menyatukan mereka. Ia segera berusaha mencarinya, dengan harapan dapat membujuknya untuk memulai hidup baru melalui kredit dan bantuannya. Beaufort telah mengambil langkah-langkah efektif untuk menyembunyikan dirinya, dan butuh sepuluh bulan sebelum ayah saya menemukan tempat tinggalnya. Sangat gembira atas penemuan ini, ia bergegas ke rumah itu, yang terletak di jalan kumuh dekat Sungai Reuss. Tetapi ketika ia masuk, hanya kesengsaraan dan keputusasaan yang menyambutnya. Beaufort hanya berhasil menyelamatkan sejumlah kecil uang dari kehancuran kekayaannya, tetapi itu cukup untuk menghidupinya selama beberapa bulan, dan sementara itu ia berharap untuk mendapatkan pekerjaan yang layak di sebuah rumah pedagang. Akibatnya, masa itu dihabiskan dalam ketidakaktifan; kesedihannya hanya menjadi lebih dalam dan menyakitkan ketika ia memiliki waktu luang untuk merenung, dan akhirnya kesedihan itu begitu menguasai pikirannya sehingga setelah tiga bulan ia terbaring di tempat tidur karena sakit, tidak mampu melakukan aktivitas apa pun. Putrinya merawatnya dengan penuh kasih sayang, tetapi ia melihat dengan putus asa bahwa dana mereka yang sedikit semakin menipis dan tidak ada prospek lain untuk menghidupinya. Namun Caroline Beaufort memiliki pikiran yang luar biasa, dan keberaniannya bangkit untuk membantunya dalam kesulitan. Ia mencari pekerjaan sederhana; ia menganyam jerami dan dengan berbagai cara berupaya mendapatkan sedikit uang yang hampir tidak cukup untuk menghidupi dirinya. Beberapa bulan berlalu seperti itu. Kondisi ayahnya semakin memburuk; waktunya semakin tersita untuk merawatnya; penghasilannya berkurang; dan pada bulan kesepuluh ayahnya meninggal dalam pelukannya, meninggalkannya sebagai yatim piatu dan pengemis. Pukulan terakhir ini membuatnya terpukul, dan ia berlutut di samping peti mati Beaufort sambil menangis tersedu-sedu, ketika ayahku memasuki ruangan. Ia datang seperti roh pelindung bagi gadis malang itu, yang mempercayakan dirinya kepada perawatannya; dan setelah pemakaman temannya, ia membawanya ke Jenewa dan menempatkannya di bawah perlindungan seorang kerabat. Dua tahun setelah peristiwa ini, Caroline menjadi istrinya. Terdapat perbedaan usia yang cukup besar antara orang tua saya, tetapi keadaan ini tampaknya justru mempererat ikatan kasih sayang mereka. Ada rasa keadilan dalam pikiran ayah saya yang jujur yang membuatnya perlu untuk sangat menyetujui dan mencintai dengan sepenuh hati. Mungkin selama tahun-tahun sebelumnya ia menderita karena ketidaklayakan seseorang yang dicintainya yang baru ditemukan, sehingga ia cenderung lebih menghargai orang yang telah teruji nilainya. Ada ungkapan rasa syukur dan penghormatan dalam kasih sayangnya kepada ibu saya, yang sama sekali berbeda dari kasih sayang yang berlebihan di usia tua, karena hal itu diilhami oleh rasa hormat terhadap kebajikan ibu dan keinginan untuk menjadi sarana, sampai batas tertentu, untuk membalas kesedihan yang telah dialaminya, tetapi hal itu memberikan keanggunan yang tak terungkapkan pada perilakunya terhadap ibu. Segala sesuatunya dibuat untuk memenuhi keinginan dan kenyamanan ibu. Ia berusaha melindungi ibu, seperti tanaman eksotis yang dilindungi oleh tukang kebun, dari setiap angin kencang dan mengelilinginya dengan segala sesuatu yang dapat membangkitkan emosi yang menyenangkan dalam pikirannya yang lembut dan baik hati. Kesehatannya, dan bahkan ketenangan jiwanya yang selama ini teguh, telah terguncang oleh apa yang telah dialaminya. Selama dua tahun sebelum pernikahan mereka, ayah saya secara bertahap melepaskan semua fungsi publiknya; dan segera setelah pernikahan mereka, mereka mencari iklim Italia yang menyenangkan, dan perubahan pemandangan serta hal-hal menarik yang menyertai perjalanan keliling negeri yang penuh keajaiban itu, sebagai penawar bagi tubuhnya yang lemah. Dari Italia mereka mengunjungi Jerman dan Prancis. Aku, anak sulung mereka, lahir di Napoli, dan sejak bayi menemani mereka dalam perjalanan mereka. Selama beberapa tahun aku tetap menjadi satu-satunya anak mereka. Meskipun mereka sangat menyayangi satu sama lain, mereka seolah-olah mengambil curahan kasih sayang yang tak habis-habisnya dari sumber cinta yang sangat besar untuk diberikan kepadaku. Belaian lembut ibuku dan senyum penuh kebaikan ayahku saat memandangku adalah kenangan pertamaku. Aku adalah mainan dan pujaan mereka, dan sesuatu yang lebih baik—anak mereka, makhluk polos dan tak berdaya yang dianugerahkan Surga kepada mereka, yang harus mereka besarkan menjadi orang baik, dan nasib masa depannya berada di tangan mereka untuk menentukan kebahagiaan atau kesengsaraan, sesuai dengan bagaimana mereka memenuhi kewajiban mereka terhadapku. Dengan kesadaran mendalam akan apa yang mereka berutang kepada makhluk yang telah mereka beri kehidupan, ditambah dengan semangat kelembutan yang menggerakkan keduanya, dapat dibayangkan bahwa selama setiap jam kehidupan masa kecilku aku menerima pelajaran tentang kesabaran, kasih sayang, dan pengendalian diri, aku dibimbing oleh tali sutra sehingga semuanya tampak seperti rangkaian kenikmatan bagiku. Untuk waktu yang lama, akulah satu-satunya perhatian mereka. Ibuku sangat mendambakan seorang anak perempuan, tetapi aku tetap menjadi satu-satunya anak mereka. Ketika aku berusia sekitar lima tahun, saat melakukan perjalanan ke luar perbatasan Italia, mereka menghabiskan seminggu di tepi Danau Como. Sifat baik hati mereka sering membuat mereka memasuki gubuk-gubuk orang miskin. Bagi ibuku, ini lebih dari sekadar kewajiban; itu adalah kebutuhan, sebuah hasrat—mengingat apa yang telah ia derita, dan bagaimana ia telah terbebas—baginya untuk bertindak sebagai malaikat pelindung bagi orang-orang yang menderita. Selama salah satu perjalanan mereka, sebuah gubuk sederhana di lembah menarik perhatian mereka karena sangat menyedihkan, sementara banyaknya anak-anak setengah telanjang yang berkumpul di sekitarnya menunjukkan kemiskinan dalam bentuk terburuknya. Suatu hari, ketika ayahku pergi sendirian ke Milan, ibuku, ditemani olehku, mengunjungi tempat tinggal itu. Ia menemukan seorang petani dan istrinya, pekerja keras, membungkuk karena beban dan pekerjaan, membagikan makanan seadanya kepada lima bayi yang kelaparan. Di antara mereka, ada satu yang menarik perhatian ibuku jauh lebih dari yang lain. Ia tampak berbeda. Empat lainnya bermata gelap, anak-anak gelandangan kecil yang tangguh; anak ini kurus dan berkulit sangat putih. Rambutnya berwarna emas paling terang, dan meskipun pakaiannya sederhana, tampak seperti mahkota keistimewaan di kepalanya. Dahinya bersih dan lebar, mata birunya jernih, dan bibir serta bentuk wajahnya begitu ekspresif dan manis sehingga tak seorang pun yang melihatnya tidak menganggapnya sebagai spesies yang berbeda, makhluk kiriman surga, dan membawa cap surgawi di semua fitur wajahnya. Perempuan petani itu, menyadari bahwa ibuku menatap gadis cantik itu dengan penuh keheranan dan kekaguman, dengan antusias menceritakan kisahnya. Ia bukanlah anaknya, melainkan putri seorang bangsawan Milan. Ibunya adalah orang Jerman dan meninggal saat melahirkannya. Bayi itu dititipkan kepada orang-orang baik ini untuk diasuh: mereka lebih makmur saat itu. Mereka belum lama menikah, dan anak sulung mereka baru saja lahir. Ayah dari anak asuh mereka adalah salah satu orang Italia yang dibesarkan dalam kenangan kejayaan Italia kuno—salah satu dari schiavi ognor frementi, yang berjuang untuk mendapatkan kemerdekaan negaranya. Ia menjadi korban kelemahan negaranya. Tidak diketahui apakah ia telah meninggal atau masih mendekam di penjara Austria. Hartanya disita; anaknya menjadi yatim piatu dan pengemis. Ia tinggal bersama orang tua angkatnya dan tumbuh subur di tempat tinggal mereka yang sederhana, lebih cantik daripada mawar taman di antara semak berduri berdaun gelap. Ketika ayahku kembali dari Milan, ia mendapati seorang anak perempuan yang lebih cantik dari malaikat dalam lukisan sedang bermain denganku di aula vila kami—makhluk yang tampak memancarkan cahaya dari wajahnya dan bentuk serta gerakannya lebih ringan daripada kambing gunung di perbukitan. Penampakan itu segera dapat dijelaskan. Dengan izinnya, ibuku membujuk para walinya di pedesaan untuk menyerahkan pengasuhan mereka kepadanya. Mereka menyukai anak yatim piatu yang manis itu. Kehadirannya tampak seperti berkah bagi mereka, tetapi akan tidak adil baginya untuk tetap membiarkannya dalam kemiskinan dan kekurangan ketika Tuhan memberinya perlindungan yang begitu kuat. Mereka berkonsultasi dengan pendeta desa mereka, dan hasilnya adalah Elizabeth Lavenza menjadi penghuni rumah orang tuaku—lebih dari sekadar saudara perempuanku—teman yang cantik dan dipuja dalam semua kegiatan dan kesenanganku. Semua orang menyayangi Elizabeth. Kasih sayang yang begitu mendalam dan hampir penuh penghormatan yang ditunjukkan semua orang kepadanya, dan saya pun turut merasakannya, menjadi kebanggaan dan kegembiraan saya. Pada malam sebelum ia dibawa ke rumah saya, ibu saya berkata dengan bercanda, “Aku punya hadiah cantik untuk Victor-ku—besok ia akan menerimanya.” Dan ketika keesokan harinya ia mempersembahkan Elizabeth kepada saya sebagai hadiah yang dijanjikannya, saya, dengan keseriusan kekanak-kanakan, menafsirkan kata-katanya secara harfiah dan menganggap Elizabeth sebagai milik saya—milik saya untuk dilindungi, dicintai, dan disayangi. Semua pujian yang diberikan kepadanya saya terima seolah-olah ditujukan kepada milik saya sendiri. Kami saling memanggil dengan akrab dengan sebutan sepupu. Tidak ada kata, tidak ada ungkapan yang dapat menggambarkan hubungan seperti apa yang ia miliki dengan saya—lebih dari saudara perempuan saya, karena sampai mati ia akan menjadi milik saya satu-satunya.</p>
 

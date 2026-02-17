@@ -5,39 +5,176 @@
 <title>MUSUH AKAN DIBUAT TUNDUK KELAPARAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="MUSUH AKAN DIBUAT TUNDUK KELAPARAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>MUSUH AKAN DIBUAT TUNDUK KELAPARAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>"Dia sudah pergi!" teriak Martha, berlari keluar dari dapurnya mendengar suara pintu dibanting dengan keras. "Ya," jawabku, "benar-benar hilang." "Baiklah; lalu bagaimana dengan makan malamnya?" kata pelayan tua itu. "Dia tidak akan mendapatkannya." "Dan makan malamnya?" "Dia tidak akan mendapatkannya." "Apa?" seru Martha sambil menggenggam kedua tangannya. "Tidak, Martha sayangku, dia tidak akan makan lagi. Tidak seorang pun di rumah ini boleh makan apa pun. Paman Liedenbrock akan membuat kita semua berpuasa sampai dia berhasil menguraikan tulisan yang tidak dapat diuraikan." "Oh, sayangku! Apakah kita semua harus mati kelaparan?" Aku hampir tak berani mengakui bahwa, dengan penguasa yang begitu absolut seperti pamanku, nasib ini tak terhindarkan. Pelayan tua itu, yang tampak sangat terharu, kembali ke dapur sambil merintih pilu. Saat aku sendirian, kupikir aku akan pergi dan menceritakan semuanya pada Gräuben. Tapi bagaimana aku bisa keluar dari rumah? Profesor bisa kembali kapan saja. Dan bagaimana jika dia memanggilku? Dan bagaimana jika dia kembali berdebat denganku, yang mungkin sia-sia jika disuguhi Oedipus kuno. Dan jika aku tidak menuruti panggilannya, siapa yang bisa bertanggung jawab atas apa yang mungkin terjadi? Langkah paling bijaksana adalah tetap di tempat saya berada. Seorang ahli mineralogi di Besançon baru saja mengirimkan kepada kami koleksi nodul silika, yang harus saya klasifikasikan: jadi saya mulai bekerja; saya memilah, memberi label, dan mengatur semua spesimen berongga ini dalam kotak kaca masing-masing, di dalam rongga setiap spesimen terdapat kumpulan kristal kecil. Namun, pekerjaan ini tidak berhasil menyita seluruh perhatian saya. Dokumen lama itu terus berputar di otak saya. Kepala saya berdenyut-denyut karena kegembiraan, dan saya merasakan kegelisahan yang tak terdefinisi. Saya dirasuki firasat buruk yang akan datang. Dalam satu jam, semua nodul saya tersusun di rak-rak yang berurutan. Kemudian saya menjatuhkan diri ke kursi berlengan beludru tua, kepala saya tersandarkan ke belakang dan tangan saya terlipat di atasnya. Saya menyalakan pipa panjang saya yang bengkok, dengan lukisan seorang naiad yang tampak malas; lalu saya menghibur diri dengan mengamati proses konversi tembakau menjadi karbon, yang secara perlahan mengubah naiad saya menjadi seorang wanita kulit hitam. Sesekali saya mendengarkan apakah ada langkah kaki yang familiar di tangga. Tidak. Di mana paman saya berada saat itu? Saya membayangkan dia berlari di bawah pohon-pohon besar yang berjajar di jalan menuju Altona, memberi isyarat, memukul dengan tongkatnya, mengibaskan rumput panjang, memotong pucuk duri, dan mengganggu burung bangau yang sedang merenung dalam kesendirian mereka yang damai. Akankah dia kembali dengan kemenangan atau kekecewaan? Mana yang akan menang, dia atau rahasia itu? Begitulah pertanyaan-pertanyaan yang kutanyakan pada diriku sendiri, dan secara mekanis menggenggam lembaran kertas yang secara misterius ternoda oleh rangkaian huruf yang tak dapat dipahami yang telah kutulis; dan aku mengulangi pada diriku sendiri, "Apa artinya semua ini?" Saya mencoba mengelompokkan huruf-huruf tersebut untuk membentuk kata-kata. Sama sekali tidak mungkin! Ketika saya menggabungkannya berpasangan, bertiga, berlima, atau berenam, tidak ada yang dihasilkan selain omong kosong. Yang pasti, huruf keempat belas, kelima belas, dan keenam belas membentuk kata bahasa Inggris 'ice'; huruf kedelapan puluh tiga dan dua huruf berikutnya membentuk 'sir'; dan di tengah dokumen, pada baris kedua dan ketiga, saya mengamati kata-kata, "rots," "mutabile," "ira," "net," "atra." "Ayolah," pikirku, "kata-kata ini sepertinya membenarkan pandangan pamanku tentang bahasa dalam dokumen itu. Pada baris keempat muncul kata "luco", yang berarti kayu suci. Memang benar bahwa pada baris ketiga terdapat kata "tabiled", yang tampak seperti bahasa Ibrani, dan pada baris terakhir terdapat kata-kata yang murni berbahasa Prancis "mer", "arc", "mere."" Semua ini cukup untuk membuat orang malang seperti saya menjadi gila. Empat bahasa berbeda dalam kalimat konyol ini! Apa hubungan yang mungkin ada antara kata-kata seperti es, tuan, amarah, kejam, kayu suci, berubah-ubah, ibu, busur, dan laut? Kata pertama dan terakhir mungkin ada hubungannya satu sama lain; sama sekali tidak mengherankan bahwa dalam dokumen yang ditulis di Islandia terdapat penyebutan tentang lautan es; tetapi sungguh hal yang berbeda untuk sampai ke akhir kriptogram ini dengan petunjuk yang begitu kecil. Jadi saya berjuang dengan kesulitan yang tak teratasi; otak saya memanas, mata saya berair melihat lembaran kertas itu; seratus tiga puluh dua hurufnya tampak bergetar dan terbang di sekitar saya seperti bintik-bintik cahaya dan kegelapan yang bercampur yang melayang di udara di sekitar kepala ketika darah mengalir ke atas dengan deras. Saya menjadi mangsa semacam halusinasi; saya sesak napas; saya butuh udara. Tanpa sadar saya mengipas-ngipas diri dengan selembar kertas itu, bagian depan dan belakangnya secara bergantian muncul di depan mata saya. Betapa terkejutnya saya ketika, dalam salah satu putaran cepat itu, pada saat punggung mereka membelakangi saya, saya pikir saya melihat kata-kata Latin "craterem," "terrestre," dan lainnya. Sebuah cahaya tiba-tiba menerangi diriku; petunjuk-petunjuk ini saja sudah memberiku pandangan pertama tentang kebenaran; aku telah menemukan kunci sandi tersebut. Untuk membaca dokumen itu, bahkan tidak perlu membacanya sampai selesai. Seperti apa adanya, persis seperti yang didiktekan kepadaku, sehingga dapat dieja dengan mudah. Semua kombinasi cerdik para profesor itu ternyata benar. Dia benar mengenai susunan hurufnya; dia benar mengenai bahasanya. Dia hampir saja berhasil membaca dokumen Latin ini dari ujung ke ujung; tetapi karena kebetulan, kesempatan itu jatuh kepadaku! Anda bisa yakin saya merasa sangat gelisah. Mata saya kabur, saya hampir tidak bisa melihat. Saya telah meletakkan kertas itu di atas meja. Sekilas pandang, saya bisa mengetahui seluruh rahasianya. Akhirnya aku menjadi lebih tenang. Aku mengambil keputusan bijak untuk berjalan dua kali mengelilingi ruangan dengan tenang dan menenangkan sarafku, lalu aku kembali ke dalam jurang yang dalam di kursi berlengan besar itu. "Sekarang aku akan membacanya," seruku, setelah menghirup udara dalam-dalam. Aku mencondongkan tubuh ke atas meja; aku meletakkan jariku secara bergantian pada setiap huruf; dan tanpa jeda, tanpa ragu sedikit pun, aku membacakan seluruh kalimat itu dengan lantang. Keheranan! Ketakutan! Aku duduk terpukul seolah-olah terkena pukulan mematikan tiba-tiba. Apa! Apa yang kubaca benar-benar telah terjadi! Seorang manusia fana telah berani menembusnya! ... "Ah!" seruku, sambil melompat berdiri. "Tapi tidak! Tidak! Pamanku tidak boleh tahu. Dia pasti akan bersikeras melakukannya. Dia ingin tahu semuanya. Tali pun tak akan bisa menahannya, seorang ahli geologi yang begitu teguh pendiriannya! Dia akan pergi, dia pasti akan pergi, terlepas dari segalanya dan semua orang, dan dia akan membawaku bersamanya, dan kita tidak akan pernah kembali. Tidak, tidak akan pernah! Tidak akan pernah!" Kegembiraan saya sungguh tak terlukiskan. "Tidak! Tidak! Itu tidak akan terjadi," seruku dengan penuh semangat; "dan karena aku memiliki kuasa untuk mencegah pengetahuan tentang hal ini sampai ke benak tiranku, aku akan melakukannya. Dengan membolak-balik dokumen ini, dia pun mungkin akan menemukan kuncinya. Aku akan menghancurkannya." Masih ada sedikit api yang tersisa di perapian. Aku meraih bukan hanya kertas itu tetapi juga perkamen Saknussemm; dengan tangan yang gemetar aku hendak melemparkan semuanya ke atas bara api dan menghancurkan serta menghapus rahasia berbahaya ini sepenuhnya, ketika pintu ruang kerja terbuka, dan pamanku muncul.</p>
 

@@ -5,39 +5,176 @@
 <title>BAB LII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Hatinya memikul tugas-tugas paling rendah sekalipun.” —WORDSWORTH. Pada malam Juni itu, ketika Tuan Farebrother tahu bahwa ia akan mendapatkan jabatan pendeta di Lowick, ada kegembiraan di ruang tamu kuno itu, dan bahkan potret para pengacara besar pun tampak memandang dengan puas. Ibunya membiarkan teh dan roti panggangnya tak tersentuh, tetapi duduk dengan sikap anggunnya yang biasa, hanya menunjukkan emosinya melalui rona merah di pipi dan kilauan di mata yang membuat seorang wanita tua seolah memiliki kesamaan sesaat dengan dirinya yang muda di masa lalu, dan berkata dengan tegas— “Hal yang paling menghibur, Camden, adalah kamu memang pantas mendapatkannya.” “Ketika seseorang mendapat tempat yang baik, Ibu, separuh dari orang yang pantas mendapatkannya pasti akan menyusul,” kata sang putra, penuh kegembiraan, dan tidak berusaha menyembunyikannya. Kegembiraan di wajahnya adalah jenis kegembiraan aktif yang tampaknya memiliki energi yang cukup tidak hanya untuk terpancar keluar, tetapi juga untuk menerangi visi yang sibuk di dalam: orang seolah melihat pikiran, serta kegembiraan, dalam tatapannya. “Nah, Bibi,” lanjutnya, sambil menggosok-gosok tangannya dan memandang Nona Noble, yang mengeluarkan suara-suara lembut seperti berang-berang, “Akan selalu ada permen gula di meja untuk Bibi curi dan berikan kepada anak-anak, dan Bibi akan memiliki banyak kaus kaki baru untuk dijadikan hadiah, dan Bibi akan lebih sering menambal kaus kaki Bibi sendiri daripada sebelumnya!” Nona Noble mengangguk kepada keponakannya dengan tawa yang tertahan dan setengah takut, menyadari bahwa ia telah menambahkan sebongkah gula lagi ke dalam keranjangnya karena pengaruh adonan ragi yang baru. “Adapun kamu, Winny,” lanjut Pendeta itu, “Aku tidak akan mempersulit pernikahanmu dengan bujangan mana pun dari Lowick—misalnya, Tuan Solomon Featherstone, segera setelah aku tahu kamu mencintainya.” Nona Winifred, yang selama ini menatap kakaknya sambil menangis tersedu-sedu—yang merupakan caranya bersukacita—tersenyum di balik air matanya dan berkata, “Kau harus memberi contoh padaku, Cam: kau harus menikah sekarang.” “Dengan sepenuh hati. Tapi siapa yang mencintai saya? Saya hanyalah seorang lelaki tua yang lusuh,” kata Pendeta itu, sambil berdiri, mendorong kursinya menjauh, dan menatap dirinya sendiri. “Bagaimana menurutmu, Ibu?” “Kau pria yang tampan, Camden: meskipun tidak setampan ayahmu,” kata wanita tua itu. “Aku berharap kau mau menikahi Nona Garth, saudaraku,” kata Nona Winifred. “Dia akan membuat suasana di Lowick menjadi sangat meriah.” “Bagus sekali! Anda berbicara seolah-olah para wanita muda diikat untuk dipilih, seperti unggas di pasar; seolah-olah saya hanya perlu meminta dan semua orang akan menerima saya,” kata Pendeta itu, tanpa bermaksud menjelaskan lebih lanjut. “Kami tidak menginginkan semua orang,” kata Nona Winifred. “Tapi Ibu pasti menyukai Nona Garth, bukan?” “Pilihan putraku akan menjadi pilihanku,” kata Ny. Farebrother dengan penuh kebijaksanaan, “dan seorang istri akan sangat disambut baik, Camden. Kau akan membutuhkan kartu whist-mu di rumah ketika kita pergi ke Lowick, dan Henrietta Noble tidak pernah menjadi pemain whist.” (Ny. Farebrother selalu memanggil adik perempuannya yang mungil dan tua itu dengan nama yang megah tersebut.) “Aku tidak akan bermain whist lagi sekarang, Bu.” “Mengapa begitu, Camden? Di zamanku, permainan whist dianggap sebagai hiburan yang tak terbantahkan bagi seorang rohaniawan yang baik,” kata Ny. Farebrother, yang tidak memahami makna permainan whist bagi putranya, dan berbicara agak tajam, seolah-olah menentang dukungan berbahaya terhadap doktrin baru. “Saya akan terlalu sibuk untuk bermain whist; saya akan mengurus dua paroki,” kata Vikaris, lebih memilih untuk tidak membahas kelebihan permainan itu. Dia sudah berkata kepada Dorothea, “Aku tidak merasa berkewajiban untuk menyerahkan St. Botolph's. Itu sudah cukup sebagai bentuk protes terhadap pluralisme yang ingin mereka reformasi jika aku memberikan sebagian besar uangnya kepada orang lain. Hal yang lebih penting bukanlah menyerahkan kekuasaan, tetapi menggunakannya dengan baik.” “Aku sudah memikirkannya,” kata Dorothea. “Sejauh menyangkut diriku sendiri, kupikir akan lebih mudah untuk melepaskan kekuasaan dan uang daripada mempertahankannya. Rasanya sangat tidak pantas jika aku memiliki perlindungan ini, namun aku merasa bahwa aku tidak seharusnya membiarkannya digunakan oleh orang lain selain aku.” “Akulah yang berkewajiban bertindak agar kau tidak menyesali kekuasaanmu,” kata Tuan Farebrother. Sifatnya termasuk tipe orang yang hati nuraninya menjadi lebih aktif ketika beban hidup berhenti menyiksanya. Ia tidak menunjukkan kerendahan hati mengenai hal itu, tetapi dalam hatinya ia merasa agak malu karena perilakunya telah menunjukkan kelalaian yang tidak dimiliki oleh orang lain yang tidak mendapatkan jabatan gerejawi. “Dulu saya sering berharap saya bukan seorang pendeta,” katanya kepada Lydgate, “tetapi mungkin akan lebih baik untuk mencoba dan menjadikan diri saya pendeta sebaik mungkin. Itulah sudut pandang yang menguntungkan, Anda mengerti, yang membuat kesulitan menjadi jauh lebih sederhana,” pungkasnya sambil tersenyum. Saat itu, Vikaris merasa bahwa bagian tugasnya akan mudah. Tetapi tugas memiliki trik untuk bertindak di luar dugaan—seperti seorang teman yang berat yang dengan ramah kita undang untuk mengunjungi kita, dan yang kakinya patah di dalam gerbang kita. Hampir seminggu kemudian, Duty muncul di ruang kerjanya dengan menyamar sebagai Fred Vincy, yang baru saja kembali dari Omnibus College dengan gelar sarjana. “Saya malu merepotkan Anda, Tuan Farebrother,” kata Fred, yang wajahnya yang ramah dan terbuka tampak menenangkan, “tetapi Anda adalah satu-satunya teman yang dapat saya mintai nasihat. Saya sudah menceritakan semuanya kepada Anda sebelumnya, dan Anda begitu baik sehingga saya tidak bisa tidak datang kepada Anda lagi.” “Duduklah, Fred, saya siap mendengarkan dan akan melakukan apa pun yang saya bisa,” kata Pendeta, yang sedang sibuk mengemas beberapa barang kecil untuk dipindahkan, lalu melanjutkan pekerjaannya. “Aku ingin memberitahumu—” Fred ragu sejenak, lalu melanjutkan dengan blak-blakan, “Aku mungkin akan masuk Gereja sekarang; dan sungguh, ke mana pun aku pergi, aku tidak melihat hal lain yang bisa kulakukan. Aku tidak menyukainya, tetapi aku tahu ini sangat berat bagi ayahku untuk mengatakan demikian, setelah ia menghabiskan banyak uang untuk mendidikku untuk itu.” Fred berhenti sejenak lagi, lalu mengulangi, “dan aku tidak melihat hal lain yang bisa kulakukan.” “Aku sudah membicarakan hal ini dengan ayahmu, Fred, tapi tidak banyak kemajuan yang kudapatkan darinya. Dia bilang sudah terlambat. Tapi kau sudah berhasil melewati satu rintangan sekarang: apa kesulitanmu yang lain?” “Intinya, aku tidak menyukainya. Aku tidak suka teologi, khotbah, dan merasa wajib terlihat serius. Aku suka berkuda melintasi pedesaan, dan melakukan apa yang dilakukan orang lain. Aku tidak bermaksud menjadi orang jahat; tetapi aku tidak menyukai hal-hal yang diharapkan orang dari seorang pendeta. Namun, apa lagi yang bisa kulakukan? Ayahku tidak bisa memberiku modal, kalau tidak aku bisa bertani. Dan dia tidak punya tempat untukku di usahanya. Dan tentu saja aku tidak bisa mulai belajar hukum atau kedokteran sekarang, ketika ayahku ingin aku mencari nafkah. Mudah saja mengatakan aku salah masuk Gereja; tetapi mereka yang mengatakan demikian sama saja menyuruhku pergi ke pedalaman.” Suara Fred terdengar seperti gerutuan dan protes, dan Tuan Farebrother mungkin akan tersenyum jika pikirannya tidak terlalu sibuk membayangkan lebih dari yang diceritakan Fred kepadanya. “Apakah Anda mengalami kesulitan mengenai doktrin—mengenai Pasal-Pasal tersebut?” katanya, berusaha keras memikirkan pertanyaan itu hanya demi Fred. “Tidak; kurasa Pasal-Pasal itu benar. Aku tidak siap dengan argumen apa pun untuk membantahnya, dan banyak orang yang lebih baik dan lebih pintar dariku sepenuhnya mendukungnya. Kurasa akan agak konyol jika aku mengajukan keberatan semacam itu, seolah-olah aku seorang hakim,” kata Fred, dengan sangat sederhana. “Jadi, saya kira Anda pernah berpikir bahwa Anda bisa menjadi pastor paroki yang baik tanpa harus menjadi seorang teolog yang hebat?” “Tentu saja, jika saya wajib menjadi seorang pendeta, saya akan berusaha menjalankan tugas saya, meskipun saya mungkin tidak menyukainya. Apakah menurut Anda ada orang yang pantas menyalahkan saya?” “Untuk masuk Gereja dalam keadaan seperti ini? Itu tergantung pada hati nuranimu, Fred—sejauh mana kau telah memperhitungkan konsekuensinya, dan melihat apa yang akan dituntut posisimu darimu. Aku hanya bisa memberitahumu tentang diriku sendiri, bahwa aku selalu terlalu lalai, dan akibatnya aku selalu merasa tidak tenang.” “Tapi ada kendala lain,” kata Fred, sambil tersipu. “Aku belum memberitahumu sebelumnya, meskipun mungkin aku telah mengatakan hal-hal yang membuatmu menebaknya. Ada seseorang yang sangat kusukai: aku mencintainya sejak kami masih kecil.” “Nona Garth, kurasa?” kata Pendeta, sambil memeriksa beberapa label dengan sangat teliti. “Ya. Aku tidak akan keberatan apa pun jika dia mau menerimaku. Dan aku tahu aku bisa menjadi pria yang baik.” “Dan menurutmu dia membalas perasaanmu?” “Dia tidak akan pernah mengatakannya; dan beberapa waktu lalu dia membuatku berjanji untuk tidak membicarakannya lagi dengannya. Dan dia sangat menentangku menjadi seorang pendeta; aku tahu itu. Tapi aku tidak bisa meninggalkannya. Aku rasa dia peduli padaku. Aku bertemu Nyonya Garth tadi malam, dan dia mengatakan bahwa Mary tinggal di Lowick Rectory bersama Nona Farebrother.” “Ya, dia dengan baik hati membantu saudara perempuan saya. Apakah Anda ingin pergi ke sana?” “Tidak, aku ingin meminta bantuan besar kepadamu. Aku malu mengganggumu dengan cara ini; tetapi Maria mungkin akan mendengarkan apa yang kau katakan, jika kau menyebutkan hal itu kepadanya—maksudku tentang kepergianku ke Gereja.” “Itu tugas yang agak rumit, Fred sayangku. Aku harus berasumsi bahwa kau menyayanginya; dan untuk membahas masalah ini seperti yang kau inginkan, aku harus memintanya untuk memberitahuku apakah dia membalas perasaanmu.” “Itulah yang ingin kudengar darinya,” kata Fred terus terang. “Aku tidak tahu harus berbuat apa, kecuali jika aku bisa mengetahui perasaannya.” “Maksudmu, kamu akan berpedoman pada hal itu dalam keputusanmu untuk masuk Gereja?” “Jika Mary berkata dia tidak akan pernah menerimaku, lebih baik aku salah langkah dengan cara apa pun.” “Itu omong kosong, Fred. Pria akan hidup lebih lama daripada cinta mereka, tetapi mereka tidak akan terbebas dari konsekuensi kecerobohan mereka.” “Bukan tipe cinta yang kusuka: Aku tidak pernah berhenti mencintai Mary. Jika aku harus melepaskannya, itu akan seperti mulai hidup dengan kaki kayu.” “Apakah dia tidak akan tersinggung dengan gangguan saya?” “Tidak, aku yakin dia tidak akan melakukannya. Dia menghormatimu lebih dari siapa pun, dan dia tidak akan membuatmu kesal dengan lelucon seperti yang dia lakukan padaku. Tentu saja aku tidak bisa memberi tahu orang lain, atau meminta orang lain untuk berbicara dengannya, selain kamu. Tidak ada orang lain yang bisa menjadi teman sebaik kamu bagi kita berdua.” Fred terdiam sejenak, lalu berkata, dengan nada agak mengeluh, “Dan dia seharusnya mengakui bahwa aku telah berusaha keras agar bisa lulus. Dia seharusnya percaya bahwa aku akan berusaha demi dirinya.” Ada keheningan sesaat sebelum Tuan Farebrother meletakkan pekerjaannya, dan sambil mengulurkan tangannya kepada Fred berkata— “Baiklah, Nak. Aku akan melakukan apa yang kau inginkan.” Pada hari itu juga, Tuan Farebrother pergi ke rumah pendeta Lowick dengan kuda yang baru saja ia latih. "Aku memang sudah tua," pikirnya, "tumbuhan-tumbuhan muda mulai menyingkirkanku." Ia menemukan Mary di taman sedang memetik mawar dan menaburkan kelopaknya di atas selembar kain. Matahari sudah rendah, dan pepohonan tinggi mengirimkan bayangannya melintasi jalan setapak berumput tempat Mary berjalan tanpa topi atau payung. Ia tidak memperhatikan kedatangan Tuan Farebrother di sepanjang rumput, dan baru saja membungkuk untuk menasihati seekor anjing terrier kecil berwarna hitam dan cokelat, yang terus berjalan di atas kain dan mengendus daun mawar saat Mary menaburkannya. Ia memegang kaki depan anjing itu dengan satu tangan, dan mengangkat jari telunjuk tangan lainnya, sementara anjing itu mengerutkan alisnya dan tampak malu. “Fly, Fly, aku malu padamu,” kata Mary dengan suara kontralto yang serius. “Ini tidak pantas untuk seekor anjing yang bijaksana; siapa pun akan mengira kau seorang pria muda yang bodoh.” “Anda tidak berbelas kasih kepada para pemuda, Nona Garth,” kata Pendeta, yang berada sekitar dua meter darinya. Mary tersentak dan tersipu. "Ia selalu menjawab dengan akal sehat bersama Fly," katanya sambil tertawa. “Tapi tidak dengan para pria muda?” “Oh, mungkin sebagian dari mereka; karena beberapa di antara mereka tumbuh menjadi orang-orang yang hebat.” “Saya senang dengan pengakuan itu, karena saat ini juga saya ingin memperkenalkan Anda pada seorang pemuda.” “Semoga bukan yang konyol,” kata Mary, mulai memetik mawar lagi, dan merasakan jantungnya berdebar kencang. “Tidak; meskipun mungkin kebijaksanaan bukanlah keunggulannya, melainkan kasih sayang dan ketulusan. Namun, kebijaksanaan lebih terletak pada dua kualitas tersebut daripada yang dibayangkan orang. Saya harap Anda mengerti dengan ciri-ciri tersebut, pemuda seperti apa yang saya maksud.” “Ya, kurasa begitu,” kata Mary dengan berani, wajahnya semakin serius, dan tangannya dingin; “pasti Fred Vincy.” “Dia meminta saya untuk berkonsultasi dengan Anda tentang keputusannya masuk Gereja. Saya harap Anda tidak berpikir bahwa saya dengan sengaja berjanji untuk melakukan hal itu.” “Sebaliknya, Tuan Farebrother,” kata Mary, sambil menyerahkan mawar-mawar itu dan melipat tangannya, tetapi tidak mampu mendongak, “kapan pun Anda ingin mengatakan sesuatu kepada saya, saya merasa terhormat.” “Namun sebelum saya membahas pertanyaan itu, izinkan saya menyinggung satu hal yang ayahmu ceritakan kepada saya; ngomong-ngomong, tepat pada malam itu saya pernah menyelesaikan sebuah misi dari Fred, setelah ia pergi ke perguruan tinggi. Tuan Garth memberi tahu saya apa yang terjadi pada malam kematian Featherstone—bagaimana Anda menolak untuk membakar surat wasiat; dan dia mengatakan bahwa Anda merasa sedikit tersinggung mengenai hal itu, karena Anda telah menjadi penyebab yang tidak bersalah yang menghalangi Fred untuk mendapatkan sepuluh ribu pound miliknya. Saya telah mengingat hal itu, dan saya telah mendengar sesuatu yang mungkin dapat meringankan Anda dalam hal itu—mungkin menunjukkan kepada Anda bahwa tidak ada pengorbanan penebusan dosa yang dituntut dari Anda di sana.” Tuan Farebrother berhenti sejenak dan menatap Mary. Ia bermaksud memberi Fred keuntungan penuh, tetapi menurutnya, akan lebih baik untuk membersihkan pikiran Mary dari segala takhayul, seperti yang terkadang dilakukan wanita ketika mereka berbuat salah kepada seorang pria dengan menikahinya sebagai tindakan penebusan dosa. Pipi Mary mulai sedikit memerah, dan ia terdiam. “Maksud saya, tindakan Anda tidak membuat perbedaan nyata pada nasib Fred. Saya berpendapat bahwa surat wasiat pertama tidak akan sah secara hukum setelah surat wasiat terakhir dibakar; surat wasiat itu tidak akan berlaku jika diperselisihkan, dan Anda dapat yakin bahwa itu pasti akan diperselisihkan. Jadi, dalam hal itu, Anda boleh merasa tenang.” “Terima kasih, Tuan Farebrother,” kata Mary dengan sungguh-sungguh. “Saya berterima kasih kepada Anda karena telah mengingat perasaan saya.” “Baiklah, sekarang saya boleh melanjutkan. Fred, Anda tahu, telah meraih gelarnya. Dia telah bekerja keras sejauh ini, dan sekarang pertanyaannya adalah, apa yang harus dia lakukan? Pertanyaan itu sangat sulit sehingga dia cenderung mengikuti keinginan ayahnya dan masuk Gereja, meskipun Anda lebih tahu daripada saya bahwa sebelumnya dia sangat menentang hal itu. Saya telah menanyakan hal itu kepadanya, dan saya akui saya tidak melihat keberatan yang tak teratasi jika dia menjadi seorang pendeta, mengingat keadaan saat ini. Dia mengatakan bahwa dia dapat mencurahkan pikirannya untuk melakukan yang terbaik dalam panggilan itu, dengan satu syarat. Jika syarat itu terpenuhi, saya akan melakukan yang terbaik untuk membantu Fred. Setelah beberapa waktu—tentu saja tidak pada awalnya—dia mungkin akan bersama saya sebagai asisten saya, dan dia akan memiliki begitu banyak pekerjaan sehingga gajinya hampir sama dengan yang saya dapatkan sebagai vikaris. Tetapi saya ulangi bahwa ada satu syarat yang tanpanya semua kebaikan ini tidak dapat terwujud. Dia telah membuka hatinya kepada saya, Nona Garth, dan meminta saya untuk membelanya. Syaratnya sepenuhnya bergantung pada perasaan Anda.” Mary tampak sangat terharu, sehingga setelah beberapa saat ia berkata, "Mari kita berjalan-jalan sebentar;" dan ketika mereka berjalan, ia menambahkan, "Terus terang saja, Fred tidak akan mengambil tindakan apa pun yang akan mengurangi kemungkinan Anda bersedia menjadi istrinya; tetapi dengan prospek itu, dia akan berusaha sebaik mungkin untuk melakukan apa pun yang Anda setujui." “Saya tidak mungkin mengatakan bahwa saya akan pernah menjadi istrinya, Tuan Farebrother: tetapi saya pasti tidak akan pernah menjadi istrinya jika dia menjadi seorang pendeta. Apa yang Anda katakan sangat murah hati dan baik; saya sama sekali tidak bermaksud mengoreksi penilaian Anda. Hanya saja saya memiliki cara pandang yang kekanak-kanakan dan mengejek,” kata Mary, dengan kilau keceriaan yang kembali muncul dalam jawabannya yang justru membuat kerendahan hatinya semakin menawan. “Dia ingin saya melaporkan persis apa yang Anda pikirkan,” kata Tuan Farebrother. “Aku tak bisa mencintai pria yang konyol,” kata Mary, tanpa bermaksud membahas lebih dalam. “Fred memiliki akal sehat dan pengetahuan yang cukup untuk membuatnya terhormat, jika ia mau, dalam beberapa urusan duniawi yang baik, tetapi aku tak pernah bisa membayangkannya berkhotbah dan memberi nasihat, mengucapkan berkat, dan berdoa di samping orang sakit, tanpa merasa seolah-olah aku sedang melihat karikatur. Menjadi pendeta baginya hanya demi kesopanan semata, dan menurutku tidak ada yang lebih hina daripada kesopanan bodoh seperti itu. Dulu aku berpikir begitu tentang Tuan Crowse, dengan wajahnya yang kosong dan payungnya yang rapi, dan pidato-pidatonya yang kemayu. Hak apa yang dimiliki orang-orang seperti itu untuk mewakili Kekristenan—seolah-olah itu adalah lembaga untuk mendidik orang-orang idiot dengan sopan—seolah-olah—” Mary menghentikan ucapannya. Ia terbawa suasana seolah-olah sedang berbicara dengan Fred, bukan dengan Tuan Farebrother. “Wanita muda itu tegas: mereka tidak merasakan tekanan tindakan seperti yang dirasakan pria, meskipun mungkin aku harus mengecualikanmu dalam hal ini. Tapi kau tidak akan meremehkan Fred Vincy sampai sebegitu rupa, kan?” “Tidak, memang dia sangat cerdas, tetapi saya rasa dia tidak akan menunjukkannya sebagai seorang pendeta. Dia akan menjadi sosok yang dibuat-buat secara profesional.” “Kalau begitu jawabannya sudah jelas. Sebagai seorang pendeta, dia tidak punya harapan sama sekali?” Mary menggelengkan kepalanya. “Tetapi jika dia berani menghadapi semua kesulitan untuk mencari nafkah dengan cara lain—maukah Anda memberinya dukungan berupa harapan? Dapatkah dia berharap untuk memenangkan hati Anda?” “Menurutku Fred tidak perlu diberitahu lagi apa yang sudah kukatakan padanya,” jawab Mary, dengan sedikit nada kesal. “Maksudku, dia seharusnya tidak mengajukan pertanyaan seperti itu sampai dia melakukan sesuatu yang pantas, bukannya hanya mengatakan bahwa dia bisa melakukannya.” Tuan Farebrother terdiam selama satu menit atau lebih, lalu, ketika mereka berbalik dan berhenti di bawah naungan pohon maple di ujung jalan setapak berumput, berkata, “Saya mengerti bahwa Anda menolak setiap upaya untuk membelenggu Anda, tetapi perasaan Anda terhadap Fred Vincy menghalangi Anda untuk menjalin hubungan lain, atau tidak: dia dapat mengandalkan Anda untuk tetap melajang sampai dia mendapatkan tangan Anda, atau dia mungkin akan kecewa. Maafkan saya, Mary—Anda tahu saya dulu mengajari Anda dengan nama itu—tetapi ketika keadaan perasaan seorang wanita menyentuh kebahagiaan kehidupan lain—lebih dari satu kehidupan—saya pikir akan lebih mulia jika dia bersikap terus terang dan terbuka.” Mary pun terdiam, heran bukan pada tingkah laku Tuan Farebrother, melainkan pada nada bicaranya yang sarat dengan emosi yang terkendali. Ketika gagasan aneh itu terlintas di benaknya bahwa kata-katanya merujuk pada dirinya sendiri, ia merasa tak percaya dan malu memikirkannya. Ia tak pernah menyangka ada pria yang bisa mencintainya kecuali Fred, yang telah menikahinya dengan cincin payung, ketika ia masih mengenakan kaus kaki dan sepatu bertali kecil; apalagi berpikir bahwa ia bisa berarti apa pun bagi Tuan Farebrother, pria terpintar di lingkaran pergaulannya yang sempit. Ia hanya punya waktu untuk merasakan bahwa semua ini kabur dan mungkin ilusi; tetapi satu hal yang jelas dan pasti—jawabannya. “Karena Anda menganggap ini sebagai kewajiban saya, Tuan Farebrother, saya akan memberi tahu Anda bahwa saya memiliki perasaan yang terlalu kuat untuk Fred sehingga saya tidak akan meninggalkannya demi orang lain. Saya tidak akan pernah benar-benar bahagia jika saya berpikir dia sedih karena kehilangan saya. Perasaan itu telah berakar begitu dalam dalam diri saya—rasa terima kasih saya kepadanya karena selalu mencintai saya dengan sepenuh hati, dan sangat memperhatikan jika saya terluka, sejak kami masih sangat kecil. Saya tidak dapat membayangkan perasaan baru apa pun yang akan melemahkan perasaan itu. Saya ingin sekali melihatnya layak mendapatkan rasa hormat semua orang. Tetapi tolong beri tahu dia bahwa saya tidak akan berjanji untuk menikah dengannya sampai saat itu: saya akan mempermalukan dan menyedihkan ayah dan ibu saya. Dia bebas memilih orang lain.” “Kalau begitu, saya telah menyelesaikan tugas saya sepenuhnya,” kata Tuan Farebrother sambil mengulurkan tangannya kepada Mary, “dan saya akan segera kembali ke Middlemarch. Dengan prospek ini, kita akan menempatkan Fred pada posisi yang tepat, dan saya harap saya akan hidup untuk bergabung dengan Anda. Tuhan memberkati Anda!” “Oh, tolong tetap di sini, dan izinkan saya memberi Anda teh,” kata Mary. Matanya berkaca-kaca, karena sesuatu yang tak terdefinisi, sesuatu seperti penekanan rasa sakit yang teguh dalam sikap Tuan Farebrother, membuatnya tiba-tiba merasa sangat sedih, seperti yang pernah ia rasakan ketika melihat tangan ayahnya gemetar di saat-saat sulit. “Tidak, sayangku, tidak. Aku harus kembali.” Dalam tiga menit, Vikaris sudah kembali menunggang kuda, setelah dengan murah hati menyelesaikan tugas yang jauh lebih sulit daripada melepaskan permainan kartu whist, atau bahkan daripada menulis meditasi pertobatan.</p>
 

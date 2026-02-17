@@ -5,39 +5,176 @@
 <title>BAB II</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB II - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB II</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kemarin sore terasa berkabut dan dingin. Saya hampir saja menghabiskan waktu di dekat perapian ruang kerja saya, daripada harus menerobos semak belukar dan lumpur menuju Wuthering Heights. Namun, setelah makan malam (NB—saya makan malam antara pukul dua belas dan satu; pengurus rumah tangga, seorang wanita paruh baya, yang dianggap sebagai bagian tetap dari rumah, tidak dapat, atau tidak mau, memahami permintaan saya agar dilayani pukul lima)—saat menaiki tangga dengan niat malas ini, dan melangkah masuk ke ruangan, saya melihat seorang pelayan perempuan berlutut dikelilingi sikat dan ember arang, dan menimbulkan debu yang sangat banyak saat dia memadamkan api dengan tumpukan abu. Pemandangan ini membuat saya langsung kembali; saya mengambil topi saya, dan, setelah berjalan sejauh empat mil, tiba di gerbang taman Heathcliff tepat pada waktunya untuk menghindari butiran salju pertama yang lembut. Di puncak bukit yang tandus itu, tanahnya keras karena embun beku hitam, dan udaranya membuatku menggigil sampai ke tulang. Karena tidak bisa melepaskan rantai itu, aku melompat, dan berlari menaiki jalan setapak beraspal yang dibatasi semak-semak gooseberry yang jarang, mengetuk dengan sia-sia untuk meminta izin masuk, sampai buku-buku jariku terasa geli dan anjing-anjing melolong. “Para tahanan yang malang!” seruku dalam hati, “kalian pantas diasingkan selamanya dari spesies kalian karena ketidakramahan kalian yang kasar. Setidaknya, aku tidak akan mengunci pintuku di siang hari. Aku tidak peduli—aku akan masuk!” Dengan tekad bulat, aku meraih kait pintu dan mengguncangnya dengan keras. Joseph yang berwajah masam menjulurkan kepalanya dari jendela bundar gudang. “Untuk apa kalian?” teriaknya. “Tuan ada di bawah sana. Pergilah lewat ujung lorong, jika kalian ingin berbicara dengannya.” “Apakah tidak ada orang di dalam untuk membukakan pintu?” teriakku, menanggapi. “Ada nobbut t' missis; dan aku tidak akan membukakanmu makan malam lezat sampai malam nanti.” “Kenapa? Tidak bisakah kau memberitahunya siapa aku, Joseph?” “Aku tak mau! Aku tak akan peduli,” gumam kepala itu, lalu menghilang. Salju mulai turun lebat. Aku meraih gagang garpu rumput untuk mencoba lagi; ketika seorang pemuda tanpa mantel, dan memanggul garpu rumput, muncul di halaman belakang. Dia memanggilku untuk mengikutinya, dan, setelah berjalan melewati tempat mencuci, dan area beraspal yang berisi gudang batu bara, pompa, dan kandang merpati, akhirnya kami tiba di ruangan besar, hangat, dan ceria tempat aku pernah diterima. Ruangan itu bersinar indah dalam cahaya api besar, yang terbuat dari batu bara, gambut, dan kayu; dan di dekat meja, yang telah disiapkan untuk makan malam yang berlimpah, aku senang melihat "nyonya," seseorang yang keberadaannya belum pernah kuduga sebelumnya. Aku membungkuk dan menunggu, berpikir dia akan menyuruhku duduk. Dia menatapku, bersandar di kursinya, dan tetap tak bergerak dan diam. “Cuaca buruk!” seruku. “Maaf, Nyonya Heathcliff, pintu ini harus menanggung akibat dari kelambatan pelayanan para pelayan Anda: saya harus bekerja keras agar mereka mendengar saya.” Dia tidak pernah membuka mulutnya. Aku menatapnya—dia juga menatapku: bagaimanapun, dia terus menatapku dengan dingin dan acuh tak acuh, sangat memalukan dan tidak menyenangkan. “Duduklah,” kata pemuda itu dengan kasar. “Dia akan segera masuk.” Aku menurut; lalu aku mengepakkan ujung ekornya, dan memanggil si penjahat Juno, yang dengan sukarela, pada pertemuan kedua ini, menggerakkan ujung ekornya sebagai tanda bahwa dia mengenalku. “Hewan yang cantik!” saya memulai lagi. “Apakah Anda bermaksud berpisah dengan anak-anaknya, Nyonya?” “Itu bukan milikku,” kata nyonya rumah yang ramah itu, dengan nada yang lebih menjijikkan daripada yang bisa dijawab Heathcliff sendiri. “Ah, favoritmu ada di antara ini?” lanjutku, sambil menunjuk ke bantal yang agak tersembunyi berisi sesuatu seperti kucing. “Pilihan favorit yang aneh!” ujarnya dengan nada mengejek. Sayangnya, itu adalah tumpukan kelinci mati. Aku mendesah sekali lagi, dan mendekat ke perapian, mengulangi komentarku tentang keganasan malam itu. “Seharusnya kau tidak keluar,” katanya, sambil berdiri dan meraih dua kaleng yang dicat dari perapian. Sebelumnya posisinya terlindung dari cahaya; sekarang, aku bisa melihat seluruh sosok dan wajahnya dengan jelas. Ia ramping, dan tampaknya masih sangat muda: bentuk tubuh yang mengagumkan, dan wajah kecil paling cantik yang pernah kulihat; fitur wajah kecil, sangat cantik; ikal pirang, atau lebih tepatnya keemasan, terurai di lehernya yang halus; dan mata, seandainya ekspresinya menyenangkan, itu pasti tak tertahankan: untungnya bagi hatiku yang mudah tersentuh, satu-satunya sentimen yang ditunjukkannya berkisar antara cemoohan dan semacam keputusasaan, sangat tidak wajar untuk terlihat di sana. Wadah-wadah itu hampir di luar jangkauannya; aku memberi isyarat untuk membantunya; ia menoleh kepadaku seperti seorang pelit yang akan menoleh jika ada yang mencoba membantunya menghitung emasnya. “Aku tidak butuh bantuanmu,” bentaknya; “Aku bisa mendapatkannya sendiri.” “Maafkan saya!” saya buru-buru menjawab. “Apakah kau diundang minum teh?” tanyanya, sambil mengikatkan celemek di atas gaun hitamnya yang rapi, dan berdiri dengan sesendok teh di atas teko. “Saya akan senang jika bisa minum secangkir,” jawab saya. “Apakah kamu ditanya?” dia mengulangi pertanyaannya. “Tidak,” kataku, sambil setengah tersenyum. “Kaulah orang yang tepat untuk bertanya padaku.” Dia melemparkan kembali tehnya, beserta sendoknya, dan kembali duduk dengan kesal; dahinya berkerut, dan bibir bawahnya yang merah cemberut, seperti anak kecil yang siap menangis. Sementara itu, pemuda itu mengenakan pakaian atas yang sangat lusuh, dan, berdiri tegak di depan api unggun, memandangku dari sudut matanya, seolah-olah ada permusuhan yang belum terbalas di antara kami. Aku mulai ragu apakah dia seorang pelayan atau bukan: pakaian dan bicaranya kasar, sama sekali tidak menunjukkan superioritas yang terlihat pada Tuan dan Nyonya Heathcliff; rambut ikal cokelatnya yang tebal kasar dan tidak terawat, kumisnya tumbuh lebat di pipinya, dan tangannya cokelat seperti tangan buruh biasa: namun sikapnya bebas, hampir angkuh, dan dia tidak menunjukkan ketekunan seorang pelayan dalam melayani nyonya rumah. Karena tidak ada bukti yang jelas tentang kondisinya, aku merasa lebih baik untuk tidak memperhatikan perilakunya yang aneh; dan, lima menit kemudian, kedatangan Heathcliff sedikit melegakanku dari keadaan yang tidak nyaman. “Anda lihat, Tuan, saya datang sesuai janji!” seru saya, dengan nada ceria; “dan saya khawatir saya akan terjebak cuaca buruk selama setengah jam, jika Anda bisa memberi saya tempat berteduh selama waktu itu.” “Setengah jam?” katanya, sambil mengibaskan serpihan salju putih dari pakaiannya; “Aku heran kau memilih tengah badai salju untuk berkeliaran. Tahukah kau bahwa kau berisiko tersesat di rawa-rawa? Orang-orang yang terbiasa dengan dataran tinggi ini sering tersesat di malam seperti ini; dan aku bisa memberitahumu bahwa saat ini tidak ada kemungkinan perubahan.” “Mungkin saya bisa mendapatkan pemandu di antara anak buah Anda, dan dia bisa tinggal di Grange sampai pagi—bisakah Anda menyediakan satu orang untuk saya?” “Tidak, saya tidak bisa.” “Oh, benarkah! Kalau begitu, aku harus mengandalkan kebijaksanaanku sendiri.” “Umph!” “Apakah kau akan membuat teh?” tanyanya dengan nada menuntut sambil mengalihkan tatapan tajamnya dari saya ke wanita muda itu. “Apakah dia akan mendapatkan bagiannya?” tanyanya, memohon kepada Heathcliff. “Siapkan, ya?” jawabnya, diucapkan dengan begitu kasar sehingga aku tersentak. Nada bicaranya menunjukkan sifat buruk yang sesungguhnya. Aku tak lagi ingin menyebut Heathcliff sebagai orang yang hebat. Setelah persiapan selesai, dia mengundangku dengan—“Nah, Tuan, majukan kursi Anda.” Dan kami semua, termasuk pemuda desa itu, duduk mengelilingi meja: keheningan yang mencekam menyelimuti saat kami mendiskusikan makanan kami. Saya berpikir, jika saya yang menyebabkan kesuraman itu, adalah kewajiban saya untuk berusaha menghilangkannya. Mereka tidak mungkin setiap hari duduk begitu muram dan pendiam; dan mustahil, betapapun buruknya temperamen mereka, bahwa cemberut yang selalu mereka tunjukkan adalah ekspresi wajah mereka sehari-hari. “Aneh sekali,” aku memulai, di sela-sela menelan secangkir teh dan menerima cangkir lainnya—“aneh bagaimana kebiasaan dapat membentuk selera dan gagasan kita: banyak orang tidak dapat membayangkan adanya kebahagiaan dalam kehidupan yang sepenuhnya terasing dari dunia seperti yang Anda jalani, Tuan Heathcliff; namun, saya berani mengatakan, bahwa, dikelilingi oleh keluarga Anda, dan dengan istri Anda yang ramah sebagai sosok yang mengatur rumah dan hati Anda—” “Nyonya yang ramah!” sela dia, dengan seringai yang hampir jahat di wajahnya. “Di mana dia—nyonya yang ramah?” “Nyonya Heathcliff, istri Anda, maksud saya.” “Ya, benar—oh, Anda ingin mengisyaratkan bahwa rohnya telah mengambil posisi sebagai malaikat pelayan, dan menjaga keberuntungan Wuthering Heights, bahkan ketika tubuhnya telah tiada. Begitukah?” Menyadari kesalahan saya, saya mencoba memperbaikinya. Saya mungkin melihat ada perbedaan usia yang terlalu besar antara kedua pihak sehingga tidak mungkin mereka adalah suami istri. Yang satu berusia sekitar empat puluh tahun: suatu masa di mana pria jarang memelihara khayalan menikah karena cinta oleh gadis-gadis: mimpi itu hanya diperuntukkan bagi penghiburan di masa senja kita. Yang lainnya tampak belum genap tujuh belas tahun. Lalu terlintas di benakku—"Badut di sebelahku, yang minum teh dari baskom dan makan roti dengan tangan yang belum dicuci, mungkin suaminya: Heathcliff junior, tentu saja. Inilah konsekuensi dari dikubur hidup-hidup: dia telah menyerahkan dirinya pada orang kasar itu karena ketidaktahuan bahwa ada orang yang lebih baik! Sungguh menyedihkan—aku harus berhati-hati agar dia tidak menyesali pilihannya." Refleksi terakhir mungkin tampak sombong; sebenarnya tidak. Tetanggaku tampak hampir menjijikkan bagiku; aku tahu, melalui pengalaman, bahwa aku cukup menarik. “Nyonya Heathcliff adalah menantu perempuan saya,” kata Heathcliff, membenarkan dugaan saya. Sambil berbicara, ia menoleh ke arahnya dengan tatapan aneh: tatapan penuh kebencian; kecuali jika ia memiliki otot wajah yang sangat aneh yang tidak, seperti otot wajah orang lain, dapat menerjemahkan bahasa jiwanya. “Ah, tentu saja—sekarang aku mengerti: kau adalah pemilik kesayangan peri yang murah hati,” ujarku, sambil menoleh ke tetanggaku. Ini lebih buruk dari sebelumnya: pemuda itu memerah padam, dan mengepalkan tinjunya, seolah-olah akan melakukan serangan yang direncanakan. Tetapi dia tampaknya segera mengendalikan diri, dan meredam amarahnya dengan kutukan brutal yang diucapkannya untukku: yang, bagaimanapun, aku berhati-hati untuk tidak memperhatikannya. “Salah jika dugaan Anda keliru, Tuan,” ujar tuan rumah saya; “kami berdua tidak memiliki hak istimewa untuk memiliki peri baik Anda; pasangannya sudah meninggal. Saya katakan dia adalah menantu perempuan saya: oleh karena itu, dia pasti telah menikah dengan putra saya.” “Dan pemuda ini adalah—” “Tentu saja bukan anakku.” Heathcliff tersenyum lagi, seolah-olah itu adalah lelucon yang terlalu berani untuk mengaitkan ayah dari beruang itu kepadanya. “Namaku Hareton Earnshaw,” geram yang lain; “dan aku sarankan kau untuk menghormatinya!” “Saya tidak bersikap tidak sopan,” jawab saya, sambil tertawa dalam hati melihat betapa berwibawanya dia memperkenalkan diri. Ia menatapku lebih lama dari yang kuinginkan untuk membalas tatapannya, karena takut aku tergoda untuk menampar telinganya atau tertawa terbahak-bahak. Aku mulai merasa jelas-jelas tidak pada tempatnya di lingkungan keluarga yang menyenangkan itu. Suasana spiritual yang suram mengalahkan, dan lebih dari sekadar menetralkan, kenyamanan fisik yang bersinar di sekitarku; dan aku memutuskan untuk berhati-hati bagaimana aku melangkah ke bawah atap itu untuk ketiga kalinya. Setelah selesai makan, dan tak seorang pun berbincang ramah, aku mendekati jendela untuk mengamati cuaca. Pemandangan yang kulihat menyedihkan: malam gelap datang lebih awal, dan langit serta bukit-bukit bercampur dalam pusaran angin dingin dan salju yang menyesakkan. “Kurasa aku tidak mungkin bisa pulang sekarang tanpa pemandu,” seruku tanpa sadar. “Jalanan pasti sudah tertutup salju; dan kalaupun masih bersih, aku hampir tidak bisa melihat satu langkah pun di depan.” “Hareton, giring selusin domba itu ke beranda lumbung. Mereka akan terlindungi jika dibiarkan di kandang sepanjang malam: dan letakkan papan di depan mereka,” kata Heathcliff. “Bagaimana aku harus melakukannya?” lanjutku, dengan rasa jengkel yang semakin meningkat. Tidak ada jawaban atas pertanyaan saya; dan ketika saya melihat sekeliling, saya hanya melihat Joseph membawa seember bubur untuk anjing-anjing, dan Nyonya Heathcliff membungkuk di atas perapian, menghibur dirinya dengan membakar seikat korek api yang jatuh dari perapian saat dia mengembalikan wadah teh ke tempatnya. Joseph, setelah meletakkan barang bawaannya, mengamati ruangan dengan kritis, dan dengan suara serak berkata—"Aku heran bagaimana kau bisa berani berdiri di sana dengan malas-malasan di tengah perang, ketika semua orang pergi! Tapi kau tidak berguna, dan percuma bicara—kau tidak akan pernah memperbaiki kebiasaan burukmu, tetapi langsung saja pergi ke neraka, seperti ibumu dulu!" Untuk sesaat, aku membayangkan bahwa pidato yang penuh retorika itu ditujukan kepadaku; dan, karena cukup marah, aku melangkah mendekati si bajingan tua itu dengan maksud untuk menendangnya keluar pintu. Namun, Nyonya Heathcliff menghentikanku dengan jawabannya. “Dasar munafik tua yang kurang ajar!” jawabnya. “Tidakkah kau takut diculik secara fisik setiap kali kau menyebut nama iblis? Aku peringatkan kau untuk tidak memprovokasi aku, atau aku akan meminta penculikanmu sebagai permintaan khusus! Berhenti! Lihat di sini, Joseph,” lanjutnya, sambil mengambil sebuah buku panjang dan gelap dari rak; “Akan kutunjukkan seberapa jauh kemajuanku dalam Ilmu Hitam: Aku akan segera mampu menguasainya sepenuhnya. Sapi merah itu tidak mati secara kebetulan; dan rematikmu hampir tidak bisa dianggap sebagai kunjungan ilahi!” “Oh, jahat, jahat!” seru tetua itu terengah-engah; “semoga Tuhan menyelamatkan kita dari kejahatan!” “Tidak, dasar bajingan! Kau adalah orang buangan—pergilah, atau aku akan menyakitimu dengan serius! Aku akan membuat patungmu dari lilin dan tanah liat! Dan orang pertama yang melewati batas yang kutetapkan akan—aku tidak akan mengatakan apa yang akan terjadi padanya—tapi, kau akan lihat! Pergi, aku sedang mengawasimu!” Penyihir kecil itu memasang kepura-puraan jahat di matanya yang indah, dan Joseph, gemetar karena ngeri yang tulus, bergegas keluar sambil berdoa, dan berseru "jahat" sambil berjalan. Kupikir tingkah lakunya pasti didorong oleh semacam lelucon yang membosankan; dan, sekarang karena kami sendirian, aku berusaha membuatnya tertarik pada kesusahanku. “Nyonya Heathcliff,” kataku dengan sungguh-sungguh, “maafkan saya karena telah mengganggu Anda. Saya kira, karena dengan wajah seperti itu, saya yakin Anda pasti berhati baik. Tolong tunjukkan beberapa penanda jalan agar saya bisa tahu jalan pulang: saya sama sekali tidak tahu bagaimana caranya sampai ke sana, sama seperti Anda tidak tahu bagaimana caranya sampai ke London!” “Ikuti jalan yang kau lalui,” jawabnya, sambil duduk nyaman di kursi dengan lilin menyala dan buku panjang terbuka di hadapannya. “Ini nasihat singkat, tetapi sebaik yang bisa kuberikan.” “Lalu, jika kau mendengar kabar bahwa aku ditemukan tewas di rawa atau lubang yang penuh salju, hati nuranimu tidak akan membisikkan bahwa itu sebagian adalah kesalahanmu?” “Bagaimana bisa? Saya tidak bisa mengantar Anda. Mereka tidak mengizinkan saya pergi sampai ke ujung tembok taman.” “ Kau ! Aku akan merasa tidak enak memintamu melewati ambang pintu, demi kenyamananku, di malam seperti ini,” seruku. “Aku ingin kau memberitahuku jalan, bukan menunjukkannya : atau membujuk Tuan Heathcliff untuk memberiku pemandu.” “Siapa? Ada dirinya sendiri, Earnshaw, Zillah, Joseph, dan saya. Mana yang akan Anda pilih?” “Apakah tidak ada anak laki-laki di peternakan?” “Tidak; itu saja.” “Kalau begitu, saya terpaksa harus tinggal.” “Agar kamu dapat menyelesaikan masalah itu dengan tuan rumahmu. Aku tidak ada hubungannya dengan itu.” “Kuharap ini akan menjadi pelajaran bagimu agar tak lagi melakukan perjalanan gegabah di perbukitan ini,” seru suara tegas Heathcliff dari pintu masuk dapur. “Soal menginap di sini, aku tidak menyediakan akomodasi untuk tamu: kau harus berbagi tempat tidur dengan Hareton atau Joseph, jika kau menginap.” “Aku bisa tidur di kursi di ruangan ini,” jawabku. “Tidak, tidak! Orang asing tetaplah orang asing, kaya atau miskin: tidak pantas bagi saya untuk membiarkan siapa pun berkeliaran di tempat ini saat saya lengah!” kata si bajingan kurang ajar itu. Kesabaranku habis karena penghinaan itu. Aku mengeluarkan ekspresi jijik, dan mendorongnya ke halaman, menabrak Earnshaw karena terburu-buru. Keadaan sangat gelap sehingga aku tidak bisa melihat jalan keluar; dan, saat aku berkeliling, aku mendengar contoh lain dari perilaku sopan mereka satu sama lain. Awalnya pemuda itu tampak ingin berteman denganku. “Aku akan ikut dengannya sampai ke taman,” katanya. “Kau akan ikut dengannya ke neraka!” seru tuannya, atau siapa pun kerabatnya. “Dan siapa yang akan mengurus kuda-kuda itu, ya?” “Nyawa seseorang jauh lebih penting daripada kelalaian merawat kuda di malam hari: seseorang harus pergi,” gumam Ny. Heathcliff, dengan nada yang lebih ramah dari yang saya duga. “Bukan atas perintahmu!” balas Hareton. “Jika kau percaya padanya, sebaiknya kau diam.” “Kalau begitu, kuharap arwahnya akan menghantuimu; dan kuharap Tuan Heathcliff tidak akan pernah mendapatkan penyewa lain sampai Grange menjadi reruntuhan,” jawabnya dengan tajam. “Dengarkan, dengarkan, usir kutukan pada mereka!” gumam Joseph, yang ke arahnya aku sedang mengarahkan kemudi. Dia duduk di dekat situ, memerah susu sapi dengan penerangan lentera, yang langsung saya rebut tanpa basa-basi, dan sambil berteriak bahwa saya akan mengembalikannya besok, saya bergegas ke pintu belakang terdekat. “Tuan, tuan, dia mencuri lentera!” teriak orang tua itu, mengejarku mundur. “Hei, Gnasher! Hei, anjing! Hei Serigala, tahan dia, tahan dia!” Saat membuka pintu kecil itu, dua monster berbulu menerkam leherku, menjatuhkanku, dan memadamkan lampu; sementara tawa terbahak-bahak dari Heathcliff dan Hareton menambah amarah dan penghinaanku. Untungnya, binatang-binatang itu tampaknya lebih tertarik untuk meregangkan cakar mereka, menguap, dan mengibaskan ekor mereka, daripada melahapku hidup-hidup; tetapi mereka tidak akan bangkit kembali, dan aku terpaksa berbaring sampai tuan-tuan jahat mereka berkenan membebaskanku: lalu, tanpa topi dan gemetar karena marah, aku memerintahkan para penjahat itu untuk melepaskanku—dengan risiko mereka sendiri jika menahanku semenit pun lebih lama—dengan beberapa ancaman pembalasan yang tidak jelas yang, dalam kedalaman keganasannya yang tak terdefinisi, mengingatkan pada Raja Lear. Kegelisahan saya yang begitu hebat menyebabkan mimisan hebat, dan Heathcliff masih tertawa, dan saya masih memarahinya. Saya tidak tahu apa yang akan mengakhiri adegan itu, seandainya tidak ada seseorang yang lebih rasional daripada saya, dan lebih baik hati daripada orang yang menghibur saya. Orang itu adalah Zillah, ibu rumah tangga yang gemuk; yang akhirnya keluar untuk menanyakan penyebab keributan itu. Dia berpikir bahwa beberapa dari mereka telah melakukan kekerasan terhadap saya; dan, karena tidak berani menyerang majikannya, dia mengarahkan amarahnya kepada si bajingan muda itu. “Nah, Tuan Earnshaw,” serunya, “aku penasaran apa lagi yang akan kau lakukan selanjutnya? Apakah kita akan membunuh orang di depan pintu rumah kita sendiri? Kurasa rumah ini tidak cocok untukku—lihatlah anak malang itu, dia hampir tersedak! Berharaplah, berharaplah; kau tidak boleh terus seperti itu. Masuklah, dan aku akan mengobatinya: nah, diamlah.” Dengan kata-kata itu, dia tiba-tiba menyiramkan segelas air es ke leherku, dan menarikku ke dapur. Tuan Heathcliff mengikuti, kegembiraannya yang tak disengaja dengan cepat sirna dan kembali pada kemurungannya yang biasa. Aku sangat sakit, pusing, dan lemas; sehingga terpaksa menerima penginapan di rumahnya. Dia menyuruh Zillah memberiku segelas brendi, lalu pergi ke kamar dalam; sementara Zillah bersimpati padaku atas keadaan menyedihkanku, dan setelah menuruti perintahnya, yang membuatku sedikit pulih, dia mengantarku ke tempat tidur.</p>
 

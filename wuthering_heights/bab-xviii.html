@@ -5,39 +5,176 @@
 <title>BAB XVIII</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XVIII - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XVIII</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Dua belas tahun berikutnya, lanjut Ny. Dean, adalah masa-masa paling bahagia dalam hidup saya: masalah terbesar saya selama masa itu muncul dari penyakit-penyakit ringan putri kecil kami, yang harus dialaminya seperti anak-anak lain, kaya maupun miskin. Selebihnya, setelah enam bulan pertama, ia tumbuh seperti pohon larch, dan bisa berjalan serta berbicara dengan caranya sendiri, sebelum semak belukar kembali mekar di atas tanah kosong Ny. Linton. Ia adalah hal paling menawan yang pernah membawa sinar matahari ke rumah yang sunyi: kecantikan sejati di wajahnya, dengan mata gelap yang tampan seperti keluarga Earnshaw, tetapi kulitnya cerah dan fitur wajahnya kecil, serta rambut keriting kuning seperti keluarga Linton. Semangatnya tinggi, meskipun tidak kasar, dan diimbangi oleh hati yang sensitif dan sangat bersemangat dalam kasih sayangnya. Kemampuan untuk terikat secara intens itu mengingatkan saya pada ibunya: namun ia tidak menyerupainya: karena ia bisa lembut dan ramah seperti merpati, dan ia memiliki suara yang lembut dan ekspresi yang termenung: amarahnya tidak pernah meluap-luap; cintanya tidak pernah ganas: itu dalam dan lembut. Namun, harus diakui, ia memiliki kekurangan yang menghambat bakatnya. Kecenderungan untuk bersikap kurang ajar adalah salah satunya; dan kemauan yang keras kepala, yang selalu dimiliki anak-anak yang dimanjakan, baik mereka berwatak baik maupun pemarah. Jika seorang pelayan kebetulan membuatnya kesal, ia selalu berkata—"Aku akan memberi tahu ayah!" Dan jika ia menegurnya, bahkan hanya dengan tatapan, Anda akan menganggapnya sebagai hal yang memilukan: Saya tidak percaya ia pernah mengucapkan kata-kata kasar kepadanya. Ayahnya sepenuhnya memikul tanggung jawab pendidikannya sendiri, dan menjadikannya sebuah hiburan. Untungnya, rasa ingin tahu dan kecerdasan yang cepat membuatnya menjadi murid yang cakap: ia belajar dengan cepat dan penuh semangat, dan menghormati pengajarannya. Sampai usianya mencapai tiga belas tahun, ia belum pernah sekalipun keluar dari taman sendirian. Tuan Linton akan membawanya bersamanya sekitar satu mil ke luar, pada kesempatan langka; tetapi ia tidak mempercayakannya kepada orang lain. Gimmerton adalah nama yang tidak berarti di telinganya; kapel, satu-satunya bangunan yang pernah didekati atau dimasukinya, kecuali rumahnya sendiri. Wuthering Heights dan Tuan Heathcliff tidak ada artinya baginya: ia adalah seorang penyendiri sejati; dan, tampaknya, sangat puas. Kadang-kadang, memang, saat mengamati pemandangan dari jendela kamar tidurnya, ia akan mengamati— “Ellen, berapa lama lagi sebelum aku bisa berjalan ke puncak bukit-bukit itu? Aku penasaran apa yang ada di sisi seberang—apakah itu laut?” “Tidak, Nona Cathy,” jawabku; “ini lagi-lagi perbukitan, persis seperti ini.” “Dan seperti apa bebatuan emas itu ketika Anda berdiri di bawahnya?” tanyanya suatu kali. Lereng curam Penistone Crags sangat menarik perhatiannya; terutama ketika matahari terbenam menyinarinya dan puncak-puncaknya, serta seluruh bentang alam di sekitarnya yang diselimuti bayangan. Saya menjelaskan bahwa itu adalah massa batu yang gersang, dengan hampir tidak ada cukup tanah di celah-celahnya untuk menopang pohon kerdil. “Dan mengapa lampu-lampu itu tetap terang begitu lama setelah hari sudah senja di sini?” lanjutnya. “Karena letaknya jauh lebih tinggi dari kita,” jawabku; “kau tidak bisa mendakinya, terlalu tinggi dan curam. Di musim dingin, embun beku selalu ada di sana sebelum sampai ke kita; dan jauh di musim panas aku pernah menemukan salju di bawah cekungan hitam di sisi timur laut itu!” “Oh, kamu sudah pernah naik wahana itu!” serunya gembira. “Kalau begitu aku juga bisa ikut saat sudah dewasa. Ayah sudah pernah naik wahana itu, Ellen?” “Ayah akan memberitahumu, Nona,” jawabku tergesa-gesa, “bahwa tempat-tempat itu tidak layak dikunjungi. Padang rumput tempat kau berjalan-jalan bersamanya jauh lebih indah; dan Taman Thrushcross adalah tempat terindah di dunia.” “Tapi aku kenal taman ini, dan aku tidak kenal mereka,” gumamnya pada diri sendiri. “Dan aku akan senang melihat sekeliling dari puncak titik tertinggi itu: kuda poni kecilku, Minny, akan membawaku cukup lama.” Salah satu pelayan yang menyebutkan Gua Peri, membuat Catherine sangat ingin mewujudkan proyek ini: ia menggoda Tuan Linton tentang hal itu; dan Tuan Linton berjanji bahwa Catherine akan melakukan perjalanan itu ketika ia sudah lebih besar. Tetapi Nona Catherine mengukur usianya berdasarkan bulan, dan, "Sekarang, apakah aku sudah cukup umur untuk pergi ke Penistone Crags?" adalah pertanyaan yang terus-menerus terucap di mulutnya. Jalan ke sana berkelok-kelok di dekat Wuthering Heights. Edgar tidak tega melewatinya; jadi ia selalu menerima jawaban, "Belum, sayang: belum." Saya mengatakan bahwa Nyonya Heathcliff hidup lebih dari selusin tahun setelah meninggalkan suaminya. Keluarganya memiliki konstitusi yang lemah: dia dan Edgar sama-sama tidak memiliki kesehatan yang prima seperti yang umumnya Anda temui di daerah ini. Saya tidak yakin apa penyakit terakhirnya: saya menduga, mereka meninggal karena hal yang sama, semacam demam, lambat pada awalnya, tetapi tidak dapat disembuhkan, dan dengan cepat menghabiskan nyawa menjelang akhir. Dia menulis surat untuk memberi tahu saudara laki-lakinya tentang kemungkinan berakhirnya sakit selama empat bulan yang dideritanya, dan memohon kepadanya untuk datang menemuinya, jika memungkinkan; karena dia memiliki banyak hal yang harus diselesaikan, dan dia ingin mengucapkan selamat tinggal kepadanya, dan menyerahkan Linton dengan aman ke tangannya. Harapannya adalah agar Linton dapat dititipkan kepadanya, seperti yang telah dilakukannya kepadanya: ayahnya, dia ingin meyakinkan dirinya sendiri, tidak ingin menanggung beban pemeliharaan atau pendidikannya. Tuan saya tidak ragu sedikit pun untuk memenuhi permintaannya: meskipun dia enggan meninggalkan rumah pada panggilan biasa, dia bergegas untuk menjawab ini; Ia mempercayakan Catherine kepada pengawasan ketat saya, selama ketidakhadirannya, dengan perintah berulang bahwa ia tidak boleh berkeliaran di luar taman, bahkan di bawah pengawalan saya: ia tidak memperhitungkan bahwa Catherine akan pergi tanpa ditemani. Ia pergi selama tiga minggu. Satu atau dua hari pertama, anak asuhku duduk di sudut perpustakaan, terlalu sedih untuk membaca atau bermain: dalam keadaan tenang itu ia tidak banyak merepotkanku; tetapi kemudian diikuti oleh periode kelelahan yang tidak sabar dan rewel; dan karena terlalu sibuk, dan terlalu tua saat itu, untuk berlarian ke sana kemari menghiburnya, aku menemukan cara agar ia bisa menghibur dirinya sendiri. Aku biasa mengirimnya berkeliling pekarangan—kadang berjalan kaki, kadang menunggang kuda poni; memanjakannya dengan mendengarkan semua petualangan nyata dan khayalannya ketika ia kembali. Musim panas bersinar dengan indahnya; dan dia sangat menyukai jalan-jalan sendirian ini sehingga dia sering kali berhasil tetap berada di luar dari sarapan hingga minum teh; dan kemudian malam-malam dihabiskan untuk menceritakan kisah-kisah khayalannya. Aku tidak takut dia melanggar aturan; karena gerbang biasanya terkunci, dan kupikir dia hampir tidak akan berani keluar sendirian jika gerbang itu terbuka lebar. Sayangnya, kepercayaanku ternyata salah. Catherine datang kepadaku suatu pagi, pukul delapan, dan berkata bahwa dia akan menjadi pedagang Arab hari itu, pergi menyeberangi Gurun dengan kafilahnya; dan aku harus memberinya banyak bekal untuk dirinya dan hewan-hewannya: seekor kuda, dan tiga unta, yang diwakili oleh seekor anjing pemburu besar dan sepasang anjing pemburu. Aku mengumpulkan banyak makanan lezat, dan menaruhnya di keranjang di satu sisi pelana; Dan dia melompat riang seperti peri, terlindung oleh topi bertepi lebar dan kerudung kasa dari terik matahari bulan Juli, lalu berlari kecil sambil tertawa riang, mengejek nasihatku yang hati-hati untuk menghindari berlari kencang dan kembali lebih awal. Si nakal itu tidak pernah muncul saat minum teh. Seorang pelancong, anjing pemburu, karena sudah tua dan suka bersantai, kembali; tetapi baik Cathy, maupun kuda poni, maupun kedua anjing pemburu tidak terlihat ke mana pun: Aku mengirim utusan menyusuri jalan ini dan jalan itu, dan akhirnya aku sendiri pergi mencarinya. Ada seorang buruh yang sedang bekerja di pagar di sekitar perkebunan, di perbatasan lahan. Aku bertanya kepadanya apakah dia telah melihat gadis muda kita. “Aku melihatnya pagi-pagi sekali,” jawabnya: “dia memintaku untuk memotongkan ranting pohon hazel untuknya, lalu dia melompatkan kuda Galloway-nya melewati pagar di sana, di tempat yang paling rendah, dan berpacu hingga menghilang dari pandangan.” Anda mungkin bisa menebak bagaimana perasaan saya saat mendengar berita ini. Saya langsung berpikir dia pasti sudah berangkat ke Penistone Crags. "Apa yang akan terjadi padanya?" seru saya, menerobos celah yang sedang diperbaiki pria itu, dan langsung menuju jalan raya. Saya berjalan seolah-olah sedang bertaruh, mil demi mil, sampai sebuah belokan membawa saya ke arah Heights; tetapi saya tidak dapat melihat Catherine, jauh maupun dekat. Crags terletak sekitar satu setengah mil di luar tempat Tuan Heathcliff, dan itu empat mil dari Grange, jadi saya mulai khawatir malam akan tiba sebelum saya bisa mencapainya. "Dan bagaimana jika dia terpeleset saat memanjat di antara tebing-tebing itu," pikir saya, "dan terbunuh, atau patah tulang?" Ketegangan saya benar-benar menyakitkan; dan, pada awalnya, saya merasa lega melihat, saat bergegas melewati rumah pertanian, Charlie, anjing pemburu yang paling ganas, berbaring di bawah jendela, dengan kepala bengkak dan telinga berdarah. Saya membuka pintu kecil dan berlari ke pintu, mengetuk dengan keras untuk meminta izin masuk. Seorang wanita yang saya kenal, dan yang dulunya tinggal di Gimmerton, menjawab: dia telah menjadi pelayan di sana sejak kematian Tuan Earnshaw. “Ah,” katanya, “kau datang mencari nyonya kecilmu! Jangan takut. Dia di sini dengan selamat: tapi aku senang itu bukan tuanmu.” “Dia tidak ada di rumah, kan?” tanyaku terengah-engah, napasku tersengal-sengal karena berjalan cepat dan cemas. “Tidak, tidak,” jawabnya: “dia dan Joseph sedang pergi, dan kurasa mereka tidak akan kembali dalam satu jam atau lebih. Masuklah dan istirahatlah sebentar.” Aku masuk, dan melihat anak dombaku yang tersesat duduk di perapian, mengayunkan dirinya di kursi kecil yang dulunya milik ibunya saat masih kecil. Topinya tergantung di dinding, dan dia tampak sangat nyaman, tertawa dan berceloteh, dengan suasana hati yang sangat baik, kepada Hareton—yang kini seorang pemuda besar dan kuat berusia delapan belas tahun—yang menatapnya dengan rasa ingin tahu dan takjub yang cukup besar: hanya sedikit memahami rangkaian ucapan dan pertanyaan lancar yang tak pernah berhenti keluar dari mulutnya. “Baiklah, Nona!” seruku, menyembunyikan kegembiraanku di balik raut wajah marah. “Ini perjalanan terakhirmu, sampai ayah kembali. Aku tidak akan mempercayakanmu melewati ambang pintu lagi, dasar gadis nakal!” “Aha, Ellen!” serunya riang, sambil melompat dan berlari ke sisiku. “Aku akan punya cerita yang bagus untuk diceritakan malam ini; dan kau sudah menemukanku. Pernahkah kau ke sini sebelumnya?” “Pakailah topi itu, dan pulanglah segera,” kataku. “Aku sangat sedih atas perbuatanmu, Nona Cathy: kau telah melakukan kesalahan besar! Merajuk dan menangis tidak ada gunanya: itu tidak akan mengganti semua kesulitan yang telah kualami, mencarimu di seluruh negeri. Bayangkan berapa biaya yang dikeluarkan Tuan Linton untuk menjagamu di sini; dan kau malah kabur begitu saja! Itu menunjukkan kau adalah rubah kecil yang licik, dan tidak ada yang akan mempercayaimu lagi.” “Apa yang telah kulakukan?” isaknya, seketika terhenti. “Ayah tidak menyalahkanku apa pun: dia tidak akan memarahiku, Ellen—dia tidak pernah marah, tidak seperti kamu!” “Ayo, ayo!” ulangku. “Aku akan mengikat pitanya. Sekarang, janganlah kita bersikap kekanak-kanakan. Oh, sungguh memalukan! Kau baru tiga belas tahun, dan masih seperti bayi!” Seruan itu muncul karena dia menyingkirkan topi dari kepalanya, lalu mundur ke cerobong asap agar tidak bisa saya jangkau. “Tidak,” kata pelayan itu, “jangan terlalu keras pada gadis cantik itu, Nyonya Dean. Kami menyuruhnya berhenti: dia lebih suka berkuda lebih cepat, karena takut Anda akan merasa tidak nyaman. Hareton menawarkan diri untuk menemaninya, dan saya pikir dia harus melakukannya: jalan di atas bukit itu sangat berbahaya.” Selama diskusi, Hareton berdiri dengan tangan di saku, terlalu canggung untuk berbicara; meskipun dia tampak seolah-olah tidak menyukai gangguan saya. “Berapa lama lagi aku harus menunggu?” lanjutku, mengabaikan campur tangan wanita itu. “Sepuluh menit lagi akan gelap. Di mana kuda poni itu, Nona Cathy? Dan di mana Phoenix? Aku akan meninggalkanmu, kecuali jika kau cepat; terserah kau.” “Kuda poni itu ada di halaman,” jawabnya, “dan Phoenix dikurung di sana. Dia digigit—begitu juga Charlie. Aku tadinya mau menceritakan semuanya padamu; tapi kau sedang marah, dan tidak pantas mendengarnya.” Aku mengambil topinya, dan mendekat untuk mengembalikannya; tetapi menyadari bahwa orang-orang di rumah itu berpihak padanya, dia mulai berjingkrak-jingkrak di sekitar ruangan; dan ketika aku mengejarnya, dia berlari seperti tikus di atas, di bawah, dan di belakang perabot, membuat aku tidak bisa mengejarnya lagi. Hareton dan wanita itu tertawa, dan dia ikut tertawa bersama mereka, dan menjadi semakin kurang ajar; sampai aku berteriak, dengan sangat kesal, —“Nah, Nona Cathy, jika Anda tahu ini rumah siapa, Anda pasti akan senang untuk pergi.” “Ini milik ayahmu , kan?” katanya, sambil menoleh ke Hareton. “Tidak,” jawabnya sambil menunduk dan tersipu malu. Dia tidak tahan dengan tatapan tajam dari matanya, meskipun itu adalah tatapan matanya sendiri. “Lalu milik siapa—milik tuanmu?” tanyanya. Ia memerah lebih dalam, dengan perasaan yang berbeda, bergumam sumpah serapah, lalu berbalik. “Siapa majikannya?” lanjut gadis yang menyebalkan itu, memohon padaku. “Dia berbicara tentang 'rumah kita,' dan 'keluarga kita.' Kupikir dia adalah putra pemiliknya. Dan dia tidak pernah menyebut Nona: seharusnya dia menyebut Nona, kan, kalau dia seorang pelayan?” Hareton memerah seperti awan badai mendengar ucapan kekanak-kanakan itu. Aku diam-diam mengguncang orang yang bertanya kepadaku, dan akhirnya berhasil mempersiapkannya untuk pergi. “Sekarang, ambil kudaku,” katanya, berbicara kepada kerabatnya yang tidak dikenal itu seolah-olah ia sedang berbicara kepada salah satu penjaga kandang di Grange. “Dan kau boleh ikut denganku. Aku ingin melihat tempat pemburu goblin muncul di rawa, dan mendengar tentang peri-peri , seperti yang kau sebut: tapi cepatlah! Ada apa? Ambil kudaku, kataku.” “Lebih baik kau terkutuk daripada menjadi hambamu !” geram pemuda itu. “Kau akan menemuiku apa? ” tanya Catherine dengan terkejut. “Sialan—kau penyihir kurang ajar!” jawabnya. “Nah, Nona Cathy! Anda lihat, Anda berada di lingkungan yang baik,” sela saya. “Kata-kata yang bagus untuk diucapkan kepada seorang wanita muda! Tolong jangan mulai berdebat dengannya. Ayo, kita cari Minny sendiri, lalu pergi.” “Tapi, Ellen,” serunya, menatap tajam dengan heran, “beraninya dia berbicara seperti itu padaku? Bukankah dia harus menuruti perintahku? Dasar makhluk jahat, aku akan memberi tahu ayah apa yang kau katakan.—Nah, sekarang!” Hareton tampaknya tidak merasakan ancaman ini; sehingga air mata menggenang di matanya karena marah. "Bawalah kuda poni itu," serunya, sambil menoleh ke wanita itu, "dan bebaskan anjingku sekarang juga!" “Pelan-pelan, Nona,” jawab orang yang disapa. “Anda tidak akan rugi apa pun dengan bersikap sopan. Meskipun Tuan Hareton di sana bukanlah putra majikan, dia adalah sepupu Anda: dan saya tidak pernah dipekerjakan untuk melayani Anda.” “ Dia sepupuku!” seru Cathy sambil tertawa mengejek. “Ya, memang benar,” jawab orang yang menegurnya. “Oh, Ellen! Jangan biarkan mereka mengatakan hal-hal seperti itu,” lanjutnya dengan sangat sedih. “Ayah pergi menjemput sepupuku dari London: sepupuku adalah putra seorang bangsawan. Itu—” ia berhenti, dan menangis tersedu-sedu; kesal hanya karena membayangkan hubungan keluarga dengan orang yang seperti badut itu. “Ssst, ssst!” bisikku; “orang bisa punya banyak sepupu dan dari berbagai macam kalangan, Nona Cathy, tanpa menjadi lebih buruk karenanya; hanya saja mereka tidak perlu berteman dengan mereka, jika mereka tidak menyenangkan dan jahat.” “Dia bukan—dia bukan sepupuku, Ellen!” lanjutnya, kesedihan baru menyelimutinya, dan ia mendekapku erat untuk mencari perlindungan dari pikiran itu. Aku sangat kesal padanya dan pelayan itu karena pengungkapan rahasia mereka; karena tidak ragu bahwa kedatangan Linton yang semakin dekat, yang dikomunikasikan oleh pelayan itu, telah dilaporkan kepada Tuan Heathcliff; dan merasa yakin bahwa pikiran pertama Catherine saat ayahnya kembali adalah mencari penjelasan atas pernyataan ayahnya tentang kerabatnya yang berasal dari keluarga kasar. Hareton, yang pulih dari rasa jijiknya karena dianggap sebagai pelayan, tampak tersentuh oleh kesedihannya; dan, setelah membawa kuda poni ke pintu, untuk menenangkannya, ia mengambil seekor anak anjing terrier berkaki bengkok yang bagus dari kandang, dan meletakkannya di tangannya, menyuruhnya bermain whist! karena ia tidak bermaksud apa-apa. Berhenti sejenak dalam ratapannya, ia menatapnya dengan tatapan kagum dan ngeri, lalu kembali menangis tersedu-sedu. Aku hampir tak bisa menahan senyum melihat rasa antipati terhadap pemuda malang itu; seorang pemuda yang berbadan tegap, atletis, tampan, gemuk dan sehat, tetapi berpakaian sesuai dengan pekerjaan sehari-harinya di ladang dan bersantai di padang rumput mengejar kelinci dan hewan buruan. Namun, kupikir aku bisa mendeteksi dalam raut wajahnya pikiran yang memiliki kualitas lebih baik daripada yang pernah dimiliki ayahnya. Hal-hal baik hilang di tengah belantara gulma, tentu saja, yang pertumbuhannya jauh melampaui pertumbuhan yang diabaikan; namun, meskipun demikian, bukti tanah yang subur, yang mungkin menghasilkan panen yang melimpah dalam keadaan lain yang menguntungkan. Tuan Heathcliff, kupercaya, tidak memperlakukannya dengan buruk secara fisik; berkat sifatnya yang pemberani, yang tidak menawarkan godaan untuk melakukan penindasan itu: ia tidak memiliki kerentanan yang penakut yang akan memberi semangat pada perlakuan buruk, menurut penilaian Heathcliff. Tampaknya ia telah mengarahkan kebenciannya untuk menjadikannya seperti binatang buas: ia tidak pernah diajari membaca atau menulis; Tidak pernah ditegur atas kebiasaan buruk apa pun yang tidak mengganggu pengasuhnya; tidak pernah menunjukkan sedikit pun kebajikan, atau dilindungi oleh satu pun ajaran melawan kejahatan. Dan dari apa yang kudengar, Joseph banyak berkontribusi pada kemerosotannya, dengan sikap pilih kasih yang sempit yang mendorongnya untuk menyanjung dan memanjakannya, sejak kecil, karena dia adalah kepala keluarga lama. Dan seperti halnya dia terbiasa menuduh Catherine Earnshaw dan Heathcliff, ketika masih anak-anak, telah membuat majikannya kehilangan kesabaran, dan memaksanya mencari pelipur lara dalam minuman keras karena apa yang disebutnya "cara-cara tercela" mereka, maka saat ini dia membebankan seluruh kesalahan Hareton pada pundak perampas hartanya. Jika anak itu mengumpat, dia tidak akan menegurnya: betapapun buruknya perilakunya. Tampaknya Joseph merasa puas melihatnya melakukan hal-hal terburuk: dia mengakui bahwa anak itu telah hancur: bahwa jiwanya telah ditinggalkan untuk binasa; tetapi kemudian dia merenungkan bahwa Heathcliff harus bertanggung jawab atas hal itu. Darah Hareton akan dituntut dari tangannya; dan di situlah terletak penghiburan yang luar biasa dalam pikiran itu. Joseph telah menanamkan dalam dirinya kebanggaan akan nama dan garis keturunannya; seandainya ia berani, ia akan memupuk kebencian antara dirinya dan pemilik Wuthering Heights saat ini: tetapi ketakutannya terhadap pemilik itu sama dengan takhayul; dan ia membatasi perasaannya terhadapnya hanya pada sindiran dan umpatan pribadi yang diucapkan dengan pelan. Saya tidak berpura-pura mengenal secara intim cara hidup yang lazim pada masa itu di Wuthering Heights: saya hanya berbicara berdasarkan desas-desus; karena saya hanya melihat sedikit. Penduduk desa menegaskan bahwa Tuan Heathcliff berada di dekat mereka , dan merupakan tuan tanah yang kejam dan keras terhadap para penyewanya; tetapi rumah itu, di dalamnya, telah kembali ke tampilan kenyamanannya yang kuno di bawah pengelolaan perempuan, dan adegan kerusuhan yang umum terjadi pada zaman Hindley tidak lagi terjadi di dalam temboknya. Sang tuan tanah terlalu murung untuk mencari pergaulan dengan siapa pun, baik atau buruk; dan ia masih demikian. Namun, ini tidak membawa kemajuan pada cerita saya. Nona Cathy menolak tawaran perdamaian dari anjing terrier itu, dan menuntut anjingnya sendiri, Charlie dan Phoenix. Mereka datang dengan pincang dan menundukkan kepala; dan kami pun pulang, dengan perasaan sedih dan tidak enak badan, semuanya. Saya tidak bisa mendapatkan informasi dari Nona Cathy tentang bagaimana ia menghabiskan hari itu; kecuali bahwa, seperti yang saya duga, tujuan ziarahnya adalah Penistone Crags; dan ia tiba tanpa petualangan di gerbang rumah pertanian, ketika Hareton kebetulan keluar, ditemani oleh beberapa anjing pengikutnya, yang menyerang rombongannya. Mereka bertarung sengit, sebelum pemiliknya dapat memisahkan mereka: itu menjadi pengantar cerita. Catherine memberi tahu Hareton siapa dirinya, dan ke mana ia pergi; dan memintanya untuk menunjukkan jalan: akhirnya, membujuknya untuk menemaninya. Ia membuka misteri Gua Peri, dan dua puluh tempat aneh lainnya. Tetapi, karena merasa malu, saya tidak diberi kesempatan untuk menceritakan objek-objek menarik yang dilihatnya. Namun, saya dapat menyimpulkan bahwa pemandunya adalah orang kesayangannya sampai dia melukai perasaannya dengan memanggilnya sebagai pelayan; dan pengurus rumah tangga Heathcliff melukai perasaannya dengan memanggilnya sepupunya. Kemudian, kata-kata yang diucapkan Heathcliff kepadanya membuat hatinya sakit; dia yang selalu dipanggil "sayang," "manis," "ratu," dan "malaikat" oleh semua orang di Grange, dihina sedemikian rupa oleh orang asing! Dia tidak mengerti; dan saya harus bekerja keras untuk mendapatkan janji bahwa dia tidak akan menyampaikan keluhan itu kepada ayahnya. Saya menjelaskan bagaimana ayahnya keberatan dengan seluruh rumah tangga di Heights, dan betapa sedihnya dia jika mengetahui bahwa dia ada di sana; tetapi saya paling menekankan fakta bahwa jika dia mengungkapkan kelalaian saya dalam menjalankan perintahnya, ayahnya mungkin akan sangat marah sehingga saya harus pergi; dan Cathy tidak tahan dengan prospek itu: dia berjanji, dan menepatinya demi saya. Bagaimanapun, dia adalah gadis kecil yang manis.</p>
 

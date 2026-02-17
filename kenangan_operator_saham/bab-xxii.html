@@ -5,39 +5,176 @@
 <title>BAB XXII</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXII - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXII</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>SUATU HARI Jim Barnes, yang bukan hanya salah satu pialang utama saya tetapi juga teman dekat, mengunjungi saya. Dia mengatakan dia ingin saya membantunya . Dia belum pernah berbicara seperti itu sebelumnya, jadi saya memintanya untuk memberi tahu saya bantuan apa yang dia inginkan, berharap itu adalah sesuatu yang bisa saya lakukan, karena saya tentu ingin membantunya. Kemudian dia memberi tahu saya bahwa perusahaannya tertarik pada saham tertentu; sebenarnya, mereka adalah promotor utama perusahaan tersebut dan telah menempatkan sebagian besar saham. Keadaan telah muncul yang membuat mereka harus memasarkan sejumlah besar saham. Jim ingin saya melakukan pemasaran untuknya. Saham tersebut adalah Consolidated Stove. Saya tidak ingin terlibat dalam hal itu karena berbagai alasan. Tetapi Barnes, kepada siapa saya memiliki beberapa hutang budi, bersikeras pada fase pemberian bantuan pribadi , yang merupakan satu-satunya cara untuk mengatasi keberatan saya. Dia adalah orang yang baik, seorang teman, dan saya menduga perusahaannya cukup terlibat, jadi pada akhirnya saya setuju untuk melakukan apa yang saya bisa. Bagi saya, perbedaan yang paling mencolok antara masa booming perang dan masa booming lainnya adalah peran yang dimainkan oleh tipe orang baru dalam urusan pasar saham—yaitu, bankir muda. Ledakan ekonomi itu luar biasa dan asal-usul serta penyebabnya jelas dapat dipahami oleh semua orang. Tetapi pada saat yang sama, bank-bank dan perusahaan-perusahaan kepercayaan terbesar di negara ini tentu saja melakukan segala yang mereka bisa untuk membantu menjadikan jutawan dalam semalam dari berbagai kalangan, promotor, dan pembuat amunisi. Sampai-sampai, yang perlu dilakukan seseorang hanyalah mengatakan bahwa ia memiliki teman yang merupakan teman dari anggota salah satu komisi Sekutu, dan ia akan ditawari semua modal yang dibutuhkan untuk melaksanakan kontrak yang belum ia dapatkan. Saya biasa mendengar cerita-cerita luar biasa tentang pegawai yang menjadi presiden perusahaan yang melakukan bisnis jutaan dolar dengan uang yang dipinjam dari perusahaan-perusahaan kepercayaan, dan tentang kontrak-kontrak yang meninggalkan jejak keuntungan saat berpindah dari satu orang ke orang lain. Banjir emas mengalir ke negara ini dari Eropa dan bank-bank harus menemukan cara untuk menahannya. Cara bisnis dijalankan mungkin dipandang dengan keraguan oleh orang-orang tua, tetapi tampaknya tidak banyak dari mereka yang masih ada. Tren presiden bank berambut abu-abu memang wajar di masa-masa tenang, tetapi usia muda adalah kualifikasi utama di masa-masa sulit ini. Bank-bank tersebut memang menghasilkan keuntungan yang sangat besar. Jim Barnes dan rekan-rekannya, yang menikmati persahabatan dan kepercayaan dari presiden muda Bank Nasional Marshall, memutuskan untuk menggabungkan tiga perusahaan kompor terkenal dan menjual saham perusahaan baru tersebut kepada publik yang selama berbulan-bulan telah membeli berbagai macam sertifikat saham berukir. Salah satu masalahnya adalah bisnis kompor begitu makmur sehingga ketiga perusahaan tersebut benar-benar memperoleh dividen dari saham biasa mereka untuk pertama kalinya dalam sejarah mereka. Pemegang saham utama mereka tidak ingin melepaskan kendali. Ada pasar yang bagus untuk saham mereka di bursa saham; dan mereka telah menjual sebanyak yang mereka inginkan dan mereka puas dengan keadaan saat ini. Kapitalisasi masing-masing perusahaan terlalu kecil untuk membenarkan pergerakan pasar yang besar, dan di situlah firma Jim Barnes berperan. Firma tersebut menunjukkan bahwa perusahaan gabungan harus cukup besar untuk terdaftar di Bursa Saham, di mana saham baru dapat dibuat lebih berharga daripada saham lama. Ini adalah taktik lama di Wall Street—mengubah warna sertifikat untuk membuatnya lebih berharga. Katakanlah suatu saham berhenti mudah dijual saat perang. Nah, terkadang dengan melipatgandakan saham empat kali lipat, Anda dapat membuat saham baru dijual dengan harga 30 atau 35. Ini setara dengan 120 atau 140 untuk saham lama—angka yang tidak mungkin dicapai sebelumnya. Tampaknya Barnes dan rekan-rekannya berhasil membujuk beberapa teman mereka yang secara spekulatif memegang beberapa blok saham Gray Stove Company—sebuah perusahaan besar—untuk ikut serta dalam konsolidasi dengan dasar empat saham Consolidated untuk setiap saham Gray. Kemudian Midland dan Western mengikuti jejak perusahaan induk mereka dan ikut serta dengan dasar saham yang sama. Saham mereka dikutip di Curb sekitar 25 hingga 30, dan Gray, yang lebih dikenal dan membayar dividen, berkisar sekitar 125. Untuk mengumpulkan uang guna membeli saham dari para pemegang saham yang bersikeras menjual secara tunai, dan juga untuk menyediakan modal kerja tambahan untuk perbaikan dan biaya promosi, diperlukan penggalangan dana beberapa juta dolar. Maka Barnes menemui presiden banknya, yang dengan baik hati meminjamkan sindikatnya tiga juta lima ratus ribu dolar. Jaminan yang diberikan adalah seratus ribu saham dari perusahaan yang baru dibentuk tersebut . Sindikat tersebut meyakinkan presiden, atau begitulah yang saya dengar, bahwa harganya tidak akan turun di bawah 50 dolar. Ini akan menjadi kesepakatan yang sangat menguntungkan karena ada nilai yang besar di sana. Kesalahan pertama para promotor adalah soal ketepatan waktu. Pasar telah mencapai titik jenuh untuk penerbitan saham baru, dan seharusnya mereka menyadarinya. Tetapi bahkan saat itu pun mereka mungkin masih bisa mendapatkan keuntungan yang layak jika mereka tidak mencoba meniru praktik pemborosan yang tidak masuk akal yang dilakukan oleh promotor lain di puncak masa booming. Jangan sampai Anda beranggapan bahwa Jim Barnes dan rekan-rekannya adalah orang bodoh atau anak muda yang tidak berpengalaman. Mereka adalah orang-orang yang cerdik. Mereka semua familiar dengan metode Wall Street dan beberapa di antaranya adalah pedagang saham yang sangat sukses. Tetapi mereka melakukan lebih dari sekadar melebih-lebihkan daya beli publik. Lagipula, daya beli itu hanya dapat ditentukan melalui pengujian aktual. Kesalahan mereka yang lebih mahal adalah mengharapkan pasar bullish berlangsung lebih lama dari yang sebenarnya terjadi. Saya kira alasannya adalah karena orang-orang ini telah meraih kesuksesan yang begitu besar dan terutama begitu cepat sehingga mereka tidak ragu bahwa mereka akan menyelesaikan kesepakatan sebelum pasar bullish berbalik arah. Mereka semua terkenal dan memiliki banyak pengikut di kalangan pedagang profesional dan perusahaan pialang saham. Kesepakatan itu diiklankan dengan sangat baik. Surat kabar tentu saja sangat murah hati dalam memberikan ruang iklannya. Perusahaan-perusahaan lama diidentifikasi dengan industri kompor Amerika dan produk mereka dikenal di seluruh dunia. Itu adalah penggabungan yang patriotik dan ada banyak literatur di surat kabar harian tentang penaklukan dunia. Pasar Asia, Afrika, dan Amerika Selatan praktis sudah dikuasai. Para direktur perusahaan semuanya adalah orang-orang yang namanya dikenal oleh semua pembaca halaman keuangan. Upaya publisitas ditangani dengan sangat baik dan janji-janji dari orang dalam yang tidak disebutkan namanya tentang apa yang akan terjadi pada harga saham sangat pasti dan meyakinkan sehingga tercipta permintaan yang besar untuk saham baru tersebut. Hasilnya adalah, ketika pembukuan ditutup, ditemukan bahwa saham yang ditawarkan kepada publik dengan harga lima puluh dolar per lembar telah mengalami kelebihan permintaan sebesar 25 persen. Bayangkan! Harapan terbaik para promotor adalah berhasil menjual saham baru tersebut dengan harga itu setelah berminggu-minggu bekerja dan setelah menaikkan harga menjadi 75 atau lebih tinggi agar rata-ratanya menjadi 50. Dengan begitu, itu berarti kenaikan sekitar 100 persen dari harga lama saham perusahaan-perusahaan konstituen. Itulah krisisnya dan mereka tidak menghadapinya sebagaimana mestinya. Ini menunjukkan bahwa setiap bisnis memiliki kebutuhannya sendiri. Kebijaksanaan umum kurang berharga daripada kecerdasan khusus. Para promotor, yang senang dengan kelebihan permintaan yang tak terduga, menyimpulkan bahwa publik siap membayar harga berapa pun untuk jumlah saham berapa pun. Dan mereka sebenarnya cukup bodoh untuk mengalokasikan saham kurang dari yang seharusnya . Setelah para promotor memutuskan untuk serakah, mereka seharusnya mencoba untuk serakah secara cerdas. Seharusnya, mereka mengalokasikan seluruh saham yang ditawarkan. Itu akan membuat mereka kekurangan saham hingga 25 persen dari total jumlah yang ditawarkan kepada publik, dan tentu saja, itu akan memungkinkan mereka untuk mendukung saham tersebut bila diperlukan dan tanpa biaya apa pun bagi mereka sendiri. Tanpa usaha apa pun dari pihak mereka, mereka akan berada dalam posisi strategis yang kuat yang selalu saya coba capai ketika saya memanipulasi saham. Mereka dapat mencegah harga saham merosot, sehingga menumbuhkan kepercayaan pada stabilitas saham baru dan pada sindikat penjamin emisi di baliknya. Mereka seharusnya ingat bahwa pekerjaan mereka belum selesai ketika mereka menjual saham yang ditawarkan kepada publik. Itu hanya sebagian dari apa yang harus mereka pasarkan. Mereka mengira telah sangat sukses, tetapi tidak lama kemudian konsekuensi dari dua kesalahan besar mereka menjadi jelas. Publik tidak lagi membeli saham baru tersebut, karena seluruh pasar mengembangkan kecenderungan reaksioner. Para pihak internal menjadi ragu dan tidak mendukung Consolidated Stove; dan jika pihak internal tidak membeli saham mereka sendiri saat resesi, siapa yang akan membelinya? Kurangnya dukungan dari pihak internal umumnya diterima sebagai sinyal penurunan pasar yang cukup baik. Tidak perlu membahas detail statistik. Harga Consolidated Stove berfluktuasi seiring dengan pasar secara keseluruhan, tetapi tidak pernah melebihi kuotasi pasar awal, yang hanya sedikit di atas 50. Barnes dan teman-temannya pada akhirnya harus masuk sebagai pembeli untuk menjaga harganya tetap di atas 40. Tidak mendukung saham tersebut di awal karier pasarnya memang disayangkan. Tetapi tidak menjual semua saham yang dibeli publik jauh lebih buruk. Bagaimanapun juga, saham tersebut akhirnya terdaftar di Bursa Saham New York dan harganya terus merosot hingga secara nominal berada di angka 37. Dan harga tersebut tetap di sana karena Jim Barnes dan rekan-rekannya harus mempertahankannya di angka tersebut karena bank mereka telah meminjamkan mereka tiga puluh lima dolar per saham untuk seratus ribu saham. Jika bank mencoba melikuidasi pinjaman tersebut, tidak ada yang tahu berapa harga saham tersebut akan jatuh. Publik yang sebelumnya ingin membelinya di harga 50, sekarang tidak tertarik lagi di harga 37, dan mungkin tidak akan menginginkannya di harga 27. Seiring berjalannya waktu, tindakan berlebihan bank dalam memberikan kredit membuat orang berpikir. Era bankir muda telah berakhir. Bisnis perbankan tampaknya berada di ambang kemunduran mendadak menuju konservatisme. Teman dekat kini diminta untuk melunasi pinjaman, seolah-olah mereka tidak pernah bermain golf dengan presiden. Tidak perlu ada ancaman dari pihak pemberi pinjaman atau permohonan waktu lebih lama dari pihak peminjam . Situasinya sangat tidak nyaman bagi kedua belah pihak. Bank, misalnya, tempat teman saya Jim Barnes berbisnis, masih bersikap baik. Tetapi situasinya menjadi seperti, "Demi Tuhan, ambil pinjaman itu atau kita semua akan berada dalam masalah besar !" Sifat kekacauan dan potensi ledakannya cukup untuk membuat Jim Barnes datang kepada saya dan meminta saya untuk menjual seratus ribu saham tersebut agar cukup untuk melunasi pinjaman bank sebesar tiga juta lima ratus ribu dolar. Jim saat itu tidak mengharapkan keuntungan dari saham tersebut. Jika sindikat hanya mengalami kerugian kecil, mereka akan sangat bersyukur. Tampaknya itu tugas yang sia-sia. Pasar secara umum tidak aktif dan tidak kuat, meskipun kadang-kadang terjadi reli, ketika semua orang bersemangat dan mencoba percaya bahwa tren kenaikan akan segera berlanjut. Jawaban yang saya berikan kepada Barnes adalah bahwa saya akan menyelidiki masalah tersebut dan memberi tahu dia dalam kondisi apa saya akan melakukan pekerjaan itu. Nah, saya memang menyelidikinya. Saya tidak menganalisis laporan tahunan terakhir perusahaan. Studi saya terbatas pada fase pasar saham dari masalah tersebut. Saya tidak akan mempromosikan saham tersebut untuk kenaikan pendapatan atau prospeknya, tetapi untuk menjual blok saham itu di pasar terbuka. Yang saya pertimbangkan hanyalah apa yang seharusnya, bisa, atau mungkin membantu atau menghalangi saya dalam tugas itu. Saya menemukan satu hal, yaitu terlalu banyak saham yang dipegang oleh terlalu sedikit orang—artinya, terlalu banyak untuk keamanan dan terlalu banyak untuk kenyamanan. Clifton P. Kane & Co., bankir dan pialang, anggota Bursa Saham New York, memiliki tujuh puluh ribu saham. Mereka adalah teman dekat Barnes dan telah berpengaruh dalam mewujudkan konsolidasi, karena mereka telah mengkhususkan diri pada saham perusahaan kompor selama bertahun-tahun. Pelanggan mereka telah dilibatkan dalam hal yang menguntungkan ini. Mantan Senator Samuel Gordon, yang merupakan mitra khusus di perusahaan keponakannya, Gordon Bros., adalah pemilik blok kedua sebanyak tujuh puluh ribu saham; dan Joshua Wolff yang terkenal memiliki enam puluh ribu saham. Ini menjadikan total dua ratus ribu saham Consolidated Stove yang dipegang oleh segelintir profesional Wall Street veteran ini. Mereka tidak membutuhkan orang baik untuk memberi tahu mereka kapan harus menjual saham mereka. Jika saya melakukan sesuatu dalam hal manipulasi yang bertujuan untuk mendorong pembelian publik—yaitu, jika saya membuat saham menjadi kuat dan aktif—saya dapat melihat Kane, Gordon, dan Wolff menjual saham mereka, dan bukan dalam dosis kecil. Bayangan dua ratus ribu saham mereka yang membanjiri pasar bukanlah sesuatu yang menarik. Jangan lupa bahwa puncak pergerakan pasar bullish sudah berlalu dan tidak akan ada permintaan yang luar biasa yang akan dihasilkan oleh operasi saya, betapapun terampilnya operasi tersebut dijalankan. Jim Barnes tidak memiliki ilusi tentang pekerjaan yang dengan rendah hati dia hindari demi saya . Dia telah memberi saya saham yang terendam air untuk dijual di pasar bullish yang akan segera berakhir. Tentu saja tidak ada pembicaraan di surat kabar tentang berakhirnya pasar bullish, tetapi saya mengetahuinya, dan Jim Barnes mengetahuinya, dan Anda bisa yakin bank juga mengetahuinya. Namun, aku sudah berjanji pada Jim, jadi aku memanggil Kane, Gordon, dan Wolff. Dua ratus ribu saham mereka adalah pedang Damocles. Kupikir aku ingin menggantinya dengan rantai baja. Cara termudah, menurutku, adalah dengan semacam perjanjian timbal balik. Jika mereka membantuku secara pasif dengan menunda sementara aku menjual seratus ribu saham bank, aku akan membantu mereka secara aktif dengan mencoba menciptakan pasar bagi kita semua untuk menjual saham. Pada kenyataannya, mereka tidak bisa menjual sepersepuluh dari kepemilikan mereka tanpa membuat Consolidated Stove bangkrut, dan mereka sangat tahu itu sehingga mereka tidak pernah bermimpi untuk mencobanya. Yang kuminta dari mereka hanyalah pertimbangan dalam menentukan waktu penjualan dan sikap tidak egois yang cerdas agar tidak menjadi egois secara tidak cerdas. Tidak pernah menguntungkan untuk menjadi anjing penjaga di Wall Street atau di mana pun. Aku ingin meyakinkan mereka bahwa penjualan yang prematur atau tidak dipikirkan matang-matang akan mencegah penjualan total. Waktu terus berjalan. Saya berharap tawaran saya akan menarik bagi mereka karena mereka adalah orang-orang berpengalaman di Wall Street dan tidak memiliki ilusi tentang permintaan sebenarnya untuk Consolidated Stove. Clifton P. Kane adalah kepala sebuah perusahaan komisi yang makmur dengan cabang di sebelas kota dan ratusan pelanggan. Perusahaannya telah bertindak sebagai pengelola untuk lebih dari satu pool di masa lalu. Senator Gordon, yang memiliki tujuh puluh ribu saham, adalah seorang pria yang sangat kaya. Namanya sangat dikenal oleh para pembaca pers metropolitan seolah-olah ia telah digugat karena pelanggaran janji oleh seorang penata kuku berusia enam belas tahun yang memiliki mantel bulu cerpelai seharga lima ribu dolar dan seratus tiga puluh dua surat dari tergugat. Ia telah memulai bisnis untuk keponakannya sebagai pialang dan ia adalah mitra khusus di perusahaan mereka. Ia telah berpartisipasi dalam puluhan lotre. Ia mewarisi saham besar di Midland Stove Company dan mendapatkan seratus ribu saham Consolidated Stove sebagai gantinya. Ia memiliki cukup saham untuk mengabaikan tips pasar saham liar Jim Barnes dan telah menjual tiga puluh ribu saham sebelum pasar merosot. Ia kemudian mengatakan kepada seorang teman bahwa ia akan menjual lebih banyak lagi, tetapi para pemegang saham besar lainnya, yang merupakan teman lama dan akrabnya, memohon kepadanya untuk tidak menjual lebih banyak lagi, dan karena menghormati mereka, ia berhenti. Selain itu, seperti yang saya katakan, ia tidak memiliki pasar untuk menjual sahamnya. Orang ketiga adalah Joshua Wolff. Dia mungkin yang paling terkenal di antara semua pedagang. Selama dua puluh tahun, semua orang mengenalnya sebagai salah satu pemain spekulatif di lantai bursa. Dalam menaikkan atau menurunkan harga saham, ia hampir tak tertandingi, karena sepuluh atau dua puluh ribu saham baginya tidak lebih berarti daripada dua atau tiga ratus saham. Sebelum saya datang ke New York, saya pernah mendengar tentang dia sebagai pemain spekulatif. Saat itu, ia bergaul dengan kelompok penggemar olahraga yang memainkan permainan tanpa batas, baik di arena pacuan kuda maupun di pasar saham. Mereka dulu menuduhnya tidak lebih dari seorang penjudi, tetapi dia memiliki kemampuan nyata dan bakat yang sangat berkembang untuk permainan spekulatif. Pada saat yang sama, ketidakpeduliannya yang terkenal terhadap kegiatan intelektual membuatnya menjadi pahlawan dari banyak anekdot. Salah satu kisah yang paling banyak beredar adalah bahwa Joshua menjadi tamu di apa yang disebutnya sebagai makan malam mewah dan karena kelalaian nyonya rumah, beberapa tamu lain mulai membahas sastra sebelum mereka dapat dihentikan. Seorang gadis yang duduk di sebelah Josh dan belum pernah mendengar dia menggunakan mulutnya kecuali untuk mengunyah, menoleh kepadanya dan tampak ingin sekali mendengar pendapat tokoh keuangan besar itu, lalu bertanya, “Oh, Tuan Wolff, apa pendapat Anda tentang Balzac?” Josh dengan sopan berhenti mengunyah, menelan ludah, dan menjawab, "Saya tidak pernah memperdagangkan saham-saham Curb itu!" Itulah tiga pemegang saham individu terbesar Consolidated Stove. Ketika mereka datang menemui saya, saya mengatakan kepada mereka bahwa jika mereka membentuk sindikat untuk menyetor sejumlah uang dan memberi saya opsi beli saham mereka sedikit di atas harga pasar, saya akan melakukan yang terbaik untuk menciptakan pasar yang menguntungkan. Mereka segera bertanya kepada saya berapa banyak uang yang dibutuhkan. Saya menjawab, “Kalian sudah memiliki saham itu sejak lama dan kalian tidak bisa berbuat apa-apa dengannya. Kalian bertiga memiliki dua ratus ribu lembar saham, dan kalian tahu betul bahwa kalian tidak memiliki peluang sedikit pun untuk menyingkirkannya kecuali kalian menciptakan pasar untuknya. Harus ada pasar yang mampu menyerap apa yang kalian tawarkan, dan akan bijaksana untuk memiliki cukup uang tunai untuk membayar saham apa pun yang mungkin perlu dibeli pada awalnya. Tidak ada gunanya memulai lalu harus berhenti karena tidak ada cukup uang. Saya sarankan kalian membentuk sindikat dan mengumpulkan enam juta dalam bentuk tunai. Kemudian, minta sindikat untuk membeli dua ratus ribu lembar saham kalian dengan harga 40 dan masukkan semua saham kalian ke dalam rekening penampungan (escrow). Jika semuanya berjalan lancar, kalian akan menyingkirkan saham kesayangan kalian yang sudah mati dan sindikat akan menghasilkan uang.” Seperti yang sudah kukatakan sebelumnya, ada berbagai macam desas-desus tentang kemenanganku di pasar saham. Kurasa itu membantu, karena tidak ada yang lebih berhasil daripada kesuksesan. Bagaimanapun, aku tidak perlu banyak menjelaskan kepada orang-orang ini. Mereka tahu persis seberapa jauh mereka akan melangkah jika mencoba bermain sendiri. Mereka menganggap rencanaku bagus. Saat mereka pergi, mereka mengatakan akan segera membentuk sindikat. Mereka tidak kesulitan membujuk banyak teman mereka untuk bergabung. Saya kira mereka berbicara dengan lebih yakin daripada saya tentang keuntungan sindikat tersebut. Dari semua yang saya dengar, mereka benar-benar mempercayainya, jadi informasi yang mereka berikan bukanlah informasi yang tidak berdasar. Bagaimanapun, sindikat tersebut terbentuk dalam beberapa hari. Kane, Gordon, dan Wolff memberikan panggilan untuk dua ratus ribu saham dengan harga 40 dan saya memastikan bahwa saham itu sendiri dimasukkan ke dalam rekening penampungan, sehingga tidak ada yang akan keluar ke pasar jika saya menaikkan harganya. Saya harus melindungi diri saya sendiri. Lebih dari satu kesepakatan yang menjanjikan gagal berjalan sesuai harapan karena anggota kelompok atau geng tersebut gagal menjaga kepercayaan satu sama lain. Di Wall Street, tidak ada prasangka bodoh terhadap memakan anjing. Pada saat American Steel and Wire Company kedua diterbitkan, para orang dalam saling menuduh melanggar kepercayaan dan mencoba menjual saham. Telah ada kesepakatan antara John W. Gates dan teman-temannya dengan keluarga Seligman dan rekan-rekan perbankan mereka. Nah, saya mendengar seseorang di kantor pialang membacakan bait empat baris ini, yang konon digubah oleh John W. Gates:</p>
 <p>Tarantula itu melompat ke punggung kelabang. Dan tertawa terbahak-bahak dengan kegembiraan yang menyeramkan: “Aku akan meracuni bajingan pembunuh ini.” Jika tidak, dia akan meracuniku!”</p>

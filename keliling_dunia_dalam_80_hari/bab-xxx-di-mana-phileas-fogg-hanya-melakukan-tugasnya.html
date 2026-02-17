@@ -5,39 +5,176 @@
 <title>BAB XXX. DI MANA PHILEAS FOGG HANYA MELAKUKAN TUGASNYA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXX. DI MANA PHILEAS FOGG HANYA MELAKUKAN TUGASNYA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXX. DI MANA PHILEAS FOGG HANYA MELAKUKAN TUGASNYA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Tiga penumpang, termasuk Passepartout, telah menghilang. Apakah mereka terbunuh dalam pertempuran? Apakah mereka ditawan oleh suku Sioux? Mustahil untuk mengetahuinya. Ada banyak yang terluka, tetapi tidak ada yang meninggal. Kolonel Proctor adalah salah satu yang paling parah lukanya; dia telah bertempur dengan gagah berani, dan sebuah peluru menembus selangkangannya. Dia dibawa ke stasiun bersama penumpang lain yang terluka, untuk menerima perawatan sebisa mungkin. Aouda selamat; dan Phileas Fogg, yang berada di tengah-tengah pertempuran sengit, tidak terluka sedikit pun. Fix sedikit terluka di lengan. Tetapi Passepartout tidak dapat ditemukan, dan air mata mengalir di pipi Aouda. Semua penumpang telah turun dari kereta, yang rodanya berlumuran darah. Dari ban dan jeruji roda tergantung potongan-potongan daging yang compang-camping. Sejauh mata memandang di dataran putih di belakang, jejak-jejak merah terlihat. Suku Sioux terakhir menghilang di selatan, di sepanjang tepi Sungai Republican. Tuan Fogg, dengan tangan terlipat, tetap tak bergerak. Ia harus membuat keputusan penting. Aouda, berdiri di dekatnya, menatapnya tanpa berbicara, dan ia mengerti tatapannya. Jika pelayannya adalah tawanan, bukankah seharusnya ia mempertaruhkan segalanya untuk menyelamatkannya dari orang-orang Indian? "Aku akan menemukannya, hidup atau mati," katanya pelan kepada Aouda. “Ah, Tuan—Tuan Fogg!” serunya sambil menggenggam tangannya dan menutupi tangannya dengan air mata. “Hidup,” tambah Fogg, “jika kita tidak menyia-nyiakan satu momen pun.” Dengan keputusan ini, Phileas Fogg mau tidak mau mengorbankan dirinya sendiri; ia menyatakan nasibnya sendiri. Penundaan satu hari saja akan membuatnya kehilangan kapal uap di New York, dan taruhannya pasti akan kalah. Tetapi karena ia berpikir, "Ini adalah kewajibanku," ia tidak ragu-ragu. Komandan Benteng Kearney ada di sana. Seratus tentaranya telah menempatkan diri pada posisi untuk mempertahankan pos tersebut, seandainya suku Sioux menyerangnya. “Pak,” kata Tuan Fogg kepada kapten, “tiga penumpang telah hilang.” “Mati?” tanya kapten. “Mati atau menjadi tawanan; itulah ketidakpastian yang harus dipecahkan. Apakah Anda bermaksud mengejar suku Sioux?” “Itu tindakan serius, Pak,” jawab sang kapten. “Orang-orang Indian ini mungkin mundur ke seberang Arkansas, dan saya tidak bisa meninggalkan benteng tanpa perlindungan.” “Nyawa tiga orang sedang dipertaruhkan, Tuan,” kata Phileas Fogg. “Tentu saja; tetapi bisakah saya mempertaruhkan nyawa lima puluh orang untuk menyelamatkan tiga orang?” “Saya tidak tahu apakah Anda mampu, Tuan; tetapi Anda sebaiknya melakukannya.” “Tidak seorang pun di sini,” jawab yang lain, “berhak mengajari saya tentang kewajiban saya.” “Baiklah,” kata Tuan Fogg dengan dingin. “Saya akan pergi sendiri.” “Anda, Tuan!” seru Fix sambil mendekat; “Anda pergi sendirian mengejar orang-orang Indian?” “Apakah kau ingin aku membiarkan orang malang ini binasa—dia yang kepadanya setiap orang yang hadir berutang nyawa? Aku akan pergi.” “Tidak, Tuan, Anda tidak akan pergi sendirian,” seru sang kapten, tersentuh meskipun ia berusaha menahan diri. “Tidak! Anda adalah orang yang pemberani. Tiga puluh sukarelawan!” tambahnya, sambil menoleh ke arah para prajurit. Seluruh pasukan segera bergerak maju. Kapten hanya perlu memilih anak buahnya. Tiga puluh orang dipilih, dan seorang sersan tua ditempatkan di barisan depan. “Terima kasih, kapten,” kata Tuan Fogg. “Apakah kau mengizinkanku ikut denganmu?” tanya Fix. “Lakukan sesuka Anda, Tuan. Tetapi jika Anda ingin membantu saya, Anda akan tetap bersama Aouda. Jika terjadi sesuatu pada saya—” Wajah detektif itu tiba-tiba pucat pasi. Ia ingin memisahkan diri dari pria yang selama ini ia ikuti langkah demi langkah! Ia ingin membiarkannya berkeliaran di padang gurun ini! Fix menatap Tuan Fogg dengan saksama, dan, meskipun curiga dan bergejolak dalam dirinya, ia menundukkan pandangannya di hadapan tatapan tenang dan jujur itu. “Aku akan tetap tinggal,” katanya. Beberapa saat kemudian, Tuan Fogg menggenggam tangan wanita muda itu, dan setelah mempercayakan tas karpet berharganya kepadanya, ia pergi bersama sersan dan pasukan kecilnya. Tetapi, sebelum pergi, ia berkata kepada para prajurit, “Teman-teman, saya akan membagi lima ribu dolar di antara kalian, jika kita menyelamatkan para tahanan.” Saat itu sudah lewat tengah hari. Aouda mengasingkan diri ke ruang tunggu, dan di sana ia menunggu sendirian, memikirkan kemurahan hati yang sederhana dan mulia, keberanian yang tenang dari Phileas Fogg. Ia telah mengorbankan kekayaannya, dan sekarang mempertaruhkan nyawanya, semuanya tanpa ragu-ragu, karena kewajiban, dalam diam. Fix tidak sependapat, dan hampir tidak bisa menyembunyikan kegelisahannya. Ia mondar-mandir dengan gelisah di peron, tetapi segera kembali tenang. Ia kini menyadari kebodohan yang telah dilakukannya dengan membiarkan Fogg pergi sendirian. Apa! Pria ini, yang baru saja ia ikuti keliling dunia, kini diizinkan untuk berpisah darinya! Ia mulai menyalahkan dan mencaci maki dirinya sendiri, dan, seolah-olah ia adalah kepala polisi, memberi dirinya sendiri ceramah panjang lebar karena ketidaktahuannya. “Aku memang bodoh!” pikirnya, “dan orang ini akan menyadarinya. Dia sudah pergi, dan tidak akan kembali! Tapi bagaimana mungkin aku, Fix, yang menyimpan surat perintah penangkapan untuknya di saku, begitu terpesona olehnya? Jelas sekali, aku hanyalah seekor keledai!” Begitulah pikir detektif itu, sementara jam-jam berlalu terlalu lambat. Dia tidak tahu harus berbuat apa. Terkadang dia tergoda untuk menceritakan semuanya kepada Aouda; tetapi dia tidak ragu bagaimana wanita muda itu akan menerima pengakuannya. Langkah apa yang harus dia ambil? Dia berpikir untuk mengejar Fogg melintasi dataran putih yang luas; tampaknya tidak mustahil dia bisa menyusulnya. Jejak kaki mudah tercetak di salju! Tetapi segera, di bawah lapisan salju baru, setiap jejak akan terhapus. Fix menjadi patah semangat. Ia merasakan semacam keinginan yang tak tertahankan untuk meninggalkan permainan itu sama sekali. Ia sekarang bisa meninggalkan stasiun Fort Kearney, dan melanjutkan perjalanannya pulang dengan tenang. Menjelang pukul dua siang, saat salju turun lebat, terdengar suara peluit panjang mendekat dari timur. Sebuah bayangan besar, didahului oleh cahaya yang liar, perlahan bergerak maju, tampak semakin besar melalui kabut, yang memberikannya penampilan yang fantastis. Tidak ada kereta yang diperkirakan datang dari timur, dan tidak ada cukup waktu bagi bantuan yang diminta melalui telegraf untuk tiba; kereta dari Omaha ke San Francisco baru akan tiba keesokan harinya. Misteri itu segera terpecahkan. Lokomotif yang perlahan mendekat dengan peluit yang memekakkan telinga itu adalah lokomotif yang, setelah terlepas dari kereta, melanjutkan perjalanannya dengan kecepatan yang sangat tinggi, membawa serta masinis dan juru api yang tidak sadarkan diri. Lokomotif itu telah melaju beberapa mil, ketika api mulai padam karena kekurangan bahan bakar, uapnya melemah; dan akhirnya berhenti satu jam kemudian, sekitar dua puluh mil di luar Fort Kearney. Baik masinis maupun juru api tidak meninggal, dan setelah beberapa saat pingsan, mereka sadar kembali. Kereta kemudian berhenti. Masinis, ketika mendapati dirinya di padang pasir, dan lokomotif tanpa gerbong, mengerti apa yang telah terjadi. Dia tidak dapat membayangkan bagaimana lokomotif bisa terpisah dari kereta; tetapi dia tidak ragu bahwa kereta yang tertinggal sedang dalam kesulitan. Ia tidak ragu-ragu untuk melakukan apa pun. Akan lebih bijaksana untuk melanjutkan perjalanan ke Omaha, karena akan berbahaya untuk kembali ke kereta api, yang mungkin masih dijarah oleh orang Indian. Meskipun demikian, ia mulai menyalakan kembali api di tungku; tekanan kembali meningkat, dan lokomotif kembali, berjalan mundur ke Benteng Kearney. Inilah yang bersiul di tengah kabut. Para pelancong merasa lega melihat lokomotif kembali ke posisinya di depan kereta. Mereka sekarang dapat melanjutkan perjalanan yang sebelumnya terganggu begitu parah. Aouda, begitu melihat lokomotif datang, bergegas keluar stasiun dan bertanya kepada kondektur, "Apakah Anda akan mulai berjalan?" “Baik, Nyonya.” “Tetapi para tahanan, teman seperjalanan kita yang malang—” “Saya tidak bisa menghentikan perjalanan ini,” jawab kondektur. “Kita sudah terlambat tiga jam.” “Lalu kapan kereta lain akan melewati sini dari San Francisco?” “Besok malam, Nyonya.” “Besok malam! Tapi nanti sudah terlambat! Kita harus menunggu—” “Itu tidak mungkin,” jawab kondektur. “Jika Anda ingin pergi, silakan masuk.” “Aku tidak akan pergi,” kata Aouda. Fix telah mendengar percakapan ini. Beberapa saat sebelumnya, ketika tidak ada prospek untuk melanjutkan perjalanan, dia telah memutuskan untuk meninggalkan Fort Kearney; tetapi sekarang kereta sudah ada di sana, siap berangkat, dan dia hanya perlu duduk di gerbong, sebuah pengaruh yang tak tertahankan menahannya. Peron stasiun terasa panas di kakinya, dan dia tidak bisa bergerak. Konflik dalam pikirannya kembali muncul; kemarahan dan kegagalan mencekiknya. Dia ingin berjuang sampai akhir. Sementara itu, para penumpang dan beberapa korban luka, di antaranya Kolonel Proctor yang lukanya serius, telah mengambil tempat mereka di dalam kereta. Suara dengung ketel uap yang terlalu panas terdengar, dan uap keluar dari katup-katupnya. Masinis meniup peluit, kereta mulai bergerak, dan segera menghilang, asap putihnya bercampur dengan pusaran salju yang turun lebat. Detektif itu tetap tinggal di belakang. Beberapa jam berlalu. Cuacanya suram, dan sangat dingin. Fix duduk tak bergerak di bangku di stasiun; ia mungkin dikira sedang tidur. Aouda, meskipun badai, terus keluar dari ruang tunggu, pergi ke ujung peron, dan mengintip menembus badai salju, seolah-olah untuk menembus kabut yang mempersempit cakrawala di sekitarnya, dan untuk mendengar, jika mungkin, suara yang menyenangkan. Ia tidak mendengar dan melihat apa pun. Kemudian ia akan kembali, kedinginan, untuk keluar lagi setelah beberapa saat, tetapi selalu sia-sia. Malam tiba, dan kelompok kecil itu belum kembali. Di mana mereka berada? Apakah mereka telah menemukan orang Indian, dan apakah mereka sedang berkonflik dengan mereka, atau apakah mereka masih berkeliaran di tengah kabut? Komandan benteng merasa cemas, meskipun ia berusaha menyembunyikan kekhawatirannya. Saat malam mendekat, salju turun lebih sedikit, tetapi udara menjadi sangat dingin. Keheningan mutlak menyelimuti dataran. Tidak ada suara burung yang terbang atau binatang yang lewat yang mengganggu ketenangan yang sempurna. Sepanjang malam Aouda, dipenuhi firasat buruk, hatinya tercekat oleh kesedihan, berkeliaran di tepi dataran. Imajinasi membawanya jauh, dan memperlihatkan kepadanya bahaya yang tak terhitung jumlahnya. Apa yang dideritanya selama berjam-jam itu tak mungkin digambarkan. Fix tetap diam di tempat yang sama, tetapi tidak tidur. Suatu kali seorang pria mendekat dan berbicara kepadanya, dan detektif itu hanya menjawab dengan menggelengkan kepalanya. Demikianlah malam berlalu. Saat fajar, cakram matahari yang setengah padam terbit di atas cakrawala yang berkabut; tetapi sekarang objek-objek yang berjarak dua mil sudah dapat dikenali. Phileas Fogg dan pasukannya telah bergerak ke selatan; di selatan semuanya masih kosong. Saat itu pukul tujuh. Sang kapten, yang benar-benar khawatir, tidak tahu tindakan apa yang harus diambil. Haruskah ia mengirim detasemen lain untuk menyelamatkan detasemen pertama? Haruskah ia mengorbankan lebih banyak orang, dengan peluang yang sangat kecil untuk menyelamatkan mereka yang telah dikorbankan? Namun, keraguannya tidak berlangsung lama. Memanggil salah satu letnannya, ia hendak memerintahkan pengintaian, ketika terdengar suara tembakan. Apakah itu sebuah sinyal? Para prajurit bergegas keluar dari benteng, dan setengah mil jauhnya mereka melihat sekelompok kecil orang kembali dengan tertib. Tuan Fogg berjalan di depan mereka, dan tepat di belakangnya ada Passepartout dan dua pelancong lainnya, yang diselamatkan dari suku Sioux. Mereka telah bertemu dan bertempur melawan suku Indian sepuluh mil di selatan Benteng Kearney. Tak lama sebelum detasemen tiba, Passepartout dan rekan-rekannya mulai bergumul dengan para penculik mereka, tiga di antaranya telah dijatuhkan oleh orang Prancis itu dengan tinjunya, ketika tuannya dan para prajurit bergegas datang untuk membantu mereka. Semua disambut dengan sorak gembira. Phileas Fogg membagikan hadiah yang telah dijanjikannya kepada para prajurit, sementara Passepartout, bukan tanpa alasan, bergumam pada dirinya sendiri, "Harus diakui bahwa aku telah merugikan tuanku!" Tanpa mengucapkan sepatah kata pun, Fix menatap Tuan Fogg, dan akan sulit untuk menganalisis pikiran-pikiran yang berkecamuk di dalam dirinya. Adapun Aouda, ia menggenggam tangan pelindungnya dan menekannya ke tangannya sendiri, terlalu terharu untuk berbicara. Sementara itu, Passepartout sedang mencari kereta api; dia berpikir dia akan menemukannya di sana, siap berangkat ke Omaha, dan dia berharap waktu yang hilang dapat diperoleh kembali. “Kereta api! Kereta api!” teriaknya. “Sudah pergi,” jawab Fix. “Lalu kapan kereta berikutnya akan melewati sini?” tanya Phileas Fogg. “Tidak sampai malam ini.” “Ah!” jawab pria yang tak terpengaruh itu dengan tenang.</p>
 

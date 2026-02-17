@@ -5,39 +5,176 @@
 <title>BAB XIX. DI MANA PASSEPARTOUT TERLALU TERTARIK PADA TUANNYA, DAN APA AKIBATNYA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XIX. DI MANA PASSEPARTOUT TERLALU TERTARIK PADA TUANNYA, DAN APA AKIBATNYA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XIX. DI MANA PASSEPARTOUT TERLALU TERTARIK PADA TUANNYA, DAN APA AKIBATNYA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Hong Kong adalah sebuah pulau yang menjadi milik Inggris melalui Perjanjian Nankin, setelah perang tahun 1842; dan kejeniusan penjajahan Inggris telah menciptakan sebuah kota penting dan pelabuhan yang sangat baik di atasnya. Pulau ini terletak di muara Sungai Canton, dan dipisahkan sekitar enam puluh mil dari kota Portugis Makau, di pantai seberang. Hong Kong telah mengalahkan Makau dalam perebutan perdagangan dengan Tiongkok, dan sekarang sebagian besar transportasi barang-barang Tiongkok menemukan depotnya di tempat tersebut. Dermaga, rumah sakit, pelabuhan, katedral bergaya Gotik, gedung pemerintahan, jalan-jalan beraspal, memberikan Hong Kong penampilan seperti kota di Kent atau Surrey yang dipindahkan oleh sihir aneh ke belahan bumi selatan. Passepartout berjalan dengan tangan di saku, menuju pelabuhan Victoria, sambil mengamati tandu-tandu aneh dan alat transportasi lainnya, serta kelompok-kelompok orang Tionghoa, Jepang, dan Eropa yang hilir mudik di jalanan. Hong Kong baginya tampak tidak jauh berbeda dengan Bombay, Calcutta, dan Singapura, karena, seperti kota-kota tersebut, Hong Kong di mana-mana menunjukkan bukti supremasi Inggris. Di pelabuhan Victoria, ia menemukan kerumunan kapal dari berbagai negara: Inggris, Prancis, Amerika, dan Belanda, kapal perang dan kapal dagang, jung Jepang dan Tionghoa, sempa, tanka, dan perahu bunga, yang membentuk begitu banyak parterres terapung. Passepartout memperhatikan di antara kerumunan itu sejumlah penduduk asli yang tampak sangat tua dan berpakaian kuning. Saat pergi ke tukang cukur untuk bercukur, ia mengetahui bahwa orang-orang tua ini semuanya setidaknya berusia delapan puluh tahun, di usia tersebut mereka diizinkan untuk mengenakan warna kuning, yang merupakan warna Kekaisaran. Passepartout, tanpa mengetahui alasan pastinya, menganggap hal ini sangat lucu. Saat tiba di dermaga tempat mereka akan menaiki kapal "Carnatic," ia tidak heran mendapati Fix mondar-mandir. Detektif itu tampak sangat terganggu dan kecewa. “Ini buruk,” gumam Passepartout, “bagi para anggota Reform Club!” Ia menyapa Fix dengan senyum riang, seolah-olah ia tidak menyadari kekecewaan pria itu. Detektif itu memang punya alasan kuat untuk mengeluh tentang nasib buruk yang menimpanya. Surat perintah penangkapan belum datang! Memang sedang dalam perjalanan, tetapi sudah pasti tidak akan sampai ke Hong Kong selama beberapa hari; dan, karena ini adalah wilayah Inggris terakhir di rute Tuan Fogg, perampok itu akan melarikan diri, kecuali jika ia berhasil menahannya. “Baiklah, Monsieur Fix,” kata Passepartout, “apakah Anda sudah memutuskan untuk ikut bersama kami sampai ke Amerika?” “Ya,” jawab Fix, sambil menggertakkan giginya. “Bagus!” seru Passepartout sambil tertawa terbahak-bahak. “Aku tahu kau tidak bisa membujuk diri sendiri untuk berpisah dari kami. Ayo, ambil tempat tidurmu.” Mereka memasuki kantor kapal uap dan memesan kabin untuk empat orang. Petugas, sambil memberikan tiket kepada mereka, memberi tahu bahwa, karena perbaikan pada kapal "Carnatic" telah selesai, kapal uap akan berangkat malam itu juga, dan bukan keesokan paginya, seperti yang telah diumumkan. “Itu akan lebih cocok untuk tuanku,” kata Passepartout. “Aku akan pergi dan memberitahunya.” Fix kemudian memutuskan untuk mengambil langkah berani; ia bertekad untuk menceritakan semuanya kepada Passepartout. Tampaknya itu satu-satunya cara yang mungkin untuk menahan Phileas Fogg beberapa hari lebih lama di Hong Kong. Oleh karena itu, ia mengajak temannya ke sebuah kedai yang menarik perhatiannya di dermaga. Setelah masuk, mereka mendapati diri mereka berada di sebuah ruangan besar yang didekorasi dengan indah, di ujungnya terdapat tempat tidur lipat besar yang dilengkapi dengan bantal. Beberapa orang berbaring di tempat tidur itu dalam keadaan tidur nyenyak. Di meja-meja kecil yang tersusun di sekitar ruangan, sekitar tiga puluh pelanggan sedang minum bir Inggris, porter, gin, dan brendi; sambil merokok, pipa tanah liat merah panjang yang diisi dengan bola-bola kecil opium yang dicampur dengan sari mawar. Dari waktu ke waktu, salah satu perokok, yang terpengaruh oleh narkotika, akan menyelinap di bawah meja, lalu para pelayan, memegang kepala dan kakinya, membawanya dan membaringkannya di atas tempat tidur. Tempat tidur itu sudah menampung dua puluh orang mabuk yang linglung itu. Fix dan Passepartout menyadari bahwa mereka berada di sebuah rumah merokok yang dihuni oleh makhluk-makhluk malang, kurus kering, dan idiot yang setiap tahunnya menjadi pembeli obat terlarang bernama opium oleh para pedagang Inggris, dengan nilai mencapai satu juta empat ratus ribu pound—ribuan pound dihabiskan untuk salah satu kebiasaan buruk paling hina yang menimpa umat manusia! Pemerintah Tiongkok telah berupaya sia-sia untuk mengatasi kejahatan ini dengan undang-undang yang ketat. Kejahatan ini secara bertahap menyebar dari kalangan kaya, yang awalnya hanya diperuntukkan bagi mereka, ke kalangan bawah, dan kemudian kerusakan yang ditimbulkannya tidak dapat dihentikan. Opium dihisap di mana-mana, setiap saat, oleh pria dan wanita, di Kekaisaran Langit; dan, setelah terbiasa, para korban tidak dapat berhenti, kecuali dengan menderita siksaan dan penderitaan fisik yang mengerikan. Seorang perokok berat dapat menghisap hingga delapan pipa sehari; tetapi ia meninggal dalam lima tahun. Di salah satu tempat persembunyian inilah Fix dan Passepartout, yang sedang mencari minuman yang nyaman, mendapati diri mereka berada. Passepartout tidak punya uang, tetapi dengan senang hati menerima undangan Fix dengan harapan dapat membalas budi di masa mendatang. Mereka memesan dua botol anggur port, yang dinikmati oleh pria Prancis itu dengan saksama, sementara Fix mengamatinya dengan saksama. Mereka mengobrol tentang perjalanan, dan Passepartout sangat gembira membayangkan bahwa Fix akan melanjutkan perjalanan bersama mereka. Namun, ketika botol-botol itu kosong, ia bangkit untuk memberi tahu tuannya tentang perubahan waktu keberangkatan kapal "Carnatic". Fix memegang lengannya dan berkata, "Tunggu sebentar." “Untuk apa, Pak Fix?” “Aku ingin berbicara serius denganmu.” “Pembicaraan serius!” seru Passepartout, sambil menghabiskan sedikit anggur yang tersisa di dasar gelasnya. “Baiklah, kita akan membicarakannya besok; aku tidak punya waktu sekarang.” “Tunggu di sini! Apa yang ingin kukatakan menyangkut tuanmu.” Mendengar itu, Passepartout menatap temannya dengan saksama. Wajah Fix tampak menunjukkan ekspresi yang aneh. Ia kembali duduk. “Apa yang ingin Anda sampaikan?” Fix meletakkan tangannya di lengan Passepartout, dan, dengan suara rendah, berkata, "Kau sudah menebak siapa aku?" “Parbleu!” kata Passepartout sambil tersenyum. “Kalau begitu, aku akan menceritakan semuanya padamu—” “Sekarang aku sudah tahu semuanya, temanku! Ah! Itu bagus sekali. Tapi lanjutkan, lanjutkan. Tapi pertama-tama, izinkan aku memberitahumu bahwa para pria itu telah mengeluarkan biaya yang sia-sia.” “Tidak berguna!” kata Fix. “Kau bicara dengan percaya diri. Jelas sekali kau tidak tahu seberapa besar jumlahnya.” “Tentu saja,” jawab Passepartout. “Dua puluh ribu poundsterling.” “Lima puluh lima ribu!” jawab Fix, sambil menggenggam tangan temannya. “Apa!” seru pria Prancis itu. “Apakah Monsieur Fogg berani—lima puluh lima ribu pound! Nah, itu semakin menjadi alasan untuk tidak membuang waktu sedetik pun,” lanjutnya sambil bangkit dengan tergesa-gesa. Fix mendorong Passepartout kembali ke kursinya, dan melanjutkan: “Lima puluh lima ribu pound; dan jika saya berhasil, saya akan mendapatkan dua ribu pound. Jika Anda membantu saya, saya akan memberikan lima ratus pound kepada Anda.” “Membantumu?” teriak Passepartout, matanya terbelalak lebar. “Ya; bantu saya menahan Tuan Fogg di sini selama dua atau tiga hari.” “Kenapa, apa yang kau katakan? Para pria itu tidak puas hanya mengikuti tuanku dan meragukan kehormatannya, tetapi mereka malah berusaha menghalangi jalannya! Aku malu atas perbuatan mereka!” "Apa maksudmu?" “Maksud saya, ini adalah tipu daya yang memalukan. Mereka sama saja mencegat Tuan Fogg dan memasukkan uangnya ke kantong mereka sendiri!” “Itulah yang selalu kami andalkan.” “Ini pasti konspirasi!” seru Passepartout, yang semakin bersemangat seiring minuman keras mulai memengaruhi kepalanya, karena ia minum tanpa menyadarinya. “Konspirasi sungguhan! Dan para bangsawan pula. Bah!” Fix mulai merasa bingung. “Para anggota Klub Reformasi!” lanjut Passepartout. “Anda harus tahu, Tuan Fix, bahwa tuan saya adalah orang yang jujur, dan bahwa, ketika dia bertaruh, dia berusaha untuk memenangkannya dengan adil!” “Tapi menurutmu aku ini siapa?” tanya Fix, menatapnya dengan saksama. “Parbleu! Seorang agen dari anggota Klub Reformasi, dikirim ke sini untuk mengganggu perjalanan tuanku. Tapi, meskipun aku sudah mengetahui keberadaanmu sejak beberapa waktu lalu, aku telah berhati-hati untuk tidak menceritakan hal ini kepada Tuan Fogg.” “Jadi, dia tidak tahu apa-apa?” “Tidak ada apa-apa,” jawab Passepartout, sambil kembali menghabiskan isi gelasnya. Detektif itu mengusap dahinya, ragu-ragu sebelum berbicara lagi. Apa yang harus dia lakukan? Kesalahan Passepartout tampak tulus, tetapi itu membuat rencananya lebih sulit. Jelas bahwa pelayan itu bukanlah kaki tangan majikannya, seperti yang Fix curigai. “Baiklah,” kata detektif itu dalam hati, “karena dia bukan kaki tangan, dia akan membantuku.” Dia tidak punya waktu untuk disia-siakan: Fogg pasti ditahan di Hong Kong, jadi dia memutuskan untuk mengakui semuanya dengan jujur. “Dengarkan aku,” kata Fix tiba-tiba. “Aku bukan, seperti yang kau kira, agen dari anggota Klub Reformasi—” “Bah!” balas Passepartout dengan nada mengejek. “Saya seorang detektif polisi, dikirim ke sini oleh kantor London.” “Anda, seorang detektif?” “Saya akan membuktikannya. Ini surat penugasan saya.” Passepartout terdiam karena takjub ketika Fix memperlihatkan dokumen ini, yang keasliannya tidak dapat diragukan. “Taruhan Tuan Fogg,” lanjut Fix, “hanyalah dalih, yang mana Anda dan para pria dari Partai Reformasi telah tertipu. Dia punya motif untuk mendapatkan keterlibatan Anda yang tidak bersalah.” "Tapi kenapa?" “Dengarkan. Pada tanggal 28 September lalu, perampokan senilai lima puluh lima ribu poundsterling terjadi di Bank of England oleh seseorang yang identitasnya untungnya berhasil diperoleh. Berikut adalah deskripsinya; ini persis sama dengan Tuan Phileas Fogg.” “Omong kosong!” seru Passepartout sambil memukul meja dengan tinjunya. “Tuanku adalah orang yang paling terhormat!” “Bagaimana kau bisa tahu? Kau hampir tidak tahu apa pun tentang dia. Kau mulai bekerja untuknya pada hari dia pergi; dan dia pergi dengan alasan yang bodoh, tanpa koper, dan membawa sejumlah besar uang kertas. Namun kau berani-beraninya menyatakan bahwa dia adalah orang yang jujur!” “Ya, ya,” ulang pria malang itu dengan mekanis. “Apakah Anda ingin ditangkap sebagai kaki tangannya?” Passepartout, yang diliputi oleh apa yang telah didengarnya, menundukkan kepalanya dan tidak berani menatap detektif itu. Phileas Fogg, penyelamat Aouda, pria pemberani dan murah hati itu, seorang perampok! Namun betapa banyaknya dugaan yang menentangnya! Passepartout berusaha menolak kecurigaan yang muncul di benaknya; dia tidak ingin percaya bahwa tuannya bersalah. “Lalu, apa yang kau inginkan dariku?” akhirnya dia berkata dengan susah payah. “Lihat ini,” jawab Fix; “Aku telah melacak Tuan Fogg ke tempat ini, tetapi sampai sekarang aku belum menerima surat perintah penangkapan yang kukirim ke London. Kau harus membantuku untuk menahannya di sini, di Hong Kong—” “Aku! Tapi aku—” “Saya akan berbagi dengan Anda hadiah sebesar dua ribu pound yang ditawarkan oleh Bank of England.” “Tidak mungkin!” jawab Passepartout, yang mencoba bangkit, tetapi jatuh kembali, kelelahan pikiran dan tubuhnya. “Tuan Fix,” dia tergagap, “sekalipun apa yang Anda katakan itu benar—jika tuan saya benar-benar perampok yang Anda cari—yang saya bantah—saya telah, dan sedang, mengabdi kepadanya; saya telah melihat kemurahan hati dan kebaikannya; dan saya tidak akan pernah mengkhianatinya—bahkan untuk semua emas di dunia. Saya berasal dari desa tempat mereka tidak makan roti seperti itu!” “Kau menolak?” “Saya menolak.” “Anggap saja aku tidak mengatakan apa-apa,” kata Fix; “dan mari kita minum.” “Ya; mari kita minum!” Passepartout merasa dirinya semakin menyerah pada pengaruh minuman keras. Fix, menyadari bahwa ia harus dipisahkan dari tuannya dengan segala cara, ingin sepenuhnya mengalahkannya. Beberapa pipa berisi opium tergeletak di atas meja. Fix menyelipkan satu pipa ke tangan Passepartout. Ia mengambilnya, meletakkannya di antara bibirnya, menyalakannya, menghisap beberapa kali, dan kepalanya, yang menjadi berat karena pengaruh narkotika, jatuh ke atas meja. “Akhirnya!” kata Fix, melihat Passepartout pingsan. “Tuan Fogg tidak akan diberitahu tentang keberangkatan 'Carnatic'; dan, jika dia diberitahu, dia harus pergi tanpa orang Prancis terkutuk ini!” Dan, setelah membayar tagihannya, Fix meninggalkan kedai tersebut.</p>
 

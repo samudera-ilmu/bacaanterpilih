@@ -5,39 +5,176 @@
 <title>BAB DUA PULUH DELAPAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB DUA PULUH DELAPAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB DUA PULUH DELAPAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>beberapa keterangan dari rekan-rekan perjalanannya. Mereka yang telah memesan tempat di kereta kuda, karena tahu kursi keenam sudah ditempati oleh orang asing, bertekad untuk memanfaatkan ketidaktahuannya; dan, dengan kesopanan yang khas di pulau yang bahagia ini, mereka memposisikan diri di dalam kendaraan sedemikian rupa, sebelum dia menyadari sedikit pun niat mereka, sehingga dia hampir tidak mungkin menyelipkan dirinya di antara seorang Quaker yang gemuk dan seorang pemilik penginapan Wapping yang gendut, di mana dia terjebak dalam posisi itu, seperti buku tipis di antara dua kamus tebal di rak toko buku. Dan, seolah-olah rasa sakit dan ketidaknyamanan akibat tekanan seperti itu belum cukup membuat jengkel, sebagian besar penumpang menghibur diri dengan menertawakan posisi konyolnya. Wanita periang di sebelah kirinya mengamati, dengan seruan riang yang keras, bahwa tuannya akan segera lebih mengenal pantat sapi Inggris; dan berkata, pada saat mereka tiba di tempat makan, dia bisa ditusuk tanpa perlu dilumuri lemak. “Ya, sungguh,” jawab Obadiah, yang memang suka bercanda, “tetapi lemak babi itu akan berada di satu sisi saja.”—“Lebih baik untukmu,” seru nyonya rumahku, “karena sisi itu sepenuhnya milikmu.” Pria Quaker itu tidak begitu bingung dengan kecepatan balasan ini, tetapi dia menjawab dengan sangat hati-hati, “Aku berterima kasih atas cintamu, tetapi aku tidak akan mengambil keuntungan dari kehilanganmu, terutama karena aku tidak menyukai rasa unggas asing ini; mereka adalah burung migran yang tidak suci, hanya dinikmati oleh anak-anak kesombongan, sepertimu.” Wanita gemuk itu tersinggung dengan ungkapan terakhir ini, yang dianggapnya sebagai celaan ganda, dan mengulangi kata-kata, "Anak-anak kesombongan!" dengan penekanan rasa kesal. "Aku percaya, jika kebenaran terungkap," katanya, "ada lebih banyak kesombongan daripada perut buncitmu itu, meskipun kau berpura-pura rendah hati dan religius. Huh! Perusahaanku terdiri dari orang-orang Inggris yang baik dan sehat; tetapi kau ditiup angin kesombongan dan khayalan; dan ketika angin itu mulai mencengkeram perutmu, kau berpura-pura sakit, lalu berdiri dan berkhotbah omong kosong. Namun kau berani menyebut orang-orang yang lebih baik darimu sebagai anak-anak. Ayolah, Tuan Si Angsa, aku punya anak-anak yang sebaik dirimu, atau orang munafik mana pun di Inggris." Seseorang yang duduk berhadapan dengan kaum Quaker, mendengar protes ini, yang tampaknya penuh dengan perselisihan, menyela percakapan dengan seringai yang disengaja, dan memohon agar tidak ada perpecahan antara roh dan daging. Dengan protes ini, ia membebaskan Obaja dari sindiran orator perempuan ini, dan menimpakan seluruh pembalasan dari pidatonya ke kepalanya sendiri. "Daging!" teriaknya, dengan segala keganasan Thalestris yang marah; “Jangan sebut namamu, Tuan Yellowchaps. Apa! Aku yakin kau punya antipati terhadap daging, karena kau sendiri hanyalah kulit dan tulang. Kurasa kau hanyalah seorang penjahit miskin kelaparan dari Prancis, tempat kau belajar memasak kubis, dan belum pernah makan makanan enak selama tujuh tahun ini. Kau hidup hanya dengan roti gandum dan sup maigre, dan sekarang kau datang seperti orang bodoh berjalan dengan ekor tikus di wigmu, dan jaket tipis. Jadi, kau berpura-pura menjadi seorang bangsawan, dan berpura-pura mengkritik daging sapi panggang.” Pria itu mendengarkan ucapan tersebut dengan kesabaran yang mengagumkan, dan ketika wanita itu telah melampiaskan kekesalannya, dengan sangat tenang menjawab, “Apa pun selain ikan busuk Anda, Nyonya. Sejak kapan, saya mohon maaf, Anda bepergian dengan kereta pos, dan meninggalkan profesi lama Anda menjual tiram di musim dingin, dan ikan kembung busuk di bulan Juni? Saat itu Anda dikenal dengan nama Kate Brawn, dan memiliki reputasi baik di antara kedai-kedai minuman di Thames Street, sampai hubungan asmara yang sial dengan kepala kapal pengangkut jagung, yang sayangnya ketahuan oleh istrinya sendiri; tetapi Anda tampaknya telah bangkit dari kejatuhan itu; dan saya berharap Anda bahagia dengan keadaan Anda saat ini. Meskipun, mengingat pendidikan Anda di Bear Quay, Anda hanya dapat memberikan gambaran yang menyedihkan tentang diri Anda.” Meskipun tidak kelelahan atau putus asa, Amazon benar-benar bingung dengan temperamen dan kepercayaan diri lawannya ini, yang telah mengumpulkan semua anekdot ini dari kesuburan imajinasinya sendiri; namun, setelah jeda singkat, ia mencurahkan rentetan celaan yang cukup untuk membanjiri siapa pun yang tidak terbiasa mengangkat senjata melawan lautan masalah seperti itu; dan terjadilah perselisihan, yang tidak hanya akan mempermalukan orator terbaik di Sungai Thames, tetapi bahkan akan menjadi bagian dari perayaan misteri Eleusinian, di mana para wanita Athena saling menyemangati dari gerbong yang berbeda, dengan kebebasan berdebat yang begitu beruntung dilestarikan di zaman dan negara kita ini. Begitu banyaknya julukan, dan beragam metafora, kiasan, dan figur yang diucapkan di antara lawan-lawan yang seimbang ini, sehingga seorang penyair epik akan menemukan kisahnya sendiri dengan mendengarkan perdebatan tersebut; yang, kemungkinan besar, tidak akan terbatas pada kata-kata, jika tidak ter interrupted oleh seorang wanita muda berwajah menyenangkan dan berpenampilan sederhana; yang, terkejut dengan beberapa kata-kata indah mereka, dan ketakutan oleh tatapan dan gerak-gerik mengancam dari wanita berwajah berapi-api itu, mulai berteriak keras, dan meminta izin untuk meninggalkan kereta. Kegelisahannya mengakhiri perdebatan sengit itu. Penumpang keenam, yang belum membuka mulutnya, berusaha menghiburnya dengan jaminan perlindungan; seorang Quaker mengusulkan penghentian pertempuran; Pria yang berdebat itu menyetujui usulan tersebut, meyakinkan hadirin bahwa ia memasuki arena hanya untuk hiburan mereka, tanpa menyimpan dendam atau niat buruk sedikit pun terhadap wanita gemuk itu, yang menurut pengakuannya belum pernah ia lihat sebelumnya pada hari itu, dan yang, sepengetahuannya, adalah orang yang terpercaya dan bereputasi baik. Kemudian ia mengulurkan tangannya sebagai tanda persahabatan, dan meminta maaf kepada pihak yang tersinggung, yang merasa tenang dengan ketundukannya; dan, sebagai bukti kemurahan hatinya, ia memberikan kepada wanita lain yang telah ia buat kesal, sebotol air Hungaria yang berisi brendi ceri, merekomendasikannya sebagai obat yang jauh lebih ampuh daripada sal-volatile yang dipegang wanita lain di hidungnya. Setelah perdamaian dipulihkan melalui perjanjian yang mencakup Obaja dan semua yang hadir, tidak ada salahnya untuk memberikan informasi lebih lanjut kepada pembaca mengenai beberapa tokoh yang berkumpul dalam kendaraan ini. Seorang Quaker adalah pedagang London yang berada di Deal mengawasi perbaikan kapal yang rusak akibat badai di Downs. Seorang pemilik penginapan di Wapping sedang dalam perjalanan pulang dari tempat yang sama, di mana ia telah mengurus pembayaran kapal perang dengan berbagai surat kuasa yang diberikan oleh para pelaut yang tinggal di rumahnya dengan sistem kredit. Saingannya dalam hal ketenaran adalah seorang pedagang anggur, penyelundup renda Prancis, dan seorang penjudi kecil yang baru tiba dari Paris, ditemani oleh seorang tukang cukur Inggris yang duduk di sebelah kanannya, dan wanita muda itu adalah putri seorang pendeta desa, dalam perjalanan ke London, di mana ia menjadi magang di sebuah toko topi wanita. Sampai saat itu Fathom duduk dalam keheranan yang mendalam melihat tingkah laku teman-teman seperjalanannya, yang jauh melampaui bayangan yang pernah ia bayangkan tentang kesederhanaan dan kekampungan orang Inggris. Ia mendapati dirinya menjadi monumen dari pengabaian dan penghinaan yang selalu dialami orang asing dari penduduk pulau ini; dan dengan terkejut ia melihat seorang pemuda yang menyenangkan duduk sendirian dan diabaikan seperti dirinya. Ia memang terpikat oleh rona pipinya yang indah dan kepolosan wajahnya, dan mulai menyesal telah berpura-pura tidak mengerti bahasa, yang menghalanginya untuk menggunakan kefasihannya dalam merayu hatinya; namun demikian, ia memutuskan untuk mengambil hati wanita itu, jika memungkinkan, dengan kesopanan dan keramahan tanpa kata-kata, dan untuk tujuan itu ia segera menggerakkan matanya.</p>
 

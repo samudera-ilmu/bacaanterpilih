@@ -5,39 +5,176 @@
 <title>KEAJAIBAN KEDALAMAN DARATAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="KEAJAIBAN KEDALAMAN DARATAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>KEAJAIBAN KEDALAMAN DARATAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Pukul delapan pagi, seberkas cahaya matahari datang membangunkan kami. Ribuan permukaan lava yang berkilauan di dinding menerimanya saat lewat, dan menyebarkannya seperti hujan percikan api. Pencahayaannya cukup untuk membedakan objek-objek di sekitarnya. "Nah, Axel, bagaimana menurutmu?" seru pamanku sambil menggosok-gosok tangannya. "Pernahkah kau menghabiskan malam yang lebih tenang di rumah kecil kita di Königsberg? Tidak ada suara roda gerobak, tidak ada teriakan para wanita penjual keranjang, tidak ada teriakan para tukang perahu!" "Tidak diragukan lagi, dasar sumur ini sangat sunyi, tetapi ada sesuatu yang mengkhawatirkan dalam kesunyian itu sendiri." "Sekarang ayo!" teriak pamanku; "jika kau sudah takut, bagaimana nanti? Kita belum masuk satu inci pun ke dalam perut bumi." "Apa maksudmu?" "Maksud saya, kita baru mencapai bagian pulau, berupa tabung vertikal panjang yang berakhir di mulut kawah, dan ujung bawahnya hanya berada di permukaan laut." "Apakah kamu yakin akan hal itu?" "Saya cukup yakin. Lihat barometernya." Faktanya, raksa, yang naik di dalam alat tersebut secepat kami turun, telah berhenti pada ketinggian dua puluh sembilan inci. "Lihatlah," kata Profesor itu, "kita sekarang hanya memiliki tekanan atmosfer kita, dan saya akan senang ketika aneroid menggantikan barometer." Dan sesungguhnya instrumen ini akan menjadi tidak berguna segera setelah berat atmosfer melebihi tekanan yang terukur di permukaan laut. "Tetapi," kataku, "bukankah ada alasan untuk khawatir bahwa tekanan yang terus meningkat ini pada akhirnya akan menjadi sangat menyakitkan untuk ditanggung?" "Tidak; kita akan turun perlahan, dan paru-paru kita akan terbiasa dengan atmosfer yang lebih padat. Para penerbang merasa kekurangan udara saat naik ke ketinggian, tetapi kita mungkin akan memiliki terlalu banyak udara: dari keduanya, inilah yang saya pilih. Jangan sampai kita kehilangan waktu sedetik pun. Di mana bungkusan yang kita kirim sebelum kita?" Lalu aku teringat bahwa kami telah mencarinya dengan sia-sia malam sebelumnya. Pamanku bertanya pada Hans, yang setelah memeriksa dengan saksama seperti seorang pemburu, menjawab: " Der huppe! " "Di atas sana." Dan memang benar. Bungkusan itu tersangkut pada tonjolan setinggi seratus kaki di atas kami. Seketika itu juga, orang Islandia itu memanjat seperti kucing, dan dalam beberapa menit paket itu sudah berada di tangan kami. "Nah," kata pamanku, "mari kita sarapan; tetapi kita harus menyiapkan bekal yang cukup, karena kita tidak tahu berapa lama lagi kita harus bertahan." Biskuit dan sari daging itu disantap dengan seteguk air yang dicampur sedikit gin. Setelah sarapan usai, pamanku mengeluarkan sebuah buku catatan kecil dari sakunya, yang memang предназначен untuk pengamatan ilmiah. Ia memeriksa alat-alatnya, dan mencatat: "Senin, 1 Juli." "Kronometer, 08.17 pagi; barometer, 297 inci; termometer, 6° (43° F.). Arah, ESE"</p>
 <p>Pengamatan terakhir ini berlaku untuk galeri yang gelap, dan ditunjukkan oleh kompas. "Nah, Axel," seru Profesor dengan antusias, "sekarang kita benar-benar akan masuk ke dalam inti bumi. Tepat pada saat ini perjalanan dimulai." Sambil berkata demikian, pamanku mengambil alat milik Ruhmkorff yang tergantung di lehernya dengan satu tangan; dan dengan tangan lainnya ia membuat sambungan listrik dengan kumparan di lentera, dan cahaya yang cukup terang menerangi kegelapan lorong itu. Hans membawa peralatan lainnya, yang juga dioperasikan. Penerapan listrik yang cerdik ini memungkinkan kami untuk terus bekerja dalam waktu lama dengan menciptakan cahaya buatan bahkan di tengah-tengah gas yang paling mudah terbakar. "Sekarang, berbaris!" teriak pamanku. Masing-masing memanggul barang bawaannya. Hans mendorong kereta di depannya membawa beban berupa kabel dan pakaian; dan, saya berjalan paling belakang, kami memasuki galeri. Saat aku terperosok ke dalam lorong gelap ini, aku mengangkat kepalaku, dan untuk terakhir kalinya melihat melalui terowongan raksasa itu langit Islandia, yang tak akan pernah kulihat lagi. Lava, dalam letusan terakhir tahun 1229, telah membuka jalan melalui terowongan ini. Lava itu masih melapisi dinding dengan lapisan tebal dan berkilauan. Cahaya listrik di sini diperkuat seratus kali lipat oleh pantulan. Satu-satunya kesulitan dalam melanjutkan perjalanan adalah agar tidak tergelincir terlalu cepat menuruni lereng dengan kemiringan sekitar empat puluh lima derajat; untungnya, beberapa permukaan yang tidak rata dan sedikit lecet di sana-sini membentuk anak tangga, dan kami pun turun, membiarkan barang bawaan kami meluncur di depan kami dari ujung tali yang panjang. Namun, apa yang tadinya membentuk anak tangga di bawah kaki kami, berubah menjadi stalaktit di atas kepala. Lava, yang berpori di banyak tempat, telah membentuk permukaan yang tertutup oleh lepuhan-lepuhan kecil bulat; kristal kuarsa buram, dihiasi dengan tetesan kaca jernih, dan menggantung seperti lampu gantung yang berkelompok dari atap berkubah, tampak seolah-olah menyala dan membentuk penerangan tiba-tiba saat kami melanjutkan perjalanan. Seolah-olah roh-roh dari kedalaman bumi sedang menerangi istana mereka untuk menerima tamu-tamu duniawi mereka. "Sungguh menakjubkan!" seruku spontan. "Paman, pemandangan yang luar biasa! Tidakkah Paman mengagumi perpaduan warna lava itu, yang berubah dari cokelat kemerahan menjadi kuning cerah dengan gradasi yang hampir tak terlihat? Dan kristal-kristal ini seperti bola-bola cahaya." "Ah, kau pikir begitu, ya, Axel, anakku? Yah, kuharap kau akan melihat kemegahan yang lebih besar dari ini. Sekarang mari kita berbaris: berbaris!" Sebaiknya dia mengatakan meluncur, karena kami benar-benar menuruni lereng yang curam. Itu adalah facilis descensus Averni karya Virgil. Kompas, yang sering saya gunakan, menunjukkan arah kami ke tenggara dengan sangat pasti. Aliran lava ini tidak menyimpang ke kanan maupun ke kiri. Namun, tidak ada peningkatan suhu yang berarti. Hal ini membenarkan teori Davy, dan lebih dari sekali saya memeriksa termometer dengan heran. Dua jam setelah keberangkatan kami, termometer hanya menunjukkan 10° (50° Fahrenheit), peningkatan hanya 4°. Ini memberi alasan untuk percaya bahwa penurunan kami lebih horizontal daripada vertikal. Adapun kedalaman pasti yang dicapai, sangat mudah untuk memastikannya; Profesor mengukur secara akurat sudut deviasi dan kemiringan di jalan, tetapi ia merahasiakan hasilnya. Sekitar pukul delapan malam, ia memberi isyarat untuk berhenti. Hans segera duduk. Lampu-lampu digantung di tonjolan lava; kami berada di semacam gua tempat udara berlimpah. Beberapa embusan udara mencapai kami. Gangguan atmosfer apa yang menyebabkannya? Saya tidak dapat menjawab pertanyaan itu saat itu. Kelaparan dan kelelahan membuat saya tidak mampu berpikir jernih. Turun selama tujuh jam berturut-turut tidak mungkin dilakukan tanpa pengeluaran tenaga yang cukup besar. Saya kelelahan. Oleh karena itu, perintah untuk 'berhenti' membuat saya senang. Hans meletakkan bekal kami di atas bongkahan lava, dan kami makan dengan lahap. Tetapi satu hal yang mengganggu saya, persediaan air kami telah habis setengahnya. Paman saya mengharapkan pasokan air segar dari sumber bawah tanah, tetapi sampai saat ini kami belum menemukannya. Saya tidak bisa tidak menarik perhatiannya pada keadaan ini. "Apakah Anda terkejut dengan kurangnya pegas ini?" katanya. "Lebih dari itu, saya merasa cemas; kami hanya memiliki air yang cukup untuk lima hari." "Jangan khawatir, Axel, kita akan menemukan lebih dari yang kita inginkan." "Kapan?" "Setelah kita meninggalkan hamparan lava ini, bagaimana mungkin mata air bisa menembus dinding seperti ini?" "Namun mungkin bagian ini membentang hingga kedalaman yang sangat besar. Tampaknya kita belum membuat kemajuan besar secara vertikal." "Menurutmu mengapa demikian?" "Karena jika kita masuk jauh ke dalam kerak bumi, kita akan menemukan panas yang lebih besar." "Menurut sistemmu," kata pamanku. "Tapi apa yang ditunjukkan termometer?" "Hampir tidak sampai lima belas derajat (59° Fahr), hanya sembilan derajat sejak keberangkatan kami." "Nah, apa kesimpulan Anda?" "Inilah kesimpulan saya. Menurut pengamatan yang tepat, peningkatan suhu di bagian dalam bumi berlangsung dengan laju satu derajat (1 4/5° Fahrenheit) untuk setiap seratus kaki. Namun, kondisi lokal tertentu dapat memodifikasi laju ini. Misalnya, di Yakoutsk di Siberia, peningkatan satu derajat dipastikan terjadi setiap 36 kaki. Perbedaan ini bergantung pada daya hantar panas batuan. Selain itu, di sekitar gunung berapi yang sudah tidak aktif, melalui batuan gneiss, telah diamati bahwa peningkatan satu derajat hanya tercapai setiap 125 kaki. Oleh karena itu, mari kita anggap hipotesis terakhir ini sebagai yang paling sesuai dengan situasi kita, dan mari kita hitung." "Baiklah, hitunglah, Nak." "Tidak ada yang lebih mudah," kataku, sambil mencatat angka-angka di buku catatanku. "Sembilan kali seratus dua puluh lima kaki menghasilkan kedalaman seribu seratus dua puluh lima kaki." "Sangat akurat sekali." "Dengan baik?" "Berdasarkan pengamatan saya, kita berada 10.000 kaki di bawah permukaan laut." "Apakah itu mungkin?" "Ya, atau angka-angka tersebut tidak ada gunanya." Perhitungan Profesor itu cukup tepat. Kami telah mencapai kedalaman enam ribu kaki melampaui kedalaman yang pernah dicapai manusia sebelumnya, seperti tambang Kitz Bahl di Tyrol, dan tambang Wuttembourg di Bohemia. Suhu, yang seharusnya mencapai 81° (178° Fahrenheit), hanya mencapai 15° (59° Fahrenheit). Ini menjadi alasan untuk merenung.</p>

@@ -5,39 +5,176 @@
 <title>BAB XXVII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXVII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXVII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Biarlah Dewi Agung melantunkan cinta-cinta Olimpus: Kita hanyalah manusia fana, dan harus menyanyikan tentang manusia. Seorang filsuf terkemuka di antara teman-teman saya, yang bahkan dapat mengangkat martabat perabot Anda yang jelek ke dalam cahaya ilmu pengetahuan yang tenang, telah menunjukkan kepada saya fakta kecil yang penting ini. Cermin dinding Anda atau permukaan baja poles yang luas yang dibuat untuk digosok oleh seorang pembantu rumah tangga, akan tergores secara halus dan banyak ke segala arah; tetapi sekarang letakkan lilin yang menyala di depannya sebagai pusat penerangan, dan lihatlah! goresan-goresan itu akan tampak tersusun dalam serangkaian lingkaran konsentris yang indah di sekitar matahari kecil itu. Dapat dibuktikan bahwa goresan-goresan itu menyebar ke mana-mana secara merata dan hanya lilin Anda yang menghasilkan ilusi susunan konsentris yang menyanjung, cahayanya jatuh dengan seleksi optik eksklusif. Hal-hal ini adalah sebuah perumpamaan. Goresan-goresan itu adalah peristiwa, dan lilin adalah egoisme seseorang yang sekarang tidak ada—misalnya, Nona Vincy. Rosamond memiliki Takdirnya sendiri yang dengan baik hati membuatnya lebih menawan daripada gadis-gadis lain, dan yang tampaknya telah mengatur penyakit Fred dan kesalahan Tuan Wrench untuk membawa dia dan Lydgate dalam kedekatan yang efektif. Akan menjadi pelanggaran terhadap kesepakatan ini jika Rosamond setuju untuk pergi ke Stone Court atau tempat lain, seperti yang diinginkan orang tuanya, terutama karena Tuan Lydgate menganggap tindakan pencegahan itu tidak perlu. Oleh karena itu, sementara Nona Morgan dan anak-anak dikirim ke sebuah rumah pertanian pada pagi hari setelah penyakit Fred muncul, Rosamond menolak untuk meninggalkan ayah dan ibunya. Ibu yang malang itu memang tak ingin disentuh oleh siapa pun yang lahir dari rahim seorang wanita; dan Tuan Vincy, yang sangat menyayangi istrinya, lebih khawatir karena keadaannya daripada karena Fred. Namun, tanpa desakannya, ia tak akan bisa tenang: keceriaannya telah meredup; tanpa menyadari pakaiannya yang selalu segar dan ceria, ia seperti burung sakit dengan mata lesu dan bulu yang acak-acakan, indranya tumpul terhadap pemandangan dan suara yang biasanya paling menarik perhatiannya. Delirium Fred, di mana ia tampak berkeliaran di luar jangkauannya, menghancurkan hatinya. Setelah ledakan amarah pertamanya terhadap Tuan Wrench, ia berjalan dengan sangat tenang: satu-satunya tangisan pelannya adalah kepada Lydgate. Ia akan mengikutinya keluar ruangan dan meletakkan tangannya di lengannya sambil merintih, “Selamatkan anakku.” Suatu kali ia memohon, “Dia selalu baik padaku, Tuan Lydgate: dia tidak pernah berkata kasar kepada ibunya,”—seolah-olah penderitaan Fred yang malang adalah tuduhan terhadapnya. Seluruh serat terdalam ingatan sang ibu teraduk, dan pemuda yang suaranya menjadi lebih lembut ketika berbicara kepadanya, menyatu dengan bayi yang pernah dicintainya, dengan cinta yang baru baginya, sebelum bayi itu lahir. “Saya punya harapan baik, Nyonya Vincy,” kata Lydgate. “Turunlah bersama saya dan mari kita bicara tentang makanan.” Dengan cara itu ia membawanya ke ruang tamu tempat Rosamond berada, dan mengubah sesuatu untuknya, mengejutkannya dengan memberinya teh atau kaldu yang telah disiapkan untuknya. Ada pemahaman yang konstan antara dia dan Rosamond tentang hal-hal ini. Dia hampir selalu menemuinya sebelum pergi ke kamar orang sakit, dan Rosamond memohon kepadanya tentang apa yang bisa dia lakukan untuk ibunya. Ketangkasan dan kecerdasannya dalam melaksanakan petunjuknya sangat mengagumkan, dan tidak mengherankan bahwa gagasan untuk menemui Rosamond mulai bercampur dengan minatnya pada kasus tersebut. Terutama ketika tahap kritis telah dilewati, dan dia mulai merasa yakin akan kesembuhan Fred. Pada masa yang lebih meragukan, dia telah menyarankan untuk memanggil Dr. Sprague (yang, jika dia bisa, lebih suka tetap netral demi Wrench); tetapi setelah dua konsultasi, penanganan kasus tersebut diserahkan kepada Lydgate, dan ada setiap alasan untuk membuatnya tekun. Pagi dan sore ia berada di rumah Tuan Vincy, dan secara bertahap kunjungan-kunjungan itu menjadi lebih menyenangkan seiring Fred semakin lemah, dan terbaring tidak hanya membutuhkan belaian yang paling banyak tetapi juga menyadarinya, sehingga Nyonya Vincy merasa seolah-olah, setelah semua itu, penyakit tersebut telah menjadikan kelembutan hatinya sebagai sebuah perayaan. Baik ayah maupun ibu menganggapnya sebagai alasan tambahan untuk bergembira, ketika Tuan Featherstone tua mengirim pesan melalui Lydgate, mengatakan bahwa Fred harus segera sembuh, karena ia, Peter Featherstone, tidak bisa hidup tanpanya, dan sangat merindukan kunjungannya. Orang tua itu sendiri juga semakin terbaring di tempat tidur. Nyonya Vincy menyampaikan pesan-pesan ini kepada Fred ketika ia bisa mendengarkan, dan Fred menoleh ke arahnya dengan wajahnya yang halus dan keriput, yang rambut pirangnya yang tebal telah dipotong, dan matanya tampak membesar, merindukan kabar tentang Mary—bertanya-tanya apa yang dirasakan Mary tentang penyakitnya. Tidak ada sepatah kata pun yang keluar dari bibirnya; tetapi "mendengar dengan mata adalah bagian dari kecerdasan cinta yang langka," dan sang ibu dengan sepenuh hati tidak hanya memahami kerinduan Fred, tetapi juga merasa siap untuk melakukan pengorbanan apa pun demi memuaskannya. “Seandainya aku bisa melihat anakku sehat kembali,” katanya, dalam kebodohan penuh kasih sayangnya; “dan siapa tahu?—mungkin dia akan menjadi penguasa Stone Court! dan dia bisa menikahi siapa pun yang dia suka.” “Tidak, jika mereka tidak mau menerima aku, Bu,” kata Fred. Penyakit itu telah membuatnya berperilaku seperti anak kecil, dan air mata mengalir saat ia berbicara. “Oh, ambillah sedikit agar-agar ini, sayangku,” kata Ny. Vincy, diam-diam tidak percaya akan penolakan seperti itu. Ia tak pernah meninggalkan sisi Fred ketika suaminya tidak ada di rumah, dan dengan demikian Rosamond berada dalam posisi yang tidak biasa karena sering sendirian. Lydgate, tentu saja, tidak pernah berpikir untuk tinggal lama bersamanya, namun tampaknya percakapan singkat dan impersonal yang mereka lakukan bersama menciptakan keintiman aneh yang terdiri dari rasa malu. Mereka terpaksa saling memandang saat berbicara, dan entah bagaimana pandangan itu tidak dapat dilakukan secara alami seperti seharusnya. Lydgate mulai merasa kesadaran semacam ini tidak menyenangkan dan suatu hari menunduk, atau melihat ke mana saja, seperti boneka yang tidak terkendali. Tetapi ini ternyata buruk: keesokan harinya, Rosamond menunduk, dan akibatnya ketika mata mereka bertemu lagi, keduanya lebih sadar daripada sebelumnya. Tidak ada pertolongan dalam ilmu pengetahuan untuk ini, dan karena Lydgate tidak ingin menggoda, tampaknya tidak ada pertolongan dalam kebodohan. Oleh karena itu, merupakan suatu kelegaan ketika tetangga tidak lagi menganggap rumah itu dalam karantina, dan ketika kemungkinan melihat Rosamond sendirian sangat berkurang. Namun, keintiman rasa malu timbal balik, di mana masing-masing merasa bahwa yang lain merasakan sesuatu, yang pernah ada, pengaruhnya tidak dapat dihilangkan. Obrolan tentang cuaca dan topik-topik sopan lainnya cenderung tampak hampa, dan perilaku hampir tidak dapat menjadi mudah kecuali jika secara jujur mengakui daya tarik timbal balik—yang tentu saja tidak harus berarti sesuatu yang dalam atau serius. Inilah cara Rosamond dan Lydgate dengan anggun beralih ke kenyamanan, dan membuat interaksi mereka kembali hidup. Para tamu datang dan pergi seperti biasa, ada lagi musik di ruang tamu, dan semua keramahan ekstra dari masa jabatan walikota Mr. Vincy kembali. Lydgate, kapan pun dia bisa, duduk di samping Rosamond, dan berlama-lama mendengarkan musiknya, menyebut dirinya tawanannya—yang sebenarnya, sepanjang waktu, bukan berarti dia benar-benar tawanannya. Kegilaan gagasan bahwa dia dapat segera membangun kehidupan yang memuaskan sebagai seorang pria yang sudah menikah merupakan jaminan yang cukup terhadap bahaya. Permainan pura-pura sedikit jatuh cinta ini menyenangkan, dan tidak mengganggu kegiatan yang lebih serius. Lagipula, rayuan tidak selalu merupakan proses yang menyakitkan. Rosamond, di sisi lain, belum pernah menikmati hari-hari seperti ini sebelumnya dalam hidupnya: dia yakin akan dikagumi oleh seseorang yang layak dipikat, dan dia tidak membedakan antara rayuan dan cinta, baik pada dirinya sendiri maupun pada orang lain. Dia tampak berlayar dengan angin yang baik ke mana pun dia mau, dan pikirannya sangat terfokus pada sebuah rumah indah di Lowick Gate yang dia harapkan akan segera kosong. Dia sangat bertekad, ketika menikah, untuk dengan lihai menyingkirkan semua pengunjung yang tidak disukainya di rumah ayahnya; dan dia membayangkan ruang tamu di rumah favoritnya dengan berbagai gaya furnitur. Tentu saja pikirannya banyak tertuju pada Lydgate sendiri; baginya dia tampak hampir sempurna: jika dia menguasai not-not musik sehingga kekagumannya pada musiknya tidak seperti gajah yang emosional, dan jika dia mampu membedakan dengan lebih baik kehalusan selera berpakaiannya, dia hampir tidak akan menyebutkan kekurangan apa pun padanya. Betapa berbedanya dia dari Plymdale muda atau Tuan Caius Larcher! Para pemuda itu tidak mengerti bahasa Prancis, dan tidak dapat berbicara tentang subjek apa pun dengan pengetahuan yang luar biasa, kecuali mungkin perdagangan pewarnaan dan pengangkutan, yang tentu saja mereka malu untuk sebutkan; mereka adalah bangsawan Middlemarch, sombong dengan cambuk berkepala perak dan dasi satin mereka, tetapi canggung dalam tingkah laku mereka, dan bercanda dengan malu-malu: bahkan Fred lebih baik dari mereka, setidaknya memiliki aksen dan tingkah laku seorang mahasiswa. Sedangkan Lydgate selalu didengarkan, bersikap sopan dengan sikap acuh tak acuh yang menunjukkan superioritas yang disadarinya, dan tampaknya mengenakan pakaian yang tepat karena kedekatan alami tertentu, tanpa perlu memikirkannya. Rosamond merasa bangga ketika pria itu memasuki ruangan, dan ketika pria itu mendekatinya dengan senyum yang menawan, ia merasakan kebahagiaan karena menjadi objek penghormatan yang patut dic羡慕. Jika Lydgate menyadari semua kebanggaan yang ia timbulkan di dada Rosamond yang lembut, ia mungkin akan sama senangnya dengan pria lain, bahkan yang paling tidak mengerti tentang patologi humoral atau jaringan fibrosa: ia menganggapnya sebagai salah satu sikap terindah dari pikiran wanita untuk mengagumi keunggulan seorang pria tanpa pengetahuan yang terlalu tepat tentang apa itu. Tetapi Rosamond bukanlah salah satu dari gadis-gadis tak berdaya yang tanpa sadar menunjukkan diri mereka sendiri, dan yang perilakunya didorong oleh impuls mereka yang canggung, alih-alih dibimbing oleh keanggunan dan kesopanan yang hati-hati. Apakah Anda membayangkan bahwa ramalan dan renungannya yang cepat tentang perabot rumah dan masyarakat pernah terlihat dalam percakapannya, bahkan dengan ibunya? Sebaliknya, ia akan menunjukkan keterkejutan dan ketidaksetujuan yang paling indah jika ia mendengar bahwa wanita muda lain telah ketahuan melakukan hal yang tidak senonoh dan terlalu dini itu—bahkan, mungkin ia akan tidak percaya akan kemungkinannya. Karena Rosamond tidak pernah menunjukkan pengetahuan yang tidak pantas, dan selalu merupakan kombinasi dari perasaan yang benar, musik, menari, menggambar, menulis catatan yang elegan, album pribadi untuk kutipan puisi, dan kecantikan pirang yang sempurna, yang menjadikannya wanita yang tak tertahankan bagi pria malang pada tanggal tersebut. Jangan berpikir buruk tentangnya, mohon: ia tidak memiliki rencana jahat, tidak ada yang kotor atau bersifat materialistis; sebenarnya, ia tidak pernah memikirkan uang kecuali sebagai sesuatu yang diperlukan yang akan selalu disediakan oleh orang lain. Ia tidak terbiasa membuat kebohongan, dan jika pernyataannya bukan petunjuk langsung terhadap fakta, itu bukan dimaksudkan seperti itu—itu adalah salah satu kemampuan elegannya, yang dimaksudkan untuk menyenangkan. Alam telah menginspirasi banyak seni dalam membentuk murid kesayangan Nyonya Lemon, yang menurut pendapat umum (kecuali Fred) merupakan perpaduan langka antara kecantikan, kecerdasan, dan keramahan. Lydgate semakin merasa nyaman bersama wanita itu, dan kini tidak ada lagi paksaan, ada pertukaran pengaruh yang menyenangkan di mata mereka, dan apa yang mereka katakan memiliki makna yang berlebihan bagi mereka, yang dapat diamati dengan sedikit rasa datar oleh orang ketiga; namun mereka tidak melakukan wawancara atau percakapan sampingan yang seharusnya tidak melibatkan orang ketiga. Bahkan, mereka saling menggoda; dan Lydgate yakin bahwa mereka tidak melakukan hal lain. Jika seorang pria tidak dapat mencintai dan menjadi bijaksana, tentu dia dapat menggoda dan menjadi bijaksana pada saat yang sama? Sungguh, para pria di Middlemarch, kecuali Tuan Farebrother, sangat membosankan, dan Lydgate tidak peduli dengan politik komersial atau kartu: apa yang bisa dia lakukan untuk bersantai? Dia sering diundang ke rumah keluarga Bulstrode; tetapi gadis-gadis di sana hampir tidak pernah keluar dari ruang kelas; Dan cara naif Nyonya Bulstrode dalam mendamaikan kesalehan dan keduniawian, kesia-siaan hidup ini dan keinginan akan barang-barang mewah, kesadaran sekaligus akan kain lusuh dan kain damask terbaik, bukanlah penghiburan yang cukup dari beban keseriusan suaminya yang tak pernah berubah. Rumah keluarga Vincy, dengan segala kekurangannya, terasa lebih menyenangkan jika dibandingkan; selain itu, rumah itu memelihara Rosamond—manis dipandang seperti mawar merah muda yang setengah mekar, dan dihiasi dengan berbagai perlengkapan untuk hiburan halus manusia. Namun, ia juga membuat beberapa musuh, selain musuh di bidang kedokteran, karena keberhasilannya dengan Nona Vincy. Suatu malam, ia datang ke ruang tamu agak terlambat, ketika beberapa tamu lain juga ada di sana. Meja kartu telah menarik perhatian para tetua, dan Tuan Ned Plymdale (salah satu pasangan yang cocok di Middlemarch, meskipun bukan salah satu tokoh terkemuka) sedang berbincang -bincang dengan Rosamond. Ia membawa "Keepsake" edisi terakhir, publikasi sutra bergelombang yang indah yang menandai kemajuan modern pada waktu itu; dan ia menganggap dirinya sangat beruntung karena bisa menjadi orang pertama yang membacanya bersama Rosamond, membahas para wanita dan pria dengan pipi dan senyum selembut tembaga, dan menunjuk pada bait-bait komik yang sangat bagus dan cerita-cerita sentimental yang menarik. Rosamond ramah, dan Tuan Ned merasa puas bahwa ia memiliki hal terbaik dalam seni dan sastra sebagai media untuk "mengucapkan salam"—hal yang tepat untuk menyenangkan seorang gadis yang baik. Ia juga memiliki alasan, yang lebih dalam daripada yang tampak, untuk merasa puas dengan penampilannya sendiri. Bagi pengamat yang dangkal, dagunya tampak terlalu samar, seolah-olah perlahan-lahan menghilang. Dan memang hal itu sedikit menyulitkannya dalam hal ukuran stoking satinnya, yang pada saat itu dagu memang berguna untuk itu. “Saya rasa Yang Terhormat Ibu S. agak mirip dengan Anda,” kata Tuan Ned. Ia tetap membuka buku itu pada potret yang mempesona, dan memandanginya dengan agak lesu. “Punggungnya sangat besar; sepertinya dia memang sengaja duduk untuk itu,” kata Rosamond, bukan bermaksud menyindir, tetapi memikirkan betapa merahnya tangan Plymdale muda, dan bertanya-tanya mengapa Lydgate tidak datang. Dia terus melanjutkan pekerjaannya merajut renda sepanjang waktu. “Aku tidak bilang dia secantik dirimu,” kata Tuan Ned, sambil memberanikan diri mengalihkan pandangan dari potret itu ke potret saingannya. “Aku curiga kau adalah seorang penjilat yang ulung,” kata Rosamond, merasa yakin bahwa ia harus menolak pemuda ini untuk kedua kalinya. Namun kemudian Lydgate masuk; buku itu ditutup sebelum ia mencapai sudut Rosamond, dan saat ia duduk dengan percaya diri di sisi lain Rosamond, rahang Plymdale muda ternganga seperti barometer yang menunjukkan sisi suram perubahan. Rosamond menikmati bukan hanya kehadiran Lydgate tetapi juga pengaruhnya: ia senang membangkitkan rasa iri. “Dasar kau datang terlambat!” katanya sambil berjabat tangan. “Mama sudah menyerahkanmu beberapa waktu lalu. Bagaimana kabar Fred?” “Seperti biasa; berjalan lancar, tetapi lambat. Aku ingin dia pergi—misalnya ke Stone Court. Tapi ibumu sepertinya keberatan.” “Kasihan sekali!” kata Rosamond dengan manis. “Kau akan melihat Fred sangat berubah,” tambahnya, sambil menoleh ke pelamar lainnya; “kami telah menganggap Tuan Lydgate sebagai malaikat pelindung kami selama sakit ini.” Tuan Ned tersenyum gugup, sementara Lydgate, sambil menarik "Kenang-kenangan" itu ke arahnya dan membukanya, tertawa kecil dengan nada mengejek dan mengangkat dagunya, seolah takjub akan kebodohan manusia. “Apa yang kau tertawaan dengan begitu kasar?” kata Rosamond dengan nada netral yang datar. “Aku penasaran mana yang akan menjadi yang paling konyol—ukiran atau tulisan di sini,” kata Lydgate dengan nada paling yakin, sambil membalik halaman dengan cepat, seolah-olah melihat seluruh buku dalam sekejap, dan memperlihatkan tangan putihnya yang besar dengan sangat baik, seperti yang dipikirkan Rosamond. “Lihatlah pengantin pria ini keluar dari gereja: pernahkah kau melihat 'ciptaan manis' seperti ini—seperti yang biasa dikatakan orang-orang Elizabethan? Pernahkah ada pedagang pakaian yang terlihat begitu menyeringai? Namun aku akan menjawab bahwa cerita ini menjadikannya salah satu bangsawan terkemuka di negeri ini.” “Kau begitu keras, aku takut padamu,” kata Rosamond, menahan rasa geli yang dirasakannya. Plymdale muda yang malang telah lama mengagumi ukiran ini, dan jiwanya tergerak. “Lagipula, ada banyak sekali orang terkenal yang menulis di 'Keepsake',” katanya, dengan nada yang sekaligus kesal dan malu-malu. “Ini pertama kalinya saya mendengar majalah itu disebut konyol.” “Kurasa aku akan berbalik dan menuduhmu sebagai seorang Goth,” kata Rosamond, sambil menatap Lydgate dengan senyum. “Kurasa kau tidak tahu apa-apa tentang Lady Blessington dan LEL.” Rosamond sendiri bukannya tidak menyukai penulis-penulis ini, tetapi ia tidak mudah menunjukkan kekagumannya, dan peka terhadap sedikit pun petunjuk bahwa sesuatu tidak sesuai dengan selera Lydgate. “Tapi Sir Walter Scott—kukira Tuan Lydgate mengenalnya,” kata Plymdale muda, sedikit terhibur dengan keuntungan ini. “Oh, sekarang saya tidak membaca sastra sama sekali,” kata Lydgate, sambil menutup buku dan mendorongnya menjauh. “Dulu saya banyak membaca saat masih muda, jadi saya rasa kebiasaan itu akan cukup untuk seumur hidup saya. Dulu saya hafal puisi-puisi Scott.” “Aku ingin tahu kapan kau berhenti,” kata Rosamond, “karena dengan begitu aku bisa yakin bahwa aku tahu sesuatu yang tidak kau ketahui.” “Tuan Lydgate akan mengatakan bahwa itu tidak layak diketahui,” kata Tuan Ned, dengan nada yang sengaja sinis. “Sebaliknya,” kata Lydgate, tanpa menunjukkan kekesalan; tetapi tersenyum dengan percaya diri yang menjengkelkan kepada Rosamond. “Akan lebih baik jika Nona Vincy bisa memberi tahu saya.” Plymdale muda segera pergi untuk menyaksikan permainan kartu whist, sambil berpikir bahwa Lydgate adalah salah satu orang yang paling sombong dan tidak menyenangkan yang pernah ia temui. “Betapa gegabahnya kau!” kata Rosamond, dalam hati merasa senang. “Apakah kau menyadari bahwa kau telah menyinggung perasaan?” “Apa! Apakah ini buku Tuan Plymdale? Maaf. Saya tidak memikirkannya.” “Aku akan mulai mengakui apa yang kau katakan tentang dirimu sendiri ketika pertama kali datang ke sini—bahwa kau adalah seekor beruang, dan membutuhkan pengajaran dari burung-burung.” “Nah, ada seekor burung yang bisa mengajariku apa saja yang dia mau. Bukankah aku mendengarkannya dengan sukarela?” Bagi Rosamond, sepertinya dia dan Lydgate sudah hampir bertunangan. Gagasan bahwa mereka akan bertunangan sudah lama ada dalam benaknya; dan gagasan, seperti yang kita tahu, cenderung mengarah pada keberadaan yang lebih nyata, karena bahan-bahan yang diperlukan sudah tersedia. Memang benar, Lydgate memiliki gagasan sebaliknya, yaitu tetap tidak bertunangan; tetapi ini hanyalah penolakan, bayangan yang dilemparkan oleh tekad lain yang sendiri pun bisa menyusut. Keadaan hampir pasti akan berpihak pada gagasan Rosamond, yang memiliki aktivitas pembentuk dan mengamati melalui mata biru yang waspada, sedangkan gagasan Lydgate buta dan acuh tak acuh seperti ubur-ubur yang meleleh tanpa menyadarinya. Malam itu ketika ia pulang, ia melihat botol-botolnya untuk mengamati bagaimana proses maserasi berlangsung, dengan minat yang tak terganggu; dan ia menulis catatan hariannya dengan ketelitian seperti biasanya. Lamunan yang sulit ia lepaskan itu adalah konstruksi ideal dari sesuatu yang lain selain kebajikan Rosamond, dan jaringan primitifnya masih merupakan hal yang tidak ia ketahui. Selain itu, ia mulai merasakan semangat untuk perseteruan yang berkembang meskipun setengah terpendam antara dirinya dan para dokter lainnya, yang kemungkinan akan menjadi lebih nyata, sekarang setelah metode Bulstrode dalam mengelola rumah sakit baru akan diumumkan; dan ada berbagai tanda yang menggembirakan bahwa ketidaksetujuannya oleh beberapa pasien Peacock mungkin diimbangi oleh kesan yang telah ia berikan di tempat lain. Hanya beberapa hari kemudian, ketika ia kebetulan menyusul Rosamond di jalan Lowick dan turun dari kudanya untuk berjalan di sisinya sampai ia benar-benar melindunginya dari kawanan ternak yang lewat, ia dihentikan oleh seorang pelayan berkuda dengan pesan yang memanggilnya masuk ke sebuah rumah penting tempat Peacock belum pernah datang; dan ini adalah kejadian kedua yang serupa. Pelayan itu adalah pelayan Sir James Chettam, dan rumah itu adalah Lowick Manor.</p>
 

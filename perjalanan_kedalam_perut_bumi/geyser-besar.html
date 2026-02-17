@@ -5,39 +5,176 @@
 <title>GEYSER BESAR</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="GEYSER BESAR - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>GEYSER BESAR</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Rabu, 19 Agustus. —Untungnya angin bertiup kencang, dan memungkinkan kami untuk melarikan diri dari lokasi pertempuran mengerikan yang baru saja terjadi. Hans tetap berada di posisinya di kemudi. Pamanku, yang perhatiannya teralihkan oleh peristiwa-peristiwa menegangkan dalam pertempuran, mulai kembali melihat sekelilingnya dengan tidak sabar. Perjalanan kembali ke alur yang seragam, yang tidak ingin saya ganggu dengan pengulangan peristiwa seperti kemarin. Kamis, 20 Agustus.—Angin dari arah timur laut, tidak stabil dan berubah-ubah. Suhu tinggi. Kecepatan angin tiga setengah liga per jam. Sekitar tengah hari terdengar suara dari kejauhan. Saya memperhatikan suara itu tanpa bisa menjelaskannya. Itu adalah deru yang terus menerus. "Di kejauhan," kata Profesor, "ada sebuah batu karang atau pulau kecil, yang dihantam ombak laut." Hans memanjat tiang layar, tetapi tidak melihat ombak. Lautan tampak tenang dan tak bergelombang hingga batas terjauhnya. Tiga jam berlalu. Suara gemuruh itu sepertinya berasal dari air terjun yang sangat jauh. Saya menyampaikan hal ini kepada paman saya, yang menjawab dengan ragu: "Ya, saya yakin saya benar." Apakah kita sedang melaju menuju air terjun yang akan menjerumuskan kita ke jurang? Cara untuk maju seperti ini mungkin disukai Profesor, karena bersifat vertikal; tetapi bagi saya, saya lebih menyukai cara-cara yang lebih umum, yaitu pergerakan horizontal. Bagaimanapun juga, beberapa mil di arah angin pasti ada fenomena yang berisik, karena sekarang deru terdengar semakin keras. Apakah suara itu berasal dari langit atau laut? Aku mendongak ke arah uap atmosfer, dan mencoba memahami kedalamannya. Langit tenang dan tak bergerak. Awan telah mencapai batas tertinggi kubah yang tinggi, dan di sana terbaring diam bermandikan cahaya terang lampu listrik. Bukan di sana kita harus mencari penyebab fenomena ini. Kemudian aku memeriksa cakrawala, yang tak terputus dan jernih tanpa kabut. Tidak ada perubahan dalam penampilannya. Tetapi jika suara ini berasal dari air terjun, air terjun, jika seluruh lautan ini mengalir deras ke cekungan yang lebih rendah, jika deru yang memekakkan telinga itu dihasilkan oleh massa air yang jatuh, arus pasti akan berakselerasi, dan peningkatan kecepatannya akan memberi tahu aku ukuran bahaya yang mengancam kita. Aku memeriksa arus: tidak ada arus. Aku melemparkan botol kosong ke laut: botol itu tetap diam. Sekitar pukul empat, Hans bangkit, berpegangan pada tiang layar, dan memanjat ke puncaknya. Dari sana, matanya menyapu area laut yang luas, dan tertuju pada satu titik. Raut wajahnya tidak menunjukkan keterkejutan, tetapi matanya tetap teguh. "Dia melihat sesuatu," kata pamanku. "Saya percaya dia memang begitu." Hans turun, lalu merentangkan tangannya ke selatan sambil berkata: " Dere nere! " "Di bawah sana?" ulang pamanku. Kemudian, sambil memegang gelasnya, dia menatap dengan saksama selama satu menit, yang bagiku terasa seperti waktu yang sangat lama. "Ya, ya!" serunya. "Aku melihat sebuah kerucut terbalik yang sangat besar muncul dari permukaan." "Apakah ini makhluk laut lainnya?" "Mungkin memang begitu." "Kalau begitu, mari kita berlayar lebih jauh ke arah barat, karena kita tahu bahaya bertemu dengan monster semacam itu." "Mari kita terus berjalan lurus," jawab pamanku. Saya memohon kepada Hans. Dia tetap pada pendiriannya tanpa bergeming. Namun, jika dari jarak kita sekarang dari hewan itu, setidaknya dua belas liga, kolom air yang disemburkan melalui alat peniupnya dapat terlihat dengan jelas, pastilah ukurannya sangat besar. Kehati-hatian yang paling umum akan menyarankan untuk segera melarikan diri; tetapi kita tidak datang sejauh ini untuk bersikap hati-hati. Oleh karena itu, dengan gegabah kami melanjutkan perjalanan. Semakin dekat kami mendekat, semakin tinggi semburan airnya. Monster macam apa yang mungkin bisa mengisi dirinya dengan air sebanyak itu, dan menyemburkannya terus menerus? Pukul delapan malam, kita hanya berjarak kurang dari dua liga darinya. Tubuhnya—gelap, sangat besar, seperti bukit—terbentang di laut seperti sebuah pulau kecil. Apakah itu ilusi atau ketakutan? Panjangnya tampak bagi saya sekitar beberapa ribu yard. Apa sebenarnya mamalia laut ini, yang tidak diketahui oleh Cuvier maupun Blumenbach? Ia terbaring tak bergerak, seolah tertidur; laut tampaknya tidak mampu menggerakkannya sedikit pun; ombaklah yang bergelombang di sisinya. Kolom air yang terlempar hingga ketinggian lima ratus kaki jatuh seperti hujan dengan suara gemuruh yang memekakkan telinga. Dan di sinilah kita, bergegas seperti orang gila mengikuti angin, untuk mendekati monster yang seratus paus sehari pun tidak akan cukup untuk memuaskan kita! Rasa takut mencekamku. Aku menolak untuk melangkah lebih jauh. Aku akan memotong tali-temali itu jika perlu! Aku memberontak secara terang-terangan terhadap Profesor, yang tidak memberikan jawaban apa pun. Tiba-tiba Hans bangkit, dan sambil menunjuk benda yang mengancam itu dengan jarinya, dia berkata: " Holm. " "Sebuah pulau!" seru pamanku. "Itu bukan pulau!" seruku skeptis. "Tidak ada yang lain," teriak Profesor sambil tertawa terbahak-bahak. "Tapi kolom air itu?" " Geyser, " kata Hans. "Tidak diragukan lagi itu adalah geyser, seperti yang ada di Islandia." Awalnya saya protes karena telah disalahpahami secara luas dengan mengira sebuah pulau sebagai monster laut. Tetapi bukti-bukti bertentangan dengan saya, dan saya harus mengakui kesalahan saya. Itu tidak lebih buruk dari fenomena alam. Saat kita mendekat, dimensi kolom cairan itu menjadi sangat megah. Pulau kecil itu menyerupai, dengan kemiripan yang sangat menipu, seekor paus raksasa, yang kepalanya mendominasi ombak pada ketinggian dua puluh yard. Geyser, sebuah kata yang berarti 'amukan,' menjulang megah dari ujungnya. Ledakan yang dalam dan berat terdengar dari waktu ke waktu, ketika semburan besar itu, yang dipenuhi dengan kekuatan yang lebih dahsyat, mengguncang puncaknya yang berbulu, dan melesat dengan cepat hingga mencapai lapisan awan terendah. Ia berdiri sendiri. Tidak ada lubang uap, tidak ada mata air panas di sekitarnya, dan semua kekuatan vulkanik di wilayah itu terkonsentrasi di sini. Percikan api listrik bercampur dengan gumpalan cairan yang menyala dan menyilaukan, setiap tetesnya membiaskan warna-warna prismatik. "Mari kita mendarat," kata Profesor itu. "Namun kita harus berhati-hati menghindari pusaran air ini, yang akan menenggelamkan rakit kita dalam sekejap." Hans, dengan keahliannya yang biasa dalam mengemudikan kapal, membawa kami ke ujung lain pulau kecil itu. Aku melompat ke atas batu; pamanku mengikuti dengan ringan, sementara pemburu kami tetap di posnya, seperti orang yang terlalu bijak untuk pernah terkejut. Kami berjalan di atas granit yang bercampur dengan tufa silika. Tanah bergetar dan berguncang di bawah kaki kami, seperti sisi-sisi ketel yang terlalu panas berisi uap yang berusaha keluar. Kami melihat sebuah cekungan kecil di tengah, tempat geyser itu menyembur. Saya mencelupkan termometer ke dalam air mendidih. Termometer itu menunjukkan suhu yang sangat tinggi, 325°, yang jauh di atas titik didih; oleh karena itu, air ini keluar dari tungku yang sangat panas, yang sama sekali tidak sesuai dengan teori Profesor Liedenbrock. Saya tidak bisa menahan diri untuk tidak berkomentar. "Nah," jawabnya, "bagaimana hal itu bertentangan dengan doktrin saya?" "Oh, tidak ada apa-apa sama sekali," kataku, menyadari bahwa aku sedang melawan sikap keras kepala yang tak tergoyahkan. Namun saya terpaksa mengakui bahwa hingga saat ini kita telah sangat diberkati, dan karena alasan yang tidak saya ketahui, kita telah menyelesaikan perjalanan kita dalam kondisi suhu yang sangat menguntungkan. Tetapi tampaknya jelas bagi saya bahwa suatu hari nanti kita akan mencapai wilayah di mana panas pusat mencapai batas tertingginya, dan melampaui titik yang dapat dicatat oleh termometer kita. "Itulah yang akan kita lihat." Begitu kata Profesor, yang, setelah menamai pulau vulkanik kecil ini sesuai nama keponakannya, memberi isyarat untuk memulai perjalanan kembali. Selama beberapa menit saya masih mengamati geyser itu. Saya perhatikan bahwa geyser itu menyemburkan kolom airnya dengan kekuatan yang bervariasi: terkadang mencapai ketinggian yang sangat tinggi, lalu kembali ke ketinggian yang lebih rendah, yang saya duga disebabkan oleh tekanan uap yang terkumpul di reservoirnya yang bervariasi. Akhirnya kami meninggalkan pulau itu, berbelok melewati bebatuan rendah di pantai selatannya. Hans memanfaatkan kesempatan berhenti ini untuk memperbaiki kemudinya. Namun sebelum melanjutkan perjalanan, saya membuat beberapa pengamatan, untuk menghitung jarak yang telah kita tempuh, dan mencatatnya dalam jurnal saya. Kita telah menempuh dua ratus tujuh puluh liga laut sejak meninggalkan Port Gräuben; dan kita berada enam ratus dua puluh liga dari Islandia, di bawah kekuasaan Inggris. [1] [1] Jarak ini membawa para pelancong sejauh di bawah Pegunungan Pyrenees jika liga tersebut berukuran tiga mil. (Terjemahan)</p>
 

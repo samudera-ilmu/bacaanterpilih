@@ -5,39 +5,176 @@
 <title>BAB 22</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB 22 - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB 22</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Pelayaran berakhir. Kami mendarat, dan melanjutkan perjalanan ke Paris. Aku segera menyadari bahwa aku telah terlalu memforsir kekuatanku dan harus beristirahat sebelum dapat melanjutkan perjalanan. Perhatian dan kepedulian ayahku tak kenal lelah, tetapi ia tidak mengetahui asal mula penderitaanku dan mencari cara yang keliru untuk mengatasi penyakit yang tak dapat disembuhkan itu. Ia ingin aku mencari hiburan di masyarakat. Aku membenci wajah manusia. Oh, bukan membenci! Mereka adalah saudara-saudaraku, sesama makhlukku, dan aku merasa tertarik bahkan kepada yang paling menjijikkan di antara mereka, seperti kepada makhluk-makhluk yang bersifat malaikat dan memiliki mekanisme surgawi. Tetapi aku merasa bahwa aku tidak berhak untuk berbagi pergaulan mereka. Aku telah melepaskan musuh di antara mereka yang senang menumpahkan darah mereka dan bersenang-senang dalam rintihan mereka. Betapa mereka, masing-masing dan semuanya, akan membenciku dan memburuku dari dunia ini, jika mereka mengetahui perbuatan-perbuatanku yang tidak suci dan kejahatan yang bersumber dari diriku! Akhirnya ayahku mengalah pada keinginanku untuk menghindari pergaulan dan berusaha dengan berbagai argumen untuk menghilangkan keputusasaanku. Terkadang ia berpikir bahwa aku sangat merasakan kehinaan karena harus menjawab tuduhan pembunuhan, dan ia berusaha membuktikan kepadaku kesia-siaan kesombongan. “Celaka! Ayahku,” kataku, “betapa sedikitnya kau mengenalku. Manusia, perasaan dan nafsu mereka, memang akan terhina jika orang hina sepertiku merasa bangga. Justine, Justine yang malang dan tidak beruntung, sama tidak bersalahnya denganku, dan dia menderita tuduhan yang sama; dia mati karenanya; dan akulah penyeBABnya—aku membunuhnya. William, Justine, dan Henry—mereka semua mati di tanganku.” Ayahku sering mendengar aku membuat pernyataan yang sama selama aku dipenjara; ketika aku menuduh diriku sendiri seperti itu, kadang-kadang ia tampak menginginkan penjelasan, dan di lain waktu ia tampak menganggapnya sebagai akibat dari delusi, dan bahwa, selama sakitku, beberapa gagasan semacam itu muncul dalam imajinasiku, ingatan tentang hal itu kusimpan selama masa pemulihanku. Aku menghindari penjelasan dan terus-menerus diam mengenai sosok malang yang telah kuciptakan. Aku yakin bahwa aku akan dianggap gila, dan ini saja sudah cukup untuk membungkam lidahku selamanya. Tetapi, selain itu, aku tidak mampu mengungkapkan rahasia yang akan membuat pendengarku cemas dan membuat rasa takut dan kengerian yang tidak wajar memenuhi dadanya. Karena itu, aku menahan dahaga tak sabarku akan simpati dan diam ketika aku rela memberikan dunia untuk menceritakan rahasia yang fatal itu. Namun, tetap saja, kata-kata seperti yang telah kucatat itu akan keluar tanpa terkendali dari mulutku. Aku tidak dapat memberikan penjelasan tentangnya, tetapi kebenarannya sebagian meringankan beban kesedihanku yang misterius. Pada kesempatan itu ayahku berkata, dengan ekspresi keheranan yang tak terbatas, “Victorku tersayang, kegilaan apa ini? Anakku sayang, aku mohon padamu jangan pernah membuat pernyataan seperti itu lagi.” “Aku tidak gila,” teriakku dengan penuh semangat; “matahari dan langit, yang telah menyaksikan perbuatanku, dapat menjadi saksi kebenaranku. Akulah pembunuh para korban yang paling tidak bersalah itu; mereka mati karena tipu dayaku. Seribu kali aku rela menumpahkan darahku sendiri, setetes demi setetes, untuk menyelamatkan nyawa mereka; tetapi aku tidak bisa, ayahku, sungguh aku tidak bisa mengorbankan seluruh umat manusia.” Kesimpulan pidato ini meyakinkan ayah saya bahwa pemikiran saya tidak waras, dan dia langsung mengubah topik pembicaraan kami dan berusaha mengubah arah pikiran saya. Dia ingin sebisa mungkin menghapus ingatan tentang kejadian yang telah terjadi di Irlandia dan tidak pernah menyinggungnya atau membiarkan saya berbicara tentang kemalangan saya. Seiring waktu berlalu, aku menjadi lebih tenang; kesengsaraan memang bersemayam di hatiku, tetapi aku tidak lagi berbicara dengan cara yang tidak koheren tentang kejahatanku sendiri; kesadaran akan hal itu sudah cukup bagiku. Dengan kekerasan diri yang ekstrem, aku mengekang suara kesengsaraan yang angkuh, yang terkadang ingin menyatakan dirinya kepada seluruh dunia, dan tingkah lakuku menjadi lebih tenang dan terkendali daripada sebelumnya sejak perjalananku ke lautan es. Beberapa hari sebelum kami meninggalkan Paris dalam perjalanan ke Swiss, saya menerima SURAT berikut dari Elizabeth: “Sahabatku tersayang, “Saya sangat senang menerima SURAT dari paman saya yang bertanggal dari Paris; Anda tidak lagi berada di jarak yang terlalu jauh, dan saya berharap dapat bertemu Anda dalam waktu kurang dari dua minggu. Sepupu saya yang malang, betapa banyak penderitaan yang telah Anda alami! Saya berharap melihat Anda tampak lebih sakit daripada saat Anda meninggalkan Jenewa. Musim dingin ini telah berlalu dengan sangat menyedihkan, saya tersiksa oleh kecemasan yang mencekam; namun saya berharap dapat melihat kedamaian di wajah Anda dan mendapati bahwa hati Anda tidak sepenuhnya kosong dari kenyamanan dan ketenangan.” “Namun aku khawatir perasaan yang sama masih ada yang membuatmu begitu menderita setahun yang lalu, bahkan mungkin bertambah parah seiring berjalannya waktu. Aku tidak ingin mengganggumu saat ini, ketika begitu banyak kemalangan menimpamu, tetapi percakapan yang kulakukan dengan pamanku sebelum kepergiannya membuat beberapa penjelasan diperlukan sebelum kita bertemu.” Penjelasan! Anda mungkin berkata, Apa yang perlu Elizabeth jelaskan? Jika Anda benar-benar mengatakan ini, pertanyaan saya terjawab dan semua keraguan saya teratasi. Tetapi Anda jauh dari saya, dan mungkin Anda merasa takut sekaligus senang dengan penjelasan ini; dan jika memang demikian, saya tidak berani lagi menunda menuliskan apa yang selama ketidakhadiran Anda, sering ingin saya ungkapkan kepada Anda tetapi tidak pernah berani saya mulai. “Kau tahu betul, Victor, bahwa persatuan kita telah menjadi rencana favorit orang tuamu sejak kita masih bayi. Kita diberitahu hal ini ketika masih kecil, dan diajari untuk menantikannya sebagai peristiwa yang pasti akan terjadi. Kita adalah teman bermain yang penuh kasih sayang selama masa kanak-kanak, dan, kupercaya, sahabat yang terkasih dan berharga satu sama lain saat kita dewasa. Tetapi seperti halnya saudara laki-laki dan perempuan seringkali memiliki kasih sayang yang mendalam satu sama lain tanpa menginginkan persatuan yang lebih intim, bukankah hal yang sama juga mungkin terjadi pada kita? Katakan padaku, Victor tersayang. Jawab aku, aku memohon kepadamu demi kebahagiaan kita bersama, dengan kebenaran yang sederhana—Apakah kau tidak mencintai orang lain?” “Kau telah bepergian; kau telah menghabiskan beberapa tahun hidupmu di Ingolstadt; dan aku mengaku kepadamu, sahabatku, bahwa ketika aku melihatmu musim gugur lalu begitu tidak bahagia, melarikan diri ke kesendirian dari masyarakat, aku tidak dapat menahan diri untuk tidak menduga bahwa kau mungkin menyesali hubungan kita dan percaya bahwa dirimu terikat kehormatan untuk memenuhi keinginan orang tuamu, meskipun mereka menentang keinginanmu. Tetapi ini adalah penalaran yang salah. Aku mengaku kepadamu, sahabatku, bahwa aku mencintaimu dan bahwa dalam mimpi-mimpiku tentang masa depan, kau telah menjadi sahabat dan pendampingku yang setia. Tetapi kebahagiaanmu juga yang kuinginkan, selain kebahagiaanku sendiri, ketika aku menyatakan kepadamu bahwa pernikahan kita akan membuatku selamanya sengsara kecuali itu adalah pilihan bebasmu sendiri. Bahkan sekarang aku menangis memikirkan bahwa, terbebani oleh kemalangan yang paling kejam, kau mungkin membungkam, dengan kata kehormatan , semua harapan akan cinta dan kebahagiaan yang akan mengembalikanmu kepada dirimu sendiri. Aku, yang memiliki kasih sayang yang begitu tulus kepadamu, mungkin akan menambah kesengsaraanmu sepuluh kali lipat dengan menjadi penghalang bagi keinginanmu. Ah! Victor, Yakinlah bahwa sepupu dan teman bermainmu ini memiliki kasih sayang yang terlalu tulus kepadamu sehingga tidak akan merasa sedih karena anggapan ini. Bergembiralah, temanku; dan jika kau menuruti permintaanku ini, yakinlah bahwa tidak ada apa pun di dunia ini yang mampu mengganggu ketenangan hatiku. “Jangan biarkan SURAT ini mengganggumu; jangan menjawab besok, atau lusa, atau bahkan sampai kau datang, jika itu akan membuatmu sakit hati. Pamanku akan mengirimiku kabar tentang kesehatanmu, dan jika aku melihat satu senyuman di bibirmu saat kita bertemu, yang diseBABkan oleh ini atau usahaku yang lain, aku tak butuh kebahagiaan lain.” “Elizabeth Lavenza.” “Jenewa, 18 Mei 17—”</p>
 <p>SURAT ini membangkitkan kembali dalam ingatanku apa yang sebelumnya telah kulupakan, ancaman iblis—" Aku akan bersamamu di malam pernikahanmu! " Itulah hukuman yang harus kuterima, dan pada malam itu iblis akan menggunakan segala cara untuk menghancurkanku dan merenggutku dari secercah kebahagiaan yang sebagian menjanjikan penghiburan atas penderitaanku. Pada malam itu ia telah bertekad untuk menyelesaikan kejahatannya dengan kematianku. Baiklah, biarlah begitu; pertarungan maut pasti akan terjadi, di mana jika ia menang, aku akan damai dan kekuasaannya atas diriku akan berakhir. Jika ia dikalahkan, aku akan menjadi orang bebas. Sayang sekali! Kebebasan apa? Kebebasan yang dinikmati petani ketika keluarganya dibantai di depan matanya, gubuknya dibakar, tanahnya dirusak, dan ia terombang-ambing, tanpa rumah, tanpa uang, dan sendirian, tetapi bebas. Itulah kebebasanku, kecuali bahwa dalam diri Elizabeth-ku, aku memiliki harta karun, sayangnya, diimbangi oleh kengerian penyesalan dan rasa bersalah yang akan mengejarku sampai mati. Elizabeth yang manis dan tercinta! Aku membaca dan membaca ulang SURATnya, dan beberapa perasaan lembut menyelinap ke dalam hatiku dan berani membisikkan mimpi-mimpi surgawi tentang cinta dan kebahagiaan; tetapi apel itu sudah dimakan, dan lengan malaikat terulur untuk mengusirku dari semua harapan. Namun aku akan mati untuk membuatnya bahagia. Jika monster itu melaksanakan ancamannya, kematian tak terhindarkan; namun, sekali lagi, aku mempertimbangkan apakah pernikahanku akan mempercepat nasibku. Kehancuranku mungkin memang akan datang beberapa bulan lebih cepat, tetapi jika penyiksaku mencurigai bahwa aku menundanya, dipengaruhi oleh ancamannya, dia pasti akan menemukan cara balas dendam lain dan mungkin lebih mengerikan. Dia telah bersumpah untuk bersamaku di malam pernikahanku , namun dia tidak menganggap ancaman itu sebagai pengikatnya pada perdamaian sementara itu, karena seolah-olah untuk menunjukkan kepadaku bahwa dia belum puas dengan darah, dia telah membunuh Clerval segera setelah mengucapkan ancamannya. Oleh karena itu, saya memutuskan bahwa jika pernikahan saya segera dengan sepupu saya akan membawa kebahagiaan bagi dirinya atau ayah saya, maka rencana musuh saya terhadap hidup saya tidak akan menundanya sedetik pun. Dalam keadaan pikiran seperti ini, aku menulis SURAT kepada Elizabeth. SURATku tenang dan penuh kasih sayang. “Aku khawatir, gadisku tersayang,” kataku, “hanya sedikit kebahagiaan yang tersisa bagi kita di bumi; namun semua yang mungkin akan kunikmati suatu hari nanti berpusat padamu. Singkirkan ketakutanmu yang sia-sia; hanya kepadamu aku persembahkan hidupku dan usahaku untuk kebahagiaan. Aku punya satu rahasia, Elizabeth, rahasia yang mengerikan; ketika diungkapkan kepadamu, itu akan membuatmu merinding ketakutan, dan kemudian, bukannya terkejut dengan penderitaanku, kau hanya akan heran bagaimana aku bisa bertahan dari apa yang telah kualami. Aku akan menceritakan kisah penderitaan dan teror ini kepadamu sehari setelah pernikahan kita berlangsung, karena, sepupuku tersayang, harus ada kepercayaan penuh di antara kita. Tetapi sampai saat itu, aku memohon kepadamu, jangan menyebutkan atau menyinggungnya. Ini kumohon dengan sungguh-sungguh, dan aku tahu kau akan menurutinya.” Sekitar seminggu setelah SURAT Elizabeth tiba, kami kembali ke Jenewa. Gadis manis itu menyambutku dengan penuh kasih sayang, namun air mata menggenang di matanya saat melihat tubuhku yang kurus kering dan pipiku yang demam. Aku juga melihat perubahan padanya. Ia lebih kurus dan telah kehilangan banyak keceriaan surgawi yang sebelumnya memikatku; tetapi kelembutan dan tatapan belas kasihnya yang lembut membuatnya menjadi teman yang lebih cocok bagi seseorang yang menderita dan sengsara sepertiku. Ketenangan yang kini kunikmati tidak bertahan lama. Kenangan membawa kegilaan bersamanya, dan ketika aku memikirkan apa yang telah terjadi, kegilaan yang sesungguhnya merasukiku; terkadang aku marah dan terbakar amarah, terkadang sedih dan putus asa. Aku tidak berbicara atau memandang siapa pun, tetapi duduk tanpa bergerak, bingung oleh banyaknya penderitaan yang menimpaku. Hanya Elizabeth yang memiliki kekuatan untuk menarikku keluar dari keadaan ini; suaranya yang lembut akan menenangkanku ketika diliputi emosi dan menginspirasiku dengan perasaan manusiawi ketika tenggelam dalam kelesuan. Dia menangis bersamaku dan untukku. Ketika akal sehatku kembali, dia akan menegur dan berusaha menginspirasiku untuk menerima keadaan. Ah! Memang baik bagi orang yang malang untuk menerima keadaan, tetapi bagi orang yang bersalah tidak ada kedamaian. Penderitaan penyesalan meracuni kemewahan yang terkadang ditemukan dalam memanjakan kesedihan yang berlebihan. Tak lama setelah kedatangan saya, ayah saya membicarakan tentang pernikahan saya dengan Elizabeth. Saya tetap diam. “Jadi, apakah Anda memiliki keterikatan lain?” “Tidak ada seorang pun di dunia ini. Aku mencintai Elizabeth dan menantikan persatuan kami dengan penuh sukacita. Oleh karena itu, tetapkanlah harinya; dan pada hari itu aku akan mengabdikan diriku, dalam hidup atau mati, untuk kebahagiaan sepupuku.” “Victor sayangku, jangan bicara seperti itu. Kemalangan besar telah menimpa kita, tetapi marilah kita berpegang teguh pada apa yang tersisa dan mengalihkan kasih sayang kita kepada mereka yang telah tiada kepada mereka yang masih hidup. Lingkaran kita akan kecil tetapi terikat erat oleh ikatan kasih sayang dan kemalangan bersama. Dan ketika waktu telah melunakkan keputusasaanmu, objek perhatian baru dan terkasih akan lahir untuk menggantikan mereka yang telah direnggut dari kita dengan begitu kejam.” Begitulah pelajaran dari ayahku. Tetapi ingatan akan ancaman itu kembali menghantuiku; dan tak heran jika, meskipun iblis itu begitu berkuasa dalam perbuatan berdarahnya, aku hampir menganggapnya tak terkalahkan, dan ketika dia mengucapkan kata-kata " Aku akan bersamamu di malam pernikahanmu ," aku menganggap nasib yang diancam itu tak terhindarkan. Tetapi kematian bukanlah kejahatan bagiku jika kehilangan Elizabeth diimbangi dengannya, dan karena itu, dengan wajah puas dan bahkan ceria, aku setuju dengan ayahku bahwa jika sepupuku setuju, upacara itu akan berlangsung dalam sepuluh hari, dan dengan demikian, seperti yang kubayangkan, menyegel takdirku. Ya Tuhan! Seandainya sejenak saja aku memikirkan niat jahat musuhku yang keji itu, aku lebih memilih mengasingkan diri selamanya dari tanah kelahiranku dan mengembara tanpa teman di bumi daripada menyetujui pernikahan yang menyedihkan ini. Tetapi, seolah-olah dirasuki kekuatan magis, monster itu telah membutakan mataku terhadap niat sebenarnya; dan ketika aku berpikir bahwa aku hanya mempersiapkan kematianku sendiri, aku mempercepat kematian korban yang jauh lebih berharga. Saat tanggal yang ditetapkan untuk pernikahan kami semakin dekat, entah karena rasa takut atau firasat, hatiku terasa hancur. Tetapi aku menyembunyikan perasaanku dengan penampilan riang yang membuat ayahku tersenyum dan gembira, namun hampir tidak menipu mata Elizabeth yang selalu waspada dan lebih jeli. Ia menantikan pernikahan kami dengan ketenangan yang damai, bercampur dengan sedikit rasa takut, yang telah ditimbulkan oleh kemalangan masa lalu, bahwa apa yang sekarang tampak sebagai kebahagiaan yang pasti dan nyata mungkin segera lenyap menjadi mimpi yang hampa dan tidak meninggalkan jejak selain penyesalan yang mendalam dan abadi. Persiapan untuk acara tersebut telah dilakukan, kunjungan ucapan selamat telah diterima, dan semua orang tampak tersenyum. Aku sebisa mungkin menahan kecemasan yang menghantui hatiku dan dengan sungguh-sungguh ikut serta dalam rencana ayahku, meskipun itu mungkin hanya berfungsi sebagai hiasan tragediku. Berkat usaha ayahku, sebagian warisan Elizabeth telah dikembalikan kepadanya oleh pemerintah Austria. Sebuah tanah kecil di tepi Danau Como menjadi miliknya. Disepakati bahwa, segera setelah pernikahan kami, kami akan pergi ke Villa Lavenza dan menghabiskan hari-hari pertama kebahagiaan kami di tepi danau yang indah di dekatnya. Sementara itu, saya mengambil setiap tindakan pencegahan untuk melindungi diri saya seandainya si jahat menyerang saya secara terang-terangan. Saya selalu membawa pistol dan belati dan selalu waspada untuk mencegah tipu daya, dan dengan cara ini saya memperoleh ketenangan yang lebih besar. Bahkan, ketika waktunya semakin dekat, ancaman itu tampak lebih seperti khayalan, tidak perlu dianggap sebagai sesuatu yang layak mengganggu kedamaian saya, sementara kebahagiaan yang saya harapkan dalam pernikahan saya tampak lebih pasti seiring hari yang ditetapkan untuk upacara pernikahan semakin dekat dan saya terus-menerus mendengarnya dibicarakan sebagai peristiwa yang tidak mungkin dicegah oleh kecelakaan apa pun. Elizabeth tampak bahagia; sikapku yang tenang sangat membantu menenangkan pikirannya. Tetapi pada hari yang akan memenuhi keinginan dan takdirku, dia merasa sedih, dan firasat buruk menyelimutinya; dan mungkin juga dia memikirkan rahasia mengerikan yang telah kujanjikan untuk kuungkapkan padanya keesokan harinya. Sementara itu, ayahku sangat gembira, dan, di tengah kesibukan persiapan, hanya menyadari kesedihan keponakannya sebagai rasa malu seorang pengantin. Setelah upacara selesai, banyak orang berkumpul di rumah ayahku, tetapi disepakati bahwa Elizabeth dan aku akan memulai perjalanan kami melalui jalur laut, bermalam di Evian dan melanjutkan perjalanan kami keesokan harinya. Hari itu cerah, angin bertiup sepoi-sepoi; semua orang tersenyum menyambut keberangkatan pernikahan kami. Itulah saat-saat terakhir dalam hidupku di mana aku menikmati perasaan bahagia. Kami melaju dengan cepat; matahari sangat terik, tetapi kami terlindungi dari sinarnya oleh semacam kanopi sementara kami menikmati keindahan pemandangan, kadang-kadang di satu sisi danau, di mana kami melihat Mont Salêve, tepian Montalègre yang indah, dan dari kejauhan, menjulang di atas semuanya, Mont Blanc yang indah, dan kumpulan pegunungan bersalju yang sia-sia berusaha menyainginya; kadang-kadang menyusuri tepian seberang, kami melihat Jura yang perkasa menentang sisi gelapnya terhadap ambisi yang ingin meninggalkan tanah kelahirannya, dan menjadi penghalang yang hampir tak tertembus bagi penjajah yang ingin memperbudaknya. Aku menggenggam tangan Elizabeth. “Kau berduka, sayangku. Ah! Seandainya kau tahu apa yang telah kuderita dan apa yang mungkin masih akan kualami, kau pasti akan berusaha membiarkanku merasakan ketenangan dan kebebasan dari keputusasaan yang setidaknya hari ini saja dapat kunikmati.” “Bergembiralah, Victor sayangku,” jawab Elizabeth; “semoga tidak ada yang membuatmu sedih; dan yakinlah bahwa jika kegembiraan yang meluap-luap tidak terpancar di wajahku, hatiku tetap tenang. Sesuatu membisikkan kepadaku untuk tidak terlalu bergantung pada pemandangan yang terbentang di hadapan kita, tetapi aku tidak akan mendengarkan suara yang menyeramkan itu. Perhatikan betapa cepatnya kita bergerak dan bagaimana awan, yang kadang-kadang menutupi dan kadang-kadang menjulang di atas puncak Mont Blanc, membuat pemandangan indah ini semakin menarik. Lihat juga ikan-ikan yang tak terhitung jumlahnya yang berenang di perairan jernih, di mana kita dapat membedakan setiap kerikil yang terletak di dasar. Sungguh hari yang indah! Betapa bahagia dan tenangnya seluruh alam!” Dengan demikian, Elizabeth berusaha mengalihkan pikirannya dan pikiranku dari semua perenungan tentang hal-hal yang menyedihkan. Tetapi suasana hatinya berubah-ubah; kegembiraan sesaat terpancar di matanya, tetapi terus-menerus digantikan oleh kebingungan dan lamunan. Matahari semakin rendah di langit; kami melewati sungai Drance dan mengamati alirannya melalui jurang-jurang di perbukitan yang lebih tinggi dan lembah-lembah di perbukitan yang lebih rendah. Pegunungan Alpen di sini semakin mendekat ke danau, dan kami mendekati amfiteater pegunungan yang membentuk batas timurnya. Puncak Evian bersinar di bawah hutan yang mengelilinginya dan deretan gunung di atasnya yang menjulang di atasnya. Angin, yang sebelumnya membawa kami dengan kecepatan luar biasa, mereda saat matahari terbenam menjadi hembusan lembut; udara lembut itu hanya mengembus air dan menyeBABkan gerakan menyenangkan di antara pepohonan saat kami mendekati pantai, dari mana tercium aroma bunga dan jerami yang sangat harum. Matahari tenggelam di bawah cakrawala saat kami mendarat, dan saat aku menyentuh pantai, aku merasakan kembali kekhawatiran dan ketakutan yang segera akan mencengkeramku dan melekat padaku selamanya.</p>

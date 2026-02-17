@@ -5,39 +5,176 @@
 <title>BAB XXV. YANG MENUNJUKKAN SEKILAS TENTANG SAN FRANCISCO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXV. YANG MENUNJUKKAN SEKILAS TENTANG SAN FRANCISCO - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXV. YANG MENUNJUKKAN SEKILAS TENTANG SAN FRANCISCO</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Pukul tujuh pagi ketika Tuan Fogg, Aouda, dan Passepartout menginjakkan kaki di benua Amerika, jika nama ini dapat diberikan kepada dermaga terapung tempat mereka turun. Dermaga-dermaga ini, yang naik dan turun mengikuti pasang surut, memudahkan pemuatan dan pembongkaran kapal. Di sampingnya terdapat kapal layar berbagai ukuran, kapal uap dari berbagai negara, dan kapal uap bertingkat yang berlayar di Sacramento dan anak sungainya. Terdapat pula tumpukan produk perdagangan yang menjangkau Meksiko, Chili, Peru, Brasil, Eropa, Asia, dan semua pulau di Pasifik. Passepartout, dalam kegembiraannya karena akhirnya mencapai benua Amerika, berpikir dia akan menunjukkannya dengan melakukan lompatan berbahaya dengan gaya yang bagus; tetapi, tersandung pada beberapa papan yang dimakan rayap, dia jatuh menembus papan tersebut. Karena malu dengan cara dia "menginjakkan kaki" di Dunia Baru, dia mengeluarkan teriakan keras, yang begitu menakutkan burung-burung kormoran dan pelikan yang tak terhitung jumlahnya yang selalu bertengger di dermaga-dermaga yang dapat dipindahkan ini, sehingga mereka terbang menjauh dengan berisik. Setelah sampai di pantai, Tuan Fogg segera mencari tahu jam berapa kereta pertama berangkat ke New York, dan mengetahui bahwa kereta tersebut berangkat pukul enam sore; oleh karena itu, ia memiliki waktu seharian penuh untuk dihabiskan di ibu kota California. Dengan menaiki kereta seharga tiga dolar, ia dan Aouda masuk ke dalamnya, sementara Passepartout naik ke tempat duduk di samping pengemudi, dan mereka berangkat menuju Hotel Internasional. Dari posisinya yang tinggi, Passepartout mengamati dengan penuh rasa ingin tahu jalan-jalan yang lebar, rumah-rumah rendah yang tertata rapi, gereja-gereja Gotik Anglo-Saxon, dermaga-dermaga besar, gudang-gudang kayu dan bata yang megah, berbagai macam kendaraan, omnibus, kereta kuda, dan di trotoar, tidak hanya orang Amerika dan Eropa, tetapi juga orang Tionghoa dan India. Passepartout terkejut dengan semua yang dilihatnya. San Francisco bukan lagi kota legendaris tahun 1849—kota para bandit, pembunuh, dan pembakar, yang berbondong-bondong datang ke sini untuk mencari harta rampasan; surga para penjahat, tempat mereka berjudi dengan debu emas, sebuah revolver di satu tangan dan pisau bowie di tangan lainnya: sekarang kota itu telah menjadi pusat perdagangan yang besar. Menara Balai Kota yang menjulang tinggi menghadap ke seluruh panorama jalan-jalan dan gang-gang yang saling berpotongan tegak lurus, dan di tengahnya tampak alun-alun yang hijau dan menyenangkan, sementara di kejauhan tampak kawasan Pecinan, yang seolah-olah diimpor dari Kerajaan Surgawi dalam sebuah kotak mainan. Topi sombrero, kemeja merah, dan orang India berhias bulu jarang terlihat; tetapi ada topi sutra dan jas hitam di mana-mana yang dikenakan oleh banyak pria yang tampak bersemangat dan berpenampilan sopan. Beberapa jalan—terutama Jalan Montgomery, yang bagi San Francisco sama seperti Jalan Regent bagi London, Boulevard des Italiens bagi Paris, dan Broadway bagi New York—dipenuhi dengan toko-toko yang megah dan luas, yang memajang produk-produk dari seluruh dunia di jendela-jendela mereka. Ketika Passepartout tiba di International Hotel, baginya seolah-olah dia belum meninggalkan Inggris sama sekali. Lantai dasar hotel ditempati oleh sebuah bar besar, semacam restoran yang terbuka bebas untuk semua orang yang lewat, yang dapat menikmati daging sapi kering, sup tiram, biskuit, dan keju, tanpa perlu mengeluarkan dompet mereka. Pembayaran hanya dilakukan untuk bir, porter, atau sherry yang diminum. Hal ini tampak "sangat Amerika" bagi Passepartout. Ruang makan hotel itu nyaman, dan Tuan Fogg dan Aouda, setelah duduk di meja, dilayani dengan berlimpah di piring-piring kecil oleh orang-orang kulit hitam yang sangat gelap. visa paspornya . Saat keluar, ia bertemu Passepartout, yang bertanya apakah sebaiknya, sebelum naik kereta, ia membeli beberapa lusin senapan Enfield dan revolver Colt. Ia telah mendengar cerita tentang serangan terhadap kereta api oleh suku Sioux dan Pawnee. Tuan Fogg menganggapnya sebagai tindakan pencegahan yang tidak perlu, tetapi menyuruhnya melakukan apa yang menurutnya terbaik, dan melanjutkan perjalanan ke konsulat. Namun, ia belum melangkah dua ratus langkah ketika, "secara kebetulan yang luar biasa," ia bertemu Fix. Detektif itu tampak sangat terkejut. Apa! Apakah Tuan Fogg dan dirinya telah menyeberangi Samudra Pasifik bersama, dan tidak bertemu di kapal uap! Setidaknya Fix merasa terhormat dapat bertemu kembali dengan pria yang telah banyak membantunya, dan, karena urusannya membawanya kembali ke Eropa, ia akan senang melanjutkan perjalanan dengan ditemani orang-orang yang menyenangkan seperti itu. Tuan Fogg menjawab bahwa kehormatan itu akan menjadi miliknya; dan detektif itu—yang bertekad untuk tidak kehilangan jejaknya—memohon izin untuk menemani mereka berjalan-jalan di sekitar San Francisco—permintaan yang dengan senang hati dikabulkan oleh Tuan Fogg. Mereka segera mendapati diri mereka berada di Jalan Montgomery, tempat kerumunan besar berkumpul; trotoar, jalan, rel trem, pintu toko, jendela rumah, dan bahkan atap, dipenuhi orang. Orang-orang berjalan-jalan membawa poster besar, dan bendera serta pita berkibar tertiup angin; sementara teriakan keras terdengar di mana-mana. “Hore untuk Camerfield!” “Hore untuk Mandiboy!” Itu adalah pertemuan politik; setidaknya begitulah dugaan Fix, yang berkata kepada Tuan Fogg, "Mungkin lebih baik kita tidak berbaur dengan kerumunan. Mungkin ada bahaya di dalamnya." “Ya,” jawab Tuan Fogg; “dan pukulan, meskipun bersifat politis, tetaplah pukulan.” Fix tersenyum mendengar ucapan itu; dan, agar bisa melihat tanpa terdesak, rombongan itu mengambil posisi di puncak anak tangga yang terletak di ujung atas Jalan Montgomery. Di seberang mereka, di sisi lain jalan, antara dermaga batu bara dan gudang minyak bumi, sebuah panggung besar telah didirikan di udara terbuka, ke arah mana arus kerumunan tampaknya mengarah. Untuk tujuan apa pertemuan ini? Apa alasan berkumpulnya orang-orang yang begitu bersemangat ini? Phileas Fogg tidak dapat membayangkannya. Apakah untuk mencalonkan pejabat tinggi—seorang gubernur atau anggota Kongres? Itu bukan hal yang mustahil, mengingat betapa gelisahnya orang-orang di hadapan mereka. Tepat pada saat itu terjadi kehebohan yang tidak biasa di tengah kerumunan orang. Semua tangan terangkat ke udara. Beberapa, terkepal erat, tampak tiba-tiba menghilang di tengah teriakan—suatu cara yang energik, tak diragukan lagi, untuk memberikan suara. Kerumunan terhuyung mundur, spanduk dan bendera berkibar, menghilang sesaat, lalu muncul kembali dalam keadaan compang-camping. Gelombang kerumunan mencapai tangga, sementara semua kepala terombang-ambing di permukaan seperti laut yang diterjang badai. Banyak topi hitam menghilang, dan sebagian besar kerumunan tampak menyusut tingginya. “Jelas ini adalah sebuah pertemuan,” kata Fix, “dan tujuannya pasti sesuatu yang menarik. Saya tidak akan heran jika ini tentang 'Alabama,' meskipun pertanyaan itu sudah terjawab.” “Mungkin,” jawab Tuan Fogg singkat. "Setidaknya, ada dua juara yang hadir bersama, Yang Terhormat Bapak Camerfield dan Yang Terhormat Bapak Mandiboy." Aouda, bersandar di lengan Tuan Fogg, mengamati pemandangan yang kacau itu dengan terkejut, sementara Fix bertanya kepada seorang pria di dekatnya apa penyebab semua itu. Sebelum pria itu dapat menjawab, kegaduhan baru muncul; sorak-sorai dan teriakan bersemangat terdengar; tiang-tiang bendera mulai digunakan sebagai senjata ofensif; dan tinju berterbangan ke segala arah. Pukulan saling dilayangkan dari atas kereta dan omnibus yang telah diblokir di tengah kerumunan. Sepatu bot dan sepatu berputar-putar di udara, dan Tuan Fogg mengira dia bahkan mendengar letupan revolver bercampur dalam keributan, gerombolan itu mendekati tangga, dan mengalir melewati anak tangga bawah. Salah satu pihak jelas telah dipukul mundur; tetapi para penonton saja tidak dapat memastikan apakah Mandiboy atau Camerfield yang telah unggul. “Akan lebih bijaksana jika kita mundur,” kata Fix, yang khawatir Tuan Fogg tidak akan terluka, setidaknya sampai mereka kembali ke London. “Jika ada pertanyaan tentang Inggris dalam semua ini, dan kita dikenali, saya khawatir akan ada masalah bagi kita.” “Mata kuliah bahasa Inggris—” mulai Pak Fogg. Dia tidak menyelesaikan kalimatnya; karena keributan hebat kini muncul di teras di belakang tangga tempat mereka berdiri, dan terdengar teriakan histeris, “Hore untuk Mandiboy! Hore, hore, hore!” Sekelompok pemilih datang untuk menyelamatkan sekutu mereka, dan mengepung pasukan Camerfield. Tuan Fogg, Aouda, dan Fix mendapati diri mereka berada di antara dua tembakan; sudah terlambat untuk melarikan diri. Arus orang-orang, bersenjata tongkat dan pentungan, tak tertahankan. Phileas Fogg dan Fix didorong dengan kasar dalam upaya mereka untuk melindungi teman mereka; yang pertama, setenang biasanya, mencoba membela diri dengan senjata yang secara alami diberikan kepada setiap orang Inggris, tetapi sia-sia. Seorang pria besar dan kekar dengan janggut merah, wajah memerah, dan bahu lebar, yang tampaknya adalah pemimpin kelompok itu, mengangkat tinjunya untuk memukul Tuan Fogg, yang akan ia beri pukulan telak, seandainya Fix tidak bergegas masuk dan menerimanya sebagai gantinya. Memar besar segera muncul di bawah topi sutra detektif itu, yang benar-benar hancur. “Yankee!” seru Tuan Fogg, sambil melirik sinis ke arah preman itu. “Orang Inggris!” jawab yang satunya. “Kita akan bertemu lagi!” “Kapan pun Anda mau.” "Siapa namamu?" “Phileas Fogg. Dan milikmu?” “Kolonel Stamp Proctor.” Gelombang manusia kini berlalu, setelah menjatuhkan Fix, yang dengan cepat bangkit berdiri lagi, meskipun dengan pakaian compang-camping. Untungnya, dia tidak terluka parah. Mantel perjalanannya terbelah menjadi dua bagian yang tidak sama, dan celananya menyerupai celana orang Indian tertentu, yang tidak pas di badan tetapi mudah dikenakan. Aouda lolos tanpa cedera, dan hanya Fix yang menanggung bekas pertempuran berupa memar hitam dan biru di tubuhnya. “Terima kasih,” kata Tuan Fogg kepada detektif itu, begitu mereka keluar dari kerumunan. “Tidak perlu berterima kasih,” jawab Fix; “tapi mari kita pergi.” "Di mana?" “Ke penjahit.” Kunjungan tersebut memang tepat waktu. Pakaian Tuan Fogg dan Fix compang-camping, seolah-olah mereka sendiri baru saja terlibat aktif dalam pertarungan antara Camerfield dan Mandiboy. Satu jam kemudian, mereka kembali berpakaian layak, dan bersama Aouda kembali ke Hotel Internasional. Passepartout sedang menunggu tuannya, dipersenjatai dengan setengah lusin revolver enam laras. Ketika ia melihat Fix, ia mengerutkan alisnya; tetapi setelah Aouda menceritakan petualangan mereka dalam beberapa kata, wajahnya kembali tenang. Jelas sekali Fix bukan lagi musuh, melainkan sekutu; ia dengan setia menepati janjinya. Setelah makan malam usai, kereta kuda yang akan mengangkut para penumpang dan barang bawaan mereka ke stasiun berhenti di depan pintu. Saat hendak masuk, Tuan Fogg berkata kepada Fix, "Kau belum melihat Kolonel Proctor ini lagi?""TIDAK." “Aku akan kembali ke Amerika untuk mencarinya,” kata Phileas Fogg dengan tenang. “Tidaklah pantas bagi seorang Inggris untuk membiarkan dirinya diperlakukan seperti itu tanpa membalas.” Detektif itu tersenyum, tetapi tidak menjawab. Jelas bahwa Tuan Fogg adalah salah satu orang Inggris yang, meskipun mereka tidak mentolerir duel di dalam negeri, akan bertarung di luar negeri ketika kehormatan mereka diserang. Pukul enam kurang seperempat, para pelancong tiba di stasiun dan mendapati kereta sudah siap berangkat. Saat hendak masuk, Tuan Fogg memanggil seorang porter dan berkata kepadanya: “Teman, bukankah ada masalah hari ini di San Francisco?” “Itu adalah pertemuan politik, Pak,” jawab petugas porter. “Tapi menurutku ada banyak sekali keributan di jalanan.” “Itu hanyalah pertemuan yang diadakan untuk sebuah pemilihan.” “Pemilihan seorang jenderal panglima tertinggi, tidak diragukan lagi?” tanya Tuan Fogg. “Bukan, Pak; melainkan milik seorang hakim perdamaian.” Phileas Fogg naik ke kereta, yang langsung melaju dengan kecepatan penuh.</p>
 

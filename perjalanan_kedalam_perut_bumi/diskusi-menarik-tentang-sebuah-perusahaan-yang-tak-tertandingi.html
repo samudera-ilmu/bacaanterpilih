@@ -5,39 +5,176 @@
 <title>DISKUSI MENARIK TENTANG SEBUAH PERUSAHAAN YANG TAK TERTANDINGI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="DISKUSI MENARIK TENTANG SEBUAH PERUSAHAAN YANG TAK TERTANDINGI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>DISKUSI MENARIK TENTANG SEBUAH PERUSAHAAN YANG TAK TERTANDINGI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Mendengar kata-kata itu, rasa dingin merinding menjalari tubuhku. Namun aku mengendalikan diri; aku bahkan bertekad untuk bersikap tenang. Hanya argumen ilmiah yang bisa berpengaruh pada Profesor Liedenbrock. Memang ada argumen yang kuat yang menentang kepraktisan perjalanan semacam itu. Menembus hingga ke pusat bumi! Omong kosong! Tapi aku menyimpan kemampuan berpikirku untuk kesempatan yang tepat, dan aku memikirkan makan malamku yang belum tiba. Tidak ada gunanya menceritakan kemarahan dan kutukan pamanku di depan meja yang kosong. Penjelasan telah diberikan, Martha dibebaskan, pergi ke pasar, dan melakukan bagiannya dengan sangat baik sehingga satu jam kemudian rasa laparku terpuaskan, dan aku dapat kembali merenungkan keseriusan situasi tersebut. Sepanjang waktu makan malam, pamanku hampir selalu gembira; ia melontarkan beberapa lelucon cerdas yang tidak pernah menyakiti siapa pun. Setelah hidangan penutup habis, ia mengajakku masuk ke ruang kerjanya. Aku menurutinya; dia duduk di salah satu ujung mejanya, aku di ujung lainnya. "Axel," katanya dengan sangat lembut; "kau adalah pemuda yang sangat cerdas, kau telah melakukan jasa yang luar biasa untukku, pada saat aku, kelelahan karena perjuangan ini, hendak menyerah. Di mana aku akan kehilangan diriku? Tak seorang pun tahu. Tak akan pernah, anakku, aku melupakannya; dan kau akan mendapatkan bagianmu dalam kemuliaan yang akan kau raih berkat penemuanmu." "Oh, ayolah!" pikirku, "dia sedang dalam kondisi yang baik. Sekaranglah saatnya untuk membicarakan kejayaan yang sama itu." "Sebelum segalanya," pamanku melanjutkan, "aku memintamu untuk menjaga kerahasiaan yang paling mutlak: kau mengerti? Tidak sedikit orang di dunia sains yang iri dengan kesuksesanku, dan banyak yang siap untuk melakukan usaha ini, dan kabar kepulangan kita akan menjadi kabar pertama bagi mereka." "Apakah menurutmu benar-benar ada banyak orang yang cukup berani?" tanyaku. "Tentu saja; siapa yang akan ragu untuk memperoleh ketenaran seperti itu? Jika dokumen itu dibocorkan, seluruh pasukan ahli geologi akan siap bergegas mengikuti jejak Arne Saknussemm." "Aku tidak begitu yakin soal itu, paman," jawabku; "karena kita tidak punya bukti keaslian dokumen ini." "Apa! Bukan dari buku, di mana kita telah menemukannya?" "Baiklah. Saya akui bahwa Saknussemm mungkin telah menulis baris-baris ini. Tetapi apakah itu berarti dia benar-benar telah menyelesaikan perjalanan seperti itu? Dan mungkinkah naskah kuno ini memang dimaksudkan untuk menyesatkan?" Aku hampir menyesal telah mengucapkan kata terakhir itu, yang keluar dari mulutku dalam momen yang tak terduga. Profesor mengerutkan alisnya yang lebat, dan aku khawatir aku telah membahayakan keselamatanku sendiri. Untungnya tidak ada bahaya besar yang terjadi. Senyum sekilas terlintas di bibir temanku yang tegas itu, dan dia menjawab: "Itulah yang akan kita lihat." "Ah!" kataku, agak kesal. "Tapi izinkan saya menyampaikan semua keberatan yang mungkin terhadap dokumen ini." "Bicaralah, Nak, jangan takut. Kamu bebas untuk menyampaikan pendapatmu. Kamu bukan lagi hanya keponakanku, tetapi juga rekan kerjaku. Silakan lanjutkan." "Baiklah, pertama-tama, saya ingin bertanya, siapakah Jokul, Sneffels, dan Scartaris ini, nama-nama yang belum pernah saya dengar sebelumnya?"</p>
 <p>"Tidak ada yang lebih mudah. Belum lama ini saya menerima peta dari teman saya, Augustus Petermann, di Leipzig. Tidak ada yang lebih tepat. Ambil atlas ketiga di rak kedua di lemari buku besar, seri Z, plat 4." Aku bangkit, dan dengan bantuan petunjuk yang begitu tepat, aku pasti dapat menemukan atlas yang dibutuhkan. Pamanku membukanya dan berkata: "Inilah salah satu peta Islandia terbaik, yaitu peta karya Handersen, dan saya yakin ini akan menyelesaikan sebagian besar kesulitan kita." Aku membungkuk di atas peta. "Lihatlah pulau vulkanik ini," kata Profesor; "perhatikan bahwa semua gunung berapi disebut jokul, sebuah kata yang berarti gletser dalam bahasa Islandia, dan di garis lintang tinggi Islandia hampir semua gunung berapi aktif mengeluarkan lava melalui lapisan es. Oleh karena itu, istilah jokul ini diterapkan pada semua gunung berapi yang meletus di Islandia." "Bagus sekali," kataku; "tapi bagaimana dengan Sneffels?" Saya berharap pertanyaan ini tidak dapat dijawab; tetapi saya salah. Paman saya menjawab: "Ikuti jari saya di sepanjang pantai barat Islandia. Apakah Anda melihat Reykjavik, ibu kotanya? Anda melihatnya. Baiklah; daki fyord-fyord yang tak terhitung jumlahnya yang menjorok ke pantai-pantai yang diterpa ombak laut itu, dan berhentilah di garis lintang ke-65. Apa yang Anda lihat di sana?" "Saya melihat sebuah semenanjung yang bentuknya seperti tulang paha dengan tulang lutut di ujungnya." "Perbandingan yang sangat tepat, Nak. Sekarang, apakah kau melihat sesuatu di tulang lutut itu?" "Ya; sebuah gunung yang muncul dari laut." "Benar. Itu Snæfell." "Snæfell itu?" "Benar. Itu adalah gunung setinggi lima ribu kaki, salah satu yang paling luar biasa di dunia, jika kawahnya mengarah ke pusat bumi." "Tapi itu tidak mungkin," kataku sambil mengangkat bahu, dan merasa jijik dengan anggapan yang menggelikan itu. "Mustahil?" tanya Profesor dengan tegas; "dan mengapa, coba tebak?" "Karena kawah ini jelas dipenuhi lava dan bebatuan yang terbakar, dan oleh karena itu—" "Tapi bagaimana jika itu adalah gunung berapi yang sudah tidak aktif?" "Punah?" "Ya; jumlah gunung berapi aktif di permukaan bumi saat ini hanya sekitar tiga ratus. Tetapi jumlah gunung berapi yang sudah tidak aktif jauh lebih banyak. Nah, Snæfell adalah salah satunya. Sejak zaman sejarah, hanya ada satu letusan gunung ini, yaitu pada tahun 1219; sejak saat itu gunung ini semakin tenang, dan sekarang tidak lagi dianggap sebagai gunung berapi aktif." Terhadap pernyataan-pernyataan positif tersebut, saya tidak dapat memberikan tanggapan. Oleh karena itu, saya berlindung di bagian-bagian gelap lain dalam dokumen tersebut. "Apa arti kata Scartaris ini, dan apa hubungannya kalender bulan Juli dengan kata tersebut?" Pamanku berpikir sejenak. Untuk sesaat aku merasakan secercah harapan, yang segera padam. Karena ia segera menjawab demikian: "Apa yang gelap bagimu adalah terang bagiku. Ini membuktikan ketelitian luar biasa yang digunakan Saknussemm dalam menjaga dan mendefinisikan penemuannya. Sneffels, atau Snæfell, memiliki beberapa kawah. Oleh karena itu, perlu untuk menunjukkan kawah mana yang mengarah ke pusat bumi. Apa yang dilakukan oleh orang bijak Islandia itu? Ia mengamati bahwa menjelang akhir Juli, yaitu pada hari-hari terakhir Juni, salah satu puncak, yang disebut Scartaris, menaungi kawah tersebut, dan ia mencatat fakta itu dalam dokumennya. Mungkinkah ada panduan yang lebih tepat? Begitu kita sampai di puncak Snæfell, kita tidak akan ragu lagi untuk menentukan jalan yang tepat." Jelas sekali, paman saya telah menjawab semua keberatan saya. Saya melihat bahwa pendiriannya mengenai naskah kuno itu tak tergoyahkan. Oleh karena itu, saya berhenti mendesaknya mengenai bagian subjek tersebut, dan karena di atas segalanya ia harus diyakinkan, saya beralih ke keberatan ilmiah, yang menurut saya jauh lebih serius. "Baiklah kalau begitu," kataku, "aku terpaksa mengakui bahwa putusan Saknussemm jelas, dan tidak menyisakan ruang untuk keraguan. Aku bahkan akan mengakui bahwa dokumen itu memuat setiap tanda dan bukti keasliannya. Filsuf terpelajar itu memang sampai ke dasar Sneffels, dia telah melihat bayangan Scartaris menyentuh tepi kawah sebelum kalender Juli; dia bahkan mungkin telah mendengar kisah-kisah legendaris yang diceritakan pada zamannya tentang kawah itu yang mencapai pusat dunia; tetapi mengenai mencapainya sendiri, mengenai melakukan perjalanan, dan kembali, jika dia pernah pergi, aku katakan tidak—dia tidak pernah, tidak pernah melakukan itu." "Sekarang, apa alasanmu?" tanya pamanku dengan nada sinis. "Semua teori sains menunjukkan bahwa prestasi seperti itu tidak mungkin dilakukan." "Teori-teori itu mengatakan demikian, benarkah?" jawab Profesor dengan nada seorang murid yang patuh. "Oh! Teori-teori yang tidak menyenangkan! Betapa teori-teori itu akan menghambat kita, bukan?" Aku tahu dia hanya menertawakanku; tapi aku tetap melanjutkan saja. "Ya; sudah diketahui dengan sangat baik bahwa suhu internal naik satu derajat untuk setiap 70 kaki kedalaman; sekarang, dengan menganggap proporsi ini konstan, dan jari-jari bumi adalah seribu lima ratus liga, maka pasti ada suhu 360.032 derajat di pusat bumi. Oleh karena itu, semua zat yang membentuk tubuh bumi ini harus ada di sana dalam keadaan gas pijar; karena logam yang paling tahan terhadap panas, emas, dan platinum, serta batuan terkeras, tidak akan pernah bisa padat atau cair pada suhu seperti itu. Karena itu, saya punya alasan kuat untuk bertanya apakah mungkin menembus medium seperti itu." "Jadi, Axel, cuaca panaslah yang mengganggumu?" "Tentu saja. Seandainya kita mencapai kedalaman tiga puluh mil, kita akan sampai di batas kerak bumi, karena di sana suhunya akan lebih dari 2372 derajat." "Apakah kamu takut dimasukkan ke dalam keadaan fusi?" "Saya serahkan keputusan itu kepada Anda," jawab saya agak cemberut. "Ini keputusan saya," jawab Profesor Liedenbrock, dengan gaya yang sangat angkuh. "Baik Anda maupun orang lain tidak tahu pasti apa yang terjadi di dalam bumi ini, karena bahkan seperduabelas ribu bagian dari jari-jarinya pun tidak diketahui; sains sangat mudah disempurnakan; dan setiap teori baru segera dikalahkan oleh teori yang lebih baru. Bukankah selalu dipercaya hingga zaman Fourier bahwa suhu ruang antarplanet terus menurun? Dan bukankah saat ini diketahui bahwa titik terdingin di wilayah eter tidak pernah lebih rendah dari 40 derajat di bawah nol Fahrenheit? Mengapa tidak sama dengan panas internal? Mengapa pada kedalaman tertentu, panas tidak mencapai batas yang tidak dapat dilampaui, alih-alih naik ke titik sedemikian rupa sehingga melebur logam yang paling tidak dapat dilebur?" Karena paman saya sekarang sedang berpegang pada hipotesisnya, tentu saja, tidak ada yang bisa dikatakan lagi. "Baiklah, saya akan memberi tahu Anda bahwa para ahli sejati, di antaranya Poisson, telah menunjukkan bahwa jika panas sebesar 360.000 derajat [1] ada di dalam bumi, gas-gas berapi yang timbul dari materi yang melebur akan memperoleh gaya elastis yang tidak dapat ditahan oleh kerak bumi, dan akan meledak seperti lempengan-lempengan ketel yang meledak." "Itu hanya pendapat Poisson, pamanku, tidak lebih dari itu." "Baiklah. Tetapi itu juga merupakan keyakinan yang dianut oleh para ahli geologi terkemuka lainnya, bahwa bagian dalam bumi bukanlah gas, air, atau mineral terberat yang dikenal, karena dalam semua kasus tersebut bumi tidak akan memiliki berat seperti sekarang ini." "Oh, dengan angka-angka, Anda bisa membuktikan apa saja!" "Tetapi apakah hal yang sama berlaku untuk fakta? Bukankah diketahui bahwa jumlah gunung berapi telah berkurang sejak hari-hari pertama penciptaan? Dan jika ada panas pusat, bukankah kita dapat menyimpulkan bahwa panas tersebut sedang dalam proses pengurangan?" "Pamanku yang baik, jika kau ikut terlibat dalam spekulasi, aku tak bisa membahas masalah ini lebih lanjut." "Namun saya harus memberi tahu Anda bahwa nama-nama besar telah mendukung pandangan saya. Apakah Anda ingat kunjungan yang dilakukan oleh ahli kimia terkenal, Humphry Davy, kepada saya pada tahun 1825?" "Tidak sama sekali, karena saya baru lahir sembilan belas tahun kemudian." "Yah, Humphry Davy memang mampir menemui saya dalam perjalanannya melalui Hamburg. Kami lama berdiskusi, di antara masalah-masalah lain, tentang hipotesis struktur cair inti bumi. Kami sepakat bahwa inti bumi tidak mungkin berada dalam keadaan cair, karena alasan yang hingga kini belum dapat dibantah oleh sains." [1] Derajat suhu diberikan oleh Jules Verne menurut sistem sentigrade, yang dalam setiap kasus akan kita ganti dengan pengukuran Fahrenheit. (Tr.) "Apa alasannya?" tanyaku, agak terkejut. "Karena massa cair ini, seperti lautan, akan dipengaruhi oleh gaya gravitasi bulan, dan oleh karena itu akan terjadi pasang surut internal dua kali sehari, yang, dengan mengangkat kerak bumi, akan menyebabkan gempa bumi secara berkala!" "Namun jelas bahwa permukaan bumi telah terkena dampak api," jawabku, "dan cukup masuk akal untuk menduga bahwa kerak luar mendingin terlebih dahulu, sementara panasnya berpindah ke pusat." "Itu kesalahan besar," jawab pamanku. "Bumi dipanaskan oleh pembakaran di permukaannya, hanya itu saja. Permukaannya terdiri dari sejumlah besar logam, seperti kalium dan natrium, yang memiliki sifat unik yaitu mudah terbakar hanya dengan kontak dengan udara dan air; logam-logam ini terbakar ketika uap atmosfer jatuh sebagai hujan ke tanah; dan lambat laun, ketika air menembus celah-celah kerak bumi, air tersebut kembali terbakar dengan ledakan dan letusan. Itulah penyebab banyaknya gunung berapi pada awal terbentuknya bumi." "Sungguh, ini hipotesis yang sangat cerdas," seruku, meskipun sebenarnya aku tidak menginginkannya. "Dan hal itu dibuktikan oleh Humphry Davy kepada saya melalui sebuah percobaan sederhana. Ia membentuk sebuah bola kecil dari logam-logam yang telah saya sebutkan, dan yang merupakan representasi yang sangat baik dari bumi kita; setiap kali ia menyebabkan embun halus jatuh ke permukaannya, bola itu terangkat menjadi gundukan-gundukan kecil, mengalami oksidasi dan membentuk gunung-gunung mini; sebuah kawah terbuka di salah satu puncaknya; letusan terjadi, dan menyebarkan panas ke seluruh bola sedemikian rupa sehingga bola itu tidak dapat dipegang di tangan." Sejujurnya, saya mulai merasa goyah oleh argumen Profesor, terlebih lagi beliau memperkuat argumen tersebut dengan semangat dan antusiasme yang biasa beliau tunjukkan. "Begini, Axel," tambahnya, "kondisi inti bumi telah memunculkan berbagai hipotesis di kalangan ahli geologi; sama sekali tidak ada bukti untuk panas internal ini; menurut pendapat saya, hal seperti itu tidak ada, tidak mungkin ada; selain itu, kita akan melihat sendiri, dan, seperti Arne Saknussemm, kita akan tahu persis apa yang harus kita yakini sebagai kebenaran mengenai pertanyaan besar ini." "Baiklah, kita lihat saja nanti," jawabku, merasa terbawa oleh antusiasmenya yang menular. "Ya, kita lihat saja nanti; maksudku, jika memang mungkin untuk melihat sesuatu di sana." "Dan mengapa tidak? Bukankah kita dapat bergantung pada fenomena listrik untuk memberi kita cahaya? Bukankah kita bahkan dapat mengharapkan cahaya dari atmosfer, yang tekanannya dapat membuatnya bercahaya saat kita mendekati pusatnya?" "Ya, ya," kataku; "itu juga mungkin." "Itu sudah pasti," seru pamanku dengan nada kemenangan. "Tapi diam, dengar aku? Diamlah tentang seluruh masalah ini; dan jangan sampai ada yang mendahului kita dalam rencana menemukan pusat bumi ini."</p>

@@ -5,39 +5,176 @@
 <title>BAB DUA PULUH TUJUH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB DUA PULUH TUJUH - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB DUA PULUH TUJUH</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>sebuah contoh nyata dari kebajikan fathom, dalam cara kepulangannya ke inggris. Fathom, yang telah mendengarkan dengan saksama setiap detail kisah tragis ini, begitu mendengar kesimpulannya, dengan raut wajah penuh belas kasihan dan kehangatan, bahkan tanpa air mata, ia menyampaikan belasungkawa atas nasib menyedihkan Don Diego de Zelos, menyesali kematian Antonia yang lembut dan Serafina yang cantik, dan dengan penuh semangat simpati, membela orang Kastilia yang malang itu hingga air mata mengalir dari matanya, sambil menggenggam tangan dermawannya dengan penuh rasa syukur. Itu benar-benar air mata kegembiraan, atau setidaknya kepuasan, dari kedua belah pihak; sang pahlawan menangis dengan kasih sayang dan keterikatan pada permata yang akan dipercayakan kepadanya; tetapi, alih-alih menemukan sumber sebenarnya dari kelembutannya, ia berusaha membujuk orang Spanyol itu agar tidak melepaskan berlian tersebut, yang ia sarankan untuk disimpan untuk kesempatan yang lebih mendesak; dan, sementara itu, dengan sungguh-sungguh memohon agar ia mengandalkan persahabatannya untuk bantuan saat ini. Tawaran murah hati ini hanya semakin menguatkan tekad Don Diego, yang segera ia laksanakan dengan memberikan kepada Ferdinand perhiasan senilai seribu mahkota, dan memintanya untuk menyimpan sebagian dari jumlah yang mereka kumpulkan untuk kepentingannya sendiri. Petualang kita berterima kasih kepadanya atas pendapat baik yang ia miliki tentang integritasnya, sebuah pendapat yang sepenuhnya terwujud dalam menghormatinya dengan kepercayaan yang begitu penting, dan meyakinkannya bahwa ia akan menyelesaikan urusannya dengan sangat teliti, hati-hati, dan cepat. Karena malam hampir tiba, sekutu baru ini beristirahat secara terpisah; meskipun masing-masing melewati malam tanpa istirahat, dalam renungan yang sangat berbeda, orang Kastilia itu, seperti biasa, gelisah dengan penderitaan yang tak henti-hentinya, diselingi dengan harapan balas dendam yang berkilauan; dan Fathom tetap terjaga dengan rencana-rencana yang berputar untuk memanfaatkan kepercayaan teman sekamarnya untuk keuntungannya sendiri. Berdasarkan situasi orang Spanyol itu, ia mungkin saja mengambil perhiasan itu untuk dirinya sendiri dan tetap tinggal di Paris tanpa takut dituntut, karena pihak yang dirugikan, menurut narasi di atas, telah menyerahkan hidup dan kebebasannya sepenuhnya. Namun, ia tidak merasa aman dari kemarahan pribadi seorang warga Kastilia yang marah dan putus asa; dan karena itu ia memutuskan untuk menarik diri secara diam-diam ke negara tempat ia sejak awal berniat untuk menunjukkan kelicikannya, yang kini telah diberi kuasa oleh takdir untuk ia lakukan sesuai keinginannya. Bertekad untuk mundur, ia pergi keluar pada pagi hari, dengan dalih bertindak atas nama temannya, Don Diego, dan setelah menyewa kereta pos yang akan siap pada fajar keesokan harinya, ia kembali ke penginapannya, di mana ia membujuk orang Spanyol itu dengan laporan palsu tentang negosiasinya; kemudian, mengamankan barang-barang berharganya di tubuhnya, bangun bersama ayam jantan, pergi ke tempat yang telah ia tentukan untuk bertemu dengan kusir dengan kereta, dan berangkat ke Inggris tanpa penundaan lebih lanjut, meninggalkan Zelos yang malang dalam kengerian kemiskinan, dan penderitaan tambahan dari kekecewaan baru ini. Namun ia bukan satu-satunya orang yang terpengaruh oleh kepergian Fathom yang tiba-tiba, yang dipercepat oleh desakan, ancaman, dan celaan dari putri tuan tanahnya, yang telah ia perkosa dengan janji pernikahan, dan sekarang ditinggalkan pada bulan keempat kehamilannya. Meskipun pernah mengalami petualangan berbahaya karena bepergian di malam hari, ia tidak merasa perlu untuk berhenti seperti biasanya dalam perjalanan ini, untuk tidur atau beristirahat, dan ia tidak pernah meninggalkan kereta kudanya sampai tiba di Boulogne, yang dicapainya dua puluh jam setelah keberangkatannya dari Paris. Di sini ia berpikir dapat menikmati makan malam yang nyaman; oleh karena itu ia memesan ayam kampung untuk makan malam, dan sementara makanan itu sedang disiapkan, ia pergi untuk melihat kota dan pelabuhan. Ketika ia melihat tebing putih Albion, hatinya berdebar-debar dengan semua kegembiraan seorang putra tercinta, yang setelah perjalanan yang membosankan dan melelahkan, melihat cerobong asap rumah ayahnya. Ia mengamati pantai Inggris di sekitarnya dengan mata penuh kasih sayang dan kerinduan, seperti Musa yang lain, mengamati tanah Kanaan dari puncak Gunung Pisgah; Dan ia begitu tidak sabar melihat pemandangan itu, sehingga, alih-alih melanjutkan perjalanan ke Calais, ia memutuskan untuk langsung berangkat dari Boulogne, meskipun ia harus menyewa kapal untuk tujuan tersebut. Dengan perasaan seperti itu, ia bertanya apakah ada kapal yang menuju Inggris, dan beruntung menemukan kapten sebuah kapal kecil yang bermaksud berlayar ke Deal pada malam itu juga saat air pasang. Dengan informasi tersebut, ia segera menyetujui perjalanannya, menjual kereta pos kepada tuan tanahnya seharga tiga puluh guinea, sebagai perabot yang tidak lagi berguna baginya, membeli sebuah koper, beserta beberapa linen dan pakaian, dan atas rekomendasi tuan rumahnya, mempekerjakan seorang pembantu pos tambahan, yang sebelumnya mengenakan seragam seorang bangsawan yang sedang bepergian. Pembantu baru ini, yang bernama Maurice, menjalani pemeriksaan oleh pahlawan kita dengan sambutan meriah, yang melihat dalam dirinya kecerdasan dan ketenangan pikiran yang luar biasa, yang membuatnya sangat cocok untuk menjadi pelayan seorang petualang. Oleh karena itu, ia diberi setelan bekas dan kemeja lain, dan segera bergabung di bawah panji-panji Count Fathom, yang menghabiskan sepanjang sore untuk memberinya instruksi yang tepat tentang pengaturan perilakunya. Setelah menyelesaikan persiapan awal sesuai keinginannya, ia dan barang bawaannya naik kapal sekitar pukul enam pagi di bulan September, dan dengan perasaan campur aduk ia mendapati dirinya terdampar di lautan luas, yang sebelum hari sebelumnya, ia belum pernah menikmati pemandangannya bahkan dari kejauhan sekalipun. Namun, ia bukanlah orang yang mudah takut jika memang tidak ada tanda-tanda bahaya; dan pertanda baik akan keberuntungan di masa depan menopang semangatnya, di tengah rasa mual yang biasanya dialami orang darat di laut, hingga ia diturunkan di pantai Deal, yang ia masuki dalam keadaan sehat sekitar pukul tujuh pagi. Namun, seperti Caesar, ia mengalami kesulitan mendarat karena ombak yang besar dan bergelombang sedemikian dahsyat sehingga hampir menenggelamkan perahu kecil yang membawanya ke pantai; dan karena terlalu bersemangat untuk melompat ke pantai, kakinya tergelincir dari sisi perahu, sehingga ia terlempar ke depan secara horizontal, dan tangannya adalah bagian tubuh pertama yang menyentuh tanah Inggris. Pada kesempatan ini, ia, meniru perilaku Scipio di pantai Afrika, menyambut pertanda tersebut, dan sambil menggenggam segenggam pasir, terdengar berseru dalam bahasa Italia: “Ah, ah, Inggris Tua, aku telah menangkapmu.” Saat berjalan menuju penginapan, diikuti oleh Maurice yang membawa koper besarnya, ia mengucapkan selamat kepada dirinya sendiri atas perjalanannya yang menyenangkan, dan kepemilikan harta rampasannya yang damai, dan tak kuasa menahan diri untuk menghirup udara Inggris dengan tanda-tanda kenikmatan dan kepuasan yang tak terhingga. Prioritas pertamanya adalah mengganti waktu tidur yang kurang, dan setelah cukup beristirahat selama beberapa jam tanpa gangguan, ia berangkat dengan kereta pos menuju Canterbury, di mana ia mengambil tempat di kereta pos London, yang menurut informasi akan berangkat keesokan paginya karena kereta sudah penuh. Pada hari pertama kedatangannya, ia melihat perbedaan mendasar antara orang Inggris dan orang-orang tempat ia tinggal selama ini, dalam kebiasaan, penampilan, dan cara hidup, yang menginspirasinya dengan gagasan tinggi tentang kebebasan, kemakmuran, dan kenyamanan Inggris, yang sering ia dengar ibunya ceritakan panjang lebar. Di perjalanan, ia menikmati pemandangan perbukitan hijau yang dipenuhi kawanan domba, lembah-lembah subur yang terbagi-bagi menjadi lahan pertanian; Bahkan ternak pun tampak mendapat manfaat dari kekayaan tuannya, karena berukuran besar, kuat, dan ramping, dan setiap petani memancarkan kesombongan kebebasan dan kemerdekaan. Singkatnya, ia memandang dataran Kent yang luas dengan mata seorang kekasih, dan, karena ambisinya menjadi romantis, ia tak kuasa membayangkan dirinya sebagai penakluk pulau itu. Namun, ia tidak lama terhibur oleh khayalan-khayalan kosong ini, yang segera lenyap di hadapan pemikiran-pemikiran lain yang lebih penting dan solid. Harus diakui, imajinasinya selalu terlalu murni untuk menerima harapan-harapan yang berlebihan, yang sering menyesatkan pikiran seorang perencana. Ia telah mempelajari umat manusia dengan sangat teliti, dan tahu betul seberapa jauh ia dapat bergantung pada nafsu dan kelemahan sifat manusia. Agar ia dapat bertindak sesuai dengan kebijaksanaannya sebelumnya, ia memutuskan untuk menyamar sebagai seorang bangsawan Prancis di antara teman-temannya, yang sama-sama asing dengan bahasa dan negara Inggris, untuk mendapatkan informasi dari percakapan mereka yang dapat berguna baginya dalam operasinya di masa depan; dan ajudannya pun dididik sesuai dengan itu.</p>
 

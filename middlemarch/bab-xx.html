@@ -5,39 +5,176 @@
 <title>BAB XX.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XX. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XX.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Seorang anak yang terlantar, terbangun tiba-tiba, yang pandangannya ketakutan mengembara ke segala sesuatu di sekitarnya, dan hanya melihat bahwa ia tak dapat melihat pertemuan mata cinta.” Dua jam kemudian, Dorothea duduk di sebuah ruangan dalam atau kamar tidur di apartemen mewah di Via Sistina. Saya menyesal menambahkan bahwa dia terisak-isak dengan pilu, dengan begitu pasrah pada kelegaan hati yang tertindas, seperti yang terkadang dilakukan seorang wanita yang biasanya dikendalikan oleh kesombongan atas dirinya sendiri dan perhatian terhadap orang lain, ketika dia merasa aman sendirian. Dan Tuan Casaubon pasti akan tetap berada di Vatikan untuk beberapa waktu. Namun Dorothea tidak memiliki keluhan yang jelas yang dapat ia ungkapkan bahkan kepada dirinya sendiri; dan di tengah-tengah pikiran dan perasaannya yang kacau, tindakan mental yang berjuang untuk menjadi jernih adalah seruan menyalahkan diri sendiri bahwa perasaan kesepiannya adalah kesalahan dari kemiskinan spiritualnya sendiri. Ia telah menikahi pria pilihannya, dan dengan keuntungan dibandingkan kebanyakan gadis karena ia memandang pernikahannya terutama sebagai awal dari tugas-tugas baru: sejak awal ia menganggap Tuan Casaubon memiliki pikiran yang jauh lebih tinggi darinya, sehingga ia seringkali harus terlibat dalam studi yang tidak sepenuhnya dapat ia ikuti; terlebih lagi, setelah pengalaman singkat dan sempit masa gadisnya, ia melihat Roma, kota sejarah yang terlihat, di mana masa lalu seluruh belahan bumi tampak bergerak dalam prosesi pemakaman dengan gambar-gambar leluhur dan piala-piala aneh yang dikumpulkan dari jauh. Namun, fragmentasi yang luar biasa ini semakin memperkuat keanehan seperti mimpi dalam kehidupan pernikahannya. Dorothea telah berada di Roma selama lima minggu, dan di pagi hari yang cerah ketika musim gugur dan musim dingin tampak beriringan seperti pasangan tua yang bahagia, salah satunya akan segera bertahan dalam kesendirian yang lebih dingin, ia awalnya berkeliling dengan Tuan Casaubon, tetapi akhir-akhir ini terutama dengan Tantripp dan kurir berpengalaman mereka. Ia telah dibawa melalui galeri-galeri terbaik, telah dibawa ke tempat-tempat pemandangan utama, telah diperlihatkan reruntuhan termegah dan gereja-gereja paling indah, dan pada akhirnya ia paling sering memilih untuk berkendara ke Campagna di mana ia dapat merasa sendirian dengan bumi dan langit, jauh dari topeng-topeng yang menindas dari zaman dahulu, di mana hidupnya sendiri pun tampak menjadi topeng dengan kostum-kostum yang penuh teka-teki. Bagi mereka yang telah memandang Roma dengan kekuatan pengetahuan yang membangkitkan jiwa yang berkembang ke dalam semua bentuk sejarah, dan menelusuri transisi terpendam yang menyatukan semua kontras, Roma mungkin masih menjadi pusat spiritual dan penafsir dunia. Tetapi biarkan mereka membayangkan satu kontras sejarah lagi: wahyu-wahyu besar yang hancur dari kota Kekaisaran dan Kepausan itu tiba-tiba menghantam gagasan seorang gadis yang dibesarkan dalam Puritanisme Inggris dan Swiss, diberi makan sejarah Protestan yang sedikit dan seni terutama jenis sablon tangan; seorang gadis yang sifatnya yang bersemangat mengubah semua sedikit pengetahuan yang dimilikinya menjadi prinsip-prinsip, menyatukan tindakannya ke dalam cetakannya, dan yang emosinya yang cepat memberi hal-hal yang paling abstrak kualitas kesenangan atau penderitaan; seorang gadis yang baru saja menjadi istri, dan dari penerimaan antusias terhadap tugas yang belum dicoba mendapati dirinya terjerumus dalam kesibukan yang bergejolak dengan nasib pribadinya. Beban Roma yang tidak dapat dipahami mungkin dengan mudah menimpa para bidadari cerdas yang baginya itu menjadi latar belakang piknik gemilang masyarakat Anglo-asing; Namun Dorothea tidak memiliki pertahanan seperti itu terhadap kesan yang mendalam. Reruntuhan dan basilika, istana dan kolosus, terletak di tengah-tengah masa kini yang kotor, di mana semua yang hidup dan berdarah panas tampak tenggelam dalam kemerosotan mendalam dari takhayul yang terlepas dari rasa hormat; kehidupan Titanic yang redup namun penuh semangat menatap dan berjuang di dinding dan langit-langit; pemandangan panjang dari bentuk-bentuk putih yang mata marmernya tampak menyimpan cahaya monoton dari dunia asing: semua reruntuhan besar dari cita-cita ambisius, sensual dan spiritual, bercampur aduk dengan tanda-tanda kelupaan dan degradasi yang bernapas, pada awalnya mengguncangnya seperti sengatan listrik, dan kemudian mendesaknya dengan rasa sakit yang berasal dari kelebihan ide-ide yang membingungkan yang menghambat aliran emosi. Bentuk-bentuk yang pucat dan bercahaya menguasai indra mudanya, dan memantapkan diri dalam ingatannya bahkan ketika dia tidak memikirkannya, menyiapkan asosiasi aneh yang tetap ada hingga tahun-tahun berikutnya. Suasana hati kita cenderung membawa serta gambaran-gambaran yang saling berurutan seperti gambar lentera ajaib saat mengantuk; Dan dalam keadaan kesepian yang suram tertentu, Dorothea sepanjang hidupnya terus melihat kebesaran Basilika Santo Petrus, kanopi perunggu yang besar, niat yang menggebu-gebu dalam sikap dan pakaian para nabi dan penginjil di mosaik di atasnya, dan kain merah yang digantung untuk Natal yang menyebar ke mana-mana seperti penyakit retina. Bukan berarti kekaguman batin Dorothea ini sesuatu yang luar biasa: banyak jiwa muda yang telanjang terlempar ke tengah ketidaksesuaian dan dibiarkan "menemukan pijakan" mereka di antara mereka, sementara orang yang lebih tua melanjutkan urusan mereka. Saya juga tidak dapat berasumsi bahwa ketika Nyonya Casaubon ditemukan menangis tersedu-sedu enam minggu setelah pernikahannya, situasi itu akan dianggap tragis. Beberapa rasa putus asa, beberapa rasa lemah hati pada masa depan nyata yang baru yang menggantikan masa depan imajiner, bukanlah hal yang tidak biasa, dan kita tidak mengharapkan orang untuk sangat tersentuh oleh apa yang tidak biasa. Unsur tragedi yang terletak pada fakta frekuensi itu sendiri, belum terwujud dalam emosi kasar umat manusia; dan mungkin tubuh kita hampir tidak dapat menanggung banyak hal itu. Jika kita memiliki penglihatan dan perasaan yang tajam tentang semua kehidupan manusia biasa, itu akan seperti mendengar rumput tumbuh dan detak jantung tupai, dan kita akan mati karena deru yang terletak di sisi lain keheningan. Seperti yang terjadi, orang-orang yang paling cerdas di antara kita berjalan dengan penuh kebodohan. Namun, Dorothea menangis, dan jika ia diminta untuk menyatakan penyebabnya, ia hanya dapat melakukannya dengan kata-kata umum seperti yang telah saya gunakan: dipaksa untuk lebih rinci akan seperti mencoba memberikan sejarah tentang terang dan gelap, karena masa depan nyata yang baru yang menggantikan masa depan imajiner itu mengambil materinya dari detail-detail kecil yang tak berujung yang secara bertahap mengubah pandangannya tentang Tuan Casaubon dan hubungannya sebagai istri, sekarang setelah ia menikah dengannya, dengan gerakan rahasia jarum jam dari apa yang ada dalam mimpi masa mudanya. Masih terlalu dini baginya untuk sepenuhnya mengenali atau setidaknya mengakui perubahan itu, terlebih lagi baginya untuk menyesuaikan kembali pengabdian yang merupakan bagian yang sangat penting dari kehidupan mentalnya sehingga ia hampir pasti akan mendapatkannya kembali cepat atau lambat. Pemberontakan permanen, kekacauan kehidupan tanpa tekad yang penuh kasih dan hormat, tidak mungkin baginya; tetapi ia sekarang berada dalam suatu periode di mana kekuatan sifatnya sendiri meningkatkan kebingungannya. Dengan demikian, bulan-bulan awal pernikahan sering kali merupakan masa-masa penuh gejolak—baik itu gejolak kecil seperti di kolam udang atau di perairan yang lebih dalam—yang kemudian mereda menjadi kedamaian yang penuh sukacita. Tetapi bukankah Tuan Casaubon sama berpengetahuannya seperti sebelumnya? Apakah cara penyampaiannya telah berubah, atau perasaannya menjadi kurang terpuji? Oh, betapa keras kepala kaum wanita! Apakah kronologinya mengecewakannya, atau kemampuannya untuk menyatakan tidak hanya sebuah teori tetapi juga nama-nama orang yang memegang teori tersebut; atau kemampuannya untuk memberikan ringkasan pokok bahasan apa pun jika diminta? Dan bukankah Roma adalah tempat di seluruh dunia untuk memberikan kebebasan bagi kemampuan seperti itu? Selain itu, bukankah antusiasme Dorothea terutama berpusat pada prospek meringankan beban dan mungkin kesedihan yang ditanggung oleh orang yang harus menyelesaikan tugas-tugas besar?— Dan beban seperti itu yang menekan Tuan Casaubon menjadi lebih jelas dari sebelumnya. Semua ini adalah pertanyaan yang sangat berat; tetapi apa pun yang tetap sama, cahayanya telah berubah, dan Anda tidak dapat menemukan fajar yang berkilauan di siang hari. Faktanya tidak dapat diubah, bahwa sesama manusia yang sifatnya Anda kenal hanya melalui pertemuan singkat beberapa minggu yang penuh imajinasi yang disebut masa pacaran, ketika dilihat dalam kesinambungan kehidupan pernikahan, mungkin akan terungkap sebagai sesuatu yang lebih baik atau lebih buruk daripada yang telah Anda bayangkan sebelumnya, tetapi tentu saja tidak akan tampak sama persis. Dan akan sangat mengejutkan untuk mengetahui betapa cepatnya perubahan itu dirasakan jika kita tidak memiliki perubahan serupa untuk dibandingkan dengannya. Tinggal bersama teman makan malam yang brilian, atau melihat politisi favorit Anda di Kementerian, dapat menyebabkan perubahan yang sama cepatnya: dalam kasus ini juga kita mulai dengan sedikit mengetahui dan banyak percaya, dan terkadang kita berakhir dengan membalikkan kuantitasnya. Namun, perbandingan semacam itu mungkin menyesatkan, karena tidak ada orang yang lebih tidak mampu berpura-pura secara mencolok daripada Tuan Casaubon: dia adalah karakter yang tulus seperti hewan pemakan rumput mana pun, dan dia tidak secara aktif membantu menciptakan ilusi apa pun tentang dirinya sendiri. Bagaimana mungkin dalam beberapa minggu sejak pernikahannya, Dorothea tidak secara jelas mengamati tetapi merasakan dengan depresi yang mencekik, bahwa pemandangan luas dan udara segar yang diimpikannya untuk ditemukan dalam pikiran suaminya digantikan oleh ruang tunggu dan lorong-lorong berliku yang tampaknya tidak mengarah ke mana pun? Saya kira itu karena dalam masa pacaran, segala sesuatu dianggap sementara dan pendahuluan, dan contoh terkecil dari kebajikan atau prestasi dianggap menjamin kekayaan yang menyenangkan yang akan diungkapkan oleh waktu luang pernikahan yang luas. Tetapi begitu ambang pintu pernikahan dilintasi, harapan terfokus pada masa kini. Setelah memulai perjalanan pernikahan Anda, mustahil untuk tidak menyadari bahwa Anda tidak membuat kemajuan dan bahwa laut tidak terlihat—bahwa, sebenarnya, Anda sedang menjelajahi cekungan tertutup. Dalam percakapan mereka sebelum pernikahan, Tuan Casaubon sering kali membahas beberapa penjelasan atau detail yang meragukan yang tidak dipahami Dorothea; tetapi ketidaksesuaian tersebut tampaknya disebabkan oleh terputusnya hubungan mereka, dan, didukung oleh keyakinannya pada masa depan mereka, ia mendengarkan dengan sabar uraian tentang kemungkinan argumen yang dapat diajukan untuk menentang pandangan baru Tuan Casaubon tentang dewa Filistin Dagon dan dewa-dewa ikan lainnya, berpikir bahwa di kemudian hari ia akan melihat subjek yang sangat menyentuhnya ini dari sudut pandang yang sama tingginya, yang pasti menjadi sangat penting baginya. Selain itu, pernyataan yang biasa saja dan nada penolakan yang digunakannya untuk menanggapi apa yang baginya merupakan pemikiran yang paling menggugah, mudah dijelaskan sebagai bagian dari rasa tergesa-gesa dan kesibukan yang juga dialami Dorothea selama masa pertunangan mereka. Namun kini, sejak mereka berada di Roma, dengan seluruh kedalaman emosinya yang teraduk-aduk menjadi aktivitas yang bergejolak, dan dengan kehidupan yang menjadi masalah baru karena unsur-unsur baru, ia semakin menyadari, dengan rasa takut tertentu, bahwa pikirannya terus-menerus tergelincir ke dalam amarah dan penolakan batin, atau ke dalam kelelahan yang menyedihkan. Seberapa jauh Hooker yang bijaksana atau pahlawan ilmu pengetahuan lainnya akan sama pada masa hidup Tuan Casaubon, ia tidak memiliki cara untuk mengetahuinya, sehingga ia tidak dapat memiliki keuntungan dari perbandingan; tetapi cara suaminya mengomentari objek-objek yang sangat mengesankan di sekitar mereka telah mulai mempengaruhinya dengan semacam getaran mental: ia mungkin memiliki niat terbaik untuk membuktikan dirinya layak, tetapi hanya membuktikan dirinya layak. Apa yang segar di benaknya telah usang di benak suaminya; dan kapasitas berpikir dan merasakan yang pernah dirangsang dalam dirinya oleh kehidupan umum umat manusia telah lama menyusut menjadi semacam persiapan kering, pengawetan pengetahuan yang tak bernyawa. Ketika dia berkata, “Apakah ini menarik minatmu, Dorothea? Maukah kita tinggal sedikit lebih lama? Aku siap tinggal jika kau menginginkannya,”—baginya seolah-olah pergi atau tinggal sama-sama membosankan. Atau, “Apakah kau ingin pergi ke Farnesina, Dorothea? Di sana terdapat lukisan dinding terkenal yang dirancang atau dilukis oleh Raphael, yang menurut kebanyakan orang layak untuk dikunjungi.” “Tapi apakah kau peduli pada mereka?” selalu menjadi pertanyaan Dorothea. “Saya yakin, lukisan-lukisan itu sangat dihargai. Beberapa di antaranya menggambarkan dongeng Cupid dan Psyche, yang mungkin merupakan ciptaan romantis dari suatu periode sastra, dan menurut saya tidak dapat dianggap sebagai produk mitologis yang asli. Tetapi jika Anda menyukai lukisan-lukisan dinding ini, kita dapat dengan mudah berkendara ke sana; dan saya rasa Anda akan melihat karya-karya utama Raphael, yang sayang untuk dilewatkan saat berkunjung ke Roma. Dia adalah pelukis yang dianggap menggabungkan keanggunan bentuk yang paling sempurna dengan keagungan ekspresi. Setidaknya itulah pendapat para ahli yang saya kumpulkan.” Jawaban seperti itu, yang diberikan dengan nada resmi yang terukur, seolah-olah seorang pendeta membaca sesuai dengan tata cara yang telah ditentukan, tidak membantu membenarkan kemuliaan Kota Abadi, atau memberinya harapan bahwa jika dia mengetahui lebih banyak tentangnya, dunia akan diterangi dengan penuh sukacita baginya. Hampir tidak ada kontak yang lebih menyedihkan bagi seorang gadis muda yang bersemangat selain kontak dengan pikiran yang bertahun-tahun penuh pengetahuan tampaknya telah menghasilkan kekosongan minat atau simpati. Dalam hal lain, Tuan Casaubon memang menunjukkan ketekunan dan semangat yang biasanya dianggap sebagai akibat dari antusiasme, dan Dorothea ingin mengikuti arah pemikiran spontannya ini, alih-alih merasa bahwa dia menyeretnya menjauh dari hal itu. Tetapi dia secara bertahap berhenti berharap dengan keyakinan yang menyenangkan sebelumnya bahwa dia akan melihat celah lebar di mana pun dia mengikutinya. Tuan Casaubon sendiri tersesat di antara lemari-lemari kecil dan tangga-tangga berliku, dan dalam kekaburan yang gelisah tentang Cabeiri, atau dalam pengungkapan paralel yang kurang tepat dari para ahli mitologi lainnya, dengan mudah kehilangan tujuan apa pun yang telah mendorongnya untuk melakukan pekerjaan ini. Dengan lilin yang tertancap di depannya, dia melupakan ketiadaan jendela, dan dalam catatan-catatan pahit dalam manuskrip tentang gagasan orang lain tentang dewa-dewa matahari, dia menjadi acuh tak acuh terhadap sinar matahari. Ciri-ciri ini, yang tetap dan tak berubah seperti tulang pada Tuan Casaubon, mungkin akan lebih lama tidak dirasakan oleh Dorothea jika ia didorong untuk mencurahkan perasaan kekanak-kanakan dan kedewasaannya—jika ia mau menggenggam tangannya dan mendengarkan dengan penuh kelembutan dan pengertian semua kisah kecil yang membentuk pengalamannya, dan memberikan keintiman yang sama sebagai balasan, sehingga kehidupan masa lalu masing-masing dapat dimasukkan dalam pengetahuan dan kasih sayang timbal balik mereka—atau jika ia dapat memupuk kasih sayangnya dengan belaian kekanak-kanakan yang merupakan kecenderungan setiap wanita manis, yang memulai dengan menghujani ciuman di kepala boneka botaknya yang keras, menciptakan jiwa yang bahagia di dalam kekakuan itu dari kekayaan cintanya sendiri. Itulah kecenderungan Dorothea. Dengan segala kerinduannya untuk mengetahui apa yang jauh darinya dan untuk bersikap ramah secara luas, ia memiliki cukup semangat untuk apa yang dekat, untuk mencium lengan jas Tuan Casaubon, atau membelai tali sepatunya, jika ia mau menunjukkan tanda penerimaan lain selain menyatakan, dengan kesopanannya yang tak pernah gagal, bahwa ia memiliki sifat yang sangat penyayang dan benar-benar feminin, sekaligus menunjukkan dengan sopan mengulurkan kursi untuknya bahwa ia menganggap manifestasi ini agak kasar dan mengejutkan. Setelah berdandan rapi di pagi hari, ia hanya siap untuk hal-hal yang sesuai dengan dasi kaku yang pas pada masa itu, dan untuk pikiran yang dipenuhi dengan materi yang belum diterbitkan. Dan dengan kontradiksi yang menyedihkan, gagasan dan tekad Dorothea tampak seperti es yang mencair, mengambang dan hilang dalam arus hangat yang sebelumnya hanyalah bentuk lain dari gagasan dan tekad tersebut. Ia merasa terhina karena mendapati dirinya hanya menjadi korban perasaan, seolah-olah ia tidak dapat mengetahui apa pun kecuali melalui medium itu: semua kekuatannya tersebar dalam agitasi, perjuangan, keputusasaan, dan kemudian lagi dalam visi penyerahan diri yang lebih lengkap, mengubah semua kondisi sulit menjadi kewajiban. Dorothea yang malang! Ia memang merepotkan—terutama bagi dirinya sendiri; tetapi pagi ini untuk pertama kalinya ia merepotkan Tuan Casaubon. Saat mereka sedang minum kopi, ia mulai bertekad untuk menyingkirkan apa yang dalam hatinya ia sebut sebagai sifat egoisnya, dan menolehkan wajahnya dengan penuh perhatian ceria kepada suaminya ketika suaminya berkata, “Dorothea sayangku, sekarang kita harus memikirkan semua yang masih belum selesai, sebagai persiapan sebelum keberangkatan kita. Aku ingin sekali pulang lebih awal agar kita bisa berada di Lowick untuk Natal; tetapi penyelidikanku di sini telah berlarut-larut melebihi waktu yang diperkirakan. Namun, aku berharap waktu di sini tidak berlalu dengan tidak menyenangkan bagimu. Di antara tempat-tempat wisata di Eropa, Roma selalu dianggap sebagai salah satu yang paling menakjubkan dan dalam beberapa hal mencerahkan. Aku ingat betul bahwa aku menganggapnya sebagai sebuah tonggak penting dalam hidupku ketika aku mengunjunginya untuk pertama kalinya; setelah jatuhnya Napoleon, sebuah peristiwa yang membuka Benua Eropa bagi para pelancong. Memang, menurutku itu adalah salah satu dari beberapa kota yang telah diberi hiperbola yang ekstrem—'Lihat Roma dan matilah:' tetapi dalam kasusmu, aku ingin mengusulkan koreksi dan mengatakan, Lihat Roma sebagai pengantin, dan hiduplah mulai sekarang sebagai istri yang bahagia.” Tuan Casaubon menyampaikan pidato singkat ini dengan penuh kesungguhan, sesekali mengedipkan mata dan menganggukkan kepalanya, lalu mengakhiri dengan senyuman. Ia tidak menganggap pernikahan sebagai keadaan yang menggembirakan, tetapi ia tidak berniat menjadi apa pun selain suami yang tak tercela, yang akan membuat seorang wanita muda yang menawan bahagia sebagaimana mestinya. “Kuharap kau benar-benar puas dengan kunjungan kami—maksudku, dengan hasil studimu sejauh ini,” kata Dorothea, berusaha memusatkan pikirannya pada hal yang paling memengaruhi suaminya. “Ya,” kata Tuan Casaubon, dengan intonasi suara yang khas sehingga kata itu terdengar seperti setengah negatif. “Saya telah melangkah lebih jauh dari yang saya duga, dan berbagai subjek untuk dicatat telah muncul, yang meskipun saya tidak membutuhkannya secara langsung, tidak dapat saya abaikan. Tugas ini, meskipun dibantu oleh juru tulis saya, agak melelahkan, tetapi untungnya kehadiran Anda telah mencegah saya dari pemikiran yang terlalu terus-menerus di luar jam belajar yang telah menjadi jebakan kehidupan menyendiri saya.” “Saya sangat senang kehadiran saya telah memberikan perbedaan bagi Anda,” kata Dorothea, yang memiliki ingatan yang jelas tentang malam-malam di mana ia mengira pikiran Tuan Casaubon terlalu dalam sepanjang hari sehingga tidak dapat kembali ke permukaan. Saya khawatir ada sedikit kekesalan dalam jawabannya. “Saya harap ketika kita sampai di Lowick, saya akan lebih berguna bagi Anda, dan dapat lebih memahami apa yang menarik minat Anda.” “Tentu saja, sayangku,” kata Tuan Casaubon sambil sedikit membungkuk. “Catatan yang telah saya buat di sini perlu disaring, dan Anda dapat, jika Anda berkenan, mengekstraknya di bawah arahan saya.” “Dan semua catatanmu,” kata Dorothea, yang hatinya sudah terbakar oleh hal ini, sehingga sekarang ia tak kuasa menahan diri untuk berbicara. “Semua tumpukan buku itu—tidakkah kau akan melakukan apa yang biasa kau bicarakan?—tidakkah kau akan memutuskan bagian mana yang akan kau gunakan, dan mulai menulis buku yang akan membuat pengetahuanmu yang luas bermanfaat bagi dunia? Aku akan menulis sesuai diktemu, atau aku akan menyalin dan mengambil apa yang kau katakan: aku tidak bisa berbuat lain.” Dorothea, dengan cara yang sangat sulit dijelaskan, dengan nada feminin yang muram, mengakhiri ucapannya dengan isak tangis kecil dan mata penuh air mata. Perasaan berlebihan yang ditunjukkan saja sudah sangat mengganggu Tuan Casaubon, tetapi ada alasan lain mengapa kata-kata Dorothea termasuk yang paling menyakitkan dan menjengkelkan baginya. Ia sama butanya terhadap masalah batin suaminya seperti halnya suaminya terhadap masalah batinnya: ia belum memahami konflik tersembunyi dalam diri suaminya yang patut kita kasihani. Ia belum mendengarkan detak jantung suaminya dengan sabar, tetapi hanya merasakan detak jantungnya sendiri berdetak kencang. Di telinga Tuan Casaubon, suara Dorothea memberikan pengulangan yang keras dan tegas pada sugesti kesadaran yang teredam yang mungkin dapat dijelaskan sebagai sekadar khayalan, ilusi kepekaan yang berlebihan: selalu ketika sugesti seperti itu diulang dengan jelas dari luar, sugesti tersebut ditolak sebagai sesuatu yang kejam dan tidak adil. Kita marah bahkan dengan penerimaan penuh atas pengakuan kita yang memalukan—apalagi dengan mendengar dalam suku kata yang keras dan jelas dari bibir pengamat yang dekat, gumaman-gumaman yang membingungkan yang kita coba sebut morbid, dan kita lawan seolah-olah itu adalah datangnya mati rasa! Dan penuduh lahiriah yang kejam ini hadir dalam wujud seorang istri—bahkan, seorang pengantin muda, yang, alih-alih mengamati banyaknya coretan pena dan kertas yang digunakannya dengan kekaguman tanpa kritik layaknya burung kenari yang cerdas, tampaknya menampilkan dirinya sebagai mata-mata yang mengawasi segala sesuatu dengan kekuatan penalaran yang jahat. Di sini, terhadap titik kompas tertentu ini, Tuan Casaubon memiliki kepekaan yang setara dengan Dorothea, dan kecepatan yang sama untuk membayangkan lebih dari sekadar fakta. Sebelumnya ia telah mengamati dengan persetujuan kemampuannya untuk memuja objek yang benar; sekarang ia meramalkan dengan ketakutan yang tiba-tiba bahwa kemampuan ini mungkin digantikan oleh kesombongan, pemujaan ini oleh kritik yang paling menjengkelkan—yaitu kritik yang secara samar-samar melihat banyak tujuan mulia, dan tidak memiliki sedikit pun gagasan tentang biaya untuk mencapainya. Untuk pertama kalinya sejak Dorothea mengenalnya, wajah Tuan Casaubon memerah karena marah. “Sayangku,” katanya, dengan kejengkelan yang ditahan oleh kesopanan, “kau dapat mengandalkanku untuk mengetahui waktu dan musim, yang disesuaikan dengan berbagai tahapan suatu pekerjaan yang tidak dapat diukur dengan dugaan mudah dari pengamat yang tidak tahu apa-apa. Akan mudah bagiku untuk mendapatkan efek sementara dengan fatamorgana opini yang tidak berdasar; tetapi selalu menjadi cobaan bagi penjelajah yang teliti untuk disambut dengan cemoohan yang tidak sabar dari para pengoceh yang hanya mencoba pencapaian terkecil, karena memang tidak mampu melakukan hal lain. Dan akan lebih baik jika semua orang seperti itu dapat diingatkan untuk membedakan penilaian yang pokok bahasannya benar-benar di luar jangkauan mereka, dari penilaian yang unsur-unsurnya dapat dipahami melalui survei yang sempit dan dangkal.” Pidato ini disampaikan dengan energi dan kesiapan yang cukup tidak biasa bagi Tuan Casaubon. Memang bukan sepenuhnya improvisasi, tetapi telah terbentuk dalam percakapan batin, dan mengalir keluar seperti butiran bulat dari buah ketika panas tiba-tiba memecahkannya. Dorothea bukan hanya istrinya: dia adalah personifikasi dari dunia dangkal yang mengelilingi penulis yang dihargai atau yang sedang putus asa. Dorothea pun merasa geram. Bukankah selama ini ia telah menekan segala sesuatu dalam dirinya kecuali keinginan untuk menjalin hubungan dengan kepentingan utama suaminya? “Penilaian saya sangat dangkal—sebagaimana yang mampu saya bentuk,” jawabnya, dengan kekesalan yang langsung terasa, tanpa perlu persiapan. “Anda menunjukkan kepada saya deretan buku catatan—Anda sering membicarakannya—Anda sering mengatakan bahwa buku-buku itu perlu dicerna. Tetapi saya tidak pernah mendengar Anda berbicara tentang tulisan yang akan diterbitkan. Itu adalah fakta-fakta yang sangat sederhana, dan penilaian saya tidak lebih dari itu. Saya hanya memohon agar Anda mengizinkan saya untuk bermanfaat bagi Anda.” Dorothea bangkit untuk meninggalkan meja dan Tuan Casaubon tidak menjawab, mengambil surat yang tergeletak di sampingnya seolah-olah untuk membacanya kembali. Keduanya terkejut dengan situasi mereka masing-masing—bahwa masing-masing telah menunjukkan kemarahan terhadap yang lain. Jika mereka berada di rumah, menetap di Lowick dalam kehidupan biasa di antara tetangga mereka, pertengkaran itu akan kurang memalukan: tetapi dalam perjalanan bulan madu, yang tujuan utamanya adalah untuk mengisolasi dua orang dengan alasan bahwa mereka adalah segalanya bagi satu sama lain, rasa ketidaksepakatan itu, setidaknya, membingungkan dan menghambat. Mengubah garis bujur secara ekstensif dan menempatkan diri dalam kesendirian moral untuk mengalami ledakan kecil, menemukan percakapan yang sulit dan memberikan segelas air tanpa melihat, hampir tidak dapat dianggap sebagai pemenuhan yang memuaskan bahkan bagi pikiran yang paling tangguh sekalipun. Bagi kepekaan Dorothea yang belum berpengalaman, itu tampak seperti bencana, mengubah semua prospek; Dan bagi Tuan Casaubon, itu adalah penderitaan baru, karena ia belum pernah melakukan perjalanan bulan madu sebelumnya, atau mendapati dirinya dalam ikatan erat yang lebih merupakan penundukan daripada yang dapat ia bayangkan, karena pengantin muda yang menawan ini tidak hanya mewajibkannya untuk banyak mempertimbangkan dirinya (yang telah ia berikan dengan tekun), tetapi ternyata mampu membuatnya gelisah dengan kejam tepat di saat ia paling membutuhkan penghiburan. Alih-alih mendapatkan perlindungan yang lembut terhadap penonton yang dingin, suram, dan tidak bertepuk tangan dalam hidupnya, bukankah seharusnya ia memberikannya kehadiran yang lebih nyata? Tak satu pun dari mereka merasa mampu untuk berbicara lagi saat ini. Membatalkan kesepakatan sebelumnya dan menolak untuk pergi keluar akan menunjukkan kemarahan yang terus-menerus, yang membuat hati nurani Dorothea gentar, mengingat ia sudah mulai merasa bersalah. Betapapun tepatnya kemarahannya, cita-citanya bukanlah untuk menuntut keadilan, melainkan untuk memberikan kelembutan. Jadi, ketika kereta tiba di depan pintu, ia berkendara bersama Tuan Casaubon ke Vatikan, berjalan bersamanya melalui jalan berbatu yang dipenuhi prasasti, dan ketika ia berpisah dengannya di pintu masuk Perpustakaan, ia melanjutkan perjalanan melalui Museum karena rasa acuh tak acuh terhadap apa yang ada di sekitarnya. Ia tidak memiliki semangat untuk berbalik dan mengatakan bahwa ia akan berkendara ke mana pun. Saat Tuan Casaubon meninggalkannya, Naumann pertama kali melihatnya, dan ia memasuki galeri patung yang panjang pada saat yang sama dengannya; tetapi di sini Naumann harus menunggu Ladislaw yang dengannya ia akan menyelesaikan taruhan sampanye tentang sosok misterius yang tampak seperti dari abad pertengahan di sana. Setelah mereka memeriksa patung itu, dan berjalan melanjutkan perdebatan mereka, mereka berpisah. Ladislaw tertinggal di belakang sementara Naumann pergi ke Aula Patung tempat ia kembali melihat Dorothea, dan melihatnya dalam keadaan termenung yang membuat posenya luar biasa. Ia sebenarnya tidak lebih melihat sinar matahari di lantai daripada patung-patung itu: ia secara batiniah melihat cahaya tahun-tahun yang akan datang di rumahnya sendiri dan di atas ladang-ladang Inggris, pohon-pohon elm, dan jalan raya yang dibatasi pagar tanaman; dan merasa bahwa jalan yang dapat ditempuh untuk dipenuhi dengan pengabdian yang penuh sukacita tidak sejelas sebelumnya. Tetapi dalam pikiran Dorothea ada arus yang cepat atau lambat akan mengalir ke semua pikiran dan perasaan—yaitu, menjangkau seluruh kesadaran menuju kebenaran yang paling penuh, kebaikan yang paling murni. Jelas ada sesuatu yang lebih baik daripada kemarahan dan keputusasaan.</p>
 

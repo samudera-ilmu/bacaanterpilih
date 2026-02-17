@@ -5,39 +5,176 @@
 <title>BAB XI. DI MANA PHILEAS FOGG MENDAPATKAN ALAT TRANSPORTASI YANG UNIK DENGAN HARGA YANG LUAR BIASA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XI. DI MANA PHILEAS FOGG MENDAPATKAN ALAT TRANSPORTASI YANG UNIK DENGAN HARGA YANG LUAR BIASA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XI. DI MANA PHILEAS FOGG MENDAPATKAN ALAT TRANSPORTASI YANG UNIK DENGAN HARGA YANG LUAR BIASA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kereta api berangkat tepat waktu. Di antara para penumpang terdapat sejumlah perwira, pejabat pemerintah, dan pedagang opium dan indigo, yang bisnisnya membawa mereka ke pantai timur. Passepartout duduk di gerbong yang sama dengan tuannya, dan seorang penumpang ketiga duduk di seberang mereka. Dia adalah Sir Francis Cromarty, salah satu rekan bermain kartu whist Mr. Fogg di kapal “Mongolia,” yang sekarang sedang dalam perjalanan untuk bergabung dengan korpsnya di Benares. Sir Francis adalah pria jangkung dan berambut pirang berusia lima puluh tahun, yang telah sangat berjasa dalam pemberontakan Sepoy terakhir. Ia menjadikan India sebagai rumahnya, hanya melakukan kunjungan singkat ke Inggris dalam interval yang jarang; dan hampir sama akrabnya dengan penduduk asli dengan adat istiadat, sejarah, dan karakter India dan rakyatnya. Tetapi Phileas Fogg, yang tidak bepergian, tetapi hanya menggambarkan keliling, tidak berusaha untuk menyelidiki hal-hal ini; ia adalah benda padat, yang melintasi orbit di sekitar bola bumi, menurut hukum mekanika rasional. Saat itu ia sedang menghitung dalam pikirannya jumlah jam yang telah berlalu sejak keberangkatannya dari London, dan, seandainya ia memiliki sifat untuk membuat demonstrasi yang sia-sia, ia pasti akan menggosok-gosok tangannya karena puas. Sir Francis Cromarty telah mengamati keanehan teman seperjalanannya—meskipun satu-satunya kesempatan yang ia miliki untuk mengamatinya adalah saat ia membagikan kartu, dan di antara dua permainan kartu—dan bertanya-tanya pada dirinya sendiri apakah hati manusia benar-benar berdetak di balik penampilan luarnya yang dingin, dan apakah Phileas Fogg memiliki rasa akan keindahan alam. Brigadir jenderal itu dengan bebas mengakui dalam hatinya bahwa, dari semua orang eksentrik yang pernah ia temui, tidak ada yang sebanding dengan produk ilmu pasti ini. Phileas Fogg tidak menyembunyikan dari Sir Francis rencananya untuk mengelilingi dunia, maupun keadaan di mana ia memulai perjalanan tersebut; dan sang jenderal hanya melihat taruhan itu sebagai keanehan yang tidak berguna dan kurangnya akal sehat. Dengan cara pria aneh ini melanjutkan perjalanannya, ia akan meninggalkan dunia tanpa melakukan kebaikan apa pun bagi dirinya sendiri atau orang lain. Satu jam setelah meninggalkan Bombay, kereta telah melewati jembatan layang dan Pulau Salcette, dan memasuki daerah terbuka. Di Callyan, mereka mencapai persimpangan jalur cabang yang menurun menuju India tenggara melalui Kandallah dan Pounah; dan, melewati Pauwell, mereka memasuki ngarai pegunungan, dengan dasar basalnya, dan puncaknya yang dimahkotai hutan lebat dan hijau. Phileas Fogg dan Sir Francis Cromarty bertukar beberapa kata dari waktu ke waktu, dan sekarang Sir Francis, menghidupkan kembali percakapan, berkata, “Beberapa tahun yang lalu, Tuan Fogg, Anda akan mengalami penundaan di titik ini yang mungkin akan membuat Anda kalah taruhan.” “Bagaimana bisa begitu, Tuan Francis?” “Karena jalur kereta api berhenti di kaki gunung-gunung ini, yang harus dilintasi para penumpang dengan tandu atau kuda poni menuju Kandallah, di sisi seberang.” “Penundaan seperti itu sama sekali tidak akan mengacaukan rencana saya,” kata Tuan Fogg. “Saya selalu mengantisipasi kemungkinan adanya hambatan tertentu.” “Tapi, Tuan Fogg,” lanjut Sir Francis, “Anda berisiko mengalami kesulitan terkait petualangan orang baik ini di pagoda.” Passepartout, dengan kakinya terbungkus nyaman dalam selimut perjalanannya, tertidur lelap dan tidak bermimpi bahwa ada orang yang membicarakannya. “Pemerintah sangat tegas terhadap pelanggaran semacam itu. Pemerintah sangat memperhatikan agar adat istiadat keagamaan masyarakat India dihormati, dan jika hamba Anda tertangkap—” “Baiklah, Tuan Francis,” jawab Tuan Fogg; “jika dia tertangkap, dia akan dihukum dan dikutuk, lalu akan kembali ke Eropa dengan tenang. Saya tidak mengerti bagaimana urusan ini bisa menunda tuannya.” Percakapan kembali terhenti. Pada malam hari, kereta meninggalkan pegunungan dan melewati Nassik, lalu keesokan harinya melanjutkan perjalanan melintasi dataran Khandeish yang subur dan tergarap dengan baik, dengan desa-desa yang tersebar, di atasnya menjulang menara-menara pagoda. Wilayah yang subur ini dialiri oleh banyak sungai kecil dan aliran jernih, sebagian besar merupakan anak sungai Godavery. Passepartout, saat terbangun dan melihat ke luar, tidak menyadari bahwa ia sebenarnya sedang melintasi India dengan kereta api. Lokomotif, yang dikemudikan oleh seorang insinyur Inggris dan diberi bahan bakar batu bara Inggris, mengeluarkan asapnya di atas perkebunan kapas, kopi, pala, cengkeh, dan lada, sementara uapnya melingkar dalam spiral di sekitar kelompok pohon palem, di tengahnya terlihat bungalow-bungalow yang indah, vihari (semacam biara yang terbengkalai), dan kuil-kuil menakjubkan yang diperkaya oleh ornamen arsitektur India yang tak habis-habisnya. Kemudian mereka sampai di hamparan luas yang membentang hingga cakrawala, dengan hutan-hutan yang dihuni oleh ular dan harimau, yang melarikan diri mendengar suara kereta; diikuti oleh hutan-hutan yang ditembus oleh jalur kereta api, dan masih dihuni oleh gajah-gajah yang, dengan mata termenung, menatap kereta saat lewat. Para pelancong melintasi, di luar Milligaum, negeri yang penuh malapetaka yang sering kali berlumuran darah oleh para pengikut dewi Kali. Tidak jauh dari situ berdiri Ellora, dengan pagoda-pagodanya yang anggun, dan Aurungabad yang terkenal, ibu kota Aureng-Zeb yang ganas, yang sekarang menjadi kota utama salah satu provinsi terpisah dari kerajaan Nizam. Di sekitar situlah Feringhea, kepala suku Thuggee, raja para pencekik, berkuasa. Para penjahat ini, yang dipersatukan oleh ikatan rahasia, mencekik korban dari segala usia untuk menghormati dewi Kematian, tanpa pernah menumpahkan darah; ada suatu masa ketika bagian negara ini hampir tidak dapat dilalui tanpa menemukan mayat di setiap arah. Pemerintah Inggris telah berhasil mengurangi pembunuhan ini secara signifikan, meskipun suku Thuggee masih ada dan terus menjalankan ritual mengerikan mereka. Pada pukul setengah dua belas, kereta berhenti di Burhampoor di mana Passepartout dapat membeli beberapa sandal India, dihiasi dengan mutiara palsu, yang kemudian dengan kesombongan yang jelas, ia kenakan di kakinya. Para pelancong sarapan dengan tergesa-gesa dan berangkat ke Assurghur, setelah sedikit menyusuri tepian sungai kecil Tapty, yang bermuara ke Teluk Cambray, dekat Surat. Passepartout kini tenggelam dalam lamunan yang mendalam. Hingga kedatangannya di Bombay, ia berharap perjalanan mereka akan berakhir di sana; tetapi, sekarang setelah mereka jelas-jelas melaju kencang melintasi India, perubahan tiba-tiba terjadi pada semangat mimpinya. Sifat pengembara lamanya kembali padanya; ide-ide fantastis masa mudanya sekali lagi menguasainya. Ia mulai menganggap proyek tuannya sebagai sesuatu yang dimaksudkan dengan sungguh-sungguh, percaya pada kenyataan taruhan tersebut, dan oleh karena itu pada perjalanan keliling dunia dan keharusan untuk menyelesaikannya tanpa gagal dalam jangka waktu yang ditentukan. Ia sudah mulai khawatir tentang kemungkinan penundaan, dan kecelakaan yang mungkin terjadi di jalan. Ia menyadari dirinya sendiri memiliki kepentingan pribadi dalam taruhan tersebut, dan gemetar memikirkan bahwa ia mungkin telah menjadi penyebab kekalahannya karena kebodohannya yang tak termaafkan pada malam sebelumnya. Karena jauh kurang tenang daripada Tuan Fogg, ia jauh lebih gelisah, menghitung dan menghitung ulang hari-hari yang telah berlalu, mengucapkan kutukan ketika kereta berhenti, dan menuduhnya lamban, serta dalam hati menyalahkan Tuan Fogg karena tidak menyuap masinis. Orang yang terhormat itu tidak menyadari bahwa, meskipun dimungkinkan untuk mempercepat laju kapal uap dengan cara seperti itu, hal itu tidak dapat dilakukan di kereta api. Kereta api memasuki celah-celah Pegunungan Sutpour, yang memisahkan Khandeish dari Bundelcund, menjelang malam. Keesokan harinya Sir Francis Cromarty bertanya kepada Passepartout jam berapa saat itu; dan setelah melihat jam tangannya, ia menjawab bahwa saat itu pukul tiga pagi. Jam tangan terkenal ini, yang selalu diatur berdasarkan meridian Greenwich, yang sekarang berada sekitar tujuh puluh tujuh derajat ke arah barat, setidaknya terlambat empat jam. Sir Francis mengoreksi waktu Passepartout, yang kemudian membuat pernyataan yang sama seperti yang telah ia lakukan kepada Fix; dan ketika sang jenderal bersikeras bahwa jam tangan harus diatur pada setiap meridian baru, karena ia terus-menerus bergerak ke arah timur, yaitu menghadap matahari, dan oleh karena itu hari-hari menjadi lebih pendek empat menit untuk setiap derajat yang dilewati, Passepartout dengan keras kepala menolak untuk mengubah jam tangannya, yang tetap menggunakan waktu London. Itu adalah khayalan yang tidak berbahaya yang tidak dapat membahayakan siapa pun. Kereta berhenti pukul delapan, di tengah padang rumput sekitar lima belas mil di luar Rothal, di mana terdapat beberapa bungalow dan pondok pekerja. Konduktor, sambil berjalan di sepanjang gerbong, berteriak, “Penumpang akan turun di sini!” Phileas Fogg menatap Sir Francis Cromarty untuk meminta penjelasan; tetapi sang jenderal tidak mengerti apa arti berhenti di tengah hutan kurma dan akasia ini. Passepartout, yang tak kalah terkejut, bergegas keluar dan segera kembali sambil berteriak: “Tuan, tidak ada lagi kereta api!” “Apa maksudmu?” tanya Sir Francis. “Maksud saya, kereta api itu tidak akan berangkat.” Sang jenderal segera melangkah keluar, sementara Phileas Fogg dengan tenang mengikutinya, dan mereka bersama-sama menuju ke kondektur. “Kita berada di mana?” tanya Sir Francis. “Di dusun Kholby.” “Apakah kita berhenti di sini?” “Tentu saja. Jalur kereta api belum selesai.” “Apa! Belum selesai?” “Tidak. Masih ada sekitar lima puluh mil lagi yang harus dipasang dari sini ke Allahabad, tempat jalur tersebut dimulai lagi.” “Namun, surat kabar mengumumkan pembukaan jalur kereta api di mana-mana.” “Apa yang Anda inginkan, Pak? Dokumennya salah.” “Namun Anda menjual tiket dari Bombay ke Calcutta,” balas Sir Francis, yang mulai merasa geram. “Tidak diragukan lagi,” jawab kondektur; “tetapi para penumpang tahu bahwa mereka harus menyediakan sendiri alat transportasi dari Kholby ke Allahabad.” Sir Francis sangat marah. Passepartout dengan senang hati akan menjatuhkan konduktor itu, dan tidak berani menatap tuannya. “Tuan Francis,” kata Tuan Fogg pelan, “kami akan mencari alat transportasi ke Allahabad jika Anda berkenan.” “Tuan Fogg, penundaan ini sangat merugikan Anda.” “Tidak, Tuan Francis; itu sudah diramalkan.” “Apa! Kau tahu kan caranya—” “Tidak sama sekali; tetapi saya tahu bahwa cepat atau lambat akan ada rintangan yang muncul di perjalanan saya. Karena itu, tidak ada yang hilang. Saya punya dua hari, yang sudah saya dapatkan, untuk dikorbankan. Sebuah kapal uap berangkat dari Kalkuta ke Hong Kong pada siang hari, tanggal 25. Ini tanggal 22, dan kita akan sampai di Kalkuta tepat waktu.” Tidak ada yang bisa dikatakan untuk menanggapi jawaban yang begitu percaya diri. Memang benar bahwa jalur kereta api berakhir di titik ini. Koran-koran seperti jam tangan yang cenderung berdetak terlalu cepat, dan terlalu dini dalam mengumumkan penyelesaian jalur tersebut. Sebagian besar penumpang menyadari gangguan ini, dan, meninggalkan kereta, mereka mulai menggunakan kendaraan apa pun yang dapat disediakan desa—palkigari beroda empat, gerobak yang ditarik oleh zebu, kereta yang tampak seperti pagoda berjalan, tandu, kuda poni, dan lain sebagainya. Tuan Fogg dan Sir Francis Cromarty, setelah menjelajahi desa dari ujung ke ujung, kembali tanpa menemukan apa pun. “Aku akan berjalan kaki,” kata Phileas Fogg. Passepartout, yang kini telah kembali bergabung dengan tuannya, meringis masam sambil memikirkan sepatu Indianya yang megah namun terlalu rapuh. Untungnya, ia juga telah melihat sekelilingnya, dan setelah ragu sejenak, berkata, "Tuan, saya rasa saya telah menemukan alat transportasi." "Apa?" “Seekor gajah! Seekor gajah milik seorang warga India yang tinggal hanya seratus langkah dari sini.” “Ayo kita pergi melihat gajah,” jawab Tuan Fogg. Mereka segera sampai di sebuah gubuk kecil, di dekatnya, terkurung di balik pagar tinggi, terdapat hewan yang dimaksud. Seorang pria India keluar dari gubuk, dan atas permintaan mereka, mengantar mereka masuk ke dalam kandang. Gajah itu, yang dipelihara pemiliknya bukan sebagai hewan pengangkut beban, tetapi untuk tujuan perang, setengah jinak. Pria India itu telah mulai, dengan sering mengganggunya, dan memberinya makan gula dan mentega setiap tiga bulan sekali, untuk menanamkan keganasan yang bukan sifat alaminya, metode ini sering digunakan oleh mereka yang melatih gajah India untuk berperang. Untungnya bagi Tuan Fogg, pelatihan hewan itu ke arah ini belum berjalan jauh, dan gajah itu masih mempertahankan sifat jinak alaminya. Kiouni—inilah nama hewan itu—tentu dapat bergerak cepat untuk waktu yang lama, dan, karena tidak ada alat transportasi lain, Tuan Fogg memutuskan untuk menyewanya. Namun, gajah di India bukanlah barang murah, dan jumlahnya semakin langka. Gajah jantan, yang hanya cocok untuk pertunjukan sirkus, sangat dicari, terutama karena hanya sedikit yang jinak. Oleh karena itu, ketika Tuan Fogg mengusulkan kepada orang India itu untuk menyewa Kiouni, ia menolak mentah-mentah. Tuan Fogg terus membujuk, menawarkan jumlah yang berlebihan, yaitu sepuluh pound per jam untuk meminjamkan gajah itu ke Allahabad. Ditolak. Dua puluh pound? Ditolak juga. Empat puluh pound? Tetap ditolak. Passepartout langsung menerima setiap tawaran; tetapi orang India itu menolak untuk tergoda. Namun, tawaran itu sangat menarik, karena, seandainya gajah itu membutuhkan waktu lima belas jam untuk mencapai Allahabad, pemiliknya akan menerima tidak kurang dari enam ratus pound sterling. Phileas Fogg, tanpa sedikit pun merasa kesal, kemudian mengusulkan untuk membeli hewan itu secara langsung, dan awalnya menawarkan seribu pound untuknya. Orang Indian itu, mungkin berpikir dia akan mendapatkan penawaran yang bagus, tetap menolak. Sir Francis Cromarty membawa Tuan Fogg ke samping, dan memintanya untuk berpikir sebelum melangkah lebih jauh; yang dijawab oleh pria itu bahwa ia tidak terbiasa bertindak gegabah, bahwa taruhan sebesar dua puluh ribu pound sedang dipertaruhkan, bahwa gajah itu mutlak diperlukan baginya, dan bahwa ia akan mendapatkannya meskipun harus membayar dua puluh kali lipat nilainya. Kembali kepada pria India itu, yang matanya yang kecil dan tajam, berkilauan karena keserakahan, menunjukkan bahwa baginya itu hanya masalah seberapa besar harga yang bisa ia dapatkan. Tuan Fogg menawarkan pertama-tama dua belas ratus, kemudian lima belas ratus, delapan belas ratus, dua ribu pound. Passepartout, yang biasanya begitu merah merona, tampak pucat pasi karena tegang. Dengan harga dua ribu pound, orang India itu menyerah. “Harga yang sangat mahal, astaga!” seru Passepartout, “untuk seekor gajah.” Kini tinggal mencari pemandu, yang relatif mudah. Seorang pemuda Parsee, dengan wajah cerdas, menawarkan jasanya, yang diterima oleh Tuan Fogg, dengan janji imbalan yang sangat besar sehingga akan sangat memotivasi semangatnya. Gajah itu dibawa keluar dan dipersiapkan. Pemuda Parsee itu, yang merupakan pengemudi gajah yang mahir, menutupi punggung gajah dengan semacam kain pelana, dan memasangkan di setiap sisi tubuhnya beberapa tandu yang aneh dan tidak nyaman. Phileas Fogg membayar orang India itu dengan beberapa uang kertas yang diambilnya dari tas karpet terkenal, suatu tindakan yang tampaknya membuat Passepartout yang malang kehilangan semangat hidupnya. Kemudian ia menawarkan untuk mengantar Sir Francis ke Allahabad, yang diterima dengan penuh syukur oleh brigadir itu, karena satu orang pelancong lagi tidak akan membuat binatang raksasa itu kelelahan. Persediaan dibeli di Kholby, dan, sementara Sir Francis dan Tuan Fogg duduk di tandu di kedua sisi, Passepartout menaiki kain pelana di antara mereka. Orang Parsee itu bertengger di leher gajah, dan pukul sembilan mereka berangkat dari desa, hewan itu berjalan menembus hutan palem yang lebat melalui jalan pintas terpendek.</p>
 

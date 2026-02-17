@@ -2,27 +2,81 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Judul Bab</title>
+<title>Petualangan Count Fathom Lengkap</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
 <style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --link: #1a73e8;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
   padding: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
-
-li { margin: 6px 0; }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
 }
 </style>
 </head>
 <body>
 
-<h1>Judul Bab</h1>
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+
+<h1>Petualangan Count Fathom Lengkap</h1>
 
 <ol>
 <li><a href="tentang-buku-ini.html">TENTANG BUKU INI</a></li><li><a href="perkenalan.html">PERKENALAN</a></li><li><a href="petualangan-ferdinand-count-fathom-kepada-dokter.html">PETUALANGAN FERDINAND COUNT FATHOM - KEPADA DOKTER ———</a></li><li><a href="penulis.html">PENULIS.</a></li><li><a href="bab-satu.html">BAB SATU</a></li><li><a href="bab-dua.html">BAB DUA</a></li><li><a href="bab-tiga.html">BAB TIGA</a></li><li><a href="bab-empat.html">BAB EMPAT</a></li><li><a href="bab-lima.html">BAB LIMA</a></li><li><a href="bab-enam.html">BAB ENAM</a></li><li><a href="bab-tujuh.html">BAB TUJUH</a></li><li><a href="bab-delapan.html">BAB DELAPAN</a></li><li><a href="bab-sembilan.html">BAB SEMBILAN</a></li><li><a href="bab-sepuluh.html">BAB SEPULUH</a></li><li><a href="bab-sebelas.html">BAB SEBELAS</a></li><li><a href="bab-dua-belas.html">BAB DUA BELAS</a></li><li><a href="bab-tiga-belas.html">BAB TIGA BELAS</a></li><li><a href="bab-empat-belas.html">BAB EMPAT BELAS</a></li><li><a href="bab-lima-belas.html">BAB LIMA BELAS</a></li><li><a href="bab-enam-belas.html">BAB ENAM BELAS</a></li><li><a href="bab-tujuh-belas.html">BAB TUJUH BELAS</a></li><li><a href="bab-delapan-belas.html">BAB DELAPAN BELAS</a></li><li><a href="bab-sembilan-belas.html">BAB SEMBILAN BELAS</a></li><li><a href="bab-dua-puluh.html">BAB DUA PULUH</a></li><li><a href="bab-dua-puluh-satu.html">BAB DUA PULUH SATU</a></li><li><a href="bab-dua-puluh-dua.html">BAB DUA PULUH DUA</a></li><li><a href="bab-dua-puluh-tiga.html">BAB DUA PULUH TIGA</a></li><li><a href="bab-dua-puluh-empat.html">BAB DUA PULUH EMPAT</a></li><li><a href="bab-dua-puluh-lima.html">BAB DUA PULUH LIMA</a></li><li><a href="bab-dua-puluh-enam.html">BAB DUA PULUH ENAM</a></li><li><a href="bab-dua-puluh-tujuh.html">BAB DUA PULUH TUJUH</a></li><li><a href="bab-dua-puluh-delapan.html">BAB DUA PULUH DELAPAN</a></li><li><a href="bab-dua-puluh-sembilan.html">BAB DUA PULUH SEMBILAN</a></li><li><a href="bab-tiga-puluh.html">BAB TIGA PULUH</a></li><li><a href="bab-tiga-puluh-satu.html">BAB TIGA PULUH SATU</a></li><li><a href="bab-tiga-puluh-dua.html">BAB TIGA PULUH DUA</a></li><li><a href="bab-tiga-puluh-tiga.html">BAB TIGA PULUH TIGA</a></li><li><a href="bab-tiga-puluh-empat.html">BAB TIGA PULUH EMPAT</a></li><li><a href="bab-tiga-puluh-lima.html">BAB TIGA PULUH LIMA</a></li><li><a href="bab-tiga-puluh-enam.html">BAB TIGA PULUH ENAM</a></li><li><a href="bab-tiga-puluh-tujuh.html">BAB TIGA PULUH TUJUH</a></li><li><a href="bab-tiga-puluh-delapan.html">BAB TIGA PULUH DELAPAN</a></li><li><a href="bab-tiga-puluh-sembilan.html">BAB TIGA PULUH SEMBILAN</a></li><li><a href="bab-empat-puluh.html">BAB EMPAT PULUH</a></li><li><a href="bab-empat-puluh-satu.html">BAB EMPAT PULUH SATU</a></li><li><a href="bab-empat-puluh-dua.html">BAB EMPAT PULUH DUA</a></li><li><a href="bab-empat-puluh-tiga.html">BAB EMPAT PULUH TIGA</a></li><li><a href="bab-empat-puluh-empat.html">BAB EMPAT PULUH EMPAT</a></li><li><a href="bab-empat-puluh-lima.html">BAB EMPAT PULUH LIMA</a></li><li><a href="bab-empat-puluh-enam.html">BAB EMPAT PULUH ENAM</a></li><li><a href="bab-empat-puluh-tujuh.html">BAB EMPAT PULUH TUJUH</a></li><li><a href="bab-empat-puluh-delapan.html">BAB EMPAT PULUH DELAPAN</a></li><li><a href="bab-empat-puluh-sembilan.html">BAB EMPAT PULUH SEMBILAN</a></li><li><a href="bab-lima-puluh.html">BAB LIMA PULUH</a></li><li><a href="bab-lima-puluh-satu.html">BAB LIMA PULUH SATU</a></li><li><a href="bab-lima-puluh-dua.html">BAB LIMA PULUH DUA</a></li><li><a href="bab-lima-puluh-tiga.html">BAB LIMA PULUH TIGA</a></li><li><a href="bab-lima-puluh-empat.html">BAB LIMA PULUH EMPAT</a></li><li><a href="bab-lima-puluh-lima.html">BAB LIMA PULUH LIMA</a></li><li><a href="bab-lima-puluh-enam.html">BAB LIMA PULUH ENAM</a></li><li><a href="bab-lima-puluh-tujuh.html">BAB LIMA PULUH TUJUH</a></li><li><a href="bab-lima-puluh-delapan.html">BAB LIMA PULUH DELAPAN</a></li><li><a href="bab-lima-puluh-sembilan.html">BAB LIMA PULUH SEMBILAN</a></li><li><a href="bab-enam-puluh.html">BAB ENAM PULUH</a></li><li><a href="bab-enam-puluh-satu.html">BAB ENAM PULUH SATU</a></li><li><a href="bab-enam-puluh-dua.html">BAB ENAM PULUH DUA</a></li><li><a href="bab-enam-puluh-tiga.html">BAB ENAM PULUH TIGA</a></li><li><a href="bab-enam-puluh-empat.html">BAB ENAM PULUH EMPAT</a></li><li><a href="bab-enam-puluh-lima.html">BAB ENAM PULUH LIMA</a></li><li><a href="bab-enam-puluh-enam.html">BAB ENAM PULUH ENAM</a></li><li><a href="bab-enam-puluh-tujuh.html">BAB ENAM PULUH TUJUH</a></li>

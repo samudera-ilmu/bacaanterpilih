@@ -5,39 +5,176 @@
 <title>BAB TIGA PULUH SEMBILAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB TIGA PULUH SEMBILAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB TIGA PULUH SEMBILAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>petualang kita diperkenalkan dengan kehidupan baru. Begitu ia memasuki rumah-rumah penderitaan ini, telinganya diserbu oleh suara serak dan mengerikan, berseru, “Kau, Bess Beetle, bawakan sepasang telur segar, mentega seharga satu penny, dan setengah pint minuman keras untuk raja; dan hentikan kredit sampai tagihannya dibayar:—Ia sekarang berhutang lima belas shilling dan enam pence, dan sialan aku jika aku mempercayainya satu farth pun lagi, meskipun ia adalah raja terbaik di seluruh dunia Kristen. Dan, dengar, kirimkan si Kepala Kusut dengan lima pon kentang untuk makan malam Mayor Macleaver, dan biarkan dia minum apa pun yang dia inginkan; janda gemuk dari Pimlico telah berjanji untuk melunasi hutangnya. Sir Mungo Barebones boleh makan puding cepat saji dan bir ringan, meskipun aku tidak berharap melihat uangnya, sama seperti aku tidak akan menerima delapan belas pence yang kubayarkan untuk celana panjangnya—lalu bagaimana? dia orang yang pendiam, dan seorang cendekiawan hebat, dan itu merupakan skandal bagi tempat ini jika lihat dia berkeliaran dalam kondisi telanjang seperti itu. Adapun orang Prancis gila berjanggut itu, jika kau memberinya sepotong keju pun, dasar jalang, aku akan mengirimmu kembali ke sel isolasi, di antara teman-teman lamamu; anjing kurang ajar! Aku akan mengajarinya untuk menghunus pedangnya pada gubernur penjara daerah Inggris. Apa! Kupikir dia pikir dia harus berurusan dengan orang Prancis, dasar kelinci! Dia akan memakan bulu putihnya, sebelum aku memberinya sepotong roti pun.” Meskipun petualang kita saat ini sangat enggan untuk membuat pengamatan yang asing bagi urusannya sendiri, ia tidak dapat menahan diri untuk memperhatikan perintah-perintah luar biasa ini; terutama yang berkaitan dengan orang yang bergelar raja, yang, bagaimanapun, ia duga adalah seorang tahanan yang terpilih sebagai hakim melalui suara bersama rekan-rekannya. Setelah menempati kamarnya, yang disewanya seharga lima shilling seminggu, dan merasa tidak nyaman dengan pikirannya sendiri, ia segera mengunci pintu, melepaskan pakaiannya, dan pergi tidur, di mana, meskipun bukan tempat tidur yang paling elegan atau nyaman, ia menikmati istirahat yang mendalam setelah kelelahan dan penderitaan yang menumpuk sepanjang hari. Keesokan paginya, setelah sarapan, penjaga memasuki kamarnya, dan memberitahunya bahwa para bangsawan di bawah pengawasannya, setelah mendengar tentang kedatangan Count, telah menugaskan salah satu dari mereka untuk menemuinya dengan ucapan belasungkawa yang sesuai dengan kesempatan tersebut, dan mengundangnya untuk menjadi anggota perkumpulan mereka. Tokoh utama kita tidak bisa mengabaikan tata krama ini, dan duta besar mereka yang langsung diperkenalkan dengan nama Kapten Minikin, memberi hormat kepadanya dengan penuh khidmat. Orang ini sama luar biasanya karena perawakannya yang luar biasa dan tingkah lakunya; usianya tampak mendekati empat puluh tahun, tingginya sekitar lima kaki, wajahnya panjang, kurus, dan keriput karena cuaca, dan penampilannya, meskipun tidak sepenuhnya murung, menunjukkan formalitas tertentu, yang merupakan hasil dari perhatian dan kesadaran akan pentingnya dirinya. Ia sangat kurus; namun tubuhnya proporsional, anggota badannya tertata dengan elegan, dan dengan pembawaannya ia pantas mendapatkan pujian yang kita berikan kepada siapa pun ketika kita mengatakan bahwa ia memiliki aura seorang pria terhormat. Ada juga keunikan yang jelas dalam pakaiannya, yang, meskipun dimaksudkan sebagai peningkatan, tampak sebagai berlebihan dari mode tersebut, dan segera menunjukkan bahwa ia adalah orang yang unik di mata petualang kita yang jeli, yang menerimanya dengan keramahan seperti biasanya, dan menyampaikan pengakuan yang sangat fasih atas kehormatan dan kepuasan yang diterimanya dari kunjungan perwakilan tersebut, dan keramahan konstituennya. Keunikan sang kapten tidak hanya terbatas pada penampilan luarnya; karena suaranya menyerupai suara fagot, atau dengungan gabungan dari seluruh sarang lebah, dan ucapannya hampir tidak lain adalah serangkaian kutipan dari para penyair Inggris, diselingi dengan frasa-frasa Prancis, yang ia pertahankan karena maknanya, atas saran teman-temannya, karena ia sendiri tidak mengenal bahasa itu atau bahasa asing lainnya. Fathom, mendapati pria ini memiliki watak yang sangat komunikatif, berpikir bahwa ia tidak mungkin mendapatkan kesempatan yang lebih baik untuk mempelajari sejarah sesama tahanannya; dan, mengalihkan percakapan ke topik itu, harapannya tidak pupus. “Saya tidak ragu, Tuan,” katanya, dengan kesungguhan deklamasi yang sangat khidmat, “tetapi Anda memandang dengan ngeri setiap objek yang mengelilingi Anda di tempat yang tidak nyaman ini; tetapi, meskipun demikian, di sini ada beberapa orang, yang, seperti kata teman saya Shakespeare, telah mengalami masa-masa yang lebih baik, dan telah diantar ke gereja dengan lonceng suci; dan duduk di pesta orang-orang baik, dan menyeka air mata mereka yang telah ditimbulkan oleh rasa iba suci. Anda harus tahu, Tuan, bahwa, selain para penjahat, atau orang-orang yang dianggap hina, seperti yang disebut oleh Horace, ada beberapa komunitas kecil di penjara, yang terdiri dari orang-orang yang tertarik oleh tingkah laku dan watak satu sama lain; karena tempat ini, Tuan, adalah mikrokosmos, dan seperti dunia besar, begitu pula tempat ini, sebuah panggung, dan semua pria dan wanita hanyalah pemain. Untuk bagian saya sendiri, Tuan, saya selalu menjadikan prinsip untuk bergaul dengan orang-orang terbaik yang dapat saya temukan. Bukan berarti saya berpura-pura membanggakan keluarga atau asal usul saya; karena, Anda tahu, seperti kata penyair, Vix ea nostra voco. Ayahku, memang benar, adalah seorang pria yang membanggakan silsilahnya, serta kesopanan dan kelebihan pribadinya; karena dia adalah seorang perwira yang sangat tua di angkatan darat, dan aku sendiri dapat mengatakan bahwa aku dilahirkan dengan tombak di tanganku. Tuan, saya telah mendapat kehormatan untuk melayani Yang Mulia selama dua puluh tahun ini, dan telah dikerahkan dalam menjalankan tugas di seluruh perkebunan Inggris, dan Anda melihat imbalan dari semua pengabdian saya. Tetapi ini adalah subjek yang tidak menyenangkan, dan karena itu saya akan mengesampingkannya; namun, seperti yang diamati Butler: Satu-satunya penghiburanku adalah, sekarang kekayaan dubbolt-ku sangat rendah, sehingga entah akan segera berakhir, atau berbalik dan membaik lagi. “Dan sekarang, untuk kembali dari penyimpangan ini, Anda mungkin akan terkejut mendengar bahwa kepala atau ketua klub kita sebenarnya adalah seorang pangeran yang berdaulat; tidak lain, saya jamin, daripada Theodore, raja Korsika yang terkenal, yang dipenjara karena hutang beberapa ratus pound. Heu! quantum mutatus ab illo. Bukan urusan saya untuk mencela perilaku atasan saya; tetapi saya selalu mengungkapkan pendapat saya dengan cara yang sembrono, dan karena, menurut Spectator, berbicara dengan teman tidak lebih dari berpikir keras, entre nous, Yang Mulia Raja Korsika telah diperlakukan dengan tidak adil oleh pemerintahan tertentu. Terlepas dari itu, beliau adalah sosok yang berpenampilan sangat gagah, dan sangat pandai dalam bersosialisasi. Selain itu, mereka akan merasa berkepentingan untuk kembali menggunakan aliansinya; dan dalam hal itu beberapa dari kita dapat berharap untuk mendapatkan keuntungan dari pemulihannya. Tetapi sedikit kata lebih baik.” “Orang yang menduduki peringkat kedua di majelis kita adalah Mayor Macleaver, seorang pria Irlandia yang telah bertugas di luar negeri; seorang tentara bayaran, Tuan, seorang pria yang tak diragukan lagi kehormatan dan keberaniannya, tetapi sedikit sombong, karena pengetahuan dan pengalamannya. Dia adalah orang yang pandai berbicara,—tentu saja, dan sama sekali bebas dari rasa malu, dan dia mungkin telah banyak bertugas. Tapi lalu bagaimana? Orang lain mungkin sama baiknya dengan dia, meskipun mereka tidak memiliki kesempatan seperti itu; jika dia berbicara lima atau enam bahasa, dia tidak berpura-pura memiliki selera dalam seni liberal, yang merupakan kriteria seorang pria terhormat yang berprestasi.” “Yang berikutnya adalah Sir Mungo Barebones, perwakilan dari keluarga yang sangat kuno di utara; urusannya sangat kacau, tetapi dia adalah seorang pria yang sangat jujur dan berpengetahuan luas, dan saat ini terlibat dalam rencana yang sangat besar, yang, jika dia dapat mewujudkannya, akan membuatnya terkenal di sepanjang masa; tidak kurang dari pertobatan orang Yahudi dan bukan Yahudi. Proyek ini, saya akui, tampak seperti khayalan bagi seseorang yang belum pernah berbicara dengan penulisnya; tetapi, menurut pendapat saya, dia telah dengan jelas menunjukkan, dari analisis anagramatikal dari kata Ibrani tertentu, bahwa Yang Mulia saat ini, yang dilindungi Tuhan, adalah orang yang ditunjuk dalam Kitab Suci sebagai Mesias duniawi bagi orang Yahudi; dan, jika dia dapat mengumpulkan sejumlah kecil uang seperti dua belas ratus ribu pound melalui sumbangan, saya tidak ragu bahwa dia akan mencapai tujuannya, betapa pun besar dan romantisnya rencana itu.” “Selain itu, kita punya teman sekamar lain, seorang ksatria Prancis, orang yang aneh, semacam Lazarillo de Tormes, seorang karikatura; dia berjenggot panjang, berpura-pura menjadi penyair hebat, dan membuat keributan dengan syair-syairnya. Raja terpaksa menggunakan wewenangnya atas dirinya lebih dari sekali, dengan memerintahkannya untuk dikurung, yang karenanya ia begitu gegabah hingga menantang Yang Mulia; tetapi kemudian ia menyerah, dan kembali disukai. Sejujurnya, saya percaya otaknya agak terganggu, dan karena dia orang asing, kita mengabaikan keanehannya.” “Tuan, kami akan merasa senang atas bergabungnya Anda ke dalam perkumpulan kami. Anda tidak akan dibatasi oleh apa pun; karena, meskipun kami makan di satu meja, setiap orang memesan dan membayar makanannya sendiri. Percakapan kami, seperti apa pun itu, saya harap tidak akan tidak menyenangkan; dan meskipun kami tidak memiliki kesempatan untuk menghirup udara Arkadia yang murni, dan tidak dapat, 'di bawah naungan dahan yang melankolis, melupakan dan mengabaikan waktu yang berlalu,' kami dapat menikmati diri kami sendiri dengan segelas punch atau secangkir teh. Kami juga tidak kekurangan teman, yang mengunjungi kami di saat-saat sulit ini. Mayor memiliki banyak kenalan dari kedua jenis kelamin; di antaranya, seorang sepupu pertama yang beruntung, yang bersama putri-putrinya, sering menghibur kesendirian kami; dia adalah seorang wanita yang sangat bijaksana dan sopan, dan para wanita muda memiliki aura yang agak genit, yang jelas menunjukkan bahwa mereka telah bergaul dengan orang-orang terbaik. Selain itu, saya akan berani merekomendasikan Nyonya Minikin sebagai wanita dengan didikan dan kemampuan yang cukup baik, yang, saya harap, tidak akan ditemukan sama sekali kurang dalam Prestasi kaum wanita. Sehingga kita menemukan cara untuk mengadakan pesta kecil, di mana waktu berlalu tanpa terasa. Kemudian saya memiliki koleksi buku kecil yang siap Anda gunakan. Anda dapat menghibur diri dengan Shakespeare, atau Milton, atau Don Quixote, atau penulis modern kita lainnya yang layak dibaca, seperti Petualangan Loveill, Lady Frail, George Edwards, Joe Thompson, Bampfylde Moore Carew, Young Scarron, dan Miss Betsy Thoughtless; dan jika Anda menyukai menggambar, saya dapat menghibur Anda dengan sejumlah cetakan karya para maestro terbaik.” Seorang pria dengan kesopanan seperti pahlawan kita tidak dapat menahan diri untuk mengungkapkan rasa terima kasihnya yang sebesar-besarnya atas pernyataan yang ramah ini. Ia berterima kasih kepada kapten khususnya atas tawaran-tawarannya yang baik hati, dan memohon agar ia bersedia menyampaikan salam hormatnya kepada perkumpulan yang sangat ingin ia ikuti. Oleh karena itu, diputuskan bahwa Minikin akan kembali dalam satu jam, ketika Count sudah berpakaian, untuk mengantarnya ke hadapan Yang Mulia; dan ia telah berpamitan untuk saat ini, ketika tiba-tiba ia kembali, dan memegang rompi yang tergeletak di atas kursi, “Tuan,” katanya, “izinkan saya melihat rumbai-rumbai itu; menurut saya itu adalah rajutan paling elegan yang pernah saya lihat. Tapi, Tuan, bukankah ini sudah ketinggalan zaman? Saya pikir sutra polos, seperti yang saya kenakan ini, adalah mode yang berlaku, dengan saku yang sangat rendah.” Sebelum Fathom sempat menjawab, ia memperhatikan topi dan sepatunya; Yang pertama, katanya, terlalu sempit di bagian tepinya, dan yang terakhir terlalu rendah satu inci di bagian tumitnya. Memang, keduanya sangat kontras dengan dirinya sendiri; karena, terlepas dari bentuk topinya yang menyerupai bentuk kapal Romawi, tepi topinya, jika dibentangkan dengan benar, akan memberikan naungan yang cukup untuk melindungi seluruh barisan prajurit bersenjata dari panasnya matahari musim panas; dan tumit sepatunya begitu tinggi sehingga mengangkat kakinya setidaknya tiga inci dari permukaan tanah. Setelah membuat pengamatan ini, demi menjaga selera makannya, ia mundur, dan kembali pada waktu yang ditentukan, menemani Ferdinand ke apartemen raja, di pintu-pintu apartemen tersebut telinga mereka diserbu oleh suara aneh, yaitu suara manusia yang meniru suara drum. Kapten, mendengar alarm ini, berhenti, dan, memberi tahu Count bahwa Yang Mulia sedang sibuk, memohon agar ia tidak tersinggung jika pengantarannya ditunda beberapa saat. Fathom, yang penasaran ingin mengetahui arti dari apa yang telah didengarnya, meminta informasi kepada pemandunya, dan mengetahui bahwa raja dan mayor, yang telah ia tunjuk untuk jabatan jenderal kepala, sedang sibuk mendaratkan pasukan di wilayah Genoa; artinya, mereka sedang mengatur terlebih dahulu cara pendaratan mereka. Kemudian, atas arahan konduktornya, ia mengintai mereka melalui lubang kunci, dan melihat raja dan menterinya duduk di sisi berlawanan dari sebuah meja kayu, yang ditutupi dengan peta besar, di mana ia melihat sejumlah besar cangkang kerang dan tiram yang tersusun dalam urutan tertentu, dan, agak jauh, beberapa persegi dan kolom teratur yang terbuat dari kartu yang dipotong kecil-kecil. Sang pangeran sendiri, yang matanya diperkuat oleh kacamata, mengamati persenjataan ini dengan sangat saksama, sementara sang jenderal menjalankan semuanya, dan mengarahkan gerakan mereka dengan tabuhan genderang. Cangkang kerang, menurut penjelasan Minikin, mewakili kapal pengangkut, cangkang tiram dianggap sebagai kapal perang yang melindungi pasukan saat mendarat, dan potongan-potongan kartu menunjukkan berbagai formasi pasukan saat mendarat. Karena urusan sepenting itu tidak mungkin dilakukan tanpa perlawanan, mereka telah menyediakan berbagai jebakan, yang terdiri dari musuh, yang mereka wakili dengan kacang polong abu-abu; dan sesuai dengan itu, Jenderal Macleaver, melihat kacang polong abu-abu tersebut berbaris di sepanjang pantai untuk menyerang pasukannya sebelum mereka dapat disusun dalam formasi battalia, berkata kepada cangkang tiram tersebut dengan suara lantang: —“Kalian para prajurit, tidakkah kalian melihat barisan depan musuh maju, dan sisa detasemen mengikuti di luar pandangan? Aduh! celaka kalian, mengapa kalian tidak mendarat dan membuka baterai kalian?” Sambil berkata demikian, ia mendorong cangkang-cangkang tersebut ke arah celah, melakukan penembakan meriam dengan suaranya, kacang polong abu-abu segera menjadi kacau, sang jenderal dikalahkan, pasukan berbaris maju dalam formasi tempur, dan musuh yang telah mundur dengan sangat cepat, merebut kembali wilayah mereka tanpa kesulitan lebih lanjut.</p>
 

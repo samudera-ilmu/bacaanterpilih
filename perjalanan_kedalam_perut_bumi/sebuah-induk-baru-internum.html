@@ -5,39 +5,176 @@
 <title>SEBUAH INDUK BARU INTERNUM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="SEBUAH INDUK BARU INTERNUM - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>SEBUAH INDUK BARU INTERNUM</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Awalnya aku hampir tidak bisa melihat apa pun. Mataku, yang belum terbiasa dengan cahaya, segera tertutup. Ketika aku bisa membukanya kembali, aku berdiri dengan perasaan lebih tercengang daripada terkejut. "Laut!" seruku. "Ya," jawab pamanku, "Laut Liedenbrock; dan kurasa tidak ada penemu lain yang akan membantah klaimku untuk menamainya berdasarkan namaku sebagai penemu pertamanya." Hamparan air yang luas, awal dari sebuah danau atau samudra, terbentang jauh di luar jangkauan mata, mengingatkan saya dengan kuat pada laut lepas yang membuat sepuluh ribu orang Yunani Xenophon, setelah mundurnya mereka yang panjang, serentak berseru, "Thalatta! thalatta!" laut! laut! Pantai yang berlekuk dalam itu dilapisi dengan hamparan pasir halus yang berkilauan, dibasuh lembut oleh ombak, dan ditaburi dengan cangkang-cangkang kecil yang pernah dihuni oleh makhluk ciptaan pertama. Ombak pecah di pantai ini dengan gumaman bergema yang khas dari ruang tertutup yang luas. Buih tipis melayang di atas ombak dihembus oleh hembusan angin sepoi-sepoi, dan beberapa percikan air jatuh ke wajah saya. Di pantai yang sedikit miring ini, sekitar seratus depa dari batas ombak, terbentang kaki dinding tebing besar yang menjulang megah hingga ketinggian yang sangat besar. Beberapa di antaranya, membagi pantai dengan puncak-puncak tajamnya, membentuk tanjung dan semenanjung, terkikis oleh aksi ombak yang tak henti-hentinya. Dari kejauhan, mata dapat melihat garis besar mereka yang besar dan jelas terlihat di cakrawala yang kabur di kejauhan. Itu adalah lautan yang cukup luas, dengan garis pantai yang tidak beraturan, tetapi tampak seperti gurun dan sangat liar. Jika mataku mampu melihat jauh ke seluruh lautan luas ini, itu karena cahaya yang istimewa memperlihatkan setiap detailnya. Itu bukanlah cahaya matahari, dengan pancaran sinarnya yang menyilaukan dan kemegahan sinarnya; bukan pula kilauan pucat dan tak menentu dari sinar bulan, pantulan redup dari benda cahaya yang lebih mulia. Tidak; daya penerangan cahaya ini, penyebarannya yang bergetar, warna putihnya yang cerah dan jernih, serta suhunya yang rendah, menunjukkan bahwa cahaya itu pasti berasal dari listrik. Itu seperti aurora borealis, fenomena kosmik yang terus-menerus, memenuhi gua yang cukup luas untuk menampung lautan. Kubah yang membentang di ruang angkasa di atas, langit, jika itu bisa disebut demikian, tampak terdiri dari hamparan awan yang luas, uap yang bergeser dan berubah-ubah, yang karena kondensasinya pada waktu-waktu tertentu pasti akan jatuh dalam curah hujan yang deras. Saya mengira bahwa di bawah tekanan atmosfer yang begitu kuat tidak mungkin terjadi penguapan; namun, di bawah hukum yang tidak saya ketahui, terdapat hamparan uap yang luas yang melayang di udara. Tapi kemudian 'cuacanya cerah'. Cahaya lampu listrik menghasilkan efek yang aneh pada lapisan awan bagian atas. Bayangan gelap menyelimuti lingkaran awan bagian bawahnya; dan seringkali, di antara dua bidang awan yang terpisah, meluncur turun seberkas cahaya yang sangat terang. Tapi itu bukan cahaya matahari, dan tidak ada panas. Efek keseluruhannya menyedihkan, sangat melankolis. Alih-alih cakrawala yang bersinar terang, bertabur bintang-bintang yang tak terhitung jumlahnya, bersinar sendiri-sendiri atau berkelompok, saya merasa bahwa semua cahaya yang redup dan teduh ini dibatasi oleh dinding-dinding granit yang sangat besar, yang seolah-olah menenggelamkan saya dengan beratnya, dan bahwa seluruh ruang angkasa ini, betapapun luasnya, tidak akan cukup untuk perjalanan satelit yang paling sederhana sekalipun. Lalu saya teringat teori seorang kapten Inggris, yang menyamakan bumi dengan bola berongga raksasa, di bagian dalamnya udara menjadi bercahaya karena tekanan besar yang menekannya; sementara dua bintang, Pluto dan Proserpine, berputar di dalamnya mengikuti orbit misterius mereka. Sebenarnya kami terkurung di dalam sebuah galian yang tak terukur. Lebarnya tidak dapat diperkirakan, karena garis pantainya melebar sejauh mata memandang, begitu pula panjangnya, karena cakrawala yang samar membatasi bagian yang baru. Adapun tingginya, pasti beberapa liga. Di mana kubah ini bertumpu pada dasar granitnya, mata tidak dapat mengetahui; tetapi ada awan yang menggantung jauh di atas, yang ketinggiannya kami perkirakan mencapai 12.000 kaki, lebih tinggi daripada uap di bumi mana pun, dan tidak diragukan lagi disebabkan oleh kepadatan udara yang sangat tinggi. Kata gua tidak mampu menggambarkan luasnya ruang ini; kata-kata dari lidah manusia tidak cukup untuk menjelaskan penemuan-penemuan orang yang menjelajah ke jurang terdalam bumi. Selain itu, saya tidak tahu teori geologi apa yang dapat menjelaskan keberadaan penggalian seperti itu. Apakah pendinginan bumi yang menghasilkannya? Saya tahu tentang gua-gua terkenal dari deskripsi para pelancong, tetapi belum pernah mendengar tentang gua dengan dimensi sebesar ini. Jika gua Guachara, di Kolombia, yang dikunjungi oleh Humboldt, tidak mengungkapkan seluruh rahasia kedalamannya kepada filsuf yang menyelidikinya hingga kedalaman 2.500 kaki, mungkin gua itu tidak meluas lebih jauh lagi. Gua raksasa di Kentucky memiliki proporsi yang sangat besar, karena atapnya yang melengkung menjulang lima ratus kaki [1] di atas permukaan danau yang tak terukur dan para pelancong telah menjelajahi percabangannya hingga sejauh empat puluh mil. Tetapi apa artinya rongga-rongga ini dibandingkan dengan tempat saya berdiri dengan takjub dan kagum, dengan langitnya yang dipenuhi uap bercahaya, semburan cahaya listriknya, dan lautan luas yang memenuhi dasarnya? Imajinasi saya tak berdaya di hadapan kebesaran seperti itu. Aku menatap keajaiban-keajaiban ini dalam diam. Kata-kata tak mampu mengungkapkan perasaanku. Aku merasa seolah berada di planet Uranus atau Neptunus yang jauh—dan di hadapan fenomena yang sama sekali tidak kukenal dalam pengalaman duniawiku. Untuk sensasi-sensasi baru seperti itu, dibutuhkan kata-kata baru; dan imajinasiku gagal menyediakannya. Aku menatap, aku berpikir, aku mengagumi, dengan rasa takjub bercampur dengan sedikit rasa takut. Kejadian tak terduga ini mengembalikan rona merah di pipiku. Aku menjalani pengobatan baru dengan bantuan rasa takjub, dan pemulihanku dipercepat oleh sistem terapi baru ini; selain itu, udara yang padat dan berangin menyegarkanku, memasok lebih banyak oksigen ke paru-paruku. Mudah dibayangkan bahwa setelah dipenjara selama empat puluh tujuh hari di lorong sempit, menghirup udara lembap yang mengandung partikel garam adalah kenikmatan fisik yang luar biasa. [1] Seratus dua puluh. (Terjemahan) Aku sangat senang bisa meninggalkan gua gelapku. Pamanku, yang sudah terbiasa dengan keajaiban-keajaiban ini, sudah tidak lagi merasa terkejut. "Kau merasa cukup kuat untuk berjalan sedikit sekarang?" tanyanya. "Ya, tentu saja; dan tidak ada yang lebih menyenangkan dari itu." "Baiklah, pegang lenganku, Axel, dan mari kita ikuti liku-liku pantai." Aku dengan senang hati menerimanya, dan kami mulai menyusuri laut baru ini. Di sebelah kiri, piramida-piramida batu raksasa, bertumpuk satu di atas yang lain, menghasilkan efek titanik yang luar biasa. Di sisi-sisinya mengalir air terjun yang tak terhitung jumlahnya, yang terus mengalir dalam aliran yang bergemuruh namun jernih. Beberapa uap tipis, melompat dari batu ke batu, menandakan tempat mata air panas; dan aliran-aliran air mengalir dengan lembut ke cekungan umum, meluncur menuruni lereng yang landai dengan gumaman yang lebih lembut. Di antara aliran-aliran sungai ini, saya mengenali teman perjalanan setia kami, Hansbach, yang datang untuk kehilangan volume kecilnya dengan tenang di laut yang perkasa, seolah-olah tidak melakukan hal lain sejak awal dunia. "Kita tak akan melihatnya lagi," kataku sambil mendesah. "Yang penting," jawab sang filsuf, "apakah ini atau yang lain yang berfungsi untuk membimbing kita?" Saya menganggap dia agak tidak tahu berterima kasih. Namun pada saat itu perhatianku tertuju pada pemandangan yang tak terduga. Pada jarak lima ratus langkah, di tikungan tanjung yang tinggi, tampak hutan lebat yang rimbun. Hutan itu terdiri dari pepohonan dengan tinggi sedang, berbentuk seperti payung, dengan garis geometris yang tepat. Hembusan angin tampaknya tidak berpengaruh pada bentuknya, dan di tengah terpaan angin kencang, pepohonan itu berdiri tegak dan kokoh, seperti sekelompok pohon cedar yang membatu. Aku bergegas maju. Aku tidak bisa memberi nama pada ciptaan-ciptaan aneh ini. Apakah mereka termasuk dalam dua ratus ribu spesies tumbuhan yang dikenal hingga saat ini, dan apakah mereka memiliki tempat tersendiri dalam flora danau? Tidak; ketika kami tiba di bawah naungan mereka, keterkejutanku berubah menjadi kekaguman. Di hadapanku berdiri hasil bumi, tetapi berukuran raksasa, yang segera diberi nama oleh pamanku. "Ini hanyalah hutan jamur," katanya. Dan dia benar. Bayangkan perkembangan besar yang dicapai oleh tanaman-tanaman ini, yang lebih menyukai iklim hangat dan lembap. Saya tahu bahwa Lycopodon giganteum , menurut Bulliard, mencapai keliling delapan atau sembilan kaki; tetapi di sini ada jamur pucat, setinggi tiga puluh hingga empat puluh kaki, dan bermahkota tudung dengan diameter yang sama. Di sana mereka berdiri ribuan jumlahnya. Tidak ada cahaya yang dapat menembus di antara kerucut-kerucut raksasa mereka, dan kegelapan total berkuasa di bawah raksasa-raksasa itu; mereka membentuk pemukiman kubah yang tersusun rapat seperti atap jerami bundar di kota Afrika tengah. Namun aku ingin menembus lebih jauh ke bawah, meskipun rasa dingin langsung menyelimutiku begitu aku memasuki ruangan-ruangan berkubah itu. Selama setengah jam kami berjalan mondar-mandir di tempat teduh yang lembap, dan sungguh perubahan yang nyaman dan menyenangkan untuk kembali sampai di tepi pantai. Namun vegetasi bawah tanah tidak terbatas pada jamur-jamur ini. Lebih jauh lagi, tumbuh kelompok-kelompok pohon tinggi dengan dedaunan tak berwarna dan mudah dikenali. Ada semak-semak rendah di tanah, yang di sini mencapai ukuran raksasa; lycopodium setinggi seratus kaki; sigillaria raksasa, yang ditemukan di tambang batubara kita; pakis pohon, setinggi pohon cemara kita di lintang utara; lepidodendra, dengan batang bercabang silindris, berujung pada daun panjang, dan dipenuhi bulu kasar seperti kaktus. "Luar biasa, megah, menakjubkan!" seru pamanku. "Inilah seluruh flora dari periode kedua dunia—periode transisi. Tanaman-tanaman kebun sederhana ini, yang ada bersama kita, dulunya adalah pohon-pohon tinggi di zaman purba. Lihat, Axel, dan kagumi semuanya. Ahli botani belum pernah memiliki pesta seperti ini!" "Kau benar, pamanku. Tampaknya takdir telah melestarikan di rumah kaca yang sangat besar ini tanaman-tanaman purba yang kemudian disusun kembali dengan sangat bijaksana oleh kearifan para filsuf." "Ini adalah rumah kaca, Axel; tetapi bukankah ini juga kebun binatang?" "Tentu bukan kebun binatang!" "Ya; tidak diragukan lagi. Lihatlah debu di bawah kakimu; lihatlah tulang-tulang yang berserakan di tanah." "Jadi memang ada!" seruku; "tulang-tulang hewan yang sudah punah." Aku bergegas menemukan sisa-sisa ini, yang terbuat dari fosfat kapur yang tak dapat dihancurkan, dan tanpa ragu aku menyebut tulang-tulang mengerikan ini, yang tergeletak berserakan seperti batang pohon yang lapuk. “Ini adalah rahang bawah mastodon,” [1] kataku. “Ini adalah gigi geraham deinotherium; tulang paha ini pasti milik binatang terbesar dari jenisnya, megatherium. Ini jelas merupakan kebun binatang, karena sisa-sisa ini tidak dibawa ke sini oleh banjir besar. Hewan-hewan yang menjadi pemiliknya berkeliaran di tepi laut bawah tanah ini, di bawah naungan pepohonan yang rimbun. Di sini terdapat kerangka utuh. Namun aku tidak mengerti mengapa hewan berkaki empat ini muncul di dalam gua granit.” [1] Hewan-hewan ini termasuk dalam periode geologi akhir, yaitu Pliosen, tepat sebelum zaman glasial, dan oleh karena itu tidak mungkin memiliki hubungan dengan vegetasi zaman Karbonifer. (Terjemahan) "Mengapa?" "Karena kehidupan hewan hanya ada di bumi pada periode sekunder, ketika sedimen tanah telah diendapkan oleh sungai, dan menggantikan batuan pijar pada periode primitif." "Baiklah, Axel, ada jawaban yang sangat sederhana untuk keberatanmu bahwa tanah ini adalah tanah aluvial." "Apa! Pada kedalaman seperti itu di bawah permukaan bumi?" "Tidak diragukan lagi; dan ada penjelasan geologis untuk fakta tersebut. Pada periode tertentu, bumi hanya terdiri dari kerak atau lapisan elastis, yang secara bergantian dipengaruhi oleh gaya dari atas atau bawah, sesuai dengan hukum tarik-menarik dan gravitasi. Mungkin terjadi penurunan kerak luar, ketika sebagian endapan sedimen terbawa ke bawah melalui lubang-lubang yang tiba-tiba terbuka." "Mungkin saja," jawabku; "tetapi jika memang ada makhluk yang kini telah punah di wilayah bawah tanah ini, mengapa beberapa monster itu tidak mungkin sekarang berkeliaran di hutan-hutan yang suram ini, atau bersembunyi di balik tebing-tebing curam?" Dan ketika pikiran yang tidak menyenangkan ini menguasai saya, saya mengamati dengan cemas hamparan luas di hadapan saya; tetapi tidak ada makhluk hidup yang tampak di pantai yang tandus itu. Aku merasa agak lelah, dan pergi duduk di ujung tanjung, di kaki tanjung itu ombak datang dan menerpa diri menjadi percikan air. Dari sana mataku dapat menyapu setiap bagian teluk; di ujungnya terbentuk sebuah pelabuhan kecil di antara tebing-tebing berbentuk piramida, tempat air yang tenang terbuai tak tersentuh oleh angin kencang. Sebuah brig dan dua atau tiga sekunar bisa berlabuh di sana dengan aman. Aku hampir membayangkan akan segera melihat sebuah kapal keluar dari sana, berlayar penuh, dan menuju laut lepas di bawah hembusan angin selatan. Namun ilusi ini hanya berlangsung sangat singkat. Kami adalah satu-satunya makhluk hidup di dunia bawah tanah ini. Ketika angin mereda, keheningan yang lebih dalam daripada gurun pasir menyelimuti bebatuan gersang dan telanjang, dan menekan permukaan laut. Saat itu aku ingin menembus kabut yang jauh, dan merobek tirai misterius yang terbentang di cakrawala. Pertanyaan-pertanyaan cemas muncul di bibirku. Di mana laut itu berakhir? Ke mana arahnya? Haruskah kita pernah mengetahui sesuatu tentang pantai seberangnya? Pamanku sama sekali tidak meragukannya; aku menginginkannya sekaligus takut akan hal itu. Setelah menghabiskan satu jam merenungkan pemandangan menakjubkan ini, kami kembali ke pantai untuk menuju gua, dan saya tertidur di tengah-tengah pikiran-pikiran yang aneh.</p>
 

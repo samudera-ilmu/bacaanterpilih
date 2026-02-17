@@ -5,39 +5,176 @@
 <title>BAB 7</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB 7 - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB 7</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Sekembalinya saya, saya menemukan SURAT berikut dari ayah saya:— “Victorku tersayang, “Kau mungkin telah menunggu dengan tidak sabar SURAT yang akan menentukan tanggal kepulanganmu kepada kami; dan awalnya aku tergoda untuk hanya menulis beberapa baris, sekadar menyebutkan hari di mana aku mengharapkanmu kembali. Tetapi itu akan menjadi kebaikan yang kejam, dan aku tidak berani melakukannya. Apa yang akan mengejutkanmu, anakku, ketika kau mengharapkan sambutan yang bahagia dan gembira, malah melihat air mata dan kesengsaraan? Dan bagaimana, Victor, aku bisa menceritakan kemalangan kami? Ketidakhadiranmu tidak mungkin membuatmu kebal terhadap suka dan duka kami; dan bagaimana aku akan menyakiti anakku yang telah lama absen? Aku ingin mempersiapkanmu untuk berita yang menyedihkan, tetapi aku tahu itu tidak mungkin; bahkan sekarang matamu menelusuri halaman untuk mencari kata-kata yang akan menyampaikan kabar buruk itu kepadamu.” “William telah meninggal!—anak manis itu, yang senyumnya menyenangkan dan menghangatkan hatiku, yang begitu lembut, namun begitu riang! Victor, dia dibunuh!” “Saya tidak akan mencoba menghibur Anda; tetapi hanya akan menceritakan keadaan transaksi tersebut. “Kamis lalu (7 Mei), saya, keponakan saya, dan kedua saudara laki-laki Anda, pergi berjalan-jalan di Plainpalais. Malam itu hangat dan tenang, dan kami memperpanjang jalan-jalan kami lebih jauh dari biasanya. Hari sudah senja sebelum kami berpikir untuk kembali; dan kemudian kami menyadari bahwa William dan Ernest, yang telah pergi lebih dulu, tidak dapat ditemukan. Karena itu, kami beristirahat di sebuah bangku sampai mereka kembali. Tak lama kemudian Ernest datang, dan bertanya apakah kami telah melihat saudaranya; dia berkata, bahwa dia telah bermain dengannya, bahwa William telah lari untuk bersembunyi, dan bahwa dia sia-sia mencarinya, dan kemudian menunggu lama, tetapi dia tidak kembali. “Kabar ini cukup membuat kami khawatir, dan kami terus mencarinya hingga malam tiba, ketika Elizabeth menduga bahwa ia mungkin telah kembali ke rumah. Ia tidak ada di sana. Kami kembali lagi, dengan obor; karena saya tidak bisa tenang, ketika saya berpikir bahwa anak saya yang manis telah tersesat, dan terpapar semua kelembapan dan embun malam; Elizabeth juga menderita kesedihan yang luar biasa. Sekitar pukul lima pagi saya menemukan anak saya yang tercinta, yang malam sebelumnya saya lihat sehat dan aktif, tergeletak di rumput pucat dan tak bergerak; bekas jari si pembunuh ada di lehernya. “Ia dibawa pulang, dan kesedihan yang terlihat di wajahku membongkar rahasia itu kepada Elizabeth. Ia sangat ingin melihat jenazah itu. Awalnya aku mencoba mencegahnya, tetapi ia bersikeras, dan memasuki ruangan tempat jenazah itu terbaring, dengan tergesa-gesa memeriksa leher korban, dan sambil menggenggam tangannya berseru, 'Ya Tuhan! Aku telah membunuh anakku tersayang!'" “Ia pingsan, dan sadar kembali dengan susah payah. Ketika ia sadar kembali, ia hanya bisa menangis dan mendesah. Ia bercerita kepadaku, bahwa malam itu juga William menggodanya agar mengizinkannya mengenakan lukisan miniatur yang sangat berharga milik ibunya. Lukisan itu telah hilang, dan tidak diragukan lagi merupakan godaan yang mendorong si pembunuh untuk melakukan perbuatan itu. Saat ini kami belum menemukan jejaknya, meskipun upaya kami untuk menemukannya tidak pernah berhenti; tetapi itu tidak akan mengembalikan William tercintaku!” “Kemarilah, Victor tersayang; hanya kau yang bisa menghibur Elizabeth. Ia terus menangis, dan secara tidak adil menyalahkan dirinya sendiri sebagai penyeBAB kematian putranya; kata-katanya menusuk hatiku. Kita semua berduka; tetapi bukankah itu akan menjadi motivasi tambahan bagimu, anakku, untuk kembali dan menjadi penghibur kami? Ibumu tersayang! Aduh, Victor! Sekarang aku berkata, Syukurlah ia tidak hidup untuk menyaksikan kematian yang kejam dan menyedihkan dari putra bungsunya yang tercinta!” “Mari, Victor; janganlah merenungkan pikiran-pikiran balas dendam terhadap si pembunuh, tetapi dengan perasaan damai dan lembut, yang akan menyembuhkan, alih-alih memperparah, luka-luka di pikiran kita. Masuklah ke rumah duka, sahabatku, tetapi dengan kebaikan dan kasih sayang kepada mereka yang mencintaimu, dan bukan dengan kebencian terhadap musuh-musuhmu.” “Ayahmu yang penyayang dan menderita, Alphonse Frankenstein.” “Jenewa, 12 Mei 17—.”</p>
 <p>Clerval, yang memperhatikan raut wajahku saat aku membaca SURAT ini, terkejut melihat keputusasaan yang menggantikan kegembiraan yang awalnya kuungkapkan setelah menerima kabar dari teman-temanku. Aku melemparkan SURAT itu ke atas meja, dan menutupi wajahku dengan tangan. “Frankensteinku sayang,” seru Henry, ketika ia melihatku menangis tersedu-sedu, “apakah kau akan selalu tidak bahagia? Sahabatku, apa yang telah terjadi?” Aku memberi isyarat padanya untuk mengambil SURAT itu, sementara aku mondar-mandir di ruangan itu dengan sangat gelisah. Air mata juga mengalir dari mata Clerval, saat dia membaca kisah kemalanganku. “Aku tak bisa memberikan penghiburan apa pun kepadamu, temanku,” katanya; “bencana yang kau alami tak dapat diperbaiki. Apa yang akan kau lakukan?” “Untuk segera pergi ke Jenewa: ikut aku, Henry, untuk memesan kuda.” Selama perjalanan kami, Clerval berusaha mengucapkan beberapa kata penghiburan; ia hanya bisa mengungkapkan simpati yang mendalam. “Kasihan William!” katanya, “anakku tersayang, kini ia tidur bersama ibunya yang seperti malaikat! Siapa yang pernah melihatnya ceria dan gembira dalam masa mudanya yang indah, pasti akan menangisi kehilangannya yang terlalu cepat! Mati dengan begitu menyedihkan; merasakan cengkeraman pembunuh! Apalagi seorang pembunuh yang mampu menghancurkan kepolosan yang bersinar! Kasihan anak kecil itu! Hanya satu penghiburan yang kita miliki; teman-temannya berduka dan menangis, tetapi ia telah beristirahat. Penderitaannya telah berakhir, kesengsaraannya telah usai selamanya. Tanah menutupi tubuhnya yang lembut, dan ia tidak merasakan sakit. Ia tidak lagi menjadi objek belas kasihan; kita harus menyimpan belas kasihan itu untuk keluarga yang ditinggalkannya yang malang.” Clerval berbicara demikian saat kami bergegas melewati jalanan; kata-katanya terpatri dalam pikiran saya dan saya mengingatnya kemudian dalam kesendirian. Tetapi sekarang, begitu kuda-kuda tiba, saya bergegas masuk ke kereta kuda, dan mengucapkan selamat tinggal kepada teman saya. Perjalananku sangat melankolis. Awalnya aku ingin bergegas, karena aku ingin menghibur dan bersimpati kepada teman-teman terkasihku yang sedang berduka; tetapi ketika aku mendekati kota kelahiranku, aku memperlambat langkahku. Aku hampir tidak mampu menahan banyaknya perasaan yang memenuhi pikiranku. Aku melewati pemandangan yang familiar di masa mudaku, tetapi yang belum kulihat selama hampir enam tahun. Betapa banyaknya perubahan yang mungkin terjadi selama waktu itu! Satu perubahan mendadak dan menyedihkan telah terjadi; tetapi seribu keadaan kecil mungkin secara bertahap telah menyeBABkan perubahan lain, yang, meskipun dilakukan dengan lebih tenang, mungkin tidak kalah menentukan. Rasa takut menguasai diriku; aku tidak berani melangkah maju, takut akan seribu kejahatan tak bernama yang membuatku gemetar, meskipun aku tidak mampu mendefinisikannya. Saya tinggal dua hari di Lausanne, dalam keadaan pikiran yang menyakitkan ini. Saya merenungkan danau itu: airnya tenang; semuanya tenang; dan pegunungan bersalju, "istana alam," tidak berubah. Perlahan-lahan ketenangan dan pemandangan surgawi itu memulihkan saya, dan saya melanjutkan perjalanan menuju Jenewa. Jalan itu membentang di sisi danau, yang semakin menyempit saat aku mendekati kota kelahiranku. Aku melihat lebih jelas sisi-sisi hitam Jura, dan puncak Mont Blanc yang cerah. Aku menangis seperti anak kecil. “Pegunungan yang terkasih! Danauku yang indah! Bagaimana kalian menyambut pengembara ini? Puncak-puncak kalian jernih; langit dan danau biru dan tenang. Apakah ini pertanda kedamaian, atau untuk mengejek ketidakbahagiaanku?” Aku khawatir, sahabatku, aku akan membuat diriku membosankan dengan bertele-tele membahas keadaan pendahuluan ini; tetapi itu adalah hari-hari yang relatif bahagia, dan aku mengingatnya dengan senang hati. Negeriku, negeriku tercinta! Siapa selain penduduk asli yang dapat menggambarkan kegembiraan yang kurasakan saat kembali melihat sungai-sungaimu, gunung-gunungmu, dan, yang terpenting, danaumu yang indah! Namun, saat aku semakin mendekati rumah, kesedihan dan ketakutan kembali menyelimutiku. Malam pun menyelimuti; dan ketika aku hampir tak bisa melihat pegunungan yang gelap, aku merasa semakin murung. Gambaran itu tampak sebagai pemandangan kejahatan yang luas dan suram, dan aku samar-samar meramalkan bahwa aku ditakdirkan untuk menjadi manusia yang paling sengsara. Celaka! Ramalanku benar, dan hanya salah dalam satu hal, bahwa dalam semua kesengsaraan yang kubayangkan dan takuti, aku tidak membayangkan seperseratus bagian dari penderitaan yang ditakdirkan untuk kutanggung. Hari sudah gelap gulita ketika saya tiba di sekitar Jenewa; gerbang kota sudah tertutup; dan saya terpaksa bermalam di Secheron, sebuah desa yang berjarak setengah liga dari kota. Langit cerah; dan, karena saya tidak bisa beristirahat, saya memutuskan untuk mengunjungi tempat William saya yang malang dibunuh. Karena saya tidak bisa melewati kota, saya terpaksa menyeberangi danau dengan perahu untuk sampai ke Plainpalais. Selama perjalanan singkat ini, saya melihat kilat menyambar puncak Mont Blanc dalam bentuk yang sangat indah. Badai tampak mendekat dengan cepat, dan, setelah mendarat, saya mendaki sebuah bukit rendah agar dapat mengamati perkembangannya. Badai itu semakin mendekat; langit berawan, dan saya segera merasakan hujan turun perlahan dalam tetesan besar, tetapi intensitasnya dengan cepat meningkat. Aku meninggalkan tempat dudukku dan berjalan terus, meskipun kegelapan dan badai semakin bertambah setiap menitnya, dan guntur bergemuruh dengan dahsyat di atas kepalaku. Gemuruhnya bergema dari Salêve, Jura, dan Pegunungan Alpen Savoy; kilatan petir yang terang menyilaukan mataku, menerangi danau, membuatnya tampak seperti hamparan api yang luas; lalu sesaat semuanya tampak gelap gulita, sampai mataku pulih dari kilatan sebelumnya. Badai, seperti yang sering terjadi di Swiss, muncul sekaligus di berbagai bagian langit. Badai paling dahsyat menggantung tepat di utara kota, di atas bagian danau yang terletak di antara tanjung Belrive dan desa Copêt. Badai lain menerangi Jura dengan kilatan samar; dan badai lain menggelapkan dan kadang-kadang menampakkan Môle, sebuah gunung berpuncak di sebelah timur danau. Sambil mengamati badai yang begitu indah namun mengerikan, aku berjalan dengan langkah tergesa-gesa. Perang agung di langit ini membangkitkan semangatku; aku menggenggam tanganku, dan berseru dengan lantang, “William, malaikatku tersayang! Ini pemakamanmu, ini ratapanmu!” Saat aku mengucapkan kata-kata itu, dalam kegelapan aku melihat sesosok yang menyelinap dari balik rumpun pohon di dekatku; aku berdiri terpaku, menatap dengan saksama: aku tidak mungkin salah. Kilatan petir menerangi objek itu, dan memperlihatkan bentuknya dengan jelas kepadaku; perawakannya yang raksasa, dan kecacatan penampilannya yang lebih mengerikan daripada yang dimiliki manusia, seketika memberitahuku bahwa itu adalah si bajingan, iblis kotor, yang telah kuberikan kehidupan. Apa yang dia lakukan di sana? Mungkinkah dia (aku bergidik membayangkannya) pembunuh saudaraku? Begitu gagasan itu terlintas dalam imajinasiku, aku langsung yakin akan kebenarannya; gigiku bergemeletuk, dan aku terpaksa bersandar pada pohon untuk menopang tubuhku. Sosok itu lewat dengan cepat di hadapanku, dan aku kehilangan jejaknya dalam kegelapan. Tidak ada makhluk berwujud manusia yang mampu menghancurkan anak yang cantik itu. Dialah pembunuhnya! Aku tidak bisa meragukannya. Kehadiran gagasan itu saja sudah menjadi bukti yang tak terbantahkan. Aku berpikir untuk mengejar iblis itu; tetapi itu akan sia-sia, karena kilatan cahaya lain memperlihatkannya kepadaku tergantung di antara bebatuan di lereng Mont Salêve yang hampir tegak lurus, sebuah bukit yang membatasi Plainpalais di selatan. Dia segera mencapai puncak, dan menghilang. Aku tetap tak bergerak. Guntur berhenti; tetapi hujan masih berlanjut, dan pemandangan itu diselimuti kegelapan yang tak tembus. Aku merenungkan kembali peristiwa-peristiwa yang selama ini berusaha kulupakan: seluruh rangkaian perjalananku menuju penciptaan; kemunculan karya tanganku sendiri di samping tempat tidurku; dan kepergiannya. Hampir dua tahun telah berlalu sejak malam ia pertama kali menerima kehidupan; dan apakah ini kejahatan pertamanya? Celaka! Aku telah melepaskan ke dunia seorang bajingan bejat, yang kesenangannya adalah pembantaian dan penderitaan; bukankah dia telah membunuh saudaraku? Tak seorang pun dapat membayangkan penderitaan yang kualami sepanjang sisa malam itu, yang kuhabiskan dalam keadaan kedinginan dan basah di udara terbuka. Tetapi aku tidak merasakan ketidaknyamanan cuaca; imajinasiku sibuk dengan adegan-adegan kejahatan dan keputusasaan. Aku memikirkan makhluk yang telah kulemparkan ke tengah umat manusia, dan yang telah kuberi kehendak dan kekuatan untuk melakukan tujuan-tujuan mengerikan, seperti perbuatan yang baru saja dilakukannya, hampir dalam terang vampirku sendiri, rohku sendiri yang terlepas dari kubur, dan dipaksa untuk menghancurkan semua yang kusayangi. Fajar menyingsing; dan aku melangkah menuju kota. Gerbang-gerbang terbuka, dan aku bergegas ke rumah ayahku. Pikiran pertamaku adalah mencari tahu apa yang kuketahui tentang si pembunuh, dan segera mengejarnya. Tetapi aku berhenti sejenak ketika merenungkan kisah yang harus kuceritakan. Makhluk yang kubentuk sendiri, dan kuberi kehidupan, telah menemuiku tengah malam di antara tebing-tebing gunung yang tak terjangkau. Aku juga ingat demam saraf yang menyerangku tepat pada saat aku menentukan tanggal penciptaanku, dan yang akan memberikan kesan delirium pada kisah yang sama sekali tidak mungkin terjadi. Aku tahu betul bahwa jika orang lain menceritakan kisah seperti itu kepadaku, aku akan menganggapnya sebagai omong kosong orang gila. Selain itu, sifat aneh hewan itu akan menghindari semua pengejaran, bahkan jika aku dipercaya untuk membujuk kerabatku untuk memulainya. Dan lalu apa gunanya pengejaran? Siapa yang bisa menangkap makhluk yang mampu memanjat sisi-sisi curam Mont Salêve? Refleksi-refleksi ini menentukan arah hidupku, dan aku memutuskan untuk tetap diam. Saat itu sekitar pukul lima pagi ketika saya memasuki rumah ayah saya. Saya menyuruh para pelayan untuk tidak mengganggu keluarga, dan pergi ke perpustakaan untuk mengikuti waktu bangun mereka seperti biasa. Enam tahun telah berlalu, seolah dalam mimpi kecuali satu jejak yang tak terhapuskan, dan aku berdiri di tempat yang sama di mana terakhir kali aku memeluk ayahku sebelum keberangkatanku ke Ingolstadt. Orang tua tercinta dan terhormat! Ia masih tetap ada bagiku. Aku menatap lukisan ibuku, yang berdiri di atas perapian. Itu adalah lukisan bertema sejarah, dilukis atas keinginan ayahku, dan menggambarkan Caroline Beaufort dalam penderitaan keputusasaan, berlutut di samping peti mati ayahnya yang telah meninggal. Pakaiannya sederhana, dan pipinya pucat; tetapi ada aura martabat dan kecantikan, yang hampir tidak memungkinkan perasaan iba. Di bawah lukisan ini ada miniatur William; dan air mataku mengalir ketika aku melihatnya. Sementara aku sedang melakukan itu, Ernest masuk: dia telah mendengar kedatanganku, dan bergegas menyambutku: “Selamat datang, Victor tersayangku,” katanya. “Ah! Seandainya kau datang tiga bulan lalu, pasti kau akan mendapati kami semua gembira dan bahagia. Kau datang sekarang untuk berbagi kesengsaraan yang tak dapat diringankan; namun kehadiranmu, kuharap, akan membangkitkan semangat ayah kami, yang tampaknya semakin terpuruk di bawah kemalangannya; dan bujukanmu akan membujuk Elizabeth yang malang untuk menghentikan tuduhan-tuduhan diri yang sia-sia dan menyiksa itu.—William yang malang! Dia adalah kesayangan dan kebanggaan kami!” Air mata tak tertahan mengalir dari mata saudaraku; rasa sakit yang luar biasa merayapi tubuhku. Sebelumnya, aku hanya membayangkan kesengsaraan rumahku yang hancur; kenyataan itu datang kepadaku sebagai bencana baru, dan tidak kalah mengerikan. Aku mencoba menenangkan Ernest; aku menanyakan lebih detail tentang ayahku, dan di sinilah aku menyebut nama sepupuku. “Dialah yang paling membutuhkan penghiburan,” kata Ernest, “dia menuduh dirinya sendiri telah menyeBABkan kematian saudaraku, dan itu membuatnya sangat menderita. Tetapi karena pembunuhnya telah ditemukan—” “Si pembunuh sudah ditemukan! Ya Tuhan! Bagaimana mungkin? Siapa yang bisa mencoba mengejarnya? Itu mustahil; sama saja seperti mencoba mengejar angin, atau membendung aliran sungai di pegunungan dengan sebatang jerami. Aku juga melihatnya; dia bebas tadi malam!” “Aku tidak tahu apa maksudmu,” jawab saudaraku, dengan nada heran, “tetapi bagi kami, penemuan yang telah kami buat ini melengkapi penderitaan kami. Awalnya tidak ada yang percaya; dan bahkan sekarang Elizabeth pun tidak mau yakin, meskipun semua bukti telah ada. Memang, siapa yang akan percaya bahwa Justine Moritz, yang begitu ramah dan menyayangi seluruh keluarga, tiba-tiba bisa menjadi begitu mampu melakukan kejahatan yang begitu mengerikan dan menakutkan?” “Justine Moritz! Gadis malang, apakah dia yang dituduh? Tapi itu tidak benar; semua orang tahu itu; tidak ada yang percaya, kan, Ernest?” “Awalnya tidak ada yang percaya; tetapi beberapa keadaan terungkap, yang hampir memaksa kami untuk percaya; dan perilakunya sendiri sangat membingungkan, sehingga menambah bobot bukti fakta yang, saya khawatir, tidak menyisakan harapan untuk keraguan. Tetapi dia akan diadili hari ini, dan Anda akan mendengar semuanya.” Kemudian ia menceritakan bahwa, pada pagi hari ketika pembunuhan William yang malang ditemukan, Justine jatuh sakit dan terbaring di tempat tidur selama beberapa hari. Selama masa itu, salah satu pelayan, yang kebetulan memeriksa pakaian yang dikenakannya pada malam pembunuhan, menemukan di sakunya foto ibunya, yang dianggap sebagai godaan bagi si pembunuh. Pelayan itu segera menunjukkannya kepada salah satu pelayan lainnya, yang, tanpa mengatakan sepatah kata pun kepada anggota keluarga, pergi ke hakim; dan, berdasarkan keterangan mereka, Justine ditangkap. Saat dituduh melakukan kejahatan, gadis malang itu semakin memperkuat kecurigaan dengan tingkah lakunya yang sangat bingung. Ini adalah kisah yang aneh, tetapi tidak menggoyahkan iman saya; dan saya menjawab dengan sungguh-sungguh, “Kalian semua salah; saya tahu siapa pembunuhnya. Justine, Justine yang malang dan baik hati, tidak bersalah.” Pada saat itu ayahku masuk. Aku melihat kesedihan yang mendalam terpancar di wajahnya, tetapi ia berusaha menyambutku dengan riang; dan, setelah kami bertukar salam duka, ia hendak membahas topik lain selain musibah yang menimpa kami, seandainya Ernest tidak berseru, “Ya Tuhan, Ayah! Victor bilang dia tahu siapa pembunuh William yang malang.” “Sayangnya, kami juga merasakan hal yang sama,” jawab ayahku, “karena sesungguhnya aku lebih memilih selamanya tetap tidak tahu daripada menemukan begitu banyak kebejatan dan rasa tidak tahu terima kasih pada seseorang yang sangat kusayangi.” “Ayahku tersayang, Ayah salah; Justine tidak bersalah.” “Jika memang demikian, semoga Tuhan melarang dia menderita sebagai orang yang bersalah. Dia akan diadili hari ini, dan saya berharap, saya sungguh berharap, dia akan dibebaskan.” Pidato ini menenangkan saya. Saya sangat yakin dalam pikiran saya sendiri bahwa Justine, dan memang setiap manusia, tidak bersalah atas pembunuhan ini. Oleh karena itu, saya tidak takut bahwa bukti tidak langsung apa pun dapat diajukan cukup kuat untuk menghukumnya. Kisah saya bukanlah kisah yang akan diumumkan secara publik; kengeriannya yang mencengangkan akan dianggap sebagai kegilaan oleh orang awam. Apakah memang ada orang lain, selain saya, sang pencipta, yang akan percaya, kecuali jika indranya meyakinkannya, akan keberadaan monumen hidup dari kesombongan dan ketidaktahuan yang gegabah yang telah saya lepaskan ke dunia? Tak lama kemudian Elizabeth bergabung dengan kami. Waktu telah mengubahnya sejak terakhir kali aku melihatnya; waktu telah memberinya kecantikan yang melampaui kecantikan masa kecilnya. Keterusterangan dan semangatnya tetap sama, tetapi dipadukan dengan ekspresi yang lebih penuh kepekaan dan kecerdasan. Dia menyambutku dengan penuh kasih sayang. “Kedatanganmu, sepupuku tersayang,” katanya, “membuatku penuh harapan. Mungkin kau akan menemukan cara untuk membenarkan Justine-ku yang malang dan tak bersalah. Aduh! Siapa yang aman jika dia terbukti bersalah? Aku yakin akan ketidakbersalahannya sama seperti aku yakin akan ketidakbersalahanku sendiri. Kemalangan kami dua kali lebih berat; kami tidak hanya kehilangan anak laki-laki kesayangan kami yang manis itu, tetapi gadis malang ini, yang sangat kucintai, akan direnggut oleh nasib yang lebih buruk. Jika dia dihukum, aku tidak akan pernah merasakan kebahagiaan lagi. Tetapi dia tidak akan dihukum, aku yakin dia tidak akan dihukum; dan kemudian aku akan bahagia lagi, bahkan setelah kematian William kecilku yang menyedihkan.” “Dia tidak bersalah, Elizabethku,” kataku, “dan itu akan terbukti; jangan takut, tetapi biarlah semangat kalian terhibur dengan kepastian pembebasannya.” “Betapa baik dan murah hatinya Anda! Semua orang percaya bahwa dia bersalah, dan itu membuat saya sengsara, karena saya tahu itu tidak mungkin: dan melihat semua orang berprasangka buruk sedemikian rupa membuat saya putus asa dan kehilangan harapan.” Dia menangis. “Keponakanku tersayang,” kata ayahku, “hapuslah air matamu. Jika dia, seperti yang kau yakini, tidak bersalah, percayalah pada keadilan hukum kita, dan pada upaya yang akan kulakukan untuk mencegah sedikit pun bayangan keberpihakan.”</p>

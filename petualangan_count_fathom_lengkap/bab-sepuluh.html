@@ -5,39 +5,176 @@
 <title>BAB SEPULUH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB SEPULUH - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB SEPULUH</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>mereka melanjutkan pengumpulan sumber daya dengan sukses besar, hingga pahlawan kita berangkat bersama sang bangsawan muda ke wina, di mana ia bergabung dengan petualang lainnya. Di bawah kedok yang aman ini, Teresa berhasil memungut pajak dari majikannya. Setiap hari ada saja perhiasan yang hilang; kesabaran wanita muda itu mulai habis; pelayan setia itu diliputi kekhawatiran, dan dengan ekspresi sangat kesal, menuntut pemecatannya, menegaskan bahwa hal-hal ini pasti dilakukan oleh seseorang dalam keluarga, dengan tujuan untuk menghancurkan reputasinya yang berharga. Nona Melvil, dengan susah payah, menenangkan kekesalannya dengan jaminan kepercayaan dan penghargaan yang tak tergoyahkan, sampai sepasang anting berlian hilang, ketika Teresa tidak lagi dapat menahan kesedihannya. Sesungguhnya, ini adalah peristiwa yang lebih penting daripada semua yang telah terjadi, karena perhiasan itu bernilai lima ratus florin. Mademoiselle sangat khawatir sehingga ia memberitahukan kehilangannya kepada ibunya, dan wanita baik hati itu, yang merupakan seorang ekonom ulung, tidak gagal menunjukkan keprihatinan yang luar biasa. Ia bertanya, apakah putrinya punya alasan untuk mencurigai siapa pun dalam keluarga, dan apakah ia benar-benar yakin akan integritas dirinya sendiri? Setelah itu, Mademoiselle, dengan banyak pujian atas kesetiaan dan kasih sayang Teresa, menceritakan petualangan pelayan kamar, yang segera menjalani penyelidikan ketat, dan bahkan dipenjara, berdasarkan kesalahan yang dilakukannya sebelumnya. Teman petualang kita bersikeras untuk menjalani persidangan yang sama dengan para pelayan lainnya, dan, seperti biasa, memahami sindiran Fathom; sementara ia mendukung usulan tersebut, dan secara diam-diam menasihati wanita tua itu untuk memperkenalkan Teresa kepada hakim setempat. Dengan tuduhan yang telah direncanakan sebelumnya ini, mereka lolos dari semua kecurigaan kolusi. Setelah penyelidikan yang tidak membuahkan hasil, tahanan itu dibebaskan dari penahanannya, dan dikeluarkan dari pelayanan Pangeran, yang menurut pendapat pribadinya, reputasi seseorang sangat tercoreng, terutama reputasi putranya sendiri, yang dicurigainya telah menggelapkan perhiasan untuk kepentingan seorang kekasih yang pada saat itu dikatakan telah merebut hatinya. Pria tua itu merasakan penderitaan batin yang mendalam, seperti yang mungkin dialami seorang pria terhormat, karena kemerosotan moral putranya; dan, tanpa mengungkapkan perasaannya, atau bahkan mengisyaratkan kecurigaannya kepada pemuda itu sendiri, ia memutuskan untuk segera memisahkannya dari hubungan berbahaya tersebut, dengan mengirimnya segera ke Wina, dengan dalih menyelesaikan pendidikannya di akademi, dan memperkenalkannya pada dunia luar. Meskipun pemuda itu sendiri tidak ingin dianggap memiliki keraguan sedikit pun tentang moralnya, ia tidak ragu untuk mencurahkan isi hatinya tentang hal itu kepada Ferdinand, yang kebijaksanaan dan kebajikannya sangat ia hormati. Pelindung yang murah hati ini mengungkapkan perasaannya dengan kata-kata yang paling menyentuh hati tentang watak putranya yang buruk; ia mengatakan kepada Fathom bahwa ia harus menemani Renaldo (itulah nama pemuda itu) bukan hanya sebagai teman, tetapi juga sebagai guru dan teladan; membujuknya untuk membantu tutornya dalam mengawasi perilakunya, dan untuk memperkuat ajaran gubernur melalui teladannya sendiri; untuk menanamkan padanya kehati-hatian yang paling halus dalam hal kehormatan, dan membujuknya untuk berfoya-foya, daripada membiarkan sedikit pun sentimen yang tidak liberal di hatinya. Petualang kita yang cerdik, dengan menunjukkan kepekaan yang luar biasa, mengakui kebaikan besar Sang Pangeran karena telah menaruh kepercayaan sebesar itu pada integritasnya; yang, seperti yang dia amati, hanya bisa disalahgunakan oleh penjahat terburuk sekalipun; dan sangat berharap agar dia tidak lagi ada, daripada terus mengingat dan menyesali kewajiban yang dia miliki kepada dermawannya yang baik hati. Sementara persiapan keberangkatan mereka sedang dilakukan, pahlawan kita mengadakan pertemuan dengan rekannya, yang dia beri banyak instruksi bijak mengenai operasi masa depannya; pada saat yang sama dia membebaskan rekannya dari semua atau sebagian besar rampasan yang telah dia menangkan, dan setelah menerima berbagai tanda kemurahan hati dari Sang Pangeran dan istrinya, bersama dengan sebuah dompet dari kekasih mudanya, dia berangkat ke Wina, pada usia delapan belas tahun, bersama Renaldo dan gubernurnya, yang diberi surat rekomendasi kepada beberapa teman Sang Pangeran yang termasuk dalam istana Kekaisaran. Perkenalan yang menguntungkan seperti itu pastinya menguntungkan bagi seorang pemuda dengan kemampuan luar biasa seperti Ferdinand; karena ia dianggap sebagai teman Pangeran muda, diterima dalam pesta-pestanya, dan diikutsertakan dalam semua acara yang dihadiri Renaldo. Ia segera menonjolkan diri melalui aktivitas dan kepiawaiannya, dalam latihan-latihan yang diajarkan di akademi tempat ia belajar; tingkah lakunya begitu menarik sehingga menarik perhatian teman-teman sekelasnya, dan percakapannya yang lincah dan tidak menyinggung, menjadi sangat diminati; singkatnya, ia dan Pangeran muda membentuk kontras yang luar biasa, yang, di mata dunia, menguntungkan dirinya. Mereka benar-benar, dalam segala hal, berlawanan satu sama lain. Renaldo, dengan kekurangan total dalam pendidikan lahiriah, memiliki pemahaman yang sangat baik, dengan setiap kebajikan yang memuliakan hati manusia; sementara yang lain, di balik penampilan luar yang sangat menyenangkan, dengan ketidakmampuan dan keengganan terhadap sastra, menyembunyikan banyak sekali kejahatan dan rasa tidak tahu terima kasih. Hingga saat ini pengamatannya terbatas pada lingkup yang sempit, dan refleksinya, meskipun sangat tepat dan tajam, belum mencapai kematangan yang diberikan oleh usia dan pengalaman; tetapi sekarang, persepsinya mulai lebih jelas, dan meluas ke seribu objek yang belum pernah ia sadari sebelumnya. Dahulu ia hanya membayangkan, tetapi sekarang sepenuhnya yakin, bahwa anak-anak manusia saling memangsa satu sama lain, dan itulah akhir dan kondisi keberadaan mereka. Di antara tokoh-tokoh utama kehidupan, ia mengamati sedikit atau bahkan tidak ada karakter yang tidak memiliki kemiripan yang kuat dengan tirani buas di hutan. Yang satu menyerupai harimau dalam amarah dan keserakahan; yang kedua berkeliaran seperti serigala lapar, mencari siapa yang dapat ia mangsa; yang ketiga berperan sebagai serigala, menggiring buruan di semak-semak untuk majikannya yang rakus; dan yang keempat meniru rubah licik, melakukan seribu jebakan licik untuk menghancurkan orang-orang yang bodoh dan lengah. Yang terakhir inilah bidang kehidupan yang menurutnya paling cocok secara alami dan berdasarkan kecenderungannya; dan karenanya ia memutuskan bahwa bakatnya tidak akan terpendam. Ia sudah cukup mahir dalam semua ilmu permainan; tetapi setiap hari ia melihat seni-seni ini dibawa ke tingkat kehalusan dan ketangkasan yang begitu mengejutkan, yang membuatnya patah semangat untuk membangun rencananya di atas dasar itu. Oleh karena itu, ia bertekad untuk memikat penilaian, bukan mata sesama manusia, dengan terus-menerus menggunakan bakat menipu yang ia yakini dimilikinya dengan tingkat yang tak tertandingi; dan untuk memperoleh pengaruh tak terbatas pada mereka yang mungkin tunduk pada kepentingannya, dengan tekun memanfaatkan hasrat mereka yang dominan. Bukan berarti permainan sama sekali diabaikan dalam rencana ekonominya.— Meskipun ia hanya sedikit terlibat dalam bagian eksekutif perjudian, ia belum lama berada di Wina ketika ia menjalin hubungan dengan seorang jenius di bidang itu, yang ia kenal di antara murid-murid akademi, dan yang memang telah menetap di tempat itu dengan tujuan menjarah penduduk provinsi pada saat pertama kali mereka tiba di kota, sebelum mereka dapat dibekali dengan kehati-hatian yang tepat untuk menjaga uang mereka, atau memiliki waktu untuk menggunakannya dengan cara lain. Karakter yang serupa secara alami saling menarik, dan orang-orang dengan prinsip seperti pahlawan kita, di antara semua orang, adalah yang paling mampu mengenali kemiripan mereka sendiri di mana pun itu terjadi; karena mereka selalu menjaga kemampuan membedakan dalam upaya penuh. Sebagai konsekuensi dari kewaspadaan timbal balik inilah, Ferdinand dan orang asing, yang berasal dari Tyrol, menyadari bahwa diri mereka tercermin dalam watak satu sama lain, dan segera membentuk aliansi ofensif dan defensif; petualang kita bertanggung jawab atas informasi, dukungan, dan nasihat, dan rekannya memikul risiko eksekusi.</p>
 

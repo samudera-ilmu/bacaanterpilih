@@ -5,39 +5,176 @@
 <title>PERCAKAPAN MENARIK DENGAN PARA AHLI ISLANDIA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="PERCAKAPAN MENARIK DENGAN PARA AHLI ISLANDIA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>PERCAKAPAN MENARIK DENGAN PARA AHLI ISLANDIA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Makan malam sudah siap. Profesor Liedenbrock melahap porsinya dengan rakus, karena puasa wajibnya di atas kapal telah mengubah perutnya menjadi jurang yang sangat luas dan tak terukur. Tidak ada yang istimewa dalam hidangan itu sendiri; tetapi keramahan tuan rumah kami, yang lebih mirip orang Denmark daripada Islandia, mengingatkan saya pada para pahlawan zaman dahulu. Jelas bahwa kami merasa lebih betah daripada dirinya sendiri. Percakapan berlangsung dalam bahasa sehari-hari, yang dicampur paman saya dengan bahasa Jerman dan M. Fridrikssen dengan bahasa Latin demi keuntungan saya. Pembicaraan berkisar pada pertanyaan-pertanyaan ilmiah sebagaimana layaknya para filsuf; tetapi Profesor Liedenbrock sangat pendiam, dan pada setiap kalimat berbicara kepada saya dengan tatapan matanya, memerintahkan agar rencana kami tetap dirahasiakan sepenuhnya. Pertama-tama, M. Fridrikssen ingin mengetahui kesuksesan apa yang telah diraih paman saya di perpustakaan. "Perpustakaanmu! Kenapa, di sana hanya ada beberapa buku lusuh di rak-rak yang hampir kosong." "Memang benar!" jawab M. Fridrikssen, "kami memiliki delapan ribu jilid buku, banyak di antaranya berharga dan langka, karya-karya dalam bahasa Skandinavia kuno, dan kami memiliki semua hal baru yang dikirimkan Kopenhagen kepada kami setiap tahun." "Di mana kau menyimpan delapan ribu jilid bukumu? Untuk bagianku—" "Oh, Tuan Liedenbrock, buku-buku itu tersebar di seluruh negeri. Di wilayah yang dingin ini, kami gemar belajar. Tidak ada petani atau nelayan yang tidak bisa membaca dan tidak membaca. Prinsip kami adalah, buku-buku, alih-alih berjamur di balik jeruji besi, seharusnya dibaca berulang kali oleh banyak pembaca. Oleh karena itu, buku-buku ini berpindah dari satu orang ke orang lain, dibaca berulang-ulang, dirujuk berulang kali; dan sering kali buku-buku itu kembali ke raknya hanya setelah absen selama satu atau dua tahun." "Dan sementara itu," kata pamanku agak sinis, "orang asing—" "Baiklah, apa yang Anda inginkan? Orang asing memiliki perpustakaan mereka di rumah, dan hal terpenting pertama bagi kaum pekerja adalah pendidikan. Saya ulangi, kecintaan membaca mengalir dalam darah orang Islandia. Pada tahun 1816 kami mendirikan sebuah perkumpulan sastra yang makmur; orang asing yang terpelajar merasa terhormat menjadi anggotanya. Perkumpulan ini menerbitkan buku-buku yang mendidik sesama warga negara kita, dan memberikan pelayanan yang besar bagi negara. Jika Anda bersedia menjadi anggota korespondensi, Tuan Liedenbrock, Anda akan memberi kami kesenangan yang besar." Paman saya, yang telah bergabung dengan sekitar seratus perkumpulan ilmiah, menerima perkumpulan itu dengan penuh keanggunan yang jelas-jelas menyentuh hati M. Fridrikssen. "Nah," katanya, "maukah Anda berbaik hati memberi tahu saya buku apa yang Anda harapkan untuk ditemukan di perpustakaan kami, dan mungkin saya dapat membantu Anda untuk membacanya?" Mata pamanku dan mataku bertemu. Ia ragu-ragu. Pertanyaan langsung ini menyentuh inti permasalahan. Tetapi setelah berpikir sejenak, ia memutuskan untuk berbicara. "Tuan Fridrikssen, saya ingin tahu apakah di antara buku-buku kuno Anda terdapat karya-karya Arne Saknussemm?" "Arne Saknussemm!" jawab profesor Rejkiavik. "Maksudmu cendekiawan abad keenam belas yang terpelajar itu, seorang naturalis, ahli kimia, dan penjelajah?" "Memang benar!" "Salah satu kejayaan sastra dan sains Islandia?" "Itulah orangnya." "Seorang pria terkemuka di mana pun!" "Memang benar." "Dan keberaniannya setara dengan kejeniusannya!" "Sepertinya Anda mengenalnya dengan baik." Pamanku sangat gembira mendengar pahlawannya digambarkan seperti itu. Ia terpukau melihat wajah M. Fridrikssen. "Nah," serunya, "di mana karya-karyanya?" "Kita tidak memiliki karya-karyanya." "Apa—bukan di Islandia?" "Mereka tidak berada di Islandia maupun di tempat lain." "Mengapa demikian?" "Karena Arne Saknussemm dianiaya karena bidah, dan pada tahun 1573 buku-bukunya dibakar oleh algojo biasa." "Bagus sekali! Luar biasa!" seru pamanku, yang membuat profesor ilmu sejarah alam itu sangat terkejut. "Apa!" teriaknya. "Ya, ya; sekarang semuanya sudah jelas, sekarang semuanya sudah terungkap; dan saya mengerti mengapa Saknussemm, yang dimasukkan ke dalam Index Expurgatorius, dan dipaksa untuk menyembunyikan penemuan-penemuan yang dibuat oleh kejeniusannya, terpaksa mengubur rahasia itu dalam sebuah kriptogram yang tidak dapat dipahami—" "Rahasia apa?" tanya M. Fridrikssen, tersentak. "Oh, hanya sebuah rahasia yang—" pamanku tergagap. "Apakah Anda memiliki dokumen pribadi?" tanya tuan rumah kami. "Tidak; saya hanya menduga-duga sebuah kasus." "Oh, baiklah," jawab M. Fridrikssen, yang cukup baik hati untuk tidak membahas lebih lanjut topik tersebut ketika ia menyadari rasa malu temannya. "Saya harap Anda tidak akan meninggalkan pulau kami sebelum Anda melihat sebagian kekayaan mineraloginya." "Tentu," jawab pamanku; "tapi aku agak terlambat; atau bukankah ada orang lain yang sudah datang sebelumku?" "Ya, Tuan Liedenbrock; kerja keras Tuan Olafsen dan Povelsen, yang dilakukan atas perintah raja, penelitian Troïl, misi ilmiah Tuan Gaimard dan Robert di korvet Prancis La Recherche, [1] dan baru-baru ini pengamatan para ilmuwan yang datang dengan Reine Hortense, telah menambah pengetahuan kita tentang Islandia secara signifikan. Tetapi saya yakinkan Anda bahwa masih banyak yang tersisa." "Kau pikir begitu?" kata pamanku, berpura-pura terlihat sangat rendah hati, dan berusaha menyembunyikan rasa ingin tahu yang terpancar dari matanya. "Oh, ya; betapa banyak gunung, gletser, dan gunung berapi yang perlu dipelajari, yang sampai sekarang masih belum sepenuhnya diketahui! Lalu, tanpa perlu melangkah lebih jauh, gunung di cakrawala itu. Itulah Snæfell." "Ah!" kata pamanku, setenang mungkin, "apakah itu Snæfell?" "Ya; salah satu gunung berapi yang paling unik, dan kawahnya hampir tidak pernah dikunjungi." "Apakah sudah punah?" "Oh, ya; lebih dari lima ratus tahun." "Nah," jawab pamanku, yang dengan panik mengunci kedua kakinya agar tidak melompat ke udara, "di situlah aku bermaksud memulai studi geologiku, di Seffel—Fessel—apa sebutannya?" "Snæfell," jawab M. Fridrikssen yang luar biasa. Bagian percakapan ini dalam bahasa Latin; saya mengerti setiap kata-katanya, dan saya hampir tidak bisa menyembunyikan rasa geli saya melihat paman saya berusaha menahan kegembiraan dan kepuasan yang meluap di setiap anggota tubuh dan setiap wajahnya. Dia berusaha keras untuk memasang ekspresi polos dan sederhana; tetapi malah terlihat seperti seringai jahat. [1] Recherche dikirim pada tahun 1835 oleh Laksamana Duperré untuk mengetahui nasib ekspedisi M. de Blosseville yang hilang di Lilloise yang tidak pernah terdengar kabarnya. "Ya," katanya, "kata-katamu yang menentukan. Kita akan mencoba mendaki Snæfell itu; mungkin bahkan kita dapat melanjutkan penelitian kita di kawahnya!"</p>
 <p>"Saya sangat menyesal," kata Tuan Fridrikssen, "bahwa kesibukan saya tidak memungkinkan saya untuk absen, atau saya akan menemani Anda sendiri dengan senang hati dan bermanfaat." "Oh, tidak, tidak!" jawab pamanku dengan penuh semangat, "kami tidak akan mengganggu siapa pun, Tuan Fridrikssen. Meskipun begitu, saya berterima kasih dengan sepenuh hati: kehadiran orang yang berbakat seperti Anda akan sangat bermanfaat, tetapi tugas profesi Anda—" Saya senang berpikir bahwa tuan rumah kami, dalam kepolosan jiwa Islandia-nya, buta terhadap tipu daya yang jelas dari paman saya. "Saya sangat menyetujui langkah awal Anda dengan gunung berapi itu, Tuan Liedenbrock. Anda akan mengumpulkan banyak pengamatan menarik. Tetapi, katakanlah, bagaimana Anda berharap untuk sampai ke semenanjung Snæfell?"</p>

@@ -5,39 +5,176 @@
 <title>BAB XXVI. DI MANA PHILEAS FOGG DAN ROMBONGANNYA BERPERJALANAN DENGAN KERETA API PASIFIK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXVI. DI MANA PHILEAS FOGG DAN ROMBONGANNYA BERPERJALANAN DENGAN KERETA API PASIFIK - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXVI. DI MANA PHILEAS FOGG DAN ROMBONGANNYA BERPERJALANAN DENGAN KERETA API PASIFIK</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Dari samudra ke samudra”—begitulah kata orang Amerika; dan keempat kata ini membentuk sebutan umum untuk “jalur utama” yang melintasi seluruh wilayah Amerika Serikat. Namun, Pacific Railroad sebenarnya terbagi menjadi dua jalur yang berbeda: Central Pacific, antara San Francisco dan Ogden, dan Union Pacific, antara Ogden dan Omaha. Lima jalur utama menghubungkan Omaha dengan New York. New York dan San Francisco dengan demikian dipersatukan oleh pita logam tanpa putus, yang panjangnya tidak kurang dari tiga ribu tujuh ratus delapan puluh enam mil. Antara Omaha dan Pasifik, jalur kereta api melintasi wilayah yang masih dihuni oleh penduduk asli Amerika dan binatang buas, dan hamparan luas yang mulai dijajah oleh kaum Mormon setelah mereka diusir dari Illinois pada tahun 1845. Perjalanan dari New York ke San Francisco, dulunya, dalam kondisi paling menguntungkan, membutuhkan waktu setidaknya enam bulan. Sekarang, perjalanan itu dapat ditempuh dalam tujuh hari. Pada tahun 1862, meskipun anggota Kongres dari Selatan menginginkan rute yang lebih selatan, diputuskan untuk membangun jalan di antara garis lintang ke-41 dan ke-42. Presiden Lincoln sendiri menetapkan ujung jalur tersebut di Omaha, Nebraska. Pekerjaan segera dimulai dan dilanjutkan dengan semangat khas Amerika; kecepatan pengerjaannya pun tidak merugikan hasil akhirnya. Jalan tersebut bertambah panjang satu setengah mil per hari di padang rumput. Sebuah lokomotif, yang berjalan di atas rel yang telah dipasang pada malam sebelumnya, membawa rel yang akan dipasang keesokan harinya, dan melaju di atasnya secepat rel tersebut dipasang. Jalur Kereta Api Pasifik memiliki beberapa cabang di Iowa, Kansas, Colorado, dan Oregon. Setelah meninggalkan Omaha, jalur ini melewati tepi kiri Sungai Platte hingga persimpangan cabang utaranya, mengikuti cabang selatannya, melintasi wilayah Laramie dan Pegunungan Wahsatch, melewati Danau Garam Besar, dan mencapai Salt Lake City, ibu kota Mormon, kemudian memasuki Lembah Tuilla, melintasi Gurun Amerika, Pegunungan Cedar dan Humboldt, Sierra Nevada, dan turun, melalui Sacramento, ke Samudra Pasifik—kemiringannya, bahkan di Pegunungan Rocky, tidak pernah melebihi seratus dua belas kaki per mil. Demikianlah jalan yang harus ditempuh dalam tujuh hari, yang akan memungkinkan Phileas Fogg—setidaknya, begitulah harapannya—untuk menaiki kapal uap Atlantik di New York pada tanggal 11 menuju Liverpool. Gerbong yang ia tumpangi adalah semacam omnibus panjang beroda delapan, dan tanpa kompartemen di bagian dalamnya. Gerbong itu dilengkapi dengan dua baris tempat duduk, tegak lurus dengan arah kereta di kedua sisi lorong yang menuju ke peron depan dan belakang. Peron-peron ini terdapat di seluruh rangkaian kereta, dan penumpang dapat berpindah dari satu ujung kereta ke ujung lainnya. Kereta itu dilengkapi dengan gerbong ruang tamu, gerbong balkon, restoran, dan gerbong khusus merokok; hanya gerbong teater yang belum ada, dan mereka akan memilikinya suatu hari nanti. Para penjual buku dan koran, penjual makanan, minuman, dan cerutu, yang tampaknya memiliki banyak pelanggan, terus-menerus beredar di lorong-lorong. Kereta api meninggalkan stasiun Oakland pukul enam. Hari sudah malam, dingin dan suram, langit tertutup awan yang seolah mengancam akan turun salju. Kereta tidak melaju kencang; termasuk pemberhentian, kecepatannya tidak lebih dari dua puluh mil per jam, namun kecepatan itu cukup untuk memungkinkan kereta mencapai Omaha dalam waktu yang ditentukan. Hanya sedikit percakapan di dalam mobil, dan tak lama kemudian banyak penumpang yang tertidur. Passepartout mendapati dirinya duduk di samping detektif itu; tetapi dia tidak berbicara dengannya. Setelah kejadian baru-baru ini, hubungan mereka menjadi agak dingin; tidak mungkin lagi ada simpati atau keintiman timbal balik di antara mereka. Sikap Fix tidak berubah; tetapi Passepartout sangat pendiam, dan siap mencekik mantan temannya itu hanya karena sedikit provokasi. Salju mulai turun satu jam setelah mereka berangkat, namun saljunya halus, yang untungnya tidak menghalangi kereta; yang terlihat dari jendela hanyalah hamparan putih yang luas, di mana asap lokomotif tampak keabu-abuan. Pukul delapan, seorang pramugara memasuki gerbong dan mengumumkan bahwa waktunya tidur telah tiba; dan dalam beberapa menit gerbong itu berubah menjadi asrama. Sandaran kursi direbahkan, ranjang-ranjang yang dikemas rapi digulirkan dengan sistem yang cerdik, tempat tidur darurat dibuat secara dadakan, dan setiap penumpang segera memiliki tempat tidur yang nyaman, terlindungi dari pandangan penasaran oleh tirai tebal. Seprainya bersih dan bantalnya empuk. Yang tersisa hanyalah pergi tidur, yang dilakukan semua orang—sementara kereta melaju melintasi Negara Bagian California. Daerah antara San Francisco dan Sacramento tidak terlalu berbukit. Jalur Central Pacific, yang mengambil Sacramento sebagai titik awalnya, membentang ke arah timur untuk bertemu dengan jalur dari Omaha. Jalur dari San Francisco ke Sacramento membentang ke arah timur laut, sepanjang Sungai American, yang bermuara ke Teluk San Pablo. Jarak seratus dua puluh mil antara kedua kota ini ditempuh dalam enam jam, dan menjelang tengah malam, saat tertidur lelap, para pelancong melewati Sacramento; sehingga mereka tidak melihat apa pun dari tempat penting itu, pusat pemerintahan negara bagian, dengan dermaga-dermaga yang indah, jalan-jalan yang lebar, hotel-hotel mewah, alun-alun, dan gereja-gereja. Kereta api, setelah meninggalkan Sacramento dan melewati persimpangan Roclin, Auburn, dan Colfax, memasuki pegunungan Sierra Nevada. Cisco tiba pukul tujuh pagi; dan satu jam kemudian gerbong asrama diubah menjadi gerbong biasa, dan para penumpang dapat mengamati keindahan pemandangan daerah pegunungan yang mereka lewati. Jalur kereta api berkelok-kelok di antara celah-celah, terkadang mendekati lereng gunung, terkadang tergantung di atas jurang, menghindari sudut-sudut tajam dengan tikungan yang berani, menukik ke dalam jurang sempit yang tampaknya tidak memiliki jalan keluar. Lokomotif, dengan cerobong asapnya yang besar memancarkan cahaya aneh, dengan loncengnya yang tajam, dan penangkap sapi yang memanjang seperti taji, mencampurkan jeritan dan derunya dengan suara derasnya air terjun dan jeram, dan mengepulkan asapnya di antara cabang-cabang pohon pinus raksasa. Hampir tidak ada jembatan atau terowongan di sepanjang rute tersebut. Jalur kereta api berbelok di sisi pegunungan, dan tidak berupaya melanggar hukum alam dengan mengambil jalan pintas terpendek dari satu titik ke titik lainnya. Kereta api memasuki Negara Bagian Nevada melalui Lembah Carson sekitar pukul sembilan, selalu menuju ke arah timur laut; dan pada tengah hari tiba di Reno, di mana terjadi penundaan selama dua puluh menit untuk sarapan. Dari titik ini, jalan yang membentang di sepanjang Sungai Humboldt, berlanjut ke utara sejauh beberapa mil di tepiannya; kemudian berbelok ke timur, dan tetap berada di tepi sungai hingga mencapai Pegunungan Humboldt, hampir di batas paling timur Nevada. Setelah sarapan, Tuan Fogg dan para pengiringnya kembali ke tempat duduk mereka di dalam kereta, dan mengamati beragam pemandangan yang terbentang saat mereka melewati padang rumput yang luas, pegunungan yang membentang di cakrawala, dan sungai-sungai kecil dengan aliran airnya yang berbusa. Terkadang, kawanan besar kerbau yang berkumpul di kejauhan tampak seperti bendungan yang dapat dipindahkan. Banyaknya hewan pemakan rumput ini seringkali menjadi penghalang yang tak teratasi bagi lewatnya kereta api; ribuan dari mereka telah terlihat melintasi rel selama berjam-jam, dalam barisan yang rapat. Lokomotif kemudian terpaksa berhenti dan menunggu sampai jalan kembali bersih. Hal ini memang terjadi pada kereta yang ditumpangi Tuan Fogg. Sekitar pukul dua belas, sekelompok besar kerbau, sekitar sepuluh atau dua belas ribu ekor, memenuhi jalur kereta. Lokomotif, mengurangi kecepatannya, mencoba membersihkan jalan dengan alat penahan depan (cow-catcher); tetapi jumlah hewan itu terlalu banyak. Kerbau-kerbau itu berjalan dengan tenang, sesekali mengeluarkan suara auman yang memekakkan telinga. Tidak ada gunanya mengganggu mereka, karena setelah mengambil arah tertentu, tidak ada yang dapat memperlambat dan mengubah arah mereka; itu adalah arus deras daging hidup yang tidak dapat dibendung oleh bendungan mana pun. Para pelancong mengamati pemandangan aneh ini dari peron; tetapi Phileas Fogg, yang paling punya alasan untuk terburu-buru, tetap duduk di kursinya, dan menunggu dengan sabar sampai kerbau-kerbau itu mau minggir. Passepartout sangat marah atas keterlambatan yang mereka sebabkan, dan ingin sekali menembakkan seluruh persenjataan revolvernya ke arah mereka. “Negara macam apa ini!” serunya. “Hewan ternak saja bisa menghentikan kereta api, dan lewat beriringan, seolah-olah mereka tidak menghambat perjalanan! Astaga! Saya ingin tahu apakah Tuan Fogg sudah memperkirakan kecelakaan ini dalam programnya! Dan di sini ada seorang masinis yang tidak berani menabrakkan lokomotif ke kawanan binatang ini!” Sang insinyur tidak mencoba mengatasi rintangan itu, dan dia bijaksana. Dia pasti akan menghancurkan kerbau pertama dengan alat penangkap sapi; tetapi lokomotif, sekuat apa pun, akan segera terhenti, kereta pasti akan terlempar keluar rel, dan kemudian akan menjadi tak berdaya. Cara terbaik adalah menunggu dengan sabar, dan mengejar waktu yang hilang dengan kecepatan lebih tinggi setelah rintangan dihilangkan. Iring-iringan kerbau berlangsung selama tiga jam penuh, dan hari sudah malam sebelum jalan setapak bersih. Barisan terakhir kawanan itu kini melewati rel, sementara barisan pertama telah menghilang di bawah cakrawala selatan. Saat itu pukul delapan ketika kereta melewati ngarai Pegunungan Humboldt, dan pukul setengah sembilan ketika memasuki Utah, wilayah Danau Garam Besar, koloni unik kaum Mormon.</p>
 

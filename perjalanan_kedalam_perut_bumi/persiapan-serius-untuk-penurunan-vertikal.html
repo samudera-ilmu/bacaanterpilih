@@ -5,39 +5,176 @@
 <title>PERSIAPAN SERIUS UNTUK PENURUNAN VERTIKAL</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="PERSIAPAN SERIUS UNTUK PENURUNAN VERTIKAL - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>PERSIAPAN SERIUS UNTUK PENURUNAN VERTIKAL</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Altona, yang hanyalah pinggiran kota Hamburg, adalah terminus kereta api Kiel, yang akan membawa kami ke Belts. Dalam dua puluh menit kami sampai di Holstein. Pukul setengah tujuh kereta berhenti di stasiun; banyak sekali barang bawaan paman saya, perlengkapan-perlengkapannya yang banyak, diturunkan, dikeluarkan, diberi label, ditimbang, dimasukkan ke dalam gerbong bagasi, dan pukul tujuh kami duduk berhadapan di kompartemen kami. Peluit berbunyi, mesin dinyalakan, kami pun berangkat. Apakah aku sudah pasrah? Tidak, belum. Namun, udara pagi yang sejuk dan pemandangan di jalan, yang berubah dengan cepat karena kecepatan kereta, sedikit mengalihkan perhatianku dari renungan sedihku. Adapun pemikiran Profesor, pemikirannya jauh melampaui kecepatan kereta ekspres tercepat. Kami sendirian di gerbong, tetapi kami duduk dalam diam. Paman saya memeriksa semua saku dan tas perjalanannya dengan sangat teliti. Saya melihat bahwa dia tidak melupakan detail terkecil sekalipun. Di antara dokumen-dokumen lain, selembar kertas yang dilipat rapi bertuliskan kop surat konsulat Denmark dengan tanda tangan W. Christiensen, konsul di Hamburg dan teman Profesor. Dengan ini, kami memiliki surat pengantar yang tepat untuk Gubernur Islandia. Aku juga mengamati dokumen terkenal itu yang tersimpan sangat rapi di saku rahasia dalam mapnya. Aku melontarkan kutukan padanya, lalu melanjutkan perjalanan untuk memeriksa negeri itu. Itu adalah rangkaian panjang dataran lempung subur yang tidak menarik, daerah yang sangat mudah untuk pembangunan jalur kereta api, dan cocok untuk peletakan jalur-jalur lurus langsung yang sangat disukai oleh perusahaan kereta api. Aku tak punya waktu untuk merasa bosan dengan rutinitas yang membosankan; karena dalam tiga jam kami akan sampai di Kiel, dekat dengan laut. Karena koper-koper itu diberi label tujuan Kopenhagen, kami tidak perlu mengurusnya. Namun Profesor mengawasi setiap barang dengan saksama, sampai semuanya aman di atas kapal. Di sana, barang-barang itu menghilang di dalam palka. Paman saya, meskipun terburu-buru, telah memperhitungkan dengan sangat baik hubungan antara kereta api dan kapal uap sehingga kami memiliki waktu luang seharian penuh. Kapal uap Ellenora baru berangkat pada malam hari. Dari situlah muncul kegelisahan yang luar biasa di mana sang pelancong yang tidak sabar dan mudah marah mengutuk para direktur kereta api, perusahaan kapal uap, dan pemerintah yang membiarkan kelambatan yang tak tertahankan tersebut. Saya terpaksa menjadi juru bicaranya ketika dia menyerang kapten Ellenora mengenai hal ini. Kapten itu kemudian menyingkirkan kami dengan cepat. Di Kiel, seperti di tempat lain, kita harus melakukan sesuatu untuk menghabiskan waktu. Dengan berjalan-jalan di tepi teluk yang hijau tempat kota kecil itu berada, menjelajahi hutan lebat yang membuatnya tampak seperti sarang yang terbungkus dedaunan rimbun, mengagumi vila-vila yang masing-masing dilengkapi dengan rumah mandi kecil, dan berjalan-jalan sambil menggerutu, akhirnya pukul sepuluh pun tiba. Kepulan asap tebal dari cerobong Ellenora membubung ke langit, anjungan bergetar karena uap yang berjuang; kami berada di atas kapal, dan untuk sementara waktu menjadi pemilik dua tempat tidur, satu di atas yang lain, di satu-satunya kabin ruang utama di kapal. Pada pukul seperempat lewat, tali tambat dilepas dan kapal uap yang berderak itu melaju melintasi perairan gelap Great Belt. Malam itu gelap gulita; angin bertiup kencang dan laut bergelombang, beberapa cahaya tampak di pantai menembus kegelapan pekat; kemudian, entah kapan, cahaya menyilaukan dari mercusuar memancarkan sinar api terang di sepanjang ombak; dan hanya itu yang dapat saya ingat dari bagian pertama pelayaran kami. Pukul tujuh pagi kami mendarat di Korsor, sebuah kota kecil di pantai barat Zealand. Di sana kami dipindahkan dari kapal ke jalur kereta api lain, yang membawa kami melewati daerah yang sama datarnya dengan dataran Holstein. Perjalanan selama tiga jam membawa kami ke ibu kota Denmark. Paman saya tidak tidur sepanjang malam. Karena tidak sabar, saya yakin dia mencoba mempercepat kereta dengan kakinya. Akhirnya ia melihat hamparan laut. "Suara itu!" teriaknya. Di sebelah kiri kami terdapat sebuah bangunan besar yang tampak seperti rumah sakit. "Itu rumah sakit jiwa," kata salah satu teman seperjalanan kami. Bagus sekali! pikirku, tepat di tempat yang kita inginkan untuk mengakhiri hidup kita; dan sehebat apa pun tempat itu, rumah sakit jiwa itu tidak cukup besar untuk menampung semua kegilaan Profesor Liedenbrock! Pukul sepuluh pagi, akhirnya kami tiba di Kopenhagen; barang bawaan kami dinaikkan ke kereta kuda dan kami bawa ke Hotel Phoenix di Breda Gate. Perjalanan ini memakan waktu setengah jam, karena stasiun kereta berada di luar kota. Kemudian paman saya, setelah berdandan dengan tergesa-gesa, menyeret saya mengikutinya. Porter di hotel itu bisa berbahasa Jerman dan Inggris; tetapi Profesor, sebagai seorang poliglot, menanyainya dalam bahasa Denmark yang baik, dan dalam bahasa yang sama pula orang itu mengarahkannya ke Museum Purbakala Utara. Kurator dari lembaga unik ini, tempat dikumpulkannya berbagai keajaiban yang darinya sejarah kuno negara itu dapat direkonstruksi melalui senjata batu, cangkir, dan perhiasannya, adalah seorang cendekiawan terpelajar, teman dari konsul Denmark di Hamburg, Profesor Thomsen. Paman saya mengirimkan surat pengantar yang ramah kepadanya. Pada umumnya, seorang cendekiawan menyapa cendekiawan lainnya dengan dingin. Tetapi di sini kasusnya berbeda. M. Thomsen, seperti seorang teman baik, memberikan salam hangat kepada Profesor Liedenbrock, dan ia bahkan memberikan kebaikan yang sama kepada keponakannya. Hampir tidak perlu dikatakan bahwa rahasia itu dijaga ketat dari kurator yang hebat itu; kami hanyalah wisatawan yang tidak memiliki kepentingan pribadi yang mengunjungi Islandia karena rasa ingin tahu yang tidak berbahaya. M. Thomsen menawarkan jasanya kepada kami, dan kami mengunjungi dermaga dengan tujuan untuk mencari tahu kapal berikutnya yang akan berlayar. Saya masih berharap tidak akan ada cara untuk sampai ke Islandia. Tetapi ternyata tidak demikian. Sebuah kapal layar kecil Denmark, Valkyria , akan berlayar ke Rejkavik pada tanggal 2 Juni. Kaptennya, M. Bjarne, berada di atas kapal. Calon penumpangnya begitu gembira hingga hampir meremas tangannya sampai sakit. Pria baik itu agak terkejut dengan semangatnya. Baginya, pergi ke Islandia tampak sangat sederhana, karena itu adalah bisnisnya; tetapi bagi paman saya itu adalah hal yang luar biasa. Kapten yang terhormat itu memanfaatkan antusiasmenya untuk mengenakan tarif dua kali lipat; tetapi kami tidak mempermasalahkan hal-hal sepele itu. "Anda harus berada di kapal pada hari Selasa, pukul tujuh pagi," kata Kapten Bjarne, setelah mengantongi uang dolar lebih banyak dari yang seharusnya menjadi haknya.</p>
 <p>Lalu kami berterima kasih kepada M. Thomsen atas kebaikannya, "dan kami kembali ke Hotel Phoenix.</p>

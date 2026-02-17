@@ -5,39 +5,176 @@
 <title>BUKU VIII. MATAHARI TERBIT - BAB LXXII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BUKU VIII. MATAHARI TERBIT - BAB LXXII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BUKU VIII. MATAHARI TERBIT - BAB LXXII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Jiwa yang utuh bagaikan cermin ganda, yang tetap menciptakan pemandangan tak berujung dari hal-hal indah di depan, dan mengulang hal-hal di belakang. Kemurahan hati Dorothea yang gegabah, yang akan langsung membela Lydgate dari kecurigaan telah menerima uang suap, mengalami hambatan yang menyedihkan ketika ia mempertimbangkan semua keadaan kasus tersebut berdasarkan pengalaman Tuan Farebrother. “Ini adalah masalah yang sensitif untuk dibahas,” katanya. “Bagaimana kita bisa mulai menyelidikinya? Itu harus dilakukan secara publik dengan melibatkan hakim dan koroner, atau secara pribadi dengan menanyai Lydgate. Mengenai langkah pertama, tidak ada dasar yang kuat untuk melanjutkannya, jika tidak, Hawley pasti sudah melakukannya; dan mengenai memulai pembicaraan dengan Lydgate, saya akui saya akan ragu melakukannya. Dia mungkin akan menganggapnya sebagai penghinaan yang sangat besar. Saya telah beberapa kali mengalami kesulitan berbicara dengannya tentang masalah pribadi. Dan—seseorang harus mengetahui kebenaran tentang perilakunya terlebih dahulu, untuk merasa sangat yakin akan hasil yang baik.” “Saya yakin bahwa perilakunya tidak bersalah: Saya percaya bahwa orang hampir selalu lebih baik daripada yang dipikirkan tetangga mereka,” kata Dorothea. Beberapa pengalaman paling intensnya dalam dua tahun terakhir telah membuat pikirannya sangat menentang penafsiran negatif terhadap orang lain; dan untuk pertama kalinya ia merasa agak tidak puas dengan Tuan Farebrother. Ia tidak menyukai pertimbangan konsekuensi yang hati-hati ini, alih-alih keyakinan yang kuat pada upaya keadilan dan belas kasihan, yang akan menang dengan kekuatan emosionalnya. Dua hari kemudian, ia makan malam di Manor bersama pamannya dan keluarga Chettam, dan ketika hidangan penutup masih belum dimakan, para pelayan keluar ruangan, dan Tuan Brooke tertidur pulas, ia kembali membahas topik tersebut dengan semangat yang baru. “Tuan Lydgate akan mengerti bahwa jika teman-temannya mendengar fitnah tentang dirinya, keinginan pertama mereka pastilah untuk membelanya. Untuk apa kita hidup, jika bukan untuk membuat hidup lebih mudah bagi satu sama lain? Saya tidak bisa acuh tak acuh terhadap kesulitan seseorang yang telah memberi nasihat kepada saya di saat kesulitan , dan merawat saya saat sakit.” Nada dan tingkah laku Dorothea tidak lebih bersemangat daripada ketika ia duduk di kursi utama pamannya hampir tiga tahun sebelumnya, dan pengalamannya sejak saat itu telah memberinya hak lebih untuk mengungkapkan pendapat yang tegas. Tetapi Sir James Chettam bukan lagi pelamar yang pemalu dan penurut: ia adalah saudara ipar yang cemas, dengan kekaguman yang tulus kepada saudara perempuannya, tetapi dengan kekhawatiran terus-menerus jangan-jangan ia akan jatuh ke dalam ilusi baru yang hampir sama buruknya dengan menikahi Casaubon. Ia lebih jarang tersenyum; ketika ia berkata "Tepat sekali," itu lebih sering merupakan pengantar untuk pendapat yang berbeda daripada di masa-masa bujangannya yang penurut; dan Dorothea terkejut mendapati bahwa ia harus memutuskan untuk tidak takut padanya—terlebih lagi karena ia sebenarnya adalah sahabat terbaiknya. Ia tidak setuju dengannya sekarang. “Tapi, Dorothea,” katanya dengan nada protes, “kau tidak bisa mengatur hidup seseorang seperti itu. Lydgate harus tahu—setidaknya dia akan segera tahu bagaimana posisinya. Jika dia bisa membuktikan dirinya tidak bersalah, dia akan melakukannya. Dia harus bertindak sendiri.” “Saya rasa teman-temannya harus menunggu sampai mereka menemukan kesempatan,” tambah Tuan Farebrother. “Mungkin saja—saya sering merasa begitu lemah dalam diri saya sendiri sehingga saya dapat membayangkan bahkan seorang pria dengan watak terhormat, seperti yang selalu saya yakini sebagai Lydgate, menyerah pada godaan seperti menerima uang yang ditawarkan secara tidak langsung sebagai suap untuk memastikan dia bungkam tentang fakta-fakta skandal yang sudah lama berlalu. Saya katakan, saya dapat membayangkan ini, jika dia berada di bawah tekanan keadaan yang sulit—jika dia telah dilecehkan seperti yang saya yakini telah dialami Lydgate. Saya tidak akan percaya hal yang lebih buruk darinya kecuali dengan bukti yang kuat. Tetapi ada pembalasan yang mengerikan yang mengikuti beberapa kesalahan, bahwa selalu mungkin bagi mereka yang menyukainya untuk menafsirkannya menjadi kejahatan: tidak ada bukti yang mendukung orang tersebut di luar kesadaran dan pernyataannya sendiri.” “Oh, betapa kejamnya!” kata Dorothea sambil menggenggam tangannya. “Dan bukankah kau ingin menjadi satu-satunya orang yang percaya pada ketidakbersalahan pria itu, jika seluruh dunia meragukannya? Lagipula, ada karakter seseorang yang akan berbicara untuknya.” “Tetapi, Nyonya Casaubon yang terhormat,” kata Tuan Farebrother, tersenyum lembut melihat semangatnya, “karakter bukanlah sesuatu yang terukir di marmer—bukan sesuatu yang padat dan tidak dapat diubah. Itu adalah sesuatu yang hidup dan berubah, dan dapat menjadi sakit seperti tubuh kita.” “Kalau begitu, mungkin bisa diselamatkan dan disembuhkan,” kata Dorothea. “Aku tidak akan takut meminta Tuan Lydgate untuk mengatakan yang sebenarnya, agar aku bisa membantunya. Mengapa aku harus takut? Sekarang karena aku tidak akan mendapatkan tanah itu, James, aku bisa melakukan seperti yang diusulkan Tuan Bulstrode, dan menggantikannya dalam menyediakan dana untuk Rumah Sakit; dan aku harus berkonsultasi dengan Tuan Lydgate, untuk mengetahui secara menyeluruh prospek melakukan kebaikan dengan mempertahankan rencana saat ini. Ini adalah kesempatan terbaik di dunia bagiku untuk meminta kepercayaannya; dan dia akan dapat memberitahuku hal-hal yang dapat memperjelas semua keadaan. Kemudian kita semua akan mendukungnya dan membantunya keluar dari kesulitan. Orang-orang mengagungkan segala macam keberanian kecuali keberanian yang mereka tunjukkan untuk kepentingan tetangga terdekat mereka.” Mata Dorothea berkaca-kaca, dan perubahan nada suaranya membangkitkan pamannya, yang mulai mendengarkan. “Memang benar bahwa seorang wanita mungkin berani melakukan beberapa upaya simpati yang hampir tidak akan berhasil jika kita para pria yang melakukannya,” kata Tuan Farebrother, yang hampir terpengaruh oleh semangat Dorothea. “Tentu saja, seorang wanita pasti akan berhati-hati dan mendengarkan orang-orang yang lebih mengenal dunia darinya,” kata Sir James, sambil sedikit mengerutkan kening. “Apa pun yang kau lakukan pada akhirnya, Dorothea, sebaiknya kau tetap tenang dulu, dan jangan ikut campur dalam urusan Bulstrode ini. Kita belum tahu apa yang akan terjadi. Kau pasti setuju denganku?” pungkasnya, sambil menatap Tuan Farebrother. “Saya rasa akan lebih baik untuk menunggu,” kata yang terakhir. “Ya, ya, sayangku,” kata Tuan Brooke, tidak sepenuhnya tahu pada titik mana diskusi itu telah sampai, tetapi memberikan kontribusi yang pada umumnya tepat. “Mudah untuk kebablasan, kau tahu. Kau tidak boleh membiarkan ide-idemu merajalela. Dan soal terburu-buru menginvestasikan uang ke dalam rencana—itu tidak akan berhasil, kau tahu. Garth telah menarik perhatianku secara luar biasa dengan perbaikan, pengurasan, dan hal-hal semacam itu: aku sangat kekurangan uang untuk satu hal atau lainnya. Aku harus berhenti. Sedangkan untukmu, Chettam, kau menghabiskan banyak uang untuk pagar kayu ek di sekitar tanah milikmu.” Dorothea, dengan berat hati menerima kekecewaan ini, pergi bersama Celia ke perpustakaan, yang biasanya menjadi ruang tamunya. “Sekarang, Dodo, dengarkan baik-baik apa yang dikatakan James,” kata Celia, “kalau tidak, kamu akan mendapat masalah. Kamu selalu begitu, dan akan selalu begitu, jika kamu melakukan apa pun yang kamu suka. Dan menurutku, sekarang ini adalah anugerah karena kamu memiliki James untuk membantumu berpikir. Dia membiarkanmu memiliki rencanamu, hanya saja dia mencegahmu untuk tertipu. Dan itulah kebaikan memiliki saudara laki-laki daripada suami. Seorang suami tidak akan membiarkanmu memiliki rencanamu.” “Seolah-olah aku menginginkan seorang suami!” kata Dorothea. “Aku hanya ingin perasaanku tidak selalu dibatasi.” Nyonya Casaubon masih belum cukup terkendali untuk meledak dalam kemarahan dan menangis. “Sekarang, sungguh, Dodo,” kata Celia, dengan suara serak yang lebih dalam dari biasanya, “kau sungguh kontradiktif: pertama begini, lalu begitu. Dulu kau selalu tunduk pada Tuan Casaubon dengan sangat memalukan: kurasa kau akan berhenti datang menemuiku jika dia memintamu.” “Tentu saja aku menurutinya, karena itu adalah kewajibanku; itu adalah perasaanku padanya,” kata Dorothea, sambil menatap melalui prisma air matanya. “Lalu mengapa kau tidak merasa berkewajiban untuk sedikit menuruti keinginan James?” kata Celia, dengan nada tegas dalam argumennya. “Karena dia hanya menginginkan apa yang terbaik untukmu. Dan, tentu saja, laki-laki selalu tahu yang terbaik tentang segala hal, kecuali apa yang lebih diketahui perempuan.” Dorothea tertawa dan melupakan air matanya. “Maksudku soal bayi dan hal-hal semacam itu,” jelas Celia. “Aku tidak seharusnya menyerah pada James ketika aku tahu dia salah, seperti yang biasa kau lakukan pada Tuan Casaubon.”</p>
 

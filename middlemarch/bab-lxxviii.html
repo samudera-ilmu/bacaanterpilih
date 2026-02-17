@@ -5,39 +5,176 @@
 <title>BAB LXXVIII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LXXVIII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LXXVIII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Seandainya itu terjadi kemarin dan aku berada di dalam kubur, dengan imannya yang manis di atas sana sebagai monumen.” Rosamond dan Will berdiri tak bergerak—mereka tidak tahu berapa lama—Will menatap ke arah tempat Dorothea berdiri, dan Rosamond menatapnya dengan ragu. Bagi Rosamond, waktu itu terasa tak berujung, di lubuk hatinya yang paling dalam hampir tidak ada rasa jengkel, melainkan kepuasan atas apa yang baru saja terjadi. Orang-orang yang dangkal bermimpi untuk dengan mudah mengendalikan emosi orang lain, sepenuhnya percaya pada sihir kecil mereka sendiri untuk mengubah aliran terdalam, dan yakin, dengan gerakan dan ucapan yang manis, untuk membuat sesuatu yang tidak ada seolah-olah ada. Dia tahu bahwa Will telah menerima pukulan berat, tetapi dia jarang membayangkan keadaan pikiran orang lain kecuali sebagai materi yang dibentuk oleh keinginannya sendiri; dan dia percaya pada kekuatannya sendiri untuk menenangkan atau menundukkan. Bahkan Tertius, orang yang paling keras kepala sekalipun, selalu ditundukkan pada akhirnya: peristiwa-peristiwa memang keras kepala, tetapi Rosamond tetap akan mengatakan sekarang, seperti yang dia katakan sebelum pernikahannya, bahwa dia tidak pernah menyerah pada apa yang telah dia putuskan. Dia mengulurkan tangannya dan meletakkan ujung jarinya di lengan baju Will. “Jangan sentuh aku!” katanya, dengan suara seperti cambukan, melesat menjauh darinya, dan wajahnya berubah dari merah muda menjadi pucat lalu kembali lagi, seolah seluruh tubuhnya bergetar karena rasa sakit akibat sengatan itu. Dia berbalik ke sisi lain ruangan dan berdiri di hadapannya, dengan ujung jari di saku dan kepala mendongak, menatap tajam bukan ke arah Rosamond tetapi ke suatu titik beberapa inci di depannya. Ia sangat tersinggung, tetapi isyarat yang diberikannya hanya bisa dipahami oleh Lydgate. Ia tiba-tiba terdiam dan duduk, melepaskan topi yang menjuntai dan meletakkannya bersama selendangnya. Tangan kecilnya yang dilipat di depannya terasa sangat dingin. Akan lebih aman bagi Will untuk mengambil topinya dan pergi sejak awal; tetapi dia tidak merasa terdorong untuk melakukan itu; sebaliknya, dia memiliki keinginan yang mengerikan untuk tetap tinggal dan menghancurkan Rosamond dengan amarahnya. Tampaknya mustahil untuk menanggung malapetaka yang telah ditimpakan Rosamond kepadanya tanpa melampiaskan amarahnya, seperti halnya seekor macan kumbang yang menanggung luka lembing tanpa melompat dan menggigit. Namun—bagaimana dia bisa mengatakan kepada seorang wanita bahwa dia siap mengutuknya? Dia marah di bawah hukum represif yang terpaksa dia akui: dia berada dalam posisi yang berbahaya, dan suara Rosamond sekarang membawa getaran yang menentukan. Dengan nada sarkasme seperti seruling, dia berkata— “Anda bisa langsung menemui Ibu Casaubon dan menjelaskan pilihan Anda.” “Kejar dia!” serunya dengan nada tajam. “Apa kau pikir dia akan menoleh untuk melihatku, atau menghargai kata-kata apa pun yang pernah kuucapkan padanya lebih dari sekadar bulu kotor?—Jelaskan! Bagaimana seorang pria bisa menjelaskan dengan mengorbankan seorang wanita?” “Kau bisa mengatakan apa pun yang kau inginkan padanya,” kata Rosamond dengan suara yang semakin gemetar. “Apakah menurutmu dia akan lebih menyukaiku karena mengorbankanmu? Dia bukan wanita yang mudah dibujuk karena aku membuat diriku menjadi hina—untuk percaya bahwa aku harus setia padanya karena aku bersikap keji padamu.” Ia mulai bergerak gelisah seperti binatang liar yang melihat mangsa tetapi tidak dapat meraihnya. Tak lama kemudian ia kembali beraksi— “Sebelumnya aku tidak punya harapan—hampir tidak ada—akan hal yang lebih baik. Tapi aku punya satu kepastian—bahwa dia percaya padaku. Apa pun yang orang katakan atau lakukan tentangku, dia percaya padaku.—Itu sudah hilang! Dia tidak akan pernah lagi menganggapku sebagai apa pun selain kepura-puraan yang remeh—terlalu baik untuk masuk surga kecuali dengan syarat yang menggiurkan, namun menjual diriku demi uang receh iblis secara diam-diam. Dia akan menganggapku sebagai penghinaan yang nyata baginya, sejak saat pertama kita—” Will berhenti seolah-olah ia mendapati dirinya menggenggam sesuatu yang tidak boleh dilempar dan dihancurkan. Ia menemukan jalan keluar lain untuk amarahnya dengan kembali menangkap kata-kata Rosamond, seolah-olah kata-kata itu adalah reptil yang harus dicekik dan dilempar. “Jelaskan! Suruh seorang pria menjelaskan bagaimana dia jatuh ke neraka! Jelaskan preferensiku! Aku tidak pernah memiliki preferensi terhadapnya , sama seperti aku tidak memiliki preferensi untuk bernapas. Tidak ada wanita lain yang sebanding dengannya. Aku lebih suka menyentuh tangannya meskipun sudah mati, daripada menyentuh tangan wanita lain yang masih hidup.” Saat senjata beracun itu dilemparkan ke arahnya, Rosamond hampir kehilangan rasa identitasnya, dan sepertinya terbangun ke dalam eksistensi baru yang mengerikan. Ia tidak merasakan penolakan yang dingin dan teguh, pembenaran diri yang tertahan seperti yang pernah ia rasakan di bawah kemarahan Lydgate yang paling dahsyat: semua kepekaannya berubah menjadi rasa sakit yang membingungkan dan baru; ia merasakan reaksi ketakutan baru di bawah cambukan yang belum pernah dialami sebelumnya. Apa yang dirasakan oleh sifat lain yang bertentangan dengan sifatnya sendiri sedang dibakar dan digigit ke dalam kesadarannya. Ketika Will berhenti berbicara, ia telah menjadi gambaran penderitaan yang memilukan: bibirnya pucat, dan matanya dipenuhi dengan keputusasaan tanpa air mata. Jika Tertius yang berdiri di hadapannya, tatapan penderitaan itu akan menjadi pedih baginya, dan ia akan merosot di sisinya untuk menghiburnya, dengan penghiburan yang penuh paksaan yang sering dianggapnya remeh. Biarlah Will dimaafkan karena ia tidak merasakan belas kasihan sama sekali. Sebelumnya ia tidak merasa terikat dengan wanita yang telah merusak harta karun ideal dalam hidupnya, dan ia menganggap dirinya tidak bersalah. Ia tahu bahwa ia kejam, tetapi ia belum menunjukkan penyesalan sedikit pun. Setelah selesai berbicara, ia masih bergerak-gerak, setengah linglung, dan Rosamond duduk diam. Akhirnya Will, seolah berpikir ulang, mengambil topinya, namun berdiri beberapa saat ragu-ragu. Ia telah berbicara padanya dengan cara yang membuat ungkapan kesopanan biasa sulit diucapkan; namun, sekarang setelah ia sampai pada titik untuk pergi darinya tanpa bicara lebih lanjut, ia merasa itu adalah tindakan brutal; ia merasa terhambat dan tumpul dalam amarahnya. Ia berjalan menuju perapian dan menyandarkan lengannya di atasnya, dan menunggu dalam diam untuk—ia hampir tidak tahu apa. Api dendam masih memb燃烧 di dalam dirinya, dan ia tidak dapat mengucapkan sepatah kata pun untuk menarik kembali ucapannya; namun demikian, dalam benaknya terlintas bahwa setelah kembali ke perapian ini tempat ia menikmati persahabatan yang hangat, ia telah menemukan malapetaka bersemayam di sana—ia tiba-tiba telah mengungkapkan kepadanya masalah yang berada di luar rumah maupun di dalamnya. Dan apa yang tampak seperti firasat buruk menekan dirinya seperti capit yang perlahan:—bahwa hidupnya mungkin akan diperbudak oleh wanita tak berdaya ini yang telah menyerahkan dirinya kepadanya dalam kesedihan hatinya yang mendalam. Tetapi dia memberontak dengan muram terhadap kenyataan yang diisyaratkan oleh kekhawatirannya yang cepat, dan ketika matanya tertuju pada wajah Rosamond yang hancur, tampaknya baginya bahwa dialah yang lebih patut dikasihani di antara keduanya; karena rasa sakit harus memasuki kehidupan kenangan yang mulia sebelum dapat berubah menjadi belas kasihan. Dan begitulah mereka tetap berdiri selama beberapa menit, saling berhadapan, berjauhan, dalam keheningan; wajah Will masih dipenuhi amarah yang tak bersuara, dan wajah Rosamond dipenuhi kesedihan yang tak bersuara. Gadis malang itu tak berdaya untuk meluapkan emosi apa pun sebagai balasan; runtuhnya ilusi yang mengerikan yang menjadi tumpuan semua harapannya adalah pukulan yang telah mengguncangnya dengan sangat hebat: dunia kecilnya hancur, dan dia merasa dirinya terhuyung-huyung di tengahnya sebagai kesadaran yang kesepian dan bingung. Will berharap dia akan berbicara dan memberikan sedikit pelipur lara atas ucapannya yang kasar, yang seolah menatap mereka berdua dengan mengejek setiap upaya untuk menghidupkan kembali persahabatan. Tetapi dia tidak mengatakan apa pun, dan akhirnya dengan usaha putus asa untuk mengendalikan dirinya, dia bertanya, "Apakah aku boleh masuk dan menemui Lydgate malam ini?" “Kalau kau mau,” jawab Rosamond, hampir tak terdengar. Lalu Will keluar rumah, Martha sama sekali tidak tahu bahwa dia telah berada di dalam. Setelah ia pergi, Rosamond mencoba bangkit dari tempat duduknya, tetapi jatuh pingsan. Ketika ia sadar kembali, ia merasa terlalu sakit untuk berusaha bangkit dan membunyikan bel, dan ia tetap tak berdaya sampai gadis itu, yang terkejut karena ketidakhadirannya yang lama, untuk pertama kalinya berpikir untuk mencarinya di semua kamar di lantai bawah. Rosamond mengatakan bahwa ia tiba-tiba merasa sakit dan pingsan, dan ingin dibantu naik ke atas. Sesampainya di atas, ia langsung merebahkan diri di tempat tidur dengan pakaiannya masih terpasang, dan berbaring dalam keadaan lesu, seperti yang pernah ia lakukan sebelumnya pada hari duka yang tak terlupakan. Lydgate pulang lebih awal dari yang diperkirakan, sekitar pukul setengah enam, dan mendapati Rosamond di sana. Kesadaran bahwa Rosamond sakit membuat semua pikiran lain terabaikan. Ketika ia memeriksa denyut nadinya, mata Rosamond menatapnya dengan lebih lama dari sebelumnya, seolah-olah ia merasa puas karena Lydgate ada di sana. Lydgate langsung menyadari perbedaan itu, dan duduk di sampingnya, meletakkan lengannya dengan lembut di bawah tubuh Rosamond, dan membungkuk sambil berkata, “Rosamondku yang malang! Apakah ada sesuatu yang membuatmu gelisah?” Rosamond berpegangan padanya dan menangis histeris, dan selama satu jam berikutnya Lydgate hanya menenangkan dan merawatnya. Ia membayangkan bahwa Dorothea telah mengunjunginya, dan bahwa semua pengaruh pada sistem sarafnya, yang jelas melibatkan perubahan sikap terhadap dirinya sendiri, disebabkan oleh kegembiraan dari kesan-kesan baru yang ditimbulkan oleh kunjungan itu.</p>
 

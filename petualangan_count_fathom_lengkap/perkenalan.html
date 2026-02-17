@@ -5,39 +5,176 @@
 <title>PERKENALAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="PERKENALAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>PERKENALAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Petualangan Ferdinand Count Fathom, novel ketiga Smollett, diterbitkan pada tahun 1753. Lady Mary Wortley Montagu, dalam suratnya kepada putrinya, Countess of Bute, lebih dari setahun kemudian [1 Januari 1755], berkomentar bahwa “teman saya Smollett… tentu memiliki bakat untuk berimprovisasi, meskipun saya pikir bakatnya sedikit menurun dalam karya terakhirnya.” Lady Mary benar sekaligus salah. Kekuatan inventif yang biasa kita anggap sebagai milik Smollett adalah kemampuannya untuk mengolah pengalamannya sendiri menjadi fiksi realistis. Ferdinand Count Fathom menunjukkan hal ini secara relatif sedikit. Novel ini juga menunjukkan sedikit kepribadian Smollett yang bersemangat, yang dalam karya-karya sebelumnya hadir untuk memberikan kehidupan dan daya tarik pada hampir setiap bab, baik itu menggambarkan perkelahian di jalan, situasi yang menggelikan, karakter yang unik, atau dengan prasangka buruk untuk menggantung musuh. Individualitas ini—semangat khas penulis yang lebih dapat dirasakan daripada dijelaskan—hadir dalam dedikasi Fathom kepada Dokter ———, yang tak lain adalah Smollett sendiri, dan merupakan pengungkapan jujur tentang karakternya, yang terkandung dalam dedikasi ini. Hal itu juga hadir dalam bab-bab pembuka, yang juga menunjukkan, dalam gambaran ibu Fathom, sesuatu dari "bakat inovatif" penulis yang khas. Namun, selanjutnya, tidak dapat disangkal bahwa daya cipta Smollett dan semangat Smollett sama-sama menurun. Namun, dalam beberapa hal, Fathom menunjukkan lebih banyak daya cipta daripada novel-novel penulis lainnya; novel ini jauh lebih sedikit didasarkan pada pengalaman pribadi daripada novel lainnya. Sayangnya, daya cipta yang menyeluruh seperti itu tidak cocok dengan kejeniusan Smollett. Akibatnya, meskipun tidak menarik sebagai novel tentang tata krama kontemporer, Fathom memiliki daya tarik tersendiri karena mengungkapkan sisi baru dari penulisnya. Secara umum, kita menganggap Smollett sebagai seorang pendongeng yang bertele-tele, seorang pria rasional dan tidak romantis yang berpengalaman, yang mengisi halaman-halamannya dengan kenalan dan pengalamannya sendiri yang bermetamorfosis secara aneh. Sebaliknya, Smollett dalam Count Fathom lebih merupakan pelopor aliran romantisme, yang telah menciptakan kisah petualangan yang cukup organik dari otaknya sendiri. Meskipun karya ini jauh kurang mudah dibaca daripada karya-karya penulis sebelumnya, tetap saja yang menakjubkan adalah bahwa ketika seorang pria begitu jauh "menyimpang dari jalurnya," ia masih tahu betul bagaimana menghadapi kondisi aneh yang dihadapinya. Bagi seseorang yang gagasan tentang kejeniusan Smollett sepenuhnya dibentuk oleh Random and Pickle dan Humphry Clinker, Ferdinand Count Fathom akan menawarkan banyak kejutan. Pertama, buku ini terasa kurang hidup. Memang, di sini lagi-lagi terdapat banyak aksi dan kejadian, tetapi umumnya tanpa diiringi oleh hiruk-pikuk khas Georgia yang kasar, yang umum dalam karya Smollett, yang begitu menarik untuk direnungkan dari jarak yang nyaman, dan yang sangat membantu membuat fiksi karyanya tampak nyata. Sebagian besar karakternya pun tidak cukup hidup untuk menjadi menarik. Tentu saja ada pengecualian yang jelas, yaitu ibu sang tokoh utama, yang telah disebutkan sebelumnya, seorang pengikut kamp yang tangguh, yang kita harapkan akan menjadi lebih hidup seperti karakter-karakter liar Smollett. Tetapi, sayangnya! kita tidak memiliki kesempatan untuk mempelajari gaya percakapan wanita itu, karena beberapa kata yang keluar dari bibirnya hanya sebagian yang menggambarkan karakternya; kita hanya memiliki sedikit kesempatan untuk mempelajari tata krama dan kebiasaannya. Dalam bab keempat, sementara ia memastikan dengan belatinya bahwa semua orang di medan perang yang ingin ia rampok benar-benar mati, seorang perwira hussar, yang telah mengamati kemajuan menguntungkannya, tanpa perasaan menembakkan dua peluru ke otak wanita itu, tepat saat ia mengangkat tangannya untuk memukul jantungnya. Mungkin lebih baik ia disingkirkan sebelum kekecewaan kita atas tidak terpenuhinya janjinya menjadi menyakitkan. Sejauh yang dapat kita nilai dari tokoh-tokoh lain dalam karya Count Fathom, bahkan Amazon yang menarik ini cepat atau lambat akan berubah menjadi patung kayu, dengan label yang memberikan informasi yang diperlukan tentang karakternya. Tentu saja demikian halnya dengan putranya, Fathom, tokoh utama dalam buku tersebut. Karena ia digambarkan sebagai "Penjahat licik dengan kekejaman yang mengerikan," kita cenderung menerimanya apa adanya sesuai dengan maksud penciptanya; tetapi jarang sekali dalam perkataan atau perbuatan ia menjadi penjahat yang meyakinkan dan nyata. Teman dan lawannya, Pangeran de Melvil yang mulia dan muda, tidak lebih hidup darinya; dan sama kakunya adalah Joshua, orang Yahudi yang berjiwa luhur dan seperti orang suci, dan Don Diego yang membosankan dan bodoh itu. Tokoh utama wanita, Monimia yang tak tertandingi, juga tidak hidup, tetapi dalam kasusnya, kurangnya vitalitas bukanlah hal yang mengejutkan; kehadirannya akan membuat kita takjub. Jika ia adalah seorang wanita yang penuh vitalitas, ia akan berbeda dari tokoh utama wanita Smollett lainnya. "Wanita kedua" dalam melodrama ini, Mademoiselle de Melvil, meskipun sama sekali tidak hidup, namun lebih nyata daripada saudara iparnya. Fakta bahwa sebagian besar tokoh dalam Count Fathom adalah figur-figur tak bernyawa bukanlah satu-satunya kejutan yang diberikan kepada kita. Yang mengejutkan adalah sedikitnya tokoh yang begitu aneh; dan yang mengejutkan adalah, dalam beberapa kasus, mereka digambarkan jauh lebih jelas daripada tokoh-tokoh dalam Roderick Random atau Peregrine Pickle. Dalam karya kedua, kita melihat Smollett mulai memahami penggunaan insiden untuk menunjukkan perkembangan karakter yang konsisten. Dalam Count Fathom, ia tampaknya sepenuhnya memahami prinsip seni ini, meskipun ia belum berhasil menerapkannya. Oleh karena itu, terlepas dari konsep yang sangat baik, Fathom, seperti yang telah saya katakan, tidak nyata. Setelah semua kejahatannya, yang dilakukannya tanpa rasa bersalah yang nyata, sungguh tidak masuk akal bahwa ia akan dengan jujur menyesali kejahatannya. Kita cenderung ragu ketika membaca bahwa "keburukan dan ambisinya kini telah benar-benar mati rasa di dalam dirinya," meskipun kesaksian Matthew Bramble, Esq., dalam Humphry Clinker selanjutnya menyatakan sebaliknya. Namun, hingga saat ini, Fathom digambarkan secara konsisten, dan digambarkan untuk suatu tujuan:—untuk menunjukkan bahwa kelicikan berdarah dingin, meskipun berhasil untuk sementara waktu, akan berakhir dengan malapetaka. Untuk meningkatkan efek dari tokoh jahatnya, Smollett mengembangkan tokoh paralel dengannya, yaitu Count de Melvil yang berbudi luhur. Skema penulis yang menggunakan satu karakter sebagai pembanding karakter lain, meskipun tidak menonjol karena orisinalitasnya, menunjukkan kemajuan yang nyata dalam teori teknik konstruksi. Hanya saja, seperti yang telah saya katakan, eksekusi Smollett sekarang cacat. “Tetapi,” orang akan bertanya secara alami, “jika Fathom kurang memiliki keseruan, dan seringkali menggembirakan, dari novel-novel Smollett sebelumnya; jika karakter-karakternya, meskipun dirancang dengan baik, jarang fantastis dan tidak pernah benar-benar hidup; apa yang membuat buku ini menarik?” Kejutan akan lebih besar dari sebelumnya ketika jawabannya diberikan bahwa, sebagian besar, plotlah yang membuat Fathom menarik. Ya, Smollett, yang selama ini acuh tak acuh terhadap struktur, di sini telah menulis sebuah cerita di mana plot itu sendiri, meskipun seringkali canggung, menarik perhatian pembaca. Kita benar-benar ingin tahu apakah Pangeran muda itu akan menerima penghiburan atas kesedihannya dan memberikan keadilan kepada pensiunannya yang tidak tahu berterima kasih. Dan ketika, akhirnya, semuanya berjalan sebagaimana mestinya, kita akan takjub menemukan betapa banyak orang dalam buku ini telah membantu menuju kesimpulan yang direncanakan. Tidak semuanya, bahkan tidak semua petualangan, mutlak diperlukan, tetapi pada akhirnya terbukti bahwa banyak hal yang pada saat itu dianggap tidak relevan oleh sebagian besar pembaca—seperti sejarah Don Diego—pada akhirnya sangat penting. Telah disebutkan sebelumnya bahwa dalam Count Fathom, Smollett tampak sampai batas tertentu sebagai seorang romantisis, dan ini adalah fakta lain yang menambah daya tarik buku ini. Bahwa ia memiliki imajinasi yang kuat bukanlah suatu kejutan. Siapa pun yang memahami karya Smollett telah melihatnya dalam situasi-situasi luar biasa yang telah ia sajikan dalam karya-karyanya sebelumnya. Namun, hal ini tidak menunjukkan bahwa Smollett memiliki imajinasi yang dapat membangkitkan minat romantis; karena dalam Roderick Random dan Peregrine Pickle, situasi-situasi yang menakjubkan terutama berfungsi untuk menghibur. Namun, dalam Fathom, ada beberapa yang dirancang untuk membangkitkan kengerian; dan setidaknya satu di antaranya sangat berhasil. Malam sang pahlawan di hutan antara Bar-le-duc dan Chalons tidak diragukan lagi lebih mengerikan bagi leluhur kita di abad ke-18 daripada bagi kita, yang telah mengenal puluhan situasi serupa dalam sejumlah kecil roman yang menarik yang termasuk dalam sastra, dan dalam jumlah yang lebih besar yang tidak termasuk. Namun, bahkan hingga hari ini, seorang pembaca, yang selera bacaannya telah jenuh dengan novel-novel murahan, akan menyadari kekuatan Smollett, dan juga beberapa sensasi menegangkan, saat ia membaca tentang pengalaman Fathom di loteng tempat wanita tua itu menguncinya untuk bermalam. Situasi ini lebih bersifat melodramatis daripada romantis, sebagaimana kata tersebut digunakan secara teknis dalam penerapannya pada sastra abad ke-18 dan ke-19. Namun, tidak sedikit pun dalam Fathom yang benar-benar romantis dalam arti yang terakhir. Misalnya, pemenjaraan Countess di menara kastil, dari mana ia melambaikan saputangannya kepada Count muda, putranya dan calon penyelamatnya. Dan terutama adegan di gereja, ketika Renaldo (nama itu sendiri romantis) mengunjungi makam yang diduga milik kekasihnya pada tengah malam. Sembari menunggu penjaga gereja membukakan pintu, "jiwanya... dipenuhi kesedihan yang mendalam. Kegelapan yang luar biasa,... keheningan yang khidmat, dan lokasi tempat yang sepi, bersekutu dengan kedatangannya, dan gambaran suram dalam imajinasinya, untuk menghasilkan kegembiraan yang nyata dari harapan yang suram, yang bahkan seluruh dunia pun tidak akan mampu mengecewakannya. Jam berdentang dua belas, burung hantu berteriak dari benteng yang hancur, pintu dibuka oleh penjaga gereja, yang, dengan cahaya lilin yang berkelap-kelip, mengantar kekasih yang putus asa itu ke lorong yang suram, dan menghentakkan kakinya ke tanah sambil berkata, 'Di sinilah wanita muda itu dimakamkan.'" Di sini kita menemukan begitu banyak unsur romantisme yang lazim dalam aliran penyair "kuburan"—aliran yang oleh Profesor WL Phelps disebut Young, dalam Night Thoughts-nya, sebagai "contoh paling menonjol"—sehingga pada awalnya kita cenderung berpikir Smollett sedang mengolok-oloknya. Namun, konteksnya tampaknya membuktikan bahwa ia benar-benar serius. Maka, menarik sekaligus mengejutkan untuk menemukan jejak semangat romantisme dalam fiksi-nya lebih dari sepuluh tahun sebelum Castle of Otranto karya Walpole. Menarik juga untuk menemukan begitu banyak perasaan melodramatis dalam dirinya, karena hal itu memperkuat hubungan antara dirinya dan muridnya di abad ke-19, Dickens. Dari semua yang telah saya katakan, jangan sampai dikira bahwa ciri khas Smollett selalu, atau hampir selalu, absen dari Count Fathom. Saya telah berbicara tentang dedikasi dan bab-bab pembuka sebagai apa yang dapat kita harapkan dari tulisannya. Selain itu, ada sentuhan khas Smollett dalam adegan-adegan di penjara tempat Melvil menyelamatkan Fathom, dan ada banyak humor satir khas Smollett dalam penggambaran pasang surut kehidupan Fathom, pertama sebagai kekasih yang dimanjakan, dan kemudian sebagai dokter yang modis. Dalam mencatat karier cemerlang Dr. Fathom, Smollett telah mengamati kekhasan bangsanya yang sering diungkit Thackeray di abad berikutnya—"pepatah yang berlaku universal di kalangan orang Inggris... untuk mengabaikan,... sekembalinya mereka ke ibu kota, semua koneksi yang mungkin mereka peroleh selama tinggal di salah satu pusat kesehatan. Dan disposisi sosial ini dijaga dengan sangat cermat, sehingga dua orang yang hidup dalam korespondensi paling intim di Bath atau Tunbridge, dalam dua puluh empat jam... akan bertemu di St. James's Park, tanpa menunjukkan sedikit pun tanda pengenalan." Dan bagus juga cara Dr. Fathom, ketika kariernya merosot dengan cepat, memberikan alasan atas kemerosotan kejayaannya. Keretanya terbalik "dengan suara benturan yang mengerikan" dalam bahaya yang begitu besar bagi dirinya sendiri, "sehingga ia tidak percaya akan pernah lagi mempertaruhkan dirinya dalam kendaraan beroda apa pun." Ia mengganti para pelayannya dengan para pelayan wanita, karena “pelayan pria umumnya kurang ajar, malas, bejat, atau tidak jujur.” Untuk menghindari kebisingan jalanan, ia memindahkan tempat tinggalnya ke halaman yang tenang dan terpencil. Dan seterusnya, sesuai dengan gaya Smollett yang sebenarnya. Namun, bagaimanapun juga, percikan api lama seperti itu hanya muncul sesekali. Terlepas dari alurnya, yang mungkin bisa diperbaiki oleh beberapa penulis cerita detektif abad ke-19, Petualangan Ferdinand Count Fathom kurang menarik dengan sendirinya dibandingkan karya fiksi lain dari pena Smollett. Namun, bagi seorang penศึกษา karya Smollett, karya ini sangat menarik karena menunjukkan kecenderungan romantis dan melodramatis penulis, serta perkembangan teknik konstruktifnya. GH MAYNADIER</p>
 

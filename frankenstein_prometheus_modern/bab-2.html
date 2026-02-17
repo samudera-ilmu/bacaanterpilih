@@ -5,39 +5,176 @@
 <title>BAB 2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB 2 - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB 2</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kami dibesarkan bersama; perbedaan usia kami hampir satu tahun. Tak perlu dikatakan bahwa kami asing dengan segala bentuk perpecahan atau perselisihan. Harmoni adalah inti dari persahabatan kami, dan keragaman serta kontras yang ada dalam karakter kami semakin mendekatkan kami. Elizabeth memiliki watak yang lebih tenang dan terfokus; tetapi, dengan segala semangatku, aku mampu menerapkan ilmu yang lebih intens dan lebih tergila-gila dengan rasa haus akan pengetahuan. Ia menyibukkan diri dengan mengikuti karya-karya puitis para penyair; dan dalam pemandangan megah dan menakjubkan yang mengelilingi rumah kami di Swiss—bentuk-bentuk pegunungan yang agung, perubahan musim, badai dan ketenangan, keheningan musim dingin, serta kehidupan dan gejolak musim panas Alpen—ia menemukan banyak ruang untuk kekaguman dan kegembiraan. Sementara temanku merenungkan dengan serius dan puas akan penampakan hal-hal yang luar biasa, aku senang menyelidiki penyeBABnya. Dunia bagiku adalah rahasia yang ingin kuungkap. Rasa ingin tahu, penelitian sungguh-sungguh untuk mempelajari hukum alam yang tersembunyi, kegembiraan yang mirip dengan ekstase, saat semua itu terungkap kepada saya, adalah beberapa sensasi paling awal yang dapat saya ingat. Setelah kelahiran putra kedua, tujuh tahun lebih muda dariku, orang tuaku sepenuhnya meninggalkan kehidupan berkelana mereka dan menetap di negara asal mereka. Kami memiliki sebuah rumah di Jenewa, dan sebuah pedesaan di Belrive, pantai timur danau, yang berjarak lebih dari satu liga dari kota. Kami terutama tinggal di pedesaan, dan kehidupan orang tuaku dihabiskan dalam pengasingan yang cukup besar. Sifatku adalah menghindari keramaian dan lebih memilih untuk dekat dengan beberapa orang saja. Oleh karena itu, aku acuh tak acuh terhadap teman-teman sekolahku secara umum; tetapi aku menjalin ikatan persahabatan yang paling erat dengan salah satu di antara mereka. Henry Clerval adalah putra seorang pedagang dari Jenewa. Dia adalah seorang anak laki-laki yang berbakat dan imajinatif. Dia menyukai petualangan, kesulitan, dan bahkan bahaya demi bahaya itu sendiri. Dia banyak membaca buku-buku tentang kesatriaan dan roman. Dia menggubah lagu-lagu kepahlawanan dan mulai menulis banyak kisah tentang keajaiban dan petualangan kesatria. Dia mencoba membuat kami berakting dalam drama dan ikut serta dalam pesta topeng, di mana karakter-karakternya diambil dari para pahlawan Roncesvalles, Meja Bundar Raja Arthur, dan rombongan ksatria yang menumpahkan darah mereka untuk menyelamatkan makam suci dari tangan orang-orang kafir. Tidak ada manusia yang bisa melewati masa kecil yang lebih bahagia daripada saya. Orang tua saya dipenuhi oleh semangat kebaikan dan kemurahan hati. Kami merasa bahwa mereka bukanlah tiran yang mengatur nasib kami sesuka hati, tetapi agen dan pencipta dari semua kebahagiaan yang kami nikmati. Ketika saya bergaul dengan keluarga lain, saya dengan jelas menyadari betapa beruntungnya nasib saya, dan rasa syukur membantu mengembangkan kasih sayang kepada orang tua. Temperamenku terkadang keras, dan hasratku bergejolak; tetapi menurut hukum tertentu dalam temperamenku, hasrat itu tidak diarahkan pada hal-hal kekanak-kanakan, melainkan pada keinginan yang kuat untuk belajar, dan bukan untuk mempelajari segala sesuatu secara sembarangan. Aku akui bahwa struktur bahasa, kode pemerintahan, atau politik berbagai negara tidak menarik bagiku. Rahasia langit dan bumi-lah yang ingin kupelajari; dan apakah itu substansi lahiriah benda-benda atau roh batiniah alam dan jiwa misterius manusia yang menyibukkanku, tetap saja penyelidikanku diarahkan pada hal-hal metafisik, atau dalam arti tertingginya, rahasia fisik dunia. Sementara itu, Clerval menyibukkan dirinya, bisa dibilang, dengan hubungan moral dari berbagai hal. Tahap kehidupan yang sibuk, kebajikan para pahlawan, dan tindakan manusia adalah temanya; dan harapan serta mimpinya adalah menjadi salah satu di antara mereka yang namanya tercatat dalam sejarah sebagai para dermawan yang gagah berani dan penuh petualangan bagi umat manusia. Jiwa suci Elizabeth bersinar seperti lampu suci di rumah kami yang damai. Simpatinya adalah simpati kami; senyumnya, suaranya yang lembut, tatapan manis dari matanya yang surgawi, selalu ada untuk memberkati dan menghidupkan kami. Dia adalah roh cinta yang hidup untuk melembutkan dan menarik; aku mungkin menjadi murung dalam belajarku, kasar karena semangat sifatku, tetapi dia ada di sana untuk menundukkanku menjadi sedikit seperti kelembutannya sendiri. Dan Clerval—mungkinkah ada hal buruk yang mencekam jiwa mulia Clerval? Namun, ia mungkin tidak akan menjadi sosok yang begitu manusiawi, begitu bijaksana dalam kemurahan hatinya, begitu penuh kebaikan dan kelembutan di tengah hasratnya untuk melakukan petualangan yang menantang, seandainya wanita itu tidak mengungkapkan kepadanya keindahan sejati dari kemurahan hati dan menjadikan berbuat baik sebagai tujuan dan sasaran dari ambisinya yang tinggi. Saya merasakan kenikmatan luar biasa saat mengenang masa kecil, sebelum kemalangan menodai pikiran saya dan mengubah visi cerah tentang kebermanfaatan yang luas menjadi refleksi suram dan sempit tentang diri sendiri. Selain itu, dalam melukiskan gambaran masa kecil saya, saya juga mencatat peristiwa-peristiwa yang secara perlahan mengarah pada kisah penderitaan saya selanjutnya, karena ketika saya mencoba menjelaskan kepada diri sendiri asal mula hasrat yang kemudian menguasai takdir saya, saya mendapati hasrat itu muncul, seperti sungai pegunungan, dari sumber yang hina dan hampir terlupakan; tetapi, semakin membesar seiring berjalannya waktu, hasrat itu menjadi arus deras yang, dalam perjalanannya, telah menyapu semua harapan dan kegembiraan saya. Filsafat alam adalah kejeniusan yang telah mengatur takdirku; oleh karena itu, dalam narasi ini, aku ingin menyatakan fakta-fakta yang menyeBABkan kecintaanku pada ilmu itu. Ketika aku berusia tiga belas tahun, kami semua pergi berpesta ke pemandian air panas dekat Thonon; cuaca buruk memaksa kami untuk tinggal sehari di penginapan. Di penginapan itu, aku kebetulan menemukan sebuah buku karya Cornelius Agrippa. Aku membukanya dengan acuh tak acuh; teori yang ia coba buktikan dan fakta-fakta menakjubkan yang ia ceritakan segera mengubah perasaan ini menjadi antusiasme. Sebuah cahaya baru seolah menyinari pikiranku, dan dengan gembira, aku menyampaikan penemuanku kepada ayahku. Ayahku memandang halaman judul bukuku dengan acuh tak acuh dan berkata, “Ah! Cornelius Agrippa! Victor sayangku, jangan buang waktumu untuk ini; ini sampah yang menyedihkan.” Seandainya, alih-alih ucapan itu, ayahku bersusah payah menjelaskan kepadaku bahwa prinsip-prinsip Agrippa telah sepenuhnya terbantahkan dan bahwa sistem ilmu pengetahuan modern telah diperkenalkan yang memiliki kekuatan jauh lebih besar daripada sistem kuno, karena kekuatan sistem kuno itu khayalan, sedangkan kekuatan sistem kuno itu nyata dan praktis, dalam keadaan seperti itu aku pasti akan mengesampingkan Agrippa dan memuaskan imajinasiku, yang begitu bersemangat, dengan kembali mempelajari ilmuku sebelumnya dengan lebih giat. Bahkan mungkin saja rangkaian ideku tidak akan pernah menerima dorongan fatal yang menyeBABkan kehancuranku. Tetapi pandangan sekilas ayahku terhadap buku yang kubaca sama sekali tidak meyakinkanku bahwa ia mengetahui isinya, dan aku terus membaca dengan sangat lahap. Ketika saya kembali ke rumah, hal pertama yang saya perhatikan adalah mendapatkan seluruh karya penulis ini, dan kemudian karya Paracelsus dan Albertus Magnus. Saya membaca dan mempelajari imajinasi liar para penulis ini dengan senang hati; bagi saya, karya-karya mereka tampak seperti harta karun yang hanya diketahui oleh sedikit orang selain saya. Saya menggambarkan diri saya sebagai seseorang yang selalu dipenuhi dengan kerinduan yang mendalam untuk menembus rahasia alam. Terlepas dari kerja keras dan penemuan-penemuan menakjubkan para filsuf modern, saya selalu pulang dari studi saya dengan perasaan tidak puas dan kecewa. Sir Isaac Newton konon pernah mengaku bahwa ia merasa seperti seorang anak kecil yang memungut kerang di tepi samudra kebenaran yang luas dan belum terjelajahi. Para penerusnya di setiap cabang filsafat alam yang saya kenal, bahkan menurut pemahaman saya sebagai seorang anak kecil, tampak seperti pemula yang terlibat dalam pengejaran yang sama. Petani yang tidak berpendidikan mengamati unsur-unsur di sekitarnya dan mengetahui kegunaan praktisnya. Filsuf yang paling terpelajar pun hanya tahu sedikit lebih banyak. Ia telah sebagian menyingkap wajah Alam, tetapi garis-garis abadi Alam masih merupakan keajaiban dan misteri. Ia mungkin membedah, menganalisis, dan memberi nama; tetapi, apalagi penyeBAB akhir, penyeBAB pada tingkatan sekunder dan tersier sama sekali tidak dikenalinya. Aku telah menatap benteng dan rintangan yang tampaknya menghalangi manusia memasuki benteng alam, dan dengan gegabah serta bodohnya aku menyesalinya. Namun di sini ada buku-buku, dan di sini ada orang-orang yang telah menembus lebih dalam dan mengetahui lebih banyak. Saya mempercayai semua yang mereka nyatakan, dan saya menjadi murid mereka. Mungkin tampak aneh bahwa hal seperti itu muncul di abad kedelapan belas; tetapi sementara saya mengikuti rutinitas pendidikan di sekolah-sekolah Jenewa, saya, sebagian besar, belajar sendiri dalam hal studi favorit saya. Ayah saya bukan seorang ilmuwan, dan saya dibiarkan berjuang dengan kebutaan seorang anak, ditambah dengan dahaga seorang siswa akan pengetahuan. Di bawah bimbingan guru-guru baru saya, saya dengan sangat tekun memasuki pencarian batu filsuf dan ramuan kehidupan; tetapi yang terakhir segera mendapatkan perhatian penuh saya. Kekayaan adalah tujuan yang lebih rendah, tetapi betapa mulianya penemuan itu jika saya dapat menghilangkan penyakit dari tubuh manusia dan membuat manusia kebal terhadap kematian apa pun kecuali kematian yang kejam! Bukan hanya itu saja visi saya. Memanggil hantu atau setan adalah janji yang diberikan dengan murah hati oleh penulis favorit saya, yang pemenuhannya sangat saya nantikan; dan jika mantra saya selalu gagal, saya lebih mengaitkan kegagalan itu dengan ketidakberpengalaman dan kesalahan saya sendiri daripada kurangnya keterampilan atau kesetiaan para pengajar saya. Dan demikianlah untuk sementara waktu saya disibukkan oleh sistem-sistem yang terpecah-pecah, mencampuradukkan, seperti orang yang tidak berpengalaman, seribu teori yang saling bertentangan dan berjuang mati-matian di rawa pengetahuan yang beraneka ragam, dipandu oleh imajinasi yang bersemangat dan penalaran kekanak-kanakan, sampai suatu kecelakaan kembali mengubah arah ide-ide saya. Ketika saya berusia sekitar lima belas tahun, kami pergi ke rumah kami di dekat Belrive, dan kami menyaksikan badai petir yang sangat dahsyat dan mengerikan. Badai itu datang dari balik pegunungan Jura, dan guntur bergemuruh dengan suara yang menakutkan dari berbagai penjuru langit. Saya tetap tinggal, selama badai berlangsung, mengamati perkembangannya dengan rasa ingin tahu dan gembira. Saat saya berdiri di pintu, tiba-tiba saya melihat aliran api keluar dari pohon ek tua dan indah yang berdiri sekitar dua puluh yard dari rumah kami; dan segera setelah cahaya yang menyilaukan itu menghilang, pohon ek itu pun lenyap, dan yang tersisa hanyalah tunggul yang hangus. Ketika kami mengunjunginya keesokan paginya, kami menemukan pohon itu hancur dengan cara yang aneh. Pohon itu tidak pecah berkeping-keping akibat benturan, tetapi benar-benar hancur menjadi potongan-potongan kayu tipis. Saya belum pernah melihat sesuatu yang hancur begitu total. Sebelumnya saya tidak sepenuhnya asing dengan hukum-hukum kelistrikan yang lebih jelas. Pada kesempatan itu, seorang peneliti hebat dalam filsafat alam hadir bersama kami, dan karena terguncang oleh bencana ini, ia mulai menjelaskan teori yang telah ia rumuskan tentang listrik dan galvanisme, yang sekaligus baru dan mengejutkan bagi saya. Semua yang dikatakannya sangat menodai Cornelius Agrippa, Albertus Magnus, dan Paracelsus, para tokoh imajinasi saya; tetapi karena suatu takdir, kejatuhan orang-orang ini membuat saya enggan melanjutkan studi saya yang biasa. Tampaknya bagi saya seolah-olah tidak ada yang akan atau dapat diketahui. Semua yang telah lama menyita perhatian saya tiba-tiba menjadi hina. Karena salah satu keanehan pikiran yang mungkin paling sering kita alami di usia muda, saya langsung meninggalkan pekerjaan saya sebelumnya, menganggap sejarah alam dan semua turunannya sebagai ciptaan yang cacat dan gagal, dan sangat meremehkan ilmu pengetahuan yang tidak akan pernah bisa melangkah ke ambang pengetahuan yang sebenarnya. Dengan suasana hati seperti itu, saya mulai mempelajari matematika dan cabang-cabang ilmu yang berkaitan dengan ilmu tersebut karena dianggap memiliki fondasi yang kokoh, dan karenanya layak untuk saya pertimbangkan. Demikianlah jiwa kita tersusun dengan aneh, dan oleh ikatan yang begitu lemah kita terikat pada kemakmuran atau kehancuran. Ketika saya menengok ke belakang, tampaknya bagi saya seolah-olah perubahan kecenderungan dan kehendak yang hampir ajaib ini adalah saran langsung dari malaikat pelindung hidup saya—upaya terakhir yang dilakukan oleh roh perlindungan untuk mencegah badai yang bahkan saat itu menggantung di bintang-bintang dan siap menelan saya. Kemenangannya diumumkan oleh ketenangan dan kegembiraan jiwa yang luar biasa yang mengikuti pelepasan studi-studi lama saya yang menyiksa. Dengan demikian saya diajari untuk mengaitkan kejahatan dengan pengejarannya, kebahagiaan dengan pengabaiannya. Itu adalah upaya yang kuat dari semangat kebaikan, tetapi tidak membuahkan hasil. Takdir terlalu kuat, dan hukumnya yang tak berubah telah menetapkan kehancuran total dan mengerikan bagiku.</p>
 

@@ -5,39 +5,176 @@
 <title>BAB XXXIX.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXXIX. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXXIX.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Jika, seperti yang telah kulakukan, kau juga melakukannya, melihat kebajikan berwujud wanita, dan berani mencintainya, dan mengatakannya juga, dan melupakan Dia laki-laki dan Dia perempuan; dan jika cinta ini, meskipun ditempatkan demikian, kau sembunyikan dari orang-orang yang tidak suci, yang tidak akan mempercayainya, atau, jika mereka mempercayainya, mencemoohnya: maka kau telah melakukan hal yang lebih berani daripada yang dilakukan semua orang terhormat, dan dari situ akan muncul keberanian yang lebih besar, yaitu, untuk tetap menyembunyikannya.” —DR. DONNE. Pikiran Sir James Chettam tidak menghasilkan banyak rencana, tetapi kecemasannya yang semakin besar untuk "bertindak terhadap Brooke," setelah diiringi keyakinannya yang teguh akan kemampuan Dorothea untuk mempengaruhi, menjadi sangat penting dan menghasilkan sebuah rencana kecil; yaitu, untuk menggunakan ketidaksehatan Celia sebagai alasan untuk membawa Dorothea sendirian ke Hall, dan meninggalkannya di Grange dengan kereta dalam perjalanan, setelah membuatnya sepenuhnya menyadari situasi mengenai pengelolaan perkebunan. Dengan cara inilah terjadi bahwa suatu hari sekitar pukul empat, ketika Tuan Brooke dan Ladislaw sedang duduk di perpustakaan, pintu terbuka dan Nyonya Casaubon diumumkan sebagai tamu. Sesaat sebelumnya, Will sedang diliputi kebosanan yang mendalam, dan, karena terpaksa membantu Tuan Brooke dalam mengatur "dokumen" tentang penggantungan pencuri domba, ia menunjukkan kekuatan pikiran kita yang mampu mengendalikan beberapa hal sekaligus dengan secara batiniah mengatur langkah-langkah untuk mendapatkan penginapan bagi dirinya sendiri di Middlemarch dan mempersingkat masa tinggalnya yang terus-menerus di Grange; sementara di antara semua gambaran yang lebih stabil itu, terlintas sebuah visi menggelitik tentang epik pencurian domba yang ditulis dengan detail ala Homer. Ketika Nyonya Casaubon diumumkan, ia tersentak seperti tersengat listrik, dan merasakan kesemutan di ujung jarinya. Siapa pun yang mengamatinya akan melihat perubahan pada warna kulitnya, pada penyesuaian otot wajahnya, pada ketajaman tatapannya, yang mungkin membuat mereka membayangkan bahwa setiap molekul dalam tubuhnya telah menyampaikan pesan sentuhan magis. Dan memang demikian. Karena sihir yang efektif adalah alam yang transenden; Dan siapa yang dapat mengukur kehalusan sentuhan-sentuhan yang menyampaikan kualitas jiwa maupun tubuh, dan membuat gairah seorang pria terhadap satu wanita berbeda dari gairahnya terhadap wanita lain, seperti kegembiraan di bawah cahaya pagi di atas lembah, sungai, dan puncak gunung yang bersalju berbeda dari kegembiraan di antara lampion-lampion Cina dan panel-panel kaca? Will pun terbuat dari bahan yang sangat mudah terpengaruh. Gesekan busur biola yang didekatkannya dengan cerdik, akan mengubah pandangan dunia baginya dalam sekejap, dan sudut pandangnya bergeser semudah suasana hatinya. Kedatangan Dorothea bagaikan kesegaran pagi. “Wah, sayangku, ini menyenangkan,” kata Tuan Brooke, menghampirinya dan menciumnya. “Kurasa kau telah meninggalkan Casaubon dengan buku-bukunya. Benar sekali. Kita tidak boleh membiarkanmu menjadi terlalu berilmu untuk seorang wanita, kau tahu.” “Tidak perlu khawatir, paman,” kata Dorothea, menoleh ke Will dan menjabat tangannya dengan riang gembira, tanpa memberikan salam lain, melainkan terus menjawab pamannya. “Aku sangat lambat. Ketika aku ingin sibuk dengan buku, aku sering kali melamun dan tenggelam dalam pikiranku. Aku merasa tidak semudah merencanakan pondok untuk menjadi terpelajar.” Dia duduk di samping pamannya, berhadapan dengan Will, dan tampaknya sedang sibuk dengan sesuatu sehingga hampir tidak memperhatikannya. Will sangat kecewa, seolah-olah dia mengira kedatangannya ada hubungannya dengan dirinya. “Ya, sayangku, memang menggambar denah adalah hobimu. Tapi bagus juga untuk sedikit menghentikannya. Hobi cenderung lepas kendali, kau tahu; tidak baik jika kita terbawa arus. Kita harus tetap terkendali. Aku tidak pernah membiarkan diriku terbawa arus; aku selalu menahan diri. Itulah yang kukatakan pada Ladislaw. Aku dan dia mirip, kau tahu: dia suka terlibat dalam segala hal. Kami sedang mengerjakan hukuman mati. Kami akan melakukan banyak hal bersama, aku dan Ladislaw.” “Ya,” kata Dorothea dengan ketegasan khasnya, “Sir James telah memberi tahu saya bahwa ia berharap akan segera melihat perubahan besar dalam pengelolaan perkebunan Anda—bahwa Anda berencana untuk menilai lahan pertanian, melakukan perbaikan, dan meningkatkan pondok-pondok, sehingga Tipton akan terlihat seperti tempat yang sama sekali berbeda. Oh, betapa bahagianya!”—ia melanjutkan, sambil menggenggam tangannya, kembali ke sikap impulsif kekanak-kanakan yang telah mereda sejak pernikahannya. “Jika saya masih di rumah, saya akan kembali berkuda, agar saya bisa pergi bersama Anda dan melihat semua itu! Dan Anda akan mempekerjakan Tuan Garth, yang memuji pondok-pondok saya, kata Sir James.” “Chettam agak terburu-buru, sayangku,” kata Tuan Brooke, sedikit memerah; “agak terburu-buru, kau tahu. Aku tidak pernah mengatakan aku akan melakukan hal seperti itu. Aku juga tidak pernah mengatakan aku tidak akan melakukannya, kau tahu.” “Ia hanya merasa yakin bahwa kau akan melakukannya,” kata Dorothea, dengan suara yang jernih dan tanpa ragu seperti seorang penyanyi muda yang melantunkan kredo, “karena kau bermaksud masuk Parlemen sebagai anggota yang peduli pada peningkatan kesejahteraan rakyat, dan salah satu hal pertama yang harus diperbaiki adalah keadaan tanah dan para buruh. Pikirkan Kit Downes, paman, yang tinggal bersama istri dan tujuh anaknya di rumah dengan satu ruang tamu dan satu kamar tidur yang hampir tidak lebih besar dari meja ini!—dan keluarga Dagley yang malang itu, di rumah pertanian mereka yang reyot, tempat mereka tinggal di dapur belakang dan membiarkan ruangan lain untuk tikus! Itulah salah satu alasan mengapa aku tidak menyukai lukisan-lukisan di sini, paman tersayang—yang menurutmu aku bodoh karenanya. Dulu aku datang dari desa dengan semua kotoran dan keburukan yang kasar itu seperti rasa sakit di dalam diriku, dan lukisan-lukisan yang dibuat-buat di ruang tamu tampak bagiku seperti upaya jahat untuk menemukan kesenangan dalam hal yang salah, sementara kita tidak peduli betapa kerasnya kebenaran bagi tetangga di luar tembok kita. Kurasa kita tidak berhak untuk Mari maju dan mendesak perubahan yang lebih luas untuk kebaikan, sampai kita mencoba mengubah kejahatan yang ada di tangan kita sendiri.” Dorothea telah mengumpulkan emosi saat ia melanjutkan pembicaraannya, dan telah melupakan segalanya kecuali kelegaan karena meluapkan perasaannya tanpa hambatan: sebuah pengalaman yang dulunya biasa baginya, tetapi hampir tidak pernah terjadi sejak pernikahannya, yang merupakan perjuangan terus-menerus antara energi dan rasa takut. Untuk saat ini, kekaguman Will disertai dengan perasaan dingin akan jarak. Seorang pria jarang merasa malu karena merasa tidak dapat mencintai seorang wanita sebaik itu ketika ia melihat kebesaran tertentu dalam dirinya: alam telah menetapkan kebesaran bagi pria. Tetapi alam terkadang membuat kesalahan yang menyedihkan dalam melaksanakan niatnya; seperti dalam kasus Tuan Brooke yang baik, yang kesadaran maskulinnya saat ini agak terbata-bata di bawah kefasihan keponakannya. Ia tidak dapat segera menemukan cara lain untuk mengekspresikan dirinya selain dengan berdiri, memasang teropongnya, dan membolak-balik kertas di depannya. Akhirnya ia berkata— “Ada benarnya apa yang kau katakan, sayangku, ada benarnya apa yang kau katakan—tapi tidak semuanya—eh, Ladislaw? Kau dan aku tidak suka jika lukisan dan patung kita dikritik. Para wanita muda agak bersemangat, kau tahu—agak berat sebelah, sayangku. Seni rupa, puisi, hal-hal semacam itu, mengangkat suatu bangsa— emollit mores —kau sekarang sedikit mengerti bahasa Latin. Tapi—eh? apa?” Pertanyaan-pertanyaan ini ditujukan kepada pelayan yang datang untuk mengatakan bahwa penjaga telah menemukan salah satu anak buah Dagley dengan seekor anak kambing di tangannya yang baru saja terbunuh. “Aku akan datang, aku akan datang. Aku akan membiarkannya lolos dengan mudah, kau tahu,” kata Tuan Brooke kepada Dorothea sambil berjalan pergi dengan riang. “Kuharap kau merasakan betapa tepatnya perubahan ini yang kuinginkan—yang diinginkan Sir James,” kata Dorothea kepada Will, segera setelah pamannya pergi. “Ya, sekarang aku sudah mendengarmu membicarakannya. Aku tidak akan melupakan apa yang telah kau katakan. Tapi bisakah kau memikirkan hal lain saat ini? Mungkin aku tidak akan punya kesempatan lain untuk berbicara denganmu tentang apa yang telah terjadi,” kata Will, bangkit dengan gerakan tidak sabar, dan memegang sandaran kursinya dengan kedua tangan. “Tolong beritahu aku apa itu,” kata Dorothea dengan cemas, sambil bangkit dan pergi ke jendela yang terbuka, tempat Monk sedang mengintip ke dalam, terengah-engah dan mengibas-ngibaskan ekornya. Ia menyandarkan punggungnya ke kusen jendela, dan meletakkan tangannya di kepala anjing itu; karena meskipun, seperti yang kita ketahui, ia tidak menyukai hewan peliharaan yang harus dipegang atau diinjak-injak, ia selalu memperhatikan perasaan anjing, dan sangat sopan jika ia harus menolak ajakan mereka. Will hanya mengikutinya dengan matanya dan berkata, “Saya kira Anda tahu bahwa Tuan Casaubon telah melarang saya pergi ke rumahnya.” “Tidak, aku tidak melakukannya,” kata Dorothea, setelah jeda sejenak. Ia jelas sangat tersentuh. “Aku sangat, sangat menyesal,” tambahnya dengan sedih. Ia memikirkan apa yang tidak diketahui Will—percakapan antara dirinya dan suaminya dalam kegelapan; dan ia kembali dilanda keputusasaan bahwa ia dapat memengaruhi tindakan Tuan Casaubon. Tetapi ungkapan kesedihannya yang begitu kentara meyakinkan Will bahwa itu bukan sepenuhnya ditujukan kepadanya secara pribadi, dan bahwa Dorothea tidak dihantui oleh gagasan bahwa ketidaksukaan dan kecemburuan Tuan Casaubon terhadapnya tertuju padanya. Ia merasakan campuran aneh antara kegembiraan dan kekesalan: kegembiraan karena ia dapat tinggal dan dihargai dalam pikirannya seperti di rumah yang murni, tanpa kecurigaan dan tanpa batasan—kesal karena ia terlalu tidak berarti baginya, tidak cukup menakutkan, diperlakukan dengan kebaikan tanpa ragu yang tidak membuatnya merasa tersanjung. Namun, rasa takutnya akan perubahan apa pun pada Dorothea lebih kuat daripada ketidakpuasannya, dan dia mulai berbicara lagi dengan nada sekadar menjelaskan. “Alasan Tuan Casaubon adalah, ketidaksenangannya karena saya menerima posisi di sini yang menurutnya tidak sesuai dengan kedudukan saya sebagai sepupunya. Saya telah mengatakan kepadanya bahwa saya tidak dapat mengalah dalam hal ini. Terlalu berat bagi saya untuk mengharapkan jalan hidup saya terhambat oleh prasangka yang menurut saya menggelikan. Kewajiban dapat diperpanjang hingga tidak lebih baik daripada cap perbudakan yang dicap pada kita ketika kita masih terlalu muda untuk memahami maknanya. Saya tidak akan menerima posisi ini jika saya tidak bermaksud menjadikannya bermanfaat dan terhormat. Saya tidak berkewajiban untuk memandang martabat keluarga dengan cara lain.” Dorothea merasa sangat sedih. Dia menganggap suaminya sepenuhnya salah, lebih dari sekadar alasan yang disebutkan Will. “Lebih baik kita tidak membicarakan masalah ini,” katanya dengan suara bergetar yang tidak biasa baginya, “karena Anda dan Tuan Casaubon berselisih. Anda bermaksud untuk tetap tinggal?” Ia memandang ke halaman rumput, dengan perenungan yang melankolis. “Ya; tapi aku hampir tidak akan pernah melihatmu lagi sekarang,” kata Will, dengan nada mengeluh seperti anak kecil. “Tidak,” kata Dorothea, menatapnya tajam, “hampir tidak pernah. Tapi aku akan mendengar kabar darimu. Aku akan tahu apa yang kau lakukan untuk pamanku.” “Aku hampir tidak akan tahu apa pun tentangmu,” kata Will. “Tidak seorang pun akan memberitahuku apa pun.” “Oh, hidupku sangat sederhana,” kata Dorothea, bibirnya melengkung membentuk senyum indah yang memancarkan kesedihannya. “Aku selalu berada di Lowick.” “Itu adalah hukuman penjara yang mengerikan,” kata Will dengan impulsif. “Tidak, jangan berpikir begitu,” kata Dorothea. “Aku tidak punya keinginan apa pun.” Dia tidak berbicara, tetapi wanita itu menanggapi perubahan ekspresi wajahnya. “Maksudku, untuk diriku sendiri. Hanya saja aku tidak ingin mendapatkan lebih dari bagianku tanpa melakukan apa pun untuk orang lain. Tapi aku punya keyakinan sendiri, dan itu menghiburku.” “Apa itu?” tanya Will, agak iri dengan kepercayaan tersebut. “Dengan menginginkan apa yang sepenuhnya baik, bahkan ketika kita tidak sepenuhnya tahu apa itu dan tidak dapat melakukan apa yang kita inginkan, kita menjadi bagian dari kekuatan ilahi melawan kejahatan—memperluas jangkauan terang dan mempersempit perjuangan melawan kegelapan.” “Itu adalah mistisisme yang indah—itu adalah—” “Tolong jangan sebut itu dengan nama apa pun,” kata Dorothea, sambil mengulurkan tangannya memohon. “Kau akan mengatakan itu Persia, atau sesuatu yang berhubungan dengan geografis lainnya. Itu adalah hidupku. Aku telah menemukannya, dan tidak bisa melepaskannya. Aku selalu mencari tahu agamaku sejak kecil. Dulu aku banyak berdoa—sekarang aku hampir tidak pernah berdoa. Aku berusaha untuk tidak memiliki keinginan hanya untuk diriku sendiri, karena itu mungkin tidak baik untuk orang lain, dan aku sudah memiliki terlalu banyak. Aku hanya memberitahumu, agar kau tahu betul bagaimana hari-hariku di Lowick.” “Semoga Tuhan memberkatimu karena telah memberitahuku!” kata Will dengan penuh semangat, dan agak heran pada dirinya sendiri. Mereka saling memandang seperti dua anak kecil yang saling menyayangi dan sedang berbicara rahasia tentang burung. “Apa agamamu ?” tanya Dorothea. “Maksudku—bukan apa yang kau ketahui tentang agama, tetapi kepercayaan yang paling membantumu?” “Aku mencintai apa yang baik dan indah saat aku melihatnya,” kata Will. “Tapi aku pemberontak: aku tidak merasa terikat, seperti kamu, untuk tunduk pada apa yang tidak kusukai.” “Tapi jika kamu menyukai apa yang baik, itu sama saja,” kata Dorothea sambil tersenyum. “Sekarang kau lebih halus,” kata Will. “Ya; Tuan Casaubon sering mengatakan bahwa saya terlalu halus. Saya tidak merasa seperti saya halus,” kata Dorothea, dengan nada bercanda. “Tapi pamanku lama sekali! Aku harus pergi mencarinya. Aku benar-benar harus pergi ke Aula. Celia sedang menungguku.” Will menawarkan diri untuk memberitahu Tuan Brooke, yang kemudian datang dan berkata bahwa dia akan naik kereta dan pergi bersama Dorothea sampai ke rumah Dagley, untuk membicarakan tentang anak nakal kecil yang tertangkap basah bersama anak kelinci. Dorothea kembali membahas masalah perkebunan saat mereka berkendara, tetapi Tuan Brooke, yang tidak terkejut, mengambil alih pembicaraan. “Chettam, nah,” jawabnya; “dia selalu mengkritikku, sayangku; tapi aku tidak akan bisa memelihara buruanku jika bukan karena Chettam, dan dia tidak bisa mengatakan bahwa pengeluaran itu demi para penyewa, kau tahu. Itu sedikit bertentangan dengan perasaanku:—perburuan liar, nah, jika kau ingin menyelidikinya—aku sering berpikir untuk membahas topik ini. Belum lama ini, Flavell, pendeta Metodis, diadili karena menembak kelinci yang melintas di jalannya ketika dia dan istrinya sedang berjalan-jalan bersama. Dia cukup cepat, dan menembaknya tepat di leher.” “Menurutku itu sangat brutal,” kata Dorothea. “Nah, jujur saja, menurutku itu agak keterlaluan, apalagi jika itu seorang pendeta Metodis. Dan Johnson berkata, 'Anda bisa menilai sendiri betapa munafiknya dia .'" Dan sungguh, saya pikir Flavell sama sekali tidak mirip dengan 'pria dengan gaya tertinggi'—seperti yang disebut orang Kristen—Young, penyair Young, saya rasa—Anda tahu Young? Nah, Flavell dengan sepatu bot hitamnya yang lusuh, memohon bahwa dia pikir Tuhan telah mengirimkan makan malam yang enak untuk dia dan istrinya, dan dia berhak untuk menyantapnya, meskipun bukan pemburu ulung di hadapan Tuhan, seperti Nimrod—saya jamin itu agak lucu: Fielding pasti akan menganggapnya lucu—atau Scott, sekarang—Scott mungkin akan membesar-besarkannya. Tapi sungguh, ketika saya memikirkannya, saya tidak bisa tidak menyukai bahwa orang itu memiliki sedikit kelinci untuk berdoa sebelum makan. Ini semua masalah prasangka—prasangka yang didukung hukum, Anda tahu—tentang tongkat dan sepatu bot, dan sebagainya. Namun, tidak ada gunanya berargumentasi tentang hal-hal; dan hukum adalah hukum. Tapi saya berhasil membuat Johnson diam, dan saya membungkam masalah itu. Saya ragu apakah Chettam tidak akan lebih keras, Namun, dia bersikap kasar padaku seolah-olah aku adalah orang paling tangguh di daerah ini. Tapi, inilah kita di Dagley's.” Tuan Brooke turun di gerbang halaman pertanian, dan Dorothea melanjutkan perjalanan. Sungguh menakjubkan betapa lebih buruknya keadaan akan terlihat ketika kita hanya curiga bahwa kita disalahkan atas hal itu. Bahkan penampilan kita sendiri di cermin cenderung berubah setelah kita mendengar beberapa komentar jujur tentang sisi-sisi yang kurang terpuji; dan di sisi lain, sungguh menakjubkan betapa menyenangkannya hati nurani menerima kesalahan kita terhadap mereka yang tidak pernah mengeluh atau tidak memiliki siapa pun untuk mengeluh atas nama mereka. Rumah Dagley tidak pernah terlihat begitu suram bagi Tuan Brooke seperti hari ini, dengan pikirannya yang begitu terganggu oleh kritikan "Terompet," yang digaungkan oleh Sir James. Memang benar bahwa seorang pengamat, di bawah pengaruh seni rupa yang melembutkan dan membuat penderitaan orang lain tampak indah, mungkin akan terpesona dengan rumah pertanian bernama Freeman's End ini: rumah tua itu memiliki jendela loteng di atap merah tua, dua cerobong asapnya tersumbat oleh tanaman rambat, beranda besarnya ditutup dengan tumpukan ranting, dan setengah dari jendelanya ditutup dengan daun jendela abu-abu yang dimakan rayap, di mana ranting melati tumbuh subur; tembok taman yang lapuk dengan bunga hollyhock yang mengintip di atasnya merupakan studi sempurna dari warna-warna lembut yang bercampur, dan ada seekor kambing tua (yang mungkin dipelihara karena alasan takhayul yang menarik) berbaring di pintu dapur belakang yang terbuka. Atap jerami berlumut dari kandang sapi, pintu gudang abu-abu yang rusak, para buruh miskin dengan celana compang-camping yang hampir selesai menurunkan gerobak berisi jagung ke dalam gudang untuk segera diirik; Sapi-sapi yang diikat untuk diperah dan separuh kandang tampak kosong berwarna cokelat; babi dan bebek putih tampak berkeliaran di halaman yang tidak rata dan terlantar seolah-olah sedang murung karena makan sisa susu yang terlalu sedikit—semua objek ini di bawah cahaya tenang langit yang dihiasi awan tinggi akan membentuk semacam gambaran yang telah kita semua renungkan sebagai "bagian yang menawan," menyentuh kepekaan lain selain yang digerakkan oleh depresi kepentingan pertanian, dengan kurangnya modal pertanian yang menyedihkan, seperti yang terus-menerus terlihat di surat kabar pada waktu itu. Tetapi asosiasi yang mengganggu ini saat itu sangat kuat hadir dalam benak Tuan Brooke, dan merusak pemandangan baginya. Tuan Dagley sendiri tampak dalam pemandangan itu, membawa garpu rumput dan mengenakan topi pemerah susunya—topi berang-berang tua yang pipih di bagian depan. Mantel dan celana panjangnya adalah yang terbaik yang dimilikinya, dan dia tidak akan mengenakannya pada kesempatan hari kerja ini jika dia tidak pergi ke pasar dan kembali lebih lambat dari biasanya, setelah memanjakan dirinya dengan makan malam di meja umum Blue Bull. Bagaimana dia bisa terjerumus ke dalam pemborosan ini mungkin akan menjadi bahan keheranan baginya sendiri keesokan harinya; tetapi sebelum makan malam, sesuatu dalam keadaan negara, jeda singkat dalam panen sebelum Far Dips dipotong, cerita tentang Raja baru dan banyak selebaran di dinding, tampaknya membenarkan sedikit kenekatan. Ada pepatah tentang Middlemarch, dan dianggap sebagai hal yang sudah jelas, bahwa daging yang baik harus ditemani minuman yang baik, yang oleh Dagley diartikan sebagai banyak bir meja yang diikuti dengan rum dan air. Minuman ini memiliki kebenaran di dalamnya sehingga tidak cukup salah untuk membuat Dagley yang malang tampak gembira: itu hanya membuat ketidakpuasannya kurang terbata-bata dari biasanya. Ia juga terlalu banyak menelan omong kosong politik yang membingungkan, sebuah rangsangan yang sangat mengganggu konservatisme pertaniannya, yang beranggapan bahwa apa pun yang ada adalah buruk, dan setiap perubahan cenderung lebih buruk. Wajahnya memerah, dan matanya menatap dengan tatapan penuh pertengkaran saat ia berdiri diam memegang garpu rumputnya, sementara tuan tanah mendekat dengan langkah santai, satu tangan di saku celananya dan tangan lainnya mengayunkan tongkat tipis. “Dagley, anakku yang baik,” kata Mr. Brooke memulai, menyadari bahwa ia akan bersikap sangat ramah terhadap anak laki-laki itu. “Oh, ya, aku orang baik, ya? Terima kasih, Tuan, terima kasih,” kata Dagley, dengan nada sinis dan menggeram yang membuat Fag, anjing gembala itu, tersentak dari tempat duduknya dan menajamkan telinganya; tetapi melihat Monk memasuki halaman setelah berlama-lama di luar, Fag duduk kembali dalam posisi mengamati. “Senang mendengar aku orang baik.” Tuan Brooke berpikir bahwa hari itu adalah hari pasar, dan penyewa terhormatnya mungkin telah makan siang, tetapi ia tidak melihat alasan mengapa ia tidak boleh melanjutkan, karena ia dapat mengambil tindakan pencegahan dengan mengulangi apa yang ingin ia sampaikan kepada Nyonya Dagley. “Anakmu Jacob tertangkap basah membunuh seekor anak kelinci, Dagley: Aku sudah menyuruh Johnson mengurungnya di kandang kosong selama satu atau dua jam, hanya untuk menakutinya, kau tahu. Tapi dia akan dibawa pulang sebentar lagi, sebelum malam: dan kau akan menjaganya, ya, dan memberinya teguran, kau tahu?” “Tidak, aku tidak mau: Aku tidak akan pernah menyiksa anakku hanya untuk menyenangkanmu atau siapa pun, bahkan jika kau adalah dua puluh tuan tanah bukan satu, dan itu pun tuan tanah yang jahat.” Kata-kata Dagley cukup keras untuk memanggil istrinya ke pintu belakang dapur—satu-satunya pintu masuk yang pernah digunakan, dan selalu terbuka kecuali saat cuaca buruk—dan Tuan Brooke, berkata dengan lembut, “Baiklah, baiklah, saya akan berbicara dengan istri Anda—saya tidak bermaksud memukul, Anda tahu,” berbalik untuk berjalan ke rumah. Tetapi Dagley, yang semakin ingin "menyampaikan pendapatnya" kepada seorang pria yang menjauh darinya, segera mengikutinya, dengan Fag yang berjalan lesu di belakangnya dan dengan cemberut menghindari beberapa upaya kecil dan mungkin baik hati dari pihak Monk. “Apa kabar, Nyonya Dagley?” kata Tuan Brooke, dengan tergesa-gesa. “Saya datang untuk memberi tahu Anda tentang putra Anda: Saya tidak ingin Anda memukulnya, Anda tahu.” Kali ini ia berhati-hati untuk berbicara dengan sangat lugas. Nyonya Dagley yang kelelahan—seorang wanita kurus dan tampak lelah, yang kesenangan hidupnya telah lenyap sepenuhnya sehingga ia bahkan tidak memiliki pakaian Minggu yang dapat memberinya kepuasan dalam bersiap-siap ke gereja—telah mengalami kesalahpahaman dengan suaminya sejak ia pulang, dan sedang dalam suasana hati yang buruk, mengharapkan yang terburuk. Tetapi suaminya lebih dulu menjawab. “Tidak, dia juga tidak akan memegang tongkat itu, mau atau tidak,” lanjut Dagley, meninggikan suaranya, seolah ingin terdengar keras. “Kau tidak berhak datang dan bicara soal tongkat atau hal-hal sepele seperti ini, karena kau tidak peduli dengan perbaikan. Pergilah ke Middlemarch untuk mencari tukangmu .” “Sebaiknya kau diam saja, Dagley,” kata sang istri, “dan jangan sampai kau menumpahkan wadah makananmu sendiri. Ketika seorang pria seperti kepala keluarga telah menghabiskan uang di pasar dan mabuk karena minuman keras, dia sudah cukup berbuat jahat untuk satu hari. Tapi aku ingin tahu apa yang telah dilakukan anakku, Tuan.” “Jangan pedulikan apa yang telah dia lakukan,” kata Dagley dengan lebih garang, “urusan saya untuk bicara, bukan urusanmu. Dan aku juga akan bicara. Aku akan menyampaikan pendapatku—mau makan malam atau tidak. Dan yang ingin kukatakan adalah, karena aku telah tinggal di tanahmu sejak ayah dan kakekku sebelumku, dan telah menghamburkan uang kami di sana, dan aku serta anak-anakku mungkin akan terbaring dan membusuk di tanah untuk dijadikan pupuk karena kami tidak mampu membeli tanah, jika Raja tidak menghentikannya.” “Kawan, kau sedang mabuk, kau tahu,” kata Tuan Brooke, dengan nada percaya diri namun tidak bijaksana. “Lain kali, lain kali,” tambahnya, berbalik seolah hendak pergi. Namun Dagley segera menghadangnya, dan Fag di belakangnya menggeram pelan, sementara suara tuannya semakin keras dan menghina, dan Monk juga mendekat dalam pengawasan yang tenang dan bermartabat. Para buruh di gerobak berhenti untuk mendengarkan, dan tampaknya lebih bijaksana untuk bersikap pasif daripada mencoba melarikan diri secara konyol sambil dikejar oleh seorang pria yang berteriak-teriak. “Aku tidak mabuk, begitu pula kau, tidak juga,” kata Dagley. “Aku bisa menahan minumanku, dan aku tahu apa maksudku. Dan maksudku, seperti yang akan Raja hentikan, karena mereka yang tahu pasti akan ada Rinform, dan para tuan tanah yang tidak pernah berbuat baik kepada penyewa mereka akan diperlakukan seperti itu, mereka harus pergi. Dan ada orang-orang di Middlemarch yang tahu apa itu Rinform—dan juga tahu siapa yang harus pergi. Kata mereka, 'Aku tahu siapa tuan tanahmu .' Dan kataku, 'Kuharap kau lebih baik karena mengenalnya, aku tidak.' Kata mereka, 'Dia orang yang pelit.'” "'Ay ay,' kataku. 'Dia orangnya Rinform,' kata mereka. Begitulah kata mereka. Dan aku tahu apa itu Rinform—dan tujuannya adalah untuk mengirimmu dan orang-orang sepertimu kabur dan dengan hal-hal yang berbau sangat menyengat juga. Dan kau boleh melakukan apa pun yang kau suka sekarang, karena aku tidak takut padamu. Dan sebaiknya kau biarkan anakku sendiri, dan jaga dirimu sendiri, sebelum Rinform menyerangmu. Itu yang ingin kukatakan," simpul Tuan Dagley, sambil menancapkan garpunya ke tanah dengan keras yang ternyata menyulitkannya saat ia mencoba menariknya kembali. Pada tindakan terakhir ini, Monk mulai menggonggong dengan keras, dan itu adalah saat yang tepat bagi Tuan Brooke untuk melarikan diri. Dia berjalan keluar dari halaman secepat mungkin, dengan sedikit keheranan atas situasi barunya. Dia belum pernah dihina di tanahnya sendiri sebelumnya, dan cenderung menganggap dirinya sebagai kesayangan umum (kita semua cenderung berpikir demikian, ketika kita lebih memikirkan keramahan kita sendiri daripada apa yang mungkin diinginkan orang lain dari kita). Ketika dia bertengkar dengan Caleb Garth dua belas tahun sebelumnya, dia berpikir bahwa para penyewa akan senang jika tuan tanah mengambil alih segalanya. Beberapa orang yang mengikuti kisah pengalamannya mungkin heran dengan kegelapan malam yang dialami Tuan Dagley; tetapi tidak ada yang lebih mudah pada masa itu daripada bagi seorang petani turun-temurun dari kalangan seperti dirinya untuk tetap bodoh, meskipun entah bagaimana ia memiliki seorang rektor di paroki kembar yang merupakan seorang pria sejati, seorang asisten pendeta yang lebih dekat yang berkhotbah lebih berilmu daripada rektor, seorang tuan tanah yang telah terjun ke segala hal, terutama seni rupa dan peningkatan sosial, dan semua gemerlap Middlemarch hanya berjarak tiga mil. Mengenai kemudahan manusia menghindari pengetahuan, cobalah kenalan biasa di tengah gemerlap intelektual London, dan pertimbangkan bagaimana jadinya orang yang pantas diundang ke pesta makan malam itu jika ia hanya mempelajari sedikit keterampilan "merangkum" dari juru tulis paroki Tipton, dan membaca satu bab dalam Alkitab dengan sangat sulit, karena nama-nama seperti Yesaya atau Apollos tetap sulit diucapkan setelah dieja dua kali. Dagley yang malang terkadang membaca beberapa ayat pada Minggu malam, dan setidaknya dunia tidak lebih gelap baginya daripada sebelumnya. Ada beberapa hal yang ia ketahui dengan saksama, yaitu kebiasaan bertani yang ceroboh, dan kesulitan cuaca, ternak, dan tanaman di Freeman's End—yang tampaknya disebut demikian sebagai sindiran, untuk menyiratkan bahwa seseorang bebas untuk meninggalkannya jika ia mau, tetapi tidak ada "alam baka" di dunia ini yang terbuka baginya.</p>
 

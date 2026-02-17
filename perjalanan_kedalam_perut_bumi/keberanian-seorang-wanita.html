@@ -5,39 +5,176 @@
 <title>KEBERANIAN SEORANG WANITA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="KEBERANIAN SEORANG WANITA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>KEBERANIAN SEORANG WANITA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Demikianlah berakhir sesi spiritual yang tak terlupakan ini. Percakapan itu membuatku demam. Aku keluar dari ruang kerja pamanku seperti orang yang pingsan, dan seolah-olah tidak ada cukup udara di seluruh jalanan Hamburg untuk membuatku sadar kembali. Karena itu, aku menuju ke tepi Sungai Elbe, tempat kapal uap menurunkan penumpangnya, yang menjadi penghubung antara kota dan jalur kereta api Hamburg. Apakah aku yakin akan kebenaran dari apa yang telah kudengar? Bukankah aku telah tunduk di bawah kekuasaan Profesor Liedenbrock yang otoriter? Haruskah aku mempercayainya dengan sungguh-sungguh dalam niatnya untuk menembus hingga ke pusat bola bumi yang besar ini? Apakah aku telah mendengarkan spekulasi gila seorang yang tidak waras, atau kesimpulan ilmiah seorang jenius yang hebat? Di mana kebenaran berhenti? Di mana kesalahan dimulai? Aku terombang-ambing di antara seribu hipotesis yang saling bertentangan, tetapi aku tidak dapat menemukan satu pun yang dapat kupegang. Namun aku ingat bahwa aku pernah yakin, meskipun sekarang antusiasmeku mulai mereda; tetapi aku merasa ingin segera berangkat, dan tidak membuang waktu dan keberanian dengan berpikir tenang. Pada saat itu aku cukup berani untuk mengikat ranselku ke bahu dan mulai berjalan. Namun harus kuakui bahwa satu jam kemudian, kegembiraan yang tidak wajar ini mereda, sarafku menjadi rileks, dan dari kedalaman jurang bumi ini aku kembali naik ke permukaannya. "Ini benar-benar tidak masuk akal!" seruku, "tidak ada logika di baliknya. Tidak ada pemuda waras yang akan mempertimbangkan usulan seperti itu sedetik pun. Semuanya tidak ada. Aku baru saja mengalami malam yang buruk, aku bermimpi buruk." Namun aku telah menyusuri tepian Sungai Elbe dan melewati kota itu. Setelah melewati pelabuhan juga, aku sampai di jalan menuju Altona. Aku dipandu oleh firasat, yang segera menjadi kenyataan; karena tak lama kemudian aku melihat Gräuben kecilku dengan berani kembali dengan langkah ringannya ke Hamburg. "Gräuben!" teriakku dari kejauhan. Gadis muda itu berhenti, mungkin agak takut mendengar namanya dipanggil di jalan raya. Sepuluh meter lagi, dan aku telah menyusulnya. "Axel!" serunya terkejut. "Apa! Kau datang menemuiku? Apakah ini alasanmu berada di sini, Tuan?" Namun ketika ia menatapku, Gräuben tidak mungkin tidak melihat kegelisahan dan kesedihan dalam pikiranku. "Ada apa?" katanya sambil mengulurkan tangannya. "Ada apa, Gräuben?" seruku. Dalam beberapa menit, Virlandaise-ku yang cantik sepenuhnya mengetahui situasi yang terjadi. Untuk beberapa saat dia terdiam. Apakah jantungnya berdebar seperti jantungku? Aku tidak tahu tentang itu, tetapi aku tahu bahwa tangannya tidak gemetar saat menggenggam tanganku. Kami berjalan seratus yard tanpa berbicara. Akhirnya dia berkata, "Axel!" "Gräuben sayangku." "Itu akan menjadi perjalanan yang luar biasa!" Aku tersentak mendengar kata-kata itu. "Ya, Axel, sebuah perjalanan yang layak dilakukan oleh keponakan seorang cendekiawan; adalah hal yang baik bagi seseorang untuk dibedakan oleh suatu usaha besar." "Apa, Gräuben, kau tidak mau membujukku untuk mengurungkan niat seperti itu?" "Tidak, Axel sayangku, dan aku dengan senang hati akan pergi bersamamu, tetapi seorang gadis malang hanya akan menghalangimu." "Apakah itu benar-benar terjadi?" "Memang benar." Ah! Para wanita dan gadis muda, betapa tak terpahaminya hati feminin kalian! Ketika kalian bukan yang paling penakut, kalian adalah makhluk yang paling berani. Akal sehat tak ada hubungannya dengan tindakan kalian. Apa! Anak ini mendorongku dalam ekspedisi seperti ini! Tidakkah dia takut untuk ikut serta? Dan dia yang mendorongku, seseorang yang dicintainya! Saya merasa bingung, dan, jika harus jujur, saya merasa malu. "Gräuben, kita lihat saja apakah kamu akan mengatakan hal yang sama besok." "Besok, Axel sayang, aku akan mengatakan apa yang kukatakan hari ini." Aku dan Gräuben, bergandengan tangan, tetapi dalam diam, melanjutkan perjalanan kami. Emosi hari itu menghancurkan hatiku. Lagipula, pikirku, bulan Juli masih lama, dan di antara waktu itu banyak hal mungkin terjadi yang akan menyembuhkan pamanku dari keinginannya untuk melakukan perjalanan di bawah tanah. Hari sudah malam ketika kami tiba di rumah di Königstrasse. Aku berharap menemukan suasana tenang di sana, pamanku sudah tidur seperti biasanya, dan Martha sedang memberikan sentuhan terakhir dengan kuas bulunya. Namun, saya tidak memperhitungkan ketidaksabaran Profesor. Saya mendapati dia berteriak-teriak—dan menjadi sangat marah di tengah kerumunan porter dan kurir yang sedang menurunkan berbagai muatan di lorong. Pelayan tua kami sudah kehabisan akal. "Kemarilah, Axel, kemarilah, dasar bajingan malang," teriak pamanku dari kejauhan, sejauh yang bisa ia lihat. "Kotak-kotakmu belum dikemas, dan surat-suratku belum diatur; di mana kunci tas karpetku? Dan apa yang telah kau lakukan dengan sepatu botku?" Aku berdiri terpaku. Suaraku tercekat. Bibirku hampir tak mampu mengucapkan kata-kata: "Apakah kita benar-benar akan pergi?" "Tentu saja, dasar anak malang! Mungkinkah aku bermimpi kau akan pergi jalan-jalan alih-alih mempercepat persiapanmu?" "Apakah kita akan pergi?" tanyaku lagi, dengan harapan yang semakin menipis. "Ya; lusa, pagi-pagi sekali." Aku tak bisa mendengar apa pun lagi. Aku berlari mencari perlindungan ke kamarku yang kecil. Semua harapan kini telah sirna. Pamanku sepanjang pagi telah membeli sebagian dari peralatan dan perlengkapan yang dibutuhkan untuk usaha putus asa ini. Lorong itu dipenuhi dengan tangga tali, tali simpul, obor, termos, kait panjat, tongkat pendaki gunung, beliung, tongkat besi, cukup untuk memuat sepuluh orang. Aku melewati malam yang mengerikan. Keesokan paginya aku didatangi pagi-pagi sekali. Aku sudah memutuskan untuk tidak membuka pintu. Tapi bagaimana aku bisa menolak suara manis yang selalu bagaikan musik di telingaku, yang berkata, "Axel sayangku?" Aku keluar dari kamarku. Kupikir wajahku yang pucat dan mataku yang merah dan kurang tidur akan membangkitkan simpati Gräuben dan mengubah pikirannya. "Ah! Axel sayangku," katanya. "Aku lihat kau sudah lebih baik. Istirahat semalaman memang bermanfaat bagimu." "Ini sangat bermanfaat bagiku!" seruku. Aku bergegas ke cermin. Sebenarnya, aku terlihat lebih baik dari yang kuharapkan. Aku hampir tidak percaya dengan apa yang kulihat. "Axel," katanya, "Aku telah berbicara panjang lebar dengan waliku. Dia seorang filsuf yang berani, seorang pria dengan keberanian yang luar biasa, dan kau harus ingat bahwa darahnya mengalir di dalam pembuluh darahmu. Dia telah mempercayakan kepadaku rencana-rencananya, harapan-harapannya, dan mengapa serta bagaimana dia berharap untuk mencapai tujuannya. Dia pasti akan berhasil. Axel sayangku, sungguh hal yang mulia untuk mengabdikan dirimu pada ilmu pengetahuan! Betapa besar kehormatan yang akan jatuh pada Tuan Liedenbrock, dan dengan demikian tercermin pada rekannya! Ketika kau kembali, Axel, kau akan menjadi seorang pria, setara dengannya, bebas untuk berbicara dan bertindak secara mandiri, dan bebas untuk—" Gadis manis itu hanya menyelesaikan kalimat ini dengan tersipu. Kata-katanya membangkitkan semangatku. Namun aku menolak untuk percaya bahwa kami harus memulai. Aku menarik Gräuben ke ruang kerja Profesor. "Paman, benarkah kita harus pergi?" "Mengapa kamu ragu?" "Baiklah, saya tidak ragu," kataku, agar tidak membuatnya kesal; "tetapi, saya bertanya, apa perlunya terburu-buru?" "Waktu, waktu, terbang dengan kecepatan yang tak terperbaiki." "Tapi ini baru tanggal 16 Mei, dan sampai akhir Juni—" "Apa, dasar bodoh! Apa kau pikir bisa sampai ke Islandia dalam beberapa hari? Kalau kau tidak meninggalkanku seperti orang bodoh, aku pasti sudah membawamu ke kantor Kopenhagen, ke Liffender & Co., dan kau akan tahu di sana bahwa hanya ada satu perjalanan setiap bulan dari Kopenhagen ke Reykjavik, pada tanggal 22." "Dengan baik?" "Nah, kalau kita menunggu sampai tanggal 22 Juni, kita akan terlambat untuk melihat bayangan Scartaris menyentuh kawah Sneffels. Karena itu, kita harus segera sampai ke Kopenhagen untuk mengamankan tiket perjalanan kita. Pergi dan kemasi barang-barangmu." Tidak ada jawaban untuk itu. Aku naik ke kamarku. Gräuben mengikutiku. Dia berjanji untuk mengemas semua barang yang diperlukan untuk perjalananku. Dia tampak tidak bersemangat, seolah-olah aku akan melakukan perjalanan singkat ke Lübeck atau Heligoland. Tangan kecilnya bergerak tanpa tergesa-gesa. Dia berbicara dengan tenang. Dia memberiku alasan yang masuk akal untuk ekspedisi kami. Dia membuatku senang, namun aku juga marah padanya. Sesekali aku merasa ingin meluapkan amarahku, tetapi dia tidak memperhatikannya dan melanjutkan perjalanannya dengan teratur seperti biasa. Akhirnya tali terakhir terpasang; aku turun ke bawah. Sepanjang hari itu para pembuat instrumen filosofis dan para teknisi listrik terus datang dan pergi. Martha tampak linglung. "Apakah tuan sudah gila?" tanyanya. Aku mengangguk. "Dan apakah dia akan mengajakmu bersamanya?" Aku mengangguk lagi. "Mau ke mana?" Saya menunjuk ke bawah dengan jari saya. "Turun ke ruang bawah tanah?" teriak pelayan tua itu. "Tidak," kataku. "Lebih rendah dari itu." Malam tiba. Tapi aku tidak tahu apa-apa tentang berlalunya waktu. "Besok pagi tepat pukul enam," pamanku menetapkan, "kita mulai." Pukul sepuluh aku jatuh tersungkur di tempat tidurku, seperti gumpalan benda mati yang tak bergerak. Sepanjang malam teror mencekamku. Aku menghabiskan malam itu bermimpi tentang jurang maut. Aku menjadi mangsa delirium. Aku merasa diriku digenggam oleh tangan Profesor yang berotot, diseret, dilempar ke bawah, hancur berkeping-keping. Aku jatuh dari tebing yang tak terukur dengan kecepatan yang semakin cepat seperti benda yang jatuh menembus ruang angkasa. Hidupku telah menjadi kejatuhan tanpa akhir. Aku terbangun pukul lima dengan saraf yang hancur, gemetar dan lelah. Aku turun ke bawah. Pamanku sedang duduk di meja, melahap sarapannya. Aku menatapnya dengan ngeri dan jijik. Tapi Gräuben tersayang ada di sana; jadi aku tidak mengatakan apa-apa, dan tidak bisa makan apa pun. Pukul setengah enam terdengar derak roda di luar. Sebuah kereta besar telah menunggu untuk membawa kami ke stasiun kereta api Altona. Tak lama kemudian, kereta itu dipenuhi dengan berbagai macam barang bawaan paman saya. "Di mana kotakmu?" teriaknya. "Sudah siap," jawabku dengan suara terbata-bata. "Kalau begitu, cepatlah turun, atau kita akan ketinggalan kereta." Kini jelas mustahil untuk terus melawan takdir. Aku kembali ke kamarku, dan sambil menyeret koper-koperku ke bawah, aku berlari mengejarnya. Pada saat itu pamanku dengan khidmat menyerahkan kendali pemerintahan kepada Gräuben. Virlandaise-ku yang cantik tetap tenang dan terkendali seperti biasanya. Dia mencium walinya; tetapi tak kuasa menahan air mata saat menyentuh pipiku dengan bibirnya yang lembut. "Gräuben!" gumamku. "Pergilah, Axel sayangku, pergilah! Aku sekarang tunanganmu; dan ketika kau kembali, aku akan menjadi istrimu." Aku memeluknya erat dan mengambil tempatku di kereta. Martha dan gadis kecil itu, berdiri di pintu, melambaikan tangan perpisahan terakhir mereka. Kemudian kuda-kuda, yang terangsang oleh siulan pengemudi, melesat dengan kecepatan tinggi di jalan menuju Altona.</p>
 

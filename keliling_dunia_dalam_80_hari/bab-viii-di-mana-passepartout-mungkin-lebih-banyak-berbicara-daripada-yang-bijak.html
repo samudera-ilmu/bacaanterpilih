@@ -5,39 +5,176 @@
 <title>BAB VIII. DI MANA PASSEPARTOUT MUNGKIN LEBIH BANYAK BERBICARA DARIPADA YANG BIJAK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB VIII. DI MANA PASSEPARTOUT MUNGKIN LEBIH BANYAK BERBICARA DARIPADA YANG BIJAK - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB VIII. DI MANA PASSEPARTOUT MUNGKIN LEBIH BANYAK BERBICARA DARIPADA YANG BIJAK</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Fix segera bergabung kembali dengan Passepartout, yang sedang bersantai dan melihat-lihat di dermaga, seolah-olah dia tidak merasa bahwa setidaknya dia tidak berkewajiban untuk melihat apa pun. “Nah, temanku,” kata detektif itu sambil menghampirinya, “apakah paspormu sudah ada visanya? ” “Ah, jadi Anda, ya, Tuan?” jawab Passepartout. “Terima kasih, ya, paspornya baik-baik saja.” “Dan kamu melihat-lihat sekelilingmu?” “Ya; tapi kita bepergian begitu cepat sehingga rasanya seperti aku sedang bermimpi. Jadi ini Terusan Suez?” "Ya." “Di Mesir?” “Tentu saja, di Mesir.” “Dan di Afrika?” “Di Afrika.” “Di Afrika!” ulang Passepartout. “Bayangkan saja, Tuan, saya tidak menyangka kita akan pergi lebih jauh dari Paris; dan yang saya lihat dari Paris hanyalah antara pukul tujuh lewat dua puluh menit dan sebelum pukul sembilan dua puluh menit pagi, antara stasiun Northern dan Lyons, melalui jendela mobil, dan dalam hujan deras! Betapa menyesalnya saya tidak sempat melihat Père la Chaise dan sirkus di Champs Elysées sekali lagi!” “Jadi, kamu sangat terburu-buru?” “Aku tidak, tapi tuanku iya. Ngomong-ngomong, aku harus membeli sepatu dan kemeja. Kami berangkat tanpa koper, hanya membawa tas karpet.” “Saya akan menunjukkan kepada Anda toko yang sangat bagus untuk mendapatkan apa yang Anda inginkan.” “Sungguh, Tuan, Anda sangat baik.” Lalu mereka berjalan pergi bersama, Passepartout mengobrol dengan lancar sepanjang jalan. “Yang terpenting,” katanya; “jangan sampai saya kehilangan kapal uap ini.” “Kamu masih punya banyak waktu; ini baru pukul dua belas.” Passepartout mengeluarkan arloji besarnya. “Pukul 12!” serunya; “wah, ini baru pukul 10 kurang delapan menit.” “Jam tanganmu lambat.” “Jam tangan saya? Jam tangan keluarga, Tuan, yang diwariskan dari kakek buyut saya! Akurasinya tidak pernah meleset lima menit pun dalam setahun. Ini adalah kronometer yang sempurna, lihatlah.” “Saya mengerti,” kata Fix. “Anda menggunakan waktu London, yang dua jam lebih lambat dari waktu Suez. Seharusnya Anda mengatur jam tangan Anda pada tengah hari di setiap negara.” “Apakah saya mengatur jam tangan saya? Tidak mungkin!” “Kalau begitu, itu tidak akan cocok dengan matahari.” “Jadi, celakalah matahari, Tuan. Matahari akan salah!” Dan pria terhormat itu mengembalikan jam tangan ke gantungan kuncinya dengan gerakan menantang. Setelah beberapa menit hening, Fix melanjutkan: "Jadi, kau meninggalkan London dengan tergesa-gesa?" “Saya rasa memang begitu! Jumat lalu pukul delapan malam, Monsieur Fogg pulang dari klubnya, dan tiga perempat jam kemudian kami pun mulai bermain.” “Tapi ke mana tuanmu akan pergi?” “Selalu lurus ke depan. Dia sedang berkeliling dunia.” “Keliling dunia?” seru Fix. “Ya, dan dalam delapan puluh hari! Dia bilang itu karena taruhan; tapi, jujur saja, aku tidak percaya sepatah kata pun. Itu tidak masuk akal. Ada sesuatu yang lain di balik semua ini.” “Ah! Tuan Fogg memang sosok yang unik, ya?” "Seharusnya saya katakan memang begitu." “Apakah dia kaya?” “Tidak diragukan lagi, karena dia membawa sejumlah besar uang kertas baru bersamanya. Dan dia juga tidak pelit mengeluarkan uang di perjalanan: dia telah menawarkan hadiah besar kepada insinyur kapal 'Mongolia' jika dia berhasil membawa kita ke Bombay jauh lebih awal dari jadwal.” “Dan kau sudah mengenal tuanmu sejak lama?” “Tidak juga; saya mulai bekerja untuknya tepat pada hari kami meninggalkan London.” Dampak dari jawaban-jawaban ini terhadap detektif yang sudah curiga dan gelisah itu dapat dibayangkan. Kepergian tergesa-gesa dari London segera setelah perampokan; sejumlah besar uang yang dibawa oleh Tuan Fogg; keinginannya untuk mencapai negara-negara jauh; dalih taruhan yang aneh dan gegabah—semuanya menguatkan teori Fix. Dia terus mengorek informasi dari Passepartout yang malang, dan mengetahui bahwa sebenarnya dia hanya tahu sedikit atau bahkan tidak tahu sama sekali tentang tuannya, yang hidup menyendiri di London, konon kaya, meskipun tidak ada yang tahu dari mana kekayaannya berasal, dan misterius serta sulit dipahami dalam urusan dan kebiasaannya. Fix yakin bahwa Phileas Fogg tidak akan mendarat di Suez, tetapi sebenarnya akan pergi ke Bombay. “Apakah Bombay jauh dari sini?” tanya Passepartout. “Cukup jauh. Perjalanan laut memakan waktu sepuluh hari.” “Lalu, Bombay terletak di negara mana?” "India." “Di Asia?” "Tentu." “Astaga! Aku tadinya mau memberitahumu ada satu hal yang membuatku khawatir—komporku!” “Pembakar apa?” “Kompor gas saya, yang lupa saya matikan, dan saat ini sedang menyala dengan biaya saya. Saya telah menghitung, Tuan, bahwa saya kehilangan dua shilling setiap dua puluh empat jam, tepat enam pence lebih banyak daripada yang saya hasilkan; dan Anda akan mengerti bahwa semakin lama perjalanan kita—” Apakah Fix memperhatikan masalah Passepartout tentang gas? Sepertinya tidak. Dia tidak mendengarkan, tetapi sedang memikirkan sebuah proyek. Passepartout dan dia sekarang telah sampai di toko, tempat Fix meninggalkan temannya untuk berbelanja, setelah menyarankan agar dia tidak ketinggalan kapal uap, dan bergegas kembali ke konsulat. Sekarang setelah dia benar-benar yakin, Fix telah sepenuhnya pulih ketenangannya. “Konsul,” katanya, “saya tidak ragu lagi. Saya telah menemukan orang yang saya cari. Dia menyamar sebagai orang aneh yang akan mengelilingi dunia dalam delapan puluh hari.” “Kalau begitu, dia orang yang cerdas,” jawab konsul, “dan berharap bisa kembali ke London setelah berhasil mengelabui polisi kedua negara.” “Kita lihat saja nanti,” jawab Fix. “Tapi bukankah Anda salah?” “Saya tidak salah.” “Mengapa perampok ini begitu ingin membuktikan, melalui visa , bahwa dia telah melewati Terusan Suez?” “Mengapa? Saya tidak tahu; tapi dengarkan saya.” Ia meringkas secara singkat bagian-bagian terpenting dari percakapannya dengan Passepartout. “Singkatnya,” kata konsul itu, “semuanya tampak bertentangan dengan orang ini. Dan apa yang akan Anda lakukan?” “Kirimkan pesan ke London untuk meminta surat perintah penangkapan yang akan segera dikirim ke Bombay, naiklah kapal 'Mongolia,' ikuti penjahatku ke India, dan di sana, di tanah Inggris, tangkap dia dengan sopan, dengan surat perintah di tanganku, dan tanganku di bahunya.” Setelah mengucapkan kata-kata itu dengan tenang dan acuh tak acuh, detektif itu berpamitan kepada konsul, dan pergi ke kantor telegraf, dari sanalah ia mengirimkan pesan yang telah kita lihat ke kantor polisi London. Seperempat jam kemudian, Fix ditemukan, dengan sebuah tas kecil di tangannya, naik ke atas kapal "Mongolia"; dan, tak lama kemudian, kapal uap yang megah itu berlayar dengan kecepatan penuh di perairan Laut Merah.</p>
 

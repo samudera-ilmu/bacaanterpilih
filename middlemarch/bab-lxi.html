@@ -5,39 +5,176 @@
 <title>BAB LXI.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LXI. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LXI.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Ketidakkonsistenan,” jawab Imlac, “tidak mungkin keduanya benar, tetapi jika dikaitkan dengan manusia, keduanya bisa jadi benar.”— Rasselas . Pada malam yang sama, ketika Tuan Bulstrode kembali dari perjalanan bisnis ke Brassing, istrinya yang baik hati menemuinya di aula masuk dan menariknya ke ruang duduk pribadinya. “Nicholas,” katanya, menatapnya dengan mata jujur dan cemas, “ada seorang pria yang sangat tidak menyenangkan di sini yang mencarimu—itu membuatku sangat tidak nyaman.” “Pria seperti apa, sayangku?” tanya Tuan Bulstrode, dengan keyakinan yang mengerikan akan jawabannya. “Seorang pria berwajah merah dengan kumis lebat, dan sangat kurang ajar. Dia mengaku sebagai teman lama Anda, dan berkata Anda akan menyesal jika tidak bertemu dengannya. Dia ingin menunggu Anda di sini, tetapi saya mengatakan kepadanya bahwa dia bisa bertemu Anda di Bank besok pagi. Sungguh kurang ajar dia!—menatap saya, dan berkata temannya Nick beruntung dalam urusan istri. Saya tidak percaya dia akan pergi, jika Blucher tidak kebetulan melepaskan rantainya dan berlarian di atas kerikil—karena saya berada di taman; jadi saya berkata, 'Sebaiknya Anda pergi—anjing itu sangat ganas, dan saya tidak bisa menahannya.' Apakah Anda benar-benar mengenal orang seperti itu?” “Kurasa aku tahu siapa dia, sayangku,” kata Tuan Bulstrode, dengan suara tenangnya yang biasa, “seorang bajingan bejat yang malang, yang dulu terlalu banyak kubantu. Namun, kurasa kau tidak akan diganggu olehnya lagi. Dia mungkin akan datang ke Bank—untuk mengemis, tentu saja.” Tidak ada lagi yang dibicarakan tentang hal itu sampai keesokan harinya, ketika Tuan Bulstrode telah kembali dari kota dan sedang bersiap untuk makan malam. Istrinya, yang tidak yakin apakah dia sudah pulang, mengintip ke ruang ganti dan melihatnya tanpa mantel dan dasi, menyandarkan satu lengan di lemari laci dan menatap kosong ke tanah. Dia tersentak gugup dan mendongak ketika istrinya masuk. “Kamu terlihat sangat sakit, Nicholas. Ada apa sebenarnya?” “Saya sering sekali sakit kepala,” kata Tuan Bulstrode, yang begitu sering sakit sehingga istrinya selalu siap mempercayai penyebab depresi ini. “Duduklah dan biarkan aku membersihkannya dengan cuka.” Secara fisik, Tuan Bulstrode tidak menginginkan cuka itu, tetapi secara moral, perhatian penuh kasih sayang itu menenangkannya. Meskipun selalu sopan, sudah menjadi kebiasaannya untuk menerima pelayanan seperti itu dengan sikap dingin sebagai seorang istri, sesuai dengan kewajibannya. Tetapi hari ini, ketika istrinya membungkuk di atasnya, ia berkata, "Kau sangat baik, Harriet," dengan nada yang terdengar baru di telinganya; ia tidak tahu persis apa kebaruannya, tetapi kepedulian seorang wanita berubah menjadi pikiran yang tiba-tiba bahwa suaminya mungkin akan sakit. “Apakah ada sesuatu yang membuatmu khawatir?” tanyanya. “Apakah pria itu mendatangimu di bank?” “Ya; memang seperti yang kuduga. Dia adalah pria yang dulunya mungkin bisa berbuat lebih baik. Tapi dia telah jatuh menjadi makhluk mabuk dan bejat.” “Apakah dia sudah benar-benar pergi?” tanya Ny. Bulstrode dengan cemas; tetapi karena alasan tertentu ia menahan diri untuk tidak menambahkan, “Sangat tidak menyenangkan mendengar dia menyebut dirinya temanmu.” Pada saat itu, ia tidak ingin mengatakan apa pun yang menyiratkan kesadarannya yang biasa bahwa koneksi awal suaminya tidak sepenuhnya setara dengan koneksinya sendiri. Bukan berarti ia tahu banyak tentang hal itu. Bahwa suaminya awalnya bekerja di bank, bahwa ia kemudian terjun ke apa yang disebutnya bisnis kota dan memperoleh kekayaan sebelum berusia tiga puluh tiga tahun, bahwa ia menikahi seorang janda yang jauh lebih tua darinya—seorang Dissenter, dan dalam hal lain mungkin memiliki kualitas yang merugikan yang biasanya terlihat pada istri pertama jika diteliti dengan penilaian objektif seorang istri kedua—hampir sama banyaknya dengan yang ingin ia ketahui di luar sekilas yang kadang-kadang diberikan oleh narasi Tn. Bulstrode tentang kecenderungan awalnya terhadap agama, keinginannya untuk menjadi seorang pengkhotbah, dan keterlibatannya dalam upaya misionaris dan filantropis. Ia percaya bahwa suaminya adalah pria yang luar biasa, yang kesalehannya memiliki keistimewaan tersendiri sebagai seorang awam, yang pengaruhnya telah mengarahkan pikirannya sendiri ke arah keseriusan, dan yang kebaikan fana yang dimilikinya telah menjadi sarana untuk meningkatkan kedudukannya sendiri. Tetapi ia juga suka berpikir bahwa dalam segala hal, Tuan Bulstrode telah memenangkan hati Harriet Vincy; yang keluarganya tak terbantahkan dalam cahaya Middlemarch—cahaya yang lebih baik tentunya daripada cahaya apa pun yang dipancarkan di jalan-jalan London atau halaman kapel kaum non-Anglikan. Pikiran provinsi yang belum direformasi tidak mempercayai London; dan sementara agama sejati di mana pun menyelamatkan, Nyonya Bulstrode yang jujur yakin bahwa diselamatkan di Gereja lebih terhormat. Ia sangat ingin mengabaikan di hadapan orang lain bahwa suaminya pernah menjadi seorang non-Anglikan London, sehingga ia suka menyembunyikannya bahkan saat berbicara dengannya. Suaminya sangat menyadari hal ini; Memang, dalam beberapa hal, ia agak takut pada istrinya yang polos ini, yang kesalehannya yang meniru dan keduniawiannya yang alami sama-sama tulus, yang tidak perlu merasa malu, dan yang dinikahinya karena kecenderungan yang masih ada. Tetapi ketakutannya adalah ketakutan seorang pria yang ingin mempertahankan supremasinya yang diakui: kehilangan penghargaan tinggi dari istrinya, seperti dari setiap orang lain yang tidak jelas membencinya karena permusuhan terhadap kebenaran, akan menjadi awal kematian baginya. Ketika dia berkata— “Apakah dia sudah benar-benar pergi?” “Oh, saya yakin begitu,” jawabnya, berusaha menampilkan nada bicara yang setenang dan setenang mungkin! Namun sebenarnya, Tuan Bulstrode jauh dari keadaan percaya sepenuhnya. Dalam wawancara di Bank, Raffles telah menunjukkan bahwa keinginannya untuk menyiksa hampir sama kuatnya dengan keserakahan lainnya. Dia terus terang mengatakan bahwa dia sengaja datang ke Middlemarch hanya untuk melihat-lihat dan memastikan apakah lingkungan itu cocok untuknya tinggal. Dia memang memiliki beberapa hutang yang harus dibayar lebih dari yang dia perkirakan, tetapi uang dua ratus pound itu belum habis: dua puluh lima pound saja sudah cukup baginya untuk pergi untuk sementara waktu. Yang paling dia inginkan adalah bertemu temannya Nick dan keluarganya, dan mengetahui semua tentang kemakmuran seorang pria yang sangat dia sayangi. Nantinya dia mungkin akan kembali untuk tinggal lebih lama. Kali ini Raffles menolak untuk "diantar pergi," seperti yang dia katakan—menolak untuk meninggalkan Middlemarch di depan mata Bulstrode. Dia bermaksud pergi dengan kereta kuda keesokan harinya—jika dia mau. Bulstrode merasa dirinya tak berdaya. Baik ancaman maupun bujukan tidak ada gunanya: dia tidak bisa mengandalkan rasa takut yang terus-menerus atau janji apa pun. Sebaliknya, dia merasakan kepastian yang dingin di hatinya bahwa Raffles—kecuali takdir mengirim kematian untuk menghalanginya—akan kembali ke Middlemarch dalam waktu singkat. Dan kepastian itu adalah teror. Bukan berarti ia terancam hukuman hukum atau menjadi pengemis: ia hanya terancam terungkapnya fakta-fakta masa lalunya kepada penilaian tetangganya dan persepsi yang menyedihkan dari istrinya, yang akan menjadikannya objek cemoohan dan celaan agama yang telah ia anut dengan tekun. Ketakutan akan dihakimi mempertajam ingatan: hal itu mengirimkan kilatan yang tak terhindarkan ke masa lalu yang sudah lama tidak dikunjungi, yang biasanya hanya diingat dalam frasa umum. Bahkan tanpa ingatan, kehidupan terikat menjadi satu oleh zona ketergantungan dalam pertumbuhan dan kemunduran; tetapi ingatan yang kuat memaksa seseorang untuk mengakui masa lalunya yang tercela. Dengan ingatan yang terasa perih seperti luka yang terbuka kembali, masa lalu seseorang bukanlah sekadar sejarah yang mati, persiapan masa kini yang usang: itu bukanlah kesalahan yang disesali dan dilepaskan dari kehidupan: itu adalah bagian dari dirinya yang masih bergetar, membawa rasa merinding, rasa pahit, dan sensasi malu yang pantas diterima. Dalam kehidupan keduanya ini, masa lalu Bulstrode kini telah bangkit, hanya saja kenikmatannya tampaknya telah kehilangan kualitasnya. Siang dan malam, tanpa gangguan kecuali tidur singkat yang hanya menjalin kilas balik dan ketakutan ke dalam masa kini yang fantastis, ia merasakan adegan-adegan kehidupan sebelumnya datang di antara dirinya dan segala sesuatu yang lain, sekeras kepala seperti ketika kita melihat melalui jendela dari ruangan yang terang, objek yang kita belai masih ada di depan kita, alih-alih rumput dan pepohonan. Peristiwa-peristiwa yang berurutan, baik internal maupun eksternal, ada di sana dalam satu pandangan: meskipun masing-masing dapat direnungkan secara bergantian, yang lainnya masih tetap melekat dalam kesadaran. Sekali lagi ia melihat dirinya sebagai seorang pegawai bank muda, dengan penampilan yang menyenangkan, mahir dalam perhitungan angka dan fasih berbicara, serta gemar memberikan penjelasan teologis: seorang anggota terkemuka meskipun masih muda dari gereja Calvinis yang berbeda pendapat di Highbury, yang memiliki pengalaman luar biasa dalam keyakinan akan dosa dan rasa pengampunan. Sekali lagi ia mendengar dirinya dipanggil sebagai Saudara Bulstrode dalam pertemuan doa, berbicara di mimbar keagamaan, berkhotbah di rumah-rumah pribadi. Sekali lagi ia merasa dirinya memikirkan pelayanan sebagai kemungkinan panggilannya, dan cenderung pada pekerjaan misionaris. Itulah masa paling bahagia dalam hidupnya: itulah tempat yang akan ia pilih sekarang untuk terbangun dan menganggap sisanya sebagai mimpi. Orang-orang di antara siapa Saudara Bulstrode dikenal sangat sedikit, tetapi mereka sangat dekat dengannya, dan semakin membangkitkan kepuasannya; kekuatannya menjangkau ruang yang sempit, tetapi ia merasakan dampaknya dengan lebih intens. Ia percaya tanpa usaha pada karya kasih karunia yang khusus di dalam dirinya, dan pada tanda-tanda bahwa Tuhan bermaksud agar ia menjadi instrumen khusus. Kemudian tibalah momen transisi; itu terjadi dengan perasaan promosi yang ia rasakan ketika, sebagai seorang yatim piatu yang dididik di sekolah amal komersial, ia diundang ke sebuah vila mewah milik Tuan Dunkirk, orang terkaya di jemaat tersebut. Tak lama kemudian ia menjadi orang kepercayaan di sana, dihormati karena kesalehannya oleh sang istri, dan diakui kemampuannya oleh sang suami, yang kekayaannya berasal dari kota yang berkembang pesat dan perdagangan di kawasan barat kota. Itulah awal dari arus baru bagi ambisinya, yang mengarahkan prospek "peran aktifnya" menuju penggabungan bakat keagamaan yang luar biasa dengan bisnis yang sukses. Lambat laun datanglah petunjuk eksternal yang jelas: seorang mitra bawahan yang dapat dipercaya meninggal dunia, dan menurut sang pemilik, tidak ada seorang pun yang lebih cocok untuk mengisi kekosongan yang sangat dirasakan itu selain teman mudanya, Bulstrode, jika ia bersedia menjadi akuntan kepercayaan. Tawaran itu diterima. Bisnis tersebut adalah usaha gadai, yang sangat besar baik dari segi luas maupun keuntungan; dan setelah mengenalnya sebentar, Bulstrode menyadari bahwa salah satu sumber keuntungan besar adalah kemudahan menerima barang apa pun yang ditawarkan, tanpa perlu penyelidikan ketat tentang asal barang tersebut. Tetapi ada cabang di ujung barat, dan tidak ada hal-hal kecil atau kumuh yang menimbulkan kesan memalukan. Ia teringat saat-saat pertamanya merasa minder. Saat-saat itu bersifat pribadi, dan dipenuhi dengan perdebatan; beberapa di antaranya berbentuk doa. Bisnis itu sudah mapan dan berakar kuat; bukankah mendirikan kedai minuman keras baru berbeda dengan menerima investasi di kedai yang lama? Keuntungan yang diperoleh dari jiwa-jiwa yang tersesat—di mana batasnya dapat ditarik dalam transaksi manusia? Bukankah itu bahkan cara Tuhan menyelamatkan umat pilihan-Nya? “Engkau tahu,”—kata Bulstrode muda saat itu, seperti yang dikatakan Bulstrode yang lebih tua sekarang—“Engkau tahu betapa longgarnya jiwaku dari hal-hal ini—bagaimana aku memandang semuanya sebagai alat untuk mengolah kebun-Mu yang diselamatkan di sana-sini dari padang gurun.” Metafora dan preseden tidaklah kurang; pengalaman spiritual yang aneh pun tak kurang, yang pada akhirnya membuat mempertahankan posisinya tampak seperti sebuah pengabdian yang dituntut darinya: cakrawala kekayaan telah terbuka, dan rasa takut Bulstrode tetap menjadi urusan pribadi. Tuan Dunkirk tidak pernah menyangka akan ada rasa takut sama sekali: ia tidak pernah membayangkan bahwa perdagangan ada hubungannya dengan rencana keselamatan. Dan memang benar bahwa Bulstrode mendapati dirinya menjalani dua kehidupan yang berbeda; aktivitas keagamaannya tidak mungkin bertentangan dengan bisnisnya begitu ia berhasil meyakinkan dirinya sendiri bahwa hal itu tidak bertentangan. Terjebak kembali dalam pikiran dengan masa lalu itu, Bulstrode memiliki permohonan yang sama—memang, tahun-tahun telah terus-menerus memutar permohonan itu menjadi ketebalan yang rumit, seperti gumpalan jaring laba-laba, melapisi kepekaan moral; bahkan, seiring bertambahnya usia membuat egoisme semakin bersemangat tetapi kurang menyenangkan, jiwanya menjadi lebih jenuh dengan keyakinan bahwa ia melakukan semuanya demi Tuhan, acuh tak acuh terhadapnya demi dirinya sendiri. Namun—jika ia bisa kembali ke tempat yang jauh itu dengan kemiskinan masa mudanya—maka ia akan memilih untuk menjadi seorang misionaris. Namun rangkaian sebab yang telah mengurung dirinya terus berlanjut. Ada masalah di vila mewah di Highbury. Bertahun-tahun sebelumnya, putri satu-satunya telah melarikan diri, menentang orang tuanya, dan terjun ke dunia panggung; dan sekarang putra satu-satunya meninggal, dan setelah beberapa waktu Tuan Dunkirk juga meninggal. Sang istri, seorang wanita sederhana dan saleh, yang diwarisi semua kekayaan dari bisnis megah tersebut, yang sifatnya tidak pernah ia ketahui secara pasti, telah percaya pada Bulstrode, dan dengan polos memujanya seperti wanita sering memuja pendeta atau menteri "buatan manusia" mereka. Wajar jika setelah beberapa waktu pernikahan mulai dipikirkan di antara mereka. Tetapi Nyonya Dunkirk memiliki keraguan dan kerinduan tentang putrinya, yang telah lama dianggap hilang baik dari Tuhan maupun orang tuanya. Diketahui bahwa putrinya telah menikah, tetapi ia benar-benar menghilang dari pandangan. Sang ibu, setelah kehilangan putranya, membayangkan seorang cucu laki-laki, dan dalam dua arti ingin mendapatkan kembali putrinya. Jika ia ditemukan, akan ada jalur pembagian harta—mungkin jalur yang luas—untuk mencukupi kebutuhan beberapa cucu. Upaya untuk menemukannya harus dilakukan sebelum Ny. Dunkirk menikah lagi. Bulstrode setuju; tetapi setelah iklan dan cara pencarian lainnya dicoba, sang ibu percaya bahwa putrinya tidak dapat ditemukan, dan setuju untuk menikah tanpa memberikan harta warisan. Sang putri telah ditemukan; tetapi hanya satu orang selain Bulstrode yang mengetahuinya, dan orang itu dibayar untuk merahasiakannya dan pergi. Itulah fakta sebenarnya yang kini harus dilihat Bulstrode dalam garis besar kaku yang memperlihatkan tindakan-tindakan tersebut kepada para pengamat. Namun, baginya pada waktu yang jauh itu, dan bahkan sekarang dalam ingatan yang membara, fakta tersebut terpecah menjadi rangkaian-rangkaian kecil, masing-masing dibenarkan oleh penalaran yang tampaknya membuktikan kebenarannya. Bulstrode berpikir bahwa perjalanan hidupnya hingga saat itu telah disetujui oleh takdir yang luar biasa, yang tampaknya menunjukkan jalan baginya untuk menjadi agen dalam memanfaatkan kekayaan yang besar dan mencegahnya dari penyimpangan. Kematian dan disposisi mencolok lainnya, seperti kepercayaan perempuan, telah datang; dan Bulstrode akan mengadopsi kata-kata Cromwell—"Apakah kau menyebut ini peristiwa-peristiwa biasa? Tuhan kasihanilah kau!" Peristiwa-peristiwa itu relatif kecil, tetapi syarat esensialnya ada—yaitu, bahwa peristiwa-peristiwa itu menguntungkan dirinya sendiri. Mudah baginya untuk menentukan apa yang harus ia berikan kepada orang lain dengan menanyakan apa maksud Tuhan terhadap dirinya sendiri. Mungkinkah ini untuk pelayanan Tuhan bahwa kekayaan ini sebagian besar jatuh ke tangan seorang wanita muda dan suaminya yang terjerumus dalam kegiatan-kegiatan yang dangkal, dan mungkin menghamburkannya dalam hal-hal sepele—orang-orang yang tampaknya berada di luar jalur takdir yang luar biasa? Bulstrode tidak pernah berkata pada dirinya sendiri sebelumnya, "Anak perempuan itu tidak akan ditemukan"—namun ketika saatnya tiba, ia merahasiakan keberadaannya; dan ketika saat-saat lain menyusul, ia menghibur sang ibu dengan penghiburan atas kemungkinan bahwa wanita muda yang malang itu mungkin sudah tiada. Ada saat-saat di mana Bulstrode merasa tindakannya tidak benar; tetapi bagaimana dia bisa mundur? Dia melakukan latihan mental, menyebut dirinya tidak berarti, berpegang pada penebusan, dan melanjutkan jalannya sebagai alat. Dan setelah lima tahun, Kematian kembali datang untuk memperluas jalannya, dengan mengambil istrinya. Dia memang secara bertahap menarik modalnya, tetapi dia tidak melakukan pengorbanan yang diperlukan untuk mengakhiri bisnis tersebut, yang dijalankan selama tiga belas tahun setelahnya sebelum akhirnya runtuh. Sementara itu, Nicholas Bulstrode telah menggunakan seratus ribunya dengan bijaksana, dan menjadi penting secara provinsi—seorang bankir, seorang tokoh gereja, seorang dermawan publik; juga mitra pasif dalam usaha perdagangan, di mana kemampuannya diarahkan pada penghematan bahan baku, seperti dalam kasus pewarna yang merusak sutra Tuan Vincy. Dan sekarang, ketika kehormatan ini telah bertahan tanpa gangguan selama hampir tiga puluh tahun—ketika semua yang mendahuluinya telah lama terpendam dalam kesadaran—masa lalu itu telah bangkit dan membanjiri pikirannya seolah-olah dengan letupan mengerikan dari perasaan baru yang membebani makhluk yang lemah itu. Sementara itu, dalam percakapannya dengan Raffles, ia telah mempelajari sesuatu yang penting, sesuatu yang secara aktif masuk ke dalam pergumulan antara kerinduan dan ketakutannya. Di situlah, pikirnya, terletak jalan menuju penyelamatan spiritual, mungkin juga penyelamatan materi. Penyelamatan spiritual adalah kebutuhan sejati baginya. Mungkin ada orang-orang munafik yang kasar, yang secara sadar berpura-pura percaya dan emosi demi menipu dunia, tetapi Bulstrode bukanlah salah satunya. Dia hanyalah seorang pria yang keinginannya lebih kuat daripada keyakinan teoritisnya, dan yang secara bertahap menjelaskan pemuasan keinginannya menjadi kesesuaian yang memuaskan dengan keyakinan tersebut. Jika ini adalah kemunafikan, itu adalah proses yang kadang-kadang muncul pada diri kita semua, apa pun keyakinan kita, dan apakah kita percaya pada kesempurnaan masa depan umat manusia atau pada tanggal terdekat yang ditetapkan untuk akhir dunia; apakah kita menganggap bumi sebagai sarang pembusukan bagi sisa umat yang diselamatkan, termasuk diri kita sendiri, atau memiliki keyakinan yang kuat pada solidaritas umat manusia. Pengabdian yang dapat ia berikan kepada agama telah menjadi dasar yang ia kemukakan sepanjang hidupnya untuk pilihan tindakannya: itu adalah motif yang telah ia curahkan dalam doanya. Siapa yang akan menggunakan uang dan kedudukan lebih baik daripada yang ia maksudkan? Siapa yang dapat melampauinya dalam kebencian diri dan pengagungan terhadap tujuan Tuhan? Dan bagi Tuan Bulstrode, tujuan Tuhan adalah sesuatu yang berbeda dari perilaku lurusnya sendiri: itu memaksanya untuk membedakan musuh-musuh Tuhan, yang hanya akan digunakan sebagai instrumen, dan yang sebaiknya dijauhkan dari uang dan pengaruh yang diakibatkannya. Selain itu, investasi yang menguntungkan dalam perdagangan di mana kekuasaan penguasa dunia ini menunjukkan tipu dayanya yang paling aktif, menjadi suci melalui penerapan keuntungan yang benar di tangan hamba Tuhan. Penalaran implisit ini pada dasarnya tidak lebih khas bagi kepercayaan evangelis daripada penggunaan frasa luas untuk motif sempit yang khas bagi orang Inggris. Tidak ada doktrin umum yang tidak mampu mengikis moralitas kita jika tidak dikendalikan oleh kebiasaan mendalam akan rasa empati langsung terhadap sesama manusia. Namun, seorang pria yang percaya pada sesuatu selain keserakahan pribadinya, pasti memiliki hati nurani atau standar yang kurang lebih ia ikuti. Standar Bulstrode adalah kebermanfaatannya bagi tujuan Tuhan: “Aku berdosa dan tidak berarti—sebuah bejana yang harus disucikan melalui penggunaan—tetapi gunakanlah aku!”—telah menjadi cetakan yang membatasi kebutuhannya yang sangat besar untuk menjadi sesuatu yang penting dan dominan. Dan sekarang telah tiba saatnya cetakan itu tampaknya terancam hancur dan benar-benar dibuang. Bagaimana jika perbuatan-perbuatan yang telah ia terima karena membuatnya menjadi alat yang lebih kuat bagi kemuliaan ilahi, justru menjadi dalih bagi pencemooh, dan meredupkan kemuliaan itu? Jika ini adalah ketetapan Providence, ia diusir dari bait suci sebagai orang yang telah mempersembahkan persembahan najis. Ia telah lama mencurahkan ucapan-ucapan pertobatan. Tetapi hari ini, pertobatan yang datang terasa lebih pahit, dan campur tangan Ilahi yang mengancam mendorongnya untuk melakukan semacam penebusan yang bukan sekadar transaksi doktrinal. Pengadilan ilahi telah mengubah wujudnya baginya; sujud diri saja tidak lagi cukup, dan ia harus melakukan pemulihan. Sesungguhnya di hadapan Tuhanlah Bulstrode hendak mencoba melakukan pemulihan yang tampaknya mungkin: rasa takut yang besar telah mencengkeram tubuhnya yang rentan, dan rasa malu yang menyengat telah menimbulkan kebutuhan spiritual baru dalam dirinya. Siang dan malam, sementara masa lalu yang mengancam dan muncul kembali membentuk hati nurani dalam dirinya, ia memikirkan cara apa yang dapat ia gunakan untuk memulihkan kedamaian dan kepercayaan—dengan pengorbanan apa ia dapat menghentikan cambuk itu. Keyakinannya pada saat-saat ketakutan ini adalah, jika ia secara spontan melakukan sesuatu yang benar, Tuhan akan menyelamatkannya dari konsekuensi perbuatan salah. Karena agama hanya dapat berubah ketika emosi yang mengisinya diubah; dan agama yang didasarkan pada rasa takut pribadi tetap hampir pada tingkat orang biadab. Ia telah melihat Raffles benar-benar pergi dengan kereta Brassing, dan ini merupakan kelegaan sementara; hal itu menghilangkan tekanan ketakutan yang mendesak, tetapi tidak mengakhiri konflik spiritual dan kebutuhan untuk mendapatkan perlindungan. Akhirnya ia sampai pada keputusan yang sulit, dan menulis surat kepada Will Ladislaw, memohon agar ia datang ke Shrubs malam itu untuk wawancara pribadi pukul sembilan. Will tidak merasa terkejut dengan permintaan itu, dan mengaitkannya dengan beberapa gagasan baru tentang "Pioneer"; tetapi ketika ia diantar ke ruang pribadi Tuan Bulstrode, ia terkejut dengan raut wajah bankir yang tampak sangat lelah, dan hendak berkata, "Apakah Anda sakit?" ketika, menahan diri dalam kekasarannya itu, ia hanya menanyakan kabar Nyonya Bulstrode, dan kepuasannya dengan lukisan yang dibelikan untuknya. “Terima kasih, dia cukup puas; dia sudah pergi keluar bersama putri-putrinya malam ini. Saya mohon Anda datang, Tuan Ladislaw, karena saya memiliki komunikasi yang sangat pribadi—bahkan, saya akan katakan, bersifat sangat rahasia, yang ingin saya sampaikan kepada Anda. Saya berani mengatakan, tidak ada yang lebih jauh dari pikiran Anda daripada bahwa ada ikatan penting di masa lalu yang dapat menghubungkan sejarah Anda dengan sejarah saya.” Will merasakan sesuatu seperti sengatan listrik. Ia sudah dalam keadaan sangat sensitif dan kegelisahannya tentang ikatan masa lalu hampir tidak mereda, dan firasatnya tidak menyenangkan. Rasanya seperti fluktuasi mimpi—seolah-olah tindakan yang dimulai oleh orang asing yang berisik dan gemuk itu dilanjutkan oleh sosok terhormat bermata pucat dan tampak sakit-sakitan ini, yang nada suaranya yang tenang dan formalitas bicaranya yang lancar saat ini hampir sama menjijikkannya baginya seperti kontras yang diingatnya. Ia menjawab, dengan perubahan warna kulit yang mencolok— “Tidak, sungguh, tidak ada apa-apa.” “Anda lihat di hadapan Anda, Tuan Ladislaw, seorang pria yang sangat terpukul. Tetapi karena desakan hati nurani dan kesadaran bahwa saya berada di hadapan pengadilan Dia yang tidak melihat seperti manusia melihat, saya tidak akan merasa terpaksa untuk mengungkapkan hal yang menjadi tujuan saya meminta Anda datang ke sini malam ini. Sejauh menyangkut hukum manusia, Anda tidak memiliki hak apa pun atas saya.” Will merasa lebih tidak nyaman daripada sekadar bertanya-tanya. Tuan Bulstrode berhenti sejenak, menyandarkan kepalanya di tangannya, dan menatap lantai. Namun kini ia menatap Will dengan saksama dan berkata— “Saya mendapat informasi bahwa nama ibu Anda adalah Sarah Dunkirk, dan bahwa ia melarikan diri dari teman-temannya untuk terjun ke dunia panggung. Selain itu, ayah Anda pernah sangat kurus karena sakit. Bolehkah saya bertanya apakah Anda dapat mengkonfirmasi pernyataan-pernyataan ini?” “Ya, semuanya benar,” kata Will, terkejut dengan urutan pertanyaan yang diajukan, yang mungkin diharapkan sebagai pendahuluan dari petunjuk-petunjuk sebelumnya dari bankir tersebut. Tetapi Tuan Bulstrode malam ini mengikuti perintah emosinya; dia tidak ragu bahwa kesempatan untuk melakukan restitusi telah tiba, dan dia memiliki dorongan yang sangat kuat untuk mengungkapkan penyesalan yang dengannya dia menolak hukuman. “Apakah kamu tahu detail tentang keluarga ibumu?” lanjutnya. “Tidak; dia tidak pernah suka membicarakan hal itu. Dia adalah wanita yang sangat murah hati dan terhormat,” kata Will, hampir dengan nada marah. “Saya tidak bermaksud menuduhnya apa pun. Apakah dia sama sekali tidak pernah menyebutkan ibunya kepada Anda?” “Aku pernah mendengar dia berkata bahwa dia pikir ibunya tidak tahu alasan dia melarikan diri. Dia berkata 'kasihan ibu' dengan nada iba.” “Ibu itu menjadi istri saya,” kata Bulstrode, lalu berhenti sejenak sebelum menambahkan, “Anda memiliki hak atas saya, Tuan Ladislaw: seperti yang saya katakan sebelumnya, bukan hak hukum, tetapi hak yang diakui oleh hati nurani saya. Saya diperkaya oleh pernikahan itu—suatu hasil yang mungkin tidak akan terjadi—tentu tidak sampai sejauh ini—jika nenek Anda dapat menemukan putrinya. Putri itu, saya kira, sudah meninggal!” “Tidak,” kata Will, merasakan kecurigaan dan rasa jijik yang begitu kuat dalam dirinya, sehingga tanpa menyadari apa yang dilakukannya, ia mengambil topinya dari lantai dan berdiri. Dorongan dalam dirinya adalah untuk menolak hubungan yang terungkap itu. “Silakan duduk, Tuan Ladislaw,” kata Bulstrode dengan cemas. “Tidak diragukan lagi Anda terkejut dengan mendadaknya penemuan ini. Tetapi saya mohon kesabaran Anda terhadap seseorang yang sudah terbebani oleh cobaan batin.” Will duduk kembali, merasa sedikit iba yang bercampur dengan rasa jijik terhadap tindakan merendahkan diri secara sukarela dari seorang pria lanjut usia. “Saya ingin, Tuan Ladislaw, mengganti kerugian yang menimpa ibu Anda. Saya tahu Anda tidak memiliki harta benda, dan saya ingin menyediakan kebutuhan Anda secara memadai dari simpanan yang mungkin sudah menjadi milik Anda seandainya nenek Anda yakin akan keberadaan ibu Anda dan dapat menemukannya.” Tuan Bulstrode terdiam sejenak. Ia merasa sedang melakukan tindakan kehati-hatian yang luar biasa di mata pendengarnya, dan tindakan pertobatan di mata Tuhan. Ia tidak mengetahui keadaan pikiran Will Ladislaw, yang masih sakit hati karena petunjuk-petunjuk jelas dari Raffles, dan dengan kecepatan alaminya dalam membangun pemikiran yang dirangsang oleh harapan akan penemuan-penemuan yang akan dengan senang hati ia singkirkan kembali ke dalam kegelapan. Will tidak menjawab selama beberapa saat, sampai Tuan Bulstrode, yang di akhir pidatonya menundukkan pandangannya ke lantai, kini mengangkat pandangannya dengan tatapan meneliti, yang dibalas Will sepenuhnya, sambil berkata— “Kurasa kau memang mengetahui keberadaan ibuku, dan tahu di mana dia mungkin ditemukan.” Bulstrode merasa kecil—wajah dan tangannya tampak gemetar. Ia sama sekali tidak siap menghadapi pendekatan yang ditanggapi dengan cara ini, atau mendapati dirinya dipaksa untuk mengungkapkan lebih banyak hal daripada yang sebelumnya ia anggap perlu. Namun saat itu ia tidak berani berbohong, dan tiba-tiba ia merasa ragu akan pendiriannya yang sebelumnya ia pegang dengan penuh percaya diri. “Saya tidak akan menyangkal bahwa dugaan Anda benar,” jawabnya, dengan nada yang sedikit terbata-bata. “Dan saya ingin menebus kesalahan kepada Anda sebagai satu-satunya yang masih tersisa yang telah menderita kerugian karena saya. Saya percaya Anda memahami tujuan saya, Tuan Ladislaw, yang berkaitan dengan tuntutan yang lebih tinggi daripada sekadar tuntutan manusiawi, dan seperti yang telah saya katakan, sepenuhnya terlepas dari paksaan hukum apa pun. Saya siap untuk membatasi sumber daya saya sendiri dan prospek keluarga saya dengan mengikat diri untuk memberi Anda lima ratus pound setiap tahun selama hidup saya, dan untuk meninggalkan Anda modal yang proporsional setelah kematian saya—bahkan, untuk melakukan lebih banyak lagi, jika lebih banyak lagi benar-benar diperlukan untuk proyek terpuji apa pun dari pihak Anda.” Tuan Bulstrode melanjutkan dengan rincian lebih lanjut dengan harapan bahwa hal-hal ini akan sangat memengaruhi Ladislaw, dan menyatukan perasaan lain dalam penerimaan yang penuh syukur. Namun Will tampak keras kepala, bibirnya cemberut dan jari-jarinya berada di saku sampingnya. Ia sama sekali tidak tersentuh, dan berkata dengan tegas,— “Sebelum saya menjawab usulan Anda, Tuan Bulstrode, saya mohon Anda menjawab satu atau dua pertanyaan. Apakah Anda terlibat dalam bisnis yang menghasilkan kekayaan yang Anda bicarakan itu?” Dalam benak Tuan Bulstrode terlintas, “Raffles sudah memberitahunya.” Bagaimana mungkin dia menolak menjawab padahal dia sendiri yang telah menyampaikan apa yang memunculkan pertanyaan itu? Dia menjawab, “Ya.” “Dan apakah bisnis itu—atau bukan—merupakan bisnis yang benar-benar tidak terhormat—bahkan, bisnis yang, jika sifatnya diungkapkan kepada publik, mungkin akan menempatkan mereka yang terlibat di dalamnya setara dengan pencuri dan narapidana?” Nada suara Will mengandung kepahitan yang menusuk: ia terdorong untuk menyampaikan pertanyaannya sejujur mungkin. Bulstrode memerah karena amarah yang tak terkendali. Dia telah siap untuk adegan mempermalukan diri sendiri, tetapi kebanggaan yang kuat dan kebiasaan merasa superior mengalahkan penyesalan, bahkan rasa takut, ketika pemuda ini, yang seharusnya dia bantu, berbalik menyerangnya dengan sikap seorang hakim. “Bisnis ini sudah berdiri sebelum saya terlibat di dalamnya, Tuan; dan bukan hak Anda untuk melakukan penyelidikan semacam itu,” jawabnya, tanpa meninggikan suara, tetapi berbicara dengan nada menantang yang cepat. “Ya, memang begitu,” kata Will, sambil kembali berdiri dengan topi di tangannya. “Sangatlah hak saya untuk mengajukan pertanyaan seperti itu, ketika saya harus memutuskan apakah saya akan bertransaksi dengan Anda dan menerima uang Anda. Kehormatan saya yang tak tercela sangat penting bagi saya. Penting bagi saya untuk tidak memiliki noda pada kelahiran dan hubungan saya. Dan sekarang saya menemukan ada noda yang tidak dapat saya hindari. Ibu saya merasakannya, dan berusaha untuk sebisa mungkin menjauhinya, dan saya pun akan demikian. Anda boleh menyimpan uang haram Anda. Jika saya memiliki kekayaan sendiri, saya akan dengan senang hati memberikannya kepada siapa pun yang dapat membuktikan bahwa apa yang Anda katakan salah. Yang harus saya syukuri adalah Anda menyimpan uang itu sampai sekarang, ketika saya dapat menolaknya. Seharusnya seseorang memiliki rasa hormat yang tulus. Selamat malam, Tuan.” Bulstrode hendak berbicara, tetapi Will, dengan cepat dan penuh tekad, langsung keluar ruangan, dan dalam sekejap pintu aula tertutup di belakangnya. Ia terlalu kuat diliputi pemberontakan yang penuh gairah terhadap noda warisan yang telah dipaksakan pada pengetahuannya sehingga saat ini ia tidak sempat merenungkan apakah ia sudah terlalu keras terhadap Bulstrode—terlalu arogan dan tanpa ampun terhadap seorang pria berusia enam puluh tahun, yang sedang berusaha memperbaiki keadaan ketika waktu telah membuat usahanya sia-sia. Tidak ada orang ketiga yang mendengarkan yang dapat sepenuhnya memahami impulsifnya penolakan Will atau kepahitan kata-katanya. Tidak seorang pun selain dirinya sendiri saat itu yang tahu bagaimana segala sesuatu yang berhubungan dengan perasaan harga dirinya sendiri memiliki pengaruh langsung baginya pada hubungannya dengan Dorothea dan perlakuan Tuan Casaubon terhadapnya. Dan dalam derasnya dorongan yang membuatnya menolak tawaran Bulstrode itu, bercampur pula perasaan bahwa mustahil baginya untuk memberi tahu Dorothea bahwa dia telah menerimanya. Adapun Bulstrode—ketika Will pergi, ia mengalami reaksi hebat, dan menangis seperti seorang wanita. Itu adalah pertama kalinya ia menghadapi ungkapan penghinaan terbuka dari siapa pun yang lebih tinggi kedudukannya daripada Raffles; dan dengan penghinaan itu yang mengalir seperti racun melalui tubuhnya, tidak ada lagi kepekaan untuk penghiburan. Tetapi kelegaan dari menangis harus ditahan. Istri dan putrinya segera pulang setelah mendengarkan pidato seorang misionaris Oriental, dan penuh penyesalan karena ayah mereka tidak mendengar, pada awalnya, hal-hal menarik yang mereka coba ulangi kepadanya. Mungkin, di antara semua pikiran tersembunyi lainnya, yang paling melegakan adalah, setidaknya Will Ladislaw kemungkinan besar tidak akan mempublikasikan apa yang telah terjadi malam itu.</p>
 

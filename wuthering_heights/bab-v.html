@@ -5,39 +5,176 @@
 <title>BAB V</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB V - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB V</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Seiring waktu, Tuan Earnshaw mulai melemah. Ia dulunya aktif dan sehat, namun kekuatannya tiba-tiba meninggalkannya; dan ketika ia terkurung di sudut perapian, ia menjadi sangat mudah tersinggung. Hal sepele membuatnya kesal; dan dugaan penghinaan terhadap wewenangnya hampir membuatnya mengamuk. Hal ini terutama perlu diperhatikan jika ada yang mencoba menipu atau mendominasi anak kesayangannya: ia sangat cemburu jika ada kata-kata yang tidak pantas diucapkan kepadanya; seolah-olah ia berpikir bahwa karena ia menyukai Heathcliff, semua orang membencinya dan ingin berbuat jahat kepadanya. Itu merugikan anak itu; karena yang lebih baik hati di antara kami tidak ingin membuat majikan kesal, jadi kami menuruti keberpihakannya; dan menuruti itu menjadi makanan yang kaya bagi kebanggaan dan temperamen buruk anak itu. Namun, hal itu menjadi suatu keharusan; Dua atau tiga kali, Hindley menunjukkan rasa jijiknya, sementara ayahnya berada di dekatnya, yang membuat lelaki tua itu marah besar: ia meraih tongkatnya untuk memukulnya, dan gemetar karena marah karena tidak dapat melakukannya. Akhirnya, pendeta kami (kami memiliki seorang pendeta saat itu yang mencari nafkah dengan mengajar anak-anak Linton dan Earnshaw, serta menggarap sebidang tanahnya sendiri) menyarankan agar pemuda itu dikirim ke perguruan tinggi; dan Tuan Earnshaw setuju, meskipun dengan berat hati, karena dia berkata—"Hindley tidak ada artinya, dan tidak akan pernah berhasil di tempat dia berkeliaran." Saya sangat berharap kita akan berdamai sekarang. Saya merasa sedih membayangkan tuan merasa tidak nyaman dengan perbuatan baiknya sendiri. Saya membayangkan ketidakpuasan karena usia dan penyakit muncul dari perselisihan keluarganya; seperti yang dia inginkan: sebenarnya, Anda tahu, Tuan, itu karena tubuhnya yang semakin lemah. Kita mungkin bisa bergaul dengan cukup baik, meskipun demikian, jika bukan karena dua orang—Nona Cathy, dan Joseph, pelayan itu: Anda melihatnya, saya kira, di sana. Dia adalah, dan kemungkinan besar masih, orang Farisi yang paling menyebalkan dan merasa benar sendiri yang pernah menggeledah Alkitab untuk mencari janji-janji bagi dirinya sendiri dan melemparkan kutukan kepada tetangganya. Dengan keahliannya dalam berkhotbah dan berbicara dengan saleh, dia berhasil membuat kesan yang besar pada Tuan Earnshaw; dan semakin lemah tuannya, semakin besar pengaruhnya. Dia tanpa henti mengkhawatirkannya tentang masalah jiwanya, dan tentang mengatur anak-anaknya dengan ketat. Dia mendorongnya untuk menganggap Hindley sebagai orang yang terkutuk; Dan, malam demi malam, dia secara teratur menggerutu dan menceritakan serangkaian kisah panjang tentang Heathcliff dan Catherine: selalu berusaha menyanjung kelemahan Earnshaw dengan menimpakan kesalahan terbesar pada Catherine. Tentu saja, dia memiliki tingkah laku yang belum pernah saya lihat pada anak kecil sebelumnya; dan dia membuat kami semua kehilangan kesabaran lima puluh kali atau lebih dalam sehari: dari saat dia turun ke bawah hingga saat dia tidur, kami tidak pernah merasa aman bahwa dia tidak akan berbuat nakal. Semangatnya selalu tinggi, lidahnya selalu berbicara—bernyanyi, tertawa, dan mengganggu siapa pun yang tidak mau melakukan hal yang sama. Dia gadis yang liar dan nakal—tetapi dia memiliki mata yang paling indah, senyum yang paling manis, dan langkah kaki yang paling ringan di paroki: dan, bagaimanapun, saya percaya dia tidak bermaksud jahat; karena begitu dia membuat Anda menangis sungguh-sungguh, jarang terjadi dia tidak akan menemani Anda, dan meminta Anda untuk diam agar Anda dapat menghiburnya. Dia terlalu menyukai Heathcliff. Hukuman terbesar yang dapat kami ciptakan untuknya adalah memisahkannya dari Heathcliff: namun dia lebih sering dimarahi daripada kami semua karena Heathcliff. Dalam bermain, dia sangat suka berperan sebagai nyonya kecil; Ia menggunakan tangannya dengan bebas, dan memerintah teman-temannya: ia melakukan hal itu padaku, tetapi aku tidak tahan ditampar dan diperintah; jadi aku memberitahunya. Sekarang, Tuan Earnshaw tidak mengerti lelucon dari anak-anaknya: dia selalu bersikap tegas dan serius kepada mereka; dan Catherine, di pihaknya, tidak mengerti mengapa ayahnya menjadi lebih pemarah dan kurang sabar dalam kondisi sakitnya daripada saat masih muda. Teguran ayahnya yang menjengkelkan membangkitkan kesenangan nakal dalam dirinya untuk memprovokasinya: dia tidak pernah sebahagia ketika kami semua memarahinya sekaligus, dan dia menantang kami dengan tatapan berani dan kurang ajar, serta kata-katanya yang siap sedia; mengubah kutukan religius Joseph menjadi ejekan, mengolok-olokku, dan melakukan apa yang paling dibenci ayahnya—menunjukkan bagaimana kekurangajaran pura-puranya, yang menurutnya nyata, memiliki pengaruh lebih besar atas Heathcliff daripada kebaikannya: bagaimana anak laki-laki itu akan menuruti perintahnya dalam segala hal, dan perintah ayahnya hanya ketika itu sesuai dengan keinginannya sendiri. Setelah berperilaku seburuk mungkin sepanjang hari, terkadang dia datang dengan mesra untuk menebusnya di malam hari. “Tidak, Cathy,” kata lelaki tua itu, “Aku tidak bisa mencintaimu, kau lebih buruk daripada saudaramu. Pergilah, panjatkan doamu, Nak, dan mintalah pengampunan Tuhan. Aku meragukan ibumu dan aku menyesal telah membesarkanmu!” Awalnya itu membuatnya menangis; dan kemudian penolakan yang terus-menerus membuatnya menjadi keras hati, dan dia tertawa jika aku menyuruhnya untuk mengatakan bahwa dia menyesali kesalahannya, dan memohon pengampunan. Namun akhirnya tiba saatnya yang mengakhiri penderitaan Tuan Earnshaw di dunia ini. Ia meninggal dengan tenang di kursinya pada suatu malam di bulan Oktober, duduk di dekat perapian. Angin kencang berhembus di sekitar rumah, dan meraung di cerobong asap: kedengarannya liar dan badai, namun tidak dingin, dan kami semua bersama—aku, agak jauh dari perapian, sibuk merajut, dan Joseph membaca Alkitabnya di dekat meja (karena para pelayan biasanya duduk di rumah saat itu, setelah pekerjaan mereka selesai). Nona Cathy sedang sakit, dan itu membuatnya diam; ia bersandar di lutut ayahnya, dan Heathcliff berbaring di lantai dengan kepalanya di pangkuannya. Aku ingat sang majikan, sebelum ia tertidur, mengelus rambutnya yang indah—ia jarang senang melihatnya lembut—dan berkata, “Mengapa kau tidak bisa selalu menjadi gadis yang baik, Cathy?” Dan ia menolehkan wajahnya ke arahnya, dan tertawa, dan menjawab, “Mengapa kau tidak bisa selalu menjadi pria yang baik, ayah?” Namun begitu melihatnya kembali kesal, ia mencium tangannya dan berkata akan menyanyikan lagu pengantar tidur untuknya. Ia mulai bernyanyi dengan sangat pelan, hingga jari-jarinya terlepas dari tangannya, dan kepalanya tertunduk di dadanya. Kemudian aku menyuruhnya diam dan tidak bergerak, karena takut ia akan membangunkannya. Kami semua diam seperti tikus selama setengah jam penuh, dan seharusnya lebih lama lagi, hanya saja Joseph, setelah menyelesaikan babnya, bangkit dan berkata bahwa ia harus membangunkan tuannya untuk berdoa dan tidur. Ia melangkah maju, memanggilnya dengan namanya, dan menyentuh bahunya; tetapi ia tidak mau bergerak: jadi ia mengambil lilin dan menatapnya. Aku merasa ada sesuatu yang tidak beres saat ia meletakkan lilin; dan sambil memegang lengan anak-anak masing-masing, berbisik kepada mereka untuk "naik ke atas, dan jangan berisik—mereka bisa berdoa sendirian malam itu—ia ada urusan." “Aku akan mengucapkan selamat malam kepada ayah dulu,” kata Catherine, sambil merangkul lehernya, sebelum kami sempat menghalanginya. Gadis malang itu langsung menyadari kehilangannya—ia berteriak—“Oh, dia sudah mati, Heathcliff! Dia sudah mati!” Dan mereka berdua pun menangis tersedu-sedu. Aku ikut meratap bersama mereka, keras dan getir; tetapi Joseph bertanya apa yang kami pikirkan sampai meraung seperti itu atas seorang santo di surga. Dia menyuruhku mengenakan jubahku dan berlari ke Gimmerton untuk memanggil dokter dan pendeta. Aku tidak bisa menebak apa gunanya mereka berdua saat itu. Namun, aku pergi, menerobos angin dan hujan, dan membawa salah satu dari mereka, dokter, kembali bersamaku; yang lain mengatakan dia akan datang besok pagi. Meninggalkan Joseph untuk menjelaskan masalah ini, aku berlari ke kamar anak-anak: pintu mereka sedikit terbuka, aku melihat mereka belum tidur, meskipun sudah lewat tengah malam; tetapi mereka lebih tenang, dan tidak membutuhkan aku untuk menghibur mereka. Jiwa-jiwa kecil itu saling menghibur dengan pikiran yang lebih baik daripada yang bisa kupikirkan: tidak ada pendeta di dunia yang pernah menggambarkan surga seindah yang mereka lakukan, dalam percakapan polos mereka; dan, sementara aku terisak dan mendengarkan, aku tidak bisa menahan diri untuk berharap kita semua berada di sana dengan selamat bersama.</p>
 

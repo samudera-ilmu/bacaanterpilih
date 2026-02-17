@@ -5,39 +5,176 @@
 <title>BAB LXXX.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LXXX. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LXXX.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Wahai pembuat hukum yang tegas! Namun engkau mengenakan rahmat keilahian yang paling murah hati; Tak seorang pun yang kami kenal seindah senyum di wajahmu; Bunga-bunga tertawa di hadapanmu di atas tempat tidurnya, Dan keharuman terpancar dari langkah kakimu; Engkau melindungi Bintang-bintang dari kejahatan; Dan Langit yang paling kuno, melalui engkau, tetap segar dan kuat. —WORDSWORTH: Ode to Duty . Ketika Dorothea bertemu Tuan Farebrother di pagi hari, dia berjanji untuk makan malam di rumah pendeta sekembalinya dari Freshitt. Terjadi pertukaran kunjungan yang sering antara dia dan keluarga Farebrother, yang memungkinkannya untuk mengatakan bahwa dia sama sekali tidak kesepian di Manor, dan untuk sementara menolak tuntutan ketat untuk memiliki teman wanita. Ketika dia sampai di rumah dan mengingat janjinya, dia merasa senang; dan karena masih punya waktu satu jam sebelum dia bisa berdandan untuk makan malam, dia langsung berjalan ke gedung sekolah dan terlibat dalam percakapan dengan guru laki-laki dan perempuan tentang lonceng baru, memberikan perhatian penuh pada detail kecil dan pengulangan mereka, dan merasa dramatis bahwa hidupnya sangat sibuk. Dalam perjalanan pulang, ia berhenti sejenak untuk berbicara dengan Tuan Bunney tua yang sedang menanam beberapa benih kebun, dan berdiskusi dengan bijak dengan orang bijak pedesaan itu tentang tanaman yang akan menghasilkan keuntungan paling banyak di sebidang tanah, dan hasil dari pengalaman enam puluh tahun tentang tanah—yaitu, jika tanah Anda cukup gembur, itu akan baik-baik saja, tetapi jika hujan terus menerus hingga menjadi seperti mumi, maka— Menyadari bahwa suasana sosial telah membuatnya agak terlambat, ia bergegas berpakaian dan pergi ke rumah pendeta lebih awal dari yang seharusnya. Rumah itu tidak pernah membosankan, Tuan Farebrother, seperti White lainnya dari Selborne, selalu memiliki sesuatu yang baru untuk diceritakan tentang tamu dan anak didiknya yang tidak pandai berbicara , yang sedang ia ajarkan kepada anak-anak laki-laki agar tidak mengganggu mereka; dan ia baru saja memasang sepasang kambing cantik untuk menjadi hewan peliharaan desa secara umum, dan untuk berkeliaran bebas sebagai hewan suci. Malam berlalu dengan riang hingga setelah minum teh, Dorothea berbicara lebih banyak dari biasanya dan bertele-tele dengan Tuan Farebrother tentang kemungkinan sejarah makhluk yang berbicara secara ringkas dengan antena mereka, dan sejauh yang kita ketahui mungkin mengadakan parlemen reformasi; ketika tiba-tiba terdengar beberapa suara kecil yang tidak jelas yang menarik perhatian semua orang. “Henrietta Noble,” kata Ny. Farebrother, melihat adik perempuannya yang kecil bergerak-gerak di antara kaki-kaki furnitur dengan gelisah, “ada apa?” “Aku kehilangan kotak permen tempurung kura-kuraku. Aku khawatir anak kucing itu telah menggulingkannya,” kata wanita tua kecil itu, tanpa sadar melanjutkan catatannya yang mirip berang-berang. “Apakah ini harta karun yang berharga, Bibi?” kata Tuan Farebrother, sambil mengangkat kacamatanya dan memandang karpet itu. “Tuan Ladislaw memberikannya kepada saya,” kata Nona Noble. “Sebuah kotak buatan Jerman—sangat cantik, tetapi jika jatuh, kotak itu selalu berputar sejauh mungkin.” “Oh, kalau ini hadiah dari Ladislaw,” kata Tuan Farebrother dengan nada penuh pengertian, sambil berdiri dan mencari. Kotak itu akhirnya ditemukan di bawah lemari, dan Nona Noble meraihnya dengan gembira, sambil berkata, “terakhir kali kotak itu berada di bawah pelindung perapian.” “Itu urusan hati dengan bibi saya,” kata Tuan Farebrother, sambil tersenyum kepada Dorothea, saat ia duduk kembali. “Jika Henrietta Noble terikat pada seseorang, Nyonya Casaubon,” kata ibunya dengan tegas, “dia seperti anjing—dia akan menjadikan sepatu mereka sebagai bantal dan tidur lebih nyenyak.” “Saya mau sepatu Tuan Ladislaw,” kata Henrietta Noble. Dorothea mencoba tersenyum sebagai balasan. Ia terkejut dan kesal mendapati jantungnya berdebar kencang, dan usahanya sia-sia setelah kembali bersemangat seperti semula. Khawatir akan dirinya sendiri—takut akan pengkhianatan lebih lanjut atas perubahan yang begitu mencolok ini, ia bangkit dan berkata dengan suara rendah dan kecemasan yang tak ters掩掩, “Aku harus pergi; aku sudah terlalu lelah.” Tuan Farebrother, yang tanggap, bangkit dan berkata, “Memang benar; Anda pasti sudah kelelahan membicarakan Lydgate. Pekerjaan semacam itu akan terasa berat setelah kegembiraan mereda.” Dia menggandeng lengannya untuk mengantar Dorothea kembali ke Manor, tetapi Dorothea tidak berusaha berbicara, bahkan ketika dia mengucapkan selamat malam. Ketahanan tak terbendung telah tercapai, dan dia kembali tak berdaya dalam cengkeraman penderitaan yang tak terhindarkan. Dengan beberapa kata lemah, dia mengusir Tantripp, mengunci pintu, dan berbalik ke arah ruangan kosong itu, menekan kedua tangannya kuat-kuat di atas kepalanya, dan mengerang— “Oh, aku memang mencintainya!” Kemudian tibalah saat di mana gelombang penderitaan mengguncangnya terlalu hebat hingga tak mampu berpikir. Ia hanya bisa menangis dengan bisikan keras, di antara isak tangisnya, setelah kehilangan keyakinan yang telah ditanam dan dipeliharanya sejak kecil di Roma—setelah kehilangan kegembiraan karena berpegang teguh dengan cinta dan iman yang diam kepada seseorang yang, diremehkan orang lain, layak di matanya—setelah kehilangan kebanggaan sebagai wanita yang mengenang dirinya—setelah kehilangan harapan samar yang manis, bahwa di suatu jalan mereka akan bertemu kembali tanpa perubahan dan menjalani tahun-tahun yang telah berlalu sebagai masa lalu. Pada saat itu, ia mengulangi apa yang telah dilihat oleh mata kesendirian yang penuh belas kasih selama berabad-abad dalam pergumulan spiritual manusia—ia memohon kekerasan, dingin, dan kelelahan yang menyakitkan untuk memberinya kelegaan dari kekuatan misterius dan tak berwujud dari penderitaannya: ia berbaring di lantai yang kosong dan membiarkan malam menjadi dingin di sekitarnya; sementara tubuhnya yang agung terguncang oleh isak tangis seolah-olah ia adalah seorang anak yang putus asa. Ada dua gambar—dua sosok hidup yang merobek hatinya menjadi dua, seolah-olah itu adalah hati seorang ibu yang melihat anaknya terbelah oleh pedang, dan menekan satu bagian yang berdarah ke dadanya sementara pandangannya tertuju dengan penuh penderitaan ke arah bagian yang dibawa pergi oleh wanita yang berbohong yang belum pernah merasakan sakitnya menjadi seorang ibu. Di sini, dengan kedekatan senyuman balasan, di sini dalam ikatan percakapan yang bergetar, ada makhluk cerah yang telah dia percayai—yang datang kepadanya seperti roh pagi yang mengunjungi ruang bawah tanah remang-remang tempat dia duduk sebagai pengantin dari kehidupan yang telah usang; dan sekarang, dengan kesadaran penuh yang belum pernah terbangun sebelumnya, dia merentangkan tangannya ke arahnya dan menangis dengan ratapan getir bahwa kedekatan mereka adalah penglihatan perpisahan: dia menemukan gairahnya sendiri dalam ungkapan keputusasaan yang tak tergoyahkan. Dan di sana, menyendiri, namun terus-menerus bersamanya, bergerak ke mana pun dia pergi, ada Will Ladislaw yang merupakan keyakinan yang berubah, kehabisan harapan, ilusi yang terdeteksi—tidak, seorang pria hidup yang kepadanya belum ada ratapan belas kasihan yang penuh penyesalan, di tengah-tengah cemoohan, kemarahan, dan kesombongan yang tersinggung. Api amarah Dorothea tidak mudah padam, dan berkobar dalam serangan balik yang tidak menentu berupa celaan yang menghina. Mengapa dia datang dan mencampuri hidupnya, hidupnya yang mungkin sudah cukup utuh tanpa dirinya? Mengapa dia membawa perhatian murahan dan kata-kata yang diucapkannya kepada wanita yang tidak memiliki apa pun untuk diberikan sebagai imbalan? Dia tahu bahwa dia sedang menipunya—berharap, pada saat perpisahan, untuk membuatnya percaya bahwa dia telah memberikan seluruh harga hatinya, dan tahu bahwa dia telah menghabiskan setengahnya sebelumnya. Mengapa dia tidak tinggal di antara kerumunan orang yang tidak dimintanya apa pun—tetapi hanya berdoa agar mereka menjadi kurang hina? Namun akhirnya ia kehilangan tenaga bahkan untuk tangisan dan rintihannya yang berbisik keras: ia terisak-isak tak berdaya, dan di lantai yang dingin ia terisak hingga tertidur. Di saat senja pagi yang dingin, ketika semuanya remang-remang di sekitarnya, ia terbangun—bukan dengan rasa takjub dan bertanya-tanya di mana ia berada atau apa yang telah terjadi, tetapi dengan kesadaran yang sangat jelas bahwa ia sedang menatap mata kesedihan. Ia bangkit, membungkus dirinya dengan benda-benda hangat, dan duduk di kursi besar tempat ia sering duduk sebelumnya. Ia cukup kuat untuk melewati malam yang berat itu tanpa merasa sakit, selain sedikit pegal dan lelah; tetapi ia terbangun dalam kondisi baru: ia merasa seolah jiwanya telah terbebas dari konflik yang mengerikan; ia tidak lagi bergulat dengan kesedihannya, tetapi dapat duduk bersamanya sebagai teman abadi dan menjadikannya bagian dari pikirannya. Karena sekarang pikiran-pikiran itu datang bertubi-tubi. Bukan sifat Dorothea, lebih lama dari durasi serangan kejang, untuk duduk di sel sempit malapetakanya, dalam kesengsaraan yang memabukkan dari kesadaran yang hanya melihat nasib orang lain sebagai kecelakaan dari nasibnya sendiri. Ia mulai menghidupkan kembali kejadian pagi kemarin dengan sengaja, memaksa dirinya untuk merenungkan setiap detail dan kemungkinan maknanya. Apakah ia sendirian dalam adegan itu? Apakah itu hanya kejadian yang menimpanya? Ia memaksa dirinya untuk menganggapnya terkait dengan kehidupan wanita lain—seorang wanita yang kepadanya ia berangkat dengan kerinduan untuk membawa kejelasan dan kenyamanan ke masa mudanya yang diselimuti kabut. Dalam luapan kemarahan dan rasa jijiknya yang pertama, ketika meninggalkan ruangan yang dibenci itu, ia telah membuang semua belas kasihan yang telah ia tunjukkan saat melakukan kunjungan itu. Ia telah menyelimuti Will dan Rosamond dengan cemoohannya yang membara, dan baginya seolah-olah Rosamond telah lenyap dari pandangannya selamanya. Tetapi dorongan rendah yang membuat seorang wanita lebih kejam kepada saingannya daripada kepada kekasih yang tidak setia, tidak akan memiliki kekuatan untuk terulang kembali dalam diri Dorothea ketika semangat keadilan yang dominan di dalam dirinya telah sekali mengatasi kekacauan dan telah sekali menunjukkan kepadanya ukuran sebenarnya dari segala sesuatu. Semua pemikiran aktif yang sebelumnya ia gunakan untuk membayangkan cobaan yang dialami Lydgate, dan pernikahan muda ini yang, seperti pernikahannya sendiri, tampaknya memiliki masalah tersembunyi maupun yang nyata—semua pengalaman simpatik yang hidup ini kembali padanya sekarang sebagai sebuah kekuatan: pengalaman itu menegaskan dirinya seperti pengetahuan yang diperoleh menegaskan dirinya dan tidak akan membiarkan kita melihat seperti yang kita lihat di masa ketidaktahuan kita. Ia berkata kepada kesedihannya yang tak tersembuhkan, bahwa hal itu seharusnya membuatnya lebih bermanfaat, alih-alih membuatnya mundur dari usaha. Dan krisis macam apa ini, dalam tiga kehidupan yang kontaknya dengan dirinya membebaninya kewajiban seolah-olah mereka adalah pemohon yang membawa ranting suci? Objek penyelamatannya bukanlah yang dicari oleh imajinasinya: objek itu dipilihkan untuknya. Ia merindukan Kebenaran yang sempurna, agar Kebenaran itu dapat membangun takhta di dalam dirinya, dan mengatur kehendaknya yang sesat. “Apa yang harus kulakukan—bagaimana aku harus bertindak sekarang, hari ini juga, jika aku dapat menggenggam rasa sakitku sendiri, dan memaksanya untuk diam, dan memikirkan ketiga orang itu?” Butuh waktu lama baginya untuk sampai pada pertanyaan itu, dan cahaya menerobos masuk ke ruangan. Dia membuka tirainya, dan melihat ke arah sebagian jalan yang terlihat, dengan ladang di luar gerbang masuk. Di jalan ada seorang pria dengan bungkusan di punggungnya dan seorang wanita menggendong bayinya; di ladang dia bisa melihat sosok-sosok bergerak—mungkin gembala dengan anjingnya. Jauh di langit yang melengkung ada cahaya mutiara; dan dia merasakan kebesaran dunia dan beragamnya kehidupan manusia yang terbangun untuk bekerja dan bertahan. Dia adalah bagian dari kehidupan yang tak disengaja dan berdenyut itu, dan tidak bisa hanya memandanginya dari tempat berlindungnya yang mewah sebagai penonton belaka, juga tidak bisa menyembunyikan matanya dalam keluhan yang egois. Apa yang akan ia putuskan untuk lakukan hari itu belum sepenuhnya jelas, tetapi sesuatu yang dapat ia capai menggerakkannya seperti gumaman yang akan segera menjadi lebih jelas. Ia melepas pakaiannya yang tampak sedikit lelah karena berjaga seharian, dan mulai berdandan. Tak lama kemudian ia memanggil Tantripp, yang datang mengenakan jubah tidurnya. “Wah, Nyonya, Anda belum pernah berbaring di tempat tidur malam yang diberkati ini,” seru Tantripp, menatap tempat tidur terlebih dahulu, lalu wajah Dorothea, yang meskipun sudah mandi, memiliki pipi pucat dan kelopak mata merah muda seperti ibu yang berduka. “Anda akan membunuh diri sendiri, Anda akan melakukannya . Siapa pun mungkin berpikir sekarang Anda berhak untuk memanjakan diri sendiri.” “Jangan khawatir, Tantripp,” kata Dorothea sambil tersenyum. “Aku sudah tidur; aku tidak sakit. Aku akan senang jika bisa minum secangkir kopi sesegera mungkin. Dan aku ingin kau membawakan gaun baruku; dan kemungkinan besar aku akan membutuhkan topi baruku hari ini.” “Kain-kain itu sudah tergeletak di sana selama sebulan lebih, siap untuk Anda, Nyonya, dan saya akan sangat bersyukur melihat Anda dengan kain krep yang harganya beberapa pound lebih murah,” kata Tantripp, membungkuk untuk menyalakan api. “Ada alasan untuk berkabung, seperti yang selalu saya katakan; dan tiga lipatan di bagian bawah rok Anda dan hiasan bulu sederhana di topi Anda—dan jika ada yang terlihat seperti malaikat, itu adalah Anda dengan hiasan bulu jaring—itulah yang cocok untuk tahun kedua. Setidaknya, itulah pemikiran saya ,” pungkas Tantripp, menatap api dengan cemas; “dan jika ada yang menikahi saya dengan harapan saya akan mengenakan kain berkabung yang jelek itu selama dua tahun untuknya, dia akan tertipu oleh kesombongannya sendiri, itu saja.” “Api saja sudah cukup, Tanku yang baik,” kata Dorothea, berbicara seperti yang biasa dilakukannya di masa-masa awal di Lausanne, hanya saja dengan suara yang sangat pelan; “bawakan aku kopi.” Ia melipat tubuhnya di kursi besar, dan menyandarkan kepalanya di kursi itu dengan lesu karena kelelahan, sementara Tantripp pergi sambil bertanya-tanya tentang kontradiksi aneh pada majikannya yang masih muda—bahwa tepat pagi itu, ketika wajahnya lebih tampak seperti janda daripada sebelumnya, ia meminta pakaian berkabung yang lebih ringan yang sebelumnya telah ia tolak. Tantripp tidak akan pernah menemukan petunjuk untuk misteri ini. Dorothea ingin mengakui bahwa ia tidak memiliki kehidupan yang kurang aktif di hadapannya karena ia telah mengubur kegembiraan pribadinya; dan tradisi bahwa pakaian baru adalah bagian dari semua inisiasi, yang menghantui pikirannya, membuatnya berusaha meraih bahkan bantuan lahiriah kecil itu untuk mencapai ketenangan. Karena ketenangan itu tidak mudah. Namun demikian, pada pukul sebelas, dia berjalan menuju Middlemarch, setelah memutuskan bahwa dia akan melakukan upaya kedua untuk menemui dan menyelamatkan Rosamond dengan setenang dan tanpa menarik perhatian mungkin.</p>
 

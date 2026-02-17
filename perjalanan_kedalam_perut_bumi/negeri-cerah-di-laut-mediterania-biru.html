@@ -5,39 +5,176 @@
 <title>NEGERI CERAH DI LAUT MEDITERANIA BIRU</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="NEGERI CERAH DI LAUT MEDITERANIA BIRU - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>NEGERI CERAH DI LAUT MEDITERANIA BIRU</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Ketika aku membuka mata lagi, aku merasakan diriku digenggam sabuknya oleh tangan kuat pemandu kami. Dengan lengan lainnya, dia menopang pamanku. Aku tidak terluka parah, tetapi aku terguncang, memar, dan babak belur di sekujur tubuh. Aku mendapati diriku terbaring di sisi lereng gunung hanya dua meter dari jurang menganga, yang akan menelanku jika aku sedikit saja condong ke arah itu. Hans telah menyelamatkanku dari kematian saat aku berguling-guling di tepi kawah. "Kita di mana?" tanya pamanku dengan kesal, seolah-olah dia merasa sangat tersinggung karena kembali menginjakkan kaki di bumi. Pemburu itu menggelengkan kepalanya sebagai tanda ketidaktahuan total. "Apakah ini Islandia?" tanyaku. " Tidak, " jawab Hans. "Apa! Bukan Islandia?" seru Profesor itu. "Hans pasti salah," kataku sambil berdiri. Inilah kejutan terakhir kami setelah semua peristiwa menakjubkan dalam perjalanan indah kami. Saya berharap melihat sebuah kerucut putih yang tertutup salju abadi menjulang dari tengah gurun tandus di utara yang dingin, diterangi samar-samar oleh sinar pucat matahari Arktik, jauh di garis lintang tertinggi yang dikenal; tetapi bertentangan dengan semua harapan kami, paman saya, orang Islandia, dan saya sedang duduk di tengah lereng gunung yang terpanggang oleh sinar matahari selatan yang menyengat, yang membakar kami dengan panasnya, dan membutakan kami dengan cahaya yang sangat terang dari sinarnya yang hampir vertikal. Aku tak percaya dengan apa yang kulihat; tetapi udara panas dan sensasi terbakar tak menyisakan ruang untuk keraguan. Kami keluar dari kawah dalam keadaan setengah telanjang, dan bola bercahaya yang selama dua bulan tak pernah kami lihat itu menghujani kami dengan cahaya dan panasnya yang begitu terang hingga melebihi kemampuan kami untuk menerimanya dengan nyaman. Setelah mataku terbiasa dengan cahaya terang yang sudah lama asing bagiku, aku mulai menggunakannya untuk menata imajinasiku. Setidaknya aku ingin tempat itu adalah Spitzbergen, dan aku tidak ingin melepaskan gagasan ini. Profesor itu adalah orang pertama yang berbicara, dan berkata: "Yah, ini tidak terlalu mirip dengan Islandia." "Tapi apakah itu Jan Mayen?" tanyaku. "Bukan juga," jawabnya. "Ini bukan gunung utara; di sini tidak ada puncak granit yang tertutup salju. Lihat, Axel, lihat!" Di atas kepala kami, pada ketinggian lima ratus kaki atau lebih, kami melihat kawah gunung berapi, yang setiap lima belas menit sekali, mengeluarkan semburan api yang tinggi dengan ledakan keras, bercampur dengan batu apung, abu, dan lava yang mengalir. Saya bisa merasakan gunung itu bergetar, seolah bernapas seperti paus raksasa, dan menyemburkan api dan angin dari lubang semburannya yang besar. Di bawahnya, menuruni lereng yang cukup curam, mengalir aliran lava sejauh delapan atau sembilan ratus kaki, sehingga ketinggian gunung itu sekitar 1.300 atau 1.400 kaki. Tetapi dasar gunung itu tersembunyi di dalam naungan pepohonan hijau yang rimbun, di antaranya saya dapat membedakan pohon zaitun, pohon ara, dan tanaman anggur, yang tertutup oleh tandan ungu yang lezat. Saya terpaksa mengakui bahwa tidak ada yang berbau Arktik di sini. Ketika mata melewati lingkungan hijau ini, pandangan tertuju pada hamparan laut atau danau biru yang luas, yang tampak mengelilingi pulau yang mempesona ini, dalam radius hanya beberapa liga. Ke arah timur terbentang kota pelabuhan atau desa kecil yang cantik berwarna putih, dengan beberapa rumah tersebar di sekitarnya, dan di pelabuhannya beberapa kapal dengan perlengkapan layar yang unik bergoyang lembut diterpa ombak yang berembus pelan. Di luarnya, gugusan pulau-pulau kecil muncul dari perairan biru yang tenang, tetapi jumlahnya begitu banyak sehingga tampak seperti beting di laut. Di sebelah barat, pantai-pantai yang jauh membentang di cakrawala yang redup, di beberapa di antaranya tampak pegunungan biru kemerahan dengan bentuk yang halus dan bergelombang; di pantai yang lebih jauh lagi muncul sebuah kerucut raksasa yang puncaknya dihiasi gumpalan awan putih seperti salju. Ke arah utara terbentang hamparan air yang luas, berkilauan dan menari di bawah sinar matahari yang panas dan terang, keseragamannya terpecah di sana-sini oleh tiang utama kapal gagah yang muncul di atas cakrawala, atau layar yang mengembang bergerak perlahan mengikuti angin. Pemandangan tak terduga ini sangat mempesona bagi mata yang sudah lama terbiasa dengan kegelapan bawah tanah. "Kita di mana? Kita di mana?" tanyaku lirih. Hans memejamkan matanya dengan acuh tak acuh. Apa pentingnya bagi dia? Pamanku menoleh dengan terkejut. "Baiklah, apa pun gunung ini," katanya akhirnya, "di sini sangat panas. Letusan masih terus terjadi, dan kurasa tidak akan baik jika kita keluar karena letusan, lalu kepala kita pecah terkena pecahan batu yang jatuh. Mari kita turun. Dengan begitu kita akan lebih tahu apa yang sedang kita lakukan. Lagipula, aku kelaparan dan kehausan." Jelas sekali Profesor itu bukanlah tipe orang yang suka merenung. Sedangkan saya, selama satu atau dua jam lagi saya bisa melupakan rasa lapar dan lelah saya untuk menikmati pemandangan indah di hadapan saya; tetapi saya harus mengikuti teman-teman saya. Lereng gunung berapi itu di banyak tempat sangat curam. Kami meluncur menuruni lereng abu, dengan hati-hati menghindari aliran lava yang meluncur lambat di samping kami seperti ular api. Saat kami berjalan, saya mengoceh dan mengajukan berbagai macam pertanyaan tentang keberadaan kami, karena saya terlalu bersemangat untuk tidak banyak bicara. "Kita berada di Asia," seruku, "di pesisir India, di Kepulauan Melayu, atau di Oseania. Kita telah melewati separuh bola dunia, dan hampir sampai di belahan bumi yang berlawanan." "Tapi kompasnya?" tanya pamanku. "Ah, kompasnya!" kataku, sangat bingung. "Menurut kompas, kita telah pergi ke utara." "Apakah itu berbohong?" "Tentu tidak. Mungkinkah itu berbohong?" "Kecuali, memang ini adalah Kutub Utara!" "Oh, bukan, itu bukan orang Polandia; tapi—" Nah, ini dia sesuatu yang benar-benar membingungkan kami. Saya tidak tahu harus berkata apa. Namun kini kami memasuki hamparan hijau yang menyenangkan itu, dan saya sangat menderita karena lapar dan haus. Untungnya, setelah dua jam berjalan, terbentang pedesaan yang menawan di hadapan kami, dipenuhi pohon zaitun, pohon delima, dan tanaman anggur yang lezat, yang semuanya tampak milik siapa pun yang ingin memilikinya. Lagipula, dalam keadaan kekurangan dan kelaparan, kami tidak mungkin pilih-pilih. Oh, betapa nikmatnya memetik buah-buahan yang dingin dan manis itu ke bibir kami, dan memakan anggur seteguk demi seteguk dari tandan yang kaya dan penuh! Tidak jauh dari situ, di rerumputan, di bawah naungan pepohonan yang rindang, saya menemukan mata air yang segar dan sejuk, di mana kami dengan senang hati membasuh wajah, tangan, dan kaki kami. Saat kami sedang menikmati ketenangan yang menyenangkan itu, seorang anak muncul dari rimbunnya pohon zaitun. "Ah!" seruku, "ini dia penduduk negeri yang bahagia ini!" Ia hanyalah seorang anak laki-laki miskin, berpakaian sangat lusuh, menderita kemiskinan, dan penampilan kami tampaknya sangat membuatnya takut; sebenarnya, hanya berpakaian setengah telanjang, dengan rambut dan janggut compang-camping, kami adalah kelompok yang tampak mencurigakan; dan jika penduduk desa tahu sesuatu tentang pencuri, kami kemungkinan besar akan menakut-nakuti mereka. Tepat ketika si kecil malang itu hendak melarikan diri, Hans menangkapnya dan membawanya kepada kami, sambil menendang dan meronta-ronta. Pamanku mulai menyemangatinya sebisa mungkin, dan berkata kepadanya dalam bahasa Jerman yang baik: " Apakah heiszt diesen Berg, mein Knablein? Sage mir geschwind! " ("Apa nama gunung ini, temanku?") Anak itu tidak menjawab. "Baiklah," kata pamanku. "Saya menyimpulkan bahwa kita tidak berada di Jerman." Dia mengajukan pertanyaan yang sama dalam bahasa Inggris. Kami tidak punya jasa pengiriman barang. Saya sangat bingung. "Apakah anak itu bisu?" seru Profesor, yang, dengan bangga akan pengetahuannya tentang banyak bahasa, kini mencoba bahasa Prancis: " Comment appellet-on cette montagne, mon enfant? " Hening sejenak. "Sekarang mari kita coba masakan Italia," kata pamanku; dan dia berkata: " Dove noi siamo? " "Ya, kita di mana?" ulangku dengan tidak sabar. Namun tetap tidak ada jawaban. "Apakah kau akan bicara saat disuruh?" seru pamanku, sambil mengguncang telinga bocah itu. " Come si noma questa isola? " "STOMBOLI," jawab si gembala kecil, sambil melepaskan diri dari genggaman Hans, dan berlari ke dataran melintasi pohon-pohon zaitun. Kami hampir tidak memikirkan hal itu. Stromboli! Betapa dahsyatnya pengaruh nama yang tak terduga ini terhadap pikiran saya! Kami berada di tengah Laut Mediterania, di sebuah pulau di kepulauan Aeolian, di Strongyle kuno, tempat Aeolus mengikat angin dan badai, untuk dilepaskan sesuai kehendaknya. Dan pegunungan biru yang jauh di timur itu adalah pegunungan Calabria. Dan gunung berapi yang mengancam jauh di selatan itu adalah Etna yang ganas. "Stromboli, Stromboli!" saya ulangi. Pamanku mengikuti irama seruanku dengan gerakan tangan dan kaki, serta dengan kata-kata. Kami seolah-olah bernyanyi bersama dalam paduan suara! Betapa menakjubkan perjalanan yang telah kita tempuh! Sungguh luar biasa! Setelah memasuki wilayah ini melalui satu gunung berapi, kita keluar dari gunung berapi lain yang berjarak lebih dari dua ribu mil dari Snæfell dan dari Islandia yang tandus dan jauh itu! Kebetulan yang aneh dari ekspedisi kita telah membawa kita ke jantung wilayah terindah di dunia. Kita telah menukar wilayah suram yang selalu tertutup salju dan penghalang es yang tak tertembus dengan wilayah yang cerah dan 'warna-warna indah dari segala hal yang mulia'. Kita telah meninggalkan langit yang keruh dan kabut dingin di zona beku untuk bersenang-senang di bawah langit biru Italia! Setelah menikmati santapan lezat berupa buah-buahan dan air dingin yang jernih, kami berangkat lagi untuk mencapai pelabuhan Stromboli. Tidak bijaksana untuk menceritakan bagaimana kami sampai di sana. Orang Italia yang percaya takhayul akan menganggap kami sebagai setan api yang dimuntahkan dari neraka; jadi kami menampilkan diri dalam wujud sederhana sebagai pelaut yang terdampar. Memang tidak semegah itu, tetapi lebih aman. Dalam perjalanan, aku mendengar pamanku bergumam: "Tapi kompas itu! Kompas itu! Kompas itu menunjuk tepat ke utara. Bagaimana kita menjelaskan fakta itu?" "Menurut saya," jawabku dengan nada meremehkan, "lebih baik tidak menjelaskannya. Itu cara termudah untuk mengabaikan kesulitan." "Sungguh, Tuan! Pemegang kursi profesor di Johannæum tidak mampu menjelaskan alasan fenomena kosmik! Sungguh memalukan!" Dan saat dia berbicara, pamanku, setengah telanjang, berpakaian compang-camping, seperti orang-orangan sawah, dengan ikat pinggang kulit melilit tubuhnya, membetulkan kacamata di hidungnya dan tampak terpelajar serta berwibawa, kembali menjadi dirinya sendiri, profesor mineralogi Jerman yang menakutkan itu. Satu jam setelah kami meninggalkan kebun zaitun, kami tiba di pelabuhan kecil San Vicenzo, tempat Hans mengambil upahnya selama tiga belas minggu, yang dihitungkan kepadanya sambil berjabat tangan dengan hangat. Pada saat itu, jika dia tidak merasakan emosi yang sama seperti kami, setidaknya raut wajahnya melebar dengan cara yang sangat tidak biasa baginya, dan sambil menekan ringan tangan kami dengan ujung jarinya, saya yakin dia tersenyum.</p>
 

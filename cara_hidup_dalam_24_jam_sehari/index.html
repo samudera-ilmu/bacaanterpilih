@@ -2,27 +2,81 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Judul Bab</title>
+<title>Cara Hidup Dalam 24 Jam Sehari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
 <style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --link: #1a73e8;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
   padding: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
-
-li { margin: 6px 0; }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
 }
 </style>
 </head>
 <body>
 
-<h1>Judul Bab</h1>
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+
+<h1>Cara Hidup Dalam 24 Jam Sehari</h1>
 
 <ol>
 <li><a href="tentang-buku-ini.html">TENTANG BUKU INI</a></li><li><a href="keajaiban-harian.html">KEAJAIBAN HARIAN</a></li><li><a href="keinginan-untuk-melebihi-program-yang-ditetapkan.html">KEINGINAN UNTUK MELEBIHI PROGRAM YANG DITETAPKAN</a></li><li><a href="perhatian-sebelum-memulai.html">PERHATIAN SEBELUM MEMULAI</a></li><li><a href="penyebab-masalah.html">PENYEBAB MASALAH</a></li><li><a href="tenis-dan-jiwa-abadi.html">TENIS DAN JIWA ABADI</a></li><li><a href="ingatlah-sifat-manusia.html">INGATLAH SIFAT MANUSIA</a></li><li><a href="mengendalikan-pikiran.html">MENGENDALIKAN PIKIRAN</a></li><li><a href="suasana-reflektif.html">SUASANA REFLEKTIF</a></li><li><a href="minat-terhadap-seni.html">MINAT TERHADAP SENI</a></li><li><a href="tidak-ada-hal-dalam-hidup-yang-membosankan.html">TIDAK ADA HAL DALAM HIDUP YANG MEMBOSANKAN.</a></li><li><a href="bacaan-serius.html">BACAAN SERIUS</a></li><li><a href="bahaya-yang-harus-dihindari.html">BAHAYA YANG HARUS DIHINDARI</a></li>

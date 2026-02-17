@@ -5,39 +5,176 @@
 <title>BAB DUA PULUH LIMA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB DUA PULUH LIMA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB DUA PULUH LIMA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Ia menerima takdirnya seperti seorang filsuf; dan berkenalan dengan seorang tokoh yang sangat luar biasa. Ini adalah topik yang tepat bagi pahlawan kita untuk merenungkan moralitas; dan karenanya hal itu tidak berlalu tanpa komentarnya; ia mendapati dirinya benar-benar dikalahkan oleh senjatanya sendiri, jatuh miskin di negeri asing, dan, yang paling disesalinya, kehilangan semua harapan besar yang selama ini ia bayangkan karena keunggulannya dalam tipu daya penipuan; karena, setelah sedikit mengingat, ia dengan jelas menyadari bahwa ia telah menjadi korban persekutuan yang ia tolak untuk bergabung; dan sama sekali tidak ragu bahwa dadu telah dimanipulasi untuk kehancurannya. Tetapi, alih-alih membenturkan kepalanya ke tembok, menjambak rambutnya, mengutuk dirinya sendiri dengan sia-sia, atau menunjukkan gejala keputusasaan lainnya, ia memutuskan untuk menerima nasibnya, dan mengambil pelajaran dari pelajaran yang telah ia beli dengan harga mahal. Dengan niat ini, ia segera memecat pelayannya, meninggalkan penginapannya, pergi ke jalan terpencil di seberang sungai, dan, menutupi satu matanya dengan kain sutra hitam besar, memperkenalkan dirinya sebagai seorang musisi kepada direktur opera, yang, setelah mendengar percobaan kemampuannya, menerimanya ke dalam band tanpa pertanyaan lebih lanjut. Selama ia berada dalam situasi ini, ia tidak hanya meningkatkan selera dan kemampuannya dalam bermusik, tetapi juga sering menemukan kesempatan untuk memperluas pengetahuannya tentang umat manusia; karena, selain pekerjaan yang ia lakukan di depan umum, ia sering terlibat dalam konser pribadi yang diadakan di hotel-hotel bangsawan; dengan cara ini ia semakin mengenal orang-orang, tata krama, dan karakter kehidupan kelas atas, yang ia amati dengan penuh perhatian, sebagai penonton, yang, karena sama sekali tidak terlibat dalam pertunjukan, lebih bebas untuk mengamati dan menikmati detail hiburan tersebut. Dalam salah satu pertemuan itulah ia berkesempatan bertemu dengan temannya, Sir Stentor, yang berpakaian sangat modis dan bertingkah laku dengan kesopanan berlebihan khas orang Prancis asli. Ia ditemani oleh saudara ksatria dan kepala biara; dan ketiganya, bahkan di hadapan Fathom, menceritakan detail yang sangat menggelikan tentang tipu daya yang telah mereka lakukan terhadap Pangeran Polandia kepada tuan rumah mereka, yang merupakan duta besar dari sebuah istana, dan mereka sangat menikmati cerita tersebut. Bahkan, mereka berusaha keras untuk menggambarkan beberapa kejadian dengan cara yang sangat menggelikan, sehingga petualang kita sendiri, yang merasa malu karena dipermalukan, tidak dapat menahan tawa diam-diam mendengar cerita tersebut. Setelah itu, ia berupaya menyelidiki karakter kedua ksatria Inggris tersebut, dan memahami bahwa mereka adalah penipu ulung yang terkenal, yang datang ke luar negeri demi kebaikan negara mereka, dan sekarang berburu berpasangan di antara sekelompok orang Prancis, yang menyebar di tempat-tempat umum, jalan-jalan, dan pertunjukan, untuk memangsa orang asing yang lengah. Kesombongan Ferdinand tersinggung mendengar informasi ini; dan ia bahkan tergerak oleh keinginan untuk membalas dendam kepada persaudaraan ini, yang darinya ia sangat ingin merebut kembali kehormatan dan harta miliknya. Tetapi hasil dari petualangan terakhirnya telah memperkuat kehati-hatiannya; dan, untuk saat ini, ia menemukan cara untuk menekan dorongan keserakahan dan ambisinya; memutuskan untuk menggunakan seluruh kecerdasannya dalam melakukan pengintaian, sebelum ia berani terjun ke medan perang lagi. Oleh karena itu, ia terus berperan sebagai pemain biola bermata satu, dengan nama Fadini, dan hidup dengan sangat hemat, agar ia dapat menabung untuk operasi masa depannya. Dengan cara ini ia telah melanjutkan selama sepuluh bulan, di mana ia memperoleh pengetahuan yang cukup tentang kota Paris, ketika rasa ingin tahunya tertarik oleh beberapa keanehan dalam penampilan seorang pria yang tinggal di salah satu apartemen atas milik rumah tempat ia sendiri menetap. Sosok itu tinggi, kurus, dan tampak lemah, dengan janggut hitam panjang, hidung mancung, kulit cokelat, dan tatapan mata yang sangat tajam dan penuh semangat. Ia tampak berusia sekitar lima puluh tahun, mengenakan pakaian Persia, dan ada keseriusan yang luar biasa dalam penampilan dan perilakunya. Ia dan petualang kita telah menjadi teman sekamar selama beberapa waktu, dan, sesuai dengan kebiasaan terpuji pada masa itu, hingga kini tetap terasing satu sama lain, seolah-olah mereka tinggal di sisi berlawanan dari dunia; tetapi akhir-akhir ini orang Persia itu tampaknya memperhatikan pahlawan kita dengan perhatian khusus; ketika mereka kebetulan bertemu di tangga, atau di tempat lain, ia membungkuk kepada Ferdinand dengan sangat khidmat, dan menyapanya dengan salam pas. Ia bahkan, dalam percakapan ini, membuka mulutnya dan menyapanya dengan ucapan selamat pagi, dan kadang-kadang membuat komentar umum tentang cuaca. Fathom, yang secara alami ramah, tidak menghalangi pendekatan-pendekatan ini. Sebaliknya, ia memperlakukannya dengan penuh hormat, dan suatu hari meminta undangan untuk sarapan bersamanya. Undangan itu ditolak oleh orang asing tersebut dengan sopan, dengan alasan sedang tidak pantas; dan, sementara itu, petualang kita berpikir untuk menanyakan kepada pemilik rumah tentang tamunya yang berasal dari luar negeri. Rasa ingin tahunya justru semakin besar daripada terpuaskan dengan informasi yang didapatnya; karena yang ia ketahui hanyalah bahwa orang Persia itu bernama Ali Beker, dan bahwa ia telah tinggal di rumah itu selama empat bulan, dengan cara yang sangat menyendiri dan hemat, tanpa dikunjungi oleh siapa pun; bahwa, beberapa waktu setelah kedatangannya, ia sering terdengar mengerang sedih di malam hari, dan bahkan berseru dalam bahasa yang tidak dikenal, seolah-olah ia menderita suatu penderitaan yang berat; dan meskipun luapan kesedihannya telah mereda, mudah untuk menyadari bahwa ia masih menyimpan kesedihan yang mendalam; karena air mata sering terlihat menetes di janggutnya. Komisaris wilayah pada awalnya memerintahkan agar orang Oriental ini diawasi pergerakannya, sesuai dengan prinsip-prinsip kepolisian Prancis; tetapi karena perilakunya terbukti sangat teratur dan tidak menimbulkan masalah, tindakan pencegahan ini segera dikesampingkan. Setiap orang yang memiliki perasaan kemanusiaan, dengan mengetahui detail-detail ini, pasti akan tergerak untuk menawarkan jasanya kepada orang asing yang terlantar itu; tetapi karena pahlawan kita tidak memiliki semua kelemahan sifat manusia ini, maka diperlukan motif lain untuk menghasilkan efek yang sama. Oleh karena itu, rasa ingin tahunya, yang dipadukan dengan harapan untuk mendapatkan kepercayaan Ali demi keuntungannya sendiri, secara efektif mendorongnya untuk berkenalan; dan, dalam waktu singkat, mereka mulai menikmati percakapan satu sama lain. Karena, seperti yang mungkin telah diamati pembaca, Fathom memiliki semua seni membujuk, dan memiliki cukup daya pengamatan untuk melihat aura martabat pada orang Persia itu, yang tidak dapat disembunyikan oleh kerendahan hati keadaannya. Selain itu, ia adalah orang yang berwawasan luas, tidak tanpa sedikit pun pengetahuan, sangat terdidik, meskipun dengan gaya yang formal, sangat bermoral dalam pembicaraannya, dan sangat teliti dalam gagasannya tentang kehormatan. Tokoh utama kita menyesuaikan diri dalam segala hal dengan pendapat orang lain, dan menggunakan kebijaksanaannya sedemikian rupa sehingga menganggapnya sebagai seorang pria terhormat yang terpaksa melakukan pekerjaan yang sama sekali tidak sesuai dengan kelahiran dan kedudukannya karena kemalangan. Ia dengan sungguh-sungguh dan berulang kali menawarkan bantuannya kepada orang asing itu, dan mendesaknya untuk menggunakan uangnya dengan kegigihan yang tulus, sehingga akhirnya keraguan Ali teratasi, dan ia berkenan meminjamkan sejumlah kecil uang kepadanya, yang kemungkinan besar menyelamatkan nyawanya; karena ia telah berada dalam keadaan sangat kekurangan sebelum ia mau menerima bantuan ini. Fathom, yang secara bertahap mendapatkan simpati darinya, mulai memperhatikan banyak desahan pilu yang keluar dari mulutnya saat mereka berinteraksi, dan tampaknya menunjukkan hati yang dipenuhi kesedihan; dan, dengan dalih memberikan penghiburan dan nasihat, meminta izin untuk mengetahui penyebab kesedihannya, dengan mengatakan bahwa pikirannya akan terbebas dari beban dengan komunikasi tersebut, dan, mungkin, kesedihannya akan berkurang dengan beberapa cara yang dapat mereka sepakati dan laksanakan bersama untuknya. Ali, yang dibujuk seperti itu, sering menggelengkan kepalanya, dengan tanda-tanda kesedihan dan keputusasaan yang mendalam, dan, sambil air mata mengalir deras dari matanya, menyatakan bahwa penderitaannya tidak dapat disembuhkan kecuali dengan kematian, dan bahwa, dengan menjadikan pahlawan kita sebagai orang kepercayaannya, ia hanya akan menyebarkan kesengsaraannya kepada seorang teman, tanpa merasakan sedikit pun pengurangan penderitaannya sendiri. Terlepas dari pernyataan berulang-ulang ini, Ferdinand, yang cukup mengenal pikiran manusia untuk mengetahui bahwa desakan seperti itu jarang atau tidak pernah tidak menyenangkan, melipatgandakan permintaannya, bersama dengan ungkapan simpati dan penghargaannya, sampai orang asing itu dibujuk untuk memuaskan rasa ingin tahu dan kebaikannya. Oleh karena itu, setelah mengunci pintu kamar suatu malam, sementara seluruh keluarga lainnya sedang tidur, Ali yang malang mengungkapkan dirinya dengan kata-kata ini.</p>
 

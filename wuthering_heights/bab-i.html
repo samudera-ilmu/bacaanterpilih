@@ -5,39 +5,176 @@
 <title>BAB I</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB I - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB I</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>1801—Saya baru saja kembali dari kunjungan ke tuan tanah saya—tetangga yang sendirian yang akan merepotkan saya. Ini sungguh negeri yang indah! Di seluruh Inggris, saya tidak percaya saya bisa menemukan tempat yang begitu terpencil dari hiruk pikuk masyarakat. Surga bagi seorang misantropis—dan Tuan Heathcliff dan saya adalah pasangan yang sangat cocok untuk membagi kesunyian di antara kami. Pria yang hebat! Dia tidak pernah membayangkan betapa hatiku menghangat kepadanya ketika aku melihat mata hitamnya menatap curiga ke bawah alisnya, saat aku berkuda mendekat, dan ketika jari-jarinya menyembunyikan diri, dengan tekad cemburu, lebih jauh di dalam rompinya, saat aku menyebutkan namaku. “Tuan Heathcliff?” tanyaku. Jawaban yang diberikan hanyalah anggukan. “Tuan Lockwood, penyewa baru Anda, Tuan. Saya merasa terhormat dapat berkunjung sesegera mungkin setelah kedatangan saya, untuk menyampaikan harapan bahwa saya tidak merepotkan Anda dengan kegigihan saya dalam meminta untuk menempati Thrushcross Grange: Saya mendengar kemarin Anda memiliki beberapa pertimbangan—” “Thrushcross Grange adalah milik saya sendiri, Tuan,” sela dia sambil meringis. “Saya tidak akan membiarkan siapa pun merepotkan saya, jika saya bisa mencegahnya—silakan masuk!” Kata "masuklah" diucapkan dengan gigi terkatup, dan mengungkapkan perasaan, "Pergi ke neraka!" bahkan gerbang tempat dia bersandar pun tidak menunjukkan gerakan simpati terhadap kata-kata itu; dan saya pikir keadaan itulah yang membuat saya menerima undangan tersebut: saya merasa tertarik pada seorang pria yang tampak lebih pendiam daripada saya. Ketika ia melihat dada kudaku hampir menyentuh pembatas, ia mengulurkan tangannya untuk melepaskan rantainya, lalu dengan cemberut mendahuluiku menyusuri jalan setapak, sambil memanggil saat kami memasuki halaman, —“Joseph, ambil kuda Tuan Lockwood; dan bawalah anggur.” “Di sini kita memiliki seluruh jajaran pembantu rumah tangga, kurasa,” begitulah refleksi yang tersirat dari susunan bangunan yang rumit ini. “Tidak heran rumput tumbuh di antara ubin, dan sapi adalah satu-satunya pemotong pagar.” Joseph adalah seorang pria tua, bahkan sangat tua, mungkin, meskipun sehat dan kuat. “Tuhan tolong kami!” gumamnya dalam nada kesal yang lirih, sambil mengambil kudaku: sementara itu, ia menatap wajahku dengan begitu masam sehingga aku dengan murah hati menduga ia pasti membutuhkan pertolongan ilahi untuk mencerna makan malamnya, dan seruannya yang saleh itu tidak ada hubungannya dengan kedatanganku yang tak terduga. Wuthering Heights adalah nama kediaman Tuan Heathcliff. "Wuthering" adalah kata sifat khas daerah yang menggambarkan kekacauan atmosfer yang dialami tempat itu saat cuaca badai. Ventilasi yang menyegarkan dan murni pasti selalu ada di sana: kita dapat memperkirakan kekuatan angin utara yang bertiup di atas tepian rumah dari kemiringan beberapa pohon cemara kerdil di ujung rumah; dan dari deretan semak berduri kurus yang semuanya menjulurkan cabangnya ke satu arah, seolah-olah meminta sedekah dari matahari. Untungnya, arsiteknya memiliki pandangan jauh ke depan untuk membangunnya dengan kuat: jendela-jendela sempit dipasang jauh di dalam dinding, dan sudut-sudutnya dilindungi dengan batu-batu besar yang menonjol. Sebelum melangkah masuk, saya berhenti sejenak untuk mengagumi banyaknya ukiran aneh yang menghiasi bagian depan, terutama di sekitar pintu utama; di atasnya, di antara ukiran griffin yang sudah lapuk dan anak laki-laki kecil yang kurang ajar, saya melihat tanggal "1500," dan nama "Hareton Earnshaw." Saya ingin memberikan beberapa komentar, dan meminta sejarah singkat tempat itu dari pemiliknya yang tampak kasar; tetapi sikapnya di pintu sepertinya menuntut saya untuk segera masuk, atau pergi sepenuhnya, dan saya tidak ingin memperburuk ketidaksabarannya sebelum memeriksa bagian dalam rumah. Satu langkah membawa kami ke ruang duduk keluarga, tanpa lobi atau lorong pengantar apa pun: di sini mereka menyebutnya "rumah" secara khusus. Ruangan ini umumnya meliputi dapur dan ruang tamu; tetapi saya yakin di Wuthering Heights dapur terpaksa mundur ke bagian lain: setidaknya saya mendengar obrolan dan dentingan peralatan masak di dalam; dan saya tidak melihat tanda-tanda memanggang, merebus, atau membakar di sekitar perapian besar; juga tidak ada kilauan panci tembaga dan saringan timah di dinding. Salah satu ujungnya, memang, memantulkan cahaya dan panas dengan indah dari deretan piring timah besar, diselingi dengan kendi dan gelas perak, yang menjulang tinggi berderet-deret, di atas lemari kayu ek besar, hingga ke atap. Lemari itu tidak pernah ditutup: seluruh strukturnya terlihat jelas oleh mata yang ingin tahu, kecuali di bagian yang ditutupi oleh kerangka kayu yang penuh dengan kue oat dan tumpukan kaki sapi, domba, dan ham. Di atas cerobong asap terdapat berbagai macam senjata tua yang tampak jahat, dan beberapa pistol kuda: dan, sebagai hiasan, tiga wadah yang dicat mencolok diletakkan di sepanjang tepiannya. Lantainya terbuat dari batu putih yang halus; kursi-kursinya, dengan sandaran tinggi, struktur primitif, dicat hijau: satu atau dua kursi hitam berat bersembunyi di tempat teduh. Di sebuah lengkungan di bawah lemari, beristirahat seekor anjing betina pointer berwarna cokelat tua yang besar, dikelilingi oleh sekumpulan anak anjing yang melengking; dan anjing-anjing lain berkeliaran di ceruk-ceruk lainnya. Apartemen dan perabotannya tidak akan terlihat luar biasa jika milik seorang petani sederhana dari utara, dengan wajah keras kepala, dan anggota tubuh tegap yang terlihat bagus dalam celana selutut dan pelindung betis. Orang seperti itu yang duduk di kursi berlengan, dengan cangkir birnya berbusa di atas meja bundar di depannya, dapat dilihat di sekitar area seluas lima atau enam mil di perbukitan ini, jika Anda pergi pada waktu yang tepat setelah makan malam. Tetapi Tuan Heathcliff membentuk kontras yang unik dengan tempat tinggal dan gaya hidupnya. Ia tampak seperti gipsi berkulit gelap, tetapi dalam berpakaian dan bertingkah laku seperti seorang bangsawan: artinya, sama seperti bangsawan pedesaan lainnya: mungkin agak ceroboh, tetapi tidak terlihat salah dengan kelalaiannya, karena ia memiliki sosok yang tegak dan tampan; dan agak murung. Mungkin, beberapa orang mungkin mencurigainya memiliki sedikit kesombongan yang kurang beradab; Aku memiliki firasat yang mengatakan bahwa itu sama sekali bukan seperti itu: aku tahu, secara naluriah, sikapnya yang tertutup muncul dari keengganan untuk menunjukkan perasaan secara berlebihan—untuk manifestasi kebaikan timbal balik. Dia akan mencintai dan membenci secara diam-diam, dan menganggapnya sebagai semacam kelancangan jika dicintai atau dibenci lagi. Tidak, aku terlalu cepat: aku terlalu mudah memberikan atributku sendiri padanya. Tuan Heathcliff mungkin memiliki alasan yang sama sekali berbeda untuk menjaga jarak ketika bertemu dengan calon kenalan, dibandingkan dengan alasan yang mendorongku. Semoga saja sifatku hampir unik: ibuku tersayang dulu mengatakan bahwa aku tidak akan pernah memiliki rumah yang nyaman; dan baru musim panas lalu aku membuktikan diriku sama sekali tidak layak untuk memilikinya. Saat menikmati cuaca cerah selama sebulan di tepi laut, saya bertemu dengan makhluk yang sangat mempesona: seorang dewi sejati di mata saya, selama dia tidak memperhatikan saya. Saya "tidak pernah mengungkapkan cinta saya" secara verbal; namun, jika tatapan memiliki bahasa, orang idiot sekalipun mungkin akan menebak bahwa saya sangat menyukainya: akhirnya dia mengerti saya, dan membalas tatapan saya—tatapan termanis yang bisa dibayangkan. Dan apa yang saya lakukan? Saya akui dengan malu—menyusut dingin ke dalam diri saya sendiri, seperti siput; setiap kali dia melirik, saya semakin menjauh dan dingin; sampai akhirnya gadis polos yang malang itu mulai meragukan indranya sendiri, dan, diliputi kebingungan atas kesalahan yang dia anggap telah dilakukannya, membujuk ibunya untuk pergi. Karena perubahan watak yang aneh ini, saya mendapatkan reputasi sebagai orang yang sengaja tidak berperasaan; betapa tidak pantasnya reputasi itu, hanya saya yang bisa memahaminya. Aku duduk di ujung perapian yang berlawanan dengan arah langkah tuan tanahku, dan mengisi keheningan dengan mencoba membelai induk anjing yang telah meninggalkan kandangnya, dan diam-diam merayap ke belakang kakiku, bibirnya melengkung ke atas, dan gigi putihnya siap menerkam. Belaianku memancing geraman panjang dan serak. “Sebaiknya kau biarkan anjing itu sendiri,” geram Tuan Heathcliff serempak, menghentikan demonstrasi yang lebih ganas dengan tendangan kakinya. “Dia tidak terbiasa dimanjakan—tidak dipelihara sebagai hewan peliharaan.” Kemudian, melangkah ke pintu samping, dia berteriak lagi, “Joseph!” Joseph bergumam tidak jelas di kedalaman ruang bawah tanah, tetapi tidak memberi isyarat akan naik; jadi tuannya menyelam ke arahnya, meninggalkan saya berhadapan dengan wanita kasar itu dan sepasang anjing gembala berbulu lebat yang garang, yang bersama dengannya mengawasi setiap gerakan saya dengan penuh kecemburuan. Karena tidak ingin bersentuhan dengan taring mereka, saya duduk diam; tetapi, membayangkan mereka hampir tidak akan mengerti hinaan diam-diam, saya tanpa sengaja mengedipkan mata dan membuat wajah lucu kepada ketiganya, dan beberapa ekspresi wajah saya begitu membuat Nyonya kesal, sehingga dia tiba-tiba marah dan melompat ke lutut saya. Saya mendorongnya kembali, dan bergegas menempatkan meja di antara kami. Tindakan ini membangkitkan seluruh kawanan: setengah lusin makhluk berkaki empat, dengan berbagai ukuran dan usia, keluar dari sarang tersembunyi ke pusat umum. Saya merasa tumit dan ujung mantel saya menjadi sasaran serangan khusus; Dan setelah menangkis serangan para petarung yang lebih besar seefektif mungkin dengan tongkat besi, saya terpaksa meminta bantuan, dengan suara lantang, dari beberapa anggota keluarga untuk memulihkan perdamaian. Tuan Heathcliff dan anak buahnya menaiki tangga ruang bawah tanah dengan perasaan kesal dan gelisah: Kurasa mereka tidak bergerak sedetik pun lebih cepat dari biasanya, meskipun perapian benar-benar diliputi kekhawatiran dan ratapan. Untungnya, seorang penghuni dapur bertindak lebih cepat; seorang wanita gagah, dengan gaun tersingkap, lengan telanjang, dan pipi merah karena api, bergegas ke tengah-tengah kami sambil mengacungkan wajan: dan menggunakan senjata itu, dan lidahnya, sedemikian rupa sehingga badai mereda secara ajaib, dan hanya dia yang tersisa, terengah-engah seperti laut setelah angin kencang, ketika tuannya memasuki tempat kejadian. “Ada apa sebenarnya?” tanyanya, menatapku dengan cara yang tak tertahankan setelah perlakuan tidak ramah ini. “Astaga!” gumamku. “Kawanan babi yang kerasukan itu tak mungkin memiliki roh yang lebih buruk daripada hewan-hewanmu, Tuan. Lebih baik kau serahkan saja sekawanan harimau kepada orang asing!” “Mereka tidak akan ikut campur dengan orang yang tidak menyentuh apa pun,” ujarnya, sambil meletakkan botol itu di depanku, dan mengembalikan meja yang bergeser. “Anjing-anjing itu memang seharusnya waspada. Mau segelas anggur?” "Tidak terima kasih." “Kamu tidak digigit, kan?” “Jika aku memang seperti itu, aku pasti sudah membubuhkan stempelku pada si penggigit.” Raut wajah Heathcliff berubah menjadi seringai. “Ayo, ayo,” katanya, “Anda tampak gelisah, Tuan Lockwood. Ini, minumlah sedikit anggur. Tamu sangat jarang datang ke rumah ini sehingga saya dan anjing-anjing saya, jujur saja, hampir tidak tahu bagaimana cara menyambut mereka. Bagaimana dengan kesehatan Anda, Tuan?” Aku membungkuk dan membalas janji itu; mulai menyadari bahwa akan bodoh jika terus merajuk karena perilaku buruk sekelompok orang yang tidak baik; lagipula, aku merasa enggan memberi orang itu hiburan lebih lanjut dengan mengorbankanku; karena suasana hatinya sudah berubah seperti itu. Dia—mungkin terpengaruh oleh pertimbangan bijaksana tentang kebodohan menyinggung seorang penyewa yang baik—sedikit melonggar dalam gaya bicaranya yang singkat, memangkas kata ganti dan kata kerja bantu, dan memperkenalkan apa yang menurutnya akan menarik minatku,—sebuah uraian tentang keuntungan dan kerugian tempat tinggalku saat ini. Aku mendapati dia sangat cerdas dalam topik yang kami bahas; dan sebelum aku pulang, aku merasa terdorong untuk menawarkan kunjungan lain besok. Dia jelas tidak ingin kunjunganku terulang lagi. Meskipun begitu, aku akan tetap pergi. Sungguh menakjubkan betapa ramahnya aku dibandingkan dengannya.</p>
 

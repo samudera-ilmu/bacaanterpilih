@@ -5,39 +5,176 @@
 <title>MINAT TERHADAP SENI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="MINAT TERHADAP SENI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>MINAT TERHADAP SENI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Banyak orang menjalani kebiasaan bermalas-malasan secara teratur dan tanpa gangguan di malam hari karena mereka berpikir bahwa tidak ada alternatif lain selain bermalas-malasan, yaitu mempelajari sastra; dan mereka tidak memiliki minat terhadap sastra. Ini adalah kesalahan besar. Tentu saja mustahil, atau setidaknya sangat sulit, untuk mempelajari apa pun dengan benar tanpa bantuan buku cetak. Tetapi jika Anda ingin memahami seluk-beluk permainan bridge atau berlayar, Anda tidak akan terhalang oleh kurangnya minat Anda pada sastra untuk membaca buku-buku terbaik tentang bridge atau berlayar. Oleh karena itu, kita harus membedakan antara sastra dan buku-buku yang membahas subjek non-sastra. Saya akan membahas sastra pada waktunya. Izinkan saya sekarang menyampaikan kepada mereka yang belum pernah membaca Meredith, dan yang tidak terpengaruh oleh diskusi tentang apakah Tuan Stephen Phillips adalah penyair sejati atau bukan, bahwa mereka sepenuhnya berhak atas hal itu. Tidak mencintai sastra bukanlah kejahatan. Itu bukan tanda kebodohan. Para ahli sastra akan langsung memerintahkan eksekusi terhadap individu malang yang tidak memahami, misalnya, pengaruh Wordsworth pada Tennyson. Tetapi itu hanyalah kelancangan mereka. Saya bertanya-tanya, di mana mereka akan berada jika diminta untuk menjelaskan pengaruh yang membentuk "Simfoni Patetik" karya Tschaikowsky? Ada bidang pengetahuan yang sangat luas di luar sastra yang akan menghasilkan hasil luar biasa bagi para penanamnya. Misalnya (karena saya baru saja menyebutkan karya musik kelas atas yang paling populer di Inggris saat ini), saya teringat bahwa Konser Promenade dimulai pada bulan Agustus. Anda pergi ke sana. Anda merokok cerutu atau rokok (dan saya menyesal mengatakan bahwa Anda menyalakan korek api Anda selama bagian lembut dari overture "Lohengrin"), dan Anda menikmati musiknya. Tetapi Anda mengatakan bahwa Anda tidak dapat memainkan piano atau biola, atau bahkan banjo; bahwa Anda tidak tahu apa pun tentang musik. Apa masalahnya? Bahwa Anda memiliki selera musik yang tulus dibuktikan oleh fakta bahwa, untuk mengisi aula dengan Anda dan rekan-rekan Anda, konduktor wajib menyediakan program yang hampir seluruhnya menghilangkan musik yang buruk (suatu perubahan dari masa-masa Covent Garden dulu!). Tentu saja, ketidakmampuan Anda untuk memainkan "The Maiden's Prayer" di piano tidak perlu menghalangi Anda untuk membiasakan diri dengan struktur orkestra yang Anda dengarkan beberapa malam seminggu selama beberapa bulan! Pada kenyataannya, Anda mungkin menganggap orkestra sebagai kumpulan instrumen heterogen yang menghasilkan kumpulan suara yang menyenangkan namun membingungkan. Anda tidak mendengarkan detail karena Anda tidak pernah melatih telinga Anda untuk mendengarkan detail. Jika Anda diminta menyebutkan instrumen-instrumen yang memainkan tema besar di awal simfoni C minor, Anda tidak akan bisa menyebutkannya sama sekali. Namun Anda mengagumi simfoni C minor. Simfoni itu telah memukau Anda. Simfoni itu akan memukau Anda lagi. Anda bahkan telah membicarakannya, dengan penuh antusias, kepada wanita itu—Anda tahu siapa yang saya maksud. Dan satu-satunya hal yang dapat Anda nyatakan secara pasti tentang simfoni C minor adalah bahwa Beethoven yang menggubahnya dan bahwa itu adalah "karya yang sangat bagus." Sekarang, jika Anda telah membaca, katakanlah, "Cara Mendengarkan Musik" karya Bapak Krehbiel (yang dapat diperoleh di toko buku mana pun dengan harga kurang dari harga sebuah kios di Alhambra, dan yang berisi foto-foto semua instrumen orkestra dan denah susunan orkestra), Anda selanjutnya akan pergi ke konser keliling dengan peningkatan minat yang luar biasa. Alih-alih massa yang kacau, orkestra akan tampak bagi Anda sebagai apa adanya— organisme yang sangat seimbang yang berbagai kelompok anggotanya masing-masing memiliki fungsi yang berbeda dan sangat penting. Anda akan mengamati instrumen-instrumen tersebut, dan mendengarkan suara masing-masing. Anda akan mengetahui perbedaan yang memisahkan French horn dari English horn, dan Anda akan memahami mengapa pemain hautboy mendapat upah lebih tinggi daripada pemain biola, meskipun biola adalah instrumen yang lebih sulit. Anda akan hidup di konser keliling, sedangkan sebelumnya Anda hanya ada di sana dalam keadaan koma yang penuh kebahagiaan, seperti bayi yang menatap benda terang. Landasan pengetahuan musik yang sejati dan sistematis dapat diletakkan. Anda dapat mengkhususkan penyelidikan Anda pada bentuk musik tertentu (seperti simfoni), atau pada karya-karya komposer tertentu. Pada akhir tahun yang terdiri dari empat puluh delapan minggu dengan tiga malam singkat setiap minggunya, dikombinasikan dengan studi program dan kehadiran di konser yang dipilih berdasarkan pengetahuan Anda yang terus meningkat, Anda akan benar-benar mengetahui sesuatu tentang musik, meskipun Anda masih jauh dari memainkan "The Maiden's Prayer" di piano. "Tapi aku benci musik!" katamu. Tuan yang terhormat, saya menghormati Anda. Apa yang berlaku untuk musik juga berlaku untuk seni lainnya. Saya mungkin menyebutkan buku karya Clermont Witt, "How to Look at Pictures," atau buku karya Russell Sturgis, "How to Judge Architecture," sebagai permulaan (hanya permulaan) dari pengetahuan yang sistematis dan vital dalam seni lainnya, yang bahan-bahan untuk mempelajarinya berlimpah di London. "Aku benci semua seni!" katamu. Tuan yang terhormat, aku semakin menghormatimu. Saya akan menangani kasus Anda selanjutnya, sebelum membahas literatur.</p>
 

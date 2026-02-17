@@ -5,39 +5,176 @@
 <title>BAB II.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB II. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB II.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“'Dime; no ves aquel caballero que hacia nosotros viene sobre un caballo rucio rodado que trae puesto en la cabeza un yelmo de oro?' 'Lo que veo y columbro,' jawab Sancho, 'no es sino un hombre sobre un as no pardo como el mio, que trae sobre la cabeza una cosa que relumbra.' 'Pues ese es el yelmo de Mambrino,' kata Don Quijote.”—CERVANTES. “'Tidakkah kau lihat ksatria yang datang ke arah kita dengan kuda abu-abu berbintik-bintik, dan mengenakan helm emas?' 'Yang kulihat,' jawab Sancho, 'tidak lain adalah seorang pria di atas keledai abu-abu seperti milikku, yang membawa sesuatu yang berkilauan di kepalanya.' 'Tepat sekali,' jawab Don Quixote: 'dan benda berkilauan itu adalah helm Mambrino.'” “Sir Humphry Davy?” tanya Mr. Brooke, sambil menyantap sup, dengan senyum ramahnya, menanggapi ucapan Sir James Chettam bahwa ia sedang mempelajari Kimia Pertanian karya Davy. “Nah, Sir Humphry Davy; saya pernah makan malam dengannya bertahun-tahun yang lalu di Cartwright's, dan Wordsworth juga ada di sana—penyair Wordsworth, Anda tahu. Nah, itu sesuatu yang unik. Saya berada di Cambridge ketika Wordsworth berada di sana, dan saya tidak pernah bertemu dengannya—dan saya makan malam dengannya dua puluh tahun kemudian di Cartwright's. Ada keanehan dalam hal ini. Tapi Davy ada di sana: dia juga seorang penyair. Atau, seperti yang bisa saya katakan, Wordsworth adalah penyair pertama, dan Davy adalah penyair kedua. Itu benar dalam setiap arti, Anda tahu.” Dorothea merasa sedikit lebih gelisah dari biasanya. Di awal makan malam, karena jumlah tamu sedikit dan ruangan sunyi, pikiran-pikiran kecil dari benak seorang hakim itu terdengar terlalu jelas. Ia bertanya-tanya bagaimana seorang pria seperti Tuan Casaubon bisa mentolerir hal-hal sepele seperti itu. Menurutnya, tingkah lakunya sangat bermartabat; tatanan rambutnya yang abu-abu keperakan dan rongga matanya yang dalam membuatnya menyerupai potret Locke. Ia memiliki bentuk tubuh yang ramping dan kulit pucat yang cocok untuk seorang mahasiswa; sangat berbeda dengan pria Inggris berambut merah yang digambarkan oleh Sir James Chettam. “Saya sedang membaca Kimia Pertanian,” kata bangsawan terhormat ini, “karena saya akan mengambil alih salah satu lahan pertanian dan melihat apakah ada sesuatu yang dapat dilakukan untuk menetapkan pola pertanian yang baik di antara para penyewa saya. Apakah Anda menyetujuinya, Nona Brooke?” “Kesalahan besar, Chettam,” sela Tuan Brooke, “memasang listrik di lahanmu dan hal-hal semacam itu, serta mengubah kandang sapi menjadi ruang tamu. Itu tidak akan berhasil. Saya sendiri pernah banyak berkecimpung dalam sains; tetapi saya melihat itu tidak akan berhasil. Itu mengarah ke segala hal; Anda tidak bisa membiarkan apa pun tetap seperti itu. Tidak, tidak—pastikan penyewa Anda tidak menjual jerami mereka, dan hal-hal semacam itu; dan berikan mereka pipa drainase, Anda tahu. Tetapi pertanian mewah Anda tidak akan berhasil—peluit termahal sekalipun: Anda lebih baik memelihara sekumpulan anjing pemburu.” “Tentu saja,” kata Dorothea, “lebih baik menghabiskan uang untuk mencari tahu bagaimana manusia dapat memanfaatkan tanah yang menopang mereka semua, daripada memelihara anjing dan kuda hanya untuk berlarian di atasnya. Bukanlah dosa untuk menjadi miskin dalam melakukan eksperimen demi kebaikan semua.” Ia berbicara dengan lebih bersemangat daripada yang diharapkan dari seorang wanita muda, tetapi Sir James telah membujuknya. Ia sudah terbiasa melakukan hal itu, dan ia sering berpikir bahwa ia dapat mendorongnya untuk melakukan banyak tindakan baik ketika ia masih menjadi saudara iparnya. Tuan Casaubon mengarahkan pandangannya dengan sangat jelas kepada Dorothea saat dia berbicara, dan sepertinya mengamatinya dengan saksama. “Para wanita muda tidak mengerti ekonomi politik, Anda tahu,” kata Tuan Brooke, sambil tersenyum ke arah Tuan Casaubon. “Saya ingat ketika kita semua membaca Adam Smith. Ada sebuah buku, sekarang. Saya menyerap semua ide baru sekaligus—kesempurnaan manusia, sekarang. Tetapi beberapa orang mengatakan, sejarah bergerak dalam lingkaran; dan itu mungkin sangat beralasan; saya sendiri telah memperdebatkannya. Faktanya adalah, akal manusia dapat membawa Anda terlalu jauh—bahkan melewati batas. Itu membawa saya cukup jauh pada suatu waktu; tetapi saya melihat itu tidak akan berhasil. Saya berhenti; saya berhenti tepat waktu. Tetapi tidak terlalu keras. Saya selalu mendukung sedikit teori: kita harus memiliki Pemikiran; jika tidak, kita akan kembali ke zaman kegelapan. Tetapi berbicara tentang buku, ada 'Perang Semenanjung' karya Southey. Saya sedang membacanya pagi ini. Anda kenal Southey?” “Tidak,” kata Tuan Casaubon, tidak sejalan dengan pemikiran impulsif Tuan Brooke, dan hanya memikirkan buku itu. “Saat ini saya tidak punya banyak waktu luang untuk membaca literatur semacam itu. Belakangan ini penglihatan saya sudah terkuras karena membaca karakter-karakter lama; kenyataannya, saya membutuhkan pembaca untuk malam-malam saya; tetapi saya pilih-pilih soal suara, dan saya tidak tahan mendengarkan pembaca yang tidak sempurna. Ini adalah suatu kemalangan, dalam beberapa hal: saya terlalu banyak bergantung pada sumber-sumber batin; saya terlalu banyak hidup dengan orang-orang yang telah meninggal. Pikiran saya seperti hantu orang kuno, berkeliaran di dunia dan mencoba secara mental untuk membangunnya seperti dulu, terlepas dari kehancuran dan perubahan yang membingungkan. Tetapi saya merasa perlu untuk sangat berhati-hati dengan penglihatan saya.” Ini adalah pertama kalinya Tuan Casaubon berbicara panjang lebar. Ia menyampaikan pidatonya dengan tepat, seolah-olah ia diminta untuk membuat pernyataan publik; dan kelancaran bicaranya yang teratur dan berirama, yang sesekali diiringi oleh gerakan kepalanya, semakin mencolok karena kontrasnya dengan kecerobohan Tuan Brooke yang ceroboh. Dorothea berkata dalam hati bahwa Tuan Casaubon adalah orang paling menarik yang pernah dilihatnya, bahkan tidak terkecuali Monsieur Liret, pendeta Vaudois yang telah memberikan ceramah tentang sejarah kaum Waldenses. Merekonstruksi dunia masa lalu, tentu saja dengan tujuan kebenaran tertinggi—sungguh pekerjaan yang luar biasa untuk dihadiri, dibantu, meskipun hanya sebagai penopang lampu! Pikiran yang membangkitkan semangat ini mengangkatnya dari kekesalannya karena diejek atas ketidaktahuannya tentang ekonomi politik, ilmu yang tak pernah dijelaskan yang seolah-olah memadamkan semua harapannya. “Tapi Anda gemar berkuda, Nona Brooke,” Sir James kemudian memanfaatkan kesempatan itu untuk berkata. “Saya kira Anda akan sedikit menikmati kesenangan berburu. Saya harap Anda mengizinkan saya mengirimkan kuda berwarna cokelat untuk Anda coba. Kuda itu telah dilatih untuk seorang wanita. Saya melihat Anda pada hari Sabtu berlari kencang di atas bukit dengan kuda yang tidak pantas untuk Anda. Pengurus kuda saya akan membawakan Corydon untuk Anda setiap hari, jika Anda mau menyebutkan waktunya.” “Terima kasih, Anda sangat baik. Saya bermaksud berhenti berkuda. Saya tidak akan berkuda lagi,” kata Dorothea, yang terdorong untuk mengambil keputusan kasar ini karena sedikit kesal Sir James meminta perhatiannya padahal ia ingin memberikan segalanya kepada Tuan Casaubon. “Tidak, itu terlalu sulit,” kata Sir James, dengan nada mencela yang menunjukkan ketertarikan yang kuat. “Saudari Anda gemar menyiksa diri sendiri, bukan?” lanjutnya, sambil menoleh ke Celia, yang duduk di sebelah kanannya. “Kurasa memang begitu,” kata Celia, merasa takut kalau-kalau ia mengatakan sesuatu yang tidak menyenangkan adiknya, dan merona secantik mungkin di atas kalungnya. “Dia suka menyerah.” “Jika itu benar, Celia, maka keputusanku untuk menyerah adalah bentuk pemanjaan diri, bukan penyiksaan diri. Tetapi mungkin ada alasan yang baik untuk memilih tidak melakukan apa yang sangat menyenangkan,” kata Dorothea. Tuan Brooke berbicara pada saat yang sama, tetapi jelas bahwa Tuan Casaubon sedang mengamati Dorothea, dan Dorothea menyadarinya. “Tepat sekali,” kata Sir James. “Anda menyerah karena motif yang mulia dan murah hati.” “Tidak, sama sekali tidak. Aku tidak mengatakan itu tentang diriku sendiri,” jawab Dorothea, wajahnya memerah. Tidak seperti Celia, ia jarang tersipu, dan hanya karena sangat gembira atau marah. Saat ini ia merasa marah pada Sir James yang keras kepala. Mengapa ia tidak memperhatikan Celia, dan membiarkannya mendengarkan Tuan Casaubon?—seandainya saja orang terpelajar itu mau berbicara, alih-alih membiarkan dirinya diajak bicara oleh Tuan Brooke, yang saat itu sedang memberitahunya bahwa Reformasi itu berarti sesuatu atau tidak, bahwa ia sendiri adalah seorang Protestan sejati, tetapi Katolik adalah sebuah fakta; dan mengenai penolakan sebidang tanah untuk kapel Katolik Roma, semua orang membutuhkan kendali agama, yang, sebenarnya, adalah rasa takut akan Kehidupan Akhirat. “Dulu saya sangat mendalami teologi,” kata Tuan Brooke, seolah menjelaskan wawasan yang baru saja terungkap. “Saya tahu sedikit tentang semua aliran. Saya mengenal Wilberforce di masa jayanya. Apakah Anda mengenal Wilberforce?” Tuan Casaubon berkata, “Tidak.” “Yah, Wilberforce mungkin bukanlah seorang pemikir yang cukup hebat; tetapi jika saya masuk Parlemen, seperti yang telah diminta kepada saya, saya akan duduk di bangku independen, seperti yang dilakukan Wilberforce, dan bekerja di bidang filantropi.” Tuan Casaubon membungkuk, dan mengamati bahwa itu adalah lapangan yang luas. “Ya,” kata Tuan Brooke sambil tersenyum ramah, “tetapi saya punya dokumen. Saya sudah lama mulai mengumpulkan dokumen. Dokumen-dokumen itu perlu diatur, tetapi ketika ada pertanyaan yang muncul, saya menulis surat kepada seseorang dan mendapatkan jawaban. Saya punya dokumen di belakang saya. Tapi sekarang, bagaimana Anda mengatur dokumen Anda?” “Sebagian di dalam rak-rak kecil,” kata Tuan Casaubon, dengan nada agak terkejut dan berusaha keras. “Ah, sistem rak-rak tidak akan berhasil. Saya sudah mencoba sistem rak-rak, tetapi semuanya tercampur di dalam rak-rak: saya tidak pernah tahu apakah sebuah makalah ada di bagian A atau Z.” “Aku harap Paman mengizinkanku menyortir dokumen-dokumen Paman,” kata Dorothea. “Aku akan mengurutkannya satu per satu, lalu membuat daftar subjek di bawah setiap huruf.” Tuan Casaubon tersenyum serius tanda setuju, dan berkata kepada Tuan Brooke, "Anda memiliki sekretaris yang sangat baik, Anda tahu." “Tidak, tidak,” kata Tuan Brooke sambil menggelengkan kepala; “Saya tidak bisa membiarkan wanita muda ikut campur dengan dokumen saya. Wanita muda terlalu plin-plan.” Dorothea merasa tersinggung. Tuan Casaubon mungkin mengira pamannya memiliki alasan khusus untuk menyampaikan pendapat ini, padahal ucapan itu terlintas di benaknya sekecil sayap serangga yang patah di antara semua serpihan lainnya, dan arus kebetulan telah membuatnya terlontar kepadanya . Ketika kedua gadis itu berada di ruang tamu sendirian, Celia berkata— “Betapa jeleknya Tuan Casaubon!” “Celia! Dia adalah salah satu pria dengan penampilan paling terhormat yang pernah saya lihat. Dia sangat mirip dengan potret Locke. Dia memiliki rongga mata yang dalam seperti Locke.” “Apakah Locke memiliki dua tahi lalat putih berbulu itu?” “Oh, kurasa! ketika orang-orang dari kalangan tertentu memandanginya,” kata Dorothea sambil berjalan sedikit menjauh. “Pak Casaubon sangat pucat.” “Lebih baik lagi. Kurasa kau mengagumi pria dengan warna kulit seperti ayam petelur .” “Dodo!” seru Celia, menatapnya dengan terkejut. “Aku belum pernah mendengar kau membuat perbandingan seperti itu sebelumnya.” “Mengapa saya harus melakukannya sebelum kesempatan itu tiba? Ini perbandingan yang bagus: padanannya sempurna.” Nona Brooke jelas-jelas lupa diri, dan Celia pun berpikir demikian. “Aku heran kenapa kau mudah marah, Dorothea.” “Sungguh menyakitkan hatimu, Celia, sehingga kau memandang manusia seolah-olah mereka hanyalah hewan yang punya toilet, dan tak pernah melihat jiwa agung di wajah seorang manusia.” “Apakah Tuan Casaubon memiliki jiwa yang mulia?” Celia tidak sepenuhnya tanpa sedikit pun kedengkian yang naif. “Ya, saya yakin dia punya,” kata Dorothea dengan suara penuh keyakinan. “Semua yang saya lihat pada dirinya sesuai dengan pamfletnya tentang Kosmologi Alkitab.” “Dia jarang bicara,” kata Celia. “Tidak ada seorang pun yang bisa dia ajak bicara.” Celia berpikir dalam hati, “Dorothea sangat membenci Sir James Chettam; kurasa dia tidak akan menerimanya.” Celia merasa ini sangat disayangkan. Dia tidak pernah tertipu mengenai objek ketertarikan baron itu. Kadang-kadang, memang, dia berpikir bahwa Dodo mungkin tidak akan membahagiakan seorang suami yang tidak memiliki cara pandang yang sama dengannya; dan terpendam di lubuk hatinya adalah perasaan bahwa saudara perempuannya terlalu religius untuk kenyamanan keluarga. Gagasan dan keraguan bagaikan jarum yang tertumpah, membuat seseorang takut untuk melangkah, duduk, atau bahkan makan. Ketika Nona Brooke sedang duduk di meja teh, Sir James datang dan duduk di sampingnya, karena sama sekali tidak merasa tersinggung dengan cara Nona Brooke menjawabnya. Mengapa juga ia harus tersinggung? Ia mengira Nona Brooke menyukainya, dan tata krama haruslah sangat menonjol sebelum berhenti ditafsirkan berdasarkan prasangka, baik yang percaya diri maupun yang tidak percaya. Nona Brooke sangat menawan baginya, tetapi tentu saja ia sedikit berteori tentang perasaannya. Ia terbuat dari bahan yang sangat baik, dan memiliki kelebihan langka yaitu mengetahui bahwa bakatnya, bahkan jika dilepaskan, tidak akan mampu menyulut aliran sungai terkecil sekalipun: oleh karena itu ia menyukai prospek seorang istri yang kepadanya ia dapat berkata, "Apa yang harus kita lakukan?" tentang ini atau itu; yang dapat membantu suaminya dengan alasan-alasan, dan juga memiliki kualifikasi yang tepat untuk melakukannya. Mengenai religiusitas berlebihan yang dituduhkan kepada Nona Brooke, ia memiliki gagasan yang sangat tidak jelas tentang apa itu, dan berpikir bahwa itu akan hilang setelah menikah. Singkatnya, ia merasa jatuh cinta di tempat yang tepat, dan siap menanggung banyak dominasi, yang, bagaimanapun, selalu bisa diredam oleh seorang pria jika ia mau. Sir James tidak menyangka bahwa ia akan pernah ingin meredam dominasi gadis cantik ini, yang kecerdasannya sangat ia kagumi. Mengapa tidak? Pikiran seorang pria—apa pun yang ada—selalu memiliki keunggulan maskulin,—seperti pohon birch terkecil pun lebih unggul daripada pohon palem yang paling menjulang tinggi,—dan bahkan ketidaktahuannya pun memiliki kualitas yang lebih baik. Sir James mungkin bukan pencetus penilaian ini; tetapi Tuhan yang Maha Baik memberikan sedikit kekuatan atau keteguhan pada kepribadian yang paling lemah sekalipun dalam bentuk tradisi. “Semoga Anda mencabut keputusan tentang kuda itu, Nona Brooke,” kata pengagum yang gigih itu. “Saya jamin, menunggang kuda adalah olahraga yang paling menyehatkan.” “Aku tahu,” kata Dorothea dingin. “Kurasa itu akan bermanfaat bagi Celia—jika dia mau melakukannya.” “Tapi kau adalah penunggang kuda yang sangat sempurna.” “Maafkan saya; saya belum banyak berlatih, dan saya mudah terjatuh.” “Kalau begitu, itu alasan untuk lebih banyak berlatih. Setiap wanita seharusnya menjadi penunggang kuda yang sempurna, agar ia dapat menemani suaminya.” “Anda lihat betapa besar perbedaan kita, Tuan James. Saya telah memutuskan bahwa saya tidak seharusnya menjadi penunggang kuda yang sempurna, dan karena itu saya tidak akan pernah sesuai dengan teladan Anda sebagai seorang wanita.” Dorothea menatap lurus ke depan, dan berbicara dengan nada dingin dan kasar, sangat mirip dengan sikap seorang pemuda tampan, yang kontras dengan keramahan dan perhatian sang pengagumnya. “Saya ingin mengetahui alasan Anda di balik keputusan kejam ini. Tidak mungkin Anda menganggap menunggang kuda itu salah.” “Ada kemungkinan besar bahwa menurutku itu salah.” “Oh, mengapa?” kata Sir James, dengan nada teguran yang lembut. Tuan Casaubon telah mendekat ke meja, cangkir teh di tangan, dan sedang mendengarkan. “Kita tidak boleh terlalu ingin tahu tentang motif,” sela dia dengan tenang. “Nona Brooke tahu bahwa motif cenderung menjadi lemah saat diucapkan: aromanya bercampur dengan udara yang lebih kasar. Kita harus menjaga biji yang sedang berkecambah agar terhindar dari cahaya.” Dorothea tersipu gembira, dan menatap pembicara dengan penuh rasa syukur. Inilah seorang pria yang dapat memahami kehidupan batin yang lebih tinggi, dan dengannya dapat terjalin persekutuan spiritual; bahkan, yang dapat menerangi prinsip dengan pengetahuan yang luas: seorang pria yang ilmunya hampir sama dengan bukti dari apa pun yang dia yakini! Kesimpulan Dorothea mungkin tampak besar; tetapi sebenarnya kehidupan tidak akan pernah bisa berjalan di periode mana pun tanpa adanya toleransi yang luas terhadap kesimpulan ini, yang telah mempermudah pernikahan di tengah kesulitan peradaban. Pernahkah ada yang merangkum ke dalam kerumitan perkenalan sebelum pernikahan? “Tentu saja,” kata Sir James yang baik. “Nona Brooke tidak akan didesak untuk mengungkapkan alasan yang lebih baik ia rahasiakan. Saya yakin alasannya akan menjunjung tinggi kehormatannya.” Ia sama sekali tidak cemburu dengan ketertarikan yang ditunjukkan Dorothea kepada Tuan Casaubon: tidak pernah terlintas dalam pikirannya bahwa seorang gadis yang sedang ia pertimbangkan untuk dilamar akan tertarik pada seorang kutu buku yang sudah hampir lima puluh tahun, kecuali, tentu saja, dalam konteks keagamaan, seperti kepada seorang pendeta yang cukup terkemuka. Namun, karena Nona Brooke sedang asyik mengobrol dengan Tuan Casaubon tentang pendeta Vaudois, Sir James menghampiri Celia dan berbicara dengannya tentang saudara perempuannya; membicarakan sebuah rumah di kota, dan bertanya apakah Nona Brooke tidak menyukai London. Jauh dari saudara perempuannya, Celia berbicara dengan cukup santai, dan Sir James berkata dalam hati bahwa Nona Brooke yang kedua memang sangat menyenangkan dan cantik, meskipun tidak, seperti yang diklaim beberapa orang, lebih pintar dan bijaksana daripada kakak perempuannya. Dia merasa telah memilih orang yang dalam segala hal lebih unggul; dan seorang pria secara alami ingin mendapatkan yang terbaik. Dia akan menjadi seperti cacing raksasa di antara para bujangan yang berpura-pura tidak mengharapkannya.</p>
 

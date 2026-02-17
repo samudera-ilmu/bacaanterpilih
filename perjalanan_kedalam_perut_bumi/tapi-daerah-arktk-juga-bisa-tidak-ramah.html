@@ -5,39 +5,176 @@
 <title>TAPI DAERAH ARKTK JUGA BISA TIDAK RAMAH.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="TAPI DAERAH ARKTK JUGA BISA TIDAK RAMAH. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>TAPI DAERAH ARKTK JUGA BISA TIDAK RAMAH.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Stapi adalah sebuah desa yang terdiri dari sekitar tiga puluh gubuk, dibangun dari lava, di sisi selatan kaki gunung berapi. Desa ini membentang di sepanjang tepi bagian dalam sebuah fyord kecil, yang dikelilingi oleh dinding basal dengan konstruksi yang sangat aneh. Basalt adalah batuan berwarna cokelat yang berasal dari batuan beku. Batuan ini memiliki bentuk yang teratur, yang susunannya seringkali sangat mengejutkan. Di sini, alam telah melakukan pekerjaannya secara geometris, dengan menggunakan penggaris siku, jangka, dan unting-unting. Di tempat lain, seni alam hanya terdiri dari menumpuk massa besar secara tidak teratur. Anda melihat kerucut yang bentuknya tidak sempurna, piramida yang tidak beraturan, dengan susunan garis yang fantastis; tetapi di sini, seolah-olah untuk menunjukkan contoh keteraturan, meskipun mendahului para arsitek paling awal, alam telah menciptakan tatanan arsitektur yang sangat sederhana, yang tidak pernah terlampaui baik oleh kemegahan Babilonia maupun keajaiban Yunani. Saya pernah mendengar tentang Giant's Causeway di Irlandia, dan Gua Fingal di Staffa, salah satu Kepulauan Hebrides; tetapi saya belum pernah melihat formasi basaltik. Di Stapi saya menyaksikan fenomena ini dalam segala keindahannya. Dinding yang membatasi fyord, seperti seluruh pantai semenanjung, terdiri dari serangkaian kolom vertikal setinggi tiga puluh kaki. Tiang-tiang lurus ini, dengan proporsi yang baik, menopang sebuah arkitrav dari lempengan horizontal, bagian yang menjorok ke luar membentuk setengah lengkungan di atas laut. Pada interval tertentu, di bawah perlindungan alami ini, terbentang pintu masuk berkubah dengan lengkungan yang indah, tempat ombak menerobos masuk dengan buih dan percikan air. Beberapa tiang basal, terlepas dari tempatnya akibat amukan badai, tergeletak di sepanjang tanah seperti sisa-sisa kuil kuno, reruntuhan yang selalu tampak baru, dan berabad-abad berlalu tanpa meninggalkan jejak usia di atasnya. Ini adalah tahap terakhir kami di bumi. Hans telah menunjukkan kecerdasan yang luar biasa, dan itu memberi saya sedikit penghiburan untuk berpikir bahwa dia tidak akan meninggalkan kami. Saat tiba di depan pintu rumah rektor, yang tidak berbeda dari rumah-rumah lainnya, saya melihat seorang pria sedang memasang tapal kuda, palu di tangan, dan mengenakan celemek kulit. " Sællvertu, " kata pemburu itu. " God dag, " kata pandai besi itu dalam bahasa Denmark yang fasih. " Kyrkoherde, " kata Hans, sambil menoleh ke pamanku. "Rektor," ulang Profesor itu. "Sepertinya, Axel, pria baik ini adalah rektor." Sementara itu, pemandu kami sedang memberi tahu 'kyrkoherde' (pemimpin kawanan kuda) tentang situasi sekitar; ketika mereka, menghentikan pekerjaannya sejenak, mengeluarkan suara yang pasti dipahami antara kuda dan tukang sepatu kuda, dan seketika seorang wanita tua tinggi dan jelek muncul dari gubuk. Tingginya pasti setidaknya enam kaki. Saya sangat khawatir kalau-kalau dia akan mencium saya dengan ciuman Islandia; tetapi tidak ada alasan untuk takut, dan dia pun tidak melakukannya dengan terlalu anggun. Ruang tamu tampak paling buruk di seluruh kabin menurut saya. Ruangan itu sempit, kotor, dan baunya tidak sedap. Tapi kami harus puas dengan itu. Rektor tidak menyukai keramahan ala zaman dulu. Jauh dari itu. Sebelum hari berakhir, saya melihat bahwa kami harus berurusan dengan seorang pandai besi, seorang nelayan, seorang pemburu, seorang tukang kayu, tetapi sama sekali tidak dengan seorang pendeta. Tentu saja, itu hari kerja; mungkin pada hari Minggu dia akan menebusnya. Saya tidak bermaksud mengatakan sesuatu yang buruk tentang para imam malang ini, yang bagaimanapun juga sangat sengsara. Mereka menerima dari Pemerintah Denmark uang yang sangat sedikit, dan mereka mendapatkan seperempat persepuluhan dari paroki, yang tidak mencapai enam puluh mark setahun (sekitar £4). Karena itulah mereka perlu bekerja untuk memenuhi kebutuhan hidup mereka; tetapi setelah memancing, berburu, dan memasang tapal kuda dalam waktu yang cukup lama, seseorang akan segera terbiasa dengan cara dan kebiasaan nelayan, pemburu, dan tukang sepatu kuda, serta orang-orang yang agak kasar dan tidak beradab lainnya; dan malam itu saya mengetahui bahwa pengendalian diri bukanlah salah satu kebajikan yang membedakan tuan rumah saya. Pamanku segera menyadari seperti apa orang yang akan dihadapinya; alih-alih orang yang baik dan terpelajar, ia menemukan seorang petani yang kasar dan tidak sopan. Karena itu, ia memutuskan untuk segera memulai ekspedisi besar dan meninggalkan rumah pendeta yang tidak ramah ini. Ia tidak peduli dengan kelelahan, dan memutuskan untuk menghabiskan beberapa hari di gunung. Oleh karena itu, persiapan keberangkatan kami dilakukan sehari setelah kedatangan kami di Stapi. Hans menyewa jasa tiga orang Islandia untuk mengurus kuda-kuda dalam pengangkutan barang; tetapi begitu kami tiba di kawah, penduduk asli ini harus kembali dan meninggalkan kami untuk mengurus diri sendiri. Hal ini harus dipahami dengan jelas. Pamanku kemudian memanfaatkan kesempatan itu untuk menjelaskan kepada Hans bahwa ia bermaksud menjelajahi bagian dalam gunung berapi hingga batas terjauhnya. Hans hanya mengangguk. Di sana atau di tempat lain, di kedalaman bumi, atau di mana pun di permukaan, semuanya sama saja baginya. Bagiku sendiri, kejadian-kejadian selama perjalanan sejauh ini telah menghiburku, dan membuatku melupakan malapetaka yang akan datang; tetapi sekarang ketakutanku mulai kembali menguasai diriku. Tapi apa yang bisa kulakukan? Tempat yang tepat untuk melawan Profesor adalah Hamburg, bukan kaki Gunung Snæfell. Satu pikiran, di atas segalanya, mengganggu dan mengkhawatirkan saya; pikiran itu mampu mengguncang saraf yang lebih kuat daripada saraf saya. Nah, pikirku, kita sudah sampai di sini, akan mendaki Snæfell. Bagus sekali. Kita akan menjelajahi kawahnya. Bagus juga, orang lain telah melakukan hal yang sama tanpa harus mati karenanya. Tapi bukan itu saja. Jika ada cara untuk menembus ke dalam perut pulau itu, jika Saknussemm yang kurang bijaksana itu menceritakan kisah yang benar, kita akan tersesat di tengah lorong-lorong bawah tanah yang dalam dari gunung berapi ini. Sekarang, tidak ada bukti bahwa Snæfell telah punah. Siapa yang dapat meyakinkan kita bahwa letusan tidak sedang terjadi saat ini? Apakah itu berarti bahwa karena monster itu telah tidur sejak tahun 1229, maka ia tidak akan pernah bangun lagi? Dan jika ia bangun sebentar lagi, di mana kita akan berada? Mendebatkan pertanyaan ini memang layak dilakukan, dan saya memang mendebatkannya. Saya tidak bisa tidur karena bermimpi tentang letusan gunung berapi. Nah, bagian tentang terak dan abu yang terlontar itu, menurut saya, sangat sulit untuk diperankan. Jadi, akhirnya, ketika saya tidak tahan lagi, saya memutuskan untuk menyampaikan masalah ini kepada paman saya, sehati-hati dan sehati-hati mungkin, hanya dalam bentuk hipotesis yang hampir mustahil. Aku menghampirinya. Aku menyampaikan ketakutanku padanya, dan mundur selangkah untuk memberi ruang baginya untuk ledakan yang kutahu pasti akan terjadi. Tapi aku salah. "Aku memang sedang memikirkan itu," jawabnya dengan sangat sederhana. Apa arti kata-kata itu?—Apakah dia benar-benar akan mendengarkan akal sehat? Apakah dia mempertimbangkan untuk meninggalkan rencananya? Ini terlalu bagus untuk menjadi kenyataan. Setelah beberapa saat hening, di mana saya tidak berani menanyainya, dia melanjutkan: "Saya sedang memikirkan hal itu. Sejak kami tiba di Stapi, saya terus memikirkan pertanyaan penting yang baru saja Anda ajukan, karena kita tidak boleh bertindak gegabah." "Tidak, sama sekali tidak!" jawabku dengan penekanan yang kuat. "Selama enam ratus tahun Snæfell bisu; tetapi dia mungkin akan berbicara lagi. Letusan selalu didahului oleh fenomena-fenomena tertentu yang sudah dikenal. Oleh karena itu, saya telah memeriksa penduduk setempat, saya telah mempelajari penampakan eksternal, dan saya dapat meyakinkan Anda, Axel, bahwa tidak akan ada letusan." Mendengar penegasan positif itu, saya berdiri takjub dan terdiam. "Kau tidak meragukan kata-kataku?" tanya pamanku. "Baiklah, ikuti aku." Aku menurut seperti robot. Keluar dari rumah pendeta, Profesor mengambil jalan lurus, yang melalui sebuah celah di dinding basal, mengarah menjauh dari laut. Kami segera berada di daerah terbuka, jika boleh disebut demikian untuk hamparan luas gundukan hasil vulkanik. Daerah ini tampak seperti tertimpa hujan batu-batu besar yang terlontar, berupa batuan trap, basal, granit, dan semua jenis batuan beku. Di sana-sini aku bisa melihat kepulan dan semburan uap yang membubung ke udara, yang dalam bahasa Islandia disebut 'reykir,' yang berasal dari mata air panas, dan menunjukkan energi vulkanik di bawahnya melalui gerakannya. Ini sepertinya membenarkan ketakutanku: Tetapi aku jatuh dari puncak harapan baruku ketika pamanku berkata: "Kau lihat semua uap yang mengepul ini, Axel; nah, itu menunjukkan bahwa kita tidak perlu takut akan dahsyatnya letusan gunung berapi." "Apakah aku harus mempercayai itu?" seruku sambil menangis. "Pahami ini dengan jelas," tambah Profesor itu. "Menjelang letusan, semburan-semburan ini akan meningkat aktivitasnya dua kali lipat, tetapi akan menghilang sama sekali selama periode letusan. Karena fluida elastis, yang tidak lagi berada di bawah tekanan, akan keluar melalui kawah alih-alih keluar melalui jalur biasanya melalui retakan di tanah. Oleh karena itu, jika uap-uap ini tetap dalam kondisi biasanya, jika mereka tidak menunjukkan peningkatan kekuatan, dan jika Anda menambahkan pengamatan bahwa angin dan hujan tidak berhenti dan digantikan oleh atmosfer yang tenang dan berat, maka Anda dapat menegaskan bahwa tidak ada letusan yang sedang terjadi." "Tetapi-" 'Tidak perlu lagi; itu sudah cukup. Ketika sains telah menyuarakan pendapatnya, biarlah para pengoceh diam.' Aku kembali ke rumah pendeta dengan perasaan sangat kecewa. Pamanku telah mengalahkanku dengan senjata ilmu pengetahuan. Namun aku masih memiliki satu harapan, yaitu, ketika kami telah mencapai dasar kawah, akan mustahil, karena tidak adanya jalan masuk, untuk masuk lebih dalam, terlepas dari semua Saknussemm di Islandia. Aku menghabiskan sepanjang malam itu dalam mimpi buruk yang tak kunjung usai; di jantung gunung berapi, dan dari kedalaman bumi yang paling dalam aku melihat diriku terlempar ke angkasa antarplanet dalam wujud batuan yang meletus. Keesokan harinya, 23 Juni, Hans menunggu kami bersama para pengikutnya membawa perbekalan, peralatan, dan perlengkapan; dua tongkat besi runcing, dua senapan, dan dua sabuk peluru untuk paman saya dan saya. Hans, sebagai orang yang berhati-hati, telah menambahkan ke dalam barang bawaan kami sebuah botol kulit berisi air, yang, bersama dengan air di termos kami, akan memastikan kami memiliki persediaan air selama delapan hari. Saat itu pukul sembilan pagi. Pendeta dan istrinya yang tinggi, Megæra, sedang menunggu kami di pintu. Kami mengira mereka berdiri di sana untuk mengucapkan selamat tinggal. Tetapi ucapan selamat tinggal itu datang dalam bentuk tagihan yang besar dan tak terduga, di mana semuanya dibebankan, bahkan udara yang kami hirup di rumah pastor itu, yang sudah terkontaminasi. Pasangan terhormat ini menipu kami seperti halnya pemilik penginapan di Swiss, dan menilai keramahan mereka yang tidak sempurna dengan harga yang sangat tinggi. Pamanku membayar tanpa berkomentar: seseorang yang berangkat menuju pusat bumi tidak perlu mempermasalahkan beberapa rix dolar. Setelah hal itu disepakati, Hans memberi isyarat, dan kami segera meninggalkan Stapi di belakang kami.</p>
 

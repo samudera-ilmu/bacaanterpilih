@@ -5,39 +5,176 @@
 <title>BAB XXXI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXXI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXXI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kemarin cerah, tenang, dan dingin. Saya pergi ke Heights seperti yang saya rencanakan: pembantu rumah tangga saya meminta saya untuk menyampaikan catatan kecil darinya kepada nyonya mudanya, dan saya tidak menolak, karena wanita yang baik hati itu tidak menyadari ada yang aneh dalam permintaannya. Pintu depan terbuka, tetapi gerbangnya terkunci rapat, seperti pada kunjungan terakhir saya; saya mengetuk dan memanggil Earnshaw dari antara petak-petak taman; dia membuka rantainya, dan saya masuk. Pria itu adalah seorang petani yang tampan. Saya memperhatikannya secara khusus kali ini; tetapi tampaknya dia melakukan yang terbaik untuk memanfaatkan kelebihannya sebaik mungkin. Saya bertanya apakah Tuan Heathcliff ada di rumah? Dia menjawab, Tidak; tetapi dia akan datang saat makan malam. Saat itu pukul sebelas, dan saya mengumumkan niat saya untuk masuk dan menunggunya; yang kemudian dia langsung meletakkan peralatan kerjanya dan menemani saya, bertindak sebagai penjaga, bukan sebagai pengganti tuan rumah. Kami masuk bersama; Catherine ada di sana, sibuk menyiapkan beberapa sayuran untuk makan malam yang akan datang; dia tampak lebih cemberut dan kurang bersemangat daripada saat pertama kali saya melihatnya. Dia hampir tidak mengangkat matanya untuk memperhatikan saya, dan melanjutkan pekerjaannya dengan mengabaikan tata krama seperti sebelumnya; tidak pernah membalas salam dan ucapan selamat pagi saya dengan sedikit pun balasan. “Dia tampaknya tidak sebaik yang Nyonya Dean ingin yakinkan padaku,” pikirku. “Memang dia cantik; tapi bukan malaikat.” Earnshaw dengan kesal menyuruhnya memindahkan barang-barangnya ke dapur. "Pindahkan sendiri," katanya, sambil mendorong barang-barang itu menjauh darinya begitu selesai; lalu duduk di bangku dekat jendela, di mana ia mulai mengukir figur burung dan binatang dari kulit lobak di pangkuannya. Aku mendekatinya, berpura-pura ingin melihat taman; dan, seperti yang kubayangkan, dengan cekatan menjatuhkan catatan Nyonya Dean ke lututnya, tanpa disadari oleh Hareton—tetapi ia bertanya dengan lantang, "Apa itu?" Dan melemparkannya. “Surat dari kenalan lamamu, pengurus rumah di Grange,” jawabku; kesal karena dia membongkar perbuatan baikku, dan takut kalau-kalau itu dikira suratku sendiri. Dia pasti akan senang mengambilnya setelah mendengar informasi ini, tetapi Hareton mendahuluinya; dia mengambil dan memasukkannya ke dalam rompinya, sambil berkata Tuan Heathcliff harus membacanya terlebih dahulu. Mendengar itu, Catherine diam-diam memalingkan wajahnya dari kami, dan, dengan sangat hati-hati, mengeluarkan saputangannya dan menutupi matanya; dan sepupunya, setelah berusaha sejenak menahan perasaannya yang lebih lembut, mengeluarkan surat itu dan melemparkannya ke lantai di sampingnya, seburuk mungkin. Catherine menangkap dan membacanya dengan penuh semangat; lalu dia mengajukan beberapa pertanyaan kepadaku tentang penghuni, baik yang rasional maupun irasional, di rumahnya dulu; dan sambil menatap ke arah perbukitan, bergumam dalam monolog: “Aku ingin sekali menunggangi Minny di sana! Aku ingin sekali memanjat ke sana! Oh! Aku lelah—aku terjebak , Hareton!” Dan dia menyandarkan kepalanya yang cantik ke ambang jendela, dengan setengah menguap dan setengah mendesah, dan tenggelam dalam ekspresi kesedihan yang linglung: tidak peduli atau tidak tahu apakah kami memperhatikannya. “Nyonya Heathcliff,” kataku, setelah beberapa saat terdiam, “Anda tidak tahu bahwa saya kenalan Anda? Begitu akrabnya sehingga saya merasa aneh Anda tidak mau datang dan berbicara dengan saya. Pembantu rumah tangga saya tidak pernah bosan membicarakan dan memuji Anda; dan dia akan sangat kecewa jika saya kembali tanpa kabar dari Anda, kecuali bahwa Anda menerima suratnya dan tidak mengatakan apa pun!” Dia tampak heran mendengar pidato itu, dan bertanya,— “Apakah Ellen menyukaimu?” “Ya, baik sekali,” jawabku dengan ragu-ragu. “Kau harus memberitahunya,” lanjutnya, “bahwa aku akan membalas suratnya, tetapi aku tidak punya alat untuk menulis: bahkan buku pun tak ada yang bisa kuambil selembar kertasnya.” “Tidak ada buku!” seruku. “Bagaimana kau bisa hidup di sini tanpa buku? Kalau boleh bertanya. Meskipun punya perpustakaan besar, aku sering merasa sangat bosan di Grange; ambil buku-bukuku, dan aku akan putus asa!” “Aku selalu membaca, ketika aku punya buku,” kata Catherine; “dan Tuan Heathcliff tidak pernah membaca; jadi dia memutuskan untuk menghancurkan buku-bukuku. Aku belum melihat satu pun bukuku selama berminggu-minggu. Hanya sekali, aku menggeledah koleksi buku teologi Joseph, yang membuatnya sangat kesal; dan sekali, Hareton, aku menemukan koleksi rahasia di kamarmu—beberapa buku Latin dan Yunani, serta beberapa cerita dan puisi: semuanya teman lama. Aku membawa yang terakhir ke sini—dan kau mengumpulkannya, seperti burung murai mengumpulkan sendok perak, hanya karena suka mencuri! Buku-buku itu tidak berguna bagimu; atau kau menyembunyikannya dengan niat buruk bahwa, karena kau tidak dapat menikmatinya, orang lain pun tidak akan bisa. Mungkin rasa iri hatimu mendorong Tuan Heathcliff untuk merampas harta karunku? Tetapi sebagian besar buku itu sudah tertulis di otakku dan tercetak di hatiku, dan kau tidak dapat merampasnya dariku!” Earnshaw tersipu merah padam ketika sepupunya mengungkapkan koleksi buku pribadinya, dan tergagap-gagap membantah tuduhannya dengan marah. “Tuan Hareton ingin menambah pengetahuannya,” kataku, mencoba membantunya. “Dia tidak iri , tetapi ingin menyaingi pencapaianmu. Dia akan menjadi cendekiawan yang cerdas dalam beberapa tahun lagi.” “Dan dia ingin aku menjadi orang bodoh sementara itu,” jawab Catherine. “Ya, aku dengar dia mencoba mengeja dan membaca sendiri, dan dia membuat kesalahan yang cukup besar! Aku berharap kau mengulangi Chevy Chase seperti yang kau lakukan kemarin: itu sangat lucu. Aku mendengarmu; dan aku mendengarmu membolak-balik kamus untuk mencari kata-kata yang sulit, lalu mengumpat karena kau tidak bisa membaca penjelasannya!” Pemuda itu tampaknya menganggap terlalu buruk bahwa ia ditertawakan karena ketidaktahuannya, dan kemudian ditertawakan karena mencoba menghilangkannya. Saya memiliki gagasan serupa; dan, mengingat anekdot Nyonya Dean tentang upaya pertamanya untuk menerangi kegelapan tempat ia dibesarkan, saya berkomentar, —“Tetapi, Nyonya Heathcliff, kita masing-masing telah memulai, dan masing-masing tersandung dan terhuyung-huyung di ambang pintu; seandainya guru kita mencemooh alih-alih membantu kita, kita akan tetap tersandung dan terhuyung-huyung.” “Oh!” jawabnya, “Aku tidak ingin membatasi pengetahuannya: namun, dia tidak berhak mengambil alih apa yang menjadi milikku, dan membuatnya tampak konyol bagiku dengan kesalahan dan pengucapannya yang buruk! Buku-buku itu, baik prosa maupun puisi, telah disucikan bagiku oleh kenangan lain; dan aku benci melihatnya direndahkan dan dinodai di mulutnya! Selain itu, dari semua itu, dia telah memilih karya-karya favoritku yang paling kusuka untuk diulang-ulang, seolah-olah dengan niat jahat yang disengaja.” Dada Hareton terangkat dalam diam selama satu menit: ia menderita rasa malu dan amarah yang hebat, yang tidak mudah untuk ditekan. Aku bangkit, dan, dengan niat baik untuk meringankan rasa malunya, mengambil tempatku di ambang pintu, mengamati pemandangan di luar sambil berdiri. Ia mengikuti contohku, dan meninggalkan ruangan; tetapi segera muncul kembali, membawa setengah lusin jilid buku di tangannya, yang ia lemparkan ke pangkuan Catherine, sambil berseru, —“Ambillah! Aku tidak ingin mendengar, membaca, atau memikirkan buku-buku ini lagi!” “Aku tidak akan menerima mereka sekarang,” jawabnya. “Aku akan menghubungkan mereka denganmu, dan membenci mereka.” Dia membuka salah satu buku yang jelas-jelas sudah sering dibalik, dan membaca sebagian isinya dengan nada bicara yang lambat seperti seorang pemula; lalu tertawa, dan melemparkannya. "Dan dengarkan," lanjutnya, dengan nada provokatif, memulai sebuah bait balada lama dengan cara yang sama. Namun, rasa cinta dirinya tak sanggup lagi menahan siksaan: kudengar, dan bukan sepenuhnya dengan nada tidak setuju, sebuah teguran fisik diberikan pada lidah lancangnya. Si gadis malang itu telah melakukan yang terbaik untuk menyakiti perasaan sepupunya yang sensitif namun belum terdidik, dan pertengkaran fisik adalah satu-satunya cara yang dia miliki untuk menyeimbangkan keadaan, dan membalas dendam pada si pelaku. Setelah itu, dia mengumpulkan buku-buku itu dan melemparkannya ke api. Aku membaca di wajahnya betapa pedihnya harus mengorbankan buku-buku itu untuk melampiaskan amarah. Kupikir, saat buku-buku itu terbakar, dia mengingat kembali kesenangan yang telah diberikannya, dan kemenangan serta kesenangan yang terus meningkat yang dia harapkan darinya; dan kupikir aku juga menduga pendorong untuk studi rahasianya. Dia puas dengan pekerjaan sehari-hari dan kesenangan hewani yang kasar, sampai Catherine datang kepadanya. Rasa malu atas penghinaannya, dan harapan akan persetujuannya, adalah pendorong pertamanya untuk mengejar hal-hal yang lebih tinggi; dan bukannya melindunginya dari yang satu dan membujuknya ke arah yang lain, usahanya untuk meningkatkan diri justru menghasilkan hasil yang sebaliknya. “Ya, hanya itu manfaat yang bisa didapatkan oleh orang kasar sepertimu dari mereka!” teriak Catherine, sambil menghisap bibirnya yang terluka, dan menyaksikan kobaran api dengan mata penuh amarah. “ Sebaiknya kau diam saja sekarang,” jawabnya dengan garang. Dan kegelisahannya menghalanginya untuk berbicara lebih lanjut; dia bergegas ke pintu masuk, di mana saya memberi jalan baginya untuk lewat. Tetapi sebelum dia melewati ambang pintu, Tuan Heathcliff, yang datang dari jalan setapak, menemuinya, dan memegang bahunya bertanya, —“Apa yang harus dilakukan sekarang, Nak?” “Tidak ada apa-apa, tidak ada apa-apa,” katanya, lalu pergi menyendiri untuk menikmati kesedihan dan kemarahannya. Heathcliff menatap kepergiannya, lalu menghela napas. “Akan aneh jika aku menggagalkan diriku sendiri,” gumamnya, tanpa menyadari bahwa aku berada di belakangnya. “Tapi ketika aku mencari kemiripan ayahnya di wajahnya, aku semakin menemukannya setiap hari! Seberapa miripkah dia? Aku hampir tak tahan melihatnya.” Ia menundukkan pandangannya ke tanah, dan berjalan masuk dengan murung. Ada ekspresi gelisah dan cemas di wajahnya, yang belum pernah saya perhatikan sebelumnya; dan ia tampak lebih kurus secara fisik. Menantu perempuannya, begitu melihatnya melalui jendela, segera lari ke dapur, sehingga saya tetap sendirian. “Senang melihat Anda kembali berada di luar ruangan, Tuan Lockwood,” katanya, menanggapi sapaan saya; “sebagian karena motif egois: saya rasa saya tidak bisa dengan mudah menggantikan kehilangan Anda di tempat terpencil ini. Saya sudah berkali-kali bertanya-tanya apa yang membawa Anda ke sini.” “Mungkin hanya iseng belaka, Tuan,” jawab saya; “atau mungkin iseng belaka akan membawa saya pergi. Saya akan berangkat ke London minggu depan; dan saya harus memberi tahu Anda bahwa saya tidak berniat untuk tetap tinggal di Thrushcross Grange lebih dari dua belas bulan yang telah saya sepakati untuk menyewanya. Saya yakin saya tidak akan tinggal di sana lagi.” “Oh, benarkah; kau lelah diasingkan dari dunia ini, ya?” katanya. “Tetapi jika kau datang untuk menghindari pembayaran tempat yang tidak akan kau tempati, perjalananmu sia-sia: Aku tidak pernah berhenti menuntut hakku dari siapa pun.” “Aku tidak bermaksud untuk membatalkan apa pun,” seruku, dengan nada kesal. “Jika kau menginginkannya, aku akan menyelesaikannya sekarang,” lalu aku mengeluarkan buku catatanku dari saku. “Tidak, tidak,” jawabnya dengan tenang; “kau akan meninggalkan cukup uang untuk melunasi hutangmu, jika kau gagal kembali: aku tidak terburu-buru. Duduklah dan makan malam bersama kami; tamu yang aman dari kunjungan berulang biasanya dapat diterima dengan baik. Catherine! bawalah barang-barang itu masuk: di mana kau?” Catherine muncul kembali sambil membawa nampan berisi pisau dan garpu. “Kau boleh makan malam bersama Joseph,” gumam Heathcliff pelan, “dan tetaplah di dapur sampai dia pergi.” Dia menuruti perintahnya dengan sangat tepat waktu: mungkin dia tidak tergoda untuk melanggar aturan. Hidup di antara badut dan pembenci manusia, dia mungkin tidak dapat menghargai orang-orang yang lebih baik ketika bertemu dengan mereka. Dengan Tuan Heathcliff yang muram dan murung di satu sisi, dan Hareton yang benar-benar bisu di sisi lain, saya menikmati makan malam yang agak suram, dan berpamitan lebih awal. Saya ingin pergi lewat jalan belakang, untuk melihat Catherine sekali lagi dan mengganggu Joseph tua; tetapi Hareton menerima perintah untuk menuntun kuda saya, dan tuan rumah saya sendiri mengantar saya ke pintu, jadi saya tidak dapat memenuhi keinginan saya. “Betapa suramnya kehidupan di rumah itu!” gumamku sambil berkendara di jalan. “Betapa indahnya jika Nyonya Linton Heathcliff bisa mewujudkan sesuatu yang lebih romantis daripada dongeng, seandainya aku dan dia menjalin hubungan, seperti yang diinginkan pengasuhnya, dan pindah bersama ke suasana kota yang ramai!”</p>
 

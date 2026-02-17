@@ -5,39 +5,176 @@
 <title>TANDA-TANDA PERTAMA KESULITAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="TANDA-TANDA PERTAMA KESULITAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>TANDA-TANDA PERTAMA KESULITAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Faktanya, kami harus berhemat. Persediaan air kami tidak cukup untuk lebih dari tiga hari. Saya baru mengetahuinya saat waktu makan malam tiba. Dan, yang membuat kami sedih, kami hampir tidak punya alasan untuk berharap menemukan mata air di tempat tidur sementara ini. Sepanjang hari berikutnya, galeri itu membentangkan lorong-lorongnya yang tak berujung di hadapan kami. Kami melanjutkan perjalanan hampir tanpa mengucapkan sepatah kata pun. Keheningan Hans seolah menular kepada kami. Jalan itu sekarang tidak lagi menanjak, setidaknya tidak terlihat jelas. Bahkan kadang-kadang, tampaknya sedikit menurun. Tetapi kecenderungan ini, yang sangat sepele, tidak dapat meyakinkan Profesor; karena tidak ada perubahan pada lapisan tanah, dan karakteristik transisi menjadi semakin jelas. Cahaya lampu listrik terpantul dengan gemerlap dari batuan sekis, batu kapur, dan batu pasir merah tua pada dinding. Seolah-olah kita sedang melewati suatu wilayah di Wales, yang namanya diabadikan oleh suatu bangsa kuno dalam sistem arsitektur ini. Spesimen marmer yang megah menghiasi dinding, beberapa berwarna abu-abu keabu-abuan dengan urat putih yang fantastis, yang lain berwarna merah tua atau kuning pekat dengan bercak-bercak merah; kemudian ada marmer berwarna merah ceri gelap yang diimbangi dengan warna-warna lebih terang dari batu kapur. Sebagian besar dari fosil-fosil ini memuat jejak organisme primitif. Penciptaan jelas telah maju sejak hari sebelumnya. Alih-alih trilobita yang masih primitif, saya melihat sisa-sisa makhluk yang lebih sempurna, di antaranya ikan ganoid dan beberapa sauroid yang di dalamnya para paleontolog telah menemukan bentuk reptil paling awal. Lautan Devonian dihuni oleh hewan-hewan dari spesies ini, dan mengendapkan ribuan fosil mereka di bebatuan formasi yang lebih baru. Jelas terlihat bahwa kita sedang menaiki tangga kehidupan hewan di mana manusia menempati posisi tertinggi. Tetapi Profesor Liedenbrock tampaknya tidak menyadarinya. Ia menantikan salah satu dari dua kemungkinan, yaitu munculnya lubang sumur vertikal di depan kakinya, yang memungkinkan kami melanjutkan perjalanan turun, atau munculnya rintangan yang akan memaksa kami kembali ke jalur semula. Namun, malam tiba dan kedua harapan itu tidak terpenuhi. Pada hari Jumat, setelah semalaman saya merasa sangat haus, rombongan kecil kami kembali menyusuri lorong-lorong berliku di galeri tersebut. Setelah berjalan selama sepuluh jam, saya mengamati perubahan yang mencolok pada pantulan lampu kami dari dinding samping. Marmer, batuan sekis, batu kapur, dan batu pasir mulai tergantikan oleh lapisan yang gelap dan kusam. Pada suatu saat, terowongan menjadi sangat sempit, saya bersandar ke dinding. Saat aku menarik tanganku, warnanya hitam. Aku melihat lebih dekat, dan mendapati kami berada di formasi batubara. "Tambang batu bara!" seruku. "Tambang tanpa penambang," jawab pamanku. "Siapa yang tahu?" tanyaku. "Saya tahu," kata Profesor itu dengan tegas, "Saya yakin bahwa terowongan yang digali menembus lapisan batubara ini tidak pernah dibuat oleh tangan manusia. Tetapi apakah itu buatan alam atau bukan, itu tidak penting. Waktu makan malam telah tiba; mari kita makan malam." Hans menyiapkan makanan. Aku hampir tidak makan, dan hanya menelan beberapa tetes air yang dibagikan kepadaku. Satu botol setengah penuh adalah semua yang tersisa untuk memuaskan dahaga tiga orang. Setelah makan, kedua temanku berbaring di atas tikar mereka, dan tidur menjadi pelepas penat bagi kelelahan mereka. Tetapi aku tidak bisa tidur, dan aku menghitung setiap jam hingga pagi. Pada hari Sabtu, pukul enam, kami memulai kembali. Dalam dua puluh menit kami mencapai ruang terbuka yang luas; saat itulah saya tahu bahwa tambang ini tidak digali oleh tangan manusia; ruang bawah tanah pasti telah ditopang, dan, seperti yang terjadi, tampaknya ditopang oleh keajaiban keseimbangan. Gua ini lebarnya sekitar seratus kaki dan tingginya seratus lima puluh kaki. Sebuah massa besar telah terbelah oleh gangguan bawah tanah. Karena menyerah pada kekuatan dahsyat dari bawah, ia hancur berkeping-keping, meninggalkan lubang besar ini yang kini dimasuki manusia untuk pertama kalinya. Seluruh sejarah periode Karboniferus tertulis di dinding-dinding suram ini, dan seorang ahli geologi dapat dengan mudah menelusuri semua fase yang beragam. Lapisan batubara dipisahkan oleh lapisan batupasir atau lempung padat, dan tampak hancur di bawah beban lapisan di atasnya. Pada zaman dunia yang mendahului periode sekunder, bumi diselimuti oleh bentuk-bentuk tumbuhan yang sangat besar, hasil dari pengaruh ganda panas tropis dan kelembapan yang konstan; atmosfer yang berkabut mengelilingi bumi, masih menghalangi sinar matahari langsung. Dari situ muncullah kesimpulan bahwa suhu tinggi yang ada saat itu disebabkan oleh sumber lain selain panas matahari. Mungkin bahkan matahari pun belum siap memainkan peran gemilang yang sekarang dimainkannya. Belum ada 'iklim' saat itu, dan panas yang menyengat, sama dari kutub hingga khatulistiwa, tersebar di seluruh permukaan bumi. Dari mana panas ini berasal? Apakah dari dalam bumi? Terlepas dari teori Profesor Liedenbrock, panas yang hebat memang terjadi di dalam tubuh spheroid tersebut pada waktu itu. Dampaknya terasa hingga lapisan terdalam kerak bumi; tumbuhan, yang tidak mengenal pengaruh baik matahari, tidak menghasilkan bunga maupun aroma. Namun akarnya memperoleh kehidupan yang kuat dari tanah yang panas di masa-masa awal planet ini. Hanya ada sedikit pohon. Hanya tumbuhan herba yang ada. Terdapat rumput tinggi, pakis, lycopod, selain sigillaria, asterophyllites, tumbuhan yang sekarang langka, tetapi pada saat itu spesiesnya bisa dihitung hingga ribuan. Lapisan batubara tersebut berawal dari periode vegetasi yang melimpah ini. Kerak bumi yang masih elastis dan lentur menuruti gaya fluida di bawahnya. Dari situ, terbentuklah retakan dan cekungan yang tak terhitung jumlahnya. Tumbuhan-tumbuhan, yang tenggelam di bawah air, secara bertahap membentuk massa akumulasi yang sangat besar. Kemudian terjadilah aksi kimia alami; di kedalaman laut, akumulasi tumbuhan pertama-tama menjadi gambut; kemudian, dipengaruhi oleh gas yang dihasilkan dan panas fermentasi, mereka mengalami proses mineralisasi lengkap. Demikianlah terbentuk ladang batubara yang sangat luas itu, yang meskipun demikian, bukanlah sumber daya yang tak terbatas, dan yang akan habis dalam tiga abad dengan laju konsumsi yang dipercepat saat ini kecuali jika dunia industri menemukan solusinya. Renungan ini muncul dalam benak saya saat saya merenungkan kekayaan mineral yang tersimpan di bagian dunia ini. Saya pikir, kekayaan ini pasti tidak akan pernah ditemukan; penggalian tambang sedalam itu akan membutuhkan biaya yang terlalu besar, dan apa gunanya selama batubara masih tersebar luas di dekat permukaan? Seperti yang saya lihat sekarang, kekayaan mineral yang masih perawan ini akan tetap seperti itu ketika dunia ini berakhir. Namun kami tetap melanjutkan perjalanan, dan hanya saya yang melupakan panjangnya jalan karena larut dalam perenungan geologis. Suhu tetap sama seperti saat kami melewati lava dan batuan sekis. Hanya indra penciuman saya yang terpengaruh oleh bau protokarburator hidrogen. Saya segera mengenali di lorong ini adanya sejumlah besar gas berbahaya yang oleh para penambang disebut gas metana, yang ledakannya sering menyebabkan bencana mengerikan. Untungnya, penerangan kami berasal dari alat cerdik Ruhmkorff. Seandainya kami menjelajahi galeri ini dengan obor, ledakan dahsyat akan mengakhiri perjalanan dan para pelancong dalam sekejap. Perjalanan menyusuri tambang batu bara ini berlangsung hingga malam. Pamanku hampir tak bisa menahan ketidaksabarannya melihat jalan yang mendatar itu. Kegelapan, yang selalu pekat sekitar dua puluh yard di depan kami, mencegah kami memperkirakan panjang lorong; dan aku mulai berpikir lorong itu pasti tak berujung, ketika tiba-tiba pukul enam, sebuah dinding muncul di hadapan kami tanpa diduga. Kanan atau kiri, atas atau bawah, tidak ada jalan lebih jauh; kami berada di ujung jalan buntu. "Baiklah, tidak apa-apa!" seru pamanku, "setidaknya sekarang, kita akan tahu apa yang sedang kita lakukan. Kita tidak berada di jalan Saknussemm, dan yang harus kita lakukan hanyalah kembali. Mari kita beristirahat semalaman, dan dalam tiga hari kita akan sampai di persimpangan jalan." "Ya," kataku, "jika kita masih punya tenaga." "Mengapa tidak?" "Karena besok kita tidak akan punya air." "Dan juga keberanian?" tanya pamanku dengan tegas. Aku tidak berani menjawab.</p>
 

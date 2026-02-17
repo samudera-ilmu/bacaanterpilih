@@ -5,39 +5,176 @@
 <title>DIVISI-DIVISI ILMU FILSAFAT</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="DIVISI-DIVISI ILMU FILSAFAT - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>DIVISI-DIVISI ILMU FILSAFAT</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Ilmu-ilmu ini, dalam kaitannya dengan tujuan yang telah kita tetapkan, dapat dibagi menjadi enam bagian: (1) Matematika; (2) Logika; (3) Fisika; (4) Metafisika; (5) Politik; (6) Filsafat Moral.</p>
 <p>Matematika mencakup pengetahuan tentang perhitungan, geometri, dan kosmografi: matematika tidak memiliki hubungan dengan ilmu-ilmu agama, dan tidak membuktikan apa pun yang mendukung atau menentang agama; matematika bertumpu pada landasan bukti-bukti yang, setelah diketahui dan dipahami, tidak dapat disangkal. Namun, matematika cenderung menghasilkan dua hasil buruk. Pertama, begini: Siapa pun yang mempelajari ilmu ini mengagumi kehalusan dan kejelasan pembuktiannya. Kepercayaan dirinya pada filsafat meningkat, dan ia berpikir bahwa semua cabangnya mampu memberikan kejelasan dan kekokohan pembuktian yang sama seperti matematika. Tetapi ketika ia mendengar orang-orang berbicara tentang ketidakpercayaan dan ketidaktaatan para matematikawan, tentang pengabaian mereka terhadap Hukum Ilahi, yang sudah terkenal, memang benar bahwa, karena menghormati otoritas, ia menggemakan tuduhan-tuduhan ini, tetapi pada saat yang sama ia berkata pada dirinya sendiri bahwa, jika ada kebenaran dalam agama, itu tidak akan luput dari perhatian mereka yang telah menunjukkan ketajaman intelektual yang begitu besar dalam mempelajari matematika. Selanjutnya, ketika ia menyadari ketidakpercayaan dan penolakan agama dari para cendekiawan ini, ia menyimpulkan bahwa menolak agama adalah hal yang masuk akal. Betapa banyak orang sesat seperti itu yang telah saya temui, yang satu-satunya argumen mereka adalah yang baru saja disebutkan. Dan misalkan seseorang mengajukan keberatan berikut kepada mereka: “Tidak berarti bahwa seseorang yang unggul dalam satu cabang ilmu pengetahuan unggul dalam semua cabang ilmu lainnya, atau bahwa ia harus sama mahirnya dalam yurisprudensi, teologi, dan kedokteran. Dimungkinkan untuk sama sekali tidak mengetahui metafisika, namun tetap menjadi ahli tata bahasa yang sangat baik. Ada para ahli di setiap bidang ilmu pengetahuan yang sama sekali tidak mengetahui cabang ilmu pengetahuan lainnya. Argumen para filsuf kuno sangat demonstratif dalam matematika dan hanya bersifat dugaan dalam pertanyaan-pertanyaan keagamaan. Untuk memastikan hal ini, seseorang harus melakukan pemeriksaan menyeluruh terhadap masalah tersebut.” Misalkan, saya katakan, seseorang mengajukan keberatan di atas kepada “kera-kera ketidakpercayaan” ini, mereka akan merasa jijik. Terperangkap dalam nafsu, kesombongan yang memabukkan, dan keinginan untuk dianggap sebagai orang terpelajar, mereka bersikeras mempertahankan keunggulan para matematikawan di semua cabang ilmu pengetahuan. Ini adalah kejahatan serius, dan karena alasan ini mereka yang mempelajari matematika harus dicegah agar tidak terlalu jauh dalam penelitian mereka. Sebab, meskipun sangat jauh dari hal-hal keagamaan, studi ini, yang berfungsi sebagai pengantar sistem filsafat, memberikan pengaruh buruknya pada agama. Jarang sekali seseorang mengabdikan dirinya untuk itu tanpa merampas imannya dan melepaskan batasan-batasan agama. Kejahatan kedua berasal dari Muslim yang tulus tetapi bodoh yang berpikir bahwa cara terbaik untuk membela agama adalah dengan menolak semua ilmu pasti. Menuduh para profesornya sesat, ia menolak teori-teori mereka tentang gerhana matahari dan bulan, dan mengutuknya atas nama agama. Tuduhan-tuduhan ini tersebar luas, sampai ke telinga filsuf yang tahu bahwa teori-teori ini didasarkan pada bukti-bukti yang tak terbantahkan; bukannya kehilangan kepercayaan pada teori-teori tersebut, ia justru percaya bahwa Islam berlandaskan pada kebodohan dan penolakan bukti-bukti ilmiah, dan pengabdiannya pada filsafat meningkat seiring dengan kebenciannya terhadap agama. Oleh karena itu, merupakan suatu kesalahan besar bagi agama jika menganggap bahwa pembelaan Islam melibatkan kecaman terhadap ilmu-ilmu pasti. Hukum agama tidak mengandung apa pun yang menyetujui atau mengecamnya, dan pada gilirannya ilmu -ilmu itu tidak menyerang agama. Sabda Nabi, “Matahari dan bulan adalah dua tanda kekuasaan Allah; keduanya tidak gerhana untuk kelahiran atau kematian siapa pun; ketika kamu melihat tanda-tanda ini, berlindunglah dalam salat dan serulah nama Allah”—sabda ini, saya katakan, sama sekali tidak mengecam perhitungan astronomi yang menentukan orbit kedua benda ini, konjungsi dan oposisinya menurut hukum-hukum tertentu. Tetapi adapun yang disebut hadis, “Ketika Allah menampakkan Diri-Nya dalam sesuatu, Dia merendahkan Diri-Nya kepadanya,” hadis itu tidak otentik, dan tidak ditemukan dalam kumpulan hadis yang dapat dipercaya. Demikianlah pengaruh dan potensi bahaya dari matematika. (2) Logika. Ilmu ini, dengan cara yang sama, tidak mengandung sesuatu pun yang mendukung atau menentang agama. Objeknya adalah mempelajari berbagai jenis bukti dan silogisme, syarat-syarat yang harus berlaku antara premis-premis suatu proposisi, cara menggabungkannya, aturan-aturan definisi yang baik, dan seni merumuskannya. Karena pengetahuan terdiri dari konsepsi yang muncul dari suatu definisi atau keyakinan yang timbul dari bukti-bukti. Oleh karena itu, tidak ada yang perlu dicela dalam ilmu ini, dan ilmu ini mendapat kontribusi dari para teolog maupun filsuf. Satu-satunya perbedaan adalah bahwa filsuf menggunakan seperangkat rumus teknis tertentu dan mereka memperluas pembagian dan sub-pembagiannya lebih jauh. Mungkin timbul pertanyaan, lalu apa hubungannya ini dengan pertanyaan-pertanyaan serius tentang agama, dan atas dasar apa penentangan harus diajukan terhadap metode logika? Penentang, akan dikatakan, hanya dapat menanamkan opini yang tidak baik kepada ahli logika tentang kecerdasan dan iman lawannya, karena iman lawannya tampaknya didasarkan pada keberatan-keberatan tersebut. Tetapi, harus diakui, logika rentan terhadap penyalahgunaan. Para ahli logika menuntut dalam penalaran kondisi-kondisi tertentu yang mengarah pada kepastian mutlak, tetapi ketika mereka menyentuh pertanyaan-pertanyaan agama, mereka tidak lagi dapat mendalilkan kondisi-kondisi ini, dan oleh karena itu harus melonggarkan kekakuan kebiasaan mereka . Akibatnya, seorang siswa yang tergila-gila pada metode-metode pembuktian logika, ketika mendengar guru-gurunya dituduh tidak beragama, percaya bahwa ketidakberagamaan ini bertumpu pada bukti-bukti yang sekuat bukti-bukti logika, dan segera, tanpa mencoba mempelajari metafisika, ikut melakukan kesalahan yang sama. Ini adalah kerugian serius yang timbul dari studi logika. (3) Fisika. Tujuan ilmu ini adalah mempelajari benda-benda yang membentuk alam semesta: langit dan bintang-bintang, dan di dunia ini, unsur-unsur sederhana seperti udara, bumi, air, api, dan benda-benda majemuk—hewan, tumbuhan, dan mineral; alasan perubahan, perkembangan, dan pencampurannya. Karena sifat penelitiannya, ilmu ini terkait erat dengan studi kedokteran, yang tujuannya adalah tubuh manusia, organ utama dan sekundernya, dan hukum yang mengatur perubahannya. Agama, karena tidak memiliki kesalahan dalam ilmu kedokteran, tidak dapat secara adil melakukan hal yang sama terhadap ilmu fisika, kecuali pada beberapa hal khusus yang telah kami sebutkan dalam karya berjudul Penghancuran Para Filsuf . Selain pertanyaan-pertanyaan utama ini, ada beberapa pertanyaan bawahan yang bergantung padanya, di mana ilmu fisika terbuka untuk keberatan. Tetapi semua ilmu fisika, sebagaimana yang kami yakini, didasarkan pada prinsip berikut: Alam sepenuhnya tunduk kepada Tuhan; tidak mampu bertindak sendiri, ia adalah instrumen di tangan Sang Pencipta; matahari, bulan, bintang, dan unsur-unsur tunduk kepada Tuhan dan tidak dapat menghasilkan apa pun sendiri. Singkatnya, tidak ada sesuatu pun di alam yang dapat bertindak secara spontan dan terlepas dari Tuhan.</p>

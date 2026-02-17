@@ -5,39 +5,176 @@
 <title>BAB XVII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XVII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XVII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Petugas itu tersenyum dan berkata, ‘Promise adalah gadis yang cantik, tetapi karena miskin, dia meninggal tanpa menikah.’” Pendeta Camden Farebrother, yang dikunjungi Lydgate pada malam berikutnya, tinggal di sebuah rumah pendeta tua, terbuat dari batu, cukup tua untuk menyaingi gereja yang menghadapinya. Semua perabotan di rumah itu juga tua, tetapi dengan tingkat usia yang berbeda—yaitu usia ayah dan kakek Tuan Farebrother. Ada kursi-kursi putih yang dicat, dengan hiasan emas dan karangan bunga di atasnya, dan beberapa kain damask sutra merah yang masih tersisa dengan celah-celah di dalamnya. Ada potret-potret ukiran para Lord Chancellor dan pengacara terkenal lainnya dari abad lalu; dan ada cermin-cermin tua untuk memantulkan potret-potret itu, serta meja-meja kecil dari kayu satin dan sofa-sofa yang menyerupai perpanjangan kursi-kursi reyot, semuanya tampak menonjol di dinding kayu gelap. Inilah gambaran ruang tamu tempat Lydgate diperlihatkan; Dan ada tiga wanita yang menyambutnya, yang juga kuno, dan memiliki kesopanan yang memudar tetapi tulus: Ny. Farebrother, ibu Vikaris yang berambut putih, berhias renda dan kerudung dengan kebersihan yang anggun, tegak, bermata tajam, dan masih berusia di bawah tujuh puluh tahun; Nona Noble, saudara perempuannya, seorang wanita tua mungil dengan penampilan yang lebih lembut, dengan renda dan kerudung yang jelas lebih usang dan ditambal; dan Nona Winifred Farebrother, kakak perempuan Vikaris, berpenampilan baik seperti dirinya, tetapi ramping dan pendiam seperti wanita lajang yang cenderung menghabiskan hidup mereka dalam ketundukan tanpa gangguan kepada orang yang lebih tua. Lydgate tidak menyangka akan melihat kelompok yang begitu aneh: hanya mengetahui bahwa Tuan Farebrother adalah seorang bujangan, dia mengira akan diantar ke ruang santai di mana perabotan utamanya mungkin berupa buku dan koleksi benda-benda alam. Pendeta itu sendiri tampak agak berubah, seperti kebanyakan pria ketika kenalan yang dikenal di tempat lain bertemu mereka untuk pertama kalinya di rumah mereka sendiri; beberapa bahkan tampak seperti aktor yang biasanya berperan sebagai orang baik tetapi kurang tepat memerankan karakter pemarah dalam sebuah drama baru. Namun, hal itu tidak terjadi pada Tuan Farebrother: ia tampak sedikit lebih lembut dan pendiam, yang paling banyak bicara adalah ibunya, sementara ia hanya sesekali memberikan komentar yang ramah dan menenangkan. Wanita tua itu jelas terbiasa memberi tahu tamunya apa yang seharusnya mereka pikirkan, dan tidak menganggap satu pun topik aman tanpa arahannya. Ia diberi waktu luang untuk fungsi ini karena semua kebutuhan kecilnya dipenuhi oleh Nona Winifred. Sementara itu, Nona Noble yang mungil membawa keranjang kecil di lengannya, tempat ia menuangkan sedikit gula yang sebelumnya ia jatuhkan ke piring kecilnya seolah-olah secara tidak sengaja; kemudian melirik ke sekeliling dengan diam-diam, dan kembali ke cangkir tehnya dengan suara kecil yang polos seperti hewan berkaki empat kecil yang penakut. Mohon jangan salah paham tentang Nona Noble. Keranjang itu berisi sedikit tabungan dari makanan yang lebih mudah dibawanya, yang ditujukan untuk anak-anak teman-temannya yang miskin, di antara mereka ia berjalan-jalan di pagi yang cerah; merawat dan menyayangi semua makhluk yang membutuhkan adalah kesenangan spontan baginya, sehingga ia menganggapnya seolah-olah itu adalah kebiasaan buruk yang menyenangkan yang membuatnya kecanduan. Mungkin ia sadar akan godaan untuk mencuri dari mereka yang memiliki banyak agar dapat diberikan kepada mereka yang tidak memiliki apa-apa, dan membawa dalam hati nuraninya rasa bersalah atas keinginan yang terpendam itu. Seseorang harus miskin untuk mengetahui kemewahan memberi! Nyonya Farebrother menyambut tamu itu dengan formalitas dan ketelitian yang meriah. Ia segera memberi tahu tamu itu bahwa mereka jarang membutuhkan bantuan medis di rumah itu. Ia telah mendidik anak-anaknya untuk mengenakan pakaian flanel dan tidak makan berlebihan, kebiasaan terakhir yang menurutnya merupakan alasan utama mengapa orang membutuhkan dokter. Lydgate memohon agar mereka yang ayah dan ibunya makan berlebihan dimaafkan, tetapi Nyonya Farebrother menganggap pandangan itu berbahaya: Alam lebih adil dari itu; akan mudah bagi penjahat mana pun untuk mengatakan bahwa leluhurnya seharusnya digantung sebagai penggantinya. Jika mereka yang memiliki ayah dan ibu yang buruk juga jahat, mereka digantung karena itu. Tidak perlu mengungkit apa yang tidak bisa Anda lihat. “Ibu saya seperti George III yang tua,” kata Pendeta, “dia menentang metafisika.” “Saya keberatan dengan apa yang salah, Camden. Saya katakan, pegang teguh beberapa kebenaran yang jelas, dan selaraskan semuanya dengan kebenaran itu. Ketika saya masih muda, Tuan Lydgate, tidak pernah ada pertanyaan tentang benar dan salah. Kami mengetahui katekisme kami, dan itu sudah cukup; kami mempelajari kredo dan kewajiban kami. Setiap orang Gereja yang terhormat memiliki pendapat yang sama. Tetapi sekarang, jika Anda berbicara di luar Kitab Doa itu sendiri, Anda berisiko dibantah.” “Hal itu membuat situasi menjadi cukup menyenangkan bagi mereka yang ingin mempertahankan pendapat mereka sendiri,” kata Lydgate. “Tapi ibuku selalu mengalah,” kata Pendeta itu dengan licik. “Tidak, tidak, Camden, kau tidak boleh membuat Tuan Lydgate salah paham tentangku . Aku tidak akan pernah menunjukkan rasa tidak hormat kepada orang tuaku, dengan mengabaikan apa yang mereka ajarkan kepadaku. Siapa pun bisa melihat apa yang terjadi jika kau berbalik. Jika kau berubah sekali, mengapa tidak dua puluh kali?” “Seseorang mungkin melihat argumen yang bagus untuk berubah sekali, dan tidak melihatnya lagi untuk berubah di lain waktu,” kata Lydgate, merasa geli dengan sikap tegas wanita tua itu. “Maafkan saya. Jika Anda berpegang pada argumen, argumen tidak akan pernah kurang, ketika seseorang tidak memiliki keteguhan pikiran. Ayah saya tidak pernah berubah, dan dia menyampaikan khotbah moral yang sederhana tanpa argumen, dan merupakan orang baik—sedikit yang lebih baik darinya. Jika Anda menemukan orang baik yang dibangun berdasarkan argumen, saya akan menyiapkan makan malam yang enak untuk Anda sambil membacakan buku masak untuk Anda. Itu pendapat saya, dan saya pikir perut siapa pun akan membenarkan saya.” “Soal makan malam, tentu saja, Bu,” kata Tuan Farebrother. “Itu sama saja, makan malamnya atau orangnya. Saya hampir tujuh puluh tahun, Tuan Lydgate, dan saya berpedoman pada pengalaman. Saya tidak mungkin mengikuti hal-hal baru, meskipun ada banyak hal baru di sini seperti di tempat lain. Saya katakan, hal-hal baru itu datang dengan berbagai macam hal yang tidak akan laku atau usang. Dulu tidak seperti itu di masa muda saya: seorang anggota Gereja adalah seorang anggota Gereja, dan seorang pendeta, Anda bisa cukup yakin, adalah seorang pria terhormat, jika bukan yang lain. Tetapi sekarang dia mungkin tidak lebih baik daripada seorang Dissenter, dan ingin menyingkirkan putra saya dengan dalih doktrin. Tetapi siapa pun yang ingin menyingkirkannya, saya bangga mengatakan, Tuan Lydgate, bahwa dia akan sebanding dengan pendeta mana pun di kerajaan ini, apalagi di kota ini, yang merupakan standar yang rendah untuk dijadikan patokan; setidaknya, menurut saya, karena saya lahir dan dibesarkan di Exeter.” “Seorang ibu tidak pernah pilih kasih,” kata Tuan Farebrother sambil tersenyum. “Menurutmu apa pendapat ibu Tyke tentang dia?” “Ah, kasihan sekali! Memangnya bagaimana?” kata Ny. Farebrother, ketajamannya sedikit meredam karena kepercayaannya pada penilaian seorang ibu. “Dia mengatakan yang sebenarnya pada dirinya sendiri, percayalah.” “Lalu apa sebenarnya kebenarannya?” tanya Lydgate. “Aku ingin tahu.” “Oh, tidak ada yang buruk sama sekali,” kata Tuan Farebrother. “Dia orang yang bersemangat: tidak terlalu berpendidikan, dan menurutku tidak terlalu bijaksana—karena aku tidak setuju dengannya.” “Wah, Camden!” kata Nona Winifred, “Griffin dan istrinya baru memberitahuku hari ini, bahwa Tuan Tyke berkata mereka tidak akan punya batubara lagi jika mereka datang untuk mendengarkan khotbahmu.” Nyonya Farebrother meletakkan rajutannya, yang ia lanjutkan setelah jatah teh dan roti panggangnya yang sedikit, dan menatap putranya seolah berkata, "Kau dengar itu?" Nona Noble berkata, "Oh kasihan sekali! kasihan sekali!" mungkin merujuk pada kehilangan ganda berupa khotbah dan batu bara. Tetapi Pendeta menjawab dengan tenang— “Itu karena mereka bukan jemaat saya. Dan saya rasa khotbah saya tidak ada artinya bagi mereka.” “Tuan Lydgate,” kata Nyonya Farebrother, yang tidak bisa membiarkan hal ini begitu saja, “Anda tidak mengenal putra saya: dia selalu meremehkan dirinya sendiri. Saya katakan padanya bahwa dia meremehkan Tuhan yang menciptakannya, dan menjadikannya seorang pengkhotbah yang sangat hebat.” “Itu pasti isyarat agar aku mengajak Tuan Lydgate ke ruang kerjaku, Bu,” kata Pendeta sambil tertawa. “Aku berjanji akan menunjukkan koleksiku kepadamu,” tambahnya, sambil menoleh ke Lydgate; “ayo kita pergi?” Ketiga wanita itu protes. Tuan Lydgate seharusnya tidak buru-buru pergi tanpa diizinkan menerima secangkir teh lagi: Nona Winifred memiliki banyak teh enak di teko. Mengapa Camden begitu tergesa-gesa membawa tamu ke sarangnya? Di sana hanya ada serangga yang diawetkan, dan laci-laci penuh lalat biru dan ngengat, tanpa karpet di lantai. Tuan Lydgate harus memaafkannya. Bermain cribbage akan jauh lebih baik. Singkatnya, jelas bahwa seorang pendeta mungkin dipuja oleh kaum wanitanya sebagai raja para pria dan pengkhotbah, namun dianggap oleh mereka sangat membutuhkan bimbingan mereka. Lydgate, dengan kedangkalan khas seorang bujangan muda, heran mengapa Tuan Farebrother tidak mengajari mereka dengan lebih baik. “Ibu saya tidak terbiasa dengan kehadiran tamu yang bisa tertarik pada hobi saya,” kata Pendeta itu, sambil membuka pintu ruang kerjanya, yang memang sangat minim kemewahan seperti yang disiratkan para wanita, kecuali pipa porselen pendek dan kotak tembakau. “Pria dengan profesi seperti Anda umumnya tidak merokok,” katanya. Lydgate tersenyum dan menggelengkan kepalanya. “Begitu juga profesi saya, kurasa. Anda akan mendengar tuduhan bahwa saya merokok pipa itu adalah ulah Bulstrode dan kawan-kawan. Mereka tidak tahu betapa senangnya iblis jika saya berhenti merokok.” “Aku mengerti. Kau mudah tersulut emosi dan butuh obat penenang. Aku lebih berat, dan sebaiknya bermalas-malasan saja. Aku harus bergegas bermalas-malasan, dan berdiam diri di sana dengan segenap kekuatanku.” “Dan kau bermaksud mencurahkan semuanya untuk pekerjaanmu. Aku sekitar sepuluh atau dua belas tahun lebih tua darimu, dan telah mencapai kompromi. Aku membiarkan satu atau dua kelemahan itu tetap ada agar tidak menjadi masalah. Lihat,” lanjut Pendeta itu, sambil membuka beberapa laci kecil, “kurasa aku telah melakukan studi menyeluruh tentang entomologi di daerah ini. Aku melanjutkan studi tentang fauna dan flora; tetapi setidaknya aku telah mempelajari serangga dengan baik. Kita sangat kaya akan orthoptera: aku tidak tahu apakah—Ah! kau telah memegang toples kaca itu—kau melihat ke dalamnya alih-alih laci-laciku. Kau sebenarnya tidak peduli dengan hal-hal ini?” “Bukan di samping monster anensefalus yang indah ini. Saya tidak pernah punya banyak waktu untuk mempelajari sejarah alam. Sejak kecil saya sudah tertarik pada struktur, dan itulah yang paling berkaitan langsung dengan profesi saya. Saya tidak punya hobi lain. Saya punya laut untuk berenang di sana.” “Ah! Anda orang yang bahagia,” kata Tuan Farebrother, berbalik dan mulai mengisi pipanya. “Anda tidak tahu bagaimana rasanya menginginkan tembakau spiritual—revisi buruk dari teks-teks lama, atau artikel kecil tentang berbagai jenis Aphis Brassicae, dengan tanda tangan Philomicron yang terkenal, untuk 'Majalah Si Pengoceh'; atau risalah ilmiah tentang entomologi Pentateuch, termasuk semua serangga yang tidak disebutkan, tetapi mungkin ditemui oleh orang Israel dalam perjalanan mereka melalui padang gurun; dengan monografi tentang Semut, seperti yang dibahas oleh Salomo, yang menunjukkan keselarasan Kitab Amsal dengan hasil penelitian modern. Anda tidak keberatan jika saya mengasapi Anda?” Lydgate lebih terkejut dengan keterbukaan pembicaraan ini daripada makna tersiratnya—bahwa Vikaris merasa dirinya tidak sepenuhnya berada di panggilan yang tepat. Penataan rapi laci dan rak, serta lemari buku yang penuh dengan buku-buku bergambar mahal tentang Sejarah Alam, membuatnya teringat kembali pada kemenangan bermain kartu dan tujuan penggunaannya. Tetapi ia mulai berharap bahwa penafsiran terbaik dari segala sesuatu yang dilakukan Tuan Farebrother adalah yang sebenarnya. Kejujuran Vikaris tampaknya bukan jenis yang menjijikkan yang berasal dari kesadaran yang gelisah yang berusaha untuk mencegah penilaian orang lain, tetapi hanya kelegaan dari keinginan untuk melakukan sesuatu dengan sesedikit mungkin kepura-puraan. Rupanya ia tidak tanpa perasaan bahwa kebebasan bicaranya mungkin tampak terlalu dini, karena ia kemudian berkata— “Saya belum memberi tahu Anda bahwa saya memiliki keunggulan dibandingkan Anda, Tuan Lydgate, dan mengenal Anda lebih baik daripada Anda mengenal saya. Anda ingat Trawley yang pernah berbagi apartemen dengan Anda di Paris untuk beberapa waktu? Saya adalah korespondennya, dan dia banyak bercerita tentang Anda. Saya tidak yakin sepenuhnya ketika Anda pertama kali datang bahwa Anda adalah orang yang sama. Saya sangat senang ketika mengetahui bahwa Anda memang orang yang sama. Hanya saja saya tidak lupa bahwa Anda belum pernah mendapatkan sambutan serupa dari saya.” Lydgate merasakan adanya kepekaan perasaan di sini, tetapi tidak sepenuhnya memahaminya. "Ngomong-ngomong," katanya, "apa kabar Trawley? Aku sudah kehilangan jejaknya. Dia sangat tertarik dengan sistem sosial Prancis, dan berbicara tentang pergi ke Backwoods untuk mendirikan semacam komunitas Pythagoras. Apakah dia sudah pergi?" “Tidak sama sekali. Dia berpraktik di pemandian Jerman, dan telah menikahi seorang pasien kaya.” “Kalau begitu, gagasan saya sejauh ini paling tepat,” kata Lydgate, sambil tertawa kecil dengan nada mengejek. “Dia berpendapat bahwa profesi medis adalah sistem penipuan yang tak terhindarkan. Saya katakan, kesalahannya ada pada para pria—pria yang tunduk pada kebohongan dan kebodohan. Alih-alih berkhotbah menentang penipuan di luar tembok, mungkin lebih baik memasang alat disinfeksi di dalam. Singkatnya—saya melaporkan percakapan saya sendiri—Anda dapat yakin bahwa saya memiliki akal sehat sepenuhnya.” “Rencana Anda jauh lebih sulit untuk dilaksanakan daripada komunitas Pythagoras. Anda tidak hanya berhadapan dengan Adam tua dalam diri Anda sendiri, tetapi Anda juga berhadapan dengan semua keturunan Adam asli yang membentuk masyarakat di sekitar Anda. Anda lihat, saya telah membayar dua belas atau tiga belas tahun lebih lama daripada Anda untuk pengetahuan saya tentang kesulitan. Tetapi”—Tuan Farebrother berhenti sejenak, lalu menambahkan, “Anda mengincar vas kaca itu lagi. Apakah Anda ingin melakukan pertukaran? Anda tidak akan mendapatkannya tanpa barter yang adil.” “Saya punya beberapa tikus laut—spesimen bagus—yang direndam dalam alkohol. Dan saya akan memberikan buku baru Robert Brown—'Pengamatan Mikroskopis pada Serbuk Sari Tanaman'—jika Anda belum memilikinya.” “Mengapa, melihat betapa kau mendambakan monster itu, mungkin aku akan meminta harga yang lebih tinggi. Bagaimana jika aku memintamu untuk melihat-lihat laci-laciku dan menyepakati semua spesies baru yang kumiliki?” Sang Vikaris, sambil berbicara seperti itu, bergantian bergerak-gerak dengan pipa di mulutnya, dan kembali menunduk dengan penuh kasih sayang di atas laci-lacinya. “Itu akan menjadi disiplin yang baik, kau tahu, untuk seorang dokter muda yang harus menyenangkan pasiennya di Middlemarch. Kau harus belajar untuk merasa bosan, ingatlah. Namun, kau akan mendapatkan monster itu dengan syaratmu sendiri.” “Tidakkah menurutmu orang-orang terlalu membesar-besarkan perlunya menuruti omong kosong semua orang, sampai mereka dihina oleh orang-orang bodoh yang mereka menuruti?” kata Lydgate, sambil mendekati Tuan Farebrother, dan memandang dengan agak linglung ke arah serangga-serangga yang tersusun rapi dalam gradasi warna, dengan nama-nama yang tertulis dalam tulisan yang indah. “Cara tercepat adalah dengan membuat nilaimu terasa, sehingga orang-orang harus menerima keberadaanmu, baik kau menyanjung mereka atau tidak.” “Dengan sepenuh hati. Tetapi Anda harus yakin memiliki nilai, dan Anda harus tetap mandiri. Sangat sedikit orang yang bisa melakukan itu. Anda bisa saja keluar dari pekerjaan sama sekali, dan menjadi tidak berguna, atau Anda mengenakan tali kekang dan banyak menarik beban ke mana rekan-rekan Anda menarik Anda. Tetapi lihatlah serangga orthoptera yang halus ini!” Lydgate pada akhirnya harus memeriksa setiap laci dengan teliti, sang Vikaris menertawakan dirinya sendiri, namun tetap bersikeras melanjutkan pameran tersebut. “Mengenai apa yang Anda katakan tentang mengenakan perlengkapan perang,” Lydgate memulai, setelah mereka duduk, “Saya sudah memutuskan sejak lama untuk sebisa mungkin tidak mengenakannya. Itulah mengapa saya memutuskan untuk tidak mencoba apa pun di London, setidaknya selama beberapa tahun. Saya tidak menyukai apa yang saya lihat ketika saya belajar di sana—begitu banyak kesombongan yang kosong, dan tipu daya yang menghalangi. Di pedesaan, orang-orang kurang berpura-pura berpengetahuan, dan kurang ramah, tetapi karena alasan itu mereka kurang memperhatikan harga diri seseorang: kita tidak mudah bertengkar, dan dapat mengikuti jalan kita sendiri dengan lebih tenang.” “Ya—baiklah—kamu telah memulai dengan baik; kamu berada di profesi yang tepat, pekerjaan yang menurutmu paling cocok untukmu. Beberapa orang melewatkan kesempatan itu, dan menyesal terlalu terlambat. Tetapi kamu tidak boleh terlalu yakin akan mempertahankan kemandirianmu.” “Maksudmu ikatan keluarga?” kata Lydgate, menduga bahwa hal itu mungkin akan sangat membebani Tuan Farebrother. “Tidak sepenuhnya. Tentu saja mereka membuat banyak hal menjadi lebih sulit. Tetapi seorang istri yang baik—seorang wanita yang baik dan tidak duniawi—benar-benar dapat membantu seorang pria, dan membuatnya lebih mandiri. Ada seorang jemaat saya—pria yang baik, tetapi dia hampir tidak akan mampu bertahan seperti sekarang tanpa istrinya. Apakah Anda mengenal keluarga Garth? Saya rasa mereka bukan pasien Peacock.” “Tidak; tetapi ada Nona Garth di Featherstone's lama, di Lowick.” “Putri mereka: seorang gadis yang luar biasa.” “Dia sangat pendiam—aku hampir tidak memperhatikannya.” “Namun, dia telah memperhatikanmu, percayalah.” “Saya tidak mengerti,” kata Lydgate; dia hampir tidak mungkin mengatakan “Tentu saja.” “Oh, dia menilai semua orang. Saya mempersiapkannya untuk pengukuhan—dia adalah murid favorit saya.” Tuan Farebrother mengisap pipanya beberapa saat dalam diam, Lydgate tidak ingin tahu lebih banyak tentang Garths. Akhirnya, Pendeta itu meletakkan pipanya, meregangkan kakinya, dan menolehkan matanya yang cerah sambil tersenyum ke arah Lydgate, berkata— “Tapi kami warga Middlemarch tidak setenang yang Anda kira. Kami punya intrik dan partai kami sendiri. Misalnya, saya seorang anggota partai, dan Bulstrode juga. Jika Anda memilih saya, Anda akan menyinggung Bulstrode.” “Apa yang bisa dijadikan alasan untuk menentang Bulstrode?” tanya Lydgate dengan tegas. “Saya tidak mengatakan ada hal yang menentangnya kecuali itu. Jika Anda memilih menentangnya, Anda akan menjadikannya musuh Anda.” “Kurasa aku tidak perlu mempermasalahkan itu,” kata Lydgate, agak sombong; “tapi dia tampaknya punya ide bagus tentang rumah sakit, dan dia menghabiskan banyak uang untuk tujuan publik yang bermanfaat. Dia mungkin bisa banyak membantuku dalam mewujudkan ide-ideku. Mengenai gagasan keagamaannya—seperti kata Voltaire, mantra akan menghancurkan sekawanan domba jika diberikan dengan sejumlah arsenik. Aku mencari orang yang akan membawa arsenik itu, dan aku tidak mempermasalahkan mantranya.” “Bagus sekali. Tapi Anda tidak boleh menyinggung petugas penanganan arsenik Anda. Anda tidak akan menyinggung saya, lho,” kata Tuan Farebrother dengan sangat tenang. “Saya tidak memaksakan kepentingan pribadi saya ke dalam tugas orang lain. Saya menentang Bulstrode dalam banyak hal. Saya tidak suka kelompok yang dia ikuti: mereka adalah kelompok yang sempit dan bodoh, dan lebih banyak membuat tetangga mereka tidak nyaman daripada membuat mereka lebih baik. Sistem mereka adalah semacam kelompok spiritual-duniawi: mereka benar-benar memandang umat manusia lainnya sebagai bangkai yang ditakdirkan untuk memberi mereka makan sebelum sampai ke surga. Tapi,” tambahnya sambil tersenyum, “saya tidak mengatakan bahwa rumah sakit baru Bulstrode adalah hal yang buruk; dan mengenai keinginannya untuk menyingkirkan saya dari rumah sakit lama—jika dia menganggap saya orang yang jahat, dia hanya membalas pujian. Dan saya bukanlah pendeta teladan—hanya pendeta sementara yang layak.” Lydgate sama sekali tidak yakin bahwa Vikaris itu menjelek-jelekkan dirinya sendiri. Seorang pendeta teladan, seperti seorang dokter teladan, seharusnya menganggap profesinya sendiri sebagai yang terbaik di dunia, dan menganggap semua pengetahuan sebagai sekadar penunjang patologi moral dan terapinya. Dia hanya berkata, "Alasan apa yang diberikan Bulstrode untuk menggantikan Anda?" “Bahwa saya tidak mengajarkan pendapatnya—yang ia sebut agama spiritual; dan bahwa saya tidak punya waktu luang. Kedua pernyataan itu benar. Tetapi jika saya bisa meluangkan waktu, saya akan senang mendapatkan empat puluh pound. Itulah fakta sebenarnya. Tapi mari kita kesampingkan itu. Saya hanya ingin memberi tahu Anda bahwa jika Anda memilih orang yang seperti arsenik itu, Anda tidak boleh menyalahkan saya sebagai akibatnya. Saya tidak bisa memberi Anda waktu luang. Anda seperti seorang penjelajah dunia yang datang untuk menetap di antara kita, dan akan mempertahankan keyakinan saya pada belahan bumi selatan. Sekarang ceritakan semua tentang mereka di Paris.”</p>
 

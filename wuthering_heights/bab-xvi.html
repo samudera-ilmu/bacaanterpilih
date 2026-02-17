@@ -5,39 +5,176 @@
 <title>BAB XVI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XVI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XVI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Sekitar pukul dua belas malam itu lahirlah Catherine yang kau lihat di Wuthering Heights: seorang bayi mungil berusia tujuh bulan; dan dua jam kemudian ibunya meninggal, setelah tidak pernah sadar sepenuhnya untuk merindukan Heathcliff, atau mengenal Edgar. Keterpukulan Edgar atas kehilangannya adalah subjek yang terlalu menyakitkan untuk dibahas; dampaknya menunjukkan betapa dalamnya kesedihan itu. Tambahan besar, di mataku, adalah ia ditinggalkan tanpa ahli waris. Aku meratapi hal itu, saat aku menatap anak yatim piatu yang lemah itu; dan dalam hati aku mencaci maki Linton tua karena (apa yang hanya merupakan keberpihakan wajar) mengamankan hartanya untuk putrinya sendiri, alih-alih untuk putranya. Bayi yang tidak diinginkan, kasihan sekali! Ia mungkin saja menangis hingga meninggal, dan tidak ada yang peduli sedikit pun, selama jam-jam pertama keberadaannya. Kami menebus kelalaian itu kemudian; tetapi permulaannya sama tanpa teman seperti akhirnya nanti. Pagi berikutnya—di luar cerah dan ceria—angin lembut menyelinap masuk melalui tirai ruangan yang sunyi, dan menyelimuti sofa dan penghuninya dengan cahaya lembut dan menenangkan. Edgar Linton meletakkan kepalanya di bantal, dan matanya terpejam. Wajahnya yang muda dan tampan hampir sama pucatnya dengan wajah sosok di sampingnya, dan hampir sama kaku: tetapi wajahnya adalah keheningan penderitaan yang melelahkan, dan wajahnya adalah kedamaian yang sempurna. Dahinya halus, kelopak matanya tertutup, bibirnya tersenyum; tidak ada malaikat di surga yang bisa lebih cantik darinya. Dan aku ikut merasakan ketenangan tak terbatas yang menyelimutinya: pikiranku tidak pernah berada dalam keadaan yang lebih suci daripada saat aku menatap gambaran ketenangan Ilahi yang tak terganggu itu. Secara naluriah aku mengulangi kata-kata yang diucapkannya beberapa jam sebelumnya: “Tak tertandingi dan di atas kita semua! Baik masih di bumi atau sekarang di surga, jiwanya berada di sisi Tuhan!” Saya tidak tahu apakah ini keanehan pada diri saya, tetapi saya jarang merasa tidak bahagia saat berjaga di kamar kematian, jika tidak ada pelayat yang panik atau putus asa yang berbagi tugas dengan saya. Saya melihat ketenangan yang tidak dapat diganggu oleh bumi maupun neraka, dan saya merasakan kepastian akan kehidupan setelah kematian yang tak berujung dan tanpa bayangan—Keabadian yang telah mereka masuki—di mana kehidupan tak terbatas dalam durasinya, dan cinta dalam simpatinya, dan sukacita dalam kepenuhannya. Pada kesempatan itu saya memperhatikan betapa banyak keegoisan yang ada bahkan dalam cinta seperti cinta Tuan Linton, ketika dia sangat menyesali pembebasan Catherine yang diberkati! Tentu saja, orang mungkin ragu, setelah kehidupan yang keras kepala dan tidak sabar yang telah dia jalani, apakah dia pantas mendapatkan tempat perlindungan kedamaian pada akhirnya. Orang mungkin ragu di saat-saat refleksi yang dingin; tetapi tidak saat itu, di hadapan jenazahnya. Jenazah itu menegaskan ketenangannya sendiri, yang tampaknya merupakan jaminan ketenangan yang sama bagi penghuninya sebelumnya. Apakah Anda percaya orang-orang seperti itu bahagia di dunia lain, Tuan? Saya rela melakukan banyak hal untuk mengetahuinya. Saya menolak menjawab pertanyaan Ny. Dean, yang menurut saya agak tidak lazim. Kemudian beliau melanjutkan: Menelusuri kembali perjalanan hidup Catherine Linton, saya khawatir kita tidak berhak berpikir demikian; tetapi kita serahkan saja dia kepada Sang Pencipta. Tuanku tampak tertidur, dan tak lama setelah matahari terbit, aku memberanikan diri meninggalkan ruangan dan menyelinap keluar untuk menghirup udara segar yang murni. Para pelayan mengira aku pergi untuk menghilangkan rasa kantuk setelah berjaga lama; sebenarnya, motif utamaku adalah menemui Tuan Heathcliff. Jika dia tetap berada di antara pohon-pohon larch sepanjang malam, dia tidak akan mendengar apa pun tentang keributan di Grange; kecuali, mungkin, dia bisa mendengar derap langkah utusan yang menuju Gimmerton. Jika dia mendekat, dia mungkin akan menyadari, dari lampu yang berkedip-kedip, dan pintu luar yang dibuka dan ditutup, bahwa ada sesuatu yang tidak beres di dalam. Aku berharap, namun takut, untuk menemukannya. Aku merasa berita buruk itu harus disampaikan, dan aku ingin segera menyelesaikannya; tetapi bagaimana caranya, aku tidak tahu. Dia ada di sana—setidaknya, beberapa meter lebih jauh di taman; bersandar pada pohon abu tua, topinya dilepas, dan rambutnya basah kuyup oleh embun yang telah berkumpul di cabang-cabang yang bertunas, dan jatuh berjatuhan di sekelilingnya. Ia sudah berdiri cukup lama di posisi itu, karena saya melihat sepasang burung ousel bolak-balik lewat hanya sekitar satu meter darinya, sibuk membangun sarang mereka, dan menganggap kedekatannya tidak lebih dari sepotong kayu. Mereka terbang pergi saat saya mendekat, dan ia mengangkat matanya dan berkata: —“Dia sudah mati!” katanya; “Aku tidak menunggu kalian mengetahuinya. Singkirkan saputanganmu—jangan merengek di depanku. Sialan kalian semua! Dia tidak menginginkan air mata kalian !” Aku menangis untuknya sama seperti untuknya: terkadang kita merasa kasihan pada makhluk yang tidak memiliki perasaan, baik untuk diri mereka sendiri maupun orang lain. Ketika pertama kali aku menatap wajahnya, aku menyadari bahwa dia telah mendapat kabar tentang bencana itu; dan sebuah pikiran bodoh terlintas di benakku bahwa hatinya hancur dan dia berdoa, karena bibirnya bergerak dan pandangannya tertunduk ke tanah. “Ya, dia sudah meninggal!” jawabku, menahan isak tangis dan menyeka pipiku. “Semoga dia pergi ke surga; di sana kita semua dapat bergabung dengannya, jika kita mengambil pelajaran dan meninggalkan jalan kita yang jahat untuk mengikuti kebaikan!” “Apakah dia sudah mengindahkan peringatan itu?” tanya Heathcliff, mencoba mencibir. “Apakah dia mati seperti orang suci? Ayo, ceritakan kisah sebenarnya tentang kejadian itu. Bagaimana—?” Ia berusaha mengucapkan nama itu, tetapi tidak berhasil; dan sambil mengerutkan bibir, ia berjuang dalam diam melawan penderitaan batinnya, sementara itu, ia menolak simpati saya dengan tatapan tajam dan garang. “Bagaimana dia meninggal?” akhirnya ia melanjutkan—meskipun tegar, ia ingin mendapat dukungan; karena, setelah pergumulan itu, ia gemetar, tanpa disadari, hingga ujung jari-jarinya. “Kasihan sekali kau!” pikirku; “kau memiliki hati dan saraf yang sama seperti saudara-saudaramu! Mengapa kau harus berusaha menyembunyikannya? Kesombonganmu tidak dapat membutakan Tuhan! Kau menggoda-Nya untuk meremasnya, sampai Dia mengeluarkan seruan penghinaan.” “Tenang seperti anak domba!” jawabku lantang. “Dia menghela napas, lalu meregangkan tubuhnya, seperti anak kecil yang baru bangun, kemudian kembali tertidur; dan lima menit kemudian aku hanya merasakan satu denyut nadi kecil di jantungnya, dan tidak ada lagi!” “Dan—apakah dia pernah menyebut namaku?” tanyanya ragu-ragu, seolah-olah dia takut jawaban atas pertanyaannya akan mengungkap detail yang tidak sanggup dia dengar. “Kesadarannya tak pernah pulih: ia tak mengenali siapa pun sejak kau meninggalkannya,” kataku. “Ia berbaring dengan senyum manis di wajahnya; dan pikiran-pikiran terbarunya kembali ke masa-masa awal yang menyenangkan. Hidupnya berakhir dalam mimpi yang lembut—semoga ia terbangun dengan ramah di dunia lain!” “Semoga dia terbangun dalam siksaan!” teriaknya dengan penuh amarah yang mengerikan, menghentakkan kakinya, dan mengerang dalam ledakan emosi yang tak terkendali. “Kenapa, dia pembohong sampai akhir! Di mana dia? Tidak di sana —tidak di surga—tidak binasa—di mana? Oh! Kau bilang kau tidak peduli dengan penderitaanku! Dan aku berdoa satu doa—aku mengulanginya sampai lidahku kaku—Catherine Earnshaw, semoga kau tidak beristirahat selama aku hidup; kau bilang aku membunuhmu—maka hantuilah aku! Orang yang dibunuh menghantui pembunuhnya, aku percaya. Aku tahu hantu telah berkeliaran di bumi. Selalu bersamaku—ambil wujud apa pun—buat aku gila! hanya jangan tinggalkan aku di jurang ini, di mana aku tidak dapat menemukanmu! Oh, Tuhan! Ini tak terucapkan! Aku tidak bisa hidup tanpa hidupku! Aku tidak bisa hidup tanpa jiwaku!” Ia membenturkan kepalanya ke batang pohon yang berlekuk-lekuk; dan, sambil mengangkat matanya, ia meraung, bukan seperti manusia, melainkan seperti binatang buas yang ditusuk hingga mati dengan pisau dan tombak. Aku melihat beberapa percikan darah di sekitar kulit pohon, dan tangan serta dahinya berlumuran darah; mungkin pemandangan yang kusaksikan adalah pengulangan dari kejadian lain yang terjadi sepanjang malam. Hal itu hampir tidak menggerakkan rasa ibaku—melainkan membuatku ngeri: namun, aku merasa enggan meninggalkannya begitu saja. Tetapi begitu ia cukup sadar untuk menyadari aku sedang mengawasinya, ia berteriak memerintahkanku untuk pergi, dan aku menurutinya. Ia terlalu sulit untuk kutenangkan atau hibur! Pemakaman Nyonya Linton dijadwalkan berlangsung pada hari Jumat setelah kematiannya; dan sampai saat itu peti matinya tetap terbuka, dan ditaburi bunga dan daun wangi, di ruang tamu besar. Linton menghabiskan hari dan malamnya di sana, seorang penjaga yang tak pernah tidur; dan—suatu keadaan yang disembunyikan dari semua orang kecuali saya—Heathcliff menghabiskan malamnya, setidaknya, di luar, sama-sama asing dengan ketenangan. Saya tidak berkomunikasi dengannya; namun, saya menyadari niatnya untuk masuk, jika dia bisa; dan pada hari Selasa, sedikit setelah gelap, ketika tuan saya, karena kelelahan yang luar biasa, terpaksa beristirahat beberapa jam, saya pergi dan membuka salah satu jendela; tergerak oleh ketekunannya untuk memberinya kesempatan memberikan penghormatan terakhir kepada sosok pudar idolanya. Dia tidak melewatkan kesempatan itu, dengan hati-hati dan singkat; terlalu hati-hati untuk mengkhianati kehadirannya dengan suara sekecil apa pun. Sesungguhnya, aku tidak akan menyadari bahwa dia telah berada di sana, kecuali karena kain penutup di sekitar wajah mayat itu berantakan, dan karena melihat di lantai sehelai rambut pirang yang diikat dengan benang perak; yang, setelah diperiksa, kupastikan berasal dari liontin yang tergantung di leher Catherine. Heathcliff telah membuka liontin itu dan membuang isinya, menggantinya dengan sehelai rambut hitam miliknya sendiri. Aku memilin keduanya, dan menyatukannya. Tentu saja, Tuan Earnshaw diundang untuk mengantar jenazah saudara perempuannya ke pemakaman; dia tidak memberikan alasan, tetapi dia tidak pernah datang; sehingga, selain suaminya, para pelayat seluruhnya terdiri dari penyewa dan pelayan. Isabella tidak diundang. Tempat pemakaman Catherine, yang mengejutkan penduduk desa, bukanlah di kapel di bawah monumen berukir keluarga Linton, atau di dekat makam kerabatnya sendiri di luar. Pemakaman itu digali di lereng hijau di sudut halaman gereja, di mana temboknya sangat rendah sehingga semak belukar dan tanaman bilberry telah merambatinya dari rawa; dan lapisan gambut hampir menutupinya. Suaminya kini dimakamkan di tempat yang sama; dan masing-masing memiliki batu nisan sederhana di atasnya, dan sebuah blok abu-abu polos di kaki mereka, untuk menandai makam mereka.</p>
 

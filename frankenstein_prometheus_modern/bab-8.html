@@ -5,39 +5,176 @@
 <title>BAB 8</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB 8 - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB 8</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kami melewati beberapa jam yang menyedihkan hingga pukul sebelas, ketika persidangan akan dimulai. Ayah saya dan anggota keluarga lainnya wajib hadir sebagai saksi, dan saya menemani mereka ke pengadilan. Selama seluruh ejekan keadilan yang menyedihkan ini, saya menderita siksaan yang mengerikan. Akan diputuskan apakah akibat dari rasa ingin tahu dan tindakan melanggar hukum saya akan menyeBABkan kematian dua sesama manusia: satu bayi yang tersenyum penuh dengan kepolosan dan kegembiraan, yang lain dibunuh dengan cara yang jauh lebih mengerikan, dengan segala keburukan yang dapat membuat pembunuhan itu dikenang dalam kengerian. Justine juga seorang gadis yang berprestasi dan memiliki kualitas yang menjanjikan kebahagiaan dalam hidupnya; sekarang semuanya akan lenyap di kuburan yang memalukan, dan saya penyeBABnya! Seribu kali lebih baik saya mengaku bersalah atas kejahatan yang dituduhkan kepada Justine, tetapi saya tidak hadir ketika itu terjadi, dan pengakuan seperti itu akan dianggap sebagai omong kosong orang gila dan tidak akan membebaskannya yang menderita karena saya. Penampilan Justine tampak tenang. Ia mengenakan pakaian berkabung, dan wajahnya, yang selalu menawan, menjadi sangat cantik karena keseriusan perasaannya. Namun ia tampak yakin akan ketidakbersalahannya dan tidak gemetar, meskipun ditatap dan dikutuk oleh ribuan orang, karena semua kebaikan yang mungkin ditimbulkan oleh kecantikannya telah terhapus dalam benak para penonton oleh bayangan kejahatan besar yang diduga telah dilakukannya. Ia tenang, namun ketenangannya jelas dipaksakan; dan karena kebingungannya sebelumnya telah dijadikan bukti kesalahannya, ia mengumpulkan keberanian dalam pikirannya. Ketika ia memasuki ruang sidang, ia mengamati sekelilingnya dan dengan cepat menemukan tempat kami duduk. Air mata tampak membasahi matanya ketika ia melihat kami, tetapi ia segera pulih, dan tatapan penuh kasih sayang yang sedih seolah membuktikan ketidakbersalahannya sepenuhnya. Persidangan dimulai, dan setelah pengacara yang melawannya menyampaikan dakwaan, beberapa saksi dipanggil. Beberapa fakta aneh digabungkan untuk melawannya, yang mungkin akan mengejutkan siapa pun yang tidak memiliki bukti ketidakbersalahannya seperti yang saya miliki. Dia berada di luar sepanjang malam saat pembunuhan itu terjadi dan menjelang pagi terlihat oleh seorang pedagang pasar tidak jauh dari tempat mayat anak yang dibunuh itu ditemukan. Wanita itu bertanya apa yang dia lakukan di sana, tetapi dia tampak sangat aneh dan hanya memberikan jawaban yang membingungkan dan tidak dapat dimengerti. Dia kembali ke rumah sekitar pukul delapan, dan ketika seseorang bertanya di mana dia menghabiskan malam, dia menjawab bahwa dia sedang mencari anak itu dan dengan sungguh-sungguh bertanya apakah ada kabar tentangnya. Ketika diperlihatkan mayatnya, dia jatuh ke dalam histeria hebat dan tetap di tempat tidur selama beberapa hari. Kemudian diperlihatkan foto yang ditemukan pelayan di sakunya; Dan ketika Elizabeth, dengan suara terbata-bata, membuktikan bahwa itu adalah kalung yang sama yang satu jam sebelum anak itu hilang, ia telah mengalungkannya di leher bayi tersebut, gumaman kengerian dan kemarahan memenuhi istana. Justine dipanggil untuk membela dirinya. Seiring berjalannya persidangan, raut wajahnya berubah. Rasa terkejut, ngeri, dan sedih sangat terlihat. Terkadang ia menahan air matanya, tetapi ketika diminta untuk membela diri, ia mengumpulkan kekuatannya dan berbicara dengan suara yang terdengar jelas meskipun berubah-ubah. “Tuhan tahu,” katanya, “betapa sepenuhnya saya tidak bersalah. Tetapi saya tidak berpura-pura bahwa pembelaan saya akan membebaskan saya; saya mendasarkan ketidakbersalahan saya pada penjelasan yang jelas dan sederhana tentang fakta-fakta yang telah diajukan terhadap saya, dan saya berharap karakter yang selalu saya miliki akan membuat para hakim saya cenderung memberikan interpretasi yang menguntungkan jika ada keadaan yang tampak meragukan atau mencurigakan.” Kemudian ia menceritakan bahwa, dengan izin Elizabeth, ia menghabiskan malam di hari pembunuhan itu di rumah seorang bibi di Chêne, sebuah desa yang terletak sekitar satu liga dari Jenewa. Saat kembali, sekitar pukul sembilan, ia bertemu dengan seorang pria yang bertanya apakah ia melihat anak yang hilang itu. Ia merasa khawatir mendengar cerita ini dan menghabiskan beberapa jam mencarinya, ketika gerbang Jenewa ditutup, dan ia terpaksa tinggal beberapa jam di malam hari di sebuah gudang milik sebuah pondok, karena tidak ingin memanggil penghuninya, yang sangat mengenalnya. Sebagian besar malam ia habiskan di sana berjaga-jaga; menjelang pagi ia yakin telah tidur beberapa menit; beberapa langkah kaki mengganggunya, dan ia terbangun. Saat itu fajar, dan ia meninggalkan tempat persembunyiannya, agar ia dapat kembali berusaha menemukan saudara laki-laki saya. Jika ia telah pergi ke dekat tempat jenazahnya tergeletak, itu tanpa sepengetahuannya. Tidak mengherankan jika dia tampak bingung ketika ditanyai oleh pedagang pasar, karena dia telah melewati malam tanpa tidur dan nasib William yang malang masih belum pasti. Mengenai lukisan itu, dia tidak bisa memberikan keterangan apa pun. “Aku tahu,” lanjut korban yang malang itu, “betapa berat dan fatalnya satu keadaan ini membebani diriku, tetapi aku tidak berdaya untuk menjelaskannya; dan setelah aku mengungkapkan ketidaktahuanku sepenuhnya, aku hanya bisa menduga-duga tentang kemungkinan bagaimana benda itu bisa diletakkan di sakuku. Tetapi di sini pun aku terhenti. Aku percaya bahwa aku tidak memiliki musuh di bumi, dan pasti tidak ada yang begitu jahat untuk menghancurkanku begitu saja. Apakah si pembunuh yang meletakkannya di sana? Aku tidak tahu ada kesempatan yang diberikan kepadanya untuk melakukan itu; atau, jika aku tahu, mengapa dia mencuri permata itu, lalu memberikannya lagi begitu cepat?” “Aku menyerahkan perkaraku kepada keadilan para hakimku, namun aku tak melihat secercah harapan. Aku memohon izin untuk memeriksa beberapa saksi mengenai karakterku, dan jika kesaksian mereka tidak dapat menepis anggapan kesalahanku, aku harus dihukum, meskipun aku akan mempertaruhkan keselamatanku atas ketidakbersalahanku.” Beberapa saksi dipanggil yang telah mengenalnya selama bertahun-tahun, dan mereka berbicara baik tentangnya; tetapi rasa takut dan kebencian terhadap kejahatan yang mereka duga telah dilakukannya membuat mereka ragu-ragu dan enggan untuk maju. Elizabeth melihat bahkan sumber daya terakhir ini, watak baiknya dan perilakunya yang tak tercela, akan gagal bagi terdakwa, ketika, meskipun sangat gelisah, dia meminta izin untuk berbicara di hadapan pengadilan. “Saya,” katanya, “sepupu dari anak malang yang dibunuh itu, atau lebih tepatnya saudara perempuannya, karena saya dididik dan tinggal bersama orang tuanya sejak dulu, bahkan jauh sebelum kelahirannya. Karena itu, mungkin dianggap tidak pantas bagi saya untuk tampil di kesempatan ini, tetapi ketika saya melihat sesama manusia akan binasa karena pengecutnya teman-teman yang berpura-pura baik, saya ingin diizinkan untuk berbicara, agar saya dapat mengatakan apa yang saya ketahui tentang karakternya. Saya sangat mengenal terdakwa. Saya pernah tinggal di rumah yang sama dengannya, pernah selama lima tahun dan pernah hampir dua tahun. Selama periode itu, dia tampak bagi saya sebagai manusia yang paling ramah dan baik hati. Dia merawat Madame Frankenstein, bibi saya, dalam sakit terakhirnya, dengan penuh kasih sayang dan perhatian, dan kemudian merawat ibunya sendiri selama sakit yang berkepanjangan, dengan cara yang membangkitkan kekaguman semua orang yang mengenalnya, setelah itu dia kembali tinggal di rumah paman saya, di mana dia dicintai oleh seluruh keluarga. Dia sangat menyayangi anak yang sekarang telah meninggal itu dan bersikap kepadanya seperti seorang ibu yang sangat penyayang. Ibu. Dari pihak saya sendiri, saya tidak ragu untuk mengatakan bahwa, terlepas dari semua bukti yang diajukan terhadapnya, saya percaya dan mengandalkan ketidakbersalahannya sepenuhnya. Dia tidak tergoda untuk melakukan tindakan seperti itu; mengenai perhiasan yang menjadi bukti utama, jika dia benar-benar menginginkannya, saya akan dengan senang hati memberikannya kepadanya, karena saya sangat menghargai dan menyayanginya.” Gumaman persetujuan mengikuti permohonan Elizabeth yang sederhana dan kuat, tetapi itu dipicu oleh campur tangannya yang murah hati, dan bukan untuk mendukung Justine yang malang, yang menjadi sasaran kemarahan publik dengan kekerasan yang diperbarui, menuduhnya dengan rasa tidak tahu terima kasih yang paling buruk. Dia sendiri menangis saat Elizabeth berbicara, tetapi dia tidak menjawab. Kegelisahan dan penderitaan saya sendiri sangat hebat selama seluruh persidangan. Saya percaya pada ketidakbersalahannya; saya tahu itu. Mungkinkah iblis yang (saya tidak ragu sedikit pun) telah membunuh saudara laki-laki saya juga dalam permainan nerakanya telah mengkhianati orang yang tidak bersalah hingga mati dan hina? Saya tidak tahan dengan kengerian situasi saya, dan ketika saya menyadari bahwa suara rakyat dan wajah para hakim telah menghukum korban saya yang malang, saya bergegas keluar dari pengadilan dalam penderitaan. Penyiksaan terdakwa tidak sebanding dengan saya; dia didukung oleh ketidakbersalahannya, tetapi taring penyesalan merobek dada saya dan tidak mau melepaskan cengkeramannya. Aku melewati malam yang penuh kesengsaraan. Pagi harinya aku pergi ke pengadilan; bibir dan tenggorokanku kering. Aku tak berani mengajukan pertanyaan yang menentukan, tetapi aku dikenal, dan petugas itu menduga alasan kunjunganku. SURAT suara telah diundi; semuanya berwarna hitam, dan Justine dinyatakan bersalah. Saya tidak dapat berpura-pura menggambarkan apa yang saya rasakan saat itu. Sebelumnya saya telah mengalami sensasi kengerian, dan saya telah berusaha untuk mengungkapkannya dengan kata-kata yang memadai, tetapi kata-kata tidak dapat menyampaikan gambaran tentang keputusasaan yang memilukan hati yang saya alami saat itu. Orang yang saya ajak bicara menambahkan bahwa Justine telah mengakui kesalahannya. "Bukti itu," katanya, "hampir tidak diperlukan dalam kasus yang begitu mencolok, tetapi saya senang akan hal itu, dan memang, tidak ada hakim kita yang suka menghukum seorang penjahat berdasarkan bukti tidak langsung, betapapun meyakinkannya bukti itu." Ini adalah informasi yang aneh dan tak terduga; apa artinya? Apakah mataku telah menipuku? Dan apakah aku benar-benar segila yang akan dipercayai seluruh dunia jika aku mengungkapkan objek kecurigaanku? Aku bergegas pulang, dan Elizabeth dengan penuh harap menuntut hasilnya. “Sepupuku,” jawabku, “sudah diputuskan seperti yang mungkin kau duga; semua hakim lebih suka sepuluh orang yang tidak bersalah menderita daripada satu orang yang bersalah lolos. Tapi dia sudah mengaku.” Ini adalah pukulan telak bagi Elizabeth yang malang, yang telah dengan teguh mengandalkan ketidakbersalahan Justine. “Celaka!” katanya. “Bagaimana aku bisa lagi percaya pada kebaikan manusia? Justine, yang kucintai dan kuhormati seperti saudara perempuanku, bagaimana mungkin dia memasang senyum polos itu hanya untuk berkhianat? Matanya yang lembut tampak tidak mungkin menunjukkan kekejaman atau tipu daya, namun dia telah melakukan pembunuhan.” Tak lama kemudian kami mendengar bahwa korban malang itu telah menyatakan keinginannya untuk bertemu sepupu saya. Ayah saya ingin dia tidak pergi tetapi mengatakan bahwa dia menyerahkan keputusan itu kepada penilaian dan perasaannya sendiri. “Ya,” kata Elizabeth, “aku akan pergi, meskipun dia bersalah; dan kau, Victor, akan menemaniku; aku tidak bisa pergi sendirian.” Gagasan kunjungan ini merupakan siksaan bagiku, namun aku tidak bisa menolak. Kami memasuki ruang penjara yang suram dan melihat Justine duduk di atas jerami di ujung ruangan; tangannya diborgol, dan kepalanya bersandar di lututnya. Dia bangkit saat melihat kami masuk, dan ketika kami ditinggal sendirian bersamanya, dia menjatuhkan diri di kaki Elizabeth, menangis tersedu-sedu. Sepupuku juga menangis. “Oh, Justine!” katanya. “Mengapa kau merampas penghiburan terakhirku? Aku mengandalkan ketulusanmu, dan meskipun saat itu aku sangat sengsara, aku tidak separah sekarang.” “Dan apakah kalian juga percaya bahwa aku begitu jahat? Apakah kalian juga bergabung dengan musuh-musuhku untuk menghancurkanku, untuk menghukumku sebagai seorang pembunuh?” Suaranya tercekat oleh isak tangis. “Bangunlah, gadisku yang malang,” kata Elizabeth; “mengapa kau berlutut, jika kau tidak bersalah? Aku bukan salah satu musuhmu, aku percaya kau tidak bersalah, terlepas dari semua bukti, sampai aku mendengar bahwa kau sendiri telah mengakui kesalahanmu. Laporan itu, katamu, palsu; dan yakinlah, Justine sayang, bahwa tidak ada yang dapat menggoyahkan kepercayaanku padamu sedetik pun, kecuali pengakuanmu sendiri.” “Aku memang mengaku, tetapi aku mengaku dengan kebohongan. Aku mengaku agar mendapat pengampunan; tetapi sekarang kebohongan itu terasa lebih berat di hatiku daripada semua dosaku yang lain. Tuhan di surga, ampunilah aku! Sejak aku dihukum, pembimbing rohaniku terus menggangguku; dia mengancam dan menakut-nakuti, sampai aku hampir berpikir bahwa aku adalah monster seperti yang dia katakan. Dia mengancam akan mengucilkanku dan membakarku di saat-saat terakhirku jika aku terus keras kepala. Nyonya yang terhormat, aku tidak punya siapa pun yang mendukungku; semua orang memandangku sebagai orang hina yang ditakdirkan untuk kehinaan dan kehancuran. Apa yang bisa kulakukan? Di saat yang buruk aku menandatangani sebuah kebohongan; dan baru sekarang aku benar-benar sengsara.” Ia berhenti sejenak, menangis, lalu melanjutkan, “Aku merasa ngeri, Nyonya yang terkasih, bahwa Anda percaya Justine Anda, yang sangat dihormati oleh bibi Anda yang terhormat, dan yang Anda cintai, adalah makhluk yang mampu melakukan kejahatan yang hanya bisa dilakukan oleh iblis itu sendiri. William tersayang! Anakku tersayang! Aku akan segera bertemu denganmu lagi di surga, di mana kita semua akan bahagia; dan itu menghiburku, karena aku akan menderita kehinaan dan kematian.” “Oh, Justine! Maafkan aku karena sesaat telah meragukanmu. Mengapa kau mengaku? Tapi jangan berduka, sayangku. Jangan takut. Aku akan menyatakan, aku akan membuktikan ketidakbersalahanmu. Aku akan meluluhkan hati keras musuh-musuhmu dengan air mata dan doaku. Kau tidak akan mati! Kau, teman bermainku, sahabatku, saudara perempuanku, binasa di tiang gantungan! Tidak! Tidak! Aku tidak akan pernah bisa bertahan menghadapi kemalangan yang begitu mengerikan.” Justine menggelengkan kepalanya dengan sedih. “Aku tidak takut mati,” katanya; “rasa sakit itu telah berlalu. Tuhan mengangkat kelemahanku dan memberiku keberanian untuk menanggung yang terburuk. Aku meninggalkan dunia yang menyedihkan dan pahit; dan jika kau mengingatku dan menganggapku sebagai orang yang dihukum secara tidak adil, aku pasrah pada takdir yang menantiku. Belajarlah dariku, wahai Nyonya, untuk bersabar dan menerima kehendak surga!” Selama percakapan itu, saya telah menyendiri di sudut ruang penjara, di mana saya dapat menyembunyikan penderitaan mengerikan yang menyelimuti saya. Keputusasaan! Siapa yang berani membicarakannya? Korban malang itu, yang esok hari akan melewati batas mengerikan antara hidup dan mati, tidak merasakan penderitaan yang begitu dalam dan pahit seperti yang saya rasakan. Saya menggertakkan gigi dan menggeram, mengeluarkan erangan yang berasal dari lubuk jiwa saya. Justine tersentak. Ketika dia melihat siapa saya, dia mendekati saya dan berkata, “Tuan yang terhormat, Anda sangat baik mengunjungi saya; saya harap Anda tidak percaya bahwa saya bersalah?” Aku tidak bisa menjawab. “Tidak, Justine,” kata Elizabeth; “dia lebih yakin akan ketidakbersalahanmu daripada aku, karena bahkan ketika dia mendengar bahwa kau telah mengaku, dia tidak mempercayainya.” “Aku sungguh berterima kasih padanya. Di saat-saat terakhir ini, aku merasakan rasa syukur yang tulus kepada mereka yang memikirkan aku dengan baik. Betapa manisnya kasih sayang orang lain kepada orang yang hina seperti aku! Itu menghilangkan lebih dari separuh kemalanganku, dan aku merasa seolah-olah aku bisa mati dengan tenang sekarang karena ketidakbersalahanku diakui olehmu, Nyonya yang terhormat, dan sepupumu.” Demikianlah si penderita malang itu berusaha menghibur orang lain dan dirinya sendiri. Ia memang memperoleh ketabahan yang diinginkannya. Tetapi aku, si pembunuh sejati, merasakan cacing yang tak pernah mati hidup di dadaku, yang tidak memberi harapan atau penghiburan. Elizabeth juga menangis dan tidak bahagia, tetapi penderitaannya juga merupakan penderitaan orang yang tidak bersalah, yang, seperti awan yang melewati bulan yang indah, untuk sementara menyembunyikan tetapi tidak dapat menodai kecerahannya. Kesedihan dan keputusasaan telah menembus inti hatiku; aku menanggung neraka di dalam diriku yang tidak dapat dipadamkan oleh apa pun. Kami tinggal beberapa jam bersama Justine, dan dengan susah payah Elizabeth dapat melepaskan diri. “Aku berharap,” serunya, “aku bisa mati bersamamu; aku tidak bisa hidup di dunia penderitaan ini.” Justine memasang wajah ceria, sementara dengan susah payah ia menahan air matanya yang pahit. Ia memeluk Elizabeth dan berkata dengan suara yang setengah tertahan, “Selamat tinggal, nona manis, Elizabeth tersayang, sahabatku satu-satunya; semoga surga, dalam kemurahannya, memberkati dan melindungimu; semoga ini adalah kemalangan terakhir yang akan kau derita! Hiduplah, dan berbahagialah, dan buat orang lain juga bahagia.” Dan keesokan harinya Justine meninggal. Kefasihan Elizabeth yang memilukan hati gagal menggoyahkan keyakinan para hakim akan kejahatan yang dilakukan oleh korban yang saleh itu. Permohonan saya yang penuh gairah dan kemarahan tidak berpengaruh pada mereka. Dan ketika saya menerima jawaban dingin mereka dan mendengar penalaran yang keras dan tidak berperasaan dari orang-orang ini, pengakuan yang saya maksudkan lenyap dari bibir saya. Dengan demikian saya dapat menyatakan diri sebagai orang gila, tetapi tidak dapat mencabut hukuman yang dijatuhkan kepada korban saya yang malang. Dia binasa di tiang gantungan sebagai seorang pembunuh! Dari siksaan hatiku sendiri, aku beralih merenungkan kesedihan Elizabeth yang mendalam dan tak terucapkan. Ini juga perbuatanku! Dan kesengsaraan ayahku, dan kehancuran rumah yang dulu begitu bahagia itu, semuanya adalah hasil karya tanganku yang terkutuk tiga kali! Kalian menangis, wahai orang-orang malang, tetapi ini bukanlah air mata terakhir kalian! Sekali lagi kalian akan melantunkan ratapan pemakaman, dan suara ratapan kalian akan terdengar berulang kali! Frankenstein, putramu, kerabatmu, sahabatmu yang tercinta; dia yang rela mengorbankan setiap tetes darahnya demi kalian, yang tidak memiliki pikiran atau rasa sukacita kecuali yang tercermin juga di wajah kalian yang terkasih, yang akan memenuhi udara dengan berkah dan menghabiskan hidupnya untuk melayani kalian—dia meminta kalian menangis, menumpahkan air mata yang tak terhitung jumlahnya; bahagia melebihi harapannya, jika takdir yang tak terhindarkan ini terpenuhi, dan jika kehancuran berhenti sebelum kedamaian kuburan menggantikan siksaan kalian yang menyedihkan! Demikianlah firman jiwaku yang penuh nubuat, ketika, diliputi penyesalan, kengerian, dan keputusasaan, aku melihat orang-orang yang kucintai meratapi kesedihan yang sia-sia di atas kuburan William dan Justine, korban pertama yang malang dari ilmu sihirku yang tak suci.</p>
 

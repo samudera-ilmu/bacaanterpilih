@@ -5,39 +5,176 @@
 <title>BAB II</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB II - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB II</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>SETELAH MENGETAHUI bahwa Perusahaan Pialang Saham Cosmopolitan siap mengalahkan saya dengan cara curang jika handicap mematikan berupa margin tiga poin dan premi satu setengah poin tidak berhasil, dan ada petunjuk bahwa mereka memang tidak menginginkan bisnis saya, saya segera memutuskan untuk pergi ke New York, di mana saya dapat berdagang di kantor salah satu anggota Bursa Saham New York. Saya tidak menginginkan cabang Boston, di mana kuotasi harus dikirim melalui telegraf. Saya ingin dekat dengan sumber aslinya. Saya datang ke New York pada usia 21 tahun, membawa semua yang saya miliki, dua ribu lima ratus dolar. Saya sudah bilang saya punya sepuluh ribu dolar saat berusia dua puluh tahun, dan margin keuntungan saya dalam kesepakatan gula itu lebih dari sepuluh ribu. Tapi saya tidak selalu menang. Rencana perdagangan saya cukup matang dan lebih sering menang daripada kalah. Jika saya tetap berpegang pada rencana itu, mungkin saya akan benar hingga tujuh dari sepuluh kali. Bahkan, saya selalu menghasilkan uang ketika saya yakin benar sebelum memulai. Yang mengalahkan saya adalah kurangnya kecerdasan untuk tetap berpegang pada strategi saya sendiri—yaitu, hanya bermain di pasar ketika saya yakin bahwa preseden mendukung strategi saya. Ada waktu untuk segala sesuatu, tetapi saya tidak mengetahuinya. Dan itulah yang mengalahkan begitu banyak orang di Wall Street yang jauh dari termasuk dalam kelas korban utama. Ada orang bodoh biasa, yang selalu melakukan kesalahan di mana pun dan kapan pun, tetapi ada juga orang bodoh Wall Street, yang berpikir dia harus berdagang sepanjang waktu. Tidak ada orang yang selalu memiliki alasan yang memadai untuk membeli atau menjual saham setiap hari—atau pengetahuan yang cukup untuk menjadikan strateginya cerdas. Saya membuktikannya. Setiap kali saya membaca pergerakan harga berdasarkan pengalaman, saya menghasilkan uang, tetapi ketika saya melakukan tindakan bodoh , saya harus kalah. Saya bukan pengecualian, bukan? Ada papan harga besar yang menatap saya, dan ticker yang terus berjalan, dan orang-orang berdagang dan menyaksikan tiket mereka berubah menjadi uang tunai atau menjadi kertas bekas. Tentu saja saya membiarkan keinginan akan sensasi mengalahkan penilaian saya. Di pasar saham yang margin keuntungannya sangat kecil, Anda tidak bermain untuk jangka panjang. Anda akan terkuras terlalu mudah dan cepat. Keinginan untuk terus bertindak tanpa memperhatikan kondisi yang mendasarinya bertanggung jawab atas banyak kerugian di Wall Street bahkan di antara para profesional, yang merasa bahwa mereka harus membawa pulang sejumlah uang setiap hari, seolah-olah mereka bekerja untuk upah tetap. Saya masih anak-anak, ingat. [Saat itu saya tidak tahu apa yang saya pelajari kemudian, apa yang membuat saya lima belas tahun kemudian, menunggu dua minggu lamanya dan melihat saham yang sangat saya yakini naik tiga puluh poin sebelum saya merasa aman untuk membelinya. Saya bangkrut dan mencoba untuk bangkit kembali, dan saya tidak mampu bermain sembrono.] Aku harus benar, jadi aku menunggu.] Itu terjadi pada tahun 1915. Ini cerita panjang. Akan kuceritakan nanti di tempat yang tepat. Sekarang mari kita lanjutkan dari tempat di mana setelah bertahun-tahun berlatih mengalahkan mereka, aku membiarkan toko-toko judi mengambil sebagian besar kemenanganku. Dan dengan mata terbuka lebar pula! Dan itu bukan satu-satunya periode dalam hidupku ketika aku melakukannya. Seorang pelaku pasar saham harus melawan banyak musuh mahal di dalam dirinya sendiri. Bagaimanapun, aku datang ke New York dengan dua ribu lima ratus dolar. Tidak ada perusahaan pialang saham ilegal di sini yang bisa dipercaya. Bursa Saham dan polisi telah berhasil menutupnya dengan sangat rapat. Selain itu, aku ingin menemukan tempat di mana satu-satunya batasan perdaganganku adalah ukuran modalku. Modalku tidak banyak, tetapi aku tidak berharap modalku akan tetap kecil selamanya. Hal utama di awal adalah menemukan tempat di mana aku tidak perlu khawatir mendapatkan perlakuan yang adil. Jadi aku pergi ke sebuah perusahaan Bursa Saham New York yang memiliki cabang di kampung halamanku di mana aku mengenal beberapa pegawainya. Mereka sudah lama bangkrut. Aku tidak lama di sana, tidak menyukai salah satu mitranya, dan kemudian aku pergi ke AR Fullerton & Co. Seseorang pasti telah memberi tahu mereka tentang pengalaman awalku, karena tidak lama kemudian mereka semua mulai memanggilku Si Pedagang Cilik. Saya selalu terlihat muda. Itu menjadi kendala dalam beberapa hal, tetapi hal itu mendorong saya untuk berjuang demi diri saya sendiri karena banyak orang mencoba memanfaatkan usia muda saya. Orang-orang di tempat perjudian ilegal, melihat betapa mudanya saya, selalu mengira saya bodoh karena keberuntungan, dan itulah satu-satunya alasan mengapa saya sering mengalahkan mereka. Yah, belum sampai enam bulan sebelum saya bangkrut. Saya adalah seorang trader yang cukup aktif dan memiliki reputasi sebagai seorang pemenang. Saya rasa komisi saya lumayan besar. Saya berhasil meningkatkan saldo akun saya cukup banyak, tetapi, tentu saja, pada akhirnya saya kalah. Saya bermain dengan hati-hati; tetapi saya harus kalah. Akan saya beri tahu alasannya: itu karena kesuksesan luar biasa saya di bursa saham ilegal! Saya hanya bisa memenangkan permainan dengan cara saya sendiri di pasar saham yang mengandalkan fluktuasi harga. Cara saya membaca pergerakan harga sepenuhnya bergantung pada hal itu. Saat saya membeli, harganya sudah tertera di papan kuotasi, tepat di depan saya. Bahkan sebelum membeli , saya sudah tahu persis harga yang harus saya bayarkan untuk saham saya. Dan saya selalu bisa menjualnya seketika. Saya bisa melakukan scalping dengan sukses, karena saya bisa bergerak secepat kilat. [Saya bisa memanfaatkan keberuntungan saya atau memangkas kerugian saya dalam sekejap.] Terkadang, misalnya, saya yakin sebuah saham akan bergerak setidaknya satu poin. Nah, saya tidak perlu memonopolinya, saya bisa memasang margin satu poin dan menggandakan uang saya dalam sekejap; atau saya bisa mengambil setengah poin. Dengan satu atau dua ratus saham sehari, itu tidak akan buruk di akhir bulan, bukan? Masalah praktis dengan pengaturan itu, tentu saja, adalah bahwa meskipun toko taruhan itu memiliki sumber daya untuk menanggung kerugian besar secara terus-menerus, mereka tidak akan melakukannya. Mereka tidak akan memiliki pelanggan di sekitar tempat itu yang memiliki selera buruk untuk selalu menang. Bagaimanapun, sistem yang sempurna untuk perdagangan di bursa saham kecil (bucket shop) tidak berfungsi di kantor Fullerton. Di sana saya benar-benar membeli dan menjual saham. Harga gula di bursa mungkin 105 dan saya bisa melihat penurunan tiga poin akan datang. Bahkan, pada saat ticker mencetak 105 di bursa, harga sebenarnya di lantai bursa mungkin 104 atau 103. Pada saat pesanan saya untuk menjual seribu saham sampai ke petugas lantai bursa Fullerton untuk dieksekusi, harganya mungkin masih lebih rendah. Saya tidak tahu berapa harga saya menjual seribu saham sampai saya mendapat laporan dari petugas. Padahal saya pasti akan menghasilkan tiga ribu dolar untuk transaksi yang sama di bursa saham kecil , tetapi saya mungkin tidak menghasilkan sepeser pun di bursa saham. Tentu saja, saya telah mengambil kasus ekstrem, tetapi faktanya tetap bahwa di kantor AR Fullerton, harga di bursa selalu menunjukkan sejarah kuno kepada saya, sejauh sistem perdagangan saya berjalan, dan saya tidak menyadarinya . Dan kemudian, jika pesanan saya cukup besar, penjualan saya sendiri cenderung akan semakin menekan harga. Di bursa saham, saya tidak perlu memperhitungkan efek dari perdagangan saya sendiri. Saya kalah di New York karena permainannya sama sekali berbeda. Bukan karena saya sekarang bermain secara sah yang membuat saya kalah, tetapi karena saya bermain dengan kurang pengetahuan. Saya telah diberi tahu bahwa saya pandai membaca pergerakan harga. Tetapi membaca pergerakan harga seperti seorang ahli tidak menyelamatkan saya. Saya mungkin akan jauh lebih untung jika saya berada di lantai bursa sendiri, sebagai pedagang di ruangan. Di tengah kerumunan tertentu, mungkin saya bisa menyesuaikan sistem saya dengan kondisi yang ada di depan saya. Tetapi, tentu saja, jika saya beroperasi dalam skala sebesar yang saya lakukan sekarang, misalnya, sistem tersebut juga akan gagal, karena efek perdagangan saya sendiri terhadap harga. Singkatnya, saya tidak memahami permainan spekulasi saham. Saya tahu sebagiannya, bagian yang cukup penting, yang selalu sangat berharga bagi saya. Tetapi jika dengan semua yang saya miliki saya tetap kalah, peluang apa yang dimiliki orang awam untuk menang, atau lebih tepatnya, untuk mendapatkan keuntungan? Tidak butuh waktu lama bagi saya untuk menyadari bahwa ada yang salah dengan permainan saya, tetapi saya tidak dapat menemukan masalah pastinya. Ada kalanya sistem saya bekerja dengan sangat baik, dan kemudian, tiba-tiba, hanya pukulan demi pukulan yang bertubi-tubi. Ingat, saya baru berusia dua puluh dua tahun; bukan karena saya terlalu terpaku pada diri sendiri sehingga tidak ingin tahu di mana letak kesalahan saya, tetapi karena pada usia itu tidak ada yang tahu banyak hal. Orang-orang di kantor sangat baik kepada saya. Saya tidak bisa melakukan trading sebebas yang saya inginkan karena persyaratan margin mereka, tetapi AR Fullerton dan seluruh perusahaan sangat baik kepada saya sehingga setelah enam bulan trading aktif, saya tidak hanya kehilangan semua yang saya investasikan dan semua yang saya hasilkan di sana, tetapi saya bahkan berhutang beberapa ratus kepada perusahaan tersebut. Di sana aku, masih anak kecil, yang belum pernah jauh dari rumah, benar-benar tidak punya uang; tetapi aku tahu tidak ada yang salah denganku; hanya dengan caraku bermain. Aku tidak tahu apakah aku menjelaskan diriku dengan jelas, tetapi aku tidak pernah marah karena pasar saham. Aku tidak pernah berdebat dengan pergerakan pasar. Marah pada pasar tidak akan membawamu ke mana pun. Saya sangat ingin melanjutkan perdagangan sehingga saya tidak membuang waktu sedetik pun, tetapi pergi ke Pak Tua Fullerton dan berkata kepadanya, "Hei, AR, pinjami saya lima ratus dolar." “Untuk apa?” tanyanya. “Aku harus punya uang.” “Untuk apa?” tanyanya lagi. “Tentu saja, untuk margin keuntungan,” kataku. “Lima ratus dolar?” katanya sambil mengerutkan kening. “Kau tahu mereka mengharapkanmu mempertahankan margin 10 persen, dan itu berarti seribu dolar untuk seratus lembar saham. Jauh lebih baik memberimu kredit——” “Tidak,” kataku, “saya tidak mau kredit di sini. Saya sudah berutang sesuatu kepada perusahaan. Yang saya inginkan adalah Anda meminjamkan saya lima ratus dolar agar saya bisa pergi membeli satu gulungan dan kembali.” “Bagaimana kau akan melakukannya?” tanya AR tua. “Aku akan pergi dan berdagang di bengkel murahan,” kataku padanya. “Berdaganglah di sini,” katanya. “Tidak,” kataku. “Aku belum yakin bisa memenangkan permainan di kantor ini, tapi aku yakin bisa mengambil uang dari toko-toko judi ilegal. Aku tahu permainan itu. Aku punya firasat bahwa aku tahu persis di mana letak kesalahanku.” Dia membiarkan saya mengambilnya, dan saya keluar dari kantor tempat Si Bocah Teror Toko Ember, begitu mereka menyebutnya, telah kehilangan tumpukan uangnya. Saya tidak bisa pulang karena toko-toko di sana tidak mau menerima bisnis saya. New York tidak mungkin; tidak ada toko yang beroperasi saat itu. Mereka mengatakan kepada saya bahwa pada tahun 90-an Broad Street dan New Street penuh dengan toko-toko tersebut. Tetapi tidak ada toko ketika saya membutuhkannya untuk bisnis saya. Jadi setelah berpikir sejenak, saya memutuskan untuk pergi ke St. Louis. Saya pernah mendengar tentang dua perusahaan di sana yang melakukan bisnis besar-besaran di seluruh Midwest. Keuntungan mereka pasti sangat besar. Mereka memiliki kantor cabang di puluhan kota. Bahkan saya diberitahu bahwa tidak ada perusahaan di Timur yang dapat dibandingkan dengan mereka dalam hal volume bisnis. Mereka beroperasi secara terbuka dan orang-orang terbaik berdagang di sana tanpa ragu-ragu. Seorang pria bahkan mengatakan kepada saya bahwa pemilik salah satu perusahaan tersebut adalah wakil presiden Kamar Dagang, tetapi itu tidak mungkin terjadi di St. Louis. Bagaimanapun juga, ke sanalah saya pergi dengan uang lima ratus dolar saya untuk membawa kembali sebagian modal yang akan digunakan sebagai margin di kantor AR Fullerton & Co., anggota Bursa Saham New York. Ketika saya sampai di St. Louis, saya pergi ke hotel, membersihkan diri, dan keluar untuk mencari tempat perjudian ilegal. Salah satunya adalah Perusahaan JG Dolan, dan yang lainnya adalah HS Teller & Co. Saya tahu saya bisa mengalahkan mereka. Saya akan bermain sangat aman—hati-hati dan konservatif. Satu-satunya kekhawatiran saya adalah seseorang mungkin mengenali saya dan membongkar identitas saya, karena tempat perjudian ilegal di seluruh negeri telah mendengar tentang Boy Trader. Mereka seperti rumah judi dan mendapatkan semua gosip para profesional. Dolan lebih dekat daripada Teller, dan saya pergi ke sana lebih dulu. Saya berharap bisa diizinkan berbisnis beberapa hari sebelum mereka menyuruh saya pindah ke tempat lain. Saya masuk. Tempat itu sangat besar dan pasti ada setidaknya beberapa ratus orang di sana yang menatap daftar harga saham. Saya senang, karena di tengah keramaian seperti itu saya memiliki peluang lebih besar untuk tidak diperhatikan. Saya berdiri dan memperhatikan papan harga saham, memeriksanya dengan cermat sampai saya memilih saham untuk langkah pertama saya. Saya melihat sekeliling dan melihat petugas loket di tempat Anda membayar dan mengambil tiket. Dia menatap saya, jadi saya menghampirinya dan bertanya, "Apakah ini tempat Anda berdagang kapas dan gandum?" “Ya, Nak,” katanya. “Apakah saya juga bisa membeli saham?” “Anda bisa melakukannya jika Anda punya uang tunai,” katanya. “Oh, aku mengerti dengan benar, benar,” kataku seperti anak yang sedang menyombongkan diri. “Kamu sudah, ya?” katanya sambil tersenyum. “Berapa banyak saham yang bisa saya beli dengan seratus dolar?” tanyaku dengan nada kesal. “Seratus; jika kamu punya seratus.” “Aku dapat seratus. Ya; dan dua ratus juga!” kataku padanya. “Ya ampun!” katanya. “Kau belikan aku dua ratus lembar saham saja,” kataku dengan tajam. “Dua ratus berapa?” tanyanya, kini serius. Ini urusan bisnis. Aku melihat papan itu lagi seolah-olah ingin menebak dengan bijak dan berkata kepadanya, "Dua ratus Omaha." “Baiklah!” katanya. Dia mengambil uang saya, menghitungnya, dan menuliskan tiketnya. “Siapa namamu?” tanyanya padaku, dan aku menjawab, “Horace Kent.” Dia memberi saya tiket itu dan saya pergi lalu duduk di antara para pelanggan untuk menunggu gulungan uang itu bertambah. Saya mendapat giliran cepat dan saya bertransaksi beberapa kali hari itu. Keesokan harinya juga. Dalam dua hari saya menghasilkan dua ribu delapan ratus dolar, dan saya berharap mereka mengizinkan saya menyelesaikan minggu itu. Dengan kecepatan seperti itu, itu tidak akan terlalu buruk. Kemudian saya akan mencoba toko yang lain , dan jika saya beruntung di sana, saya akan kembali ke New York dengan sejumlah uang yang bisa saya gunakan. Pada pagi hari ketiga, ketika saya pergi ke loket dengan malu-malu untuk membeli lima ratus BRT, petugas itu berkata kepada saya, "Hei, Tuan Kent, bos ingin bertemu Anda." Aku tahu permainan sudah berakhir. Tapi aku bertanya padanya, "Apa yang ingin dia bicarakan denganku?" "Aku tidak tahu." "Dimana dia?" “Di ruang kerja pribadinya. Masuklah lewat sana.” Lalu dia menunjuk ke sebuah pintu. Aku masuk. Dolan sedang duduk di mejanya. Dia berbalik dan berkata, "Duduklah, Livingston." Dia menunjuk ke sebuah kursi. Harapan terakhirku sirna. Aku tidak tahu bagaimana dia mengetahui siapa aku; mungkin dari buku registrasi hotel. “Anda ingin bertemu saya untuk membicarakan apa?” tanyaku padanya. “Dengar, Nak. Aku tidak punya masalah apa pun denganmu , mengerti? Sama sekali tidak. Mengerti?” “Tidak, saya tidak melihat,” kataku. Dia bangkit dari kursi putarnya. Dia pria yang sangat besar. Dia berkata kepadaku, "Kemarilah, Livingston, ya?" lalu dia berjalan ke pintu. Dia membukanya dan kemudian menunjuk ke arah pelanggan di ruangan besar itu. “ Apa kau melihat mereka?” tanyanya padaku. “Melihat apa?” “Orang-orang itu. Lihat mereka , Nak. Ada tiga ratus orang ! Tiga ratus orang bodoh! Mereka menghidupi aku dan keluargaku. Lihat? Tiga ratus orang bodoh! Lalu kau datang, dan dalam dua hari kau mendapatkan lebih banyak daripada yang kudapatkan dari tiga ratus orang itu dalam dua minggu. Itu bukan bisnis, Nak—bukan untukku! Aku tidak punya masalah denganmu . Silakan ambil apa yang kau punya. Tapi kau tidak punya lagi. Tidak ada lagi yang bisa kau dapatkan di sini!” “Kenapa, aku——” “Itu saja. Aku melihatmu datang dua hari yang lalu, dan aku tidak suka penampilanmu . Sejujurnya, aku tidak suka. Aku curiga kau penipu. Aku memanggil si brengsek itu”—dia menunjuk ke petugas yang bersalah— “ dan bertanya apa yang telah kau lakukan; dan ketika dia memberitahuku, aku berkata kepadanya: 'Aku tidak suka penampilan orang itu. Dia penipu!' Dan si brengsek itu berkata: 'Penipu apanya, bos! Namanya Horace Kent, dan dia anak nakal yang pura-pura terbiasa memakai celana panjang. Dia baik-baik saja!' Yah, aku membiarkannya saja. Bajingan itu merugikanku dua ribu delapan ratus dolar. Aku tidak keberatan, Nak. Tapi brankasnya terkunci untukmu.” “Lihat sini—” aku memulai. “Dengar sini, Livingston,” katanya. “Aku sudah mendengar semua tentangmu. Aku mencari uang dengan menipu taruhan orang bodoh, dan kau tidak pantas berada di sini. Aku ingin bersikap sportif dan kau dipersilakan untuk mengambil apa yang kau dapatkan dari kami. Tapi jika kau terus seperti itu, aku juga akan jadi orang bodoh, sekarang aku tahu siapa kau. Jadi , pergilah, nak!” Saya meninggalkan tempat Dolan dengan keuntungan dua ribu delapan ratus dolar. Tempat Teller berada di blok yang sama. Saya mengetahui bahwa Teller adalah orang yang sangat kaya yang juga menjalankan banyak tempat biliar. Saya memutuskan untuk pergi ke tempat taruhannya. Saya bertanya-tanya apakah bijaksana untuk memulai secara moderat dan meningkatkannya hingga seribu saham atau memulai dengan taruhan besar, dengan teori bahwa saya mungkin tidak dapat berdagang lebih dari satu hari. Mereka menjadi sangat waspada ketika mereka merugi dan saya memang ingin membeli seribu BRT, saya yakin saya bisa mendapatkan empat atau lima poin darinya. Tetapi jika mereka curiga atau jika terlalu banyak pelanggan yang memiliki saham itu, mereka mungkin tidak mengizinkan saya berdagang sama sekali. Saya pikir mungkin lebih baik saya menyebar perdagangan saya terlebih dahulu dan memulai dari yang kecil. Tempatnya tidak sebesar Dolan's, tetapi perlengkapannya lebih bagus dan jelas pengunjungnya berasal dari kelas yang lebih baik. Ini sangat cocok untukku dan aku memutuskan untuk membeli seribu BRT. Jadi aku pergi ke loket yang tepat dan berkata kepada petugas, "Saya ingin membeli BRT. Berapa batasnya?" “Tidak ada batasnya,” kata petugas toko. “Anda bisa membeli sebanyak yang Anda mau—jika Anda punya uang.” “Beli seribu lima ratus lembar saham,” kataku , lalu mengeluarkan gulungan uangku dari saku sementara petugas mulai menulis tiket. Lalu saya melihat seorang pria berambut merah mendorong petugas kasir itu menjauh dari konter. Dia mencondongkan tubuh dan berkata kepada saya, “Livingston, kau kembali saja ke Dolan's. Kami tidak menginginkan bisnismu.” “Tunggu sampai aku dapat tiketku,” kataku. “Aku baru saja membeli tiket BRT kecil.” “Anda tidak akan mendapat tilang di sini,” katanya. Saat itu, petugas lain sudah berada di belakangnya dan menatap saya. “Jangan pernah datang ke sini untuk berdagang. Kami tidak menerima bisnis Anda. Mengerti?” Tidak ada gunanya marah atau mencoba berdebat, jadi saya kembali ke hotel, membayar tagihan saya, dan naik kereta pertama kembali ke New York. Itu sulit. Saya ingin membawa pulang uang sungguhan dan Teller itu tidak mengizinkan saya melakukan satu transaksi pun. Saya kembali ke New York, membayar Fullerton lima ratus dolar, dan mulai berdagang lagi dengan uang dari St. Louis. Saya mengalami masa-masa baik dan buruk, tetapi saya lebih baik daripada impas. Lagipula, saya tidak perlu banyak melupakan apa yang telah saya pelajari; hanya perlu memahami satu fakta bahwa ada lebih banyak hal dalam permainan spekulasi saham daripada yang saya pertimbangkan sebelum saya pergi ke kantor Fullerton untuk berdagang. Saya seperti salah satu penggemar teka-teki, mengerjakan teka-teki silang di suplemen hari Minggu. Dia tidak puas sampai dia mendapatkannya. Nah, saya tentu ingin menemukan solusi untuk teka-teki saya. Saya pikir saya sudah selesai berdagang di bursa saham spekulatif. Tapi saya salah. Sekitar dua bulan setelah saya kembali ke New York, seorang pria tua datang ke kantor Fullerton. Dia kenal AR. Seseorang mengatakan mereka pernah memiliki sejumlah kuda pacuan bersama. Jelas sekali dia pernah mengalami masa-masa yang lebih baik. Saya diperkenalkan kepada McDevitt tua. Dia bercerita kepada orang banyak tentang sekelompok penjahat pacuan kuda di wilayah Barat yang baru saja melakukan penipuan di St. Louis. Dalang utamanya, katanya, adalah pemilik ruang biliar bernama Teller. “Teller yang mana?” tanyaku padanya. “Hai Teller; HS Teller.” “Aku kenal burung itu,” kataku. “Dia tidak becus,” kata McDevitt. “Dia lebih buruk dari itu,” kataku, “dan aku punya sedikit urusan yang harus diselesaikan dengannya.” “Maksudnya bagaimana?” “Satu-satunya cara saya bisa mengenai pemain-pemain bertubuh pendek itu adalah dengan menguras dompet mereka. Saya tidak bisa menyentuhnya di St. Louis sekarang, tapi suatu hari nanti saya pasti bisa.” Dan saya menyampaikan keluhan saya kepada McDevitt. “Nah,” kata Mac tua, “dia mencoba menjalin koneksi di New York dan tidak berhasil, jadi dia membuka tempat di Hoboken. Kabarnya, pertunjukan di sana tak terbatas dan jumlah penontonnya sangat banyak, bahkan melebihi jumlah penonton di Rock of Gibraltar.” “Tempat seperti apa?” Kupikir dia maksudnya ruang biliar. “Toko ember,” kata McDevitt. “Apakah kamu yakin tempat ini buka?” “Ya; saya sudah bertemu beberapa orang yang menceritakan hal itu kepada saya.” “Itu hanya kabar angin,” kataku. “Bisakah kau memastikan secara pasti apakah itu masih beroperasi, dan juga seberapa berat barang yang benar-benar boleh diperdagangkan oleh seseorang?” “Tentu, Nak,” kata McDevitt. “Aku akan pergi sendiri besok pagi, lalu kembali dan memberitahumu.” Dia melakukannya. Tampaknya Teller sudah menjalankan bisnis besar dan akan mengambil semua yang bisa didapatnya. Ini terjadi pada hari Jumat. Pasar telah naik sepanjang minggu itu—ingat, ini dua puluh tahun yang lalu—dan sudah pasti laporan bank pada hari Sabtu akan menunjukkan penurunan besar dalam cadangan surplus. Itu akan memberikan alasan konvensional bagi para pedagang besar untuk terjun ke pasar dan mencoba untuk menyingkirkan beberapa akun komisi yang lemah. Akan ada reaksi biasa dalam setengah jam terakhir perdagangan, terutama pada saham-saham di mana publik paling aktif. Tentu saja, saham-saham tersebut juga akan menjadi saham-saham yang paling banyak dipegang oleh pelanggan Teller, dan toko tersebut mungkin akan senang melihat beberapa penjualan pendek di saham-saham tersebut. Tidak ada yang lebih menyenangkan daripada menjebak orang bodoh dari kedua sisi; dan tidak ada yang lebih mudah—dengan margin satu poin. pagi itu saya bergegas ke Hoboken ke tempat Teller. Mereka telah menyiapkan ruang pelanggan yang besar dengan papan penawaran harga yang bagus dan sejumlah besar pegawai serta seorang polisi khusus berseragam abu-abu. Ada sekitar dua puluh lima pelanggan. Saya mulai mengobrol dengan manajer. Dia bertanya apa yang bisa dia lakukan untuk saya dan saya mengatakan tidak ada; bahwa seseorang bisa menghasilkan lebih banyak uang di arena pacuan kuda karena peluangnya dan kebebasan untuk mempertaruhkan seluruh uangnya dan berpeluang memenangkan ribuan dalam hitungan menit, daripada hanya mendapatkan recehan di pasar saham dan harus menunggu berhari-hari. Dia mulai menjelaskan betapa lebih amannya permainan pasar saham, dan berapa banyak uang yang dihasilkan beberapa pelanggan mereka—Anda akan bersumpah bahwa itu adalah pialang biasa yang benar-benar membeli dan menjual saham Anda di Bursa—dan bagaimana jika seseorang hanya melakukan perdagangan besar-besaran, dia bisa menghasilkan cukup uang untuk memuaskan siapa pun. Dia pasti mengira saya akan pergi ke tempat biliar dan dia ingin mencoba peruntungan saya sebelum uang saya habis, karena dia mengatakan saya harus bergegas karena pasar tutup pukul dua belas siang pada hari Sabtu. Itu akan memberi saya kebebasan untuk mengabdikan seluruh sore untuk kegiatan lain. Saya mungkin memiliki uang yang lebih banyak untuk dibawa ke arena pacuan kuda—jika saya memilih saham yang tepat. Aku tampak seperti tidak percaya padanya, dan dia terus menghubungiku. Aku terus melihat jam. Pukul 11:15 aku berkata, "Baiklah," dan aku mulai memberinya pesanan jual di berbagai saham. Aku menyetor dua ribu dolar tunai, dan dia sangat senang menerimanya. Dia mengatakan bahwa dia pikir aku akan menghasilkan banyak uang dan berharap aku akan sering datang. Semuanya terjadi seperti yang saya perkirakan. Para trader menekan saham-saham yang mereka perkirakan akan paling banyak memicu stop loss, dan, benar saja, harga pun turun. Saya menutup posisi trading saya tepat sebelum reli lima menit terakhir karena aksi beli kembali yang biasa dilakukan para trader. Ada uang sebesar lima ribu seratus dolar yang menjadi hak saya. Saya pergi untuk mencairkannya. “Senang saya mampir,” kataku kepada manajer, lalu memberikan tiketku kepadanya. “Begini,” katanya padaku, “aku tidak bisa memberikan semuanya padamu. Aku tidak mengharapkan hasil seperti ini. Pasti akan kubawa ke sini untukmu Senin pagi.” “Baiklah. Tapi pertama-tama, aku akan mengambil semua yang kau punya di rumah,” kataku. “Kau harus membiarkan aku membayarkan uang para pemenang kecil itu,” katanya. “Aku akan mengembalikan uang yang kau setorkan, dan sisanya. Tunggu sampai aku mencairkan tiket-tiket lainnya.” Jadi aku menunggu sementara dia membayarkan uang para pemenang. Oh, aku tahu uangku aman. Teller tidak akan mengingkari janji karena kantornya sedang ramai pengunjung. Dan jika dia melakukannya, apa lagi yang bisa kulakukan selain mengambil semua yang dia punya saat itu juga? Aku mengambil dua ribu dolar milikku sendiri dan sekitar delapan ratus dolar lagi, yang merupakan semua yang dia punya di kantor. Aku bilang padanya aku akan datang Senin pagi. Dia bersumpah uang itu akan menungguku. Saya sampai di Hoboken sedikit sebelum pukul dua belas siang pada hari Senin. Saya melihat seorang pria berbicara dengan manajer yang pernah saya lihat di kantor St. Louis pada hari Teller menyuruh saya kembali ke Dolan. Saya langsung tahu bahwa manajer telah mengirim telegram ke kantor pusat dan mereka telah mengirim salah satu anak buah mereka untuk menyelidiki cerita tersebut. Penjahat tidak mempercayai siapa pun. “Saya datang untuk mengambil sisa uang saya,” kata saya kepada manajer. “Apakah ini orangnya?” tanya pria dari St. Louis itu. “Ya,” kata manajer itu, lalu mengeluarkan seikat uang kertas kuning dari sakunya. “Tunggu dulu!” kata pria dari St. Louis itu kepadanya, lalu menoleh kepada saya, “Livingston, bukankah sudah kami bilang kami tidak menginginkan bisnis Anda?” “Berikan uangku dulu,” kataku kepada manajer, dan dia pun memberikan dua ribu , empat lima ratus, dan tiga ratus. “Apa yang kau katakan?” tanyaku pada St. Louis. “Kami sudah bilang kami tidak ingin Anda berdagang menggantikan kami.” “Ya,” kataku; “itulah mengapa aku datang.” “Baiklah, jangan datang lagi. Menjauh!” bentaknya padaku. Polisi swasta berseragam abu-abu datang menghampiri, dengan santai. St. Louis mengepalkan tinjunya ke arah manajer dan berteriak: “Seharusnya kau tahu lebih baik, dasar bodoh, daripada membiarkan orang ini mempengaruhimu. Dia Livingston. Kau sudah mendapat perintah.” “Dengar, kau,” kataku pada pria asal St. Louis itu. “Ini bukan St. Louis. Kau tidak bisa melakukan trik apa pun di sini, seperti yang bosmu lakukan pada Belfast Boy.” “Jauhi kantor ini! Kau tidak boleh berbisnis di sini!” teriaknya. “Jika saya tidak bisa berdagang di sini, orang lain juga tidak akan bisa,” kataku padanya. “Kau tidak bisa lolos begitu saja dengan hal-hal seperti itu di sini.” Nah, St. Louis langsung mengubah pendiriannya. “Dengar sini, bung,” katanya dengan nada kesal, “tolonglah kami. Bersikaplah masuk akal! Kau tahu kami tidak tahan dengan ini setiap hari. Orang tua ini akan sangat marah ketika mendengar siapa pelakunya. Berbaik hatilah, Livingston!” “Aku akan pelan-pelan,” janjiku. “Dengarkan akal sehat, ya? Demi Tuhan, menjauhlah! Beri kami kesempatan untuk memulai dengan baik. Kami pendatang baru di sini. Maukah kau?” “Aku tidak mau lagi berurusan dengan hal-hal yang sok penting seperti ini saat aku datang lagi,” kataku, lalu meninggalkannya berbicara dengan manajer dengan kecepatan satu juta dolar per menit. Aku sudah mendapatkan sejumlah uang dari mereka karena perlakuan mereka kepadaku di St. Louis. Tidak ada gunanya aku marah atau mencoba menutup usaha mereka. Aku kembali ke kantor Fullerton dan memberi tahu McDevitt apa yang telah terjadi. Kemudian aku mengatakan kepadanya bahwa jika dia setuju, aku ingin dia pergi ke tempat Teller dan mulai berdagang dalam jumlah dua puluh atau tiga puluh saham, agar mereka terbiasa dengannya. Kemudian, begitu aku melihat peluang bagus untuk mendapatkan keuntungan besar, aku akan meneleponnya dan dia bisa langsung terjun. Saya memberi McDevitt seribu dolar dan dia pergi ke Hoboken dan melakukan apa yang saya suruh. Dia menjadi salah satu pelanggan tetap. Kemudian suatu hari ketika saya pikir saya melihat peluang besar akan datang , saya memberi tahu Mac dan dia menjual semua yang mereka izinkan. Saya mendapat keuntungan dua ribu delapan ratus dolar hari itu, setelah memberi Mac bagiannya dan membayar pengeluaran, dan saya menduga Mac juga memasang taruhan kecilnya sendiri. Kurang dari sebulan setelah itu, Teller menutup cabang Hoboken-nya. Polisi mulai sibuk. Dan, bagaimanapun, itu tidak menguntungkan, meskipun saya hanya bertransaksi dua kali. Kami mengalami pasar saham yang sangat bullish ketika saham tidak bereaksi cukup untuk menghapus bahkan margin satu poin, dan, tentu saja, semua pelanggan adalah investor bullish dan menang serta melakukan skema piramida. Banyak sekali tempat perjudian ilegal yang digerebek di seluruh negeri. Permainan mereka telah berubah. Perdagangan di bursa saham tradisional memiliki beberapa keuntungan dibandingkan spekulasi di kantor pialang terkemuka. Salah satunya adalah penutupan otomatis perdagangan Anda ketika margin mencapai titik habis, yang merupakan jenis perintah stop-loss terbaik. Anda tidak akan rugi lebih dari yang telah Anda investasikan dan tidak ada bahaya eksekusi pesanan yang buruk, dan sebagainya. Di New York, bursa saham tidak pernah semurah hati kepada pelanggan mereka seperti yang saya dengar di Barat. Di sini, mereka biasanya membatasi potensi keuntungan pada saham-saham tertentu dalam urutan pergerakan harga hingga dua poin. Saham Sugar dan Tennessee Coal and Iron termasuk di antaranya. Tidak peduli jika harganya bergerak sepuluh poin dalam sepuluh menit, Anda hanya bisa mendapatkan dua poin dalam satu tiket. Mereka berpikir bahwa jika tidak, pelanggan mendapatkan peluang yang terlalu besar; dia berisiko kehilangan satu dolar dan mendapatkan sepuluh dolar. Dan kemudian ada saat-saat ketika semua bursa saham, termasuk yang terbesar, menolak untuk menerima pesanan pada saham-saham tertentu. Pada tahun 1900, sehari sebelum Hari Pemilihan, ketika sudah dapat dipastikan bahwa McKinley akan menang, tidak ada satu pun toko di negeri itu yang mengizinkan pelanggannya membeli saham. Peluang kemenangan McKinley dalam pemilihan adalah 3 banding 1. Dengan membeli saham pada Pada hari Senin, Anda berpotensi mendapatkan tiga hingga enam poin atau lebih. Seseorang bisa bertaruh pada Bryan dan membeli saham serta memastikan mendapatkan uang. Toko-toko taruhan menolak pesanan sepanjang hari itu. Seandainya mereka tidak menolak berbisnis dengan saya, saya tidak akan pernah berhenti berdagang dengan mereka. Dan kemudian saya tidak akan pernah belajar bahwa permainan spekulasi saham jauh lebih kompleks daripada sekadar bermain untuk fluktuasi beberapa poin.</p>
 

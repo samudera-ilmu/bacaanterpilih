@@ -5,39 +5,176 @@
 <title>KEINGINAN UNTUK MELEBIHI PROGRAM YANG DITETAPKAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="KEINGINAN UNTUK MELEBIHI PROGRAM YANG DITETAPKAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>KEINGINAN UNTUK MELEBIHI PROGRAM YANG DITETAPKAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>"Tapi," mungkin ada yang berkomentar, dengan sikap acuh tak acuh khas Inggris terhadap segala hal kecuali intinya, "apa maksudnya dengan dua puluh empat jam sehari? Saya tidak kesulitan hidup dengan dua puluh empat jam sehari. Saya melakukan semua yang ingin saya lakukan, dan masih sempat mengikuti kompetisi surat kabar. Tentu saja ini hal yang sederhana, mengetahui bahwa seseorang hanya memiliki dua puluh empat jam sehari, untuk merasa puas dengan dua puluh empat jam sehari!" Kepada Anda, Tuan yang terhormat, saya menyampaikan permintaan maaf dan permohonan saya. Anda adalah orang yang selama kurang lebih empat puluh tahun ingin saya temui. Maukah Anda mengirimkan nama dan alamat Anda, serta menyebutkan biaya untuk memberi tahu saya bagaimana cara Anda melakukannya? Seharusnya Anda yang berbicara kepada saya, bukan saya yang berbicara kepada Anda. Silakan maju. Saya yakin Anda ada, dan saya merasa kehilangan karena belum bertemu dengan Anda. Sementara itu, sampai Anda muncul, saya akan terus mengobrol dengan teman-teman seperjuangan saya—sekelompok jiwa yang tak terhitung jumlahnya yang dihantui, kurang lebih menyakitkan, oleh perasaan bahwa tahun-tahun terus berlalu, dan mereka belum mampu mengatur hidup mereka dengan baik. Jika kita menganalisis perasaan itu, kita akan menyadari bahwa perasaan itu, terutama, adalah perasaan gelisah, penuh harapan, menantikan masa depan, dan penuh aspirasi. Perasaan itu merupakan sumber ketidaknyamanan yang konstan, karena ia berperilaku seperti kerangka di pesta kenikmatan kita. Kita pergi ke teater dan tertawa; tetapi di antara babak-babak pertunjukan, ia mengangkat jari kurusnya ke arah kita. Kita bergegas mengejar kereta terakhir, dan sementara kita menunggu lama di peron menunggu kereta terakhir, ia berjalan mondar-mandir dengan tulang-tulangnya di samping kita dan bertanya: "Wahai manusia, apa yang telah kau lakukan dengan masa mudamu? Apa yang kau lakukan dengan usia tuamu?" Anda mungkin berpendapat bahwa perasaan menantikan masa depan yang terus-menerus, penuh aspirasi, adalah bagian dari kehidupan itu sendiri, dan tak terpisahkan dari kehidupan itu sendiri. Benar! Namun ada berbagai tingkatan. Seseorang mungkin ingin pergi ke Mekah. Hati nuraninya mengatakan bahwa ia harus pergi ke Mekah. Ia berangkat, baik dengan bantuan Cook's, atau tanpa bantuan; ia mungkin tidak pernah sampai ke Mekah; ia mungkin tenggelam sebelum sampai ke Port Said; ia mungkin binasa secara tidak terhormat di pantai Laut Merah; keinginannya mungkin tetap selamanya terpendam. Aspirasi yang tidak terpenuhi mungkin selalu mengganggunya. Tetapi ia tidak akan tersiksa dengan cara yang sama seperti orang yang, karena ingin mencapai Mekah, dan diganggu oleh keinginan untuk mencapai Mekah, tidak pernah meninggalkan Brixton. Rasanya sungguh luar biasa bisa meninggalkan Brixton. Sebagian besar dari kita belum pernah meninggalkan Brixton. Kita bahkan belum pernah naik taksi ke Ludgate Circus dan menanyakan harga tur berpemandu di Cook's. Dan alasan kita adalah karena hanya ada dua puluh empat jam dalam sehari. Jika kita menganalisis lebih lanjut aspirasi kita yang samar dan gelisah, saya pikir kita akan melihat bahwa aspirasi itu berasal dari gagasan tetap bahwa kita harus melakukan sesuatu di samping hal-hal yang secara setia dan moral wajib kita lakukan. Kita diwajibkan, oleh berbagai kode tertulis dan tidak tertulis, untuk menjaga kesehatan dan kenyamanan diri kita dan keluarga kita (jika ada), untuk membayar hutang kita, untuk menabung, untuk meningkatkan kemakmuran kita dengan meningkatkan efisiensi kita. Tugas yang cukup sulit! Tugas yang sangat sedikit dari kita yang berhasil mencapainya! Tugas yang seringkali di luar kemampuan kita! Namun, jika kita berhasil melakukannya, seperti yang kadang-kadang kita lakukan, kita tidak puas; kerangka itu masih ada pada kita. Dan bahkan ketika kita menyadari bahwa tugas itu di luar kemampuan kita, bahwa kekuatan kita tidak mampu mengatasinya, kita merasa bahwa kita seharusnya tidak terlalu kecewa jika kita memberikan kekuatan kita, yang sudah terlalu terbebani, sesuatu yang lebih untuk dilakukan lagi. Dan memang demikianlah kenyataannya. Keinginan untuk mencapai sesuatu di luar program formal mereka adalah hal yang umum bagi semua manusia yang dalam perjalanan evolusi telah melampaui tingkat tertentu. Sampai ada upaya untuk memenuhi keinginan itu, perasaan gelisah menunggu sesuatu yang belum dimulai akan tetap mengganggu kedamaian jiwa. Keinginan itu telah disebut dengan banyak nama. Itu adalah salah satu bentuk keinginan universal akan pengetahuan. Dan keinginan itu begitu kuat sehingga orang-orang yang seluruh hidupnya telah didedikasikan untuk memperoleh pengetahuan secara sistematis telah didorong olehnya untuk melampaui batas program mereka dalam mencari lebih banyak pengetahuan lagi. Bahkan Herbert Spencer, menurut pendapat saya, pemikir terhebat yang pernah hidup, sering kali dipaksa olehnya untuk menjelajahi tempat-tempat terpencil yang menyenangkan dalam penyelidikan. Saya membayangkan bahwa pada sebagian besar orang yang menyadari keinginan untuk hidup—yaitu, orang-orang yang memiliki rasa ingin tahu intelektual—aspirasi untuk melampaui program formal mengambil bentuk sastra. Mereka ingin memulai kursus membaca. Jelas sekali, masyarakat Inggris semakin menjadi lebih sastrawan. Tetapi saya ingin menunjukkan bahwa sastra sama sekali tidak mencakup seluruh bidang pengetahuan, dan bahwa dahaga yang mengganggu untuk meningkatkan diri—untuk menambah pengetahuan—dapat dipuaskan terlepas dari sastra. Berbagai cara untuk memuaskan dahaga tersebut akan saya bahas nanti. Di sini saya hanya menunjukkan kepada mereka yang tidak memiliki simpati alami terhadap sastra bahwa sastra bukanlah satu-satunya sumber.</p>
 

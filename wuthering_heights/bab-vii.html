@@ -5,39 +5,176 @@
 <title>BAB VII</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB VII - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB VII</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Cathy tinggal di Thrushcross Grange selama lima minggu: sampai Natal. Pada saat itu pergelangan kakinya sudah sembuh total, dan perilakunya jauh lebih baik. Nyonya rumah sering mengunjunginya selama waktu itu, dan memulai rencana reformasinya dengan mencoba meningkatkan harga dirinya dengan pakaian bagus dan sanjungan, yang diterimanya dengan senang hati; sehingga, alih-alih seorang gadis kecil liar tanpa topi yang melompat ke rumah, dan bergegas untuk membuat kami semua sesak napas, turun dari seekor kuda poni hitam yang tampan seorang wanita yang sangat anggun, dengan rambut ikal cokelat yang jatuh dari penutup kepala berbulu berang-berang, dan pakaian kain panjang, yang terpaksa dipegangnya dengan kedua tangan agar dia bisa masuk. Hindley mengangkatnya dari kudanya, berseru dengan gembira, “Wah, Cathy, kau cantik sekali! Aku hampir tidak akan mengenalmu: kau sekarang terlihat seperti seorang wanita. Isabella Linton tidak bisa dibandingkan dengannya, bukan, Frances?” “Isabella tidak memiliki kelebihan alaminya,” jawab istrinya: “tetapi dia harus berhati-hati dan tidak menjadi liar lagi di sini. Ellen, bantu Nona Catherine membawa barang-barangnya—Tunggu, sayang, nanti rambut keritingmu berantakan—biarkan aku melepaskan topimu.” Aku melepas jubahnya, dan di baliknya tampak gaun sutra kotak-kotak yang megah, celana putih, dan sepatu mengkilap; dan, sementara matanya berbinar gembira ketika anjing-anjing berlari menghampirinya untuk menyambutnya, dia hampir tidak berani menyentuh mereka karena takut mereka akan menjilat pakaiannya yang indah. Dia menciumku dengan lembut: aku seperti tepung yang sedang membuat kue Natal, dan tidak pantas jika aku dipeluk; lalu dia melihat sekeliling mencari Heathcliff. Tuan dan Nyonya Earnshaw mengamati pertemuan mereka dengan cemas; berpikir bahwa itu akan memungkinkan mereka untuk menilai, sampai batas tertentu, alasan apa yang mereka miliki untuk berharap berhasil memisahkan kedua teman itu. Heathcliff sulit ditemukan pada awalnya. Jika dia ceroboh dan tidak terurus sebelum kepergian Catherine, dia menjadi sepuluh kali lebih ceroboh sejak saat itu. Tidak ada seorang pun selain aku yang berbaik hati memanggilnya anak kotor dan menyuruhnya mandi seminggu sekali; dan anak-anak seusianya jarang menikmati sabun dan air. Oleh karena itu, belum lagi pakaiannya yang telah tiga bulan terendam lumpur dan debu, dan rambutnya yang tebal dan tidak disisir, permukaan wajah dan tangannya tampak suram. Dia mungkin akan bersembunyi di balik bangku kecil, saat melihat seorang gadis yang begitu cantik dan anggun memasuki rumah, alih-alih sosok dirinya yang berkepala kasar seperti yang dia harapkan. "Apakah Heathcliff tidak ada di sini?" tanyanya, sambil melepas sarung tangannya, dan memperlihatkan jari-jarinya yang memutih karena tidak melakukan apa pun dan hanya tinggal di dalam rumah. “Heathcliff, kau boleh maju,” seru Tuan Hindley, menikmati rasa malu yang dialaminya, dan senang melihat betapa kurang ajarnya pemuda kurang ajar itu terpaksa tampil. “Kau boleh maju dan menyapa Nona Catherine, seperti para pelayan lainnya.” Cathy, yang sekilas melihat temannya yang bersembunyi, bergegas memeluknya; ia memberikan tujuh atau delapan ciuman di pipinya dalam sekejap, lalu berhenti, dan mundur, tertawa terbahak-bahak, berseru, “Wah, betapa muram dan marahnya kau terlihat! dan betapa—betapa lucunya dan mengerikannya! Tapi itu karena aku sudah terbiasa dengan Edgar dan Isabella Linton. Nah, Heathcliff, apakah kau sudah melupakanku?” Dia punya alasan untuk mengajukan pertanyaan itu, karena rasa malu dan harga diri menambah kesedihan di wajahnya, dan membuatnya tak bergerak. “Silakan berjabat tangan, Heathcliff,” kata Tuan Earnshaw dengan nada merendahkan; “sesekali, itu diperbolehkan.” “Aku tidak akan,” jawab anak laki-laki itu, akhirnya bisa berbicara; “Aku tidak akan membiarkan diriku ditertawakan. Aku tidak akan tahan!” Dan dia hendak melepaskan diri dari lingkaran itu, tetapi Nona Cathy menangkapnya kembali. “Aku tidak bermaksud menertawaimu,” katanya; “Aku tidak bisa menahan diri: Heathcliff, setidaknya berjabat tanganlah! Kenapa kau cemberut? Hanya saja penampilanmu aneh. Jika kau mencuci muka dan menyisir rambutmu, semuanya akan baik-baik saja: tapi kau sangat kotor!” Dia menatap cemas pada jari-jari gelap yang dipegangnya, dan juga pada gaunnya; yang dia khawatirkan tidak menjadi lebih indah karena bersentuhan dengan jari pria itu. “Kau tak perlu menyentuhku!” jawabnya, mengikuti arah pandangan matanya dan menarik tangannya. “Aku akan kotor sesukaku: dan aku suka kotor, dan aku akan kotor.” Dengan itu, ia bergegas keluar ruangan tanpa pikir panjang, di tengah keriuhan tuan dan nyonya rumah, dan membuat Catherine sangat terganggu; ia tidak mengerti bagaimana ucapannya bisa menimbulkan luapan amarah seperti itu. Setelah melayani tamu baru, memasukkan kue ke dalam oven, dan membuat rumah serta dapur menjadi ceria dengan perapian besar, sesuai dengan suasana malam Natal, saya bersiap untuk duduk dan menghibur diri dengan menyanyikan lagu-lagu Natal, sendirian; tanpa mempedulikan pernyataan Joseph bahwa ia menganggap melodi riang yang saya pilih hampir sama dengan lagu-lagu lainnya. Ia telah pergi berdoa di kamarnya, dan Tuan dan Nyonya Earnshaw sedang menarik perhatian Missy dengan berbagai barang kecil yang menyenangkan yang dibelinya untuk diberikan kepada anak-anak Linton, sebagai ucapan terima kasih atas kebaikan mereka. Mereka telah mengundang mereka untuk menghabiskan hari esok di Wuthering Heights, dan undangan itu telah diterima, dengan satu syarat: Nyonya Linton memohon agar anak-anak kesayangannya dijauhkan dari "anak laki-laki nakal yang suka mengumpat" itu. Dalam keadaan seperti itu, aku tetap sendirian. Aku menghirup aroma rempah-rempah yang harum dari perapian; dan mengagumi peralatan dapur yang berkilauan, jam yang dipoles, dihiasi dengan daun holly, cangkir perak yang tersusun di atas nampan siap diisi dengan bir hangat untuk makan malam; dan yang terpenting, kemurnian tanpa cela dari perhatianku yang khusus—lantai yang digosok dan disapu bersih. Aku memberikan pujian dalam hati kepada setiap benda, dan kemudian aku ingat bagaimana Earnshaw tua biasa datang ketika semuanya sudah rapi, dan memanggilku gadis manja, dan menyelipkan satu shilling ke tanganku sebagai kotak Natal; dan dari situ aku mulai memikirkan kesukaannya pada Heathcliff, dan ketakutannya jangan-jangan dia akan diabaikan setelah kematian menjemputnya: dan itu secara alami membuatku mempertimbangkan keadaan pemuda malang itu sekarang, dan dari bernyanyi aku mengubah pikiranku menjadi menangis. Namun, segera terlintas dalam pikiranku bahwa akan lebih masuk akal untuk berusaha memperbaiki beberapa kesalahannya daripada hanya meratapinya: aku bangkit dan berjalan ke halaman untuk mencarinya. Dia tidak jauh; aku menemukannya sedang merapikan bulu kuda poni baru yang mengkilap di kandang, dan memberi makan hewan-hewan lain, sesuai kebiasaan. “Cepatlah, Heathcliff!” kataku, “dapurnya sangat nyaman; dan Joseph ada di lantai atas: cepatlah, dan biarkan aku memakaikanmu pakaian yang bagus sebelum Nona Cathy keluar, lalu kalian bisa duduk bersama, dengan seluruh perapian untuk kalian sendiri, dan mengobrol panjang lebar sampai waktu tidur.” Dia melanjutkan pekerjaannya, dan tidak pernah menoleh ke arahku. “Ayo—apakah kalian ikut?” lanjutku. “Ada sedikit kue untuk kalian masing-masing, hampir cukup; dan kalian butuh waktu setengah jam untuk bersiap-siap.” Aku menunggu lima menit, tetapi karena tidak mendapat jawaban, aku meninggalkannya. Catherine makan malam bersama saudara laki-laki dan iparnya: Joseph dan aku bergabung dalam makan malam yang kurang ramah, diwarnai dengan teguran di satu sisi dan kekurangajaran di sisi lain. Kue dan kejunya tetap di meja sepanjang malam untuk para peri. Dia berhasil melanjutkan pekerjaannya sampai jam sembilan, lalu berjalan dengan bodoh dan muram ke kamarnya. Cathy begadang, karena harus mengatur banyak hal untuk menyambut teman-teman barunya: dia masuk ke dapur sekali untuk berbicara dengan teman lamanya; tetapi dia sudah pergi, dan dia hanya tinggal untuk bertanya apa yang terjadi padanya, lalu kembali. Pagi harinya dia bangun pagi-pagi; dan, karena hari libur, dia membawa suasana hatinya yang buruk ke padang rumput; tidak muncul kembali sampai keluarga berangkat ke gereja. Puasa dan perenungan tampaknya telah membuatnya lebih bersemangat. Dia berlama-lama di dekatku, dan setelah mengumpulkan keberaniannya, tiba-tiba berseru—"Nelly, buat aku terlihat sopan, aku akan bersikap baik." “Sudah waktunya, Heathcliff,” kataku; “kau telah membuat Catherine sedih: kurasa dia menyesal telah pulang! Sepertinya kau iri padanya, karena dia lebih dihargai daripada dirimu.” Gagasan untuk iri kepada Catherine tidak dapat dipahami olehnya, tetapi gagasan untuk berduka atas kepergiannya cukup ia pahami. “Apakah dia mengatakan bahwa dia berduka?” tanyanya, dengan ekspresi sangat serius. “Dia menangis ketika aku memberitahunya bahwa kamu tidak masuk kerja lagi pagi ini.” “Yah, aku menangis semalam,” jawabnya, “dan aku punya alasan yang lebih besar untuk menangis daripada dia.” “Ya: kau punya alasan untuk tidur dengan hati yang sombong dan perut kosong,” kataku. “Orang yang sombong menciptakan kesedihan yang mendalam bagi diri mereka sendiri. Tapi, jika kau malu dengan sifatmu yang mudah tersinggung, kau harus meminta maaf, ingat, ketika dia masuk. Kau harus menghampirinya dan menawarkan untuk menciumnya, dan katakan—kau tahu yang terbaik untuk dikatakan; lakukan saja dengan sepenuh hati, dan jangan seolah-olah kau menganggapnya sebagai orang asing karena gaunnya yang mewah. Dan sekarang, meskipun aku harus menyiapkan makan malam, aku akan menyempatkan waktu untuk mengatur penampilanmu agar Edgar Linton terlihat sangat tampan di sampingmu: dan memang begitu. Kau lebih muda, namun, sungguh, kau lebih tinggi dan dua kali lebih lebar bahunya; kau bisa menjatuhkannya dalam sekejap; bukankah kau merasa bisa?” Wajah Heathcliff berseri sesaat; lalu kembali muram, dan dia menghela napas. “Tapi, Nelly, kalau aku menjatuhkannya dua puluh kali, itu tidak akan membuatnya kurang tampan atau membuatku lebih tampan. Aku berharap aku punya rambut pirang dan kulit putih, dan berpakaian serta berperilaku sebaik dia, dan punya kesempatan untuk sekaya dia!” “Dan menangis memanggil ibu setiap saat,” tambahku, “dan gemetar jika seorang pemuda desa memukulmu, dan duduk di rumah seharian menunggu hujan. Oh, Heathcliff, kau menunjukkan semangat yang buruk! Mari ke cermin, dan aku akan membiarkanmu melihat apa yang seharusnya kau harapkan. Apakah kau memperhatikan dua garis di antara matamu; dan alis tebal itu, yang bukannya melengkung ke atas, malah cekung di tengah; dan sepasang iblis hitam itu, yang terkubur begitu dalam, yang tidak pernah membuka jendela mereka dengan berani, tetapi bersembunyi berkilauan di bawahnya, seperti mata-mata iblis? Berharaplah dan belajarlah untuk menghaluskan kerutan yang masam, untuk membuka kelopak matamu dengan jujur, dan ubah iblis-iblis itu menjadi malaikat yang percaya diri dan polos, yang tidak curiga dan tidak meragukan apa pun, dan selalu melihat teman di tempat yang mereka tidak yakin akan musuh. Jangan sampai ekspresimu seperti anjing jahat yang tampaknya tahu bahwa tendangan yang didapatnya adalah balasannya, namun membenci seluruh dunia, serta si penendang, atas apa yang dideritanya.” “Dengan kata lain, aku harus mendambakan mata biru besar dan dahi rata seperti Edgar Linton,” jawabnya. “Memang—dan itu tidak akan membantuku mendapatkannya.” “Hati yang baik akan membantumu memiliki wajah yang tampan, Nak,” lanjutku, “jika kau memang berkulit hitam; dan hati yang buruk akan mengubah wajah yang paling tampan sekalipun menjadi sesuatu yang lebih buruk daripada jelek. Dan sekarang setelah kita selesai mandi, menyisir rambut, dan merajuk—katakan padaku apakah kau tidak merasa dirimu cukup tampan? Akan kukatakan padamu, aku memang merasa begitu. Kau pantas menjadi pangeran yang menyamar. Siapa tahu ayahmu adalah Kaisar Tiongkok, dan ibumu seorang ratu India, masing-masing mampu membeli Wuthering Heights dan Thrushcross Grange sekaligus dengan penghasilan satu minggu? Dan kau diculik oleh pelaut jahat dan dibawa ke Inggris. Seandainya aku di tempatmu, aku akan memiliki gagasan yang tinggi tentang asal usulku; dan pikiran tentang siapa diriku akan memberiku keberanian dan martabat untuk menanggung penindasan sebagai seorang petani kecil!” Jadi aku terus mengobrol; dan Heathcliff perlahan-lahan kehilangan cemberutnya dan mulai terlihat cukup ramah, ketika tiba-tiba percakapan kami ter interrupted oleh suara gemuruh yang bergerak di jalan dan memasuki halaman. Dia berlari ke jendela dan aku ke pintu, tepat pada waktunya untuk melihat kedua Linton turun dari kereta keluarga, diselimuti jubah dan bulu, dan keluarga Earnshaw turun dari kuda mereka: mereka sering berkuda ke gereja di musim dingin. Catherine memegang tangan masing-masing anak, dan membawa mereka ke dalam rumah dan menempatkan mereka di depan perapian, yang dengan cepat merona wajah pucat mereka. Aku mendesak temanku untuk segera bergegas dan menunjukkan sikap ramahnya, dan dia dengan senang hati menurut; tetapi sialnya, saat dia membuka pintu yang menghubungkan dapur di satu sisi, Hindley membukanya di sisi lain. Mereka bertemu, dan sang majikan, kesal melihatnya bersih dan ceria, atau mungkin ingin menepati janjinya kepada Nyonya Linton, mendorongnya dengan tiba-tiba, dan dengan marah menyuruh Joseph, “Jauhkan orang itu dari ruangan—kirim dia ke loteng sampai makan malam selesai. Dia akan memasukkan jarinya ke dalam kue tart dan mencuri buah-buahan jika dibiarkan sendirian sebentar saja.” “Tidak, Pak,” saya tak bisa menghindar untuk menjawab, “dia tidak akan menyentuh apa pun, sama sekali tidak: dan saya kira dia juga harus mendapatkan bagiannya dari makanan lezat itu seperti kita.” “Dia akan mendapat bagian dari tanganku, jika aku menangkapnya di lantai bawah sebelum gelap,” teriak Hindley. “Pergi sana, dasar gelandangan! Apa! Kau mencoba bersikap sombong, ya? Tunggu sampai aku memegang rambutmu yang indah itu—lihat saja apakah aku tidak akan menariknya lebih lama lagi!” “Rambutnya sudah cukup panjang,” ujar Tuan Linton, mengintip dari ambang pintu; “Aku heran kenapa rambutnya tidak membuat kepalanya sakit. Seperti surai anak kuda yang menutupi matanya!” Ia melontarkan komentar ini tanpa bermaksud menghina; tetapi sifat Heathcliff yang kasar tidak siap untuk mentolerir sikap kurang ajar dari seseorang yang tampaknya ia benci, bahkan saat itu, sebagai saingan. Ia merebut mangkuk besar berisi saus apel panas, benda pertama yang ada di genggamannya, dan menyiramkannya ke wajah dan leher orang yang berbicara; yang seketika mulai meratap sehingga Isabella dan Catherine bergegas ke tempat itu. Tuan Earnshaw segera menangkap pelaku dan membawanya ke kamarnya; di mana, tanpa diragukan lagi, ia memberikan obat kasar untuk meredakan amarahnya, karena ia tampak merah dan terengah-engah. Aku mengambil kain lap, dan dengan agak kesal menggosok hidung dan mulut Edgar, menegaskan bahwa itu pantas untuknya karena ikut campur. Saudarinya mulai menangis ingin pulang, dan Cathy berdiri di sana dengan bingung, tersipu malu. “Seharusnya kau tidak berbicara dengannya!” protesnya kepada Tuan Linton. “Dia sedang marah, dan sekarang kau telah merusak kunjunganmu; dan dia akan dicambuk: Aku benci dia dicambuk! Aku tidak bisa makan malamku. Mengapa kau berbicara dengannya, Edgar?” “Aku tidak melakukannya,” isak pemuda itu, melepaskan diri dari tanganku, dan menyelesaikan sisa penyucian dengan saputangan katunnya. “Aku berjanji pada ibu bahwa aku tidak akan mengatakan sepatah kata pun kepadanya, dan aku menepatinya.” “Baiklah, jangan menangis,” jawab Catherine dengan nada meremehkan; “kau tidak terbunuh. Jangan membuat masalah lagi; saudaraku akan datang: diam! Diam, Isabella! Apakah ada yang melukaimu ? ” “Tenang, tenang, anak-anak—kembali ke tempat duduk kalian!” teriak Hindley sambil bergegas masuk. “Anak laki-laki kasar itu telah menghangatkan saya dengan baik. Lain kali, Tuan Edgar, ambil hukum ke tanganmu sendiri—itu akan membuatmu nafsu makan!” Kelompok kecil itu kembali tenang saat melihat hidangan yang harum. Mereka lapar setelah berkuda, dan mudah terhibur, karena tidak ada bahaya nyata yang menimpa mereka. Tuan Earnshaw menyajikan makanan dalam porsi besar, dan nyonya rumah membuat mereka gembira dengan obrolan yang hidup. Aku menunggu di belakang kursinya, dan merasa sedih melihat Catherine, dengan mata kering dan sikap acuh tak acuh, mulai memotong sayap angsa di depannya. "Anak yang tidak berperasaan," pikirku dalam hati; "betapa entengnya dia mengabaikan masalah teman bermain lamanya. Aku tidak pernah membayangkan dia begitu egois." Dia mengangkat sesuap ke bibirnya: lalu dia meletakkannya kembali: pipinya memerah, dan air mata mengalir deras. Dia menjatuhkan garpunya ke lantai, dan buru-buru menyelam di bawah kain untuk menyembunyikan emosinya. Aku tidak menyebutnya tidak berperasaan lama; Karena aku menyadari dia berada di api penyucian sepanjang hari, dan berusaha keras mencari kesempatan untuk menyendiri, atau mengunjungi Heathcliff, yang telah dikurung oleh tuannya: seperti yang kuketahui, ketika berusaha membawakan makanan secara pribadi kepadanya. Malam itu kami berdansa. Cathy memohon agar dia dibebaskan saat itu juga, karena Isabella Linton tidak punya pasangan: permohonannya sia-sia, dan saya ditunjuk untuk menggantikannya. Kami menghilangkan semua kesedihan dalam kegembiraan acara tersebut, dan kesenangan kami bertambah dengan kedatangan band Gimmerton, yang berjumlah lima belas orang: sebuah terompet, sebuah trombon, klarinet, fagot, French horn, dan biola bas, selain para penyanyi. Mereka berkeliling ke semua rumah terhormat, dan menerima sumbangan setiap Natal, dan kami menganggapnya sebagai suguhan yang luar biasa untuk mendengarkan mereka. Setelah lagu-lagu Natal biasa dinyanyikan, kami mengajak mereka untuk menyanyikan lagu-lagu dan nyanyian riang. Nyonya Earnshaw menyukai musiknya, dan mereka pun memberi kami banyak lagu. Catherine juga menyukainya: tetapi dia berkata suara itu terdengar paling merdu di puncak tangga, dan dia naik dalam kegelapan: aku mengikutinya. Mereka menutup pintu rumah di bawah, sama sekali tidak menyadari ketidakhadiran kami, karena rumah itu penuh sesak dengan orang. Dia tidak berhenti di puncak tangga, tetapi naik lebih jauh, ke loteng tempat Heathcliff dikurung, dan memanggilnya. Dia dengan keras kepala menolak untuk menjawab untuk sementara waktu: dia terus berusaha, dan akhirnya membujuknya untuk berkomunikasi dengannya melalui papan. Aku membiarkan mereka berdua mengobrol tanpa gangguan, sampai aku mengira nyanyian akan berhenti, dan para penyanyi akan beristirahat: lalu aku memanjat tangga untuk memperingatkannya. Bukannya menemukannya di luar, aku mendengar suaranya di dalam. Si monyet kecil telah merayap melalui jendela atap salah satu loteng, di sepanjang atap, ke jendela atap loteng lainnya, dan dengan susah payah aku bisa membujuknya keluar lagi. Ketika ia datang, Heathcliff ikut bersamanya, dan ia bersikeras agar aku membawanya ke dapur, karena rekan pelayanku telah pergi ke rumah tetangga, untuk menjauh dari suara "nyanyian setan" kami, seperti yang ia sebut. Aku mengatakan kepada mereka bahwa aku sama sekali tidak bermaksud mendorong tipu daya mereka: tetapi karena tahanan itu belum makan siang sejak makan malam kemarin, aku akan membiarkan dia menipu Tuan Hindley sekali itu saja. Dia turun: aku menyiapkan bangku untuknya di dekat perapian, dan menawarkannya banyak makanan enak: tetapi dia sakit dan hanya bisa makan sedikit, dan upayaku untuk menghiburnya sia-sia. Dia menyandarkan kedua sikunya di lututnya, dan dagunya di tangannya, dan tetap termenung dalam keheningan. Ketika aku menanyakan isi pikirannya, dia menjawab dengan serius—"Aku sedang mencoba mencari cara untuk membayar Hindley. Aku tidak peduli berapa lama aku harus menunggu, asalkan aku akhirnya bisa melakukannya. Kuharap dia tidak akan mati sebelum aku!" “Sungguh memalukan, Heathcliff!” kataku. “Tuhanlah yang berhak menghukum orang jahat; kita seharusnya belajar memaafkan.” “Tidak, Tuhan tidak akan puas jika aku bisa melakukannya,” jawabnya. “Aku hanya berharap aku tahu cara terbaik! Biarkan aku sendiri, dan aku akan merencanakannya: sementara aku memikirkan itu, aku tidak merasakan sakit.” Tapi, Tuan Lockwood, saya lupa bahwa kisah-kisah ini tidak dapat menghibur Anda. Saya kesal karena saya bermimpi bisa terus mengoceh seperti ini; sementara bubur Anda dingin, dan Anda sudah mengantuk! Saya bisa saja menceritakan sejarah Heathcliff, semua yang perlu Anda dengar, hanya dalam beberapa kata. *** * * * Sambil menyela dirinya sendiri, pengurus rumah tangga itu bangkit dan meletakkan jahitannya; tetapi saya merasa tidak mampu beranjak dari perapian, dan saya sama sekali tidak mengantuk. "Duduklah diam, Nyonya Dean," seru saya; "duduklah diam setengah jam lagi. Anda sudah melakukan hal yang benar dengan menceritakan kisah ini dengan santai. Itulah metode yang saya sukai; dan Anda harus menyelesaikannya dengan gaya yang sama. Saya tertarik pada setiap karakter yang Anda sebutkan, sedikit banyak." “Jam menunjukkan pukul sebelas, Pak.” “Tidak masalah—aku tidak terbiasa tidur larut malam. Jam satu atau dua sudah cukup awal untuk orang yang biasa tidur sampai jam sepuluh.” “Kamu tidak boleh tidur sampai jam sepuluh. Waktu terbaik di pagi hari sudah berlalu jauh sebelum itu. Seseorang yang belum menyelesaikan setengah dari pekerjaannya pada jam sepuluh, berisiko meninggalkan setengah pekerjaan lainnya belum selesai.” “Meskipun begitu, Nyonya Dean, kembalilah duduk; karena besok saya bermaksud memperpanjang malam hingga siang hari. Setidaknya, saya memperkirakan akan terkena flu yang membandel.” “Saya harap tidak, Tuan. Baiklah, Anda harus mengizinkan saya untuk melompati sekitar tiga tahun; selama periode itu Nyonya Earnshaw—” “Tidak, tidak, saya tidak akan mengizinkan hal seperti itu! Apakah Anda tahu suasana hati di mana, jika Anda duduk sendirian, dan kucing menjilati anaknya di karpet di depan Anda, Anda akan mengamati proses itu dengan sangat saksama sehingga kelalaian kucing pada salah satu telinga akan membuat Anda sangat marah?” “Suasana hati yang sangat malas, bisa dibilang begitu.” “Sebaliknya, justru sangat aktif dan melelahkan. Saat ini, itulah yang saya rasakan; dan karena itu, akan terus saya bahas secara rinci. Saya menyadari bahwa orang-orang di daerah ini memperoleh nilai lebih dibandingkan orang-orang di kota, seperti laba-laba di ruang bawah tanah dibandingkan laba-laba di pondok, bagi penghuninya masing-masing; namun daya tarik yang lebih dalam ini tidak sepenuhnya disebabkan oleh situasi pengamat. Mereka hidup lebih sungguh-sungguh, lebih dalam diri mereka sendiri, dan kurang pada permukaan, perubahan, dan hal-hal eksternal yang dangkal. Saya bisa membayangkan kecintaan pada kehidupan di sini hampir mungkin terjadi; padahal saya adalah orang yang tidak percaya pada cinta yang bertahan selama setahun. Satu keadaan menyerupai menempatkan orang lapar di depan satu hidangan, di mana ia dapat memusatkan seluruh selera makannya dan menikmatinya sepenuhnya; keadaan lainnya, memperkenalkannya pada meja yang disiapkan oleh koki Prancis: ia mungkin dapat menikmati semuanya; tetapi setiap bagian hanyalah atom dalam pandangan dan ingatannya.” “Oh! Di sini kami sama saja seperti di tempat lain, kalau Anda sudah mengenal kami,” ujar Ny. Dean, agak bingung dengan ucapan saya. “Maafkan saya,” jawab saya; “Anda, sahabatku, adalah bukti nyata yang membantah pernyataan itu. Kecuali beberapa kebiasaan daerah yang tidak terlalu penting, Anda tidak memiliki ciri-ciri perilaku yang biasa saya anggap sebagai ciri khas kelas Anda. Saya yakin Anda telah berpikir jauh lebih banyak daripada kebanyakan pelayan. Anda terpaksa mengembangkan kemampuan berpikir Anda karena kurangnya kesempatan untuk menyia-nyiakan hidup Anda dalam hal-hal sepele yang bodoh.” Nyonya Dean tertawa. “Saya memang menganggap diri saya sebagai orang yang tenang dan masuk akal,” katanya; “bukan karena tinggal di perbukitan dan melihat satu set wajah dan satu rangkaian tindakan dari tahun ke tahun; tetapi saya telah menjalani disiplin yang keras, yang telah mengajari saya kebijaksanaan; dan kemudian, saya telah membaca lebih banyak daripada yang Anda bayangkan, Tuan Lockwood. Anda tidak akan menemukan buku di perpustakaan ini yang belum saya baca dan dapatkan sesuatu darinya: kecuali buku-buku berbahasa Yunani dan Latin, dan Prancis; dan saya tahu perbedaan antara keduanya: itu sudah cukup bagi Anda untuk mengharapkan seorang putri dari keluarga miskin. Namun, jika saya ingin melanjutkan cerita saya dengan cara yang biasa dilakukan oleh para penggosip, sebaiknya saya lanjutkan; dan daripada melompat tiga tahun, saya akan puas untuk beralih ke musim panas berikutnya—musim panas tahun 1778, yaitu hampir dua puluh tiga tahun yang lalu.”</p>
 

@@ -5,39 +5,176 @@
 <title>SURAT 2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="SURAT 2 - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>SURAT 2</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kepada Ny. Saville, Inggris. Malaikat Agung, 28 Maret 17—. Betapa lambatnya waktu berlalu di sini, diselimuti embun beku dan salju! Namun langkah kedua telah diambil menuju usaha saya. Saya telah menyewa sebuah kapal dan sedang sibuk mengumpulkan para pelaut; mereka yang telah saya rekrut tampaknya adalah orang-orang yang dapat saya andalkan dan pastinya memiliki keberanian yang tak gentar. Namun, ada satu keinginan yang belum pernah bisa saya penuhi, dan ketiadaan objek keinginan itu kini saya rasakan sebagai keburukan yang sangat berat. Saya tidak punya teman, Margaret: ketika saya dipenuhi antusiasme akan kesuksesan, tidak akan ada yang ikut merasakan kegembiraan saya; jika saya dilanda kekecewaan, tidak ada yang akan berusaha menghibur saya dalam kesedihan. Memang benar, saya akan menuangkan pikiran saya ke atas kertas; tetapi itu adalah media yang buruk untuk mengkomunikasikan perasaan. Saya menginginkan kehadiran seorang pria yang dapat bersimpati kepada saya, yang matanya akan membalas tatapan mata saya. Anda mungkin menganggap saya romantis, saudari tersayang, tetapi saya sangat merasakan kekurangan seorang teman. Saya tidak memiliki siapa pun di dekat saya, yang lembut namun berani, memiliki pikiran yang terdidik dan luas, yang seleranya sama dengan saya, untuk menyetujui atau memperbaiki rencana saya. Bagaimana mungkin teman seperti itu memperbaiki kesalahan saudara Anda yang malang! Saya terlalu bersemangat dalam pelaksanaan dan terlalu tidak sabar menghadapi kesulitan. Namun, keburukan yang lebih besar bagi saya adalah bahwa saya berpendidikan sendiri: selama empat belas tahun pertama hidup saya, saya berkeliaran di lapangan terbuka dan tidak membaca apa pun kecuali buku-buku perjalanan Paman Thomas kami. Pada usia itu saya berkenalan dengan para penyair terkenal di negara kami sendiri; tetapi baru ketika saya tidak lagi mampu memperoleh manfaat terpenting dari keyakinan tersebut, saya menyadari perlunya mengenal lebih banyak bahasa daripada bahasa negara asal saya. Sekarang saya berusia dua puluh delapan tahun dan sebenarnya lebih buta huruf daripada banyak anak sekolah berusia lima belas tahun. Memang benar bahwa saya telah lebih banyak berpikir dan lamunan saya lebih luas dan megah, tetapi lamunan itu (seperti yang disebut para pelukis) perlu dijaga; dan saya sangat membutuhkan seorang teman yang cukup bijaksana untuk tidak meremehkan saya sebagai orang yang romantis, dan cukup menyayangi saya untuk berusaha mengatur pikiran saya. Yah, ini keluhan yang tidak berguna; saya pasti tidak akan menemukan teman di lautan luas, bahkan di sini di Archangel, di antara para pedagang dan pelaut. Namun, beberapa perasaan, yang tidak terkait dengan kekotoran sifat manusia, berdenyut bahkan di dada yang kasar ini. Letnan saya, misalnya, adalah seorang pria yang sangat berani dan berinisiatif; dia sangat menginginkan kemuliaan, atau lebih tepatnya, untuk menggunakan ungkapan saya yang lebih khas, kemajuan dalam profesinya. Dia adalah orang Inggris, dan di tengah prasangka nasional dan profesional, yang tidak dilunakkan oleh pendidikan, ia mempertahankan beberapa anugerah kemanusiaan yang paling mulia. Saya pertama kali berkenalan dengannya di atas kapal penangkap paus; karena mengetahui bahwa dia menganggur di kota ini, saya dengan mudah mempekerjakannya untuk membantu usaha saya. Kapten adalah orang yang berwatak baik dan terkenal di kapal karena kelembutan dan kedisiplinannya yang lunak. Keadaan ini, ditambah dengan integritasnya yang terkenal dan keberaniannya yang tak gentar, membuat saya sangat ingin mempekerjakannya. Masa muda yang dihabiskan dalam kesendirian, tahun-tahun terbaik saya dihabiskan di bawah bimbingan Anda yang lembut dan feminin, telah begitu menyempurnakan dasar karakter saya sehingga saya tidak dapat mengatasi rasa jijik yang mendalam terhadap kebrutalan yang biasa dilakukan di atas kapal: Saya tidak pernah percaya itu perlu, dan ketika saya mendengar tentang seorang pelaut yang sama terkenalnya karena kebaikan hatinya dan rasa hormat serta ketaatan yang diberikan kepadanya oleh awak kapalnya, saya merasa sangat beruntung dapat memperoleh jasanya. Saya pertama kali mendengarnya dengan cara yang agak romantis, dari seorang wanita yang berutang kebahagiaan hidupnya kepadanya. Singkatnya, inilah kisahnya. Beberapa tahun yang lalu dia mencintai seorang wanita muda Rusia yang berkecukupan, dan setelah mengumpulkan sejumlah besar uang hadiah, ayah gadis itu menyetujui perjodohan tersebut. Dia bertemu kekasihnya sekali sebelum upacara yang direncanakan; Namun, ia bermandikan air mata, dan menjatuhkan diri di kakinya, memohon agar ia mengampuninya, sambil mengaku bahwa ia mencintai orang lain, tetapi kekasihnya miskin, dan ayahnya tidak akan pernah menyetujui pernikahan tersebut. Teman saya yang murah hati itu menenangkan gadis yang memohon, dan setelah mengetahui nama kekasihnya, ia langsung menghentikan usahanya. Ia telah membeli sebuah pertanian dengan uangnya, yang rencananya akan ia gunakan untuk menghabiskan sisa hidupnya; tetapi ia memberikan semuanya kepada saingannya, bersama dengan sisa uang hadiahnya untuk membeli ternak, dan kemudian ia sendiri meminta izin kepada ayah gadis muda itu untuk menikahkan putrinya dengan kekasihnya. Tetapi lelaki tua itu dengan tegas menolak, karena merasa terikat kehormatan kepada teman saya, yang, ketika mendapati sang ayah tidak mau mengalah, meninggalkan negaranya, dan tidak kembali sampai ia mendengar bahwa mantan kekasihnya telah menikah sesuai keinginannya. “Betapa mulianya orang ini!” seru Anda. Memang benar; Namun, ia sama sekali tidak berpendidikan: ia pendiam seperti orang Turki, dan semacam ketidakpedulian yang bodoh menyertainya, yang, meskipun membuat perilakunya semakin mencengangkan, mengurangi minat dan simpati yang seharusnya ia dapatkan. Namun jangan mengira, karena aku sedikit mengeluh atau karena aku dapat membayangkan penghiburan atas jerih payahku yang mungkin tidak akan pernah kuketahui, bahwa aku goyah dalam tekadku. Tekadku sudah tetap seperti takdir, dan pelayaranku hanya ditunda sampai cuaca memungkinkan keberangkatanku. Musim dingin sangat berat, tetapi musim semi menjanjikan, dan dianggap sebagai musim yang sangat awal, sehingga mungkin aku dapat berlayar lebih cepat dari yang kuharapkan. Aku tidak akan melakukan sesuatu dengan gegabah: kau cukup mengenalku untuk mempercayai kebijaksanaan dan pertimbanganku setiap kali keselamatan orang lain dipercayakan kepadaku. Aku tak dapat menggambarkan perasaanku menjelang keberangkatanku. Mustahil untuk menyampaikan kepadamu gambaran tentang perasaan gemetar, setengah menyenangkan dan setengah menakutkan, yang kurasakan saat bersiap berangkat. Aku akan pergi ke wilayah yang belum dijelajahi, ke "negeri kabut dan salju," tetapi aku tidak akan membunuh albatros; oleh karena itu jangan khawatir tentang keselamatanku atau jika aku kembali kepadamu dalam keadaan lelah dan sedih seperti "Pelaut Tua." Kau akan tersenyum mendengar sindiranku, tetapi aku akan mengungkapkan sebuah rahasia. Aku sering mengaitkan keterikatanku, antusiasme yang mendalam terhadap misteri lautan yang berbahaya dengan karya penyair modern yang paling imajinatif itu. Ada sesuatu yang bekerja di dalam jiwaku yang tidak kupahami. Saya pada dasarnya seorang pekerja keras—teliti, seorang pekerja yang melaksanakan pekerjaan dengan tekun dan kerja keras—tetapi di samping itu ada kecintaan pada hal-hal yang menakjubkan, kepercayaan pada hal-hal yang menakjubkan, yang terjalin dalam semua proyek saya, yang mendorong saya keluar dari jalur umum manusia, bahkan ke laut yang liar dan wilayah yang belum dikunjungi yang akan saya jelajahi. Namun, mari kembali ke hal-hal yang lebih berharga. Akankah kita bertemu lagi, setelah menyeberangi lautan luas, dan kembali melalui tanjung paling selatan Afrika atau Amerika? Aku tak berani mengharapkan kesuksesan seperti itu, namun aku tak sanggup membayangkan sisi sebaliknya. Untuk saat ini, teruslah menulis SURAT kepadaku setiap ada kesempatan: Aku mungkin menerima SURATmu pada saat-saat tertentu ketika aku sangat membutuhkannya untuk membangkitkan semangatku. Aku sangat menyayangimu. Ingatlah aku dengan penuh kasih sayang, seandainya kau tak pernah mendengar kabar dariku lagi. Saudaramu yang penyayang, Robert Walton</p>
 

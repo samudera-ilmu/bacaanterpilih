@@ -2,27 +2,81 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Judul Bab</title>
+<title>Kisah Kisah Begitu Saja</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
 <style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --link: #1a73e8;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
   padding: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
-
-li { margin: 6px 0; }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
 }
 </style>
 </head>
 <body>
 
-<h1>Judul Bab</h1>
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+
+<h1>Kisah Kisah Begitu Saja</h1>
 
 <ol>
 <li><a href="tentang-buku-ini.html">TENTANG BUKU INI</a></li><li><a href="bagaimana-ikan-paus-mendapatkan-tenggorokannya.html">BAGAIMANA IKAN PAUS MENDAPATKAN TENGGOROKANNYA</a></li><li><a href="bagaimana-unta-mendapatkan-punuknya.html">BAGAIMANA UNTA MENDAPATKAN PUNUKNYA</a></li><li><a href="bagaimana-badak-mendapatkan-kulitnya.html">BAGAIMANA BADAK MENDAPATKAN KULITNYA</a></li><li><a href="bagaimana-macan-tutul-mendapatkan-bintik-bintiknya.html">BAGAIMANA MACAN TUTUL MENDAPATKAN BINTIK-BINTIKNYA</a></li><li><a href="anak-gajah.html">ANAK GAJAH</a></li><li><a href="nyanyian-kanguru-tua.html">NYANYIAN KANGURU TUA</a></li><li><a href="awal-mula-armadillo.html">AWAL MULA ARMADILLO</a></li><li><a href="bagaimana-surat-pertama-ditulis.html">BAGAIMANA SURAT PERTAMA DITULIS</a></li><li><a href="bagaimana-alfabet-dibuat.html">BAGAIMANA ALFABET DIBUAT</a></li><li><a href="kepiting-yang-bermain-dengan-laut.html">KEPITING YANG BERMAIN DENGAN LAUT</a></li><li><a href="kucing-yang-berjalan-sendirian.html">KUCING YANG BERJALAN SENDIRIAN</a></li><li><a href="kupu-kupu-yang-mengecap.html">KUPU-KUPU YANG MENGECAP</a></li>

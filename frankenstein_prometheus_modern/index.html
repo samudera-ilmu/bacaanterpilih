@@ -2,27 +2,81 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Judul Bab</title>
+<title>Frankenstein Prometheus Modern</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
 <style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --link: #1a73e8;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
   padding: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
-
-li { margin: 6px 0; }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
 }
 </style>
 </head>
 <body>
 
-<h1>Judul Bab</h1>
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+
+<h1>Frankenstein Prometheus Modern</h1>
 
 <ol>
 <li><a href="tentang-apa-buku-ini.html">TENTANG APA BUKU INI</a></li><li><a href="surat-1.html">SURAT 1</a></li><li><a href="surat-2.html">SURAT 2</a></li><li><a href="surat-3.html">SURAT 3</a></li><li><a href="surat-4.html">SURAT 4</a></li><li><a href="bab-1.html">BAB 1</a></li><li><a href="bab-2.html">BAB 2</a></li><li><a href="bab-3.html">BAB 3</a></li><li><a href="bab-4.html">BAB 4</a></li><li><a href="bab-5.html">BAB 5</a></li><li><a href="bab-6.html">BAB 6</a></li><li><a href="bab-7.html">BAB 7</a></li><li><a href="bab-8.html">BAB 8</a></li><li><a href="bab-9.html">BAB 9</a></li><li><a href="bab-10.html">BAB 10</a></li><li><a href="bab-11.html">BAB 11</a></li><li><a href="bab-12.html">BAB 12</a></li><li><a href="bab-13.html">BAB 13</a></li><li><a href="bab-14.html">BAB 14</a></li><li><a href="bab-15.html">BAB 15</a></li><li><a href="bab-16.html">BAB 16</a></li><li><a href="bab-17.html">BAB 17</a></li><li><a href="bab-18.html">BAB 18</a></li><li><a href="bab-19.html">BAB 19</a></li><li><a href="bab-20.html">BAB 20</a></li><li><a href="bab-21.html">BAB 21</a></li><li><a href="bab-22.html">BAB 22</a></li><li><a href="bab-23.html">BAB 23</a></li><li><a href="bab-24.html">BAB 24</a></li>

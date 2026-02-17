@@ -5,39 +5,176 @@
 <title>AKHIRNYA TERLEMPAR DARI GUNUNG BERAPI!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="AKHIRNYA TERLEMPAR DARI GUNUNG BERAPI! - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>AKHIRNYA TERLEMPAR DARI GUNUNG BERAPI!</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Ya: kompas kami bukan lagi penunjuk arah; jarumnya melesat dari kutub ke kutub dengan semacam dorongan liar; ia berputar mengelilingi dial, dan berputar ke sana kemari seolah-olah pusing atau mabuk. Saya tahu betul bahwa menurut teori-teori yang paling diterima, lapisan mineral bumi tidak pernah benar-benar diam; perubahan yang disebabkan oleh dekomposisi kimiawi komponen-komponennya, gejolak yang disebabkan oleh aliran cairan yang deras, dan arus magnetik, terus-menerus cenderung mengganggunya—bahkan ketika makhluk hidup di permukaannya mungkin membayangkan bahwa semuanya tenang di bawah. Fenomena semacam ini tidak akan terlalu membuat saya khawatir, atau setidaknya tidak akan menimbulkan ketakutan yang mengerikan. Namun fakta-fakta lain, keadaan-keadaan lain, yang bersifat aneh, secara bertahap mengungkapkan kepada saya keadaan sebenarnya. Terjadi ledakan-ledakan yang terus-menerus dan tiada henti. Saya hanya bisa membandingkannya dengan derak keras iring-iringan kereta kuda panjang yang melaju dengan kecepatan penuh di atas bebatuan, atau gemuruh guntur yang tak henti-hentinya. Kemudian kompas yang kacau, yang terlepas dari posisinya akibat arus listrik, menguatkan keyakinanku. Kerak mineral bumi terancam meledak, fondasi granit akan runtuh dengan suara keras, celah tempat kita terdorong tanpa daya akan terisi, kekosongan itu akan penuh dengan pecahan batu yang hancur, dan kita, manusia malang yang celaka, akan terkubur dan dimusnahkan dalam kehancuran yang mengerikan ini. "Pamanku," seruku, "kita sudah tersesat sekarang, benar-benar tersesat!" "Apa yang membuatmu takut sekarang?" jawabnya dengan tenang. "Ada apa denganmu?" "Ada apa? Lihatlah dinding-dinding yang bergetar itu! Lihatlah bebatuan yang berguncang itu. Tidakkah kau merasakan panas yang menyengat? Tidakkah kau melihat bagaimana air mendidih dan bergelembung? Apakah kau buta terhadap uap dan asap tebal yang semakin menebal setiap menitnya? Lihatlah jarum kompas yang berguncang ini. Ini adalah gempa bumi yang mengancam kita." Pamanku yang tak gentar itu dengan tenang menggelengkan kepalanya. "Apakah menurutmu," katanya, "akan terjadi gempa bumi?" "Saya bersedia." "Yah, menurutku kamu keliru." "Apa! Apa kau tidak mengenali gejalanya?" "Gempa bumi? Bukan! Aku sedang mencari sesuatu yang lebih baik." "Apa maksudmu? Jelaskan?" "Ini adalah letusan, Axel." "Letusan! Maksudmu kita sedang berlari menaiki lubang kawah gunung berapi?" "Saya yakin kita memang demikian," kata Profesor yang tak tergoyahkan itu dengan penuh percaya diri; "dan ini adalah hal terbaik yang mungkin terjadi pada kita dalam keadaan kita saat ini." Hal terbaik! Apakah pamanku benar-benar gila? Apa maksud pria itu? Dan apa gunanya mengatakan hal-hal yang menyindir di saat seperti ini? "Apa!" teriakku. "Apakah kita akan terseret letusan? Nasib kita telah melemparkan kita ke sini di antara lava yang membara, batuan cair, air mendidih, dan segala macam material vulkanik; kita akan terlempar, diusir, dihembuskan, dimuntahkan, dimuntahkan tinggi ke udara, bersama dengan pecahan batu, hujan abu dan skoria, di tengah kepulan asap dan api yang menjulang tinggi; dan itu adalah hal terbaik yang bisa terjadi pada kita!" "Ya," jawab Profesor itu, sambil menatapku dari balik kacamatanya, "Saya tidak melihat cara lain untuk mencapai permukaan bumi." Aku dengan cepat menelusuri ribuan gagasan yang terlintas di benakku. Pamanku benar, tak diragukan lagi benar; dan tak pernah ia tampak lebih berani dan lebih teguh dalam gagasannya daripada saat ini ketika ia dengan tenang merenungkan kemungkinan terlempar keluar dari gunung berapi! Sementara itu kami terus mendaki; malam berlalu dengan pendakian yang terus menerus; kebisingan dan keributan di sekitar kami semakin intensif; saya merasa sesak dan tercengang; saya pikir saat-saat terakhir saya sudah dekat; namun imajinasi adalah hal yang begitu kuat sehingga bahkan di saat-saat genting ini saya disibukkan dengan spekulasi yang aneh dan hampir kekanak-kanakan. Tetapi saya adalah korban, bukan penguasa, dari pikiran saya sendiri. Sangat jelas bahwa kami sedang didorong ke atas di puncak gelombang letusan; di bawah rakit kami terdapat air yang mendidih, dan di bawahnya lava yang lebih lambat merambat ke atas dalam massa yang panas, bersama dengan pecahan-pecahan batu yang, ketika sampai di kawah, akan tersebar ke segala arah, baik tinggi maupun rendah. Kami terperangkap di dalam lubang atau cerobong suatu gunung berapi. Tidak ada ruang untuk meragukan hal itu. Namun kali ini, alih-alih Snæfell, gunung berapi yang sudah tidak aktif, kami berada di dalam gunung berapi yang sedang aktif sepenuhnya. Karena itu, saya bertanya-tanya, di manakah gunung ini berada, dan di bagian dunia mana kami akan dikeluarkan. Saya yakin bahwa itu pasti berada di suatu wilayah utara. Sebelum kekacauan terjadi, jarum penunjuk tidak pernah menyimpang dari arah itu. Dari Tanjung Saknussemm, kami telah terbawa ke utara sejauh ratusan liga. Apakah kami berada di bawah Islandia lagi? Apakah kami ditakdirkan untuk terlempar keluar dari Hecla, atau dari salah satu dari tujuh kawah berapi lainnya di pulau itu? Dalam radius lima ratus liga ke barat, saya hanya ingat di bawah garis lintang ini gunung berapi yang kurang dikenal di pantai timur laut Amerika. Di sebelah timur hanya ada satu di garis lintang 80 derajat utara, Esk di Pulau Jan Mayen, tidak jauh dari Spitzbergen! Tentu saja tidak kekurangan kawah, dan ada beberapa yang cukup besar untuk mengeluarkan seluruh pasukan! Tetapi saya ingin tahu kawah mana yang akan menjadi jalan keluar kami dari dunia dalam. Menjelang pagi, pergerakan naik menjadi semakin cepat. Jika panas meningkat, bukannya berkurang, saat kita mendekati permukaan bumi, efek ini hanya disebabkan oleh faktor lokal, dan itu pun vulkanik. Cara pergerakan kita tidak meninggalkan keraguan dalam pikiran saya. Sebuah kekuatan yang sangat besar, kekuatan ratusan atmosfer, yang dihasilkan oleh tekanan ekstrem uap yang terperangkap, mendorong kita maju tanpa hambatan. Tetapi betapa banyak bahaya yang ditimbulkannya bagi kita! Tak lama kemudian, cahaya-cahaya yang menyilaukan mulai menembus galeri vertikal yang semakin melebar saat kami naik. Di kanan dan kiri, saya bisa melihat lorong-lorong dalam, seperti terowongan besar, dari mana keluarnya asap tebal; lidah-lidah api menjilati dinding, yang berderak dan berdesis di bawah panas yang sangat hebat. "Lihat, lihat, pamanku!" teriakku. "Nah, itu hanyalah nyala api dan uap belerang, yang memang wajar terlihat saat terjadi letusan. Itu hal yang wajar." "Tapi bagaimana jika mereka membungkus kita?" "Tapi mereka tidak akan bisa menjebak kita." "Tapi kita akan dibungkam." "Kita tidak akan terhimpit sama sekali. Lorongnya semakin lebar, dan jika perlu, kita akan meninggalkan rakit dan merayap ke celah." "Tapi airnya—air yang naik?" "Tidak ada air lagi, Axel; hanya pasta lava, yang membawa kita naik di permukaannya ke puncak kawah." Kolom cairan itu memang telah lenyap, digantikan oleh materi erupsi padat dan masih mendidih dari berbagai jenis. Suhu menjadi tak tertahankan. Termometer yang terkena atmosfer ini akan menunjukkan angka 150°. Keringat mengalir deras dari tubuhku. Seandainya kami tidak begitu cepat mendaki, kami pasti sudah mati lemas. Namun Profesor mengurungkan niatnya untuk meninggalkan rakit itu, dan memang sudah seharusnya begitu. Meskipun sambungannya tidak rapi, papan-papan itu memberi kami pijakan yang lebih kokoh daripada yang bisa kami temukan di tempat lain. Sekitar pukul delapan pagi, insiden baru terjadi. Pergerakan ke atas berhenti. Rakit itu tergeletak tak bergerak. "Apa ini?" tanyaku, terguncang oleh penghentian mendadak ini seolah-olah terkena kejutan. "Ini adalah pemberhentian," jawab pamanku. "Apakah letusan itu sudah diperiksa?" tanyaku. "Saya harap tidak." Aku bangkit, dan mencoba melihat sekelilingku. Mungkin rakit itu sendiri, yang terhenti oleh sebuah tonjolan, menahan arus deras gunung berapi. Jika demikian, kita harus melepaskannya sesegera mungkin. Namun ternyata tidak demikian. Ledakan abu, puing-puing, dan sampah telah berhenti membumbung ke atas. "Apakah letusannya sudah berhenti?" teriakku. "Ah!" kata pamanku sambil mengertakkan gigi, "kau takut. Tapi jangan khawatir—ketenangan ini tidak akan berlangsung lama. Ini sudah berlangsung lima menit, dan sebentar lagi kita akan melanjutkan perjalanan ke mulut kawah." Sembari berbicara, Profesor terus memeriksa kronometernya, dan sekali lagi ramalannya terbukti benar. Rakit itu segera dipercepat dan didorong maju dengan gerakan cepat namun tidak teratur, yang berlangsung sekitar sepuluh menit, lalu berhenti lagi. "Bagus sekali," kata pamanku; "sepuluh menit lagi kita akan berangkat lagi, karena urusan kita saat ini adalah mengurus gunung berapi yang meletus sesekali. Ini memberi kita waktu untuk beristirahat." Ini benar adanya. Setelah sepuluh menit berlalu, kami mulai lagi dengan kecepatan yang lebih tinggi. Kami terpaksa berpegangan erat pada papan rakit agar tidak terlempar. Kemudian, serangan itu pun berakhir. Sejak itu saya merenungkan fenomena aneh ini tanpa mampu menjelaskannya. Bagaimanapun, jelas bahwa kami tidak berada di poros utama gunung berapi, tetapi di lorong samping tempat terdengar dentuman reaksi yang berulang. Seberapa sering operasi ini diulang, saya tidak bisa mengatakan. Yang saya tahu hanyalah, setiap dorongan baru membuat kami terlempar ke depan dengan kekuatan yang jauh lebih besar, dan kami tampak seperti proyektil belaka. Selama berhenti sejenak, kami sesak napas karena panas; saat kami terlempar ke depan, udara panas hampir menghentikan napas saya. Saya berpikir sejenak betapa menyenangkannya jika tiba-tiba saya dibawa ke wilayah Arktik, dengan suhu dingin 30° di bawah titik beku. Otak saya yang terlalu panas membayangkan hamparan salju putih yang sejuk, tempat saya bisa berguling dan meredakan demam saya. Sedikit demi sedikit, otak saya, yang melemah karena begitu banyak guncangan yang terus-menerus berulang, tampaknya menyerah sepenuhnya. Tetapi karena lengan Hans yang kuat, kepala saya pasti sudah terbentur atap granit penjara bawah tanah kami yang terbakar. Oleh karena itu, saya tidak memiliki ingatan pasti tentang apa yang terjadi selama beberapa jam berikutnya. Saya hanya memiliki kesan samar tentang ledakan terus-menerus, detonasi keras, guncangan umum bebatuan di sekitar kami, dan gerakan berputar yang membuat rakit kami terombang-ambing tanpa daya. Rakit itu bergoyang di atas aliran lava, di tengah hujan abu yang lebat. Api yang berkobar menyemburkan lidah-lidah berapi ke arah kami. Ada embusan angin badai yang liar dan ganas dari bawah, menyerupai semburan tungku besi besar yang meledak bersamaan; dan saya melihat sekilas sosok Hans yang diterangi api; dan semua perasaan yang tersisa hanyalah apa yang saya bayangkan sebagai perasaan seorang penjahat malang yang ditakdirkan untuk diledakkan hidup-hidup dari mulut meriam, tepat sebelum pelatuk ditarik, dan anggota tubuh serta potongan-potongan daging dan kulit yang beterbangan memenuhi udara yang bergetar dan memercik ke tanah yang berlumuran darah.</p>
 

@@ -5,39 +5,176 @@
 <title>BAB XXXIII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXXIII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXXIII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Tutup matanya dan tarik tirainya rapat-rapat; Dan marilah kita semua bermeditasi.” —2 Henry VI . Malam itu setelah pukul dua belas, Mary Garth menggantikan tugas jaga di kamar Tuan Featherstone, dan duduk sendirian di sana hingga larut malam. Ia sering memilih tugas ini, yang memberinya sedikit kesenangan, meskipun lelaki tua itu mudah marah setiap kali ia meminta perhatiannya. Ada saat-saat di mana ia bisa duduk diam, menikmati keheningan di luar dan cahaya yang redup. Api merah dengan gerakan lembutnya yang terdengar seperti keberadaan yang khidmat, tenang dan terlepas dari nafsu-nafsu kecil, keinginan-keinginan bodoh, dan upaya mengejar hal-hal yang tidak berharga, yang setiap hari membuatnya jijik. Mary menyukai pikirannya sendiri, dan bisa menghibur dirinya sendiri dengan duduk di senja hari dengan tangan di pangkuannya; karena, setelah sejak awal memiliki alasan kuat untuk percaya bahwa segala sesuatunya tidak mungkin diatur untuk kepuasannya yang khusus, ia tidak membuang waktu untuk merasa heran dan jengkel akan fakta itu. Dan ia telah menganggap hidup sebagai sebuah komedi di mana ia memiliki tekad yang bangga, bahkan murah hati, untuk tidak memainkan peran yang jahat atau khianat. Mary mungkin akan menjadi sinis jika dia tidak memiliki orang tua yang dia hormati, dan sumber rasa syukur yang mendalam di dalam dirinya, yang semakin penuh karena dia telah belajar untuk tidak mengajukan tuntutan yang tidak masuk akal. Malam ini ia duduk sambil merenungkan, seperti biasanya, kejadian-kejadian hari itu, bibirnya sering kali melengkung geli karena keanehan yang ditambahkan imajinasinya dengan kelucuan baru: orang-orang begitu menggelikan dengan ilusi mereka, mengenakan topi badut mereka tanpa disadari, menganggap kebohongan mereka sendiri buram sementara kebohongan orang lain transparan, menjadikan diri mereka pengecualian untuk segala hal, seolah-olah ketika seluruh dunia tampak kuning di bawah lampu, hanya mereka yang tampak merah muda. Namun ada beberapa ilusi di mata Mary yang tidak sepenuhnya lucu baginya. Ia diam-diam yakin, meskipun ia tidak memiliki alasan lain selain pengamatannya yang cermat terhadap sifat Featherstone tua, bahwa meskipun ia senang dikelilingi keluarga Vincy, mereka sama mungkinnya untuk kecewa seperti kerabat lain yang ia jaga jarak. Ia sangat meremehkan kekhawatiran Nyonya Vincy yang jelas-jelas takut ia dan Fred akan berduaan, tetapi itu tidak menghalanginya untuk memikirkan dengan cemas bagaimana Fred akan terpengaruh, jika ternyata pamannya meninggalkannya dalam keadaan miskin seperti sebelumnya. Dia bisa mempermainkan Fred saat Fred ada di dekatnya, tetapi dia tidak menikmati tingkah konyol Fred saat dia tidak ada. Namun ia menyukai pemikirannya: pikiran muda yang bersemangat dan tidak terlalu dikuasai nafsu, menemukan kebaikan dalam berkenalan dengan kehidupan, dan mengamati kemampuannya sendiri dengan penuh minat. Mary memiliki banyak keceriaan di dalam dirinya. Pikirannya tidak diliputi oleh keseriusan atau kesedihan tentang lelaki tua di ranjang itu: perasaan seperti itu lebih mudah ditimbulkan daripada dirasakan tentang makhluk tua yang hidupnya tampak hanyalah sisa-sisa keburukan. Dia selalu melihat sisi paling tidak menyenangkan dari Tuan Featherstone: dia tidak bangga padanya, dan dia hanya berguna baginya. Merasa cemas tentang jiwa yang selalu membentak Anda harus diserahkan kepada orang-orang suci di bumi; dan Mary bukanlah salah satunya. Dia tidak pernah membalas kata-kata kasar kepadanya, dan telah melayaninya dengan setia: itulah yang terbaik darinya. Featherstone sendiri sama sekali tidak cemas tentang jiwanya, dan menolak untuk menemui Tuan Tucker mengenai masalah itu. Malam ini dia tidak marah, dan selama satu atau dua jam pertama dia berbaring sangat tenang, sampai akhirnya Mary mendengar dia menggesekkan seikat kuncinya ke kotak kaleng yang selalu dia simpan di samping tempat tidurnya. Sekitar pukul tiga dia berkata, dengan sangat jelas, “Missy, kemarilah!” Mary menurut, dan mendapati bahwa ia telah mengambil kotak kaleng dari bawah pakaian, meskipun biasanya ia meminta agar hal itu dilakukan untuknya; dan ia telah memilih kuncinya. Sekarang ia membuka kotak itu, dan, mengambil kunci lain dari dalamnya, menatap lurus ke arahnya dengan mata yang tampaknya telah pulih sepenuhnya dan berkata, "Ada berapa orang di rumah ini?" “Maksud Anda kerabat Anda sendiri, Tuan,” kata Mary, yang sudah terbiasa dengan cara bicara lelaki tua itu. Ia mengangguk sedikit dan Mary melanjutkan. “Tuan Jonah Featherstone dan Cranch muda sedang tidur di sini.” “Oh ya, mereka tetap di sini, ya? Dan yang lainnya—mereka datang setiap hari, aku jamin—Solomon dan Jane, dan semua anak-anak muda? Mereka datang mengintip, menghitung, dan mencari-cari?” “Tidak semuanya setiap hari. Bapak Solomon dan Ibu Waule ada di sini setiap hari, dan yang lainnya datang sesekali.” Pria tua itu mendengarkan dengan meringis saat wanita itu berbicara, lalu berkata sambil merilekskan wajahnya, “Mereka memang bodoh. Dengarkan, Nona. Ini jam tiga pagi, dan aku masih waras seperti dulu. Aku tahu semua hartaku, ke mana uangku disimpan, dan semuanya. Dan aku sudah menyiapkan segalanya untuk berubah pikiran, dan melakukan apa pun yang kusuka pada akhirnya. Apakah kau dengar, Nona? Aku masih waras.” “Baik, Pak?” tanya Mary pelan. Ia kini merendahkan nada bicaranya dengan nada yang lebih licik. “Aku telah membuat dua surat wasiat, dan aku akan membakar salah satunya. Sekarang lakukan apa yang kukatakan. Ini kunci peti besiku, di lemari di sana. Dorong kuat-kuat sisi pelat kuningan di bagian atas, sampai masuk seperti baut: lalu kau bisa memasukkan kunci ke dalam kunci depan dan memutarnya. Lihat dan lakukan itu; dan ambil kertas paling atas—Surat Wasiat Terakhir—dengan tulisan besar.” “Tidak, Pak,” kata Mary dengan suara tegas, “saya tidak bisa melakukan itu.” “Tidak melakukannya? Kukatakan padamu, kau harus melakukannya,” kata lelaki tua itu, suaranya mulai bergetar karena terkejut mendengar penolakan itu. “Aku tak bisa menyentuh dadamu yang kokoh atau tekadmu. Aku harus menolak melakukan apa pun yang bisa membuatku dicurigai.” “Kukatakan padamu, aku waras. Bukankah aku akan melakukan apa yang kusuka pada akhirnya? Aku sengaja membuat dua surat wasiat. Ambil kuncinya, kataku.” “Tidak, Pak, saya tidak mau,” kata Mary dengan lebih tegas. Rasa jijiknya semakin kuat. “Kukatakan padamu, tidak ada waktu untuk disia-siakan.” “Saya tidak bisa berbuat apa-apa, Tuan. Saya tidak akan membiarkan akhir hidup Anda menodai awal hidup saya. Saya tidak akan menyentuh dada baja Anda atau tekad Anda.” Dia bergeser sedikit menjauh dari sisi tempat tidur. Pria tua itu terdiam sejenak dengan tatapan kosong, memegang satu kunci tegak di gantungan kunci; lalu dengan gerakan tersentak gelisah, ia mulai menggunakan tangan kirinya yang kurus untuk mengosongkan kotak kaleng di hadapannya. “Nona,” ia mulai berkata dengan tergesa-gesa, “lihat ke sini! ambil uangnya—uang kertas dan emasnya—lihat ke sini—ambil—kau akan mendapatkan semuanya—lakukan seperti yang kukatakan.” Ia berusaha mengulurkan kunci itu sejauh mungkin ke arahnya, dan Mary kembali mundur. “Saya tidak akan menyentuh kunci atau uang Anda, Tuan. Mohon jangan meminta saya melakukannya lagi. Jika Anda melakukannya lagi, saya harus pergi dan memanggil saudara Anda.” Ia menurunkan tangannya, dan untuk pertama kalinya dalam hidupnya, Mary melihat Peter Featherstone tua mulai menangis seperti anak kecil. Ia berkata, dengan nada selembut mungkin, "Tolong berikan uang Anda, Tuan;" lalu pergi ke tempat duduknya di dekat perapian, berharap ini akan membantu meyakinkannya bahwa tidak ada gunanya mengatakan lebih banyak. Tak lama kemudian ia pulih dan berkata dengan penuh semangat— “Lihat sini. Panggil anak muda itu. Panggil Fred Vincy.” Jantung Mary mulai berdetak lebih cepat. Berbagai pikiran melintas di benaknya tentang apa implikasi dari pembakaran surat wasiat kedua. Dia harus membuat keputusan sulit dengan tergesa-gesa. “Saya akan memanggilnya, jika Anda mengizinkan saya memanggil Tuan Jonah dan yang lainnya bersamanya.” “Bukan orang lain, kataku. Anak muda itu. Aku akan melakukan apa yang kusuka.” “Tunggu sampai hari terang benderang, Pak, ketika semua orang sudah bangun. Atau biar saya panggil Simmons sekarang, untuk pergi menjemput pengacara? Dia bisa sampai di sini kurang dari dua jam lagi.” “Pengacara? Apa yang saya butuhkan dari pengacara? Tidak seorang pun akan tahu—saya katakan, tidak seorang pun akan tahu. Saya akan melakukan apa pun yang saya suka.” “Biar saya panggil orang lain, Pak,” kata Mary dengan persuasif. Ia tidak menyukai posisinya—sendirian dengan lelaki tua itu, yang tampaknya menunjukkan peningkatan energi gugup yang aneh yang memungkinkannya berbicara berulang kali tanpa batuk seperti biasanya; namun ia tidak ingin memaksakan pertentangan yang mengganggunya. “Izinkan saya, tolong, memanggil orang lain.” “Tinggalkan aku sendiri, kataku. Lihat, nona. Ambil uang ini. Kau takkan pernah punya kesempatan lagi. Jumlahnya hampir dua ratus—masih ada lagi di dalam kotak, dan tak seorang pun tahu berapa jumlahnya. Ambil dan lakukan apa yang kukatakan.” Mary, berdiri di dekat perapian, melihat cahaya merahnya jatuh pada lelaki tua itu, yang bersandar pada bantal dan sandaran tempat tidurnya, dengan tangan kurusnya mengulurkan kunci, dan uang tergeletak di atas selimut di depannya. Dia tidak pernah melupakan bayangan seorang pria yang ingin melakukan apa yang diinginkannya pada saat-saat terakhir. Tetapi cara pria itu menawarkan uang tersebut mendorongnya untuk berbicara dengan tekad yang lebih kuat dari sebelumnya. “Percuma saja, Tuan. Saya tidak akan melakukannya. Serahkan uang Anda. Saya tidak akan menyentuh uang Anda. Saya akan melakukan apa pun yang bisa saya lakukan untuk menghibur Anda; tetapi saya tidak akan menyentuh kunci atau uang Anda.” “Apa pun lagi—apa pun lagi!” kata Featherstone tua, dengan amarah serak, yang seolah-olah dalam mimpi buruk, berusaha terdengar keras, namun hanya samar-samar terdengar. “Aku tidak menginginkan apa pun lagi. Kemarilah—kemarilah.” Mary mendekatinya dengan hati-hati, karena ia mengenalnya dengan baik. Ia melihat pria itu menjatuhkan kunci dan berusaha meraih tongkatnya, sementara pria itu menatapnya seperti hyena tua, otot-otot wajahnya berkerut karena usaha tangannya. Ia berhenti di jarak yang aman. “Izinkan saya memberimu minuman penyegar,” katanya pelan, “dan cobalah untuk menenangkan diri. Mungkin kau akan tertidur. Dan besok pagi saat fajar kau bisa melakukan apa pun yang kau suka.” Ia mengangkat tongkat itu, meskipun Mary berada di luar jangkauannya, dan melemparkannya dengan sekuat tenaga namun sia-sia. Tongkat itu jatuh, tergelincir di kaki tempat tidur. Mary membiarkannya saja, dan kembali ke kursinya di dekat perapian. Sebentar lagi ia akan menghampirinya dengan obat penawar rasa sakit. Kelelahan akan membuatnya pasif. Saat itu sudah memasuki saat terdingin di pagi hari, api sudah mengecil, dan ia bisa melihat melalui celah di antara tirai jendela yang terbuat dari kain morena, cahaya yang diputihkan oleh tirai. Setelah menambahkan kayu ke perapian dan menyelimuti dirinya dengan selendang, ia duduk, berharap Tuan Featherstone bisa tertidur. Jika ia mendekatinya, rasa jengkelnya mungkin akan terus berlanjut. Ia tidak mengatakan apa pun setelah melempar tongkat itu, tetapi Mary melihatnya mengambil kunci lagi dan meletakkan tangan kanannya di atas uang. Namun, ia tidak mengangkatnya, dan Mary berpikir bahwa ia akan tertidur. Namun, Mary sendiri mulai lebih gelisah karena mengingat apa yang telah dialaminya, daripada karena kenyataan yang terjadi—ia mempertanyakan tindakan-tindakannya yang dilakukan secara terpaksa dan mengesampingkan semua pertanyaan pada saat kritis. Tak lama kemudian, kayu kering itu mengeluarkan nyala api yang menerangi setiap celah, dan Mary melihat bahwa lelaki tua itu berbaring tenang dengan kepalanya sedikit menoleh ke satu sisi. Ia mendekatinya dengan langkah yang tak terdengar, dan berpikir bahwa wajahnya tampak anehnya tak bergerak; tetapi sesaat kemudian gerakan nyala api yang menyebar ke semua objek membuatnya ragu. Detak jantungnya yang kencang membuat persepsinya begitu meragukan sehingga bahkan ketika ia menyentuhnya dan mendengarkan napasnya, ia tidak dapat mempercayai kesimpulannya. Ia pergi ke jendela dan dengan lembut menyingkirkan tirai dan penutup jendela, sehingga cahaya langit yang tenang jatuh ke tempat tidur. Sesaat kemudian dia berlari ke lonceng dan membunyikannya dengan penuh semangat. Dalam waktu yang sangat singkat, tidak ada lagi keraguan bahwa Peter Featherstone telah meninggal, dengan tangan kanannya menggenggam tuts piano, dan tangan kirinya tergeletak di atas tumpukan uang kertas dan emas.</p>
 

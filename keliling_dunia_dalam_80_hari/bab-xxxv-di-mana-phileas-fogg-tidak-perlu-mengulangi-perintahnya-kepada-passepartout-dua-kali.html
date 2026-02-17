@@ -5,39 +5,176 @@
 <title>BAB XXXV. DI MANA PHILEAS FOGG TIDAK PERLU MENGULANGI PERINTAHNYA KEPADA PASSEPARTOUT DUA KALI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXXV. DI MANA PHILEAS FOGG TIDAK PERLU MENGULANGI PERINTAHNYA KEPADA PASSEPARTOUT DUA KALI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXXV. DI MANA PHILEAS FOGG TIDAK PERLU MENGULANGI PERINTAHNYA KEPADA PASSEPARTOUT DUA KALI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Para penghuni Saville Row pasti akan terkejut keesokan harinya jika mereka diberi tahu bahwa Phileas Fogg telah kembali ke rumah. Pintu dan jendelanya masih tertutup, tidak ada perubahan yang terlihat. Setelah meninggalkan stasiun, Tuan Fogg memberi instruksi kepada Passepartout untuk membeli beberapa perbekalan, dan diam-diam pergi ke tempat tinggalnya. Ia menanggung kemalangan itu dengan ketenangan yang biasa ia tunjukkan. Hancur! Dan karena kecerobohan detektif itu! Setelah dengan mantap menempuh perjalanan panjang itu, mengatasi seratus rintangan, menghadapi banyak bahaya, dan masih sempat melakukan beberapa kebaikan di sepanjang jalan, ia gagal di dekat tujuan karena peristiwa mendadak yang tidak dapat ia duga sebelumnya, dan yang tidak dapat ia hadapi; itu mengerikan! Hanya beberapa pound yang tersisa dari sejumlah besar uang yang dibawanya. Hanya tersisa dari kekayaannya dua puluh ribu pound yang disimpan di Barings, dan jumlah ini yang ia hutangkan kepada teman-temannya di Reform Club. Begitu besar pengeluaran perjalanannya sehingga, bahkan jika ia menang, itu tidak akan memperkayanya; dan kemungkinan besar ia tidak berusaha untuk memperkaya dirinya sendiri, karena ia adalah orang yang lebih suka bertaruh demi kehormatan daripada demi taruhan yang diusulkan. Tetapi taruhan ini benar-benar menghancurkannya. Namun, langkah yang akan diambil Tuan Fogg sudah sepenuhnya diputuskan; dia tahu apa yang masih harus dia lakukan. Sebuah kamar di rumah di Saville Row disiapkan untuk Aouda, yang diliputi kesedihan atas kemalangan pelindungnya. Dari kata-kata yang diucapkan Tuan Fogg, ia menyadari bahwa ia sedang merencanakan suatu proyek serius. Mengetahui bahwa orang Inggris yang dikendalikan oleh ide tetap terkadang menggunakan cara putus asa berupa bunuh diri, Passepartout mengawasi tuannya dengan ketat, meskipun ia dengan hati-hati menyembunyikan penampilan bahwa ia melakukan hal itu. Pertama-tama, pria baik hati itu telah naik ke kamarnya dan memadamkan kompor gas yang telah menyala selama delapan puluh hari. Dia menemukan tagihan dari perusahaan gas di kotak surat, dan dia merasa sudah saatnya untuk menghentikan pengeluaran ini, yang mau tidak mau harus ditanggungnya. Malam berlalu. Tuan Fogg pergi tidur, tetapi apakah dia benar-benar tidur? Aouda tidak sekali pun memejamkan matanya. Passepartout berjaga sepanjang malam, seperti anjing setia, di depan pintu tuannya. Tuan Fogg meneleponnya di pagi hari, dan menyuruhnya untuk menyiapkan sarapan Aouda, serta secangkir teh dan sepotong daging untuk dirinya sendiri. Ia meminta Aouda untuk tidak mengajaknya sarapan dan makan malam, karena waktunya akan tersita sepanjang hari untuk membereskan urusannya. Di malam hari ia akan meminta izin untuk mengobrol sebentar dengan wanita muda itu. Passepartout, setelah menerima perintahnya, tidak punya pilihan selain mematuhinya. Ia menatap tuannya yang tenang, dan hampir tak mampu mengalihkan pikirannya darinya. Hatinya penuh, dan nuraninya tersiksa oleh penyesalan; karena ia menuduh dirinya sendiri lebih pahit dari sebelumnya sebagai penyebab bencana yang tak dapat diperbaiki itu. Ya! Seandainya ia memperingatkan Tuan Fogg, dan mengkhianati rencana Fix kepadanya, tuannya pasti tidak akan memberikan jalan bagi detektif itu ke Liverpool, dan kemudian— Passepartout tidak bisa bertahan lebih lama lagi. “Tuanku! Tuan Fogg!” serunya, “mengapa Anda tidak mengutuk saya? Ini kesalahan saya bahwa—” “Aku tidak menyalahkan siapa pun,” jawab Phileas Fogg dengan tenang. “Pergi!” Passepartout meninggalkan ruangan, dan pergi mencari Aouda, kepada siapa dia menyampaikan pesan tuannya. “Nyonya,” tambahnya, “saya sendiri tidak bisa berbuat apa-apa—sama sekali tidak! Saya tidak memiliki pengaruh apa pun terhadap tuan saya; tetapi Anda, mungkin—” “Pengaruh apa yang bisa saya berikan?” jawab Aouda. “Tuan Fogg tidak dipengaruhi oleh siapa pun. Pernahkah dia mengerti bahwa rasa terima kasih saya kepadanya sangat besar? Pernahkah dia membaca isi hati saya? Teman, dia tidak boleh ditinggalkan sendirian sedetik pun! Kau bilang dia akan berbicara denganku malam ini?” “Ya, Nyonya; mungkin untuk mengatur perlindungan dan kenyamanan Anda di Inggris.” “Kita lihat saja nanti,” jawab Aouda, tiba-tiba menjadi termenung. Sepanjang hari itu (Minggu), rumah di Saville Row tampak seperti tidak berpenghuni, dan Phileas Fogg, untuk pertama kalinya sejak ia tinggal di rumah itu, tidak berangkat ke klubnya ketika jam Westminster menunjukkan pukul setengah sebelas. Mengapa ia harus datang ke Reform? Teman-temannya tidak lagi mengharapkannya di sana. Karena Phileas Fogg tidak muncul di kedai minuman pada malam sebelumnya (Sabtu, 21 Desember, pukul 9:45), ia telah kalah taruhan. Bahkan tidak perlu baginya untuk pergi ke bank untuk mengambil dua puluh ribu pound; karena lawan-lawannya sudah memegang ceknya, dan mereka hanya perlu mengisinya dan mengirimkannya ke Barings agar jumlah tersebut ditransfer ke rekening mereka. Oleh karena itu, Tuan Fogg tidak punya alasan untuk keluar, jadi dia tetap tinggal di rumah. Dia mengurung diri di kamarnya, dan menyibukkan diri dengan membereskan urusannya. Passepartout terus-menerus naik turun tangga. Waktu terasa panjang baginya. Dia menguping di pintu tuannya, dan mengintip melalui lubang kunci, seolah-olah dia memiliki hak penuh untuk melakukannya, dan seolah-olah dia takut sesuatu yang mengerikan mungkin terjadi kapan saja. Terkadang dia memikirkan Fix, tetapi tidak lagi dengan marah. Fix, seperti seluruh dunia, telah salah mengira Phileas Fogg, dan hanya menjalankan tugasnya dengan melacak dan menangkapnya; sementara dia, Passepartout. . . . Pikiran ini menghantuinya, dan dia tidak pernah berhenti mengutuk kebodohannya yang menyedihkan. Merasa dirinya terlalu sengsara untuk tetap sendirian, ia mengetuk pintu Aouda, masuk ke kamarnya, duduk di sudut tanpa berbicara, dan menatap wanita muda itu dengan sedih. Aouda masih termenung. Sekitar pukul setengah tujuh malam, Tuan Fogg mengirim utusan untuk menanyakan apakah Aouda akan menerimanya, dan beberapa saat kemudian ia mendapati dirinya sendirian bersama wanita itu. Phileas Fogg mengambil kursi, dan duduk di dekat perapian, berhadapan dengan Aouda. Tidak ada emosi yang terlihat di wajahnya. Fogg yang kembali persis sama dengan Fogg yang pergi; ada ketenangan yang sama, ketidakpedulian yang sama. Ia duduk beberapa menit tanpa berbicara; lalu, sambil menatap Aouda, “Nyonya,” katanya, “maafkan saya karena telah membawa Anda ke Inggris?” “Saya, Tuan Fogg!” jawab Aouda, sambil memeriksa denyut jantungnya. “Silakan saya selesai bicara,” jawab Tuan Fogg. “Ketika saya memutuskan untuk membawa Anda jauh dari negara yang sangat tidak aman bagi Anda, saya kaya, dan berharap dapat memberikan sebagian kekayaan saya untuk Anda; maka hidup Anda akan bebas dan bahagia. Tetapi sekarang saya bangkrut.” “Aku tahu itu, Tuan Fogg,” jawab Aouda; “dan sekarang aku bertanya padamu, maukah kau memaafkanku karena telah mengikutimu, dan—siapa tahu?—karena mungkin telah menundamu, dan dengan demikian turut menyebabkan kehancuranmu?” “Nyonya, Anda tidak bisa tinggal di India, dan keselamatan Anda hanya dapat dipastikan dengan membawa Anda ke tempat yang jauh sehingga para penganiaya Anda tidak dapat membawa Anda.” “Jadi, Tuan Fogg,” lanjut Aouda, “tidak puas hanya menyelamatkan saya dari kematian yang mengerikan, Anda merasa berkewajiban untuk menjamin kenyamanan saya di negeri asing?” “Ya, Nyonya; tetapi keadaan tidak menguntungkan saya. Meskipun demikian, saya ingin menyerahkan sedikit yang saya miliki untuk melayani Anda.” “Tapi apa yang akan terjadi padamu, Tuan Fogg?” “Adapun saya, Nyonya,” jawab pria itu dengan dingin, “saya tidak membutuhkan apa pun.” “Namun bagaimana pandangan Anda terhadap takdir yang menanti Anda, Tuan?” “Seperti yang biasa saya lakukan.” “Setidaknya,” kata Aouda, “kemiskinan tidak akan menimpa orang sepertimu. Teman-temanmu—” “Saya tidak punya teman, Nyonya.” “Kerabatmu—” “Saya sudah tidak punya kerabat lagi.” “Kalau begitu, aku kasihan padamu, Tuan Fogg, karena kesendirian adalah hal yang menyedihkan, tanpa ada hati untuk tempat mencurahkan kesedihanmu. Namun, konon, penderitaan itu sendiri, jika dibagi oleh dua jiwa yang bersimpati, dapat ditanggung dengan sabar.” “Begitu kata mereka, Nyonya.” “Tuan Fogg,” kata Aouda, sambil berdiri dan menggenggam tangannya, “apakah Anda menginginkan seorang kerabat sekaligus teman? Maukah Anda menjadikan saya istri Anda?” Mendengar itu, Tuan Fogg pun bangkit. Ada cahaya yang tak biasa di matanya, dan sedikit getaran di bibirnya. Aouda menatap wajahnya. Ketulusan, kejujuran, ketegasan, dan kelembutan tatapan lembut seorang wanita mulia, yang berani melakukan segalanya untuk menyelamatkan orang yang kepadanya ia berutang segalanya, awalnya mengejutkannya, lalu merasukinya. Ia memejamkan mata sejenak, seolah menghindari tatapannya. Ketika ia membukanya kembali, “Aku mencintaimu!” katanya, sederhana. “Ya, demi segala yang suci, aku mencintaimu, dan aku sepenuhnya milikmu!” “Ah!” seru Aouda sambil menekan tangannya ke jantung wanita itu. Passepartout dipanggil dan segera muncul. Tuan Fogg masih memegang tangan Aouda; Passepartout mengerti, dan wajahnya yang besar dan bulat menjadi berseri-seri seperti matahari tropis di puncaknya. Pak Fogg bertanya kepadanya apakah belum terlambat untuk memberi tahu Pendeta Samuel Wilson, dari paroki Marylebone, malam itu juga. Passepartout tersenyum ramah, dan berkata, "Tidak pernah terlambat." Saat itu pukul delapan lewat lima menit. “Apakah itu untuk besok, hari Senin?” “Untuk besok, hari Senin,” kata Tuan Fogg, sambil menoleh ke Aouda. “Ya; untuk besok, hari Senin,” jawabnya. Passepartout bergegas pergi secepat yang kakinya mampu.</p>
 

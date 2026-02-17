@@ -5,39 +5,176 @@
 <title>INGATLAH SIFAT MANUSIA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="INGATLAH SIFAT MANUSIA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>INGATLAH SIFAT MANUSIA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Saya tadi secara tidak sengaja menyebutkan rentang waktu yang sangat panjang, yaitu empat puluh empat jam, antara meninggalkan pekerjaan pukul 2 siang pada hari Sabtu dan kembali bekerja pukul 10 pagi pada hari Senin. Dan di sini saya harus membahas apakah seminggu seharusnya terdiri dari enam hari atau tujuh hari. Selama bertahun-tahun—bahkan, sampai saya mendekati usia empat puluh—minggu saya sendiri terdiri dari tujuh hari. Saya terus-menerus diberi tahu oleh orang-orang yang lebih tua dan lebih bijak bahwa lebih banyak pekerjaan, lebih banyak kehidupan yang sesungguhnya, dapat diperoleh dari enam hari daripada dari tujuh hari. Dan memang benar bahwa sekarang, dengan satu hari dalam tujuh hari di mana saya tidak mengikuti program apa pun dan tidak melakukan upaya apa pun kecuali apa yang didiktekan oleh keinginan sesaat, saya sangat menghargai nilai moral dari istirahat mingguan. Namun demikian, jika saya dapat mengatur hidup saya lagi, saya akan melakukan hal yang sama seperti yang telah saya lakukan. Hanya mereka yang telah hidup dengan aktivitas penuh tujuh hari seminggu untuk waktu yang lama yang dapat menghargai keindahan penuh dari kemalasan yang teratur dan berulang. Selain itu, saya semakin tua. Dan ini adalah masalah usia. Dalam kasus-kasus dengan masa muda yang melimpah dan energi serta keinginan yang luar biasa untuk berusaha, saya akan mengatakan tanpa ragu: Teruslah bekerja, hari demi hari. Namun secara umum, saya akan mengatakan: Batasi program formal Anda (maksud saya, program super ) hingga enam hari seminggu. Jika Anda ingin memperpanjangnya, perpanjanglah, tetapi hanya sebanding dengan keinginan Anda; dan anggap waktu tambahan itu sebagai rezeki tak terduga, bukan sebagai penghasilan tetap, sehingga Anda dapat kembali ke program enam hari tanpa merasa lebih miskin, tanpa merasa mundur. Sekarang mari kita lihat posisi kita. Sejauh ini kita telah mengalokasikan waktu untuk penghematan, setidaknya setengah jam pada enam pagi dalam seminggu, dan satu setengah jam pada tiga malam dalam seminggu. Total, tujuh setengah jam seminggu. Saya bermaksud untuk merasa puas dengan tujuh setengah jam itu untuk saat ini. "Apa?" seru Anda. "Anda berpura-pura menunjukkan kepada kami bagaimana cara hidup, dan Anda hanya membahas tujuh setengah jam dari seratus enam puluh delapan jam! Apakah Anda akan melakukan keajaiban dengan tujuh setengah jam Anda?" Baiklah, tanpa basa-basi, saya akan melakukannya—jika Anda mengizinkan saya! Maksud saya, saya akan meminta Anda untuk mencoba sebuah pengalaman yang, meskipun sepenuhnya alami dan dapat dijelaskan, memiliki aura keajaiban. Argumen saya adalah bahwa penggunaan penuh tujuh setengah jam itu akan mempercepat seluruh kehidupan dalam seminggu, menambah semangat, dan meningkatkan minat yang Anda rasakan bahkan dalam pekerjaan yang paling biasa sekalipun. Anda melakukan latihan fisik hanya selama sepuluh menit pagi dan sore, namun Anda tidak heran ketika kesehatan dan kekuatan fisik Anda terpengaruh secara positif setiap jam dalam sehari, dan seluruh pandangan fisik Anda berubah. Mengapa Anda harus heran bahwa rata-rata lebih dari satu jam sehari yang diberikan untuk pikiran dapat secara permanen dan sepenuhnya menghidupkan seluruh aktivitas pikiran? Tentu saja, lebih banyak waktu dapat diberikan untuk pengembangan diri. Dan seiring bertambahnya waktu, hasilnya pun akan semakin besar. Tetapi saya lebih memilih untuk memulai dengan apa yang tampak seperti usaha kecil. Ini bukanlah usaha yang sepele, seperti yang akan ditemukan oleh mereka yang belum mencobanya. Untuk "menjelajahi" hutan selama tujuh setengah jam saja sudah cukup sulit. Karena beberapa pengorbanan harus dilakukan. Seseorang mungkin telah menghabiskan waktunya dengan buruk, tetapi ia memang menghabiskannya; ia memang melakukan sesuatu dengannya, betapapun tidak bijaksananya hal itu. Melakukan sesuatu yang lain berarti mengubah kebiasaan. Dan kebiasaan sangat sulit diubah! Lebih lanjut, setiap perubahan, bahkan perubahan ke arah yang lebih baik, selalu disertai dengan kekurangan dan ketidaknyamanan. Jika Anda membayangkan bahwa Anda akan mampu mencurahkan tujuh setengah jam seminggu untuk upaya serius dan berkelanjutan, dan tetap menjalani kehidupan lama Anda, Anda salah. Saya ulangi bahwa beberapa pengorbanan, dan kemauan yang sangat besar, akan diperlukan. Dan karena saya tahu kesulitannya, karena saya tahu dampak yang hampir fatal dari kegagalan dalam usaha seperti itu, saya dengan sungguh-sungguh menyarankan untuk memulai dengan sangat sederhana. Anda harus menjaga harga diri Anda. Harga diri adalah akar dari semua tujuan, dan kegagalan dalam usaha yang direncanakan dengan sengaja akan melukai harga diri seseorang dengan sangat parah. Karena itu saya ulangi dan tegaskan: Mulailah dengan tenang, tanpa pamer. Setelah Anda dengan sungguh-sungguh meluangkan tujuh setengah jam seminggu untuk mengembangkan vitalitas Anda selama tiga bulan—maka Anda dapat mulai bernyanyi lebih lantang dan mengatakan pada diri sendiri hal-hal menakjubkan apa yang mampu Anda lakukan. Sebelum membahas metode penggunaan jam yang telah ditentukan, saya memiliki satu saran terakhir. Yaitu, terkait dengan malam hari, berikan waktu lebih dari satu setengah jam untuk mengerjakan pekerjaan yang seharusnya hanya satu setengah jam. Ingatlah kemungkinan terjadinya kecelakaan. Ingatlah sifat manusia. Dan berikan diri Anda waktu, misalnya, dari pukul 9 hingga 11.30 untuk tugas Anda yang berdurasi sembilan puluh menit.</p>
 

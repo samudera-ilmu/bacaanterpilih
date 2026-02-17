@@ -5,39 +5,176 @@
 <title>BAB XXIII. DI MANA HIDUNG PASSEPARTOUT MENJADI SANGAT PANJANG</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXIII. DI MANA HIDUNG PASSEPARTOUT MENJADI SANGAT PANJANG - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXIII. DI MANA HIDUNG PASSEPARTOUT MENJADI SANGAT PANJANG</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Keesokan paginya, Passepartout yang malang, lelah, dan kelaparan berkata pada dirinya sendiri bahwa ia harus mendapatkan sesuatu untuk dimakan dengan cara apa pun, dan semakin cepat ia melakukannya semakin baik. Ia bahkan bisa menjual jam tangannya; tetapi ia lebih memilih kelaparan daripada melakukannya. Sekarang atau tidak sama sekali, ia harus menggunakan suara yang kuat, meskipun tidak merdu, yang telah dianugerahkan alam kepadanya. Ia mengetahui beberapa lagu Prancis dan Inggris, dan memutuskan untuk mencobanya di hadapan orang Jepang, yang pastinya adalah pecinta musik, karena mereka selalu memukul simbal, tam-tam, dan rebana mereka, dan pasti akan menghargai bakat Eropa. Mungkin terlalu pagi untuk mengadakan konser, dan penonton yang baru terbangun dari tidurnya mungkin tidak akan membayar penghibur mereka dengan koin bergambar Mikado. Karena itu, Passepartout memutuskan untuk menunggu beberapa jam; dan, saat ia berjalan santai, terlintas di benaknya bahwa ia akan tampak terlalu rapi untuk seorang seniman keliling. Muncul ide untuk mengganti pakaiannya dengan pakaian yang lebih sesuai dengan proyeknya; dengan begitu ia juga bisa mendapatkan sedikit uang untuk memenuhi kebutuhan mendesak akan rasa lapar. Setelah mengambil keputusan, tinggal melaksanakannya. Barulah setelah pencarian yang panjang, Passepartout menemukan seorang pedagang pakaian bekas lokal, kepadanya ia mengajukan permohonan pertukaran. Pria itu menyukai pakaian Eropa tersebut, dan tak lama kemudian Passepartout keluar dari tokonya dengan mengenakan mantel Jepang tua dan semacam turban satu sisi yang pudar karena lama dipakai. Selain itu, beberapa keping perak kecil bergemerincing di sakunya. “Bagus!” pikirnya. “Aku akan membayangkan aku sedang berada di Karnaval!” Hal pertama yang ia perhatikan, setelah "dijepangi" seperti itu, adalah memasuki kedai teh yang sederhana, dan, dengan setengah ekor ayam dan sedikit nasi, sarapan seperti orang yang makan malamnya masih menjadi masalah yang harus dipecahkan. “Sekarang,” pikirnya setelah makan dengan lahap, “aku tidak boleh kehilangan akal sehatku. Aku tidak bisa menjual kostum ini lagi untuk mendapatkan kostum Jepang yang lebih mewah. Aku harus mempertimbangkan bagaimana caranya meninggalkan negeri Matahari ini, yang tidak akan meninggalkan kenangan terindah bagiku, secepat mungkin.” Terlintas di benaknya untuk mengunjungi kapal-kapal uap yang akan berangkat ke Amerika. Ia akan menawarkan diri sebagai juru masak atau pelayan, sebagai imbalan untuk ongkos perjalanan dan makanannya. Sesampainya di San Francisco, ia akan mencari cara untuk melanjutkan perjalanan. Kesulitannya adalah, bagaimana menempuh jarak empat ribu tujuh ratus mil Samudra Pasifik yang membentang antara Jepang dan Dunia Baru. Passepartout bukanlah orang yang membiarkan idenya terbengkalai, dan ia mengarahkan langkahnya menuju dermaga. Namun, saat ia mendekati dermaga, proyeknya, yang pada awalnya tampak begitu sederhana, mulai menjadi semakin menakutkan di benaknya. Untuk apa mereka membutuhkan juru masak atau pelayan di kapal uap Amerika, dan seberapa besar kepercayaan yang akan mereka berikan kepadanya, dengan pakaiannya seperti itu? Referensi apa yang bisa ia berikan? Saat ia sedang merenung seperti itu, matanya tertuju pada sebuah papan pengumuman besar yang dibawa oleh seorang pria yang tampak seperti badut di jalanan. Papan pengumuman itu, yang berbahasa Inggris, berbunyi sebagai berikut: Kelompok Akrobatik Jepang, Yang Terhormat William Batulcar, Pemilik, Pertunjukan Terakhir, Sebelum Keberangkatan Mereka Ke Amerika Serikat, Dari Hidung Panjang! Hidung Panjang! Di Bawah Perlindungan Langsung Dewa Tingou! Atraksi Hebat! “Amerika Serikat!” kata Passepartout; “itulah yang saya inginkan!” Dia mengikuti badut itu, dan segera mendapati dirinya kembali di kawasan Jepang. Seperempat jam kemudian dia berhenti di depan sebuah kabin besar, dihiasi dengan beberapa gugusan pita, yang dinding luarnya dirancang untuk mewakili, dengan warna-warna mencolok dan tanpa perspektif, sekelompok pemain sulap. Ini adalah tempat usaha Yang Terhormat William Batulcar. Pria itu semacam Barnum, direktur sebuah kelompok pemain sirkus, pemain sulap, badut, akrobat, pesenam keseimbangan, dan pesenam, yang, menurut papan pengumuman, sedang memberikan pertunjukan terakhirnya sebelum meninggalkan Kekaisaran Matahari menuju Negara-negara Bagian Uni. Passepartout masuk dan menanyakan Tuan Batulcar, yang segera muncul sendiri. “Apa yang kau inginkan?” katanya kepada Passepartout, yang awalnya ia kira adalah penduduk asli. “Apakah Anda menginginkan seorang pelayan, Tuan?” tanya Passepartout. “Seorang pelayan!” seru Tuan Batulcar, sambil mengelus janggut abu-abu tebal yang menjuntai dari dagunya. “Saya sudah punya dua orang yang patuh dan setia, tidak pernah meninggalkan saya, dan melayani saya untuk nafkah mereka, dan ini mereka,” tambahnya, sambil mengulurkan kedua lengannya yang kekar, berurat-urat sebesar senar biola bas. “Jadi aku tidak berguna bagimu?” "Tidak ada." “Sialan! Aku sangat ingin menyeberangi Samudra Pasifik bersamamu!” “Ah!” seru Yang Terhormat Tuan Batulcar. “Anda bukan orang Jepang, sama seperti saya bukan monyet! Anda berpakaian seperti siapa?” “Seorang pria berpakaian sebisa mungkin.” “Benar sekali. Anda orang Prancis, bukan?” “Ya; seorang warga Paris asli.” “Kalau begitu, seharusnya kamu tahu cara membuat mimik wajah?” “Mengapa,” jawab Passepartout, sedikit kesal karena kewarganegaraannya menimbulkan pertanyaan ini, “kami orang Prancis memang tahu cara membuat mimik wajah, itu benar, tetapi tidak lebih baik daripada orang Amerika.” “Benar. Nah, jika aku tidak bisa menerimamu sebagai pelayan, aku bisa menerimamu sebagai badut. Begini, temanku, di Prancis mereka mempertunjukkan badut-badut asing, dan di luar negeri mereka mempertunjukkan badut-badut Prancis.” "Ah!" “Kamu cukup kuat, ya?” “Terutama setelah makan enak.” “Dan kamu bisa menyanyi?” “Ya,” jawab Passepartout, yang sebelumnya biasa bernyanyi di jalanan. “Tapi bisakah kamu bernyanyi sambil berdiri terbalik, dengan gasing berputar di kaki kirimu, dan pedang seimbang di kaki kananmu?” “Hmph! Kurasa begitu,” jawab Passepartout, mengenang latihan-latihan di masa mudanya. “Baiklah, itu sudah cukup,” kata Yang Terhormat William Batulcar. Pertunangan itu diselesaikan saat itu juga. Passepartout akhirnya menemukan sesuatu untuk dilakukan. Ia dipekerjakan untuk berakting dalam kelompok teater Jepang yang terkenal. Itu bukanlah posisi yang sangat terhormat, tetapi dalam waktu seminggu ia akan berangkat ke San Francisco. Pertunjukan yang diumumkan dengan begitu riuh oleh Yang Terhormat Bapak Batulcar itu akan dimulai pukul tiga, dan tak lama kemudian suara alat musik orkestra Jepang yang memekakkan telinga bergema di pintu. Passepartout, meskipun ia tidak dapat mempelajari atau berlatih bagiannya, ditugaskan untuk membantu dengan bahunya yang kokoh dalam pertunjukan besar "piramida manusia," yang dilakukan oleh para Hidung Panjang dewa Tingou. "Atraksi besar" ini akan menutup pertunjukan. Sebelum pukul tiga, gudang besar itu diserbu oleh para penonton, yang terdiri dari orang Eropa dan penduduk asli, Tionghoa dan Jepang, pria, wanita, dan anak-anak, yang berdesakan di bangku-bangku sempit dan di kotak-kotak di seberang panggung. Para musisi mengambil posisi di dalam, dan dengan penuh semangat memainkan gong, tam-tam, seruling, tulang, rebana, dan drum besar mereka. Pertunjukan itu sangat mirip dengan semua pertunjukan akrobatik; tetapi harus diakui bahwa orang Jepang adalah ahli keseimbangan terbaik di dunia. Salah seorang, dengan kipas dan beberapa potongan kertas, mempertunjukkan trik anggun kupu-kupu dan bunga; yang lain mengukir serangkaian kata-kata biru di udara, dengan asap pipa yang harum, yang merupakan pujian kepada penonton; sementara yang ketiga memainkan beberapa lilin yang menyala, yang ia padamkan secara bergantian saat melewati bibirnya, dan menyalakannya kembali tanpa mengganggu permainannya sedetik pun. Yang lain mereproduksi kombinasi paling unik dengan gasing; di tangannya, gasing-gasing yang berputar itu tampak hidup dengan sendirinya dalam putarannya yang tak berujung; mereka meluncur di atas batang pipa, ujung pedang, kawat, dan bahkan rambut yang terbentang di panggung; mereka berputar di tepi gelas besar, melintasi tangga bambu, menyebar ke semua sudut, dan menghasilkan efek musik yang aneh dengan kombinasi berbagai nada mereka. Para pemain melemparnya ke udara, melemparkannya seperti kok bulu tangkis dengan raket kayu, namun mereka terus berputar; Mereka memasukkannya ke dalam saku mereka, dan mengeluarkannya lagi sambil tetap berputar seperti sebelumnya. Tidak ada gunanya menggambarkan penampilan menakjubkan para akrobat dan pesenam. Putaran di atas tangga, tiang, bola, tong, dan lain-lain, dilakukan dengan presisi yang luar biasa. Namun daya tarik utamanya adalah pameran Hidung Panjang, sebuah pertunjukan yang belum pernah ada di Eropa sebelumnya. Kelompok Berhidung Panjang merupakan kelompok yang unik, di bawah perlindungan langsung dewa Tingou. Mengenakan pakaian ala Abad Pertengahan, mereka membawa sepasang sayap yang indah di pundak mereka; tetapi yang paling membedakan mereka adalah hidung panjang yang terpasang di wajah mereka, dan kegunaan yang mereka berikan padanya. Hidung-hidung ini terbuat dari bambu, dan panjangnya lima, enam, bahkan sepuluh kaki, ada yang lurus, ada yang melengkung, ada yang berpita, dan ada yang memiliki kutil tiruan. Di atas tambahan-tambahan inilah, yang terpasang erat di hidung asli mereka, mereka melakukan latihan gimnastik. Selusin dari sekte Tingou ini berbaring telentang, sementara yang lain, berpakaian menyerupai penangkal petir, datang dan bermain-main di atas hidung mereka, melompat dari satu ke yang lain, dan melakukan lompatan dan salto yang sangat terampil. Sebagai adegan terakhir, sebuah "piramida manusia" telah diumumkan, di mana lima puluh orang berhidung panjang akan mewakili Kereta Juggernaut. Namun, alih-alih membentuk piramida dengan saling menaiki bahu, para seniman harus berkelompok di atas hidung-hidung tersebut. Kebetulan, pemain yang selama ini membentuk dasar Kereta telah keluar dari rombongan, dan karena untuk mengisi peran ini hanya dibutuhkan kekuatan dan ketangkasan, Passepartout dipilih untuk menggantikannya. Pria malang itu benar-benar merasa sedih ketika—kenangan melankolis masa mudanya!—ia mengenakan kostumnya, dihiasi sayap warna-warni, dan memasang hidung palsu sepanjang enam kaki pada wajahnya yang asli. Tetapi ia kembali ceria ketika berpikir bahwa hidung ini akan memberinya sesuatu untuk dimakan. Ia naik ke panggung, dan mengambil tempatnya di samping yang lain yang akan membentuk dasar Kereta Juggernaut. Mereka semua berbaring di lantai, hidung mereka menunjuk ke langit-langit. Kelompok seniman kedua menempatkan diri di atas bagian-bagian panjang ini, kemudian kelompok ketiga di atasnya, lalu kelompok keempat, hingga sebuah monumen manusia yang mencapai hingga ke bagian atas teater segera muncul di atas hidung-hidung itu. Hal ini menimbulkan tepuk tangan meriah, di tengah-tengahnya orkestra baru saja memainkan melodi yang memekakkan telinga, ketika piramida itu goyah, keseimbangan hilang, salah satu hidung bagian bawah menghilang dari piramida, dan monumen manusia itu hancur seperti kastil yang terbuat dari kartu! Itu adalah kesalahan Passepartout. Meninggalkan posisinya, melewati lampu panggung tanpa bantuan sayapnya, dan memanjat ke galeri sebelah kanan, dia jatuh di kaki salah satu penonton, sambil berteriak, “Ah, tuanku! tuanku!” “Kau di sini?” "Saya sendiri." “Baiklah kalau begitu, mari kita pergi ke kapal uap, anak muda!” Tuan Fogg, Aouda, dan Passepartout melewati lobi teater menuju ke luar, di mana mereka bertemu dengan Yang Terhormat Tuan Batulcar, yang sangat marah. Ia menuntut ganti rugi atas "kerusakan" piramida; dan Phileas Fogg menenangkannya dengan memberinya segenggam uang kertas. Tepat pukul setengah tujuh, pada jam keberangkatan, Tuan Fogg dan Aouda, diikuti oleh Passepartout yang karena terburu-buru masih memiliki sayap dan hidung sepanjang enam kaki, naik ke kapal uap Amerika.</p>
 

@@ -5,39 +5,176 @@
 <title>BAB XVI.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XVI. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XVI.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Segala sesuatu yang dipuja pada wanita, kutemukan dalam dirimu yang cantik— Karena seluruh kaum wanita hanya mampu memberikan yang tampan dan baik hati.” —SIR CHARLES SEDLEY. Pertanyaan apakah Tuan Tyke harus diangkat sebagai pendeta bergaji di rumah sakit merupakan topik yang menarik bagi warga Middlemarch; dan Lydgate mendengar diskusi tersebut dengan cara yang memberikan banyak gambaran tentang kekuasaan yang dijalankan di kota itu oleh Tuan Bulstrode. Bankir itu jelas seorang penguasa, tetapi ada partai oposisi, dan bahkan di antara para pendukungnya ada beberapa yang mengakui bahwa dukungan mereka adalah sebuah kompromi, dan yang secara jujur menyatakan kesan mereka bahwa skema umum segala sesuatu, dan terutama kerugian perdagangan, mengharuskan Anda untuk melawan iblis. Kekuasaan Tuan Bulstrode bukan hanya karena ia seorang bankir desa yang mengetahui rahasia keuangan sebagian besar pedagang di kota dan dapat mengakses sumber kredit mereka; kekuasaannya diperkuat oleh kemurahan hati yang sekaligus siap dan tegas—siap memberikan kewajiban, dan tegas dalam mengawasi hasilnya. Sebagai seorang pria yang rajin dan selalu berada di posisinya, ia telah mengumpulkan bagian utama dalam mengelola badan amal kota, dan badan amal pribadinya sangat kecil namun berlimpah. Ia akan berusaha keras untuk membantu Tegg, putra tukang sepatu, untuk magang, dan ia akan mengawasi kehadiran Tegg di gereja; ia akan membela Nyonya Strype, tukang cuci, dari tuntutan tidak adil Stubbs atas lahan jemurannya, dan ia sendiri akan menyelidiki fitnah terhadap Nyonya Strype. Pinjaman kecil pribadinya banyak, tetapi ia akan menyelidiki dengan cermat keadaan sebelum dan sesudahnya. Dengan cara ini, seseorang mengumpulkan kekuasaan dalam harapan dan ketakutan serta rasa terima kasih tetangganya; Dan kekuasaan, begitu telah masuk ke wilayah yang halus itu, akan menyebar dengan sendirinya, melampaui proporsi sarana eksternalnya. Prinsip Tuan Bulstrode adalah untuk mendapatkan kekuasaan sebanyak mungkin, agar ia dapat menggunakannya untuk kemuliaan Tuhan. Ia mengalami banyak konflik spiritual dan perdebatan batin untuk menyesuaikan motifnya, dan memperjelas bagi dirinya sendiri apa yang dibutuhkan oleh kemuliaan Tuhan. Tetapi, seperti yang telah kita lihat, motifnya tidak selalu dihargai dengan benar. Ada banyak pikiran kasar di Middlemarch yang timbangan refleksinya hanya dapat menimbang segala sesuatu secara keseluruhan; dan mereka sangat curiga bahwa karena Tuan Bulstrode tidak dapat menikmati hidup dengan cara mereka, makan dan minum sangat sedikit seperti yang dilakukannya, dan mengkhawatirkan dirinya sendiri tentang segala hal, ia pasti mengalami semacam pesta vampir dalam hal penguasaan. Topik tentang jabatan pendeta muncul di meja makan Tuan Vincy ketika Lydgate sedang makan di sana, dan hubungan keluarga dengan Tuan Bulstrode, menurut pengamatannya, tidak menghalangi kebebasan berkomentar bahkan dari tuan rumah sendiri, meskipun alasan penolakannya terhadap pengaturan yang diusulkan sepenuhnya berpusat pada keberatannya terhadap khotbah Tuan Tyke, yang semuanya berisi doktrin, dan preferensinya terhadap Tuan Farebrother, yang khotbahnya bebas dari pengaruh doktrin tersebut. Tuan Vincy cukup menyukai gagasan bahwa pendeta akan menerima gaji, dengan asumsi gaji tersebut diberikan kepada Farebrother, yang merupakan orang yang baik hati dan pengkhotbah terbaik di mana pun, serta ramah. “Lalu, jalur mana yang akan Anda ambil?” tanya Tuan Chichely, sang koroner, seorang rekan dekat Tuan Vincy dalam olahraga berkuda. “Oh, saya sangat senang saya bukan salah satu Direktur sekarang. Saya akan memilih untuk merujuk masalah ini kepada para Direktur dan Dewan Medis bersama-sama. Saya akan membebankan sebagian tanggung jawab saya kepada Anda, Dokter,” kata Tuan Vincy, melirik terlebih dahulu ke arah Dr. Sprague, dokter senior kota itu, dan kemudian ke arah Lydgate yang duduk di seberangnya. “Anda sekalian dokter harus berkonsultasi mengenai jenis obat hitam apa yang akan Anda resepkan, ya, Tuan Lydgate?” “Saya tidak begitu paham tentang keduanya,” kata Lydgate; “tetapi secara umum, penunjukan cenderung terlalu bergantung pada kesukaan pribadi. Orang yang paling cocok untuk suatu jabatan tertentu tidak selalu orang yang terbaik atau paling menyenangkan. Terkadang, jika Anda ingin melakukan reformasi, satu-satunya cara adalah dengan mempensiunkan orang-orang baik yang disukai semua orang, dan menyingkirkan mereka dari pertimbangan.” Dr. Sprague, yang dianggap sebagai dokter paling "berpengaruh," meskipun Dr. Minchin biasanya dikatakan memiliki "daya pikir" yang lebih tinggi, menghilangkan semua ekspresi dari wajahnya yang besar dan berat, dan menatap gelas anggurnya saat Lydgate berbicara. Apa pun yang tidak bermasalah dan mencurigakan tentang pemuda ini—misalnya, sikap pamer terhadap ide-ide asing, dan kecenderungan untuk menggoyahkan apa yang telah mapan dan dilupakan oleh para tetua—sama sekali tidak disukai oleh seorang dokter yang reputasinya telah ditetapkan tiga puluh tahun sebelumnya oleh sebuah risalah tentang Meningitis, yang setidaknya satu salinannya bertanda "milik sendiri" dan dijilid dengan kulit sapi. Saya sendiri memiliki sedikit rasa simpati terhadap Dr. Sprague: kepuasan diri adalah jenis properti yang tidak dikenakan pajak dan sangat tidak menyenangkan jika diremehkan. Namun, ucapan Lydgate tidak sesuai dengan pendapat semua orang di perusahaan itu. Tuan Vincy berkata, bahwa jika ia bisa menentukan sendiri , ia tidak akan menempatkan orang-orang yang tidak menyenangkan di mana pun. “Lupakan reformasi itu!” kata Tuan Chichely. “Tidak ada tipu daya yang lebih besar di dunia ini. Anda tidak pernah mendengar tentang reformasi, tetapi itu hanyalah tipu daya untuk menempatkan orang baru. Saya harap Anda bukan salah satu orang 'Lancet', Tuan Lydgate—yang ingin mengambil jabatan koroner dari tangan profesi hukum: kata-kata Anda tampaknya mengarah ke sana.” “Saya tidak setuju dengan Wakley,” sela Dr. Sprague, “tidak ada orang lain yang lebih tidak setuju darinya: dia orang yang berniat buruk, yang akan mengorbankan kehormatan profesi, yang semua orang tahu bergantung pada Kolese London, demi mendapatkan ketenaran untuk dirinya sendiri. Ada orang-orang yang tidak keberatan dihina asalkan mereka dibicarakan. Tapi Wakley terkadang benar,” tambah Dokter itu, dengan nada menghakimi. “Saya bisa menyebutkan satu atau dua poin di mana Wakley benar.” “Oh, baiklah,” kata Tuan Chichely, “saya tidak menyalahkan siapa pun karena membela sesama anggota partainya; tetapi, kembali ke pokok bahasan, saya ingin tahu bagaimana seorang koroner dapat menilai bukti jika dia tidak memiliki pelatihan hukum?” “Menurut pendapat saya,” kata Lydgate, “pelatihan hukum hanya membuat seseorang lebih tidak kompeten dalam pertanyaan yang membutuhkan pengetahuan jenis lain. Orang-orang berbicara tentang bukti seolah-olah bukti itu benar-benar dapat ditimbang di timbangan oleh Hakim yang buta. Tidak seorang pun dapat menilai apa yang merupakan bukti yang baik dalam subjek tertentu, kecuali jika ia mengetahui subjek tersebut dengan baik. Seorang pengacara tidak lebih baik daripada seorang wanita tua dalam pemeriksaan post-mortem. Bagaimana ia bisa mengetahui cara kerja racun? Anda sama saja mengatakan bahwa membaca puisi akan mengajari Anda untuk membaca hasil panen kentang.” “Anda tentu menyadari, kan, bahwa bukan tugas koroner untuk melakukan otopsi , melainkan hanya untuk mengambil keterangan saksi medis?” kata Tuan Chichely, dengan sedikit nada mengejek. “Seringkali, saksi yang hampir sama bodohnya dengan koroner itu sendiri,” kata Lydgate. “Pertanyaan-pertanyaan tentang yurisprudensi medis seharusnya tidak diserahkan pada kebetulan pengetahuan yang memadai dari seorang saksi medis, dan koroner seharusnya bukan orang yang akan percaya bahwa strychnine akan menghancurkan lapisan lambung jika seorang praktisi yang bodoh kebetulan mengatakan demikian kepadanya.” Lydgate benar-benar lupa bahwa Tuan Chichely adalah koroner Yang Mulia Raja, dan dengan polosnya mengakhiri percakapan dengan pertanyaan, "Apakah Anda tidak setuju dengan saya, Dr. Sprague?" “Sampai batas tertentu—terutama di daerah padat penduduk, dan di ibu kota,” kata Dokter. “Tetapi saya harap tidak akan lama lagi bagian negara ini kehilangan jasa teman saya Chichely, meskipun mungkin akan mendapatkan orang terbaik di profesi kita untuk menggantikannya. Saya yakin Vincy akan setuju dengan saya.” “Ya, ya, beri saya seorang koroner yang ahli dalam penanganan kasus,” kata Tuan Vincy dengan riang. “Dan menurut pendapat saya, Anda paling aman jika didampingi pengacara. Tidak ada yang bisa mengetahui segalanya. Kebanyakan hal adalah 'kehendak Tuhan'. Dan soal keracunan, yang ingin Anda ketahui adalah hukumnya. Ayo, kita bergabung dengan para wanita?” Pendapat pribadi Lydgate adalah bahwa Tuan Chichely mungkin adalah koroner yang sama sekali tidak bias mengenai jenis kelamin bayi, tetapi ia tidak bermaksud untuk bersikap pribadi. Ini adalah salah satu kesulitan bergaul di kalangan masyarakat Middlemarch yang terhormat: berbahaya untuk bersikeras pada pengetahuan sebagai kualifikasi untuk jabatan bergaji apa pun. Fred Vincy menyebut Lydgate sebagai orang yang sok tahu, dan sekarang Tuan Chichely cenderung menyebutnya cerewet; terutama ketika, di ruang tamu, ia tampak berusaha membuat dirinya sangat menyenangkan bagi Rosamond, yang dengan mudah ia monopoli dalam percakapan empat mata , karena Nyonya Vincy sendiri duduk di meja teh. Ia tidak menyerahkan fungsi rumah tangga apa pun kepada putrinya; dan wajah ibu rumah tangga yang berseri-seri dan ramah, dengan dua untaian merah muda yang melayang dari tenggorokannya yang indah, dan sikapnya yang ceria kepada suami dan anak-anak, tentu saja merupakan salah satu daya tarik utama rumah Vincy—daya tarik yang membuatnya semakin mudah untuk jatuh cinta pada putrinya. Nuansa kekasaran yang bersahaja dan tidak menyinggung perasaan pada Nyonya Vincy justru memberikan efek lebih pada kehalusan Rosamond, yang melampaui apa yang diharapkan Lydgate. Tentu saja, kaki kecil dan bahu yang terarah sempurna menambah kesan sopan santun yang halus, dan ucapan yang tepat terdengar sangat tepat ketika disertai dengan lekukan bibir dan kelopak mata yang indah. Dan Rosamond bisa mengatakan hal yang tepat; karena dia cerdas dengan kecerdasan yang mampu menangkap setiap nada kecuali nada humor. Untungnya dia tidak pernah mencoba bercanda, dan mungkin inilah tanda paling menentukan dari kecerdasannya. Ia dan Lydgate dengan mudah terlibat dalam percakapan. Ia menyesal karena tidak mendengarnya bernyanyi beberapa hari yang lalu di Stone Court. Satu-satunya kesenangan yang ia izinkan untuk dirinya sendiri selama bagian akhir masa tinggalnya di Paris adalah pergi mendengarkan musik. “Kau mungkin pernah belajar musik?” tanya Rosamond. “Tidak, aku tahu suara banyak burung, dan aku tahu banyak melodi secara lisan; tetapi musik yang sama sekali tidak kukenal, dan tidak kupahami, justru membuatku senang—menyentuh hatiku. Betapa bodohnya dunia ini karena tidak lebih memanfaatkan kesenangan yang ada di hadapannya!” “Ya, dan Anda akan mendapati Middlemarch sangat sumbang. Hampir tidak ada musisi yang bagus. Saya hanya mengenal dua pria yang bernyanyi dengan cukup baik.” “Kurasa sekarang sedang tren menyanyikan lagu-lagu komik dengan ritme tertentu, membiarkan penonton membayangkan melodinya—seolah-olah diketuk pada sebuah drum?” “Ah, Anda sudah mendengar Tuan Bowyer,” kata Rosamond, sambil tersenyum tipis. “Tapi kami sedang membicarakan hal buruk tentang tetangga kami.” Lydgate hampir lupa bahwa ia harus melanjutkan percakapan, karena terpikir betapa cantiknya makhluk ini, pakaiannya tampak terbuat dari biru langit yang sangat lembut, dirinya sendiri berambut pirang sempurna, seolah-olah kelopak bunga raksasa baru saja mekar dan menampakkannya; namun dengan rambut pirang kekanak-kanakan ini ia menunjukkan begitu banyak keanggunan yang siap dan percaya diri. Sejak mengingat Laure, Lydgate telah kehilangan selera untuk keheningan yang penuh kekaguman: wanita yang memesona itu tidak lagi menarik perhatiannya, dan Rosamond adalah kebalikannya. Tetapi ia tersadar. "Kuharap kau akan mengizinkanku mendengarkan musik malam ini." “Aku akan membiarkanmu mendengar upayaku, jika kau mau,” kata Rosamond. “Ayah pasti akan bersikeras agar aku bernyanyi. Tapi aku akan gemetar di hadapanmu, yang telah mendengar penyanyi-penyanyi terbaik di Paris. Aku hanya sedikit mendengar: aku hanya sekali ke London. Tapi pemain organ kami di St. Peter's adalah musisi yang baik, dan aku terus belajar dengannya.” “Ceritakan apa yang kamu lihat di London.” “Sangat sedikit.” (Gadis yang lebih naif mungkin akan berkata, “Oh, semuanya!” Tetapi Rosamond tahu lebih baik.) “Beberapa pemandangan biasa, seperti yang selalu dilihat gadis-gadis desa yang polos.” “Apakah kau menyebut dirimu gadis desa yang polos?” kata Lydgate, menatapnya dengan penekanan kekaguman yang tak disengaja, yang membuat Rosamond tersipu malu karena senang. Tetapi dia tetap serius, sedikit memutar lehernya yang panjang, dan mengangkat tangannya untuk menyentuh kepang rambutnya yang menakjubkan—gerakan kebiasaannya yang secantik gerakan kaki anak kucing. Bukan berarti Rosamond sama sekali seperti anak kucing: dia adalah peri yang dibesarkan dan dididik di rumah Nyonya Lemon. “Aku jamin pikiranku sedang kacau,” katanya langsung; “Aku lewat di Middlemarch. Aku tidak takut berbicara dengan tetangga lama kita. Tapi aku benar-benar takut padamu.” “Seorang wanita yang berprestasi hampir selalu tahu lebih banyak daripada kita para pria, meskipun pengetahuannya berbeda jenis. Saya yakin Anda bisa mengajari saya seribu hal—seperti seekor burung yang indah bisa mengajari seekor beruang jika ada bahasa yang sama di antara mereka. Untungnya, ada bahasa yang sama antara wanita dan pria, sehingga beruang pun bisa diajari.” “Ah, Fred mulai memetik gitar! Aku harus pergi dan menghentikannya agar tidak mengganggu saraf kalian semua,” kata Rosamond, sambil bergerak ke sisi lain ruangan, di mana Fred, atas permintaan ayahnya agar Rosamond dapat memainkan musik di piano, sedang memainkan lagu “Cherry Ripe!” dengan satu tangan. Orang-orang yang cakap dan telah lulus ujian terkadang melakukan hal-hal seperti ini, tidak terkecuali Fred yang dipetik. “Fred, tunda dulu latihanmu sampai besok; nanti Tuan Lydgate sakit,” kata Rosamond. “Dia punya telinga yang peka.” Fred tertawa, dan melanjutkan lagunya hingga selesai. Rosamond menoleh ke arah Lydgate, tersenyum lembut, dan berkata, “Kau mengerti, beruang tidak akan selalu diajari.” “Nah, Rosy!” kata Fred, melompat dari bangku dan memutarnya ke atas untuknya, dengan penuh harapan akan kenikmatan. “Mari kita mainkan beberapa lagu yang meriah dulu.” Rosamond bermain dengan sangat baik. Gurunya di sekolah Nyonya Lemon (dekat kota kabupaten dengan sejarah yang mengesankan yang memiliki peninggalan di gereja dan kastil) adalah salah satu musisi hebat yang dapat ditemukan di provinsi kita, yang layak dibandingkan dengan banyak Kapellmeister terkenal di negara yang menawarkan kondisi lebih melimpah untuk ketenaran musik. Rosamond, dengan naluri seorang pemain, telah menguasai gaya bermainnya, dan menampilkan interpretasi musik yang mulia dengan ketepatan seperti gema. Itu hampir mengejutkan, didengar untuk pertama kalinya. Jiwa tersembunyi tampaknya mengalir dari jari-jari Rosamond; dan memang demikian, karena jiwa hidup dalam gema abadi, dan untuk semua ekspresi yang indah ada aktivitas asal di suatu tempat, meskipun itu hanya aktivitas seorang penafsir. Lydgate terpesona, dan mulai percaya padanya sebagai sesuatu yang luar biasa. Lagipula, pikirnya, orang tidak perlu terkejut menemukan perpaduan alam yang langka dalam keadaan yang tampaknya tidak menguntungkan: di mana pun itu terjadi, itu selalu bergantung pada kondisi yang tidak jelas. Dia duduk memandanginya, dan tidak berdiri untuk memberikan pujian apa pun, menyerahkan hal itu kepada orang lain, karena kekagumannya kini semakin dalam. Nyanyiannya kurang luar biasa, tetapi juga terlatih dengan baik, dan merdu seperti dentingan lonceng yang selaras sempurna. Memang benar dia menyanyikan "Meet me by moonlight," dan "I've been roaming"; karena manusia harus mengikuti tren zamannya, dan hanya orang-orang zaman dahulu yang selalu bisa klasik. Tetapi Rosamond juga bisa menyanyikan "Black-eyed Susan" dengan baik, atau canzonet karya Haydn, atau "Voi, che sapete," atau "Batti, batti"—dia hanya ingin tahu apa yang disukai penontonnya. Ayahnya memandang sekeliling ke arah para tamu, merasa senang dengan kekaguman mereka. Ibunya duduk, seperti Niobe sebelum menghadapi masalahnya, dengan putri bungsunya di pangkuannya, dengan lembut memukul-mukul tangan anak itu mengikuti irama musik. Dan Fred, meskipun umumnya skeptis terhadap Rosy, mendengarkan musiknya dengan penuh kesetiaan, berharap dia bisa melakukan hal yang sama dengan serulingnya. Itu adalah pesta keluarga paling menyenangkan yang pernah dilihat Lydgate sejak dia datang ke Middlemarch. Keluarga Vincy memiliki kesiapan untuk menikmati, penolakan terhadap semua kecemasan, dan keyakinan bahwa hidup adalah hal yang menyenangkan, yang membuat rumah mereka luar biasa di sebagian besar kota kabupaten pada waktu itu, ketika Evangelisme telah menimbulkan kecurigaan tertentu sebagai wabah penyakit terhadap beberapa hiburan yang masih ada di provinsi-provinsi. Di rumah keluarga Vincy selalu ada permainan whist, dan meja kartu sudah siap, membuat beberapa tamu diam-diam tidak sabar menunggu musik. Sebelum acara berakhir, Tuan Farebrother masuk—seorang pria tampan, berbadan tegap namun bertubuh kecil, berusia sekitar empat puluh tahun, dengan pakaian hitam yang sudah sangat usang: satu-satunya daya tariknya adalah mata abu-abunya yang tajam. Ia datang bagaikan perubahan suasana yang menyenangkan, menghentikan Louisa kecil dengan obrolan kebapakan saat ia dituntun keluar ruangan oleh Nona Morgan, menyapa semua orang dengan kata-kata khusus, dan seolah-olah meringkas lebih banyak pembicaraan dalam sepuluh menit daripada yang terjadi sepanjang malam. Ia menuntut pemenuhan janji dari Lydgate untuk datang menemuinya. “Aku tidak bisa membiarkanmu pergi, kau tahu, karena aku punya beberapa kumbang untuk diperlihatkan kepadamu. Kami para kolektor merasa tertarik pada setiap orang baru sampai ia melihat semua yang kami miliki untuk diperlihatkan kepadanya.” Namun tak lama kemudian ia beralih ke meja permainan kartu whist, menggosok-gosok tangannya dan berkata, “Ayolah, kita serius! Tuan Lydgate? Tidak bermain? Ah! Anda terlalu muda dan ceroboh untuk hal semacam ini.” Lydgate berkata dalam hati bahwa pendeta yang kemampuannya begitu menyakitkan bagi Tuan Bulstrode, tampaknya telah menemukan tempat yang menyenangkan di rumah tangga yang jelas-jelas tidak terpelajar ini. Dia bisa sedikit memahaminya: suasana hati yang baik, paras yang menarik baik yang tua maupun yang muda, dan fasilitas untuk menghabiskan waktu tanpa perlu melakukan pekerjaan intelektual, mungkin membuat rumah itu menarik bagi orang-orang yang tidak memiliki kegunaan khusus untuk waktu luang mereka. Semuanya tampak berseri-seri dan gembira kecuali Nona Morgan, yang berkulit cokelat, kusam, dan pasrah, dan sama sekali, seperti yang sering dikatakan Nyonya Vincy, persis tipe orang yang cocok untuk menjadi pengasuh. Lydgate sendiri tidak bermaksud untuk sering berkunjung seperti itu. Itu hanya membuang-buang waktu di malam hari; dan sekarang, setelah sedikit berbicara dengan Rosamond, ia bermaksud untuk pamit dan pergi. “Kau pasti tidak akan menyukai kami di Middlemarch,” katanya, setelah para pemain whist duduk. “Kami sangat bodoh, dan kau sudah terbiasa dengan sesuatu yang sangat berbeda.” “Kurasa semua kota kecil di pedesaan hampir sama,” kata Lydgate. “Tapi aku perhatikan bahwa orang selalu percaya kota sendiri lebih bodoh daripada kota lain. Aku sudah memutuskan untuk menerima Middlemarch apa adanya, dan akan sangat berterima kasih jika kota itu menerimaku dengan cara yang sama. Aku memang menemukan beberapa pesona di dalamnya yang jauh lebih besar dari yang kuharapkan.” “Maksudmu perjalanan menuju Tipton dan Lowick; semua orang senang dengan perjalanan itu,” kata Rosamond dengan sederhana. “Tidak, maksudku sesuatu yang jauh lebih dekat denganku.” Rosamond bangkit dan meraih jaringnya, lalu berkata, “Apakah kau peduli dengan dansa? Aku tidak yakin apakah pria cerdas pernah berdansa.” “Aku akan berdansa denganmu jika kau mengizinkanku.” “Oh!” kata Rosamond, sambil tertawa kecil meremehkan. “Aku hanya ingin mengatakan bahwa terkadang kami mengadakan acara dansa, dan aku ingin tahu apakah kau akan merasa tersinggung jika diminta untuk ikut.” “Tidak dengan syarat yang saya sebutkan tadi.” Setelah obrolan itu, Lydgate mengira dia akan pergi, tetapi saat menuju meja permainan kartu whist, dia tertarik menonton permainan Tuan Farebrother, yang sangat mahir, dan juga wajahnya, yang merupakan perpaduan mencolok antara kelicikan dan kelembutan. Pukul sepuluh makan malam disajikan (demikianlah kebiasaan Middlemarch) dan ada acara minum punch; tetapi Tuan Farebrother hanya minum segelas air. Dia sedang menang, tetapi tampaknya tidak ada alasan mengapa permainan kartu harus berakhir, dan Lydgate akhirnya pamit. Namun karena belum pukul sebelas, ia memilih untuk berjalan di udara yang sejuk menuju menara Gereja St. Botolph, gereja milik Tuan Farebrother, yang tampak gelap, persegi, dan besar di bawah cahaya bintang. Itu adalah gereja tertua di Middlemarch; namun, jabatan pendetanya hanya berupa jabatan vikaris yang nilainya kurang dari empat ratus poundsterling per tahun. Lydgate telah mendengar hal itu, dan sekarang ia bertanya-tanya apakah Tuan Farebrother peduli dengan uang yang ia menangkan dalam permainan kartu; berpikir, “Dia tampak seperti orang yang sangat menyenangkan, tetapi Bulstrode mungkin memiliki alasan yang baik.” Banyak hal akan lebih mudah bagi Lydgate jika ternyata Tuan Bulstrode pada umumnya dapat dibenarkan. “Apa urusan doktrin agamanya dengan saya, jika ia membawa beberapa gagasan baik bersamanya? Kita harus menggunakan otak yang ada.” Sebenarnya, inilah renungan pertama Lydgate saat ia berjalan menjauh dari rumah Tuan Vincy, dan karena alasan ini saya khawatir banyak wanita akan menganggapnya hampir tidak layak mendapatkan perhatian mereka. Ia memikirkan Rosamond dan musiknya hanya di urutan kedua; dan meskipun, ketika tiba gilirannya, ia merenungkan bayangan Rosamond selama sisa perjalanannya, ia tidak merasa gelisah, dan tidak merasakan adanya arus baru yang masuk ke dalam hidupnya. Ia belum bisa menikah; ia tidak ingin menikah selama beberapa tahun; dan karena itu ia belum siap untuk memikirkan kemungkinan jatuh cinta pada seorang gadis yang kebetulan ia kagumi. Ia memang sangat mengagumi Rosamond; tetapi kegilaan yang pernah melandanya karena Laure, menurutnya, tidak mungkin terulang kembali pada wanita lain. Tentu saja, jika jatuh cinta memang menjadi pertanyaan, itu akan sangat aman dengan makhluk seperti Nona Vincy ini, yang memiliki kecerdasan yang diinginkan seseorang pada seorang wanita—halus, anggun, penurut, mampu menyempurnakan semua keindahan hidup, dan terwujud dalam tubuh yang mengekspresikan hal ini dengan kekuatan demonstrasi yang meniadakan kebutuhan akan bukti lain. Lydgate yakin bahwa jika ia menikah, istrinya akan memiliki pancaran feminin itu, kewanitaan khas yang harus digolongkan dengan bunga dan musik, jenis kecantikan yang pada hakikatnya berbudi luhur, dibentuk hanya untuk kegembiraan yang murni dan halus. Namun karena ia tidak bermaksud menikah dalam lima tahun ke depan—urusan yang lebih mendesak baginya adalah mempelajari buku baru Louis tentang Demam, yang sangat menarik baginya karena ia mengenal Louis di Paris dan telah mengikuti banyak demonstrasi anatomi untuk memastikan perbedaan spesifik antara tifus dan demam tifoid. Ia pulang dan membaca hingga larut malam, membawa visi yang jauh lebih mendalam tentang detail dan hubungan ke dalam studi patologis ini daripada yang pernah ia anggap perlu untuk diterapkan pada kompleksitas cinta dan pernikahan, yang merupakan subjek yang menurutnya telah cukup ia pahami dari literatur dan kearifan tradisional yang diturunkan dalam percakapan ramah antar pria. Sedangkan Demam memiliki kondisi yang tidak jelas, dan memberinya pekerjaan imajinasi yang menyenangkan yang bukan sekadar kesewenang-wenangan, tetapi latihan kekuatan yang disiplin—menggabungkan dan membangun dengan pandangan yang paling jernih terhadap probabilitas dan kepatuhan penuh terhadap pengetahuan; dan kemudian, dalam aliansi yang lebih energik dengan Alam yang tidak memihak, berdiri sendiri untuk menciptakan tes untuk menguji karyanya sendiri. Banyak orang dipuji karena imajinasi mereka yang hidup berkat kelimpahan gambar yang biasa-biasa saja atau narasi murahan:—laporan tentang percakapan yang sangat buruk yang terjadi di bola-bola angkasa yang jauh; atau potret Lucifer yang turun untuk menjalankan tugas-tugas buruknya sebagai pria besar dan jelek dengan sayap kelelawar dan semburan fosforesensi; atau penggambaran berlebihan tentang kesenangan yang tampaknya mencerminkan kehidupan dalam mimpi yang sakit. Tetapi jenis inspirasi ini dianggap Lydgate agak vulgar dan murahan dibandingkan dengan imajinasi yang mengungkapkan tindakan halus yang tidak dapat diakses oleh lensa apa pun, tetapi dilacak dalam kegelapan luar itu melalui jalur panjang urutan yang diperlukan oleh cahaya batin yang merupakan penyempurnaan terakhir dari Energi, yang mampu memandikan bahkan atom-atom eterik dalam ruangnya yang diterangi secara ideal. Ia sendiri telah membuang semua penemuan murahan di mana ketidaktahuan merasa mampu dan nyaman: ia terpikat oleh penemuan yang sulit yang merupakan mata penelitian itu sendiri, secara sementara membingkai objeknya dan memperbaikinya menjadi hubungan yang semakin tepat; Ia ingin menembus kekaburan proses-proses kecil yang mempersiapkan penderitaan dan kegembiraan manusia, jalan-jalan tak terlihat yang merupakan tempat persembunyian pertama dari kesengsaraan, kegilaan, dan kejahatan, keseimbangan dan transisi halus yang menentukan pertumbuhan kesadaran yang bahagia atau tidak bahagia. Saat ia melempar bukunya, meregangkan kakinya ke arah bara api di perapian, dan menggenggam tangannya di belakang kepala, dalam perasaan gembira yang menyenangkan setelah mengamati suatu objek tertentu dan beralih ke pemahaman yang mendalam tentang hubungannya dengan seluruh keberadaan kita—seolah-olah, setelah berenang dengan giat, pikiran itu kembali ke posisi semula dan mengapung dengan ketenangan kekuatan yang tak habis-habisnya—Lydgate merasakan kegembiraan yang luar biasa dalam studinya, dan sedikit rasa iba terhadap orang-orang yang kurang beruntung yang bukan dari profesinya. “Seandainya aku tidak mengambil jalan itu saat masih muda,” pikirnya, “aku mungkin akan terjebak dalam pekerjaan bodoh seperti menggembala kuda penarik beban, dan selalu hidup dengan penutup mata. Aku tidak akan pernah bahagia dalam profesi apa pun yang tidak menuntut kemampuan intelektual tertinggi, namun tetap menjaga hubungan baik dan hangat dengan tetangga. Tidak ada yang seperti profesi kedokteran dalam hal itu: seseorang dapat menjalani kehidupan ilmiah eksklusif yang menjangkau jauh dan juga berteman dengan orang-orang tua di paroki. Agak lebih sulit bagi seorang pendeta: Farebrother tampaknya merupakan anomali.” Pikiran terakhir ini membangkitkan kembali kenangan tentang keluarga Vincy dan semua gambar malam itu. Kenangan itu melayang di benaknya dengan cukup menyenangkan, dan saat ia mengambil lilin di tempat tidurnya, bibirnya melengkung membentuk senyum yang biasa menyertai kenangan indah. Ia adalah seorang yang bersemangat, tetapi saat ini semangatnya terserap oleh kecintaan pada pekerjaannya dan ambisi untuk menjadikan hidupnya diakui sebagai faktor dalam kehidupan umat manusia yang lebih baik—seperti para pahlawan sains lainnya yang hanya memiliki praktik di pedesaan yang tidak terkenal untuk memulai. Kasihan Lydgate! Atau lebih tepatnya, kasihan Rosamond! Masing-masing hidup di dunia yang sama sekali tidak diketahui oleh yang lain. Lydgate tidak menyadari bahwa ia telah menjadi objek renungan Rosamond, yang tidak memiliki alasan untuk memikirkan pernikahannya dari jauh, atau studi patologis apa pun untuk mengalihkan pikirannya dari kebiasaan merenung itu, pengulangan batin akan pandangan, kata-kata, dan frasa, yang merupakan bagian besar dalam kehidupan sebagian besar gadis. Ia tidak bermaksud menatapnya atau berbicara kepadanya dengan lebih dari sekadar kekaguman dan pujian yang tak terhindarkan yang harus diberikan seorang pria kepada gadis cantik; bahkan, baginya, kenikmatannya terhadap musiknya hampir tetap terpendam, karena ia takut bersikap kasar dengan mengatakan betapa terkejutnya ia atas bakatnya tersebut. Tetapi Rosamond telah mencatat setiap pandangan dan kata-kata, dan menganggapnya sebagai awal dari sebuah kisah cinta yang telah direncanakan—kisah-kisah yang nilainya bertambah dari perkembangan dan klimaks yang telah diperkirakan. Dalam kisah romantis Rosamond, tidak perlu membayangkan banyak hal tentang kehidupan batin sang pahlawan, atau urusan seriusnya di dunia: tentu saja, ia memiliki profesi dan cerdas, serta cukup tampan; tetapi fakta menarik tentang Lydgate adalah kelahirannya yang baik, yang membedakannya dari semua pengagum Middlemarch, dan menghadirkan pernikahan sebagai prospek untuk naik pangkat dan sedikit lebih dekat dengan kondisi surgawi di bumi di mana ia tidak akan berurusan dengan orang-orang biasa, dan mungkin akhirnya bergaul dengan kerabat yang setara dengan orang-orang daerah yang memandang rendah keluarga Middlemarch. Kecerdasan Rosamond terletak pada kemampuannya untuk secara halus mengenali aroma status yang paling samar sekalipun, dan suatu kali ketika ia melihat Nona Brookes menemani paman mereka di pengadilan daerah, dan duduk di antara kaum bangsawan, ia merasa iri kepada mereka, meskipun pakaian mereka sederhana. Jika Anda menganggap tidak masuk akal bahwa membayangkan Lydgate sebagai seorang pria berkeluarga dapat menimbulkan sensasi kepuasan yang ada hubungannya dengan perasaan bahwa dia jatuh cinta padanya, saya akan meminta Anda untuk menggunakan kemampuan perbandingan Anda sedikit lebih efektif, dan mempertimbangkan apakah kain merah dan epaulet tidak pernah memiliki pengaruh semacam itu. Gairah kita tidak hidup terpisah di kamar-kamar terkunci, tetapi, mengenakan lemari kecil berisi gagasan-gagasan, membawa bekal mereka ke meja makan bersama dan makan bersama, mengambil makanan dari persediaan bersama sesuai selera mereka. Rosamond, sebenarnya, sama sekali tidak terfokus pada Tertius Lydgate sebagai pribadi, tetapi pada hubungannya dengan dirinya; dan itu bisa dimaklumi bagi seorang gadis yang terbiasa mendengar bahwa semua pria muda mungkin, bisa, akan, atau memang jatuh cinta padanya, untuk langsung percaya bahwa Lydgate tidak terkecuali. Penampilan dan kata-katanya lebih berarti baginya daripada pria lain, karena dia lebih peduli pada hal-hal itu: dia memikirkannya dengan saksama, dan dengan tekun memperhatikan kesempurnaan penampilan, perilaku, perasaan, dan semua keanggunan lainnya, yang akan menemukan pengagum yang lebih tepat dalam diri Lydgate daripada yang selama ini dia sadari. Meskipun Rosamond tidak pernah melakukan sesuatu yang tidak menyenangkan baginya, ia adalah seorang yang rajin; dan sekarang lebih dari sebelumnya ia aktif dalam membuat sketsa pemandangan, gerobak pasar, dan potret teman-temannya, berlatih musik, dan dari pagi hingga malam menjadi standar dirinya sendiri sebagai seorang wanita sempurna, selalu memiliki audiens dalam kesadarannya sendiri, dengan kadang-kadang tambahan yang tidak diinginkan dari audiens eksternal yang lebih beragam dalam diri banyak pengunjung rumahnya. Ia juga menemukan waktu untuk membaca novel-novel terbaik, dan bahkan yang terbaik kedua, dan ia hafal banyak puisi. Puisi favoritnya adalah “Lalla Rookh.” “Gadis terbaik di dunia! Pria yang mendapatkannya pasti akan bahagia!” begitulah sentimen para pria tua yang mengunjungi keluarga Vincy; dan para pemuda yang ditolak berpikir untuk mencoba lagi, seperti yang lazim di kota-kota kecil di mana cakrawala tidak dipenuhi oleh saingan yang datang. Tetapi Nyonya Plymdale berpikir bahwa Rosamond telah dididik hingga ke tingkat yang menggelikan, karena apa gunanya keterampilan yang akan ditinggalkan begitu dia menikah? Sementara bibinya, Bulstrode, yang memiliki kesetiaan seperti saudara perempuan terhadap keluarga saudara laki-lakinya, memiliki dua harapan tulus untuk Rosamond—agar dia menunjukkan sikap yang lebih serius, dan agar dia bertemu dengan suami yang kekayaannya sesuai dengan kebiasaannya.</p>
 

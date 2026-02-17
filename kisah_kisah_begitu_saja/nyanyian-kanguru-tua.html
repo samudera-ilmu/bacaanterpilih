@@ -5,39 +5,176 @@
 <title>NYANYIAN KANGURU TUA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="NYANYIAN KANGURU TUA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>NYANYIAN KANGURU TUA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kanguru tidak selalu seperti yang kita lihat sekarang, tetapi merupakan Hewan yang Berbeda dengan empat kaki pendek. Ia berwarna abu-abu dan berbulu lebat, dan kesombongannya luar biasa: ia menari di atas sebuah tebing di tengah Australia, dan ia pergi kepada Dewa Kecil Nqa. Dia pergi ke Nqa pukul enam sebelum sarapan, sambil berkata, 'Buatlah aku berbeda dari semua hewan lain pada pukul lima siang ini.' Nqa melompat dari tempat duduknya di dataran pasir dan berteriak, 'Pergi sana!' Ia berwarna abu-abu dan berbulu lebat, dan kesombongannya berlebihan: ia menari di atas tebing batu di tengah Australia, dan ia pergi ke Dewa Tengah Nquing. Ia pergi ke Nquing pukul delapan setelah sarapan, sambil berkata, 'Jadikan aku berbeda dari semua hewan lain; jadikan aku juga sangat populer pada pukul lima siang ini.' Nquing melompat keluar dari liangnya di semak spinifex dan berteriak, 'Pergi sana!' Ia berwarna abu-abu dan berbulu lebat, dan kesombongannya sangat berlebihan: ia menari di gundukan pasir di tengah Australia, dan ia pergi menghadap Dewa Besar Nqong. Dia pergi menemui Nqong pukul sepuluh sebelum waktu makan malam, sambil berkata, 'Buat aku berbeda dari semua hewan lain; buat aku populer dan sangat diminati pada pukul lima siang ini.' Nqong melompat dari bak mandinya di tambak garam dan berteriak, 'Ya, aku mau!' Nqong memanggil Dingo—Dingo Anjing Kuning—yang selalu lapar, berdebu di bawah terik matahari, dan memperlihatkan Kanguru kepadanya. Nqong berkata, 'Dingo! Bangun, Dingo! Apakah kau melihat pria itu menari di atas lubang abu? Dia ingin menjadi populer dan benar-benar ingin dikejar. Dingo, buat dia seperti itu!' Dingo—Dingo Anjing Kuning—melompat dan berkata, 'Apa, kucing-kelinci itu?' Dingo—Dingo Anjing Kuning—selalu lapar, menyeringai seperti ember batu bara,—berlari mengejar Kanguru. Kanguru yang gagah itu pun melesat dengan keempat kaki kecilnya seperti kelinci. Wahai Kekasihku, inilah akhir dari bagian pertama kisah ini! Dia berlari melintasi gurun; dia berlari melintasi pegunungan; dia berlari melintasi ladang garam; dia berlari melintasi rawa-rawa; dia berlari melintasi pohon-pohon eucalyptus biru; dia berlari melintasi rumput spinifex; dia berlari hingga kedua kaki depannya terasa sakit. Dia harus melakukannya! Dingo—Dingo Anjing Kuning—masih berlari, selalu lapar, menyeringai seperti perangkap tikus, tak pernah mendekat, tak pernah menjauh,—berlari mengejar Kanguru. Dia harus melakukannya! Kanguru masih berlari—Kanguru Tua. Ia berlari melewati pohon ti; ia berlari melewati semak mulga; ia berlari melewati rerumputan panjang; ia berlari melewati rerumputan pendek; ia berlari melewati Garis Balik Capricorn dan Garis Balik Cancer; ia berlari hingga kaki belakangnya terasa sakit. Dia harus melakukannya! Dingo—Dingo Anjing Kuning—terus berlari, semakin lapar dan semakin lapar, menyeringai seperti kerah kuda, tak pernah mendekat, tak pernah menjauh; dan mereka sampai di Sungai Wollgong. Saat itu, tidak ada jembatan, dan tidak ada kapal feri, dan Kanguru tidak tahu bagaimana cara menyeberang; jadi dia berdiri di atas kakinya dan melompat. Dia harus melakukannya! Dia melompat-lompat melewati Flinders; dia melompat-lompat melewati Cinders; dia melompat-lompat melewati gurun di tengah Australia. Dia melompat seperti kanguru. Pertama-tama ia melompat satu yard; kemudian ia melompat tiga yard; lalu ia melompat lima yard; kakinya semakin kuat; kakinya semakin panjang. Ia tidak punya waktu untuk istirahat atau menyegarkan diri, dan ia sangat menginginkannya. Dingo—Dingo Anjing Kuning—masih berlari dengan sangat bingung, sangat lapar, dan bertanya-tanya apa yang membuat Kakek Kanguru melompat-lompat. Karena ia melompat seperti jangkrik; seperti kacang polong dalam panci; atau bola karet baru di lantai kamar anak-anak. Dia harus melakukannya! Ia menekuk kaki depannya; ia melompat dengan kaki belakangnya; ia menjulurkan ekornya sebagai penyeimbang di belakangnya; dan ia melompat-lompat melintasi Darling Downs. Dia harus melakukannya! Dingo—Dingo Si Anjing Lelah—terus berlari, semakin lapar dan semakin lapar, sangat bingung, dan bertanya-tanya kapan Pak Tua Kanguru akan berhenti. Kemudian Nqong datang dari tempat mandinya di tambak garam, dan berkata, 'Sekarang pukul lima.' Dingo—Anjing Dingo yang malang—duduk di sana, selalu lapar, tampak kusam di bawah sinar matahari; menjulurkan lidahnya dan melolong. Kanguru—Kanguru Tua—duduk sambil menjulurkan ekornya seperti bangku pemerahan susu ke belakang, dan berkata, "Syukurlah sudah selesai!" Lalu Nqong, yang selalu bersikap sopan, berkata, 'Mengapa kau tidak berterima kasih kepada Dingo Anjing Kuning? Mengapa kau tidak berterima kasih padanya atas semua yang telah dia lakukan untukmu?' Lalu kata Kanguru—Kanguru Tua yang Lelah—Dia telah mengusirku dari rumah-rumah masa kecilku; dia telah mengusirku dari waktu makanku yang biasa; dia telah mengubah bentukku sehingga aku tidak akan pernah mendapatkannya kembali; dan dia telah memperlakukan kakiku seperti Si Cakar.' Lalu Nqong berkata, 'Mungkin aku salah, tetapi bukankah kau memintaku untuk membuatmu berbeda dari semua hewan lain, serta membuatmu sangat dicari? Dan sekarang sudah pukul lima.' 'Ya,' kata Kanguru. 'Seandainya aku tidak melakukannya. Kupikir kau akan melakukannya dengan mantra dan jampi-jampi, tapi ini cuma lelucon.' "Candaan!" kata Nqong dari tempat mandinya di antara pepohonan eucalyptus biru. "Ulangi lagi kalau aku panggil Dingo dan lari terbirit-birit." 'Tidak,' kata Kanguru. 'Saya harus meminta maaf. Kaki tetaplah kaki, dan Anda tidak perlu mengubahnya sejauh yang saya pedulikan. Saya hanya bermaksud menjelaskan kepada Yang Mulia bahwa saya belum makan apa pun sejak pagi, dan saya benar-benar sangat lapar.' 'Ya,' kata Dingo—Dingo Anjing Kuning,—'aku juga dalam situasi yang sama. Aku telah membuatnya berbeda dari semua hewan lain; tapi apa yang bisa kumakan untuk minum tehku?' Lalu Nqong berkata dari tempat mandinya di tambak garam, 'Datang dan tanyakan padaku tentang hal itu besok, karena aku akan mandi.' Jadi mereka ditinggalkan di tengah Australia, Si Kanguru Tua dan Dingo Anjing Kuning, dan masing-masing berkata, 'Itu salahmu.'</p>
 <p>INI adalah lagu yang menggugah selera tentang perlombaan yang dijalankan oleh seorang Boomer, berlari dalam satu kali ledakan—satu-satunya peristiwa sejenis— dimulai oleh Dewa Nqong dari Warrigaborrigarooma, Kanguru Tua di depan: Dingo Anjing Kuning di belakang.</p>

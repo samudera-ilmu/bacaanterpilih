@@ -5,39 +5,176 @@
 <title>BAB VII. YANG SEKALI LAGI MENUNJUKKAN KETIDAKMAMPUAN PASPOR SEBAGAI ALAT BANTU DETEKTIF</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB VII. YANG SEKALI LAGI MENUNJUKKAN KETIDAKMAMPUAN PASPOR SEBAGAI ALAT BANTU DETEKTIF - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB VII. YANG SEKALI LAGI MENUNJUKKAN KETIDAKMAMPUAN PASPOR SEBAGAI ALAT BANTU DETEKTIF</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Detektif itu menyusuri dermaga, dan dengan cepat menuju ke kantor konsul, di mana ia langsung diizinkan menghadap pejabat tersebut. “Konsul,” katanya tanpa basa-basi, “Saya punya alasan kuat untuk percaya bahwa orang saya adalah penumpang kapal 'Mongolia'.” Dan dia menceritakan apa yang baru saja terjadi mengenai paspor tersebut. “Baiklah, Tuan Fix,” jawab konsul, “saya tidak akan menyesal melihat wajah bajingan itu; tetapi mungkin dia tidak akan datang ke sini—yaitu, jika dia adalah orang yang Anda duga. Seorang perampok tidak suka meninggalkan jejak pelariannya; dan, selain itu, dia tidak wajib meminta paspornya ditandatangani oleh orang lain.” “Jika dia sepintar yang kukira, konsul, dia akan datang.” “Untuk mengurus visa paspornya ? ” “Ya. Paspor hanya berguna untuk mengganggu orang jujur, dan membantu pelarian penjahat. Saya jamin itu akan menjadi hal yang cukup menarik baginya; tetapi saya harap Anda tidak akan memberikan visa pada paspor itu.” “Kenapa tidak? Jika paspor itu asli, saya tidak berhak menolak.” “Namun demikian, saya harus menahan orang ini di sini sampai saya bisa mendapatkan surat perintah penangkapan dari London.” “Ah, itu urusanmu. Tapi aku tidak bisa—” Konsul itu tidak menyelesaikan kalimatnya, karena saat ia berbicara terdengar ketukan di pintu, dan dua orang asing masuk, salah satunya adalah pelayan yang ditemui Fix di dermaga. Yang lainnya, yang merupakan majikannya, mengulurkan paspornya dengan permintaan agar konsul berbaik hati mengurus visa untuk paspor tersebut. Konsul mengambil dokumen itu dan membacanya dengan saksama, sementara Fix mengamati, atau lebih tepatnya mengamati dengan saksama, orang asing itu dari sudut ruangan. “Anda Tuan Phileas Fogg?” tanya konsul setelah membaca paspor. "Saya." “Dan orang ini adalah hamba-Mu?” “Dia adalah seorang warga negara Prancis, bernama Passepartout.” “Anda dari London?” "Ya." “Dan kau akan pergi—” “Ke Bombay.” “Bagus sekali, Pak. Anda tahu bahwa visa tidak diperlukan, dan paspor tidak dibutuhkan?” “Saya tahu itu, Tuan,” jawab Phileas Fogg; “tetapi saya ingin membuktikan, dengan visa Anda , bahwa saya datang melalui Terusan Suez.” “Baik, Pak.” Konsul itu kemudian menandatangani dan membubuhkan tanggal pada paspor, setelah itu ia menambahkan stempel resminya. Tuan Fogg membayar biaya yang lazim, membungkuk dengan dingin, dan keluar, diikuti oleh pelayannya. “Nah?” tanya detektif itu. “Yah, dia terlihat dan bertingkah seperti orang yang benar-benar jujur,” jawab konsul itu. “Mungkin; tetapi bukan itu pertanyaannya. Menurut Anda, konsul, apakah pria yang tenang ini mirip, dari segi wajah ke wajah, dengan perampok yang deskripsinya telah saya terima?” “Saya akui itu; tapi, Anda tahu, semua deskripsi—” “Akan saya pastikan,” sela Fix. “Pelayan itu menurut saya kurang misterius daripada tuannya; lagipula, dia orang Prancis, dan tidak bisa berhenti berbicara. Permisi sebentar, konsul.” Fix memulai pencariannya terhadap Passepartout. Sementara itu, setelah meninggalkan konsulat, Tuan Fogg pergi ke dermaga, memberi beberapa perintah kepada Passepartout, berangkat ke kapal “Mongolia” dengan perahu, dan turun ke kabinnya. Ia mengambil buku catatannya, yang berisi catatan-catatan berikut: “Berangkat dari London, Rabu, 2 Oktober, pukul 20.45 “Tiba di Paris, Kamis, 3 Oktober, pukul 07.20 pagi” “Berangkat dari Paris, Kamis, pukul 08.40 pagi” “Tiba di Turin melalui Mont Cenis, Jumat, 4 Oktober, pukul 6.35 pagi “Berangkat dari Turin, Jumat, pukul 7.20 pagi” “Tiba di Brindisi, Sabtu, 5 Oktober, pukul 4 sore” “Berlayar dengan kapal 'Mongolia,' hari Sabtu, pukul 5 sore “Tiba di Suez, Rabu, 9 Oktober, pukul 11 pagi” “Total jam yang dihabiskan, 158½; atau, dalam hari, enam hari setengah.” Tanggal-tanggal ini dicatat dalam sebuah rencana perjalanan yang dibagi menjadi beberapa kolom, menunjukkan bulan, tanggal dalam bulan tersebut, dan tanggal kedatangan yang telah ditentukan dan yang sebenarnya di setiap titik utama—Paris, Brindisi, Suez, Bombay, Calcutta, Singapura, Hong Kong, Yokohama, San Francisco, New York, dan London—dari tanggal 2 Oktober hingga 21 Desember; dan menyediakan ruang untuk mencatat keuntungan yang diperoleh atau kerugian yang diderita saat tiba di setiap lokasi. Catatan sistematis ini berisi semua hal yang dibutuhkan, dan Tuan Fogg selalu tahu apakah ia terlambat atau mendahului waktunya. Pada hari Jumat, 9 Oktober, ia mencatat kedatangannya di Suez, dan mengamati bahwa ia belum memperoleh keuntungan maupun kerugian. Ia duduk dengan tenang untuk sarapan di kabinnya, tanpa pernah berpikir untuk menjelajahi kota, karena ia termasuk orang Inggris yang terbiasa melihat negara asing melalui mata para pembantu rumah tangganya.</p>
 

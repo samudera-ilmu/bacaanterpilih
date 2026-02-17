@@ -5,39 +5,176 @@
 <title>REALITA INSPIRASI: PENTINGNYA BAGI UMAT MANUSIA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="REALITA INSPIRASI: PENTINGNYA BAGI UMAT MANUSIA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>REALITA INSPIRASI: PENTINGNYA BAGI UMAT MANUSIA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Hakikat manusia pada saat penciptaannya adalah monad sederhana, tanpa pengetahuan tentang dunia-dunia yang berada di bawah kekuasaan Sang Pencipta, dunia-dunia yang jumlahnya tak terbatas dan hanya Dia yang mengetahuinya, sebagaimana Al-Qur'an berfirman: "Hanya Tuhanmu yang mengetahui jumlah bala tentara-Nya." Manusia mencapai pengetahuan ini dengan bantuan indra-indranya; setiap indra diberikan kepadanya agar ia dapat memahami dunia ciptaan, dan dengan istilah "dunia" kita memahami berbagai spesies makhluk. Indra pertama yang diungkapkan kepada manusia adalah sentuhan, yang dengannya ia merasakan sekelompok kualitas tertentu—panas, dingin, lembap, kering. Indra sentuhan tidak merasakan warna dan bentuk, yang baginya seolah-olah tidak ada. Selanjutnya datang indra penglihatan, yang membuatnya mengenal warna dan bentuk; yaitu, hal yang menempati peringkat tertinggi di dunia sensasi. Indra pendengaran menyusul, dan kemudian indra penciuman dan pengecap. Ketika manusia mampu mengangkat dirinya di atas dunia indera, sekitar usia tujuh tahun, ia menerima kemampuan membedakan; ia kemudian memasuki fase eksistensi baru dan dapat mengalami, berkat kemampuan ini, kesan-kesan yang lebih unggul daripada kesan indera, yang tidak terjadi dalam ranah sensasi. Kemudian ia beralih ke fase lain dan menerima akal, yang dengannya ia membedakan hal-hal yang perlu, mungkin, dan tidak mungkin; singkatnya, semua gagasan yang tidak dapat ia gabungkan pada tahap-tahap sebelumnya dalam hidupnya. Tetapi di luar akal dan pada tingkat yang lebih tinggi, kemampuan penglihatan baru dianugerahkan kepadanya, yang dengannya ia merasakan hal-hal yang tak terlihat, rahasia masa depan, dan konsep-konsep lain yang tidak dapat diakses oleh akal, sebagaimana konsep-konsep akal tidak dapat diakses oleh diskriminasi semata dan apa yang dirasakan oleh diskriminasi oleh indra. Sama seperti manusia yang hanya memiliki diskriminasi menolak dan menyangkal gagasan-gagasan yang diperoleh oleh akal, demikian pula beberapa rasionalis menolak dan menyangkal gagasan inspirasi. Ini adalah bukti ketidaktahuan mereka yang mendalam; karena, alih-alih argumen, mereka hanya menyangkal inspirasi sebagai ranah yang tidak dikenal dan tidak memiliki keberadaan nyata. Dengan cara yang sama, seorang pria buta sejak lahir, yang tidak mengetahui baik melalui pengalaman maupun informasi apa itu warna dan bentuk, tidak mengetahui atau memahaminya ketika seseorang membicarakannya kepadanya untuk pertama kalinya. Tuhan, yang ingin membuat gagasan inspirasi dapat dipahami oleh manusia, telah memberi mereka semacam gambaran sekilas tentangnya saat tidur. Faktanya, manusia saat tidur merasakan hal-hal di dunia yang tak terlihat, baik yang tampak jelas maupun yang tersembunyi di balik tabir alegori yang kemudian akan disingkapkan melalui ramalan. Namun, jika seseorang mengatakan kepada orang yang belum pernah mengalami mimpi-mimpi ini bahwa, dalam keadaan lesu yang menyerupai kematian dan selama hilangnya penglihatan, pendengaran, dan semua indra sepenuhnya, seseorang dapat melihat hal-hal di dunia yang tak terlihat, orang ini akan berseru, dan berusaha membuktikan ketidakmungkinan penglihatan ini dengan argumen seperti berikut: “Fakultas sensitif adalah penyebab persepsi. Nah, jika seseorang dapat merasakan hal-hal tertentu ketika ia memiliki fakultas-fakultas ini sepenuhnya, betapa mustahilnya persepsi hal-hal tersebut ketika fakultas-fakultas ini hilang.” Kepalsuan argumen tersebut ditunjukkan oleh bukti dan pengalaman. Karena sama seperti akal budi merupakan fase eksistensi tertentu di mana konsep-konsep intelektual yang tersembunyi dari indra dipersepsikan, demikian pula inspirasi adalah keadaan khusus di mana mata batin menemukan, yang diungkapkan oleh cahaya surgawi, misteri-misteri di luar jangkauan akal budi. Keraguan yang muncul mengenai inspirasi berkaitan (1) dengan kemungkinannya, (2) dengan eksistensinya yang nyata dan aktual, (3) dengan manifestasinya pada orang tertentu. Membuktikan kemungkinan adanya inspirasi berarti membuktikan bahwa inspirasi termasuk dalam kategori cabang ilmu pengetahuan yang tidak dapat dicapai melalui akal. Hal yang sama berlaku untuk ilmu kedokteran dan astronomi. Siapa pun yang mempelajarinya wajib mengakui bahwa ilmu-ilmu tersebut semata-mata berasal dari wahyu dan rahmat khusus Tuhan. Beberapa fenomena astronomi hanya terjadi sekali dalam seribu tahun; lalu bagaimana kita dapat mengetahuinya melalui pengalaman? Kita dapat mengatakan hal yang sama tentang inspirasi, yang merupakan salah satu cabang pengetahuan intuitif. Lebih lanjut, persepsi tentang hal-hal yang berada di luar jangkauan akal hanyalah salah satu ciri khas inspirasi, yang memiliki banyak ciri khas lainnya. Karakteristik yang telah kita sebutkan hanyalah, seolah-olah, setetes air di lautan, dan kita menyebutkannya karena orang mengalami hal yang serupa dengannya dalam mimpi dan dalam ilmu kedokteran dan astronomi. Cabang-cabang pengetahuan ini termasuk dalam ranah mukjizat kenabian, dan akal tidak dapat mencapainya. Adapun karakteristik inspirasi lainnya, hal itu hanya terungkap kepada para ahli Sufisme dan dalam keadaan ekstase. Sedikit yang kita ketahui tentang hakikat inspirasi kita peroleh dari kemiripan yang kita temukan dalam tidur; tanpa itu kita tidak akan mampu memahaminya, dan akibatnya tidak akan mampu mempercayainya, karena keyakinan muncul dari pemahaman. Proses inisiasi ke dalam Sufisme menunjukkan kemiripan ini dengan inspirasi sejak awal. Di dalamnya terdapat semacam ekstase yang sebanding dengan kondisi orang yang diinisiasi, dan tingkat kepastian dan keyakinan yang tidak dapat dicapai oleh akal. Fakta tunggal ini sudah cukup untuk membuat kita percaya pada inspirasi. Sekarang kita akan membahas keraguan terkait ilham seorang nabi tertentu. Kita tidak akan sampai pada kepastian mengenai hal ini kecuali dengan memastikan, baik melalui bukti visual maupun tradisi yang dapat diandalkan, fakta-fakta yang berkaitan dengan nabi tersebut. Setelah kita memastikan hakikat ilham yang sebenarnya dan melanjutkan studi serius terhadap Al-Qur'an dan tradisi, barulah kita akan mengetahui dengan pasti bahwa Muhammad adalah nabi terbesar. Setelah itu, kita harus memperkuat keyakinan kita dengan memverifikasi kebenaran dakwahnya dan pengaruh baik yang dimilikinya terhadap jiwa. Kita harus memverifikasi dalam pengalaman kebenaran kalimat-kalimat seperti berikut: “Barangsiapa yang menyesuaikan perilakunya dengan ilmunya, maka ia akan menerima lebih banyak ilmu dari Allah”; atau ini, “Allah akan menyerahkan kepada penindas orang yang mendukung ketidakadilan”; atau lagi, “Barangsiapa yang ketika bangun di pagi hari hanya mempunyai satu kekhawatiran (untuk menyenangkan Allah), maka Allah akan melindunginya dari segala kekhawatiran di dunia dan akhirat.” Ketika kita telah memverifikasi perkataan ini dalam pengalaman ribuan kali, kita akan memiliki kepastian yang tidak dapat digoyahkan oleh keraguan. Itulah jalan yang harus kita tempuh untuk menyadari kebenaran ilham. Ini bukan soal mencari tahu apakah tongkat telah berubah menjadi ular, atau apakah bulan telah terbelah menjadi dua. [3] Jika kita memandang mukjizat secara terpisah, tanpa berbagai keadaan yang menyertainya, kita akan cenderung menganggapnya sebagai sihir dan kebohongan, atau menganggapnya sebagai cara untuk menyesatkan manusia, sebagaimana tertulis, “Allah menyesatkan dan memberi petunjuk sesuai kehendak-Nya” ( Al-Qur'an , 35:9); kita akan mendapati diri kita terlibat dalam semua kesulitan yang ditimbulkan oleh pertanyaan tentang mukjizat. Misalnya, jika kita percaya bahwa kefasihan gaya adalah bukti ilham, ada kemungkinan bahwa gaya yang fasih yang disusun dengan tujuan ini dapat menginspirasi kita dengan keyakinan yang salah tentang ilham orang yang menggunakannya. Hal-hal supranatural seharusnya hanya menjadi salah satu unsur yang membentuk kepercayaan kita, tanpa kita terlalu bergantung pada detail ini atau itu. Kita seharusnya lebih menyerupai seseorang yang, setelah mengetahui suatu fakta dari sekelompok orang, tidak dapat menunjukkan orang tertentu sebagai informannya, dan yang, tanpa membedakan di antara mereka, tidak dapat menjelaskan secara tepat bagaimana keyakinannya mengenai fakta tersebut terbentuk. Demikianlah ciri-ciri kepastian ilmiah. Adapun kemampuan yang memungkinkan manusia untuk melihat kebenaran dan, bisa dikatakan, untuk menanganinya, hanya kaum Sufi yang mengetahuinya. Apa yang baru saja saya katakan mengenai hakikat inspirasi yang sebenarnya sudah cukup untuk tujuan yang telah saya tetapkan untuk diri saya sendiri. Saya mungkin akan kembali membahas subjek ini nanti, jika perlu. Sekarang saya akan membahas penyebab kemerosotan iman dan menunjukkan cara untuk membawa kembali mereka yang telah tersesat dan melindungi mereka dari bahaya yang mengancam mereka. Bagi mereka yang ragu karena terpengaruh oleh doktrin Ta'limites , risalah saya yang berjudul Keseimbangan yang Adil memberikan panduan yang cukup; oleh karena itu, tidak perlu kembali membahas subjek ini di sini. Adapun teori-teori sia-sia kaum Ibahat , saya telah mengelompokkannya menjadi tujuh kelas, dan menjelaskannya dalam karya yang berjudul Alkimia Kebahagiaan . Bagi mereka yang imannya telah dirusak oleh filsafat, sedemikian rupa sehingga mereka mengingkari realitas ilham, kami telah membuktikan kebenaran dan keniscayaannya, dengan mencari bukti-bukti kami dalam sifat-sifat tersembunyi obat-obatan dan benda-benda langit. Untuk merekalah kami menulis risalah ini, dan alasan kami mencari bukti dalam ilmu kedokteran dan astronomi adalah karena ilmu-ilmu ini termasuk dalam ranah filsafat. Semua cabang ilmu pengetahuan yang dibanggakan oleh lawan-lawan kami—astronomi, kedokteran, fisika, dan ramalan—memberi kami argumen yang mendukung Nabi. Adapun mereka yang, dengan mengaku beriman kepada Nabi secara lisan, mencampuradukkan agama dengan filsafat, mereka sebenarnya mengingkari ilham, karena menurut pandangan mereka Nabi hanyalah seorang bijak yang telah ditunjuk oleh takdir yang lebih tinggi sebagai penuntun bagi manusia, dan pandangan ini menyangkal hakikat sejati ilham. Beriman kepada Nabi berarti mengakui bahwa ada di atas akal budi suatu alam di mana kebenaran-kebenaran yang melampaui jangkauan akal budi diwahyukan kepada penglihatan batin, sebagaimana hal-hal yang dilihat tidak dapat dipahami oleh indra pendengaran, dan hal-hal yang dipahami oleh indra sentuhan. Jika lawan kita menyangkal keberadaan alam yang lebih tinggi tersebut, kita dapat membuktikan kepadanya, bukan hanya kemungkinannya, tetapi juga kenyataannya. Sebaliknya, jika ia mengakui keberadaannya, ia sekaligus mengakui bahwa di alam tersebut terdapat hal-hal yang tidak dapat dipahami oleh akal budi; bahkan, yang ditolak oleh akal budi sebagai sesuatu yang salah dan tidak masuk akal. Seandainya, misalnya, kenyataan bahwa mimpi yang terjadi saat tidur tidak begitu umum dan terkenal seperti sekarang, para bijak kita pasti akan menolak pernyataan bahwa rahasia dunia gaib dapat diungkapkan saat indra, bisa dikatakan, sedang dinonaktifkan.</p>
 <p>Sekali lagi, jika dikatakan kepada salah satu dari mereka, “Mungkinkah di dunia ini ada sesuatu sekecil sebutir biji, yang jika dibawa ke sebuah kota dapat menghancurkannya dan kemudian menghancurkan dirinya sendiri sehingga tidak ada yang tersisa dari kota atau dari dirinya sendiri?” “Tentu saja,” serunya, “itu tidak mungkin dan menggelikan.” Namun, itulah efek api, yang tentu akan dibantah oleh seseorang yang belum menyaksikannya dengan mata kepala sendiri. Nah, penolakan untuk percaya pada misteri kehidupan setelah kematian adalah hal yang sama. Adapun penyebab keempat penyebaran ketidakpercayaan—kemerosotan iman akibat contoh buruk yang diberikan oleh para cendekiawan—ada tiga cara untuk mencegahnya. (1) Seseorang dapat menjawab demikian: “Orang terpelajar yang Anda tuduh melanggar hukum ilahi tahu bahwa ia melanggar hukum, seperti halnya Anda ketika minum anggur atau memungut riba atau membiarkan diri Anda bergosip, berbohong, dan memfitnah. Anda tahu dosa Anda dan menurutinya, bukan karena ketidaktahuan, tetapi karena Anda dikuasai oleh nafsu. Hal yang sama berlaku untuk orang terpelajar. Betapa banyak orang yang percaya pada dokter yang tidak menjauhi buah dan air dingin ketika dilarang keras oleh dokter! Itu tidak membuktikan bahwa hal-hal itu tidak berbahaya, atau bahwa kepercayaan mereka pada dokter tidak kokoh. Kesalahan serupa yang dilakukan oleh orang terpelajar semata-mata disebabkan oleh kelemahan mereka.”</p>

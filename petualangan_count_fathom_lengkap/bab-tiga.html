@@ -5,39 +5,176 @@
 <title>BAB TIGA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB TIGA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB TIGA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>ia didistribusikan dalam kehidupan militer, dan beruntung mendapatkan seorang pelindung yang dermawan. Sementara ia memohon kepada Surga dengan berbagai permohonan ini, api perang berkobar antara keluarga Ottoman dan Austria, dan Kaisar mengirimkan pasukan ke Hongaria, di bawah naungan Pangeran Eugene yang terkenal. Karena ekspedisi ini, ibu dari pahlawan kita meninggalkan pekerjaan rumah tangga, dan dengan gembira mengikuti pelanggan dan suaminya ke medan perang; setelah terlebih dahulu menyediakan persediaan barang dagangan yang sebelumnya ia perdagangkan. Meskipun harapan akan keuntungan mungkin sedikit memengaruhi tekadnya, salah satu motif utama kunjungannya ke perbatasan Turki adalah keinginan untuk memperkenalkan putranya pada dasar-dasar pendidikannya, yang menurutnya sudah saatnya untuk ditanamkan, karena saat itu putranya berusia enam tahun; oleh karena itu, ia dibawa ke kamp, yang dianggapnya sebagai sekolah kehidupan yang paling sempurna, dan diusulkan sebagai tempat pendidikannya; Dan belum lama ia berada di akademi ini, ia sudah menjadi saksi mata kemenangan terkenal itu, yang diraih oleh jenderal kekaisaran dengan enam puluh ribu orang atas pasukan Turki yang berjumlah seratus lima puluh ribu orang. Ayah mertuanya sedang bertunangan, dan ibunya tidak akan tinggal diam pada kesempatan ini. Ia sangat mahir dalam semua kualifikasi perkemahan, dan menganggapnya sebagai kewajiban untuk memberikan semua yang ada dalam kekuasaannya untuk menyusahkan musuh. Dengan perasaan ini, ia berkeliaran di sekitar pasukan, dan begitu pasukan mulai mengejar, ia mulai melintasi medan perang dengan belati dan tas, untuk mengurus kepentingannya sendiri, mengganggu musuh, dan sekaligus menunjukkan kemanusiaannya. Singkatnya, dengan keberanian yang luar biasa, ia telah membebaskan sekitar lima puluh atau enam puluh orang Muslim yang terluka dari rasa sakit yang mereka derita, dan mendapatkan rampasan yang cukup dari korban yang terbunuh, ketika matanya tertarik oleh pakaian mewah seorang perwira Kekaisaran, yang tergeletak berdarah di dataran, tampak sedang sekarat. Ia tak sanggup menolak bantuan itu kepada seorang teman dan orang Kristen yang telah dengan penuh belas kasih ia berikan kepada begitu banyak musuh dan orang kafir, dan karena itu ia mendekat dengan obat mujarab yang telah ia berikan dengan begitu sukses. Saat ia mendekati orang yang malang itu, telinganya dikejutkan oleh seruan dalam bahasa Inggris, yang diucapkannya dengan sungguh-sungguh, meskipun dengan suara lemah dan lesu, menyerahkan jiwanya kepada Tuhan, dan keluarganya kepada perlindungan Surga. Tujuan Amazon kita terguncang oleh kejadian yang penuh hikmat ini; suara bahasa ibunya, yang terdengar begitu tak terduga, dan diucapkan dengan begitu mengharukan, memiliki efek yang mengejutkan pada imajinasinya; dan kemampuan berpikirnya tidak meninggalkannya dalam keadaan darurat seperti itu. Meskipun ia tidak dapat mengingat wajah perwira malang itu, ia menyimpulkan, dari penampilannya, bahwa ia adalah seseorang yang terhormat dalam dinas militer, dan melihat keuntungan yang lebih besar bagi dirinya sendiri dalam mencoba menyelamatkan nyawanya, daripada yang mungkin ia peroleh dari pelaksanaan keputusan pertamanya. “Jika,” katanya dalam hati, “aku bisa menemukan cara untuk mengantarkannya ke tendanya dalam keadaan hidup, dia pasti akan mengakui kemanusiaanku dengan imbalan yang cukup besar; dan, jika dia kebetulan selamat dari luka-lukanya, aku bisa mengharapkan segalanya dari rasa terima kasih dan kekuatannya.” Dengan penuh pertimbangan bijaksana, ia mendekati orang asing yang malang itu, dan dengan nada iba dan simpati yang lembut, menanyakan nama, kondisi, dan penyebab kemalangannya, sambil menawarkan bantuannya dengan ramah. Terkejut mendengar dirinya didekati dengan cara seperti itu oleh seseorang yang perlengkapannya tampak menjanjikan tujuan yang jauh berbeda, ia berterima kasih padanya dengan penuh rasa syukur atas kemanusiaannya, dengan sebutan wanita desa yang baik hati; menjelaskan bahwa ia adalah kolonel resimen kavaleri; bahwa ia jatuh akibat tembakan yang mengenai dadanya di awal pertempuran; dan, akhirnya, memohon padanya untuk mencarikan kereta agar ia dapat dibawa ke tendanya. Melihatnya lemas dan kelelahan karena kehilangan banyak darah, ia mengangkat kepalanya, dan memberinya minuman penyegar yang selalu menjadi teman setianya. Pada saat itu juga, melihat sekelompok kecil pasukan hussar kembali ke perkemahan dengan rampasan yang telah mereka ambil, dia meminta bantuan mereka, dan mereka segera membawa perwira itu ke tempat tinggalnya sendiri, di mana lukanya diobati, dan pengawalnya dengan cermat merawatnya sampai ia pulih sepenuhnya. Sebagai balasan atas kebaikan hati tersebut, pria ini, yang berasal dari Skotlandia, membalas kebaikannya dengan kemurahan hati yang besar, menjamin pengaruhnya dalam mempromosikan suaminya, dan mengambil alih pendidikan Ferdinand muda; anak laki-laki itu segera berada di bawah perlindungannya, dan bergabung sebagai prajurit di resimennya sendiri; tetapi niat baiknya terhadap ayah mertuanya digagalkan oleh kematian orang Jerman tersebut, yang beberapa hari setelah kejadian ini, ditembak di parit di depan Temiswaer. Peristiwa ini, di samping kesedihan perkawinan yang mengganggu ketenangan wanita itu, akan membuatnya berada dalam kesulitan dan kesusahan yang tak terhingga, terkait dengan urusan duniawinya, karena meninggalkannya tanpa perlindungan di tengah orang asing, seandainya ia tidak secara kebetulan diberi pelindung yang efektif dalam diri kolonel yang dikenal dengan sebutan Count Melvil. Begitu melihatnya, karena kematian suaminya, terlepas dari semua hubungan pribadi dengan kehidupan militer, ia segera mengusulkan agar ia meninggalkan pekerjaannya di kamp dan pensiun ke kediamannya di kota Presburg, di mana ia akan dijamu dengan nyaman dan berlimpah selama sisa hidupnya. Dengan segala penghargaan atas kemurahan hatinya, ia memohon untuk tidak menerima usulannya, dengan alasan bahwa ia sudah sangat terbiasa dengan cara hidupnya saat ini, dan sangat mengabdi pada pelayanan militer, sehingga ia tidak akan pernah bahagia dalam masa pensiun, sementara pasukan pangeran mana pun di dunia Kristen masih bertugas di medan perang. Sang Pangeran, menyadari tekadnya untuk melanjutkan rencananya, mengulangi janjinya untuk selalu bersahabat dengannya; dan sementara itu menerima Ferdinand sebagai salah satu pelayannya, memutuskan bahwa ia harus dibesarkan untuk melayani putranya sendiri, yang masih anak laki-laki seusianya. Namun, ia tetap menempatkannya di tendanya, sampai ia memiliki kesempatan untuk mengunjungi keluarganya secara pribadi; dan, sebelum kesempatan itu tiba, dua tahun penuh berlalu, selama waktu itu Pangeran Eugene yang termasyhur memenangkan pertempuran Beograd yang terkenal, dan kemudian menguasai perbatasan penting itu.</p>
 

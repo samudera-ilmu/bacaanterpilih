@@ -5,39 +5,176 @@
 <title>PROFESOR ITU KEMBALI DUDUK DI KURSINYA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="PROFESOR ITU KEMBALI DUDUK DI KURSINYA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>PROFESOR ITU KEMBALI DUDUK DI KURSINYA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Untuk memahami seruan paman saya ini, yang ditujukan kepada para cendekiawan Prancis yang tidak hadir, perlu untuk menyinggung suatu peristiwa yang sangat penting dari sudut pandang paleontologi, yang terjadi beberapa saat sebelum keberangkatan kami. Pada tanggal 28 Maret 1863, beberapa penggali yang bekerja di bawah arahan M. Boucher de Perthes, di tambang batu Moulin Quignon, dekat Abbeville, di departemen Somme, menemukan tulang rahang manusia empat belas kaki di bawah permukaan. Ini adalah fosil pertama dari jenis ini yang pernah ditemukan. Tidak jauh dari situ ditemukan kapak batu dan mata panah batu api yang ternoda dan terbungkus oleh berjalannya waktu dengan lapisan karat yang seragam. Kabar penemuan ini sangat menggemparkan, tidak hanya di Prancis, tetapi juga di Inggris dan Jerman. Beberapa ilmuwan dari Institut Prancis, di antaranya MM. Milne-Edwards dan de Quatrefages, segera menyadari pentingnya penemuan ini, membuktikan keaslian tulang tersebut, dan menjadi pembela paling gigih dalam apa yang disebut orang Inggris sebagai 'uji coba tulang rahang'. Para ahli geologi Inggris, yang percaya akan kepastian fakta tersebut—Tuan Falconer, Busk, Carpenter, dan lainnya—segera bergabung pula para ilmuwan Jerman, dan di antara mereka yang paling bersemangat, paling antusias, dan paling bersemangat adalah paman saya, Liedenbrock. Oleh karena itu, keaslian fosil peninggalan manusia dari periode kuarter tampaknya telah terbukti dan diterima tanpa dapat dibantah. Memang benar bahwa teori ini mendapat penentangan yang sangat keras kepala dari M. Elie de Beaumont. Tokoh terkemuka ini berpendapat bahwa tanah di Moulin Quignon sama sekali bukan hasil banjir besar, melainkan terbentuk jauh lebih baru; dan, sependapat dengan Cuvier, ia menolak untuk mengakui bahwa spesies manusia dapat hidup sezaman dengan hewan-hewan pada periode kuarter. Paman saya, Liedenbrock, bersama dengan sebagian besar ahli geologi, mempertahankan pendiriannya, berdebat, dan berargumen, hingga M. Elie de Beaumont hampir sendirian dalam pendapatnya. Kami mengetahui semua detail ini, tetapi kami tidak menyadari bahwa sejak kepergian kami, pertanyaan tersebut telah berkembang ke tahap yang lebih lanjut. Tulang rahang atas serupa lainnya, meskipun milik individu dari berbagai jenis dan bangsa yang berbeda, ditemukan di tanah abu-abu gembur di beberapa gua di Prancis, Swiss, dan Belgia, serta senjata, perkakas, peralatan tanah liat, tulang anak-anak dan orang dewasa. Oleh karena itu, keberadaan manusia pada periode kuarter tampaknya semakin pasti setiap harinya. Namun bukan hanya itu. Penemuan baru sisa-sisa fosil dalam formasi Pleiosen telah mendorong para ahli geologi lainnya untuk mengaitkan spesies manusia dengan zaman yang lebih kuno lagi. Memang benar bahwa sisa-sisa tersebut bukanlah tulang manusia, melainkan objek-objek yang membawa jejak hasil karya manusia, seperti tulang kaki fosil hewan, yang dipahat dan diukir dengan jelas oleh tangan manusia. Dengan demikian, dalam sekejap, catatan keberadaan manusia mundur jauh ke masa lalu; ia adalah pendahulu mastodon; ia hidup sezaman dengan gajah selatan; ia hidup seratus ribu tahun yang lalu, ketika, menurut para ahli geologi, pembentukan Pleiosen sedang berlangsung. Demikianlah keadaan ilmu paleontologi saat itu, dan apa yang kita ketahui tentangnya sudah cukup untuk menjelaskan perilaku kita di hadapan Golgota yang menakjubkan ini. Siapa pun sekarang dapat memahami kegembiraan yang luar biasa dari paman saya, ketika, dua puluh yard lebih jauh, ia mendapati dirinya berhadapan langsung dengan manusia purba! Itu adalah tubuh manusia yang sangat mudah dikenali. Apakah tanah tertentu, seperti tanah di pemakaman St. Michel, Bordeaux, telah mengawetkannya selama berabad-abad? Mungkin saja. Tetapi mayat kering ini, dengan kulitnya yang seperti perkamen yang tergulung rapat di atas kerangka tulang, anggota tubuhnya masih mempertahankan bentuknya, gigi yang utuh, rambut yang lebat, dan kuku jari tangan dan kaki yang sangat panjang, mumi yang mengering ini mengejutkan kami karena tampak seperti hidup berabad-abad yang lalu. Aku berdiri terdiam di hadapan penampakan zaman kuno yang jauh ini. Pamanku, yang biasanya sangat cerewet, juga terdiam. Kami mengangkat tubuhnya. Kami menyandarkannya ke sebuah batu. Ia tampak menatap kami dari rongga matanya yang kosong. Kami meraba kerangka tubuhnya yang berongga dengan buku-buku jari kami. Setelah beberapa saat hening, Profesor kembali seperti semula. Otto Liedenbrock, menuruti sifatnya, melupakan semua kejadian perjalanan kami yang penuh peristiwa, melupakan tempat kami berdiri, melupakan gua berkubah yang menampung kami. Tak diragukan lagi, dalam benaknya ia kembali ke Johannæum-nya, mengajar murid-muridnya, karena ia kembali bersikap layaknya seorang cendekiawan; dan berbicara kepada audiens imajiner, ia melanjutkan demikian: "Tuan-tuan, saya merasa terhormat untuk memperkenalkan kepada Anda seorang manusia dari sistem kuarter atau pasca-tersier. Para ahli geologi terkemuka telah menyangkal keberadaannya, sementara yang lain, yang tak kalah terkemuka, telah menegaskannya. Para Santo Thomas dalam bidang paleontologi, jika mereka ada di sini, mungkin sekarang dapat menyentuhnya dengan jari mereka, dan akan terpaksa mengakui kesalahan mereka. Saya sangat menyadari bahwa ilmu pengetahuan harus waspada terhadap penemuan-penemuan semacam ini. Saya tahu betapa besarnya keuntungan yang diperoleh oleh individu-individu yang giat seperti Barnum dari fosil manusia. Saya telah mendengar kisah tentang tempurung lutut Ajax, jasad Orestes yang diklaim telah ditemukan oleh orang Sparta, dan jasad Asterius, sepanjang sepuluh hasta, yang diceritakan oleh Pausanias. Saya telah membaca laporan tentang kerangka Trapani, yang ditemukan pada abad keempat belas, dan yang pada saat itu diidentifikasi sebagai kerangka Polifemus; dan sejarah raksasa yang digali pada abad keenam belas di dekat Palermo. Anda tahu seperti saya, Tuan-tuan, analisis yang dilakukan di Lucerne pada 1577 dari tulang-tulang besar itu yang oleh Dr. Felix Plater yang terkenal ditegaskan sebagai tulang raksasa setinggi sembilan belas kaki. Saya telah membaca risalah Cassanion, dan semua memoar, pamflet, jawaban, dan sanggahan yang diterbitkan mengenai kerangka Teutobochus, penyerbu Gaul, yang digali dari lubang pasir di Dauphiné, pada tahun 1613. Pada abad kedelapan belas, saya akan membela manusia pra-Adam Scheuchzer melawan Peter Campet. Saya telah membaca sebuah tulisan, berjudul Gigan—" Di sinilah kelemahan paman saya yang malang menerpa dirinya—yaitu ketidakmampuannya untuk mengucapkan kata-kata sulit di depan umum. "Pamflet berjudul Gigan—" Dia tidak bisa melangkah lebih jauh. "Giganteo—" Itu tidak boleh dilakukan. Kata sial itu tidak boleh terucap. Di Johannæum pasti akan menjadi bahan tertawaan.</p>
 <p>"Gigantosteologie," akhirnya Profesor itu berseru, di antara dua kata yang tidak akan saya catat di sini. Kemudian bergegas maju dengan semangat baru, dan dengan penuh antusiasme: "Ya, Tuan-tuan, saya tahu semua hal ini, dan lebih banyak lagi. Saya tahu bahwa Cuvier dan Blumenbach tidak menemukan sesuatu yang lebih luar biasa pada tulang-tulang ini selain tulang-tulang mammoth dan mamalia lain dari periode pasca-tersier. Tetapi di hadapan spesimen ini, meragukannya sama saja dengan menghina ilmu pengetahuan. Di sana berdiri tubuhnya! Anda dapat melihatnya, menyentuhnya. Ini bukan sekadar kerangka; ini adalah tubuh utuh, yang diawetkan untuk tujuan dan maksud antropologis semata." Saya cukup baik untuk tidak membantah pernyataan yang mengejutkan ini. "Seandainya aku bisa mencucinya dengan larutan asam sulfat," lanjut pamanku, "aku pasti bisa membersihkannya dari semua partikel tanah dan cangkang yang menempel di sana. Tapi aku tidak memiliki pelarut berharga itu. Namun, seperti apa adanya, tubuh itu akan menceritakan kisahnya sendiri yang menakjubkan." Di sini Profesor memegang kerangka fosil itu, dan menanganinya dengan keahlian seorang pemain sandiwara yang cekatan. "Lihatlah," katanya, "bahwa panjangnya tidak sampai enam kaki, dan kita masih terpisah oleh jarak yang cukup jauh dari ras raksasa yang diklaim itu. Adapun keluarga tempat fosil ini berasal, jelaslah itu Kaukasia. Itu adalah ras kulit putih, ras kita sendiri. Tengkorak fosil ini berbentuk oval teratur, atau lebih tepatnya ovoid. Ia tidak menunjukkan tulang pipi yang menonjol, tidak ada rahang yang menonjol. Ia tidak menunjukkan tanda-tanda prognatisme yang mengurangi sudut wajah. [1] Ukurlah sudut itu. Hampir sembilan puluh derajat. Tetapi saya akan melangkah lebih jauh dalam deduksi saya, dan saya akan menegaskan bahwa spesimen keluarga manusia ini adalah ras Yafet, yang sejak itu menyebar dari Hindia ke Atlantik. Jangan tersenyum, Tuan-tuan." Tidak ada yang tersenyum; tetapi Profesor terpelajar itu sering kali terganggu oleh senyum lebar yang ditimbulkan oleh keanehan-keanehan intelektualnya. "Ya," lanjutnya dengan penuh semangat, "ini adalah manusia fosil, sezaman dengan mastodon yang sisa-sisanya memenuhi amfiteater ini. Tetapi jika Anda bertanya kepada saya bagaimana dia sampai di sana, bagaimana lapisan-lapisan tempat dia berbaring tergelincir ke dalam cekungan besar di bumi ini, saya akui saya tidak dapat menjawab pertanyaan itu. Tidak diragukan lagi, pada periode pasca-tersier masih terjadi gejolak besar yang mengganggu kerak bumi. Pendinginan bumi yang berlangsung lama menghasilkan jurang, retakan, celah, dan patahan, yang kemungkinan besar menjadi tempat jatuhnya sebagian lapisan bumi bagian atas. Saya tidak membuat pernyataan yang gegabah; tetapi di sana ada manusia yang dikelilingi oleh hasil karyanya sendiri, kapak, dan ujung panah batu, yang merupakan ciri khas zaman batu. Dan kecuali dia datang ke sini, seperti saya, sebagai turis yang berkunjung dan sebagai pelopor ilmu pengetahuan, saya tidak dapat meragukan keaslian asal-usulnya yang jauh." [1] Sudut wajah dibentuk oleh dua garis, satu menyentuh alis dan gigi depan, yang lain dari lubang telinga ke garis bawah lubang hidung. Semakin besar sudut ini, semakin tinggi kecerdasan yang ditunjukkan oleh pembentukan tengkorak. Prognatisme adalah proyeksi tulang rahang yang mempertajam atau memperkecil sudut ini, dan yang diilustrasikan pada wajah orang Negro dan pada suku-suku primitif. Profesor itu berhenti berbicara, dan hadirin pun bertepuk tangan dengan meriah dan serempak. Karena tentu saja paman saya benar, dan orang-orang yang lebih bijak daripada keponakannya pasti akan kesulitan untuk membantah pernyataannya. Hal luar biasa lainnya. Jasad fosil ini bukanlah satu-satunya di katakomba yang sangat luas ini. Kami menemukan jasad-jasad lain di setiap langkah di antara debu fana ini, dan paman saya mungkin memilih spesimen yang paling menarik untuk menghancurkan keraguan para skeptis. Sungguh, itu adalah pemandangan yang menakjubkan, generasi manusia dan hewan yang bercampur di pemakaman umum. Kemudian, sebuah pertanyaan yang sangat serius muncul, yang hampir tidak berani kami ajukan. Apakah semua makhluk itu meluncur melalui celah besar di kerak bumi, turun ke pantai Laut Liedenbrock, ketika mereka mati dan berubah menjadi debu, atau apakah mereka hidup, tumbuh, dan mati di dunia bawah tanah ini di bawah langit palsu, seperti penghuni bumi bagian atas? Sampai saat ini, kami hanya melihat monster laut dan ikan yang masih hidup. Mungkinkah ada manusia yang masih hidup, penduduk asli jurang, yang masih menjadi pengembara di pantai gurun ini?</p>

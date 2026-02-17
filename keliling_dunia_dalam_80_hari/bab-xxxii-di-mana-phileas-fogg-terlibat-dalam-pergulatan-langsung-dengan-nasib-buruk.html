@@ -5,39 +5,176 @@
 <title>BAB XXXII. DI MANA PHILEAS FOGG TERLIBAT DALAM PERGULATAN LANGSUNG DENGAN NASIB BURUK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXXII. DI MANA PHILEAS FOGG TERLIBAT DALAM PERGULATAN LANGSUNG DENGAN NASIB BURUK - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -46,7 +183,19 @@ a {
 
 <h1>BAB XXXII. DI MANA PHILEAS FOGG TERLIBAT DALAM PERGULATAN LANGSUNG DENGAN NASIB BURUK</h1>
 
-<p>Keberangkatan kapal "China" tampaknya telah merenggut harapan terakhir Phileas Fogg. Tak satu pun dari kapal uap lainnya mampu memenuhi rencananya. Kapal "Pereire" milik Perusahaan Transatlantik Prancis, yang kapal-kapal uapnya yang mengagumkan setara dengan kapal mana pun dalam hal kecepatan dan kenyamanan, baru berangkat pada tanggal 14; kapal-kapal Hamburg tidak langsung menuju Liverpool atau London, tetapi ke Havre; dan perjalanan tambahan dari Havre ke Southampton akan membuat upaya terakhir Phileas Fogg sia-sia. Kapal uap Inman baru berangkat keesokan harinya, dan tidak dapat menyeberangi Atlantik tepat waktu untuk menyelamatkan taruhan tersebut. Tuan Fogg mempelajari semua ini dengan berkonsultasi dengan "Bradshaw" miliknya, yang memberinya informasi tentang pergerakan harian kapal uap transatlantik. Passepartout sangat terpukul; ia sangat kecewa karena kehilangan kapal dengan selisih waktu tiga perempat jam. Itu adalah kesalahannya, karena, alih-alih membantu tuannya, ia malah terus-menerus menghalangi jalannya! Dan ketika ia mengingat semua kejadian selama perjalanan, ketika ia menghitung jumlah uang yang dihabiskan untuk kerugian dan untuk dirinya sendiri, ketika ia berpikir bahwa taruhan yang sangat besar, ditambah dengan biaya besar perjalanan yang sia-sia ini, akan benar-benar menghancurkan Tuan Fogg, ia diliputi oleh rasa bersalah yang mendalam. Namun, Tuan Fogg tidak menegurnya; dan, saat meninggalkan dermaga Cunard, hanya berkata: “Kita akan berdiskusi tentang apa yang terbaik besok. Ayo.” Rombongan itu menyeberangi Sungai Hudson dengan kapal feri Jersey City, dan berkendara dengan kereta kuda ke Hotel St. Nicholas di Broadway. Kamar-kamar dipesan, dan malam berlalu, singkat bagi Phileas Fogg, yang tidur nyenyak, tetapi sangat lama bagi Aouda dan yang lainnya, yang gelisah sehingga tidak memungkinkan mereka untuk beristirahat. Keesokan harinya adalah tanggal 12 Desember. Dari pukul tujuh pagi tanggal 12 hingga pukul seperempat sebelum sembilan malam tanggal 21, terdapat sembilan hari, tiga belas jam, dan empat puluh lima menit. Jika Phileas Fogg berangkat dengan kapal "China," salah satu kapal uap tercepat di Atlantik, ia akan sampai di Liverpool, dan kemudian London, dalam jangka waktu yang telah disepakati. Tuan Fogg meninggalkan hotel sendirian, setelah memberi instruksi kepada Passepartout untuk menunggu kepulangannya, dan memberi tahu Aouda untuk bersiap siaga setiap saat. Ia menuju ke tepi Sungai Hudson, dan melihat-lihat di antara kapal-kapal yang berlabuh atau bersandar di sungai, untuk mencari kapal yang akan berangkat. Beberapa kapal telah memasang sinyal keberangkatan, dan bersiap untuk berlayar saat air pasang pagi; karena di pelabuhan yang luas dan mengagumkan ini, tidak ada satu hari pun dalam seratus hari di mana kapal tidak berangkat ke setiap penjuru dunia. Tetapi sebagian besar adalah kapal layar, yang tentu saja tidak dapat dimanfaatkan oleh Phileas Fogg. Ia tampak hampir putus asa, ketika ia melihat, berlabuh di Battery, paling jauh sejauh satu kabel, sebuah kapal dagang, dengan baling-baling yang bagus, yang cerobong asapnya mengepulkan kepulan asap, menunjukkan bahwa kapal itu sedang bersiap untuk berangkat. Phileas Fogg memanggil sebuah perahu, naik ke dalamnya, dan segera mendapati dirinya berada di atas kapal "Henrietta," yang berbadan besi dan terbuat dari kayu di bagian atasnya. Dia naik ke dek, dan meminta bertemu kapten, yang segera muncul. Dia adalah seorang pria berusia lima puluh tahun, semacam serigala laut, dengan mata besar, kulit berwarna tembaga yang teroksidasi, rambut merah dan leher tebal, serta suara yang menggeram. “Kaptennya?” tanya Tuan Fogg. “Saya adalah kaptennya.” “Saya Phileas Fogg, dari London.” “Dan saya Andrew Speedy, dari Cardiff.” “Anda akan berlayar?” "Sejam lagi." “Kau akan menuju ke—” “Bordeaux.” “Dan muatan Anda?” “Tidak ada muatan. Akan dimuat sebagai muatan kosong.” “Apakah ada penumpang?” “Tidak ada penumpang. Tidak pernah ada penumpang. Terlalu banyak yang menghalangi.” “Apakah kapalmu termasuk kapal yang cepat?” “Antara sebelas dan dua belas knot. “Henrietta,” yang terkenal.” “Maukah Anda mengantar saya dan tiga orang lainnya ke Liverpool?” “Ke Liverpool? Kenapa tidak ke China?” “Saya bilang Liverpool.” "TIDAK!""TIDAK?" “Tidak. Saya akan berangkat ke Bordeaux, dan akan pergi ke Bordeaux.” “Uang bukan masalah?” "Tidak ada." Sang kapten berbicara dengan nada yang tidak memungkinkan untuk dijawab. “Tapi pemilik 'Henrietta'—” lanjut Phileas Fogg. “Pemiliknya adalah saya sendiri,” jawab kapten. “Kapal ini milik saya.” “Saya akan mengirimkannya untuk Anda.” "TIDAK." “Aku akan membelinya darimu.” "TIDAK." Phileas Fogg tidak menunjukkan sedikit pun kekecewaan; tetapi situasinya sangat genting. Situasinya berbeda dengan di Hong Kong, dan berbeda pula dengan kapten kapal “Henrietta” dibandingkan dengan kapten kapal “Tankadere.” Hingga saat ini, uang telah melancarkan setiap rintangan. Sekarang uang telah gagal. Namun, tetap harus ditemukan cara untuk menyeberangi Atlantik dengan kapal, kecuali dengan balon—yang akan sangat berisiko, selain itu juga tidak mungkin dilakukan. Tampaknya Phileas Fogg memiliki ide, karena ia berkata kepada kapten, "Baiklah, maukah Anda membawa saya ke Bordeaux?" “Tidak, tidak meskipun Anda membayar saya dua ratus dolar.” “Aku menawarkanmu dua ribu.” “Masing-masing?” “Satu per satu.” “Dan kalian berempat?” “Empat.” Kapten Speedy mulai menggaruk kepalanya. Ada delapan ribu dolar yang bisa didapatkan, tanpa mengubah rutenya; yang mana itu sangat layak untuk mengatasi rasa jijiknya terhadap semua jenis penumpang. Lagipula, penumpang seharga dua ribu dolar bukan lagi penumpang, melainkan barang dagangan yang berharga. "Saya berangkat pukul sembilan," kata Kapten Speedy singkat. "Apakah Anda dan rombongan Anda sudah siap?" “Kita akan berada di atas kapal pukul sembilan,” jawab Tuan Fogg dengan singkat. Saat itu pukul setengah sembilan. Untuk turun dari kapal “Henrietta,” naik kereta kuda, bergegas ke St. Nicholas, dan kembali bersama Aouda, Passepartout, dan bahkan Fix yang tak terpisahkan, adalah pekerjaan yang membutuhkan waktu singkat, dan dilakukan oleh Tuan Fogg dengan ketenangan yang tak pernah meninggalkannya. Mereka sudah berada di atas kapal ketika “Henrietta” bersiap untuk mengangkat jangkar. Ketika Passepartout mendengar berapa biaya pelayaran terakhir ini, dia mengeluarkan seruan panjang "Oh!" yang terdengar di seluruh rentang vokalnya. Adapun Fix, ia berkata dalam hati bahwa Bank of England pasti tidak akan terlindungi dengan baik dari urusan ini. Ketika mereka sampai di Inggris, bahkan jika Tuan Fogg tidak melemparkan beberapa lembar uang kertas ke laut, lebih dari tujuh ribu poundsterling akan terbuang!</p>
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
+
+<p>Keberangkatan kapal "China" tampaknya telah merenggut harapan terakhir Phileas Fogg. Tak satu pun dari kapal uap lainnya mampu memenuhi rencananya. Kapal "Pereire" milik Perusahaan Transatlantik Prancis, yang kapal-kapal uapnya yang mengagumkan setara dengan kapal mana pun dalam hal kecepatan dan kenyamanan, baru berangkat pada tanggal 14; kapal-kapal Hamburg tidak langsung menuju Liverpool atau London, tetapi ke Havre; dan perjalanan tambahan dari Havre ke Southampton akan membuat upaya terakhir Phileas Fogg sia-sia. Kapal uap Inman baru berangkat keesokan harinya, dan tidak dapat menyeberangi Atlantik tepat waktu untuk menyelamatkan taruhan tersebut. Tuan Fogg mempelajari semua ini dengan berkonsultasi dengan "Bradshaw" miliknya, yang memberinya informasi tentang pergerakan harian kapal uap transatlantik. Passepartout sangat terpukul; ia sangat kecewa karena kehilangan kapal dengan selisih waktu tiga perempat jam. Itu adalah kesalahannya, karena, alih-alih membantu tuannya, ia malah terus-menerus menghalangi jalannya! Dan ketika ia mengingat semua kejadian selama perjalanan, ketika ia menghitung jumlah uang yang dihabiskan untuk kerugian dan untuk dirinya sendiri, ketika ia berpikir bahwa taruhan yang sangat besar, ditambah dengan biaya besar perjalanan yang sia-sia ini, akan benar-benar menghancurkan Tuan Fogg, ia diliputi oleh rasa bersalah yang mendalam. Namun, Tuan Fogg tidak menegurnya; dan, saat meninggalkan dermaga Cunard, hanya berkata: “Kita akan berdiskusi tentang apa yang terbaik besok. Ayo.” Rombongan itu menyeberangi Sungai Hudson dengan kapal feri Jersey City, dan berkendara dengan kereta kuda ke Hotel St. Nicholas di Broadway. Kamar-kamar dipesan, dan malam berlalu, singkat bagi Phileas Fogg, yang tidur nyenyak, tetapi sangat lama bagi Aouda dan yang lainnya, yang gelisah sehingga tidak memungkinkan mereka untuk beristirahat. Keesokan harinya adalah tanggal 12 Desember. Dari pukul tujuh pagi tanggal 12 hingga pukul seperempat sebelum sembilan malam tanggal 21, terdapat sembilan hari, tiga belas jam, dan empat puluh lima menit. Jika Phileas Fogg berangkat dengan kapal "China," salah satu kapal uap tercepat di Atlantik, ia akan sampai di Liverpool, dan kemudian London, dalam jangka waktu yang telah disepakati. Tuan Fogg meninggalkan hotel sendirian, setelah memberi instruksi kepada Passepartout untuk menunggu kepulangannya, dan memberi tahu Aouda untuk bersiap siaga setiap saat. Ia menuju ke tepi Sungai Hudson, dan melihat-lihat di antara kapal-kapal yang berlabuh atau bersandar di sungai, untuk mencari kapal yang akan berangkat. Beberapa kapal telah memasang sinyal keberangkatan, dan bersiap untuk berlayar saat air pasang pagi; karena di pelabuhan yang luas dan mengagumkan ini, tidak ada satu hari pun dalam seratus hari di mana kapal tidak berangkat ke setiap penjuru dunia. Tetapi sebagian besar adalah kapal layar, yang tentu saja tidak dapat dimanfaatkan oleh Phileas Fogg. Ia tampak hampir putus asa, ketika ia melihat, berlabuh di Battery, paling jauh sejauh satu kabel, sebuah kapal dagang, dengan baling-baling yang bagus, yang cerobong asapnya mengepulkan kepulan asap, menunjukkan bahwa kapal itu sedang bersiap untuk berangkat. Phileas Fogg memanggil sebuah perahu, naik ke dalamnya, dan segera mendapati dirinya berada di atas kapal "Henrietta," yang berbadan besi dan terbuat dari kayu di bagian atasnya. Dia naik ke dek, dan meminta bertemu kapten, yang segera muncul. Dia adalah seorang pria berusia lima puluh tahun, semacam serigala laut, dengan mata besar, kulit berwarna tembaga yang teroksidasi, rambut merah dan leher tebal, serta suara yang menggeram. “Kaptennya?” tanya Tuan Fogg. “Saya adalah kaptennya.” “Saya Phileas Fogg, dari London.” “Dan saya Andrew Speedy, dari Cardiff.” “Anda akan berlayar?” "Sejam lagi." “Kau akan menuju ke—” “Bordeaux.” “Dan muatan Anda?” “Tidak ada muatan. Akan dimuat sebagai muatan kosong.” “Apakah ada penumpang?” “Tidak ada penumpang. Tidak pernah ada penumpang. Terlalu banyak yang menghalangi.” “Apakah kapalmu termasuk kapal yang cepat?” “Antara sebelas dan dua belas knot. “Henrietta,” yang terkenal.” “Maukah Anda mengantar saya dan tiga orang lainnya ke Liverpool?” “Ke Liverpool? Kenapa tidak ke China?” “Saya bilang Liverpool.” "TIDAK!" "TIDAK?" “Tidak. Saya akan berangkat ke Bordeaux, dan akan pergi ke Bordeaux.” “Uang bukan masalah?” "Tidak ada." Sang kapten berbicara dengan nada yang tidak memungkinkan untuk dijawab. “Tapi pemilik 'Henrietta'—” lanjut Phileas Fogg. “Pemiliknya adalah saya sendiri,” jawab kapten. “Kapal ini milik saya.” “Saya akan mengirimkannya untuk Anda.” "TIDAK." “Aku akan membelinya darimu.” "TIDAK." Phileas Fogg tidak menunjukkan sedikit pun kekecewaan; tetapi situasinya sangat genting. Situasinya berbeda dengan di Hong Kong, dan berbeda pula dengan kapten kapal “Henrietta” dibandingkan dengan kapten kapal “Tankadere.” Hingga saat ini, uang telah melancarkan setiap rintangan. Sekarang uang telah gagal. Namun, tetap harus ditemukan cara untuk menyeberangi Atlantik dengan kapal, kecuali dengan balon—yang akan sangat berisiko, selain itu juga tidak mungkin dilakukan. Tampaknya Phileas Fogg memiliki ide, karena ia berkata kepada kapten, "Baiklah, maukah Anda membawa saya ke Bordeaux?" “Tidak, tidak meskipun Anda membayar saya dua ratus dolar.” “Aku menawarkanmu dua ribu.” “Masing-masing?” “Satu per satu.” “Dan kalian berempat?” “Empat.” Kapten Speedy mulai menggaruk kepalanya. Ada delapan ribu dolar yang bisa didapatkan, tanpa mengubah rutenya; yang mana itu sangat layak untuk mengatasi rasa jijiknya terhadap semua jenis penumpang. Lagipula, penumpang seharga dua ribu dolar bukan lagi penumpang, melainkan barang dagangan yang berharga. "Saya berangkat pukul sembilan," kata Kapten Speedy singkat. "Apakah Anda dan rombongan Anda sudah siap?" “Kita akan berada di atas kapal pukul sembilan,” jawab Tuan Fogg dengan singkat. Saat itu pukul setengah sembilan. Untuk turun dari kapal “Henrietta,” naik kereta kuda, bergegas ke St. Nicholas, dan kembali bersama Aouda, Passepartout, dan bahkan Fix yang tak terpisahkan, adalah pekerjaan yang membutuhkan waktu singkat, dan dilakukan oleh Tuan Fogg dengan ketenangan yang tak pernah meninggalkannya. Mereka sudah berada di atas kapal ketika “Henrietta” bersiap untuk mengangkat jangkar. Ketika Passepartout mendengar berapa biaya pelayaran terakhir ini, dia mengeluarkan seruan panjang "Oh!" yang terdengar di seluruh rentang vokalnya. Adapun Fix, ia berkata dalam hati bahwa Bank of England pasti tidak akan terlindungi dengan baik dari urusan ini. Ketika mereka sampai di Inggris, bahkan jika Tuan Fogg tidak melemparkan beberapa lembar uang kertas ke laut, lebih dari tujuh ribu poundsterling akan terbuang!</p>
 
 <div class="nav">
   <a href="bab-xxxi-di-mana-fix-sang-detektif-secara-signifikan-memperjuangkan-kepentingan-phileas-fogg.html">⬅ Bab Xxxi. Di Mana Fix, Sang Detektif, Secara Signifikan Memperjuangkan Kepentingan Phileas Fogg</a>

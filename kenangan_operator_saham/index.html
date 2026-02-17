@@ -2,27 +2,81 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Judul Bab</title>
+<title>Kenangan Operator Saham</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
 <style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --link: #1a73e8;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
   padding: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
-
-li { margin: 6px 0; }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
 }
 </style>
 </head>
 <body>
 
-<h1>Judul Bab</h1>
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+
+<h1>Kenangan Operator Saham</h1>
 
 <ol>
 <li><a href="tentang-apa-buku-ini.html">TENTANG APA BUKU INI ??</a></li><li><a href="bab-i.html">BAB I</a></li><li><a href="bab-ii.html">BAB II</a></li><li><a href="bab-iii.html">BAB III</a></li><li><a href="bab-iv.html">BAB IV</a></li><li><a href="bab-v.html">BAB V</a></li><li><a href="bab-vi.html">BAB VI</a></li><li><a href="bab-vii.html">BAB VII</a></li><li><a href="bab-viii.html">BAB VIII</a></li><li><a href="bab-ix.html">BAB IX</a></li><li><a href="bab-x.html">BAB X</a></li><li><a href="bab-xi.html">BAB XI</a></li><li><a href="bab-xii.html">BAB XII</a></li><li><a href="bab-xiii.html">BAB XIII</a></li><li><a href="bab-xiv.html">BAB XIV</a></li><li><a href="bab-xv.html">BAB XV</a></li><li><a href="bab-xvi.html">BAB XVI</a></li><li><a href="bab-xvii.html">BAB XVII</a></li><li><a href="bab-xviii.html">BAB XVIII</a></li><li><a href="bab-xix.html">BAB XIX</a></li><li><a href="bab-xx.html">BAB XX</a></li><li><a href="bab-xxi.html">BAB XXI</a></li><li><a href="bab-xxii.html">BAB XXII</a></li><li><a href="bab-xxiii.html">BAB XXIII</a></li><li><a href="bab-xxiv.html">BAB XXIV</a></li>

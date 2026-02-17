@@ -5,39 +5,176 @@
 <title>TANAH GURUN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="TANAH GURUN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>TANAH GURUN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kami memulai perjalanan di bawah langit yang mendung namun tenang. Tidak ada kekhawatiran akan panas, tidak ada hujan deras yang dahsyat. Cuacanya sangat ideal untuk wisatawan. Kenikmatan menunggang kuda melintasi negeri yang tak dikenal membuatku mudah merasa senang pada awal perjalanan kami. Aku sepenuhnya larut dalam kesenangan perjalanan itu, dan menikmati perasaan kebebasan serta kepuasan hasrat. Aku mulai benar-benar ikut serta dalam usaha ini. "Lagipula," kataku dalam hati, "di mana risikonya? Kita sedang melakukan perjalanan melintasi negara yang sangat menarik! Kita akan mendaki gunung yang sangat luar biasa; paling buruk kita hanya akan menuruni kawah yang sudah tidak aktif. Jelas bahwa Saknussemm tidak melakukan lebih dari itu. Adapun jalur menuju pusat bumi, itu hanyalah omong kosong! sama sekali tidak mungkin! Baiklah kalau begitu; mari kita manfaatkan ekspedisi ini sebaik mungkin, dan jangan kita berdebat tentang peluangnya." Setelah mempertimbangkan hal itu, kami pun meninggalkan Rejkavik. Hans terus bergerak maju dengan mantap, tetap berada di depan kami dengan kecepatan yang stabil, lancar, dan cepat. Kuda-kuda pengangkut barang mengikutinya tanpa menimbulkan masalah. Kemudian datanglah paman saya dan saya, tampak tidak terlalu buruk dalam menunggangi hewan-hewan kecil namun tangguh kami. Islandia adalah salah satu pulau terbesar di Eropa. Luas permukaannya mencapai 14.000 mil persegi, dan hanya dihuni oleh 16.000 penduduk. Para ahli geografi telah membaginya menjadi empat bagian, dan kami sedang melintasi bagian barat daya secara diagonal, yang disebut 'Sudvester Fjordungr'. Saat meninggalkan Rejkavik, Hans membawa kami menyusuri pantai. Kami melewati padang rumput gersang yang berusaha keras, tetapi sia-sia, untuk tampak hijau; warna kuninglah yang paling menonjol. Puncak-puncak terjal batuan trakit menampilkan garis samar di cakrawala timur; kadang-kadang beberapa gumpalan salju, yang memusatkan cahaya yang redup, berkilauan di lereng pegunungan yang jauh; beberapa puncak, menjulang tinggi dengan gagah, menembus awan kelabu, dan muncul kembali di atas kabut yang bergerak, seperti ombak yang muncul di langit. Seringkali rangkaian bebatuan tandus ini menurun ke arah laut, dan menjorok ke padang rumput yang sedikit: tetapi selalu ada cukup ruang untuk lewat. Selain itu, kuda-kuda kami secara naluriah memilih tempat yang paling mudah tanpa pernah memperlambat langkah mereka. Paman saya bahkan tidak diberi kesempatan untuk menggerakkan kudanya dengan cambuk atau suara. Dia tidak punya alasan untuk tidak sabar. Saya tidak bisa menahan senyum melihat pria setinggi itu menunggangi kuda poni sekecil itu, dan karena kakinya yang panjang hampir menyentuh tanah, dia tampak seperti centaur berkaki enam. "Kuda yang bagus! Kuda yang bagus!" dia terus berkata. "Kau akan lihat, Axel, bahwa tidak ada hewan yang lebih bijaksana daripada kuda Islandia. Ia tidak terhalang oleh salju, badai, jalan yang tidak dapat dilalui, bebatuan, gletser, atau apa pun. Ia berani, tenang, dan mantap. Ia tidak pernah salah langkah, tidak pernah takut. Jika ada sungai atau fyord yang harus diseberangi (dan kita akan menemui banyak), kau akan melihatnya langsung terjun, seolah-olah ia amfibi, dan mencapai tepi seberang. Tetapi kita tidak boleh terburu-buru; kita harus membiarkannya melakukan apa yang dia inginkan, dan kita akan maju dengan kecepatan tiga puluh mil sehari." "Mungkin saja; tapi bagaimana dengan pemandu kami?" "Oh, abaikan saja dia. Orang seperti dia bisa bergerak tanpa berpikir. Orang ini sangat tidak aktif sehingga dia tidak akan pernah lelah; dan lagipula, jika dia mau, dia bisa menggunakan kudaku. Aku akan kram jika tidak sedikit bergerak. Lenganku baik-baik saja, tetapi kakiku butuh olahraga." Kami bergerak maju dengan cepat. Daerah itu sudah hampir menjadi gurun. Di sana-sini terdapat sebuah pertanian terpencil, yang disebut boër, dibangun dari kayu, tanah, atau potongan lava, tampak seperti pengemis miskin di pinggir jalan. Gubuk-gubuk reyot ini seolah meminta sedekah dari orang-orang yang lewat; dan dengan sedikit provokasi pun kami akan memberi sedekah untuk meringankan penderitaan penghuni miskin tersebut. Di daerah ini tidak ada jalan raya dan jalur setapak, dan vegetasi yang jarang, meskipun pertumbuhannya lambat, akan segera menghapus jejak kaki para pelancong yang jarang terlihat. Namun bagian provinsi ini, yang berjarak sangat dekat dari ibu kota, dianggap sebagai salah satu wilayah Islandia yang berpenduduk dan berbudidaya. Lalu, seperti apakah wilayah lain yang lebih tandus daripada gurun ini? Dalam setengah mil pertama, kami belum melihat seorang petani pun berdiri di depan pintu gubuknya, atau seorang gembala pun menggembalakan kawanan ternak yang tidak seliar dirinya, hanya beberapa sapi dan domba yang dibiarkan begitu saja. Lalu, seperti apakah wilayah-wilayah yang bergejolak yang sedang kami lalui, wilayah-wilayah yang rentan terhadap fenomena letusan yang mengerikan, akibat ledakan gunung berapi dan gejolak bawah tanah? Kami akan segera mengenal mereka, tetapi setelah melihat peta Olsen, saya menyadari bahwa mereka dapat dihindari dengan menyusuri pantai. Faktanya, aktivitas plutonik besar terbatas pada bagian tengah pulau; di sana, batuan kelas trappean dan vulkanik, termasuk trakit, basal, dan tufa serta aglomerat yang terkait dengan aliran lava, telah menjadikan tempat ini sebagai tanah kengerian supranatural. Saya tidak menyangka pemandangan mengerikan yang menanti kami di semenanjung Snæfell, di mana reruntuhan yang berapi-api ini telah membentuk kekacauan yang menakutkan. Dua jam perjalanan dari Rejkavik, kami tiba di kota Gufunes, yang disebut Aolkirkja, atau gereja utama. Tidak ada yang istimewa di sini selain beberapa rumah, hampir tidak cukup untuk sebuah dusun di Jerman. Hans berhenti di sini selama setengah jam. Dia berbagi sarapan sederhana kami; menjawab pertanyaan paman saya tentang jalan dan tempat istirahat kami malam itu hanya dengan ya atau tidak, kecuali ketika dia berkata "Gardär." Saya melihat peta untuk mengetahui letak Gardär. Saya melihat ada sebuah kota kecil dengan nama itu di tepi Hvalfiord, empat mil dari Rejkavik. Saya menunjukkannya kepada paman saya. "Hanya empat mil!" serunya; "empat mil dari dua puluh delapan mil. Jalan-jalan yang menyenangkan!"</p>
 <p>Dia hendak menyampaikan sebuah komentar kepada pemandu, yang tanpa menjawab kembali duduk di depan dan melanjutkan perjalanannya. Tiga jam kemudian, masih menginjak rumput tak berwarna di padang rumput, kami harus memutari fjord Kolla, jalan yang lebih panjang tetapi lebih mudah daripada menyeberangi teluk itu. Kami segera memasuki 'pingstaoer' atau paroki bernama Ejulberg, yang dari menaranya seharusnya berbunyi pukul dua belas, jika gereja-gereja Islandia cukup kaya untuk memiliki jam. Tetapi mereka seperti jemaat yang tidak memiliki jam tangan dan hidup serba kekurangan. Di sana kuda-kuda kami diberi makan; kemudian mengambil jalan setapak sempit ke kiri di antara rangkaian bukit dan laut, mereka membawa kami ke tempat tujuan berikutnya, aolkirkja Brantär dan satu mil lebih jauh lagi, ke Saurboër 'Annexia,' sebuah kapel kecil yang dibangun di pantai selatan Hvalfiord. Saat itu sudah pukul empat, dan kami telah menempuh jarak empat mil Islandia, atau dua puluh empat mil Inggris. Di tempat itu, fyord tersebut setidaknya selebar tiga mil Inggris; ombak bergulir dengan deru yang menggelegar di atas bebatuan runcing; teluk ini terkurung di antara dinding-dinding batu, tebing-tebing yang dimahkotai oleh puncak-puncak tajam setinggi 2.000 kaki, dan terkenal karena lapisan-lapisan cokelat yang memisahkan lapisan-lapisan tufa kemerahan. Betapapun saya menghormati kecerdasan hewan berkaki empat kita, saya hampir tidak ingin mengujinya dengan mempercayakan diri saya padanya di atas kuda menyeberangi selat laut. Jika mereka memang sepintar yang dikatakan orang, pikirku, mereka tidak akan mencoba hal itu. Bagaimanapun juga, aku akan mengerahkan kecerdasanku untuk mengarahkan kecerdasan mereka. Namun paman saya tidak mau menunggu. Ia memacu kudanya ke tepi pantai. Kudanya menundukkan kepala untuk memeriksa ombak terdekat dan berhenti. Paman saya, yang juga memiliki insting sendiri, memberikan tekanan, tetapi kembali ditolak oleh hewan itu yang menggelengkan kepalanya dengan penuh arti. Kemudian terdengar kata-kata kasar, dan cambuk; tetapi hewan itu membalas argumen-argumen ini dengan tendangan dan upaya untuk menjatuhkan penunggangnya. Akhirnya, kuda poni kecil yang cerdas itu, dengan menekuk lututnya, melompat dari bawah kaki Profesor, dan meninggalkannya berdiri di atas dua batu besar di pantai persis seperti kolosus Rhodes. "Dasar binatang terkutuk!" teriak penunggang kuda yang terjatuh dari kudanya, tiba-tiba direndahkan menjadi pejalan kaki, sama malunya dengan seorang perwira kavaleri yang direndahkan menjadi prajurit infanteri. " Färja, " kata pemandu itu sambil menyentuh bahunya. "Apa! Sebuah perahu?" " Der, " jawab Hans sambil menunjuk ke salah satunya. "Ya," seruku; "ada sebuah perahu." "Mengapa Anda tidak mengatakannya saat itu? Baiklah, mari kita lanjutkan." " Tidvatten, " kata pemandu itu. "Apa yang dia katakan?" "Dia bilang pasang surut," kata pamanku, menerjemahkan kata dalam bahasa Denmark itu. "Tidak diragukan lagi, kita harus menunggu saat yang tepat." " Förbida, " kata pamanku. " Ya, " jawab Hans. Pamanku menghentakkan kakinya saat kuda-kuda itu naik ke perahu. Saya sepenuhnya memahami perlunya menunggu momen pasang surut tertentu untuk menyeberangi fyord, yaitu ketika air laut telah mencapai ketinggian maksimumnya dan menjadi tenang. Dengan demikian, pasang dan surut tidak akan berpengaruh secara signifikan, dan perahu tidak berisiko tenggelam ke dasar laut atau hanyut ke laut lepas. Momen yang menguntungkan itu baru tiba pukul enam; ketika paman saya, saya sendiri, pemandu, dua penumpang lain, dan empat kuda, mempercayakan diri pada rakit yang agak rapuh. Karena terbiasa dengan kapal uap yang cepat dan andal di Sungai Elbe, saya merasa dayung para pendayung agak lambat sebagai alat penggerak. Kami membutuhkan lebih dari satu jam untuk menyeberangi fyord; tetapi perjalanan berhasil tanpa kecelakaan. Dalam setengah jam berikutnya kami telah sampai di aolkirkja Gardär.</p>

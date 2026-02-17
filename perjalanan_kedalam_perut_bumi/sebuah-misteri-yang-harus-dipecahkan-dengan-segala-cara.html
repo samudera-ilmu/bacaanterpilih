@@ -5,39 +5,176 @@
 <title>SEBUAH MISTERI YANG HARUS DIPECAHKAN DENGAN SEGALA CARA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="SEBUAH MISTERI YANG HARUS DIPECAHKAN DENGAN SEGALA CARA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>SEBUAH MISTERI YANG HARUS DIPECAHKAN DENGAN SEGALA CARA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Ruang kerjanya itu bagaikan museum, dan tidak lebih dari itu. Spesimen dari segala sesuatu yang dikenal dalam mineralogi tergeletak di tempatnya masing-masing dalam keadaan tertata rapi, dan diberi nama dengan benar, dibagi menjadi mineral yang mudah terbakar, logam, dan litoid. Betapa baiknya aku mengetahui semua seluk-beluk ilmu pengetahuan ini! Berkali-kali, alih-alih menikmati kebersamaan dengan teman-teman sebaya, aku lebih suka membersihkan debu dari grafit, antrasit, batubara, lignit, dan gambut ini! Dan ada bitumen, resin, garam organik, yang harus dilindungi dari debu sekecil apa pun; dan logam, dari besi hingga emas, logam yang nilai pasarnya sama sekali lenyap di hadapan kesetaraan spesimen ilmiah; dan batu juga, cukup untuk membangun kembali seluruh rumah di Königstrasse, bahkan dengan tambahan ruangan yang indah, yang akan sangat cocok untukku. Namun, saat memasuki ruang kerja ini, aku tak memikirkan semua keajaiban itu; hanya pamanku yang memenuhi pikiranku. Ia telah merebahkan diri di kursi empuk beludru, dan menggenggam sebuah buku di antara kedua tangannya sambil menunduk, merenung dengan kekaguman yang mendalam. "Ini buku yang luar biasa! Buku yang sangat bagus!" serunya. Ungkapan-ungkapan ini mengingatkan saya pada kenyataan bahwa paman saya terkadang rentan terhadap serangan bibliomania; tetapi tidak ada buku tua yang berharga di matanya kecuali jika buku itu memiliki keunggulan karena tidak dapat ditemukan di tempat lain, atau setidaknya, tidak dapat dibaca. "Nah, sekarang; apakah kau belum melihatnya? Aku punya harta karun yang tak ternilai harganya, yang kutemukan pagi ini, saat menggeledah toko Hevelius tua, si Yahudi." "Luar biasa!" jawabku, dengan menirukan antusiasme dengan baik. Apa gunanya semua keributan tentang sebuah buku quarto tua, bersampul kulit kasar, berwarna kuning pudar, dengan segel compang-camping yang tergantung di sampulnya? Namun terlepas dari itu semua, seruan kekaguman dari Profesor belum juga mereda. "Lihat," lanjutnya, sambil mengajukan pertanyaan sekaligus memberikan jawaban. "Bukankah ini indah? Ya; luar biasa! Pernahkah Anda melihat penjilidan seperti ini? Bukankah buku ini mudah dibuka? Ya; buku ini bisa berhenti terbuka di mana saja. Tapi apakah buku ini juga mudah ditutup? Ya; karena penjilidan dan halamannya rata, semuanya dalam garis lurus, dan tidak ada celah atau lubang di mana pun. Dan lihat bagian belakangnya, setelah tujuh ratus tahun. Bozerian, Closs, atau Purgold pasti akan bangga dengan penjilidan seperti ini!" Sembari melontarkan komentar-komentar itu dengan cepat, paman saya terus membuka dan menutup buku tua itu. Saya benar-benar tidak bisa berbuat kurang dari mengajukan pertanyaan tentang isinya, meskipun saya sama sekali tidak merasa tertarik. "Dan apa judul karya luar biasa ini?" tanyaku dengan antusiasme yang dibuat-buat, yang pasti sangat mudah ia sadari. "Karya ini," jawab pamanku, dengan antusiasme yang baru, "karya ini adalah Heims Kringla karya Snorre Turlleson, penulis Islandia paling terkenal di abad ke-12! Ini adalah kronik para pangeran Norwegia yang memerintah di Islandia."</p>
 <p>"Memang benar," seruku, sambil terus berbicara dengan lancar, "tentu saja ini terjemahan bahasa Jerman?" "Apa!" jawab Profesor dengan tajam, "terjemahan! Apa yang harus saya lakukan dengan terjemahan? Ini adalah teks asli Islandia, dalam bahasa sehari-hari yang indah dan kaya, serta memungkinkan berbagai kombinasi tata bahasa dan modifikasi kata kerja yang tak terbatas." "Seperti bahasa Jerman," ujarku dengan riang. "Ya," jawab pamanku sambil mengangkat bahu; "tetapi, selain semua itu, bahasa Islandia memiliki tiga bilangan seperti bahasa Yunani, dan deklinasi kata benda yang tidak beraturan seperti bahasa Latin." "Ah!" kataku, sedikit tersadar dari ketidakpedulianku; "dan apakah tipenya bagus?" "Tipe! Apa maksudmu membicarakan tipe, Axel yang malang? Tipe! Apa kau mengira itu buku cetak, dasar bodoh? Itu adalah manuskrip, manuskrip Rune." "Rahasia?" "Ya. Apakah Anda ingin saya jelaskan apa itu?" "Tentu saja tidak," jawabku dengan nada seperti orang yang terluka. Tetapi pamanku terus memaksa, dan menceritakan banyak hal yang sama sekali tidak kupedulikan, meskipun aku tidak mau. "Huruf rune digunakan di Islandia pada zaman dahulu. Konon, huruf-huruf itu diciptakan oleh Odin sendiri. Lihatlah ke sana, dan renungkanlah, wahai pemuda yang tidak saleh, dan kagumilah huruf-huruf ini, ciptaan dewa Skandinavia!" Wah, wah! Karena tak tahu harus berkata apa, aku hendak bersujud di hadapan buku yang luar biasa ini, sebuah cara menjawab yang sama-sama menyenangkan bagi para dewa dan raja, dan yang memiliki keunggulan karena tidak pernah membuat mereka malu, ketika sebuah kejadian kecil terjadi dan mengalihkan percakapan ke arah lain. Ini adalah penampakan selembar perkamen kotor yang terlepas dari jilid buku dan jatuh ke lantai. Pamanku langsung menyambar potongan kertas itu dengan sangat antusias. Sebuah dokumen lama, yang tersimpan sejak zaman dahulu kala di dalam lipatan buku tua ini, memiliki nilai yang tak terukur baginya. "Apa ini?" teriaknya. Lalu ia membentangkan selembar perkamen di atas meja, berukuran lima inci kali tiga inci, dan di sepanjang perkamen itu terdapat coretan karakter-karakter misterius. Berikut ini faksimili persisnya. Saya pikir penting untuk membiarkan tanda-tanda aneh ini diketahui publik, karena tanda-tanda inilah yang menjadi sarana untuk mengajak Profesor Liedenbrock dan keponakannya melakukan ekspedisi paling menakjubkan di abad kesembilan belas. [Hipotesis rune terdapat di sini] Profesor itu merenung sejenak tentang rangkaian tokoh-tokoh ini; lalu sambil mengangkat kacamatanya, ia menyatakan: "Ini adalah huruf-huruf Rune; bentuknya persis seperti pada manuskrip Snorre Turkleson. Tapi, apa sebenarnya artinya?" Huruf-huruf rune yang menurutku hanyalah ciptaan para cendekiawan untuk membingungkan dunia yang malang ini, aku tidak menyesal melihat pamanku menderita karena kebingungan itu. Setidaknya, begitulah kelihatannya bagiku, dilihat dari jari-jarinya yang mulai bergerak dengan energi yang luar biasa. "Ini jelas bahasa Islandia kuno," gumamnya di antara giginya. Dan Profesor Liedenbrock pasti mengetahuinya, karena ia dikenal sebagai seorang poliglot. Bukan berarti ia fasih berbicara dalam dua ribu bahasa dan dua belas ribu dialek yang ada di bumi, tetapi setidaknya ia mengetahui sebagian besar dari bahasa-bahasa tersebut. Jadi, di tengah kesulitan ini, dia hendak membiarkan dirinya terbawa oleh sifat impulsifnya, dan saya bersiap untuk ledakan amarah yang hebat, ketika jam kecil di atas perapian berbunyi tepat pukul dua. Pada saat itu, pengurus rumah tangga kami yang baik, Martha, membuka pintu ruang kerja dan berkata: "Makan malam sudah siap!" Aku khawatir dia membuang sup itu ke tempat yang akan mendidih hingga habis, dan Martha segera lari menyelamatkan diri. Aku mengikutinya, dan tanpa menyadari bagaimana aku sampai di sana, aku mendapati diriku duduk di tempatku biasa. Aku menunggu beberapa menit. Profesor tidak datang. Sepanjang ingatanku, beliau tidak pernah absen dari acara makan malam yang penting ini. Namun, makan malam itu sungguh enak! Ada sup peterseli, omelet ham yang dihiasi dengan sorrel berbumbu, fillet daging sapi muda dengan kompot prem; untuk hidangan penutup, buah-buahan yang dikristalkan; semuanya disantap dengan anggur Moselle yang manis. Semua ini akan dikorbankan pamanku untuk selembar perkamen tua. Sebagai keponakan yang penyayang dan perhatian, aku menganggap sebagai kewajibanku untuk makan untuknya dan juga untuk diriku sendiri, yang kulakukan dengan penuh kesungguhan. "Aku belum pernah melihat hal seperti ini," kata Martha. "Tuan Liedenbrock tidak ada di meja makan!" "Siapa yang bisa mempercayainya?" kataku, sambil mengunyah makanan. "Sesuatu yang serius akan terjadi," kata pelayan itu sambil menggelengkan kepalanya. Menurutku, tidak akan terjadi hal yang lebih serius selain pemandangan mengerikan ketika pamanku mendapati makan malamnya telah habis dimakan. Aku baru saja menghabiskan buah terakhir ketika sebuah suara yang sangat keras menyadarkanku dari kenikmatan hidangan penutupku. Dengan satu lompatan, aku berlari keluar dari ruang makan menuju ruang kerja.</p>

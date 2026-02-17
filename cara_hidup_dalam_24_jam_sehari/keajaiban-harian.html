@@ -5,39 +5,176 @@
 <title>KEAJAIBAN HARIAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="KEAJAIBAN HARIAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>KEAJAIBAN HARIAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>"Ya, dia salah satu tipe orang yang tidak tahu cara mengelola keuangan. Situasinya bagus. Penghasilan tetap. Cukup untuk kemewahan dan kebutuhan. Tidak terlalu boros. Namun orang ini selalu kesulitan. Entah bagaimana dia tidak mendapatkan apa pun dari uangnya. Apartemennya bagus—setengah kosong! Selalu terlihat seperti dia menggunakan jasa makelar. Jas baru—kuno! Dasi yang megah—celana longgar! Mengundangmu makan malam: gelas kristal—daging kambing yang buruk, atau kopi Turki—cangkir retak! Dia tidak mengerti. Penjelasannya sederhana, dia menghambur-hamburkan penghasilannya. Seandainya aku punya setengahnya! Aku akan menunjukkan padanya—" Jadi, sebagian besar dari kita pernah dikritik , cepat atau lambat, karena merasa lebih unggul dari orang lain. Kita hampir semua adalah menteri keuangan: itu adalah kebanggaan saat ini. Surat kabar penuh dengan artikel yang menjelaskan cara hidup dengan sejumlah uang tertentu, dan artikel-artikel ini memicu korespondensi yang intensitasnya membuktikan minat yang ditimbulkannya. Baru-baru ini, di sebuah surat kabar harian, terjadi perdebatan sengit seputar pertanyaan apakah seorang wanita dapat hidup nyaman di pedesaan dengan £85 per tahun. Saya pernah melihat esai, "Cara hidup dengan delapan shilling seminggu." Tetapi saya belum pernah melihat esai, "Cara hidup dengan dua puluh empat jam sehari." Namun telah dikatakan bahwa waktu adalah uang. Pepatah itu meremehkan kenyataan. Waktu jauh lebih berharga daripada uang. Jika Anda punya waktu , Anda bisa mendapatkan uang—biasanya. Tetapi meskipun Anda memiliki kekayaan seorang petugas ruang ganti di Hotel Carlton, Anda tidak dapat membeli waktu lebih banyak satu menit pun daripada yang saya miliki, atau yang dimiliki kucing di dekat perapian.</p>
 <p>Para filsuf telah menjelaskan ruang. Mereka belum menjelaskan waktu. Waktu adalah bahan mentah yang tak terjelaskan dari segala sesuatu. Dengan waktu, segala sesuatu mungkin terjadi; tanpanya, tidak ada apa pun. Pasokan waktu benar-benar merupakan keajaiban sehari-hari, suatu hal yang benar-benar menakjubkan ketika kita mengamatinya. Anda bangun di pagi hari, dan lihatlah! dompet Anda secara ajaib terisi dengan dua puluh empat jam jaringan alami alam semesta kehidupan Anda! Itu milik Anda. Itu adalah harta yang paling berharga. Komoditas yang sangat unik, dihujani kepada Anda dengan cara yang unik seperti komoditas itu sendiri! Sebagai catatan! Tidak seorang pun dapat mengambilnya darimu. Itu tidak dapat dicuri . Dan tidak seorang pun menerima lebih atau kurang dari yang kamu terima. Bicara tentang demokrasi ideal! Dalam ranah waktu, tidak ada aristokrasi kekayaan, dan tidak ada aristokrasi intelektual. Kejeniusan tidak pernah dihargai bahkan dengan tambahan satu jam sehari. Dan tidak ada hukuman. Buanglah komoditas Anda yang sangat berharga sebanyak yang Anda mau, dan persediaannya tidak akan pernah ditahan dari Anda. Tidak ada kekuatan misterius yang akan berkata: — "Orang ini bodoh, jika bukan penipu. Dia tidak pantas mendapatkan waktu; dia akan diputus di meteran." Ini lebih pasti daripada obligasi pemerintah, dan pembayaran pendapatan tidak dipengaruhi oleh hari Minggu. Terlebih lagi, Anda tidak dapat menarik uang dari masa depan. Mustahil untuk berhutang! Anda hanya dapat membuang momen yang berlalu. Anda tidak dapat membuang hari esok; itu disimpan untuk Anda. Anda tidak dapat membuang jam berikutnya; itu disimpan untuk Anda. Saya bilang perselingkuhan itu adalah sebuah keajaiban. Bukankah begitu? Anda harus hidup dengan dua puluh empat jam waktu setiap hari ini. Dari waktu itu, Anda harus menciptakan kesehatan, kesenangan, uang, kepuasan, rasa hormat, dan evolusi jiwa abadi Anda. Penggunaan yang tepat, penggunaan yang paling efektif, adalah masalah yang sangat mendesak dan sangat nyata. Semua bergantung pada itu. Kebahagiaan Anda—hadiah yang sulit diraih yang Anda semua dambakan, teman-teman!—bergantung pada itu. Anehnya, surat kabar, yang begitu giat dan mutakhir, tidak penuh dengan artikel "Cara hidup dengan pendapatan waktu yang terbatas," alih-alih "Cara hidup dengan pendapatan uang yang terbatas"! Uang jauh lebih umum daripada waktu. Ketika seseorang merenung, ia menyadari bahwa uang adalah hal yang paling umum yang ada. Uang menumpuk di bumi dalam jumlah besar. Jika seseorang tidak dapat mengatur agar hidup dengan penghasilan tertentu, ia akan menghasilkan sedikit lebih banyak—atau mencurinya, atau memasang iklan. Seseorang tidak serta merta mengacaukan hidupnya hanya karena tidak dapat mencukupi kebutuhan dengan seribu pound setahun; ia akan berusaha keras dan mengubahnya menjadi koin emas, serta menyeimbangkan anggaran. Tetapi jika seseorang tidak dapat mengatur agar penghasilan selama dua puluh empat jam sehari dapat mencukupi semua pengeluaran yang diperlukan, maka hidupnya akan benar-benar kacau. Ketersediaan waktu, meskipun teratur, sangat terbatas.</p>

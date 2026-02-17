@@ -5,39 +5,176 @@
 <title>BAB XX. DI MANA FIX BERTEMU LANGSUNG DENGAN PHILEAS FOGG</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XX. DI MANA FIX BERTEMU LANGSUNG DENGAN PHILEAS FOGG - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XX. DI MANA FIX BERTEMU LANGSUNG DENGAN PHILEAS FOGG</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Sementara peristiwa-peristiwa ini terjadi di rumah opium, Tuan Fogg, tanpa menyadari bahaya yang mengancamnya karena kehilangan kapal uap, dengan tenang mengantar Aouda berkeliling jalan-jalan di kawasan Inggris, melakukan pembelian yang diperlukan untuk perjalanan panjang yang akan mereka tempuh. Bagi seorang Inggris seperti Tuan Fogg, berkeliling dunia dengan tas koper memang mudah; tetapi seorang wanita tidak dapat diharapkan untuk bepergian dengan nyaman dalam kondisi seperti itu. Ia menyelesaikan tugasnya dengan ketenangan yang khas, dan selalu menjawab keberatan dari teman wanitanya yang cantik, yang bingung oleh kesabaran dan kemurahan hatinya: “Hal ini demi kepentingan perjalanan saya—bagian dari program saya.” Setelah berbelanja, mereka kembali ke hotel, di mana mereka makan malam dengan hidangan mewah yang disajikan secara prasmanan; setelah itu Aouda, berjabat tangan dengan pelindungnya sesuai kebiasaan Inggris, kembali ke kamarnya untuk beristirahat. Tuan Fogg menghabiskan sepanjang malam dengan membaca Times dan Illustrated London News . Seandainya ia mampu merasa takjub akan sesuatu, itu pasti karena tidak melihat pelayannya kembali saat waktu tidur. Tetapi, karena tahu bahwa kapal uap tidak akan berangkat ke Yokohama sampai keesokan paginya, ia tidak terlalu memikirkannya. Ketika Passepartout tidak muncul keesokan paginya untuk menjawab bel tuannya, Tuan Fogg, tanpa menunjukkan sedikit pun kekesalan, hanya mengambil tasnya, memanggil Aouda, dan meminta tandu. Saat itu pukul delapan; pukul setengah sembilan, karena air pasang, kapal “Carnatic” akan meninggalkan pelabuhan. Tuan Fogg dan Aouda naik ke tandu, barang bawaan mereka dibawa di belakang dengan gerobak dorong, dan setengah jam kemudian mereka sampai di dermaga tempat mereka akan naik kapal. Tuan Fogg kemudian mengetahui bahwa kapal “Carnatic” telah berlayar malam sebelumnya. Ia berharap menemukan tidak hanya kapal uap itu, tetapi juga pelayannya, dan terpaksa melepaskan keduanya; tetapi tidak ada tanda kekecewaan di wajahnya, dan ia hanya berkata kepada Aouda, “Ini kecelakaan, Nyonya; tidak lebih dari itu.” Pada saat itu, seorang pria yang telah mengamatinya dengan saksama mendekat. Itu adalah Fix, yang sambil membungkuk, menyapa Tuan Fogg: “Bukankah Anda, seperti saya, Tuan, seorang penumpang kapal 'Rangoon,' yang tiba kemarin?” “Ya, Pak,” jawab Tuan Fogg dingin. “Tapi saya tidak mendapat kehormatan—” “Maafkan saya; saya kira saya akan menemukan pelayan Anda di sini.” “Apakah Anda tahu di mana dia berada, Tuan?” tanya Aouda dengan cemas. “Apa!” jawab Fix, pura-pura terkejut. “Bukankah dia bersamamu?” “Tidak,” kata Aouda. “Dia belum muncul sejak kemarin. Mungkinkah dia naik ke kapal 'Carnatic' tanpa kita?” “Tanpa Anda, Nyonya?” jawab detektif itu. “Maaf, apakah Anda bermaksud berlayar dengan kapal 'Carnatic'?” “Baik, Pak.” “Saya juga, Nyonya, dan saya sangat kecewa. Kapal 'Carnatic', setelah perbaikannya selesai, meninggalkan Hong Kong dua belas jam sebelum waktu yang ditentukan, tanpa pemberitahuan apa pun; dan sekarang kita harus menunggu seminggu untuk kapal uap lain.” Saat ia mengucapkan "seminggu," Fix merasakan jantungnya berdebar kencang karena gembira. Fogg ditahan di Hong Kong selama seminggu! Akan ada waktu bagi surat perintah untuk tiba, dan keberuntungan akhirnya berpihak pada perwakilan hukum. Kengeriannya dapat dibayangkan ketika ia mendengar Tuan Fogg berkata, dengan suara tenangnya, "Tetapi tampaknya ada kapal lain selain 'Carnatic' di pelabuhan Hong Kong." Dan, sambil mengulurkan tangannya kepada Aouda, ia melangkah menuju dermaga untuk mencari kapal yang akan segera berangkat. Fix, dengan tercengang, mengikutinya; seolah-olah ia terikat pada Tuan Fogg oleh benang tak terlihat. Namun, tampaknya keberuntungan benar-benar telah meninggalkan pria yang selama ini telah dilayaninya dengan sangat baik. Selama tiga jam Phileas Fogg berkeliaran di dermaga, dengan tekad, jika perlu, untuk menyewa kapal yang akan membawanya ke Yokohama; tetapi ia hanya menemukan kapal yang sedang memuat atau membongkar muatan, dan karena itu tidak dapat berlayar. Fix mulai berharap lagi. Namun, Tuan Fogg, bukannya patah semangat, malah melanjutkan pencariannya, bertekad untuk tidak berhenti meskipun harus pergi ke Makau, ketika ia didekati oleh seorang pelaut di salah satu dermaga. “Apakah Yang Mulia sedang mencari perahu?” “Apakah Anda sudah menyiapkan perahu untuk berlayar?” “Baik, Yang Mulia; sebuah kapal pandu—Nomor 43—yang terbaik di pelabuhan.” “Apakah dia ngebut?” “Antara pukul delapan dan sembilan knot. Maukah kau melihatnya?” "Ya." “Yang Mulia akan merasa puas dengannya. Apakah ini untuk wisata laut?” “Tidak; untuk sebuah pelayaran.” “Sebuah pelayaran?” “Ya, maukah Anda mengantar saya ke Yokohama?” Pelaut itu bersandar di pagar, membuka matanya lebar-lebar, dan berkata, "Apakah Yang Mulia sedang bercanda?" “Tidak. Saya ketinggalan kapal 'Carnatic,' dan saya harus sampai di Yokohama paling lambat tanggal 14, untuk naik kapal ke San Francisco.” “Maaf,” kata pelaut itu; “tapi itu tidak mungkin.” “Saya menawarkan Anda seratus pound per hari, dan hadiah tambahan dua ratus pound jika saya sampai di Yokohama tepat waktu.” “Apakah kamu serius?” “Tentu saja.” Sang pilot berjalan agak jauh, dan memandang ke laut, tampak bergumul antara kecemasan untuk mendapatkan sejumlah besar uang dan ketakutan untuk berlayar sejauh itu. Fix berada dalam ketegangan yang mencekam. Tuan Fogg menoleh ke Aouda dan bertanya kepadanya, "Anda tidak akan takut, bukan, Nyonya?" “Tidak dengan Anda, Tuan Fogg,” jawabnya. Sang pilot kembali sambil menggeser-geser topinya di tangannya. “Nah, pilot?” tanya Tuan Fogg. “Baik, Yang Mulia,” jawabnya, “saya tidak bisa mempertaruhkan diri saya, anak buah saya, atau perahu kecil saya yang beratnya kurang dari dua puluh ton untuk perjalanan sejauh itu pada waktu seperti ini. Selain itu, kami tidak akan bisa sampai ke Yokohama tepat waktu, karena jaraknya dari Hong Kong adalah seribu enam ratus enam puluh mil.” “Hanya seribu enam ratus,” kata Tuan Fogg. “Itu sama saja.” Fix bernapas lebih lega. “Namun,” tambah pilot itu, “mungkin ada cara lain untuk mengaturnya.” Fix berhenti bernapas sama sekali. “Bagaimana?” tanya Tuan Fogg. “Dengan pergi ke Nagasaki, di ujung selatan Jepang, atau bahkan ke Shanghai, yang hanya berjarak delapan ratus mil dari sini. Dengan pergi ke Shanghai, kita tidak akan terpaksa berlayar jauh dari pantai Tiongkok, yang akan menjadi keuntungan besar, karena arus mengalir ke utara, dan akan membantu kita.” “Pilot,” kata Tuan Fogg, “saya harus naik kapal uap Amerika di Yokohama, dan bukan di Shanghai atau Nagasaki.” “Kenapa tidak?” jawab pilot itu. “Kapal uap San Francisco tidak berangkat dari Yokohama. Kapal itu singgah di Yokohama dan Nagasaki, tetapi berangkat dari Shanghai.” “Anda yakin akan hal itu?” “Sempurna.” “Lalu, kapan kapal itu berangkat dari Shanghai?” “Pada tanggal 11, pukul tujuh malam. Oleh karena itu, kita punya waktu empat hari, yaitu sembilan puluh enam jam; dan dalam waktu itu, jika kita beruntung dan ada angin barat daya, serta laut tenang, kita bisa menempuh jarak delapan ratus mil ke Shanghai.” “Dan kamu bisa pergi—” “Dalam satu jam; segera setelah perbekalan dapat dimuat ke kapal dan layar dikembangkan.” “Ini tawaran yang bagus. Apakah Anda kapten kapal ini?” “Ya; John Bunsby, kapten kapal 'Tankadere'.” “Apakah Anda ingin uang muka?” “Jika itu tidak akan mengganggu Yang Mulia—” “Ini ada dua ratus pound yang sudah saya bayarkan, Tuan,” tambah Phileas Fogg, sambil menoleh ke Fix, “jika Anda ingin memanfaatkannya—” “Terima kasih, Pak; saya memang hendak meminta bantuan itu.” “Baiklah. Dalam setengah jam lagi kita akan naik ke kapal.” “Tapi kasihan Passepartout?” desak Aouda, yang sangat terganggu oleh hilangnya pelayan itu. “Aku akan melakukan segala yang aku bisa untuk menemukannya,” jawab Phileas Fogg. Sementara Fix, dalam keadaan demam dan gugup, pergi ke perahu pandu, yang lain mengarahkan haluan mereka ke kantor polisi di Hong Kong. Di sana Phileas Fogg memberikan deskripsi Passepartout, dan meninggalkan sejumlah uang untuk digunakan dalam pencariannya. Setelah formalitas yang sama dilakukan di konsulat Prancis, dan tandu berhenti di hotel untuk mengambil barang bawaan yang telah dikirim kembali ke sana, mereka kembali ke dermaga. Saat itu sudah pukul tiga; dan kapal pandu nomor 43, dengan awak kapal di dalamnya dan perbekalan yang telah disimpan, siap untuk berangkat. Kapal “Tankadere” adalah kapal kecil yang rapi dengan berat dua puluh ton, dibangun dengan anggun seolah-olah ia adalah kapal layar balap. Lapisan tembaga yang mengkilap, pekerjaan besi galvanisnya, deknya yang putih seperti gading, menunjukkan kebanggaan John Bunsby dalam membuatnya tampak menarik. Kedua tiangnya sedikit condong ke belakang; ia membawa layar brigantine, layar depan, layar badai, dan layar tetap, dan dilengkapi dengan baik untuk berlayar searah angin; dan ia tampak mampu mencapai kecepatan tinggi, yang memang telah dibuktikannya dengan memenangkan beberapa hadiah dalam perlombaan kapal pandu. Awak kapal “Tankadere” terdiri dari John Bunsby, sang kapten, dan empat pelaut tangguh yang akrab dengan laut Tiongkok. John Bunsby sendiri, seorang pria berusia sekitar empat puluh lima tahun, kuat, kulitnya terbakar matahari, dengan ekspresi mata yang ceria, dan wajah yang energik dan percaya diri, akan menginspirasi kepercayaan pada orang yang paling penakut sekalipun. Phileas Fogg dan Aouda naik ke kapal, di mana mereka mendapati Fix sudah terpasang. Di bawah dek terdapat kabin persegi, yang dindingnya menjorok keluar berbentuk ranjang, di atas sofa bundar; di tengahnya terdapat meja yang dilengkapi dengan lampu gantung. Akomodasinya sempit, tetapi rapi. “Maaf, saya tidak punya hal yang lebih baik untuk ditawarkan kepada Anda,” kata Tuan Fogg kepada Fix, yang membungkuk tanpa menjawab. Sang detektif merasakan perasaan yang mirip dengan penghinaan karena telah mengambil keuntungan dari kebaikan Tuan Fogg. “Sudah pasti,” pikirnya, “meskipun dia bajingan, dia orang yang sopan!” Layar dan bendera Inggris dikibarkan pada pukul tiga lewat sepuluh menit. Tuan Fogg dan Aouda, yang duduk di dek, melirik dermaga untuk terakhir kalinya, dengan harapan dapat melihat Passepartout. Fix tidak tanpa rasa takut jika kebetulan mengarahkan langkah pelayan malang yang telah ia perlakukan dengan sangat buruk itu ke arah ini; dalam hal ini, penjelasan yang sama sekali tidak memuaskan bagi detektif itu pasti akan terjadi. Tetapi orang Prancis itu tidak muncul, dan, tanpa diragukan lagi, masih terbaring di bawah pengaruh opium yang membius. John Bunsby, sang kapten, akhirnya memberi perintah untuk berlayar, dan "Tankadere," memanfaatkan angin di bawah layar brigantine, layar depan, dan layar jib tetapnya, melaju kencang menerjang ombak.</p>
 

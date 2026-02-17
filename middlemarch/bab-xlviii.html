@@ -5,39 +5,176 @@
 <title>BAB XLVIII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XLVIII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XLVIII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Tentunya saat-saat keemasan berubah menjadi kelabu Dan tak lagi menari, dan sia-sia berusaha berlari: Kulihat rambut putih mereka terurai tertiup angin— Setiap wajah tampak lelah saat menatapku, Perlahan berputar dalam pelukan konstan Badai yang menerjang. Kekesalan Dorothea saat meninggalkan gereja terutama berasal dari persepsinya bahwa Tuan Casaubon bertekad untuk tidak berbicara dengan sepupunya, dan bahwa kehadiran Will di gereja telah semakin mempertegas keterasingan di antara mereka. Kedatangan Will baginya tampak cukup dapat dimaafkan, bahkan, ia menganggapnya sebagai langkah baik dari Will menuju rekonsiliasi yang selama ini selalu ia harapkan. Will mungkin membayangkan, seperti halnya Dorothea, bahwa jika Tuan Casaubon dan dia dapat bertemu dengan mudah, mereka akan berjabat tangan dan hubungan persahabatan mungkin akan kembali terjalin. Tetapi sekarang Dorothea merasa harapan itu telah direnggut sepenuhnya. Will semakin terasing, karena Tuan Casaubon pasti semakin merasa sakit hati karena kehadiran seseorang yang ia tolak untuk akui. Pagi itu kesehatannya kurang baik, ia mengalami kesulitan bernapas, dan akibatnya ia tidak berkhotbah; oleh karena itu, ia tidak heran jika ia hampir diam saat makan siang, apalagi ia tidak menyinggung Will Ladislaw sama sekali. Ia sendiri merasa tidak akan pernah lagi membahas topik itu. Mereka biasanya menghabiskan waktu terpisah antara makan siang dan makan malam pada hari Minggu; Tuan Casaubon kebanyakan tidur siang di perpustakaan, dan Dorothea di kamarnya, tempat ia biasa menyibukkan diri dengan beberapa buku favoritnya. Ada tumpukan kecil buku di atas meja di dekat jendela lengkung—berbagai macam, dari Herodotus, yang sedang ia pelajari untuk dibaca bersama Tuan Casaubon, hingga buku karya Pascal, dan "Tahun Kristen" karya Keble. Tetapi hari ini ia membuka satu demi satu buku, dan tidak dapat membaca satu pun. Segalanya tampak suram: pertanda sebelum kelahiran Cyrus—barang-barang antik Yahudi—oh, astaga!—epigram-epigram saleh—denting suci himne-himne favorit—semuanya sama-sama datar seperti nada yang dipukul di atas kayu: bahkan bunga-bunga musim semi dan rumput tampak gemetar lesu di bawah awan sore yang sesekali menutupi matahari; bahkan pikiran-pikiran yang menopang yang telah menjadi kebiasaan tampaknya mengandung kelelahan akan hari-hari panjang di masa depan di mana ia masih akan hidup dengan pikiran-pikiran itu sebagai satu-satunya teman. Dorothea yang malang mendambakan jenis persahabatan lain, atau lebih tepatnya, jenis persahabatan yang lebih lengkap, dan rasa lapar itu tumbuh dari upaya terus-menerus yang dituntut oleh kehidupan pernikahannya. Ia selalu berusaha menjadi apa yang diinginkan suaminya, dan tidak pernah bisa beristirahat pada kegembiraan suaminya atas dirinya sendiri. Hal yang disukainya, yang secara spontan ingin dimilikinya, tampaknya selalu dikecualikan dari hidupnya; karena jika hanya diberikan dan tidak dibagikan oleh suaminya, itu sama saja dengan ditolak. Mengenai Will Ladislaw, sejak awal sudah ada perbedaan di antara mereka, dan perbedaan itu berakhir, karena Tuan Casaubon telah begitu keras menolak perasaan kuat Dorothea tentang klaimnya atas harta keluarga, dengan keyakinan Dorothea bahwa dialah yang benar dan suaminya yang salah, tetapi dia tidak berdaya. Siang ini, rasa tidak berdaya itu terasa lebih menyedihkan dan mematikan daripada sebelumnya: dia merindukan orang-orang yang bisa menyayanginya, dan kepada siapa dia bisa menyayangi. Dia merindukan pekerjaan yang akan memberikan manfaat langsung seperti sinar matahari dan hujan, dan sekarang tampaknya dia akan semakin hidup dalam kuburan virtual, di mana terdapat peralatan kerja yang mengerikan yang menghasilkan sesuatu yang tidak akan pernah melihat cahaya. Hari ini dia berdiri di pintu kuburan dan melihat Will Ladislaw menjauh ke dunia yang jauh penuh aktivitas dan persahabatan—menolehkan wajahnya ke arahnya saat dia pergi. Buku-buku tidak ada gunanya. Berpikir pun tidak ada gunanya. Hari itu Minggu, dan dia tidak bisa naik kereta untuk pergi ke Celia, yang baru saja melahirkan. Kini tidak ada tempat berlindung dari kekosongan dan ketidakpuasan rohani, dan Dorothea harus menanggung suasana hatinya yang buruk, seperti halnya ia menanggung sakit kepala. Setelah makan malam, pada saat ia biasanya mulai membaca dengan suara keras, Tuan Casaubon mengusulkan agar mereka pergi ke perpustakaan, di mana, katanya, ia telah memasang perapian dan lampu. Ia tampak segar kembali, dan berpikir dengan sungguh-sungguh. Di perpustakaan, Dorothea memperhatikan bahwa ia baru saja menata deretan buku catatannya di atas meja, dan sekarang ia mengambil dan memberikan kepadanya sebuah buku yang sudah dikenalnya, yang merupakan daftar isi dari semua buku lainnya. “Kau akan menuruti permintaanku, sayangku,” katanya sambil duduk, “jika alih-alih membaca yang lain malam ini, kau mau membaca ini dengan lantang, pensil di tangan, dan di setiap titik di mana aku mengatakan 'tandai,' buatlah tanda silang dengan pensilmu. Ini adalah langkah pertama dalam proses penyaringan yang telah lama kupikirkan, dan seiring berjalannya waktu aku akan dapat menunjukkan kepadamu prinsip-prinsip seleksi tertentu sehingga kau, kuharap, akan memiliki partisipasi yang cerdas dalam tujuanku.” Usulan ini hanyalah satu lagi pertanda yang ditambahkan ke banyak pertanda sejak wawancaranya yang berkesan dengan Lydgate, bahwa keengganan awal Tuan Casaubon untuk membiarkan Dorothea bekerja dengannya telah berubah menjadi sikap sebaliknya, yaitu, menuntut banyak minat dan tenaga darinya. Setelah ia membaca dan memeriksa selama dua jam, ia berkata, “Kita akan membawa buku itu ke atas—dan pensilnya juga, kalau kau mau—dan jika perlu membaca di malam hari, kita bisa melanjutkan tugas ini. Kuharap ini tidak melelahkan bagimu, Dorothea?” “Aku lebih suka selalu membaca apa yang paling kau sukai untuk didengar,” kata Dorothea, yang mengatakan kebenaran sederhana; karena yang ia takuti adalah harus bersusah payah membaca atau melakukan hal lain yang membuatnya tetap murung seperti biasanya. Hal itu membuktikan betapa kuatnya pengaruh karakteristik tertentu dalam diri Dorothea terhadap orang-orang di sekitarnya, sehingga suaminya, meskipun diliputi rasa cemburu dan curiga, telah menaruh kepercayaan penuh pada integritas janji-janjinya, dan kemampuannya untuk mengabdikan diri pada gagasannya tentang yang benar dan terbaik. Belakangan ini, ia mulai merasa bahwa kualitas-kualitas ini adalah sesuatu yang istimewa baginya, dan ia ingin menguasainya. Waktu membaca di malam hari pun tiba. Dorothea, dalam kelelahan masa mudanya, segera tertidur lelap: ia terbangun oleh cahaya yang pada awalnya tampak seperti penglihatan tiba-tiba tentang matahari terbenam setelah ia mendaki bukit yang curam: ia membuka matanya dan melihat suaminya, yang terbungkus jubah hangatnya, duduk di kursi berlengan dekat perapian tempat bara api masih menyala. Ia telah menyalakan dua lilin, berharap Dorothea akan bangun, tetapi tidak ingin membangunkannya dengan cara yang lebih langsung. “Apakah kau sakit, Edward?” katanya, sambil segera berdiri. “Aku merasa agak tidak nyaman dalam posisi berbaring. Aku akan duduk di sini sebentar.” Dia melemparkan kayu ke perapian, membungkus dirinya, dan berkata, “Apakah Anda ingin saya membacakan untuk Anda?” “Anda akan sangat membantu saya jika melakukan itu, Dorothea,” kata Tuan Casaubon, dengan sedikit lebih lembut dari biasanya dalam sikap sopannya. “Saya terjaga: pikiran saya sangat jernih.” “Aku khawatir kegembiraan ini mungkin terlalu besar untukmu,” kata Dorothea, mengingat peringatan Lydgate. “Tidak, saya tidak merasa terlalu bersemangat. Berpikir itu mudah.” Dorothea tidak berani bersikeras, dan dia membaca selama satu jam atau lebih pada rencana yang sama seperti yang telah dia lakukan di malam hari, tetapi dengan lebih cepat menyelesaikan setiap halaman. Pikiran Tuan Casaubon lebih waspada, dan dia tampaknya mengantisipasi apa yang akan datang setelah sedikit petunjuk verbal, dengan mengatakan, “Cukup—perhatikan itu”—atau “Lanjutkan ke bagian selanjutnya—saya hilangkan uraian kedua tentang Kreta.” Dorothea takjub memikirkan kecepatan seperti burung yang digunakan pikirannya untuk mengamati wilayah tempat ia telah merayap selama bertahun-tahun. Akhirnya dia berkata— “Tutup buku ini sekarang, sayangku. Kita akan melanjutkan pekerjaan kita besok. Aku telah menundanya terlalu lama, dan dengan senang hati akan menyelesaikannya. Tetapi kau perhatikan bahwa prinsip yang mendasari pemilihanku adalah untuk memberikan ilustrasi yang memadai, dan bukan yang tidak proporsional, untuk setiap tesis yang tercantum dalam pengantarku, seperti yang telah digariskan saat ini. Kau telah memahaminya dengan jelas, Dorothea?” “Ya,” kata Dorothea, agak gemetar. Ia merasa sedih sekali. “Dan sekarang kurasa aku bisa beristirahat sejenak,” kata Tuan Casaubon. Ia berbaring lagi dan memintanya untuk mematikan lampu. Setelah istrinya juga berbaring, dan hanya ada kegelapan yang dipecah oleh cahaya redup di perapian, ia berkata— “Sebelum tidur, aku ingin menyampaikan sebuah permintaan, Dorothea.” “Apa itu?” tanya Dorothea, dengan perasaan takut di hatinya. “Intinya adalah Anda akan memberi tahu saya, dengan sengaja, apakah, jika saya meninggal, Anda akan melaksanakan keinginan saya: apakah Anda akan menghindari melakukan apa yang saya sesalkan, dan berupaya melakukan apa yang saya inginkan.” Dorothea tidak terkejut: banyak kejadian telah mengarahkannya pada dugaan adanya niat tertentu dari suaminya yang mungkin akan memberinya beban baru. Dia tidak langsung menjawab. “Kau menolak?” kata Tuan Casaubon, dengan nada yang lebih tajam. “Tidak, aku belum menolak,” kata Dorothea dengan suara jelas, kebutuhan akan kebebasan menegaskan dirinya dalam dirinya; “tetapi terlalu serius—kurasa tidak pantas—untuk membuat janji ketika aku tidak tahu apa yang akan mengikatku. Apa pun yang mendorong perasaan itu, aku lebih memilih untuk tidak berjanji.” “Tetapi kamu menggunakan penilaianmu sendiri: Aku meminta kamu untuk menaati penilaianku; kamu menolak.” “Tidak, sayang, tidak!” kata Dorothea memohon, diliputi oleh rasa takut yang bertentangan. “Tetapi bolehkah aku menunggu dan berpikir sejenak? Aku sangat ingin melakukan apa yang akan menghiburmu; tetapi aku tidak dapat memberikan janji apa pun secara tiba-tiba—apalagi janji untuk melakukan sesuatu yang aku tidak tahu apa.” “Kalau begitu, Anda tidak bisa mempercayai isi keinginan saya?” “Berilah aku waktu sampai besok,” kata Dorothea memohon. “Sampai besok kalau begitu,” kata Tuan Casaubon. Tak lama kemudian ia mendengar suaminya tertidur, tetapi ia sendiri tak bisa tidur lagi. Sambil berusaha tetap berbaring agar tidak mengganggu suaminya, pikirannya berkecamuk dalam konflik di mana imajinasi mengerahkan kekuatannya, pertama di satu sisi dan kemudian di sisi lain. Ia tidak memiliki firasat bahwa kekuasaan yang ingin ditegakkan suaminya atas tindakannya di masa depan berkaitan dengan hal lain selain pekerjaannya. Tetapi cukup jelas baginya bahwa suaminya mengharapkannya untuk mengabdikan diri pada penyaringan tumpukan materi yang bercampur aduk itu, yang akan menjadi ilustrasi prinsip-prinsip yang bahkan lebih meragukan. Anak malang itu telah menjadi sama sekali tidak percaya akan keandalan Kunci yang telah mewujudkan ambisi dan kerja keras hidup suaminya. Tidak mengherankan bahwa, meskipun pendidikannya terbatas, penilaiannya dalam hal ini lebih tepat daripada suaminya: karena ia melihat dengan perbandingan yang tidak bias dan akal sehat pada kemungkinan-kemungkinan yang telah dipertaruhkan oleh suaminya dengan semua keegoisannya. Dan kini ia membayangkan hari-hari, bulan-bulan, dan tahun-tahun yang harus ia habiskan untuk memilah apa yang dapat disebut mumi yang hancur, dan fragmen-fragmen tradisi yang merupakan mosaik yang terbuat dari reruntuhan yang remuk—memilahnya sebagai bahan untuk sebuah teori yang sudah layu sejak lahir seperti anak peri. Tak diragukan lagi, kesalahan yang gigih dikejar telah menjaga embrio kebenaran tetap bernapas: pencarian emas sekaligus merupakan pertanyaan tentang substansi, tubuh kimia dipersiapkan untuk jiwanya, dan Lavoisier pun lahir. Namun teori Tuan Casaubon tentang unsur-unsur yang menjadi benih semua tradisi sepertinya tidak akan tiba-tiba terbentur penemuan-penemuan baru: teori itu mengambang di antara dugaan-dugaan fleksibel yang tidak lebih kokoh daripada etimologi-etimologi yang tampak kuat karena kemiripan bunyi sampai terbukti bahwa kemiripan bunyi tersebut membuatnya mustahil: itu adalah metode interpretasi yang tidak diuji oleh kebutuhan untuk membentuk sesuatu yang memiliki benturan yang lebih tajam daripada gagasan rumit tentang Gog dan Magog: itu bebas dari gangguan seperti rencana untuk merangkai bintang-bintang. Dan Dorothea sering kali harus menahan rasa lelah dan ketidaksabarannya atas tebakan teka-teki yang meragukan ini, karena hal itu justru mengungkapkan dirinya kepadanya sebagai pengganti persahabatan dalam pengetahuan tinggi yang akan membuat hidup lebih berharga! Dia sekarang cukup mengerti mengapa suaminya bergantung padanya, sebagai satu-satunya harapan yang tersisa agar kerja kerasnya dapat terwujud dan diberikan kepada dunia. Awalnya, tampaknya dia ingin menjauhkan dirinya dari pengetahuan mendalam tentang apa yang sedang dia lakukan; tetapi secara bertahap, kebutuhan manusia yang sangat mendesak—prospek kematian yang terlalu cepat— Dan di sini rasa iba Dorothea beralih dari masa depannya sendiri ke masa lalu suaminya—bahkan, ke perjuangan beratnya saat ini dengan banyak hal yang tumbuh dari masa lalu itu: kerja keras yang kesepian, ambisi yang terengah-engah di bawah tekanan ketidakpercayaan diri; tujuan yang semakin menjauh, dan anggota tubuh yang semakin berat; dan sekarang akhirnya pedang itu tampak bergetar di atasnya! Dan bukankah dia ingin menikah dengannya agar dia bisa membantunya dalam pekerjaan hidupnya?—Tetapi dia mengira pekerjaan itu adalah sesuatu yang lebih besar, yang dapat dia layani dengan penuh pengabdian demi dirinya sendiri. Apakah benar, bahkan untuk menenangkan kesedihannya—mungkinkah, bahkan jika dia berjanji—untuk bekerja seperti di alat penggilingan tanpa hasil? Namun, bisakah dia menolaknya? Bisakah dia berkata, “Aku menolak untuk memenuhi kerinduan yang mendalam ini?” Itu berarti menolak melakukan untuknya setelah dia meninggal, apa yang hampir pasti akan dia lakukan untuknya saat dia hidup. Jika dia hidup seperti yang dikatakan Lydgate, selama lima belas tahun atau lebih, hidupnya pasti akan dihabiskan untuk membantunya dan menaatinya. Namun, tetap ada perbedaan mendalam antara pengabdian kepada yang hidup dan janji tak terbatas akan pengabdian kepada yang telah meninggal. Selama ia hidup, ia tidak dapat menuntut apa pun yang tidak dapat ia bantah, bahkan tolak. Tetapi—pikiran itu terlintas di benaknya lebih dari sekali, meskipun ia tidak dapat mempercayainya—mungkinkah ia tidak bermaksud menuntut sesuatu yang lebih darinya daripada yang dapat ia bayangkan, karena ia menginginkan janjinya untuk melaksanakan keinginannya tanpa memberitahunya secara tepat apa keinginannya? Tidak; hatinya hanya terikat pada pekerjaannya: itulah tujuan yang untuknya hidupnya yang semakin menipis harus ditolong oleh hidupnya. Dan sekarang, jika dia berkata, “Tidak! Jika kau mati, aku tak akan ikut campur dalam pekerjaanmu”—seolah-olah dia akan menghancurkan hati yang terluka itu. Selama empat jam Dorothea terombang-ambing dalam pergumulan ini, hingga ia merasa sakit dan bingung, tidak mampu mengambil keputusan, berdoa dalam hati. Tak berdaya seperti anak kecil yang telah menangis dan memohon terlalu lama, ia tertidur di pagi hari, dan ketika ia bangun, Tuan Casaubon sudah bangun. Tantripp memberitahunya bahwa ia telah membaca doa, sarapan, dan berada di perpustakaan. “Saya belum pernah melihat Anda tampak sepucat ini, Nyonya,” kata Tantripp, seorang wanita bertubuh tegap yang pernah bersama para biarawati di Lausanne. “Apakah aku pernah berkulit cerah, Tantripp?” kata Dorothea sambil tersenyum tipis. “Yah, bukan berarti berwarna cerah, tapi seindah mawar Cina. Tapi selalu mencium aroma buku-buku kulit itu, apa yang bisa diharapkan? Istirahatlah sebentar pagi ini, Nyonya. Izinkan saya mengatakan bahwa Anda sedang sakit dan tidak dapat pergi ke perpustakaan yang tertutup itu.” “Oh tidak, tidak! Biar aku bergegas,” kata Dorothea. “Tuan Casaubon sangat menginginkanku.” Saat ia turun, ia yakin bahwa ia harus berjanji untuk memenuhi keinginannya; tetapi itu akan dilakukan nanti—belum sekarang. Saat Dorothea memasuki perpustakaan, Tuan Casaubon berbalik dari meja tempat dia meletakkan beberapa buku, dan berkata— “Aku sedang menunggu kedatanganmu, sayangku. Aku berharap bisa langsung mulai bekerja pagi ini, tetapi aku merasa kurang enak badan, mungkin karena terlalu bersemangat kemarin. Sekarang aku akan berjalan-jalan di semak-semak, karena udaranya lebih sejuk.” “Aku senang mendengarnya,” kata Dorothea. “Aku khawatir pikiranmu terlalu aktif semalam.” “Saya ingin masalah ini diselesaikan pada poin yang terakhir saya bicarakan, Dorothea. Sekarang, saya harap, Anda dapat memberi saya jawaban.” “Bolehkah aku keluar menemuimu di taman sebentar lagi?” kata Dorothea, mendapatkan sedikit waktu untuk bernapas dengan cara itu. “Saya akan berada di Yew-tree Walk selama setengah jam ke depan,” kata Tuan Casaubon, lalu ia meninggalkannya. Dorothea, merasa sangat lelah, memanggil dan meminta Tantripp untuk membawakannya beberapa selendang. Ia telah duduk diam selama beberapa menit, tetapi bukan dalam keadaan mengulangi konflik sebelumnya: ia hanya merasa akan mengatakan "Ya" pada malapetakanya sendiri: ia terlalu lemah, terlalu dipenuhi rasa takut memikirkan akan memberikan pukulan tajam kepada suaminya, untuk melakukan apa pun selain menyerah sepenuhnya. Ia duduk diam dan membiarkan Tantripp mengenakan topi dan selendangnya, sebuah sikap pasif yang tidak biasa baginya, karena ia lebih suka mengurus dirinya sendiri. “Semoga Tuhan memberkati Anda, Nyonya!” kata Tantripp, dengan perasaan cinta yang tak terbendung terhadap makhluk cantik dan lembut itu, yang untuknya ia merasa tak sanggup berbuat apa pun lagi, setelah selesai mengikatkan penutup kepala. Hal ini terlalu berat bagi perasaan Dorothea yang sangat sensitif, dan dia pun menangis tersedu-sedu sambil bersandar di lengan Tantripp. Namun tak lama kemudian dia menenangkan diri, mengusap air matanya, dan keluar melalui pintu kaca menuju semak-semak. “Seandainya setiap buku di perpustakaan itu dibangun menjadi kamar mayat untuk tuanmu,” kata Tantripp kepada Pratt, kepala pelayan, ketika menemukannya di ruang sarapan. Ia pernah ke Roma dan mengunjungi tempat-tempat purbakala, seperti yang kita ketahui; dan ia selalu menolak memanggil Tuan Casaubon dengan sebutan lain selain “tuanmu” ketika berbicara dengan para pelayan lainnya. Pratt tertawa. Dia sangat menyukai tuannya, tetapi dia lebih menyukai Tantripp. Ketika Dorothea berada di jalan setapak berkerikil, ia berlama-lama di antara rumpun pohon yang lebih dekat, ragu-ragu, seperti yang pernah ia lakukan sebelumnya, meskipun karena alasan yang berbeda. Saat itu ia takut usahanya untuk menjalin persahabatan tidak akan diterima; sekarang ia takut pergi ke tempat di mana ia meramalkan bahwa ia harus mengikat dirinya pada persahabatan yang membuatnya gentar. Baik hukum maupun opini dunia tidak memaksanya untuk melakukan ini—hanya sifat suaminya dan belas kasihnya sendiri, hanya kuk pernikahan yang ideal dan bukan yang sebenarnya. Ia cukup jelas melihat seluruh situasi, namun ia terbelenggu: ia tidak dapat memukul jiwa yang tersiksa yang memohon belas kasihnya. Jika itu adalah kelemahan, Dorothea lemah. Tetapi setengah jam telah berlalu, dan ia tidak boleh menunda lebih lama lagi. Ketika ia memasuki Jalan Setapak Pohon Yew, ia tidak dapat melihat suaminya; Namun jalan itu berkelok-kelok, dan dia pun berjalan, berharap dapat melihat sosoknya yang terbungkus jubah biru, yang, bersama dengan topi beludru hangat, adalah pakaian luarnya di hari-hari dingin saat berada di taman. Terlintas di benaknya bahwa mungkin dia sedang beristirahat di rumah musim panas, ke arah mana jalan itu sedikit bercabang. Setelah berbelok, dia bisa melihatnya duduk di bangku, dekat dengan meja batu. Lengannya bertumpu di atas meja, dan dahinya tertunduk, jubah birunya tersangkut di depan dan menutupi wajahnya di kedua sisi. “Dia kelelahan semalam,” kata Dorothea dalam hati, awalnya mengira dia tertidur, dan rumah musim panas itu terlalu lembap untuk beristirahat. Tetapi kemudian dia ingat bahwa akhir-akhir ini dia pernah melihat Edward mengambil posisi itu ketika dia membacakan buku untuknya, seolah-olah dia merasa itu lebih mudah daripada cara lain; dan bahwa terkadang dia berbicara, serta mendengarkan, dengan wajah menunduk seperti itu. Dia masuk ke rumah musim panas dan berkata, “Aku datang, Edward; aku sudah siap.” Ia tidak memperhatikan, dan wanita itu mengira ia pasti sudah tertidur lelap. Ia meletakkan tangannya di bahunya, dan mengulangi, “Aku siap!” Namun ia tetap tak bergerak; dan dengan rasa takut yang tiba-tiba bercampur kebingungan, ia menunduk menghampirinya, melepas topi beludru miliknya, dan mendekatkan pipinya ke kepalanya, menangis dengan nada sedih— “Bangunlah, sayangku, bangunlah! Dengarkan aku. Aku datang untuk menjawab.” Tetapi Dorothea tidak pernah memberikan jawabannya. Kemudian di hari itu, Lydgate duduk di samping tempat tidurnya, dan dia berbicara ng incoherent, berpikir keras, dan mengingat kembali apa yang telah terlintas di benaknya malam sebelumnya. Dia mengenalnya, dan memanggilnya dengan namanya, tetapi tampaknya menganggap perlu untuk menjelaskan semuanya kepadanya; dan berulang kali, memohon kepadanya untuk menjelaskan semuanya kepada suaminya. “Sampaikan padanya bahwa aku akan segera menemuinya: aku siap berjanji. Hanya saja, memikirkannya sangat mengerikan—aku jadi sakit. Tidak terlalu sakit. Aku akan segera sembuh. Pergilah dan sampaikan padanya.” Namun keheningan di telinga suaminya tak pernah lagi terpecahkan.</p>
 

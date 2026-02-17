@@ -5,39 +5,176 @@
 <title>BAB TIGA PULUH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB TIGA PULUH - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB TIGA PULUH</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>cara istimewa serangan dan kemenangan fathom atas kebajikan elenor yang cantik. Setelah barang selundupan tersebut diketahui dengan benar, dan informan diberi sertifikat yang memberinya hak atas bagian dari barang sitaan, kusir memanggil penumpangnya kembali ke kereta; dompet dan perhiasan dikembalikan kepada Count Fathom, yang berterima kasih kepada hakim, dan khususnya kepada Yang Mulia, atas kejujuran dan keramahan yang telah diberikan kepadanya, dan kembali ke tempatnya di dalam kereta, diiringi ucapan selamat dari semua penumpang lainnya, kecuali dua penyelundup yang malang, yang, alih-alih naik kembali ke kereta, memilih untuk tetap tinggal di penginapan, dengan tujuan untuk mengurangi, jika memungkinkan, kesialan mereka. Di antara mereka yang memberi selamat kepada Fathom atas keberhasilan petualangan ini, gadis muda itu tampaknya mengungkapkan kegembiraan yang paling nyata atas peristiwa tersebut. Bahasa licik dari matanya telah membangkitkan emosi yang berdebar-debar di dadanya, sebelum dia mengetahui nilai penaklukannya; tetapi sekarang setelah pangkat dan kedudukannya diketahui, kegembiraan ini meningkat oleh gagasan kesombongan dan ambisi, yang bercampur dengan benih pertama dari setiap konstitusi wanita. Keyakinan telah memikat hati seorang pria yang dapat mengangkatnya ke pangkat dan martabat seorang bangsawan wanita, menghasilkan sensasi yang menyenangkan dalam imajinasinya, sehingga matanya bersinar dengan kilau yang tidak biasa, dan senyum terus-menerus terukir di lesung pipinya yang merah muda; sehingga daya tariknya, meskipun tidak cukup kuat untuk membangkitkan kasih sayang, namun cukup untuk membangkitkan hasrat petualang kita, yang dengan jujur menjadikan kesuciannya sebagai mangsa nafsu birahinya. Seandainya ia dibekali pengetahuan dan pengalaman yang cukup, dan sepenuhnya dipersenjatai dengan kewaspadaan terhadap tipu daya dan kejahatan manusia, kebajikannya mungkin tidak akan mampu menahan taktik penyerang seperti itu, mengingat peluang berbahaya yang pasti dihadapinya. Betapa mudahnya kemenangan pria itu atas seorang gadis desa yang polos dan tidak curiga, yang dipenuhi dengan kehangatan masa muda, dan sama sekali asing dengan cara hidup! Sementara Obadiah dan temannya yang gemuk sedang berbincang-bincang tentang kejadian-kejadian aneh yang telah terjadi, Fathom berakting dengan sangat ekspresif dalam pantomim bersama gadis cantik bertubuh montok ini, yang dengan mudah memahami maksudnya, dan begitu mudah menyembunyikan kesenangan yang ia rasakan dalam interaksi semacam ini, sehingga beberapa pelukan hangat terjadi antara dia dan kekasihnya sebelum mereka tiba di Rochester, tempat mereka berencana untuk makan malam. Selama periode ini, ia mengetahui dari jawaban yang diberikan gadis itu kepada Quaker yang ingin tahu, bahwa satu-satunya ketergantungannya adalah pada seorang kerabat, kepada siapa ia memiliki surat, dan bahwa ia adalah orang asing di kota besar itu; keadaan yang segera menjadi dasar rencana kehancurannya. Setibanya di Black Bull, untuk pertama kalinya ia sendirian bersama Amanda-nya, yang bernama Elenor, karena teman-teman seperjalanan mereka sedang sibuk dengan urusan masing-masing; dan, karena tidak ingin kehilangan kesempatan berharga itu, ia mulai berperan sebagai kekasih yang sangat agresif, yang menurutnya merupakan kelanjutan yang tepat dari pendahuluan yang telah dilakukan di kereta. Kebebasan yang diberikan Amanda, karena kesederhanaan dan keramahannya, untuk disentuh dengan tangannya, dan bahkan bibirnya yang merah muda, mendorongnya untuk melakukan tindakan-tindakan mesra lainnya di dadanya yang indah, yang sangat menyinggung kesuciannya, sehingga, meskipun gairah yang mulai ia tunjukkan untuknya, ia menolak rayuannya dengan penuh amarah dan penghinaan; dan ia merasa perlu untuk meredakan kemarahan yang telah ia timbulkan, dengan sikap yang paling hormat dan patuh; bertekad untuk mengubah tindakannya, dan melanjutkan serangannya, sehingga Amanda akan menyerah dengan bijaksana, tanpa mengganggu agama atau harga dirinya. Oleh karena itu, ketika tagihan dipanggil setelah makan malam, ia sangat memperhatikan perilakunya, dan, melihatnya mengeluarkan dompet kulit besar berisi uangnya, ia memeriksa saku tempat uang itu disimpan, dan, sementara mereka duduk berdekatan di kereta, dengan cekatan memasukkannya ke dalam lubang di bantal. Apakah pasangan gemuk yang duduk di seberang kedua kekasih ini telah bertunangan di penginapan, atau masing-masing didorong oleh motif lain, tidak pasti; tetapi yang pasti, keduanya meninggalkan kereta di bagian jalan yang paling dekat dengan Gravesend, dan mengucapkan selamat tinggal kepada pasangan lainnya, dengan dalih memiliki urusan penting di tempat itu. Ferdinand, yang sangat senang dengan kepergian mereka, kembali mengungkapkan rasa cintanya yang paling mengharukan, dan menyanyikan beberapa lagu Prancis tentang tema yang lembut itu, yang tampaknya menggugah jiwa Helen yang cantik. Saat pengemudi berhenti di Dartford untuk memberi minum kudanya, Helen terpesona oleh beberapa kue keju yang disajikan oleh pemilik penginapan, dan setelah menawar dua atau tiga buah, ia merogoh sakunya untuk membayar pembeliannya; tetapi betapa terkejutnya dia ketika, setelah menggeledah barang bawaannya, dia menyadari bahwa seluruh hartanya telah hilang! Kemalangan ini, dengan jeritan keras, diumumkan kepada pahlawan kita, yang menunjukkan keheranan dan keprihatinan yang luar biasa; dan segera setelah mengetahui penyebab kemalangannya, ia memberikan dompetnya sendiri, dari mana ia, dengan gerakan bisu yang tegas, memohon agar Helen mengganti kerugian yang dideritanya. Meskipun tawaran baik hati ini sedikit meringankan kesialannya, dia tetap mencurahkan ratapan yang sangat memilukan, menyatakan bahwa dia tidak hanya kehilangan semua uangnya, yang berjumlah lima pound, tetapi juga surat rekomendasi yang menjadi satu-satunya andalannya untuk mendapatkan pekerjaan saat ini. Kendaraan itu digeledah secara teliti dari atas ke bawah, oleh dirinya sendiri dan petualang kita, dibantu oleh Maurice dan kusir, yang, karena penyelidikan mereka tidak membuahkan hasil, tidak ragu-ragu untuk menyatakan kecurigaannya terhadap dua kura-kura gemuk yang telah meninggalkan kereta dengan cara yang tiba-tiba. Singkatnya, ia membuat dugaan ini begitu masuk akal, dengan memutarbalikkan keadaan perilaku dan pelarian mereka, sehingga Elenor yang malang sepenuhnya percaya bahwa merekalah pencuri yang telah menyakitinya; dan dibujuk untuk menerima bantuan yang ditawarkan oleh Count yang murah hati, yang, melihatnya sangat terganggu oleh kemalangan ini, bersikeras agar ia minum segelas besar anggur kenari, untuk menenangkan kegelisahan hatinya. Ini adalah musim yang paling menguntungkan bagi upaya seorang kekasih yang licik; dan membenarkan pepatah metaforis tentang memancing di perairan yang bergejolak. Ada kesamaan dan transisi singkat antara semua hasrat kuat yang mengguncang pikiran manusia. Semua itu adalah perspektif yang keliru, yang meskipun memperbesar, namun membingungkan dan membuat setiap objek yang diwakilinya menjadi tidak jelas. Dan sanjungan tidak pernah begitu berhasil diberikan selain kepada mereka yang tahu bahwa mereka membutuhkan persahabatan, persetujuan, dan dukungan. Minuman keras yang ditelannya, bukannya menenangkan, malah memperburuk kekacauan pikirannya dan menyebabkan mabuk; selama itu, dia berbicara ng incoherent, tertawa dan menangis bergantian, dan melakukan tindakan-tindakan aneh lainnya, yang dikenal sebagai gejala penyakit histeris. Fathom, meskipun sama sekali asing dengan perasaan hormat, belas kasihan, dan penyesalan, tidak akan melanjutkan niat jahatnya, meskipun didukung oleh delirium yang ditimbulkan oleh kejahatannya pada gadis muda yang malang ini; karena nafsunya menuntut pengorbanan yang lebih sempurna daripada yang dapat diberikan gadis itu dalam situasi menyedihkannya saat ini, ketika keinginannya sama sekali tidak terlibat dalam keberhasilannya. Oleh karena itu, bertekad untuk menaklukkan kesuciannya sebelum ia mengambil alih dirinya, ia menirukan rasa belas kasihan dan kemurahan hati yang belum pernah dirasakan hatinya, dan, ketika kereta tiba di London, ia tidak hanya melunasi hutangnya untuk tempatnya, tetapi juga menyediakan apartemen baginya di rumah yang telah ditunjuk untuk tempat tinggalnya sendiri, dan bahkan menyewa seorang perawat untuk merawatnya selama demam parah, yang merupakan akibat dari kekecewaan dan keputusasaannya. Sesungguhnya, ia dibekali dengan semua kebutuhan berkat kemurahan hati Pangeran yang mulia ini, yang, demi kepentingan hasratnya, dan kehormatan namanya, bertekad untuk memberikan sedekahnya hingga sen terakhir dari uangnya sendiri, yang telah ia siapkan dengan bijaksana untuk tujuan ini. Masa mudanya segera mengalahkan penyakitnya, dan ketika dia memahami kewajibannya kepada Sang Pangeran, yang tidak gagal untuk menemuinya secara pribadi dengan penuh kelembutan, hatinya, yang sebelumnya telah berpihak padanya, kini berkobar dengan kehangatan rasa syukur, penghargaan, dan kasih sayang. Dia menyadari dirinya berada di tempat yang asing, tanpa sumber daya apa pun kecuali kemurahan hatinya. Dia mencintai pribadinya, dia terpesona oleh kedudukannya; dan dia tahu betul bagaimana memanfaatkan peluang dan keuntungan yang diperolehnya dari situasi malangnya, sehingga dia secara bertahap meningkatkan keintiman dari satu tingkat ke tingkat lainnya, sampai semua benteng kesuciannya runtuh, dan dia menyerah pada keinginannya; bukan dengan keengganan orang yang kalah, tetapi dengan semua kegembiraan kota yang gembira, yang membuka gerbangnya untuk menerima pangeran kesayangan yang kembali dari penaklukan. Karena pada saat ini dia telah dengan cerdik memusatkan dan menyalakan semua unsur yang mudah terbakar dalam dirinya; dan kini ia mengenang kembali prinsip-prinsip luhur pendidikannya, seolah-olah itu adalah mimpi yang tidak menyenangkan dan membosankan, dari mana ia terbangun menuju kebahagiaan yang tak pernah pudar.</p>
 

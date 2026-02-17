@@ -5,39 +5,176 @@
 <title>THALATTA! THALATTA!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="THALATTA! THALATTA! - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>THALATTA! THALATTA!</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Ketika aku sadar, aku terbaring dalam kegelapan sebagian, tertutup mantel dan selimut tebal. Pamanku mengawasiku, untuk menemukan tanda kehidupan sekecil apa pun. Saat aku menghela napas pertama kali, dia meraih tanganku; ketika aku membuka mata, dia berseru gembira. "Dia hidup! Dia hidup!" teriaknya. "Ya, saya masih hidup," jawab saya dengan lemah. "Keponakanku tersayang," kata pamanku sambil mendekapku erat, "kau telah diselamatkan." Saya sangat tersentuh dengan kelembutan sikapnya saat mengucapkan kata-kata itu, dan terlebih lagi dengan perhatian yang ia berikan kepada saya. Tetapi cobaan seperti itu diperlukan untuk menampakkan sifat-sifat lembut Profesor. Saat itu Hans datang, dia melihat tanganku di tangan pamanku, dan dapat kukatakan dengan yakin bahwa ada kegembiraan di wajahnya. " Ya Tuhan, " katanya. "Apa kabar, Hans? Bagaimana kabarmu? Dan sekarang, paman, ceritakan padaku di mana kita berada saat ini?" "Besok, Axel, besok. Sekarang kau terlalu lemas dan lemah. Aku telah membalut kepalamu dengan kompres yang tidak boleh diganggu. Tidurlah sekarang, dan besok aku akan menceritakan semuanya padamu." "Tapi tolong beritahu saya jam berapa sekarang, dan hari apa." "Hari ini Minggu, tanggal 8 Agustus, dan sudah pukul sepuluh malam. Anda tidak boleh bertanya lagi kepada saya sampai tanggal 10." Sejujurnya aku sangat lemah, dan mataku tanpa sadar tertutup. Aku menginginkan istirahat malam yang nyenyak; dan karena itu aku pergi tidur, dengan kesadaran bahwa aku telah empat hari lamanya sendirian di jantung bumi. Keesokan paginya, setelah bangun tidur, saya melihat sekeliling. Tempat tidur saya, yang terbuat dari semua perlengkapan perjalanan kami, berada di sebuah gua yang menawan, dihiasi dengan stalaktit yang indah, dan tanahnya berupa pasir halus. Hari masih remang-remang. Tidak ada obor, tidak ada lampu, namun beberapa kilatan cahaya misterius datang dari luar melalui celah sempit di gua. Saya juga mendengar suara samar dan tidak jelas, sesuatu seperti gemuruh ombak yang pecah di pantai berkerikil, dan kadang-kadang saya sepertinya mendengar siulan angin. Aku bertanya-tanya apakah aku terjaga, apakah aku bermimpi, apakah otakku, yang kacau akibat jatuh, tidak terpengaruh oleh suara-suara khayalan. Namun, baik mata maupun telinga tidak mungkin tertipu sepenuhnya. "Itu seberkas cahaya siang hari," pikirku, "menembus celah di bebatuan ini!" "Itu memang suara deburan ombak! Itu suara desiran angin. Apakah aku benar-benar salah, atau kita telah kembali ke permukaan bumi? Apakah pamanku telah menghentikan ekspedisi ini, ataukah telah berakhir dengan bahagia?" Saya sedang mengajukan pertanyaan-pertanyaan yang tak terjawab kepada diri sendiri ketika Profesor masuk. "Selamat pagi, Axel," serunya riang. "Aku yakin kau sudah lebih baik." "Ya, memang benar," kataku sambil duduk tegak di sofa. "Kau pasti sudah membaik, karena kau tidur dengan tenang. Hans dan aku bergantian mengawasimu, dan kami melihat kau jelas-jelas pulih." "Memang, saya merasa jauh lebih baik, dan saya akan membuktikannya sebentar lagi jika Anda mengizinkan saya sarapan." "Kau boleh makan, Nak. Demammu sudah reda. Hans mengoleskan salep tertentu yang rahasianya dirahasiakan oleh orang Islandia pada lukamu, dan lukamu sembuh dengan luar biasa. Pemburu kita ini memang hebat!" Sembari terus berbicara, pamanku menyiapkan beberapa bekal, yang kumakan dengan lahap, meskipun ia melarangku. Sepanjang waktu aku terus menghujaninya dengan pertanyaan yang dijawabnya dengan mudah. Kemudian saya mengetahui bahwa jatuhnya saya yang tak terduga telah membawa saya tepat ke ujung sebuah lubang yang hampir tegak lurus; dan karena saya mendarat di tengah-tengah aliran batu yang deras, yang sedikit saja sudah cukup untuk menghancurkan saya, kesimpulannya adalah bahwa sebagian batu yang lepas telah ikut runtuh bersama saya. Peristiwa mengerikan ini membawa saya ke pelukan paman saya, di mana saya jatuh dengan luka memar, berdarah, dan pingsan. "Sungguh menakjubkan bahwa kamu tidak terbunuh seratus kali. Tetapi, demi Tuhan, jangan biarkan kita berpisah lagi, atau kita mungkin tidak akan pernah bertemu lagi." "Tidak terpisah! Bukankah perjalanan sudah berakhir?" Aku membuka sepasang mata yang terkejut, yang langsung memunculkan pertanyaan: "Ada apa, Axel?" "Saya ingin bertanya kepada Anda. Anda mengatakan bahwa saya selamat dan sehat?" "Tidak diragukan lagi, memang benar." "Dan semua anggota tubuhku tidak patah?" "Tentu." "Dan kepalaku?" "Kepalamu, kecuali beberapa memar, baik-baik saja; dan letaknya di pundakmu, di tempat seharusnya." "Yah, saya khawatir otak saya terpengaruh." "Pikiranmu terpengaruh!" "Ya, saya khawatir memang begitu. Apakah kita kembali berada di permukaan bumi?" "Tidak, tentu tidak." "Kalau begitu, aku pasti sudah gila; karena bukankah aku melihat cahaya siang hari, dan bukankah aku mendengar angin bertiup, dan deburan ombak di pantai?" "Ah! Hanya itu saja?" "Ceritakan semuanya padaku." "Saya tidak bisa menjelaskan hal yang tak dapat dijelaskan, tetapi Anda akan segera melihat dan memahami bahwa geologi belum mempelajari semua yang perlu dipelajarinya." "Kalau begitu, mari kita pergi," jawabku cepat. "Tidak, Axel; udara terbuka mungkin tidak baik untukmu." "Di udara terbuka?" "Ya; anginnya cukup kencang. Anda tidak boleh membahayakan diri sendiri." "Tapi saya jamin saya baik-baik saja." "Bersabarlah sedikit, keponakanku. Kambuh bisa membuat kita kesulitan, dan kita tidak punya waktu untuk disia-siakan, karena perjalanan ini mungkin akan panjang." "Perjalanan itu!" "Ya, istirahatlah hari ini, dan besok kita akan berlayar." "Berlayarlah!"—dan aku hampir melompat berdiri. Apa arti semua ini? Apakah kita memiliki sungai, danau, atau laut untuk diandalkan? Apakah ada kapal yang siap kita gunakan di pelabuhan bawah tanah?</p>
 <p>Rasa ingin tahuku sangat besar, pamanku berusaha menahanku dengan sia-sia. Ketika ia melihat bahwa ketidaksabaranku membahayakan diriku, ia pun mengalah. Aku berpakaian dengan tergesa-gesa. Demi keamanan yang lebih besar, aku membungkus diriku dengan selimut, lalu keluar dari gua.</p>

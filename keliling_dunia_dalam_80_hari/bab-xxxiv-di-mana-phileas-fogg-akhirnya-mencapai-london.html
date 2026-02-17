@@ -5,39 +5,176 @@
 <title>BAB XXXIV. DI MANA PHILEAS FOGG AKHIRNYA MENCAPAI LONDON</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXXIV. DI MANA PHILEAS FOGG AKHIRNYA MENCAPAI LONDON - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXXIV. DI MANA PHILEAS FOGG AKHIRNYA MENCAPAI LONDON</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Phileas Fogg berada di penjara. Dia dikurung di Gedung Bea Cukai, dan dia akan dipindahkan ke London keesokan harinya. Ketika melihat tuannya ditangkap, Passepartout pasti akan menyerang Fix jika ia tidak ditahan oleh beberapa polisi. Aouda sangat terkejut dengan kejadian yang tiba-tiba dan tidak dapat ia pahami. Passepartout menjelaskan kepadanya bagaimana Fogg yang jujur dan pemberani ditangkap sebagai perampok. Hati wanita muda itu memberontak terhadap tuduhan yang begitu keji, dan ketika ia menyadari bahwa ia tidak dapat berbuat apa pun untuk menyelamatkan pelindungnya, ia menangis tersedu-sedu. Adapun Fix, dia menangkap Tuan Fogg karena itu adalah tugasnya, terlepas dari apakah Tuan Fogg bersalah atau tidak. Kemudian terlintas di benak Passepartout, bahwa dialah penyebab kemalangan baru ini! Bukankah dia telah menyembunyikan misi Fix dari tuannya? Ketika Fix mengungkapkan jati diri dan tujuannya yang sebenarnya, mengapa dia tidak memberi tahu Tuan Fogg? Jika Tuan Fogg telah diperingatkan, dia pasti akan memberi Fix bukti ketidakbersalahannya, dan meyakinkannya tentang kesalahannya; setidaknya, Fix tidak akan melanjutkan perjalanannya dengan biaya dan mengikuti tuannya, hanya untuk menangkapnya begitu dia menginjakkan kaki di tanah Inggris. Passepartout menangis hingga matanya buta, dan merasa ingin bunuh diri. Aouda dan dia tetap tinggal, meskipun cuaca dingin, di bawah serambi Gedung Bea Cukai. Keduanya tidak ingin meninggalkan tempat itu; keduanya sangat ingin bertemu Tuan Fogg lagi. Pria itu benar-benar hancur, dan itu terjadi pada saat ia hampir mencapai ajalnya. Penangkapan ini berakibat fatal. Setelah tiba di Liverpool pukul dua puluh menit sebelum pukul dua belas pada tanggal 21 Desember, ia memiliki waktu hingga pukul seperempat sebelum pukul sembilan malam untuk sampai ke Reform Club, yaitu sembilan jam seperempat; perjalanan dari Liverpool ke London memakan waktu enam jam. Jika ada yang memasuki Gedung Bea Cukai saat ini, mereka akan mendapati Tuan Fogg duduk, tak bergerak, tenang, dan tanpa kemarahan yang tampak, di atas bangku kayu. Memang benar, ia tidak pasrah; tetapi pukulan terakhir ini gagal memaksanya untuk menunjukkan emosi apa pun secara lahiriah. Apakah ia sedang diliputi oleh salah satu amarah tersembunyi itu, yang lebih mengerikan karena tertahan, dan yang hanya meledak, dengan kekuatan yang tak tertahankan, pada saat-saat terakhir? Tidak ada yang bisa tahu. Di sana ia duduk, dengan tenang menunggu—untuk apa? Apakah ia masih menyimpan harapan? Apakah ia masih percaya, sekarang setelah pintu penjara ini tertutup baginya, bahwa ia akan berhasil? Namun demikian, Tuan Fogg dengan hati-hati meletakkan arlojinya di atas meja, dan mengamati jarumnya yang bergerak. Sepatah kata pun tak keluar dari bibirnya, tetapi tatapannya sangat tegas dan keras. Bagaimanapun, situasinya sangat mengerikan, dan dapat dinyatakan demikian: jika Phileas Fogg jujur, ia hancur; jika ia seorang penipu, ia tertangkap. Apakah ia sempat berpikir untuk melarikan diri? Apakah ia memeriksa apakah ada jalan keluar yang memungkinkan dari penjara itu? Apakah ia berpikir untuk kabur dari sana? Mungkin; karena suatu ketika ia berjalan perlahan mengelilingi ruangan. Tetapi pintu terkunci, dan jendela dipagari dengan jeruji besi yang tebal. Ia duduk kembali, dan mengeluarkan jurnalnya dari sakunya. Pada baris tempat kata-kata ini tertulis, "21 Desember, Sabtu, Liverpool," ia menambahkan, "Hari ke-80, 11.40 pagi," dan menunggu. Jam di Kantor Bea Cukai berdentang satu. Tuan Fogg memperhatikan bahwa arlojinya dua jam lebih cepat. Dua jam! Dengan mengakui bahwa saat ini ia sedang menaiki kereta ekspres, ia bisa sampai di London dan Reform Club pada pukul sembilan kurang seperempat malam. Dahinya sedikit berkerut. Pada pukul 2 lewat 33 menit, ia mendengar suara aneh di luar, lalu pintu dibuka dengan tergesa-gesa. Suara Passepartout terdengar, dan segera setelah itu suara Fix. Mata Phileas Fogg berbinar sesaat. Pintu terbuka, dan dia melihat Passepartout, Aouda, dan Fix, yang bergegas menghampirinya. Fix terengah-engah, dan rambutnya acak-acakan. Dia tidak bisa berbicara. "Tuan," dia tergagap, "tuan—maafkan saya—kemiripan yang sangat—sayang sekali—perampok yang ditangkap tiga hari yang lalu—Anda bebas!" Phileas Fogg bebas! Dia berjalan ke arah detektif itu, menatap wajahnya dengan tajam, dan dengan satu-satunya gerakan cepat yang pernah dia lakukan dalam hidupnya, atau yang akan pernah dia lakukan, menarik lengannya ke belakang, dan dengan ketepatan seperti mesin menjatuhkan Fix. “Pukulan yang bagus!” seru Passepartout, “Parbleu! itulah yang bisa disebut penerapan tinju Inggris yang baik!” Fix, yang mendapati dirinya tergeletak di lantai, tidak mengucapkan sepatah kata pun. Ia hanya menerima balasan setimpal. Tuan Fogg, Aouda, dan Passepartout segera meninggalkan Kantor Bea Cukai, naik taksi, dan beberapa saat kemudian tiba di stasiun. Phileas Fogg bertanya apakah ada kereta ekspres yang akan berangkat ke London. Saat itu pukul 2 lewat 40 menit. Kereta ekspres telah berangkat 35 menit sebelumnya. Phileas Fogg kemudian memesan kereta khusus. Tersedia beberapa lokomotif cepat; tetapi pengaturan kereta api tidak mengizinkan kereta khusus tersebut berangkat hingga pukul tiga. Pada saat itu, Phileas Fogg, setelah membujuk sang insinyur dengan tawaran hadiah yang besar, akhirnya berangkat menuju London bersama Aouda dan pelayannya yang setia. Perjalanan tersebut harus ditempuh dalam waktu lima setengah jam; dan ini akan mudah dilakukan jika jalannya lancar. Namun, terjadi penundaan yang tidak terduga, dan ketika Tuan Fogg turun dari kereta di stasiun terminus, semua jam di London menunjukkan pukul sembilan kurang sepuluh menit. [1] Setelah melakukan tur keliling dunia, dia tertinggal lima menit. Dia kalah taruhan! [1] Suatu keanehan yang agak luar biasa dari jam-jam di London! —TRANSLATOR .</p>
 

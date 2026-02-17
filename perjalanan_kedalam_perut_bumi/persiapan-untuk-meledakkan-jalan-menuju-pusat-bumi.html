@@ -5,39 +5,176 @@
 <title>PERSIAPAN UNTUK MELEDAKKAN JALAN MENUJU PUSAT BUMI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="PERSIAPAN UNTUK MELEDAKKAN JALAN MENUJU PUSAT BUMI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>PERSIAPAN UNTUK MELEDAKKAN JALAN MENUJU PUSAT BUMI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Sejak awal perjalanan ziarah yang menakjubkan ini, saya telah mengalami begitu banyak hal yang mengejutkan sehingga saya mungkin bisa dimaafkan jika menganggap diri saya sudah cukup kebal terhadap kejutan lebih lanjut. Namun, saat melihat dua huruf ini, yang terukir di tempat ini tiga ratus tahun yang lalu, saya berdiri terpaku dalam keheranan. Bukan hanya inisial sang alkemis terpelajar yang terlihat di atas batu yang hidup, tetapi juga terdapat ujung besi yang digunakan untuk mengukir huruf-huruf tersebut. Saya tidak lagi dapat meragukan keberadaan penjelajah hebat itu dan fakta perjalanannya yang tak tertandingi, tanpa rasa tidak percaya yang sangat mencolok. Sembari pikiran-pikiran ini memenuhi benak saya, Profesor Liedenbrock mulai menyampaikan pidato pujian yang agak berlebihan, di mana Arne Saknussemm, tentu saja, adalah tokoh utamanya. "Wahai jenius yang luar biasa!" serunya, "kau tidak melupakan satu petunjuk pun yang dapat membuka jalan bagi manusia melalui kerak bumi; dan sesama makhlukmu bahkan sekarang, setelah tiga abad berlalu, dapat kembali menelusuri jejakmu melalui jalan-jalan yang dalam dan gelap ini. Kau menyimpan perenungan keajaiban-keajaiban ini untuk mata lain selain matamu sendiri. Namamu, terukir dari satu tahap ke tahap lainnya, menuntun pengikut jejakmu yang berani ke pusat inti planet kita, dan di sana kita akan menemukan namamu lagi yang tertulis dengan tanganmu sendiri. Aku pun akan mengukir namaku di halaman granit gelap ini. Tetapi untuk selamanya mulai sekarang, biarlah tanjung yang menjorok ke laut yang kau temukan ini dikenal dengan namamu yang mulia—Tanjung Saknussemm." Begitulah kata-kata pujian yang mengharukan yang sampai ke telinga saya yang penuh perhatian, dan saya tidak dapat menahan perasaan antusiasme yang juga menular kepada saya. Api semangat kembali menyala dalam diri saya. Saya melupakan segalanya. Saya menyingkirkan dari pikiran saya bahaya perjalanan di masa lalu, bahaya kepulangan kami di masa depan. Apa yang telah dilakukan orang lain, saya kira kami pun dapat melakukannya, dan tidak ada yang tidak bersifat supranatural yang tampak mustahil bagi saya. "Maju! Maju!" teriakku. Aku sudah berlari menyusuri terowongan yang suram ketika Profesor menghentikanku; dia, pria yang impulsif itu, menasihatiku untuk bersabar dan tenang. "Mari kita kembali ke Hans dulu," katanya, "dan membawa rakit ke tempat ini." Aku menurut, meskipun dengan rasa tidak puas, dan segera berjalan di antara bebatuan di pantai. Saya berkata: "Paman, tahukah Paman, menurut saya keadaan telah sangat berpihak kepada kita selama ini?" "Kau pikir begitu, Axel?" "Tidak diragukan lagi; bahkan badai pun telah menuntun kita ke jalan yang benar. Berkatilah badai itu! Badai itu telah membawa kita kembali ke pantai ini, padahal cuaca cerah akan membawa kita jauh. Bayangkan jika haluan kapal kita (haluan kemudi!) menyentuh pantai selatan Laut Liedenbrock, apa yang akan terjadi pada kita? Kita tidak akan pernah melihat nama Saknussemm, dan saat ini kita akan terperangkap di pantai berbatu yang tidak dapat dilewati." "Ya, Axel, sungguh suatu kebetulan yang luar biasa bahwa ketika kita mengira sedang berlayar ke selatan, kita malah kembali ke utara di Tanjung Saknussemm. Harus kuakui bahwa ini mencengangkan, dan aku merasa tidak punya cara untuk menjelaskannya." "Apa artinya itu, paman? Tugas kita bukanlah menjelaskan fakta, melainkan menggunakannya!" "Tentu; tapi—" "Baiklah, paman, kita akan kembali menempuh rute utara, dan melewati negara-negara utara Eropa—di bawah Swedia, Rusia, Siberia: siapa tahu di mana?—alih-alih menggali di bawah gurun Afrika, atau mungkin ombak Atlantik; dan hanya itu yang ingin saya ketahui." "Ya, Axel, kau benar. Ini semua demi kebaikan, karena kita telah meninggalkan lautan horizontal yang melelahkan itu, yang tidak membawa kita ke mana pun. Sekarang kita akan turun, turun, turun! Tahukah kau bahwa sekarang hanya tersisa 1.500 liga ke pusat bumi?" "Hanya itu?" seruku. "Bukan apa-apa. Mari kita mulai: berbaris!" Semua obrolan gila ini masih berlangsung ketika kami bertemu dengan pemburu itu. Semuanya disiapkan untuk keberangkatan kami yang mendadak. Semua tali tambat telah dinaikkan ke atas kapal. Kami mengambil tempat masing-masing, dan dengan layar yang sudah terpasang, Hans mengemudikan kami menyusuri pantai menuju Tanjung Saknussemm.</p>
 <p>Angin tidak berpihak pada jenis perahu yang tidak dirancang untuk perairan dangkal. Di banyak tempat kami terpaksa mendorong perahu dengan tongkat berujung besi. Seringkali bebatuan yang tenggelam tepat di bawah permukaan memaksa kami untuk menyimpang dari jalur lurus kami. Akhirnya, setelah tiga jam berlayar, sekitar pukul enam sore kami mencapai tempat yang cocok untuk mendarat. Saya melompat ke darat, diikuti oleh paman saya dan orang Islandia itu. Perjalanan singkat ini tidak mengurangi semangat saya. Sebaliknya, saya bahkan bermaksud membakar 'kapal kami,' untuk mencegah kemungkinan kembali; tetapi paman saya tidak setuju. Saya menganggapnya sangat acuh tak acuh. "Setidaknya," kataku, "jangan biarkan kita kehilangan satu menit pun." "Ya, ya, Nak," jawabnya; "tetapi pertama-tama mari kita periksa galeri baru ini, untuk melihat apakah kita memerlukan tangga kita." Paman saya mengaktifkan peralatan Ruhmkorff miliknya; rakit yang ditambatkan ke pantai dibiarkan begitu saja; mulut terowongan tidak sampai dua puluh yard dari kami; dan rombongan kami, dengan saya di depan, langsung menuju ke sana tanpa menunda-nunda. Lubang itu, yang hampir berbentuk lingkaran, berdiameter sekitar lima kaki; lorong gelap itu dipahat di batuan hidup dan dilapisi dengan lapisan material erupsi yang dulunya keluar dari sana; bagian dalamnya sejajar dengan tanah di luar, sehingga kami dapat masuk tanpa kesulitan. Kami mengikuti bidang horizontal, ketika, baru enam langkah masuk, perjalanan kami terhenti oleh sebuah blok besar yang melintang di jalan kami. "Batu terkutuk!" teriakku penuh amarah, tiba-tiba dihadapkan pada rintangan yang tak dapat dilewati. Kami mencari ke kanan dan ke kiri dengan sia-sia, ke atas dan ke bawah, ke samping dan ke samping; tidak ada jalan yang bisa kami tempuh. Saya merasa sangat kecewa, dan saya tidak mau mengakui bahwa rintangan itu sudah final. Saya berhenti, saya melihat ke bawah balok: tidak ada celah. Di atas: masih granit. Hans mengarahkan lampunya ke setiap bagian penghalang dengan sia-sia. Kita harus menyerah untuk bisa melewatinya. Aku duduk dengan putus asa. Pamanku mondar-mandir di lorong sempit itu. "Tapi bagaimana dengan Saknussemm?" seruku. "Ya," kata pamanku, "apakah dia dihentikan oleh penghalang batu ini?" "Tidak, tidak," jawabku dengan bersemangat. "Pecahan batu ini telah terguncang oleh suatu guncangan atau getaran, atau oleh salah satu badai magnetik yang mengguncang wilayah ini, dan telah menghalangi jalan yang terbuka untuknya. Bertahun-tahun telah berlalu sejak kembalinya Saknussemm ke permukaan dan jatuhnya pecahan besar ini. Bukankah jelas bahwa lorong ini dulunya adalah jalan yang terbuka untuk aliran lava, dan pada saat itu pasti ada jalan yang bebas? Lihatlah di sini, retakan-retakan baru yang membentuk alur dan saluran di atap granit. Atap itu sendiri terbentuk dari pecahan-pecahan batu yang terbawa ke bawah, batu-batu besar, seolah-olah oleh tangan raksasa; tetapi pada suatu waktu gaya dorongnya lebih besar dari biasanya, dan bongkahan ini, seperti batu kunci yang jatuh dari lengkungan yang runtuh, telah tergelincir ke tanah dan menghalangi jalan. Ini hanyalah penghalang yang tidak disengaja, yang tidak ditemui oleh Saknussemm, dan jika kita tidak menghancurkannya, kita tidak akan layak untuk mencapai pusat bumi." Begitulah hukuman yang kuterima! Jiwa Profesor telah merasukiku. Kejeniusan penemuan sepenuhnya menguasaiku. Aku melupakan masa lalu, aku mencemooh masa depan. Aku tak memikirkan hal-hal di permukaan bumi tempat aku menyelam; kota-kotanya dan datarannya yang cerah, Hamburg dan Königstrasse, bahkan Gräuben yang malang, yang pasti telah menganggap kami hilang, semuanya untuk sementara waktu terhapus dari halaman ingatanku. "Baiklah," seru pamanku, "mari kita buka jalan dengan beliung kita." "Terlalu keras untuk beliung." "Baiklah, kalau begitu, sekopnya." "Itu akan memakan waktu terlalu lama." "Lalu, apa?" "Mengapa bubuk mesiu, tentu saja! Mari kita pasang ranjau di rintangan itu dan meledakkannya." "Oh, ya, itu hanya sedikit batu yang perlu diledakkan!" "Hans, kerja!" teriak pamanku. Orang Islandia itu kembali ke rakit dan segera kembali dengan sebatang besi yang ia gunakan untuk membuat lubang untuk muatan bahan peledak. Ini bukan pekerjaan mudah. Sebuah lubang harus dibuat cukup besar untuk menampung lima puluh pon kapas mesiu, yang daya ledaknya empat kali lipat dari bubuk mesiu. Aku sangat gembira. Sementara Hans sedang bekerja, aku aktif membantu pamanku menyiapkan korek api lambat dari bubuk basah yang dibungkus kain linen. "Ini akan berhasil," kataku. "Tentu saja," jawab pamanku. Menjelang tengah malam, persiapan penambangan kami selesai; bahan peledak dimasukkan ke dalam lubang, dan sumbu yang terurai perlahan di sepanjang lorong memperlihatkan ujungnya di luar lubang. Percikan api akan segera menggerakkan seluruh persiapan kita menjadi sebuah tindakan nyata. "Besok," kata Profesor itu. Saya harus pasrah dan menunggu selama enam jam yang panjang.</p>

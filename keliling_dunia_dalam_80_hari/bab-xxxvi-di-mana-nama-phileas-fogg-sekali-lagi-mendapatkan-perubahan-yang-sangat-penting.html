@@ -5,39 +5,176 @@
 <title>BAB XXXVI. DI MANA NAMA PHILEAS FOGG SEKALI LAGI MENDAPATKAN PERUBAHAN YANG SANGAT PENTING</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXXVI. DI MANA NAMA PHILEAS FOGG SEKALI LAGI MENDAPATKAN PERUBAHAN YANG SANGAT PENTING - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXXVI. DI MANA NAMA PHILEAS FOGG SEKALI LAGI MENDAPATKAN PERUBAHAN YANG SANGAT PENTING</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Sudah saatnya untuk menceritakan perubahan yang terjadi dalam opini publik Inggris ketika terungkap bahwa perampok bank sebenarnya, seorang bernama James Strand, telah ditangkap pada tanggal 17 Desember di Edinburgh. Tiga hari sebelumnya, Phileas Fogg adalah seorang penjahat yang sedang dikejar-kejar polisi; sekarang ia adalah seorang pria terhormat, yang secara matematis melanjutkan perjalanan eksentriknya mengelilingi dunia. Surat kabar kembali membahas taruhan tersebut; semua orang yang telah memasang taruhan, baik mendukung maupun menentangnya, kembali tertarik, seolah-olah secara ajaib; "obligasi Phileas Fogg" kembali dapat diperdagangkan, dan banyak taruhan baru dibuat. Nama Phileas Fogg sekali lagi menjadi barang berharga di bursa saham. Kelima temannya dari Klub Reformasi menghabiskan tiga hari ini dalam keadaan tegang dan cemas. Akankah Phileas Fogg, yang telah mereka lupakan, muncul kembali di hadapan mereka? Di mana dia saat ini? Tanggal 17 Desember, hari penangkapan James Strand, adalah hari ke-76 sejak kepergian Phileas Fogg, dan tidak ada kabar tentangnya. Apakah dia sudah mati? Apakah dia telah menghentikan upayanya, atau apakah dia melanjutkan perjalanannya di sepanjang rute yang telah disepakati? Dan akankah dia muncul pada hari Sabtu, tanggal 21 Desember, pukul 11.45 malam, di depan pintu ruang pertemuan Klub Reformasi? Kecemasan yang melanda masyarakat London selama tiga hari tidak dapat digambarkan. Telegram dikirim ke Amerika dan Asia untuk meminta kabar tentang Phileas Fogg. Utusan dikirim ke rumah di Saville Row pagi dan sore. Tidak ada kabar. Polisi tidak mengetahui apa yang terjadi pada detektif, Fix, yang sayangnya telah mengikuti petunjuk yang salah. Namun demikian, taruhan meningkat baik jumlah maupun nilainya. Phileas Fogg, seperti kuda pacu, mendekati titik balik terakhirnya. Obligasi dikutip, bukan lagi seratus di bawah nilai nominal, tetapi dua puluh, sepuluh, dan lima; dan Lord Albemarle yang lumpuh dan tua bahkan bertaruh untuknya. Kerumunan besar berkumpul di Pall Mall dan jalan-jalan sekitarnya pada Sabtu malam; tampak seperti sekumpulan makelar yang menetap di sekitar Reform Club. Pergerakan terhambat, dan di mana-mana terjadi perselisihan, diskusi, dan transaksi keuangan. Polisi kesulitan menahan kerumunan, dan saat waktu kedatangan Phileas Fogg semakin dekat, kegembiraan mencapai puncaknya. Kelima tokoh antagonis Phileas Fogg telah bertemu di ruang utama klub. John Sullivan dan Samuel Fallentin, para bankir, Andrew Stuart, sang insinyur, Gauthier Ralph, direktur Bank of England, dan Thomas Flanagan, sang pembuat bir, semuanya menunggu dengan cemas. Ketika jam menunjukkan pukul delapan lewat dua puluh menit, Andrew Stuart berdiri dan berkata, “Tuan-tuan, dalam dua puluh menit lagi waktu yang telah disepakati antara Tuan Fogg dan kita akan berakhir.” “Jam berapa kereta terakhir tiba dari Liverpool?” tanya Thomas Flanagan. “Pada pukul tujuh lewat dua puluh tiga menit,” jawab Gauthier Ralph; “dan kereta berikutnya baru tiba pukul dua belas lewat sepuluh menit.” “Baiklah, Tuan-tuan,” lanjut Andrew Stuart, “jika Phileas Fogg datang dengan kereta pukul 7:23, dia pasti sudah sampai di sini pada waktu ini. Oleh karena itu, kita dapat menganggap taruhan ini dimenangkan.” “Tunggu; jangan terburu-buru,” jawab Samuel Fallentin. “Kau tahu bahwa Tuan Fogg sangat eksentrik. Ketepatan waktunya sudah terkenal; dia tidak pernah datang terlalu cepat, atau terlalu lambat; dan aku tidak akan heran jika dia muncul di hadapan kita pada menit terakhir.” “Wah,” kata Andrew Stuart dengan gugup, “kalau aku melihatnya, aku tidak akan percaya itu dia.” “Faktanya,” lanjut Thomas Flanagan, “proyek Tuan Fogg sangat bodoh. Seberapapun tepatnya ia datang tepat waktu, ia tidak dapat mencegah penundaan yang pasti akan terjadi; dan penundaan hanya dua atau tiga hari saja akan berakibat fatal bagi turnya.” “Perhatikan juga,” tambah John Sullivan, “bahwa kami belum menerima informasi apa pun darinya, meskipun ada jalur telegraf di sepanjang rutenya.” “Dia telah kalah, Tuan-tuan,” kata Andrew Stuart, “dia telah kalah seratus kali lipat! Anda tahu, selain itu, bahwa 'China'—satu-satunya kapal uap yang bisa dia tumpangi dari New York untuk sampai ke sini tepat waktu—tiba kemarin. Saya telah melihat daftar penumpang, dan nama Phileas Fogg tidak ada di antaranya. Bahkan jika kita mengakui bahwa keberuntungan telah berpihak padanya, dia hampir tidak mungkin sampai ke Amerika. Saya pikir dia akan terlambat setidaknya dua puluh hari, dan Lord Albemarle akan kehilangan lima ribu dolar.” “Sudah jelas,” jawab Gauthier Ralph; “dan kita tidak perlu melakukan apa pun selain menyerahkan cek Tuan Fogg di Barings besok.” Saat itu, jarum jam klub menunjukkan pukul 9 kurang 20 menit. “Lima menit lagi,” kata Andrew Stuart. Kelima pria itu saling memandang. Kecemasan mereka semakin meningkat; tetapi, karena tidak ingin menunjukkannya, mereka dengan mudah menyetujui usulan Tuan Fallentin untuk melakukan hubungan seks tanpa kondom. “Saya tidak akan melepaskan uang taruhan saya sebesar empat ribu,” kata Andrew Stuart sambil duduk, “untuk tiga ribu sembilan ratus sembilan puluh sembilan.” Jam menunjukkan pukul sembilan kurang delapan belas menit. Para pemain mengambil kartu mereka, tetapi tidak bisa mengalihkan pandangan dari jam. Tentu saja, betapapun amannya perasaan mereka, menit-menit terasa begitu lama bagi mereka! “Pukul 17 menit sebelum pukul sembilan,” kata Thomas Flanagan, sambil mengocok kartu yang diberikan Ralph kepadanya. Lalu terjadi keheningan sesaat. Aula besar itu benar-benar sunyi; tetapi gumaman kerumunan di luar terdengar, sesekali diselingi teriakan melengking. Bandul berdetak mengikuti detik, yang dihitung dengan penuh semangat oleh setiap pemain sambil mendengarkan, dengan keteraturan matematis. “Pukul 16 menit sebelum pukul sembilan!” kata John Sullivan, dengan suara yang menunjukkan emosinya. Satu menit lagi, dan taruhan akan dimenangkan. Andrew Stuart dan rekan-rekannya menghentikan permainan mereka. Mereka meninggalkan kartu mereka, dan menghitung detik. Pada detik keempat puluh, tidak terjadi apa-apa. Pada detik kelima puluh, masih tidak terjadi apa-apa. Di tempat ke-55, teriakan keras terdengar di jalan, diikuti oleh tepuk tangan, sorak-sorai, dan beberapa geraman ganas. Para pemain bangkit dari tempat duduk mereka. Pada detik ke-57 pintu kedai terbuka; dan pendulum belum mencapai detik ke-60 ketika Phileas Fogg muncul, diikuti oleh kerumunan yang bersemangat yang telah menerobos masuk melalui pintu klub, dan dengan suara tenangnya, berkata, "Ini saya, Tuan-tuan!"</p>
 

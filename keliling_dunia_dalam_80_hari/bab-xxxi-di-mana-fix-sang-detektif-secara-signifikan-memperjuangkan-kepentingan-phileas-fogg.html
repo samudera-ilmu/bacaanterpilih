@@ -5,39 +5,176 @@
 <title>BAB XXXI. DI MANA FIX, SANG DETEKTIF, SECARA SIGNIFIKAN MEMPERJUANGKAN KEPENTINGAN PHILEAS FOGG</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXXI. DI MANA FIX, SANG DETEKTIF, SECARA SIGNIFIKAN MEMPERJUANGKAN KEPENTINGAN PHILEAS FOGG - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXXI. DI MANA FIX, SANG DETEKTIF, SECARA SIGNIFIKAN MEMPERJUANGKAN KEPENTINGAN PHILEAS FOGG</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Phileas Fogg mendapati dirinya terlambat dua puluh jam. Passepartout, penyebab keterlambatan yang tidak disengaja ini, merasa putus asa. Dia telah menghancurkan majikannya! Pada saat itu, detektif tersebut mendekati Tuan Fogg, dan sambil menatap wajahnya dengan saksama, berkata: “Serius, Pak, apakah Anda sangat terburu-buru?” “Sungguh serius.” “Saya punya maksud tertentu dalam bertanya,” lanjut Fix. “Apakah benar-benar perlu Anda berada di New York pada tanggal 11, sebelum pukul sembilan malam, waktu keberangkatan kapal uap ke Liverpool?” “Ini benar-benar diperlukan.” “Dan, jika perjalanan Anda tidak terganggu oleh orang-orang India ini, Anda akan sampai di New York pada pagi hari tanggal 11?” “Ya; dengan waktu sebelas jam tersisa sebelum kapal uap itu berangkat.” “Bagus! Jadi, Anda tertinggal dua puluh jam. Dua belas dari dua puluh sama dengan delapan. Anda harus mengejar ketertinggalan delapan jam. Apakah Anda ingin mencoba melakukannya?” “Dengan berjalan kaki?” tanya Tuan Fogg. “Tidak; di atas kereta luncur,” jawab Fix. “Di atas kereta luncur yang dilengkapi layar. Seseorang telah mengusulkan metode seperti itu kepada saya.” Dialah pria yang telah berbicara dengan Fix di malam hari, dan yang tawarannya telah ditolak oleh Fix. Phileas Fogg tidak langsung menjawab; tetapi Fix, setelah menunjuk pria yang berjalan mondar-mandir di depan stasiun, Tuan Fogg menghampirinya. Sesaat kemudian, Tuan Fogg dan orang Amerika itu, yang bernama Mudge, memasuki sebuah gubuk yang dibangun tepat di bawah benteng. Di sana, Tuan Fogg memeriksa sebuah kendaraan yang aneh, semacam rangka di atas dua balok panjang, sedikit terangkat di bagian depan seperti rel kereta luncur, dan di atasnya terdapat ruang untuk lima atau enam orang. Sebuah tiang tinggi dipasang pada rangka, diikat erat dengan tali logam, yang di atasnya terpasang layar brigantine besar. Tiang ini menahan penyangga besi untuk menaikkan layar jib. Di belakang, semacam kemudi berfungsi untuk mengarahkan kendaraan. Singkatnya, itu adalah kereta luncur yang dilengkapi seperti kapal layar. Selama musim dingin, ketika kereta api terhalang oleh salju, kereta luncur ini melakukan perjalanan yang sangat cepat melintasi dataran beku dari satu stasiun ke stasiun lainnya. Dilengkapi dengan lebih banyak layar daripada kapal pemotong, dan dengan angin di belakangnya, mereka meluncur di permukaan padang rumput dengan kecepatan yang sama atau bahkan lebih tinggi daripada kereta ekspres. Tuan Fogg dengan mudah membuat kesepakatan dengan pemilik kapal darat ini. Angin bertiup kencang dari barat, memberikan keuntungan. Salju telah mengeras, dan Mudge sangat yakin dapat mengangkut Tuan Fogg dalam beberapa jam ke Omaha. Dari sana, kereta api sering beroperasi ke arah timur menuju Chicago dan New York. Bukan tidak mungkin waktu yang hilang masih dapat dipulihkan; dan kesempatan seperti itu tidak boleh dilewatkan. Karena tidak ingin Aouda mengalami ketidaknyamanan perjalanan di udara terbuka, Tuan Fogg mengusulkan untuk meninggalkannya bersama Passepartout di Benteng Kearney, dengan pelayan tersebut bertugas mengantarnya ke Eropa melalui rute yang lebih baik dan dalam kondisi yang lebih menguntungkan. Tetapi Aouda menolak untuk berpisah dari Tuan Fogg, dan Passepartout sangat senang dengan keputusannya; karena tidak ada yang dapat membujuknya untuk meninggalkan tuannya selama Fix bersamanya. Sulit untuk menebak pikiran sang detektif. Apakah keyakinan ini terguncang oleh kembalinya Phileas Fogg, atau apakah ia masih menganggapnya sebagai seorang bajingan yang sangat licik, yang, setelah menyelesaikan perjalanannya keliling dunia, akan menganggap dirinya benar-benar aman di Inggris? Mungkin pendapat Fix tentang Phileas Fogg sedikit berubah; tetapi ia tetap bertekad untuk menjalankan tugasnya, dan mempercepat kepulangan seluruh rombongan ke Inggris sebisa mungkin. Pukul delapan, kereta luncur siap berangkat. Para penumpang mengambil tempat duduk mereka di atasnya, dan membungkus diri mereka rapat-rapat dengan jubah perjalanan mereka. Kedua layar besar dikembangkan, dan di bawah tekanan angin, kereta luncur meluncur di atas salju yang mengeras dengan kecepatan empat puluh mil per jam. Jarak antara Fort Kearney dan Omaha, jika diukur lurus seperti burung terbang, paling jauh adalah dua ratus mil. Jika angin bertiup kencang, jarak tersebut dapat ditempuh dalam lima jam; jika tidak terjadi kecelakaan, kereta luncur mungkin dapat mencapai Omaha pada pukul satu siang. Sungguh perjalanan yang luar biasa! Para pelancong, berdesakan, tidak dapat berbicara karena kedinginan, yang semakin diperparah oleh kecepatan perjalanan mereka. Kereta luncur melaju seringan perahu di atas ombak. Ketika angin sepoi-sepoi menyentuh bumi, kereta luncur itu tampak terangkat dari tanah oleh layarnya. Mudge, yang berada di kemudi, menjaga agar tetap lurus, dan dengan putaran tangannya, ia mengendalikan goyangan yang cenderung terjadi pada kendaraan itu. Semua layar telah terpasang, dan layar jib diatur sedemikian rupa sehingga tidak menghalangi pandangan kapal brigantine. Sebuah tiang atas dinaikkan, dan layar jib lainnya, yang diulurkan ke arah angin, menambah kekuatannya pada layar-layar lainnya. Meskipun kecepatannya tidak dapat diperkirakan secara tepat, kereta luncur itu pasti melaju dengan kecepatan tidak kurang dari empat puluh mil per jam. “Jika tidak ada yang rusak,” kata Mudge, “kita pasti akan sampai di sana!” Tuan Fogg telah mengatur agar Mudge berkesempatan mencapai Omaha dalam waktu yang telah disepakati, dengan menawarkan hadiah yang besar. Padang rumput, yang dilalui kereta luncur dalam garis lurus, datar seperti laut. Tampaknya seperti danau beku yang luas. Jalur kereta api yang melewati bagian ini menanjak dari barat daya ke barat laut melewati Great Island, Columbus, sebuah kota penting di Nebraska, Schuyler, dan Fremont, hingga Omaha. Jalur itu mengikuti sepanjang tepi kanan Sungai Platte. Kereta luncur, mempersingkat rute ini, mengambil garis lengkung yang digambarkan oleh jalur kereta api. Mudge tidak takut terhenti oleh Sungai Platte, karena sungai itu membeku. Jalan itu, kemudian, benar-benar bebas dari rintangan, dan Phileas Fogg hanya memiliki dua hal yang perlu ditakutkan—kecelakaan pada kereta luncur, dan perubahan atau tenangnya angin. Namun, angin sepoi-sepoi itu, bukannya berkurang kekuatannya, malah bertiup seolah ingin membengkokkan tiang layar, yang meskipun demikian, tetap tertahan kuat oleh tali-tali logam. Tali-tali ini, seperti senar alat musik gesek, bergaung seolah digesek oleh busur biola. Kereta luncur itu meluncur di tengah melodi yang melankolis dan penuh kesedihan. “Akord-akord itu menghasilkan nada kelima dan oktaf,” kata Bapak Fogg. Hanya kata-kata itulah yang diucapkannya selama perjalanan. Aouda, yang nyaman terbungkus bulu dan jubah, terlindungi sebisa mungkin dari serangan angin dingin yang membekukan. Adapun Passepartout, wajahnya semerah cakram matahari saat terbenam di tengah kabut, dan ia dengan susah payah menghirup udara yang menusuk. Dengan semangatnya yang selalu ceria, ia mulai berharap lagi. Mereka akan sampai di New York pada malam hari, jika tidak pada pagi hari, tanggal 11, dan masih ada kemungkinan bahwa itu akan terjadi sebelum kapal uap berlayar ke Liverpool. Passepartout bahkan merasakan keinginan kuat untuk menggenggam tangan sekutunya, Fix. Ia ingat bahwa detektif itulah yang mendapatkan kereta luncur, satu-satunya cara untuk mencapai Omaha tepat waktu; tetapi, karena firasat buruk, ia tetap bersikap tenang seperti biasanya. Namun, satu hal yang tidak akan pernah dilupakan Passepartout adalah pengorbanan yang telah dilakukan Tuan Fogg, tanpa ragu-ragu, untuk menyelamatkannya dari suku Sioux. Tuan Fogg telah mempertaruhkan kekayaan dan nyawanya. Tidak! Pelayannya tidak akan pernah melupakan itu! Sementara masing-masing dari rombongan tenggelam dalam lamunan yang berbeda, kereta luncur melesat melewati hamparan salju yang luas. Anak sungai yang dilewatinya tidak terlihat. Ladang dan sungai menghilang di bawah warna putih yang seragam. Dataran itu benar-benar sepi. Di antara jalan Union Pacific dan cabang yang menghubungkan Kearney dengan Saint Joseph, terbentuklah sebuah pulau besar yang tak berpenghuni. Tidak ada desa, stasiun, atau benteng yang terlihat. Dari waktu ke waktu mereka melaju melewati beberapa pohon seperti hantu, yang kerangka putihnya meliuk dan berderak tertiup angin. Terkadang kawanan burung liar terbang, atau gerombolan serigala padang rumput yang kurus, kelaparan, dan ganas berlari sambil melolong mengejar kereta luncur. Passepartout, dengan revolver di tangan, bersiap menembak mereka yang mendekat terlalu dekat. Seandainya terjadi kecelakaan pada kereta luncur, para pelancong, yang diserang oleh binatang buas ini, akan berada dalam bahaya yang sangat mengerikan; tetapi kereta luncur tetap melaju dengan stabil, segera mengejar serigala, dan tak lama kemudian meninggalkan gerombolan serigala yang melolong itu pada jarak yang aman. Sekitar tengah hari, Mudge menyadari melalui beberapa penanda bahwa ia sedang menyeberangi Sungai Platte. Ia tidak mengatakan apa pun, tetapi ia yakin bahwa ia sekarang berada dalam jarak dua puluh mil dari Omaha. Dalam waktu kurang dari satu jam, ia meninggalkan kemudi dan melipat layarnya, sementara kereta luncur, yang terbawa oleh dorongan besar angin, melaju setengah mil lebih jauh dengan layar yang belum terbentang. Akhirnya kereta itu berhenti, dan Mudge, sambil menunjuk ke hamparan atap-atap yang tertutup salju putih, berkata: “Kita sudah sampai!” Tiba! Tiba di stasiun yang setiap hari terhubung, melalui banyak kereta api, dengan pesisir Atlantik! Passepartout dan Fix melompat turun, meregangkan anggota tubuh mereka yang kaku, dan membantu Tuan Fogg dan wanita muda itu turun dari kereta luncur. Phileas Fogg dengan murah hati memberi hadiah kepada Mudge, yang tangannya digenggam hangat oleh Passepartout, dan rombongan itu menuju stasiun kereta api Omaha. Jalur kereta api Pasifik yang sebenarnya berakhir di kota penting Nebraska ini. Omaha terhubung dengan Chicago melalui jalur kereta api Chicago dan Rock Island, yang membentang langsung ke timur, dan melewati lima puluh stasiun. Sebuah kereta sudah siap berangkat ketika Tuan Fogg dan rombongannya tiba di stasiun, dan mereka hanya punya waktu untuk masuk ke dalam gerbong. Mereka belum melihat apa pun di Omaha; tetapi Passepartout mengakui dalam hati bahwa hal itu tidak perlu disesali, karena mereka tidak bepergian untuk melihat pemandangan. Kereta api itu melaju cepat melintasi Negara Bagian Iowa, melewati Council Bluffs, Des Moines, dan Iowa City. Pada malam harinya, kereta itu menyeberangi Sungai Mississippi di Davenport, dan memasuki Illinois melalui Rock Island. Keesokan harinya, tanggal 10, pukul empat sore, kereta itu tiba di Chicago, yang telah bangkit dari reruntuhannya, dan berdiri lebih megah dari sebelumnya di tepi Danau Michigan yang indah. Sembilan ratus mil memisahkan Chicago dari New York; tetapi kereta api tidak kurang di Chicago. Tuan Fogg langsung berpindah dari satu kota ke kota lainnya, dan lokomotif Kereta Api Pittsburgh, Fort Wayne, dan Chicago melaju dengan kecepatan penuh, seolah-olah sepenuhnya memahami bahwa pria itu tidak punya waktu untuk disia-siakan. Kereta itu melintasi Indiana, Ohio, Pennsylvania, dan New Jersey seperti kilat, melaju melewati kota-kota dengan nama-nama kuno, beberapa di antaranya memiliki jalan dan jalur kereta, tetapi belum ada rumah. Akhirnya Sungai Hudson terlihat; dan, pada pukul sebelas lewat seperempat malam tanggal 11, kereta berhenti di stasiun di tepi kanan sungai, tepat di depan dermaga jalur Cunard. Pertandingan melawan Liverpool yang berlabel "China" sudah dimulai tiga perempat jam sebelumnya!</p>
 

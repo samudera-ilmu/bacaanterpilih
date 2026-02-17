@@ -5,39 +5,176 @@
 <title>BAB I. DI MANA PHILEAS FOGG DAN PASSEPARTOUT SALING MENERIMA, YANG SATU SEBAGAI TUAN, YANG LAIN SEBAGAI MANUSIA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB I. DI MANA PHILEAS FOGG DAN PASSEPARTOUT SALING MENERIMA, YANG SATU SEBAGAI TUAN, YANG LAIN SEBAGAI MANUSIA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB I. DI MANA PHILEAS FOGG DAN PASSEPARTOUT SALING MENERIMA, YANG SATU SEBAGAI TUAN, YANG LAIN SEBAGAI MANUSIA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Pada tahun 1872, Tuan Phileas Fogg tinggal di No. 7, Saville Row, Burlington Gardens, rumah tempat Sheridan meninggal pada tahun 1814. Ia adalah salah satu anggota Reform Club yang paling menonjol, meskipun ia tampaknya selalu menghindari perhatian; sosok yang penuh teka-teki, yang tentangnya hanya sedikit yang diketahui, kecuali bahwa ia adalah seorang pria terhormat dan berpengalaman. Orang-orang mengatakan bahwa ia mirip Byron—setidaknya kepalanya seperti Byron; tetapi ia adalah Byron yang berjanggut dan tenang, yang mungkin bisa hidup seribu tahun tanpa menjadi tua. Meskipun jelas seorang Inggris, lebih diragukan apakah Phileas Fogg adalah warga London. Ia tidak pernah terlihat di bursa saham, di bank, atau di ruang akuntansi "City"; tidak ada kapal yang pernah datang ke dermaga London yang dimilikinya; ia tidak memiliki pekerjaan di sektor publik; ia tidak pernah terdaftar di salah satu Inns of Court, baik di Temple, Lincoln's Inn, atau Gray's Inn; suaranya pun tidak pernah bergema di Pengadilan Chancery, atau di Exchequer, atau Queen's Bench, atau Pengadilan Gerejawi. Ia jelas bukan seorang produsen; juga bukan seorang pedagang atau petani terhormat. Namanya asing bagi perkumpulan ilmiah dan terpelajar, dan ia tidak pernah diketahui ikut serta dalam musyawarah bijak Royal Institution atau London Institution, Artisan's Association, atau Institution of Arts and Sciences. Pada kenyataannya, ia tidak tergabung dalam satu pun dari sekian banyak perkumpulan yang bertebaran di ibu kota Inggris, mulai dari Harmonic hingga Entomologists, yang didirikan terutama untuk tujuan memberantas serangga berbahaya. Phileas Fogg adalah anggota Partai Reformasi, dan hanya itu saja. Cara dia bisa masuk ke klub eksklusif ini cukup sederhana. Ia direkomendasikan oleh keluarga Baring, yang dengannya ia memiliki kredit terbuka. Cek-ceknya secara teratur dibayarkan langsung dari rekening giro miliknya, yang selalu memiliki saldo yang cukup. Apakah Phileas Fogg kaya? Tidak diragukan lagi. Tetapi mereka yang paling mengenalnya tidak dapat membayangkan bagaimana ia memperoleh kekayaannya, dan Tuan Fogg adalah orang terakhir yang dapat dimintai informasi tersebut. Ia tidak boros, atau sebaliknya, tamak; karena, setiap kali ia tahu bahwa uang dibutuhkan untuk tujuan yang mulia, bermanfaat, atau dermawan, ia menyediakannya secara diam-diam dan terkadang tanpa menyebutkan nama. Singkatnya, ia adalah orang yang paling pendiam. Ia berbicara sangat sedikit, dan tampak semakin misterius karena sikapnya yang tertutup. Kebiasaan sehari-harinya cukup terbuka untuk diamati; tetapi apa pun yang dilakukannya selalu sama persis dengan yang selalu dilakukannya sebelumnya, sehingga orang-orang yang ingin tahu benar-benar bingung. Apakah dia pernah bepergian? Kemungkinan besar, karena sepertinya tidak ada seorang pun yang lebih mengenal dunia darinya; tidak ada tempat yang begitu terpencil sehingga dia tidak tampak akrab dengannya. Dia sering mengoreksi, dengan beberapa kata yang jelas, ribuan dugaan yang diajukan oleh anggota klub tentang para pelancong yang hilang dan tidak terdengar kabarnya, menunjukkan kemungkinan yang sebenarnya, dan seolah-olah dikaruniai semacam kemampuan melihat masa depan, karena peristiwa-peristiwa seringkali membenarkan prediksinya. Dia pasti telah bepergian ke mana-mana, setidaknya dalam jiwanya. Setidaknya sudah pasti bahwa Phileas Fogg tidak meninggalkan London selama bertahun-tahun. Mereka yang beruntung mengenalnya lebih baik daripada yang lain, menyatakan bahwa tidak ada seorang pun yang dapat mengklaim pernah melihatnya di tempat lain. Satu-satunya hiburannya adalah membaca koran dan bermain whist. Ia sering menang dalam permainan ini, yang, sebagai permainan yang tenang, selaras dengan sifatnya; tetapi kemenangannya tidak pernah masuk ke dompetnya, melainkan disimpan sebagai dana untuk amal. Tuan Fogg bermain, bukan untuk menang, tetapi demi bermain. Permainan itu di matanya adalah sebuah kontes, sebuah perjuangan dengan kesulitan, namun perjuangan yang tenang dan tak kenal lelah, sesuai dengan seleranya. Phileas Fogg tidak diketahui memiliki istri atau anak, yang mungkin terjadi pada orang yang paling jujur sekalipun; ia juga tidak memiliki kerabat atau teman dekat, yang tentu saja lebih tidak biasa. Ia tinggal sendirian di rumahnya di Saville Row, tempat yang tidak pernah dikunjungi siapa pun. Seorang pelayan saja sudah cukup untuk melayaninya. Ia sarapan dan makan siang di klub, pada jam-jam yang telah ditentukan secara pasti, di ruangan yang sama, di meja yang sama, tidak pernah makan bersama anggota lain, apalagi membawa tamu; dan pulang tepat tengah malam, hanya untuk langsung tidur. Ia tidak pernah menggunakan kamar-kamar nyaman yang disediakan Reform untuk anggota-anggota pilihannya. Ia menghabiskan sepuluh jam dari dua puluh empat jam di Saville Row, baik untuk tidur atau berdandan. Ketika ia memilih untuk berjalan-jalan, ia melakukannya dengan langkah teratur di aula masuk dengan lantai mosaiknya, atau di galeri melingkar dengan kubah yang ditopang oleh dua puluh kolom Ionik pualam merah, dan diterangi oleh jendela-jendela yang dicat biru. Saat ia sarapan atau makan malam, seluruh sumber daya klub—dapur dan lumbungnya, gudang mentega dan susunya—membantu memenuhi mejanya dengan hidangan paling lezat; ia dilayani oleh para pelayan yang paling terhormat, mengenakan jas dan sepatu bersol kulit angsa, yang menyajikan makanan dalam porselen khusus dan di atas linen terbaik; teko-teko klub, dari cetakan yang sudah langka, berisi sherry, port, dan claret berbumbu kayu manisnya; sementara minumannya didinginkan dengan es yang menyegarkan, yang dibawa dengan biaya besar dari danau-danau Amerika. Jika hidup dengan gaya seperti ini berarti menjadi eksentrik, harus diakui bahwa ada sesuatu yang baik dalam keeksentrikan tersebut. Rumah besar di Saville Row, meskipun tidak mewah, sangat nyaman. Kebiasaan penghuninya sedemikian rupa sehingga tidak menuntut banyak dari satu-satunya pembantu rumah tangga, tetapi Phileas Fogg menuntutnya untuk selalu tepat waktu dan teratur, hampir di luar kemampuan manusia. Tepat pada tanggal 2 Oktober ini, ia telah memecat James Forster, karena pemuda malang itu membawakan air cukur dengan suhu 84 derajat Fahrenheit, bukan 86 derajat; dan ia sedang menunggu penggantinya, yang dijadwalkan tiba di rumah antara pukul sebelas dan setengah sebelas. Phileas Fogg duduk tegak di kursi berlengan, kakinya rapat seperti kaki seorang grenadier yang sedang berbaris, tangannya bertumpu pada lutut, tubuhnya lurus, kepalanya tegak; ia terus mengamati jam rumit yang menunjukkan jam, menit, detik , hari, bulan, dan tahun. Tepat pukul setengah sebelas, Tuan Fogg, sesuai kebiasaannya sehari-hari, akan meninggalkan Saville Row dan pergi ke Reform. Pada saat itu, terdengar ketukan di pintu apartemen nyaman tempat Phileas Fogg duduk, dan James Forster, pelayan yang dipecat, pun muncul. “Pelayan baru itu,” katanya. Seorang pria muda berusia tiga puluh tahun maju dan membungkuk. “Saya yakin Anda orang Prancis,” tanya Phileas Fogg, “dan nama Anda John?” “Jean, jika Tuan berkenan,” jawab pendatang baru itu, “Jean Passepartout, nama keluarga yang melekat pada saya karena saya memiliki bakat alami untuk berpindah dari satu bisnis ke bisnis lain. Saya percaya saya jujur, Tuan, tetapi, terus terang saja, saya telah menjalani beberapa pekerjaan. Saya pernah menjadi penyanyi keliling, penunggang sirkus, ketika saya masih bisa melompat seperti Leotard, dan menari di atas tali seperti Blondin. Kemudian saya menjadi profesor senam, agar dapat memanfaatkan bakat saya dengan lebih baik; dan kemudian saya menjadi sersan pemadam kebakaran di Paris, dan membantu dalam banyak kebakaran besar. Tetapi saya meninggalkan Prancis lima tahun yang lalu, dan, ingin merasakan manisnya kehidupan rumah tangga, saya bekerja sebagai pelayan di sini di Inggris. Merasa tidak pada tempatnya, dan mendengar bahwa Tuan Phileas Fogg adalah pria paling teliti dan mapan di Inggris Raya, saya datang kepada Tuan dengan harapan dapat hidup tenang bersamanya, dan melupakan bahkan nama Passepartout.” “Passepartout cocok untuk saya,” jawab Tuan Fogg. “Anda direkomendasikan dengan baik kepada saya; saya mendengar kabar baik tentang Anda. Anda tahu kondisi saya?” “Baik, Tuan.” “Bagus! Jam berapa sekarang?” “Pukul sebelas lewat 22 menit,” jawab Passepartout, sambil mengeluarkan sebuah jam tangan perak besar dari dalam sakunya. “Kamu terlalu lambat,” kata Tuan Fogg. “Maafkan saya, Tuan, ini tidak mungkin—” “Kamu terlambat empat menit. Tidak masalah; cukup sebutkan kesalahannya. Mulai saat ini, pukul sebelas lewat dua puluh sembilan menit, hari Rabu, 2 Oktober, kamu berada di bawah pengawasanku.” Phileas Fogg bangkit, mengambil topinya dengan tangan kiri, memakainya di kepala secara otomatis, dan pergi tanpa mengucapkan sepatah kata pun. Passepartout mendengar pintu depan tertutup sekali; itu adalah majikannya yang baru yang sedang keluar. Dia mendengarnya tertutup lagi; itu adalah pendahulunya, James Forster, yang juga sedang pergi. Passepartout tetap sendirian di rumah di Saville Row.</p>
 

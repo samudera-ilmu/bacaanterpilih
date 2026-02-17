@@ -5,39 +5,176 @@
 <title>BAB DUA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB DUA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB DUA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>sebuah pandangan dangkal tentang masa kanak-kanak pahlawan kita. Setelah menyampaikan rasa terima kasih atas keramahan para tamu kami, sekarang mari kita sampaikan rincian hiburan kami, dan dengan cepat mengarahkan petualang kita melalui tahap masa kanak-kanak, yang jarang dipenuhi dengan kejadian-kejadian menarik. Karena kesibukan ibunya tidak memungkinkannya untuk menyusui anak pertamanya sendiri, dan masa-masa bahagia di mana tugas menyusui dapat diserahkan kepada kambing atau serigala betina terdekat telah berlalu, ia memutuskan untuk memanfaatkan hukum alam dan memberinya nutrisi yang jauh lebih berenergi daripada susu kambing, serigala, atau wanita; ini tidak lain adalah nektar lezat yang, seperti yang telah kami singgung, dengan sepenuh hati ia bagikan dari sebuah wadah kecil yang tergantung di depannya, bergantung dari bahunya dengan tali kulit. Setelah memutuskan demikian, sebelum usianya genap dua belas hari, ia membungkusnya dalam ransel kanvas, yang disesuaikan dengan lehernya, lalu jatuh ke punggungnya, dan menyeimbangkan beban yang bertumpu di dadanya. Tidak sedikit yang berpendapat bahwa, ketika ia membawa kedua bayinya dalam situasi tersebut, wadahnya dilengkapi dengan selang fleksibel yang panjang dan ramping, yang, ketika bayi mulai rewel, ia masukkan ke dalam mulutnya, dan bayi itu langsung tenang dengan mengisap; tetapi kami menganggap ini sebagai pernyataan yang berlebihan dari mereka yang mencampuradukkan hal-hal ajaib dalam semua narasi mereka, karena kami tidak dapat membayangkan bagaimana organ-organ lembut seorang bayi dapat mencerna minuman yang begitu pedas, yang selalu mengganggu tubuh orang yang paling kuat dan sehat sekalipun. Oleh karena itu, kami menyimpulkan bahwa penggunaan minuman ini lebih terkendali, dan bahwa minuman tersebut dibuat dengan bahan-bahan sederhana yang diencerkan menjadi komposisi yang sesuai dengan selera dan usianya. Terlepas dari itu, ia memang dimanjakan dalam penggunaan hal itu hingga sedemikian rupa sehingga akan secara efektif menghambat keberuntungannya di masa depan, seandainya ia tidak merasa jenuh dengan pengulangan hal yang sama, yang sangat ia benci dan jijikkan, menolaknya dengan jijik dan muak, seperti orang-orang pilihan yang, setelah dijejali agama di masa kecil mereka, meninggalkannya di masa muda mereka, di antara prasangka-prasangka absurd lainnya dari pendidikan. Sementara ia terombang-ambing dalam keadaan menggantung, seorang prajurit Jerman sejenak terpikat oleh pesona ibunya, yang mendengarkan pidato-pidatonya yang penuh hormat, dan sekali lagi menerima ikatan pernikahan yang lembut; upacara tersebut dilakukan seperti biasa di depan genderang. Wanita itu segera setelah mendapatkan nama barunya, lalu memberikannya kepada putranya, yang sejak saat itu dikenal dengan nama Ferdinand de Fadom; sang suami pun tidak tersinggung dengan sikap lancang istrinya ini, yang tidak hanya dianggapnya sebagai bukti kasih sayang dan penghargaan istrinya, tetapi juga sebagai pujian, yang dengannya ia suatu saat nanti dapat memperoleh kepercayaan sebagai ayah kandung dari anak yang penuh harapan tersebut. Terlepas dari keterlibatannya yang baru dengan orang asing, ibu sang pahlawan kita masih menjalankan kebajikan profesinya di antara pasukan Inggris, karena ia sangat dipengaruhi oleh keberpihakan yang terpuji, yang, seperti yang diamati Horace, umumnya diilhami oleh tanah kelahiran. Memang kecenderungan ini diperkuat oleh alasan lain, yang tidak gagal memengaruhi perilakunya dalam hal ini; semua pengetahuannya tentang bahasa Belanda Tinggi hanya terdiri dari beberapa kata-kata perdagangan yang mutlak diperlukan untuk praktik profesinya, bersama dengan berbagai sumpah dan istilah celaan, yang membuat pelanggannya gentar; sehingga, kecuali di antara sesama warga negaranya, ia tidak dapat memanjakan kecenderungannya untuk bercakap-cakap, yang telah menjadi ciri khasnya sejak usia dini. Contoh kasih sayangnya ini pun tidak gagal untuk menguntungkannya di kemudian hari. Ia dipromosikan ke jabatan juru masak untuk mess perwira resimen; dan, sebelum perdamaian Utrecht, ia benar-benar memiliki tenda perbekalan, yang didirikan untuk mengakomodasi para bangsawan di angkatan darat. Sementara itu, Ferdinand berkembang pesat dalam kemampuan-kemampuan masa kanak-kanaknya; kecantikannya sangat mencolok, dan kekuatannya begitu luar biasa, sehingga ia pantas disamakan dengan Hercules di dalam buaian. Teman-teman ayah mertuanya menggendongnya di pangkuan mereka, sementara ia bermain dengan kumis mereka, dan, sebelum berusia tiga belas bulan, mereka mengajarinya menghisap brendi yang dicampur bubuk mesiu, melalui lubang sumbu pistol. Pada saat yang sama, ia dibelai oleh berbagai sersan tentara Inggris, yang masing-masing dan secara diam-diam mengagumi kualifikasinya dengan kebanggaan seorang ayah, yang tergugah oleh pernyataan licik yang digunakan ibunya untuk memuji mereka satu per satu. Segera setelah perang (sayangnya baginya) berakhir, ia, sebagai kewajiban, mengikuti suaminya ke Bohemia; dan karena resimen suaminya dikirim ke garnisun di Praha, ia membuka sebuah kabaret di kota itu, yang sering dikunjungi oleh banyak tamu dari bangsa Skotlandia dan Irlandia, yang berdedikasi untuk berlatih militer dalam pelayanan Kaisar. Melalui komunikasi inilah bahasa Inggris menjadi bahasa sehari-hari bagi Ferdinand muda, yang, tanpa kesempatan seperti itu, akan asing dengan bahasa leluhurnya, terlepas dari semua kefasihan dan kemampuan berbicara ibunya; meskipun harus diakui, demi kebaikan kasih sayangnya sebagai seorang ibu, bahwa ia tidak melewatkan kesempatan untuk membuatnya familiar bagi telinga dan pemahaman putranya; karena, bahkan pada saat-saat ketika ia tidak dapat menemukan orang untuk melanjutkan perdebatan, ia biasa berbicara panjang lebar tentang situasinya sendiri, melampiaskan banyak cercaan yang menghina terhadap negara suaminya, yang antara negara itu dan Inggris Raya ia bandingkan dengan banyak hal yang menjijikkan; dan berdoa tanpa henti agar Eropa segera terlibat dalam perang umum, sehingga ia memiliki kesempatan untuk kembali menikmati kesenangan dan keuntungan dari kampanye Flanders.</p>
 

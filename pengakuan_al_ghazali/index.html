@@ -2,27 +2,81 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Judul Bab</title>
+<title>Pengakuan Al Ghazali</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
 <style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --link: #1a73e8;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
   padding: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
-
-li { margin: 6px 0; }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
 }
 </style>
 </head>
 <body>
 
-<h1>Judul Bab</h1>
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+
+<h1>Pengakuan Al Ghazali</h1>
 
 <ol>
 <li><a href="tentang-apa-buku-ini.html">TENTANG APA BUKU INI ?</a></li><li><a href="pencarian-kebenaran-ghazzali.html">PENCARIAN KEBENARAN GHAZZALI</a></li><li><a href="tipu-daya-kaum-sufis.html">TIPU DAYA KAUM SUFIS</a></li><li><a href="berbagai-macam-pencari-kebenaran.html">BERBAGAI MACAM PENCARI KEBENARAN</a></li><li><a href="tujuan-teologi-skolastik-dan-hasilnya.html">TUJUAN TEOLOGI SKOLASTIK DAN HASILNYA</a></li><li><a href="mengenai-sekte-sekte-filosofis-dan-stigma-ketidaksetiaan-yang-melekat-pada-mereka-semua.html">MENGENAI SEKTE-SEKTE FILOSOFIS DAN STIGMA KETIDAKSETIAAN YANG MELEKAT PADA MEREKA SEMUA</a></li><li><a href="divisi-divisi-ilmu-filsafat.html">DIVISI-DIVISI ILMU FILSAFAT</a></li><li><a href="sufisme.html">SUFISME</a></li><li><a href="realita-inspirasi-pentingnya-bagi-umat-manusia.html">REALITA INSPIRASI: PENTINGNYA BAGI UMAT MANUSIA</a></li>

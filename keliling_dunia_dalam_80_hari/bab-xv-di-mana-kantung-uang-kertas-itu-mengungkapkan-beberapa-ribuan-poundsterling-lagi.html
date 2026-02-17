@@ -5,39 +5,176 @@
 <title>BAB XV. DI MANA KANTUNG UANG KERTAS ITU MENGUNGKAPKAN BEBERAPA RIBUAN POUNDSTERLING LAGI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XV. DI MANA KANTUNG UANG KERTAS ITU MENGUNGKAPKAN BEBERAPA RIBUAN POUNDSTERLING LAGI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XV. DI MANA KANTUNG UANG KERTAS ITU MENGUNGKAPKAN BEBERAPA RIBUAN POUNDSTERLING LAGI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kereta memasuki stasiun, dan Passepartout melompat keluar lebih dulu, diikuti oleh Tuan Fogg, yang membantu temannya yang cantik itu turun. Phileas Fogg bermaksud untuk segera menuju kapal uap Hong Kong, agar Aouda bisa nyaman selama perjalanan. Dia tidak ingin meninggalkannya selagi mereka masih berada di tempat yang berbahaya. Saat ia hendak meninggalkan kantor polisi, seorang polisi menghampirinya dan berkata, “Tuan Phileas Fogg?” “Akulah dia.” “Apakah orang ini pelayanmu?” tambah polisi itu, sambil menunjuk ke Passepartout. "Ya." “Berbuat baiklah, kalian berdua, dan ikutilah Aku.” Tuan Fogg sama sekali tidak menunjukkan keterkejutan. Polisi itu adalah perwakilan hukum, dan hukum adalah sesuatu yang sakral bagi orang Inggris. Passepartout mencoba berargumentasi tentang masalah itu, tetapi polisi itu memukulnya dengan tongkatnya, dan Tuan Fogg memberi isyarat agar polisi itu patuh. “Bolehkah gadis muda ini ikut bersama kami?” tanyanya. “Mungkin saja,” jawab polisi itu. Tuan Fogg, Aouda, dan Passepartout diantar ke sebuah palkigahri, sejenis kereta beroda empat yang ditarik oleh dua kuda, di mana mereka duduk dan kemudian diantar pergi. Tidak seorang pun berbicara selama dua puluh menit yang berlalu sebelum mereka mencapai tujuan mereka. Mereka pertama kali melewati "kota hitam," dengan jalan-jalan sempitnya, gubuk-gubuknya yang kumuh dan kotor, serta penduduknya yang miskin; kemudian melalui "kota Eropa," yang tampak lebih indah dengan rumah-rumah besar dari batu bata yang cerah, dinaungi pohon kelapa dan dipenuhi tiang-tiang kapal, di mana, meskipun masih pagi, para penunggang kuda yang berpakaian elegan dan kereta-kereta kuda yang indah hilir mudik. Kereta kuda berhenti di depan sebuah rumah yang tampak sederhana, namun rumah itu tidak terlihat seperti rumah mewah pribadi. Setelah polisi meminta para tahanannya—karena memang mereka pantas disebut demikian—untuk turun, polisi itu membawa mereka ke sebuah ruangan dengan jendela berjeruji, dan berkata: “Kalian akan menghadap Hakim Obadiah pukul setengah delapan.” Lalu dia mundur dan menutup pintu. “Wah, kita ini tahanan!” seru Passepartout sambil menjatuhkan diri ke kursi. Aouda, dengan emosi yang berusaha disembunyikannya, berkata kepada Tuan Fogg: “Tuan, Anda harus membiarkan saya menghadapi nasib saya sendiri! Karena sayalah Anda menerima perlakuan ini, karena telah menyelamatkan saya!” Phileas Fogg hanya mengatakan bahwa itu tidak mungkin. Sangat tidak mungkin dia ditangkap karena mencegah suttee. Para pengadu tidak akan berani mengajukan diri dengan tuduhan seperti itu. Ada kesalahan. Selain itu, dia tidak akan meninggalkan Aouda, tetapi akan mengantarnya ke Hong Kong. “Tapi kapal uap itu berangkat siang hari!” ujar Passepartout dengan gugup. “Kita akan berada di atas kapal sebelum tengah hari,” jawab tuannya dengan tenang. Hal itu dikatakan dengan begitu yakin sehingga Passepartout tak kuasa bergumam sendiri, “Parbleu, itu pasti! Sebelum tengah hari kita akan berada di atas kapal.” Namun, ia sama sekali tidak merasa tenang. Pukul setengah delapan pintu terbuka, polisi muncul, dan meminta mereka untuk mengikutinya, lalu memimpin jalan ke aula yang bersebelahan. Jelas itu adalah ruang sidang, dan kerumunan orang Eropa dan penduduk asli sudah memenuhi bagian belakang ruangan. Tuan Fogg dan kedua temannya duduk di bangku di seberang meja hakim dan juru tulisnya. Segera setelah itu, Hakim Obadiah, seorang pria gemuk dan bulat, diikuti oleh juru tulis, masuk. Ia kemudian mengambil wig yang tergantung di paku, dan buru-buru memakainya di kepalanya. “Kasus pertama,” katanya. Lalu, sambil memegang kepalanya, dia berseru, “Heh! Ini bukan wigku!” “Bukan, Yang Mulia,” jawab petugas itu, “itu milik saya.” “Tuan Oysterpuff yang terhormat, bagaimana mungkin seorang hakim memberikan putusan yang bijaksana dengan mengenakan wig juru tulis?” Wig-wig itu ditukar. Passepartout mulai merasa gugup, karena jarum jam pada permukaan jam besar di atas hakim tampak berputar dengan kecepatan yang mengerikan. “Kasus pertama,” ulang Hakim Obadiah. “Phileas Fogg?” tanya Oysterpuff. “Saya di sini,” jawab Tuan Fogg. “Passepartout?” “Hadir,” jawab Passepartout. “Bagus,” kata hakim. “Kalian, para tahanan, telah dicari selama dua hari di kereta api dari Bombay.” “Tapi kami dituduh melakukan apa?” tanya Passepartout dengan tidak sabar. “Anda akan segera diberi informasi.” “Saya warga negara Inggris, Pak,” kata Tuan Fogg, “dan saya memiliki hak—” “Apakah Anda pernah diperlakukan tidak adil?” "Sama sekali tidak." “Baiklah; silakan para pengadu masuk.” Sebuah pintu dibuka atas perintah hakim, dan tiga pendeta India masuk. “Itulah dia,” gumam Passepartout; “mereka inilah para penjahat yang hendak membakar nona muda kita.” Para pendeta mengambil tempat mereka di depan hakim, dan juru tulis mulai membacakan dengan suara lantang sebuah pengaduan penodaan terhadap Phileas Fogg dan pelayannya, yang dituduh telah melanggar tempat yang dianggap suci oleh agama Brahmana. “Apakah Anda mendengar dakwaan itu?” tanya hakim. “Ya, Pak,” jawab Tuan Fogg sambil melihat arlojinya, “dan saya mengakuinya.” “Kau mengakuinya?” “Saya akui, dan saya ingin mendengar para pendeta ini mengakui, pada gilirannya, apa yang akan mereka lakukan di pagoda Pillaji.” Para imam saling memandang; mereka tampaknya tidak mengerti apa yang dikatakan. “Ya,” seru Passepartout dengan antusias; “di pagoda Pillaji, tempat mereka hendak membakar korbannya.” Hakim itu menatap dengan heran, dan para pendeta tercengang. “Korban siapa?” tanya Hakim Obadiah. “Siapa yang akan dibakar? Di Bombay sendiri?” “Bombay?” teriak Passepartout. “Tentu. Kita tidak sedang membicarakan pagoda Pillaji, tetapi pagoda di Malabar Hill, Bombay.” “Dan sebagai bukti,” tambah petugas itu, “ini dia sepatu si penoda, yang ditinggalkannya.” Lalu ia meletakkan sepasang sepatu di atas mejanya. “Sepatuku!” seru Passepartout, karena terkejut hingga tanpa sengaja melontarkan seruan yang kurang bijaksana itu. Kebingungan antara majikan dan anak buah, yang sama sekali telah melupakan kejadian di Bombay, yang menyebabkan mereka ditahan di Calcutta, dapat dibayangkan. Fix, sang detektif, telah meramalkan keuntungan yang diberikan oleh pelarian Passepartout kepadanya, dan, menunda keberangkatannya selama dua belas jam, telah berkonsultasi dengan para pendeta di Malabar Hill. Mengetahui bahwa pihak berwenang Inggris menangani pelanggaran semacam ini dengan sangat keras, ia menjanjikan mereka sejumlah besar uang sebagai ganti rugi, dan mengirim mereka ke Kalkuta dengan kereta berikutnya. Karena keterlambatan yang disebabkan oleh penyelamatan janda muda itu, Fix dan para pendeta tiba di ibu kota India sebelum Tuan Fogg dan pelayannya, karena para hakim telah diperingatkan melalui surat untuk menangkap mereka jika mereka tiba. Kekecewaan Fix ketika mengetahui bahwa Phileas Fogg belum muncul di Kalkuta dapat dibayangkan. Ia memutuskan bahwa perampok itu telah berhenti di suatu tempat di sepanjang jalan dan berlindung di provinsi selatan. Selama dua puluh empat jam Fix mengawasi stasiun dengan cemas; akhirnya ia mendapat imbalan dengan melihat Tuan Fogg dan Passepartout tiba, ditemani oleh seorang wanita muda, yang kehadirannya sama sekali tidak dapat ia jelaskan. Ia bergegas memanggil seorang polisi; dan dengan cara inilah rombongan tersebut ditangkap dan dibawa ke hadapan Hakim Obadiah. Seandainya Passepartout sedikit kurang sibuk, dia pasti akan melihat detektif itu duduk di sudut ruang sidang, mengamati jalannya persidangan dengan minat yang mudah dipahami; karena surat perintah itu gagal sampai kepadanya di Calcutta, seperti yang terjadi di Bombay dan Suez. Sayangnya, Hakim Obadiah telah mendengar seruan gegabah Passepartout, yang seharusnya bisa ditarik kembali oleh orang malang itu dengan segala cara. “Apakah fakta-fakta tersebut diakui?” tanya hakim. “Baiklah,” jawab Tuan Fogg dengan dingin. “Oleh karena itu,” lanjut hakim, “karena hukum Inggris melindungi secara setara dan tegas agama-agama masyarakat India, dan karena Passepartout telah mengakui bahwa ia melanggar pagoda suci Bukit Malabar, di Bombay, pada tanggal 20 Oktober, saya menghukum Passepartout tersebut dengan hukuman penjara selama lima belas hari dan denda sebesar tiga ratus pound.” “Tiga ratus pound!” seru Passepartout, terkejut dengan besarnya jumlah tersebut. “Diam!” teriak polisi itu. “Dan karena,” lanjut hakim, “tidak terbukti bahwa perbuatan itu tidak dilakukan dengan persetujuan majikan dan pelayan, dan karena majikan dalam hal apa pun harus bertanggung jawab atas perbuatan pelayannya yang dibayar, saya menghukum Phileas Fogg dengan hukuman penjara satu minggu dan denda seratus lima puluh pound.” Fix mengusap tangannya pelan dengan puas; jika Phileas Fogg bisa ditahan di Kalkuta selama seminggu, itu sudah lebih dari cukup waktu bagi surat perintah penangkapan untuk tiba. Passepartout tercengang. Hukuman ini menghancurkan tuannya. Taruhan dua puluh ribu pound hilang, karena dia, seperti orang bodoh yang berharga, telah masuk ke pagoda yang menjijikkan itu! Phileas Fogg, dengan sikap tenang seolah-olah putusan itu sama sekali tidak menyangkut dirinya, bahkan tidak mengangkat alisnya saat putusan dibacakan. Tepat ketika panitera memanggil kasus berikutnya, dia berdiri dan berkata, "Saya menawarkan jaminan." “Anda memiliki hak itu,” jawab hakim. Darah Fix membeku, tetapi ia kembali tenang ketika mendengar hakim mengumumkan bahwa uang jaminan yang dibutuhkan untuk setiap tahanan adalah seribu poundsterling. “Saya akan segera membayarnya,” kata Tuan Fogg, sambil mengambil segepok uang kertas dari tas yang dibawa Passepartout, dan meletakkannya di meja petugas. “Jumlah ini akan dikembalikan kepada Anda setelah Anda dibebaskan dari penjara,” kata hakim. “Sementara itu, Anda dibebaskan dengan jaminan.” “Kemarilah!” kata Phileas Fogg kepada pelayannya. “Tapi setidaknya kembalikan sepatuku!” teriak Passepartout dengan marah. “Ah, sepatu ini mahal sekali!” gumamnya saat sepatu itu diserahkan kepadanya. “Lebih dari seribu pound per pasang; lagipula, sepatu ini membuat kakiku sakit.” Tuan Fogg, sambil mengulurkan tangannya kepada Aouda, kemudian pergi, diikuti oleh Passepartout yang tampak kecewa. Fix masih menyimpan harapan bahwa perampok itu pada akhirnya tidak akan meninggalkan uang dua ribu pound itu, tetapi akan memutuskan untuk menjalani hukuman penjara selama seminggu, dan ia pun berangkat mengikuti jejak Tuan Fogg. Pria itu kemudian naik kereta kuda, dan rombongan itu segera mendarat di salah satu dermaga. Kapal “Rangoon” berlabuh setengah mil jauhnya di pelabuhan, sinyal keberangkatannya dikibarkan di puncak tiang. Pukul sebelas berbunyi; Tuan Fogg satu jam lebih awal dari waktu yang ditentukan. Fix melihat mereka meninggalkan kereta dan mendayung perahu menuju kapal uap, dan menghentakkan kakinya karena kecewa. “Si brengsek itu akhirnya kabur!” serunya. “Dua ribu pound dikorbankan! Dia boros seperti pencuri! Aku akan mengejarnya sampai ke ujung dunia jika perlu; tetapi, dengan kecepatan seperti ini, uang curian itu akan segera habis.” Dugaan detektif itu tidak sepenuhnya salah. Sejak meninggalkan London, dengan biaya perjalanan, suap, pembelian gajah, uang jaminan, dan denda, Tuan Fogg telah menghabiskan lebih dari lima ribu poundsterling dalam perjalanan, dan persentase dari jumlah yang diperoleh dari perampok bank yang dijanjikan kepada para detektif, dengan cepat berkurang.</p>
 

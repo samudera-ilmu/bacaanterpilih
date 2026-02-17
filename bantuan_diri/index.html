@@ -2,27 +2,81 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Judul Bab</title>
+<title>Bantuan Diri</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
 <style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --link: #1a73e8;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
   padding: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
-
-li { margin: 6px 0; }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
 }
 </style>
 </head>
 <body>
 
-<h1>Judul Bab</h1>
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+
+<h1>Bantuan Diri</h1>
 
 <ol>
 <li><a href="tentang-apa-buku-ini.html">TENTANG APA BUKU INI ??</a></li><li><a href="kata-pengantar.html">KATA PENGANTAR.</a></li><li><a href="pendahuluan-untuk-edisi-pertama.html">PENDAHULUAN UNTUK EDISI PERTAMA.</a></li><li><a href="bab-i-bantuan-dirinasional-dan-individu.html">BAB I. BANTUAN DIRI—NASIONAL DAN INDIVIDU .</a></li><li><a href="bab-ii-para-pemimpin-industripenemu-dan-produsen.html">BAB II.-PARA PEMIMPIN INDUSTRI—PENEMU DAN PRODUSEN .</a></li><li><a href="bab-iii-para-perajin-tembikar-terkemukapalissy-bttgher-wedgwood.html">BAB III.- PARA PERAJIN TEMBIKAR TERKEMUKA—PALISSY, BÖTTGHER , WEDGWOOD .</a></li><li><a href="bab-iv-penerapan-dan-ketekunan.html">BAB IV.- PENERAPAN DAN KETEKUNAN .</a></li><li><a href="bab-v-bantuan-dan-peluangupaya-ilmiah.html">BAB V.- BANTUAN DAN PELUANG—UPAYA ILMIAH .</a></li><li><a href="bab-vi-pekerja-di-bidang-seni.html">BAB VI.- PEKERJA DI BIDANG SENI .</a></li><li><a href="bab-vii-industri-dan-kaum-bangsawan.html">BAB VII.- INDUSTRI DAN KAUM BANGSAWAN .</a></li><li><a href="bab-viii-energi-dan-keberanian.html">BAB VIII.- ENERGI DAN KEBERANIAN .</a></li><li><a href="bab-ix-para-pengusaha-pria.html">BAB IX.- PARA PENGUSAHA PRIA .</a></li><li><a href="bab-x-uangpenggunaan-dan-penyalahgunaannya.html">BAB X.- UANG—PENGGUNAAN DAN PENYALAHGUNAANNYA .</a></li><li><a href="bab-xi-pengembangan-dirifasilitas-dan-kesulitan.html">BAB XI.- PENGEMBANGAN DIRI—FASILITAS DAN KESULITAN .</a></li><li><a href="bab-xii-contohmodel.html">BAB XII.- CONTOH—MODEL .</a></li><li><a href="bab-xiiikarakterseorang-pria-sejati.html">BAB XIII.KARAKTER—SEORANG PRIA SEJATI .</a></li><li><a href="catatan-kaki.html">CATATAN KAKI</a></li>

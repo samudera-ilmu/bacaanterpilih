@@ -5,39 +5,176 @@
 <title>BAB IV. DI MANA PHILEAS FOGG MEMBUAT PASSEPARTOUT, PELAYANNYA, TERKEJUT</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB IV. DI MANA PHILEAS FOGG MEMBUAT PASSEPARTOUT, PELAYANNYA, TERKEJUT - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB IV. DI MANA PHILEAS FOGG MEMBUAT PASSEPARTOUT, PELAYANNYA, TERKEJUT</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Setelah memenangkan dua puluh guinea dalam permainan whist, dan berpamitan kepada teman-temannya, Phileas Fogg, pada pukul tujuh lewat dua puluh lima menit, meninggalkan Reform Club. Passepartout, yang telah dengan sungguh-sungguh mempelajari jadwal tugasnya, sangat terkejut melihat atasannya lalai datang pada jam yang tidak biasa ini; karena, menurut aturan, ia baru harus berada di Saville Row tepat tengah malam. Tuan Fogg kembali ke kamar tidurnya, dan berseru, "Passepartout!" Passepartout tidak menjawab. Bukan dia yang dipanggil; ini bukan waktu yang tepat. “Passepartout!” ulang Tuan Fogg, tanpa meninggikan suara. Passepartout pun muncul. “Aku sudah memanggilmu dua kali,” ujar tuannya. “Tapi ini belum tengah malam,” jawab yang lainnya sambil menunjukkan jam tangannya. “Aku tahu; aku tidak menyalahkanmu. Kita akan berangkat ke Dover dan Calais dalam sepuluh menit.” Senyum bingung menghiasi wajah bulat Passepartout; jelas dia tidak memahami tuannya. “Apakah Tuan akan meninggalkan rumah?” “Ya,” jawab Phileas Fogg. “Kami akan mengelilingi dunia.” Passepartout membuka matanya lebar-lebar, mengangkat alisnya, mengangkat kedua tangannya, dan tampak seperti akan pingsan, saking terkejutnya ia. “Keliling dunia!” gumamnya. “Dalam delapan puluh hari,” jawab Tuan Fogg. “Jadi kita tidak punya waktu untuk disia-siakan.” “Tapi bagaimana dengan koper-koper itu?” seru Passepartout, tanpa sadar menggelengkan kepalanya dari kanan ke kiri. “Kita tidak akan membawa koper; hanya tas koper, berisi dua kemeja dan tiga pasang kaus kaki untukku, dan sama untukmu. Kita akan membeli pakaian kita di perjalanan. Bawalah jas hujan dan jubah perjalananku, serta beberapa sepatu yang kokoh, meskipun kita tidak akan banyak berjalan kaki. Cepatlah!” Passepartout mencoba menjawab, tetapi tidak bisa. Dia keluar, naik ke kamarnya sendiri, duduk di kursi, dan bergumam: “Bagus sekali! Dan aku, yang ingin tetap diam!” Ia dengan mekanis mulai mempersiapkan keberangkatan. Keliling dunia dalam delapan puluh hari! Apakah tuannya bodoh? Tidak. Jadi, apakah ini lelucon? Mereka akan pergi ke Dover; bagus! Ke Calais; bagus lagi! Lagipula, Passepartout, yang telah meninggalkan Prancis selama lima tahun, tidak akan menyesal menginjakkan kaki di tanah kelahirannya lagi. Mungkin mereka akan pergi sejauh Paris, dan akan menyenangkan matanya untuk melihat Paris sekali lagi. Tetapi tentu saja seorang pria yang begitu berhati-hati dalam langkahnya akan berhenti di sana; tidak diragukan lagi—tetapi, bagaimanapun juga, tetap benar bahwa ia akan pergi, orang yang selama ini begitu betah di rumah! Menjelang pukul delapan, Passepartout telah mengemas tas karpet sederhana yang berisi pakaian tuannya dan dirinya sendiri; kemudian, masih dengan pikiran yang gelisah, ia dengan hati-hati menutup pintu kamarnya, dan turun menemui Tuan Fogg. Tuan Fogg sudah siap sepenuhnya. Di bawah lengannya terlihat sebuah buku panduan Bradshaw's Continental Railway Steam Transit and General Guide bersampul merah, dengan jadwal yang menunjukkan kedatangan dan keberangkatan kapal uap dan kereta api. Ia mengambil tas koper, membukanya, dan menyelipkan ke dalamnya sejumlah besar uang kertas Bank of England, yang dapat digunakan ke mana pun ia pergi. “Kau tidak melupakan apa pun?” tanyanya. “Tidak apa-apa, Tuan.” “Jas hujan dan jubahku?” “Ini dia.” “Bagus! Ambil tas karpet ini,” katanya sambil menyerahkannya kepada Passepartout. “Jaga baik-baik, karena di dalamnya ada dua puluh ribu pound.” Passepartout hampir menjatuhkan tas itu, seolah-olah dua puluh ribu poundsterling itu berupa emas dan memberatkannya. Kemudian majikan dan anak buahnya turun, pintu depan terkunci ganda, dan di ujung Saville Row mereka naik taksi dan melaju cepat ke Charing Cross. Taksi berhenti di depan stasiun kereta api pukul delapan lewat dua puluh menit. Passepartout melompat dari kereta dan mengikuti majikannya, yang, setelah membayar sopir taksi, hendak memasuki stasiun, ketika seorang wanita pengemis miskin, dengan seorang anak di gendongannya, kakinya yang telanjang berlumuran lumpur, kepalanya tertutup oleh topi lusuh yang tergantung bulu compang-camping, dan bahunya diselimuti selendang compang-camping, mendekat, dan dengan sedih meminta sedekah. Tuan Fogg mengeluarkan dua puluh guinea yang baru saja ia menangkan dalam permainan whist, dan memberikannya kepada pengemis itu, sambil berkata, “Ini, nona yang baik. Saya senang bertemu dengan Anda;” lalu melanjutkan perjalanannya. Passepartout merasa matanya berkaca-kaca; tindakan tuannya menyentuh hatinya yang peka. Setelah dua tiket kelas satu ke Paris dibeli dengan cepat, Tuan Fogg menyeberangi stasiun menuju kereta, ketika ia melihat kelima temannya dari Partai Reformasi. “Baiklah, Tuan-tuan,” katanya, “saya akan pergi; dan, jika Anda memeriksa paspor saya ketika saya kembali, Anda akan dapat menilai apakah saya telah menyelesaikan perjalanan yang telah disepakati.” “Oh, itu sama sekali tidak perlu, Tuan Fogg,” kata Ralph dengan sopan. “Kami akan mempercayai perkataan Anda, sebagai seorang pria terhormat.” “Kau tidak lupa kapan kau akan kembali ke London lagi?” tanya Stuart. “Dalam delapan puluh hari; pada hari Sabtu, 21 Desember 1872, pukul seperempat sebelum pukul sembilan malam. Selamat tinggal, Tuan-tuan.” Phileas Fogg dan pelayannya duduk di gerbong kelas satu pada pukul sembilan kurang dua puluh menit; lima menit kemudian peluit berbunyi nyaring, dan kereta perlahan meluncur keluar dari stasiun. Malam itu gelap, dan hujan gerimis turun dengan deras. Phileas Fogg, yang nyaman berada di sudutnya, tidak membuka mulutnya. Passepartout, yang belum pulih dari keterkejutannya, secara mekanis memegang erat tas koper berisi harta karun yang sangat banyak itu. Saat kereta api melaju kencang melewati Sydenham, Passepartout tiba-tiba mengeluarkan teriakan putus asa. “Ada apa?” tanya Tuan Fogg. “Sayang sekali! Karena terburu-buru—aku—aku lupa—” "Apa?" “Untuk mematikan gas di kamar saya!” “Baiklah, anak muda,” jawab Tuan Fogg dengan tenang; “itu akan terbakar—atas biayamu sendiri.”</p>
 

@@ -5,39 +5,176 @@
 <title>BAB XXII. DI MANA PASSEPARTOUT MENEMUKAN BAHWA, BAHKAN DI ANTIPODA, ADA BAIKNYA MEMILIKI UANG DI SAKU</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXII. DI MANA PASSEPARTOUT MENEMUKAN BAHWA, BAHKAN DI ANTIPODA, ADA BAIKNYA MEMILIKI UANG DI SAKU - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXII. DI MANA PASSEPARTOUT MENEMUKAN BAHWA, BAHKAN DI ANTIPODA, ADA BAIKNYA MEMILIKI UANG DI SAKU</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Kapal “Carnatic,” yang berlayar dari Hong Kong pukul setengah tujuh pada tanggal 7 November, mengarahkan haluannya dengan kecepatan penuh menuju Jepang. Kapal itu membawa muatan besar dan kabin penumpang yang penuh sesak. Namun, dua kamar di bagian belakang kosong—kamar-kamar yang sebelumnya ditempati oleh Phileas Fogg. Keesokan harinya, seorang penumpang dengan mata setengah linglung, langkah terhuyung-huyung, dan rambut acak-acakan, terlihat keluar dari kabin kelas dua, dan tertatih-tatih menuju tempat duduk di dek. Itu adalah Passepartout; dan apa yang terjadi padanya adalah sebagai berikut: Tak lama setelah Fix meninggalkan tempat persembunyian opium, dua pelayan mengangkat Passepartout yang tak sadarkan diri, dan membawanya ke tempat tidur yang disediakan untuk para perokok. Tiga jam kemudian, bahkan dalam mimpinya pun dihantui oleh sebuah gagasan yang tetap, pria malang itu terbangun, dan berjuang melawan pengaruh narkotika yang membius. Pikiran tentang tugas yang belum terpenuhi mengguncang kelesuannya, dan dia bergegas meninggalkan tempat mabuk itu. Terhuyung-huyung dan menopang dirinya dengan berpegangan pada dinding, jatuh dan merangkak naik lagi, dan didorong tak tertahankan oleh semacam naluri, dia terus berteriak, "'Carnatic!' 'Carnatic!'" Kapal uap itu terparkir di samping dermaga, hampir berlayar. Passepartout hanya perlu melangkah beberapa langkah lagi; dan, bergegas menaiki papan, ia menyeberanginya, dan jatuh pingsan di dek, tepat saat "Carnatic" mulai bergerak. Beberapa pelaut, yang tampaknya sudah terbiasa dengan pemandangan seperti ini, membawa orang Prancis malang itu ke kabin kedua, dan Passepartout tidak sadar sampai mereka berada seratus lima puluh mil jauhnya dari Tiongkok. Demikianlah ia mendapati dirinya keesokan paginya di dek "Carnatic," dan dengan penuh semangat menghirup angin laut yang menyegarkan. Udara murni itu membuatnya sadar. Ia mulai mengumpulkan kesadarannya, yang ternyata merupakan tugas yang sulit; tetapi akhirnya ia mengingat kembali peristiwa malam sebelumnya, wahyu Fix, dan rumah opium. “Jelas sekali,” katanya dalam hati, “bahwa aku telah mabuk berat! Apa kata Tuan Fogg? Setidaknya aku tidak ketinggalan kapal uap, dan itu yang terpenting.” Kemudian, seperti yang terlintas di benak Fix: “Soal si bajingan itu, kuharap kita sudah terbebas darinya, dan dia tidak berani, seperti yang dia rencanakan, mengikuti kita naik ke kapal “Carnatic.” Seorang detektif sedang melacak Tuan Fogg, yang dituduh merampok Bank of England! Huh! Tuan Fogg bukanlah perampok, sama seperti aku bukanlah seorang pembunuh.” Haruskah dia membocorkan tujuan sebenarnya Fix kepada tuannya? Apakah tepat untuk menceritakan peran yang dimainkan detektif itu? Bukankah lebih baik menunggu sampai Tuan Fogg kembali ke London, lalu memberitahunya bahwa seorang agen kepolisian metropolitan telah mengikutinya keliling dunia, dan menertawakannya? Tidak diragukan lagi; setidaknya, itu layak dipertimbangkan. Hal pertama yang harus dilakukan adalah menemukan Tuan Fogg, dan meminta maaf atas perilakunya yang aneh. Passepartout bangkit dan melanjutkan perjalanannya, sebisa mungkin dengan kapal uap yang bergoyang-goyang, ke dek belakang. Ia tidak melihat siapa pun yang menyerupai tuannya atau Aouda. "Bagus!" gumamnya; "Aouda belum bangun, dan Tuan Fogg mungkin sudah menemukan beberapa lawan main." Ia turun ke ruang utama. Tuan Fogg tidak ada di sana. Namun, Passepartout hanya perlu menanyakan kepada petugas kapal nomor kamar tuannya. Petugas kapal menjawab bahwa ia tidak mengenal penumpang mana pun dengan nama Fogg. “Maafkan saya,” kata Passepartout dengan gigih. “Dia seorang pria tinggi, pendiam, dan tidak banyak bicara, dan bersamanya seorang wanita muda—” “Tidak ada wanita muda di kapal ini,” sela petugas kapal. “Berikut daftar penumpangnya; Anda dapat melihat sendiri.” Passepartout meneliti daftar itu, tetapi nama tuannya tidak ada di sana. Tiba-tiba sebuah ide terlintas di benaknya. “Ah! Apakah saya sedang berada di 'Carnatic'?” "Ya." “Dalam perjalanan ke Yokohama?” "Tentu." Passepartout sempat khawatir bahwa ia berada di kapal yang salah; tetapi, meskipun ia sebenarnya berada di kapal "Carnatic," nahkodanya tidak ada di sana. Ia jatuh tersungkur di kursi dengan kaget. Kini ia menyadari semuanya. Ia ingat bahwa waktu keberangkatan telah diubah, bahwa seharusnya ia memberi tahu tuannya tentang hal itu, dan bahwa ia tidak melakukannya. Maka, itu adalah kesalahannya sehingga Tuan Fogg dan Aouda ketinggalan kapal uap. Ya, tetapi itu lebih merupakan kesalahan pengkhianat yang, untuk memisahkannya dari tuannya, dan menahan yang terakhir di Hong Kong, telah membujuknya untuk mabuk! Kini ia melihat tipu daya detektif itu; dan pada saat ini Tuan Fogg pasti hancur, taruhannya kalah, dan ia sendiri mungkin ditangkap dan dipenjara! Saat memikirkan hal ini, Passepartout menjambak rambutnya. Ah, jika Fix pernah berada dalam jangkauannya, betapa dahsyatnya pembalasan yang akan terjadi! Setelah depresi pertamanya, Passepartout menjadi lebih tenang, dan mulai mempelajari situasinya. Tentu saja, situasinya tidak patut disyukuri. Ia mendapati dirinya dalam perjalanan ke Jepang, dan apa yang harus dilakukannya ketika sampai di sana? Kantongnya kosong; ia tidak punya uang sepeser pun, bahkan satu sen pun tidak. Untungnya, ongkos perjalanannya telah dibayar di muka; dan ia memiliki waktu lima atau enam hari untuk memutuskan langkah selanjutnya. Ia makan dengan lahap, dan makan untuk Tuan Fogg, Aouda, dan dirinya sendiri. Ia makan dengan sangat lahap seolah-olah Jepang adalah padang pasir, di mana tidak ada makanan yang bisa diharapkan. Pada fajar tanggal 13, kapal “Carnatic” memasuki pelabuhan Yokohama. Ini adalah pelabuhan penting di Pasifik, tempat semua kapal uap pengangkut surat, dan kapal-kapal yang membawa penumpang antara Amerika Utara, Cina, Jepang, dan kepulauan Oriental berlabuh. Pelabuhan ini terletak di teluk Yeddo, dan hanya berjarak singkat dari ibu kota kedua Kekaisaran Jepang, dan kediaman Kaisar sipil, sebelum Kaisar spiritual, Mikado, mengambil alih jabatannya. Kapal “Carnatic” berlabuh di dermaga dekat kantor bea cukai, di tengah kerumunan kapal yang mengibarkan bendera berbagai negara. Passepartout dengan ragu-ragu mendarat di wilayah yang begitu aneh ini, wilayah Putra-Putra Matahari. Ia tidak punya pilihan lain selain, dengan mengandalkan keberuntungan sebagai pemandu, untuk berjalan-jalan tanpa tujuan di jalan-jalan Yokohama. Pada awalnya, ia mendapati dirinya berada di kawasan yang benar-benar bergaya Eropa, rumah-rumahnya berfasad rendah dan dihiasi beranda, di bawahnya ia melihat sekilas serambi-serambi yang rapi. Kawasan ini, dengan jalan-jalan, alun-alun, dermaga, dan gudang-gudangnya, menempati seluruh ruang antara "tanjung Perjanjian" dan sungai. Di sini, seperti di Hong Kong dan Kalkuta, terdapat kerumunan campuran dari semua ras, Amerika dan Inggris, Tionghoa dan Belanda, sebagian besar pedagang yang siap membeli atau menjual apa saja. Orang Prancis itu merasa dirinya sendirian di antara mereka, seolah-olah ia telah jatuh di tengah-tengah suku Hottentot. Setidaknya, ia memiliki satu jalan keluar—meminta bantuan kepada konsul Prancis dan Inggris di Yokohama. Namun, ia enggan menceritakan kisah petualangannya, yang terkait erat dengan kisah tuannya; dan sebelum melakukannya, ia memutuskan untuk menggunakan semua cara bantuan lainnya terlebih dahulu. Karena keberuntungan tidak berpihak padanya di kawasan Eropa, ia memasuki kawasan yang dihuni oleh penduduk asli Jepang, bertekad, jika perlu, untuk terus maju ke Yeddo. Kawasan Jepang di Yokohama disebut Benten, diambil dari nama dewi laut yang dipuja di pulau-pulau sekitarnya. Di sana Passepartout melihat hutan cemara dan cedar yang indah, gerbang suci dengan arsitektur yang unik, jembatan yang setengah tersembunyi di tengah bambu dan alang-alang, kuil-kuil yang dinaungi pohon cedar raksasa, tempat-tempat suci di mana para pendeta Buddha dan pengikut sekte Konfusius berlindung, dan jalan-jalan yang tak berujung, di mana mungkin terdapat kumpulan anak-anak berwajah merah muda dan pipi merona, yang tampak seperti dipotong dari layar Jepang, dan yang bermain di tengah anjing pudel berkaki pendek dan kucing kekuningan. Jalan-jalan dipenuhi orang. Para pendeta lewat dalam prosesi, memukul rebana mereka yang suram; polisi dan petugas bea cukai dengan topi runcing berhiaskan lak dan membawa dua pedang yang disampirkan di pinggang mereka; tentara, mengenakan katun biru bergaris putih, dan membawa senjata; pengawal Mikado, diselimuti kain sutra ganda, baju zirah, dan baju besi; dan sejumlah besar personel militer dari semua pangkat—karena profesi militer sama dihormatinya di Jepang seperti halnya dibenci di Cina—pergi ke sana kemari dalam kelompok dan berpasangan. Passepartout juga melihat para biarawan pengemis, peziarah berjubah panjang, dan warga sipil sederhana, dengan rambut keriting dan hitam pekat, kepala besar, dada panjang, kaki ramping, perawakan pendek, dan warna kulit yang bervariasi dari warna tembaga hingga putih pucat, tetapi tidak pernah kuning, seperti orang Cina, yang sangat berbeda dengan orang Jepang. Ia tidak luput mengamati perlengkapan-perlengkapan yang aneh—kereta kuda dan tandu, gerobak yang dilengkapi layar, dan tandu yang terbuat dari bambu; juga para wanita—yang menurutnya tidak terlalu cantik—yang melangkah kecil-kecil dengan kaki mungil mereka, mengenakan sepatu kanvas, sandal jerami, dan bakiak dari kayu olahan, dan memperlihatkan mata yang sipit, dada rata, gigi yang dihitamkan sesuai mode, dan gaun yang disilangkan dengan selendang sutra, diikat dengan simpul besar di belakang ornamen yang tampaknya dipinjam oleh para wanita Paris modern dari para wanita Jepang. Passepartout berkelana selama beberapa jam di tengah kerumunan yang beragam ini, mengintip ke jendela-jendela toko-toko yang kaya dan unik, toko perhiasan yang berkilauan dengan ornamen Jepang yang aneh, restoran-restoran yang dihiasi pita dan spanduk, kedai teh tempat minuman beraroma harum diminum dengan "saki," minuman keras yang dibuat dari fermentasi beras, dan rumah-rumah merokok yang nyaman tempat mereka menghisap, bukan opium, yang hampir tidak dikenal di Jepang, tetapi tembakau yang sangat halus dan berserat. Dia terus berjalan sampai dia menemukan dirinya di ladang, di tengah-tengah perkebunan padi yang luas. Di sana dia melihat bunga kamelia yang mempesona mekar, dengan bunga-bunga yang mengeluarkan warna dan aroma terakhirnya, bukan di semak-semak, tetapi di pohon-pohon, dan di dalam pagar bambu, pohon ceri, plum, dan apel, yang dibudidayakan orang Jepang lebih untuk bunganya daripada buahnya, dan yang dilindungi oleh orang-orangan sawah yang aneh dan menyeringai dari burung pipit, merpati, gagak, dan burung-burung rakus lainnya. Di dahan-dahan pohon cedar bertengger elang-elang besar; di antara dedaunan pohon willow yang menjuntai terdapat burung bangau, berdiri dengan khidmat di satu kaki; dan di setiap sisi terdapat gagak, bebek, elang, burung liar, dan sejumlah besar burung bangau, yang dianggap suci oleh orang Jepang, dan yang menurut mereka melambangkan umur panjang dan kemakmuran. Saat sedang berjalan-jalan, Passepartout melihat beberapa bunga violet di antara semak-semak. “Bagus!” katanya; “Aku akan makan malam.” Namun, setelah menciumnya, ia mendapati bahwa benda-benda itu tidak berbau. “Tidak mungkin,” pikirnya. Pria terhormat itu tentu telah memastikan untuk sarapan sepuasnya sebelum meninggalkan "Carnatic"; tetapi, karena ia telah berjalan-jalan sepanjang hari, rasa lapar mulai mendesak. Ia memperhatikan bahwa kios-kios penjual daging tidak menjual daging domba, kambing, atau babi; dan, karena ia juga tahu bahwa membunuh ternak adalah tindakan yang tidak pantas, karena ternak dipelihara semata-mata untuk pertanian, ia memutuskan bahwa daging sangat sulit ditemukan di Yokohama—dan ia tidak salah; dan, jika tidak ada daging dari penjual daging, ia mungkin menginginkan seperempat babi hutan atau rusa, burung puyuh, atau beberapa burung dara, beberapa hewan buruan atau ikan, yang, bersama nasi, hampir selalu dimakan oleh orang Jepang. Tetapi ia merasa perlu untuk tetap bersemangat, dan menunda makan yang ia idam-idamkan hingga pagi berikutnya. Malam tiba, dan Passepartout kembali memasuki kawasan penduduk asli, di mana ia berjalan-jalan di jalanan yang diterangi lentera warna-warni, mengamati para penari yang menampilkan gerakan dan lompatan terampil, serta para astrolog yang berdiri di udara terbuka dengan teleskop mereka. Kemudian ia sampai di pelabuhan, yang diterangi oleh obor resin para nelayan yang sedang memancing dari perahu mereka. Jalanan akhirnya menjadi tenang, dan patroli, yang para petugasnya, dengan kostum megah mereka dan dikelilingi oleh rombongan mereka, menurut Passepartout tampak seperti duta besar, menggantikan kerumunan yang ramai. Setiap kali satu regu lewat, Passepartout terkekeh, dan berkata dalam hati: "Bagus! Satu lagi kedutaan Jepang berangkat ke Eropa!"</p>
 

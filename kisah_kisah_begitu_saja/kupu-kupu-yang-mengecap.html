@@ -5,39 +5,176 @@
 <title>KUPU-KUPU YANG MENGECAP</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="KUPU-KUPU YANG MENGECAP - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>KUPU-KUPU YANG MENGECAP</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>INI, wahai Kekasihku, adalah sebuah kisah—kisah baru dan menakjubkan—kisah yang sangat berbeda dari kisah-kisah lainnya—kisah tentang Raja Suleiman bin Daou yang Maha Bijaksana—Salomo Putra Daud. Ada tiga ratus lima puluh lima kisah tentang Suleiman bin Daou; tetapi ini bukan salah satunya. Ini bukan kisah tentang Burung Lapwing yang menemukan Air; atau Burung Hoopoe yang menaungi Suleiman bin Daou dari panas. Ini bukan kisah tentang Lantai Kaca, atau Batu Rubi dengan Lubang Bengkok, atau Batangan Emas Balkis. Ini adalah kisah tentang Kupu-kupu yang Menginjak. Sekarang, hadiri semuanya sekali lagi dan dengarkan! Suleiman bin Daou adalah orang yang bijaksana. Ia memahami apa yang dikatakan binatang buas, apa yang dikatakan burung-burung, apa yang dikatakan ikan-ikan, dan apa yang dikatakan serangga-serangga. Ia memahami apa yang dikatakan bebatuan jauh di bawah bumi ketika mereka membungkuk satu sama lain dan mengerang; dan ia memahami apa yang dikatakan pepohonan ketika mereka berdesir di tengah pagi. Ia memahami segala sesuatu, dari uskup di bangku hingga hyssop di dinding, dan Balkis, Ratu Utamanya, Ratu Balkis yang Tercantik, hampir sama bijaksananya dengan dirinya. Suleiman bin Daoud adalah orang yang kuat. Di jari manis tangan kanannya, ia mengenakan sebuah cincin. Ketika ia memutarnya sekali, Afrit dan Jin keluar dari bumi untuk melakukan apa pun yang diperintahkannya. Ketika ia memutarnya dua kali, Peri turun dari langit untuk melakukan apa pun yang diperintahkannya; dan ketika ia memutarnya tiga kali, malaikat agung Azrael sang Pedang datang mengenakan pakaian pembawa air, dan memberitahunya kabar tentang tiga dunia, Atas—Bawah—dan Di Sini. Namun Suleiman bin Daou bukanlah orang yang sombong. Ia sangat jarang pamer, dan jika pun ia melakukannya, ia menyesalinya. Suatu ketika ia mencoba memberi makan semua hewan di seluruh dunia dalam satu hari, tetapi ketika makanan sudah siap, seekor Hewan muncul dari dasar laut dan memakannya dalam tiga suapan. Suleiman bin Daou sangat terkejut dan berkata, 'Wahai Hewan, siapakah engkau?' Dan Hewan itu berkata, 'Wahai Raja, hiduplah selamanya! Aku adalah yang terkecil dari tiga puluh ribu saudara, dan rumah kami berada di dasar laut. Kami mendengar bahwa engkau akan memberi makan semua hewan di seluruh dunia, dan saudara-saudaraku mengutusku untuk bertanya kapan makan malam akan siap.' Suleiman bin Daou lebih terkejut dari sebelumnya dan berkata, 'Wahai Hewan, engkau telah memakan semua makan malam yang telah kusiapkan untuk semua hewan di dunia.' Dan Hewan itu berkata, 'Wahai Raja, hiduplah selamanya, tetapi apakah engkau benar-benar menyebut itu makan malam? Di tempat asalku, kami masing-masing makan dua kali lipat dari itu di antara waktu makan.' Kemudian Suleiman bin Daou jatuh tersungkur dan berkata, 'Wahai Hewan! Aku mengadakan jamuan makan itu untuk menunjukkan betapa hebat dan kayanya aku sebagai raja, dan bukan karena aku benar-benar ingin berbuat baik kepada hewan-hewan. Sekarang aku malu, dan itu memang pantas kudapatkan. Suleiman bin Daou adalah orang yang benar-benar bijaksana, Kekasihku. Setelah itu dia tidak pernah lupa bahwa pamer itu bodoh; dan sekarang bagian cerita sebenarnya dari kisahku dimulai. Ia menikahi begitu banyak istri. Ia menikahi sembilan ratus sembilan puluh sembilan istri, selain Balkis yang Tercantik; dan mereka semua tinggal di sebuah istana emas besar di tengah taman yang indah dengan air mancur. Sebenarnya ia tidak menginginkan sembilan ratus sembilan puluh sembilan istri, tetapi pada masa itu semua orang menikahi begitu banyak istri, dan tentu saja Raja harus menikahi lebih banyak lagi hanya untuk menunjukkan bahwa ia adalah Raja. Beberapa istri Suleiman bin Daou memang baik, tetapi beberapa lainnya benar-benar mengerikan, dan istri-istri yang mengerikan itu bertengkar dengan istri-istri yang baik dan membuat mereka menjadi mengerikan juga, lalu mereka semua bertengkar dengan Suleiman bin Daou, dan itu mengerikan baginya. Tetapi Balkis yang Tercantik tidak pernah bertengkar dengan Suleiman bin Daou. Dia sangat mencintainya. Dia duduk di kamarnya di Istana Emas, atau berjalan di taman Istana, dan benar-benar merasa kasihan padanya. Tentu saja, jika dia memilih untuk memutar cincin di jarinya dan memanggil Jin dan Afrit, mereka akan menyulap kesembilan ratus sembilan puluh sembilan istrinya yang suka bertengkar itu menjadi keledai putih gurun atau anjing greyhound atau biji delima; tetapi Suleiman bin Daoud berpikir bahwa itu akan menjadi pamer. Jadi, ketika mereka terlalu banyak bertengkar, dia hanya berjalan sendirian di salah satu bagian taman Istana yang indah dan berharap dia tidak pernah dilahirkan. Suatu hari, setelah bertengkar selama tiga minggu—kesembilan ratus sembilan puluh sembilan istrinya bersama-sama—Suleiman bin Daoud pergi mencari kedamaian dan ketenangan seperti biasa; dan di antara pohon-pohon jeruk ia bertemu Balkis yang Tercantik, sangat sedih karena Suleiman bin Daoud begitu khawatir. Dan dia berkata kepadanya, 'Wahai Tuanku dan Cahaya Mataku, putar cincin di jarimu dan tunjukkan kepada Ratu-ratu Mesir, Mesopotamia, Persia, dan Cina ini bahwa engkau adalah Raja yang agung dan dahsyat.' Tetapi Suleiman bin Daoud menggelengkan kepalanya dan berkata, 'Wahai Istriku dan Kegembiraan Hidupku, ingatlah binatang yang keluar dari laut dan membuatku malu di hadapan semua binatang di seluruh dunia karena aku pamer. Sekarang, jika aku pamer di hadapan Ratu-ratu Persia, Mesir, Abyssinia, dan Cina ini, hanya karena mereka membuatku khawatir, aku mungkin akan lebih malu daripada yang telah kurasakan.' Lalu Balkis yang Tertampan berkata, 'Wahai Tuhanku dan Harta Jiwaku, apa yang akan Engkau lakukan?' Dan Suleiman bin Daou berkata, 'Wahai Nyonya dan Kekasih Hatiku, aku akan terus menanggung nasibku di tangan sembilan ratus sembilan puluh sembilan Ratu ini yang menyiksaku dengan pertengkaran mereka yang terus-menerus.' Maka ia melanjutkan perjalanan di antara bunga lili, buah loquat, mawar, canna, dan tanaman jahe yang harum yang tumbuh di kebun, hingga ia sampai di pohon kamper besar yang disebut Pohon Kamper Suleiman bin Daou. Tetapi Balkis bersembunyi di antara bunga iris yang tinggi, bambu berbintik, dan bunga lili merah di belakang pohon kamper, agar dekat dengan kekasih sejatinya, Suleiman bin Daou. Tak lama kemudian, dua kupu-kupu terbang di bawah pohon sambil bertengkar. Suleiman bin Daou mendengar seseorang berkata kepada yang lain, 'Aku heran dengan kelancanganmu berbicara seperti ini kepadaku. Tidakkah kau tahu bahwa jika aku menghentakkan kakiku, seluruh Istana Suleiman bin Daou dan taman ini akan langsung lenyap dalam dentuman guntur.' Kemudian Suleiman bin Daou melupakan sembilan ratus sembilan puluh sembilan istrinya yang merepotkan, dan tertawa terbahak-bahak hingga pohon kamper berguncang mendengar kesombongan Si Kupu-kupu. Lalu ia mengulurkan jarinya dan berkata, 'Anak kecil, kemarilah.' Kupu-kupu itu sangat ketakutan, tetapi ia berhasil terbang ke tangan Suleiman bin Daou, dan menempel di sana sambil mengipas-ngipas dirinya. Suleiman bin Daou menundukkan kepalanya dan berbisik sangat pelan, 'Wahai anak kecil, kau tahu bahwa semua hentakanmu tidak akan membengkokkan sehelai rumput pun. Apa yang membuatmu mengatakan kebohongan mengerikan itu kepada istrimu?—karena tak diragukan lagi dia adalah istrimu.' Kupu-kupu itu memandang Suleiman bin Daou dan melihat mata Raja yang paling bijaksana itu berbinar seperti bintang di malam yang dingin, dan ia mengumpulkan keberaniannya dengan kedua sayapnya, lalu memiringkan kepalanya dan berkata, 'Wahai Raja, hiduplah selamanya. Dia adalah istriku; dan engkau tahu seperti apa istri itu.' Suleiman bin Daou tersenyum di balik janggutnya dan berkata, "Ya, aku tahu, adikku." "Kita harus menjaga agar mereka tetap tertib," kata Kupu-kupu, "dan dia sudah bertengkar denganku sepanjang pagi. Aku mengatakan itu untuk menenangkannya." Lalu Suleiman bin Daou berkata, 'Semoga itu menenangkannya. Kembalilah kepada istrimu, adikku, dan beritahukan kepadaku apa yang kau katakan.' Si Kupu-kupu terbang kembali kepada istrinya, yang bersembunyi di balik dedaunan dengan gelisah, dan ia berkata, 'Dia mendengarmu! Suleiman bin Daoud sendiri mendengarmu!' 'Dia mendengarku!' kata Kupu-kupu. 'Tentu saja dia mendengarku. Aku memang bermaksud agar dia mendengarku.' 'Lalu apa yang dia katakan? Oh, apa yang dia katakan?' 'Baiklah,' kata Kupu-kupu, sambil mengipas-ngipas dirinya dengan penuh perhatian, 'antara kita, sayangku—tentu saja aku tidak menyalahkannya, karena Istana-nya pasti sangat mahal dan jeruk-jeruknya baru saja matang,—dia memintaku untuk tidak menginjak-injak, dan aku berjanji tidak akan melakukannya.' 'Astaga!' kata istrinya, lalu duduk dengan tenang; tetapi Suleiman bin Daoud tertawa terbahak-bahak hingga air mata mengalir di wajahnya karena kelancangan si Kupu-kupu kecil yang nakal itu. Balkis yang Tercantik berdiri di balik pohon di antara bunga lili merah dan tersenyum sendiri, karena ia telah mendengar semua pembicaraan ini. Ia berpikir, 'Jika aku bijaksana, aku masih bisa menyelamatkan Tuanku dari penganiayaan para Ratu yang suka bertengkar ini,' dan ia mengulurkan jarinya dan berbisik lembut kepada Istri Kupu-kupu, 'Wanita kecil, kemarilah.' Istri Kupu-kupu terbang ke atas, sangat ketakutan, dan berpegangan pada tangan putih Balkis. Balkis menundukkan kepalanya yang cantik dan berbisik, 'Wanita kecil, apakah kau percaya apa yang baru saja dikatakan suamimu?' Istri Kupu-Kupu memandang Balkis, dan melihat mata Ratu yang paling cantik bersinar seperti kolam yang dalam dengan cahaya bintang di dalamnya, dan dia mengumpulkan keberaniannya dengan kedua sayapnya dan berkata, 'Wahai Ratu, tetaplah cantik selamanya. Kau tahu seperti apa kaum pria.' Dan Ratu Balkis, Balkis yang Bijaksana dari Sheba, meletakkan tangannya di bibir untuk menyembunyikan senyum dan berkata, 'Adikku, aku tahu.' 'Mereka marah,' kata Istri Kupu-Kupu, sambil mengipas-ngipas dirinya dengan cepat, 'karena hal-hal sepele, tetapi kita harus menuruti keinginan mereka, O Ratu. Kata-kata mereka tidak pernah setengah-setengah. Jika suamiku senang percaya bahwa aku percaya dia bisa membuat Istana Suleiman bin Daoud lenyap hanya dengan menghentakkan kakinya, aku yakin aku tidak peduli. Dia akan melupakan semuanya besok.' 'Adikku,' kata Balkis, 'kau benar sekali; tapi lain kali dia mulai membual, percayalah saja kata-katanya. Suruh dia menghentakkan kakinya, dan lihat apa yang akan terjadi. Kita tahu seperti apa laki-laki itu, kan? Dia akan sangat malu.' Istri Kupu-Kupu terbang pergi menemui suaminya, dan dalam lima menit mereka bertengkar lebih hebat dari sebelumnya. 'Ingat!' kata Kupu-kupu. 'Ingat apa yang bisa kulakukan jika aku menghentakkan kakiku.' 'Aku sama sekali tidak percaya padamu,' kata Istri Kupu-kupu. 'Aku sangat ingin melihatnya dilakukan. Bagaimana kalau kau cap sekarang?' 'Aku sudah berjanji pada Suleiman bin Daoud bahwa aku tidak akan melakukannya,' kata Kupu-kupu, 'dan aku tidak ingin mengingkari janjiku.' "Tidak akan ada bedanya jika kau melakukannya," kata istrinya. "Kau bahkan tidak bisa membengkokkan sehelai rumput pun dengan hentakanmu. Aku tantang kau untuk melakukannya," katanya. "Hentak! Hentak! Hentak!" Suleiman bin Daoud, yang duduk di bawah pohon kamper, mendengar setiap kata-kata itu, dan dia tertawa seperti belum pernah tertawa sebelumnya dalam hidupnya. Dia melupakan semua tentang Ratu-ratunya; dia melupakan semua tentang Hewan yang keluar dari laut; dia melupakan tentang pamer. Dia hanya tertawa gembira, dan Balkis, di sisi lain pohon, tersenyum karena kekasih sejatinya begitu gembira. Tak lama kemudian, Kupu-kupu yang sangat panas dan menggembung itu berputar-putar kembali di bawah naungan pohon kamper dan berkata kepada Suleiman, 'Dia ingin aku menginjakkan kaki! Dia ingin melihat apa yang akan terjadi, wahai Suleiman bin Daou! Kau tahu aku tidak bisa melakukannya, dan sekarang dia tidak akan pernah percaya sepatah kata pun yang kukatakan. Dia akan menertawakanku sampai akhir hayatku!' 'Tidak, adikku,' kata Suleiman bin Daoud, 'dia tidak akan pernah menertawakanmu lagi,' dan dia memutar cincin di jarinya—hanya demi Si Kupu-Kupu kecil, bukan untuk pamer,—dan, lihatlah, empat Jin raksasa keluar dari bumi! 'Para budak,' kata Suleiman bin Daoud, 'ketika pria yang duduk di jariku ini' (di situlah Kupu-kupu yang kurang ajar itu duduk) 'menghentakkan kaki depan kirinya, kalian akan membuat Istana dan taman-taman ini lenyap dalam dentuman guntur. Ketika dia menghentakkan kakinya lagi, kalian akan mengembalikannya dengan hati-hati.' 'Nah, adikku,' katanya, 'kembali ke istrimu dan lakukan apa pun yang kau mau.' Kupu-kupu itu terbang pergi menemui istrinya, yang berteriak, 'Aku menantangmu untuk melakukannya! Aku menantangmu untuk melakukannya! Hentakkan! Hentakkan sekarang! Hentakkan!' Balkis melihat keempat Jin yang besar itu membungkuk ke empat sudut taman dengan Istana di tengahnya, dan dia bertepuk tangan pelan sambil berkata, 'Akhirnya Suleiman bin Daoud akan melakukan demi seekor Kupu-kupu apa yang seharusnya dia lakukan sejak lama demi dirinya sendiri, dan para Ratu yang suka bertengkar itu akan ketakutan!' Kupu-kupu itu menghentakkan kakinya. Para Jin mengangkat Istana dan taman-tamannya sejauh seribu mil ke udara: terdengar suara guntur yang sangat mengerikan, dan semuanya menjadi gelap gulita. Istri Kupu-kupu itu mengepakkan sayapnya dalam kegelapan, sambil menangis, 'Oh, aku akan bersikap baik! Aku sangat menyesal telah berbicara. Kembalikan saja taman-tamannya, suamiku tersayang, dan aku tidak akan pernah membantah lagi.' Si Kupu-Kupu hampir sama ketakutannya dengan istrinya, dan Suleiman bin Daoud tertawa terbahak-bahak hingga butuh beberapa menit sebelum ia bisa bernapas lega dan berbisik kepada Si Kupu-Kupu, 'Injak lagi, adikku. Kembalikan Istanaku, wahai penyihir hebat.' 'Ya, kembalikan istananya,' kata Istri Kupu-kupu, masih terbang berkerumun dalam kegelapan seperti ngengat. 'Kembalikan istananya, dan jangan biarkan sihir mengerikan itu terjadi lagi.' 'Nah, sayangku,' kata Kupu-kupu seberani mungkin, 'kau lihat apa akibat dari omelanmu itu. Tentu saja itu tidak berpengaruh bagiku—aku sudah terbiasa dengan hal semacam ini—tetapi sebagai bentuk kebaikan kepadamu dan kepada Suleiman bin Daoud, aku tidak keberatan untuk memperbaiki keadaan.' Maka ia menghentakkan kakinya sekali lagi, dan seketika itu juga para Jin menurunkan Istana dan taman-tamannya, tanpa sedikit pun guncangan. Matahari bersinar di atas dedaunan hijau tua berwarna oranye; air mancur bermain di antara bunga lili Mesir berwarna merah muda; burung-burung terus bernyanyi, dan Istri Kupu-kupu berbaring miring di bawah pohon kamper sambil mengepakkan sayapnya dan terengah-engah, 'Oh, aku akan menjadi anak baik! Aku akan menjadi anak baik!' Suleiman bin Daeld hampir tak bisa berkata-kata karena tertawa terbahak-bahak. Ia bersandar lemah dan tersedak-sedu, lalu mengacungkan jarinya ke arah Kupu-Kupu dan berkata, 'Wahai penyihir agung, apa gunanya mengembalikan Istanaku jika pada saat yang sama kau membuatku tertawa terbahak-bahak!' Kemudian terdengar suara yang mengerikan, karena kesembilan ratus sembilan puluh sembilan Ratu berlari keluar dari Istana sambil menjerit dan berteriak serta memanggil bayi-bayi mereka. Mereka bergegas menuruni tangga marmer besar di bawah air mancur, seratus orang berbaris, dan Balkis yang Maha Bijaksana berjalan dengan anggun ke depan untuk menemui mereka dan berkata, 'Apa masalah kalian, wahai Ratu?' Mereka berdiri di tangga marmer seratus orang berjajar dan berteriak, 'Apa masalah kami? Kami hidup damai di istana emas kami, seperti kebiasaan kami, ketika tiba-tiba Istana itu lenyap, dan kami ditinggalkan duduk dalam kegelapan yang pekat dan berbau busuk; dan bergemuruh, dan Jin dan Afrit bergerak-gerak dalam kegelapan! Itulah masalah kami, O Ratu Utama, dan kami sangat terganggu karena masalah itu, karena itu adalah masalah yang merepotkan, tidak seperti masalah apa pun yang pernah kami alami.' Kemudian Balkis, Ratu Tercantik—Kekasih Tersayang Suleiman bin Daou—Ratu dari Syeba dan Sable dan Sungai Emas di Selatan—dari Gurun Zinn hingga Menara Zimbabwe—Balkis, hampir sebijak Suleiman bin Daou sendiri, berkata, 'Bukan apa-apa, wahai para Ratu! Seekor kupu-kupu telah mengadu kepada istrinya karena istrinya bertengkar dengannya, dan Tuan kita Suleiman bin Daou telah berkenan untuk memberinya pelajaran tentang berbicara dengan rendah hati dan kerendahan hati, karena itu dianggap sebagai kebajikan di antara istri-istri kupu-kupu.' Kemudian seorang Ratu Mesir—putri seorang Firaun—bersuara dan berkata, 'Istana kita tidak dapat dicabut sampai ke akarnya seperti daun bawang hanya karena serangga kecil. Tidak! Suleiman bin Daoud pasti sudah mati, dan apa yang kita dengar dan lihat adalah bumi bergemuruh dan menjadi gelap karena berita itu.' Kemudian Balkis memberi isyarat kepada Ratu yang berani itu tanpa memandangnya, dan berkata kepadanya dan kepada yang lain, 'Mari lihat.' Mereka menuruni tangga marmer, seratus orang berbaris, dan di bawah pohon kampernya, masih lemas karena tertawa, mereka melihat Raja Suleiman bin Daou yang Maha Bijaksana bergoyang-goyang dengan seekor kupu-kupu di setiap tangannya, dan mereka mendengar beliau berkata, 'Wahai istri saudaraku di angkasa, ingatlah setelah ini, untuk menyenangkan suamimu dalam segala hal, agar ia tidak terprovokasi untuk menghentakkan kakinya lagi; karena ia telah mengatakan bahwa ia terbiasa dengan sihir ini, dan ia adalah seorang penyihir hebat—seseorang yang mencuri Istana Suleiman bin Daou sendiri. Pergilah dengan damai, wahai kaum kecil!' Dan beliau mencium sayap mereka, dan mereka terbang pergi. Kemudian semua Ratu kecuali Balkis—Balkis yang Tercantik dan Termegah, yang berdiri terpisah sambil tersenyum—jatuh tersungkur, karena mereka berkata, 'Jika hal-hal ini dilakukan ketika seekor Kupu-kupu tidak senang dengan istrinya, apa yang akan dilakukan kepada kami yang telah membuat Raja kami jengkel dengan ucapan keras dan pertengkaran terbuka kami selama berhari-hari?' Kemudian mereka menutupi kepala mereka dengan kerudung, dan mereka menutup mulut mereka dengan tangan, lalu mereka berjalan mengendap-endap kembali ke Istana dengan sangat senyap seperti tikus. Kemudian Balkis—Balkis yang Tercantik dan Terunggul—maju melewati bunga lili merah menuju naungan pohon kamper dan meletakkan tangannya di bahu Suleiman bin Daoud dan berkata, 'Wahai Tuhanku dan Harta Jiwaku, bergembiralah, karena kita telah mengajarkan kepada Ratu-ratu Mesir dan Etiopia dan Abyssinia dan Persia dan India dan Cina dengan ajaran yang agung dan tak terlupakan.' Dan Suleiman bin Daoud, yang masih menjaga kupu-kupu yang bermain di bawah sinar matahari, berkata, 'Wahai Nyonya dan Permata Kebahagiaanku, kapan ini terjadi? Karena aku telah bercanda dengan seekor kupu-kupu sejak aku datang ke taman.' Dan dia menceritakan kepada Balkis apa yang telah dilakukannya. Balkis—Balkis yang lembut dan Maha Indah—berkata, 'Wahai Tuanku dan Penguasa Kehidupanku, aku bersembunyi di balik pohon kamper dan melihat semuanya. Akulah yang menyuruh Istri Kupu-kupu untuk meminta Kupu-kupu menginjakkan kaki, karena aku berharap demi lelucon itu Tuanku akan melakukan sihir hebat dan para Ratu akan melihatnya dan ketakutan.' Dan dia menceritakan kepadanya apa yang telah dikatakan, dilihat, dan dipikirkan para Ratu. Kemudian Suleiman bin Daou bangkit dari tempat duduknya di bawah pohon kamper, merentangkan tangannya, bersukacita, dan berkata, 'Wahai Nyonya dan Penyejuk Hari-hariku, ketahuilah bahwa jika aku melakukan sihir terhadap Ratu-ratuku karena kesombongan atau amarah, seperti aku mengadakan pesta untuk semua hewan, aku pasti akan dipermalukan. Tetapi berkat kebijaksanaanmu, aku melakukan sihir itu demi sebuah lelucon dan demi seekor kupu-kupu kecil, dan—lihatlah—itu juga telah membebaskanku dari gangguan istri-istriku yang menyebalkan! Karena itu, katakanlah kepadaku, wahai Nyonya dan Kekasih Hatiku, bagaimana engkau bisa begitu bijaksana?' Dan Ratu Balkis, yang cantik dan tinggi, menatap mata Suleiman bin Daou dan memiringkan kepalanya sedikit ke samping, seperti kupu-kupu itu, dan berkata, 'Pertama, wahai Tuanku, karena aku mencintaimu; dan kedua, wahai Tuanku, karena aku tahu apa itu kaum wanita.' Kemudian mereka pergi ke Istana dan hidup bahagia selamanya. Tapi bukankah itu langkah yang cerdas dari Balkis?</p>
 <p>Tak pernah ada Ratu seperti Balkis, Dari sini hingga ujung dunia; Tetapi Balkis berbicara kepada kupu-kupu Seperti Anda berbicara kepada seorang teman.</p>

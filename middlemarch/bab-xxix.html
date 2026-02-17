@@ -5,39 +5,176 @@
 <title>BAB XXIX.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XXIX. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XXIX.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Saya mendapati bahwa tidak ada kejeniusan pada orang lain yang dapat menyenangkan saya. Paradoks-paradoks malang saya telah sepenuhnya mengeringkan sumber penghiburan itu.—GOLDSMITH. Suatu pagi, beberapa minggu setelah kedatangannya di Lowick, Dorothea—tetapi mengapa selalu Dorothea? Apakah sudut pandangnya satu-satunya yang mungkin terkait dengan pernikahan ini? Saya memprotes semua minat kita, semua upaya kita untuk memahami yang diberikan kepada kulit muda yang tampak berseri-seri meskipun mengalami kesulitan; karena ini pun akan memudar, dan akan mengalami kesedihan yang lebih tua dan lebih menyakitkan yang kita bantu abaikan. Terlepas dari mata yang berkedip dan tahi lalat putih yang tidak disukai Celia, dan kurangnya lekukan otot yang secara moral menyakitkan bagi Sir James, Tuan Casaubon memiliki kesadaran yang mendalam di dalam dirinya, dan secara spiritual haus seperti kita semua. Dia tidak melakukan sesuatu yang luar biasa dalam pernikahannya—tidak ada selain apa yang disetujui masyarakat, dan dianggap sebagai kesempatan untuk karangan bunga dan buket. Ia menyadari bahwa ia tidak boleh lagi menunda niatnya untuk menikah, dan ia merenungkan bahwa dalam menikahi seorang wanita, seorang pria dengan kedudukan baik harus mengharapkan dan dengan cermat memilih seorang wanita muda yang cantik—semakin muda semakin baik, karena lebih mudah dididik dan patuh—dengan kedudukan yang setara dengannya, berprinsip religius, berwatak baik, dan berakal sehat. Ia akan memberikan tunjangan yang besar kepada wanita muda seperti itu, dan ia tidak akan mengabaikan pengaturan apa pun untuk kebahagiaannya: sebagai imbalannya, ia akan menerima kebahagiaan keluarga dan meninggalkan salinan dirinya sendiri yang tampaknya sangat dibutuhkan oleh para penyair soneta abad keenam belas. Zaman telah berubah sejak saat itu, dan tidak ada penyair soneta yang bersikeras agar Tuan Casaubon meninggalkan salinan dirinya sendiri; terlebih lagi, ia belum berhasil menerbitkan salinan kunci mitologisnya; Namun, ia selalu berniat untuk menebus kesalahannya melalui pernikahan, dan perasaan bahwa usianya semakin bertambah, bahwa dunia semakin suram dan ia merasa kesepian, menjadi alasan baginya untuk tidak membuang waktu lagi dalam mengejar kenikmatan rumah tangga sebelum semua itu ditinggalkan oleh usia. Dan ketika ia melihat Dorothea, ia percaya bahwa ia telah menemukan lebih dari yang ia inginkan: ia benar-benar bisa menjadi penolong yang memungkinkannya untuk tidak perlu lagi mempekerjakan sekretaris, bantuan yang belum pernah digunakan oleh Tuan Casaubon dan yang sangat ia takuti. (Tuan Casaubon sangat sadar bahwa ia diharapkan untuk menunjukkan pikiran yang kuat.) Takdir, dalam kebaikannya, telah memberinya istri yang dibutuhkannya. Seorang istri, seorang wanita muda yang sederhana, dengan kemampuan yang murni menghargai dan tidak ambisius seperti wanita pada umumnya, pasti akan menganggap pikiran suaminya kuat. Apakah takdir telah memperhatikan Nona Brooke dengan sama baiknya dengan mempertemukannya dengan Tuan Casaubon adalah sebuah gagasan yang hampir tidak mungkin terlintas dalam pikirannya. Masyarakat tidak pernah menuntut secara tidak masuk akal bahwa seorang pria harus memikirkan kualifikasinya sendiri untuk membuat seorang gadis yang menawan bahagia seperti halnya ia memikirkan kualifikasi gadis itu untuk membuat dirinya bahagia. Seolah-olah seorang pria dapat memilih bukan hanya istrinya tetapi juga suami istrinya! Atau seolah-olah dia berkewajiban untuk memberikan pesona bagi keturunannya melalui dirinya sendiri!— Ketika Dorothea menerimanya dengan penuh sukacita, itu wajar; dan Tuan Casaubon percaya bahwa kebahagiaannya akan segera dimulai. Ia tidak banyak merasakan kebahagiaan di kehidupan sebelumnya. Untuk merasakan kegembiraan yang mendalam tanpa kerangka fisik yang kuat, seseorang harus memiliki jiwa yang antusias. Tuan Casaubon tidak pernah memiliki kerangka fisik yang kuat, dan jiwanya sensitif tanpa antusias: jiwanya terlalu lesu untuk bergetar keluar dari kesadaran diri menjadi kegembiraan yang penuh gairah; jiwanya terus mengepak di tanah rawa tempat ia menetas, memikirkan sayapnya dan tidak pernah terbang. Pengalamannya adalah jenis yang menyedihkan yang menghindari rasa iba, dan paling takut jika diketahui: itu adalah kepekaan sempit yang sombong yang tidak memiliki cukup massa untuk diubah menjadi simpati, dan bergetar seperti benang dalam arus kecil keasyikan diri atau paling banter dari keraguan egois. Dan Tuan Casaubon memiliki banyak keraguan: ia mampu menahan diri dengan keras; ia teguh untuk menjadi orang yang terhormat sesuai dengan kode etik; ia akan tak tercela oleh opini yang diakui. Dalam perilaku, tujuan-tujuan ini telah tercapai; Namun, kesulitan untuk membuat "Kunci Semua Mitologi" karyanya tak tercela terasa seperti beban berat di benaknya; dan pamflet-pamflet—atau "Parerga" seperti yang ia sebut—yang digunakannya untuk menguji publik dan menyimpan catatan monumental kecil tentang perjalanannya, jauh dari dipahami sepenuhnya maknanya. Ia mencurigai Uskup Agung belum membacanya; ia sangat ragu tentang apa yang sebenarnya dipikirkan oleh para pemikir terkemuka di Brasenose, dan sangat yakin bahwa kenalan lamanya, Carp, adalah penulis resensi yang merendahkan itu yang disimpan terkunci di laci kecil meja Tuan Casaubon, dan juga di lemari gelap ingatan verbalnya. Ini adalah kesan berat yang harus dilawan, dan membawa kepahitan melankolis yang merupakan konsekuensi dari semua klaim yang berlebihan: bahkan iman agamanya goyah seiring dengan goyahnya kepercayaannya pada kepengarangan dirinya sendiri, dan penghiburan dari harapan Kristen akan keabadian tampaknya bergantung pada keabadian "Kunci Semua Mitologi" yang belum ditulis. Saya sendiri sangat kasihan padanya. Sungguh nasib yang tidak nyaman, paling tidak, untuk menjadi apa yang kita sebut sangat terdidik namun tidak menikmati: hadir di tontonan besar kehidupan ini dan tidak pernah terbebas dari diri kecil yang lapar dan gemetar—tidak pernah sepenuhnya dikuasai oleh kemuliaan yang kita saksikan, tidak pernah kesadaran kita diubah secara menggembirakan menjadi kejelasan sebuah pikiran, semangat sebuah gairah, energi sebuah tindakan, tetapi selalu menjadi terpelajar dan tidak terinspirasi, ambisius dan penakut, teliti dan rabun. Menjadi dekan atau bahkan uskup, saya khawatir, tidak akan banyak mengubah kegelisahan Tuan Casaubon. Tidak diragukan lagi, beberapa orang Yunani kuno telah mengamati bahwa di balik topeng besar dan terompet bicara, pasti selalu ada mata kecil kita yang mengintip seperti biasa dan bibir kita yang penakut kurang lebih terkendali dengan cemas. Pada kondisi mental yang telah dipetakan seperempat abad sebelumnya, pada kepekaan yang terkurung seperti itu, Tuan Casaubon telah berpikir untuk menambahkan kebahagiaan dengan seorang pengantin muda yang cantik; tetapi bahkan sebelum menikah, seperti yang telah kita lihat, ia mendapati dirinya berada di bawah depresi baru dalam kesadaran bahwa kebahagiaan baru itu tidak membahagiakan baginya. Kecenderungannya kembali pada kebiasaan lamanya yang lebih mudah. Dan semakin dalam ia masuk ke dalam kehidupan rumah tangga, semakin besar rasa untuk membuktikan diri dan bertindak dengan pantas mendominasi kepuasan lainnya. Pernikahan, seperti agama dan pengetahuan, bahkan seperti kepenulisan itu sendiri, ditakdirkan untuk menjadi persyaratan lahiriah, dan Edward Casaubon bertekad untuk memenuhi semua persyaratan tersebut tanpa cela. Bahkan mengajak Dorothea untuk bekerja di ruang kerjanya, sesuai dengan niatnya sendiri sebelum menikah, adalah upaya yang selalu ingin ia tunda, dan jika bukan karena desakan Dorothea, mungkin hal itu tidak akan pernah dimulai. Namun, ia berhasil menjadikan hal itu sebagai kebiasaan bahwa ia harus mengambil tempatnya di perpustakaan pada jam-jam awal dan diberi tugas membaca keras atau menyalin. Tugas itu lebih mudah ditentukan karena Tuan Casaubon telah memiliki niat langsung: akan ada Parergon baru, sebuah monografi kecil tentang beberapa petunjuk yang baru-baru ini ditemukan mengenai misteri Mesir yang dengannya beberapa pernyataan Warburton dapat dikoreksi. Referensinya pun luas di sini, tetapi tidak sepenuhnya tanpa batas; dan kalimat-kalimat sebenarnya harus ditulis dalam bentuk yang akan dibaca oleh Brasenose dan generasi penerus yang kurang tangguh. Produksi monumental kecil ini selalu menarik bagi Tuan Casaubon; pencernaan menjadi sulit karena gangguan kutipan, atau karena persaingan frasa dialektis yang saling berbenturan di otaknya. Dan sejak awal akan ada dedikasi dalam bahasa Latin yang segala hal tentangnya masih belum pasti kecuali bahwa dedikasi itu tidak boleh ditujukan kepada Carp: merupakan penyesalan yang sangat menyakitkan bagi Tuan Casaubon bahwa ia pernah menulis dedikasi kepada Carp di mana ia memasukkan anggota kerajaan hewan itu ke dalam kelompok viros nullo ævo perituros , sebuah kesalahan yang pasti akan membuat penulis dedikasi tersebut menjadi bahan ejekan di zaman mendatang, dan bahkan mungkin akan ditertawakan oleh Pike dan Tench di masa sekarang. Jadi, Tuan Casaubon sedang berada di salah satu masa tersibuknya, dan seperti yang sudah saya sebutkan beberapa saat yang lalu, Dorothea bergabung dengannya lebih awal di perpustakaan tempat ia sarapan sendirian. Saat itu Celia sedang berkunjung untuk kedua kalinya ke Lowick, mungkin yang terakhir sebelum pernikahannya, dan berada di ruang tamu menunggu Sir James. Dorothea telah belajar membaca tanda-tanda suasana hati suaminya, dan dia melihat bahwa pagi itu menjadi lebih berkabut di sana selama satu jam terakhir. Dia diam-diam pergi ke mejanya ketika suaminya berkata, dengan nada jauh yang menyiratkan bahwa dia sedang menjalankan tugas yang tidak menyenangkan— “Dorothea, ini surat untukmu, yang terlampir dalam surat yang ditujukan kepadaku.” Itu adalah surat dua halaman, dan dia langsung melihat tanda tangannya. “Tuan Ladislaw! Apa yang ingin dia sampaikan kepada saya?” serunya, dengan nada terkejut sekaligus senang. “Tapi,” tambahnya, sambil memandang Tuan Casaubon, “saya bisa membayangkan apa yang telah dia tulis kepada Anda.” “Silakan, jika Anda berkenan, baca surat itu,” kata Tuan Casaubon, menunjuk surat itu dengan tegas menggunakan pena, tanpa memandanginya. “Tetapi sebaiknya saya katakan terlebih dahulu, bahwa saya harus menolak usulan yang ada di dalamnya untuk berkunjung ke sini. Saya harap saya dapat dimaafkan karena menginginkan waktu istirahat total dari gangguan-gangguan yang selama ini tak terhindarkan, dan terutama dari para tamu yang keceriaannya yang tak menentu membuat kehadiran mereka melelahkan.” Tidak pernah ada pertengkaran hebat antara Dorothea dan suaminya sejak ledakan kecil di Roma itu, yang meninggalkan jejak begitu kuat dalam pikirannya sehingga sejak saat itu lebih mudah untuk meredam emosi daripada menanggung konsekuensi melampiaskannya. Tetapi antisipasi yang tidak menyenangkan ini, bahwa ia mungkin menginginkan kunjungan yang mungkin tidak menyenangkan bagi suaminya, pembelaan tanpa alasan terhadap keluhan egois darinya, adalah sengatan yang terlalu tajam untuk direnungkan sampai setelah hal itu disesali. Dorothea mengira bahwa ia bisa bersabar dengan John Milton, tetapi ia tidak pernah membayangkan suaminya akan berperilaku seperti ini; dan untuk sesaat Tuan Casaubon tampak bodoh dan tidak adil. Rasa iba, "bayi yang baru lahir" yang kelak akan menguasai banyak badai di dalam dirinya, tidak "menguasai badai" pada kesempatan ini. Dengan kata-kata pertamanya, yang diucapkan dengan nada yang mengguncangnya, ia mengejutkan Tuan Casaubon hingga menatapnya, dan membalas tatapan matanya. “Mengapa kau menganggapku menginginkan sesuatu yang akan membuatmu kesal? Kau berbicara kepadaku seolah-olah aku adalah sesuatu yang harus kau lawan. Tunggu setidaknya sampai aku tampak memikirkan kesenanganku sendiri tanpa memikirkanmu.” “Dorothea, kau terlalu terburu-buru,” jawab Tuan Casaubon dengan gugup. Jelas sekali, wanita ini terlalu muda untuk berada di level yang tangguh sebagai seorang istri—kecuali jika dia pucat, tanpa fitur wajah, dan menganggap segala sesuatunya sebagai hal yang biasa. “Kurasa kaulah yang pertama kali terburu-buru membuat dugaan keliru tentang perasaanku,” kata Dorothea dengan nada yang sama. Api itu belum padam, dan ia merasa tidak terpuji jika suaminya tidak meminta maaf kepadanya. “Mohon maaf, kami tidak akan membahas ini lebih lanjut, Dorothea. Saya tidak punya waktu luang maupun energi untuk perdebatan semacam ini.” Di sini Tuan Casaubon mencelupkan pena dan berpura-pura akan kembali menulis, meskipun tangannya gemetar hebat sehingga kata-kata itu tampak ditulis dalam huruf yang tidak dikenal. Ada jawaban yang, dalam meredakan amarah, justru mengirimkannya ke ujung ruangan yang lain, dan mengabaikan diskusi begitu saja ketika Anda merasa bahwa keadilan sepenuhnya berada di pihak Anda sendiri bahkan lebih menjengkelkan dalam pernikahan daripada dalam filsafat. Dorothea meninggalkan dua surat Ladislaw tanpa membacanya di meja tulis suaminya dan pergi ke tempatnya sendiri. Rasa jijik dan kemarahan dalam dirinya menolak untuk membaca surat-surat itu, sama seperti kita membuang sampah apa pun yang kita curigai sebagai barang yang tidak berharga. Ia sama sekali tidak menduga sumber halus dari amarah suaminya tentang surat-surat itu: ia hanya tahu bahwa surat-surat itu telah membuatnya tersinggung. Ia segera mulai bekerja, dan tangannya tidak gemetar; sebaliknya, saat menulis kutipan yang telah diberikan kepadanya sehari sebelumnya, ia merasa bahwa ia membentuk huruf-hurufnya dengan indah, dan tampaknya baginya ia melihat konstruksi bahasa Latin yang ia salin, dan yang mulai ia pahami, lebih jelas dari biasanya. Dalam kemarahannya terdapat rasa superioritas, tetapi untuk saat ini rasa itu tersalurkan dalam ketegasan goresan, dan tidak berubah menjadi suara batin yang menyatakan bahwa "malaikat agung yang ramah" itu adalah makhluk yang malang. Keheningan yang tampak jelas itu berlangsung selama setengah jam, dan Dorothea tidak mengalihkan pandangannya dari mejanya sendiri, ketika ia mendengar suara keras buku jatuh ke lantai, dan dengan cepat menoleh melihat Tuan Casaubon di tangga perpustakaan membungkuk seolah-olah sedang kesakitan. Ia langsung berdiri dan berlari ke arahnya: jelas sekali ia sangat kesulitan bernapas. Melompat ke atas bangku kecil, ia mendekat ke sikunya dan berkata dengan seluruh jiwanya yang dipenuhi rasa khawatir— “Bisakah kau bersandar padaku, sayang?” Ia terdiam selama dua atau tiga menit, yang terasa tak berujung baginya, tak mampu berbicara atau bergerak, terengah-engah. Ketika akhirnya ia menuruni tiga anak tangga dan jatuh terlentang di kursi besar yang telah ditarik Dorothea ke dekat kaki tangga, ia tak lagi terengah-engah tetapi tampak tak berdaya dan hampir pingsan. Dorothea membunyikan bel dengan keras, dan tak lama kemudian Tuan Casaubon dibantu ke tempat tidur: ia tidak pingsan, dan secara bertahap sadar kembali, ketika Sir James Chettam masuk, setelah bertemu di aula dengan kabar bahwa Tuan Casaubon "mengalami kejang di perpustakaan." “Ya Tuhan! Inilah yang seharusnya terjadi,” pikirnya seketika. Jika jiwanya yang memiliki firasat terdorong untuk lebih spesifik, baginya kata “serangan” akan menjadi ungkapan yang tepat. Ia bertanya kepada informannya, kepala pelayan, apakah dokter sudah dipanggil. Kepala pelayan belum pernah tahu bahwa tuannya membutuhkan dokter sebelumnya; tetapi bukankah sebaiknya memanggil dokter? Namun, ketika Sir James memasuki perpustakaan, Tuan Casaubon dapat menunjukkan sedikit kesopanan seperti biasanya, dan Dorothea, yang karena ketakutan awalnya berlutut dan menangis di sisinya, kini bangkit dan mengusulkan agar seseorang pergi mencari dokter. “Saya sarankan Anda memanggil Lydgate,” kata Sir James. “Ibu saya telah memanggilnya, dan beliau mendapati dia sangat cerdas. Beliau memiliki pendapat yang buruk tentang para dokter sejak kematian ayah saya.” Dorothea memohon kepada suaminya, dan suaminya memberikan persetujuan tanpa kata. Maka Tuan Lydgate dipanggil dan ia datang dengan sangat cepat, karena utusan itu, yang merupakan orang kepercayaan Sir James Chettam dan mengenal Tuan Lydgate, menemuinya sedang menuntun kudanya di sepanjang jalan Lowick dan mengulurkan tangannya kepada Nona Vincy. Celia, di ruang tamu, tidak mengetahui apa pun tentang masalah itu sampai Sir James memberitahunya. Setelah penjelasan Dorothea, dia tidak lagi menganggap penyakit itu sebagai serangan, tetapi masih sesuatu yang "mirip dengan itu." “Kasihan Dodo tersayang—betapa mengerikannya!” kata Celia, merasa sedih sebisa mungkin di tengah kebahagiaannya yang sempurna. Tangan kecilnya tergenggam, dan terbungkus oleh tangan Sir James seperti kuncup bunga yang terbungkus kelopak yang indah. “Sangat mengejutkan bahwa Tuan Casaubon sakit; tapi aku memang tidak pernah menyukainya. Dan kupikir dia tidak cukup menyayangi Dorothea; dan seharusnya begitu, karena aku yakin tidak ada orang lain yang mau menerimanya—menurutmu bagaimana?” “Aku selalu menganggap pengorbanan adikmu itu sangat mengerikan,” kata Sir James. “Ya. Tapi Dodo yang malang tidak pernah melakukan apa yang dilakukan orang lain, dan kurasa dia tidak akan pernah melakukannya.” “Dia adalah makhluk yang mulia,” kata Sir James yang berhati setia. Ia baru saja mendapat kesan seperti itu, saat melihat Dorothea merangkul leher suaminya dengan lembut dan menatapnya dengan kesedihan yang tak terungkapkan. Ia tidak tahu betapa dalam penyesalan yang terkandung dalam kesedihan itu. “Ya,” kata Celia, berpikir bahwa memang baik Sir James mengatakan demikian, tetapi ia pasti tidak akan merasa nyaman dengan Dodo. “Haruskah aku pergi menemuinya? Menurutmu, bisakah aku membantunya?” “Kurasa akan lebih baik jika kau menemuinya sebelum Lydgate datang,” kata Sir James dengan murah hati. “Tapi jangan berlama-lama.” Saat Celia pergi, ia mondar-mandir sambil mengingat perasaannya semula tentang pertunangan Dorothea, dan merasakan kembali rasa jijiknya terhadap ketidakpedulian Tuan Brooke. Jika Cadwallader—jika semua orang lain memandang masalah itu seperti yang dilakukan Sir James, pernikahan itu mungkin bisa dicegah. Sungguh jahat membiarkan seorang gadis muda secara membabi buta memutuskan nasibnya sendiri dengan cara itu, tanpa upaya apa pun untuk menyelamatkannya. Sir James sudah lama tidak menyesali apa pun atas dirinya sendiri: hatinya puas dengan pertunangannya dengan Celia. Tetapi ia memiliki sifat kesatria (bukankah pengabdian tanpa pamrih kepada wanita termasuk di antara kemuliaan ideal kesatriaan kuno?): cintanya yang diabaikan tidak berubah menjadi kepahitan; kematiannya telah menghasilkan aroma manis—kenangan yang melayang yang melekat dengan efek menguduskan pada Dorothea. Ia dapat tetap menjadi sahabatnya seperti saudara, menafsirkan tindakannya dengan kepercayaan yang murah hati.</p>
 

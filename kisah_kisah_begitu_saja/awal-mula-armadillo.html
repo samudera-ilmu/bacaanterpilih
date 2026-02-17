@@ -5,39 +5,176 @@
 <title>AWAL MULA ARMADILLO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="AWAL MULA ARMADILLO - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>AWAL MULA ARMADILLO</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>INI, wahai Kekasihku, adalah kisah lain dari Zaman yang Tinggi dan Jauh. Di tengah-tengah zaman itu hiduplah seekor Landak Berduri, dan ia tinggal di tepi Sungai Amazon yang keruh, memakan siput bercangkang dan sejenisnya. Dan ia memiliki seorang teman, seekor Kura-kura Lambat dan Padat, yang tinggal di tepi Sungai Amazon yang keruh, memakan selada hijau dan sejenisnya. Dan itu semua baik-baik saja, Kekasihku. Apakah kau mengerti? Namun juga, dan pada saat yang sama, di Zaman yang Tinggi dan Jauh itu, ada seekor Jaguar Berwarna, dan ia tinggal di tepi Sungai Amazon yang keruh; dan ia memakan segala sesuatu yang dapat ditangkapnya. Ketika ia tidak dapat menangkap rusa atau monyet, ia akan memakan katak dan kumbang; dan ketika ia tidak dapat menangkap katak dan kumbang, ia pergi ke Ibu Jaguarnya, dan ibunya memberitahunya cara memakan landak dan kura-kura. Ia berkata kepadanya berkali-kali, sambil mengibaskan ekornya dengan anggun, 'Anakku, ketika kau menemukan landak, kau harus menjatuhkannya ke dalam air dan ia akan membuka gulungannya, dan ketika kau menangkap kura-kura, kau harus mengeluarkannya dari cangkangnya dengan cakarmu.' Dan semuanya baik-baik saja, Kekasihku. Pada suatu malam yang indah di tepi Sungai Amazon yang keruh, Jaguar Berwarna menemukan Landak Berduri dan Kura-kura Lambat duduk di bawah batang pohon yang tumbang. Mereka tidak bisa melarikan diri, jadi Landak Berduri menggulung dirinya menjadi bola, karena dia adalah seekor Landak, dan Kura-kura Lambat menarik kepala dan kakinya ke dalam cangkangnya sejauh mungkin, karena dia adalah seekor Kura-kura; dan itu tidak apa-apa, Kekasihku. Apakah kau mengerti? 'Sekarang perhatikan aku,' kata Jaguar Berwarna, 'karena ini sangat penting. Ibuku berkata bahwa ketika aku bertemu Landak, aku harus menjatuhkannya ke dalam air dan dia akan membuka gulungannya, dan ketika aku bertemu Kura-kura, aku harus mengeluarkannya dari cangkangnya dengan cakarku. Nah, siapa di antara kalian yang Landak dan siapa yang Kura-kura? karena, demi bintik-bintikku, aku tidak bisa membedakannya.' 'Apakah kamu yakin dengan apa yang Ibumu katakan?' kata Landak Berduri Lengket. 'Apakah kamu benar-benar yakin? Mungkin dia berkata bahwa ketika kamu membuka gulungan Kura-kura, kamu harus mengeluarkannya dari air dengan sekop, dan ketika kamu mencakar Landak, kamu harus menjatuhkannya ke cangkangnya.' 'Apakah kamu yakin dengan apa yang Ibumu katakan?' kata Kura-kura Lambat dan Padat. 'Apakah kamu benar-benar yakin? Mungkin dia berkata bahwa ketika kamu memberi minum Landak, kamu harus menjatuhkannya ke telapak tanganmu, dan ketika kamu bertemu Kura-kura, kamu harus mengulitinya sampai ia membuka gulungannya.' 'Kurasa sama sekali tidak seperti itu,' kata Painted Jaguar, tetapi dia merasa sedikit bingung; 'tapi, tolong, ulangi lagi dengan lebih jelas.' 'Saat kau menyendok air dengan cakarmu, kau membuka gulungannya dengan seekor landak,' kata Stickly-Prickly. 'Ingat itu, karena itu penting.' 'Tapi,' kata Kura-kura, 'ketika kau mencakar dagingmu, kau menjatuhkannya ke dalam mulut Kura-kura menggunakan sendok. Kenapa kau tidak mengerti?' 'Kau membuat bintik-bintikku terasa sakit,' kata Jaguar Berwarna; 'lagipula, aku sama sekali tidak menginginkan nasihatmu. Aku hanya ingin tahu siapa di antara kalian yang Landak dan siapa yang Kura-kura.' 'Aku tak akan memberitahumu,' kata Stickly-Prickly, 'tapi kau bisa mengeluarkan aku dari cangkangku jika kau mau.' 'Aha!' kata Jaguar Berwarna. 'Sekarang aku tahu kau adalah Kura-kura. Kau pikir aku tidak akan tahu! Sekarang aku tahu.' Jaguar Berwarna menjulurkan cakar sawahnya tepat saat Si Berduri Melengkung, dan tentu saja cakar sawah Jaguar penuh dengan duri. Lebih buruk lagi, dia mendorong Si Berduri Melengkung jauh ke dalam hutan dan semak-semak, di mana terlalu gelap untuk menemukannya. Kemudian dia memasukkan cakar sawahnya ke dalam mulutnya, dan tentu saja duri-duri itu menyakitinya lebih dari sebelumnya. Begitu dia bisa berbicara, dia berkata, 'Sekarang aku tahu dia sama sekali bukan Kura-kura. Tapi'—lalu dia menggaruk kepalanya dengan cakarnya yang tidak berduri—'bagaimana aku tahu bahwa yang lain ini adalah Kura-kura?' 'Tapi aku adalah Kura-kura,' kata Kura-Kura Lambat dan Padat. Ibumu benar sekali. Dia bilang kau harus mengeluarkan aku dari cangkangku dengan cakarmu. Mulailah.' "Kau tidak bilang dia mengatakan itu semenit yang lalu," kata Jaguar Berwarna, sambil menghisap duri-duri di telapak kakinya. "Kau bilang dia mengatakan sesuatu yang sangat berbeda." 'Baiklah, anggaplah Anda mengatakan bahwa saya mengatakan bahwa dia mengatakan sesuatu yang sangat berbeda, saya rasa itu tidak membuat perbedaan; karena jika dia mengatakan apa yang Anda katakan bahwa saya katakan bahwa dia katakan, itu sama saja dengan jika saya mengatakan apa yang dia katakan bahwa dia katakan. Di sisi lain, jika Anda berpikir dia mengatakan bahwa Anda harus membuka gulungan saya dengan sendok, alih-alih mencakar saya menjadi tetesan dengan cangkang, saya tidak bisa berbuat apa-apa, bukan?' "Tapi kau bilang kau ingin dikeluarkan dari cangkangmu dengan cakarku," kata Jaguar Berwarna. 'Jika kau pikirkan lagi, kau akan menyadari bahwa aku tidak mengatakan hal seperti itu. Aku bilang ibumu menyuruhmu untuk mengeluarkan aku dari cangkangku,' kata Si Lambat dan Padat. 'Apa yang akan terjadi jika aku melakukannya?' kata Jaguar itu dengan nada paling angkuh dan penuh kehati-hatian. 'Aku tidak tahu, karena aku belum pernah dikeluarkan dari cangkangku sebelumnya; tapi sungguh, jika kau ingin melihatku berenang, kau hanya perlu menjatuhkanku ke dalam air.' 'Aku tidak percaya,' kata Jaguar Berwarna. 'Kau mencampuradukkan semua hal yang ibuku suruh aku lakukan dengan hal-hal yang kau tanyakan padaku, apakah aku yakin dia tidak mengatakannya, sampai aku tidak tahu apakah aku berada di atas kepalaku atau ekorku yang berwarna; dan sekarang kau datang dan mengatakan sesuatu yang bisa kupahami, dan itu membuatku lebih bingung dari sebelumnya. Ibuku menyuruhku untuk menjatuhkan salah satu dari kalian berdua ke dalam air, dan karena kalian tampak sangat ingin dijatuhkan, kurasa kalian tidak ingin dijatuhkan. Jadi, lompatlah ke Sungai Amazon yang keruh dan cepatlah.' 'Aku peringatkan kamu, Ibumu tidak akan senang. Jangan bilang padanya kalau aku tidak memberitahumu,' kata Slow-Solid. 'Jika kau mengucapkan sepatah kata pun lagi tentang apa yang dikatakan ibuku—' jawab Jaguar, tetapi dia belum menyelesaikan kalimatnya sebelum Slow-and-Solid diam-diam menyelam ke Sungai Amazon yang keruh, berenang di bawah air untuk jarak yang jauh, dan muncul di tepi sungai tempat Stickly-Prickly menunggunya. 'Itu nyaris saja terjadi,' kata Stickly-Prickly. 'Aku tidak mengolok-olok Painted Jaguar. Kau bilang padanya kau itu siapa?' 'Aku mengatakan yang sebenarnya kepadanya bahwa aku adalah Kura-kura yang jujur, tetapi dia tidak percaya, dan dia menyuruhku melompat ke sungai untuk melihat apakah aku benar-benar kura-kura, dan ternyata memang benar, dan dia terkejut. Sekarang dia pergi untuk memberi tahu Ibunya. Dengarkan dia!' Mereka bisa mendengar Jaguar Berwarna-warni meraung-raung di antara pepohonan dan semak-semak di tepi Sungai Amazon yang keruh, sampai ibunya datang. 'Nak, nak!' kata ibunya berulang kali sambil mengibaskan ekornya dengan anggun, 'apa yang telah kau lakukan yang seharusnya tidak kau lakukan?' "Aku mencoba mengambil sesuatu yang katanya ingin dikeluarkan dari cangkangnya dengan cakarku, dan cakarku penuh dengan duri," kata Jaguar Berwarna. 'Nak, nak!' kata ibunya berulang kali sambil mengibaskan ekornya dengan anggun, 'dari duri-duri di telapak kakimu, aku lihat itu pasti landak. Seharusnya kau menjatuhkannya ke dalam air.' 'Aku melakukan hal yang sama pada makhluk lain itu; dan dia bilang dia seekor kura-kura, dan aku tidak percaya, tapi ternyata memang benar, dan dia telah menyelam ke bawah Sungai Amazon yang keruh, dan dia tidak mau muncul lagi, dan aku sama sekali tidak punya apa-apa untuk dimakan, dan kupikir sebaiknya kita mencari penginapan di tempat lain. Mereka terlalu pintar di Sungai Amazon yang keruh untukku yang malang ini!' 'Nak, nak!' kata ibunya berulang kali sambil mengibaskan ekornya dengan anggun, 'perhatikan aku dan ingat apa yang kukatakan. Landak menggulung tubuhnya menjadi bola dan duri-durinya mencuat ke segala arah sekaligus. Dengan begitu kamu bisa mengenali Landak.' 'Aku sama sekali tidak suka dengan wanita tua ini,' kata Stickly-Prickly, di bawah naungan daun besar. 'Aku ingin tahu apa lagi yang dia ketahui?' 'Kura-kura tidak bisa menggulung tubuhnya,' lanjut Ibu Jaguar, berulang kali sambil mengibaskan ekornya dengan anggun. 'Ia hanya menarik kepala dan kakinya ke dalam tempurungnya. Dari sinilah kalian bisa mengenali kura-kura.' 'Aku sama sekali tidak suka wanita tua ini—sama sekali,' kata Kura-kura Lambat dan Kokoh. 'Bahkan Jaguar Berwarna pun tidak bisa melupakan petunjuk arah itu. Sayang sekali kau tidak bisa berenang, Si Berduri Lengket.' 'Jangan bicara padaku,' kata Stickly-Prickly. 'Bayangkan betapa lebih baiknya jika kau bisa meringkuk. Ini berantakan! Dengarkan Painted Jaguar.' Jaguar Berwarna-warni sedang duduk di tepi Sungai Amazon yang keruh, menghisap duri dari cakarnya dan berkata pada dirinya sendiri—</p>
 <p>'Tidak bisa menggulung, tapi bisa berenang— Lambat-Padat, itulah dia! Menggulung, tapi tidak bisa berenang— Lengket-Berduri, itulah dia!'</p>

@@ -5,39 +5,176 @@
 <title>BAHAYA TERBURUK DARI SEMUANYA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAHAYA TERBURUK DARI SEMUANYA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAHAYA TERBURUK DARI SEMUANYA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Harus diakui bahwa sejauh ini keadaan tidak berjalan begitu buruk, dan saya tidak punya banyak alasan untuk mengeluh. Jika kesulitan kita tidak bertambah buruk, kita bisa berharap untuk mencapai tujuan kita. Dan betapa tingginya kejayaan ilmiah yang akan kita raih saat itu! Saya telah menjadi seperti Liedenbrock dalam penalaran saya; sungguh. Tetapi akankah keadaan ini bertahan di tempat asing yang telah kita datangi? Mungkin saja. Selama beberapa hari, tanjakan yang semakin curam, beberapa bahkan sangat mendekati garis tegak lurus, membawa kami semakin dalam ke dalam massa inti bumi. Beberapa hari kami maju lebih dekat ke pusat bumi sejauh satu setengah liga, atau hampir dua liga. Ini adalah penurunan yang berbahaya, di mana keterampilan dan ketenangan luar biasa Hans sangat berharga bagi kami. Orang Islandia yang tenang itu mencurahkan dirinya dengan pertimbangan yang tak terbayangkan; dan, berkat dia, kami melewati banyak tempat berbahaya yang tidak akan pernah bisa kami lewati sendiri. Namun kebiasaan diamnya semakin menguasainya dari hari ke hari, dan menular kepada kami. Objek eksternal menghasilkan efek yang nyata pada otak. Seseorang yang terkurung di antara empat dinding akan segera kehilangan kemampuan untuk menghubungkan kata-kata dan ide-ide. Berapa banyak tahanan di sel isolasi yang menjadi idiot, jika bukan gila, karena kurangnya latihan untuk kemampuan berpikir! Selama dua minggu setelah percakapan terakhir kita, tidak ada kejadian yang layak dicatat. Tetapi saya punya alasan kuat untuk mengingat satu peristiwa yang sangat serius yang terjadi pada waktu itu, dan yang detail terkecilnya pun hampir tidak bisa saya lupakan sekarang. Pada tanggal 7 Agustus, penurunan berturut-turut kami telah membawa kami ke kedalaman tiga puluh liga; artinya, dalam jarak tiga puluh liga di atas kepala kami terdapat hamparan batu karang, lautan, benua, dan kota-kota. Kami pasti berada dua ratus liga dari Islandia. Pada hari itu terowongan menuruni lereng yang landai. Aku berada di depan yang lain. Pamanku membawa salah satu lampu Ruhmkorff dan aku yang lainnya. Aku sedang memeriksa lapisan-lapisan granit. Tiba-tiba, saat berbalik, saya menyadari bahwa saya sendirian. Wah, wah, pikirku; aku telah melaju terlalu cepat, atau Hans dan pamanku telah berhenti di tengah jalan. Ayo, ini tidak bisa dibiarkan; aku harus bergabung dengan mereka. Untungnya, tanjakannya tidak terlalu curam. Aku menelusuri kembali jejakku. Aku berjalan selama seperempat jam. Aku menatap kegelapan. Aku berteriak. Tidak ada jawaban: suaraku hilang di tengah gema gua yang sendirian menjawab panggilanku. Aku mulai merasa gelisah. Sebuah getaran menjalari tubuhku. "Tenang!" kataku dalam hati, "Aku yakin akan menemukan teman-temanku lagi. Tidak ada dua jalan. Aku sudah terlalu jauh di depan. Aku akan kembali!" Selama setengah jam aku mendaki. Aku mendengarkan suara panggilan, dan di atmosfer yang pekat itu, suara bisa terdengar sangat jauh. Tetapi hanya ada keheningan yang suram di seluruh lorong panjang itu. Aku berhenti. Aku tidak percaya bahwa aku tersesat. Aku hanya bingung untuk sementara waktu, bukan tersesat. Aku yakin aku akan menemukan jalan kembali. "Ayo," ulangku, "karena hanya ada satu jalan, dan mereka ada di jalan itu, aku harus menemukan mereka lagi. Aku hanya perlu mendaki lagi. Kecuali, memang, karena mereka tidak melihatku, dan mengira aku tertinggal, mereka juga akan kembali. Tetapi bahkan dalam kasus ini aku hanya perlu bergegas lebih cepat. Aku yakin aku akan menemukan mereka." Aku mengulangi kata-kata ini dengan nada yang lebih lemah, seperti orang yang setengah yakin. Lagipula, untuk menghubungkan ide-ide sederhana seperti itu dengan kata-kata, dan menggunakannya dalam penalaran, membutuhkan waktu. Kemudian keraguan menghampiri saya. Apakah saya memang berada di depan ketika kami terpisah? Ya, tentu saja. Hans berada di belakang saya, mendahului paman saya. Dia bahkan berhenti sejenak untuk mengikat barang bawaannya lebih erat di pundaknya. Saya ingat kejadian kecil ini. Tepat pada saat itulah saya pasti melanjutkan perjalanan. Lagipula, pikirku, bukankah aku punya jaminan bahwa aku tidak akan tersesat, sebuah petunjuk di labirin yang tak bisa dipatahkan, aliran setiaku? Aku hanya perlu menelusurinya kembali, dan aku pasti akan menemukannya. Kesimpulan ini membangkitkan semangatku, dan aku bertekad untuk melanjutkan perjalanan tanpa membuang waktu. Betapa bersyukurnya aku atas kebijaksanaan pamanku yang mencegah pemburu itu menutup lubang di batu granit. Mata air yang bermanfaat ini, setelah memuaskan dahaga kami di perjalanan, kini akan menjadi penuntunku di antara liku-liku permukaan bumi. Sebelum memulai dari awal, kupikir mandi akan bermanfaat. Aku membungkuk untuk membasuh wajahku di Hansbach. Betapa terkejut dan sedihnya aku, kakiku hanya menginjak—batu granit kering yang kasar. Aliran air itu tak lagi berada di kakiku.</p>
 

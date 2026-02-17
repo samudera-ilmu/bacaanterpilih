@@ -5,39 +5,176 @@
 <title>BAB X. DI MANA PASSEPARTOUT SANGAT SENANG BISA LOLOS DARI HUKUMAN HANYA DENGAN KEHILANGAN SEPATUNYA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB X. DI MANA PASSEPARTOUT SANGAT SENANG BISA LOLOS DARI HUKUMAN HANYA DENGAN KEHILANGAN SEPATUNYA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB X. DI MANA PASSEPARTOUT SANGAT SENANG BISA LOLOS DARI HUKUMAN HANYA DENGAN KEHILANGAN SEPATUNYA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Semua orang tahu bahwa daratan berbentuk segitiga terbalik yang luas, dengan alas di utara dan puncaknya di selatan, yang disebut India, meliputi empat belas ratus ribu mil persegi, di mana tersebar secara tidak merata populasi seratus delapan puluh juta jiwa. Mahkota Inggris menjalankan kekuasaan nyata dan despotik atas sebagian besar negara yang luas ini, dan memiliki seorang gubernur jenderal yang ditempatkan di Calcutta, gubernur di Madras, Bombay, dan di Bengal, serta seorang letnan gubernur di Agra. Namun, India Britania, yang sebenarnya disebut demikian, hanya mencakup tujuh ratus ribu mil persegi, dan populasi sekitar seratus hingga seratus sepuluh juta penduduk. Sebagian besar wilayah India masih bebas dari kekuasaan Inggris; dan ada beberapa raja yang ganas di pedalaman yang benar-benar merdeka. Perusahaan Hindia Timur yang terkenal itu sangat berkuasa sejak tahun 1756, ketika Inggris pertama kali mendapatkan pijakan di tempat yang sekarang menjadi kota Madras, hingga masa pemberontakan Sepoy yang besar. Perusahaan itu secara bertahap mencaplok provinsi demi provinsi, membelinya dari kepala suku setempat, yang jarang dibayar, dan menunjuk gubernur jenderal dan bawahannya, baik sipil maupun militer. Tetapi Perusahaan Hindia Timur kini telah lenyap, meninggalkan wilayah jajahan Inggris di India langsung di bawah kendali Kerajaan. Aspek negara, serta tata krama dan perbedaan ras, berubah setiap hari. Dahulu, orang terpaksa bepergian di India dengan cara yang kuno dan merepotkan, yaitu berjalan kaki atau menunggang kuda, menggunakan tandu atau kereta kuda yang besar; sekarang kapal uap cepat beroperasi di Sungai Indus dan Gangga, dan sebuah jalur kereta api besar, dengan jalur cabang yang bergabung dengan jalur utama di banyak titik di sepanjang rutenya, melintasi semenanjung dari Bombay ke Calcutta dalam tiga hari. Jalur kereta api ini tidak membentang lurus melintasi India. Jarak antara Bombay dan Calcutta, jika diukur garis lurus, hanya sekitar seribu hingga sebelas ratus mil; tetapi belokan jalan menambah jarak ini lebih dari sepertiganya. Rute umum Kereta Api Semenanjung India Raya adalah sebagai berikut: Meninggalkan Bombay, kereta melewati Salcette, menyeberang ke daratan di seberang Tannah, melintasi rangkaian Pegunungan Ghat Barat, kemudian membentang ke timur laut hingga Burhampoor, melewati wilayah Bundelcund yang hampir merdeka, naik ke Allahabad, kemudian berbelok ke timur, bertemu dengan Sungai Gangga di Benares, lalu sedikit menjauh dari sungai, dan, menurun ke tenggara melewati Burdivan dan kota Prancis Chandernagor, berakhir di Calcutta. Para penumpang kapal “Mongolia” turun dari kapal pada pukul setengah empat sore; tepat pukul delapan kereta akan berangkat menuju Calcutta. Setelah mengucapkan selamat tinggal kepada rekan-rekan bermain kartunya, Tuan Fogg meninggalkan kapal uap, memberi pelayannya beberapa tugas, mendesaknya untuk berada di stasiun tepat pukul delapan, dan dengan langkah teraturnya yang berdetak hingga detik, seperti jam astronomi, ia menuju kantor paspor. Adapun keajaiban Bombay—balai kotanya yang terkenal, perpustakaannya yang megah, benteng dan dermaganya, pasar-pasarnya, masjid-masjidnya, sinagoge-sinagogenya, gereja-gereja Armenia, dan pagoda megah di Bukit Malabar, dengan dua menara segi banyaknya—ia sama sekali tidak tertarik untuk melihatnya. Ia bahkan tidak mau sudi memeriksa mahakarya Elephanta, atau hypogea misterius yang tersembunyi di sebelah tenggara dermaga, atau sisa-sisa arsitektur Buddha yang indah, gua-gua Kanherian di pulau Salcette. Setelah menyelesaikan urusannya di kantor paspor, Phileas Fogg diam-diam pergi ke stasiun kereta api, di mana ia memesan makan malam. Di antara hidangan yang disajikan kepadanya, pemilik penginapan sangat merekomendasikan jeroan "kelinci lokal" tertentu, yang menjadi kebanggaannya. Oleh karena itu, Tuan Fogg mencicipi hidangan tersebut, tetapi, meskipun sausnya berbumbu, ia merasa rasanya sama sekali tidak enak. Ia memanggil pemilik penginapan, dan ketika pemilik penginapan muncul, ia berkata sambil menatapnya dengan mata tajam, "Apakah ini kelinci, Tuan?" “Ya, Tuan,” jawab si penjahat dengan berani, “kelinci dari hutan.” “Dan kelinci ini tidak mengeong ketika dibunuh?” “Meong, Tuanku! Apa, meong kelinci! Aku bersumpah padamu—” “Mohon bersikap baik, Tuan pemilik rumah, agar tidak mengucapkan kata-kata kasar, tetapi ingatlah ini: kucing dulunya dianggap sebagai hewan suci di India. Itu adalah masa yang indah.” “Untuk kucing-kucing itu, Tuan?” “Mungkin juga untuk para pelancong!” Setelah itu, Tuan Fogg dengan tenang melanjutkan makan malamnya. Fix telah turun ke darat tak lama setelah Tuan Fogg, dan tujuan pertamanya adalah markas besar kepolisian Bombay. Ia memperkenalkan diri sebagai detektif London, menceritakan urusannya di Bombay, dan situasi terkait perampok yang diduga, dan dengan gugup bertanya apakah surat perintah penangkapan telah tiba dari London. Surat perintah itu belum sampai ke kantor; bahkan, belum ada waktu untuk surat perintah itu tiba. Fix sangat kecewa, dan mencoba mendapatkan surat perintah penangkapan dari direktur kepolisian Bombay. Direktur menolak, karena masalah itu menyangkut kantor London, yang hanya merekalah yang secara hukum dapat mengirimkan surat perintah tersebut. Fix tidak bersikeras, dan pasrah menunggu kedatangan dokumen penting itu; tetapi ia bertekad untuk tidak melupakan penjahat misterius itu selama ia tinggal di Bombay. Ia tidak ragu sedikit pun, seperti halnya Passepartout, bahwa Phileas Fogg akan tetap tinggal di sana, setidaknya sampai tiba waktunya surat perintah penangkapan. Namun, begitu mendengar perintah tuannya untuk meninggalkan "Mongolia", Passepartout langsung menyadari bahwa mereka akan meninggalkan Bombay seperti yang telah mereka lakukan di Suez dan Paris, dan perjalanan akan diperpanjang setidaknya sampai Calcutta, dan mungkin lebih jauh dari tempat itu. Ia mulai bertanya-tanya apakah taruhan yang dibicarakan Tuan Fogg itu benar-benar serius, dan apakah takdirnya sebenarnya memaksanya, meskipun ia menyukai ketenangan, untuk mengelilingi dunia dalam delapan puluh hari! Setelah membeli sejumlah kemeja dan sepatu seperti biasa, ia berjalan-jalan santai di jalanan, tempat kerumunan orang dari berbagai kebangsaan—Eropa, Persia dengan topi runcing, Banya dengan turban bundar, Sinde dengan topi persegi, Parsee dengan mitra hitam, dan Armenia berjubah panjang—berkumpul. Kebetulan hari itu adalah hari festival Parsee. Keturunan sekte Zoroaster ini—yang paling hemat, beradab, cerdas, dan sederhana di antara orang-orang India Timur, di antaranya termasuk pedagang pribumi terkaya di Bombay—merayakan semacam karnaval keagamaan, dengan prosesi dan pertunjukan, di tengah-tengahnya para penari wanita India, berpakaian kain kasa berwarna merah muda, dihiasi emas dan perak, menari dengan ringan, tetapi dengan kesopanan yang sempurna, diiringi suara biola dan dentingan rebana. Tak perlu dikatakan lagi bahwa Passepartout menyaksikan upacara-upacara aneh ini dengan mata melotot dan mulut ternganga, dan raut wajahnya seperti burung booby paling polos yang bisa dibayangkan. Sayangnya bagi tuannya, dan juga dirinya sendiri, rasa ingin tahunya tanpa sadar membawanya lebih jauh dari yang ia inginkan. Akhirnya, setelah melihat karnaval Parsee berlalu di kejauhan, ia berbalik menuju stasiun, ketika ia kebetulan melihat pagoda yang megah di Bukit Malabar, dan diliputi keinginan yang tak tertahankan untuk melihat bagian dalamnya. Ia sama sekali tidak tahu bahwa dilarang bagi umat Kristen untuk memasuki kuil-kuil tertentu di India, dan bahkan umat yang beriman pun tidak boleh masuk tanpa terlebih dahulu meninggalkan sepatu mereka di luar pintu. Dapat dikatakan di sini bahwa kebijakan bijaksana Pemerintah Inggris sangat menghukum pengabaian terhadap praktik-praktik agama asli. Namun, Passepartout, tanpa berpikir panjang, masuk seperti turis biasa, dan segera terpesona oleh ornamen Brahmana yang megah yang ada di mana-mana, ketika tiba-tiba ia mendapati dirinya tergeletak di atas lantai suci. Ia mendongak dan melihat tiga pendeta yang marah, yang segera menerkamnya; merobek sepatunya, dan mulai memukulinya dengan teriakan keras dan kasar. Pria Prancis yang lincah itu segera berdiri kembali, dan tanpa membuang waktu menjatuhkan dua lawannya yang berjubah panjang dengan tinju dan tendangan jari kakinya yang kuat; kemudian, bergegas keluar dari pagoda secepat yang kakinya mampu, ia segera lolos dari pendeta ketiga dengan berbaur dengan kerumunan di jalanan. Tepat pukul delapan kurang lima menit, Passepartout, tanpa topi, tanpa sepatu, dan karena kehilangan bungkusan berisi kemeja dan sepatunya dalam perkelahian itu, bergegas terengah-engah menuju stasiun. Fix, yang telah mengikuti Tuan Fogg ke stasiun, dan melihat bahwa dia benar-benar akan meninggalkan Bombay, berada di sana, di peron. Dia telah memutuskan untuk mengikuti perampok yang diduga itu ke Calcutta, dan lebih jauh lagi, jika perlu. Passepartout tidak memperhatikan detektif itu, yang berdiri di sudut yang terpencil; tetapi Fix mendengarnya menceritakan petualangannya secara singkat kepada Tuan Fogg. “Saya harap ini tidak akan terjadi lagi,” kata Phileas Fogg dingin, saat ia naik ke kereta. Passepartout yang malang, sangat kecewa, mengikuti tuannya tanpa mengucapkan sepatah kata pun. Fix hendak memasuki gerbong lain, ketika sebuah ide terlintas di benaknya yang membuatnya mengubah rencananya. “Tidak, aku akan tetap di sini,” gumamnya. “Sebuah pelanggaran telah terjadi di tanah India. Aku sudah menangkap orangku.” Tepat saat itu lokomotif mengeluarkan suara derit yang tajam, dan kereta api melaju ke dalam kegelapan malam.</p>
 

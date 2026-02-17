@@ -5,39 +5,176 @@
 <title>BAB LIMA PULUH TUJUH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LIMA PULUH TUJUH - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LIMA PULUH TUJUH</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Setelah Fathom ditempatkan dengan aman, pembaca dihibur dengan kilas balik. Namun kini saatnya kita meninggalkan petualang kita untuk merenungkan dan menyesali masa lalunya di rumah terpencil ini, agar kita dapat menelusuri langkah-langkah yang diambil Renaldo untuk menegakkan haknya dan memberikan keadilan kepada keluarganya. Tak pernah ada orang yang memiliki rangkaian pikiran yang lebih melankolis daripada yang menyertainya dalam perjalanannya ke istana Kekaisaran. Sebab, terlepas dari berbagai alasan yang dimilikinya untuk mengharapkan hasil yang membahagiakan, imajinasinya terus-menerus terinfeksi oleh sesuatu yang membuat sarafnya dingin dan hatinya sedih, berulang kali, seperti gelombang tak kenal lelah yang menghantam pantai Greenland yang tandus dan tidak ramah. Pembaca akan dengan mudah menduga bahwa ini tidak lain adalah kenangan akan Monimia yang malang, yang bayangannya muncul dalam imajinasinya dalam berbagai pose, sesuai dengan kuatnya nafsu yang berkecamuk di dadanya. Terkadang ia memandangnya dalam cahaya kemurtadan, dan kemudian jiwanya dipenuhi kemarahan dan keputusasaan. Namun, hembusan-hembusan sementara ini tidak mampu menghapus kesan yang pernah ia tinggalkan di hatinya; kesan yang begitu sering dan lama ia renungkan dengan kekaguman yang tak terbayangkan. Gambaran-gambaran itu masih tetap ada, menggambarkannya cantik sebagai perwujudan kecantikan yang paling sempurna, lembut dan penuh kasih sayang seperti malaikat belas kasihan dan welas asih, dipenuhi dengan setiap kebajikan hati, dan dihiasi dengan setiap kemampuan kodrat manusia. Namun, kontras yang mengkhawatirkan masih tetap ada di balik ingatan ini; sehingga jiwanya bergantian diguncang oleh badai kengerian, dan diliputi oleh banjir kesedihan. Ia mengingat kembali saat pertama kali melihatnya, dengan penyesalan yang menyenangkan yang menyertai kenangan akan seorang sahabat terkasih yang telah meninggal. Kemudian ia mengutuknya dengan getir, sebagai sumber dari semua kemalangan dan penderitaannya. Ia bersyukur kepada Tuhan karena telah memberkatinya dengan seorang sahabat untuk mengungkap pengkhianatan dan rasa tidak tahu terima kasihnya; dan kemudian dengan penuh semangat berharap ia masih terus berada di bawah pengaruh khayalannya. Singkatnya, kesendiriannya memperburuk setiap kengerian dalam pikirannya; karena, ketika ia mendapati dirinya tanpa teman, imajinasinya tidak pernah tergerak, atau perhatiannya teralihkan dari hal-hal yang menyedihkan ini; dan ia melakukan perjalanan ke Brussels dalam lamunan, penuh dengan siksaan yang pasti akan menghancurkan akal sehatnya, seandainya Providence tidak campur tangan untuk membantunya. Ia diantar oleh kusirnya ke salah satu penginapan terbaik di tempat itu, di mana ia mengerti bahwa hidangan makan malam sudah disiapkan; Dan karena tempat hiburan ini terbuka untuk orang asing, ia memperkenalkan diri ke dalam perkumpulan tersebut, dengan tujuan untuk sedikit meringankan kesedihan dan kekecewaannya melalui percakapan dengan sesama tamu. Namun, ia begitu tidak siap untuk mendapatkan kelegaan yang ia harapkan, sehingga ia memasuki ruangan dan duduk di meja makan tanpa memperhatikan jumlah atau wajah orang-orang yang hadir, meskipun ia sendiri tidak lama tidak diperhatikan. Sikap dan tingkah lakunya menimbulkan kesan positif; dan raut wajahnya yang penuh kesedihan, begitu mencolok, berhasil menarik simpati dan perhatian mereka. Di antara mereka, ada seorang perwira Irlandia yang bertugas di Austria, yang setelah memperhatikan Renaldo dengan saksama, berkata, “Tuan,” sambil berdiri, “jika mata dan ingatan saya tidak salah, Anda adalah Count de Melvil, yang pernah saya layani di Rhine selama perang terakhir.” Pemuda itu, mendengar namanya sendiri disebut, mengangkat matanya, dan segera mengenali orang itu sebagai seorang pria terhormat yang pernah menjadi kapten di resimen ayahnya, berlari maju, dan memeluknya dengan penuh kasih sayang.</p>
 <p>Dalam berbagai hal, ini adalah pertemuan yang menguntungkan bagi Melvil muda; karena perwira itu tidak hanya sangat mengenal situasi keluarga Count, tetapi juga bertekad, dalam beberapa hari, untuk berangkat ke Wina, tempat ia berjanji untuk menemani Renaldo, segera setelah ia memahami bahwa rutenya sama. Sebelum hari yang ditetapkan untuk keberangkatan mereka tiba, pria ini menemukan cara untuk menyusup ke dalam kepercayaan Count, hingga mengetahui penyebab kesedihan yang telah ia amati di wajahnya pada pertemuan pertama mereka; dan sebagai seorang pria yang sangat lincah, serta sangat menyayangi keluarga Melvil, yang telah membantunya mendapatkan promosi, ia mengerahkan semua humor dan akal sehatnya untuk menghibur dan meredakan rasa sakit hati orang Hongaria yang menderita itu. Ia khususnya berusaha mengalihkan perhatiannya dari Monimia yang hilang, dengan memusatkannya pada urusan rumah tangganya, dan pada penderitaan ibu dan saudara perempuannya, yang, menurut pemahamannya, sedang menderita di bawah tirani ayah mertuanya. Catatan itu berhasil membangkitkannya dari kelesuan kesedihannya; dan keinginan untuk membalas dendam kepada penindas, yang telah menghancurkan kekayaannya, dan membuat kerabat terdekatnya sengsara, begitu sepenuhnya memenuhi pikirannya, sehingga tidak menyisakan ruang untuk pertimbangan lain. Selama perjalanan mereka ke Austria, Mayor Farrel (itulah nama teman seperjalanannya) memberitahunya tentang banyak hal yang menyangkut rumah ayahnya, yang sama sekali asing baginya. “Perilaku ibumu,” katanya, “dalam menikahi Pangeran Trebasi, sama sekali tidak disukai baik oleh teman-teman Pangeran de Melvil, maupun oleh kerabatnya sendiri, yang tahu bahwa suami keduanya adalah seorang pria yang pemarah dan serakah, yang sifat pendidikan dan pekerjaannya justru memperburuk daripada meredakannya; karena kau tahu betul bahwa ia adalah seorang partisan selama perang terakhir. Mereka juga sama terkejut dan kecewanya ketika mengetahui bahwa ia tidak mengambil langkah apa pun untuk mencegah suaminya merebut warisan yang seharusnya menjadi hakmu, dan yang menurut hukum Hongaria, tidak dapat dialihkan dari ahli waris darah. Meskipun demikian, mereka sekarang sepenuhnya yakin bahwa ia telah lebih dari cukup menebus ketidakbijaksanaannya dengan kekejaman suaminya, yang tidak hanya mengisolasinya dari semua komunikasi dengan teman dan kenalannya, tetapi bahkan mengurungnya di menara barat rumah ayahmu, di mana ia dikatakan ditahan sebagai tahanan dan mengalami segala macam ketidaknyamanan dan penyiksaan. Kekejaman ini Diyakini bahwa hal itu terjadi sebagai akibat dari teguran yang Anda sampaikan kepadanya mengenai perilaku tidak adilnya terhadap Anda dan Nona, yang sebenarnya telah ia kurung di sebuah biara di Wina, yang hingga kini belum dapat ditemukan oleh kerabat Anda. Namun, kenangan akan ayah Anda yang mulia begitu berharga bagi semua orang yang beruntung mendapatkan persahabatannya, dan penderitaan Countess dan Nona telah membangkitkan semangat kebencian yang begitu besar terhadap sipir penjara yang kejam, sehingga yang dibutuhkan hanyalah kehadiran Anda untuk memulai penuntutan, dan memberikan dukungan kepada tindakan teman-teman Anda, yang dalam waktu singkat akan mengembalikan hak dan kekayaan keluarga Anda. Untuk bagian saya sendiri, Count yang terhormat, saya menganggap diri saya sepenuhnya berhutang budi kepada keluarga Anda atas kedudukan dan harapan yang saya nikmati sekarang; dan keuangan, kepentingan, dan diri saya, sebagaimana adanya, saya persembahkan untuk pelayanan Anda.” Renaldo tidak ragu-ragu menyampaikan ucapan terima kasihnya kepada orang Irlandia yang murah hati ini, yang ia beri tahu tentang rencananya, menceritakan kepadanya transaksi luar biasa yang dilakukannya dengan orang Yahudi yang baik hati itu, dan menyampaikan surat-surat rekomendasi yang telah ia terima melalui perantaraannya kepada beberapa bangsawan terkemuka di istana Kekaisaran. Sementara itu, ia sangat ingin menghukum Pangeran Trebasi atas perilakunya yang khianat terhadap janda dan anak yatim, dan akan langsung menuju Presburg, tanpa singgah di Wina, untuk meminta pertanggungjawabannya yang berat, seandainya ia tidak ditentang keras oleh Mayor Farrel, yang menyatakan bahwa mengambil langkah seperti itu sebelum ia mendapatkan perlindungan yang memadai dari konsekuensi yang mungkin ditimbulkannya adalah tindakan yang tidak bijaksana. “Bukan hanya hidup dan kekayaanmu sendiri yang bergantung pada perilakumu dalam keadaan darurat ini,” katanya, “tetapi juga ketenangan dan kebahagiaan orang-orang yang paling kau sayangi. Bukan hanya kau sendiri, tetapi juga ibu dan adikmu, pasti akan menderita karena keberanian dan kecerobohanmu. Pertama-tama, serahkan surat kepercayaanmu di istana, dan mari kita gabungkan upaya kita untuk mengumpulkan dukungan yang cukup kuat untuk mengimbangi dukungan Trebasi. Jika kita berhasil, tidak perlu lagi menggunakan tindakan pribadi. Dia akan dipaksa untuk menyerahkan warisanmu yang ditahannya secara tidak adil, dan mengembalikan adikmu ke pangkuanmu; dan jika dia kemudian menolak untuk berbuat adil kepada Countess, kau akan selalu memiliki kekuatan untuk membuktikan dirimu sebagai putra dari Count de Melvil yang pemberani.” Representasi yang adil dan bermanfaat ini memberikan pengaruh yang semestinya pada Renaldo, yang segera setelah tiba di ibu kota Austria, menemui seorang pangeran terhormat yang kepadanya ia direkomendasikan; dan dari siapa ia disambut dengan sangat hangat, bukan hanya karena surat kepercayaannya, tetapi juga demi ayahnya, yang dikenal baik oleh Yang Mulia. Pangeran mendengarkan keluhannya dengan penuh kesabaran dan keramahan, meyakinkannya akan bantuan dan perlindungannya, dan bahkan berjanji untuk memperkenalkannya kepada permaisuri, yang tidak akan membiarkan rakyatnya yang paling lemah ditindas, apalagi mengabaikan perkara seorang bangsawan muda yang dirugikan, yang, dengan jasanya sendiri dan jasa keluarganya, sangat berhak atas kemurahan hatinya. Ia bukanlah satu-satunya orang yang dukungan dan bantuannya diminta oleh Melvil dalam kesempatan ini; ia mengunjungi semua teman ayahnya, dan semua kerabat ibunya, yang dengan mudah tertarik untuk membantunya; sementara Mayor Farrel memberikan seluruh upayanya dalam memperkuat asosiasi tersebut. Sehingga gugatan segera diajukan terhadap Count Trebasi, yang di pihaknya tidak tinggal diam, tetapi bersiap dengan kerja keras yang luar biasa untuk serangan tersebut, bertekad untuk mempertahankan dengan segenap kekuatannya perolehan yang telah ia lakukan. Hukum Hongaria, seperti hukum beberapa negara lain yang dapat saya sebutkan, memberikan begitu banyak celah untuk tujuan pengkhianatan dan penipuan, sehingga tidak mengherankan jika pemuda kita mulai mengeluh tentang lambatnya kemajuan urusannya; terutama karena ia sangat ingin membalas dendam atas penderitaan orang tua dan saudara perempuannya, yang penderitaannya, ia yakin, berlipat ganda sejak ia mengajukan gugatan terhadap penyiksa mereka. Ia menyampaikan perasaannya tentang hal ini kepada temannya; dan, karena kekhawatirannya meningkat setiap saat, ia dengan jelas mengatakan kepadanya bahwa ia tidak dapat lagi hidup tanpa berusaha untuk menemui orang-orang yang sangat dekat dengannya dalam hal hubungan darah dan kasih sayang. Oleh karena itu, ia memutuskan untuk segera pergi ke Presburg; dan, sesuai dengan informasi yang akan ia peroleh, berusaha untuk menemui dan berbicara dengan ibunya, meskipun dengan mempertaruhkan nyawanya.</p>

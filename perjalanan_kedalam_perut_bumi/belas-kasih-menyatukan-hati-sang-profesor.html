@@ -5,39 +5,176 @@
 <title>BELAS KASIH MENYATUKAN HATI SANG PROFESOR</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BELAS KASIH MENYATUKAN HATI SANG PROFESOR - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BELAS KASIH MENYATUKAN HATI SANG PROFESOR</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Keesokan harinya kami berangkat pagi-pagi sekali. Kami harus bergegas. Perjalanan menuju persimpangan jalan itu memakan waktu tiga hari. Aku tak akan menceritakan penderitaan yang kami alami dalam perjalanan pulang. Pamanku menanggungnya dengan ketidaksabaran dan amarah seorang pria yang terpaksa mengakui kelemahannya; Hans dengan kepasrahan sifat pasifnya; aku, aku akui, dengan keluhan dan ungkapan keputusasaan. Aku tak punya semangat untuk melawan nasib buruk ini. Seperti yang telah kukatakan sebelumnya, air benar-benar habis pada akhir hari pertama perjalanan mundur. Minuman kami sekarang hanyalah gin; tetapi cairan mengerikan ini membakar tenggorokanku, dan aku bahkan tidak tahan melihatnya. Aku merasa suhu dan udaranya sangat pengap. Kelelahan melumpuhkan anggota tubuhku. Lebih dari sekali aku jatuh tak bergerak. Kemudian berhenti; dan pamanku serta orang Islandia itu berusaha sebaik mungkin untuk memulihkanku. Tetapi aku melihat bahwa pamanku berjuang dengan susah payah melawan kelelahan yang berlebihan dan siksaan kehausan. Akhirnya, pada hari Selasa, 8 Juli, kami tiba dengan merangkak, dan setengah mati, di persimpangan dua jalan. Di sana aku jatuh seperti gumpalan tak bernyawa, tergeletak di tanah lava. Saat itu pukul sepuluh pagi. Hans dan pamanku, berpegangan pada dinding, mencoba menggigit beberapa potongan biskuit. Erangan panjang keluar dari bibirku yang bengkak. Setelah beberapa saat, pamanku mendekatiku dan menggendongku. "Kasihan anak itu!" katanya, dengan nada belas kasihan yang tulus. Aku tersentuh dengan kata-kata itu, karena tidak terbiasa melihat Profesor yang biasanya bersemangat itu dalam suasana hati yang lebih lembut. Aku menggenggam tangannya yang gemetar. Dia membiarkanku memegang tangannya dan menatapku. Matanya berkaca-kaca. Lalu aku melihatnya mengambil botol yang tergantung di sisinya. Sungguh mengejutkan, dia menempelkannya ke bibirku. "Minumlah!" katanya. Apakah aku mendengarnya? Apakah pamanku sudah gila? Aku menatapnya dengan bodoh, dan merasa seolah aku tidak mengerti apa yang dia katakan. "Minumlah!" katanya lagi. Lalu, sambil mengangkat botolnya, ia menuangkan isinya hingga tetes terakhir ke bibirku. Oh! kenikmatan yang tak terhingga! seteguk air tipis membasahi mulutku yang terbakar. Hanya seteguk, tetapi itu cukup untuk mengingatkan kembali akan hidupku yang perlahan memudar. Aku berterima kasih kepada pamanku dengan tangan terkatup. "Ya," katanya, "seteguk air; tapi ini yang terakhir—dengar!—yang terakhir. Aku menyimpannya sebagai harta berharga di dasar botolku. Dua puluh kali, bahkan seratus kali, aku berjuang melawan dorongan mengerikan untuk meminumnya. Tapi tidak, Axel, aku menyimpannya untukmu." "Paman tersayangku," kataku, sambil air mata panas mengalir di wajahku. "Ya, anakku yang malang, aku tahu bahwa begitu kau sampai di persimpangan ini, kau akan jatuh setengah mati, dan aku menyimpan tetes air terakhirku untuk menghidupkanmu kembali." "Terima kasih, terima kasih," kataku. Meskipun dahagaku hanya sebagian terpuaskan, namun sebagian kekuatanku telah kembali. Otot-otot tenggorokanku, yang sebelumnya tegang, kini kembali rileks; dan peradangan di bibirku agak mereda; dan aku sekarang bisa berbicara. "Mari kita lihat," kataku, "kita hanya punya satu hal yang harus dilakukan sekarang. Kita tidak punya air; kita harus kembali." Saat aku berbicara, pamanku menghindari tatapanku; ia menundukkan kepala; matanya menghindari tatapanku. "Kita harus kembali," seruku dengan penuh semangat; "kita harus kembali ke Snæfell. Semoga Tuhan memberi kita kekuatan untuk mendaki kawah itu lagi!" "Kembali!" kata pamanku, seolah-olah dia lebih menjawab dirinya sendiri daripada aku. "Ya, kembalilah, tanpa membuang waktu sedetik pun." Keheningan panjang pun menyusul. "Jadi, Axel," jawab Profesor itu dengan nada ironis, "kau tidak menemukan keberanian atau energi dalam beberapa tetes air ini?" "Keberanian?" "Aku melihatmu masih sama lemah pikirannya seperti sebelumnya, dan masih hanya menunjukkan keputusasaan!" Pria macam apa sebenarnya yang harus kuhadapi ini, dan rencana-rencana apa yang kini berputar di benaknya yang tak kenal takut? "Apa! Kamu tidak mau kembali?" "Haruskah aku membatalkan ekspedisi ini tepat ketika kita memiliki peluang keberhasilan yang paling besar! Tidak akan pernah!" "Lalu, haruskah kita pasrah pada kehancuran?" "Tidak, Axel, tidak; kembalilah. Hans akan ikut denganmu. Biarkan aku sendiri!" "Aku tinggalkan kau di sini!" "Tinggalkan aku, kukatakan padamu. Aku telah memulai ekspedisi ini. Aku akan melaksanakannya sampai akhir, dan aku tidak akan kembali. Pergi, Axel, pergi!" Pamanku sangat gelisah. Suaranya, yang sesaat tadi lembut dan halus, kini menjadi keras dan mengancam. Ia bergumul dengan tekad suram melawan hal-hal yang mustahil. Aku tidak akan meninggalkannya dalam jurang tanpa dasar ini, dan di sisi lain naluri mempertahankan diri mendorongku untuk melarikan diri. Pemandu itu mengamati pemandangan ini dengan sikap acuh tak acuh seperti biasanya. Namun, ia memahami sepenuhnya apa yang terjadi di antara kedua temannya. Gerakan-gerakan itu sendiri sudah cukup untuk menunjukkan bahwa kami masing-masing berniat mengambil jalan yang berbeda; tetapi Hans tampaknya tidak ikut campur dalam masalah yang menentukan hidupnya. Ia siap berangkat pada aba-aba tertentu, atau tetap tinggal, jika tuannya menghendakinya. Betapa aku berharap saat ini aku bisa membuatnya mengerti aku. Kata-kataku, keluhanku, kesedihanku pasti akan berpengaruh pada sifatnya yang dingin itu. Bahaya-bahaya yang tidak bisa dipahami pemandu kami bisa kutunjukkan dan buktikan padanya. Bersama-sama kita mungkin bisa mengalahkan Profesor yang keras kepala itu; jika perlu, mungkin kita bisa memaksanya untuk kembali ke puncak Snæfell. Aku mendekati Hans. Aku meletakkan tanganku di atas tangannya. Dia tidak bergerak. Bibirku yang sedikit terbuka cukup menunjukkan penderitaanku. Pria Islandia itu perlahan menggerakkan kepalanya, dan dengan tenang menunjuk ke pamanku dan berkata: "Menguasai." "Tuan!" teriakku; "dasar orang gila! Tidak, dia bukan penguasa hidup kita; kita harus lari, kita harus menyeretnya. Apa kau dengar aku? Apa kau mengerti?" Aku telah memegang lengan Hans. Aku ingin memaksanya untuk berdiri. Aku bergumul dengannya. Pamanku ikut campur. "Tenanglah, Axel! Kau tidak akan mendapatkan apa pun dari pelayan yang keras kepala itu. Karena itu, dengarkan usulanku."</p>
 <p>Aku menyilangkan tangan, dan menghadapi pamanku dengan berani. "Kekurangan air," katanya, "adalah satu-satunya kendala yang kami hadapi. Di lorong timur yang terdiri dari lava, sekis, dan batubara ini, kami belum menemukan setetes pun kelembapan. Mungkin kami akan lebih beruntung jika mengikuti terowongan barat." Aku menggelengkan kepala tak percaya. "Dengarkan aku sampai akhir," lanjut Profesor itu dengan suara tegas. "Sementara kau terbaring tak bergerak di sana, aku pergi memeriksa bentuk lorong itu. Lorong itu menembus langsung ke bawah, dan dalam beberapa jam akan membawa kita ke bebatuan granit. Di sana kita pasti akan menemukan banyak mata air. Sifat batuan itu meyakinkanku akan hal ini, dan naluri sejalan dengan logika untuk mendukung keyakinanku. Nah, inilah usulanku. Ketika Columbus meminta awak kapalnya tiga hari lagi untuk menemukan dunia baru, awak kapal itu, meskipun putus asa dan sakit, mengakui kebenaran klaim tersebut, dan ia menemukan Amerika. Aku adalah Columbus dari dunia bawah ini, dan aku hanya meminta satu hari lagi. Jika dalam satu hari saja aku belum menemukan air yang kita inginkan, aku bersumpah kita akan kembali ke permukaan bumi." Meskipun saya merasa jengkel, saya tersentuh oleh kata-kata ini, serta oleh kekerasan yang dilakukan paman saya terhadap keinginannya sendiri dengan mengajukan proposal yang begitu berisiko. "Baiklah," kataku, "lakukan sesukamu, dan semoga Tuhan membalas energi luar biasamu. Kau hanya punya beberapa jam untuk mencoba peruntungan. Mari kita mulai!"</p>

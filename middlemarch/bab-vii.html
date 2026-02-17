@@ -5,39 +5,176 @@
 <title>BAB VII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB VII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB VII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Piacer e popone Vuol la sua stagione.” — Pepatah Italia . Seperti yang bisa diduga, Tuan Casaubon menghabiskan banyak waktunya di Grange selama beberapa minggu ini, dan hambatan yang ditimbulkan oleh proses pendekatan terhadap kemajuan karya besarnya—Kunci untuk Semua Mitologi—secara alami membuatnya semakin menantikan berakhirnya proses pendekatan yang bahagia. Tetapi ia sengaja menimbulkan hambatan itu, karena telah memutuskan bahwa sekarang saatnya baginya untuk menghiasi hidupnya dengan keanggunan persahabatan wanita, untuk menghilangkan kesuraman yang cenderung menyelimuti masa-masa kerja keras dengan permainan imajinasi wanita, dan untuk mengamankan di usia senjanya ini, penghiburan dari perhatian wanita untuk tahun-tahun terakhirnya. Karena itu, ia memutuskan untuk menyerahkan dirinya pada arus perasaan, dan mungkin terkejut menemukan betapa dangkalnya arus itu. Seperti di daerah yang kering, pembaptisan dengan cara menyelam hanya dapat dilakukan secara simbolis, Tuan Casaubon mendapati bahwa percikan air adalah pendekatan paling ekstrem untuk menyelam yang dapat diberikan oleh arus perasaannya; dan ia menyimpulkan bahwa para penyair telah melebih-lebihkan kekuatan gairah maskulin. Meskipun demikian, ia dengan senang hati mengamati bahwa Nona Brooke menunjukkan kasih sayang yang tulus dan patuh yang menjanjikan untuk memenuhi harapannya yang paling menyenangkan tentang pernikahan. Pernah beberapa kali terlintas di benaknya bahwa mungkin ada kekurangan pada Dorothea yang menjelaskan mengapa ia bersikap lebih moderat dalam meninggalkannya; tetapi ia tidak mampu melihat kekurangan itu, atau membayangkan seorang wanita yang akan lebih menyenangkan hatinya; sehingga jelas tidak ada alasan untuk bergantung selain pada dilebih-lebihkan oleh tradisi manusia. “Bukankah aku bisa mempersiapkan diri sekarang untuk menjadi lebih berguna?” kata Dorothea kepadanya suatu pagi, di awal masa pacaran; “bukankah aku bisa belajar membaca bahasa Latin dan Yunani dengan lantang untukmu, seperti yang dilakukan putri-putri Milton kepada ayah mereka, tanpa memahami apa yang mereka baca?” “Saya khawatir itu akan melelahkan bagi Anda,” kata Tuan Casaubon sambil tersenyum; “dan, memang, jika saya ingat dengan benar, para wanita muda yang Anda sebutkan menganggap latihan dalam bahasa-bahasa yang tidak dikenal itu sebagai alasan untuk memberontak terhadap penyair.” “Ya; tetapi pertama-tama mereka adalah gadis-gadis yang sangat nakal, kalau tidak mereka pasti akan bangga melayani ayah seperti itu; dan kedua, mereka bisa saja belajar secara privat dan mengajari diri mereka sendiri untuk memahami apa yang mereka baca, dan itu akan menjadi menarik. Kuharap kau tidak mengharapkan aku menjadi nakal dan bodoh?” “Saya berharap kamu menjadi seorang wanita muda yang anggun dan sempurna dalam setiap aspek kehidupan. Tentu saja, akan sangat menguntungkan jika kamu mampu meniru karakter Yunani, dan untuk itu, ada baiknya kamu mulai dengan sedikit membaca.” Dorothea menganggap ini sebagai izin yang berharga. Ia tidak akan langsung meminta Tuan Casaubon untuk mengajarinya bahasa-bahasa tersebut, karena takut hal itu akan membosankan alih-alih bermanfaat; tetapi bukan sepenuhnya karena pengabdian kepada calon suaminya ia ingin mengetahui bahasa Latin dan Yunani. Bidang pengetahuan maskulin itu tampak baginya sebagai landasan dari mana semua kebenaran dapat dilihat dengan lebih jelas. Namun, ia terus-menerus meragukan kesimpulannya sendiri, karena ia merasakan ketidaktahuannya sendiri: bagaimana ia bisa yakin bahwa pondok-pondok satu kamar bukanlah untuk kemuliaan Tuhan, ketika orang-orang yang mengetahui ilmu klasik tampaknya mendamaikan ketidakpedulian terhadap pondok-pondok itu dengan semangat untuk kemuliaan? Mungkin bahkan bahasa Ibrani pun diperlukan—setidaknya alfabet dan beberapa akar kata—untuk sampai pada inti permasalahan, dan menilai dengan tepat kewajiban sosial seorang Kristen. Dan ia belum mencapai titik pelepasan diri di mana ia akan puas dengan memiliki suami yang bijaksana: ia ingin, anakku yang malang, menjadi bijaksana sendiri. Nona Brooke memang sangat naif dengan semua kepintarannya yang diklaim. Celia, yang pikirannya tidak pernah dianggap terlalu cerdas, jauh lebih mudah melihat kekosongan kepura-puraan orang lain. Memiliki sedikit perasaan secara umum tampaknya menjadi satu-satunya jaminan agar tidak terlalu banyak merasakan sesuatu pada kesempatan tertentu. Namun, Tuan Casaubon setuju untuk mendengarkan dan mengajar selama satu jam, seperti seorang guru bagi anak-anak kecil, atau lebih tepatnya seperti seorang kekasih, yang merasa tersentuh dengan ketidaktahuan dan kesulitan dasar seorang kekasih. Hanya sedikit cendekiawan yang akan keberatan mengajar alfabet dalam keadaan seperti itu. Tetapi Dorothea sendiri sedikit terkejut dan patah semangat karena kebodohannya sendiri, dan jawaban yang didapatnya atas beberapa pertanyaan malu-malu tentang nilai aksen Yunani memberinya kecurigaan yang menyakitkan bahwa di sini memang mungkin ada rahasia yang tidak dapat dijelaskan oleh akal sehat seorang wanita. Tuan Brooke tidak ragu sedikit pun tentang hal itu, dan mengungkapkan pendapatnya dengan kekuatan seperti biasanya suatu hari ketika ia datang ke perpustakaan saat acara pembacaan sedang berlangsung. “Nah, tapi sekarang, Casaubon, studi mendalam seperti itu, studi klasik, matematika, hal-hal semacam itu, terlalu berat bagi seorang wanita—terlalu berat, kau tahu.” “Dorothea sedang belajar membaca huruf-huruf itu dengan sederhana,” kata Tuan Casaubon, menghindari pertanyaan tersebut. “Dia memiliki pemikiran yang sangat baik untuk menyelamatkan mata saya.” “Ah, ya, tanpa pemahaman, Anda tahu—itu mungkin tidak terlalu buruk. Tetapi ada keringanan dalam pikiran perempuan—sentuhan dan kesibukan—musik, seni rupa, hal-hal semacam itu—mereka harus mempelajarinya sampai titik tertentu, perempuan harus; tetapi dengan cara yang ringan, Anda tahu. Seorang perempuan harus bisa duduk dan memainkan atau menyanyikan lagu Inggris kuno yang bagus untuk Anda. Itulah yang saya sukai; meskipun saya telah mendengar hampir semua hal—pernah ke opera di Wina: Gluck, Mozart, semua hal semacam itu. Tetapi saya konservatif dalam musik—itu bukan seperti ide, Anda tahu. Saya tetap berpegang pada lagu-lagu lama yang bagus.” “Tuan Casaubon tidak menyukai piano, dan saya sangat senang dia tidak menyukainya,” kata Dorothea, yang ketidakpeduliannya terhadap musik rumahan dan seni halus wanita harus dimaafkan, mengingat dentingan kecil dan sapuan kuas yang sebagian besar terdapat di dalamnya pada masa-masa sulit itu. Dia tersenyum dan menatap tunangannya dengan mata penuh syukur. Jika dia selalu memintanya untuk memainkan “Mawar Terakhir Musim Panas,” dia pasti akan membutuhkan banyak kesabaran. “Dia bilang hanya ada harpsichord tua di Lowick, dan itu tertutup buku.” “Ah, kau di belakang Celia, sayangku. Celia bermain dengan sangat indah, dan selalu siap bermain. Namun, karena Casaubon tidak menyukainya, tidak apa-apa bagimu. Tapi sayang sekali kau tidak memiliki hiburan kecil seperti itu, Casaubon: busur yang selalu terpasang—hal semacam itu, kau tahu—tidak akan cocok.” “Saya tidak pernah bisa menganggapnya sebagai hiburan jika telinga saya digoda dengan suara-suara yang terukur,” kata Tuan Casaubon. “Sebuah melodi yang diulang-ulang memiliki efek menggelikan, membuat kata- kata dalam pikiran saya melakukan semacam tarian minuet untuk menjaga tempo—suatu efek yang hampir tidak dapat ditoleransi, saya bayangkan, setelah masa kanak-kanak. Adapun bentuk-bentuk musik yang lebih agung, yang layak untuk mengiringi perayaan khidmat, dan bahkan berfungsi sebagai pengaruh pendidikan menurut konsepsi kuno, saya tidak mengatakan apa pun, karena hal-hal ini tidak langsung berkaitan dengan kita.” “Tidak; tetapi musik semacam itu akan saya nikmati,” kata Dorothea. “Ketika kami pulang dari Lausanne, paman saya mengajak kami mendengarkan organ besar di Freiberg, dan itu membuat saya menangis tersedu-sedu.” “Hal semacam itu tidak sehat, sayangku,” kata Tuan Brooke. “Casaubon, dia akan berada di tanganmu sekarang: kau harus mengajari keponakanku untuk lebih tenang menghadapi segala sesuatu, ya, Dorothea?” Ia mengakhiri ucapannya dengan senyuman, tidak bermaksud menyakiti keponakannya, tetapi sebenarnya berpikir bahwa mungkin lebih baik baginya untuk menikah lebih awal dengan pria yang begitu bijaksana seperti Casaubon, karena ia tidak akan pernah mendengar tentang Chettam. “Sungguh luar biasa,” katanya pada diri sendiri sambil berjalan keluar ruangan—“sungguh luar biasa bahwa dia menyukainya. Namun, perjodohan ini baik. Seharusnya aku keluar dari tugasku untuk menghalanginya, biarlah Nyonya Cadwallader berkata apa pun yang dia mau. Casaubon hampir pasti akan menjadi uskup. Pamfletnya tentang Masalah Katolik itu sangat tepat waktu:—setidaknya jabatan dekan. Mereka berutang jabatan dekan kepadanya.” Dan di sini saya harus membela klaim saya atas refleksi filosofis, dengan menyatakan bahwa Tuan Brooke pada kesempatan ini hampir tidak memikirkan pidato Radikal yang, di kemudian hari, ia sampaikan mengenai pendapatan para uskup. Sejarawan ulung mana yang akan mengabaikan kesempatan yang luar biasa untuk menunjukkan bahwa para pahlawannya tidak meramalkan sejarah dunia, atau bahkan tindakan mereka sendiri?—Misalnya, bahwa Henry dari Navarre, ketika masih bayi Protestan, hampir tidak pernah berpikir untuk menjadi raja Katolik; atau bahwa Alfred Agung, ketika ia mengukur malam-malamnya yang melelahkan dengan lilin yang menyala, tidak memiliki gagasan tentang para bangsawan di masa depan yang mengukur hari-hari santai mereka dengan jam tangan. Inilah tambang kebenaran, yang, betapapun giatnya digali, kemungkinan akan bertahan lebih lama daripada batubara kita. Namun mengenai Tuan Brooke, saya ingin menambahkan catatan lain yang mungkin kurang didukung oleh preseden—yaitu, jika dia mengetahui sebelumnya apa yang akan dia sampaikan dalam pidatonya, mungkin tidak akan ada perbedaan besar. Membayangkan dengan senang hati bahwa suami keponakannya memiliki penghasilan gerejawi yang besar adalah satu hal—menyampaikan pidato Liberal adalah hal lain; dan pikiran sempitlah yang tidak dapat melihat suatu subjek dari berbagai sudut pandang.</p>
 

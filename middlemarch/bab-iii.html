@@ -5,39 +5,176 @@
 <title>BAB III.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB III. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB III.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Katakanlah, wahai dewi, apa yang terjadi ketika Raphael, malaikat agung yang ramah… Hawa mendengarkan kisah itu dengan saksama, dan dipenuhi dengan kekaguman dan inspirasi yang mendalam, mendengar tentang hal-hal yang begitu luhur dan aneh.” — Paradise Lost , B. vii.</p>
 <p>Jika memang terlintas di benak Tuan Casaubon untuk menganggap Nona Brooke sebagai istri yang cocok baginya, alasan-alasan yang mungkin akan membujuknya untuk menerimanya sudah tertanam dalam pikirannya, dan pada malam hari berikutnya alasan-alasan itu telah tumbuh dan berkembang. Sebab mereka telah berbincang panjang lebar di pagi hari, sementara Celia, yang tidak menyukai kehadiran Tuan Casaubon yang berwajah pucat dan penuh tahi lalat, telah pergi ke rumah pendeta untuk bermain dengan anak-anak pendeta yang riang gembira meskipun sepatunya lusuh. Pada saat itu, Dorothea telah meneliti jauh ke dalam wadah pikiran Tuan Casaubon yang tak terukur, melihat tercermin di sana dalam perluasan labirin yang samar setiap kualitas yang dimilikinya; telah membuka banyak pengalamannya sendiri kepadanya, dan telah memahami darinya cakupan karya besarnya, yang juga memiliki cakupan labirin yang menarik. Karena ia telah memberikan instruksi seperti "malaikat agung yang ramah" karya Milton; dan dengan sedikit gaya malaikat agung, ia menceritakan kepadanya bagaimana ia telah berupaya menunjukkan (apa yang memang telah dicoba sebelumnya, tetapi tidak dengan ketelitian, keadilan perbandingan, dan efektivitas pengaturan yang dituju oleh Tuan Casaubon) bahwa semua sistem mitos atau fragmen mitos yang tidak menentu di dunia adalah korupsi dari tradisi yang awalnya diwahyukan. Setelah menguasai posisi yang benar dan mengambil pijakan yang kokoh di sana, bidang konstruksi mitos yang luas menjadi dapat dipahami, bahkan bercahaya dengan cahaya pantulan dari korespondensi. Tetapi untuk mengumpulkan panen kebenaran yang besar ini bukanlah pekerjaan yang mudah atau cepat. Catatannya sudah membentuk rangkaian volume yang mengesankan, tetapi tugas puncaknya adalah meringkas hasil yang masih terus bertambah ini dan menyusunnya, seperti buku-buku Hippokrates terdahulu, agar muat di rak kecil. Dalam menjelaskan hal ini kepada Dorothea, Tuan Casaubon mengungkapkan dirinya hampir seperti yang akan dia lakukan kepada sesama mahasiswa, karena dia tidak memiliki dua gaya bicara yang sama: memang benar bahwa ketika dia menggunakan frasa Yunani atau Latin, dia selalu memberikan terjemahan bahasa Inggris dengan sangat hati-hati, tetapi dia mungkin akan melakukan ini dalam keadaan apa pun. Seorang pendeta provinsi yang terpelajar terbiasa menganggap kenalannya sebagai "bangsawan, ksatria, dan orang-orang mulia dan terhormat lainnya, yang hanya sedikit mengerti bahasa Latin." Dorothea benar-benar terpikat oleh cakupan luas dari konsepsi ini. Di sinilah sesuatu yang melampaui kedangkalan sastra sekolah perempuan: di sinilah Bossuet yang hidup, yang karyanya akan mendamaikan pengetahuan yang lengkap dengan kesalehan yang tulus; di sinilah Agustinus modern yang menyatukan kemuliaan seorang doktor dan santo. Kesuciannya tampak sama jelasnya dengan pengetahuannya, karena ketika Dorothea terdorong untuk membuka pikirannya tentang tema-tema tertentu yang tidak dapat ia bicarakan kepada siapa pun yang pernah ia temui di Tipton, terutama tentang pentingnya bentuk-bentuk gerejawi dan pokok-pokok kepercayaan dibandingkan dengan agama spiritual, yaitu penenggelaman diri dalam persekutuan dengan kesempurnaan Ilahi yang menurutnya diungkapkan dalam buku-buku Kristen terbaik dari zaman yang sangat jauh, ia menemukan dalam diri Tuan Casaubon seorang pendengar yang langsung memahaminya, yang dapat meyakinkannya tentang persetujuannya sendiri dengan pandangan itu ketika diimbangi dengan kesesuaian yang bijaksana, dan dapat menyebutkan contoh-contoh sejarah yang sebelumnya tidak ia ketahui. “Dia berpikir bersamaku,” kata Dorothea dalam hati, “atau lebih tepatnya, dia memikirkan seluruh dunia yang mana pikiranku hanyalah cermin kecil yang tak berarti. Dan perasaannya juga, seluruh pengalamannya—betapa luasnya danau dibandingkan dengan kolam kecilku!” Nona Brooke berargumen berdasarkan kata-kata dan watak dengan tidak ragu-ragu seperti gadis-gadis muda seusianya yang lain. Tanda-tanda adalah hal-hal kecil yang terukur, tetapi interpretasi tidak terbatas, dan pada gadis-gadis yang manis dan bersemangat, setiap tanda cenderung membangkitkan kekaguman, harapan, kepercayaan, seluas langit, dan diwarnai oleh secuil materi yang tersebar dalam bentuk pengetahuan. Mereka tidak selalu tertipu secara terang-terangan; karena Sinbad sendiri mungkin beruntung menemukan deskripsi yang benar, dan penalaran yang salah terkadang membawa manusia biasa pada kesimpulan yang benar: dimulai jauh dari titik sebenarnya, dan berlanjut dengan liku-liku, kita kadang-kadang sampai tepat di tempat yang seharusnya. Karena Nona Brooke terburu-buru dalam kepercayaannya, bukan berarti Tuan Casaubon tidak layak dipercaya. Ia tinggal sedikit lebih lama dari yang direncanakan, karena sedikit tekanan undangan dari Tuan Brooke, yang tidak menawarkan iming-iming apa pun kecuali dokumen-dokumennya sendiri tentang pembongkaran mesin dan pembakaran tumpukan jerami. Tuan Casaubon dipanggil ke perpustakaan untuk melihat dokumen-dokumen itu dalam tumpukan, sementara tuan rumahnya mengambil satu demi satu untuk dibaca dengan cara yang melompat-lompat dan ragu-ragu, berpindah dari satu bagian yang belum selesai ke bagian lain dengan "Ya, sekarang, tapi di sini!" dan akhirnya menyingkirkan semuanya untuk membuka jurnal perjalanan masa mudanya di Benua Eropa. “Lihat di sini—di sini semuanya tentang Yunani. Rhamnus, reruntuhan Rhamnus—kau adalah seorang ahli Yunani yang hebat. Aku tidak tahu apakah kau telah banyak mempelajari topografinya. Aku menghabiskan banyak waktu untuk membuat hal-hal ini—Helicon, sekarang. Di sini, sekarang!—'Kami berangkat keesokan paginya ke Parnassus, Parnassus yang berpuncak ganda.' Seluruh buku ini tentang Yunani, kau tahu,” Tuan Brooke mengakhiri pembicaraannya, sambil menggosokkan ibu jarinya melintang di sepanjang tepi halaman saat ia memegang buku itu ke depan. Tuan Casaubon menjadi pendengar yang bermartabat meskipun agak sedih; membungkuk di tempat yang tepat, dan sebisa mungkin menghindari melihat dokumen apa pun tanpa menunjukkan ketidakpedulian atau ketidaksabaran; menyadari bahwa sikap acuh tak acuh ini terkait dengan lembaga-lembaga negara, dan bahwa orang yang membawanya dalam perjalanan mental yang berat ini bukan hanya tuan rumah yang ramah, tetapi juga pemilik tanah dan custos rotulorum. Apakah ketahanannya juga terbantu oleh pemikiran bahwa Tuan Brooke adalah paman Dorothea? Tentu saja, ia tampak semakin bertekad untuk membuat Celia berbicara dengannya, untuk memancingnya keluar, seperti yang Celia katakan dalam hati; dan saat memandanginya, wajahnya sering kali berseri-seri dengan senyum seperti sinar matahari musim dingin yang pucat. Sebelum berangkat keesokan paginya, saat berjalan-jalan santai dengan Nona Brooke di sepanjang teras berkerikil, ia menyebutkan kepadanya bahwa ia merasakan kerugian kesepian, kebutuhan akan persahabatan yang ceria yang kehadiran masa muda dapat meringankan atau mengubah kerja keras masa dewasa. Dan ia menyampaikan pernyataan ini dengan ketelitian yang cermat seolah-olah ia adalah seorang utusan diplomatik yang kata-katanya akan disertai dengan hasil. Memang, Tuan Casaubon tidak terbiasa mengharapkan bahwa ia harus mengulang atau merevisi komunikasinya yang bersifat praktis atau pribadi. Kecenderungan yang telah ia nyatakan dengan sengaja pada tanggal 2 Oktober, menurutnya cukup dengan menyebutkan tanggal tersebut; dilihat dari standar ingatannya sendiri, yang merupakan sebuah buku di mana sebuah "vide supra" dapat berfungsi sebagai pengganti pengulangan, dan bukan buku catatan biasa yang sudah lama digunakan yang hanya menceritakan tulisan yang terlupakan. Namun dalam kasus ini, kepercayaan diri Tuan Casaubon tidak mungkin terbantahkan, karena Dorothea mendengar dan mengingat apa yang dikatakannya dengan penuh minat layaknya seorang anak muda yang polos, yang bagi dirinya setiap variasi pengalaman adalah sebuah zaman. Pukul tiga sore di hari musim gugur yang indah dan berangin sepoi-sepoi, Tuan Casaubon berangkat ke Pastorinya di Lowick, hanya lima mil dari Tipton; dan Dorothea, yang mengenakan topi dan selendangnya, bergegas menyusuri semak-semak dan melintasi taman agar ia dapat berjalan-jalan di hutan perbatasan tanpa ditemani siapa pun selain Monk, anjing St. Bernard besar, yang selalu menjaga para gadis muda saat berjalan-jalan. Di hadapannya telah muncul visi masa depan yang mungkin baginya, yang ia nantikan dengan harapan yang bergetar, dan ia ingin terus berjalan dalam visi masa depan itu tanpa gangguan. Ia berjalan cepat di udara yang sejuk, pipinya memerah, dan topi jeraminya (yang mungkin dipandang oleh orang-orang sezaman kita dengan rasa ingin tahu yang penuh dugaan sebagai bentuk keranjang yang sudah usang) sedikit jatuh ke belakang. Mungkin ia tidak akan cukup terkarakterisasi jika tidak disebutkan bahwa ia menata rambut cokelatnya dengan kepang lurus dan digulung ke belakang sehingga memperlihatkan lekuk kepalanya dengan cara yang berani pada saat perasaan publik menuntut agar kekurangan fisik disembunyikan dengan barikade tinggi berupa ikal dan pita yang mengembang, yang tidak pernah terlampaui oleh ras besar mana pun kecuali orang Feejeean. Ini adalah ciri asketisme Nona Brooke. Tetapi tidak ada ekspresi seorang pertapa di matanya yang cerah dan penuh, saat ia memandang ke depan, tidak secara sadar melihat, tetapi menyerap ke dalam intensitas suasana hatinya, kemuliaan sore yang khidmat dengan hamparan cahaya yang panjang di antara deretan pohon jeruk nipis yang jauh, yang bayangannya saling bersentuhan. Semua orang, muda atau tua (yaitu, semua orang di masa sebelum reformasi itu), akan menganggapnya sebagai objek yang menarik jika mereka mengaitkan pancaran di mata dan pipinya dengan gambaran biasa tentang cinta muda yang baru terbangun: ilusi Chloe tentang Strephon telah cukup diabadikan dalam puisi, sebagaimana keindahan yang menyentuh hati dari semua kepercayaan spontan seharusnya. Nona Pippin yang memuja Pumpkin muda, dan bermimpi tentang pemandangan persahabatan yang tak berujung, adalah drama kecil yang tidak pernah membuat ayah dan ibu kita bosan, dan telah diadaptasi ke dalam berbagai kostum. Seandainya Pumpkin memiliki sosok yang mampu menutupi kekurangan gaun ekor burung layang-layang berpinggang pendek, semua orang merasa itu bukan hanya wajar tetapi juga perlu untuk kesempurnaan kewanitaan, bahwa seorang gadis manis harus segera yakin akan kebajikannya, kemampuannya yang luar biasa, dan di atas segalanya, ketulusannya yang sempurna. Namun mungkin tidak ada seorang pun yang hidup pada waktu itu—tentu saja tidak ada seorang pun di sekitar Tipton—yang akan memiliki pemahaman simpatik terhadap impian seorang gadis yang gagasannya tentang pernikahan sepenuhnya dipengaruhi oleh antusiasme yang tinggi tentang tujuan hidup, antusiasme yang terutama dipicu oleh semangatnya sendiri, dan tidak termasuk hal-hal kecil seperti perlengkapan pengantin, pola perhiasan, atau bahkan kehormatan dan kegembiraan manis seorang wanita dewasa yang sedang mekar. Kini terlintas di benak Dorothea bahwa Tuan Casaubon mungkin ingin menjadikannya istrinya, dan gagasan bahwa ia akan melakukannya menyentuhnya dengan semacam rasa syukur yang penuh hormat. Betapa baiknya dia—bahkan, itu hampir seperti seorang utusan bersayap tiba-tiba berdiri di samping jalannya dan mengulurkan tangannya kepadanya! Untuk waktu yang lama ia tertekan oleh ketidakpastian yang menggantung di benaknya, seperti kabut tebal musim panas, atas semua keinginannya untuk membuat hidupnya sangat efektif. Apa yang bisa dia lakukan, apa yang seharusnya dia lakukan?—dia, yang hampir masih seorang wanita muda, namun memiliki hati nurani yang aktif dan kebutuhan mental yang besar, tidak dapat dipuaskan oleh pengajaran kekanak-kanakan yang sebanding dengan gigitan dan penilaian seekor tikus yang cerewet. Dengan sedikit kebodohan dan kesombongan, ia mungkin berpikir bahwa seorang wanita muda Kristen yang kaya raya akan menemukan cita-cita hidupnya dalam kegiatan amal desa, dukungan dari para pendeta yang lebih rendah hati, membaca "Tokoh-Tokoh Wanita dalam Kitab Suci," mengungkap pengalaman pribadi Sara di bawah Perjanjian Lama, dan Dorcas di bawah Perjanjian Baru, serta merawat jiwanya melalui sulaman di kamar tidurnya sendiri—dengan latar belakang pernikahan yang akan datang dengan seorang pria yang, meskipun kurang ketat darinya, karena terlibat dalam urusan yang tidak dapat dijelaskan secara religius, dapat didoakan dan dinasihati pada waktunya. Dari kepuasan seperti itu, Dorothea yang malang terhalang. Intensitas kecenderungan religiusnya, paksaan yang diberikannya atas hidupnya, hanyalah satu aspek dari sifatnya yang sepenuhnya bersemangat, teoritis, dan konsekuen secara intelektual: dan dengan sifat seperti itu yang berjuang dalam belenggu ajaran yang sempit, terkurung oleh kehidupan sosial yang tampak tak lebih dari labirin kegiatan-kegiatan kecil, labirin tertutup dari jalan-jalan kecil yang tidak mengarah ke mana pun, hasilnya pasti akan tampak bagi orang lain sebagai sesuatu yang berlebihan dan tidak konsisten. Hal yang menurutnya terbaik, ingin ia benarkan dengan pengetahuan yang paling lengkap; dan bukan untuk hidup dalam pengakuan pura-pura terhadap aturan-aturan yang tidak pernah dipatuhi. Ke dalam kerinduan jiwa inilah seluruh gairah masa mudanya dicurahkan; persatuan yang menariknya adalah persatuan yang akan membebaskannya dari ketundukan masa mudanya pada ketidaktahuannya sendiri, dan memberinya kebebasan untuk tunduk secara sukarela kepada seorang pembimbing yang akan membawanya menyusuri jalan yang paling agung. “Kalau begitu, aku harus mempelajari semuanya,” katanya pada diri sendiri, masih berjalan cepat di sepanjang jalan setapak melalui hutan. “Sudah menjadi kewajibanku untuk belajar agar aku bisa membantunya lebih baik dalam karya-karya besarnya. Tidak akan ada hal sepele dalam hidup kita. Hal-hal sehari-hari bersama kita akan berarti hal-hal terbesar. Itu akan seperti menikahi Pascal. Aku harus belajar melihat kebenaran dengan cahaya yang sama seperti yang dilihat oleh orang-orang hebat. Dan kemudian aku akan tahu apa yang harus kulakukan, ketika aku sudah tua: aku akan melihat bagaimana mungkin untuk menjalani kehidupan yang hebat di sini—sekarang—di Inggris. Aku tidak yakin bisa berbuat baik dengan cara apa pun sekarang: semuanya tampak seperti pergi menjalankan misi ke suatu bangsa yang bahasanya tidak kuketahui;—kecuali membangun pondok-pondok yang bagus—tidak ada keraguan tentang itu. Oh, kuharap aku bisa membuat orang-orang tinggal dengan baik di Lowick! Aku akan membuat banyak rencana selagi aku punya waktu.” Dorothea tiba-tiba menghentikan dirinya sendiri dengan teguran atas cara lancangnya dalam memperkirakan peristiwa yang tidak pasti, tetapi ia terhindar dari upaya batin untuk mengubah arah pikirannya ketika seorang penunggang kuda berpacu di tikungan jalan. Kuda cokelat yang terawat baik dan dua anjing setter yang cantik tidak menyisakan keraguan bahwa penunggangnya adalah Sir James Chettam. Ia mengenali Dorothea, segera melompat dari kudanya, dan, setelah menyerahkannya kepada pengurus kudanya, mendekatinya dengan sesuatu yang berwarna putih di lengannya, yang membuat kedua anjing setter itu menggonggong dengan gembira. “Senang sekali bertemu dengan Anda, Nona Brooke,” katanya, sambil mengangkat topinya dan memperlihatkan rambut pirangnya yang terurai rapi. “Kesempatan ini telah mempercepat kesenangan yang saya nantikan.” Nona Brooke merasa jengkel dengan gangguan itu. Baronet yang ramah ini, yang sebenarnya adalah suami yang cocok untuk Celia, melebih-lebihkan perlunya bersikap baik kepada kakak perempuannya. Bahkan calon ipar pun bisa menjadi beban jika ia selalu menganggap dirinya terlalu baik dan setuju dengannya bahkan ketika ia membantahnya. Pikiran bahwa ia telah melakukan kesalahan dengan menyapa dirinya sendiri tidak dapat terwujud: seluruh aktivitas mentalnya telah habis untuk membujuknya dengan cara lain. Tetapi saat ini ia benar-benar mengganggu, dan tangannya yang berlesung pipi sangat tidak menyenangkan. Amarahnya yang meluap membuat wajahnya memerah, saat ia membalas sapaannya dengan sedikit angkuh. Sir James menafsirkan rona wajah yang lebih cerah itu dengan cara yang paling memuaskan baginya, dan berpikir bahwa ia belum pernah melihat Nona Brooke tampak begitu cantik. “Saya membawa seorang pemohon kecil,” katanya, “atau lebih tepatnya, saya membawanya untuk melihat apakah permohonannya akan disetujui sebelum diajukan.” Dia menunjukkan benda putih di bawah lengannya, yaitu seekor anak anjing Maltese kecil, salah satu mainan paling polos di alam. “Saya merasa sedih melihat makhluk-makhluk ini yang dibiakkan hanya sebagai hewan peliharaan,” kata Dorothea, yang pendapatnya sedang terbentuk saat itu juga (seperti halnya pendapat pada umumnya) di tengah kekesalan yang meluap. “Oh, mengapa?” tanya Sir James sambil berjalan maju. “Saya percaya bahwa semua belaian yang diberikan kepada mereka tidak membuat mereka bahagia. Mereka terlalu tak berdaya: kehidupan mereka terlalu rapuh. Musang atau tikus yang mencari nafkah sendiri jauh lebih menarik. Saya suka berpikir bahwa hewan-hewan di sekitar kita memiliki jiwa yang mirip dengan jiwa kita, dan mereka menjalankan urusan kecil mereka sendiri atau dapat menjadi teman bagi kita, seperti Monk di sini. Makhluk-makhluk itu bersifat parasit.” “Saya sangat senang mengetahui bahwa Anda tidak menyukai mereka,” kata Sir James yang baik hati. “Saya tidak akan pernah memelihara mereka untuk diri saya sendiri, tetapi para wanita biasanya menyukai anjing-anjing Malta ini. Ini, John, ambillah anjing ini, maukah kau?” Anak anjing yang menyebalkan itu, yang hidung dan matanya sama-sama hitam dan ekspresif, akhirnya disingkirkan, karena Nona Brooke memutuskan bahwa lebih baik anak anjing itu tidak dilahirkan. Tetapi dia merasa perlu untuk menjelaskan. “Kamu tidak boleh menilai perasaan Celia dari perasaanku. Kurasa dia menyukai hewan peliharaan kecil ini. Dia pernah punya anjing terrier kecil, yang sangat disayanginya. Itu membuatku tidak senang, karena aku takut menginjaknya. Aku agak rabun.” “Anda selalu punya pendapat sendiri tentang segala hal, Nona Brooke, dan pendapat Anda selalu bagus.” Jawaban apa yang mungkin diberikan untuk pujian bodoh seperti itu? “Tahukah kau, aku iri padamu,” kata Sir James, sambil mereka terus berjalan dengan langkah yang cukup cepat seperti yang dilakukan Dorothea. “Saya kurang mengerti maksud Anda.” “Kemampuanmu dalam membentuk opini. Aku bisa membentuk opini tentang orang. Aku tahu kapan aku menyukai orang. Tapi tentang hal-hal lain, tahukah kamu, aku sering kesulitan dalam mengambil keputusan. Kita mendengar hal-hal yang sangat masuk akal dikatakan dari pihak yang berlawanan.” “Atau mungkin hal itu tampak masuk akal. Mungkin kita tidak selalu membedakan antara akal sehat dan omong kosong.” Dorothea merasa bahwa dirinya agak kurang sopan. “Tepat sekali,” kata Sir James. “Tapi Anda tampaknya memiliki kemampuan untuk membedakan.” “Sebaliknya, saya seringkali tidak mampu mengambil keputusan. Tapi itu karena ketidaktahuan. Kesimpulan yang benar tetap ada, meskipun saya tidak mampu melihatnya.” “Saya rasa hanya sedikit orang yang akan lebih mudah memahaminya. Tahukah Anda, Lovegood memberi tahu saya kemarin bahwa Anda memiliki gagasan terbaik di dunia tentang rencana pembangunan pondok—sungguh luar biasa untuk seorang wanita muda, pikirnya. Anda benar-benar jenius , untuk menggunakan ungkapannya. Dia bilang Anda ingin Tuan Brooke membangun serangkaian pondok baru, tetapi dia tampaknya berpikir bahwa paman Anda hampir tidak mungkin akan menyetujuinya. Tahukah Anda, itu adalah salah satu hal yang ingin saya lakukan—maksud saya, di tanah milik saya sendiri. Saya akan sangat senang melaksanakan rencana Anda itu, jika Anda mengizinkan saya melihatnya. Tentu saja, itu adalah uang yang terbuang; itulah mengapa orang-orang keberatan. Para buruh tidak akan pernah mampu membayar sewa agar proyek itu menguntungkan. Tetapi, bagaimanapun juga, itu layak dilakukan.” “Layak dilakukan! Ya, memang,” kata Dorothea dengan penuh semangat, melupakan kekesalan kecilnya sebelumnya. “Kurasa kita pantas diusir dari rumah-rumah indah kita dengan cambuk tali kecil—kita semua yang membiarkan penyewa tinggal di kandang babi seperti yang kita lihat di sekitar kita. Kehidupan di pondok-pondok mungkin lebih bahagia daripada kehidupan kita, jika itu adalah rumah sungguhan yang layak untuk manusia yang darinya kita mengharapkan kewajiban dan kasih sayang.” “Bisakah kau menunjukkan rencanamu padaku?” “Ya, tentu saja. Saya berani mengatakan itu sangat cacat. Tapi saya telah memeriksa semua rencana pondok di buku Loudon, dan memilih apa yang tampaknya terbaik. Oh, betapa bahagianya jika kita bisa menerapkan pola itu di sini! Saya pikir, alih-alih Lazarus di gerbang, kita harus menempatkan pondok kandang babi di luar gerbang taman.” Dorothea sedang dalam suasana hati yang sangat baik sekarang. Sir James, sebagai saudara ipar, membangun pondok-pondok model di perkebunannya, dan kemudian, mungkin, pondok-pondok lain dibangun di Lowick, dan semakin banyak lagi di tempat lain sebagai tiruan—seolah-olah semangat Oberlin telah melewati paroki-paroki untuk membuat kehidupan kemiskinan menjadi indah! Sir James melihat semua rencana itu, dan membawa salah satunya untuk dikonsultasikan dengan Lovegood. Ia juga merasa puas karena telah membuat kemajuan besar dalam pandangan baik Nona Brooke. Anak anjing Maltese itu tidak ditawarkan kepada Celia; sebuah kelalaian yang kemudian dipikirkan Dorothea dengan heran; tetapi ia menyalahkan dirinya sendiri atas hal itu. Ia telah menyibukkan Sir James. Lagipula, itu melegakan karena tidak ada anak anjing yang terinjak. Celia hadir saat rencana-rencana itu diperiksa, dan mengamati ilusi Sir James. “Dia berpikir bahwa Dodo peduli padanya, padahal Dodo hanya peduli pada rencananya. Namun aku tidak yakin bahwa Dodo akan menolaknya jika dia berpikir Sir James akan membiarkannya mengatur segalanya dan melaksanakan semua gagasannya. Dan betapa tidak nyamannya Sir James! Aku tidak tahan dengan gagasan-gagasan itu.” Merupakan kemewahan pribadi Celia untuk menikmati ketidaksukaannya ini. Dia tidak berani mengakuinya kepada saudara perempuannya secara langsung, karena itu akan membuatnya rentan terhadap demonstrasi bahwa dia entah bagaimana sedang berperang dengan semua kebaikan. Tetapi pada kesempatan yang aman, dia memiliki cara tidak langsung untuk membuat kebijaksanaan negatifnya memengaruhi Dorothea, dan menurunkannya dari suasana hatinya yang gembira dengan mengingatkannya bahwa orang-orang sedang menatap, bukan mendengarkan. Celia bukanlah orang yang impulsif: apa yang ingin dia katakan bisa menunggu, dan selalu keluar dari mulutnya dengan ketenangan dan keseragaman yang sama. Ketika orang-orang berbicara dengan penuh energi dan penekanan, dia hanya memperhatikan wajah dan fitur mereka. Dia tidak pernah bisa mengerti bagaimana orang-orang yang berpendidikan baik mau bernyanyi dan membuka mulut mereka dengan cara yang menggelikan yang diperlukan untuk latihan vokal tersebut. Tidak lama kemudian, Tuan Casaubon berkunjung di pagi hari, dan ia diundang lagi untuk makan malam dan menginap minggu berikutnya. Dengan demikian, Dorothea berbincang tiga kali lagi dengannya, dan yakin bahwa kesan pertamanya memang benar. Ia persis seperti yang dibayangkannya: hampir semua yang dikatakannya tampak seperti spesimen dari tambang, atau prasasti di pintu museum yang mungkin membuka harta karun dari zaman dahulu; dan kepercayaan pada kekayaan intelektualnya ini semakin dalam dan efektif pada perasaannya karena sekarang jelas bahwa kunjungannya dilakukan untuknya. Pria yang berprestasi ini merendahkan hati untuk memikirkan seorang gadis muda, dan berusaha untuk berbicara dengannya, bukan dengan pujian yang berlebihan, tetapi dengan ajakan untuk memahaminya, dan kadang-kadang dengan koreksi yang mendidik. Sungguh persahabatan yang menyenangkan! Tuan Casaubon tampaknya bahkan tidak menyadari bahwa hal-hal sepele itu ada, dan tidak pernah menyampaikan obrolan ringan para pria yang berat yang sama tidak disukainya seperti kue pengantin basi yang dikeluarkan dengan bau lemari. Ia berbicara tentang hal-hal yang menarik minatnya, atau ia diam dan membungkuk dengan sopan santun yang sedih. Bagi Dorothea, ini adalah ketulusan yang mengagumkan, dan penolakan religius terhadap kepalsuan yang menghabiskan jiwa dalam upaya berpura-pura. Karena ia memandang dengan penuh hormat pada ketinggian religius Tuan Casaubon di atas dirinya sendiri seperti halnya pada kecerdasan dan pengetahuannya. Ia menyetujui ungkapan perasaan salehnya, dan biasanya dengan kutipan yang sesuai; ia mengizinkan dirinya untuk mengatakan bahwa ia telah melalui beberapa konflik spiritual di masa mudanya; singkatnya, Dorothea melihat bahwa di sini ia dapat mengandalkan pengertian, simpati, dan bimbingan. Pada satu—hanya satu—dari tema favoritnya, ia kecewa. Tuan Casaubon tampaknya tidak peduli tentang membangun pondok, dan mengalihkan pembicaraan ke akomodasi yang sangat sempit yang dapat ditemukan di tempat tinggal orang Mesir kuno, seolah-olah untuk memeriksa standar yang terlalu tinggi. Setelah ia pergi, Dorothea merenungkan ketidakpeduliannya ini dengan sedikit gelisah; Dan pikirannya sangat dipenuhi dengan argumen-argumen yang diambil dari berbagai kondisi iklim yang memodifikasi kebutuhan manusia, dan dari kejahatan yang diakui dari para penguasa lalim pagan. Bukankah seharusnya dia mendesak argumen-argumen ini kepada Tuan Casaubon ketika dia datang lagi? Tetapi setelah berpikir lebih lanjut, dia menyadari bahwa dia terlalu lancang menuntut perhatiannya pada subjek seperti itu; dia tidak akan keberatan jika dia menyibukkan diri dengan hal itu di saat-saat luang, seperti wanita lain yang diharapkan menyibukkan diri dengan pakaian dan sulaman mereka—tidak akan melarangnya ketika—Dorothea merasa agak malu ketika dia menyadari dirinya terlibat dalam spekulasi-spekulasi ini. Tetapi pamannya telah diundang untuk pergi ke Lowick untuk tinggal beberapa hari: apakah masuk akal untuk berasumsi bahwa Tuan Casaubon senang dengan pergaulan Tuan Brooke demi dirinya sendiri, baik dengan atau tanpa dokumen? Sementara itu, kekecewaan kecil itu justru membuatnya semakin gembira dengan kesediaan Sir James Chettam untuk segera memulai perbaikan yang diinginkan. Ia datang jauh lebih sering daripada Tuan Casaubon, dan Dorothea berhenti merasa tidak menyukainya sejak ia menunjukkan kesungguhannya; karena ia telah terlibat dengan kemampuan praktis yang besar dalam perhitungan Lovegood, dan sangat penurut. Ia mengusulkan untuk membangun beberapa pondok, dan memindahkan dua keluarga dari pondok lama mereka, yang kemudian dapat dirobohkan, sehingga pondok baru dapat dibangun di lokasi lama. Sir James berkata "Tepat sekali," dan Dorothea menerima kata itu dengan sangat baik. Tentu saja, para pria yang memiliki sedikit ide spontan ini mungkin bisa menjadi anggota masyarakat yang sangat berguna di bawah arahan wanita yang baik, jika mereka beruntung dalam memilih saudara ipar mereka! Sulit untuk mengatakan apakah ada sedikit kesengajaan dalam dirinya yang terus buta terhadap kemungkinan bahwa pilihan lain sedang dipertimbangkan dalam hubungannya dengan dirinya. Tetapi hidupnya saat ini penuh dengan harapan dan tindakan: dia tidak hanya memikirkan rencananya, tetapi juga mengambil buku-buku ilmiah dari perpustakaan dan membaca banyak hal dengan tergesa-gesa (agar dia sedikit kurang bodoh saat berbicara dengan Tuan Casaubon), sementara itu terus dihantui oleh pertanyaan-pertanyaan hati nurani apakah dia tidak meninggikan perbuatan-perbuatan kecil ini secara berlebihan dan merenungkannya dengan kepuasan diri yang merupakan malapetaka terakhir dari ketidaktahuan dan kebodohan.</p>

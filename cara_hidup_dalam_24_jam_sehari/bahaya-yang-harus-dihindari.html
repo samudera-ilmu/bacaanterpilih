@@ -5,39 +5,176 @@
 <title>BAHAYA YANG HARUS DIHINDARI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAHAYA YANG HARUS DIHINDARI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAHAYA YANG HARUS DIHINDARI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Saya tidak dapat mengakhiri petunjuk-petunjuk ini, yang seringkali, saya khawatir, terlalu didaktik dan tiba-tiba, tentang penggunaan waktu sepenuhnya untuk tujuan besar hidup (sebagai pembeda dari hidup tanpa tujuan), tanpa secara singkat menyinggung beberapa bahaya yang mengintai calon yang tulus menuju kehidupan. Yang pertama adalah bahaya mengerikan menjadi orang yang paling menjijikkan dan paling tidak dapat ditolerir—orang yang sok tahu. Nah, orang yang sok tahu adalah orang yang lancang yang bersikap seolah-olah memiliki kebijaksanaan yang lebih tinggi. Orang yang sok tahu adalah orang bodoh yang sombong yang pergi berjalan-jalan seremonial, dan tanpa menyadarinya telah kehilangan bagian penting dari pakaiannya, yaitu, selera humornya . Orang yang sok tahu adalah individu yang membosankan yang, setelah membuat penemuan, begitu terkesan oleh penemuannya sehingga ia mampu merasa sangat tidak senang karena seluruh dunia tidak juga terkesan olehnya. Tanpa disadari menjadi orang yang sok tahu adalah hal yang mudah dan fatal. Oleh karena itu, ketika seseorang memulai usaha untuk menggunakan seluruh waktunya, ada baiknya untuk mengingat bahwa waktu sendirilah, dan bukan waktu orang lain, yang harus dikelola; bahwa bumi terus berputar dengan cukup nyaman sebelum seseorang mulai menyeimbangkan anggaran waktu, dan akan terus berputar dengan cukup nyaman terlepas dari apakah seseorang berhasil atau tidak dalam peran barunya sebagai bendahara waktu. Ada baiknya untuk tidak terlalu banyak mengoceh tentang apa yang sedang dilakukan, dan tidak menunjukkan kesedihan yang berlebihan atas pemandangan seluruh dunia yang sengaja membuang begitu banyak waktu setiap hari, dan karena itu tidak pernah benar-benar hidup. Pada akhirnya akan ditemukan bahwa dengan menjaga diri sendiri, seseorang telah melakukan segalanya dengan baik. Bahaya lainnya adalah bahaya terikat pada suatu program seperti seorang budak pada kereta kuda. Program seseorang tidak boleh dibiarkan menguasai dirinya. Program itu harus dihormati, tetapi tidak boleh disembah sebagai berhala. Program pekerjaan sehari-hari bukanlah sebuah agama. Ini tampaknya jelas. Namun saya mengenal pria-pria yang hidupnya menjadi beban bagi diri mereka sendiri dan beban yang menyedihkan bagi kerabat dan teman-teman mereka hanya karena mereka gagal memahami hal yang jelas. "Oh, tidak," saya pernah mendengar istri yang menderita berseru, "Arthur selalu mengajak anjing jalan-jalan pukul delapan dan dia selalu mulai membaca pukul seperempat sembilan. Jadi sama sekali tidak mungkin kita harus..." dan seterusnya. Dan nada kepastian mutlak dalam suara yang merintih itu mengungkapkan tragedi karier yang tak terduga dan menggelikan. Di sisi lain, sebuah program tetaplah sebuah program . Dan kecuali jika diperlakukan dengan penuh hormat, program itu akan berhenti menjadi apa pun selain lelucon yang buruk. Memperlakukan program seseorang dengan rasa hormat yang tepat, hidup dengan elastisitas yang tidak terlalu banyak dan tidak terlalu sedikit, bukanlah hal yang sederhana seperti yang mungkin tampak bagi orang yang tidak berpengalaman. Dan bahaya lainnya adalah bahaya mengembangkan kebijakan terburu-buru, secara bertahap semakin terobsesi dengan apa yang harus dilakukan selanjutnya. Dengan cara ini seseorang mungkin hidup seperti di penjara, dan hidupnya mungkin berhenti menjadi miliknya sendiri. Seseorang mungkin mengajak anjingnya jalan-jalan pukul delapan, dan sepanjang waktu merenungkan fakta bahwa ia harus mulai membaca pukul 11.45, dan bahwa ia tidak boleh terlambat. Dan sesekali sengaja melanggar program yang telah direncanakan tidak akan membantu memperbaiki keadaan. Masalahnya bukan berasal dari terus-menerus berpegang teguh pada apa yang telah dicoba, tetapi dari awalnya mencoba terlalu banyak, dari mengisi program hingga melampaui batas. Satu-satunya obatnya adalah menyusun kembali program tersebut , dan mencoba lebih sedikit. Namun, hasrat akan pengetahuan tumbuh dari apa yang dikonsumsinya, dan ada orang-orang yang menyukai kesibukan yang terus-menerus dan tanpa henti dalam berupaya . Tentang mereka dapat dikatakan bahwa kesibukan yang terus-menerus dan tanpa henti lebih baik daripada tidur panjang yang abadi. Bagaimanapun, jika program tersebut cenderung menindas, dan seseorang tidak ingin mengubahnya, penawar yang sangat baik adalah dengan beralih secara perlahan dari satu bagian ke bagian lain; misalnya, menghabiskan lima menit dalam ketenangan mental sempurna antara mengikat anjing St. Bernard dan membuka buku; dengan kata lain, membuang waktu lima menit dengan kesadaran penuh bahwa waktu tersebut terbuang sia-sia. terakhir, dan yang terpenting , yang ingin saya sampaikan adalah bahaya yang telah saya sebutkan sebelumnya—risiko kegagalan di awal usaha. Saya harus bersikeras akan hal itu. Kegagalan di awal dapat dengan mudah membunuh dorongan yang baru lahir menuju vitalitas penuh, dan oleh karena itu setiap tindakan pencegahan harus diperhatikan untuk menghindarinya. Dorongan tersebut tidak boleh terlalu dipaksakan. Biarkan kecepatan putaran pertama sangat lambat, tetapi biarkan teratur sebisa mungkin. Dan, setelah memutuskan untuk menyelesaikan suatu tugas tertentu, selesaikanlah tugas itu dengan segala cara, meskipun membosankan dan tidak menyenangkan. Peningkatan kepercayaan diri yang didapat setelah menyelesaikan pekerjaan yang melelahkan sangatlah besar. Terakhir, dalam memilih kegiatan pertama di malam hari, janganlah berpedoman pada apa pun selain selera dan kecenderungan alami Anda. Menjadi ensiklopedia berjalan filsafat adalah hal yang bagus, tetapi jika Anda kebetulan tidak menyukai filsafat, dan lebih menyukai sejarah alam teriakan jalanan, lebih baik tinggalkan filsafat saja, dan beralihlah ke teriakan jalanan.</p>
 

@@ -5,39 +5,176 @@
 <title>PEMBUKAAN.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="PEMBUKAAN. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>PEMBUKAAN.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Siapa pun yang sangat peduli untuk mengetahui sejarah manusia, dan bagaimana campuran misterius itu berperilaku di bawah berbagai eksperimen Waktu, pasti pernah merenungkan, setidaknya secara singkat, kehidupan Santa Theresa, pasti pernah tersenyum lembut membayangkan gadis kecil itu berjalan suatu pagi bergandengan tangan dengan adik laki-lakinya yang lebih kecil, untuk mencari kemartiran di negeri Moor? Mereka berjalan tertatih-tatih dari Avila yang terjal, bermata lebar dan tampak tak berdaya seperti dua anak rusa, tetapi dengan hati manusia, yang sudah berdetak untuk sebuah gagasan nasional; sampai realitas domestik menemui mereka dalam wujud paman-paman, dan membuat mereka kembali dari tekad besar mereka. Ziarah anak itu adalah permulaan yang tepat. Sifat Theresa yang penuh gairah dan ideal menuntut kehidupan epik: apa artinya roman-roman panjang tentang kesatriaan dan penaklukan sosial seorang gadis brilian baginya? Nyala apinya dengan cepat membakar bahan bakar ringan itu; dan, didorong dari dalam, melambung mengejar kepuasan yang tak terbatas, suatu objek yang tak akan pernah membenarkan kelelahan, yang akan mendamaikan keputusasaan diri dengan kesadaran yang menggembirakan akan kehidupan di luar diri sendiri. Ia menemukan eposnya dalam reformasi sebuah ordo religius. Perempuan Spanyol yang hidup tiga ratus tahun yang lalu itu, tentu bukan yang terakhir dari jenisnya. Banyak Theresa telah lahir yang tidak menemukan kehidupan epik bagi diri mereka sendiri di mana terdapat perkembangan tindakan yang bergema luas secara terus-menerus; mungkin hanya kehidupan yang penuh kesalahan, keturunan dari keagungan spiritual tertentu yang tidak sesuai dengan kesempitan kesempatan; mungkin kegagalan tragis yang tidak menemukan penyair suci dan tenggelam tanpa ditangisi ke dalam kelupaan. Dengan cahaya redup dan keadaan yang kusut, mereka mencoba membentuk pikiran dan perbuatan mereka dalam kesepakatan yang mulia; tetapi bagaimanapun, bagi mata orang awam, perjuangan mereka tampak hanya sebagai ketidakkonsistenan dan ketidakberaturan; karena Theresa yang lahir kemudian ini tidak dibantu oleh keyakinan dan tatanan sosial yang koheren yang dapat menjalankan fungsi pengetahuan bagi jiwa yang bersemangat. Semangat mereka bergantian antara cita-cita yang samar dan kerinduan umum seorang wanita; sehingga yang satu tidak disetujui sebagai pemborosan, dan yang lain dikutuk sebagai penyimpangan. Sebagian orang berpendapat bahwa kehidupan yang penuh kesalahan ini disebabkan oleh ketidakpastian yang tidak nyaman yang telah diciptakan Tuhan dalam membentuk sifat-sifat perempuan: jika ada satu tingkat ketidakmampuan perempuan yang seketat kemampuan menghitung tiga dan tidak lebih, nasib sosial perempuan mungkin dapat diperlakukan dengan kepastian ilmiah. Sementara itu, ketidakpastian tetap ada, dan batas-batas variasi sebenarnya jauh lebih luas daripada yang dibayangkan siapa pun dari kesamaan gaya rambut perempuan dan kisah cinta favorit dalam prosa dan puisi. Di sana-sini seekor anak angsa dibesarkan dengan gelisah di antara anak-anak bebek di kolam cokelat, dan tidak pernah menemukan aliran kehidupan dalam persekutuan dengan jenisnya sendiri yang berkaki dayung. Di sana-sini lahir seorang Santa Teresa, pendiri sesuatu yang tidak ada, yang detak jantung dan isak tangisnya yang penuh kasih sayang atas kebaikan yang tak tercapai bergetar dan tersebar di antara rintangan, alih-alih berpusat pada suatu perbuatan yang dapat dikenali sejak lama.</p>
 

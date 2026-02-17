@@ -5,39 +5,176 @@
 <title>BAB TIGA PULUH DELAPAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB TIGA PULUH DELAPAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB TIGA PULUH DELAPAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>si penggigit digigit. Namun, begitu ia mempercayakan harta miliknya kepada tiga orang ini, pikirannya langsung dihantui oleh peringatan-peringatan mengerikan, yang menyebabkan keringat dingin dan jantung berdebar-debar, serta membuatnya diliputi kecemasan yang belum pernah ia alami sebelumnya. Ia teringat akan pengkhianatan orang Tyrol sebelumnya, kejahatan pengacara baru-baru ini, dan teringat akan komentar-komentar yang pernah ia buat tentang watak dan karakter pelayannya, yang menunjukkan bahwa ia adalah teman yang cocok untuk kedua orang lainnya. Khawatir dengan pikiran-pikiran itu, ia memohon kepada petugas pengadilan untuk mengizinkannya mengunjungi tempat tinggalnya, dan bahkan menawarkan seratus guinea sebagai imbalan atas kesediaannya. Tetapi petugas itu, yang sebelumnya telah kehilangan sejumlah besar uang karena pelarian seorang tahanan, tidak mau mengambil risiko dalam urusan sepenting ini, dan pahlawan kita terpaksa menyerah pada siksaan ketakutan yang menghantuinya. Setelah menunggu selama lima jam dengan sangat tidak sabar, ia melihat pengacara itu masuk dengan segala tanda tergesa-gesa, kelelahan, dan kebingungan, dan mendengarnya berseru, "Ya Tuhan, apakah Anda melihat Tuan itu?" Fathom mendapati ketakutannya menjadi kenyataan dalam interogasi ini, yang dijawabnya dengan nada ngeri dan cemas, “Tuan yang mana? Kurasa aku dirampok. Bicaralah, dan jangan biarkan aku terus menunggu.” “Dirampok!” "Seru pengacara itu, "Astaga! Saya harap Anda dapat mempercayai orang yang Anda beri kuasa untuk menerima perhiasan dan uang tunai Anda? Harus saya akui, tindakannya agak luar biasa; karena setelah dia menggeledah kotak harta Anda, yang darinya, di hadapan saya dan pelayan Anda, dia mengambil seratus lima puluh guinea, seikat cincin dan gesper berlian, menurut inventaris ini, yang saya tulis dengan tangan saya sendiri, dan obligasi Hindia Timur senilai lima ratus lebih, kami pergi ke Garraway's, di mana dia meninggalkan saya sendirian, dengan dalih pergi ke seorang pialang kenalannya yang tinggal di sekitar situ, sementara pelayan, seperti yang saya duga, menunggu kami di gang. Nah, Tuan, dia tinggal begitu lama sehingga saya mulai merasa gelisah, dan akhirnya memutuskan untuk mengirim pelayan untuk mencarinya, tetapi ketika saya keluar untuk tujuan itu, tidak ada seorang pun pelayan yang dapat ditemukan; meskipun saya sendiri menanyakan keberadaannya di setiap kedai minuman dalam radius setengah mil dari tempat itu. Kemudian saya mengirim tidak kurang dari lima petugas tiket untuk mencarinya." Mereka, dan saya sendiri, atas arahan dari pemilik bar, pergi ke penginapan Signior Ratchcali, di mana, seperti yang mereka katakan kepada saya, dia belum terlihat sejak pukul sembilan pagi. Atas pemberitahuan ini, saya langsung datang ke sini, untuk memberi Anda pemberitahuan tepat waktu, agar Anda dapat segera mengambil tindakan untuk keamanan Anda sendiri. Hal terbaik yang dapat Anda lakukan adalah mengeluarkan surat perintah untuk menangkapnya, di wilayah Middlesex, Surrey, Kent, dan Essex, dan saya akan menyerahkannya kepada petugas yang dapat dipercaya dan rajin, yang akan segera menemukannya di tempat persembunyiannya, asalkan dia bersembunyi dalam radius sepuluh mil dari lokasi kejadian. Tentu saja, pekerjaan ini akan mahal; dan semua kurir ini harus dibayar di muka. Tapi lalu bagaimana? Terdakwa itu sangat berharga, dan jika kita dapat menangkapnya sekali saja, saya jamin penuntutannya akan menutupi biayanya.” Fathom hampir tersedak oleh kekhawatiran dan kemarahan mendengar berita kemalangan ini, sehingga ia tidak dapat mengucapkan sepatah kata pun sampai narasi ini selesai. Kecurigaannya tidak hanya terbatas pada orang Tyrol dan asistennya sendiri; ia menganggap pengacara itu sebagai kaki tangan dan dalang mereka, dan sangat terprovokasi pada bagian akhir pidatonya, sehingga kebijaksanaannya seolah lenyap, dan, sambil mencegat pengacara itu, "Bajingan!" katanya, "kau sendiri telah menjadi aktor utama dalam perampokan ini." Kemudian beralih ke orang-orang yang berdiri di dekatnya, "dan saya memohon atas nama Raja agar dia ditahan, sampai saya dapat bersumpah di hadapan hakim untuk mendukung tuduhan tersebut. Jika kalian menolak membantu menahannya, saya akan segera mengajukan permohonan kepada salah satu sekretaris negara, yang merupakan teman dekat saya, dan dia akan memastikan keadilan ditegakkan untuk semua pihak." Saat nama yang menakutkan itu disebut, juru sita dan seluruh keluarganya menjadi ribut, berusaha menghalangi jalan keluar pengacara itu, yang berdiri terkejut dan gemetar di bawah cengkeraman petualang kita. Tetapi, segera setelah ia terbebas dari pelukan itu berkat campur tangan para penonton, dan mengumpulkan kembali semangatnya yang tiba-tiba hilang akibat serangan tak terduga Fathom, ia mulai menunjukkan salah satu keahliannya, yang selalu ia simpan untuk kesempatan luar biasa. Ini adalah bakatnya dalam menghina, yang ia lontarkan dengan begitu lancar menggunakan kata-kata kasar, sehingga pahlawan kita, yang merasa sakit hati dan hampir putus asa karena kehilangannya, menyimpang dari sikap tenang yang selama ini ia pertahankan, dan merebut tongkat besi itu, dengan satu pukulan membuka parit yang dalam di tengkorak pengacara itu, yang membentang dari bagian belakang kepala hampir sampai ke bagian atas hidung, di setiap sisinya mengalirkan aliran darah. Meskipun merasakan sakit akibat tindakan tersebut, pengacara itu diliputi kegembiraan karena rasa perihnya, dan dalam hati mengucapkan selamat kepada dirinya sendiri atas munculnya darahnya sendiri, yang begitu ia sadari, ia langsung berseru, "Aku sudah mati," dan jatuh tersungkur ke lantai. Segera dilakukan upaya untuk memanggil seorang ahli bedah di sekitar tempat tinggalnya. Setelah memeriksa luka, ahli bedah tersebut menyatakan bahwa terdapat depresi berbahaya pada lapisan pertama tengkorak, dan jika ia dapat menyelamatkan nyawa pasien tanpa menggunakan trepanasi, itu akan menjadi salah satu penyembuhan terbesar yang pernah dilakukan. Pada saat itu, setelah kegembiraan pertama Fathom mereda, ia mengumpulkan seluruh tekadnya, dan merenungkan kehancurannya sendiri dengan ketabahan yang tidak pernah meninggalkannya dalam keadaan darurat yang menimpanya. Ia tidak terlalu terganggu oleh prognosis ahli bedah tersebut, yang menurutnya tepat; “Tuan,” katanya, “saya tidak begitu tidak mengenal daya tahan tengkorak seorang pengacara, sehingga saya tidak percaya hukuman yang telah saya berikan kepadanya akan membahayakan nyawanya, yang jauh lebih terancam oleh algojo biasa. Sebab, terlepas dari kecelakaan ini, saya bertekad untuk menuntut bajingan itu atas perampokan dengan hukuman seberat-beratnya sesuai hukum; dan, agar saya memiliki dana yang cukup untuk penuntutan itu, saya tidak akan membuang sepeser pun untuk pengeluaran yang tidak perlu saat ini, tetapi akan bersikeras untuk segera dibawa ke penjara.” Pernyataan ini sama sekali tidak disukai oleh juru sita, dokter bedah, dan pengacara, yang, dengan anggapan bahwa Sang Pangeran adalah orang kaya, dan lebih memilih kehilangan sejumlah besar uang daripada menanggung aib penjara, atau terlibat dalam tuntutan hukum memalukan lainnya, telah memutuskan untuk menipu dia sebisa mungkin. Tetapi, sekarang pengacara itu, mendapati dia bertekad untuk menantang nasibnya, dan untuk membalasnya dengan tuntutan hukum, yang tidak ingin dia jalani, mulai sangat menyesali provokasi yang telah dia berikan, dan mulai berpikir serius tentang beberapa metode untuk mengatasi kekeraskepalaan orang asing yang marah itu. Dengan tujuan ini, sementara juru sita mengantarnya ke kamar lain, dia meminta juru sita untuk bertindak sebagai mediator antara dia dan Sang Pangeran, dan memberinya instruksi yang tepat untuk tujuan itu. Sesuai dengan itu, pemilik penginapan, sekembalinya, memberi tahu Fathom bahwa dia yakin pengacara itu bukanlah orang yang cocok untuk dunia ini; Karena itulah ia meninggalkannya dalam keadaan kehilangan kesadaran, dan berdoa kepada Tuhan dengan penuh pengabdian memohon belas kasihan bagi pembunuhnya. Kemudian ia mendesaknya, dengan banyak pernyataan persahabatan, untuk menyelesaikan masalah yang menyedihkan itu dengan bertukar surat pembebasan dengan pengacara sebelum deliriumnya diketahui, jika tidak, ia akan menempatkan dirinya dalam posisi yang sangat berbahaya, baik penggugat meninggal karena lukanya, atau hidup untuk menuntutnya atas penyerangan. “Dan mengenai tuduhan perampokan terhadapnya,” katanya, “karena itu hanyalah kecurigaan yang tidak berdasar, tanpa didukung oleh bukti sedikit pun, tuntutan itu akan ditolak, dan kemudian ia dapat menuntut Anda untuk ganti rugi. Oleh karena itu, karena persahabatan dan kebaikan hati yang murni, saya menyarankan Anda untuk menyelesaikan masalah ini, dan, jika Anda merasa perlu, saya akan berusaha untuk mencapai pembebasan bersama.” Tokoh utama kita, yang gairahnya saat itu sudah cukup mereda, melihat alasan untuk menyetujui usulan tersebut; setelah itu, akta tersebut segera dilaksanakan, tagihan mediator dibatalkan, dan Ferdinand dibawa dengan kereta kuda ke penjara, setelah ia memberi kuasa kepada tuan tanahnya untuk memecat para pelayannya, dan menukar harta miliknya dengan uang tunai. Dengan demikian, dalam beberapa jam, ia kehilangan reputasi, pangkat, kebebasan, dan teman-temannya; dan kekayaannya berkurang dari dua ribu pound menjadi kurang dari dua ratus lima puluh pound, yang sebagian di antaranya ia bawa ke penjara di sakunya.</p>
 

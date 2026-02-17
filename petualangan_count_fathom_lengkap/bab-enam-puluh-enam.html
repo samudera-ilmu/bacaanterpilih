@@ -5,39 +5,176 @@
 <title>BAB ENAM PULUH ENAM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB ENAM PULUH ENAM - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB ENAM PULUH ENAM</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>sejarah mendekati suatu periode. Tepuk tangan meriah pun datang menyambut mereka atas pengorbanan mulia dari kekecewaan mereka. Sore itu dihabiskan dalam suasana yang sangat harmonis dan penuh sukacita; dan atas permohonan tulus Renaldo, yang masih dihantui kekhawatiran akan perpisahan lain, Don Diego menyetujui bahwa ikatan yang tak terpisahkan akan diikat antara pemuda itu dan Serafina dalam dua hari, dan tempat yang ditentukan untuk upacara tersebut adalah gereja tempat mereka dipersatukan kembali. Pengantin wanita yang cantik itu, dengan rona merah diam yang membakar hati kekasihnya, menerima keputusan ini, yang akibatnya rombongan tersebut dipesan untuk jam yang menguntungkan itu, dan karena malam sudah cukup larut, mereka berpamitan kepada para wanita, dan kembali ke rumah masing-masing; Don Diego dan calon menantunya diantar kembali ke penginapan mereka, dengan kereta kuda milik orang Yahudi, yang, mengambil kesempatan untuk berduaan dengan Melvil, mengamati bahwa pada kesempatan ini perlu untuk memberi orang Kastilia itu sejumlah uang, untuk mendukung martabat dan kemandiriannya, dalam menyediakan Serafina segala sesuatu yang sesuai dengan kedudukan dan jasanya; dan bahwa dia akan dengan senang hati membantunya, asalkan dia tahu bagaimana mengajukannya agar tidak menyinggung sifatnya yang teliti. Renaldo, berterima kasih kepadanya atas antisipasi yang murah hati ini, menyarankannya untuk meminta surat-menyurat dari orang Spanyol itu dalam hal bisnis, dan untuk menempatkan semuanya pada dasar kepentingannya sendiri; dengan cara itu kepekaan Don Diego tidak dapat mentolerir penghinaan. Dengan berbekal instruksi ini, orang Israel itu menginginkan audiensi pribadi dengan orang Kastilia tersebut, di mana, setelah meminta maaf atas kebebasan permintaannya, “Tuan Don Diego,” katanya, “karena kekayaan Anda telah lama digelapkan oleh musuh Anda di Spanyol, dan korespondensi Anda dengan negara itu telah sepenuhnya terputus, tidak dapat diasumsikan bahwa keuangan Anda saat ini dalam kondisi yang memungkinkan untuk mempertahankan kemewahan keluarga Anda. Seluruh kekayaan Count de Melvil berada di bawah kendali Anda; dan seandainya dia tidak takut menyinggung kepekaan khusus perasaan Anda, dia pasti akan mendesak Anda untuk menggunakannya demi kenyamanan Anda. Bagi saya sendiri, di atas keinginan saya untuk melayani Don Diego, saya mempertimbangkan keuntungan pribadi saya sendiri dalam meminta Anda untuk menerima layanan saya pada kesempatan ini. Uang adalah komoditas utama yang saya perdagangkan, dan, jika Anda menghormati saya dengan perintah Anda, saya akan diuntungkan dengan ketaatan saya.” Don Diego menjawab, dengan senyum yang menunjukkan betapa ia memahami maksud dari ucapan tersebut, “Tentu saja, Tuan, saya terikat oleh ikatan terkuat untuk mengerahkan upaya terbaik saya demi keuntungan Anda; dan saya berdoa kepada Tuhan agar usulan Anda ini membuahkan hasil. Saya sangat mengenal kemurahan hati dan gagasan kehormatan yang luhur dari Sang Pangeran; dan sudah terlalu berterima kasih kepadanya, sehingga saya tidak akan ragu-ragu dengan sikap hati-hati dalam menerima bantuannya di masa mendatang. Namun demikian, karena Anda telah merancang sebuah rencana untuk menghilangkan semua keraguan semacam itu, saya akan melaksanakannya dengan senang hati; dan, dalam bentuk bisnis, Anda akan mendapatkan semua jaminan yang dapat saya berikan untuk apa yang diperlukan untuk memenuhi kebutuhan saya saat ini.” Setelah urusan pendahuluan diselesaikan, Joshua memberikan uang muka seribu pound untuknya, yang tidak akan ia minta dengan surat perjanjian, wesel, atau tanda terima, hanya meminta agar orang Kastilia itu mencatatnya di buku sakunya sendiri, agar hutang tersebut terlihat jika terjadi kecelakaan pada peminjam. Meskipun orang Spanyol itu sudah terbiasa dengan kemurahan hati Melvil yang luar biasa, ia tidak bisa tidak heran dengan perilaku mulia ini, yang jarang diharapkan dari pedagang mana pun, apalagi dari seorang makelar Yahudi. Sementara urusan ini masih dalam proses, Renaldo, yang tidak lagi dapat menahan kabar bahagianya dari saudara perempuannya dan kerabatnya di Jerman, mengambil pena, dan, dalam sebuah surat kepada saudara iparnya, menceritakan semua keadaan dari perubahan nasib yang mengejutkan yang telah dialaminya sejak kedatangannya di Inggris. Ia juga menceritakan kisah Don Diego, memberi tahu mereka tentang hari yang ditetapkan untuk pernikahannya, dan memohon kepada Mayor untuk melakukan perjalanan ke London bersama istrinya; atau, jika itu tidak memungkinkan, untuk datang sejauh Brussels, di mana mereka akan disambut olehnya dan Serafina-nya. Kini hanya ada satu hari lagi antara dia dan terwujudnya keinginan terbesarnya, dan hari itu dihabiskan untuk mendapatkan izin, dan menyesuaikan persiapan untuk pesta besar tersebut. Pagi harinya, Don Diego mengunjungi Nyonya Clement, dan mengulangi ucapan terima kasihnya yang tulus atas kemurahan hati dan kasih sayang keibuan Nyonya Clement kepada putrinya, serta memberikan uang kertas senilai lima ratus poundsterling kepada Serafina untuk menutupi biaya perhiasan pernikahannya. Setelah semua persiapan sebelumnya untuk acara penting ini selesai, dan saat yang telah ditentukan tiba, mempelai pria, ditem ditemani oleh ayah mertuanya, bergegas ke tempat pertemuan, yaitu ruang sakristi gereja yang telah kita uraikan sebelumnya; di sana mereka disambut oleh pendeta yang baik hati dengan pakaian kanoniknya; dan di sana mereka belum menunggu beberapa menit, ketika mereka bergabung dengan Nyonya Clement dan mempelai wanita yang ramah, diiringi oleh dokter yang bersahabat, yang selama ini telah banyak membantu dalam urusan mereka. Serafina mengenakan gaun satin putih, dan hiasan kepalanya disesuaikan dengan gaya Spanyol, yang memberikan kesan khusus pada penampilannya, dan menambah daya tarik yang memikat hati setiap orang yang melihatnya. Tidak ada yang istimewa dalam pakaian Renaldo, yang meniru kesederhanaan dan keanggunan kekasihnya; Namun, ketika dia memasuki tempat itu, raut wajahnya tampak berlipat ganda penuh semangat, dan tatapan mata mereka seolah menyulut api yang menyebarkan kehangatan dan kegembiraan ke seluruh wajah orang-orang yang hadir. Setelah jeda singkat, ayahnya menuntunnya ke altar, dan menyerahkannya kepada Renaldo yang terpesona, di hadapan pendeta yang melakukan upacara, dan menganugerahkan berkat pernikahan kepada pasangan yang berbahagia ini. Setelah mendapat restu gereja, mereka mundur ke ruang sakristi, di mana Melvil mengukuhkan gelarnya di bibir merah muda istrinya, dan memperkenalkan istrinya kepada para hadirin, yang kemudian memeluknya bergantian, dengan harapan tulus untuk kebahagiaan mereka berdua. Meskipun tempat transaksi ini jauh dari permukiman penduduk, gereja dikelilingi oleh kerumunan orang, yang dengan rasa terkejut dan kagum yang luar biasa, memohon kepada Surga untuk memberkati pasangan yang begitu cantik. Begitu besar keinginan mereka untuk bertemu, sehingga beberapa nyawa terancam oleh tekanan kerumunan, yang mengiringi mereka dengan sorak sorai keras menuju kereta, setelah mempelai pria menyerahkan seratus pound kepada pendeta untuk kepentingan kaum miskin di paroki itu, dan melemparkan beberapa genggam uang di antara kerumunan. Serafina naik kembali dengan kereta milik Madam Clement, bersama wanita baik itu dan Don Diego, sementara Renaldo, bersama pendeta dan dokter, mengikuti dengan kereta Joshua, ke sebuah rumah pedesaan yang menyenangkan di tepi Sungai Thames, beberapa mil dari London. Rumah itu telah dipinjam oleh orang Yahudi itu dari pemiliknya selama beberapa hari, dan di sana mereka diterima oleh orang Ibrani yang jujur itu, yang telah menyediakan hiburan yang sangat elegan untuk acara tersebut. Dia juga telah memesan sebuah band musik kecil tetapi bagus, yang menghibur telinga mereka saat mereka duduk makan malam; Karena sore itu cuacanya tenang dan damai, ia membujuk mereka untuk menghirup udara segar di sungai, dengan menggunakan perahu yang telah ia siapkan untuk tujuan tersebut. Namun, terlepas dari beragam hiburan ini, Renaldo akan menganggapnya sebagai hari terpanjang yang pernah ia lalui, seandainya imajinasinya tidak teralihkan oleh sebuah kejadian yang menyita perhatiannya selama sisa malam itu. Mereka telah minum teh, dan bermain kartu whist, ketika mereka dikejutkan oleh suara pertengkaran dari sebuah kedai minuman yang berada di depan jendela apartemen tempat mereka duduk. Karena khawatir dengan keributan ini, mereka meninggalkan kartu mereka, dan, membuka jendela, melihat sebuah kereta jenazah dikelilingi oleh empat orang berkuda, yang telah menghentikan kereta, dan dengan kasar menarik pengemudi dari tempat duduknya. Penangkapan yang tidak biasa ini telah menarik rasa ingin tahu keluarga pemilik kedai minuman, yang berdiri di pintu untuk mengamati akibatnya, ketika tiba-tiba muncul seseorang dengan pakaian kanonik, menunggang kuda dengan baik, yang, menghampiri orang-orang yang menganiaya pengemudi, memberikan pukulan yang begitu keras dengan ujung cambuknya kepada salah satu dari mereka, sehingga orang itu tergeletak di tanah; lalu, melompat dari pelana ke atas peti mati, mengambil kendali kuda ke tangannya sendiri, bersumpah dengan sangat keras bahwa dia akan membunuh setiap orang yang mencoba menghalangi kereta jenazah. Pendeta baik yang menikahi Renaldo sangat terkejut dengan perilaku ganas seorang pendeta, dan tak kuasa menahan diri untuk berkata lantang, "Dia memalukan bagi gereja," ketika penunggang kuda yang melihat ke jendela menjawab, "Tuan, semoga saya terkutuk, jika ada orang di Inggris yang lebih menghormati gereja daripada saya; tetapi saat ini saya benar-benar bingung." Sambil berkata demikian, ia mencambuk kuda-kudanya, dan berhasil melepaskan kereta jenazah dari orang-orang yang mengelilinginya, ketika ia dihadang oleh pasukan lain, salah satu dari mereka turun dengan sangat cepat, dan memotong tali kekang sehingga ia tidak mungkin melanjutkan perjalanan. Merasa dirinya terdesak, ia melompat ke tanah, dan menggunakan senjatanya dengan kekuatan dan kelincahan yang luar biasa, sehingga beberapa lawannya tergeletak tak bergerak di medan perang, sebelum ia dikalahkan dan dilucuti senjatanya oleh banyak orang yang menyerangnya dari segala sisi. Setelah pendeta gila itu ditangkap, seorang wanita tua yang berpenampilan sangat menarik menghampiri kereta jenazah, dan membuka pintunya. Seorang wanita muda melompat keluar sambil menjerit dan berlari langsung ke kedai minuman, membuat seluruh keluarga sangat terkejut dan ketakutan, karena mereka percaya itu adalah roh orang yang telah meninggal, yang jenazahnya terbaring di dalam kereta. Renaldo, yang dengan susah payah menahan diri untuk tidak membela pendeta dalam situasi yang begitu sulit, begitu menyadari penampakan itu, mengira itu adalah seorang gadis yang sedang kesulitan, naluri Quixot-nya bangkit. Ia segera turun dan bergegas masuk ke kedai, di antara mereka yang mengejar hantu cantik itu. Don Diego dan dokter mengambil jalan yang sama, sementara pendeta yang sebenarnya dan Joshua tetap tinggal bersama para wanita, yang pada saat itu sangat tertarik dengan kejadian tersebut. Melvil menemukan gadis muda itu di tangan pria tua yang telah membebaskannya dari kereta jenazah, dan yang kini dengan getir mencelanya karena kebodohan dan ketidaktaatannya; sementara gadis itu dengan penuh semangat membantah, bahwa apa pun yang mungkin dideritanya dari kekejaman pria itu, dia tidak akan pernah menerima perjodohan yang dibenci yang telah diusulkan pria itu, atau mengingkari janji yang telah dia buat kepada pria yang kini berusaha menyelamatkannya dari tirani seorang ayah yang kejam. Pernyataan ini diikuti oleh curahan air mata yang deras, yang tidak dapat dilihat oleh sang ayah dengan mata yang kering, meskipun ia mencaci maki gadis itu dengan tanda-tanda ketidaksenangan yang luar biasa; Lalu berpaling kepada Sang Pangeran, “Saya memohon kepada Anda, Tuan,” katanya, “apakah saya tidak punya alasan untuk mengutuk kekeraskepalaan tak taat perempuan kurang ajar itu, dan selamanya menolaknya sebagai orang asing bagi darah daging saya. Selama beberapa bulan, dia telah dilamar oleh seorang warga negara yang jujur, seorang pria kaya raya; dan bukannya mendengarkan lamaran yang menguntungkan itu, dia malah memberikan hatinya kepada seorang pemuda yang tidak berharga sepeser pun. Ah! dasar perempuan bejat, ini berasal dari sandiwara dan kisah cintamu. Jika ibumu bukan wanita dengan kehidupan dan perilaku yang tidak tercela, aku akan benar-benar percaya bahwa kau bukan anakku. Larilah dengan seorang pengemis! Sungguh memalukan!” “Kurasa,” jawab Renaldo, “orang yang disukai putrimu adalah pendeta yang begitu gagah berani berdiri di pintu?” “Pendeta!” seru yang lain, “aduh! Dia lebih banyak memiliki sifat iblis daripada gereja. Bajingan! Setahuku, dia telah membunuh pria terhormat yang kumaksudkan untuk menjadi menantuku; dan si brengsek itu, jika aku tidak menjauhinya, kurasa akan memperlakukanku dengan cara yang sama. Aku! Yang telah menjadi atasannya selama bertahun-tahun, dan telah bertekad untuk mendidiknya. Tuan, dia adalah juru tulisku sendiri, dan inilah balasan yang kudapatkan dari ular yang kupelihara di dadaku.” Di sini ia disela oleh kedatangan warga yang telah ia khawatirkan; pria itu mengalami memar di salah satu matanya, yang menyebabkan penglihatannya terhalang sepenuhnya, sehingga ia menyimpulkan bahwa ia tidak akan pernah bisa menggunakan organ tersebut lagi, dan dengan sangat berisik mengajak semua orang yang menyaksikan cedera yang dideritanya; ia memasuki ruangan dengan sangat gelisah, menuntut ganti rugi dari sang ayah, dan dengan tegas menyatakan bahwa jika ada hukum di Inggris, mata itu tidak akan hilang. Tuntutan yang tidak tepat waktu ini, dan cara yang ribut saat menyampaikannya, sama sekali tidak sesuai dengan suasana hati pria tua itu, yang dengan kesal mengatakan kepadanya bahwa ia tidak berutang mata kepadanya, dan menyuruhnya pergi dan meminta ganti rugi kepada orang yang telah berbuat salah kepadanya. Gadis muda itu, memanfaatkan kesempatan yang menguntungkan ini, dengan sungguh-sungguh memohon kepada Melvil dan rombongannya untuk memohon kepada ayahnya demi kekasihnya, yang, menurutnya, adalah seorang pria muda dari keluarga baik-baik dan memiliki kelebihan yang luar biasa; dan untuk memenuhi permintaannya, mereka mengundang pria itu dan putrinya ke rumah tempat mereka menginap, di mana mereka akan terbebas dari kerumunan yang telah berkumpul karena perselisihan ini, dan lebih leluasa untuk berkonsultasi tentang langkah-langkah yang perlu diambil. Pria tua itu berterima kasih kepada mereka atas keramahan mereka, yang menurutnya tidak pantas untuk ditolak, dan sementara dia menuntun, atau lebih tepatnya menyeret Nona itu, di bawah perlindungan orang Kastilia, Renaldo membebaskan kekasih itu, menawarkan bantuannya, dan menyarankannya untuk menunggu di kedai minuman untuk hasil yang memuaskan dari negosiasi mereka. Pendeta gadungan itu sangat tersentuh oleh tawaran murah hati ini, yang untuk itu ia menyampaikan ucapan terima kasih yang pantas, dan bersumpah di hadapan Tuhan bahwa ia lebih baik mati seribu kali daripada berpisah dengan Charlotte kesayangannya. Ayah Charlotte segera memasuki ruangan, dan Joshua langsung mengenalinya sebagai pedagang terkemuka di kota London, dan pedagang itu senang berada di antara kenalannya. Ia begitu bersemangat menceritakan kisah yang membawanya ke sana, sehingga ia hampir belum duduk ketika ia mulai mengeluh tentang nasib buruknya, karena memiliki anak tunggal yang begitu jahat, keras kepala, dan bandel; dan setiap kalimat diakhiri dengan celaan kepada si anak nakal. Setelah pria Yahudi itu mengizinkannya untuk melampiaskan kekesalannya, ia turut berduka atas kemalangannya, dan dengan serius menasihati gadis muda itu untuk menjauhkan kasih sayangnya dari orang yang tidak pantas itu, karena ia menduga kekasihnya adalah pria yang tidak berprinsip, atau tidak memiliki banyak harta, jika tidak, ayahnya tidak akan berteriak begitu keras terhadap perilakunya. Charlotte, yang tidak kekurangan kecantikan maupun kecerdasan, meyakinkannya bahwa karakter kekasihnya, dalam segala hal, tidak tercela, dan untuk kebenaran pernyataan itu ia meminta izin kepada ayahnya, yang dengan enggan mengakui bahwa pemuda itu adalah seorang bangsawan sejak lahir, bahwa ia telah melayaninya dengan sangat rajin dan berintegritas, dan bahwa prestasinya jauh lebih tinggi daripada kedudukannya dalam kehidupan. "Tapi kemudian," katanya, "orang itu tidak punya uang sepeser pun, dan apakah kau ingin aku memberikan putriku kepada seorang pengemis?" “Astaghfirullah!” seru orang Yahudi itu, “Saya selalu mengira Anda memiliki kekayaan yang melimpah, dan saya menyesal mendapati kenyataannya berbeda.” “Berbeda!” seru warga itu dengan sedikit ketus, “hati-hati dengan ucapan Anda, Tuan; kredibilitas pedagang tidak boleh dipermainkan.” “Maafkan saya,” jawab orang Ibrani itu, “Saya menyimpulkan bahwa keadaan Anda buruk, karena Anda keberatan dengan kemiskinan pemuda itu setelah Anda mengakui bahwa ia memiliki semua kualifikasi lain untuk membahagiakan putri Anda; karena tidak dapat dibayangkan bahwa Anda akan menghalangi keinginannya, atau berusaha membuat anak tunggal menderita karena suatu rintangan yang dapat Anda singkirkan dengan mudah. Katakanlah Anda mampu memberikan sepuluh ribu pound kepada putri Anda, yang akan memungkinkan pemuda ini untuk hidup dengan baik dan bereputasi, dan terlibat secara menguntungkan dalam perdagangan, yang menurut Anda ia sangat memenuhi syarat, maka alternatifnya adalah, apakah Anda lebih suka melihatnya dalam pelukan seorang pemuda yang pantas yang dicintainya, menikmati semua kenyamanan hidup dengan kekayaan yang cukup, yang selalu dapat Anda tingkatkan sendiri, atau terikat seumur hidup dengan seorang pria kaya yang dibencinya, mengutuk nasibnya yang buruk, dan meremehkan kekayaan yang berlebihan itu, meskipun demikian ia merasa sangat sengsara.” Pria tua itu tampak terkejut dengan pengamatan ini, yang diperkuat oleh ucapan Renaldo, bahwa ia juga akan menikmati kesenangan yang tak terkatakan dalam memberikan kebahagiaan kepada pria yang pantas, yang rasa terima kasihnya akan bekerja sama dengan cintanya, dalam membuktikan dirinya sebagai putra yang berbakti, serta suami yang penyayang. Kemudian ia menggambarkan keresahan keluarga dan tragedi suram yang dihasilkan dari perjodohan yang bersifat materialistis dan paksa seperti itu, dan, sebagai penutup, menceritakan kisah Don Diego dan putrinya, yang ketika didengar oleh pedagang itu, ia tersentak dengan tanda-tanda ketakutan di wajahnya, dan, membuka jendela, memanggil Valentine dengan sangat keras. Ini adalah nama pengagum putrinya, yang begitu mendengar panggilan itu segera berlari ke tempat asal panggilan tersebut, dan pedagang itu, tanpa basa-basi lagi, meraih tangannya, menggabungkannya dengan tangan Charlotte, sambil berkata dengan sangat takut, “Ini, ambillah dia, demi Tuhan, dan ucapkan terima kasih kepada rombongan terhormat ini atas keberuntunganmu.” Pasangan kekasih itu diliputi kegembiraan luar biasa atas keputusan mendadak yang menguntungkan mereka. Valentine, setelah mencium tangan kekasihnya dengan penuh semangat dan mengakui kemurahan hati pedagang itu, memberi hormat kepada para wanita dengan sapaan yang sangat sopan, dan dengan menunjukkan rasa terima kasih dan kepekaan yang luar biasa, berterima kasih kepada para pria, dan khususnya kepada Count, atas bantuan mereka, yang menurutnya menjadi sumber kebahagiaan yang kini dinikmatinya. Sementara Serafina dan Nyonya Clement membelai Charlotte yang ramah, anggota rombongan lainnya memberi selamat kepada pengagumnya atas pilihan dan keberhasilannya, meskipun pendeta tidak dapat menahan diri untuk menegurnya karena menodai pakaian keimaman. Valentine dengan tulus meminta maaf karena telah memberikan alasan untuk tersinggung, dan berharap dia akan dimaafkan, karena itu adalah penyamaran yang menurutnya mutlak diperlukan untuk menjalankan rencana yang sangat bergantung pada kebahagiaannya. Kemudian, atas permintaan Renaldo, dia mengungkap misteri kereta jenazah, dengan memberi mereka pengertian bahwa ayah Charlotte, setelah mengetahui perasaan mereka, telah memecat juru tulisnya, dan membawa putrinya ke sebuah rumah pedesaan di sekitar London, untuk memutus korespondensi mereka; meskipun telah mengambil tindakan pencegahan ini, mereka telah menemukan cara untuk berkomunikasi satu sama lain melalui surat, yang diurus oleh pihak ketiga; dan karena saingannya sangat gigih dalam permohonannya, mereka telah bersekongkol untuk menggunakan kereta jenazah, yang ia sediakan dan kendarai melalui jalan yang berdekatan dengan ujung taman pedagang, di mana Charlotte, setelah mengetahui rencana tersebut, menunggu kedatangannya, dan naik ke dalamnya tanpa ragu-ragu. Valentine mengira dirinya cukup terlindungi dari deteksi berkat penyamarannya, tetapi sayangnya ia bertemu dengan seorang pelayan keluarga, yang mengingat wajahnya, dan segera membunyikan alarm, yang kemudian membuat sang ayah dan teman-temannya menunggang kuda, dan mengejar mereka melalui dua jalan yang berbeda, hingga mereka berhasil disusul di tempat ini. Ia belum selesai menceritakan kisah singkat ini ketika saingannya, dengan kasar memasuki ruangan sambil menutup matanya dengan sapu tangan, menyerahkan Valentine kepada seorang polisi yang datang atas surat perintah dari hakim perdamaian di lingkungan itu, dan mengancam akan menuntut pedagang itu atas ganti rugi karena kehilangan satu matanya, yang katanya dideritanya saat bekerja. Para hadirin berusaha menenangkan warga ini dengan menyatakan bahwa kemalangan yang dialaminya hanyalah peradangan biasa, bukan karena niat jahat, tetapi sepenuhnya karena emosi sesaat seorang pemuda yang marah, yang, kebetulan, bertindak untuk membela diri. Pada saat yang sama, pedagang itu berjanji untuk memberikan ganti rugi yang wajar, yang kemudian dibalas dengan janji bahwa ia akan, dalam sepuluh hari sejak tanggal tersebut, menikahkan putrinya dengan Valentine, dengan mas kawin sebesar lima belas ribu poundsterling, atau, jika gagal, membayarnya dua kali lipat jumlah tersebut. Pedagang itu, yang kesal dengan tuntutan yang berlebihan ini, dengan tegas mengatakan kepadanya bahwa ia telah menikahkan putrinya dengan Valentine, yang menurutnya jauh lebih pantas, dan bahwa ia siap menemui hakim yang telah mengeluarkan surat perintah tersebut, untuk memberikan jaminan bagi calon menantunya. Pernyataan ini sangat memalukan bagi penggugat, meskipun ia merasa kasihan pada dirinya sendiri dengan harapan akan mendapat keuntungan dari kehilangan matanya, dan sekarang setelah rasa sakit itu berakhir, ia akan sangat menyesal jika penglihatannya pulih. Pria tua itu, Joshua, dan Renaldo menemani tahanan ke rumah hakim, di mana ia segera dibebaskan dengan jaminan. Sekembalinya mereka, Valentine mengganti pakaiannya, dan mereka makan malam bersama dengan penuh kehangatan dan kegembiraan, yang dibiayai oleh kekasih yang telah ditinggalkan itu. Setelah makan malam, Don Diego berdansa minuet dengan Madam Clement; yang pada saat itu, ia telah menaruh kasih sayang yang luar biasa padanya. Valentine mendapat kehormatan untuk berdansa dengan Serafina yang tak tertandingi, yang kecantikan dan daya tariknya memukau mata para pendatang baru, dan membuat pasangannya yang pemalu merasa kagum dan bingung; dan Melvil melamar Charlotte yang menyenangkan, yang begitu memuaskan ayahnya sehingga ia tak kuasa menahan kegembiraan dan kebanggaannya. Ia memuji Tuhan karena telah mempertemukannya dengan rombongan kami, dan meminta pendeta untuk menikahkan pasangan muda itu, setelah menetapkan hari untuk upacara tersebut, dan mengundang semua yang hadir ke pernikahan. Malam telah berlalu tanpa terasa dalam kegiatan-kegiatan ini, dan malam sudah cukup larut, para wanita pergi tanpa basa-basi; dan kepergian Serafina memenuhi dada Renaldo dengan gejolak dan emosi; darahnya mulai mengalir deras, jantungnya berdetak dengan kekuatan dan kecepatan yang berlipat ganda, sementara matanya tampak berbinar dengan kemegahan yang melebihi manusia. Kini imajinasinya mulai mengantisipasi dengan amarah antusias seorang peramal yang terinspirasi; ia seketika teralihkan dari percakapan, dan setiap sarafnya menegang hingga mencapai tingkat ketidaksabaran yang tak tertahankan, sehingga sifat manusia tidak dapat bertahan lama dalam ketegangan tersebut. Oleh karena itu, setelah menahan dorongan itu selama sekitar seperempat jam, akhirnya ia menyerah pada kegugupannya, dan, melompat dari teman-temannya, mendapati dirinya berada di lorong gelap, di ujung lorong itu ia melihat Nyonya Clement keluar dari sebuah kamar dengan sebuah lampu, yang, begitu melihatnya, ia letakkan dan menghilang dalam sekejap. Inilah bintang yang menunjuk ke surganya; ia menyambut sinyal itu, memasuki ruangan, dan, seperti singa yang menerkam mangsanya, mendekati ranjang pernikahan, di mana Serafina, dikelilingi oleh semua keanggunan kecantikan, kelembutan, perasaan, dan kebenaran, berbaring gemetar seperti korban di altar, dan berusaha menyembunyikan pipinya yang memerah dari pandangannya—pintu tertutup, lampu padam—ia mengakui bahwa nasibnya lebih dari yang dapat diklaim oleh manusia fana. Di sini izinkan saya menyingkap tabir yang pantas untuk menaungi misteri rahasia Hymen. Pergilah, para pencemooh yang tidak suci, yang menodai, dengan basa-basi yang sia-sia atau sindiran yang tidak sopan, upacara suci ini; dan biarkan para kekasih yang bahagia itu menikmati, dalam pelukan satu sama lain, kebahagiaan yang tak terkatakan, mahkota kebajikan dan keteguhan yang diperoleh dengan susah payah, yang telah melalui pemurnian yang paling ketat. Pasangan yang lebih pantas, tirai malam tak mampu menutupi kegelapannya. Pikiran tentang kebahagiaan Renaldo meredam semangat Valentine, yang melihat masa percobaannya diperpanjang beberapa hari lagi, dan tak kuasa menahan keinginan dalam hatinya untuk melakukan petualangan yang akan mempersingkat harapannya, meskipun dengan mengorbankan ketidaksenangan pria tua itu. Ia mengisi gelas besar untuk kesehatan pengantin, dan sambil mengangkat matanya dengan tanda kekaguman, berseru, “Betapa bahagianya Sang Pangeran! Sayang sekali! Lima hari lagi aku harus menahan ketidaksabaranku!” “Wajar saja, dasar nakal, bahwa orang yang lebih tinggi kedudukannya harus mendahuluimu,” kata pedagang itu, yang menegurnya dengan adil, dan menyarankannya untuk menenggelamkan ketidaksabarannya dengan anggur merah yang enak. Pemuda itu mengikuti sarannya, dan sudah larut malam sebelum rombongan beristirahat. Namun, warga ini memutuskan untuk memanfaatkan kesempatan untuk menyambut pasangan pengantin baru itu, sesuai dengan kebiasaan, dan dengan tujuan itu mereka bangun pagi-pagi sekali, dengan harapan menemukan mereka masih tidur; tetapi mereka sangat terkejut ketika memasuki ruang sarapan dan melihat Renaldo, dan teman tidurnya yang ramah, sudah berpakaian, dan menunggu untuk melakukan kehormatan rumah. Pria tua itu ingin sekali melontarkan lelucon tentang kecepatan luar biasa mereka, tetapi ia begitu terintimidasi oleh martabat dan dijinakkan oleh kelembutan sikap Serafina, sehingga ia tidak berani mengungkapkan pikirannya; dan Valentine berdiri diam dan malu, seolah-olah berada di hadapan makhluk yang lebih tinggi. Setelah sarapan, para pria ini dan Charlotte sekali lagi menyatakan rasa terima kasih mereka kepada keluarga bahagia ini, mengulangi undangan mereka, dan, berpamitan, kembali ke London dengan kereta yang disediakan untuk semalaman. Setelah teman-teman kita ditinggal berdua saja, Don Diego menoleh ke arah Melvil: “Sekarang,” katanya, “karena aku telah mengalah pada ketidaksabaran cintamu, serta pada keinginanku sendiri untuk membahagiakanmu, aku harus meminta izin untuk sedikit mengganggu aliran kebahagiaan kalian berdua, dan mengusulkan perjalanan yang menyedihkan, yang bagaimanapun juga tidak akan sepenuhnya tanpa kenikmatan. Aku telah terlalu lama menunda pelaksanaan tugasku di makam Antonia—mari kita habiskan pagi ini dalam ziarah suci itu—aku akan meneteskan beberapa air mata untuk mengenang wanita yang luar biasa itu, dan teman-temanku tidak akan pernah lagi terganggu dengan kesedihanku.” Setelah usulan itu disetujui secara universal, mereka berangkat ke tempat itu, yang sering dikunjungi oleh Serafina yang lembut, yang mengantar ayahnya ke sebuah batu marmer hitam, yang telah diperintahkan Renaldo untuk diletakkan di atas makam; dan, saat ia berlutut untuk mencium monumen itu, ia melihat tulisan sederhana ini dalam bahasa Spanyol:—Antonia de Zelos primera en todo lo que es ser bueno, y sin segundo en todo lo que fue ser desdichado, quedad con Dios! yaitu, Antonia de Zelos, tak tertandingi dalam kebajikan, dan tak ada duanya dalam kemalangan, selamat tinggal! “Wahai catatan yang setia!” "Seru orang Kastilia itu, sambil memukul dadanya, sementara air matanya menetes di atas marmer, "Kebaikanmu adalah anugerah Surga, tetapi kemalanganmu berasal dari kesalahan Don Diego; namun kesedihannya akan menebus pelanggarannya, dan pertobatannya akan mendapat rahmat di hadapan Surga! Beristirahatlah, beristirahatlah, wahai kebajikan yang bernasib buruk!—kedamaian abadi akan menjaga makammu, dan para malaikat akan melayani arwahmu yang tak ternoda; abumu pun tak akan terpendam dalam kegelapan, di sini aku akan mendirikan monumen yang lebih sesuai dengan keunggulan dan namamu." Serafina luluh dengan kelembutan seorang anak; yang lain pun tak acuh melihat pemandangan yang mengharukan ini, yang tidak ditinggalkan Don Diego tanpa rasa enggan.</p>
 

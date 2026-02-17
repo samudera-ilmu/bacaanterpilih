@@ -5,39 +5,176 @@
 <title>BAB LXX.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB LXX. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB LXX.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Perbuatan baik kita masih tetap bersama kita dari jauh, dan siapa kita di masa lalu membentuk siapa kita sekarang.” Tujuan pertama Bulstrode setelah Lydgate meninggalkan Stone Court adalah memeriksa saku Raffles, yang menurut dugaannya pasti berisi tanda berupa tagihan hotel dari tempat-tempat yang pernah ia singgahi, jika ia tidak mengatakan yang sebenarnya bahwa ia datang langsung dari Liverpool karena sakit dan tidak punya uang. Ada berbagai tagihan yang dijejalkan ke dalam dompetnya, tetapi tidak ada yang bertanggal setelah Natal di tempat lain, kecuali satu, yang bertanggal pagi itu. Tagihan ini kusut bersama selebaran tentang pekan raya kuda di salah satu saku belakangnya, dan mewakili biaya menginap tiga hari di sebuah penginapan di Bilkley, tempat pekan raya itu diadakan—sebuah kota yang berjarak setidaknya empat puluh mil dari Middlemarch. Tagihan itu berat, dan karena Raffles tidak membawa barang bawaan, tampaknya ia telah meninggalkan kopernya sebagai pembayaran, untuk menghemat uang untuk ongkos perjalanannya; karena dompetnya kosong, dan dia hanya memiliki beberapa koin enam pence dan beberapa koin satu pence di sakunya. Bulstrode merasa aman dari indikasi-indikasi ini bahwa Raffles benar-benar menjaga jarak dari Middlemarch sejak kunjungannya yang berkesan pada Natal. Jauh di sana dan di antara orang-orang yang asing bagi Bulstrode, kepuasan apa yang bisa didapat Raffles dari kebiasaannya yang menyiksa diri sendiri dan suka membesar-besarkan diri sendiri dengan menceritakan kisah-kisah skandal lama tentang seorang bankir Middlemarch? Dan apa salahnya jika dia berbicara? Poin utama sekarang adalah mengawasinya selama masih ada bahaya mengoceh tanpa arti, dorongan yang tak dapat dijelaskan untuk bercerita, yang tampaknya telah terjadi pada Caleb Garth; dan Bulstrode merasa sangat cemas jangan-jangan dorongan semacam itu akan menghampirinya saat melihat Lydgate. Dia duduk sendirian bersamanya sepanjang malam, hanya memerintahkan pengurus rumah tangga untuk berbaring dengan pakaiannya, agar siap ketika dia memanggilnya, dengan alasan ketidaknyamanannya sendiri untuk tidur, dan kecemasannya untuk melaksanakan perintah dokter. Ia memang melaksanakannya dengan setia, meskipun Raffles terus-menerus meminta brendi, dan menyatakan bahwa ia semakin lemah—bahwa bumi seolah runtuh di bawahnya. Ia gelisah dan tidak bisa tidur, tetapi masih gemetar dan bisa dikendalikan. Ketika Lydgate menawarkan makanan yang ia pesan, yang ia tolak, dan menolak permintaannya yang lain, ia tampak memusatkan seluruh ketakutannya pada Bulstrode, memohon dengan sedih untuk mengurangi amarahnya, balas dendamnya dengan kelaparan, dan menyatakan dengan sumpah yang kuat bahwa ia tidak pernah mengatakan sepatah kata pun yang menentangnya kepada siapa pun. Bahkan hal ini pun Bulstrode merasa bahwa ia tidak ingin Lydgate mendengarnya; tetapi tanda yang lebih mengkhawatirkan dari perubahan suasana hatinya yang tiba-tiba adalah, di pagi hari saat senja, Raffles tiba-tiba tampak membayangkan seorang dokter hadir, berbicara kepadanya dan menyatakan bahwa Bulstrode ingin membuatnya mati kelaparan sebagai balas dendam karena telah membocorkan rahasia, padahal ia tidak pernah membocorkan rahasia tersebut. Keberanian dan tekad kuat Bulstrode yang alami sangat membantunya. Pria yang tampak lemah lembut ini, yang sendiri gelisah, menemukan rangsangan yang dibutuhkan dalam keadaan sulitnya, dan sepanjang malam dan pagi yang sulit itu, sementara ia tampak seperti mayat hidup yang kembali bergerak tanpa kehangatan, memegang kendali dengan ketenangannya yang dingin, pikirannya bekerja keras memikirkan apa yang harus ia waspadai dan apa yang akan memberinya keamanan. Doa apa pun yang mungkin ia panjatkan, pernyataan apa pun yang mungkin ia ucapkan dalam hati tentang kondisi spiritual pria ini yang menyedihkan, dan kewajiban yang harus ia pikul untuk menerima hukuman yang telah ditetapkan Tuhan baginya daripada mengharapkan kejahatan bagi orang lain—melalui semua upaya untuk memadatkan kata-kata menjadi keadaan mental yang solid, muncul dan menyebar dengan sangat jelas gambaran peristiwa yang diinginkannya. Dan dalam rangkaian gambaran itu datanglah permintaan maaf mereka. Ia tidak dapat tidak melihat kematian Raffles, dan melihat di dalamnya pembebasannya sendiri. Apa arti dari penyingkiran makhluk malang ini? Ia tidak menyesal—tetapi bukankah penjahat publik juga tidak menyesal?—namun hukum yang menentukan nasib mereka. Jika takdir dalam kasus ini menjatuhkan hukuman mati, tidak ada dosa dalam mempertimbangkan kematian sebagai hasil yang diinginkan—jika ia menahan diri untuk tidak mempercepatnya—jika ia dengan cermat melakukan apa yang telah ditentukan. Bahkan di sini mungkin ada kesalahan: resep manusia adalah hal yang dapat salah: Lydgate mengatakan bahwa pengobatan telah mempercepat kematian,—mengapa tidak metode pengobatannya sendiri? Tetapi tentu saja niat adalah segalanya dalam pertanyaan tentang benar dan salah. Dan Bulstrode berusaha memisahkan niatnya dari keinginannya. Dalam hatinya, ia menyatakan bahwa ia bermaksud untuk mematuhi perintah. Mengapa ia harus berdebat tentang keabsahan perintah-perintah tersebut? Itu hanyalah tipuan umum dari keinginan—yang memanfaatkan skeptisisme yang tidak relevan, menemukan ruang yang lebih besar bagi dirinya sendiri dalam semua ketidakpastian tentang akibat, dalam setiap ketidakjelasan yang tampak seperti ketiadaan hukum. Namun demikian, ia tetap mematuhi perintah tersebut. Kecemasannya terus-menerus tertuju pada Lydgate, dan ingatannya tentang apa yang terjadi di antara mereka pagi sebelumnya disertai dengan kepekaan yang sama sekali tidak muncul selama kejadian sebenarnya. Saat itu, ia tidak terlalu peduli dengan kesan menyakitkan Lydgate mengenai perubahan yang diusulkan di Rumah Sakit, atau tentang sikapnya terhadap dirinya sendiri yang mungkin timbul akibat penolakannya yang dianggap dapat dibenarkan atas permintaan yang agak berlebihan. Ia kembali mengingat kejadian itu sekarang dengan kesadaran bahwa ia mungkin telah menjadikan Lydgate musuhnya, dan dengan keinginan yang terbangun untuk menenangkannya, atau lebih tepatnya untuk menciptakan rasa tanggung jawab pribadi yang kuat dalam dirinya. Ia menyesal karena tidak segera memberikan pengorbanan uang, bahkan yang tidak masuk akal sekalipun. Karena jika ada kecurigaan yang tidak menyenangkan, atau bahkan pengetahuan yang didapat dari ocehan Raffles, Bulstrode akan merasa bahwa ia memiliki pembelaan di benak Lydgate dengan memberikan manfaat yang sangat besar kepadanya. Tetapi penyesalan itu mungkin datang terlambat. Konflik yang aneh dan menyedihkan dalam jiwa pria malang ini, yang selama bertahun-tahun mendambakan menjadi lebih baik dari dirinya—yang telah mendisiplinkan nafsu egoisnya dan mengenakannya jubah yang keras, sehingga ia berjalan bersama nafsu-nafsu itu seperti paduan suara yang khusyuk, hingga kini rasa takut telah muncul di antara mereka, dan mereka tidak dapat lagi bernyanyi, tetapi meneriakkan seruan bersama mereka untuk keselamatan. Hampir tengah hari sebelum Lydgate tiba: ia bermaksud datang lebih awal, tetapi tertahan, katanya; dan raut wajahnya yang lesu diperhatikan oleh Balstrode. Namun, ia segera memusatkan perhatiannya pada pasien, dan menanyakan dengan saksama semua yang telah terjadi. Kondisi Raffles memburuk, hampir tidak mau makan, terus-menerus terjaga dan mengoceh tanpa henti; tetapi masih belum melakukan kekerasan. Bertentangan dengan harapan Bulstrode yang khawatir, ia tidak terlalu memperhatikan kehadiran Lydgate, dan terus berbicara atau bergumam tidak jelas. “Bagaimana pendapatmu tentang dia?” tanya Bulstrode, secara pribadi. “Gejalanya semakin parah.” “Anda kurang berharap?” “Tidak; aku masih berpikir dia mungkin akan berubah pikiran. Apakah kau sendiri akan tetap di sini?” kata Lydgate, menatap Bulstrode dengan pertanyaan tiba-tiba, yang membuat Bulstrode merasa tidak nyaman, meskipun sebenarnya bukan karena dugaan yang mencurigakan. “Ya, saya rasa begitu,” kata Bulstrode, mengendalikan diri dan berbicara dengan penuh pertimbangan. “Nyonya Bulstrode telah diberitahu tentang alasan mengapa saya menahan diri. Nyonya Abel dan suaminya tidak cukup berpengalaman untuk dibiarkan sendirian, dan tanggung jawab semacam ini hampir tidak termasuk dalam tugas mereka. Saya kira Anda memiliki beberapa instruksi baru.” Instruksi baru utama yang harus diberikan Lydgate adalah tentang pemberian dosis opium yang sangat moderat, jika insomnia berlanjut setelah beberapa jam. Ia telah mengambil tindakan pencegahan dengan membawa opium di sakunya, dan ia memberikan arahan terperinci kepada Bulstrode mengenai dosis dan titik di mana pemberiannya harus dihentikan. Ia menekankan risiko tidak menghentikan pemberian opium; dan mengulangi perintahnya agar tidak diberikan alkohol. “Dari apa yang saya lihat dari kasus ini,” pungkasnya, “narkotisme adalah satu-satunya hal yang sangat saya takuti. Dia mungkin akan kelelahan meskipun tanpa banyak makanan. Dia memiliki kekuatan yang cukup besar.” “Anda sendiri tampak sakit, Tuan Lydgate—suatu hal yang sangat tidak biasa, bahkan bisa dibilang belum pernah terjadi sebelumnya sepengetahuan saya tentang Anda,” kata Bulstrode, menunjukkan kepedulian yang sangat berbeda dengan ketidakpeduliannya sehari sebelumnya, sebagaimana sikap cerobohnya saat ini tentang kelelahannya sendiri sangat berbeda dengan kecemasan yang biasa ia tunjukkan. “Saya khawatir Anda sedang mengalami kelelahan.” “Ya, benar,” kata Lydgate dengan kasar, sambil memegang topinya, dan siap untuk pergi. “Sepertinya ini sesuatu yang baru,” kata Bulstrode dengan nada bertanya. “Silakan duduk.” “Tidak, terima kasih,” kata Lydgate dengan sedikit angkuh. “Kemarin saya sudah menceritakan keadaan saya. Tidak ada yang perlu ditambahkan, kecuali bahwa eksekusi telah benar-benar dilakukan di rumah saya. Kita bisa menceritakan banyak masalah dalam satu kalimat singkat. Selamat pagi.” “Tunggu, Tuan Lydgate, tunggu,” kata Bulstrode; “Saya telah mempertimbangkan kembali masalah ini. Kemarin saya terkejut, dan hanya melihatnya secara sepintas. Nyonya Bulstrode cemas akan keponakannya, dan saya sendiri akan berduka atas perubahan buruk dalam posisi Anda. Tuntutan terhadap saya banyak, tetapi setelah mempertimbangkan kembali, saya rasa lebih tepat jika saya menanggung sedikit pengorbanan daripada membiarkan Anda tanpa bantuan. Saya rasa Anda mengatakan bahwa seribu pound akan cukup untuk membebaskan Anda dari beban Anda, dan memungkinkan Anda untuk mendapatkan kembali posisi yang kokoh?” “Ya,” kata Lydgate, dengan luapan kegembiraan yang luar biasa di dalam dirinya, mengalahkan semua perasaan lainnya; “itu akan melunasi semua utang saya, dan menyisakan sedikit uang. Saya bisa mulai berhemat dalam cara hidup kami. Dan lambat laun praktik saya mungkin akan membaik.” “Jika Anda bersedia menunggu sebentar, Tuan Lydgate, saya akan membuat cek senilai jumlah tersebut. Saya menyadari bahwa bantuan, agar efektif dalam kasus-kasus ini, harus menyeluruh.” Saat Bulstrode menulis, Lydgate menoleh ke jendela sambil memikirkan rumahnya—memikirkan hidupnya yang dimulai dengan baik dan terhindar dari kekecewaan, serta tujuan-tujuan baiknya yang masih utuh. “Anda bisa memberi saya surat pernyataan untuk ini, Tuan Lydgate,” kata bankir itu sambil mendekatinya dengan cek tersebut. “Dan lambat laun, saya harap, Anda akan berada dalam keadaan yang memungkinkan untuk secara bertahap membayar saya kembali. Sementara itu, saya senang membayangkan bahwa Anda akan terbebas dari kesulitan lebih lanjut.” “Saya sangat berterima kasih kepada Anda,” kata Lydgate. “Anda telah mengembalikan kepada saya prospek untuk bekerja dengan sedikit kebahagiaan dan beberapa peluang yang baik.” Baginya, tampaknya sangat wajar jika Bulstrode mempertimbangkan kembali penolakannya: hal itu sesuai dengan sisi karakternya yang lebih murah hati. Tetapi ketika ia memacu kudanya agar bisa segera pulang, memberi tahu kabar baik kepada Rosamond, dan mengambil uang tunai di bank untuk dibayarkan kepada agen Dover, terlintas dalam pikirannya, dengan kesan yang tidak menyenangkan, seolah-olah dari bayangan gelap pertanda buruk yang melintas di pandangannya, pikiran tentang kontras dalam dirinya yang telah muncul beberapa bulan lalu—bahwa ia seharusnya sangat gembira karena memiliki kewajiban pribadi yang besar—bahwa ia seharusnya sangat gembira karena mendapatkan uang untuk dirinya sendiri dari Bulstrode. Bankir itu merasa telah melakukan sesuatu untuk meniadakan salah satu penyebab kegelisahannya, namun ia sendiri hampir tidak merasa lebih tenang. Ia tidak mengukur seberapa besar motif jahat yang membuatnya menginginkan kebaikan Lydgate, tetapi jumlahnya tetap ada secara aktif, seperti zat pengiritasi dalam darahnya. Seseorang bersumpah, namun tidak mau membuang cara untuk melanggar sumpahnya. Apakah ia benar-benar bermaksud untuk melanggarnya? Sama sekali tidak; tetapi keinginan yang cenderung untuk melanggarnya bekerja samar-samar dalam dirinya, dan masuk ke dalam imajinasinya, dan mengendurkan otot-ototnya tepat pada saat ia mengulang-ulang alasan sumpahnya. Raffles, pulih dengan cepat, kembali menggunakan kekuatan jahatnya secara bebas—bagaimana mungkin Bulstrode menginginkan hal itu? Kematian Raffles adalah gambaran yang membawa kelegaan, dan secara tidak langsung ia berdoa untuk jalan kelegaan itu, memohon agar, jika memungkinkan, sisa hidupnya di dunia ini dapat terbebas dari ancaman kehinaan yang akan menghancurkannya sepenuhnya sebagai alat pelayanan Tuhan. Pendapat Lydgate tidak mendukung janji bahwa doa ini akan terpenuhi; dan seiring berjalannya hari, Bulstrode merasa dirinya semakin jengkel dengan kehidupan yang terus-menerus ada pada pria ini, yang ingin sekali ia lihat tenggelam dalam keheningan kematian: kehendak yang angkuh membangkitkan dorongan membunuh terhadap kehidupan yang kasar ini, yang mana kehendak itu sendiri tidak memiliki kekuatan. Ia berkata dalam hati bahwa ia semakin lelah; ia tidak akan menemani pasien malam ini, tetapi akan menyerahkannya kepada Ny. Abel, yang, jika perlu, dapat memanggil suaminya. Pukul enam, Raffles, yang hanya tidur sebentar-sebentar dan terganggu, lalu terbangun dengan kegelisahan baru dan teriakan terus-menerus bahwa ia akan pingsan, Bulstrode mulai memberikan opium sesuai petunjuk Lydgate. Setelah setengah jam atau lebih, ia memanggil Ny. Abel dan mengatakan bahwa ia merasa tidak mampu lagi berjaga. Ia harus menyerahkan pasien kepada perawatannya; dan ia melanjutkan untuk mengulangi petunjuk Lydgate mengenai jumlah setiap dosis. Ny. Abel sebelumnya tidak mengetahui resep Lydgate; ia hanya menyiapkan dan membawa apa pun yang diperintahkan Bulstrode, dan melakukan apa yang ditunjukkannya. Ia mulai bertanya apa lagi yang harus ia lakukan selain memberikan opium. “Saat ini tidak ada apa-apa, kecuali tawaran sup atau air soda: Anda bisa datang kepada saya untuk petunjuk lebih lanjut. Kecuali ada perubahan penting, saya tidak akan masuk ke ruangan ini lagi malam ini. Anda bisa meminta bantuan suami Anda jika perlu. Saya harus tidur lebih awal.” “Anda sangat membutuhkannya, Tuan, saya yakin,” kata Nyonya Abel, “dan perlu mengonsumsi sesuatu yang lebih menguatkan daripada yang telah Anda lakukan.” Bulstrode pergi tanpa cemas memikirkan apa yang mungkin dikatakan Raffles dalam ocehannya, yang telah berubah menjadi gumaman tak koheren yang sepertinya tidak akan menimbulkan keyakinan berbahaya. Bagaimanapun, ia harus mengambil risiko ini. Ia turun ke ruang tamu berpanel kayu terlebih dahulu, dan mulai mempertimbangkan apakah ia tidak akan memasang pelana kudanya dan pulang di bawah sinar bulan, dan berhenti mempedulikan konsekuensi duniawi. Kemudian, ia berharap telah meminta Lydgate untuk datang lagi malam itu. Mungkin ia bisa menyampaikan pendapat yang berbeda, dan berpikir bahwa Raffles semakin memburuk. Haruskah ia memanggil Lydgate? Jika Raffles benar-benar memburuk, dan perlahan sekarat, Bulstrode merasa bahwa ia bisa pergi tidur dan beristirahat dengan rasa syukur kepada Tuhan. Tetapi apakah kondisinya memburuk? Lydgate mungkin datang dan hanya mengatakan bahwa kondisinya seperti yang ia harapkan, dan meramalkan bahwa ia akan segera tertidur lelap dan sembuh. Apa gunanya memanggilnya? Bulstrode menghindari kemungkinan itu. Tidak ada ide atau pendapat yang dapat menghalanginya untuk melihat satu kemungkinan yang paling mungkin, yaitu Raffles yang pulih akan tetap menjadi orang yang sama seperti sebelumnya, dengan kekuatannya sebagai penyiksa yang diperbarui, memaksanya untuk menyeret istrinya pergi agar menghabiskan tahun-tahunnya terpisah dari teman-teman dan tempat asalnya, membawa kecurigaan yang mengasingkan terhadapnya di dalam hatinya. Ia telah duduk selama satu setengah jam dalam pergumulan ini hanya di bawah cahaya perapian, ketika sebuah pikiran tiba-tiba membuatnya bangkit dan menyalakan lilin tempat tidur yang dibawanya. Pikiran itu adalah, ia belum memberi tahu Nyonya Abel kapan dosis opium harus dihentikan. Ia memegang tempat lilin, tetapi berdiri tanpa bergerak untuk waktu yang lama. Ia mungkin sudah memberinya lebih dari yang diresepkan Lydgate. Tetapi itu bisa dimaafkan, karena ia lupa sebagian dari perintah tersebut, dalam kondisinya yang lelah saat ini. Ia berjalan ke atas, lilin di tangan, tidak tahu apakah ia harus langsung masuk ke kamarnya sendiri dan pergi tidur, atau berbalik ke kamar pasien dan memperbaiki kelalaiannya. Ia berhenti di lorong, dengan wajah menghadap ke kamar Raffles, dan ia bisa mendengar Raffles mengerang dan bergumam. Saat itu Raffles belum tidur. Siapa yang tahu bahwa resep Lydgate tidak akan lebih baik diabaikan daripada diikuti, karena Raffles masih belum bisa tidur? Ia masuk ke kamarnya sendiri. Sebelum ia sempat melepas pakaiannya, Nyonya Abel mengetuk pintu; ia membukanya sedikit, agar ia bisa mendengar suara istrinya yang pelan. “Jika Anda berkenan, Tuan, apakah saya tidak punya brendi atau apa pun untuk diberikan kepada makhluk malang itu? Dia merasa semakin lemah, dan dia tidak mau menelan apa pun—itupun hanya sedikit kekuatannya—hanya opium. Dan dia semakin sering mengatakan bahwa dia semakin tenggelam ke dalam bumi.” Yang mengejutkannya, Tuan Bulstrode tidak menjawab. Ada pergolakan yang terjadi di dalam dirinya. “Kurasa dia harus mati karena kekurangan nafkah, jika dia terus seperti itu. Ketika saya merawat majikan saya yang malang, Tuan Robisson, saya harus memberinya anggur port dan brendi terus-menerus, dan segelas besar setiap kali,” tambah Nyonya Abel, dengan sedikit nada teguran dalam suaranya. Namun lagi-lagi Tuan Bulstrode tidak langsung menjawab, dan dia melanjutkan, “Ini bukan waktu yang tepat untuk disia-siakan ketika orang-orang berada di ambang kematian, dan Anda pun tentu tidak menginginkannya, Tuan. Kalau tidak, saya akan memberinya sebotol rum milik kami yang biasa kami simpan. Tetapi dengan kondisi Anda yang selalu siaga dan melakukan segala yang Anda mampu—” Di sini sebuah kunci diselipkan melalui celah pintu yang sempit, dan Tuan Bulstrode berkata dengan suara serak, “Itu adalah kunci lemari pendingin anggur. Anda akan menemukan banyak brendi di sana.” Pagi-pagi sekali—sekitar pukul enam—Tuan Bulstrode bangun dan meluangkan waktu untuk berdoa. Apakah ada yang beranggapan bahwa doa pribadi selalu jujur—selalu menyentuh akar tindakan? Doa pribadi adalah ucapan yang tak terdengar, dan ucapan bersifat representatif: siapa yang dapat mewakili dirinya sendiri sebagaimana adanya, bahkan dalam refleksinya sendiri? Bulstrode belum mampu menguraikan dalam pikirannya dorongan-dorongan yang membingungkan selama dua puluh empat jam terakhir. Ia mendengarkan di lorong, dan dapat mendengar napas tersengal-sengal. Kemudian ia berjalan keluar ke taman, dan melihat embun beku awal di rumput dan dedaunan musim semi yang segar. Ketika ia kembali masuk ke rumah, ia merasa terkejut melihat Nyonya Abel. “Bagaimana keadaan pasien Anda—kurasa dia sedang tidur?” katanya, dengan nada yang berusaha terdengar ceria. “Dia sudah tenggelam sangat dalam, Pak,” kata Nyonya Abel. “Dia perlahan-lahan melemah antara pukul tiga dan empat. Maukah Anda pergi dan melihatnya? Saya pikir tidak ada salahnya meninggalkannya. Suami saya sedang pergi ke ladang, dan gadis kecil itu sedang mengurus ketel.” Bulstrode naik ke atas. Sekilas ia tahu bahwa Raffles tidak berada dalam tidur yang membawa kebangkitan, tetapi dalam tidur yang semakin menjerumuskannya ke dalam jurang kematian. Dia melihat sekeliling ruangan dan melihat sebotol brendi di dalamnya, dan botol opium yang hampir kosong. Dia menyembunyikan botol itu, dan membawa botol brendi ke bawah bersamanya, lalu menguncinya kembali di lemari pendingin anggur. Saat sarapan, ia mempertimbangkan apakah ia harus segera berkuda ke Middlemarch, atau menunggu kedatangan Lydgate. Ia memutuskan untuk menunggu, dan memberi tahu Nyonya Abel bahwa ia boleh melanjutkan pekerjaannya—ia bisa berjaga di kamar tidur. Saat ia duduk di sana dan menyaksikan musuh kedamaiannya terdiam tanpa bisa diubah lagi, ia merasa lebih tenang daripada yang ia rasakan selama berbulan-bulan. Hati nuraninya ditenangkan oleh selubung kerahasiaan, yang saat itu terasa seperti malaikat yang dikirim untuk menolongnya. Ia mengeluarkan buku sakunya untuk meninjau berbagai catatan di sana mengenai pengaturan yang telah ia rencanakan dan sebagian telah ia laksanakan dalam prospek meninggalkan Middlemarch, dan mempertimbangkan sejauh mana ia akan membiarkannya tetap berlaku atau menariknya kembali, sekarang karena ketidakhadirannya akan singkat. Beberapa penghematan yang menurutnya perlu mungkin masih menemukan kesempatan yang tepat dalam penarikan sementara dirinya dari manajemen, dan ia masih berharap Nyonya Casaubon akan mengambil bagian besar dalam biaya Rumah Sakit. Dengan cara itu, saat-saat berlalu, sampai perubahan dalam pernapasan tersengal-sengal cukup mencolok untuk menarik perhatiannya sepenuhnya ke tempat tidur, dan memaksanya untuk memikirkan kehidupan yang akan datang, yang pernah tunduk pada kehidupannya sendiri—yang pernah ia senangi karena cukup hina untuk ia jalani sesuka hatinya. Kegembiraannya saat itu yang mendorongnya sekarang untuk bergembira karena hidupnya telah berakhir. Dan siapa yang bisa mengatakan bahwa kematian Raffles dipercepat? Siapa yang tahu apa yang bisa menyelamatkannya? Lydgate tiba pukul setengah sebelas, tepat waktu untuk menyaksikan hembusan napas terakhir. Ketika ia memasuki ruangan, Bulstrode memperhatikan ekspresi tiba-tiba di wajahnya, yang bukan berupa keterkejutan melainkan pengakuan bahwa ia telah melakukan kesalahan. Ia berdiri di samping tempat tidur dalam diam untuk beberapa waktu, dengan matanya tertuju pada pria yang sekarat itu, tetapi dengan ekspresi tenang yang menunjukkan bahwa ia sedang berdebat dalam hatinya. “Kapan perubahan ini dimulai?” tanyanya sambil menatap Bulstrode. “Aku tidak menjaganya semalam,” kata Bulstrode. “Aku terlalu lelah, dan meninggalkannya di bawah pengawasan Nyonya Abel. Dia bilang dia tertidur antara pukul tiga dan empat. Ketika aku pulang sebelum pukul delapan, kondisinya hampir seperti ini.” Lydgate tidak mengajukan pertanyaan lain, tetapi mengamati dalam diam sampai dia berkata, "Semuanya sudah berakhir." Pagi ini Lydgate berada dalam keadaan penuh harapan dan kebebasan yang pulih. Ia memulai pekerjaannya dengan semangat lamanya, dan merasa cukup kuat untuk menanggung semua kekurangan kehidupan pernikahannya. Dan ia sadar bahwa Bulstrode telah menjadi dermawan baginya. Namun ia merasa gelisah tentang kasus ini. Ia tidak menyangka akan berakhir seperti ini. Namun ia hampir tidak tahu bagaimana mengajukan pertanyaan tentang hal ini kepada Bulstrode tanpa terkesan menghinanya; dan jika ia memeriksa pengurus rumah tangga—ya, pria itu sudah meninggal. Tampaknya tidak ada gunanya menyiratkan bahwa ketidaktahuan atau kecerobohan seseorang telah membunuhnya. Dan lagipula, ia sendiri mungkin salah. Ia dan Bulstrode kembali ke Middlemarch bersama-sama, membicarakan banyak hal—terutama kolera dan peluang RUU Reformasi di House of Lords, serta tekad kuat dari Serikat Politik. Tidak ada yang dibicarakan tentang Raffles, kecuali Bulstrode menyebutkan perlunya membuat makam untuknya di halaman gereja Lowick, dan mengamati bahwa, sejauh yang ia ketahui, pria malang itu tidak memiliki koneksi, kecuali Rigg, yang menurutnya tidak bersahabat dengannya. Sekembalinya ke rumah, Lydgate dikunjungi oleh Tuan Farebrother. Pendeta itu tidak berada di kota sehari sebelumnya, tetapi berita tentang eksekusi di rumah Lydgate telah sampai ke Lowick pada malam harinya, setelah dibawa oleh Tuan Spicer, tukang sepatu dan juru tulis paroki, yang mendapatkannya dari saudaranya, tukang pasang lonceng terhormat di Lowick Gate. Sejak malam itu ketika Lydgate turun dari ruang biliar bersama Fred Vincy, pikiran Tuan Farebrother tentangnya agak suram. Bermain di Green Dragon sekali atau lebih mungkin hal sepele bagi orang lain; tetapi bagi Lydgate itu adalah salah satu dari beberapa tanda bahwa ia mulai berbeda dari dirinya yang dulu. Ia mulai melakukan hal-hal yang sebelumnya bahkan sangat ia benci. Terlepas dari ketidakpuasan tertentu dalam pernikahan, yang telah diisyaratkan oleh beberapa desas-desus konyol, yang mungkin ada hubungannya dengan perubahan ini, Tuan Farebrother yakin bahwa hal itu terutama terkait dengan hutang-hutang yang semakin jelas dilaporkan, dan ia mulai khawatir bahwa anggapan bahwa Lydgate memiliki sumber daya atau teman di belakangnya pastilah ilusi belaka. Penolakan yang ia terima dalam upaya pertamanya untuk memenangkan kepercayaan Lydgate, membuatnya enggan untuk mencoba lagi; tetapi berita tentang eksekusi yang benar-benar terjadi di rumah itu, membuat Pendeta itu bertekad untuk mengatasi keengganannya. Lydgate baru saja memulangkan seorang pasien miskin yang sangat ia sayangi, dan ia maju untuk mengulurkan tangannya—dengan keceriaan yang mengejutkan Tuan Farebrother. Mungkinkah ini juga merupakan penolakan yang angkuh terhadap simpati dan bantuan? Tidak masalah; simpati dan bantuan harus diberikan. “Apa kabar, Lydgate? Aku datang menemuimu karena aku mendengar sesuatu yang membuatku khawatir tentangmu,” kata Vikaris, dengan nada seorang saudara yang baik, hanya saja tidak ada celaan di dalamnya. Mereka berdua sudah duduk saat itu, dan Lydgate langsung menjawab— “Kurasa aku mengerti maksudmu. Kau dengar ada eksekusi di rumah itu?” “Ya; benarkah?” “Memang benar,” kata Lydgate dengan nada bebas, seolah-olah dia tidak keberatan membicarakan masalah itu sekarang. “Tapi bahayanya sudah berlalu; utangnya sudah lunas. Saya sudah terbebas dari kesulitan sekarang: saya akan bebas dari utang, dan semoga bisa memulai kembali dengan rencana yang lebih baik.” “Saya sangat bersyukur mendengarnya,” kata Vikaris, sambil bersandar di kursinya, dan berbicara dengan nada rendah dan cepat yang sering muncul setelah beban berat terangkat. “Saya lebih menyukai ini daripada semua berita di 'Times'. Saya akui, saya datang kepada Anda dengan hati yang berat.” “Terima kasih atas kedatangan Anda,” kata Lydgate dengan ramah. “Saya dapat menikmati kebaikan ini lebih lagi karena saya lebih bahagia. Saya memang sangat terpukul. Saya khawatir memar-memar ini masih akan terasa sakit nanti,” tambahnya, sambil tersenyum agak sedih; “tetapi saat ini saya hanya bisa merasa bahwa siksaan itu telah berakhir.” Tuan Farebrother terdiam sejenak, lalu berkata dengan sungguh-sungguh, “Sahabatku, izinkan saya mengajukan satu pertanyaan. Maafkan saya jika saya lancang.” “Saya rasa Anda tidak akan menanyakan sesuatu yang bisa menyinggung perasaan saya.” “Lalu—ini perlu untuk menenangkan hatiku—kamu tidak—bukan?—untuk membayar utangmu, malah menambah utang lain yang mungkin akan lebih menyusahkanmu di kemudian hari?” “Tidak,” kata Lydgate, sedikit memerah. “Tidak ada alasan mengapa saya tidak boleh memberi tahu Anda—karena memang begitulah kenyataannya—bahwa orang yang kepadanya saya berhutang adalah Bulstrode. Dia telah memberi saya uang muka yang sangat besar—seribu pound—dan dia mampu menunggu pembayaran kembali.” “Wah, itu murah hati,” kata Tuan Farebrother, memaksakan diri untuk menyetujui pria yang tidak disukainya. Perasaannya yang halus menghindar bahkan dari memikirkan fakta bahwa ia selalu mendesak Lydgate untuk menghindari keterlibatan pribadi dengan Bulstrode. Ia segera menambahkan, “Dan Bulstrode tentu saja merasa tertarik pada kesejahteraan Anda, setelah Anda bekerja dengannya dengan cara yang mungkin mengurangi penghasilan Anda alih-alih menambahkannya. Saya senang berpikir bahwa ia telah bertindak sesuai dengan itu.” Lydgate merasa tidak nyaman dengan anggapan-anggapan baik hati itu. Hal itu semakin memperjelas dalam dirinya kesadaran gelisah yang baru muncul beberapa jam sebelumnya, bahwa motif Bulstrode atas kemurahan hatinya yang tiba-tiba setelah ketidakpedulian yang sangat dingin mungkin semata-mata egois. Dia membiarkan anggapan-anggapan baik hati itu berlalu. Dia tidak dapat menceritakan sejarah pinjaman itu, tetapi hal itu hadir lebih jelas dalam ingatannya daripada sebelumnya, begitu pula fakta yang diabaikan oleh Vikaris—bahwa hubungan hutang pribadi kepada Bulstrode inilah yang pernah sangat ingin dia hindari. Alih-alih menjawab, ia mulai berbicara tentang rencana penghematannya, dan tentang pandangannya yang berubah terhadap hidupnya. “Aku akan membuka tempat praktik,” katanya. “Aku benar-benar merasa telah melakukan kesalahan dalam hal itu. Dan jika Rosamond tidak keberatan, aku akan mengambil seorang murid magang. Aku tidak suka hal-hal ini, tetapi jika dilakukan dengan setia, sebenarnya tidak terlalu berat. Awalnya aku mengalami luka lecet yang parah: itu akan membuat gosokan kecil terasa mudah.” Kasihan Lydgate! Ungkapan "jika Rosamond tidak keberatan," yang terucap tanpa sengaja sebagai bagian dari pikirannya, merupakan pertanda signifikan dari beban yang dipikulnya. Namun, Tuan Farebrother, yang harapannya sejalan dengan harapan Lydgate, dan yang tidak mengetahui apa pun tentang dirinya yang dapat menimbulkan firasat buruk, meninggalkannya dengan ucapan selamat yang penuh kasih sayang.</p>
 

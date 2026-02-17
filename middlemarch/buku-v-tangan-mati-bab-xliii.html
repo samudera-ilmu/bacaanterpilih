@@ -5,39 +5,176 @@
 <title>BUKU V. TANGAN MATI - BAB XLIII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BUKU V. TANGAN MATI - BAB XLIII. - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BUKU V. TANGAN MATI - BAB XLIII.</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Patung ini sangat berharga: dibuat dengan penuh cinta berabad-abad yang lalu dari gading terbaik; tidak ada yang modis di dalamnya, garis-garis murni dan mulia dari kewanitaan yang murah hati yang cocok sepanjang masa, itu juga barang mahal; majolica dengan desain yang terampil, untuk menyenangkan mata bangsawan: senyumnya, Anda lihat, sempurna—luar biasa seperti faience biasa! hiasan meja untuk melengkapi penataan yang paling mewah.” Dorothea jarang meninggalkan rumah tanpa suaminya, tetapi sesekali ia berkendara ke Middlemarch sendirian, untuk keperluan kecil seperti berbelanja atau amal, seperti yang biasa dilakukan setiap wanita kaya yang tinggal dalam radius tiga mil dari kota. Dua hari setelah kejadian di Yew-tree Walk itu, ia memutuskan untuk menggunakan kesempatan tersebut, jika memungkinkan, untuk menemui Lydgate, dan mencari tahu darinya apakah suaminya benar-benar merasakan perubahan gejala yang menyedihkan yang disembunyikannya darinya, dan apakah ia bersikeras untuk mengetahui semua tentang dirinya. Ia merasa hampir bersalah karena meminta informasi tentang suaminya dari orang lain, tetapi rasa takut akan ketidaktahuan—rasa takut akan ketidaktahuan yang akan membuatnya tidak adil atau keras—mengalahkan setiap keraguan. Ia yakin bahwa telah terjadi krisis dalam pikiran suaminya: keesokan harinya ia mulai menggunakan metode baru untuk mengatur catatannya, dan baru saja melibatkannya dalam menjalankan rencananya. Dorothea yang malang perlu mengumpulkan kesabaran. Saat itu sekitar pukul empat sore ketika dia berkendara ke rumah Lydgate di Lowick Gate, berharap, karena ragu akan menemukannya di rumah, dia telah menulis surat sebelumnya. Dan ternyata dia tidak ada di rumah. “Apakah Nyonya Lydgate ada di rumah?” tanya Dorothea, yang setahunya belum pernah melihat Rosamond, tetapi sekarang teringat akan pernikahan itu. Ya, Nyonya Lydgate ada di rumah. “Saya akan masuk dan berbicara dengannya, jika dia mengizinkan. Maukah Anda menanyakan apakah dia boleh bertemu saya—bertemu dengan Nyonya Casaubon, sebentar saja?” Ketika pelayan itu pergi untuk menyampaikan pesan tersebut, Dorothea dapat mendengar suara musik melalui jendela yang terbuka—beberapa nada dari suara seorang pria dan kemudian piano yang memainkan melodi-melodi roulade. Tetapi melodi-melodi itu tiba-tiba berhenti, dan kemudian pelayan itu kembali mengatakan bahwa Nyonya Lydgate akan senang bertemu dengan Nyonya Casaubon. Ketika pintu ruang tamu terbuka dan Dorothea masuk, ada semacam kontras yang tidak jarang terjadi dalam kehidupan pedesaan ketika kebiasaan berbagai kalangan kurang bercampur dibandingkan sekarang. Biarlah mereka yang tahu memberi tahu kita persis bahan apa yang dikenakan Dorothea pada hari-hari musim gugur yang sejuk itu—kain wol putih tipis yang lembut saat disentuh dan lembut dipandang. Kain itu selalu tampak baru saja dicuci, dan berbau seperti pagar tanaman yang manis—selalu berbentuk pelisse dengan lengan yang menjuntai, yang saat itu sudah ketinggalan zaman. Namun, jika ia masuk di hadapan penonton yang hening sebagai Imogene atau putri Cato, gaun itu mungkin tampak cukup tepat: keanggunan dan martabat terpancar dari anggota tubuh dan lehernya; dan di sekitar rambutnya yang sederhana dan mata yang jujur, jambul bulat besar yang saat itu menjadi ciri khas wanita, tampak tidak lebih aneh sebagai hiasan kepala daripada piring emas yang kita sebut halo. Di hadapan dua orang penonton saat ini, tidak ada pahlawan wanita dramatis yang dapat diharapkan dengan minat yang lebih besar daripada Nyonya Casaubon. Bagi Rosamond, ia adalah salah satu dewi daerah yang tidak berbaur dengan manusia biasa di Middlemarch, yang setiap tingkah laku atau penampilannya layak untuk dipelajari; terlebih lagi, Rosamond merasa puas karena Nyonya Casaubon berkesempatan untuk mengamatinya . Apa gunanya menjadi cantik jika tidak dilihat oleh para penilai terbaik? Dan karena Rosamond telah menerima pujian tertinggi di rumah Sir Godwin Lydgate, ia merasa cukup yakin akan kesan yang akan ia berikan kepada orang-orang terhormat. Dorothea mengulurkan tangannya dengan kebaikan sederhana seperti biasanya, dan memandang kagum pengantin wanita Lydgate yang cantik—sadar bahwa ada seorang pria berdiri di kejauhan, tetapi hanya melihatnya sebagai sosok bermantel dari sudut pandang yang luas. Pria itu terlalu sibuk dengan kehadiran wanita itu untuk memikirkan kontras antara keduanya—kontras yang pasti akan mencolok bagi pengamat yang tenang. Mereka berdua tinggi, dan mata mereka sejajar; Namun bayangkan rambut pirang Rosamond yang masih seperti bayi dan mahkota kepang rambutnya yang menakjubkan, dengan gaun biru pucatnya yang pas dan modis sehingga tak seorang pun penjahit dapat melihatnya tanpa terharu, kerah bersulam besar yang diharapkan semua orang yang melihatnya mengetahui harganya, tangan mungilnya yang dihiasi cincin, dan kesadaran diri yang terkendali yang merupakan pengganti kesederhanaan yang mahal. “Terima kasih banyak telah mengizinkan saya menyela Anda,” kata Dorothea segera. “Saya ingin sekali bertemu Tuan Lydgate, jika memungkinkan, sebelum saya pulang, dan saya berharap Anda mungkin dapat memberi tahu saya di mana saya dapat menemukannya, atau bahkan mengizinkan saya menunggunya, jika Anda mengharapkannya segera datang.” “Dia berada di Rumah Sakit Baru,” kata Rosamond; “Saya tidak yakin kapan dia akan pulang. Tapi saya bisa memanggilnya.” “Bolehkah kau mengizinkanku pergi dan memanggilnya?” kata Will Ladislaw, sambil maju ke depan. Ia sudah mengambil topinya sebelum Dorothea masuk. Wajah Dorothea memerah karena terkejut, tetapi ia mengulurkan tangannya dengan senyum yang jelas menunjukkan kegembiraan, sambil berkata— “Aku tidak tahu itu kamu: aku sama sekali tidak menyangka akan bertemu kamu di sini.” “Bolehkah saya pergi ke Rumah Sakit dan memberi tahu Tuan Lydgate bahwa Anda ingin menemuinya?” kata Will. “Akan lebih cepat mengirim kereta untuk menjemputnya,” kata Dorothea, “jika Anda bersedia menyampaikan pesan ini kepada kusir.” Will sedang berjalan menuju pintu ketika Dorothea, yang pikirannya seketika teringat banyak kenangan yang saling berhubungan, berbalik dengan cepat dan berkata, “Aku akan pergi sendiri, terima kasih. Aku tidak ingin membuang waktu sebelum sampai di rumah lagi. Aku akan mengemudi ke Rumah Sakit dan menemui Tuan Lydgate di sana. Mohon maaf, Nyonya Lydgate. Saya sangat berterima kasih kepada Anda.” Pikirannya jelas terhenti oleh suatu pikiran yang tiba-tiba muncul, dan dia meninggalkan ruangan hampir tanpa menyadari apa yang ada di sekitarnya—hampir tidak menyadari bahwa Will membukakan pintu untuknya dan menawarkan lengannya untuk menuntunnya ke kereta. Dia menerima uluran tangan itu tetapi tidak mengatakan apa pun. Will merasa agak kesal dan sedih, dan tidak menemukan apa pun untuk dikatakan. Dia mengantarkannya ke dalam kereta dalam diam, mereka mengucapkan selamat tinggal, dan Dorothea pergi. Dalam perjalanan lima menit menuju Rumah Sakit, ia sempat merenung beberapa hal yang cukup baru baginya. Keputusannya untuk pergi, dan kekhawatirannya saat meninggalkan ruangan, muncul dari perasaan tiba-tiba bahwa akan ada semacam penipuan jika ia secara sukarela mengizinkan hubungan lebih lanjut antara dirinya dan Will, yang tidak dapat ia sebutkan kepada suaminya, dan tujuan perjalanannya mencari Lydgate pun merupakan urusan yang dirahasiakan. Hanya itu yang secara eksplisit ada dalam pikirannya; tetapi ia juga didorong oleh ketidaknyamanan yang samar. Sekarang, saat ia sendirian dalam perjalanan, ia mendengar suara pria itu dan iringan piano, yang tidak terlalu ia perhatikan saat itu, kembali terlintas dalam benaknya; dan ia mendapati dirinya berpikir dengan heran bahwa Will Ladislaw menghabiskan waktunya bersama Nyonya Lydgate saat suaminya tidak ada. Dan kemudian ia teringat bahwa Will pernah menghabiskan waktu bersamanya dalam keadaan yang sama, jadi mengapa harus ada ketidakpantasan dalam hal itu? Namun Will adalah kerabat Tuan Casaubon, dan seseorang yang kepadanya ia wajib menunjukkan kebaikan. Meskipun demikian, ada tanda-tanda yang mungkin seharusnya ia pahami sebagai indikasi bahwa Tuan Casaubon tidak menyukai kunjungan sepupunya selama ketidakhadirannya. “Mungkin aku telah keliru dalam banyak hal,” kata Dorothea yang malang kepada dirinya sendiri, sementara air mata terus mengalir dan ia harus segera mengeringkannya. Ia merasa bingung dan tidak bahagia, dan gambaran Will yang sebelumnya begitu jelas baginya tiba-tiba menjadi rusak. Namun kereta berhenti di gerbang Rumah Sakit. Ia segera berjalan-jalan di sekitar padang rumput bersama Lydgate, dan perasaannya kembali kuat seperti sebelumnya yang mendorongnya untuk mencari pertemuan ini. Sementara itu, Will Ladislaw merasa sangat malu, dan ia tahu alasannya dengan cukup jelas. Kesempatannya untuk bertemu Dorothea sangat kecil; dan di sini untuk pertama kalinya muncul kesempatan yang justru merugikannya. Bukan hanya karena, seperti sebelumnya, Dorothea tidak terlalu tertarik padanya, tetapi juga karena Dorothea melihatnya dalam keadaan di mana ia mungkin tampak tidak terlalu tertarik padanya. Ia merasa terdorong ke jarak baru dari Dorothea, di antara lingkaran penduduk Middlemarch yang tidak menjadi bagian dari hidupnya. Tetapi itu bukan salahnya: tentu saja, sejak ia menetap di kota itu, ia telah menjalin banyak kenalan, karena posisinya mengharuskan ia mengenal semua orang dan segala hal. Lydgate benar-benar lebih berharga untuk dikenal daripada siapa pun di lingkungan itu, dan kebetulan ia memiliki istri yang pandai bermusik dan sangat layak untuk dikunjungi. Di sinilah seluruh sejarah situasi di mana Diana turun terlalu tiba-tiba pada pemujanya. Itu sangat memalukan. Will sadar bahwa ia tidak akan berada di Middlemarch jika bukan karena Dorothea; Namun, posisinya di sana mengancam untuk memisahkannya dari Dorothea dengan hambatan sentimen kebiasaan yang lebih fatal bagi keberlangsungan minat bersama daripada jarak antara Roma dan Britania. Prasangka tentang pangkat dan status cukup mudah ditentang dalam bentuk surat tirani dari Tuan Casaubon; tetapi prasangka, seperti tubuh yang berbau, memiliki eksistensi ganda, baik padat maupun halus—padat seperti piramida, halus seperti gema ke-20 dari sebuah gema, atau seperti ingatan akan bunga hyacinth yang pernah mengharumkan kegelapan. Dan Will memiliki temperamen yang sangat peka terhadap kehadiran hal-hal yang halus: seorang pria dengan persepsi yang lebih kasar tidak akan merasakan, seperti yang dia rasakan, bahwa untuk pertama kalinya beberapa perasaan ketidakcocokan dalam kebebasan sempurna bersamanya telah muncul dalam pikiran Dorothea, dan bahwa keheningan mereka, saat dia mengantarnya ke kereta, terasa dingin. Mungkin Casaubon, dalam kebencian dan kecemburuannya, telah bersikeras kepada Dorothea bahwa Will telah merosot secara sosial di bawahnya. Sialan Casaubon! Will kembali memasuki ruang tamu, mengambil topinya, dan tampak kesal sambil mendekati Ny. Lydgate, yang telah duduk di meja kerjanya, lalu berkata— “Selalu fatal jika musik atau puisi terganggu. Bolehkah saya datang lain hari dan menyelesaikan pembacaan 'Lungi dal caro bene' saja?” “Saya akan senang diajari,” kata Rosamond. “Tapi saya yakin Anda mengakui bahwa gangguan tadi sangat indah. Saya sangat iri dengan perkenalan Anda dengan Nyonya Casaubon. Apakah dia sangat pintar? Dia tampak seperti itu.” “Sungguh, aku tidak pernah memikirkannya,” kata Will dengan cemberut. “Itulah jawaban yang diberikan Tertius kepadaku, ketika aku pertama kali bertanya apakah dia cantik. Apa yang kalian pikirkan, Tuan-tuan, ketika bersama Nyonya Casaubon?” “Dirinya sendiri,” kata Will, yang tidak keberatan memprovokasi Nyonya Lydgate yang menawan. “Ketika seseorang melihat wanita yang sempurna, ia tidak pernah memikirkan atributnya—ia menyadari kehadirannya.” “Aku akan cemburu ketika Tertius pergi ke Lowick,” kata Rosamond, sambil tersenyum dan berbicara dengan ringan. “Dia akan kembali dan tidak memikirkan aku sama sekali.” “Sepertinya bukan itu pengaruhnya terhadap Lydgate sampai saat ini. Nyonya Casaubon terlalu berbeda dari wanita lain sehingga mereka tidak bisa dibandingkan dengannya.” “Saya rasa Anda adalah seorang pemuja yang taat. Anda sering bertemu dengannya.” “Tidak,” kata Will, hampir dengan nada kesal. “Ibadah biasanya lebih tentang teori daripada praktik. Tapi saat ini aku sedang beribadah secara berlebihan—aku harus segera berhenti.” “Silakan datang lagi suatu malam: Tuan Lydgate pasti ingin mendengarkan musiknya, dan saya tidak bisa menikmatinya dengan baik tanpa kehadirannya.” Ketika suaminya kembali ke rumah, Rosamond berkata, sambil berdiri di depannya dan memegang kerah jasnya dengan kedua tangannya, “Tuan Ladislaw sedang bernyanyi bersamaku ketika Nyonya Casaubon masuk. Dia tampak kesal. Apakah menurutmu dia tidak suka Nyonya Casaubon melihatnya di rumah kita? Tentu saja posisimu lebih dari setara dengannya—apa pun hubungannya dengan keluarga Casaubon.” “Tidak, tidak; pasti ada alasan lain jika dia benar-benar kesal. Ladislaw itu semacam orang gipsi; dia tidak mempermasalahkan kulit dan prunella.” "Selain musik, dia tidak selalu menyenangkan. Apakah kamu menyukainya?" “Ya: menurutku dia orang yang baik: agak beragam dan seperti barang-barang bekas, tapi menyenangkan.” “Tahukah kamu, kurasa dia sangat mengagumi Nyonya Casaubon.” “Kasihan sekali!” kata Lydgate sambil tersenyum dan mencubit telinga istrinya. Rosamond merasa dirinya mulai mengetahui banyak hal tentang dunia, terutama dalam menemukan apa yang ketika ia masih gadis lajang tidak terbayangkan kecuali sebagai tragedi samar dalam kostum masa lalu—bahwa perempuan, bahkan setelah menikah, dapat menaklukkan dan memperbudak laki-laki. Pada waktu itu, para wanita muda di pedesaan, bahkan ketika dididik di rumah Nyonya Lemon, hanya sedikit membaca sastra Prancis setelah Racine, dan media cetak publik belum memberikan penerangan yang luar biasa seperti sekarang ini atas skandal kehidupan. Namun, kesombongan, dengan seluruh pikiran dan waktu seorang wanita untuk bekerja, dapat membangunnya secara berlimpah berdasarkan petunjuk kecil, terutama petunjuk seperti kemungkinan penaklukan yang tak terbatas. Betapa menyenangkannya menjadikan tawanan dari takhta pernikahan dengan suami sebagai putra mahkota di sisimu—yang sebenarnya adalah seorang bawahan—sementara para tawanan menatap ke atas selamanya tanpa harapan, mungkin kehilangan ketenangan mereka, dan jika nafsu makan mereka juga, maka itu jauh lebih baik! Tetapi romansa Rosamond saat ini terutama berpusat pada putra mahkotanya, dan cukup baginya untuk menikmati kepatuhannya yang pasti. Ketika dia berkata, "Kasihan sekali!" tanyanya, dengan rasa ingin tahu yang jenaka— “Mengapa begitu?” “Lalu, apa yang bisa dilakukan seorang pria ketika ia jatuh cinta pada salah satu dari kalian para putri duyung? Ia hanya mengabaikan pekerjaannya dan menumpuk tagihan.” “Aku yakin kau tidak mengabaikan pekerjaanmu. Kau selalu berada di rumah sakit, atau merawat pasien miskin, atau memikirkan perselisihan dokter; dan kemudian di rumah kau selalu ingin mempelajari mikroskop dan tabung-tabung sampelmu. Akui saja kau lebih menyukai hal-hal itu daripada aku.” “Apakah kau tidak punya cukup ambisi untuk berharap suamimu menjadi sesuatu yang lebih baik daripada seorang dokter di Middlemarch?” kata Lydgate, sambil meletakkan tangannya di bahu istrinya, dan menatapnya dengan penuh kasih sayang. “Aku akan membuatmu mempelajari bagian favoritku dari seorang penyair tua— 'Mengapa kesombongan kita harus membuat kehebohan untuk kemudian dilupakan? Apa gunanya melakukan sesuatu yang layak untuk ditulis, dan menulis sesuatu yang layak untuk dibaca dan dinikmati dunia?' Yang kuinginkan, Rosy, adalah melakukan pekerjaan menulis yang layak,—dan menuliskan sendiri apa yang telah kulakukan. Seseorang harus bekerja keras untuk melakukan itu, sayangku.” “Tentu saja, aku ingin kau membuat penemuan: tak seorang pun lebih menginginkanmu mencapai posisi tinggi di tempat yang lebih baik daripada Middlemarch. Kau tak bisa mengatakan bahwa aku pernah mencoba menghalangimu untuk bekerja. Tapi kita tak bisa hidup seperti pertapa. Kau tidak merasa tidak puas denganku, Tertius?” “Tidak, sayang, tidak. Aku sudah sangat puas.” “Tapi apa yang ingin Nyonya Casaubon sampaikan kepada Anda?” “Hanya untuk menanyakan kesehatan suaminya. Tapi saya rasa dia akan menjadi aset berharga bagi Rumah Sakit Baru kita: saya pikir dia akan memberi kita dua ratus dolar setahun.”</p>
 

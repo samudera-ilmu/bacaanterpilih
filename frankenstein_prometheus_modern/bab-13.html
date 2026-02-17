@@ -5,39 +5,176 @@
 <title>BAB 13</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB 13 - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB 13</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>“Sekarang saya akan beralih ke bagian yang lebih mengharukan dari kisah saya. Saya akan menceritakan peristiwa-peristiwa yang membuat saya terkesan dengan perasaan-perasaan yang, dari siapa saya sebelumnya, telah membentuk saya menjadi seperti sekarang ini.” “Musim semi datang dengan cepat; cuaca menjadi cerah dan langit tanpa awan. Sungguh mengejutkan saya bahwa apa yang sebelumnya berupa gurun dan suram kini bermekaran dengan bunga-bunga terindah dan tanaman hijau. Indra saya dipuaskan dan disegarkan oleh ribuan aroma yang menyenangkan dan ribuan pemandangan yang indah.” “Pada suatu hari, ketika para pekerja di pondokku beristirahat dari pekerjaan—lelaki tua itu memainkan gitarnya, dan anak-anak mendengarkannya—aku memperhatikan wajah Felix tampak sangat sedih; ia sering menghela napas, dan suatu kali ayahnya berhenti bermain musik, dan aku menduga dari tingkah lakunya bahwa ia menanyakan penyeBAB kesedihan anaknya. Felix menjawab dengan nada riang, dan lelaki tua itu hendak melanjutkan musiknya ketika seseorang mengetuk pintu. “Itu adalah seorang wanita yang menunggang kuda, ditemani oleh seorang pria desa sebagai pemandu. Wanita itu mengenakan setelan gelap dan ditutupi kerudung hitam tebal. Agatha mengajukan pertanyaan, yang dijawab oleh orang asing itu hanya dengan menyebutkan, dengan aksen yang manis, nama Felix. Suaranya merdu tetapi tidak seperti suara kedua teman saya. Mendengar kata itu, Felix segera menghampiri wanita itu, yang, ketika melihatnya, menyingkirkan kerudungnya, dan saya melihat wajah yang cantik dan ekspresif seperti malaikat. Rambutnya hitam legam berkilau, dan dikepang dengan indah; matanya gelap, tetapi lembut, meskipun bersemangat; fitur wajahnya proporsional, dan kulitnya sangat cerah, setiap pipinya diwarnai dengan warna merah muda yang indah.” “Felix tampak sangat gembira ketika melihatnya, semua kesedihan lenyap dari wajahnya, dan seketika itu juga wajahnya menunjukkan kegembiraan yang luar biasa, yang hampir tak pernah kusangka mampu ia rasakan; matanya berbinar, pipinya memerah karena senang; dan pada saat itu kupikir dia sama tampannya dengan orang asing itu. Wanita itu tampak terpengaruh oleh perasaan yang berbeda; menyeka beberapa tetes air mata dari matanya yang indah, ia mengulurkan tangannya kepada Felix, yang menciumnya dengan penuh gairah dan memanggilnya, sebisa mungkin kupahami, 'kuda Arabku yang manis'. Wanita itu tampaknya tidak mengerti, tetapi tersenyum. Felix membantunya turun dari kuda, dan setelah menyuruh pemandunya pergi, ia mengantarnya ke pondok. Terjadi percakapan antara dia dan ayahnya, dan wanita muda asing itu berlutut di kaki lelaki tua itu dan hendak mencium tangannya, tetapi lelaki tua itu mengangkatnya dan memeluknya dengan penuh kasih sayang.” “Saya segera menyadari bahwa meskipun orang asing itu mengucapkan suara-suara yang jelas dan tampaknya memiliki bahasanya sendiri, dia tidak dipahami oleh penghuni pondok, dan dia sendiri pun tidak memahami mereka. Mereka membuat banyak isyarat yang tidak saya mengerti, tetapi saya melihat bahwa kehadirannya menyebarkan kegembiraan di seluruh pondok, menghilangkan kesedihan mereka seperti matahari menghilangkan kabut pagi. Felix tampak sangat bahagia dan dengan senyum gembira menyambut kuda Arabnya. Agatha, Agatha yang selalu lembut, mencium tangan orang asing yang cantik itu, dan sambil menunjuk ke saudara laki-lakinya, membuat isyarat yang menurut saya berarti bahwa saudara laki-lakinya telah bersedih sampai dia datang. Beberapa jam berlalu seperti itu, sementara mereka, melalui raut wajah mereka, mengungkapkan kegembiraan, yang penyeBABnya tidak saya mengerti. Kemudian saya menemukan, dari seringnya pengulangan beberapa suara yang diulangi orang asing itu setelah mereka, bahwa dia berusaha mempelajari bahasa mereka; dan gagasan itu langsung terlintas dalam pikiran saya bahwa saya harus menggunakan instruksi yang sama untuk tujuan yang sama. Orang asing itu mempelajari sekitar dua puluh kata pada pelajaran pertama; sebagian besar, memang, adalah kata-kata yang sebelumnya telah saya mengerti, tetapi saya diuntungkan oleh orang lain. “Saat malam tiba, Agatha dan orang Arab itu tidur lebih awal. Ketika mereka berpisah, Felix mencium tangan orang asing itu dan berkata, 'Selamat malam, Safie sayang.' Dia duduk lebih lama, mengobrol dengan ayahnya, dan karena seringnya nama Safie disebut, saya menduga bahwa tamu mereka yang cantik itulah yang menjadi topik pembicaraan mereka. Saya sangat ingin memahami mereka, dan mengerahkan segala kemampuan untuk itu, tetapi ternyata sama sekali tidak mungkin.” “Keesokan paginya Felix pergi bekerja, dan setelah kegiatan rutin Agatha selesai, wanita Arab itu duduk di kaki lelaki tua itu, dan mengambil gitarnya, memainkan beberapa melodi yang begitu indah dan mempesona sehingga seketika membuatku meneteskan air mata kesedihan dan kegembiraan. Dia bernyanyi, dan suaranya mengalir dalam irama yang kaya, mengembang atau meredup seperti burung bulbul di hutan. “Setelah selesai, ia memberikan gitar itu kepada Agatha, yang awalnya menolaknya. Ia memainkan melodi sederhana, dan suaranya mengiringinya dengan aksen yang manis, tetapi tidak seperti alunan merdu dari orang asing itu. Lelaki tua itu tampak terpesona dan mengucapkan beberapa kata yang Agatha coba jelaskan kepada Safie, dan yang tampaknya ingin ia sampaikan bahwa Agatha telah memberinya kegembiraan terbesar melalui musiknya. “Hari-hari berlalu dengan damai seperti sebelumnya, satu-satunya perubahan adalah kegembiraan telah menggantikan kesedihan di wajah teman-teman saya. Safie selalu riang dan bahagia; dia dan saya berkembang pesat dalam pengetahuan bahasa, sehingga dalam dua bulan saya mulai memahami sebagian besar kata-kata yang diucapkan oleh para pelindung saya. “Sementara itu, tanah hitam juga tertutup rerumputan, dan tepian hijau diselingi oleh bunga-bunga yang tak terhitung jumlahnya, harum dan indah dipandang, bintang-bintang bercahaya redup di antara hutan yang diterangi cahaya bulan; matahari menjadi lebih hangat, malam menjadi cerah dan sejuk; dan jalan-jalan malamku sangat menyenangkan bagiku, meskipun waktu jalan-jalan itu jauh lebih singkat karena matahari terbenam terlambat dan terbit lebih awal, karena aku tidak pernah berani keluar rumah di siang hari, takut akan mengalami perlakuan yang sama seperti yang pernah kualami di desa pertama yang kukunjungi. “Hari-hari saya dihabiskan dengan penuh perhatian, agar saya dapat lebih cepat menguasai bahasa; dan saya dapat berbangga bahwa saya berkembang lebih cepat daripada orang Arab, yang hanya mengerti sedikit dan berbicara dengan aksen yang terbata-bata, sementara saya memahami dan dapat meniru hampir setiap kata yang diucapkan. “Seiring dengan peningkatan kemampuan berbicara saya, saya juga mempelajari ilmu huruf sebagaimana diajarkan kepada orang asing, dan ini membuka bidang yang luas bagi kekaguman dan kegembiraan bagi saya. “Buku yang digunakan Felix untuk mengajari Safie adalah ' Ruins of Empires ' karya Volney . Saya tidak akan mengerti maksud buku ini jika Felix tidak memberikan penjelasan yang sangat rinci saat membacanya. Katanya, ia memilih karya ini karena gaya retorikanya disusun meniru gaya penulis-penulis Timur. Melalui karya ini, saya memperoleh pengetahuan sekilas tentang sejarah dan pandangan tentang berbagai kekaisaran yang ada di dunia saat ini; buku ini memberi saya wawasan tentang tata krama, pemerintahan, dan agama dari berbagai bangsa di bumi. Saya mendengar tentang orang-orang Asia yang malas, tentang kejeniusan dan aktivitas mental yang luar biasa dari orang-orang Yunani, tentang peperangan dan kebajikan yang menakjubkan dari orang-orang Romawi awal—tentang kemerosotan mereka selanjutnya—tentang kemunduran kekaisaran yang perkasa itu, tentang kesatriaan, Kekristenan, dan raja-raja. Saya mendengar tentang penemuan belahan bumi Amerika dan menangis bersama Safie atas nasib malang penduduk aslinya.” “Kisah-kisah menakjubkan ini membangkitkan perasaan aneh dalam diri saya. Benarkah manusia, pada saat yang bersamaan, begitu kuat, begitu berbudi luhur dan agung, namun juga begitu jahat dan hina? Ia tampak pada suatu waktu hanya sebagai keturunan dari prinsip jahat dan pada waktu lain sebagai segala sesuatu yang dapat dibayangkan sebagai mulia dan seperti dewa. Menjadi orang yang hebat dan berbudi luhur tampak sebagai kehormatan tertinggi yang dapat menimpa makhluk yang peka; menjadi hina dan jahat, seperti yang banyak tercatat, tampak sebagai degradasi terendah, suatu kondisi yang lebih hina daripada tikus tanah buta atau cacing yang tidak berbahaya. Untuk waktu yang lama saya tidak dapat memahami bagaimana seseorang dapat pergi membunuh sesamanya, atau bahkan mengapa ada hukum dan pemerintahan; tetapi ketika saya mendengar detail tentang kejahatan dan pertumpahan darah, kekaguman saya lenyap dan saya berpaling dengan jijik dan muak.” “Setiap percakapan para penghuni pondok kini membuka keajaiban baru bagiku. Saat aku mendengarkan petunjuk yang diberikan Felix kepada orang Arab itu, sistem masyarakat manusia yang aneh dijelaskan kepadaku. Aku mendengar tentang pembagian harta benda, kekayaan yang melimpah dan kemiskinan yang menyedihkan, tentang pangkat, keturunan, dan darah bangsawan. “Kata-kata itu membuatku menoleh ke diri sendiri. Aku mengetahui bahwa harta benda yang paling dihargai oleh sesama makhlukmu adalah keturunan yang tinggi dan tak ternoda yang dipadukan dengan kekayaan. Seseorang mungkin dihormati hanya dengan salah satu dari keuntungan ini, tetapi tanpa keduanya, ia dianggap, kecuali dalam kasus yang sangat jarang, sebagai gelandangan dan budak, yang ditakdirkan untuk menyia-nyiakan kemampuannya demi keuntungan segelintir orang terpilih! Dan siapakah aku? Aku sama sekali tidak tahu tentang penciptaan dan penciptaku, tetapi aku tahu bahwa aku tidak memiliki uang, teman, atau harta benda apa pun. Selain itu, aku dikaruniai sosok yang sangat cacat dan menjijikkan; aku bahkan bukan dari jenis yang sama dengan manusia. Aku lebih lincah daripada mereka dan dapat bertahan hidup dengan makanan yang lebih kasar; aku tahan terhadap suhu panas dan dingin yang ekstrem dengan lebih sedikit kerusakan pada tubuhku; tinggi badanku jauh melebihi mereka. Ketika aku melihat sekeliling, aku tidak melihat dan mendengar tentang siapa pun yang seperti aku. Apakah aku, kalau begitu, monster, noda di bumi, yang darinya semua orang melarikan diri dan yang ditolak oleh semua orang?” “Aku tak dapat menggambarkan kepadamu penderitaan yang ditimbulkan oleh renungan-renungan ini; aku mencoba untuk menghilangkannya, tetapi kesedihan hanya bertambah seiring dengan pengetahuan itu. Oh, seandainya aku selamanya tinggal di hutan kelahiranku, dan tidak mengenal atau merasakan apa pun selain rasa lapar, haus, dan panas!” “Betapa anehnya sifat pengetahuan! Ia melekat pada pikiran begitu ia mencengkeramnya seperti lumut pada batu. Kadang-kadang aku ingin melepaskan semua pikiran dan perasaan, tetapi aku belajar bahwa hanya ada satu cara untuk mengatasi rasa sakit, dan itu adalah kematian—suatu keadaan yang kutakuti namun tidak kupahami. Aku mengagumi kebajikan dan perasaan baik dan menyukai sopan santun dan sifat-sifat menyenangkan dari penghuni pondokku, tetapi aku terisolasi dari pergaulan dengan mereka, kecuali melalui cara-cara yang kuperoleh secara diam-diam, ketika aku tak terlihat dan tak dikenal, dan yang justru meningkatkan daripada memuaskan keinginanku untuk menjadi salah satu dari sesamaku. Kata-kata lembut Agatha dan senyum riang orang Arab yang menawan bukanlah untukku. Nasihat lembut orang tua dan percakapan riang Felix yang kucintai bukanlah untukku. Celaka, malang sekali! “Pelajaran-pelajaran lain bahkan lebih mendalam tertanam dalam diri saya. Saya mendengar tentang perbedaan jenis kelamin, kelahiran dan pertumbuhan anak-anak, bagaimana seorang ayah menyayangi senyuman bayinya, dan tingkah laku riang anak yang lebih besar, bagaimana seluruh hidup dan perhatian seorang ibu tercurah pada anak yang berharga itu, bagaimana pikiran anak muda berkembang dan memperoleh pengetahuan, tentang saudara laki-laki dan perempuan, dan semua berbagai hubungan yang mengikat satu manusia dengan manusia lainnya dalam ikatan timbal balik. “Tetapi di mana teman-teman dan kerabatku? Tak ada ayah yang mengawasi masa kecilku, tak ada ibu yang memberkatiku dengan senyuman dan belaian; atau jika mereka pernah, seluruh masa laluku kini menjadi noda, kekosongan buta di mana aku tak dapat membedakan apa pun. Sejak ingatan terawalku, aku selalu sama seperti saat itu, tinggi dan proporsiku. Aku belum pernah melihat makhluk yang menyerupaiku atau yang mengaku memiliki hubungan denganku. Siapakah aku? Pertanyaan itu kembali muncul, dan hanya dapat dijawab dengan rintihan.” “Saya akan segera menjelaskan ke mana perasaan-perasaan ini cenderung mengarah, tetapi izinkan saya sekarang kembali kepada para penghuni pondok, yang kisahnya membangkitkan berbagai perasaan dalam diri saya—kemarahan, kegembiraan, dan kekaguman—tetapi yang semuanya berakhir dengan rasa cinta dan hormat yang lebih besar kepada para pelindung saya (karena begitulah saya suka menyebut mereka, dalam penipuan diri yang polos dan setengah menyakitkan).”</p>
 

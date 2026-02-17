@@ -5,39 +5,176 @@
 <title>KELAPARAN, LALU KEMENANGAN, DIIKUTI OLEH KEKECEWAAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="KELAPARAN, LALU KEMENANGAN, DIIKUTI OLEH KEKECEWAAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>KELAPARAN, LALU KEMENANGAN, DIIKUTI OLEH KEKECEWAAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Saya hanya punya waktu sebentar untuk mengganti dokumen yang malang itu di atas meja. Profesor Liedenbrock tampak sangat melamun. Pikiran yang menguasai dirinya itu tidak memberinya ketenangan. Jelas sekali dia telah mendalami masalah itu secara analitis dan dengan pengamatan yang cermat. Dia telah mengerahkan seluruh kemampuan pikirannya selama berjalan-jalan, dan dia kembali untuk menerapkan beberapa kombinasi baru. Ia duduk di kursi berlengan, dan pena di tangan ia mulai menulis sesuatu yang sangat mirip dengan rumus aljabar: Aku mengikuti dengan mataku tangannya yang gemetar, aku menghitung setiap gerakannya. Mungkinkah akan ada hasil yang tak terduga? Aku pun gemetar, padahal sebenarnya tidak perlu, karena kunci sebenarnya ada di tanganku, dan tidak ada orang lain yang akan membuka rahasia itu. Selama tiga jam lamanya pamanku bekerja tanpa mengucapkan sepatah kata pun, tanpa mengangkat kepalanya; menggosok, memulai lagi, lalu menggosok lagi, dan seterusnya hingga seratus kali. Saya tahu betul bahwa jika dia berhasil menyusun huruf-huruf ini dalam setiap posisi relatif yang mungkin, kalimat itu akan terbentuk. Tetapi saya juga tahu bahwa dua puluh huruf saja dapat membentuk dua kuintiliun, empat ratus tiga puluh dua kuadriliun, sembilan ratus dua triliun, delapan miliar, seratus tujuh puluh enam juta, enam ratus empat puluh ribu kombinasi. Nah, di sini ada seratus tiga puluh dua huruf dalam kalimat ini, dan seratus tiga puluh dua huruf ini akan menghasilkan sejumlah kalimat berbeda, masing-masing terdiri dari setidaknya seratus tiga puluh tiga angka, sebuah angka yang jauh melampaui semua perhitungan atau konsepsi. Jadi saya merasa tenang terkait metode heroik ini dalam mengatasi kesulitan tersebut. Namun waktu terus berlalu; malam tiba; suara-suara jalanan berhenti; pamanku, yang sedang membungkuk mengerjakan pekerjaannya, tidak memperhatikan apa pun, bahkan Martha yang setengah membuka pintu; dia tidak mendengar suara apa pun, bahkan wanita hebat itu pun tidak berkata: "Apakah Tuan tidak akan makan malam malam ini?" Dan Martha yang malang harus pergi tanpa mendapat jawaban. Adapun aku, setelah lama menolak, aku akhirnya tertidur pulas di ujung sofa, sementara paman Liedenbrock terus menghitung dan menghapus perhitungannya. Ketika saya terbangun keesokan paginya, pekerja yang tak kenal lelah itu masih berada di posnya. Matanya yang merah, wajahnya yang pucat, rambutnya yang kusut di antara jari-jarinya yang demam, bintik-bintik merah di pipinya, menunjukkan perjuangannya yang putus asa melawan hal-hal yang mustahil, dan kelelahan jiwa, pergulatan batin yang pasti dialaminya sepanjang malam yang menyedihkan itu. Sejujurnya, aku merasa kasihan padanya. Terlepas dari celaan yang menurutku pantas kuucapkan padanya, perasaan iba mulai muncul dalam diriku. Pria malang itu begitu terpaku pada satu idenya sehingga ia bahkan lupa bagaimana caranya marah. Seluruh kekuatan perasaannya terkonsentrasi pada satu hal saja; dan karena jalan keluarnya yang biasa tertutup, dikhawatirkan ketegangan ekstrem akan memicu ledakan cepat atau lambat. Mungkin dengan satu kata aku bisa melonggarkan sekrup penjepit baja yang menghancurkan otaknya; tetapi kata itu tak akan kuucapkan. Namun aku bukanlah orang yang jahat. Mengapa aku begitu bisu dalam krisis seperti ini? Mengapa aku begitu tidak peka terhadap kepentingan pamanku?</p>
 <p>"Tidak, tidak," ulangku, "aku tidak akan bicara. Dia akan bersikeras untuk pergi; tidak ada apa pun di dunia ini yang bisa menghentikannya. Imajinasinya seperti gunung berapi, dan untuk melakukan hal yang belum pernah dilakukan oleh ahli geologi lain, dia akan mempertaruhkan nyawanya. Aku akan tetap diam. Aku akan merahasiakan hal yang secara kebetulan telah terungkap kepadaku. Mengungkapnya berarti membunuh Profesor Liedenbrock! Biarkan dia mengetahuinya sendiri jika dia mampu. Aku tidak akan pernah membiarkan tuduhan bahwa aku telah membawanya pada kehancurannya." Setelah mengambil keputusan ini, saya melipat tangan dan menunggu. Tetapi saya tidak memperhitungkan satu kejadian kecil yang muncul beberapa jam kemudian. Ketika Martha kita yang baik hati ingin pergi ke Pasar, ia mendapati pintu terkunci. Kunci besarnya hilang. Siapa yang mungkin mengambilnya? Pasti pamanku, ketika ia kembali malam sebelumnya dari jalan-jalan terburu-burunya. Apakah ini dilakukan dengan sengaja? Atau itu sebuah kesalahan? Apakah dia ingin mengurangi jumlah kami dengan kelaparan? Ini sepertinya sudah keterlaluan! Apa! Haruskah Martha dan saya menjadi korban dari keadaan yang sama sekali tidak kami minati? Memang benar bahwa beberapa tahun sebelum ini, ketika paman saya sedang mengerjakan klasifikasi mineralnya yang hebat, dia berpuasa selama empat puluh delapan jam, dan seluruh keluarganya terpaksa ikut berpuasa dalam kegiatan ilmiah ini. Sedangkan saya, yang saya ingat adalah, saya mengalami kram perut yang parah, yang sama sekali tidak sesuai dengan kondisi tubuh seorang anak laki-laki yang lapar dan sedang tumbuh. Sekarang sepertinya sarapan akan kurang, sama seperti makan malam tadi malam. Namun aku bertekad untuk menjadi pahlawan, dan tidak akan dikalahkan oleh rasa lapar. Martha menanggapinya dengan sangat serius, dan, wanita malang itu, sangat sedih. Adapun aku, ketidakmungkinan untuk meninggalkan rumah membuatku jauh lebih sedih, dan untuk alasan yang sangat bagus. Perasaan seorang kekasih yang terkurung mudah dibayangkan. Pamanku terus bekerja, imajinasinya melayang ke dunia ideal yang penuh kombinasi; dia jauh dari kenyataan, dan benar-benar jauh dari kebutuhan duniawi. Sekitar tengah hari, rasa lapar mulai menyerangku dengan hebat. Martha, tanpa berpikir panjang, telah mengosongkan dapur malam sebelumnya, sehingga sekarang tidak ada apa pun yang tersisa di rumah. Namun aku tetap bertahan; aku menjadikannya sebagai sebuah kehormatan. Pukul dua tepat. Ini mulai menjadi menggelikan; lebih buruk dari itu, tak tertahankan. Aku mulai berkata pada diriku sendiri bahwa aku melebih-lebihkan pentingnya dokumen itu; bahwa pamanku pasti tidak akan mempercayainya, bahwa dia akan menganggapnya hanya sebagai teka-teki; bahwa jika sampai terjadi hal terburuk, kami akan menangkapnya dengan kasar dan menahannya di rumah jika dia berpikir untuk ikut ekspedisi; bahwa, bagaimanapun, dia mungkin sendiri yang menemukan kunci sandi tersebut, dan bahwa kemudian aku akan terbebas hanya dengan mengorbankan pantanganku yang tak disengaja. Alasan-alasan itu tampak sangat masuk akal bagiku, meskipun pada malam sebelumnya aku akan menolaknya dengan marah; aku bahkan sampai mengutuk diriku sendiri atas kebodohanku karena telah menunggu begitu lama, dan akhirnya aku memutuskan untuk meluapkan semuanya. Oleh karena itu, saya sedang memikirkan kata pengantar yang tepat untuk masalah ini, agar tidak terkesan terlalu tiba-tiba, ketika Profesor itu melompat berdiri, mengenakan topinya, dan bersiap untuk keluar. Tentunya dia tidak akan keluar, untuk mengurung kita lagi! tidak, tidak mungkin! "Menyerah!" teriakku. Dia sepertinya tidak mendengarku. "Paman Liedenbrock!" seruku, meninggikan suara. "Ay," jawabnya seperti orang yang tiba-tiba terbangun. "Paman, kunci itu!" "Kunci yang mana? Kunci pintu?" "Tidak, tidak!" teriakku. "Kunci dokumen itu." Profesor itu menatapku dari balik kacamatanya; tak diragukan lagi ia melihat sesuatu yang tidak biasa dalam ekspresi wajahku; karena ia memegang lenganku, dan tanpa berkata-kata menanyaiku dengan matanya. Ya, tak pernah ada pertanyaan yang diajukan sekuat itu. Aku mengangguk-angguk. Dia menggelengkan kepalanya dengan iba, seolah-olah sedang berurusan dengan orang gila. Saya memberikan isyarat yang lebih tegas. Matanya berkilauan dan memancarkan api, tangannya terkepal mengancam. Percakapan tanpa kata-kata di tengah krisis yang begitu penting ini akan menarik perhatian orang yang paling acuh tak acuh sekalipun. Dan kenyataannya memang benar bahwa aku tidak berani berbicara sekarang, saking hebatnya kegembiraan itu, karena takut pamanku akan membanjiriku dengan pelukan gembiranya yang pertama. Tetapi ia menjadi begitu mendesak sehingga akhirnya aku terpaksa menjawab. "Ya, kunci itu, kebetulan—" "Apa yang kau katakan itu?" teriaknya dengan emosi yang tak terlukiskan. "Nah, bacalah itu!" kataku, sambil menunjukkan selembar kertas yang telah kutulis. "Tapi tidak ada apa-apa di sini," jawabnya sambil meremas kertas itu. "Tidak, tidak ada apa pun sampai Anda mulai membaca dari akhir ke awal." Aku belum selesai mengucapkan kalimatku ketika Profesor itu tiba-tiba berteriak, bahkan meraung. Sebuah wahyu baru tiba-tiba menghampirinya. Dia telah berubah! "Aha, pintar sekali Saknussemm!" serunya. "Awalnya kau menulis kalimatmu dengan cara yang salah." Dan dengan cepat, matanya berkaca-kaca, dan suaranya tercekat karena emosi, ia membaca seluruh dokumen itu dari huruf terakhir hingga huruf pertama. Hal itu dikonsepkan dengan dasar sebagai berikut: Di Sneffels Joculis kawahem yang delibat Umbra Scartaris Julii intra calendas descende, Audax viator, dan terrestre centrum attinges. Ini dia, Arne Saknussemm.[1]</p>

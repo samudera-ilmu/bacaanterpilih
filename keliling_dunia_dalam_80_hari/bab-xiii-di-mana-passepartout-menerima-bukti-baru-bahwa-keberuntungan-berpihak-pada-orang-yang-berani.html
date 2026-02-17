@@ -5,39 +5,176 @@
 <title>BAB XIII. DI MANA PASSEPARTOUT MENERIMA BUKTI BARU BAHWA KEBERUNTUNGAN BERPIHAK PADA ORANG YANG BERANI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="BAB XIII. DI MANA PASSEPARTOUT MENERIMA BUKTI BARU BAHWA KEBERUNTUNGAN BERPIHAK PADA ORANG YANG BERANI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
 <style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
 body {
   font-family: Georgia, serif;
   max-width: 720px;
   margin: auto;
-  padding: 20px;
-  line-height: 1.8;
+  padding: 22px;
+  line-height: 1.85;
   font-size: 18px;
-  background: #fafafa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
-
-h1 { font-size: 1.6em; }
 
 .nav {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+  color: var(--link);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
 </style>
 </head>
 <body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
 <div class="top-nav">
   <a href="../index.html">⬅ Perpustakaan</a>
@@ -45,6 +182,18 @@ a {
 </div>
 
 <h1>BAB XIII. DI MANA PASSEPARTOUT MENERIMA BUKTI BARU BAHWA KEBERUNTUNGAN BERPIHAK PADA ORANG YANG BERANI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
 
 <p>Proyek itu adalah proyek yang berani, penuh kesulitan, bahkan mungkin tidak praktis. Tuan Fogg akan mempertaruhkan nyawa, atau setidaknya kebebasan, dan karena itu keberhasilan turnya. Tetapi dia tidak ragu-ragu, dan dia menemukan sekutu yang antusias dalam diri Sir Francis Cromarty. Adapun Passepartout, dia siap untuk apa pun yang mungkin diusulkan. Gagasan tuannya memikatnya; dia melihat hati, jiwa, di balik penampilan luarnya yang dingin. Dia mulai mencintai Phileas Fogg. Yang tersisa adalah pemandu: langkah apa yang akan dia ambil? Apakah dia tidak akan berpihak kepada orang Indian? Jika dia tidak memberikan bantuan, perlu dipastikan kenetralannya. Sir Francis dengan jujur mengajukan pertanyaan itu kepadanya. “Para petugas,” jawab pemandu itu, “saya seorang Parsee, dan wanita ini juga seorang Parsee. Perintahkan saya sesuka Anda.” “Bagus sekali!” kata Tuan Fogg. “Namun,” lanjut pemandu itu, “sudah pasti, bukan hanya nyawa kita yang akan terancam, tetapi juga siksaan yang mengerikan, jika kita tertangkap.” “Itu sudah diperkirakan,” jawab Tuan Fogg. “Saya rasa kita harus menunggu sampai malam sebelum bertindak.” “Kurasa begitu,” kata pemandu wisata itu. Orang India yang terhormat itu kemudian memberikan beberapa keterangan tentang korban, yang, katanya, adalah seorang wanita cantik terkenal dari ras Parsee, dan putri seorang pedagang kaya di Bombay. Ia telah menerima pendidikan Inggris sepenuhnya di kota itu, dan, dari tingkah laku dan kecerdasannya, akan dianggap sebagai orang Eropa. Namanya Aouda. Menjadi yatim piatu, ia dinikahkan secara paksa dengan raja tua Bundelcund; dan, mengetahui nasib yang menantinya, ia melarikan diri, ditangkap kembali, dan dikorbankan oleh kerabat raja, yang memiliki kepentingan dalam kematiannya, untuk pengorbanan yang tampaknya tidak dapat ia hindari. Narasi orang Parsee itu hanya menguatkan niat baik Tuan Fogg dan rekan-rekannya. Diputuskan bahwa pemandu harus mengarahkan gajah menuju pagoda Pillaji, yang kemudian didekati secepat mungkin. Setengah jam kemudian, mereka berhenti di semak-semak, sekitar lima ratus kaki dari pagoda, di mana mereka tersembunyi dengan baik; tetapi mereka dapat mendengar rintihan dan tangisan para fakir dengan jelas. Mereka kemudian mendiskusikan cara untuk mendapatkan korban. Pemandu itu mengenal pagoda Pillaji, tempat, seperti yang dia nyatakan, wanita muda itu dipenjara. Bisakah mereka memasuki salah satu pintunya sementara seluruh rombongan orang India itu tertidur karena mabuk, atau lebih aman untuk mencoba membuat lubang di dinding? Ini hanya dapat ditentukan pada saat dan tempat itu sendiri; tetapi sudah pasti bahwa penculikan harus dilakukan malam itu, dan bukan ketika, saat fajar menyingsing, korban dibawa ke tumpukan kayu bakar pemakamannya. Saat itu, tidak ada campur tangan manusia yang dapat menyelamatkannya. Begitu malam tiba, sekitar pukul enam, mereka memutuskan untuk melakukan pengintaian di sekitar pagoda. Teriakan para fakir baru saja berhenti; orang-orang India sedang asyik mabuk karena opium cair yang dicampur dengan ganja, dan mungkin saja mereka bisa menyelinap di antara mereka menuju kuil itu sendiri. Orang Parsee, memimpin yang lain, diam-diam merayap melalui hutan, dan dalam sepuluh menit mereka mendapati diri mereka berada di tepi sebuah sungai kecil, dari sana, dengan cahaya obor damar, mereka melihat tumpukan kayu, di atasnya terbaring jenazah raja yang telah diawetkan, yang akan dibakar bersama istrinya. Pagoda, yang menara-menaranya menjulang di atas pepohonan dalam senja yang semakin gelap, berdiri seratus langkah jauhnya. “Ayo!” bisik pemandu itu. Ia menyelinap lebih hati-hati dari sebelumnya melalui semak-semak, diikuti oleh teman-temannya; keheningan di sekitarnya hanya terpecah oleh desiran angin yang pelan di antara ranting-ranting. Tak lama kemudian, orang Parsee itu berhenti di tepi padang rumput yang diterangi obor. Tanah itu dipenuhi oleh kelompok-kelompok orang Indian, tak bergerak dalam tidur mabuk mereka; tampak seperti medan perang yang dipenuhi mayat. Laki-laki, perempuan, dan anak-anak berbaring bersama. Di latar belakang, di antara pepohonan, pagoda Pillaji tampak jelas. Yang sangat mengecewakan pemandu wisata, para penjaga raja, yang diterangi obor, berjaga di pintu dan mondar-mandir dengan pedang terhunus; mungkin para pendeta juga berjaga di dalam. Orang Parsee itu, yang kini yakin bahwa mustahil untuk memaksa masuk ke kuil, tidak maju lebih jauh, tetapi memimpin teman-temannya kembali. Phileas Fogg dan Sir Francis Cromarty juga melihat bahwa tidak ada yang bisa dicoba ke arah itu. Mereka berhenti, dan terlibat dalam percakapan berbisik. “Sekarang baru jam delapan,” kata brigadir itu, “dan para penjaga ini juga boleh tidur.” “Itu bukan hal yang mustahil,” jawab orang Parsee itu. Mereka berbaring di bawah pohon, dan menunggu. Waktu terasa lama; pemandu sesekali meninggalkan mereka untuk melakukan pengamatan di tepi hutan, tetapi para penjaga mengawasi dengan saksama di bawah sorotan obor, dan cahaya redup merambat melalui jendela pagoda. Mereka menunggu hingga tengah malam; tetapi tidak ada perubahan yang terjadi di antara para penjaga, dan menjadi jelas bahwa mereka tidak bisa diandalkan untuk tertidur. Rencana lain harus dilaksanakan; sebuah lubang di dinding pagoda harus dibuat. Tinggal memastikan apakah para pendeta berjaga di sisi korban mereka dengan tekun seperti halnya para prajurit di pintu. Setelah konsultasi terakhir, pemandu mengumumkan bahwa ia siap untuk mencoba, dan maju, diikuti oleh yang lain. Mereka mengambil jalan memutar, agar sampai ke pagoda di bagian belakang. Mereka mencapai tembok sekitar pukul setengah dua belas, tanpa bertemu siapa pun; di sini tidak ada penjaga, dan tidak ada jendela atau pintu. Malam itu gelap gulita. Bulan, yang sedang surut, hampir tidak meninggalkan cakrawala, dan tertutup awan tebal; ketinggian pepohonan semakin memperdalam kegelapan. Mencapai dinding saja tidak cukup; mereka harus membuat lubang di dinding tersebut, dan untuk mencapai tujuan ini, kelompok tersebut hanya memiliki pisau saku. Untungnya, dinding kuil terbuat dari batu bata dan kayu, yang dapat ditembus tanpa banyak kesulitan; setelah satu batu bata dikeluarkan, sisanya akan mudah runtuh. Mereka mulai bekerja tanpa suara, dan orang Parsee di satu sisi dan Passepartout di sisi lain mulai melonggarkan batu bata untuk membuat lubang selebar dua kaki. Mereka bekerja dengan cepat, ketika tiba-tiba terdengar teriakan di dalam kuil, diikuti hampir seketika oleh teriakan lain dari luar. Passepartout dan pemandu berhenti. Apakah mereka terdengar? Apakah alarm sedang dibunyikan? Kehati-hatian mendorong mereka untuk mundur, dan mereka melakukannya, diikuti oleh Phileas Fogg dan Sir Francis. Mereka kembali bersembunyi di hutan, dan menunggu sampai gangguan, apa pun itu, berhenti, bersiap untuk melanjutkan upaya mereka tanpa penundaan. Tetapi, dengan canggung, para penjaga sekarang muncul di belakang kuil, dan menempatkan diri mereka di sana, bersiap untuk mencegah serangan mendadak. Sulit untuk menggambarkan kekecewaan rombongan tersebut, yang pekerjaannya terganggu. Mereka tidak dapat menjangkau korban; lalu bagaimana mereka bisa menyelamatkannya? Sir Francis mengepalkan tinjunya, Passepartout sangat marah, dan pemandu itu menggertakkan giginya karena geram. Fogg yang tenang menunggu, tanpa menunjukkan emosi apa pun. “Kita tidak punya pilihan lain selain pergi,” bisik Sir Francis. “Tidak ada pilihan lain selain pergi,” timpal pemandu wisata itu. “Berhenti,” kata Fogg. “Saya baru akan tiba di Allahabad besok sebelum tengah hari.” “Tapi apa yang bisa kau harapkan?” tanya Sir Francis. “Dalam beberapa jam lagi akan terang, dan—” “Kesempatan yang kini tampaknya hilang mungkin akan muncul di saat-saat terakhir.” Sir Francis pasti ingin membaca tatapan mata Phileas Fogg. Apa yang dipikirkan pria Inggris yang tenang ini? Apakah dia berencana untuk menyerbu wanita muda itu tepat pada saat pengorbanan dilakukan, dan dengan berani merebutnya dari para algojonya? Ini akan menjadi kebodohan yang luar biasa, dan sulit untuk mengakui bahwa Fogg sebodoh itu. Namun, Sir Francis setuju untuk tetap tinggal sampai akhir drama mengerikan ini. Pemandu membawa mereka ke bagian belakang padang rumput, di mana mereka dapat mengamati kelompok-kelompok yang sedang tidur. Sementara itu, Passepartout, yang bertengger di cabang-cabang bawah sebuah pohon, sedang merenungkan sebuah ide yang awalnya muncul tiba-tiba di benaknya, dan yang kini telah tertanam kuat di otaknya. Ia memulai dengan berkata pada dirinya sendiri, "Betapa bodohnya!" lalu ia mengulangi, "Mengapa tidak? Ini sebuah kesempatan,—mungkin satu-satunya; dan dengan orang-orang bodoh seperti ini!" Sambil berpikir demikian, ia menyelinap, dengan kelincahan seekor ular, ke dahan-dahan terendah, yang ujungnya hampir menyentuh tanah. Jam-jam berlalu, dan bayangan yang lebih terang kini menandai datangnya hari, meskipun belum terang sepenuhnya. Inilah saatnya. Kerumunan yang tadinya tertidur menjadi bersemangat, rebana berbunyi, nyanyian dan teriakan terdengar; saatnya pengorbanan telah tiba. Pintu pagoda terbuka, dan cahaya terang keluar dari dalamnya, di tengah-tengahnya Tuan Fogg dan Sir Francis melihat korban. Ia tampak, setelah tersadar dari keadaan linglung akibat mabuk, berusaha melarikan diri dari algojonya. Jantung Sir Francis berdebar kencang; dan, dengan gemetar menggenggam tangan Tuan Fogg, ia menemukan pisau terbuka di dalamnya. Tepat pada saat ini kerumunan mulai bergerak. Wanita muda itu kembali jatuh ke dalam keadaan linglung akibat asap ganja, dan berjalan di antara para fakir, yang mengiringinya dengan teriakan keagamaan mereka yang liar. Phileas Fogg dan para pengikutnya, yang berbaur di barisan belakang kerumunan, mengikuti; dan dalam dua menit mereka mencapai tepi sungai, dan berhenti lima puluh langkah dari tumpukan kayu bakar, di mana masih terbaring jenazah raja. Dalam kegelapan remang-remang mereka melihat korban, tak sadarkan diri, terbaring di samping tubuh suaminya. Kemudian sebuah obor dibawa, dan kayu yang telah direndam minyak itu langsung terbakar. Pada saat itu Sir Francis dan pemandu menangkap Phileas Fogg, yang, dalam sekejap kemurahan hati yang gila, hendak menerjang tumpukan kayu bakar. Tetapi dia dengan cepat mendorong mereka ke samping, ketika seluruh pemandangan tiba-tiba berubah. Teriakan ketakutan terdengar. Seluruh kerumunan orang bersujud di tanah, diliputi rasa takut. Raja tua itu ternyata belum mati, karena ia tiba-tiba bangkit seperti hantu, mengangkat istrinya ke dalam pelukannya, dan turun dari tumpukan kayu bakar di tengah kepulan asap, yang justru semakin memperkuat penampilannya yang menyeramkan. Para fakir, tentara, dan pendeta, yang diliputi rasa takut seketika, berbaring di sana dengan wajah menempel di tanah, tidak berani mengangkat mata dan menyaksikan keajaiban tersebut. Korban yang tak bernyawa itu diangkat oleh lengan-lengan kuat yang menopangnya, dan yang tampaknya sama sekali tidak menjadi bebannya. Tuan Fogg dan Sir Francis berdiri tegak, orang Parsee menundukkan kepalanya, dan Passepartout, tak diragukan lagi, hampir sama tercengangnya. Raja yang telah sadar kembali itu mendekati Sir Francis dan Tuan Fogg, dan dengan nada tiba-tiba berkata, "Ayo kita pergi!" Passepartout sendirilah yang terpeleset di atas tumpukan kayu bakar di tengah asap dan, memanfaatkan kegelapan yang masih menyelimuti, telah menyelamatkan wanita muda itu dari kematian! Passepartout-lah yang, dengan keberanian yang luar biasa, menerobos kerumunan di tengah teror umum. Sesaat setelah keempat anggota rombongan itu menghilang di hutan, dan gajah itu membawa mereka pergi dengan cepat. Tetapi teriakan dan suara gaduh, serta sebuah bola yang melesat menembus topi Phileas Fogg, memberi tahu mereka bahwa tipuan itu telah terbongkar. Jenazah raja tua itu memang kini muncul di atas tumpukan kayu bakar; dan para pendeta, yang telah pulih dari ketakutan mereka, menyadari bahwa telah terjadi penculikan. Mereka bergegas ke hutan, diikuti oleh para prajurit, yang menembakkan rentetan tembakan ke arah para buronan; tetapi para buronan dengan cepat memperbesar jarak antara mereka, dan tak lama kemudian mendapati diri mereka berada di luar jangkauan peluru dan panah.</p>
 
