@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kimia Kebahagiaan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --link: #1a73e8;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 720px;
+  margin: auto;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link);
+}
+
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+
+<h1>Kimia Kebahagiaan</h1>
+
+<ol>
+<li><a href="tentang-apa-buku-ini.html">TENTANG APA BUKU INI?</a></li><li><a href="kata-pengantar.html">KATA PENGANTAR</a></li><li><a href="bab-1-pengetahuan-tentang-diri.html">BAB 1: PENGETAHUAN TENTANG DIRI</a></li><li><a href="bab-2-pengetahuan-tentang-tuhan.html">BAB 2: PENGETAHUAN TENTANG TUHAN</a></li><li><a href="bab-3-pengetahuan-tentang-dunia-ini.html">BAB 3 : PENGETAHUAN TENTANG DUNIA INI</a></li><li><a href="bab-4-pengetahuan-tentang-akhirat.html">BAB 4 : PENGETAHUAN TENTANG AKHIRAT</a></li><li><a href="bab-5-tentang-musik-dan-tarian-sebagai-pembantu-kehidupan-keagamaan.html">BAB 5	:   TENTANG MUSIK DAN TARIAN SEBAGAI PEMBANTU KEHIDUPAN KEAGAMAAN</a></li><li><a href="bab-6-pemeriksaan-diri-muhasabah-dan-dzikir-kepada-allah.html">BAB 6	: PEMERIKSAAN DIRI (MUHASABAH) DAN DZIKIR KEPADA ALLAH</a></li><li><a href="bab-7-perkawinan-sebagai-pendorong-atau-penghalang-dalam-kehidupan-keagamaan.html">BAB 7  :  PERKAWINAN SEBAGAI PENDORONG ATAU PENGHALANG DALAM KEHIDUPAN KEAGAMAAN</a></li><li><a href="bab-8-cinta-kepada-allah.html">BAB 8 : CINTA KEPADA ALLAH</a></li>
+</ol>
+
+</body>
+</html>

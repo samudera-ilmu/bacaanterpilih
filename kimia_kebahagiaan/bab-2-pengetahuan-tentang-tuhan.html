@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>BAB 2: PENGETAHUAN TENTANG TUHAN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BAB 2: PENGETAHUAN TENTANG TUHAN - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
+<style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 720px;
+  margin: auto;
+  padding: 22px;
+  line-height: 1.85;
+  font-size: 18px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
+
+<div class="top-nav">
+  <a href="../index.html">⬅ Perpustakaan</a>
+  <a href="index.html">Index Buku</a>
+</div>
+
+<h1>BAB 2: PENGETAHUAN TENTANG TUHAN</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
+
+<p>Sebuah hadits Nabi (SAW) yang terkenal berbunyi "Dia yang mengenal dirinya, mengenal Allah." Artinya, dengan merenungkan wujud dan sifat- sifatnya, manusia sampai pada sebagian pengetahuan tentang Tuhan. Tetapi karena banyak orang yang merenungkan dirinya tidak juga menemui Tuhan, berarti bahwa tentulah ada cara-cara tersendiri untuk melakukan hal tersebut. Kenyataannya, ada dua metode untuk bisa sampai pada pengetahuan ini. Salah satu di antaranya sedemikian musykil sehingga tidak bisa dicerna dengan kecerdasan biasa dan karenanya lebih baik tidak dijelaskan.</p>
+<p>Metode yang lain adalah sebagai berikut. Jika seorang manusia merenungkan dirinya, ia akan tahu bahwa sebelumnya ia tidak ada, sebagaimana tertulis di dalam al-Qur'an: "Tidakkah manusia tahu bahwa sebelumnya ia bukan apa- apa?" Selanjutnya ia ketahui bahwa ia terbuat dari satu tetes air yang tidak mengandung intelek, pendengaran, kepala, tangan, kaki dan sebagainya. Dari sini jelaslah bahwa, setinggi apa pun tingkat kesempurnaannya, ia tidak menciptakan dirinya dan tidak pula ia mampu mencipta seutas rambut sekalipun.</p>
+<p>Betapa sangat tak berdayanya ia pada waktu ia baru hanya berupa setetes air itu! Jadi, sebagaimana telah kita lihat pada bab pertama (Pengetahuan Tentang Diri - pen.), dia dapati pada wujudnya sendiri terpantulkan sebagai, katakanlah, suatu miniatur kekuasaan, kebijakan dan cinta Sang Pencipta. Jika semu orang pandai dari seluruh dunia dikumpulkan dan hidup mereka diperpanjang sampai waktu yang tidak terbatas, tidak akan bisa mereka hasilkan perbaikan apa pun atas bangun satu bagian saja dari jasad manusia. Misalnya, pada penyesuaian geligi depan dan samping pada pengunyahan makanan, serta pada bangun lidah, kelenjar-kelenjar air liur dan kerongkongan untuk penelanannya, kita dapati peralatan-peralatan yang tidak bisa dibuat lebih baik lagi. Demikian pula seseorang yang merenungkan tangan dengan lima jari-jarinya yang tidak sama panjang - empat di antaranya dengan tiga persendian dan jempol yang hanya mempunyai dua - serta dengan cara bagaimana ia bisa dipergunakan untuk mencekal, menjinjing atau memukul, secara terus terang akan mengakui bahwa tidak akan mungkin kebijakan manusia bisa membuatnya lebih baik lagi dengan mengubah jumlah dan aturan jari-jari tersebut, atau dengan jalan lain apa pun.</p>
+<p>Jika seorang manusia lebih lanjut memikirkan bagaimana beragam keinginannya akan makanan, penginapan dan lain sebagainya, pemenuhannya begitu banyak disodorkan dari gudang penciptaan, ia pun menjadi sadar bahwa rahmat Allah adalah sebesar kekuasaan dan kebijakan- Nya, sebagaimaan Ia sendiri berkata: "Rahmat-Ku lebih luas dari kutukan- Ku." Dan menurut hadits Nabi (SAW), allah lebih lembut penciptaan dirinya sendiri, manusia menjadi tahu akan kemaujudan Tuhan. Dari kerangka tubuhnya yang menakjubkan ia mengetahui kekuasaan dan kebijakkan Allah. Dan lewat karunia yang berlimpah untuk memenuhi berbagai kebutuhannya, ia mengetahui kecintaan Allah. Dengan cara ini pengetahuan tentang diri menjadi kunci bagi pengetahuan tentang Allah.</p>
+<p>Bukan saja sifat-sifat manusia merupakan suatu pantulan sifat-sifat Tuhan, tetapi bentuk kemaujudan jiwa manusia pun menghasilkan suatu wawasan tentang bentuk kemaujudan Allah. Dengan demikian bisa dikatakan bahwa Allah dan jiwa kedua-duanya tidak terbatasi oleh ruang dan waktu, serta berada di luar pengelompokan-pengelompokan jumlah dan kualitas. Demikian pula gagasan-gagasan tentang bentuk, warna atau ukuran tidak bisa pula dihubungkan dengan keduanya. Orang mengalami kesulitan untuk membentuk suatu konsepsi tentang hakikat semacam itu yang hampa kualitas, jumlah, dan sebagainya, padahal kesulitan yang sama terkaitkan pula dengan konsepsi tentang perasaan kita sehari-hari, seperti marah, sakit, senang atau cinta. Semuanya itu adalah konsep-konsep pikiran dan tidak bisa dimengerti oleh indera, sementara kualitas, jumlah dan lain sebagainya adalah konsep-konsep indera. Sebagaimana telinga tidak bisa mengenali warna, tidak pula mata bisa mengenali suara; dalam ketidakmampuan kita membayangkan hakikat-hakikat puncak, yaitu Allah dan ruh, kita dapati diri kita berada di dalam suatu wilayah di mana konsep-konsep indera tidak bisa ambil bagian. Meskipun demikian, sebagaimana bisa kita lihat, Allah adalah pengatur jagat dan Ia - yang berada di luar ruang dan waktu, kuantitas dan kualitas - mengatur apa-apa yang sedemikian terkondisikan. Begitu pulalah ruh mengatur jasad dan anggota-anggotanya dalam keadaan ia sendiri tidak kasat-mata, tidak terbagi-bagi dan tidak tertempatkan di suatu bagian khusus mana pun. Karena, bagaimana bisa sesuatu yang tidak terbagi-bagi tertempatkan di dalam sesuatu yang bisa tergagi-bagi. Dari semuanya ini bisa kita lihat betapa benarnya hadits Nabi (SAW): "Allah menciptakan manusia di dalam kemiripan dengan diri-Nya sendiri."</p>
+<p>Dan setelah kita sampai pada sebagian pengetahuan tentang esensi dari sifat-sifat Allah lewat perenungan akan esensi dan sifat-sifat ruh, maka akan bisa kita pahami metode kerja, pengaturan dan pendelegasian kekuasaan Allah kepada kekuatan-kekuatan kemalaikatan dan sebagainya, yaitu dengan jalan mengamati bagaimana masing-masing kita mengatur kerajaan-kerajaan kecilnya sendiri. Sebagai contoh sederhana, misalkan seorang manusia ingin menulis nama Allah. Pertama sekali keinginan ini terbetik di dalam hati, baru kemudian dibawa ke otak oleh ruh-ruh vital. Bentuk kata "Allah" tergambar di dalam relung-relung otak, kemudian berjalan sepanjang saluran syaraf dan menggerakkan jari-jari yang pada gilirannya menggerakkan pena. Dengan demikian nama "Allah" terguratkan di atas kertas tepat sebagaimana dibayangkan di dalam otak penulisnya. Demikian pula, jika Allah menghendaki sesuatu, maka sesuatu itu tampil di dalam dataran ruhaniah yang di dalam al-Qur'an disebut sebagai "Singgasana" (al-'arsy). Dari singgasana itu ia berlalu lewat suatu arus spiritual ke arah suatu dataran yang lebih rendah yang disebut kursi (al-kursiy), kemudian bentuknya tampil dalam al-lauh 'al-mahfuzh yang, dengan perantaraan kekuatan-kekuatan yang disebut sebagai "malaikat-malaikat", mewujud dan tampil di atas bumi dalam bentuk tetanaman, pepohonan dan hewan-hewan, sebagai pencerminan keinginan dan pikiran Allah, sebagaimana huruf-huruf yang tertulis mencerminkan keinginan yang terbetik di dalam hati dan bentuk yang hadir di dalam otak sang penulis.</p>
+<p>Tidak seorang pun bisa memahami seorang raja kecuali seorang raja. Karena itu Tuhan telah menjadikan masing-masing kita sebagai, katakanlah, seorang raja dalam miniatur, atas suatu kerajaan yang merupakan tiruan dari kerajaan-Nya yang telah disusutkan secara tidak terbatas. Di dalam kerajaan manusia, singgasana Allah dicerminkan oleh ruh, malaikat (Jibril) oleh hati, kursy oleh otak dan lauhul-mahfuzh oleh ruang-gudang pikiran. Jiwa - yang ia sendiri tak tertempatkan dan tak terbagi-bagi - mengatur jasad sebagaimana Allah mengatur jagad. Pendeknya, kepada kita diamanatkan suatu kerajaan kecil, dan kita diwajibkan untuk tidak ceroboh dalam mengaturnya.</p>
+<p>Mengenai pengenalan tentang bagaimana Allah memelihara, ada banyak tingkatan pengetahuan. Ahli fisika biasa, seperti seekor semut yang merangkak di atas selembar kertas dan mengamati huruf-huruf hitam yang tersebar di atasnya, akan menunjukkan "sebab" hanya kepada pena saja. Seorang astronom, seperti seekor semut dengan pandangan agak lebih luas, bisa melihat jari-jari yang menggerakkan pena. Maksudnya, ia mengetahui bahwa bintang-bintang berada di bawah kekuasaan malaikat-malaikat. Jadi, sehubungan dengan berbagai tingkat persepsi orang, perdebatan mesti timbul dalam melacak sebab dari akibat. Orang-orang yang matanya tidak pernah melihat ke balik dunia-gejala, adalah seperti orang-orang yang salah menempatkan hamba-hamba dari tingkatan yang paling rendah ke tingkatan raja. Hukum-hukum tentang gejala mesti tetap atau, jika tidak, tak akan ada sains dan sebagainya; tetapi untuk menempatkan hamba-hamba sebagai majikan adalah suatu kesalahan besar.</p>
+<p>Selama perbedaan di dalam fakultas perseptif para pengamat ini masih ada, perdebatan memang mesti perlu berlanjut. Bagaikan beberapa orang buta yang mendengar bahwa seekor gajah telah datang ke kotanya, lantas pergi menyelidikinya. Pengetahuan yang bisa mereka peroleh hanyalah lewat indera perasaan, sehingga ketika seorang memegang kaki sang binatang, yang satu lagi memegang gadingnya dan yang lain telinganya, dan, sesuai dengan persepsi mereka masing-masing, mereka menyatakannya sebagai suatu batangan, suatu tabung yang tebal dan suatu lapisan kapas, masing- masing mengambil sebagian untuk menyatakan keseluruhannya. Jadi, sang ahli fisika dan astronomi mengacaukan hukum-hukum yang mereka tangkap dengan Sang Penetap hukum-hukum. Kesalahan yang sama dilemparkan kepada Ibrahim di dalam al-Qur'an yang meriwayatkan bahwa ia berturut-turut berpaling kepada bintang-bintahg, bulan dan matahari sebagai obyek-obyek penyembahan, sampai kemudian menjadi sadar tentang Dia yang membuat segala sesuatu, Ibrahim pun berseru: "Saya tidak menyukai segala sesuatu yang terbenam." (QS 6:76).</p>
+<p>Kita memiliki sebuah contoh yang sudah umum tentang pengacuan kepada sebab-sebab kedua apa-apa yang seharusnya diacu kepada Sebab Pertama, yaitu dalam persoalan apa yang disebut sebagai penyakit. Misalnya jika seseorang kehilangan rasa tertariknya apda urusan duniawi, memiliki rasa benci terhadap kesenangan-kesenangan umum, dan tampak tenggelam dalam depresi, dokter akan berkata: "Ini adalah kasus melankoli yang membutuhkan resep ini dan itu." Seorang ahli fisika akan berkata: "Ini adalah persoalan kekeringan otak yang disebabkan oleh cuaca panas dan tidak bisa disembuhkan sampai udara menjadi lembab kembali." Sang ahli astrologi akan mengaitkan hal ini dengan konjungsi atau oposisi tertentu planet-planet. "Sejauh jangkauan kebijakan mereka," kata al-Qur'an. Tidak terbayangkan oleh mereka bahwa yang sesungguhnya terjadi adalah seperti demikian: bahwa Yang Maha Kuasa berkehendak mengurus kesejahteraan orang itu, dan oleh karenanya telah memerintahkan hamba-hamba-Nya, yakni planet- planet atau unsur-unsur, agar menciptakan keadaan seperti itu di dalam diri orang tersebut, sehingga ia bisa berpaling dari dunia ke arah Penciptanya. Pengetahuan tentang kenyataan ini merupakan suatu mutiara yang berkilauan dari lautan pengetahuan keilhaman, yang dibandingkan dengannya, semua bentuk pengetahuan lain menjadi bagaikan pulau-pulau di tengah laut.</p>
+<p>Dokter, ahli fisika dan ahli astrologi tersebut, tak syak lagi memang benar dalam cabang pengetahuan-khususnya masing-masing, tetapi mereka tidak bisa melihat bahwa penyakit itu adalah, katakanlah, suatu tali cinta yang digunakanoleh Allah untuk menarik para wali mendekat kepada diri-Nya. Tentang para wali ini Allah berfirman: "Aku sakit dan kamu tidak menjenguk- Ku." (ini hanya kiasan-pen). Penyakit itu sendiri adalah salah satu di antara bentuk-bentuk pengalaman yang menjadi sarana bagi manusia untuk sampai pada pengetahuan tentang Allah, sebagaimana Ia lewat mulut nabi-Nya (SAW): "Penyakit-penyakit itu sendiri adalah hamba-hamba-Ku, dan dikenakan atas pilihan-Ku."</p>
+<p>Catatan-catatan di atas memungkinkan kita memasuki lebih dalam makna seruan-seruan yang melekat di bibir orang-orang mukmin: "Subhanallah, alhamdulillah, la ilaha illallah, allahu akbar." Mengenai yang terakhir, kita bisa berkata bahwa hal itu tidaklah berarti bahwa Allah lebih besar dari penciptaan, karena penciptaan adalah pengejawantahan-Nya, sebagaimana cahaya adalah pengejawantahan matahari. Dan akan tidak benar kalau dikatakan bahwa matahari lebih besar dari cahayanya sendiri. Hal itu lebih berarti bahwa kebesaran Allah sama sekali melampaui kemampuan kognitif dan bahwa kita hanya bisa membentuk suatu gagasan yang amat kabur dan tidak sempurna tentang-Nya. Jika seorang anak meminta kita untuk menerangkan padanya kesenangan-kesenangan yang ada di dalam pemilikan kedaulatan, kita bisa berkata bahwa hal itu adalah seperti kesenangan-kesenangan yang ia rasakan di dalam bermain-main dengan alat pemukul dan bola, meskipun pada hakikatnya keduanya tidak memiliki sesuatu yang sama kecuali bahwa keduanya termasuk ke dalam katagori kesenangan. Jadi, seruan Allahu akbar berarti bahwa kebesaran-Nya jauh melampaui kemampuan pemahaman kita. Lagi pula, pengetahuan tentang Allah yang tidak sempurna seperti itu - sebagaimana yang bisa kita peroleh - bukanlah sekadar suatu pengetahuan spekulatif belaka, tetapi mesti dibarengi dengan penyerahan dan ibadah. Jika seseorang meninggal dunia, dia berurusan hanya dengan Allah saja.</p>
+<p>Dan jika kita harus hidup bersama seseorang, kebahagiaan kita sama sekali tergantung pada tingkat kecintaan yang kita rasakan kepadanya. Cinta adalah benih kebahagiaan, dan cinta kepada Allah ditumbuhkan dan dikembangkan oleh ibadah. Ibadan dan zikir yang terus-menerus seperti itu mengisyaratkan suatu tingkat tertentu dari keprihatinan dan pengekangan nafsu-nafsu badaniah. Hal ini tidak berarti bahwa seseorang diharapkan untuk sama sekali memusnahkan nafsu-nafsu badaniah itu, karena jika demikian halnya, maka ras manusia akan musnah. Tetapi batasan-batasan yang ketat mesti dikenakan pada usaha pemuasannya. Dan karena manusia bukan hakim yang terbaik dalam kasusnya sendiri, maka untuk menetapkan batasan- batasan apa yang harus dikenakan itu sebaiknya ia konsultasikan masalah tersebut kepada  pembimbing-pembimbing  ruhaniah.  Pembimbing- pembimbing ruhaniah seperti itu adalah para nabi. Hukum-hukum yang telah mereka tetapkan berdasar wahyu Tuhan menentukan batasan-batasan yang mesti ditaati dalam persoalan-persoalan ini. Orang yang melanggar batas- batas ini berarti "telah menganiaya dirinya sendiri", sebagaimana tertulis di dalam al-Qur'an. Meskipun pernyataan al-Qur'an ini telah jelas, masih ada juga orang-orang yang, karena kejahilannya tentang Allah, melanggar batas- batas tersebut. Kejahilan ini bisa disebabkan karena berbagai sebab.</p>
+<p>Pertama, ada orang yang gagal menemukan Allah lewat pengamatan, lantas menyimpulkan bahwa Allah itu tidak ada dan bahwa dunia yang penuh  keajaiban-keajaiban ini menciptakan dirinya sendiri atau ada dari keabadian. Mereka bagaikan seseoran gyang melihat suatu huruf yang tertulis dengan indah kemudian menduga bahwa tulisan itu tertulis dengan sendirinya tanpa ada penulisnya, atau memang sudah selalu ada. Orang-orang dengan cara berpikir seamcam ini sudah terlalu jauh tersesat sehingga berdebat dengan mereka akan sedikit sekali manfaatnya. Orang-orang seperti itu mirip seorang ahli fisika dan astronomi yang kita sebut di atas.</p>
+<p>Kedua, sejumlah orang yang, akibat kejahilan tentang sifat jiwa yang sebenarnya, menolak doktrin kehidupan akhrat, tempat manusia akan diminta pertanggungjawabannya dan diberi balasan baik atau dihukum. Mereka anggap diri mereka sendiri sebagai tidak lebih baik daripada hewan-hewan atau sayur-sayuran, dan sama-sama bisa musnah.</p>
+<p>Ketiga, di lain pihak, ada orang yang percaya pada Allah dan kehidupan akhirat, tapi hanya dengan iman yang lemah. Mereka berkata kepada diri mereka sendiri. "Allah itu Maha Besar dan tidak tergantung pada kita; kita beribadah atau tidak merupakan masalah yang sama sekali tidak penting bagi Dia." Mereka berpikir seperti orang sakit yang ketika oleh dokter diberi peraturan pengobatan tertentu kemudian berkata: "Yah, saya ikuti atau tidak, apa urusannya dengan dokter itu." Tentunya hal ini tidak berakibat apa-apa terhadap dokter tersebut, tetapi pasien itu bisa merusak dirinya sendiri akibat ketidaktaatannya. Sebagaimana pastinya penyakit jasad yang tak terobati berakhir dengan kematian jasad, begitu pula penyakit jiwa yang tak tersembuhkan akan berakhir dengan kepedihan di masa datang. Sesuai dengan kata-kata al-Qur'an: "Orang-orang yang akan diselamatkan hanyalah yang datang kepada Allah dengan hati yang bersih."</p>
+<p>Keempat, adalah orang-orang kafir yang berkata: "Syariah mengajarkan kepada kita untuk menahan amarah, nafsu dan kemunafikan. Hal ini jelas tidak mungkin dilaksanakan, mengingat manusia diciptakan dengan kualitas-</p>
+<p>kualitas bawaan seperti ini di dalam dirinya. Sama saja dengan kamu meminta agar kami jelmakan yang hitam menjadi putih." Orang-orang jahil itu sama sekali buta akan kenyataan bawha syariah tidak mengajarkan kita untuk mencerabut nafsu-nafsu ini, melainkan untuk meletakkan mereka di dalam batas-batasnya. Sehingga, dengan menghindar dari dosa-dosa besar, kita bisa mendapatkan ampunan atas dosa-dosa kita yang lebih kecil. Bahkan, Nabi saw. berkata: "Saya adalah manusia seperti kamu juga, dan marah seperti yang lain-lain." Dan di dalam al-Qur'an tertulis: "Allah mencintai orang- orang yang menahan amarahnya," bukan orang-orang yang tidak punya marah sama sekali.</p>
+<p>Kelima, adalah kelompok yang menonjol-nonjolkan kemurahan Allah seraya mengabaikan keadilan-Nya, kemudian berkata kepada dirinya sendiri: "Ya, apa pun yang kita kerjakan, Allah Maha Pemaaf." Mereka tidak berpikir bahwa meskipun Allah itu bersifat pemaaf, beribu-ribu manusia hancur secara menyedihkan karena kelaparan dan penyakit. Mereka mengetahui bahwa siapa saja yang menginginkan suatu kehidupan, kemakmuran atau kepintaran, tidak boleh sekadar berkata, "Tuhan Maha Pemaaf," tetapi mesti berusaha sendiri dengan keras. Meskipun al-Qur'an berkata: "Semua makhluk hidup rizkinya datang dari Allah," di sana tertulis pula: "Manusia tidak mendapatkan sesuatu kecuali dengan berusaha." Kenyataannya adalah: ajaran semacam itu berasal dari setan, dan orang-orang seperti itu hanya berbicara dengan bibirnya, tidak dengan hatinya.</p>
+<p>Keenam, adalah kelompok yang mengklaim sebagai telah mencapai suatu tingkat kesucian tertentu sehingga dosa tidak dapat lagi mempengaruhi mereka. Meski demikian, jika anda perlakukan salah seorang di antara mereka dengan tidak hormat, dia akan menaruh dendam terhadap anda selama bertahun-tahun. Dan jika salah seorang di antara mereka tidak mendapatkan sebutir makanan yang dia pikir merupakan haknya, seluruh dunia akan tampak gelap dan sempit baginya. Bahkan, jika ada di antara mereka benar-benar bisa menaklukkan nafsu-nafsunya, mereka tidak punya hak untuk membuat klaim semacam itu, mengingat para nabi - jenis manusia yang tertinggi - terus-menerus mengakui dan meratapi dosa-dosa mereka. Beberapa di antara mereka mempunyai dosa yang sedemikian besar, sehingga mereka bahkan menjauhkan diri dari hal-hal yang halal. Pernah diriwayatkan dari Nabi saw. bahwa suatu hari ketika sebutir koma dibawa kepadanya, beliau tidak mau memakannya hanya lantaran tidak yakin bahwa korma tersebut diperoleh secara halal. Sementara orang-orang yang berkehidupan bebas ini mau meneguk berliter-liter anggur dan mengklaim (saya menggigil pada saat menulis ini) sebagai lebih unggul dari Nabi yang kesuciannya diancam oleh sebutir kurma, sementara mereka tidak terpengaruh oleh anggur sebanyak itu. Patutlah jika setan membenamkan mereka ke dalam kehancuran total. Orang-orang suci sejati mengetahui bahwa orang yang tidak bisa menguasai nafsu-nafsunya tidak pantas disebut sebagai seorang manusia. Dan bahwa seorang muslim sejati adalah orang yang dengan senang hati mau mengakui batas-batas yang ditetapkan oleh syariah.</p>
+<p>Orang yang berupaya dengan dalih apa pun untuk mengabaikan kewajiban-kewajibannya, sudah jelas berada dalam pengaruh setan dan harus diajak berbicara tidak dengan sebatang pena, tapi dengan sebilah pedang. Para penganut mistik palsu semacam ini kadang-kadang berpura- pura telah tenggelam di dalam lautan ketakjuban. Tetapi, jika anda bertanya kepada mereka tentang apa yang mereka takjubkan, mereka tidak tahu. Mereka mesti disuruh agar takjub semau mereka, tetapi pada saat yang sama agar mengingat bahwa Yang Maha Kuasa adalah penciptanya, dan bahwa mereka adalah abdi-abdi-Nya.</p>
+
+<div class="nav">
+  <a href="bab-1-pengetahuan-tentang-diri.html">⬅ Bab 1: Pengetahuan Tentang Diri</a>
+  <a href="bab-3-pengetahuan-tentang-dunia-ini.html">Bab 3 : Pengetahuan Tentang Dunia Ini ➡</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>BAB 1: PENGETAHUAN TENTANG DIRI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BAB 1: PENGETAHUAN TENTANG DIRI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
+<style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 720px;
+  margin: auto;
+  padding: 22px;
+  line-height: 1.85;
+  font-size: 18px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
+
+<div class="top-nav">
+  <a href="../index.html">⬅ Perpustakaan</a>
+  <a href="index.html">Index Buku</a>
+</div>
+
+<h1>BAB 1: PENGETAHUAN TENTANG DIRI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
+
+<p>Pengetahuan tentang diri adalah kunci pengetahuan tentang Tuhan, sesuai dengan Hadits: "Dia yang mentetahui dirinya sendiri, akan mengetahui Tuhan," dan sebagaimana yang tertulis di dalam al-Qur'an: "Akan Kami tunjukkan ayat-ayat kami di dunia ini dan di dalam diri mereka, agar kebenaran tampak bagi mereka." Nah, tidak ada yang lebih dekat kepada anda kecuali diri anda sendiri. Jika anda tidak mengetahui diri anda sendiri, bagaimana anda bisa mengetahui segala sesuatu yang lain. Jika anda berkata" "Saya mengetahui diri saya"- yang berarti bentuk luar anda; badan, muka dan anggota-anggota badan lainnya - pengetahuan seperti itu tidak akan pernah bisa menjadi kunci pengetahuan tentang Tuhan. Demikian pula halnya jika pengetahuan anda hanyalah sekedar bahwa kalau lapar anda makan, dan kalau marah anda menyerang seseorang; akankah anda dapatkan kemajuan-kemajuan lebih lanjut di dalam lintasan ini, mengingat bahwa dalam hal ini hewanlah kawan anda?</p>
+<p>Pengetahuan tentang diri yang sebenarnya, ada dalam pengetahuan tentang hal-hal berikut ini:</p>
+<p>Siapakah anda, dan dari mana anda datang? Kemana anda pergi, apa tujuan anda datang lalu tinggal sejenak di sini, serta di manakah kebahagiaan anda dan kesedihan anda yang sebenarnya berada? Sebagian sifat anda adalah sifat-sifat binatang, sebagian yan glain adalah sifat-sifat setan dan selebihnya sifat-sifat malaikat. Mestai anda temukan, mana di antara sifat-sifat ini yan gaksidental dan mana yan gesensial (pokok). Sebelum anda ketahui hal ini, tak akan bisa anda temukan letak kebahagiaan anda yang sebenarnya.</p>
+<p>Pekerjaan hewan hanyalah makan, tidur dan berkelahi. Oleh karena itu, jika anda seekor hewan, sibukkan diri anda dengan pekerjaan-pekerjaan ini. Setan selalu sibuk mengobarkan kejahatan, akal bulus dan kebohongan. Jika anda termasuk dalam kelompok mereka, kerjakan pekerjaan mereka. Malaikat-malaikat selalu merenungkan keindahan Tuhan dan sama sekali bebas dari kualitas-kualitas hewan. Jika anda punya sifat-sifat malaikat, maka berjuanglah untuk mencapai sifat-sifat asal anda agar bisa anda kenali dan renungi Dia Yang Maha Tinggi, serta merdeka dari perbudakan nafsu dan amarah. Juga mesti anda temukan sebab-sebab anda diciptakan dengan kedua insting hewan ini: mestikah keduanya menundukkan dan memerangkap anda, ataukah anda yang mesti menundukkan mereka dan - dalam kemajuan anda - menjadikan salah satu di antaranya sebagai kuda tunggangan serta yang lainnya sebagai senjata.</p>
+<p>Langkah pertama menuju pengetahuan tentang diri adalah menyadari bahwa anda terdiri dari bentuk luar yang disebut sebagai jasad, dan wujud dalam yang disebut sebagai hati atau ruh. Yang saya maksudkan dengan "hati" bukanlah sepotong daging yang terletak di bagian kiri badan, tetapi sesuatu yang menggunakan fakultas-fakultas lainnya sebagai alat dan pelayannya. Pada hakikatnya dia tidak termasuk dalam dunia kasat-mata, melainkan dunia maya; dia datang ke dunia ini sebagai pelancong yan gmengunjungi suatu negeri asing untuk keperluan perdagangan dan yang akhirnya akan kembali ke tanah asalnya. Pengetahuan tentang wujud dan sifat-sifatnya inilah yang merupakan kunci pengetahuan tentang Tuhan.</p>
+<p>Beberapa gagasan tentang hakikat hati atau ruh bisa diperoleh seseorang yang mengatupkan matanya dan melupakan segala sesuatu di sekitarnya selain individualitasnya. Dengan demikian, ia juga akan memperoleh penglihatan sekilas akan sifat tak berujung dari individualitas itu. Meskipun demikian, pemeriksaan yang terlalu dekat kepada esensi ruh dilarang oleh syariat. Di dalam al-Qur'an tertulis: "Mereka bertanya kepadamu tentang ruh. Katakan: Ruh itu adalah urusan Tuhanku." (QS 17:85). Yang bisa diketahui adalah bahwa ia merupakan suatu esensi tak terpisahkan yang termasuk dalam dunia titah, dan bahwa ia tidak berasal dari sesuatu yang abadi, melainkan diciptakan. Pengetahuan filosofis yang tepat tentang ruh bukanlah merupakan pendahuluan yang perlu untuk perjalanan di atas lintasan agama, melainkan muncul lebih sebagai akibat disiplin-diri dan kesabaran berada di atas lintasan itu, sebagaimana dikatakan dalam al-Qur'an: "Siapa yang berjuang di jalan Kami, pasti akan Kami tunjukkan padanya jalan yan glurus." (QS 29:69).</p>
+<p>Untuk melanjutkan peperangan ruhaniah demi mendapatkan pengetahuan tentang diri dan tentang Tuhan, jasad bisa digambarkan sebagai suatu kerajaan, jiwa (ruh) sebagai rajanya serta berbagai indera dan fakultas lain sebagai tentaranya. Nalar bisa disebut sebagai wazir atau perdana menteri, nafsu sebagai pemungut pajak dan amarah sebagai petugas polisi. Dengan berpura-pura mengumpulkan pajak, nafsu terus-menerus cenderung untuk merampas demi kepentingannya sendiri, sementara amarah selalu cenderung kepada kekasaran dan kekerasan. Pemungut pajak dan petugas polisi keduanya harus selalu ditempatkan di bawah raja, tetapi tidak dibunuh atau diungguli, mengingat mereka memiliki fungsi-fungsi tersendiri yang harus dipenuhinya. Tapi jika nafsu dan amarah menguasai nalar, maka - tak bisa tidak - keruntuhan jiwa pasti terjadi. Jiwa yang membiarkan fakultas-fakultas yang lebih rendah untuk menguasai yang lebih tinggi ibarat seseorang yang menyerahkan seorang bidadari kepada kekuasaan seekor anjing, atau seorang muslim kepada tirani seorang kafir.</p>
+<p>Penanaman kualitas-kualitas setan, hewan ataupun malaikat menghasilkan watak-watak yang sesuai dengan kualitas tersebut - yang di Hari Perhitungan akan diwujudkan dalam bentuk kasat-mata, seperti nafsu sebagai babi, ganas sebagai anjing dan serigala, serta suci sebagai malaikat. Tujuan disiplin moral adalah untuk memurnikan hati dari karat-nafsu dan amarah, sehingga bagaikan cermin yan gjernih, ia memantulkan cahaya Tuhan.</p>
+<p>Barangkali di antara pembaca ada yang akan berkeberatan, "Tapi jika manusia telah diciptakan dengan kualitas-kualitas hewan, setan dan malaikat, bagaimana bisa kita ketahui bahwa kualitas malaikat merupakan esensinya yang sebenarnya, sementara kualitas hewan dan setan hanyalah aksidental dan peralihan belaka?" Atas pertanyaan ini, saya jawab bahwa esensi tiap makhluk adalah sesuatu yang tertinggi di dalam dirinya dan khas baginya.</p>
+<p>Kuda dan keledai kedua-duanya adalah hewan pengangkut beban, tetapi kuda lebih unggul dari keledai karena ia dimanfaatkan untuk perang. Jika gagal dalam hal ini, ia pun terpuruk ke tingkatan binatang pengangkut beban. Fakultas tertinggi di dalamnya adalah nalar yang menjadikannya bisa merenung tentang Tuhan. Jika fakultas ini dominan dalam dirinya, maka ketika mati dia tinggalkan di belakangnya segenap kecenderungan kepada nafsu dan amarah, sehingga memungkinkannya berkawan dengan para malaikat. Dalam hal pemilikan kualitas-kualitas hewan, manusia kalah dibanding banyak hewan, tetapi nalar membuatnya lebih unggul dari mereka, sebagaimana tertulis di dalam al-Qur'an: "Telah Kami tundukkan segala sesuatu di atas bumi untuk manusia" (QS 45:13). Tetapi jika kecenderungan- kecenderungannya yang lebih rendah yang menang, maka setelah kematiannya, dia akan selamanya menghadap ke bumi dan mendambakan kesenangan-kesenangan duniawi.</p>
+<p>Selanjutnya, jiwa rasional di dalam manusia penuh dengan keajaiban- keajaiban pengetahuan maupun kekuatan. Dengan itu semua ia menguasai seni dan sains, ia bisa menempuh jarak dari bumi ke langit bolak-balik  secepat kilat, dan mampu mengatur lelangit dan mengukur jarak antar bintang. Dengan itu juga ia bisa menangkap ikan dari lautan dan burung- burung dari udara, serta bisa menundukkan binatang-binatang seperti gajah, unta dan kuda.</p>
+<p>Pancainderanya bagaikan lima pintu yang terbuka menghadap ke dunia luar. Tetapi ajaib dari semuanya ini, hatinya memiliki jendela yang terbuka ke arah dunia ruh yang tak kasat-mata. Dalam keadaan tertidur, ketika saluran inderanya tertutup, jendela ini terbuka dan ia menerima kesan-kesan dari dunia tak-kasat-mata; kadang-kadang bisa ia dapatkan isyarat tentang masa depan. Hatinya bagaikan sebuah cermin yang memantulkan segala sesuatu yang tergambar di dalam Lauhul-mahfuzh. Tapi, bahkan dalam keadaan tidur, pikiran-pikiran akan segala sesuatu yang bersifat keduniaan akan memburamkan cermin ini, sehingga kesan-kesan yang diterimanya tidak jelas. Meskipun demikian setelah mati pikiran-pikiran seperti itu sirna dan segala sesuatu tampak dalam hakikat-telanjangnya. Dan kata-kata di dalam al-Qur'an pun menyatakan: "Telah Kami angkat tirai darimu dan hari ini penglihatanmu amat tajam."</p>
+<p>Membuka sebuah jendela di dalam hati yang mengarah kepada yan gtak- kasat-mata ini juga terjadi di dalam keadaan-keadaan yang mendekati ilham kenabian, yakni ketika intuisi timbul di dalam pikiran - tak terbawa lewat saluran-indera apa pun. Makin seseorang memurnikan dirinya dari syahwat- syahwat badani dan memusatkan pikirannya pada Tuhan, akan makin pekalah ia terhadap intuisi-intuisi seperti itu. Orang-orang yang tidak sadar akan hal ini tidak punya hak untuk menyangkal hakikatnya.</p>
+<p>Intuisi-intuisi seperti itu tidak pula terbatas hanya pada tingkatan kenabian saja. Sebagaimana juga besi, dengan memolesnya secukupnya, ia akan bisa dijelmakan menjadi sebuah cermin. Jadi, dengan disiplin yang memadai, pikiran siapa pun bisa dijadikan mampu menerima kesan-kesan seperti itu. Kebenaran inilah yang diisyaratkan oleh Nabi ketika beliau berkata: "Setiap anak lahir dengan suatu fitrah (untuk menjadi muslim); orang tuanyalah yang kemudian membuatnya menjadi seorang Yahudi, Nasrani atau Majusi." Setiap manusia, di kedalaman kesadarannya, mendengar pertanyaan "Bukankah Aku ini tuhanmu?" dan menjawab "Ya". Tetapi ada hati yang menyerupai cermin yang telah sedemikian dikotori oleh karat dan kotoran sehingga tidak lagi memberikan pantulan-pantulan yang jernih. Sementara hati para nabi dan wali, meskipun mereka juga mempunyai nafsu seperti kita, sangat peka terhadap segenap kesan-kesan ilahiah.</p>
+<p>Bukan hanya dengan nalar pengetahuan capaian dan intuitif saja jiwa manusia bisa menempati tingkatan palin gutama di antara makhluk-makhluk lain, tetapi juga dengan nalar kekuatan. Sebagaimana malaikat-malaikat berkuasa atas kekuatan-kekuatan alam, demikian jugalah jiwa mengatur anggota-anggota badan. Jiwa yang telah mencapai suatu tingkatan kekuatan khusus, tidak saja mengatur jasadnya sendiri, melainkan juga jasad orang lain. Jika mereka ingin agar seseorang yang sakit bisa sembuh, maka si sakit pun akan sembuh, atau menginginkan seseorang yang sehat agar jatuh sakit, maka sakitlah orang itu, atau jika ia inginkan kehadiran seseorang, maka datanglah orang itu kepadanya. Sesuai dengan baik-buruknya akibat yang ditimbulkan oleh jiwa yang sangat kuat ini, hal tersebut diistilahkan sebagai mukjizat dan sihir. Jiwa ini berbeda dari orang biasa dalam tiga hal:</p>
+<p>1.	Yang hanya dilihat oleh orang-orang lain sebagai mimpi, mereka lihat pada saat-saat jaga. 2.	Sementara kehendak orang lain hanya mempengaruhi jasad mereka saja, jiwa ini, dengan kekuatan kehendaknya, bisa pula menggerakan jasad-jasad di luar mereka. 3.	Pengetahuan yang oleh orang lain diperoleh dengan belajar secara sungguh-sungguh, sampai kepada mereka lewat intuisi.</p>
+<p>Tentunya bukan hanya tiga tanda ini sajalah yang membedakan mereka dari orang-orang biasa, tetapi hanya ketiganya itulah yang bisa kita ketahui. Sebagaimana halnya, tidak ada sesuatu pun yang mengetahui sifat-sifat Tuhan yang sebenarnya, kecuali Tuhan sendiri, maka tak ada seorang pun yang mengetahui sifat sebenarnya seorang Nabi, kecuali seorang Nabi. Hal ini tak perlu kita herankan, sama halnya dengan di dalam peristiwa sehari-hari kita melihat kemustahilan untuk menerangkan keindahan puisi pada seseorang yan gtelinganya kebal terhadap irama, atau menjelaskan keindahan warna kepada seseorang yang sama sekali buta. Di samping ketidakmampuan, ada juga hambatan-hambatan lain di dalam pencapaian kebenaran ruhaniah. Salah satu di antaranya adalah pengetahuan yang dicapai secara eksternal. Sebagai misal, hati bisa digambarkan sebagai sumur dan pancaindera sebagai lima aliran yang dengan terus-menerus membawa air ke dalamnya. Agar bisa menemukan kandungan hati yang sebenarnya, maka aliran-aliran ini mesti dihentikan untuk sesaat dengan cara apa pun dan sampah yang dibawa bersamanya mesti dibersihkan dari sumur itu. Dengan kata lain, jika kita ingin sampai kepada kebenaran ruhani yang murni, pada saat itu mesti kita buang pengetahuan yang telah dicapai dengan proses-proses eksternal dan yang sering sekali mengeras menjadi prasangka dogmatis.</p>
+<p>Kesalahan dari jenis lain, berlawanan dengan itu, dibuat oleh orang-orang yang dangkal yang - dengan menggemakan beberapa ungkapan yang mereka tangkap dari guru-guru Sufi - ke sana ke mari menyebarkan kutukan terhadap semua pengetahuan. Ia bagaikan seseorang yang tidak capak di bidang kimia menyebarkan ucapan: "Kimia lebih baik dari emas," dan menolak emas ketika ditawarkan kepadanya. Kimia memang lebih baik dari emas, tapi para ahli kimia sejati amatlah langka, demikian pula Sufi-sufi sejati. Seseorang yang hanya memiliki pengetahuan yang dangkal tentang tasawuf, tidak lebih unggul daripada seorang yang terpelajar. Demikian pula seseorang yang baru mencoba beberapa percobaan kimia, tidak punya alasan untuk merendahkan seorang kaya.</p>
+<p>Setiap orang yang mengkaji persoalan ini akan melihat bahwa kebahagiaan memang terkaitkan dengan pengetahuan tentang Tuhan. Tiap fakultas dalam diri kita senang dengan segala sesuatu yang untuknya ia diciptakan. Syahwat senang memuasi nafsu, kemarahan senang membalas dendam, mata senang melihat obyek-obyek yang indah, dan telinga senang mendengar suara-suara yang selaras. Fungsi tertinggi jiwa manusia adalah pencerapan kebenaran, karena itu dalam mencerap kebenaran tersebut ia mendapatkan kesenangan tersendiri. Bahkan soal-soal remeh, seperti mempelajari catur, juga mengandung kebaikan. Dan makin tinggi materi subyek pengetahuan didapatnya, makin besarlah kesenangannya. Seseorang akan senang jika dipercayai untuk jabatan Perdana Menteri, tetapi betapa lebih senangnya ia jika sang raja sedemikian akrab dengannya sehingga membukakan soal-soal rahasia baginya.</p>
+<p>Seorang ahli astronomi yang dengan pengetahuannya bisa memetakan bintang-bintang dan menguraikan lintasan-lintasannya, mereguk lebih banyak kenikmatan dari pengetahuannya dibanding seorang pemain catur. Setelah mengetahui bahwa tak ada sesuatu yang lebih tinggi dari Allah, maka betapa akan besarnya kebahagiaan yang memancar dari pengetahuan sejati tentang- Nya itu!</p>
+<p>Orang yang telah kehilangan keinginan akan pengetahuan seperti ini adalah bagaikan seorang yang telah kehilangan seleranya terhadap makanan sehat, atau yang untuk hidupnya lebih menyukai makan lempung daripada roti. Semua nafsu badani musnah pada saat kematian bersamaan dengan kematian organ-organ yang biasa diperalat nafsu-nafsu tersebut. Tetapi jiwa tidak. Ia simpan segala pengetahuan tentang Tuhan yang dimilikinya, malah menambahnya.</p>
+<p>Suatu bagian penting dari pengetahuan kita tentang Tuhan timbul dari kajian dan renungan atas jasad kita sendiri yang menampakkan pada kita kebijaksanaan, kekuasaan, serta cinta Sang Pencipta. Dengan kekuasan- Nya, Ia bangun kerangka tubuh manusia yang luar biasa dari hanya suatu tetesan belaka. Kebijakan-Nya terungkapkan di dalam kerumitan jasad kita serta kemampuan bagian-bagiannya untuk saling menyesuaikan, Ia perlihatkan cinta-Nya dengan memberikan lebih dari sekadar organ-organ yang memang mutlak perlu bagi eksistensi - seperti hati, jantung dan otak - tetapi juga yang tidak mutlak perlu - seperti tangan, kaki, lidan dan mata.</p>
+<p>Kepada semuanya ini telah Ia tambahkan sebagai hiasan hitamnya rambut, merahnya bibir dan melengkungnya bulu mata.</p>
+<p>Manusia dengan tepat disebut sebagi 'alamushshaghir' atau jasad-kecil di dalam dirinya. Struktur jasadnya mesti dipelajari, bukan hanya oleh orang- orang yang ingin menjadi dokter, tetapi juga oleh orang-orang yang ingin mencapai pengetahuan yang lebih dalam tentang Tuhan, sebagaimana studi yang mendalam tentang keindahan dan corak bahasa di dalam sebuah puisi yang agung akan mengungkapkan pada kita lebih banyak tentang kejeniusan pengarangnya.</p>
+<p>Di atas semua itu, pengetahuan tentang jiwa memainkan peranan yang lebih penting dalam membimbing ke arah pengetahuan tentang Tuhan ketimbang pengetauhan tentan gjasad kita dan fungsi-fungsinya. Jasad bisa diperbandingkan dengan seekor kuda dengan jiwa sebagai penunggangnya. Jasad diciptakan untuk jiwa dan jiwa untuk jasad. Jika seorang manusia tidak mengetahui jiwanya sendiri - yang merupakan sesuatu yang paling dekat dengannya - maka apa arti klaimnya bahwa ia telah mengetahui hal-hal lain. Kalau demikian, ia bagaikan seorang pengemis yang tidak memiliki persediaan makanan, lalu mengklaim bisa memberi makan seluruh penduduk kota.</p>
+<p>Dalam bab ini kita telah berusaha sampai tingkat tertentu untuk memaparkan kebesaran jiwa manusia. Seseorang yang mengabaikannya dan menodai kapasitasnya dengan karat atau memerosotkannya, pasti menjadi pihak yang kalah di dunia ini dan di dunia mendatang. Kebesaran manusia yang sebenarnya terletak pada kapasitasnya untuk terus-menerus meraih kemajuan. Jika tidak, di dalam ruang temporal ini, ia akan menjadi makhluk yang paling lemah di antara segalanya - takluk oleh kelaparan, kehausan, panas, dingin dan penderitaan. Sesuatu yang paling ia senangi sering merupakan sesuatu yang paling berbahaya baginya. Dan sesuatu yang menguntungkannya tidak bisa ia peroleh kecuali dengan kesusahan dan kesulitan. Mengenai inteleknya, sekadar suatu kekacauan kecil saja di dalam otaknya sudah cukup untuk memusnahkan atau membuatnya gila. Sedangkan mengenai kekuatannya, sekadar sengatan tawon saja sudah bisa mengganggu rasa santai dan tidurnya. Mengenai tabiatnya, dia sudah akan gelisah hanya dengan kehilangan satu rupiah saja. Dan tentang kecantikannya, ia hanya sedikit lebih cantik daripada benda-benda memuakkan yang diselubungi dengan kulit halus. Jika tidak sering dicuci, ia akan menjadi sangat menjijikkan dan memalukan.</p>
+<p>Sebenarnyalah manusia di dunia ini sungguh amat lemah dan hina. Hanya di dalam kehidupan yang akan datang sajalah ia akan mempunyai nilai, jika dengan sarana "kimia kebahagiaan" tersebut ia meningkat dari tingkat hewan ke tingkat malaikat. Jika tidak, maka keadaannya akan menjadi lebih buruk dari orang-orang biadab yan gpasti musnah dan menjadi debu. Perlu baginya untuk - bersamaan dengan timbulnya kesadaran akan keunggulannya sebagai makhluk terbaik - belajar mengetahui juga ketidakberdayaannya, karena hal ini juga merupakan salah satu kunci kepada pengetahuan tentang Tuhan.</p>
+
+<div class="nav">
+  <a href="kata-pengantar.html">⬅ Kata Pengantar</a>
+  <a href="bab-2-pengetahuan-tentang-tuhan.html">Bab 2: Pengetahuan Tentang Tuhan ➡</a>
+</div>
+
+</body>
+</html>

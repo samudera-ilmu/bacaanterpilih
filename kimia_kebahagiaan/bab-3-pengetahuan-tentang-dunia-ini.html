@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>BAB 3 : PENGETAHUAN TENTANG DUNIA INI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BAB 3 : PENGETAHUAN TENTANG DUNIA INI - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
+<style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 720px;
+  margin: auto;
+  padding: 22px;
+  line-height: 1.85;
+  font-size: 18px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
+
+<div class="top-nav">
+  <a href="../index.html">⬅ Perpustakaan</a>
+  <a href="index.html">Index Buku</a>
+</div>
+
+<h1>BAB 3 : PENGETAHUAN TENTANG DUNIA INI</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
+
+<p>Dunia ini adalah sebuah panggung atau pasar yang disinggahi oleh para musafir di tengah perjalannya ke tempat lain. Di sinilah mereka membekali diri dengan berbagai perbekalan untuk perjalanan itu. Jelasnya, di sini manusia dengan menggunakan indera-indera jasmaniahnya, memperoleh sejumlah pengetahuan tentang karya-karya Allah serta, melalui karya-karya tersebut, tentang Allah sendiri. Suatu pandangan tentang-Nya akan menentukan kebahagiaan masa-depannya. Untuk memperoleh pengetahuan inilah ruh manusia diturunkan ke alam air dan lempung ini. Selama indera-inderanya masih tinggal bersamanya, dikatakan bahwa ia berada di "alam ini". Jika kesemuanya itu pergi dan hanya sifat-sifat esensinya saja yang tinggal, dikatakan ia telah pergi ke "alam lain".</p>
+<p>Sementara manusia berada di dunia ini ada dua hal yang perlu baginya. Pertama, perlindungan dan pemeliharaan jiwanya; kedua, perawatan dan pemeliharaan jasadnya. Pemeliharaan yang tepat atas jiwanya, sebagaimana ditunjukkan di atas, adalah pengetahuan dan cinta akan Tuhan. Terserap ke dalam kecintaan akan segala sesuatu selain Allah berarti keruntuhan jiwa. Jasad bisa dikatakan sebagai sekadar hewan tunggangan jiwa dan musnah, sementara jiwa terus abadi. Jiwa mesti merawat badan persis sebagaimana seorang peziarah, dalam perjalanannya ke Makkah, merawat ontanya. Tetapi jika sang peziarah menghabiskan waktunya untuk memberi makan dan menghiasi ontanya, kafilah pun akan meninggalkannya dan ia akan mati di padang pasir.</p>
+<p>Kebutuhan-kebutuhan jasmaniah manusia itu sederhana saja, hanya terdiri dari tiga hal; makanan, pakaian dan tempat tinggal. Tetapi nafsu-nafsu jasmaniah yang tertanam di dalam dirinya dan keinginan untuk memenuhinya cenderung untuk memberontak melawan nalar yang lebih belakangan tumbuh dari nafsu-nafsu itu. Sesuai dengan itu, sebagaimana kita lihat di atas, mereka perlu dikekang dan dikendalikan dengan hukum-hukum Tuhan yang disebarkan oleh para nabi.</p>
+<p>Sedangkan mengenai dunia yang mesti kita garap, kita dapati ia terkelompokkan dalam tiga bagian, hewan, tetumbuhan dan barang tambah. Produk-produk dari ketiganya terus-menerus dibutuhkan oleh manusia dan telah mengembangkan tiga pekerjaan besar; pekerjaan para penenun, pembangun dan pekerja logam. Sekali lagi, semuanya itu memiliki banyak cabang yang lebih rendah seperti penjahit, tukang batu dan tukang besi. Tidak ada daripadanya yang bisa sama sekali bebas dari yang lain. Hal ini menimbulkan berbagai macam hubungan perdagangan dan seringkali mengakibatkan kebencian, iri hari, cemburu dan lain-lain penyakit jiwa. Karenanya timbullah pertengkaran dan perselisihan, kebutuhan akan pemerintahan politik dan sipil serta ilmu hukum.</p>
+<p>Demikianlah, pekerjaan-pekerjaan dan bisnis-bisnis di dunia ini telah menjadi semakin rumit dan menimbulkan kekacauan. Sebab utamanya adalah manusia telah lupa bahwa kebutuhan-kebutuhan mereka sebenarnya hanya tiga; pakaian, makanan dan tempat tinggal, dan bahwa kesemuanya itu ada hanya demi menjadikan jasad sebagai kendaraan yang layak bagi jiwa di dalam perjalanannya menuju dunia berikutnya. Mereka terjerumus ke dalam kesalahan yang sama sebagaimana sang peziarah menuju Makkah yang, karena melupakan tujuan ziarah dan dirinya sendiri, terpaksa menghabiskan seluruh waktunya untuk memberi makan dan menghiasi ontanya. Seseorang pasti akan terpikat dan terseibukkan oleh dunia - yang oleh Rasulullah dikatakan sebagai tukang sihir yang lebih kuat daripada Harut dan Marut - kecuali jika orang tersebut menyelenggarakan pengawasan yang paling ketat.</p>
+<p>Watak penipu dari dunia ini bisa mengambil berbagai bentuk. Pertama, ia berpura-pura seakan-akan bakal selalu tinggal dengan anda, sementara nyatanya ia pelan-pelan menyingkir dari anda dan menyampaikan salam perpisahan, sebagaimana suatu bayangan yang tampaknya tetap, tetapi kenyatannya selalu bergerak. Demikian pula, dunia menampilkan dirinya di balik kedok nenek sihir yang berseri-seri tetapi tak bermoral, berpura-pura mencintai anda, menyayangi anda dan kemudian membelot kepada musuh anda, meninggalkan anda mati merana karena rasa kecewa dan putus asa. Isa a.s. melihat dunia terungkapkan dalam bentuk seorang wanita tua yang buruk muka. Ia bertanya kepada wanita itu, berapa banyak suami yang dipunyainya, dan mendapat jawaban, jumlahnya tak terhitung. Ia bertanya lagi, telah matikah mereka ataukah diceraikan. Kata si wanita, ia telah memenggal mereka semua. "Saya heran", kata Isa a.s., "atas kepandiran orang yang melihat apa yan gtelah kamu kerjakan kepada orang lain, tetapi masih tetap menginginimu." Wanita sihir ini mematut dirinya dengan pakaian indah-indah dan penuh permata, menutupi mukanya dnegan cadar, kemudian mulai merayu manusia. Sangat banyak dari mereka yang mengikutinya menuju kehancuran diri mereka sendiri. Rasulullah saw. Bersabda bahwa di Hari Pengadilan, dunia ini akan tampak dalam bentuk seorang nenek sihir yang seram, dengan mata yang hijau dan gigi bertonjolan. Orang-orang yang melihat mereka akan berkata, "Ampun! Siapa ini?" Malaikat pun akan menjawab, "Inilah dunia yang deminya engkau bertengkar dan berkelahi serta saling merusakkan kehidupan satu sama lain." Kemudian wanita itu akan dicampakkan ke dalam neraka sementara dia menjerit keras-keras, "Oh Tuhan, di mana pencinta-pencintaku dahulu?" Tuhan pun kemudian akan memerintahkan agar mereka juga dilemparkan mengikutinya.</p>
+<p>Siapa pun yang mau secara serius merenung tentang keabadian yang telah lalu, akan melihat bahwa kehidupan ini seperti sebuah perjalanan yang babakannya dicerminkan oleh tahun, liga-liga (ukuran jarak, kira-kira sama dengan tiga mil) oleh bulan, mil-mil oleh hari, dan langkah-langkah oleh saat. Kemudian, kata-kata apa yang bisa menggambarkan ketololan manusia yang berupaya untuk menjadikannya tempat tinggal abadi dan membuat rencana- rencana untuk sepuluh tahun mendatang mengenai apa-apa yang boleh jadi tak pernah ia butuhkan, karena sangat mungkin ia sepuluh hari lagi sudah berada di bawah tanah.</p>
+<p>Orang-orang yang telah mengumbar diri tanpa batas dengan kesenangan- kesenangan dunia ini, pada saat kematiannya akan seperti seseorang yang memenuhi perutnya dengan bahan makanan terpilih dan lezat, kemudian memuntahkannya. Kelezatannya telah hilang, tetapi ketidak-enakannya tinggal. Makin berlimpah harta yang telah mereka nikmati - taman-taman, budak-budak laki dan perempuan, emas, perak dan lain sebagainya - akan makin keraslah mereka rasakan kepahitan berpisah dari semuanya itu. Kepahitan ini akan terasa lebih berat dari kematian, karena jiwa yan gtlah menjadikan ketamakan sebagai suatu kebiasaan tetap akan menderita di dunia yang akan datang akibat kepedihan nafsu-nafsu yang tak terpuasi.</p>
+<p>Sifat berbahaya lainnya dari benda-benda duniawi adalah bahwa pada mulanya mereka tampak sebagai sekadar hal-hal sepele, tetapi hal-hal yang dianggap sepele ini masing-masing bercabang tak terhitung banyaknya sampai menelan seluruh waktu dan energi manusia. Isa a.s. bersabda: "Pencinta dunia ini seperti seseorang yang minum air laut; makin banyak minum, makin hauslah ia sampai akhirnya mati akibat kehausan yang tak terpuasi," Rasulullah saw. bersabda: "Engkau tak bisa lagi bercampur dengan dunia tanpa terkotori olehnya, sebagaimana engkau tak bisa menyelam dalam air tanpa menjadi basah".</p>
+<p>Dunia ini seperti sebuah meja yang terhampar bagi tamu-tamu yang datang dan pergi silih berganti. Ada piring-piring emas dan perak, makanan dan parfum yang berlimpah-limpah. Tamu yang bijaksana makan sebanyak yang ia butuhkan, menghirup harum-haruman, mengucapkan terima kasih pada tuan rumah, lalu pergi. Sebaliknya tamu-tamu yang tolol mencoba untuk membawa beberapa piring emas dan perak hanya dengan akibat semua itu direnggutkan dari tangannya dan ia pun dicampakkan ke dalam keadaan kecewa dan malu.</p>
+<p>Akan kita tutup gambaran tentang sifat-menipu dunia dengan tamsil pendek berikut ini. Misalkan sebuah kapal akan sampai pada sebuah pulau yang berhutan lebat. Kapten kapal berkata kepada para penumpang bahwa ia akan berhenti selama beberapa jam di sana, dan mereka boleh berjalan-jalan di pantai sebentar, tetapi memperingatkan mereka agar tidak terlalu lama. Maka para penumpang pun turun dan bertebaran ke berbagai arah. Meskipun demikian, orang yang paling bijaksana akan segera kembali, menemukan bahwa kapal itu kosong, lalu memilih tempat yan gpaling nyaman di dalamnya. Kelompok penumpang yang kedua menghabiskan waktu yang agak lebih lama di pulau tersebut, mengagumi dedaunan, pepohonan dan mendengarkan nyanyian burung-burung. Ketika kembali ke kapal mereka temui tempat-tempat yang paling nyaman di kapal tersebut telah terisi dan terpaksa puas dengan tempat yang agak kurang nyaman. Kelompok ketiga berjalan-jalan lebih lauh lagi dan menemukan batu-batu berwarna yang amat indah, lalu membawanya kembali ke kapal. Keterlambatan itu memaksa mereka untuk mendekam jauh di bagian paling rendah kapal itu, tempat mereka dapati batu-batuan yang mereka bawa - yang ketika itu telah kehilangan segenap keindahannya - mengganggu mereka di perjalanan. Kelompok terakhir berjalan-jalan sedemikian jauh sehingga tak bisa dijangkau lagu oleh suara kapten kapal yang memanggil mereka untuk kembali ke kapal. Sehingga kapal itu pun akhirnya terpaksa berlayar tanpa mereka.</p>
+<p>Meraka luntang-lantung dalam keadaan tanpa harapan dan akhirnya mati kelaparan, atau menjadi mangsa binatang buas.</p>
+<p>Kelompok pertama mencerminkan orang-orang beriman yang sama sekali menjauhkan diri dari dunia, dan kelompok yang terakhir adalah kelompok orang kafir yang hanya mengurusi dunia ini dan sama sekali tidak mengacuhkan yang akan datang. Dua kelompok di antaranya adalah orang- orang yang masih mempunyai iman, tapi menyibukkan diri mereka, sedikit atau banyak, dengan kesia-siaan benda-benda sekarang.</p>
+<p>Meskipun telah kita katakan banyak hal yang menentang dunia, mesti diingat bahwa ada beberapa hal di dunia ini yang tidak termasuk di dalamnya, seperti ilmu dan amal baik. Seseorang membawa bersamanya ilmu yang ia miliki ke dunia yang akan datang dan, meskipun amal-amal baiknya telah lampau, efeknya tetap tinggal dalam pribadinya. Khususnya dengan ibadah yang menjadikan orang terus-menerus ingat dan cinta kepada Allah. Semuanya ini termasuk "hal-hal yang baik", dan sebagaimana difirmankan dalam al-Quran, "tidak akan hapus."</p>
+<p>Ada hal-hal lainnya yang baik di dunia ini, seperti perkawinan, makanan, pakaian dan lain sebagainya, yang oleh orang yang bijaksana digunakan sekadarnya untuk membantunya mencapai dunia yang akan datang. Benda- benda lain yang memikat pikiran yang menyebabkan setiap kepada dunia ini dan ceroboh tentang dunia lain, adalah benar-benar kejahatan dan disebutkan oleh Rasulullah saw. dalam sabdanya: "Dunia ini terkutuk dan segala sesuatu yang terdapat di dalamnya juga terkutuk, kecuali zikir kepada Allah dan segala sesuatu yang mendukung perbuatan itu."</p>
+
+<div class="nav">
+  <a href="bab-2-pengetahuan-tentang-tuhan.html">⬅ Bab 2: Pengetahuan Tentang Tuhan</a>
+  <a href="bab-4-pengetahuan-tentang-akhirat.html">Bab 4 : Pengetahuan Tentang Akhirat ➡</a>
+</div>
+
+</body>
+</html>

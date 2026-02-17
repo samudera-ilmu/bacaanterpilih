@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>BAB 8 : CINTA KEPADA ALLAH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BAB 8 : CINTA KEPADA ALLAH - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+// APPLY THEME BEFORE PAGE RENDER (no white flash)
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+// ===== AUTO BOOKMARK LAST READ POSITION =====
+
+const pageKey = "bookmark_" + location.pathname;
+
+// Restore posisi scroll saat halaman dibuka
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) {
+    window.scrollTo(0, parseInt(saved));
+  }
+});
+
+// Simpan posisi scroll otomatis (throttle ringan)
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+
+// ===== ESTIMASI WAKTU BACA =====
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200; // kecepatan baca rata2
+  const minutes = Math.max(1, Math.round(words / wpm));
+
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+
+// ===== PROGRESS BACA (%) =====
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+
+// ===== TOMBOL LANJUTKAN MEMBACA =====
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+
+</script>
+
+
+
+
+<style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 720px;
+  margin: auto;
+  padding: 22px;
+  line-height: 1.85;
+  font-size: 18px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
+
+<div class="top-nav">
+  <a href="../index.html">⬅ Perpustakaan</a>
+  <a href="index.html">Index Buku</a>
+</div>
+
+<h1>BAB 8 : CINTA KEPADA ALLAH</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+</div>
+
+<button id="resumeBtn"
+onclick="resumeReading()"
+style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
+📖 Lanjutkan membaca
+</button>
+
+<p>Kecintaan kepada Allah adalah topik yang paling penting dan merupakan tujuan akhir pembahasan kita sejauh ini. Kita telah berbicara tentang bahaya- bahaya ruhaniah karena mereka menghalangi kecintaan kepada Allah di hati manusia. Telah pula kita bicarakan tentang berbagai sifat baik yang diperlukan untuk itu. Penyempurnaan kemanusiaan terletak di sini, yaitu bahwa kecintaan kepada Allah mesti menaklukkanhati manusia dan menguasainya sepenuhnya. Kalaupun kecintaan kepada Allah tidak menguasainya sepenuhnya, maka hal itu mesti merupakan perasaan yang paling besar di dalam hatinya, mengatasi kecintaan kepada yang lain-lain. Meskipun demikian, mudah dipahami bahwa kecintaan kepada Allah adalah sesuatu yang sulit dicapai, sehingga suatu aliran teologi telah kenyataan sama sekali menyangkal, bahwa manusia bisa mencitai suatu wujud yang bukan merupakan spesiesnya sendiri. Mereka telah mendefinisikan kecintaan kepada Allah sebagai sekedar ketaatan belaka. Orang-orang yang berpendapat demikian sesungguhnya tidak tahu apakah agama itu sebenarnya.</p>
+<p>Seluruh muslim sepakat bahwa cinta kepada Allah adalah suatu kewajiban. Allah berfirman berkenaan dengan orang-orang mukmin: "Ia mencintai mereka dan mereka mencitaiNya." Dan Nabi saw. Bersabda, "Sebelum seseorang mencintai Allah dan NabiNya lebih daripada mencintai yang lain, ia tidak memiliki keimanan yang benar." Ketika Malaikat Maut datang untuk mengambil nyawa Nabi Ibrahim, Ibrahim berkata: "Pernahkan engkau melihat seorang sahabat mengambil nyawa sahabatnya?" Allah menjawabnya, "Pernahkan engkau melihat seorang kawan yang tidak suka untuk melihat kawannya?" Maka Ibrahim pun berkata, "Wahai Izrail, ambillah nyawaku!"</p>
+<p>Doa berikut ini diajarkan oleh Nabi saw. kepada para sahabatnya; "Ya Allah, berilah aku kecintaan kepadaMu dan kecintaan kepada orang-orang yang mencintaiMu, dan apa saja yang membawaku mendekat kepada cintaMu. Jadikanlah cintaMu lebih berharga bagiku daripada air dingin bagi orang- orang yang kehausan." Hasan Basri seringkali berkata: "Orang yang mengenal Allah akan mencintaiNya; dan orang yang mengenal dunia akan membencinya."</p>
+<p>Sekarang kita akan membahas sifat esensial cinta. Cinta bisa didefinisikan sebagai suatu kecenderungan kepada sesuatu yang menyenangkan. Hal ini tampak nyata berkenaan dengan lima indera kita. Masing-masing indera mencintai segala sesuatu yang memberinya kesenangan. Jadi, mata mencintai bentuk-bentuk yang indah, telinga mencintai musk, dan seterusnya. Ini adalah sejenis cinta yang juga dimiliki oleh hewan-hewan. Tetapi ada indera keenam, yakni fakultas persepsi, yang tertanamkan dalam hati dan tidak dimiliki oleh hewan-hewan. Dengannya kita menjadi sadar akan keindahan dan keunggulan ruhani. Jadi, seseorang yang hanya akrab dengan kesenangan-kesenangan inderawi tidak akan bisa memahami apa yang dimaksud oleh Nabi saw. ketika bersabda bhwa ia mencintai shalat lebih daripada wewangian dan wanita, meskipun keduanya itu juga menyenangkan baginya. Tetapi orang yang mata-hatinya terbuka untuk melihat keindahan dan kesempurnaan Allah akan meremehkan semua penglihatan-penglihatan luar, betapa pun indah tampaknya semua itu.</p>
+<p>Manusia yang hanya akrab dengan kesenangan-kesenangan inderawi akan berkata bahwa keindahan ada pada warna-warni merah putih, anggota- anggota tubuh yang serasi dan seterusnya, sedang ia buta terhadap keindahan moral yang dimaksudkan oleh orang-orang ketika mereka berbicara tentang orang ini dan orang itu yang memiliki tabiat baik. Tetapi orang-orang yang memiliki persepsi yang lebih dalam merasa sangat mungkin untuk bisa mencintai orang-orang besar yang telah jauh mendahului kita - seperti kata Khalifah Umar dan Abu Bakar - berkenaan dengan sifat-sifat mulia mereka, meskipun jasad-jasad mereka telah sejak dahulu sekali bercampur dengan debu. Kecintaan seperti itu tidak diarahkan kepada bentuk luar melainkan kepada sifat-sifat ruhaniah. Bahkan ketika kita ingin membangkitkan rasa cinta di dalam diri seorang anak kepada orang lain, kita tidak menguraikan keindahan luar bentuk itu atau yang lainnya, melainkan kunggulan-keunggulan ruhaniahnya.</p>
+<p>Jika kita terapkan prinsip ini untuk kecintaan kepada Allah, maka akan kita dapati bahwa Ia sendiri sajalah yang pantas dicintai. Dan jika seseorang tidak mencintaiNya, maka hal itu disebabkan karena ia tidak mengenaliNya. Karena alasan inilah, maka kita mencintai Muhammad saw., karena ia adalah Nabi dan kecintaan Allah; dan kecintaan kepada orang-orang berilmu dan bartakwa adalah benar-benar kecintaan kepada Allah. Kita akan melihat hal ini lebih jelas kalau kita membahas sebab-sebab yang bisa membangkitkan kecintaan.</p>
+<p>Sebab pertama adalah kecintaan seseorang atas dirinya dan kesempurnaan sifatnya sendiri. Hal ini membawanya langsung kepada kecintaan kepada Allah, karena kemaujudan asasi dan sifat-sifat manusia tidak lain adalah anugerah Allah. Kalau bukan karena kebaikanNya, manusia tidak akan pernah tampil dari balik tirai ketidak-maujudan ke dunia kasat-mata ini. Pemeliharaan dan pencapaian kesempurnaan manusia juga sama sekali tergantung para kemurahan Allah. Sungguh aneh jika seseorang mencari perlindungan dari panas matahari di bawah bayangan sebuah pohon dan tidak bersyukur kepada pohon yang tanpanya tidak akan ada bayangan sama sekali. Sama seperti itu, kalau bukan karena Allah, manusia tidak akan maujud (ada) dan sama sekali tidak pula mempunyai sifat-sifat. Oleh sebab itu ia akan mencintai Allah kalau saja bukan karena kemasabodohan terhadapNya. Orang-orang bodoh tidak bisa mencintaiNya, karna kecintaan kepadaNya memancar langsung dari pengetahuan tentangNya. Dan sejak kapankah seorang bodoh mempunyai pengetahuan?</p>
+<p>Sebab kedua dari kecintaan ini adalah kecintaan manusia kepada sesuatu yang berjasa kepadanya, dan sebenarnyalah satu-satunya yang berjasa kepadanya hanyalah Allah; karena, kebaikan apa pun yang diterimanya dari sesama manusia disebabkan oleh dorongan langsung dari Allah. Motif apa pun yang menggerakkan seseorang memberikan kebaikan kepada orang lain, apakah itu keinginan untuk memperoleh pahala atau nama baik, Allah-lah yang mempekerjakan motif itu.</p>
+<p>Sebab ketiga adalah kecintaan yang terbangkitkan oleh perenungan tentang sifat-sifat Allah, kekuasaan dan kebijakanNya, yang jika dibandingkan dengan kesemuanya itu kekuasaan dan kebijakan manusia tidak lebih daripada cerminan-cerminan yang paling remeh. Kecintaan ini mirip dengan cinta yang kita rasakan terhadap orang-orang besar di masa lampau, seperti Imam Malik dan Imam Syafi'i, meskipun kita tidak pernah mengharap untuk menerima keuntungan pribadi dari mereka. Dan oleh karenanya, cinta ini merupakan jenis cinta yang lebih tak berpamrih. Allah berfirman kepada Nabi Daud, "AbdiKu yang paling cinta kepadaKu adalah yang tidak mencariku karena takut untuk dihukum atau berharap mendapatkan pahala, tetapi hanya demi membayar hutangnya kepada KetuhananKu." Di dalam Injil tertulis: "Siapakah yang lebih kafir daripada orang yang menyembahKu karena takut neraka atau mengharapkan surga? Jika tidak Kuciptakan semuanya itu, tidak akan pantaskah Aku untuk disembah?"</p>
+<p>Sebab KEEMPAT dari kecintaan ini adalah "persamaan" antara manusia dan Allah. Hal inilah yang dimaksudkan dalam sabda Nabi saw.: "Sesungguhnya Allah menciptakan manusia dalam kemiripan dengan diriNya sendiri." Lebih jauh lagi Allah telah berfirman: "Hambaku mendekat kepadaKu sehingga Aku menjadikannya sahabatKu. Aku pun menjadi telinganya, matanya dan lidahnya." Juga Allah berfirman kepada Musa as.: "Aku pernah sakit tapi engkau tidak menjengukku!" Musa menjawab: "Ya Allah, Engkau adalah Rabb langit dan bumi; bagaimana Engkau bisa sakit?" Allah berfirman: "Salah seorang hambaKu sakit; dan dengan menjenguknya berarti engkau telah mengunjungiKu."</p>
+<p>Memang ini adalah suatu masalah yang agak berbahaya untuk diperbincangkan, karena hal ini berada di balik pemahaman orang-orang awam. Seseorang yang cerdas sekalipun bisa tersandung dalam membicarakan soal ini dan percaya pada inkarnasi dan kersekutuan dengan Allah. Meskipun demikian, "persamaan" yang maujud di antara manusia dan Allah menghilangkan keberatan para ahli Ilmu Kalam yang telah disebutkan di atas itu, yang berpendapat bahwa manusia tidak bisa mencintai suatu wujud yang bukan dari spesiesnya sendiri. Betapa pun jauh jarak yang memisahkan mereka, manusia bisa mencintai Allah karena "persamaan" yang disyaratkan di dalam sabda Nabi: "Allah menciptakan manusia dalam kemiripan dengan diriNya sendiri."</p>
+<p>Melihat Allah</p>
+<p>Semua muslim mengaku percaya bahwa melihat Allah adalah puncak kebahagiaan manusia, karena hal ini dinyatakan dalam syariah. Tetapi bagi banyak orang hal ini hanyalah sekedar pengakuan di bibir belaka yang tidak membangkitkan perasaan di dalam hati. Hal ini bersifat alami saja, karena bagaimana bisa seseorang mendambakan sesuatu yang tidak ia ketahui? Kami akan berusaha untuk menunjukkan secara ringkas, kenapa menampak Allah merupakan kebahagiaan terbesar yang bisa diperoleh manusia.</p>
+<p>Pertama sekali, semua fakultas manusia memiliki fungsinya sendiri yang ingin dipuasi. Masing-masing punya kebaikannya sendiri, mulai dari nafsu badani yang paling rendah sampai bentuk tertinggi dari pemahaman intelektual. Tetapi suatu upaya mental dalam bentuk rendahnya sekalipun masih memberikan kesenangan yang lebih besar daripada kepuasan nafsu jasmaniah. Jadi, jika seseorang kebetulan terserap dalam suatu permainan catur, ia tidak akan ingat makan meskipun berulang kali dipanggil. Dan makin tinggi pengetahuan kita makin besarlah kegembiraankita akan dia. Misalnya, kita akan lebih merasa senang mengetahui rahasia-rahasia seorang raja daripada rahasia-rahasia seorang wazir. Mengingat bahwa Allah adalah obyek pengetahuan yang paling tinggi, maka pengetahuan tentangNya pasti akan memberikan kesenangan yang lebih besar ketimbang yang lain. Orang yang mengenal Allah, di dunia ini sekalipun, seakan-akan merasa telah berada di surga "yang luasnya seluas langit dan bumi"; surga yang buah- buahnya sedemikian nikmat, sehingga tak ada seorang pun yang bisa mencegahnya untuk memetiknya; dan surga yang tidak menjadi lebih sempit oleh banyaknya orang yang tinggal di dalamnya.</p>
+<p>Tetapi nikmatnya pengetahuan masih jauh lebih kecil daripada nikmatnya penglihatan, persis seperti kesenangan kita di dalam melamunkan orang- orang yang kita cintai jauh lebih sedikit daripada kesenangan yang diberikan oleh penglihatan langsung akan mereka. Keterpenjaraan kita di dalam jasad yang terbuat dari lempung dan air ini, dan kesibukankita dengan ihwal inderawi, menciptakan suatu tirai yang menghalangi kita dari menampak Allah, meskipun hal itu tidak mencegah kita dari memperoleh beberapa pengethuan tentangNya. Karena alasan inilah, Allah berfirman kepada Musa di Bukit Sinai: "Engkau tidak akan bisa melihatKu."</p>
+<p>Hal yang sebenarnya adalah sebagai berikut. Sebagaimana benih manusia akan menjadi seorang manusia dan biji korma yang ditanam akan menjadi pohon korma, maka pengetahuan tentang Tuhan yang diperoleh di bumi akan menjelma menjadi penampakan Tuhan di akhirat kelak, dan orang yang tak pernah mempelajari pengetahuan itu tak akan pernah mengalami penampakan itu. Penampakan ini tak akan terbagi sama kepada orang-orang yang tahu, melainkan kadar kejelasannya akan beragam sesuai dengan pengetahuan mereka. Tuhan itu satu, tetapi Ia akan terlihat dalam banyak cara yang berbeda, persis sebagaimana suatu obyek tercerminkan dalam berbagai cara oleh berbagai cermin; ada yang mempertunjukkan bayangan yang lurus, ada pula yang baur, ada yang jelas dan yang lainny akabur. Sebuah cermin mungkin telah sedemikian rusak sehingga bisa membuat bentuk yang indah sekalipun tampa buruk, dan seseorang mungkin membawa sebuah hati yang sedemikian gelap dan kotor ke akhirat, sehingga penglihatan yang bagi orang lain merupakan sumber kebahagiaan dan kedamaian, baginya malah menjadi sumber kesedihan. Seseorang yang di hatinya cinta terhadap Tuhan telah mengungguli yang lain akan menghirup lebih banyak kebahagiaan dari penglihatan ini dibanding orang yang di hatinya cinta itu tak sedemikian unggul; persis seperti halnya dua manusia yang sama memiliki pandangan mata yang tajam; ketika menatap sebentuk wajah yang cantik, maka orang yang telah mencintai pemilik wajah itu akan lebih berbahagia dalam menatapnya daripada orang yang tidak mencinta.</p>
+<p>Agar bisa menikmati kebahagiaan sempurna, pengetahuan saja tanpa disertai cinta belumlah cukup. Dan cinta akan Allah tak bisa memenuhi hati manusia sebelum ia disucikan dari cinta akan dunia yang hanya bisa didapatkan dengan zuhud. Ketika berada di dunia ini, keadaan manusia berkenaan dengan menampak Allah adalah seperti seorang pencinta yang akan melihat wajah kasihya di keremangan fajar, sementara pakaiannya dipenuhi dengan lebah dan kalajengking yang terus menerus menyiksanya. Tetapi jika matahari terbit dan menampakkan wajah sang kekasih dalam segenap keindahannya dan binatang berbisa berhenti menyiksanya, maka kebahagiaan sang pencinta akan menjadi seperti kecintaan hamba Allah yang setelah keluar dari keremangan dan terbebaskan dari bala yang menyiksa di dunia ini, melihatNya tanpa tirai. Abu Sulaiman berkata: "Orang yang sibuk dengan dirinya sekarang, akan sibuk dengan dirinya kelak; dan orang yang tersibukkan dengan Allah sekarang, akan tersibukkan denganNya kelak."</p>
+<p>Yahya Ibnu Mu'adz meriwayatkan bahwa ia mengamati Bayazid Bistami dalam shalatnya sepanjang malam. Ketika telah selesai, Bayazid berdiri dan berkata: "O Tuhan! Beberapa hamba telah meminta dan mendapatkan kemampuan untuk membuat mukjizat, berjalan di atas permukaan air, terbang di udara, tapi bukan semua itu yang kuminta; beberapa yang lain telah meminta dan mendapatkan harta benda, tapi bukan itu pula yang kuminta." Kemudian Bayazid berpaling dan ketika melihat Yahya, ia bertanya: "Engkaulah yang di sanan itu Yahya?" Ia jawab: "Ya." Ia bertanya lagi: "Sejak kapan?" "Sudah sejak lama." Kemudian Yahya memintanya agar mengungkapkan beberapa pengalaman ruhaniahnya. "Akan kuungkapkan", jawab Bayazid, "apa-apa yang halal untuk diceritakan kepadamu." Yang Kuasa telah mempertunjukkan kerajaanNya kepadaku, dari yang paling mulia hingga yang terenah. Ia mengangkatku ke atas 'Arsy dan KursiNya dan ketujuh langit. Kemudian Ia berkata: 'Mintalah kepadaKu apa saja yang kau ingini.' Saya jawab: 'Ya Allah! Tak kuingini sesuatu pun selain Engkau.' 'Sesungguhnya,' kataNya, 'engkau adalah hambaKu."</p>
+<p>Pada kali lain Bayazid berkata: "Jika Allah akan memberikan padamu keakraban dengan diriNya atau Ibrahim, kekuatan dalam doa Musa dan keruhanian Isa, maka jagalah agar wajahmu terus mengarah kepadaNya saja, karena Ia memiliki khazanah-khazanah yang bahkan melampaui semuanya ini." Suatu hari seorang sahabatnya berkata kepadanya: "Selama tigapuluh tahun aku telah berpuasa di siang hari dan bersembahyang di malam hari, tapi sama sekali tidak kudapati kebahagiaan ruhaniah yang kamu sebut-sebut itu." Bayazid menjawab: "Kalaupun engkau berpuasa dan bersembahyang selama tigaratus tahun, engkau tetap tak akan mendapatinya." "Kenapa?" tanya sang sahabat. "Karena," kata Bayazid, "perasaan mementingkan-diri- sendirimu telah menjadi tirai antara engkau dan Allah." "Jika demikian, katakan padaku cara penyembuhannya." "Cara itu takkan mungkin bisa kaulaksanakan." Meskipun demikian ketika sahabatnya itu memaksanya untuk mengungkapkannya, Bayazid berkata: "Pergilah ke tukang cukur terdekat dan mintalah ia untuk mencukur jenggotmu. Bukalah semua pakaianmu kecuali korset yang melingkari pinggangmu. Ambillah sebuah kantong yang penuh dengan kenari, gantungkan di lehermu, pergilah ke pasar dan berteriaklah: 'Setiap orang yang memukul tengkukku akan mendapatkan buah kenari'. Kemudian dalam keadaan seperti itu pergilah ke tempat para qadhi dan faqih." "Astaga!" kata temannya, "saya benar-benar tak bisa melakukannya. Berilah cara penyembuhan yang lain." "Itu tadi adalah pendahuluan yang harus dipenuhi untuk penyembuhannya," jawab Bayazid. "Tapi, sebagaimana telah saya katakan padamu, engkau tak bisa disembuhkan."</p>
+<p>Alasan Bayazid untuk menunjukkan cara penyembuhan seperti itu adalah kenyataan bahwa sahabatnya itu adalah seorang pengejar kedudukan dan kehormatan yang ambisius. Ambisi dan kesombongan adalah penyakit- penyakit yang hanya bisa disembuhkan dengan cara-cara seperti itu. Allah berfirman kepada Isa: "Wahai Isa, jika Kulihat di hati para hambaKu kecintaan yang murni terhadap diriKu yang tidak terkotori dengan nafsu-nafsu mementingkan diri-sendiri berkenaan dengan dunia ini atau dunia yang akan datang, maka Aku akan menjadi penjaga cinta itu." Juga ketika orang-orang meminta Isa a.s. menunjukkan amal yang paling mulia, ia menjawab: "Mencintai Allah dan memasrahkan diri kepada kehendakNya." Wali Rabi'ah pernah ditanya cintakah ia kepada Nabi. "Kecintaan kepada Sang Pencipta," katanya, "telah mencegahku dari mencintai mahluk." Ibrahim bin Adam dalam doanya berkata: "Ya Allah, di mataku surga itu sendiri masih lebih remeh daripada sebuah agas jika dibandingkan dengan kecintaan kepadaMu dan kebahagiaan mengingat Engkau yang telah Kauanugerahkan kepadaku."</p>
+<p>Orang yang menduga bahwa mungkin saja untuk menikmati kebahagiaan di akhirat tanpa mencintai Allah, sudah terlalu jauh tersesat, karena inti kehidupan masa yang akan datang adalah untuk sampai kepada Allah sebagaimana sampai pada suatu obyek keinginan yang sudah lama didambakan dan diraih melalui halangan-halangan yang tak terbilang banyaknya. Penikmatan akan Allah adalah kebahagiaan. Tapi jika ia tidak memiliki kesenangan akan Allah sebelumnya, ia tidak akan bergembira di dalamnya kelak; dan jika kebahagiaannya di dalam Allah sebelumnya sangat kecil sekali, maka kelak ia pun akan kecil. Ringkasnya, kebahagiaan kita di masa datang akan sama persis kadarnya dengan kecintaan kita kepada Allah sekarang.</p>
+<p>Tetapi na'udzu billah, jika di dalam hati seseorang telah tumbuh suatu kecintaan terhadap sesuatu yang bertentangan dengan Allah, maka keadaan kehidupan akhirat akan saa sekali asing baginya. Dan apa-apa yang akan membuat orang lain bahagia akan membuatnya bersedih.</p>
+<p>Hal ini bisa diterangkan dengan anekdot berikut ini. Seorang manusia pemakan bangkai pergi ke sebuah pasar yang menjual wangi-wangian. Ketika membaui aroma yang wangi ia jatuh pingsan. Orang-orang mengerumuninya dan memercikkan air bunga mawar padanya, lalu mendekatkan misyk (minyak wangi) ke hidungnya; tetapi ia malah menjadi semakin parah. Akhirnya seseorang datang; dia sendiri adalah juga pemakan bangkai. Ia mendekatkan sampah ke hidung orang itu, maka orang itu segera sadar, mendesah penuh kepuasan: "Wah, ini baru benar-benar wangi-wangian!" Jadi, di akhirat nanti manusia tak akan lagi mendapati kenikmatan-kenikmatan cabul dunia ini; kebahagiaan ruhaniah dunia itu akan sama sekali baru</p>
+<p>baginya dan malah akan meningkatkan kebobrokannya. Karena, akhirat adalah suatu dunia ruh dan merupakan pengejawantahan dari keindahan Allah; kebahagiaan adalah bagi manusia yang telah mengejarnya dan tertarik padanya. Semua kezuhudan, ibadah dan pengkajian-pengkajian akan menjadikan rasa tertarik itu sebagai tujuannya dan itu adalah cinta. Inilah arti dari ayat al-Qur'an: "Orang yang telah menyucikan jiwanya akan berbahagia." Dosa-dosa dan syahwat langsung bertentangan dengan pencapaian rasa tertarik ini. Oleh karena itu, al-Qur'an berkata: "Dan orang yang mengotori jiwanya akan merugi." Orang-orang yang dianugerahi wawasan ruhaniah telah benar-benar memahami kebenaran ini sebagai suatu kenyataan pengalaman, bukan sekadar sebuah pepatah tradisional belaka. Pencerapan mereka yang amat jelas terhadap kebenaran ini membawa mereka kepada keyakinan bahwa orang yang membawa kebenaran itu adalah benar-benar seorang Nabi, sebagaimana yakinnya seseorang yang telah mempelajari pengobatan ketika ia mendengarkan omongan seorang dokter. Ini adalah sejenis keyakinan yang tidak membutuhkan dukungan berupa mukjizat- mukjizat, seperti mengubah sebatang kayu menjadi seekor ular yang masih mungkin digoncangkan dengan mukjizat-mukjizat luar biasa sejenisnya yang dilakukan oleh para ahli sihir.</p>
+<p>Tanda-tanda Kecintaan kepada Allah</p>
+<p>Banyak orang mengaku telah mencintai Allah, tetapi masing-masing mesti memeriksa diri sendiri berkenaan dengan kemurnian cinta yang ia miliki. Ujian pertama adalah: dia mesti tidak membenci pikiran tentang mati, kerena tak ada seorang "teman" pun yang ketakutan ketika akan bertemu dengan "teman"nya. Nabi saw. Berkata: "Siapa yang ingin melihat Allah, Allah pun ingin melihatnya." Memang benar bahwa seorang pencinta Allah yang ikhlas mungkin saja bisa takut akan kematian sebelum ia menyelesaikan persiapannya untuk ke akhirat, tapi jika ia ikhlas ia akan rajin dalam membuat persiapan-persiapan itu.</p>
+<p>Ujian keikhlasan yang kedua ialah seseorang mesti rela mengorbankan kehendaknya demi kehendak Allah; mesti berpegang erat-erat kepada apa yang membawanya lebih dekat kepada Allah; dan mesti menjauhkan diri dari tempat-tempat yang menyebabkan ia berada jauh dari Allah.</p>
+<p>Kenyataan bahwa seseorang telah berbuat dosa bukanlah bukti bahwa dia tidak mencintai Allah sama sekali, tetapi hal itu hanya membuktikan bahwa ia tidak mencintaiNya dengan sepenuhhati. Wali Fudhail berkata pada seseorang: "Jika seseorang bertanya kepadamu, cintakah engkau kepada Allah, maka diamlah; karena jika engkau berkata: 'Saya tidak mencintaiNya,' maka engkau menjadi seorang kafir; dan jika engkau berkata: 'Ya, saya mencintai Allah,' padahal perbuatan-perbuatanmu bertentangan dengan itu."</p>
+<p>Ujian yang ketiga adalah bahwa dzikrullah mesti secara otomatis terus tetap segar di dalam hati manusia. Karena, jika seseorang memang mencintai, maka ia akan terus mengingat-ngingat; dan jika cintanya itu sempurna, maka ia tidak akan pernah melupakan-Nya. Meskipun demikian, memang mungkin terjadi bahwa sementara kecintaan kepada Allah tidak menempati tempat utama di hati seseorang, kecintaan akan kecintaan kepada Allahlah yang berada di tempat itu, karena cinta adalah sesuatu dan kecintaan akan cinta adalah sesuatu yang lain.</p>
+<p>Ujian yang keempat adalah bahwa ia akan mencintai al-Qur'an yang merupakan firman Allah - dan Muhammad Nabiyullah. Jika cintanya memang benar-benar kuat, ia akan mencintai semua manusia, karena mereka semua adalah hamba-hamba Allah. Malah cintanya akan melingkupi semua mahluk, karena orang yang mencintai seseorang akan mencintai karya-karya cipta dan tulisan tangannya.</p>
+<p>Ujian kelima adalah, ia akan bersikap tamak terhadap 'uzlah untuk tujuan ibadah. Ia akan terus mendambakan datangnya malam agar bisa berhubungan dengan Temannya tanpa halangan. Jika ia lebih menyukai bercakap-cakap di siang hari dan tidur di malam hari daripada 'uzlah seperti itu, maka cintanya itu tidak sempurna. Allah berkata kepada Daud a.s.: "Jangan terlalu dekat dengan manusia, karena ada dua jenis orang yang menghalangi kehadiranKu: orang-orang yang bernafsu untuk mencari imbalan dan kemudian semangatnya mengendor ketika telah mendapatkannya, dan orang-orang yang lebih menyukai pikiran-pikirannya sendiri daripada mengingatKu. Tanda-tanda ketidak-hadiranKu adalah bahwa Aku meninggalkannya sendiri.</p>
+<p>Sebenarnyalah, jika kecintaan kepada Allah benar-benar menguasai hati manusia, maka semua cinta kepada yang lain pun akan hilang. Salah seorang dari Bani Israil mempunyai kebiasaan untuk sembahyang di malam hari. Tetapi ketika tahu bahwa seekor burung bisa bernyanyi dengan sangat merdu di atas sebatang pohon, ia pun mulai sembahyang di bawah pohon itu agar dapat menikmati  kesenangan mendengarkan  burung itu.  Allah memerintahkan Daut a.s. untuk pergi dan berkata kepadanya: "Engkau telah mencampurkan kecintaan kepada seekor burung yang merdu dengan kecintaan kepadaKu; maka tingkatanmu di kalangan para wali pun terendahkan." Di pihak lain, beberapa orang telah mencintai Allah dengan kecintaan sedemikian rupa, sehingga ketika mereka sedang berkhidmat dalam ibadah, rumah-rumah mereka telah terbakar dan mereka tidak mengetahuinya.</p>
+<p>Ujian keenam adalah bahwa ibadah pun menjadi mudah baginya. Seorang wali berkata: "Selama tigapuluh tahun pertama saya menjalankan ibadah malamku dengan sudah payah, tetapi tiga puluh tahun kemudian hal itu telah menjadi suatu kesenangan bagiku." Jika kecintaan kepada Allah sudah sempurna, maka tak ada kebahagiaan yang bisa menandingi kebahagiaan beribadah.</p>
+<p>Ujian ketujuh adalah bahwa pencinta Allah akan mencintai orang-orang yang menaatiNya, dan membenci orang-orang kafir dan orang-orang yang tidak taat, sebagaimana kara al-Qur'an: "Mereka bersikap keras terhadap orang kafir dan berkasih sayang dengan sesamanya." Nabi saw pernah bertanya kepada Allah: "Ya Allah, siapakah pencinta-pencintaMu?" Dan jawabannya pun datang: "Orang-orang yang berpegang erat-erat kepadaKu sebagaimana seorang anak kepada ibunya; yang berlindung di dalam pengingatan kepadaKu sebagaimana seekor burung mencari naungan pada sarangnya; dan akan sangat marah jika melihat perbuatan dosa sebagaimana seekor macan marah yang tidak takut kepada apa pun."</p>
+
+<div class="nav">
+  <a href="bab-7-perkawinan-sebagai-pendorong-atau-penghalang-dalam-kehidupan-keagamaan.html">⬅ Bab 7  :  Perkawinan Sebagai Pendorong Atau Penghalang Dalam Kehidupan Keagamaan</a>
+  <a href="index.html"></a>
+</div>
+
+</body>
+</html>
