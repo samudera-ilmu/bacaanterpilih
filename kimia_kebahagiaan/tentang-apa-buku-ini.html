@@ -2,9 +2,9 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>TENTANG APA BUKU INI?</title>
+<title>Tentang Apa Buku Ini?</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="TENTANG APA BUKU INI? - Bacaan digital klasik">
+<meta name="description" content="Tentang Apa Buku Ini? - Bacaan digital klasik">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
@@ -17,7 +17,6 @@ gtag('config', 'G-JCYRN8385S');
 
 
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -36,19 +35,13 @@ function toggleTheme() {
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
 
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
 
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -60,36 +53,26 @@ window.addEventListener("scroll", () => {
 
 
 <script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
   const text = document.body.innerText || "";
   const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
+  const wpm = 200;
   const minutes = Math.max(1, Math.round(words / wpm));
-
   const el = document.getElementById("readingTime");
   if (el) el.innerText = "⏱ " + minutes + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
   const total = doc.scrollHeight - doc.clientHeight;
   const progress = Math.round((window.scrollY / total) * 100);
-
   const bar = document.getElementById("progressBar");
   if (bar) bar.style.width = progress + "%";
-
   localStorage.setItem("progress_" + location.pathname, progress);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
   const progress = localStorage.getItem("progress_" + location.pathname);
-
   if (progress && progress > 5) {
     const btn = document.getElementById("resumeBtn");
     if (btn) btn.style.display = "block";
@@ -100,10 +83,7 @@ function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
   if (saved) window.scrollTo(0, parseInt(saved));
 }
-
 </script>
-
-
 
 
 <style>
@@ -112,6 +92,8 @@ function resumeReading() {
   --text: #111;
   --link: #1a73e8;
   --border: #ddd;
+  --blockquote-bg: #f0f0f0;
+  --blockquote-border: #ccc;
 }
 
 .dark {
@@ -119,6 +101,8 @@ function resumeReading() {
   --text: #e6e6e6;
   --link: #8ab4f8;
   --border: #2a2f36;
+  --blockquote-bg: #1a1f27;
+  --blockquote-border: #444;
 }
 
 body {
@@ -131,6 +115,63 @@ body {
   background: var(--bg);
   color: var(--text);
   transition: background 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.35em; }
+h3 { font-size: 1.15em; }
+
+p {
+  margin: 0 0 1.2em 0;
+  text-align: justify;
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+u { text-decoration: underline; }
+s { text-decoration: line-through; }
+
+blockquote {
+  margin: 1.5em 0;
+  padding: 14px 20px;
+  background: var(--blockquote-bg);
+  border-left: 4px solid var(--blockquote-border);
+  font-style: italic;
+  border-radius: 4px;
+}
+
+ul, ol {
+  margin: 0.5em 0 1.2em 1.5em;
+  line-height: 1.85;
+}
+
+li { margin-bottom: 0.3em; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.85em;
+  opacity: 0.7;
+  margin-top: 6px;
 }
 
 .top-nav {
@@ -153,9 +194,7 @@ a {
   color: var(--link);
 }
 
-a:hover {
-  opacity: 0.8;
-}
+a:hover { opacity: 0.8; }
 
 .toggle {
   position: fixed;
@@ -167,12 +206,11 @@ a:hover {
   border-radius: 6px;
   background: var(--border);
   user-select: none;
+  z-index: 999;
 }
-
 </style>
 </head>
 <body>
-
 
 <div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
 
@@ -181,28 +219,21 @@ a:hover {
   <a href="index.html">Index Buku</a>
 </div>
 
-<h1>TENTANG APA BUKU INI?</h1>
+<h1>Tentang Apa Buku Ini?</h1>
 
 <div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
 
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001;z-index:998">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8;transition:width 0.1s"></div>
 </div>
 
 <button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
+  onclick="resumeReading()"
+  style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer;background:#1a73e8;color:#fff;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,0.3)">
+  📖 Lanjutkan membaca
 </button>
 
-<p>Buku ini berjudul "Kimia Kebahagiaan" (Kîmiyâ’ al-Sa‘âdah) karya Imam Al-Ghazali. Secara garis besar, buku ini membahas tentang "kimia ruhani" yang mampu mengubah jiwa manusia dari sifat-sifat rendah (seperti logam biasa) menjadi jiwa yang mulia dan bercahaya (seperti emas) demi meraih kebahagiaan abadi.</p>
-<p>Inti dari ajaran buku ini adalah berpaling dari dunia untuk menghadap kepada Allah. Al-Ghazali membagi proses ini ke dalam empat elemen utama:</p>
-<p>1.	Mengenal Diri: Memahami hakikat ruh dan hati sebagai kunci mengenal Tuhan. 2.	Mengenal Allah: Merenungkan kekuasaan, kebijaksanaan, dan cinta Sang Pencipta melalui diri sendiri dan alam semesta. 3.	Mengenal Dunia: Memahami dunia sebagai tempat persinggahan sementara atau panggung untuk mencari bekal. 4.	Mengenal Akhirat: Memahami hakikat kehidupan setelah kematian, termasuk surga dan neraka ruhani. Selain itu, buku ini juga membahas aspek praktis kehidupan seperti musik dan tarian dalam perspektif spiritual, pentingnya muhasabah (introspeksi diri), zikir, pernikahan, serta puncaknya adalah menanamkan cinta kepada Allah.</p>
-<p>Ditujukan kepada Siapa?</p>
-<p>Meskipun sumber tidak secara eksplisit menyebutkan kategori umur, isi dan kedalaman materi buku ini menunjukkan bahwa ia ditujukan bagi orang dewasa atau remaja yang sudah matang secara intelektual. Hal ini terlihat dari:</p>
-<p>•	Topik yang Kompleks: Pembahasan mengenai makrifat (pengetahuan mendalam tentang Tuhan), filsafat ruh, dan perdebatan teologis yang membutuhkan kemampuan nalar yang tinggi. •	Masalah Kedewasaan: Adanya bab khusus mengenai perkawinan, termasuk hak dan kewajiban suami-istri serta cara memilih pasangan. •	Tujuan Spiritual: Buku ini ditulis untuk mereka yang mencari "alkemis sejati" atau pembimbing ruhani dalam menyucikan hati dari karat syahwat dan amarah.</p>
-<p>Manfaat yang Dijanjikan</p>
-<p>Setelah membaca dan menerapkan metode dalam buku ini, pembaca dijanjikan berbagai manfaat spiritual dan eksistensial, antara lain: •	Meraih Kebahagiaan Sejati: Pembaca dibimbing untuk menemukan kebahagiaan yang tidak bergantung pada kenikmatan badani, melainkan pada perenungan tentang "Keindahan Abadi". •	Transformasi Jiwa: Mengubah diri yang sebelumnya didominasi sifat hewani atau setan menjadi pribadi yang memiliki sifat-sifat malaikat. •	Mengenal Hakikat Tuhan: Memberikan kunci untuk memahami keberadaan, kekuasaan, dan cinta Allah melalui pengenalan diri yang mendalam. •	Ketenangan Hati: Melalui zikir, muhasabah, dan disiplin diri, pembaca dapat membersihkan hati sehingga mampu memantulkan cahaya Ilahi. •	Persiapan Menghadapi Kematian: Membantu manusia memahami bahwa kematian bukanlah akhir, melainkan hadiah atau jembatan untuk bertemu dengan Sang Kekasih (Allah) bagi mereka yang telah mempersiapkan diri. •	Keselamatan di Akhirat: Dengan mempraktikkan "Kimia Kebahagiaan", seseorang dapat naik tingkat dari makhluk yang hina menjadi makhluk mulia, terhindar dari penyesalan besar di hari kiamat.</p>
+<p>Buku ini berjudul <strong>&quot;Kimia Kebahagiaan&quot; (<em>Kîmiyâ’ al-Sa‘âdah</em>)</strong> karya <strong>Imam Al-Ghazali</strong>. Secara garis besar, buku ini membahas tentang <strong>&quot;kimia ruhani&quot;</strong> yang mampu mengubah jiwa manusia dari sifat-sifat rendah (seperti logam biasa) menjadi jiwa yang mulia dan bercahaya (seperti emas) demi meraih <strong>kebahagiaan abadi</strong>.</p><p>Inti dari ajaran buku ini adalah <strong>berpaling dari dunia untuk menghadap kepada Allah</strong>. Al-Ghazali membagi proses ini ke dalam empat elemen utama:</p><p>1. <strong>Mengenal Diri:</strong> Memahami hakikat ruh dan hati sebagai kunci mengenal Tuhan.</p><p>2. <strong>Mengenal Allah:</strong> Merenungkan kekuasaan, kebijaksanaan, dan cinta Sang Pencipta melalui diri sendiri dan alam semesta.</p><p>3. <strong>Mengenal Dunia:</strong> Memahami dunia sebagai tempat persinggahan sementara atau panggung untuk mencari bekal.</p><p>4. <strong>Mengenal Akhirat:</strong> Memahami hakikat kehidupan setelah kematian, termasuk surga dan neraka ruhani.</p><p>Selain itu, buku ini juga membahas aspek praktis kehidupan seperti musik dan tarian dalam perspektif spiritual, pentingnya <em>muhasabah</em> (introspeksi diri), zikir, pernikahan, serta puncaknya adalah menanamkan cinta kepada Allah.</p><p><strong>Ditujukan kepada Siapa?</strong></p><p>Meskipun sumber tidak secara eksplisit menyebutkan kategori umur, isi dan kedalaman materi buku ini menunjukkan bahwa ia ditujukan bagi <strong>orang dewasa atau remaja yang sudah matang secara intelektual</strong>. Hal ini terlihat dari:</p><p>• <strong>Topik yang Kompleks:</strong> Pembahasan mengenai makrifat (pengetahuan mendalam tentang Tuhan), filsafat ruh, dan perdebatan teologis yang membutuhkan kemampuan nalar yang tinggi.</p><p>• <strong>Masalah Kedewasaan:</strong> Adanya bab khusus mengenai <strong>perkawinan</strong>, termasuk hak dan kewajiban suami-istri serta cara memilih pasangan.</p><p>• <strong>Tujuan Spiritual:</strong> Buku ini ditulis untuk mereka yang mencari <strong>&quot;alkemis sejati&quot;</strong> atau pembimbing ruhani dalam menyucikan hati dari karat syahwat dan amarah.</p><p><strong>Manfaat yang Dijanjikan</strong></p><p>Setelah membaca dan menerapkan metode dalam buku ini, pembaca dijanjikan berbagai manfaat spiritual dan eksistensial, antara lain:</p><p>• <strong>Meraih Kebahagiaan Sejati:</strong> Pembaca dibimbing untuk menemukan kebahagiaan yang tidak bergantung pada kenikmatan badani, melainkan pada perenungan tentang &quot;Keindahan Abadi&quot;.</p><p>• <strong>Transformasi Jiwa:</strong> Mengubah diri yang sebelumnya didominasi sifat hewani atau setan menjadi pribadi yang memiliki <strong>sifat-sifat malaikat</strong>.</p><p>• <strong>Mengenal Hakikat Tuhan:</strong> Memberikan kunci untuk memahami keberadaan, kekuasaan, dan cinta Allah melalui pengenalan diri yang mendalam.</p><p>• <strong>Ketenangan Hati:</strong> Melalui zikir, muhasabah, dan disiplin diri, pembaca dapat membersihkan hati sehingga mampu memantulkan <strong>cahaya Ilahi</strong>.</p><p>• <strong>Persiapan Menghadapi Kematian:</strong> Membantu manusia memahami bahwa kematian bukanlah akhir, melainkan hadiah atau jembatan untuk bertemu dengan Sang Kekasih (Allah) bagi mereka yang telah mempersiapkan diri.</p><p>• <strong>Keselamatan di Akhirat:</strong> Dengan mempraktikkan &quot;Kimia Kebahagiaan&quot;, seseorang dapat naik tingkat dari makhluk yang hina menjadi makhluk mulia, terhindar dari penyesalan besar di hari kiamat</p>
 
 <div class="nav">
   <a href="index.html"></a>

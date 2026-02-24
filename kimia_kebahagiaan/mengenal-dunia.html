@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>MENGENAL DUNIA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MENGENAL DUNIA - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+const pageKey = "bookmark_" + location.pathname;
+
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) window.scrollTo(0, parseInt(saved));
+});
+
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200;
+  const minutes = Math.max(1, Math.round(words / wpm));
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+</script>
+
+
+<style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+  --blockquote-bg: #f0f0f0;
+  --blockquote-border: #ccc;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+  --blockquote-bg: #1a1f27;
+  --blockquote-border: #444;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 720px;
+  margin: auto;
+  padding: 22px;
+  line-height: 1.85;
+  font-size: 18px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.35em; }
+h3 { font-size: 1.15em; }
+
+p {
+  margin: 0 0 1.2em 0;
+  text-align: justify;
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+u { text-decoration: underline; }
+s { text-decoration: line-through; }
+
+blockquote {
+  margin: 1.5em 0;
+  padding: 14px 20px;
+  background: var(--blockquote-bg);
+  border-left: 4px solid var(--blockquote-border);
+  font-style: italic;
+  border-radius: 4px;
+}
+
+ul, ol {
+  margin: 0.5em 0 1.2em 1.5em;
+  line-height: 1.85;
+}
+
+li { margin-bottom: 0.3em; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.85em;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link);
+}
+
+a:hover { opacity: 0.8; }
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+  z-index: 999;
+}
+</style>
+</head>
+<body>
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
+
+<div class="top-nav">
+  <a href="../index.html">⬅ Perpustakaan</a>
+  <a href="index.html">Index Buku</a>
+</div>
+
+<h1>MENGENAL DUNIA</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001;z-index:998">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8;transition:width 0.1s"></div>
+</div>
+
+<button id="resumeBtn"
+  onclick="resumeReading()"
+  style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer;background:#1a73e8;color:#fff;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,0.3)">
+  📖 Lanjutkan membaca
+</button>
+
+<p>d<sub>unia</sub> <sub>ini</sub> adalah sebuah panggung atau pai sar yang disinggahi para musafir dalam peri jalanan mereka ke tempat lain. Di sinilah mereka membekali diri dengan berbagai peri bekalan. Dengan bantuan perangkat indriai winya, manusia harus memperoleh pengetai huan tentang ciptaan Allah dan, melalui pei renungan terhadap semua ciptaaniNya itu, ia akan mengenal Allah. Pandangan manusia mengenai Tuhannya akan menentukan nai sibnya di masa depan. Untuk memperoleh pengetahuan inilah ruh manusia diturunkan ke dunia tanah dan air. Selama indranya mai sih berfungsi, ia akan menetap di alam ini. Jika semuanya telah sirna dan yang tertingi</p><p>gal hanya sifatisifat esensinya, berarti ia tei lah pergi ke “alam lain”.</p><p>Selama hidup di dunia ini, manusia hai rus menjalankan dua hal penting, yaitu mei lindungi dan memelihara jiwanya, serta mei rawat dan mengembangkan jasadnya. Jiwa akan terpelihara dengan pengetahuan dan cinta kepada Allah. Sebaliknya, jiwa akan hancur jika seseorang terserap dalam kecini taan kepada sesuatu selain Allah. Sementara itu, jasad hanyalah hewan tunggangan bagi jiwa, yang kelak akan musnah. Setelah kei hancuran jasad, jiwa akan abadi. Kendati demikian, jiwa harus merawat jasad layaki nya seorang pedagang yang selalu merawat unta tunggangannya. Tetapi jika ia menghai biskan waktunya untuk memberi makan dan menghiasi untanya, tentu rombongan kafilah akan meninggalkannya dan ia akan mati seni dirian di padang pasir.</p><p>Untuk bertahan dan berkembang, jasad hanya membutuhkan makanan, pakaian, dan tempat tinggal. Tetapi nafsu jasmani yang tertanam dalam dirinya untuk memenuhi kei butuhan itu cenderung memberontak melai wan nalar yang tumbuhnya lebih lambat kei</p><p>timbang nafsu. Karenanya, nafsu jasmani harus dikendalikan dengan hukumihukum Tuhan yang diajarkan oleh para nabi.</p><p>Lalu, berkenaan dengan dunia yang kita tempati ini, ia terbagi ke dalam tiga kelomi pok utama, yaitu hewan, tumbuhan,  dan mineral. Produk ketiganya terusimenerus dii butuhkan manusia, yang kemudian memuni culkan tiga bidang profesi utama, yaitu para pembuat pakaian, tukang bangunan, dan pei kerja tambang. Tentu saja  ketiga bidang keri ja utama itu menurunkan profesiiprofesi lain yang lebih khusus, seperti penjahit, tukang batu, tukang besi, dan lainilain. Semua pei kerja dalam berbagai bidang itu saling teri kait satu sama lain. Tidak ada seorang pun yang terlepas dari yang lain. Keadaan ini melahirkan sistem hubungan perdagangan yang pada gilirannya sering kali memunculi kan kebencian, iri hati, cemburu, dan penyai kit jiwa lainnya. Ujungiujungnya, timbul peri tengkaran dan perselisihan, yang memunculi kan kebutuhan terhadap kekuasaan politik dan sipil serta pengetahuan tentang hukum. Begitulah, berbagai bidang profesi, peri dagangan, jasa, dan lainilain bermunculan</p><p>di dunia ini yang semakin memperumit kei adaan dan menimbulkan kekacauan sosial. Apa pasal? Karena manusia lupa bahwa kei butuhan mereka sebenarnya hanya tiga, yaii tu pakaian, makanan, dan tempat tinggal, yang semuanya semataimata dibutuhkan agar jasad dapat menjadi tunggangan yang layak bagi jiwa dalam perjalanannya ke alam beri ikutnya. Mereka terjerumus dalam kesalahi an yang sama seperti peziarah ke Mekah yang, karena melupakan tujuan ziarah, mengi habiskan seluruh waktunya untuk memberi makan dan menghiasi hewan tunggangani nya. Seseorang pasti akan terpikat dan disii bukkan oleh dunia—yang menurut Rasulullah daya pikatnya lebih kuat daripada sihir Harut dan Marut—kecuali jika ia mengawasi dan mengendalikan nafsunya dengan ketat.</p><p>Dunia cenderung menipu dan memperi daya manusia, yang mewujud dalam berai gam rupa. Misalnya, dunia berpuraipura sei akaniakan ia akan selalu tinggal bersamai mu, padahal kenyataannya, secara perlahan ia bakal pergi menjauhimu dan berpisah dai rimu, layaknya suatu bayangan yang tami paknya tetap, tetapi kenyataannya selalu beri</p><p>gerak. Atau, dunia menampilkan dirinya dai lam rupa penyihir yang berseriiseri tetapi tak bermoral, ia berpuraipura mencintai dan menyayangimu, namun kemudian membelot kepada musuhmu, meninggalkanmu mati mei rana dilanda rasa kecewa dan putus asa.  Nabi Isa a.s. melihat dunia melihat dunia dalam bentuk seorang wanita tua yang bui ruk rupa. Ketika Isa a.s. bertanya kepadanya tentang berapa banyak suaminya, ia menjai wab bahwa jumlahnya tak terhitung. Ia beri tanya lagi, apakah mereka telah mati ataui kah dicerai. Si wanita itu bilang bahwa ia telah memenggal mereka semua. “Aku hei ran,” ujar Isa a.s. kepada wanita tua itu, “betapa banyak orang bodoh yang masih menginginkanmu setelah apa yang kaulakui kan atas banyak orang.”</p><p>Wanita tua ini menghiasi dirinya dengan busana yang indah sarat permata, menutupi mukanya dengan cadar, lalu merayu manui sia. Sangat banyak dari mereka yang mengi ikutinya menuju kehancuran. Rasulullah saw. menyatakan bahwa di Hari Pengadilan, dui nia ini akan tampak dalam bentuk seorang nenek tua yang seram, bermata hijau gelap,</p><p>dan gigi yang bertonjolan. Orang yang melii hatnya akan berkata, “Ampun! Siapakah ini?” Malaikat menjawab, “Inilah dunia yang dei minya kalian bertengkar dan berkelahi serta saling merusak kehidupan.” Kemudian wai nita itu akan dicampakkan ke neraka seraya menjerit keras, “Oh Tuhan, di mana pencini taipencintaku dahulu?” Tuhan pun kemudii an memerintahkan para pecinta dunia juga dilemparkan mengikuti kekasih mereka itu.</p><p>Siapa saja yang mau merenungkan secai ra serius keabadian di masa lalu, ketika dui nia ini belum ada, dan keabadian di masa datang, ketika dunia tak lagi ada, akan mei ngetahui bahwa kehidupan ini bagaikan sei buah perjalanan yang tahapanitahapannya dicerminkan oleh tahun, ligailiganya (ukuran jarak, ± 3 mil) oleh bulan, milimilnya oleh hari, dan langkahilangkahnya oleh detik. Jadi, betapa bodoh orang yang berupaya menjadii kan dunia sebagai tempat tinggalnya yang abadi dan menyusun rencana sepuluh tahun ke depan untuk meraih apaiapa yang bisa jadi tak pernah dibutuhkannya, padahal sei puluh hari ke depan mungkin ia telah terkui bur dalam tanah.</p><p>Saat kematian datang, orang yang mengi umbar nafsu tanpa batas dan tenggelam dai lam kenikmatan dunia tak ubahnya seperti orang yang memenuhi perutnya dengan pai nganan lezat, kemudian memuntahkannya. Kelezatannya telah hilang, tetapi mualnya tetap terasa. Makin banyak harta yang dii nikmati—berupa tamanitaman yang indah, budak, emas, perak, dan lainilain—semakin berat penderitaan yang dirasakan ketika mei reka dipisahkan oleh kematian. Beratnya penderitaan itu melebihi derita kematian, kai rena jiwa yang telah dilekati sifat tamak akan menderita di akhirat akibat nafsu yang tak terpuaskan.</p><p>Dunia menipu manusia dengan carai cara lainnya, seperti menampakkan diri sei bagai sesuatu yang remeh dan sepele, tetapi setelah dikejar ternyata ia punya cabang yang begitu banyak dan panjang sehingga seluruh waktu dan energi manusia dihabiskan untuk mengejarnya. Nabi Isa a.s. berkata, “Pecinta dunia ini seperti orang yang minum air laut; semakin banyak minum, semakin haus ia sampai akhirnya mati akibat dahaga yang  tak terpuaskan.” Dan Rasulullah saw. beri</p><p>sabda, “Kau tak bisa bergelut dengan dunia tanpa terkotori olehnya, sebagaimana kau tak bisa menyelam tanpa menjadi basah.”</p><p>Dunia ini seperti sebuah meja yang teri hampar bagi tamuitamu yang datang dan pergi silih berganti. Di sana disediakan pii ringipiring emas dan perak, makanan dan wewangian yang berlimpah. Tamu yang bii jaksana makan sesuai kebutuhannya, mengi hirup wewangian, berterima kasih kepada tuan rumah, lalu pergi. Sebaliknya, tamu yang tolol mencoba membawa beberapa pii ring emas dan perak hanya untuk direnggut kembali dari tangannya sehingga ia akhinya dicampakkan dalam keadaan hina dan malu. Gambaran tentang sifat dunia yang pei  nuh tipu daya ini akan kita tutup dengan sebuah tamsil pendek berikut ini. Katakanlah ada sebuah kapal yang hendak berlabuh di sebuah pulau berhutan lebat. Kapten kapal berkata kepada para penumpang bahwa  ia akan berlabuh selama beberapa jam, dan mei reka boleh berjalanijalan di pantai, tetapi jai ngan terlalu lama. Akhirnya, para penumi pang turun dan berjalan ke berbagai arah. Kelompok penumpang yang bijaksana akan</p><p>segera kembali setelah berjalanijalan sebeni tar dan mendapati kapal itu kosong sehingi ga mereka dapat memilih tempat yang pai ling nyaman. Ada pula para penumpang yang berjalanijalan lebih lama di pulau itu, mengagumi dedaunan, pepohonan, dan meni dengarkan nyanyian burung. Saat kembali  ke kapal, ternyata tempat yang paling nyai man telah terisi sehingga mereka terpaksa diam di tempat yang kurang nyaman. Kelomi pok penumpang lainnya berjalanijalan lebih lauh dan lebih lama; mereka menemukan bebatuan berwarna yang sangat indah, lalu membawanya ke kapal. Namun, mereka teri paksa mendekam di bagian paling bawah kapal itu. Batuibatu yang mereka bawa, yang kini keindahannya telah sirna, justru semai kin membuat mereka merasa tidak nyaman. Kelompok penumpang lain berjalan begitu jauh sehingga suara kapten, yang menyeru mereka untuk kembali, tak lagi terdengar. Akhirnya, kapal itu terpaksa berlayar tanpa mereka. Mereka terluntailunta di pulau itu tanpa harapan dan akhirnya mati kelaparan, atau menjadi mangsa binatang buas.</p><p> </p><img loading="lazy" src="images/img-020.png" /><img loading="lazy" src="images/img-021.png" /><h3>Jasad bisa diumpamakan seekor kuda sementara jiwa adalah penunggangnya. Jasad diciptakan untuk jiwa dan jiwa untuk jasad. Jika seseorang</h3><p>tidak mengetahui jiwanya—sesuatu yang paling dekat kepadanya—maka pengakuannya bahwa ia mengetahui hal-hal lain tidak berarti apa-apa.</p><p>Ia tak ubahnya pengemis yang tak punya persediaan makanan, lalu mengaku bisa memberi makan seluruh penduduk kota.</p><img loading="lazy" src="images/img-022.png" /><img loading="lazy" src="images/img-023.png" /><p>Kelompok pertama adalah orang beri iman yang sepenuhnya menjauhkan diri dari dunia, dan kelompok terakhir adalah orang kafir yang hanya mengurusi dunia dan sama sekali tidak memedulikan kehidupan akhirat. Dua kelompok lainnya adalah orang beri iman, tetapi masih disibukkan oleh dunia yang sesungguhnya tidak berharga.</p><p>Meskipun kita telah banyak bicara teni tang bahaya dunia, mesti diingat bahwa ada beberapa hal di dunia ini yang tak layak dii cela, seperti ilmu dan amal baik. Ilmu dan amal baik yang dibawa seseorang ke akhirat akan memengaruhi nasib dan keadaannya di sana. Terlebih lagi amal yang dibawa adalah amal ibadah yang membuatnya selalu mengi ingat dan mencintai Allah. Semua itu, sebai gaimana  ungkapan  Alquran,  termasuk  <em>“sem gala yang baik akan abadi</em>”.</p><p>Juga ada beberapa hal baik lainnya di dunia ini, seperti perkawinan, makanan, pai kaian, dan lainilain, yang dipergunakan sei cara bijak oleh kaum beriman sebagai sarai na untuk mencapai dunia yang akan datang. Selain semua hal tersebut, terutama yang mei mikat pikiran dan memaksa manusia untuk</p><p>bersetia kepadanya dan mengabaikan akhii rat, sungguh merupakan kejahatan yang lai yak dikutuk, sebagaimana sabda Rasulullah saw.: “Dunia ini terkutuk dan segala sesuatu yang terdapat di dalamnya juga terkutuk, kecuali zikir kepada Allah dan segala sesuai tu yang mendukungnya.”[]</p>
+
+<div class="nav">
+  <a href="mengenal-allah.html">⬅ Mengenal Allah</a>
+  <a href="mengenal-akhirat.html">Mengenal Akhirat ➡</a>
+</div>
+
+</body>
+</html>

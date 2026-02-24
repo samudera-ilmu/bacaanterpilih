@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>MENGENAL AKHIRAT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MENGENAL AKHIRAT - Bacaan digital klasik">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<script>
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light"
+  );
+}
+</script>
+
+
+<script>
+const pageKey = "bookmark_" + location.pathname;
+
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) window.scrollTo(0, parseInt(saved));
+});
+
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+</script>
+
+
+<script>
+(function() {
+  const text = document.body.innerText || "";
+  const words = text.trim().split(/\s+/).length;
+  const wpm = 200;
+  const minutes = Math.max(1, Math.round(words / wpm));
+  const el = document.getElementById("readingTime");
+  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+})();
+
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const total = doc.scrollHeight - doc.clientHeight;
+  const progress = Math.round((window.scrollY / total) * 100);
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = progress + "%";
+  localStorage.setItem("progress_" + location.pathname, progress);
+});
+
+window.addEventListener("load", () => {
+  const progress = localStorage.getItem("progress_" + location.pathname);
+  if (progress && progress > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "block";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo(0, parseInt(saved));
+}
+</script>
+
+
+<style>
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --link: #1a73e8;
+  --border: #ddd;
+  --blockquote-bg: #f0f0f0;
+  --blockquote-border: #ccc;
+}
+
+.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --link: #8ab4f8;
+  --border: #2a2f36;
+  --blockquote-bg: #1a1f27;
+  --blockquote-border: #444;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 720px;
+  margin: auto;
+  padding: 22px;
+  line-height: 1.85;
+  font-size: 18px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.35em; }
+h3 { font-size: 1.15em; }
+
+p {
+  margin: 0 0 1.2em 0;
+  text-align: justify;
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+u { text-decoration: underline; }
+s { text-decoration: line-through; }
+
+blockquote {
+  margin: 1.5em 0;
+  padding: 14px 20px;
+  background: var(--blockquote-bg);
+  border-left: 4px solid var(--blockquote-border);
+  font-style: italic;
+  border-radius: 4px;
+}
+
+ul, ol {
+  margin: 0.5em 0 1.2em 1.5em;
+  line-height: 1.85;
+}
+
+li { margin-bottom: 0.3em; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.85em;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--link);
+}
+
+a:hover { opacity: 0.8; }
+
+.toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--border);
+  user-select: none;
+  z-index: 999;
+}
+</style>
+</head>
+<body>
+
+<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
+
+<div class="top-nav">
+  <a href="../index.html">⬅ Perpustakaan</a>
+  <a href="index.html">Index Buku</a>
+</div>
+
+<h1>MENGENAL AKHIRAT</h1>
+
+<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
+
+<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001;z-index:998">
+  <div id="progressBar" style="height:100%;width:0;background:#1a73e8;transition:width 0.1s"></div>
+</div>
+
+<button id="resumeBtn"
+  onclick="resumeReading()"
+  style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer;background:#1a73e8;color:#fff;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,0.3)">
+  📖 Lanjutkan membaca
+</button>
+
+<p>O<sub>rang</sub> <sub>yang</sub> memercayai Alquran dan Sunah sudah tidak asing lagi dengan konsep niki mat surga dan siksa neraka yang menanti di akhirat. Namun, ada hal penting yang sering mereka luputkan, yakni bahwa ada surga ruhani dan neraka ruhani. Mengenai surga ruhani, Allah berfirman kepada NabiiNya, <em>“Tak  pernah  dilihat  mata,  tak  pernah  didem ngar telinga, dan tak pernah terlintas dalam hati manusia, itulah nikmat yang disiapkan bagi orang yang bertakwa.”</em></p><p>Hati orang yang tercerahkan memiliki satu jendela yang terbuka ke arah dunia rui hani sehingga ia dapat mengetahui—bukan dari kabar angin atau kepercayaan tradisio nal, melainkan teralami secara nyata—</p><p>penyebab segala kerusakan dan kebahagiaan jiwa, sejelas dan senyata pengetahuan se orang dokter mengenai segala penyebab rasa sakit atau pendukung kesehatan. Ia tahu bahwa pengetahuan tentang Allah dan iba dah kepadaiNya menjadi obat bagi jiwa, sei mentara kebodohan dan dosa menjadi racun yang merusaknya. Banyak orang, bahkan juga yang disebut ulama, karena bertaklid buta terhadap pendapat orang lain, tak pui nya keyakinan yang benar berkenaan dengan kebahagiaan atau penderitaan jiwa di akhirat. Tetapi orang yang mau mempelajari mai salah ini dengan pikiran yang bersih dari prasangka akan sampai pada keyakinan yang jelas mengenai masalah ini.</p><p>Kematian akan mengakibatkan keadaan yang berbeda pada dua jenis jiwa yang di miliki manusia, yaitu jiwa hewani dan jiwa ruhani. Jiwa ruhani bersifat malakut. Jiwa hewani bertempat dalam hati, yang dari sana menyebar laksana uap ke semua anggota tu buh, memberi tenaga atau kemampuan meli hat pada mata, mendengar pada telinga, dan ke seluruh anggota tubuh lainnya sehingga mereka dapat menjalankan fungsinya. Ini</p><p>bisa dibandingkan dengan sebuah lampu di sebuah pondok yang cahayanya menyebar ke dindingidinding. Hati adalah sumbu lam pu ini, dan jika aliran minyaknya terputus karena suatu sebab, lampu itu akan mati. Seperti itulah jiwa hewani mengalami kema tiannya.</p><p>Berbeda halnya dengan jiwa ruhani atau jiwa manusiawi. Jiwa ruhani tak terbagi dan dengan jiwa itulah manusia dapat mengenali Allah. Boleh dikatakan, ia adalah pengendai ra jiwa hewani. Dan ketika jiwa hewani musi nah, ia tetap ada. Keadaannya serupa dei ngan penunggang kuda yang telah turun atau pemburu yang tak lagi bersenjata. Kuda dan senjata itu adalah anugerah bagi jiwa manui sia agar ia bisa mengejar dan menangkap keabadian cinta dan pengetahuan tentang Allah. Jika berhasil, ia pasti akan  merasa  lega dan bahagia meski senjata atau tung gangannya meninggalkannya; ia tidak akan berkeluh kesah. Karena itu, Rasulullah saw. bersabda, “Kematian adalah hadiah Tuhan yang diharapiharapkan kaum beriman.” Te tapi ia akan celaka dan menderita jika kuda atau senjata itu telah hilang sedang ia belum</p><p>berhasil meraih tujuannya. Kesedihan dan penyesalannya sangat tak terperi.</p><p>Pembahasan yang lebih dalam akan me nunjukkan betapa berbedanya jiwa manusia dari jasad dan segenap anggotanya. Setiap anggota tubuh bisa rusak dan berhenti be kerja, tetapi kemandirian jiwa tak terusik. Selain itu, tubuh manusia mengalami peri kembangan dari waktu ke waktu.  Tubuhnya di waktu bayi jauh berbeda dengan tubuhi nya di masa tua. Namun, kepribadian mai nusia tetap sama, dulu maupun sekarang. Jadi, bisa dikatakan bahwa jiwa akan terus ada menyertai sifatisifat esensialnya yang tak bergantung pada tubuh, seperti pengetahuan dan cinta kepada Allah. Inilah makna ayat Alquran, <em>“segala yang baik akan abadi.” </em>Layaknya pengetahuan, kebodohan pun akan abadi menyertai jiwa. Jadi, jika kau lebih memilih kebodohan ketimbang pengetahuan tentang Allah maka kebodohan itu akan mei nyertaimu di akhirat dalam wujud kegelapan jiwa dan penderitaan. Keadaan itulah yang dimaksudkan Alquran:</p><p><img loading="lazy" src="images/img-024.png" /> <img loading="lazy" src="images/img-025.png" /> <img loading="lazy" src="images/img-026.png" /></p><p><img loading="lazy" src="images/img-027.png" /><img loading="lazy" src="images/img-028.png" /><img loading="lazy" src="images/img-029.png" /></p><p><em>Orang yang buta di dunia ini akan buta  di  akhirat  dan  tersesat  dari  jam lan yang lurus.</em></p><p>Mengapa jiwa manusia cenderung untuk kembali ke dunia yang lebih  tinggi?  Sebab, ia berasal dari sana dan pada dasarnya ia bersifat malakut. Ia dikirim ke dunia yang lebih rendah ini berlawanan dengan keheni daknya untuk memperoleh pengetahuan dan pengalaman, sebagaimana firman Allah dai lam  Alquran,  <em>“Turunlah  dari  sini  kamu  sem muanya,  akan  datang  kepadamu  perintahm perintah  darimKu  dan  siapa  yang  menaatinya tidak perlu takut dan tak perlu gelisah.” </em>Dan ayat Alquran: <em>“Aku tiupkan ke dalam diri manusia   ruhmKu”   </em>juga   menunjukkan   asal samawi jiwa manusia. Jiwa hewani akan tei tap sehat selama keseimbangan bagianibagii an yang menyusunnya terjaga. Jika keseimi bangan itu terusik, ia obatiobatan dapat</p><p>memulihkannya. Sama halnya, jiwa ruhani akan tetap sehat selama keseimbangan moi ralnya terjaga dengan menjalankan tuntunan etika dan ajaran moral.</p><p>Lalu, bagaimanakah keadaan jiwa mai nusia setelah kematian jasad? Sebagaimana telah disebutkan, jiwa manusia tak bergani tung pada jasad. Pandangan sebagian orang yang menentang keberadaan jiwa setelah kei matian didasarkan atas dugaan bahwa jiwa harus dibangkitkan setelah jasadnya menyai tu dengan tanah. Sebagian ahli kalam beri pendapat bahwa jiwa manusia musnah setei lah mati, kemudian dibangkitkan kembali. Pendapat ini bertentangan baik dengan nalar maupun Alquran. Sebagaimana telah kita bahas, kematian jasad sama sekali tidak mei mengaruhi apalagi menghancurkan jiwa, sei bagaimana dikatakan Alquran, <em>“Jangan kamu pikir orang yang terbunuh di jalan Allah itu mati. Tidak! Mereka hidup, bahagia dengan kehadiran  Tuhan  mereka  dan  dalam  limpahm an karunia.” </em>Tak ada sedikit pun rujukan syariat yang menyebutkan bahwa ruh orang yang telah mati, yang baik maupun jahat, akan musnah. Malah, diriwayatkan bahwa</p><p>Nabi saw. pernah bertanya kepada ruh orangi orang kafir yang terbunuh mengenai kebei naran hukuman yang diancamkan kepada mereka. Ketika para sahabat menanyakan apa gunanya bertanya kepada mereka, Rasulullah menjawab, “Mereka bisa mendei ngar kataikataku lebih baik daripada kalii an.”</p><p>Diriwayatkan bahwa beberapa sufi melii hat surga dan neraka ketika mereka mencai pai keadaan ekstase. Ketika kembali sadar, wajah mereka menunjukkan apa yang telah mereka saksikan; sarat dengan tandaitanda kebahagiaan dan ketakutan yang sangat. Tetapi, visi atau penglihatan ke dunia gaib tak lagi dibutuhkan bagi orangiorang yang berpikir. Bagi orang yang selalu menyibuki kan dirinya memuaskan nafsu duniawi, saat kematian menghentikan seluruh perangkat indriawinya dan ketika segalanya musnah kecuali kepribadiannya, ia akan menderita karena harus berpisah dengan segala bentuk keduniaan yang begitu dekat dengannya sei lama ini, seperti istri, anak, kekayaan, tanah, budak, dan sebagainya. Sebaliknya, orang yang telah menghindari keduniaan dan mei</p><p>neguhkan cintanya kepada Allah, niscaya akan menyambut kematian sebagai pelepasi an dari kericuhan hidup duniawi untuk beri gabung dengan Dia yang dicintainya. Benari lah Rasulullah saw. ketika mengatakan, “Kei matian adalah jembatan yang menyatukan sahabat dengan sahabat.” Dan dalam hadis yang lain beliau bersabda, “Dunia ini surga bagi orang kafir, dan penjara bagi orang mukmin.”</p><p>Di lain pihak, semua derita yang ditangi gung jiwa setelah mati sesungguhnya disei babkan oleh cinta dunia yang berlebihan. Rasulullah bersabda bahwa setelah mati, sei mua orang kafir akan disiksa oleh 99 ular, yang masingimasing punya sembilan kepala. Orang yang berpikiran dangkal memaknai hadis itu secara harfiah; ia menggali kuburi an orang kafir dan mencari ular yang dii maksud namun tak juga ditemukan. Mereka sama sekali tidak memahami bahwa “ulari ular” itu selalu bersemayam dalam jiwa orang kafir, bahkan sudah menetap di sana saat mereka masih hidup. Ulariular itu menyimi bolkan sifatisifat jahat, seperti dengki, benci, munafik, sombong, licik, dan lainilain. Semua</p><p>sifat itu bersumber, langsung maupun tidak, dari cinta dunia. Itulah neraka yang disediai kan  bagi  orang  yang,  menurut  Alquran, <em>“mem neguhkan  hati  mereka  pada  dunia  ini  melem bihi akhirat”. </em>Jika ulariular itu adalah ular biasa, mereka mungkin bisa melarikan diri dari siksanya meski hanya untuk sesaat. Tetapi ulariular itu merupakan penjelmaan dari sifat bawaan mereka sehingga bagaimai na bisa mereka melarikan diri darinya?</p><p>Ambillah contoh seseorang yang menjui al budak perempuannya tanpa menyadari pei rasaannya hingga budak itu telah lepas dari jangkauannya. Lalu, rasa cinta kepada bui dak itu yang selama ini tertidur dalam hatii nya, tibaitiba bangkit dengan intensitas yang luar biasa sehingga ia tersiksa dan menderita bagai disengat bisa ular. Ia menjadi gila kai renanya; ia rela mencampakkan dirinya ke dalam kobaran api atau menceburkan  diri  ke sungai untuk melarikan diri impitan pei rasaan itu. Seperti itulah akibat cinta dunia yang berlebihan. Para pecinta dunia tidak menyadarinya hingga dunia yang mereka cini tai itu direnggut dari mereka dan akhirnya, karena merasa sangat tersiksa, mereka lebih</p><p> </p><img loading="lazy" src="images/img-030.png" /><img loading="lazy" src="images/img-031.png" /><h3>Cinta adalah benih kebahagiaan, dan cinta kepada Allah dapat ditumbuhkan</h3><p>dan dikembangkan oleh ibadah.</p><p>Ibadah dan zikir tak berkesudahan mencerminkan suatu tingkat keprihatinan dan pengekangan nafsu badani.</p><p>Ini tidak berarti ia harus memusnahkan nafsu badani sepenuhnya, karena jika begitu, ras manusia akan musnah.</p><p>Namun, pemuasan hasrat tubuh itu harus dibatasi dengan ketat.</p><img loading="lazy" src="images/img-032.png" /><img loading="lazy" src="images/img-033.png" /><p>memilih hidup sengsara ditemani ular dan kalajengking.</p><p>Dengan demikian, setiap pendosa akan disiksa di akhirat dengan alat penyiksaan yang mereka bawa sendiri dari dunia. Benari lah kata Alquran, <em>“Sesungguhnya kalian akan melihat  neraka.  Kalian  akan  melihatnya  dem ngan mata keyakinan </em>(‘ayn aliyaqîn)”, dan <em>“neraka mengitari orang kafir.” </em>Alquran tii dak mengatakan “neraka <em>akan </em>mengitari mei reka”, karena bahkan di dunia pun neraka sudah mengitari mereka.</p><p>Mungkin ada yang keberatan dan mei nyatakan, “Kalau begitu, berarti tidak ada orang yang terbebas dari neraka, karena siai pa pun, sedikit atau banyak, pasti terikat pada dunia dengan beragam kepentingan dan kecenderungan?” Untuk menjawabnya bisa kita katakan bahwa ada orangiorang, terutama para fakir, yang telah sepenuhnya melepaskan diri dari cinta dunia. Bahkan, di antara orangiorang yang memiliki dan meni cintai dunia—termasuk istri, anak, rumah, dan lainilain—ada yang cintanya kepada Allah jauh lebih besar daripada cintanya kei pada yang lain. Mereka layaknya seseorang</p><p>yang, meski sudah punya rumah yang ia cini tai di sebuah kota, ketika raja memintanya untuk mengisi pos jabatan di kota lain, ia akan memenuhinya dengan senang hati, kai rena jabatan itu lebih berharga baginya dai ripada rumahnya. Termasuk dalam kategori ini adalah para nabi dan sebagian wali.</p><p>Di lain pihak, ada pula orang yang meni cintai Allah, tetapi cintanya kepada dunia jauh lebih besar sehingga mereka harus meni derita siksaan yang cukup berat setelah kei matian sebelum mereka dibebaskan darinya. Banyak orang yang mengaku mencintai Allah, tetapi kecintaannya sama sekali tak teruji. Untuk menguji rasa cintamu, perhatikanlah ke mana kau akan condong ketika perintahi perintah Allah datang bertolak belakang dei ngan hasrat keduniawianmu? Orang yang mengaku cinta kepada Allah namun tetap membangkang kepadaiNya, berarti pengi akuannya itu dusta belaka.</p><p>Telah kita jelaskan di atas bahwa salah satu bentuk neraka ruhani adalah terpisahi nya seseorang secara paksa dari dunia yang sangat dicintainya. Banyak orang yang tanpa sadar membawa dalam dirinya benihibenih</p><p>neraka. Mereka akan mengalami nasib yang teramat naas, layaknya seorang raja yang setelah menjalani hidup mewah, tibaitiba dii campakkan dari singgasananya dan menjadi cemoohan orangiorang.</p><p>Neraka ruhani jenis kedua adalah rasa malu, yaitu ketika seseorang dibangunkan untuk melihat hasil perbuatannya di dunia. Orang yang suka mengumpat di dunia akan mendapati dirinya dalam bentuk seorang kai nibal yang makan bangkai saudaranya. Orang yang iri hati akan tampak sebagai seseorang yang melemparkan batuibatu ke dinding, kei mudian batuibatu itu memantul kembali dan mengenai mata anaknya sendiri.</p><p>Neraka jenis ini, yaitu rasa malu, bisa dijelaskan dengan perumpamaan ringkas beri ikut ini. Seorang putra raja baru saja menii kah. Di malam harinya, ia pergi keluar beri sama beberapa sahabatnya dan kembali lagi ke istana dalam keadaan mabuk. Ia masuki sebuah kamar yang terang lalu berbaring di samping tubuh yang diduganya sebagai memi pelai wanitanya. Pagi harinya, saat kesadari annya pulih, ia terperanjat mendapati dirii nya terbaring di sebuah kamar mayat pei</p><p>nyembah api. Sofanya adalah pembaringan jenazah, dan tubuh yang diduganya mempei lai wanitanya adalah mayat wanita tua yang mulai membusuk. Betapa malu ia ketika kei luar kamar dan mendapati ayahnya, sang raja, mendekatinya dengan serombongan teni tara. Itulah perumpamaan tentang rasa malu yang akan dirasakan di akhirat oleh orangi orang serakah yang memasrahkan diri merei ka kepada segala sesuatu yang mereka angi gap sumber kebahagiaan.</p><p>Neraka ruhani jenis ketiga adalah kekei cewaan dan kegagalan mencapai objek eki sistensi yang sejati. Manusia diciptakan dei ngan tujuan untuk memantulkan cahaya pei ngetahuan tentang Tuhan. Namun, jika ia  tiba di akhirat dengan jiwa yang tertutup karat tebal nafsu duniawi, ia akan gagal meni capai tujuan penciptaannya. Kekecewaannya bisa digambarkan dengan perumpamaan beri ikut. Misalkan seseorang melewati hutan gei lap bersama beberapa sahabat. Mereka mei lihat di sanaisini bertebaran batu berwarna yang kerlapikerlip memantulkan cahaya. Para sahabatnya mengumpulkan dan membawa batuibatu itu dan mengajaknya untuk melai</p><p>kukan hal yang sama. “Karena,” kata merei ka, “kami dengar batuibatu itu akan  dibai  yar dengan harga tinggi di tempat yang akan kita datangi.” Tetapi orang ini malah mei nertawakan mereka dan menyebut mereka bodoh karena menyimpan harapan siaisia untuk memperoleh sesuatu, sementara ia seni diri bisa berjalan bebas tak berbebani. Kei mudian mereka tiba di tempat yang dituju dan ternyata batuibatu itu adalah batu delii ma, zamrud, dan permata yang tak ternilai harganya. Betapa kecewa dan menyesal orang itu karena tidak mengumpulkan bendaibeni da yang sudah berada dalam jangkauannya itu. Seperti itulah penyesalan orang yang saat hidup di dunia ini tidak berusaha mendapati kan permata kebajikan dan perbendaharaan agama.</p><p>Perjalanan manusia di dunia ini bisa dii bagi ke dalam empat tahap, yaitu tahap ini driawi, eksperimental, instingtif, dan rasioi nal. Pada tahapan pertama ia seperti seekor ngengat yang, meski bisa melihat, tak bisa mengingat sehingga ia akan menubrukkan dirinya berkaliikali pada lilin yang sama. Pada tahapan kedua ia seperti seekor anjing yang,</p><p>setelah sekali dipukul, akan lari saat melihat sebatang rotan pemukul. Pada tahapan ketii ga ia seperti seekor kuda atau domba yang, secara instingtif, segera kabur saat melihat macan atau srigala—musuh alaminya—sei mentara mereka tak akan lari saat melihat unta atau kerbau, meski ukuran keduanya lebih besar. Pada tahapan keempat ia telah melampaui batasibatas kebinatangan itu sei hingga mampu, hingga batas tertentu, merai malkan dan mempersiapkan masa depannya. Pada tahapan pertama gerakannya seperti orang yang berjalan di atas tanah, lalu sei perti orang yang menyeberangi lautan di atas sebuah kapal, dan pada tahapan terakhir, ketika ia sudah akrab dengan hakikatihakii kat, ia seperti orang yang  mampu  berjalan di atas air. Dan, masih ada tahapan kelima yang hanya dikenal oleh para nabi dan wali. Gerakan mereka seperti orang yang terbang mengarungi udara.</p><p>Jadi, manusia bisa mengada pada berbai gai tahapan yang berbeda, mulai tahapan hewani sampai tahapan malakut. Dan persis di sinilah bahaya besar mengancam, yaitu kemungkinan jatuh ke tahapan yang paling</p><p>rendah. Alquran menyatakan, <em>“Telah Kami tawarkan amanah kepada langit dan bumi serta  gunungmgunung;  mereka  menolak  mem nanggungnya.  Tetapi  manusia  mau  menangm gungnya. Sungguh manusia itu bodoh.” </em>Hei wan maupun malaikat tak bisa mengubah tingkatan dan posisi kemakhlukannya. Tei tapi manusia bisa jatuh ke tingkatan hewan yang paling rendah atau naik meraih tingi katan malakut tertinggi. Inilah makna “pei nanggungan amanah” yang disebutkan dai lam ayat di atas. Kebanyakan manusia mei milih menetap di dua tahapan yang paling rendah. Dan biasanya mereka selalu memui suhi orangiorang yang bepergian atau musi afir yang jumlahnya jauh lebih sedikit.</p><p>Banyak manusia dari kedua kelompok itu, karena tak punya keyakinan yang teguh tentang akhirat, menolaknya sama sekali saat nafsu indriawi menguasainya. Menurut mei reka, neraka hanyalah temuan para teolog untuk menakutinakuti manusia. Mereka menghina dan merendahkan para teolog. Beri debat dengan orang seperti ini tak banyak berguna. Meski demikian, mungkin pertai nyaan ini bisa membungkam keangkuhani</p><p> </p><img loading="lazy" src="images/img-034.png" /><img loading="lazy" src="images/img-035.png" /><h3>Selama hidup di dunia ini, manusia harus menjalankan dua hal penting,</h3><p>yaitu melindungi dan memelihara jiwanya, serta merawat dan mengembangkan jasadnya. Jiwa akan terpelihara</p><p>dengan pengetahuan dan cinta kepada Allah. Sebaliknya, jiwa akan hancur jika seseorang terserap dalam kecintaan</p><p>kepada sesuatu selain Allah.</p><img loading="lazy" src="images/img-036.png" /><img loading="lazy" src="images/img-037.png" /><p>nya sehingga ia mau merenung sejenak: “Apai kah kau benaribenar yakin bahwa 124.000 nabi dan wali yang memercayai kehidupan akhirat itu semuanya salah, dan hanya kau yang benar?” Jika ia menjawab, “Ya, aku yakin,” berarti tak ada lagi yang dapat dii harapkan darinya. Hati dan pikiran mereka sudah membatu. Mereka sama sekali tak mei mercayai adanya hari akhir dengan pahala dan siksa yang disediakan bagi jiwaijiwa mai nusia. Jika seperti itu keadaannya, tinggali kan dan biarkanlah mereka dalam kesesati an, sebagaimana dikatakan Alquran, <em>“Meski kau peringatkan, mereka takkan ingat.”</em></p><p>Tetapi jika ia menjawab bahwa kehii dupan akhirat itu mungkin ada mungkin tii dak ada, dan bahwa ajaran itu sarat misteri dan keraguan sehingga ia tak dapat memui tuskan benar atau tidaknya maka katakani lah kepadanya, “Tuntaskan keraguanmu itu!” Sampaikan beberapa perumpamaan beri ikut. Umpamanya kau hendak makan, lalu seseorang berkata bahwa seekor ular telah meludahkan bisa ke makanan itu, mungkin kau akan menahan diri dan memilih untuk menahan lapar daripada memakannya, mesi</p><p>ki orang yang mengabarkan informasi itu mungkin hanya bercanda atau berbohong. Atau misalnya kau sedang sakit dan seorang penyair berkata, “Beri aku satu dirham dan akan kutulis sebuah puisi untuk kauikatkan di lehermu agar kau sembuh dari sakit.” Mungkin kau akan memberinya uang dei ngan harapan jimatnya bisa menyembuhkan penyakitmu. Atau jika seorang peramal beri kata, “Jika bulan telah sampai pada suatu bentuk tertentu, minumlah obat ini dan itu, niscaya kamu akan sembuh.” Meski kau tak begitu percaya astrologi, mungkin kau akan mencobanya seraya berharap ramalannya itu benar. Lalu, tidak pernahkah kau berpikir bahwa mungkin saja ucapan para nabi, para wali, dan orangiorang suci, yang meyakini kan manusia mengenai adanya kehidupan mendatang, mengandung kebenaran seperti jimat si penyair atau ramalan si peramal? Banyak manusia yang berani menanggung risiko menyeberangi samudera demi mengi harap suatu keuntungan. Apakah kau bersii kukuh tidak mau menanggung sedikit peni deritaan di masa sekarang demi kebahagiaan abadi di akhirat?</p><p>Sayyidina Ali Zainal Abidin (Putra Husain ibn Ali ibn Abi Thalib, cucu Rasulullah saw.) ketika berdebat dengan seorang kafir pernah berkata, “Jika kau benar maka tidak sei orang pun di antara kita yang akan menangi gung penderitaan di masa depan. Tetapi jika kami yang benar maka kami akan selamat sementara kau pasti menderita.” Ia mengai takan itu bukan karena meragukan akhirat, melainkan untuk memberikan kesan tertentu kepada orang kafir itu.</p><p>Berdasarkan semua pembahasan di atas, dapat disimpulkan bahwa urusan utama mai nusia di dunia ini adalah mempersiapkan diri bagi dunia yang akan datang. Bahkan seani dainya seseorang meragukan keberadaan akhirat, nalar mengajarkan bahwa ia harus bertindak seakaniakan akhirat itu ada dei ngan mempertimbangkan akibat luar biasa yang mungkin terjadi. Keselamatan hanya bagi orangiorang yang mengikuti ajaran Allah.[]</p>
+
+<div class="nav">
+  <a href="mengenal-dunia.html">⬅ Mengenal Dunia</a>
+  <a href="spiritualitas-dalam-musik-dan-tarian.html">Spiritualitas Dalam Musik Dan Tarian ➡</a>
+</div>
+
+</body>
+</html>
