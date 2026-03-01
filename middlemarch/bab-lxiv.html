@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB LXIV.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB LXIV. - Bacaan digital klasik">
+<title>Bab LXIV — Middlemarch</title>
+<meta name="description" content="Baca Bab LXIV dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-lxiv.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab LXIV — Middlemarch">
+  <meta property="og:description" content="Baca Bab LXIV dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-lxiv.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab LXIV — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab LXIV dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab LXIV",
+    "name": "Bab LXIV — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-lxiv.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab LXIV</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>1. Di mana letak kekuasaan, di situ pula letak kesalahan. <br />2. Tidak , kekuasaan itu relatif; Anda tidak dapat menakut-nakuti <br />wabah yang akan datang dengan benteng perbatasan, atau menangkap ikan mas Anda dengan argumen yang halus. Semua kekuatan adalah dua dalam satu: sebab bukanlah sebab kecuali ada akibatnya; dan tindakan itu sendiri harus mengandung pasif. Jadi perintah hanya ada dengan kepatuhan.</p><p>Sekalipun Lydgate cenderung terbuka tentang urusannya, ia tahu bahwa Tuan Farebrother hampir tidak mungkin memberikan bantuan yang segera ia butuhkan. Dengan tagihan tahunan yang datang dari para pedagangnya, dengan ancaman Dover terhadap perabotannya, dan tanpa ada yang bisa diandalkan selain pembayaran yang lambat dan bertahap dari pasien yang tidak boleh tersinggung—karena biaya besar yang telah ia terima dari Freshitt Hall dan Lowick Manor telah dengan mudah diserap—tidak kurang dari seribu pound akan membebaskannya dari kesulitan yang sebenarnya, dan menyisakan sisa yang, menurut ungkapan harapan favorit dalam keadaan seperti itu, akan memberinya &quot;waktu untuk melihat-lihat.&quot;</p><p>Tentu saja, Natal yang meriah yang membawa Tahun Baru yang bahagia, ketika sesama warga mengharapkan imbalan atas usaha dan barang-barang yang telah mereka berikan dengan ramah kepada tetangga mereka, telah begitu menekan pikiran Lydgate dengan kekhawatiran yang menyedihkan sehingga hampir tidak mungkin baginya untuk memikirkan hal lain tanpa gangguan, bahkan yang paling biasa dan mendesak sekalipun. Dia bukanlah orang yang pemarah; aktivitas intelektualnya, kebaikan hatinya yang tulus, serta tubuhnya yang kuat, akan selalu, dalam kondisi yang cukup mudah, membuatnya terhindar dari kepekaan kecil yang tak terkendali yang menyebabkan sifat pemarah. Tetapi sekarang dia menjadi mangsa iritasi terburuk yang muncul bukan hanya dari gangguan, tetapi dari kesadaran kedua yang mendasari gangguan tersebut, yaitu energi yang terbuang dan kekhawatiran yang merendahkan, yang merupakan kebalikan dari semua tujuan sebelumnya. &quot; Inilah yang kupikirkan; dan itulah yang seharusnya kupikirkan,&quot; adalah gumaman pahit yang tak henti-hentinya di dalam dirinya, menjadikan setiap kesulitan sebagai cambuk ganda bagi ketidaksabarannya.</p><p>Beberapa pria terhormat telah menciptakan sosok yang menakjubkan dalam sastra melalui ketidakpuasan umum terhadap alam semesta sebagai jebakan kebosanan yang secara keliru menjebak jiwa-jiwa besar mereka; tetapi perasaan akan diri yang luar biasa dan dunia yang tidak berarti mungkin memiliki penghiburan tersendiri. Ketidakpuasan Lydgate jauh lebih sulit ditanggung: itu adalah perasaan bahwa ada eksistensi agung dalam pikiran dan tindakan efektif yang mengelilinginya, sementara dirinya sendiri dipersempit ke dalam isolasi menyedihkan dari ketakutan egoistis, dan kecemasan vulgar akan peristiwa yang mungkin meredakan ketakutan tersebut. Masalahnya mungkin akan tampak sangat hina, dan di bawah perhatian orang-orang tinggi yang tidak tahu apa-apa tentang hutang kecuali dalam skala yang megah. Tidak diragukan lagi, masalahnya memang hina; Dan bagi sebagian besar orang, yang tidak bermartabat, tidak ada jalan keluar dari kehinaan kecuali dengan bebas dari nafsu akan uang, dengan segala harapan dan godaan rendahnya, penantian akan kematian, permintaan tersiratnya, keinginan seperti pedagang kuda untuk membuat pekerjaan buruk tampak baik, pencarian fungsi yang seharusnya menjadi milik orang lain, dan dorongan untuk sering kali mendambakan Keberuntungan dalam bentuk malapetaka besar.</p><p>Karena Lydgate merasa tersiksa oleh gagasan untuk terjerat dalam beban yang berat ini, ia jatuh ke dalam keadaan murung yang pahit, yang terus memperluas keterasingan Rosamond darinya. Setelah pengungkapan pertama tentang surat penjualan, ia telah melakukan banyak upaya untuk membujuk Rosamond agar bersimpati kepadanya tentang kemungkinan langkah-langkah untuk mengurangi pengeluaran mereka, dan dengan semakin dekatnya Natal, usulannya menjadi semakin pasti. “Kita berdua bisa hidup hanya dengan satu pelayan, dan hidup dengan sangat hemat,” katanya, “dan aku akan cukup dengan satu kuda.” Karena Lydgate, seperti yang telah kita lihat, telah mulai berpikir, dengan visi yang lebih jelas, tentang pengeluaran hidup, dan kebanggaan apa pun yang ia berikan pada penampilan semacam itu sangat kecil dibandingkan dengan kebanggaan yang membuatnya memberontak karena terungkap sebagai debitur, atau karena meminta orang untuk membantunya dengan uang mereka.</p><p>“Tentu saja Anda bisa memecat dua pelayan lainnya, jika Anda mau,” kata Rosamond; “tetapi saya pikir akan sangat merugikan posisi Anda jika kita hidup dalam kemiskinan. Anda harus siap menerima kenyataan bahwa penghasilan Anda akan menurun.”</p><p>“Rosamond sayangku, ini bukan soal pilihan. Kita memulai dengan terlalu mahal. Kau tahu, Peacock tinggal di rumah yang jauh lebih kecil dari ini. Ini salahku: seharusnya aku lebih bijak, dan aku pantas dihukum—jika ada orang yang berhak menghukumku—karena telah membuatmu harus hidup dalam kemiskinan yang lebih parah daripada yang biasa kau alami. Tapi kita menikah karena kita saling mencintai, kurasa. Dan itu mungkin membantu kita bertahan sampai keadaan membaik. Ayo, sayang, tinggalkan pekerjaan itu dan datanglah padaku.”</p><p>Saat itu, ia benar-benar diliputi kesedihan yang mendalam tentang Rosamond, tetapi ia takut akan masa depan tanpa kasih sayang, dan bertekad untuk mencegah perpecahan di antara mereka. Rosamond menurutinya, dan ia memangkunya, tetapi di lubuk hatinya yang terdalam, ia benar-benar menjauh darinya. Gadis malang itu hanya melihat bahwa dunia tidak diatur sesuai keinginannya, dan Lydgate adalah bagian dari dunia itu. Namun, ia memegang pinggang Rosamond dengan satu tangan dan meletakkan tangan lainnya dengan lembut di atas kedua tangan Rosamond; karena pria yang agak kasar ini memiliki kelembutan yang besar dalam perilakunya terhadap wanita, seolah-olah selalu membayangkan kelemahan tubuh mereka dan keseimbangan kesehatan mereka yang rapuh baik secara fisik maupun mental. Dan ia mulai berbicara lagi dengan persuasif.</p><p>“Sekarang setelah saya sedikit menyelidiki, Rosy, saya menyadari betapa banyak uang yang terbuang untuk pengeluaran rumah tangga kita. Saya kira para pelayan ceroboh, dan kita sering kedatangan banyak orang. Tapi pasti ada banyak orang di kalangan kita yang bisa hidup dengan jauh lebih sedikit: mereka harus puas dengan hal-hal yang lebih sederhana, saya kira, dan mengurus sisa-sisa makanan. Tampaknya, uang tidak banyak berpengaruh dalam hal ini, karena Wrench mengatur semuanya sejelas mungkin, dan dia memiliki praktik yang sangat besar.”</p><p>“Oh, kalau kau berpikir untuk hidup seperti keluarga Wrench!” kata Rosamond sambil sedikit menolehkan lehernya. “Tapi aku pernah mendengar kau mengungkapkan rasa jijikmu terhadap cara hidup seperti itu.”</p><p>“Ya, mereka punya selera buruk dalam segala hal—mereka membuat ekonomi terlihat buruk. Kita tidak perlu melakukan itu. Maksud saya hanya mereka menghindari pengeluaran, meskipun Wrench memiliki praktik yang bagus.”</p><p>“Mengapa kamu tidak boleh memiliki praktik yang baik, Tertius? Tuan Peacock memilikinya. Kamu harus lebih berhati-hati agar tidak menyinggung perasaan orang lain, dan kamu harus mengirimkan obat-obatan seperti yang dilakukan orang lain. Aku yakin kamu memulai dengan baik, dan kamu mendapatkan beberapa rumah sakit yang bagus. Bersikap eksentrik tidak akan berhasil; kamu harus memikirkan apa yang akan disukai secara umum,” kata Rosamond, dengan nada teguran yang tegas.</p><p>Kemarahan Lydgate meningkat: ia siap bersikap toleran terhadap kelemahan perempuan, tetapi tidak terhadap perintah perempuan. Kedangkalan jiwa seorang peri air mungkin memiliki daya tarik sampai ia menjadi suka menggurui. Tetapi ia mengendalikan dirinya, dan hanya berkata, dengan sedikit ketegasan yang despotik—</p><p>“Apa yang akan saya lakukan dalam praktik saya, Rosy, itu terserah saya untuk menentukannya. Itu bukan masalah di antara kita. Cukup bagimu untuk tahu bahwa penghasilan kita kemungkinan akan sangat terbatas—hampir empat ratus, mungkin kurang, untuk waktu yang lama ke depan, dan kita harus mencoba mengatur kembali kehidupan kita sesuai dengan kenyataan itu.”</p><p>Rosamond terdiam sejenak, menatap ke depan, lalu berkata, “Paman Bulstrode seharusnya memberimu gaji atas waktu yang kau berikan untuk Rumah Sakit: tidak adil jika kau bekerja tanpa imbalan.”</p><p>“Sejak awal sudah dipahami bahwa jasa saya akan diberikan secara cuma-cuma. Sekali lagi, itu tidak perlu dibahas lagi. Saya sudah menunjukkan satu-satunya kemungkinan yang ada,” kata Lydgate dengan tidak sabar. Kemudian, setelah menahan diri, ia melanjutkan dengan lebih tenang—</p><p>“Saya rasa saya melihat satu sumber daya yang dapat membebaskan kita dari sebagian besar kesulitan saat ini. Saya dengar Ned Plymdale muda akan menikah dengan Nona Sophy Toller. Mereka kaya, dan jarang sekali ada rumah bagus yang kosong di Middlemarch. Saya yakin mereka akan senang mengambil rumah ini dari kita beserta sebagian besar perabotannya, dan mereka bersedia membayar sewa dengan harga yang tinggi. Saya dapat meminta Trumbull untuk berbicara dengan Plymdale tentang hal itu.”</p><p>Rosamond meninggalkan pangkuan suaminya dan berjalan perlahan ke ujung ruangan yang lain; ketika dia berbalik dan berjalan ke arahnya, terlihat jelas bahwa air mata telah mengalir, dan dia menggigit bibir bawahnya serta menggenggam tangannya untuk menahan tangis. Lydgate merasa sangat sedih—terguncang oleh amarah namun merasa bahwa akan tidak jantan untuk melampiaskan amarahnya saat ini.</p><p>“Aku sangat menyesal, Rosamond; aku tahu ini menyakitkan.”</p><p>“Saya pikir, setidaknya, setelah saya bersusah payah mengirimkan piring itu kembali dan meminta orang itu membuat inventaris perabotan—saya kira itu sudah cukup.”</p><p>“Sudah kujelaskan padamu waktu itu, sayang. Itu hanya jaminan dan di balik jaminan itu ada hutang. Dan hutang itu harus dibayar dalam beberapa bulan ke depan, kalau tidak perabot kita akan dijual. Jika Plymdale muda mau mengambil rumah kita dan sebagian besar perabot kita, kita akan bisa membayar hutang itu, dan beberapa hutang lainnya juga, dan kita akan terbebas dari tempat yang terlalu mahal untuk kita. Kita bisa mengambil rumah yang lebih kecil: Trumbull, aku tahu, punya rumah yang sangat layak untuk disewakan seharga tiga puluh pound setahun, dan ini sembilan puluh pound.” Lydgate mengucapkan kata-kata ini dengan cara yang singkat dan tegas, seperti yang biasa kita gunakan untuk mencoba memaksa pikiran yang masih samar-samar untuk menerima fakta-fakta penting. Air mata mengalir tanpa suara di pipi Rosamond; dia hanya menekan saputangannya ke pipinya, dan berdiri memandang vas besar di atas perapian. Itu adalah momen kepedihan yang lebih hebat daripada yang pernah dia rasakan sebelumnya. Akhirnya dia berkata, tanpa terburu-buru dan dengan penekanan yang hati-hati—</p><p>“Aku tidak pernah menyangka kau ingin bertindak seperti itu.”</p><p>“Suka?” seru Lydgate, bangkit dari kursinya, memasukkan tangannya ke saku, dan berjalan menjauh dari perapian; “ini bukan soal suka. Tentu saja, aku tidak suka; ini satu-satunya yang bisa kulakukan.” Dia berbalik dan menatap wanita itu.</p><p>“Kupikir pasti ada banyak cara lain selain itu,” kata Rosamond. “Mari kita adakan obral dan tinggalkan Middlemarch sama sekali.”</p><p>“Untuk apa? Apa gunanya aku meninggalkan pekerjaanku di Middlemarch untuk pergi ke tempat yang tidak ada pekerjaanku? Kita akan sama miskinnya di tempat lain seperti di sini,” kata Lydgate dengan lebih marah.</p><p>“Jika kita sampai berada dalam posisi itu, itu sepenuhnya kesalahanmu sendiri, Tertius,” kata Rosamond, berbalik untuk berbicara dengan keyakinan penuh. “Kau tidak akan berperilaku sebagaimana seharusnya terhadap keluargamu sendiri. Kau telah menyinggung Kapten Lydgate. Sir Godwin sangat baik kepadaku ketika kita berada di Quallingham, dan aku yakin jika kau menunjukkan rasa hormat yang sepatutnya kepadanya dan menceritakan urusanmu, dia akan melakukan apa pun untukmu. Tetapi alih-alih itu, kau malah ingin menyerahkan rumah dan perabotan kita kepada Tuan Ned Plymdale.”</p><p>Ada semacam kegarangan di mata Lydgate, saat ia menjawab dengan kekerasan yang baru, “Baiklah, kalau begitu, jika kau mau menerimanya, aku memang menyukainya. Aku akui aku lebih menyukainya daripada mempermalukan diri sendiri dengan mengemis di tempat yang tidak ada gunanya. Pahami saja, bahwa itulah yang ingin kulakukan . ”</p><p>Ada nada dalam kalimat terakhir yang setara dengan cengkeraman tangan kuatnya pada lengan Rosamond yang lembut. Namun terlepas dari itu semua, tekadnya tidak sedikit pun lebih kuat dari tekad Rosamond. Ia segera keluar dari ruangan dalam diam, tetapi dengan tekad yang kuat untuk menghalangi apa yang Lydgate suka lakukan.</p><p>Ia keluar rumah, tetapi saat darahnya mendingin, ia merasa bahwa hasil utama dari diskusi itu adalah rasa takut yang mendalam dalam dirinya karena membayangkan harus berbicara dengan istrinya tentang hal-hal di masa depan yang mungkin akan kembali mendorongnya untuk berbicara dengan kasar. Seolah-olah retakan pada kristal yang rapuh telah dimulai, dan ia takut akan gerakan apa pun yang dapat membuatnya fatal. Pernikahannya akan menjadi ironi yang pahit jika mereka tidak dapat terus saling mencintai. Ia telah lama memutuskan apa yang menurutnya merupakan karakter negatif istrinya—kurangnya kepekaan, yang terlihat dalam pengabaiannya terhadap keinginan spesifiknya dan tujuan umumnya. Kekecewaan besar pertama telah ditanggung: pengabdian yang lembut dan pemujaan yang patuh dari istri ideal harus ditinggalkan, dan hidup harus dijalani pada tingkat harapan yang lebih rendah, seperti halnya orang-orang yang telah kehilangan anggota tubuhnya. Tetapi istri yang sebenarnya tidak hanya memiliki tuntutannya, ia masih memegang kendali atas hatinya, dan keinginan terbesarnya adalah agar kendali itu tetap kuat. Dalam pernikahan, kepastian, “Dia tidak akan pernah mencintaiku banyak,” lebih mudah ditanggung daripada ketakutan, “Aku tidak akan mencintainya lagi.” Oleh karena itu, setelah ledakan emosi itu, upaya batinnya sepenuhnya untuk memaafkannya, dan menyalahkan keadaan sulit yang sebagian merupakan kesalahannya. Malam itu, dengan membelainya, ia mencoba menyembuhkan luka yang telah ia buat pagi itu, dan bukan sifat Rosamond untuk bersikap menolak atau merajuk; memang, ia menyambut baik tanda-tanda bahwa suaminya mencintainya dan terkendali. Tetapi ini adalah sesuatu yang sangat berbeda dari mencintainya . Lydgate tidak akan memilih untuk segera kembali pada rencana untuk berpisah dengan rumah itu; ia bertekad untuk melaksanakannya, dan sebisa mungkin tidak banyak bicara tentang hal itu. Tetapi Rosamond sendiri menyinggungnya saat sarapan dengan mengatakan, dengan lembut—</p><p>“Apakah kamu sudah berbicara dengan Trumbull?”</p><p>“Tidak,” kata Lydgate, “tetapi aku akan menemuinya saat aku lewat pagi ini. Tidak boleh membuang waktu.” Ia menganggap pertanyaan Rosamond sebagai tanda bahwa Rosamond telah menarik penolakan batinnya, dan mencium keningnya dengan lembut ketika ia bangkit untuk pergi.</p><p>Begitu sudah cukup larut untuk menelepon, Rosamond pergi ke rumah Ny. Plymdale, ibu dari Tuan Ned, dan menyampaikan ucapan selamat yang manis tentang pernikahan yang akan datang. Pandangan keibuan Ny. Plymdale adalah bahwa Rosamond mungkin sekarang akan melihat kembali kebodohannya sendiri; dan karena merasa bahwa keuntungan saat ini sepenuhnya berada di pihak putranya, ia adalah wanita yang terlalu baik untuk tidak bersikap ramah.</p><p>“Ya, Ned sangat bahagia, harus saya akui. Dan Sophy Toller adalah semua yang saya inginkan dari seorang menantu perempuan. Tentu saja ayahnya mampu melakukan sesuatu yang baik untuknya—itulah yang diharapkan dari sebuah perusahaan bir seperti miliknya. Dan koneksinya adalah semua yang kita inginkan. Tapi bukan itu yang saya perhatikan. Dia gadis yang sangat baik—tidak sombong, tidak berpura-pura, meskipun setara dengan yang pertama. Saya tidak bermaksud setara dengan bangsawan bergelar. Saya melihat sangat sedikit kebaikan pada orang-orang yang berusaha keluar dari lingkup mereka sendiri. Maksud saya, Sophy setara dengan yang terbaik di kota ini, dan dia puas dengan itu.”</p><p>“Saya selalu menganggapnya sangat menyenangkan,” kata Rosamond.</p><p>“Saya menganggap ini sebagai hadiah untuk Ned, yang tidak pernah sombong, karena ia bisa mendapatkan koneksi terbaik,” lanjut Ny. Plymdale, ketajamannya yang alami melunak oleh keyakinan yang kuat bahwa pandangannya benar. “Dan orang-orang seperti keluarga Toller sangat selektif, mereka mungkin keberatan karena beberapa teman kita bukan teman mereka. Sudah diketahui umum bahwa bibi Bulstrode dan saya telah akrab sejak muda, dan Tuan Plymdale selalu berada di pihak Tuan Bulstrode. Dan saya sendiri lebih menyukai pendapat yang serius. Tetapi keluarga Toller tetap menerima Ned dengan baik.”</p><p>“Saya yakin dia adalah pemuda yang sangat pantas dan berprinsip baik,” kata Rosamond, dengan nada merendahkan yang rapi sebagai balasan atas koreksi yang baik dari Ny. Plymdale.</p><p>“Oh, dia tidak memiliki gaya seorang kapten di angkatan darat, atau sikap seolah-olah semua orang berada di bawahnya, atau cara bicara dan bernyanyi yang mencolok, serta bakat intelektual. Tapi saya bersyukur dia tidak memilikinya. Itu adalah persiapan yang buruk baik untuk di dunia maupun di akhirat.”</p><p>“Oh ya ampun, ya; penampilan luar tidak ada hubungannya dengan kebahagiaan,” kata Rosamond. “Kurasa ada kemungkinan besar mereka akan menjadi pasangan yang bahagia. Rumah mana yang akan mereka pilih?”</p><p>“Oh, soal itu, mereka harus puas dengan apa yang mereka dapatkan. Mereka sudah melihat rumah di St. Peter's Place, di sebelah rumah Tuan Hackbutt; itu miliknya, dan dia sedang memperbaikinya dengan baik. Kurasa mereka tidak akan menemukan yang lebih baik. Bahkan, kurasa Ned akan memutuskan masalah ini hari ini.”</p><p>“Menurutku itu rumah yang bagus; aku suka St. Peter's Place.”</p><p>“Yah, letaknya dekat Gereja, dan lokasinya cukup bagus. Tapi jendelanya sempit, dan atapnya naik turun. Apakah Anda tahu tempat lain yang mungkin bersedia?” kata Ny. Plymdale, menatap Rosamond dengan mata hitam bulatnya yang penuh semangat, seolah-olah ada pemikiran baru di dalamnya.</p><p>“Oh tidak; saya jarang sekali mendengar hal-hal seperti itu.”</p><p>Rosamond tidak menduga pertanyaan dan jawaban itu ketika hendak berkunjung; ia hanya bermaksud mengumpulkan informasi apa pun yang dapat membantunya menghindari perpisahan dengan rumahnya sendiri dalam keadaan yang sangat tidak menyenangkan baginya. Mengenai ketidakbenaran dalam jawabannya, ia tidak memikirkannya sama sekali, seperti halnya ketidakbenaran dalam ucapannya bahwa penampilan tidak ada hubungannya dengan kebahagiaan. Ia yakin bahwa tujuannya sepenuhnya dapat dibenarkan: niat Lydgate-lah yang tidak dapat dimaafkan; dan ada rencana dalam pikirannya yang, ketika ia telah melaksanakannya sepenuhnya, akan membuktikan betapa salahnya langkah yang akan diambil Lydgate jika ia turun dari posisinya.</p><p>Ia pulang melalui kantor Tuan Borthrop Trumbull, bermaksud untuk mampir ke sana. Ini adalah pertama kalinya dalam hidupnya Rosamond berpikir untuk melakukan sesuatu yang berkaitan dengan bisnis, tetapi ia merasa mampu menghadapi kesempatan itu. Bahwa ia harus melakukan sesuatu yang sangat tidak disukainya, adalah sebuah gagasan yang mengubah keteguhan hatinya yang tenang menjadi daya cipta yang aktif. Ini adalah kasus di mana tidak cukup hanya dengan tidak patuh dan bersikap keras kepala dengan tenang dan pasif: ia harus bertindak sesuai dengan penilaiannya, dan ia berkata pada dirinya sendiri bahwa penilaiannya benar—&quot;memang, jika tidak, ia tidak akan mau bertindak berdasarkan penilaian itu.&quot;</p><p>Tuan Trumbull berada di ruang belakang kantornya, dan menerima Rosamond dengan sopan santun terbaiknya, bukan hanya karena ia sangat peka terhadap pesonanya, tetapi karena kebaikan hatinya tergerak oleh keyakinannya bahwa Lydgate sedang dalam kesulitan, dan bahwa wanita yang sangat cantik ini—wanita muda dengan daya tarik pribadi yang luar biasa—kemungkinan akan merasakan dampak masalah—terlibat dalam keadaan di luar kendalinya. Ia memohon agar Rosamond menghormatinya dengan duduk, dan berdiri di hadapannya sambil merapikan dan bersikap dengan penuh perhatian, yang sebagian besar bersifat baik hati. Pertanyaan pertama Rosamond adalah, apakah suaminya telah menemui Tuan Trumbull pagi itu, untuk membicarakan tentang penjualan rumah mereka.</p><p>“Ya, Bu, ya, memang benar; dia melakukannya,” kata juru lelang yang baik hati itu, mencoba menambahkan sedikit nada menenangkan dalam ucapannya. “Saya hendak memenuhi pesanannya, jika memungkinkan, siang ini. Dia ingin saya tidak menunda-nunda.”</p><p>“Saya datang untuk memberitahu Anda agar tidak melanjutkan pembicaraan ini, Tuan Trumbull; dan saya mohon agar Anda tidak menyebutkan apa yang telah dikatakan mengenai masalah ini. Maukah Anda menuruti permintaan saya?”</p><p>“Tentu saja, Nyonya Lydgate, tentu saja. Kerahasiaan sangat penting bagi saya dalam urusan bisnis atau topik apa pun. Kalau begitu, saya harus menganggap penugasan ini dicabut?” kata Tuan Trumbull, sambil menyesuaikan ujung-ujung dasi birunya dengan kedua tangan, dan menatap Rosamond dengan hormat.</p><p>“Ya, jika Anda berkenan. Saya mendapati bahwa Tuan Ned Plymdale telah menyewa sebuah rumah—yang berada di St. Peter's Place, di sebelah rumah Tuan Hackbutt. Tuan Lydgate akan kesal jika pesanannya dipenuhi dengan sia-sia. Dan selain itu, ada keadaan lain yang membuat usulan ini tidak perlu.”</p><p>“Bagus sekali, Nyonya Lydgate, bagus sekali. Saya siap membantu Anda kapan pun Anda membutuhkan jasa saya,” kata Tuan Trumbull, yang merasa senang menduga bahwa beberapa sumber daya baru telah ditemukan. “Percayalah pada saya. Masalah ini tidak akan berlanjut lebih jauh.”</p><p>Malam itu Lydgate sedikit terhibur dengan melihat Rosamond lebih ceria dari biasanya akhir-akhir ini, dan bahkan tampak tertarik melakukan apa pun yang akan menyenangkan hatinya tanpa diminta. Ia berpikir, “Jika dia bahagia dan aku bisa mengatasinya, apa artinya semua ini? Ini hanyalah rawa sempit yang harus kita lewati dalam perjalanan panjang. Jika aku bisa menjernihkan pikiranku lagi, aku akan melakukannya.”</p><p>Ia begitu gembira sehingga mulai mencari catatan tentang eksperimen yang sudah lama ingin ia cari, tetapi telah diabaikan karena rasa putus asa yang perlahan-lahan muncul seiring dengan kecemasan-kecemasan kecil. Ia merasakan kembali sebagian dari daya tarik lamanya yang menyenangkan dalam penyelidikan yang luas, sementara Rosamond memainkan musik yang tenang yang sama bermanfaatnya bagi meditasinya seperti suara dayung di danau pada malam hari. Saat itu sudah agak larut; ia telah menyingkirkan semua buku, dan sedang memandang perapian dengan tangan terlipat di belakang kepalanya, melupakan segalanya kecuali konstruksi eksperimen kontrol baru, ketika Rosamond, yang telah meninggalkan piano dan bersandar di kursinya sambil mengawasinya, berkata—</p><p>“Tuan Ned Plymdale sudah menyewa sebuah rumah.”</p><p>Lydgate, terkejut dan tersentak, menatap ke atas dalam diam sejenak, seperti orang yang tidurnya terganggu. Kemudian, dengan perasaan tidak nyaman di wajahnya, dia bertanya—</p><p>“Bagaimana kamu tahu?”</p><p>“Saya mampir ke rumah Ny. Plymdale pagi ini, dan dia memberi tahu saya bahwa dia telah mengambil rumah di St. Peter's Place, di sebelah rumah Tn. Hackbutt.”</p><p>Lydgate terdiam. Ia menarik tangannya dari belakang kepala dan menekannya ke rambut yang menjuntai, seperti biasanya, menggumpal di dahinya, sementara ia menyandarkan siku di lututnya. Ia merasakan kekecewaan yang pahit, seolah-olah ia telah membuka pintu keluar dari tempat yang menyesakkan dan mendapati pintu itu tertutup tembok; tetapi ia juga yakin bahwa Rosamond senang dengan penyebab kekecewaannya. Ia lebih memilih untuk tidak menatapnya dan tidak berbicara, sampai ia mengatasi gejolak kekesalan pertamanya. Lagipula, katanya dengan getir, apa yang begitu dipedulikan seorang wanita selain rumah dan perabotan? seorang suami tanpa itu adalah hal yang tidak masuk akal. Ketika ia mendongak dan menyingkirkan rambutnya, mata gelapnya memiliki tatapan kosong yang menyedihkan tanpa harapan akan simpati, tetapi ia hanya berkata, dengan dingin—</p><p>“Mungkin ada orang lain yang akan muncul. Saya sudah bilang pada Trumbull untuk waspada jika dia gagal dengan Plymdale.”</p><p>Rosamond tidak berkomentar. Ia mengandalkan kesempatan bahwa tidak akan ada lagi yang terjadi antara suaminya dan juru lelang sampai ada masalah yang membenarkan campur tangannya; bagaimanapun juga, ia telah mencegah kejadian yang sangat ia takuti. Setelah jeda, ia berkata—</p><p>“Berapa banyak uang yang diinginkan oleh orang-orang yang menyebalkan itu?”</p><p>“Orang-orang yang tidak menyenangkan seperti apa?”</p><p>“Mereka yang mengambil daftar itu—dan yang lainnya. Maksudku, berapa banyak uang yang akan memuaskan mereka sehingga kamu tidak perlu repot lagi?”</p><p>Lydgate mengamatinya sejenak, seolah-olah sedang mencari gejala, lalu berkata, “Oh, seandainya aku bisa mendapatkan enam ratus dari Plymdale untuk perabot dan sebagai premi, mungkin aku bisa mengatasinya. Aku bisa melunasi hutang ke Dover, dan memberi cukup uang muka kepada yang lain agar mereka menunggu dengan sabar, jika kita mengurangi pengeluaran kita.”</p><p>“Tapi maksudku, berapa banyak yang seharusnya kamu inginkan jika kita tetap tinggal di rumah ini?”</p><p>“Lebih dari yang mungkin bisa saya dapatkan di mana pun,” kata Lydgate, dengan nada sarkasme yang agak kasar. Ia marah melihat pikiran Rosamond melayang-layang pada keinginan yang tidak realistis alih-alih menghadapi upaya yang mungkin dilakukan.</p><p>“Mengapa Anda tidak menyebutkan jumlahnya?” kata Rosamond, dengan sedikit nada menunjukkan bahwa dia tidak menyukai sikap pria itu.</p><p>“Yah,” kata Lydgate dengan nada menebak, “setidaknya dibutuhkan seribu untuk membuatku tenang. Tapi,” tambahnya dengan tajam, “aku harus mempertimbangkan apa yang akan kulakukan tanpa itu, bukan dengan itu.”</p><p>Rosamond tidak berkata apa-apa lagi.</p><p>Namun keesokan harinya ia melaksanakan rencananya untuk menulis surat kepada Sir Godwin Lydgate. Sejak kunjungan Kapten, ia telah menerima surat darinya, dan juga satu surat dari Ny. Mengan, saudara perempuannya yang sudah menikah, yang menyampaikan belasungkawa atas kehilangan bayinya, dan secara samar-samar menyatakan harapan bahwa mereka akan bertemu lagi di Quallingham. Lydgate telah mengatakan kepadanya bahwa kesopanan ini tidak berarti apa-apa; tetapi ia diam-diam yakin bahwa sikap dingin dan meremehkan keluarga Lydgate terhadapnya disebabkan oleh perilakunya yang dingin dan meremehkan, dan ia telah membalas surat-surat itu dengan cara yang paling menawan, merasa yakin bahwa undangan khusus akan menyusul. Tetapi tidak ada kabar sama sekali. Kapten jelas bukan penulis yang hebat, dan Rosamond berpikir bahwa kedua saudara perempuan itu mungkin sedang berada di luar negeri. Namun, saatnya telah tiba untuk memikirkan teman-teman di rumah, dan bagaimanapun juga Sir Godwin, yang telah menepuk dagunya dan menyatakan bahwa dia mirip dengan kecantikan terkenal, Nyonya Croly, yang telah menaklukkannya pada tahun 1790, akan tersentuh oleh permohonan apa pun darinya, dan akan merasa senang demi dirinya untuk berperilaku sebagaimana mestinya terhadap keponakannya. Rosamond dengan naif yakin akan apa yang seharusnya dilakukan seorang pria tua untuk mencegahnya menderita gangguan. Dan dia menulis surat yang menurutnya paling bijaksana—surat yang akan membuat Sir Godwin menganggapnya sebagai bukti kebijaksanaannya yang luar biasa—menunjukkan betapa diinginkannya Tertius meninggalkan tempat seperti Middlemarch untuk tempat yang lebih sesuai dengan bakatnya, bagaimana karakter penduduk yang tidak menyenangkan telah menghambat kesuksesan profesionalnya, dan bagaimana akibatnya dia mengalami kesulitan keuangan, yang membutuhkan seribu pound untuk sepenuhnya mengatasinya. Dia tidak mengatakan bahwa Tertius tidak menyadari niatnya untuk menulis; Karena ia beranggapan bahwa persetujuan yang diberikan pria itu atas suratnya akan sesuai dengan apa yang telah ia katakan tentang rasa hormatnya yang besar kepada pamannya, Godwin, sebagai kerabat yang selalu menjadi sahabat terbaiknya. Begitulah kuatnya taktik Rosamond yang malang saat ia menerapkannya pada berbagai urusan.</p><p>Hal ini telah terjadi sebelum pesta di Hari Tahun Baru, dan belum ada jawaban yang datang dari Sir Godwin. Tetapi pada pagi harinya, Lydgate mengetahui bahwa Rosamond telah mencabut perintahnya kepada Borthrop Trumbull. Merasa perlu agar Rosamond secara bertahap terbiasa dengan gagasan mereka meninggalkan rumah di Lowick Gate, ia mengatasi keengganannya untuk berbicara lagi dengannya tentang masalah itu, dan ketika mereka sedang sarapan, ia berkata—</p><p>“Saya akan mencoba menemui Trumbull pagi ini, dan menyuruhnya memasang iklan rumah itu di 'Pioneer' dan 'Trumpet'. Jika diiklankan, mungkin ada seseorang yang berminat untuk membelinya, yang sebelumnya tidak terpikir untuk pindah. Di daerah pedesaan seperti ini, banyak orang tetap tinggal di rumah lama mereka ketika keluarga mereka sudah terlalu besar untuk rumah tersebut, karena tidak tahu di mana mereka bisa menemukan rumah lain. Dan Trumbull tampaknya tidak tertarik sama sekali.”</p><p>Rosamond tahu bahwa saat yang tak terhindarkan itu telah tiba. &quot;Saya memerintahkan Trumbull untuk tidak menyelidiki lebih lanjut,&quot; katanya, dengan ketenangan hati-hati yang jelas-jelas bersifat defensif.</p><p>Lydgate menatapnya dengan takjub tanpa kata. Hanya setengah jam sebelumnya dia sedang mengikat kepang rambutnya dan berbicara dengan &quot;bahasa kecil&quot; kasih sayang, yang Rosamond, meskipun tidak membalasnya, menerimanya seolah-olah dia adalah sosok yang tenang dan cantik, yang sesekali tersenyum lembut kepada pengagumnya. Dengan perasaan yang masih bergejolak dalam dirinya, guncangan yang diterimanya tidak bisa langsung berupa kemarahan; itu adalah rasa sakit yang bercampur aduk. Dia meletakkan pisau dan garpu yang sedang digunakannya untuk memotong, dan sambil menyandarkan diri di kursinya, akhirnya berkata, dengan nada ironi yang dingin—</p><p>“Bolehkah saya bertanya kapan dan mengapa Anda melakukan itu?”</p><p>“Ketika saya tahu bahwa keluarga Plymdale telah menyewa sebuah rumah, saya datang untuk memberitahunya agar tidak menyebutkan rumah kami kepada mereka; dan pada saat yang sama saya mengatakan kepadanya agar tidak membiarkan masalah ini berlanjut lebih jauh. Saya tahu bahwa akan sangat merugikan Anda jika diketahui bahwa Anda ingin menjual rumah dan perabotan Anda, dan saya sangat keberatan dengan hal itu. Saya pikir itu sudah cukup alasan.”</p><p>“Lalu, tidak ada bedanya kalau aku sudah memberitahumu alasan-alasan penting yang berbeda; tidak ada bedanya kalau aku sudah sampai pada kesimpulan yang berbeda, dan memberikan perintah yang sesuai?” kata Lydgate dengan nada tajam, guntur dan kilat menyambar di dahi dan matanya.</p><p>Dampak kemarahan siapa pun terhadap Rosamond selalu membuatnya menyusut dalam ketidaksukaan yang dingin, dan menjadi semakin tenang dan benar, dengan keyakinan bahwa dia bukanlah orang yang akan berperilaku buruk apa pun yang dilakukan orang lain. Dia menjawab—</p><p>“Saya rasa saya memiliki hak penuh untuk berbicara tentang suatu hal yang sama pentingnya bagi saya seperti bagi Anda.”</p><p>“Jelas—kau berhak berbicara, tetapi hanya kepadaku. Kau tidak berhak membantah perintahku secara diam-diam, dan memperlakukanku seolah-olah aku bodoh,” kata Lydgate, dengan nada yang sama seperti sebelumnya. Kemudian dengan sedikit nada mengejek, “Apakah mungkin membuatmu mengerti apa konsekuensinya? Apakah ada gunanya aku memberitahumu lagi mengapa kita harus mencoba menjual rumah ini?”</p><p>“Tidak perlu kau mengulanginya lagi,” kata Rosamond, dengan suara yang merendah dan bergetar seperti tetesan air dingin. “Aku ingat apa yang kau katakan. Kau berbicara sama kasarnya seperti sekarang. Tapi itu tidak mengubah pendapatku bahwa kau seharusnya mencoba segala cara lain daripada mengambil langkah yang begitu menyakitkan bagiku. Dan mengenai mengiklankan rumah itu, menurutku itu akan sangat merendahkanmu.”</p><p>“Bagaimana jika saya mengabaikan pendapat Anda sebagaimana Anda mengabaikan pendapat saya?”</p><p>“Tentu saja kamu bisa melakukannya. Tapi menurutku seharusnya kamu memberitahuku sebelum kita menikah bahwa kamu akan menempatkanku dalam posisi terburuk, daripada menyerah pada keinginanmu sendiri.”</p><p>Lydgate tidak berbicara, tetapi menggelengkan kepalanya ke samping, dan menggerakkan sudut mulutnya dengan putus asa. Rosamond, melihat bahwa dia tidak menatapnya, bangkit dan meletakkan cangkir kopinya di depannya; tetapi dia tidak memperhatikannya, dan terus bergelut dengan drama dan perdebatan batinnya, sesekali bergerak di kursinya, meletakkan satu lengan di atas meja, dan mengusap rambutnya. Ada percampuran emosi dan pikiran dalam dirinya yang tidak membiarkannya menyerah sepenuhnya pada amarahnya atau bertahan dengan keteguhan tekad yang sederhana. Rosamond memanfaatkan keheningannya.</p><p>“Saat kita menikah, semua orang merasa bahwa kedudukanmu sangat tinggi. Saat itu aku tak pernah membayangkan kau ingin menjual perabotan kita, dan mengambil rumah di Bride Street, di mana kamar-kamarnya seperti sangkar. Jika kita harus hidup seperti itu, setidaknya mari kita tinggalkan Middlemarch.”</p><p>“Ini akan menjadi pertimbangan yang sangat kuat,” kata Lydgate, setengah ironis—masih ada pucat pasi di bibirnya saat ia menatap kopinya, dan tidak meminumnya—“ini akan menjadi pertimbangan yang sangat kuat jika saya tidak sedang berhutang.”</p><p>“Pasti banyak orang yang pernah berutang dengan cara yang sama, tetapi jika mereka orang yang terhormat, orang akan mempercayai mereka. Aku yakin pernah mendengar ayahku berkata bahwa keluarga Torbit berutang, dan mereka baik-baik saja. Bertindak gegabah bukanlah hal yang baik,” kata Rosamond dengan bijaksana dan tenang.</p><p>Lydgate duduk lumpuh oleh dorongan yang bertentangan: karena tidak ada penalaran yang dapat ia terapkan pada Rosamond yang tampaknya akan berhasil mendapatkan persetujuannya, ia ingin menghancurkan dan menggiling suatu benda yang setidaknya dapat ia beri bekas, atau mengatakan kepadanya dengan kasar bahwa dialah tuannya, dan dia harus patuh. Tetapi ia tidak hanya takut akan dampak ekstrem tersebut pada kehidupan mereka—ia juga semakin takut akan kekeraskepalaan Rosamond yang tenang dan sulit dipahami, yang tidak akan membiarkan penegasan kekuasaan apa pun menjadi final; dan lagi, Rosamond telah menyentuhnya di titik perasaannya yang paling tajam dengan menyiratkan bahwa ia telah tertipu oleh visi kebahagiaan palsu dalam menikahinya. Mengenai mengatakan bahwa ia adalah tuannya, itu bukanlah fakta. Tekad yang telah ia bentuk sendiri dengan logika dan harga diri yang terhormat mulai goyah di bawah serangan Rosamond yang seperti torpedo. Ia menelan setengah cangkir kopinya, lalu bangkit untuk pergi.</p><p>“Setidaknya aku mohon agar kau tidak pergi ke Trumbull untuk saat ini—sampai terbukti tidak ada cara lain,” kata Rosamond. Meskipun ia tidak terlalu takut, ia merasa lebih aman untuk tidak mengungkapkan bahwa ia telah menulis surat kepada Sir Godwin. “Berjanjilah padaku bahwa kau tidak akan pergi menemuinya selama beberapa minggu, atau tanpa memberitahuku.”</p><p>Lydgate tertawa kecil. “Kurasa justru akulah yang harus meminta janji bahwa kau tidak akan melakukan apa pun tanpa memberitahuku,” katanya, menatapnya tajam, lalu berjalan ke pintu.</p><p>“Kau ingat kita akan makan malam di rumah ayah,” kata Rosamond, berharap suaminya akan berbalik dan memberikan konsesi yang lebih menyeluruh kepadanya. Tetapi suaminya hanya berkata “Oh ya,” dengan tidak sabar, lalu pergi. Ia merasa sangat jijik dengan suaminya karena ia tidak menganggap usulan-usulan menyakitkan yang harus ia sampaikan kepadanya sudah cukup, tanpa menunjukkan temperamen yang begitu tidak menyenangkan. Dan ketika ia mengajukan permintaan yang lebih moderat agar suaminya menunda pergi ke Trumbull lagi, sungguh kejam suaminya karena tidak meyakinkannya tentang apa yang akan dilakukannya. Ia yakin telah bertindak dengan sebaik-baiknya; dan setiap ucapan kasar atau marah Lydgate hanya menambah daftar pelanggaran dalam pikirannya. Rosamond yang malang selama berbulan-bulan mulai mengaitkan suaminya dengan perasaan kecewa, dan hubungan pernikahan yang sangat kaku telah kehilangan daya tariknya dalam menumbuhkan mimpi-mimpi indah. Pernikahan itu telah membebaskannya dari hal-hal yang tidak menyenangkan di rumah ayahnya, tetapi tidak memberinya semua yang ia inginkan dan harapkan. Lydgate, pria yang pernah dicintainya, baginya hanyalah sekumpulan kondisi yang abstrak, yang sebagian besar telah lenyap, digantikan oleh detail-detail sehari-hari yang harus dijalani perlahan dari jam ke jam, bukan dilewati dengan cepat melalui pemilihan aspek-aspek yang menguntungkan. Kebiasaan profesi Lydgate, kesibukannya di rumah dengan subjek-subjek ilmiah, yang baginya hampir seperti selera vampir yang morbid, pandangannya yang aneh tentang berbagai hal yang tidak pernah dibahas dalam percakapan percintaan—semua pengaruh yang terus-menerus mengasingkan ini, bahkan tanpa fakta bahwa ia telah menempatkan dirinya pada posisi yang tidak menguntungkan di kota, dan tanpa kejutan pertama tentang utang Dover, akan membuat kehadirannya membosankan baginya. Ada kehadiran lain yang sejak awal pernikahannya, hingga empat bulan yang lalu, telah menjadi kegembiraan yang menyenangkan, tetapi itu telah hilang: Rosamond tidak mau mengakui pada dirinya sendiri seberapa besar kekosongan yang diakibatkannya berhubungan dengan kebosanannya yang luar biasa; Dan baginya (mungkin dia benar) bahwa undangan ke Quallingham, dan kesempatan bagi Lydgate untuk menetap di tempat lain selain Middlemarch—di London, atau di suatu tempat yang kemungkinan besar bebas dari hal-hal yang tidak menyenangkan—akan cukup memuaskannya, dan membuatnya acuh tak acuh terhadap ketidakhadiran Will Ladislaw, yang terhadapnya dia merasa sedikit kesal karena pujiannya terhadap Nyonya Casaubon.</p><p>Begitulah keadaan Lydgate dan Rosamond pada Hari Tahun Baru ketika mereka makan malam di rumah ayahnya. Rosamond tampak agak netral terhadap ayahnya, mengingat perilakunya yang pemarah saat sarapan, sementara ayahnya merasakan dampak yang jauh lebih dalam dari konflik batin yang dialaminya, di mana kejadian pagi itu hanyalah salah satu dari sekian banyak peristiwa. Usahanya yang tampak malu-malu saat berbicara dengan Tuan Farebrother—usahanya untuk berpura-pura sinis bahwa semua cara mendapatkan uang pada dasarnya sama, dan bahwa keberuntungan memiliki kekuasaan yang mereduksi pilihan menjadi ilusi orang bodoh—hanyalah gejala dari tekad yang goyah, respons yang mati rasa terhadap rangsangan antusiasme lama.</p><p>Apa yang harus dia lakukan? Dia bahkan lebih menyadari daripada Rosamond betapa suramnya membawa istrinya ke rumah kecil di Bride Street, di mana istrinya hanya akan memiliki perabotan seadanya dan ketidakpuasan di dalam: kehidupan yang serba kekurangan dan kehidupan bersama Rosamond adalah dua gambaran yang semakin tidak dapat didamaikan sejak ancaman kekurangan itu terungkap. Tetapi bahkan jika tekadnya telah memaksa kedua gambaran itu untuk menyatu, persiapan yang bermanfaat untuk perubahan sulit itu tidak tampak dalam jangkauan. Dan meskipun dia tidak memberikan janji yang diminta istrinya, dia tidak pergi lagi ke Trumbull. Dia bahkan mulai berpikir untuk melakukan perjalanan cepat ke Utara dan menemui Sir Godwin. Dia pernah percaya bahwa tidak ada yang akan mendorongnya untuk mengajukan permohonan uang kepada pamannya, tetapi saat itu dia belum mengetahui sepenuhnya tekanan dari alternatif yang lebih tidak menyenangkan. Dia tidak dapat mengandalkan efek sebuah surat; hanya dalam sebuah wawancara, betapapun tidak menyenangkannya hal itu bagi dirinya sendiri, dia dapat memberikan penjelasan menyeluruh dan dapat menguji efektivitas hubungan kekerabatan. Begitu Lydgate mulai menganggap langkah ini sebagai yang termudah, langsung muncul reaksi marah karena dia—dia yang sejak lama memutuskan untuk menjauhkan diri dari perhitungan hina semacam itu, kecemasan yang mementingkan diri sendiri tentang kecenderungan dan kantong orang-orang yang dulunya ia banggakan tidak memiliki tujuan yang sama—tidak hanya jatuh ke level mereka, tetapi juga ke level meminta bantuan mereka.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="buku-vii-dua-godaan-bab-lxiii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Buku Vii Dua Godaan Bab Lxiii</span>
+    </a>
+    <a href="bab-lxv.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Lxv</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB LXIV.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>1. Di mana letak kekuasaan, di situ pula letak kesalahan. 2. Tidak , kekuasaan itu relatif; Anda tidak dapat menakut-nakuti wabah yang akan datang dengan benteng perbatasan, atau menangkap ikan mas Anda dengan argumen yang halus. Semua kekuatan adalah dua dalam satu: sebab bukanlah sebab kecuali ada akibatnya; dan tindakan itu sendiri harus mengandung pasif. Jadi perintah hanya ada dengan kepatuhan. Sekalipun Lydgate cenderung terbuka tentang urusannya, ia tahu bahwa Tuan Farebrother hampir tidak mungkin memberikan bantuan yang segera ia butuhkan. Dengan tagihan tahunan yang datang dari para pedagangnya, dengan ancaman Dover terhadap perabotannya, dan tanpa ada yang bisa diandalkan selain pembayaran yang lambat dan bertahap dari pasien yang tidak boleh tersinggung—karena biaya besar yang telah ia terima dari Freshitt Hall dan Lowick Manor telah dengan mudah diserap—tidak kurang dari seribu pound akan membebaskannya dari kesulitan yang sebenarnya, dan menyisakan sisa yang, menurut ungkapan harapan favorit dalam keadaan seperti itu, akan memberinya "waktu untuk melihat-lihat." Tentu saja, Natal yang meriah yang membawa Tahun Baru yang bahagia, ketika sesama warga mengharapkan imbalan atas usaha dan barang-barang yang telah mereka berikan dengan ramah kepada tetangga mereka, telah begitu menekan pikiran Lydgate dengan kekhawatiran yang menyedihkan sehingga hampir tidak mungkin baginya untuk memikirkan hal lain tanpa gangguan, bahkan yang paling biasa dan mendesak sekalipun. Dia bukanlah orang yang pemarah; aktivitas intelektualnya, kebaikan hatinya yang tulus, serta tubuhnya yang kuat, akan selalu, dalam kondisi yang cukup mudah, membuatnya terhindar dari kepekaan kecil yang tak terkendali yang menyebabkan sifat pemarah. Tetapi sekarang dia menjadi mangsa iritasi terburuk yang muncul bukan hanya dari gangguan, tetapi dari kesadaran kedua yang mendasari gangguan tersebut, yaitu energi yang terbuang dan kekhawatiran yang merendahkan, yang merupakan kebalikan dari semua tujuan sebelumnya. " Inilah yang kupikirkan; dan itulah yang seharusnya kupikirkan," adalah gumaman pahit yang tak henti-hentinya di dalam dirinya, menjadikan setiap kesulitan sebagai cambuk ganda bagi ketidaksabarannya. Beberapa pria terhormat telah menciptakan sosok yang menakjubkan dalam sastra melalui ketidakpuasan umum terhadap alam semesta sebagai jebakan kebosanan yang secara keliru menjebak jiwa-jiwa besar mereka; tetapi perasaan akan diri yang luar biasa dan dunia yang tidak berarti mungkin memiliki penghiburan tersendiri. Ketidakpuasan Lydgate jauh lebih sulit ditanggung: itu adalah perasaan bahwa ada eksistensi agung dalam pikiran dan tindakan efektif yang mengelilinginya, sementara dirinya sendiri dipersempit ke dalam isolasi menyedihkan dari ketakutan egoistis, dan kecemasan vulgar akan peristiwa yang mungkin meredakan ketakutan tersebut. Masalahnya mungkin akan tampak sangat hina, dan di bawah perhatian orang-orang tinggi yang tidak tahu apa-apa tentang hutang kecuali dalam skala yang megah. Tidak diragukan lagi, masalahnya memang hina; Dan bagi sebagian besar orang, yang tidak bermartabat, tidak ada jalan keluar dari kehinaan kecuali dengan bebas dari nafsu akan uang, dengan segala harapan dan godaan rendahnya, penantian akan kematian, permintaan tersiratnya, keinginan seperti pedagang kuda untuk membuat pekerjaan buruk tampak baik, pencarian fungsi yang seharusnya menjadi milik orang lain, dan dorongan untuk sering kali mendambakan Keberuntungan dalam bentuk malapetaka besar. Karena Lydgate merasa tersiksa oleh gagasan untuk terjerat dalam beban yang berat ini, ia jatuh ke dalam keadaan murung yang pahit, yang terus memperluas keterasingan Rosamond darinya. Setelah pengungkapan pertama tentang surat penjualan, ia telah melakukan banyak upaya untuk membujuk Rosamond agar bersimpati kepadanya tentang kemungkinan langkah-langkah untuk mengurangi pengeluaran mereka, dan dengan semakin dekatnya Natal, usulannya menjadi semakin pasti. “Kita berdua bisa hidup hanya dengan satu pelayan, dan hidup dengan sangat hemat,” katanya, “dan aku akan cukup dengan satu kuda.” Karena Lydgate, seperti yang telah kita lihat, telah mulai berpikir, dengan visi yang lebih jelas, tentang pengeluaran hidup, dan kebanggaan apa pun yang ia berikan pada penampilan semacam itu sangat kecil dibandingkan dengan kebanggaan yang membuatnya memberontak karena terungkap sebagai debitur, atau karena meminta orang untuk membantunya dengan uang mereka. “Tentu saja Anda bisa memecat dua pelayan lainnya, jika Anda mau,” kata Rosamond; “tetapi saya pikir akan sangat merugikan posisi Anda jika kita hidup dalam kemiskinan. Anda harus siap menerima kenyataan bahwa penghasilan Anda akan menurun.” “Rosamond sayangku, ini bukan soal pilihan. Kita memulai dengan terlalu mahal. Kau tahu, Peacock tinggal di rumah yang jauh lebih kecil dari ini. Ini salahku: seharusnya aku lebih bijak, dan aku pantas dihukum—jika ada orang yang berhak menghukumku—karena telah membuatmu harus hidup dalam kemiskinan yang lebih parah daripada yang biasa kau alami. Tapi kita menikah karena kita saling mencintai, kurasa. Dan itu mungkin membantu kita bertahan sampai keadaan membaik. Ayo, sayang, tinggalkan pekerjaan itu dan datanglah padaku.” Saat itu, ia benar-benar diliputi kesedihan yang mendalam tentang Rosamond, tetapi ia takut akan masa depan tanpa kasih sayang, dan bertekad untuk mencegah perpecahan di antara mereka. Rosamond menurutinya, dan ia memangkunya, tetapi di lubuk hatinya yang terdalam, ia benar-benar menjauh darinya. Gadis malang itu hanya melihat bahwa dunia tidak diatur sesuai keinginannya, dan Lydgate adalah bagian dari dunia itu. Namun, ia memegang pinggang Rosamond dengan satu tangan dan meletakkan tangan lainnya dengan lembut di atas kedua tangan Rosamond; karena pria yang agak kasar ini memiliki kelembutan yang besar dalam perilakunya terhadap wanita, seolah-olah selalu membayangkan kelemahan tubuh mereka dan keseimbangan kesehatan mereka yang rapuh baik secara fisik maupun mental. Dan ia mulai berbicara lagi dengan persuasif. “Sekarang setelah saya sedikit menyelidiki, Rosy, saya menyadari betapa banyak uang yang terbuang untuk pengeluaran rumah tangga kita. Saya kira para pelayan ceroboh, dan kita sering kedatangan banyak orang. Tapi pasti ada banyak orang di kalangan kita yang bisa hidup dengan jauh lebih sedikit: mereka harus puas dengan hal-hal yang lebih sederhana, saya kira, dan mengurus sisa-sisa makanan. Tampaknya, uang tidak banyak berpengaruh dalam hal ini, karena Wrench mengatur semuanya sejelas mungkin, dan dia memiliki praktik yang sangat besar.” “Oh, kalau kau berpikir untuk hidup seperti keluarga Wrench!” kata Rosamond sambil sedikit menolehkan lehernya. “Tapi aku pernah mendengar kau mengungkapkan rasa jijikmu terhadap cara hidup seperti itu.” “Ya, mereka punya selera buruk dalam segala hal—mereka membuat ekonomi terlihat buruk. Kita tidak perlu melakukan itu. Maksud saya hanya mereka menghindari pengeluaran, meskipun Wrench memiliki praktik yang bagus.” “Mengapa kamu tidak boleh memiliki praktik yang baik, Tertius? Tuan Peacock memilikinya. Kamu harus lebih berhati-hati agar tidak menyinggung perasaan orang lain, dan kamu harus mengirimkan obat-obatan seperti yang dilakukan orang lain. Aku yakin kamu memulai dengan baik, dan kamu mendapatkan beberapa rumah sakit yang bagus. Bersikap eksentrik tidak akan berhasil; kamu harus memikirkan apa yang akan disukai secara umum,” kata Rosamond, dengan nada teguran yang tegas. Kemarahan Lydgate meningkat: ia siap bersikap toleran terhadap kelemahan perempuan, tetapi tidak terhadap perintah perempuan. Kedangkalan jiwa seorang peri air mungkin memiliki daya tarik sampai ia menjadi suka menggurui. Tetapi ia mengendalikan dirinya, dan hanya berkata, dengan sedikit ketegasan yang despotik— “Apa yang akan saya lakukan dalam praktik saya, Rosy, itu terserah saya untuk menentukannya. Itu bukan masalah di antara kita. Cukup bagimu untuk tahu bahwa penghasilan kita kemungkinan akan sangat terbatas—hampir empat ratus, mungkin kurang, untuk waktu yang lama ke depan, dan kita harus mencoba mengatur kembali kehidupan kita sesuai dengan kenyataan itu.” Rosamond terdiam sejenak, menatap ke depan, lalu berkata, “Paman Bulstrode seharusnya memberimu gaji atas waktu yang kau berikan untuk Rumah Sakit: tidak adil jika kau bekerja tanpa imbalan.” “Sejak awal sudah dipahami bahwa jasa saya akan diberikan secara cuma-cuma. Sekali lagi, itu tidak perlu dibahas lagi. Saya sudah menunjukkan satu-satunya kemungkinan yang ada,” kata Lydgate dengan tidak sabar. Kemudian, setelah menahan diri, ia melanjutkan dengan lebih tenang— “Saya rasa saya melihat satu sumber daya yang dapat membebaskan kita dari sebagian besar kesulitan saat ini. Saya dengar Ned Plymdale muda akan menikah dengan Nona Sophy Toller. Mereka kaya, dan jarang sekali ada rumah bagus yang kosong di Middlemarch. Saya yakin mereka akan senang mengambil rumah ini dari kita beserta sebagian besar perabotannya, dan mereka bersedia membayar sewa dengan harga yang tinggi. Saya dapat meminta Trumbull untuk berbicara dengan Plymdale tentang hal itu.” Rosamond meninggalkan pangkuan suaminya dan berjalan perlahan ke ujung ruangan yang lain; ketika dia berbalik dan berjalan ke arahnya, terlihat jelas bahwa air mata telah mengalir, dan dia menggigit bibir bawahnya serta menggenggam tangannya untuk menahan tangis. Lydgate merasa sangat sedih—terguncang oleh amarah namun merasa bahwa akan tidak jantan untuk melampiaskan amarahnya saat ini. “Aku sangat menyesal, Rosamond; aku tahu ini menyakitkan.” “Saya pikir, setidaknya, setelah saya bersusah payah mengirimkan piring itu kembali dan meminta orang itu membuat inventaris perabotan—saya kira itu sudah cukup.” “Sudah kujelaskan padamu waktu itu, sayang. Itu hanya jaminan dan di balik jaminan itu ada hutang. Dan hutang itu harus dibayar dalam beberapa bulan ke depan, kalau tidak perabot kita akan dijual. Jika Plymdale muda mau mengambil rumah kita dan sebagian besar perabot kita, kita akan bisa membayar hutang itu, dan beberapa hutang lainnya juga, dan kita akan terbebas dari tempat yang terlalu mahal untuk kita. Kita bisa mengambil rumah yang lebih kecil: Trumbull, aku tahu, punya rumah yang sangat layak untuk disewakan seharga tiga puluh pound setahun, dan ini sembilan puluh pound.” Lydgate mengucapkan kata-kata ini dengan cara yang singkat dan tegas, seperti yang biasa kita gunakan untuk mencoba memaksa pikiran yang masih samar-samar untuk menerima fakta-fakta penting. Air mata mengalir tanpa suara di pipi Rosamond; dia hanya menekan saputangannya ke pipinya, dan berdiri memandang vas besar di atas perapian. Itu adalah momen kepedihan yang lebih hebat daripada yang pernah dia rasakan sebelumnya. Akhirnya dia berkata, tanpa terburu-buru dan dengan penekanan yang hati-hati— “Aku tidak pernah menyangka kau ingin bertindak seperti itu.” “Suka?” seru Lydgate, bangkit dari kursinya, memasukkan tangannya ke saku, dan berjalan menjauh dari perapian; “ini bukan soal suka. Tentu saja, aku tidak suka; ini satu-satunya yang bisa kulakukan.” Dia berbalik dan menatap wanita itu. “Kupikir pasti ada banyak cara lain selain itu,” kata Rosamond. “Mari kita adakan obral dan tinggalkan Middlemarch sama sekali.” “Untuk apa? Apa gunanya aku meninggalkan pekerjaanku di Middlemarch untuk pergi ke tempat yang tidak ada pekerjaanku? Kita akan sama miskinnya di tempat lain seperti di sini,” kata Lydgate dengan lebih marah. “Jika kita sampai berada dalam posisi itu, itu sepenuhnya kesalahanmu sendiri, Tertius,” kata Rosamond, berbalik untuk berbicara dengan keyakinan penuh. “Kau tidak akan berperilaku sebagaimana seharusnya terhadap keluargamu sendiri. Kau telah menyinggung Kapten Lydgate. Sir Godwin sangat baik kepadaku ketika kita berada di Quallingham, dan aku yakin jika kau menunjukkan rasa hormat yang sepatutnya kepadanya dan menceritakan urusanmu, dia akan melakukan apa pun untukmu. Tetapi alih-alih itu, kau malah ingin menyerahkan rumah dan perabotan kita kepada Tuan Ned Plymdale.” Ada semacam kegarangan di mata Lydgate, saat ia menjawab dengan kekerasan yang baru, “Baiklah, kalau begitu, jika kau mau menerimanya, aku memang menyukainya. Aku akui aku lebih menyukainya daripada mempermalukan diri sendiri dengan mengemis di tempat yang tidak ada gunanya. Pahami saja, bahwa itulah yang ingin kulakukan . ” Ada nada dalam kalimat terakhir yang setara dengan cengkeraman tangan kuatnya pada lengan Rosamond yang lembut. Namun terlepas dari itu semua, tekadnya tidak sedikit pun lebih kuat dari tekad Rosamond. Ia segera keluar dari ruangan dalam diam, tetapi dengan tekad yang kuat untuk menghalangi apa yang Lydgate suka lakukan. Ia keluar rumah, tetapi saat darahnya mendingin, ia merasa bahwa hasil utama dari diskusi itu adalah rasa takut yang mendalam dalam dirinya karena membayangkan harus berbicara dengan istrinya tentang hal-hal di masa depan yang mungkin akan kembali mendorongnya untuk berbicara dengan kasar. Seolah-olah retakan pada kristal yang rapuh telah dimulai, dan ia takut akan gerakan apa pun yang dapat membuatnya fatal. Pernikahannya akan menjadi ironi yang pahit jika mereka tidak dapat terus saling mencintai. Ia telah lama memutuskan apa yang menurutnya merupakan karakter negatif istrinya—kurangnya kepekaan, yang terlihat dalam pengabaiannya terhadap keinginan spesifiknya dan tujuan umumnya. Kekecewaan besar pertama telah ditanggung: pengabdian yang lembut dan pemujaan yang patuh dari istri ideal harus ditinggalkan, dan hidup harus dijalani pada tingkat harapan yang lebih rendah, seperti halnya orang-orang yang telah kehilangan anggota tubuhnya. Tetapi istri yang sebenarnya tidak hanya memiliki tuntutannya, ia masih memegang kendali atas hatinya, dan keinginan terbesarnya adalah agar kendali itu tetap kuat. Dalam pernikahan, kepastian, “Dia tidak akan pernah mencintaiku banyak,” lebih mudah ditanggung daripada ketakutan, “Aku tidak akan mencintainya lagi.” Oleh karena itu, setelah ledakan emosi itu, upaya batinnya sepenuhnya untuk memaafkannya, dan menyalahkan keadaan sulit yang sebagian merupakan kesalahannya. Malam itu, dengan membelainya, ia mencoba menyembuhkan luka yang telah ia buat pagi itu, dan bukan sifat Rosamond untuk bersikap menolak atau merajuk; memang, ia menyambut baik tanda-tanda bahwa suaminya mencintainya dan terkendali. Tetapi ini adalah sesuatu yang sangat berbeda dari mencintainya . Lydgate tidak akan memilih untuk segera kembali pada rencana untuk berpisah dengan rumah itu; ia bertekad untuk melaksanakannya, dan sebisa mungkin tidak banyak bicara tentang hal itu. Tetapi Rosamond sendiri menyinggungnya saat sarapan dengan mengatakan, dengan lembut— “Apakah kamu sudah berbicara dengan Trumbull?” “Tidak,” kata Lydgate, “tetapi aku akan menemuinya saat aku lewat pagi ini. Tidak boleh membuang waktu.” Ia menganggap pertanyaan Rosamond sebagai tanda bahwa Rosamond telah menarik penolakan batinnya, dan mencium keningnya dengan lembut ketika ia bangkit untuk pergi. Begitu sudah cukup larut untuk menelepon, Rosamond pergi ke rumah Ny. Plymdale, ibu dari Tuan Ned, dan menyampaikan ucapan selamat yang manis tentang pernikahan yang akan datang. Pandangan keibuan Ny. Plymdale adalah bahwa Rosamond mungkin sekarang akan melihat kembali kebodohannya sendiri; dan karena merasa bahwa keuntungan saat ini sepenuhnya berada di pihak putranya, ia adalah wanita yang terlalu baik untuk tidak bersikap ramah. “Ya, Ned sangat bahagia, harus saya akui. Dan Sophy Toller adalah semua yang saya inginkan dari seorang menantu perempuan. Tentu saja ayahnya mampu melakukan sesuatu yang baik untuknya—itulah yang diharapkan dari sebuah perusahaan bir seperti miliknya. Dan koneksinya adalah semua yang kita inginkan. Tapi bukan itu yang saya perhatikan. Dia gadis yang sangat baik—tidak sombong, tidak berpura-pura, meskipun setara dengan yang pertama. Saya tidak bermaksud setara dengan bangsawan bergelar. Saya melihat sangat sedikit kebaikan pada orang-orang yang berusaha keluar dari lingkup mereka sendiri. Maksud saya, Sophy setara dengan yang terbaik di kota ini, dan dia puas dengan itu.” “Saya selalu menganggapnya sangat menyenangkan,” kata Rosamond. “Saya menganggap ini sebagai hadiah untuk Ned, yang tidak pernah sombong, karena ia bisa mendapatkan koneksi terbaik,” lanjut Ny. Plymdale, ketajamannya yang alami melunak oleh keyakinan yang kuat bahwa pandangannya benar. “Dan orang-orang seperti keluarga Toller sangat selektif, mereka mungkin keberatan karena beberapa teman kita bukan teman mereka. Sudah diketahui umum bahwa bibi Bulstrode dan saya telah akrab sejak muda, dan Tuan Plymdale selalu berada di pihak Tuan Bulstrode. Dan saya sendiri lebih menyukai pendapat yang serius. Tetapi keluarga Toller tetap menerima Ned dengan baik.” “Saya yakin dia adalah pemuda yang sangat pantas dan berprinsip baik,” kata Rosamond, dengan nada merendahkan yang rapi sebagai balasan atas koreksi yang baik dari Ny. Plymdale. “Oh, dia tidak memiliki gaya seorang kapten di angkatan darat, atau sikap seolah-olah semua orang berada di bawahnya, atau cara bicara dan bernyanyi yang mencolok, serta bakat intelektual. Tapi saya bersyukur dia tidak memilikinya. Itu adalah persiapan yang buruk baik untuk di dunia maupun di akhirat.” “Oh ya ampun, ya; penampilan luar tidak ada hubungannya dengan kebahagiaan,” kata Rosamond. “Kurasa ada kemungkinan besar mereka akan menjadi pasangan yang bahagia. Rumah mana yang akan mereka pilih?” “Oh, soal itu, mereka harus puas dengan apa yang mereka dapatkan. Mereka sudah melihat rumah di St. Peter's Place, di sebelah rumah Tuan Hackbutt; itu miliknya, dan dia sedang memperbaikinya dengan baik. Kurasa mereka tidak akan menemukan yang lebih baik. Bahkan, kurasa Ned akan memutuskan masalah ini hari ini.” “Menurutku itu rumah yang bagus; aku suka St. Peter's Place.” “Yah, letaknya dekat Gereja, dan lokasinya cukup bagus. Tapi jendelanya sempit, dan atapnya naik turun. Apakah Anda tahu tempat lain yang mungkin bersedia?” kata Ny. Plymdale, menatap Rosamond dengan mata hitam bulatnya yang penuh semangat, seolah-olah ada pemikiran baru di dalamnya. “Oh tidak; saya jarang sekali mendengar hal-hal seperti itu.” Rosamond tidak menduga pertanyaan dan jawaban itu ketika hendak berkunjung; ia hanya bermaksud mengumpulkan informasi apa pun yang dapat membantunya menghindari perpisahan dengan rumahnya sendiri dalam keadaan yang sangat tidak menyenangkan baginya. Mengenai ketidakbenaran dalam jawabannya, ia tidak memikirkannya sama sekali, seperti halnya ketidakbenaran dalam ucapannya bahwa penampilan tidak ada hubungannya dengan kebahagiaan. Ia yakin bahwa tujuannya sepenuhnya dapat dibenarkan: niat Lydgate-lah yang tidak dapat dimaafkan; dan ada rencana dalam pikirannya yang, ketika ia telah melaksanakannya sepenuhnya, akan membuktikan betapa salahnya langkah yang akan diambil Lydgate jika ia turun dari posisinya. Ia pulang melalui kantor Tuan Borthrop Trumbull, bermaksud untuk mampir ke sana. Ini adalah pertama kalinya dalam hidupnya Rosamond berpikir untuk melakukan sesuatu yang berkaitan dengan bisnis, tetapi ia merasa mampu menghadapi kesempatan itu. Bahwa ia harus melakukan sesuatu yang sangat tidak disukainya, adalah sebuah gagasan yang mengubah keteguhan hatinya yang tenang menjadi daya cipta yang aktif. Ini adalah kasus di mana tidak cukup hanya dengan tidak patuh dan bersikap keras kepala dengan tenang dan pasif: ia harus bertindak sesuai dengan penilaiannya, dan ia berkata pada dirinya sendiri bahwa penilaiannya benar—"memang, jika tidak, ia tidak akan mau bertindak berdasarkan penilaian itu." Tuan Trumbull berada di ruang belakang kantornya, dan menerima Rosamond dengan sopan santun terbaiknya, bukan hanya karena ia sangat peka terhadap pesonanya, tetapi karena kebaikan hatinya tergerak oleh keyakinannya bahwa Lydgate sedang dalam kesulitan, dan bahwa wanita yang sangat cantik ini—wanita muda dengan daya tarik pribadi yang luar biasa—kemungkinan akan merasakan dampak masalah—terlibat dalam keadaan di luar kendalinya. Ia memohon agar Rosamond menghormatinya dengan duduk, dan berdiri di hadapannya sambil merapikan dan bersikap dengan penuh perhatian, yang sebagian besar bersifat baik hati. Pertanyaan pertama Rosamond adalah, apakah suaminya telah menemui Tuan Trumbull pagi itu, untuk membicarakan tentang penjualan rumah mereka. “Ya, Bu, ya, memang benar; dia melakukannya,” kata juru lelang yang baik hati itu, mencoba menambahkan sedikit nada menenangkan dalam ucapannya. “Saya hendak memenuhi pesanannya, jika memungkinkan, siang ini. Dia ingin saya tidak menunda-nunda.” “Saya datang untuk memberitahu Anda agar tidak melanjutkan pembicaraan ini, Tuan Trumbull; dan saya mohon agar Anda tidak menyebutkan apa yang telah dikatakan mengenai masalah ini. Maukah Anda menuruti permintaan saya?” “Tentu saja, Nyonya Lydgate, tentu saja. Kerahasiaan sangat penting bagi saya dalam urusan bisnis atau topik apa pun. Kalau begitu, saya harus menganggap penugasan ini dicabut?” kata Tuan Trumbull, sambil menyesuaikan ujung-ujung dasi birunya dengan kedua tangan, dan menatap Rosamond dengan hormat. “Ya, jika Anda berkenan. Saya mendapati bahwa Tuan Ned Plymdale telah menyewa sebuah rumah—yang berada di St. Peter's Place, di sebelah rumah Tuan Hackbutt. Tuan Lydgate akan kesal jika pesanannya dipenuhi dengan sia-sia. Dan selain itu, ada keadaan lain yang membuat usulan ini tidak perlu.” “Bagus sekali, Nyonya Lydgate, bagus sekali. Saya siap membantu Anda kapan pun Anda membutuhkan jasa saya,” kata Tuan Trumbull, yang merasa senang menduga bahwa beberapa sumber daya baru telah ditemukan. “Percayalah pada saya. Masalah ini tidak akan berlanjut lebih jauh.” Malam itu Lydgate sedikit terhibur dengan melihat Rosamond lebih ceria dari biasanya akhir-akhir ini, dan bahkan tampak tertarik melakukan apa pun yang akan menyenangkan hatinya tanpa diminta. Ia berpikir, “Jika dia bahagia dan aku bisa mengatasinya, apa artinya semua ini? Ini hanyalah rawa sempit yang harus kita lewati dalam perjalanan panjang. Jika aku bisa menjernihkan pikiranku lagi, aku akan melakukannya.” Ia begitu gembira sehingga mulai mencari catatan tentang eksperimen yang sudah lama ingin ia cari, tetapi telah diabaikan karena rasa putus asa yang perlahan-lahan muncul seiring dengan kecemasan-kecemasan kecil. Ia merasakan kembali sebagian dari daya tarik lamanya yang menyenangkan dalam penyelidikan yang luas, sementara Rosamond memainkan musik yang tenang yang sama bermanfaatnya bagi meditasinya seperti suara dayung di danau pada malam hari. Saat itu sudah agak larut; ia telah menyingkirkan semua buku, dan sedang memandang perapian dengan tangan terlipat di belakang kepalanya, melupakan segalanya kecuali konstruksi eksperimen kontrol baru, ketika Rosamond, yang telah meninggalkan piano dan bersandar di kursinya sambil mengawasinya, berkata— “Tuan Ned Plymdale sudah menyewa sebuah rumah.” Lydgate, terkejut dan tersentak, menatap ke atas dalam diam sejenak, seperti orang yang tidurnya terganggu. Kemudian, dengan perasaan tidak nyaman di wajahnya, dia bertanya— “Bagaimana kamu tahu?” “Saya mampir ke rumah Ny. Plymdale pagi ini, dan dia memberi tahu saya bahwa dia telah mengambil rumah di St. Peter's Place, di sebelah rumah Tn. Hackbutt.” Lydgate terdiam. Ia menarik tangannya dari belakang kepala dan menekannya ke rambut yang menjuntai, seperti biasanya, menggumpal di dahinya, sementara ia menyandarkan siku di lututnya. Ia merasakan kekecewaan yang pahit, seolah-olah ia telah membuka pintu keluar dari tempat yang menyesakkan dan mendapati pintu itu tertutup tembok; tetapi ia juga yakin bahwa Rosamond senang dengan penyebab kekecewaannya. Ia lebih memilih untuk tidak menatapnya dan tidak berbicara, sampai ia mengatasi gejolak kekesalan pertamanya. Lagipula, katanya dengan getir, apa yang begitu dipedulikan seorang wanita selain rumah dan perabotan? seorang suami tanpa itu adalah hal yang tidak masuk akal. Ketika ia mendongak dan menyingkirkan rambutnya, mata gelapnya memiliki tatapan kosong yang menyedihkan tanpa harapan akan simpati, tetapi ia hanya berkata, dengan dingin— “Mungkin ada orang lain yang akan muncul. Saya sudah bilang pada Trumbull untuk waspada jika dia gagal dengan Plymdale.” Rosamond tidak berkomentar. Ia mengandalkan kesempatan bahwa tidak akan ada lagi yang terjadi antara suaminya dan juru lelang sampai ada masalah yang membenarkan campur tangannya; bagaimanapun juga, ia telah mencegah kejadian yang sangat ia takuti. Setelah jeda, ia berkata— “Berapa banyak uang yang diinginkan oleh orang-orang yang menyebalkan itu?” “Orang-orang yang tidak menyenangkan seperti apa?” “Mereka yang mengambil daftar itu—dan yang lainnya. Maksudku, berapa banyak uang yang akan memuaskan mereka sehingga kamu tidak perlu repot lagi?” Lydgate mengamatinya sejenak, seolah-olah sedang mencari gejala, lalu berkata, “Oh, seandainya aku bisa mendapatkan enam ratus dari Plymdale untuk perabot dan sebagai premi, mungkin aku bisa mengatasinya. Aku bisa melunasi hutang ke Dover, dan memberi cukup uang muka kepada yang lain agar mereka menunggu dengan sabar, jika kita mengurangi pengeluaran kita.” “Tapi maksudku, berapa banyak yang seharusnya kamu inginkan jika kita tetap tinggal di rumah ini?” “Lebih dari yang mungkin bisa saya dapatkan di mana pun,” kata Lydgate, dengan nada sarkasme yang agak kasar. Ia marah melihat pikiran Rosamond melayang-layang pada keinginan yang tidak realistis alih-alih menghadapi upaya yang mungkin dilakukan. “Mengapa Anda tidak menyebutkan jumlahnya?” kata Rosamond, dengan sedikit nada menunjukkan bahwa dia tidak menyukai sikap pria itu. “Yah,” kata Lydgate dengan nada menebak, “setidaknya dibutuhkan seribu untuk membuatku tenang. Tapi,” tambahnya dengan tajam, “aku harus mempertimbangkan apa yang akan kulakukan tanpa itu, bukan dengan itu.” Rosamond tidak berkata apa-apa lagi. Namun keesokan harinya ia melaksanakan rencananya untuk menulis surat kepada Sir Godwin Lydgate. Sejak kunjungan Kapten, ia telah menerima surat darinya, dan juga satu surat dari Ny. Mengan, saudara perempuannya yang sudah menikah, yang menyampaikan belasungkawa atas kehilangan bayinya, dan secara samar-samar menyatakan harapan bahwa mereka akan bertemu lagi di Quallingham. Lydgate telah mengatakan kepadanya bahwa kesopanan ini tidak berarti apa-apa; tetapi ia diam-diam yakin bahwa sikap dingin dan meremehkan keluarga Lydgate terhadapnya disebabkan oleh perilakunya yang dingin dan meremehkan, dan ia telah membalas surat-surat itu dengan cara yang paling menawan, merasa yakin bahwa undangan khusus akan menyusul. Tetapi tidak ada kabar sama sekali. Kapten jelas bukan penulis yang hebat, dan Rosamond berpikir bahwa kedua saudara perempuan itu mungkin sedang berada di luar negeri. Namun, saatnya telah tiba untuk memikirkan teman-teman di rumah, dan bagaimanapun juga Sir Godwin, yang telah menepuk dagunya dan menyatakan bahwa dia mirip dengan kecantikan terkenal, Nyonya Croly, yang telah menaklukkannya pada tahun 1790, akan tersentuh oleh permohonan apa pun darinya, dan akan merasa senang demi dirinya untuk berperilaku sebagaimana mestinya terhadap keponakannya. Rosamond dengan naif yakin akan apa yang seharusnya dilakukan seorang pria tua untuk mencegahnya menderita gangguan. Dan dia menulis surat yang menurutnya paling bijaksana—surat yang akan membuat Sir Godwin menganggapnya sebagai bukti kebijaksanaannya yang luar biasa—menunjukkan betapa diinginkannya Tertius meninggalkan tempat seperti Middlemarch untuk tempat yang lebih sesuai dengan bakatnya, bagaimana karakter penduduk yang tidak menyenangkan telah menghambat kesuksesan profesionalnya, dan bagaimana akibatnya dia mengalami kesulitan keuangan, yang membutuhkan seribu pound untuk sepenuhnya mengatasinya. Dia tidak mengatakan bahwa Tertius tidak menyadari niatnya untuk menulis; Karena ia beranggapan bahwa persetujuan yang diberikan pria itu atas suratnya akan sesuai dengan apa yang telah ia katakan tentang rasa hormatnya yang besar kepada pamannya, Godwin, sebagai kerabat yang selalu menjadi sahabat terbaiknya. Begitulah kuatnya taktik Rosamond yang malang saat ia menerapkannya pada berbagai urusan. Hal ini telah terjadi sebelum pesta di Hari Tahun Baru, dan belum ada jawaban yang datang dari Sir Godwin. Tetapi pada pagi harinya, Lydgate mengetahui bahwa Rosamond telah mencabut perintahnya kepada Borthrop Trumbull. Merasa perlu agar Rosamond secara bertahap terbiasa dengan gagasan mereka meninggalkan rumah di Lowick Gate, ia mengatasi keengganannya untuk berbicara lagi dengannya tentang masalah itu, dan ketika mereka sedang sarapan, ia berkata— “Saya akan mencoba menemui Trumbull pagi ini, dan menyuruhnya memasang iklan rumah itu di 'Pioneer' dan 'Trumpet'. Jika diiklankan, mungkin ada seseorang yang berminat untuk membelinya, yang sebelumnya tidak terpikir untuk pindah. Di daerah pedesaan seperti ini, banyak orang tetap tinggal di rumah lama mereka ketika keluarga mereka sudah terlalu besar untuk rumah tersebut, karena tidak tahu di mana mereka bisa menemukan rumah lain. Dan Trumbull tampaknya tidak tertarik sama sekali.” Rosamond tahu bahwa saat yang tak terhindarkan itu telah tiba. "Saya memerintahkan Trumbull untuk tidak menyelidiki lebih lanjut," katanya, dengan ketenangan hati-hati yang jelas-jelas bersifat defensif. Lydgate menatapnya dengan takjub tanpa kata. Hanya setengah jam sebelumnya dia sedang mengikat kepang rambutnya dan berbicara dengan "bahasa kecil" kasih sayang, yang Rosamond, meskipun tidak membalasnya, menerimanya seolah-olah dia adalah sosok yang tenang dan cantik, yang sesekali tersenyum lembut kepada pengagumnya. Dengan perasaan yang masih bergejolak dalam dirinya, guncangan yang diterimanya tidak bisa langsung berupa kemarahan; itu adalah rasa sakit yang bercampur aduk. Dia meletakkan pisau dan garpu yang sedang digunakannya untuk memotong, dan sambil menyandarkan diri di kursinya, akhirnya berkata, dengan nada ironi yang dingin— “Bolehkah saya bertanya kapan dan mengapa Anda melakukan itu?” “Ketika saya tahu bahwa keluarga Plymdale telah menyewa sebuah rumah, saya datang untuk memberitahunya agar tidak menyebutkan rumah kami kepada mereka; dan pada saat yang sama saya mengatakan kepadanya agar tidak membiarkan masalah ini berlanjut lebih jauh. Saya tahu bahwa akan sangat merugikan Anda jika diketahui bahwa Anda ingin menjual rumah dan perabotan Anda, dan saya sangat keberatan dengan hal itu. Saya pikir itu sudah cukup alasan.” “Lalu, tidak ada bedanya kalau aku sudah memberitahumu alasan-alasan penting yang berbeda; tidak ada bedanya kalau aku sudah sampai pada kesimpulan yang berbeda, dan memberikan perintah yang sesuai?” kata Lydgate dengan nada tajam, guntur dan kilat menyambar di dahi dan matanya. Dampak kemarahan siapa pun terhadap Rosamond selalu membuatnya menyusut dalam ketidaksukaan yang dingin, dan menjadi semakin tenang dan benar, dengan keyakinan bahwa dia bukanlah orang yang akan berperilaku buruk apa pun yang dilakukan orang lain. Dia menjawab— “Saya rasa saya memiliki hak penuh untuk berbicara tentang suatu hal yang sama pentingnya bagi saya seperti bagi Anda.” “Jelas—kau berhak berbicara, tetapi hanya kepadaku. Kau tidak berhak membantah perintahku secara diam-diam, dan memperlakukanku seolah-olah aku bodoh,” kata Lydgate, dengan nada yang sama seperti sebelumnya. Kemudian dengan sedikit nada mengejek, “Apakah mungkin membuatmu mengerti apa konsekuensinya? Apakah ada gunanya aku memberitahumu lagi mengapa kita harus mencoba menjual rumah ini?” “Tidak perlu kau mengulanginya lagi,” kata Rosamond, dengan suara yang merendah dan bergetar seperti tetesan air dingin. “Aku ingat apa yang kau katakan. Kau berbicara sama kasarnya seperti sekarang. Tapi itu tidak mengubah pendapatku bahwa kau seharusnya mencoba segala cara lain daripada mengambil langkah yang begitu menyakitkan bagiku. Dan mengenai mengiklankan rumah itu, menurutku itu akan sangat merendahkanmu.” “Bagaimana jika saya mengabaikan pendapat Anda sebagaimana Anda mengabaikan pendapat saya?” “Tentu saja kamu bisa melakukannya. Tapi menurutku seharusnya kamu memberitahuku sebelum kita menikah bahwa kamu akan menempatkanku dalam posisi terburuk, daripada menyerah pada keinginanmu sendiri.” Lydgate tidak berbicara, tetapi menggelengkan kepalanya ke samping, dan menggerakkan sudut mulutnya dengan putus asa. Rosamond, melihat bahwa dia tidak menatapnya, bangkit dan meletakkan cangkir kopinya di depannya; tetapi dia tidak memperhatikannya, dan terus bergelut dengan drama dan perdebatan batinnya, sesekali bergerak di kursinya, meletakkan satu lengan di atas meja, dan mengusap rambutnya. Ada percampuran emosi dan pikiran dalam dirinya yang tidak membiarkannya menyerah sepenuhnya pada amarahnya atau bertahan dengan keteguhan tekad yang sederhana. Rosamond memanfaatkan keheningannya. “Saat kita menikah, semua orang merasa bahwa kedudukanmu sangat tinggi. Saat itu aku tak pernah membayangkan kau ingin menjual perabotan kita, dan mengambil rumah di Bride Street, di mana kamar-kamarnya seperti sangkar. Jika kita harus hidup seperti itu, setidaknya mari kita tinggalkan Middlemarch.” “Ini akan menjadi pertimbangan yang sangat kuat,” kata Lydgate, setengah ironis—masih ada pucat pasi di bibirnya saat ia menatap kopinya, dan tidak meminumnya—“ini akan menjadi pertimbangan yang sangat kuat jika saya tidak sedang berhutang.” “Pasti banyak orang yang pernah berutang dengan cara yang sama, tetapi jika mereka orang yang terhormat, orang akan mempercayai mereka. Aku yakin pernah mendengar ayahku berkata bahwa keluarga Torbit berutang, dan mereka baik-baik saja. Bertindak gegabah bukanlah hal yang baik,” kata Rosamond dengan bijaksana dan tenang. Lydgate duduk lumpuh oleh dorongan yang bertentangan: karena tidak ada penalaran yang dapat ia terapkan pada Rosamond yang tampaknya akan berhasil mendapatkan persetujuannya, ia ingin menghancurkan dan menggiling suatu benda yang setidaknya dapat ia beri bekas, atau mengatakan kepadanya dengan kasar bahwa dialah tuannya, dan dia harus patuh. Tetapi ia tidak hanya takut akan dampak ekstrem tersebut pada kehidupan mereka—ia juga semakin takut akan kekeraskepalaan Rosamond yang tenang dan sulit dipahami, yang tidak akan membiarkan penegasan kekuasaan apa pun menjadi final; dan lagi, Rosamond telah menyentuhnya di titik perasaannya yang paling tajam dengan menyiratkan bahwa ia telah tertipu oleh visi kebahagiaan palsu dalam menikahinya. Mengenai mengatakan bahwa ia adalah tuannya, itu bukanlah fakta. Tekad yang telah ia bentuk sendiri dengan logika dan harga diri yang terhormat mulai goyah di bawah serangan Rosamond yang seperti torpedo. Ia menelan setengah cangkir kopinya, lalu bangkit untuk pergi. “Setidaknya aku mohon agar kau tidak pergi ke Trumbull untuk saat ini—sampai terbukti tidak ada cara lain,” kata Rosamond. Meskipun ia tidak terlalu takut, ia merasa lebih aman untuk tidak mengungkapkan bahwa ia telah menulis surat kepada Sir Godwin. “Berjanjilah padaku bahwa kau tidak akan pergi menemuinya selama beberapa minggu, atau tanpa memberitahuku.” Lydgate tertawa kecil. “Kurasa justru akulah yang harus meminta janji bahwa kau tidak akan melakukan apa pun tanpa memberitahuku,” katanya, menatapnya tajam, lalu berjalan ke pintu. “Kau ingat kita akan makan malam di rumah ayah,” kata Rosamond, berharap suaminya akan berbalik dan memberikan konsesi yang lebih menyeluruh kepadanya. Tetapi suaminya hanya berkata “Oh ya,” dengan tidak sabar, lalu pergi. Ia merasa sangat jijik dengan suaminya karena ia tidak menganggap usulan-usulan menyakitkan yang harus ia sampaikan kepadanya sudah cukup, tanpa menunjukkan temperamen yang begitu tidak menyenangkan. Dan ketika ia mengajukan permintaan yang lebih moderat agar suaminya menunda pergi ke Trumbull lagi, sungguh kejam suaminya karena tidak meyakinkannya tentang apa yang akan dilakukannya. Ia yakin telah bertindak dengan sebaik-baiknya; dan setiap ucapan kasar atau marah Lydgate hanya menambah daftar pelanggaran dalam pikirannya. Rosamond yang malang selama berbulan-bulan mulai mengaitkan suaminya dengan perasaan kecewa, dan hubungan pernikahan yang sangat kaku telah kehilangan daya tariknya dalam menumbuhkan mimpi-mimpi indah. Pernikahan itu telah membebaskannya dari hal-hal yang tidak menyenangkan di rumah ayahnya, tetapi tidak memberinya semua yang ia inginkan dan harapkan. Lydgate, pria yang pernah dicintainya, baginya hanyalah sekumpulan kondisi yang abstrak, yang sebagian besar telah lenyap, digantikan oleh detail-detail sehari-hari yang harus dijalani perlahan dari jam ke jam, bukan dilewati dengan cepat melalui pemilihan aspek-aspek yang menguntungkan. Kebiasaan profesi Lydgate, kesibukannya di rumah dengan subjek-subjek ilmiah, yang baginya hampir seperti selera vampir yang morbid, pandangannya yang aneh tentang berbagai hal yang tidak pernah dibahas dalam percakapan percintaan—semua pengaruh yang terus-menerus mengasingkan ini, bahkan tanpa fakta bahwa ia telah menempatkan dirinya pada posisi yang tidak menguntungkan di kota, dan tanpa kejutan pertama tentang utang Dover, akan membuat kehadirannya membosankan baginya. Ada kehadiran lain yang sejak awal pernikahannya, hingga empat bulan yang lalu, telah menjadi kegembiraan yang menyenangkan, tetapi itu telah hilang: Rosamond tidak mau mengakui pada dirinya sendiri seberapa besar kekosongan yang diakibatkannya berhubungan dengan kebosanannya yang luar biasa; Dan baginya (mungkin dia benar) bahwa undangan ke Quallingham, dan kesempatan bagi Lydgate untuk menetap di tempat lain selain Middlemarch—di London, atau di suatu tempat yang kemungkinan besar bebas dari hal-hal yang tidak menyenangkan—akan cukup memuaskannya, dan membuatnya acuh tak acuh terhadap ketidakhadiran Will Ladislaw, yang terhadapnya dia merasa sedikit kesal karena pujiannya terhadap Nyonya Casaubon. Begitulah keadaan Lydgate dan Rosamond pada Hari Tahun Baru ketika mereka makan malam di rumah ayahnya. Rosamond tampak agak netral terhadap ayahnya, mengingat perilakunya yang pemarah saat sarapan, sementara ayahnya merasakan dampak yang jauh lebih dalam dari konflik batin yang dialaminya, di mana kejadian pagi itu hanyalah salah satu dari sekian banyak peristiwa. Usahanya yang tampak malu-malu saat berbicara dengan Tuan Farebrother—usahanya untuk berpura-pura sinis bahwa semua cara mendapatkan uang pada dasarnya sama, dan bahwa keberuntungan memiliki kekuasaan yang mereduksi pilihan menjadi ilusi orang bodoh—hanyalah gejala dari tekad yang goyah, respons yang mati rasa terhadap rangsangan antusiasme lama. Apa yang harus dia lakukan? Dia bahkan lebih menyadari daripada Rosamond betapa suramnya membawa istrinya ke rumah kecil di Bride Street, di mana istrinya hanya akan memiliki perabotan seadanya dan ketidakpuasan di dalam: kehidupan yang serba kekurangan dan kehidupan bersama Rosamond adalah dua gambaran yang semakin tidak dapat didamaikan sejak ancaman kekurangan itu terungkap. Tetapi bahkan jika tekadnya telah memaksa kedua gambaran itu untuk menyatu, persiapan yang bermanfaat untuk perubahan sulit itu tidak tampak dalam jangkauan. Dan meskipun dia tidak memberikan janji yang diminta istrinya, dia tidak pergi lagi ke Trumbull. Dia bahkan mulai berpikir untuk melakukan perjalanan cepat ke Utara dan menemui Sir Godwin. Dia pernah percaya bahwa tidak ada yang akan mendorongnya untuk mengajukan permohonan uang kepada pamannya, tetapi saat itu dia belum mengetahui sepenuhnya tekanan dari alternatif yang lebih tidak menyenangkan. Dia tidak dapat mengandalkan efek sebuah surat; hanya dalam sebuah wawancara, betapapun tidak menyenangkannya hal itu bagi dirinya sendiri, dia dapat memberikan penjelasan menyeluruh dan dapat menguji efektivitas hubungan kekerabatan. Begitu Lydgate mulai menganggap langkah ini sebagai yang termudah, langsung muncul reaksi marah karena dia—dia yang sejak lama memutuskan untuk menjauhkan diri dari perhitungan hina semacam itu, kecemasan yang mementingkan diri sendiri tentang kecenderungan dan kantong orang-orang yang dulunya ia banggakan tidak memiliki tujuan yang sama—tidak hanya jatuh ke level mereka, tetapi juga ke level meminta bantuan mereka.</p>
-
-<div class="nav">
-  <a href="buku-vii-dua-godaan-bab-lxiii.html">⬅ Buku Vii. Dua Godaan - Bab Lxiii.</a>
-  <a href="bab-lxv.html">Bab Lxv. ➡</a>
-</div>
 
 </body>
 </html>

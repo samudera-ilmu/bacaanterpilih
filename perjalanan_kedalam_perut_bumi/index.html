@@ -2,10 +2,54 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Perjalanan Ke Dalam Perut Bumi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perjalanan ke Dalam Perut Bumi — Bacaan Terpilih</title>
+<meta name="description" content="Perjalanan ke Dalam Perut Bumi karya Jules Verne. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/index.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="book">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Perjalanan ke Dalam Perut Bumi — Bacaan Terpilih">
+  <meta property="og:description" content="Perjalanan ke Dalam Perut Bumi karya Jules Verne. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/index.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <meta property="og:book:author" content="Jules Verne">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Perjalanan ke Dalam Perut Bumi — Bacaan Terpilih">
+  <meta name="twitter:description" content="Perjalanan ke Dalam Perut Bumi karya Jules Verne. Baca gratis dalam bahasa Indonesia.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/images/img-001.jpg">
+  <!-- Schema.org: Book -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Perjalanan ke Dalam Perut Bumi",
+    "author": {
+      "@type": "Person",
+      "name": "Jules Verne"
+    },
+    "datePublished": "1864",
+    "inLanguage": "id",
+    "genre": "('Petualangan', 'Fiksi Ilmiah', 'Klasik')",
+    "url": "https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/index.html",
+    "image": "https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/images/img-001.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -15,72 +59,245 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
-
-function toggleTheme() {
-  document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
-}
 </script>
-
-
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #fafafa;
-  --text: #111;
-  --link: #1a73e8;
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
 }
 
 .dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 20px;
+  font-family: 'Source Serif 4', Georgia, serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
-.toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 14px;
-  opacity: 0.7;
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.book-hero {
+  max-width: 780px; margin: 0 auto;
+  padding: 48px 24px 0;
+  display: flex; gap: 40px; align-items: flex-start;
+}
+
+.book-cover-wrap { flex-shrink: 0; }
+
+.book-cover-img {
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  display: block;
+}
+
+.book-hero-text {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 12px;
+  padding-top: 8px;
+}
+
+.back-link {
+  font-size: 0.8rem; color: var(--accent);
+  text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.book-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.03em; color: var(--text);
+}
+
+.book-author { font-size: 1rem; color: var(--accent); font-weight: 600; }
+.book-year   { font-size: 0.82rem; color: var(--text3); }
+
+.book-divider {
+  max-width: 780px; margin: 32px auto 0;
+  border: none; border-top: 1px solid var(--border);
+}
+
+.toc-section {
+  max-width: 780px; margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.toc-label {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 20px;
+}
+
+.toc-list { list-style: none; counter-reset: toc; }
+
+.toc-list li {
+  counter-increment: toc;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-list li:first-child { border-top: 1px solid var(--border); }
+
+.toc-list a {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 14px 0;
+  text-decoration: none; color: var(--text);
+  font-size: 0.95rem; font-weight: 400;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.toc-list a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 0.72rem; color: var(--text3);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px; flex-shrink: 0;
+}
+
+.toc-list a:hover { color: var(--accent); padding-left: 6px; }
+
+@media (max-width: 600px) {
+  .book-hero { flex-direction: column; padding: 32px 16px 0; gap: 24px; }
+  .book-cover-img { width: 120px; }
+  .toc-section { padding: 24px 16px 60px; }
 }
 </style>
 </head>
 <body>
 
-<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
 
-<h1>Perjalanan Ke Dalam Perut Bumi</h1>
+<div class="book-hero">
+  
+<div class="book-cover-wrap">
+  <img src="images/img-001.jpg" alt="Cover Perjalanan ke Dalam Perut Bumi" class="book-cover-img">
+</div>
+  <div class="book-hero-text">
+    <a href="../index.html" class="back-link">← Perpustakaan</a>
+    <h1 class="book-title">Perjalanan ke Dalam Perut Bumi</h1>
+    <div class="book-author">Jules Verne</div>
+    <div class="book-year">1864</div>
+  </div>
+</div>
 
-<ol>
-<li><a href="tentang-buku-ini.html">TENTANG BUKU INI</a></li><li><a href="profesor-dan-keluarganya.html">PROFESOR DAN KELUARGANYA</a></li><li><a href="sebuah-misteri-yang-harus-dipecahkan-dengan-segala-cara.html">SEBUAH MISTERI YANG HARUS DIPECAHKAN DENGAN SEGALA CARA</a></li><li><a href="latihan-menulis-runik-profesor.html">LATIHAN MENULIS RUNIK PROFESOR</a></li><li><a href="musuh-akan-dibuat-tunduk-kelaparan.html">MUSUH AKAN DIBUAT TUNDUK KELAPARAN</a></li><li><a href="kelaparan-lalu-kemenangan-diikuti-oleh-kekecewaan.html">KELAPARAN, LALU KEMENANGAN, DIIKUTI OLEH KEKECEWAAN</a></li><li><a href="diskusi-menarik-tentang-sebuah-perusahaan-yang-tak-tertandingi.html">DISKUSI MENARIK TENTANG SEBUAH PERUSAHAAN YANG TAK TERTANDINGI</a></li><li><a href="keberanian-seorang-wanita.html">KEBERANIAN SEORANG WANITA</a></li><li><a href="persiapan-serius-untuk-penurunan-vertikal.html">PERSIAPAN SERIUS UNTUK PENURUNAN VERTIKAL</a></li><li><a href="islandia-tapi-apa-selanjutnya.html">ISLANDIA! TAPI APA SELANJUTNYA?</a></li><li><a href="percakapan-menarik-dengan-para-ahli-islandia.html">PERCAKAPAN MENARIK DENGAN PARA AHLI ISLANDIA</a></li><li><a href="petunjuk-menuju-pusat-bumi.html">PETUNJUK MENUJU PUSAT BUMI</a></li><li><a href="tanah-gurun.html">TANAH GURUN</a></li><li><a href="keramahan-di-bawah-lingkaran-arktk.html">KERAMAHAN DI BAWAH LINGKARAN ARKTK</a></li><li><a href="tapi-daerah-arktk-juga-bisa-tidak-ramah.html">TAPI DAERAH ARKTK JUGA BISA TIDAK RAMAH.</a></li><li><a href="snfell-akhirnya.html">SNÆFELL AKHIRNYA</a></li><li><a href="dengan-berani-menuruni-krater.html">DENGAN BERANI MENURUNI KRATER</a></li><li><a href="penurunan-vertikal.html">PENURUNAN VERTIKAL</a></li><li><a href="keajaiban-kedalaman-daratan.html">KEAJAIBAN KEDALAMAN DARATAN</a></li><li><a href="studi-geologi-di-lokasi.html">STUDI GEOLOGI DI LOKASI</a></li><li><a href="tanda-tanda-pertama-kesulitan.html">TANDA-TANDA PERTAMA KESULITAN</a></li><li><a href="belas-kasih-menyatukan-hati-sang-profesor.html">BELAS KASIH MENYATUKAN HATI SANG PROFESOR</a></li><li><a href="kegagalan-total-air.html">KEGAGALAN TOTAL AIR</a></li><li><a href="air-ditemukan.html">AIR DITEMUKAN</a></li><li><a href="bagus-sekali-tikus-tanah-tua-apakah-kau-bisa-bekerja-di-tanah-secepat-itu.html">BAGUS SEKALI, TIKUS TANAH TUA! APAKAH KAU BISA BEKERJA DI TANAH SECEPAT ITU?</a></li><li><a href="de-profundis.html">DE PROFUNDIS</a></li><li><a href="bahaya-terburuk-dari-semuanya.html">BAHAYA TERBURUK DARI SEMUANYA</a></li><li><a href="tersesat-di-dalam-perut-bumi.html">TERSESAT DI DALAM PERUT BUMI</a></li><li><a href="penyelamatan-di-galeri-berbisik.html">PENYELAMATAN DI GALERI BERBISIK</a></li><li><a href="thalatta-thalatta.html">THALATTA! THALATTA!</a></li><li><a href="sebuah-induk-baru-internum.html">SEBUAH INDUK BARU INTERNUM</a></li><li><a href="persiapan-untuk-pelayaran-penemuan.html">PERSIAPAN UNTUK PELAYARAN PENEMUAN</a></li><li><a href="keajaiban-laut-dalam.html">KEAJAIBAN LAUT DALAM</a></li><li><a href="pertempuran-para-monster.html">PERTEMPURAN PARA MONSTER</a></li><li><a href="geyser-besar.html">GEYSER BESAR</a></li><li><a href="badai-listrik.html">BADAI LISTRIK</a></li><li><a href="diskusi-filosofi-yang-tenang.html">DISKUSI FILOSOFI YANG TENANG</a></li><li><a href="museum-geologi-liedenbrock.html">MUSEUM GEOLOGI LIEDENBROCK</a></li><li><a href="profesor-itu-kembali-duduk-di-kursinya.html">PROFESOR ITU KEMBALI DUDUK DI KURSINYA</a></li><li><a href="persiapan-untuk-meledakkan-jalan-menuju-pusat-bumi.html">PERSIAPAN UNTUK MELEDAKKAN JALAN MENUJU PUSAT BUMI</a></li><li><a href="ledakan-besar-dan-serbuhan-ke-bawah.html">LEDAKAN BESAR DAN SERBUHAN KE BAWAH</a></li><li><a href="melaju-dengan-kecepatan-tinggi-melewati-kekerasan-yang-mengerikan.html">MELAJU DENGAN KECEPATAN TINGGI MELEWATI KEKERASAN YANG MENGERIKAN</a></li><li><a href="akhirnya-terlempar-dari-gunung-berapi.html">AKHIRNYA TERLEMPAR DARI GUNUNG BERAPI!</a></li><li><a href="negeri-cerah-di-laut-mediterania-biru.html">NEGERI CERAH DI LAUT MEDITERANIA BIRU</a></li><li><a href="semua-akan-baik-baik-pada-akhirnya.html">SEMUA AKAN BAIK-BAIK PADA AKHIRNYA</a></li>
-</ol>
+<hr class="book-divider">
+
+<section class="toc-section">
+  <div class="toc-label">Daftar Isi</div>
+  <ol class="toc-list">
+    <li><a href="tentang-apa-buku-ini.html">Tentang Apa Buku Ini?</a></li>
+<li><a href="profesor-dan-keluarganya.html">Profesor Dan Keluarganya</a></li>
+<li><a href="sebuah-misteri-yang-harus-dipecahkan-dengan-segala-cara.html">Sebuah Misteri Yang Harus Dipecahkan Dengan Segala Cara</a></li>
+<li><a href="latihan-menulis-runik-profesor.html">Latihan Menulis Runik Profesor</a></li>
+<li><a href="musuh-akan-dibuat-tunduk-kelaparan.html">Musuh Akan Dibuat Tunduk Kelaparan</a></li>
+<li><a href="kelaparan-lalu-kemenangan-diikuti-oleh-kekecewaan.html">Kelaparan, Lalu Kemenangan, Diikuti Oleh Kekecewaan</a></li>
+<li><a href="diskusi-menarik-tentang-sebuah-perusahaan-yang-tak-tertandingi.html">Diskusi Menarik Tentang Sebuah Perusahaan Yang Tak Tertandingi</a></li>
+<li><a href="keberanian-seorang-wanita.html">Keberanian Seorang Wanita</a></li>
+<li><a href="persiapan-serius-untuk-penurunan-vertikal.html">Persiapan Serius Untuk Penurunan Vertikal</a></li>
+<li><a href="islandia-tapi-apa-selanjutnya.html">Islandia! Tapi Apa Selanjutnya?</a></li>
+<li><a href="percakapan-menarik-dengan-para-ahli-islandia.html">Percakapan Menarik Dengan Para Ahli Islandia</a></li>
+<li><a href="petunjuk-menuju-pusat-bumi.html">Petunjuk Menuju Pusat Bumi</a></li>
+<li><a href="tanah-gurun.html">Tanah Gurun</a></li>
+<li><a href="keramahan-di-bawah-lingkaran-arktk.html">Keramahan Di Bawah Lingkaran Arktk</a></li>
+<li><a href="tapi-daerah-arktk-juga-bisa-tidak-ramah.html">Tapi Daerah Arktk Juga Bisa Tidak Ramah.</a></li>
+<li><a href="snfell-akhirnya.html">Snæfell Akhirnya</a></li>
+<li><a href="dengan-berani-menuruni-krater.html">Dengan Berani Menuruni Krater</a></li>
+<li><a href="penurunan-vertikal.html">Penurunan Vertikal</a></li>
+<li><a href="keajaiban-kedalaman-daratan.html">Keajaiban Kedalaman Daratan</a></li>
+<li><a href="studi-geologi-di-lokasi.html">Studi Geologi Di Lokasi</a></li>
+<li><a href="tanda-tanda-pertama-kesulitan.html">Tanda-Tanda Pertama Kesulitan</a></li>
+<li><a href="belas-kasih-menyatukan-hati-sang-profesor.html">Belas Kasih Menyatukan Hati Sang Profesor</a></li>
+<li><a href="kegagalan-total-air.html">Kegagalan Total Air</a></li>
+<li><a href="air-ditemukan.html">Air Ditemukan</a></li>
+<li><a href="bagus-sekali-tikus-tanah-tua-apakah-kau-bisa-bekerja-di-tanah-secepat-itu.html">Bagus Sekali, Tikus Tanah Tua! Apakah Kau Bisa Bekerja Di Tanah Secepat Itu?</a></li>
+<li><a href="de-profundis.html">De Profundis</a></li>
+<li><a href="bahaya-terburuk-dari-semuanya.html">Bahaya Terburuk Dari Semuanya</a></li>
+<li><a href="tersesat-di-dalam-perut-bumi.html">Tersesat Di Dalam Perut Bumi</a></li>
+<li><a href="penyelamatan-di-galeri-berbisik.html">Penyelamatan Di Galeri Berbisik</a></li>
+<li><a href="thalatta-thalatta.html">Thalatta! Thalatta!</a></li>
+<li><a href="sebuah-induk-baru-internum.html">Sebuah Induk Baru Internum</a></li>
+<li><a href="persiapan-untuk-pelayaran-penemuan.html">Persiapan Untuk Pelayaran Penemuan</a></li>
+<li><a href="keajaiban-laut-dalam.html">Keajaiban Laut Dalam</a></li>
+<li><a href="pertempuran-para-monster.html">Pertempuran Para Monster</a></li>
+<li><a href="geyser-besar.html">Geyser Besar</a></li>
+<li><a href="badai-listrik.html">Badai Listrik</a></li>
+<li><a href="diskusi-filosofi-yang-tenang.html">Diskusi Filosofi Yang Tenang</a></li>
+<li><a href="museum-geologi-liedenbrock.html">Museum Geologi Liedenbrock</a></li>
+<li><a href="profesor-itu-kembali-duduk-di-kursinya.html">Profesor Itu Kembali Duduk Di Kursinya</a></li>
+<li><a href="pemandangan-hutan-diterangi-oleh-listrik.html">Pemandangan Hutan Diterangi Oleh Listrik.</a></li>
+<li><a href="persiapan-untuk-meledakkan-jalan-menuju-pusat-bumi.html">Persiapan Untuk Meledakkan Jalan Menuju Pusat Bumi</a></li>
+<li><a href="ledakan-besar-dan-serbuhan-ke-bawah.html">Ledakan Besar Dan Serbuhan Ke Bawah</a></li>
+<li><a href="melaju-dengan-kecepatan-tinggi-melewati-kekerasan-yang-mengerikan.html">Melaju Dengan Kecepatan Tinggi Melewati Kekerasan Yang Mengerikan</a></li>
+<li><a href="akhirnya-terlempar-dari-gunung-berapi.html">Akhirnya Terlempar Dari Gunung Berapi!</a></li>
+<li><a href="negeri-cerah-di-laut-mediterania-biru.html">Negeri Cerah Di Laut Mediterania Biru</a></li>
+<li><a href="semua-akan-baik-baik-pada-akhirnya.html">Semua Akan Baik-Baik Pada Akhirnya</a></li>
+  </ol>
+</section>
+
+
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
+}
+</script>
+
 
 </body>
 </html>

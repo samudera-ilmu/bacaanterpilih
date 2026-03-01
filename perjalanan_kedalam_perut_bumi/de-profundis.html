@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>DE PROFUNDIS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="DE PROFUNDIS - Bacaan digital klasik">
+<title>DE PROFUNDIS — Perjalanan ke Dalam Perut Bumi</title>
+<meta name="description" content="Baca DE PROFUNDIS dari buku Perjalanan ke Dalam Perut Bumi karya Jules Verne secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/de-profundis.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="DE PROFUNDIS — Perjalanan ke Dalam Perut Bumi">
+  <meta property="og:description" content="Baca DE PROFUNDIS dari buku Perjalanan ke Dalam Perut Bumi karya Jules Verne secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/de-profundis.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="DE PROFUNDIS — Perjalanan ke Dalam Perut Bumi">
+  <meta name="twitter:description" content="Baca DE PROFUNDIS dari Perjalanan ke Dalam Perut Bumi karya Jules Verne gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DE PROFUNDIS",
+    "name": "DE PROFUNDIS — Perjalanan ke Dalam Perut Bumi",
+    "author": {
+      "@type": "Person",
+      "name": "Jules Verne"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Perjalanan ke Dalam Perut Bumi",
+      "author": {
+        "@type": "Person",
+        "name": "Jules Verne"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/de-profundis.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Perjalanan ke Dalam Perut Bumi</a>
+    </div>
+    <h1 class="chapter-title">DE PROFUNDIS</h1>
+    <div class="chapter-info">
+      <span>✍️ Jules Verne</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p><a id="I_therefore_awoke_next_day_relie"></a>Oleh karena itu, keesokan harinya aku terbangun dengan lega karena tidak lagi merasa cemas akan harus segera berangkat. Meskipun kami berada di kedalaman terdalam yang diketahui, ada sesuatu yang tidak menyenangkan tentangnya. Dan, selain itu, kami mulai terbiasa dengan kehidupan troglodit [1] ini. Aku tidak lagi memikirkan matahari, bulan, dan bintang, pohon, rumah, dan kota, atau hal-hal duniawi yang berlebihan yang merupakan kebutuhan manusia yang hidup di permukaan bumi. Karena kami adalah fosil, kami menganggap semua hal itu sebagai lelucon belaka.</p><p><a id="The_grotto_was_an_immense_apartm"></a>Gua itu adalah ruangan yang sangat luas. Di sepanjang lantai granitnya mengalir aliran air yang setia. Pada jarak ini dari sumbernya, airnya hampir tidak hangat, dan kami meminumnya dengan senang hati.</p><p><a id="After_breakfast_the_Professor_ga"></a>Setelah sarapan, Profesor meluangkan beberapa jam untuk menyusun catatan hariannya.</p><p><a id="_First___said_he___I_will_make_a"></a>&quot;Pertama,&quot; katanya, &quot;saya akan melakukan perhitungan untuk memastikan posisi kita yang tepat. Saya berharap, setelah kita kembali, dapat menggambar peta perjalanan kita, yang sebenarnya akan berupa penampang vertikal bola dunia, yang berisi jalur ekspedisi kita.&quot;</p><p><a id="_That_will_be_curious__uncle__bu"></a>&quot;Itu akan menarik, paman; tetapi apakah pengamatanmu cukup akurat untuk memungkinkanmu melakukan ini dengan benar?&quot;</p><p><a id="_Yes__I_have_everywhere_observed"></a>&quot;Ya; saya telah mengamati sudut dan kemiringan di mana-mana. Saya yakin tidak ada kesalahan. Mari kita lihat di mana kita berada sekarang. Ambil kompas Anda, dan catat arahnya.&quot;</p><p><a id="I_looked__and_replied_carefully"></a>Saya melihat, lalu menjawab dengan hati-hati:</p><p><a id="_1__tpwgln__a_hole__dnw__to_cree"></a>[1] tpwgln, lubang; dnw, merayap masuk. Nama suku Ethiopia yang tinggal di gua dan lubang. ??????, lubang, dan ???, merayap masuk.</p><p><a id="_South_east_by_east"></a>&quot;Tenggara ke timur.&quot;</p><p><a id="_Well___answered_the_Professor"></a>&quot;Baiklah,&quot; jawab Profesor itu, setelah perhitungan cepat, &quot;saya menyimpulkan bahwa kita telah menempuh delapan puluh lima liga sejak kita mulai.&quot;</p><p><a id="_Therefore_we_are_under_mid_Atla"></a>&quot;Jadi, kita berada di bawah wilayah Atlantik tengah?&quot;</p><p><a id="_To_be_sure_we_are"></a>&quot;Tentu saja.&quot;</p><p><a id="_And_perhaps_at_this_very_moment"></a>&quot;Dan mungkin saat ini juga sedang terjadi badai di atas sana, dan kapal-kapal di atas kepala kita sedang terombang-ambing hebat oleh badai tersebut.&quot;</p><p><a id="_Quite_probable"></a>&quot;Sangat mungkin.&quot;</p><p><a id="_And_whales_are_lashing_the_roof"></a>&quot;Dan paus-paus itu mencambuk atap penjara kita dengan ekor mereka?&quot;</p><p><a id="_It_may_be__Axel__but_they_won_t"></a>&quot;Mungkin saja, Axel, tapi mereka tidak akan menggoyahkan kita di sini. Tapi mari kita kembali ke perhitungan kita. Kita berada delapan puluh lima liga di sebelah tenggara Snæfell, dan saya perkirakan kita berada di kedalaman enam belas liga.&quot;</p><p><a id="_Sixteen_leagues___I_cried"></a>&quot;Enam belas liga?&quot; seruku.</p><p><a id="_No_doubt"></a>&quot;Tidak diragukan lagi.&quot;</p><p><a id="_Why__this_is_the_very_limit_ass"></a>&quot;Ya, ini adalah batas yang ditetapkan oleh ilmu pengetahuan untuk ketebalan kerak bumi.&quot;</p><p><a id="_I_don_t_deny_it"></a>&quot;Aku tidak menyangkalnya.&quot;</p><p><a id="_And_here__according_to_the_law"></a>&quot;Dan di sini, menurut hukum peningkatan suhu, seharusnya ada panas sebesar 2.732° Fahrenheit!&quot;</p><p><a id="_So_there_should__my_lad"></a>&quot;Memang seharusnya begitu, nak.&quot;</p><p><a id="_And_all_this_solid_granite_ough"></a>&quot;Dan semua granit padat ini seharusnya meleleh.&quot;</p><p><a id="_You_see_that_it_is_not_so__and"></a>&quot;Anda lihat bahwa kenyataannya tidak demikian, dan seperti yang sering terjadi, fakta-fakta membuktikan teori salah.&quot;</p><p><a id="_I_am_obliged_to_agree__but__aft"></a>&quot;Saya terpaksa setuju; tetapi, bagaimanapun juga, ini mengejutkan.&quot;</p><p><a id="_What_does_the_thermometer_say"></a>&quot;Apa yang ditunjukkan termometer?&quot;</p><p><a id="_Twenty_seven__six_tenths__82deg"></a>&quot;Dua puluh tujuh, enam persepuluh (82° Fahr.).&quot;</p><p><a id="_Therefore_the_savants_are_wrong"></a>&quot;Oleh karena itu, para cendekiawan salah sebesar 2.705°, dan peningkatan proporsional adalah sebuah kesalahan. Oleh karena itu, Humphry Davy benar, dan saya tidak salah mengikutinya. Bagaimana pendapat Anda sekarang?&quot;</p><p><a id="_Nothing"></a>&quot;Tidak ada apa-apa.&quot;</p><p><a id="In_truth__I_had_a_good_deal_to_s"></a>Sejujurnya, saya punya banyak hal untuk dikatakan. Saya sama sekali tidak menyerah pada teori Davy. Saya tetap berpegang pada panas sentral, meskipun saya tidak merasakan efeknya. Saya lebih memilih untuk mengakui dengan jujur, bahwa cerobong asap gunung berapi yang sudah tidak aktif ini, yang dilapisi lava, yang merupakan penghantar panas yang buruk, tidak memungkinkan panas untuk menembus dindingnya.</p><p><a id="But_without_stopping_to_look_up"></a>Namun tanpa berhenti mencari argumen baru, saya hanya menerima situasi kami apa adanya.</p><p><a id="_Well__admitting_all_your_calcul"></a>&quot;Baiklah, dengan mengakui bahwa semua perhitungan Anda cukup tepat, Anda harus mengizinkan saya untuk menarik satu kesimpulan yang pasti darinya.&quot;</p><p><a id="_What_is_it__Speak_freely"></a>&quot;Ada apa? Bicaralah dengan bebas.&quot;</p><p><a id="_At_the_latitude_of_Iceland__whe"></a>&quot;Pada garis lintang Islandia, tempat kita berada sekarang, jari-jari bumi, jarak dari pusat ke permukaan adalah sekitar 1.583 liga; katakanlah dalam angka bulat 1.600 liga, atau 4.800 mil. Dari 1.600 liga, kita telah menempuh dua belas mil!&quot;</p><p><a id="_So_you_say"></a>&quot;Begitu katamu.&quot;</p><p><a id="_And_these_twelve_at_a_cost_of_8"></a>&quot;Dan kedua belas ini dengan biaya 85 liga secara diagonal?&quot;</p><p><a id="_Exactly_so"></a>&quot;Tepat sekali.&quot;</p><p><a id="_In_twenty_days"></a>&quot;Dalam dua puluh hari?&quot;</p><p><a id="_Yes"></a>&quot;Ya.&quot;</p><p><a id="_Now__sixteen_leagues_are_the_hu"></a>&quot;Sekarang, enam belas liga adalah seperseratus bagian dari jari-jari bumi. Dengan kecepatan ini, kita akan membutuhkan dua ribu hari, atau hampir lima setengah tahun, untuk sampai ke pusat bumi.&quot;</p><p><a id="No_answer_was_vouchsafed_to_this"></a>Tidak ada jawaban yang diberikan untuk kesimpulan rasional ini. &quot;Tanpa memperhitungkan juga bahwa jika kedalaman vertikal enam belas liga hanya dapat dicapai dengan penurunan diagonal delapan puluh empat liga, maka kita harus menempuh delapan ribu mil ke arah tenggara; sehingga kita akan muncul dari suatu titik di keliling bumi alih-alih sampai ke pusatnya!&quot;</p><p><a id="_Confusion_to_all_your_figures"></a>&quot;Semua angka dan hipotesismu itu membingungkan,&quot; teriak pamanku dengan tiba-tiba marah. &quot;Apa dasar dari semua itu? Bagaimana kau tahu bahwa bagian ini tidak langsung menuju ke tujuan kita? Lagipula, ada presedennya. Apa yang dilakukan seseorang, mungkin akan dilakukan orang lain.&quot;</p><p><a id="_I_hope_so__but__still__I_may_be"></a>&quot;Saya harap begitu; tetapi, mungkin saya tetap diizinkan—&quot;</p><p><a id="_You_shall_have_my_leave_to_hold"></a>&quot;Kau boleh diam, Axel, tapi jangan bicara dengan cara yang tidak rasional seperti itu.&quot;</p><p><a id="I_could_see_the_awful_Professor"></a>Aku bisa melihat Profesor yang mengerikan itu muncul dari balik kulit pamanku, dan <br />aku menerima peringatan itu tepat waktu.<br /> </p><p><a id="_Now_look_at_your_aneroid__What"></a>&quot;Sekarang lihat aneroid Anda. Apa yang tertulis di situ?&quot;</p><p><a id="_It_says_we_are_under_considerab"></a>&quot;Ini menunjukkan bahwa kita berada di bawah tekanan yang cukup besar.&quot;</p><p><a id="_Very_good__so_you_see_that_by_g"></a>&quot;Bagus sekali; jadi Anda lihat bahwa dengan turun secara bertahap, dan membiasakan diri dengan kepadatan atmosfer, kita tidak akan menderita sama sekali.&quot;</p><p><a id="_Nothing__except_a_little_pain_i"></a>&quot;Tidak ada apa-apa, kecuali sedikit sakit di telinga.&quot;</p><p><a id="_That_s_nothing__and_you_may_get"></a>&quot;Itu bukan apa-apa, dan Anda bahkan bisa menghilangkan rasa sakit itu dengan bernapas cepat setiap kali merasakan sakit.&quot;</p><p><a id="_Exactly_so___I_said__determined"></a>&quot;Tepat sekali,&quot; kataku, bertekad untuk tidak mengucapkan sepatah kata pun yang mungkin menyinggung prasangka pamanku. &quot;Bahkan ada kenikmatan tersendiri dalam hidup di atmosfer yang padat ini. Pernahkah kau perhatikan betapa intensnya suara di sini?&quot;</p><p><a id="_No_doubt_it_is__A_deaf_man_woul"></a>&quot;Tidak diragukan lagi. Seorang pria tuli akan segera belajar mendengar dengan sempurna.&quot;</p><p><a id="_But_won_t_this_density_augment"></a>&quot;Tapi bukankah kepadatan ini akan meningkat?&quot;</p><p><a id="_Yes__according_to_a_rather_obsc"></a>&quot;Ya; menurut hukum yang agak samar. Sudah diketahui bahwa berat benda berkurang secepat kita turun. Anda tahu bahwa di permukaan bumi berat paling terasa, dan di pusatnya tidak ada berat sama sekali.&quot;</p><p><a id="_I_am_aware_of_that__but__tell_m"></a>&quot;Saya menyadari hal itu; tetapi, katakanlah, bukankah udara pada akhirnya akan memiliki kepadatan seperti air?&quot;</p><p><a id="_Of_course__under_a_pressure_of"></a>&quot;Tentu saja, di bawah tekanan tujuh ratus sepuluh atmosfer.&quot;</p><p><a id="_And_how__lower_down_still"></a>&quot;Lalu bagaimana, lebih rendah lagi?&quot;</p><p><a id="_Lower_down_the_density_will_sti"></a>&quot;Di bagian bawah, kepadatan akan tetap meningkat.&quot;</p><p><a id="_But_how_shall_we_go_down_then"></a>&quot;Tapi bagaimana kita akan turun?&quot;</p><p><a id="_Why__we_must_fill_our_pockets_w"></a>&quot;Kalau begitu, kita harus mengisi kantong kita dengan batu.&quot;</p><p><a id="_Well__indeed__my_worthy_uncle"></a>&quot;Memang benar, pamanku yang terhormat, Anda tidak pernah kehabisan jawaban.&quot;</p><p><a id="I_dared_venture_no_farther_into"></a>Aku tak berani melangkah lebih jauh ke wilayah kemungkinan, karena aku bisa saja tiba-tiba menemukan sesuatu yang mustahil, yang akan membuat Profesor muncul di tempat kejadian saat kehadirannya tidak dibutuhkan.</p><p><a id="Still__it_was_evident_that_the_a"></a>Namun, jelas bahwa udara, di bawah tekanan yang mungkin mencapai ribuan atmosfer, pada akhirnya akan mencapai keadaan padat, dan kemudian, bahkan jika tubuh kita dapat menahan tekanan tersebut, kita akan terhenti, dan tidak ada penalaran yang dapat membawa kita lebih jauh.</p><p><a id="But_I_did_not_advance_this_argum"></a>Namun saya tidak mengemukakan argumen ini. Paman saya pasti akan menanggapinya dengan Saknussemm yang tak terelakkan, sebuah preseden yang tidak berpengaruh bagi saya; karena bahkan jika perjalanan orang Islandia yang terpelajar itu benar-benar terbukti, ada satu jawaban yang sangat sederhana, yaitu pada abad keenam belas belum ada barometer atau aneroid dan oleh karena itu Saknussemm tidak dapat mengetahui seberapa jauh ia telah pergi.</p><p><a id="But_I_kept_this_objection_to_mys"></a>Namun saya menyimpan keberatan ini untuk diri sendiri, dan menunggu perkembangan situasi.</p><p><a id="The_rest_of_the_day_was_passed_i"></a>Sisa hari itu dihabiskan untuk perhitungan dan percakapan. Saya tetap teguh pada pendapat Profesor Liedenbrock, dan saya iri pada sikap acuh tak acuh Hans, yang, tanpa membahas sebab dan akibat, terus berjalan dengan mata tertutup ke mana pun takdir membimbingnya.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bagus-sekali-tikus-tanah-tua-apakah-kau-bisa-bekerja-di-tanah-secepat-itu.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bagus Sekali, Tikus Tanah Tua! Apakah Kau Bisa Bekerja Di Tanah Secepat Itu?</span>
+    </a>
+    <a href="bahaya-terburuk-dari-semuanya.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bahaya Terburuk Dari Semuanya</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,152 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>DE PROFUNDIS</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Oleh karena itu, keesokan harinya aku terbangun dengan lega karena tidak lagi merasa cemas akan harus segera berangkat. Meskipun kami berada di kedalaman terdalam yang diketahui, ada sesuatu yang tidak menyenangkan tentangnya. Dan, selain itu, kami mulai terbiasa dengan kehidupan troglodit [1] ini. Aku tidak lagi memikirkan matahari, bulan, dan bintang, pohon, rumah, dan kota, atau hal-hal duniawi yang berlebihan yang merupakan kebutuhan manusia yang hidup di permukaan bumi. Karena kami adalah fosil, kami menganggap semua hal itu sebagai lelucon belaka. Gua itu adalah ruangan yang sangat luas. Di sepanjang lantai granitnya mengalir aliran air yang setia. Pada jarak ini dari sumbernya, airnya hampir tidak hangat, dan kami meminumnya dengan senang hati. Setelah sarapan, Profesor meluangkan beberapa jam untuk menyusun catatan hariannya. "Pertama," katanya, "saya akan melakukan perhitungan untuk memastikan posisi kita yang tepat. Saya berharap, setelah kita kembali, dapat menggambar peta perjalanan kita, yang sebenarnya akan berupa penampang vertikal bola dunia, yang berisi jalur ekspedisi kita." "Itu akan menarik, paman; tetapi apakah pengamatanmu cukup akurat untuk memungkinkanmu melakukan ini dengan benar?" "Ya; saya telah mengamati sudut dan kemiringan di mana-mana. Saya yakin tidak ada kesalahan. Mari kita lihat di mana kita berada sekarang. Ambil kompas Anda, dan catat arahnya." Saya melihat, lalu menjawab dengan hati-hati: [1] tpwgln, lubang; dnw, merayap masuk. Nama suku Ethiopia yang tinggal di gua dan lubang. ??????, lubang, dan ???, merayap masuk. "Tenggara ke timur." "Baiklah," jawab Profesor itu, setelah perhitungan cepat, "saya menyimpulkan bahwa kita telah menempuh delapan puluh lima liga sejak kita mulai." "Jadi, kita berada di bawah wilayah Atlantik tengah?" "Tentu saja." "Dan mungkin saat ini juga sedang terjadi badai di atas sana, dan kapal-kapal di atas kepala kita sedang terombang-ambing hebat oleh badai tersebut." "Sangat mungkin." "Dan paus-paus itu mencambuk atap penjara kita dengan ekor mereka?" "Mungkin saja, Axel, tapi mereka tidak akan menggoyahkan kita di sini. Tapi mari kita kembali ke perhitungan kita. Kita berada delapan puluh lima liga di sebelah tenggara Snæfell, dan saya perkirakan kita berada di kedalaman enam belas liga." "Enam belas liga?" seruku. "Tidak diragukan lagi." "Ya, ini adalah batas yang ditetapkan oleh ilmu pengetahuan untuk ketebalan kerak bumi." "Aku tidak menyangkalnya." "Dan di sini, menurut hukum peningkatan suhu, seharusnya ada panas sebesar 2.732° Fahrenheit!" "Memang seharusnya begitu, nak." "Dan semua granit padat ini seharusnya meleleh." "Anda lihat bahwa kenyataannya tidak demikian, dan seperti yang sering terjadi, fakta-fakta membuktikan teori salah." "Saya terpaksa setuju; tetapi, bagaimanapun juga, ini mengejutkan." "Apa yang ditunjukkan termometer?" "Dua puluh tujuh, enam persepuluh (82° Fahr.)." "Oleh karena itu, para cendekiawan salah sebesar 2.705°, dan peningkatan proporsional adalah sebuah kesalahan. Oleh karena itu, Humphry Davy benar, dan saya tidak salah mengikutinya. Bagaimana pendapat Anda sekarang?" "Tidak ada apa-apa." Sejujurnya, saya punya banyak hal untuk dikatakan. Saya sama sekali tidak menyerah pada teori Davy. Saya tetap berpegang pada panas sentral, meskipun saya tidak merasakan efeknya. Saya lebih memilih untuk mengakui dengan jujur, bahwa cerobong asap gunung berapi yang sudah tidak aktif ini, yang dilapisi lava, yang merupakan penghantar panas yang buruk, tidak memungkinkan panas untuk menembus dindingnya. Namun tanpa berhenti mencari argumen baru, saya hanya menerima situasi kami apa adanya. "Baiklah, dengan mengakui bahwa semua perhitungan Anda cukup tepat, Anda harus mengizinkan saya untuk menarik satu kesimpulan yang pasti darinya." "Ada apa? Bicaralah dengan bebas." "Pada garis lintang Islandia, tempat kita berada sekarang, jari-jari bumi, jarak dari pusat ke permukaan adalah sekitar 1.583 liga; katakanlah dalam angka bulat 1.600 liga, atau 4.800 mil. Dari 1.600 liga, kita telah menempuh dua belas mil!" "Begitu katamu." "Dan kedua belas ini dengan biaya 85 liga secara diagonal?" "Tepat sekali." "Dalam dua puluh hari?" "Ya." "Sekarang, enam belas liga adalah seperseratus bagian dari jari-jari bumi. Dengan kecepatan ini, kita akan membutuhkan dua ribu hari, atau hampir lima setengah tahun, untuk sampai ke pusat bumi." Tidak ada jawaban yang diberikan untuk kesimpulan rasional ini. "Tanpa memperhitungkan juga bahwa jika kedalaman vertikal enam belas liga hanya dapat dicapai dengan penurunan diagonal delapan puluh empat liga, maka kita harus menempuh delapan ribu mil ke arah tenggara; sehingga kita akan muncul dari suatu titik di keliling bumi alih-alih sampai ke pusatnya!" "Semua angka dan hipotesismu itu membingungkan," teriak pamanku dengan tiba-tiba marah. "Apa dasar dari semua itu? Bagaimana kau tahu bahwa bagian ini tidak langsung menuju ke tujuan kita? Lagipula, ada presedennya. Apa yang dilakukan seseorang, mungkin akan dilakukan orang lain." "Saya harap begitu; tetapi, mungkin saya tetap diizinkan—" "Kau boleh diam, Axel, tapi jangan bicara dengan cara yang tidak rasional seperti itu." Aku bisa melihat Profesor yang mengerikan itu muncul dari balik kulit pamanku, dan aku menerima peringatan itu tepat waktu.</p>
-<p>"Sekarang lihat aneroid Anda. Apa yang tertulis di situ?" "Ini menunjukkan bahwa kita berada di bawah tekanan yang cukup besar." "Bagus sekali; jadi Anda lihat bahwa dengan turun secara bertahap, dan membiasakan diri dengan kepadatan atmosfer, kita tidak akan menderita sama sekali." "Tidak ada apa-apa, kecuali sedikit sakit di telinga." "Itu bukan apa-apa, dan Anda bahkan bisa menghilangkan rasa sakit itu dengan bernapas cepat setiap kali merasakan sakit." "Tepat sekali," kataku, bertekad untuk tidak mengucapkan sepatah kata pun yang mungkin menyinggung prasangka pamanku. "Bahkan ada kenikmatan tersendiri dalam hidup di atmosfer yang padat ini. Pernahkah kau perhatikan betapa intensnya suara di sini?" "Tidak diragukan lagi. Seorang pria tuli akan segera belajar mendengar dengan sempurna." "Tapi bukankah kepadatan ini akan meningkat?" "Ya; menurut hukum yang agak samar. Sudah diketahui bahwa berat benda berkurang secepat kita turun. Anda tahu bahwa di permukaan bumi berat paling terasa, dan di pusatnya tidak ada berat sama sekali." "Saya menyadari hal itu; tetapi, katakanlah, bukankah udara pada akhirnya akan memiliki kepadatan seperti air?" "Tentu saja, di bawah tekanan tujuh ratus sepuluh atmosfer." "Lalu bagaimana, lebih rendah lagi?" "Di bagian bawah, kepadatan akan tetap meningkat." "Tapi bagaimana kita akan turun?" "Kalau begitu, kita harus mengisi kantong kita dengan batu." "Memang benar, pamanku yang terhormat, Anda tidak pernah kehabisan jawaban." Aku tak berani melangkah lebih jauh ke wilayah kemungkinan, karena aku bisa saja tiba-tiba menemukan sesuatu yang mustahil, yang akan membuat Profesor muncul di tempat kejadian saat kehadirannya tidak dibutuhkan. Namun, jelas bahwa udara, di bawah tekanan yang mungkin mencapai ribuan atmosfer, pada akhirnya akan mencapai keadaan padat, dan kemudian, bahkan jika tubuh kita dapat menahan tekanan tersebut, kita akan terhenti, dan tidak ada penalaran yang dapat membawa kita lebih jauh. Namun saya tidak mengemukakan argumen ini. Paman saya pasti akan menanggapinya dengan Saknussemm yang tak terelakkan, sebuah preseden yang tidak berpengaruh bagi saya; karena bahkan jika perjalanan orang Islandia yang terpelajar itu benar-benar terbukti, ada satu jawaban yang sangat sederhana, yaitu pada abad keenam belas belum ada barometer atau aneroid dan oleh karena itu Saknussemm tidak dapat mengetahui seberapa jauh ia telah pergi. Namun saya menyimpan keberatan ini untuk diri sendiri, dan menunggu perkembangan situasi. Sisa hari itu dihabiskan untuk perhitungan dan percakapan. Saya tetap teguh pada pendapat Profesor Liedenbrock, dan saya iri pada sikap acuh tak acuh Hans, yang, tanpa membahas sebab dan akibat, terus berjalan dengan mata tertutup ke mana pun takdir membimbingnya.</p>
-
-<div class="nav">
-  <a href="bagus-sekali-tikus-tanah-tua-apakah-kau-bisa-bekerja-di-tanah-secepat-itu.html">⬅ Bagus Sekali, Tikus Tanah Tua! Apakah Kau Bisa Bekerja Di Tanah Secepat Itu?</a>
-  <a href="bahaya-terburuk-dari-semuanya.html">Bahaya Terburuk Dari Semuanya ➡</a>
-</div>
 
 </body>
 </html>

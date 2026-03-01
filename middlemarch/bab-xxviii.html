@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XXVIII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XXVIII. - Bacaan digital klasik">
+<title>Bab XXVIII — Middlemarch</title>
+<meta name="description" content="Baca Bab XXVIII dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-xxviii.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab XXVIII — Middlemarch">
+  <meta property="og:description" content="Baca Bab XXVIII dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-xxviii.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab XXVIII — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab XXVIII dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab XXVIII",
+    "name": "Bab XXVIII — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-xxviii.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab XXVIII</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>1. Pria Pertama . Segala waktu adalah waktu yang baik untuk mencari rumah pernikahanmu, <br />membawa kebahagiaan bersama. 2. Pria Kedua . Benar sekali. <br />Kalender tidak memiliki hari yang buruk, karena jiwa-jiwa yang dipersatukan oleh cinta, dan bahkan kematian, akan menjadi manis, jika datang seperti gelombang yang bergulir sementara mereka berdua saling berpelukan, dan meramalkan tidak akan ada kehidupan terpisah.</p><p>Tuan dan Nyonya Casaubon, yang kembali dari perjalanan bulan madu mereka, tiba di Lowick Manor pada pertengahan Januari. Salju tipis turun saat mereka turun di pintu, dan di pagi hari, ketika Dorothea melewati ruang ganti ke kamar tidur berwarna biru kehijauan yang kita kenal, ia melihat deretan panjang pohon jeruk nipis mengangkat batangnya dari tanah putih, dan menyebar cabang-cabang putihnya di langit yang kelabu dan tak bergerak. Dataran di kejauhan menyusut dalam keseragaman putih dan keseragaman awan yang menggantung rendah. Bahkan perabotan di ruangan itu tampak menyusut sejak ia melihatnya sebelumnya: rusa di permadani tampak lebih seperti hantu di dunia biru kehijauannya yang seperti hantu; buku-buku sastra sopan di rak buku tampak lebih seperti tiruan buku yang tak bergerak. Api terang dari ranting pohon ek kering yang terbakar di atas kayu tampak seperti pembaharuan kehidupan dan cahaya yang tidak sesuai—seperti sosok Dorothea sendiri saat ia masuk sambil membawa kotak kulit merah berisi cameo untuk Celia.</p><p>Ia tampak berseri-seri setelah berdandan pagi itu, seperti hanya kaum muda yang sehat yang bisa bersinar: ada kilauan seperti permata pada rambutnya yang digulung dan di mata cokelatnya; ada kehidupan merah hangat di bibirnya; tenggorokannya tampak putih bersih di atas warna putih bulu yang berbeda, yang seolah melilit lehernya dan menempel di mantel abu-birunya dengan kelembutan yang berasal dari dirinya sendiri, sebuah kepolosan yang bercampur dan penuh perasaan yang mempertahankan keindahannya di tengah kemurnian kristal salju di luar. Saat ia meletakkan kotak-kotak cameo di atas meja di jendela lengkung, tanpa sadar ia tetap meletakkan tangannya di atasnya, langsung asyik memandang ke luar, ke arah ruangan putih yang tenang yang menjadi dunianya yang terlihat.</p><p>Tuan Casaubon, yang bangun pagi-pagi karena mengeluh jantung berdebar, berada di perpustakaan sedang mendengarkan ceramah pendetanya, Tuan Tucker. Sebentar lagi Celia akan datang sebagai pengiring pengantin sekaligus saudara perempuan, dan selama beberapa minggu berikutnya akan ada kunjungan pernikahan yang diterima dan diberikan; semua itu sebagai kelanjutan dari kehidupan transisi yang dipahami sesuai dengan kegembiraan kebahagiaan pengantin, dan mempertahankan perasaan kesibukan yang tidak efektif, seperti mimpi yang mulai dicurigai oleh si pemimpi. Tugas-tugas kehidupan pernikahannya, yang sebelumnya dianggap begitu besar, tampaknya menyusut bersama perabotan dan pemandangan berdinding uap putih. Ketinggian yang jernih tempat dia berharap untuk berjalan dalam persekutuan penuh telah menjadi sulit untuk dilihat bahkan dalam imajinasinya; ketenangan jiwa yang nikmat pada sesuatu yang sepenuhnya lebih unggul telah terguncang menjadi upaya yang gelisah dan dikhawatirkan dengan firasat yang samar. Kapan hari-hari pengabdian istri yang aktif yang akan memperkuat kehidupan suaminya dan mengangkat hidupnya sendiri akan dimulai? Mungkin tidak pernah, seperti yang telah dia bayangkan sebelumnya; Namun entah bagaimana—tetap saja entah bagaimana. Dalam ikatan hidup yang diikrarkan dengan sungguh-sungguh ini, kewajiban akan hadir dalam bentuk inspirasi baru dan memberikan makna baru pada cinta seorang istri.</p><p>Sementara itu, ada salju dan lengkungan rendah uap kelabu—ada penindasan yang menyesakkan dari dunia wanita bangsawan itu, di mana segala sesuatu dilakukan untuknya dan tidak ada yang meminta bantuannya—di mana rasa keterkaitan dengan eksistensi yang beraneka ragam dan penuh makna harus dipertahankan dengan susah payah sebagai visi batin, alih-alih datang dari luar dalam tuntutan yang akan membentuk energinya.— “Apa yang harus kulakukan?” “Apa pun yang kau inginkan, sayangku:” itulah sejarah singkatnya sejak ia berhenti belajar pelajaran pagi dan berlatih ritme konyol di piano yang dibencinya. Pernikahan, yang seharusnya membawa bimbingan ke dalam pekerjaan yang layak dan penting, belum membebaskannya dari kebebasan yang menindas sebagai wanita bangsawan: bahkan belum mengisi waktu luangnya dengan kegembiraan merenung dari kelembutan yang tak terkendali. Masa mudanya yang mekar dan penuh semangat berdiri di sana dalam penjara moral yang menyatu dengan lanskap yang dingin, tanpa warna, dan sempit, dengan perabotan yang menyusut, buku-buku yang tak pernah dibaca, dan rusa hantu di dunia fantastis pucat yang tampaknya menghilang dari siang hari.</p><p>Pada menit-menit pertama ketika Dorothea melihat keluar, ia tidak merasakan apa pun selain penindasan yang suram; kemudian muncul ingatan yang tajam, dan berpaling dari jendela, ia berjalan mengelilingi ruangan. Gagasan dan harapan yang hidup dalam benaknya ketika ia pertama kali melihat ruangan ini hampir tiga bulan sebelumnya kini hanya hadir sebagai kenangan: ia menilainya seperti kita menilai hal-hal yang fana dan telah berlalu. Seluruh kehidupan tampak berdenyut dengan denyut yang lebih rendah daripada denyut nadinya sendiri, dan iman religiusnya adalah jeritan yang sunyi, perjuangan keluar dari mimpi buruk di mana setiap objek layu dan menjauh darinya. Setiap hal yang diingat di ruangan itu kehilangan daya magisnya, mati rasa seperti transparansi yang tidak bercahaya, hingga pandangannya yang berkelana tertuju pada kelompok miniatur, dan di sana akhirnya ia melihat sesuatu yang telah mendapatkan nafas dan makna baru: itu adalah miniatur bibi Tuan Casaubon, Julia, yang telah melakukan pernikahan yang tidak beruntung—dengan nenek Will Ladislaw. Dorothea dapat membayangkan bahwa miniatur itu kini hidup—wajah wanita yang lembut namun memiliki tatapan keras kepala, sebuah kekhasan yang sulit ditafsirkan. Apakah hanya teman-temannya yang menganggap pernikahannya tidak beruntung? Atau apakah dia sendiri menyadari bahwa itu adalah sebuah kesalahan, dan merasakan kepahitan air matanya dalam keheningan malam yang menenangkan? Betapa luasnya pengalaman yang tampaknya telah dilalui Dorothea sejak pertama kali melihat miniatur ini! Dia merasakan persahabatan baru dengannya, seolah-olah miniatur itu mendengarkannya dan dapat melihat bagaimana dia memandangnya. Di sini ada seorang wanita yang mengalami beberapa kesulitan dalam pernikahan. Bahkan, warnanya semakin pekat, bibir dan dagunya tampak lebih besar, rambut dan matanya tampak memancarkan cahaya, wajahnya maskulin dan bersinar padanya dengan tatapan penuh yang memberi tahu siapa pun yang dilihatnya bahwa dia terlalu menarik untuk gerakan kelopak mata sekecil apa pun yang tidak diperhatikan dan tidak ditafsirkan. Gambaran yang jelas itu datang seperti cahaya yang menyenangkan bagi Dorothea: dia merasa dirinya tersenyum, dan berpaling dari miniatur itu, duduk dan mendongak seolah-olah dia kembali berbicara dengan sosok di depannya. Tetapi senyum itu menghilang saat dia terus merenung, dan akhirnya dia berkata dengan lantang—</p><p>“Oh, sungguh kejam berbicara seperti itu! Betapa menyedihkannya—betapa mengerikannya!”</p><p>Ia segera bangkit dan keluar dari ruangan, bergegas menyusuri koridor, dengan dorongan yang tak tertahankan untuk menemui suaminya dan menanyakan apakah ia bisa melakukan sesuatu untuknya. Mungkin Tuan Tucker sudah pergi dan Tuan Casaubon sendirian di perpustakaan. Ia merasa seolah-olah semua kesedihan paginya akan lenyap jika ia bisa melihat suaminya bahagia karena kehadirannya.</p><p>Namun ketika ia sampai di puncak pohon ek gelap itu, Celia sudah datang, dan di bawahnya ada Tuan Brooke, yang sedang bertukar sapa dan ucapan selamat dengan Tuan Casaubon.</p><p>“Dodo!” kata Celia dengan suara pelan dan terputus-putus; lalu mencium adiknya yang melingkarkan lengannya di tubuhnya, dan tak berkata apa-apa lagi. Kurasa mereka berdua sedikit menangis diam-diam, sementara Dorothea berlari menuruni tangga untuk menyambut pamannya.</p><p>“Aku tak perlu bertanya bagaimana kabarmu, sayangku,” kata Tuan Brooke, setelah mencium keningnya. “Roma tampaknya cocok untukmu—kebahagiaan, lukisan dinding, barang antik—hal-hal semacam itu. Senang sekali kau kembali lagi, dan sekarang kau mengerti semua tentang seni, ya? Tapi Casaubon agak pucat, kukatakan padanya—agak pucat, kau tahu. Belajar keras selama liburannya agak berlebihan. Dulu aku juga pernah berlebihan”—Tuan Brooke masih memegang tangan Dorothea, tetapi telah memalingkan wajahnya ke Tuan Casaubon—“tentang topografi, reruntuhan, kuil—kukira aku punya petunjuk, tetapi aku menyadari itu akan membawaku terlalu jauh, dan mungkin tidak akan menghasilkan apa-apa. Kau bisa melakukan apa saja dalam hal semacam itu, dan mungkin tidak akan menghasilkan apa-apa, kau tahu.”</p><p>Mata Dorothea juga tertuju pada wajah suaminya dengan sedikit kecemasan, membayangkan bahwa orang-orang yang melihatnya kembali setelah lama absen mungkin menyadari tanda-tanda yang tidak ia perhatikan.</p><p>“Jangan khawatir, sayangku,” kata Tuan Brooke, mengamati ekspresinya. “Sedikit daging sapi dan domba Inggris akan segera membuat perbedaan. Tidak apa-apa terlihat pucat saat berpose untuk potret Aquinas, kau tahu—kami menerima suratmu tepat waktu. Tapi Aquinas, nah—dia agak terlalu halus, bukan? Apakah ada yang membaca Aquinas?”</p><p>“Dia memang bukan penulis yang cocok untuk pikiran dangkal,” kata Bapak Casaubon, menanggapi pertanyaan-pertanyaan tepat waktu ini dengan kesabaran yang bermartabat.</p><p>“Paman, mau kopi di kamar sendiri?” kata Dorothea, datang menyelamatkan keadaan.</p><p>“Ya; dan kau harus pergi menemui Celia: dia punya kabar penting untuk memberitahumu, kau tahu. Aku serahkan semuanya padanya.”</p><p>Kamar tidur berwarna biru kehijauan itu tampak jauh lebih ceria ketika Celia duduk di sana mengenakan pelisse yang persis sama dengan milik kakaknya, mengamati cameo-cameo dengan kepuasan yang tenang, sementara percakapan beralih ke topik lain.</p><p>“Menurutmu, apakah menyenangkan pergi ke Roma untuk bulan madu?” tanya Celia, dengan pipinya yang merona lembut, seperti yang biasa terjadi pada Dorothea bahkan dalam kesempatan terkecil sekalipun.</p><p>“Itu tidak akan cocok untuk semua orang—bukan untukmu, sayang, misalnya,” kata Dorothea pelan. Tak seorang pun akan tahu apa yang dipikirkannya tentang perjalanan bulan madu ke Roma.</p><p>“Nyonya Cadwallader mengatakan itu omong kosong, orang-orang melakukan perjalanan jauh ketika mereka sudah menikah. Dia bilang mereka akan sangat lelah satu sama lain, dan tidak bisa bertengkar dengan nyaman, seperti yang mereka lakukan di rumah. Dan Lady Chettam mengatakan dia pergi ke Bath.” Warna wajah Celia berubah lagi dan lagi—sepertinya</p><p>“Untuk datang dan pergi membawa kabar dari hati, <br />seolah-olah ia adalah seorang utusan yang berlari.”</p><p>Ini pasti memiliki makna yang lebih dalam daripada sekadar rona merah di pipi Celia biasanya.</p><p>“Celia! Apa yang terjadi?” tanya Dorothea dengan nada penuh kasih sayang sebagai seorang kakak. “Apakah kau benar-benar punya kabar baik untuk diceritakan padaku?”</p><p>“Itu karena kau pergi, Dodo. Lalu tidak ada orang lain selain aku yang bisa diajak bicara oleh Sir James,” kata Celia, dengan sedikit kenakalan di matanya.</p><p>“Aku mengerti. Ini seperti yang dulu kuharapkan dan kupercayai,” kata Dorothea, sambil memegang wajah adiknya dengan kedua tangannya, dan menatapnya dengan sedikit cemas. Pernikahan Celia tampak lebih serius daripada sebelumnya.</p><p>“Itu baru tiga hari yang lalu,” kata Celia. “Dan Lady Chettam sangat baik.”</p><p>“Dan Anda sangat bahagia?”</p><p>“Ya. Kami belum akan menikah. Karena semuanya masih perlu dipersiapkan. Dan aku tidak ingin menikah secepat ini, karena menurutku bertunangan itu menyenangkan. Dan kami akan menikah seumur hidup setelah ini.”</p><p>“Aku yakin kau tidak mungkin menikah dengan orang yang lebih baik, Kitty. Sir James adalah pria yang baik dan terhormat,” kata Dorothea dengan hangat.</p><p>“Dia sudah melanjutkan pembangunan pondok-pondok itu, Dodo. Dia akan menceritakannya padamu saat dia datang. Apakah kamu akan senang bertemu dengannya?”</p><p>“Tentu saja aku mau. Bagaimana bisa kau memintaku?”</p><p>“Hanya saja aku khawatir kau akan menjadi begitu berpengetahuan,” kata Celia, menganggap pengetahuan Tuan Casaubon sebagai semacam kelembapan yang suatu saat nanti dapat meresap ke tubuh di sekitarnya.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-xxvii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Xxvii</span>
+    </a>
+    <a href="bab-xxix.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xxix</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XXVIII.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>1. Pria Pertama . Segala waktu adalah waktu yang baik untuk mencari rumah pernikahanmu, membawa kebahagiaan bersama. 2. Pria Kedua . Benar sekali. Kalender tidak memiliki hari yang buruk, karena jiwa-jiwa yang dipersatukan oleh cinta, dan bahkan kematian, akan menjadi manis, jika datang seperti gelombang yang bergulir sementara mereka berdua saling berpelukan, dan meramalkan tidak akan ada kehidupan terpisah. Tuan dan Nyonya Casaubon, yang kembali dari perjalanan bulan madu mereka, tiba di Lowick Manor pada pertengahan Januari. Salju tipis turun saat mereka turun di pintu, dan di pagi hari, ketika Dorothea melewati ruang ganti ke kamar tidur berwarna biru kehijauan yang kita kenal, ia melihat deretan panjang pohon jeruk nipis mengangkat batangnya dari tanah putih, dan menyebar cabang-cabang putihnya di langit yang kelabu dan tak bergerak. Dataran di kejauhan menyusut dalam keseragaman putih dan keseragaman awan yang menggantung rendah. Bahkan perabotan di ruangan itu tampak menyusut sejak ia melihatnya sebelumnya: rusa di permadani tampak lebih seperti hantu di dunia biru kehijauannya yang seperti hantu; buku-buku sastra sopan di rak buku tampak lebih seperti tiruan buku yang tak bergerak. Api terang dari ranting pohon ek kering yang terbakar di atas kayu tampak seperti pembaharuan kehidupan dan cahaya yang tidak sesuai—seperti sosok Dorothea sendiri saat ia masuk sambil membawa kotak kulit merah berisi cameo untuk Celia. Ia tampak berseri-seri setelah berdandan pagi itu, seperti hanya kaum muda yang sehat yang bisa bersinar: ada kilauan seperti permata pada rambutnya yang digulung dan di mata cokelatnya; ada kehidupan merah hangat di bibirnya; tenggorokannya tampak putih bersih di atas warna putih bulu yang berbeda, yang seolah melilit lehernya dan menempel di mantel abu-birunya dengan kelembutan yang berasal dari dirinya sendiri, sebuah kepolosan yang bercampur dan penuh perasaan yang mempertahankan keindahannya di tengah kemurnian kristal salju di luar. Saat ia meletakkan kotak-kotak cameo di atas meja di jendela lengkung, tanpa sadar ia tetap meletakkan tangannya di atasnya, langsung asyik memandang ke luar, ke arah ruangan putih yang tenang yang menjadi dunianya yang terlihat. Tuan Casaubon, yang bangun pagi-pagi karena mengeluh jantung berdebar, berada di perpustakaan sedang mendengarkan ceramah pendetanya, Tuan Tucker. Sebentar lagi Celia akan datang sebagai pengiring pengantin sekaligus saudara perempuan, dan selama beberapa minggu berikutnya akan ada kunjungan pernikahan yang diterima dan diberikan; semua itu sebagai kelanjutan dari kehidupan transisi yang dipahami sesuai dengan kegembiraan kebahagiaan pengantin, dan mempertahankan perasaan kesibukan yang tidak efektif, seperti mimpi yang mulai dicurigai oleh si pemimpi. Tugas-tugas kehidupan pernikahannya, yang sebelumnya dianggap begitu besar, tampaknya menyusut bersama perabotan dan pemandangan berdinding uap putih. Ketinggian yang jernih tempat dia berharap untuk berjalan dalam persekutuan penuh telah menjadi sulit untuk dilihat bahkan dalam imajinasinya; ketenangan jiwa yang nikmat pada sesuatu yang sepenuhnya lebih unggul telah terguncang menjadi upaya yang gelisah dan dikhawatirkan dengan firasat yang samar. Kapan hari-hari pengabdian istri yang aktif yang akan memperkuat kehidupan suaminya dan mengangkat hidupnya sendiri akan dimulai? Mungkin tidak pernah, seperti yang telah dia bayangkan sebelumnya; Namun entah bagaimana—tetap saja entah bagaimana. Dalam ikatan hidup yang diikrarkan dengan sungguh-sungguh ini, kewajiban akan hadir dalam bentuk inspirasi baru dan memberikan makna baru pada cinta seorang istri. Sementara itu, ada salju dan lengkungan rendah uap kelabu—ada penindasan yang menyesakkan dari dunia wanita bangsawan itu, di mana segala sesuatu dilakukan untuknya dan tidak ada yang meminta bantuannya—di mana rasa keterkaitan dengan eksistensi yang beraneka ragam dan penuh makna harus dipertahankan dengan susah payah sebagai visi batin, alih-alih datang dari luar dalam tuntutan yang akan membentuk energinya.— “Apa yang harus kulakukan?” “Apa pun yang kau inginkan, sayangku:” itulah sejarah singkatnya sejak ia berhenti belajar pelajaran pagi dan berlatih ritme konyol di piano yang dibencinya. Pernikahan, yang seharusnya membawa bimbingan ke dalam pekerjaan yang layak dan penting, belum membebaskannya dari kebebasan yang menindas sebagai wanita bangsawan: bahkan belum mengisi waktu luangnya dengan kegembiraan merenung dari kelembutan yang tak terkendali. Masa mudanya yang mekar dan penuh semangat berdiri di sana dalam penjara moral yang menyatu dengan lanskap yang dingin, tanpa warna, dan sempit, dengan perabotan yang menyusut, buku-buku yang tak pernah dibaca, dan rusa hantu di dunia fantastis pucat yang tampaknya menghilang dari siang hari. Pada menit-menit pertama ketika Dorothea melihat keluar, ia tidak merasakan apa pun selain penindasan yang suram; kemudian muncul ingatan yang tajam, dan berpaling dari jendela, ia berjalan mengelilingi ruangan. Gagasan dan harapan yang hidup dalam benaknya ketika ia pertama kali melihat ruangan ini hampir tiga bulan sebelumnya kini hanya hadir sebagai kenangan: ia menilainya seperti kita menilai hal-hal yang fana dan telah berlalu. Seluruh kehidupan tampak berdenyut dengan denyut yang lebih rendah daripada denyut nadinya sendiri, dan iman religiusnya adalah jeritan yang sunyi, perjuangan keluar dari mimpi buruk di mana setiap objek layu dan menjauh darinya. Setiap hal yang diingat di ruangan itu kehilangan daya magisnya, mati rasa seperti transparansi yang tidak bercahaya, hingga pandangannya yang berkelana tertuju pada kelompok miniatur, dan di sana akhirnya ia melihat sesuatu yang telah mendapatkan nafas dan makna baru: itu adalah miniatur bibi Tuan Casaubon, Julia, yang telah melakukan pernikahan yang tidak beruntung—dengan nenek Will Ladislaw. Dorothea dapat membayangkan bahwa miniatur itu kini hidup—wajah wanita yang lembut namun memiliki tatapan keras kepala, sebuah kekhasan yang sulit ditafsirkan. Apakah hanya teman-temannya yang menganggap pernikahannya tidak beruntung? Atau apakah dia sendiri menyadari bahwa itu adalah sebuah kesalahan, dan merasakan kepahitan air matanya dalam keheningan malam yang menenangkan? Betapa luasnya pengalaman yang tampaknya telah dilalui Dorothea sejak pertama kali melihat miniatur ini! Dia merasakan persahabatan baru dengannya, seolah-olah miniatur itu mendengarkannya dan dapat melihat bagaimana dia memandangnya. Di sini ada seorang wanita yang mengalami beberapa kesulitan dalam pernikahan. Bahkan, warnanya semakin pekat, bibir dan dagunya tampak lebih besar, rambut dan matanya tampak memancarkan cahaya, wajahnya maskulin dan bersinar padanya dengan tatapan penuh yang memberi tahu siapa pun yang dilihatnya bahwa dia terlalu menarik untuk gerakan kelopak mata sekecil apa pun yang tidak diperhatikan dan tidak ditafsirkan. Gambaran yang jelas itu datang seperti cahaya yang menyenangkan bagi Dorothea: dia merasa dirinya tersenyum, dan berpaling dari miniatur itu, duduk dan mendongak seolah-olah dia kembali berbicara dengan sosok di depannya. Tetapi senyum itu menghilang saat dia terus merenung, dan akhirnya dia berkata dengan lantang— “Oh, sungguh kejam berbicara seperti itu! Betapa menyedihkannya—betapa mengerikannya!” Ia segera bangkit dan keluar dari ruangan, bergegas menyusuri koridor, dengan dorongan yang tak tertahankan untuk menemui suaminya dan menanyakan apakah ia bisa melakukan sesuatu untuknya. Mungkin Tuan Tucker sudah pergi dan Tuan Casaubon sendirian di perpustakaan. Ia merasa seolah-olah semua kesedihan paginya akan lenyap jika ia bisa melihat suaminya bahagia karena kehadirannya. Namun ketika ia sampai di puncak pohon ek gelap itu, Celia sudah datang, dan di bawahnya ada Tuan Brooke, yang sedang bertukar sapa dan ucapan selamat dengan Tuan Casaubon. “Dodo!” kata Celia dengan suara pelan dan terputus-putus; lalu mencium adiknya yang melingkarkan lengannya di tubuhnya, dan tak berkata apa-apa lagi. Kurasa mereka berdua sedikit menangis diam-diam, sementara Dorothea berlari menuruni tangga untuk menyambut pamannya. “Aku tak perlu bertanya bagaimana kabarmu, sayangku,” kata Tuan Brooke, setelah mencium keningnya. “Roma tampaknya cocok untukmu—kebahagiaan, lukisan dinding, barang antik—hal-hal semacam itu. Senang sekali kau kembali lagi, dan sekarang kau mengerti semua tentang seni, ya? Tapi Casaubon agak pucat, kukatakan padanya—agak pucat, kau tahu. Belajar keras selama liburannya agak berlebihan. Dulu aku juga pernah berlebihan”—Tuan Brooke masih memegang tangan Dorothea, tetapi telah memalingkan wajahnya ke Tuan Casaubon—“tentang topografi, reruntuhan, kuil—kukira aku punya petunjuk, tetapi aku menyadari itu akan membawaku terlalu jauh, dan mungkin tidak akan menghasilkan apa-apa. Kau bisa melakukan apa saja dalam hal semacam itu, dan mungkin tidak akan menghasilkan apa-apa, kau tahu.” Mata Dorothea juga tertuju pada wajah suaminya dengan sedikit kecemasan, membayangkan bahwa orang-orang yang melihatnya kembali setelah lama absen mungkin menyadari tanda-tanda yang tidak ia perhatikan. “Jangan khawatir, sayangku,” kata Tuan Brooke, mengamati ekspresinya. “Sedikit daging sapi dan domba Inggris akan segera membuat perbedaan. Tidak apa-apa terlihat pucat saat berpose untuk potret Aquinas, kau tahu—kami menerima suratmu tepat waktu. Tapi Aquinas, nah—dia agak terlalu halus, bukan? Apakah ada yang membaca Aquinas?” “Dia memang bukan penulis yang cocok untuk pikiran dangkal,” kata Bapak Casaubon, menanggapi pertanyaan-pertanyaan tepat waktu ini dengan kesabaran yang bermartabat. “Paman, mau kopi di kamar sendiri?” kata Dorothea, datang menyelamatkan keadaan. “Ya; dan kau harus pergi menemui Celia: dia punya kabar penting untuk memberitahumu, kau tahu. Aku serahkan semuanya padanya.” Kamar tidur berwarna biru kehijauan itu tampak jauh lebih ceria ketika Celia duduk di sana mengenakan pelisse yang persis sama dengan milik kakaknya, mengamati cameo-cameo dengan kepuasan yang tenang, sementara percakapan beralih ke topik lain. “Menurutmu, apakah menyenangkan pergi ke Roma untuk bulan madu?” tanya Celia, dengan pipinya yang merona lembut, seperti yang biasa terjadi pada Dorothea bahkan dalam kesempatan terkecil sekalipun. “Itu tidak akan cocok untuk semua orang—bukan untukmu, sayang, misalnya,” kata Dorothea pelan. Tak seorang pun akan tahu apa yang dipikirkannya tentang perjalanan bulan madu ke Roma. “Nyonya Cadwallader mengatakan itu omong kosong, orang-orang melakukan perjalanan jauh ketika mereka sudah menikah. Dia bilang mereka akan sangat lelah satu sama lain, dan tidak bisa bertengkar dengan nyaman, seperti yang mereka lakukan di rumah. Dan Lady Chettam mengatakan dia pergi ke Bath.” Warna wajah Celia berubah lagi dan lagi—sepertinya “Untuk datang dan pergi membawa kabar dari hati, seolah-olah ia adalah seorang utusan yang berlari.” Ini pasti memiliki makna yang lebih dalam daripada sekadar rona merah di pipi Celia biasanya. “Celia! Apa yang terjadi?” tanya Dorothea dengan nada penuh kasih sayang sebagai seorang kakak. “Apakah kau benar-benar punya kabar baik untuk diceritakan padaku?” “Itu karena kau pergi, Dodo. Lalu tidak ada orang lain selain aku yang bisa diajak bicara oleh Sir James,” kata Celia, dengan sedikit kenakalan di matanya. “Aku mengerti. Ini seperti yang dulu kuharapkan dan kupercayai,” kata Dorothea, sambil memegang wajah adiknya dengan kedua tangannya, dan menatapnya dengan sedikit cemas. Pernikahan Celia tampak lebih serius daripada sebelumnya. “Itu baru tiga hari yang lalu,” kata Celia. “Dan Lady Chettam sangat baik.” “Dan Anda sangat bahagia?” “Ya. Kami belum akan menikah. Karena semuanya masih perlu dipersiapkan. Dan aku tidak ingin menikah secepat ini, karena menurutku bertunangan itu menyenangkan. Dan kami akan menikah seumur hidup setelah ini.” “Aku yakin kau tidak mungkin menikah dengan orang yang lebih baik, Kitty. Sir James adalah pria yang baik dan terhormat,” kata Dorothea dengan hangat. “Dia sudah melanjutkan pembangunan pondok-pondok itu, Dodo. Dia akan menceritakannya padamu saat dia datang. Apakah kamu akan senang bertemu dengannya?” “Tentu saja aku mau. Bagaimana bisa kau memintaku?” “Hanya saja aku khawatir kau akan menjadi begitu berpengetahuan,” kata Celia, menganggap pengetahuan Tuan Casaubon sebagai semacam kelembapan yang suatu saat nanti dapat meresap ke tubuh di sekitarnya.</p>
-
-<div class="nav">
-  <a href="bab-xxvii.html">⬅ Bab Xxvii.</a>
-  <a href="bab-xxix.html">Bab Xxix. ➡</a>
-</div>
 
 </body>
 </html>

@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB LV.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB LV. - Bacaan digital klasik">
+<title>Bab LV — Middlemarch</title>
+<meta name="description" content="Baca Bab LV dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-lv.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab LV — Middlemarch">
+  <meta property="og:description" content="Baca Bab LV dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-lv.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab LV — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab LV dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab LV",
+    "name": "Bab LV — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-lv.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab LV</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Apakah dia memiliki kekurangan? Kuharap kau juga memilikinya. <br />Kekurangan itu bagaikan sari buah anggur terbaik; atau bisa dikatakan, itu adalah api yang membangkitkan kembali, seperti api yang telah mengubah unsur hitam pekat menjadi jalan kristal bagi matahari.</p><p>Jika masa muda adalah musim harapan, seringkali itu hanya dalam arti bahwa para tetua kita berharap pada kita; karena tidak ada usia yang lebih cenderung daripada masa muda untuk berpikir bahwa emosi, perpisahan, dan tekadnya adalah yang terakhir dari jenisnya. Setiap krisis tampak final, hanya karena itu baru. Kita diberitahu bahwa penduduk tertua di Peru tidak berhenti merasa gelisah oleh gempa bumi, tetapi mereka mungkin melihat melampaui setiap guncangan, dan merenungkan bahwa masih banyak lagi yang akan datang.</p><p>Bagi Dorothea, yang masih berada di masa muda ketika mata dengan bulu mata panjang dan lebatnya menatap tanpa noda dan lelah seperti bunga passion yang baru mekar setelah hujan air mata, perpisahan pagi itu dengan Will Ladislaw tampak seperti akhir dari hubungan pribadi mereka. Dia pergi ke kejauhan selama bertahun-tahun yang tak diketahui, dan jika dia kembali, dia akan menjadi orang yang berbeda. Keadaan pikirannya yang sebenarnya—tekadnya yang penuh percaya diri untuk membantah terlebih dahulu kecurigaan bahwa dia akan berperan sebagai petualang yang membutuhkan wanita kaya—sama sekali di luar imajinasinya, dan dia telah menafsirkan semua perilakunya dengan cukup mudah berdasarkan anggapannya bahwa surat wasiat tambahan dari Tuan Casaubon tampak baginya, seperti halnya baginya, sebagai larangan yang kasar dan kejam terhadap persahabatan aktif apa pun di antara mereka. Kegembiraan masa muda mereka dalam berbicara satu sama lain, dan mengatakan apa yang tidak ingin didengar orang lain, telah berakhir selamanya, dan menjadi harta karun masa lalu. Karena alasan inilah dia merenungkannya tanpa kendali batin. Kebahagiaan unik itu pun telah sirna, dan di ruangan sunyi yang teduh itu ia dapat melampiaskan kesedihan mendalam yang bahkan ia sendiri herankan. Untuk pertama kalinya ia menurunkan miniatur itu dari dinding dan meletakkannya di hadapannya, ingin memadukan sosok wanita yang telah dihakimi terlalu keras dengan cucunya yang dibela oleh hati dan penilaiannya sendiri. Dapatkah siapa pun yang telah bersukacita atas kelembutan wanita menganggapnya sebagai celaan karena ia mengambil gambar oval kecil itu di telapak tangannya dan menjadikannya tempat tidur di sana, dan menyandarkan pipinya di atasnya, seolah-olah itu akan menenangkan makhluk-makhluk yang telah menderita hukuman yang tidak adil? Ia tidak tahu saat itu bahwa Cinta-lah yang telah datang kepadanya sebentar, seperti dalam mimpi sebelum bangun, dengan warna-warna pagi di sayapnya—bahwa Cinta-lah yang kepadanya ia menangis mengucapkan selamat tinggal saat gambarnya diusir oleh kerasnya hari yang tak tertahankan. Ia hanya merasa bahwa ada sesuatu yang salah dan hilang dalam nasibnya, dan pikirannya tentang masa depan semakin mudah dibentuk menjadi tekad. Orang-orang yang bersemangat, siap membangun kehidupan mereka di masa depan, cenderung berkomitmen untuk mewujudkan visi mereka sendiri.</p><p>Suatu hari ketika ia pergi ke Freshitt untuk memenuhi janjinya menginap semalaman dan memandikan bayi, Nyonya Cadwallader datang untuk makan malam, karena Rektor sedang pergi memancing. Malam itu hangat, dan bahkan di ruang tamu yang indah, di mana rumput tua yang bagus miring dari jendela terbuka menuju kolam bunga lili dan gundukan yang ditanami dengan baik, panasnya cukup untuk membuat Celia dengan gaun muslin putih dan rambut ikalnya yang terang merenung dengan iba tentang apa yang dirasakan Dodo dengan gaun hitam dan topinya yang tertutup rapat. Tetapi ini tidak terjadi sampai beberapa episode dengan bayinya berakhir, dan pikirannya menjadi tenang. Ia telah duduk dan mengambil kipas untuk beberapa saat sebelum ia berkata, dengan suara seraknya yang pelan—</p><p>“Dodo sayang, lepaskan topi itu. Aku yakin gaunmu pasti membuatmu merasa tidak enak badan.”</p><p>“Aku sudah terbiasa dengan topi ini—sudah seperti cangkang bagiku,” kata Dorothea sambil tersenyum. “Aku merasa agak telanjang dan rentan saat topi ini dilepas.”</p><p>“Aku harus melihatmu tanpa itu; itu membuat kita semua merasa hangat,” kata Celia, sambil melempar kipasnya, dan menghampiri Dorothea. Sungguh pemandangan yang indah melihat wanita kecil bergaun muslin putih itu melepaskan topi janda dari kakaknya yang lebih anggun, dan melemparkannya ke kursi. Tepat ketika gulungan dan kepang rambut cokelat gelap itu terbebas, Sir James memasuki ruangan. Dia memandang kepala yang telah terbebas itu, dan berkata, “Ah!” dengan nada puas.</p><p>“Akulah yang melakukannya, James,” kata Celia. “Dodo tidak perlu terlalu larut dalam kesedihannya; dia tidak perlu lagi memakai topi itu di antara teman-temannya.”</p><p>“Celia sayangku,” kata Lady Chettam, “seorang janda harus mengenakan pakaian berkabung setidaknya selama setahun.”</p><p>“Tidak, jika dia menikah lagi sebelum masa pernikahannya berakhir,” kata Ny. Cadwallader, yang merasa senang bisa mengejutkan sahabatnya, Janda Ratu. Sir James merasa kesal, dan mencondongkan tubuh ke depan untuk bermain dengan anjing Maltese milik Celia.</p><p>“Itu sangat jarang terjadi, saya harap,” kata Lady Chettam, dengan nada yang dimaksudkan untuk mencegah kejadian seperti itu. “Tidak ada teman kita yang pernah melakukan hal seperti itu kecuali Nyonya Beevor, dan itu sangat menyakitkan bagi Lord Grinsell ketika dia melakukannya. Suami pertamanya tidak disukai, yang membuat hal itu semakin mengejutkan. Dan dia dihukum berat karenanya. Mereka mengatakan Kapten Beevor menyeretnya dengan rambutnya, dan mengacungkan pistol berisi peluru ke arahnya.”</p><p>“Oh, seandainya dia salah pilih pria!” kata Ny. Cadwallader, yang sedang dalam suasana hati yang sangat jahat. “Pernikahan selalu buruk, baik yang pertama maupun yang kedua. Prioritas bukanlah rekomendasi yang baik untuk seorang suami jika dia tidak punya pilihan lain. Saya lebih memilih suami kedua yang baik daripada suami pertama yang biasa-biasa saja.”</p><p>“Sayangku, lidahmu yang cerdas terlalu banyak bicara,” kata Lady Chettam. “Aku yakin kau akan menjadi wanita terakhir yang menikah lagi sebelum waktunya, jika Rektor kita tercinta meninggal dunia.”</p><p>“Oh, aku tidak mengucapkan sumpah; mungkin ini adalah penghematan yang diperlukan. Kurasa sah untuk menikah lagi; kalau tidak, kita lebih baik menjadi Hindu daripada Kristen. Tentu saja, jika seorang wanita menerima pria yang salah, dia harus menanggung konsekuensinya, dan seseorang yang melakukannya dua kali pantas menerima nasibnya. Tetapi jika dia bisa menikahi pria yang berdarah biru, cantik, dan pemberani—semakin cepat semakin baik.”</p><p>“Menurutku topik pembicaraan kita ini sangat tidak tepat,” kata Sir James dengan ekspresi jijik. “Bagaimana kalau kita menggantinya?”</p><p>“Bukan karena saya, Tuan James,” kata Dorothea, bertekad untuk tidak kehilangan kesempatan melepaskan diri dari beberapa sindiran tidak langsung tentang perjodohan yang ideal. “Jika Anda berbicara atas nama saya, saya dapat meyakinkan Anda bahwa tidak ada pertanyaan yang lebih acuh tak acuh dan tidak pribadi bagi saya daripada pernikahan kedua. Itu sama saja bagi saya seperti jika Anda berbicara tentang wanita yang pergi berburu rubah: apakah itu mengagumkan bagi mereka atau tidak, saya tidak akan mengikuti mereka. Biarkan Nyonya Cadwallader menikmati pembicaraan tentang hal itu seperti halnya tentang hal lainnya.”</p><p>“Nyonya Casaubon yang terhormat,” kata Lady Chettam dengan gaya paling anggunnya, “semoga Anda tidak berpikir ada sindiran terhadap Anda ketika saya menyebut Nyonya Beevor. Itu hanya sebuah kejadian yang terlintas di benak saya. Dia adalah anak tiri Lord Grinsell: Lord Grinsell menikahi Nyonya Teveroy sebagai istri keduanya. Tidak mungkin ada sindiran terhadap Anda.”</p><p>“Oh tidak,” kata Celia. “Tidak ada yang memilih topik itu; semuanya berasal dari topi Dodo. Nyonya Cadwallader hanya mengatakan apa yang memang benar. Seorang wanita tidak bisa menikah dengan mengenakan topi janda, James.”</p><p>“Diamlah, sayangku!” kata Ny. Cadwallader. “Aku tidak akan menyinggung lagi. Aku bahkan tidak akan menyebut Dido atau Zenobia. Lagipula, apa yang akan kita bicarakan? Aku, untuk bagianku, keberatan dengan pembahasan tentang Sifat Manusia, karena itulah sifat istri-istri rektor.”</p><p>Kemudian di malam hari, setelah Nyonya Cadwallader pergi, Celia berkata secara pribadi kepada Dorothea, “Sungguh, Dodo, melepas topimu membuatmu kembali seperti dirimu sendiri dalam banyak hal. Kau berbicara seperti biasa, ketika ada sesuatu yang dikatakan yang membuatmu tidak senang. Tapi aku hampir tidak bisa memastikan apakah kau menganggap James atau Nyonya Cadwallader salah.”</p><p>“Tidak juga,” kata Dorothea. “James berbicara dengan penuh pertimbangan kepadaku, tetapi dia keliru mengira aku keberatan dengan apa yang dikatakan Nyonya Cadwallader. Aku hanya akan keberatan jika ada hukum yang mewajibkanku untuk menerima sepotong darah dan kecantikan yang direkomendasikan olehnya atau orang lain.”</p><p>“Tapi kau tahu, Dodo, jika kau menikah, akan lebih baik jika kau memiliki darah daging dan kecantikan,” kata Celia, merenungkan bahwa Tuan Casaubon tidak diberkahi dengan begitu banyak anugerah tersebut, dan bahwa ada baiknya untuk memperingatkan Dorothea tepat waktu.</p><p>“Jangan khawatir, Kitty; aku punya rencana lain tentang hidupku. Aku tidak akan pernah menikah lagi,” kata Dorothea, sambil menyentuh dagu adiknya, dan menatapnya dengan penuh kasih sayang. Celia sedang menyusui bayinya, dan Dorothea datang untuk mengucapkan selamat malam kepadanya.</p><p>“Benarkah—benar-benar?” kata Celia. “Bukan siapa-siapa—kalau dia memang sangat luar biasa?”</p><p>Dorothea menggelengkan kepalanya perlahan. “Bukan siapa pun. Aku punya rencana yang menyenangkan. Aku ingin mengambil sebidang tanah yang luas, mengeringkannya, dan membuat koloni kecil, di mana semua orang akan bekerja, dan semua pekerjaan akan dilakukan dengan baik. Aku akan mengenal setiap orang di sana dan menjadi teman mereka. Aku akan berkonsultasi panjang lebar dengan Tuan Garth: dia bisa memberitahuku hampir semua yang ingin aku ketahui.”</p><p>“Kalau begitu, kamu akan bahagia jika punya rencana, Dodo?” kata Celia. “Mungkin Arthur kecil akan menyukai rencana saat ia besar nanti, dan ia bisa membantumu.”</p><p>Pada malam itu juga, Sir James diberitahu bahwa Dorothea benar-benar menolak untuk menikah dengan siapa pun, dan akan membuat &quot;segala macam rencana,&quot; seperti yang biasa ia lakukan. Sir James tidak berkomentar. Secara diam-diam, ia merasa ada sesuatu yang menjijikkan dalam pernikahan kedua seorang wanita, dan tidak ada perjodohan yang akan mencegahnya merasa bahwa itu semacam penodaan bagi Dorothea. Ia menyadari bahwa dunia akan menganggap sentimen seperti itu sebagai hal yang menggelikan, terutama berkaitan dengan seorang wanita berusia dua puluh satu tahun; kebiasaan &quot;dunia&quot; adalah menganggap pernikahan kedua seorang janda muda sebagai sesuatu yang pasti dan mungkin akan segera terjadi, dan tersenyum penuh arti jika janda tersebut bertindak sesuai dengan itu. Tetapi jika Dorothea memilih untuk menjalani kesendiriannya, ia merasa bahwa keputusan itu akan sangat cocok untuknya.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="buku-vi-sang-janda-dan-istrinya-bab-liv.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Buku Vi Sang Janda Dan Istrinya Bab Liv</span>
+    </a>
+    <a href="bab-lvi.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Lvi</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB LV.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Apakah dia memiliki kekurangan? Kuharap kau juga memilikinya. Kekurangan itu bagaikan sari buah anggur terbaik; atau bisa dikatakan, itu adalah api yang membangkitkan kembali, seperti api yang telah mengubah unsur hitam pekat menjadi jalan kristal bagi matahari. Jika masa muda adalah musim harapan, seringkali itu hanya dalam arti bahwa para tetua kita berharap pada kita; karena tidak ada usia yang lebih cenderung daripada masa muda untuk berpikir bahwa emosi, perpisahan, dan tekadnya adalah yang terakhir dari jenisnya. Setiap krisis tampak final, hanya karena itu baru. Kita diberitahu bahwa penduduk tertua di Peru tidak berhenti merasa gelisah oleh gempa bumi, tetapi mereka mungkin melihat melampaui setiap guncangan, dan merenungkan bahwa masih banyak lagi yang akan datang. Bagi Dorothea, yang masih berada di masa muda ketika mata dengan bulu mata panjang dan lebatnya menatap tanpa noda dan lelah seperti bunga passion yang baru mekar setelah hujan air mata, perpisahan pagi itu dengan Will Ladislaw tampak seperti akhir dari hubungan pribadi mereka. Dia pergi ke kejauhan selama bertahun-tahun yang tak diketahui, dan jika dia kembali, dia akan menjadi orang yang berbeda. Keadaan pikirannya yang sebenarnya—tekadnya yang penuh percaya diri untuk membantah terlebih dahulu kecurigaan bahwa dia akan berperan sebagai petualang yang membutuhkan wanita kaya—sama sekali di luar imajinasinya, dan dia telah menafsirkan semua perilakunya dengan cukup mudah berdasarkan anggapannya bahwa surat wasiat tambahan dari Tuan Casaubon tampak baginya, seperti halnya baginya, sebagai larangan yang kasar dan kejam terhadap persahabatan aktif apa pun di antara mereka. Kegembiraan masa muda mereka dalam berbicara satu sama lain, dan mengatakan apa yang tidak ingin didengar orang lain, telah berakhir selamanya, dan menjadi harta karun masa lalu. Karena alasan inilah dia merenungkannya tanpa kendali batin. Kebahagiaan unik itu pun telah sirna, dan di ruangan sunyi yang teduh itu ia dapat melampiaskan kesedihan mendalam yang bahkan ia sendiri herankan. Untuk pertama kalinya ia menurunkan miniatur itu dari dinding dan meletakkannya di hadapannya, ingin memadukan sosok wanita yang telah dihakimi terlalu keras dengan cucunya yang dibela oleh hati dan penilaiannya sendiri. Dapatkah siapa pun yang telah bersukacita atas kelembutan wanita menganggapnya sebagai celaan karena ia mengambil gambar oval kecil itu di telapak tangannya dan menjadikannya tempat tidur di sana, dan menyandarkan pipinya di atasnya, seolah-olah itu akan menenangkan makhluk-makhluk yang telah menderita hukuman yang tidak adil? Ia tidak tahu saat itu bahwa Cinta-lah yang telah datang kepadanya sebentar, seperti dalam mimpi sebelum bangun, dengan warna-warna pagi di sayapnya—bahwa Cinta-lah yang kepadanya ia menangis mengucapkan selamat tinggal saat gambarnya diusir oleh kerasnya hari yang tak tertahankan. Ia hanya merasa bahwa ada sesuatu yang salah dan hilang dalam nasibnya, dan pikirannya tentang masa depan semakin mudah dibentuk menjadi tekad. Orang-orang yang bersemangat, siap membangun kehidupan mereka di masa depan, cenderung berkomitmen untuk mewujudkan visi mereka sendiri. Suatu hari ketika ia pergi ke Freshitt untuk memenuhi janjinya menginap semalaman dan memandikan bayi, Nyonya Cadwallader datang untuk makan malam, karena Rektor sedang pergi memancing. Malam itu hangat, dan bahkan di ruang tamu yang indah, di mana rumput tua yang bagus miring dari jendela terbuka menuju kolam bunga lili dan gundukan yang ditanami dengan baik, panasnya cukup untuk membuat Celia dengan gaun muslin putih dan rambut ikalnya yang terang merenung dengan iba tentang apa yang dirasakan Dodo dengan gaun hitam dan topinya yang tertutup rapat. Tetapi ini tidak terjadi sampai beberapa episode dengan bayinya berakhir, dan pikirannya menjadi tenang. Ia telah duduk dan mengambil kipas untuk beberapa saat sebelum ia berkata, dengan suara seraknya yang pelan— “Dodo sayang, lepaskan topi itu. Aku yakin gaunmu pasti membuatmu merasa tidak enak badan.” “Aku sudah terbiasa dengan topi ini—sudah seperti cangkang bagiku,” kata Dorothea sambil tersenyum. “Aku merasa agak telanjang dan rentan saat topi ini dilepas.” “Aku harus melihatmu tanpa itu; itu membuat kita semua merasa hangat,” kata Celia, sambil melempar kipasnya, dan menghampiri Dorothea. Sungguh pemandangan yang indah melihat wanita kecil bergaun muslin putih itu melepaskan topi janda dari kakaknya yang lebih anggun, dan melemparkannya ke kursi. Tepat ketika gulungan dan kepang rambut cokelat gelap itu terbebas, Sir James memasuki ruangan. Dia memandang kepala yang telah terbebas itu, dan berkata, “Ah!” dengan nada puas. “Akulah yang melakukannya, James,” kata Celia. “Dodo tidak perlu terlalu larut dalam kesedihannya; dia tidak perlu lagi memakai topi itu di antara teman-temannya.” “Celia sayangku,” kata Lady Chettam, “seorang janda harus mengenakan pakaian berkabung setidaknya selama setahun.” “Tidak, jika dia menikah lagi sebelum masa pernikahannya berakhir,” kata Ny. Cadwallader, yang merasa senang bisa mengejutkan sahabatnya, Janda Ratu. Sir James merasa kesal, dan mencondongkan tubuh ke depan untuk bermain dengan anjing Maltese milik Celia. “Itu sangat jarang terjadi, saya harap,” kata Lady Chettam, dengan nada yang dimaksudkan untuk mencegah kejadian seperti itu. “Tidak ada teman kita yang pernah melakukan hal seperti itu kecuali Nyonya Beevor, dan itu sangat menyakitkan bagi Lord Grinsell ketika dia melakukannya. Suami pertamanya tidak disukai, yang membuat hal itu semakin mengejutkan. Dan dia dihukum berat karenanya. Mereka mengatakan Kapten Beevor menyeretnya dengan rambutnya, dan mengacungkan pistol berisi peluru ke arahnya.” “Oh, seandainya dia salah pilih pria!” kata Ny. Cadwallader, yang sedang dalam suasana hati yang sangat jahat. “Pernikahan selalu buruk, baik yang pertama maupun yang kedua. Prioritas bukanlah rekomendasi yang baik untuk seorang suami jika dia tidak punya pilihan lain. Saya lebih memilih suami kedua yang baik daripada suami pertama yang biasa-biasa saja.” “Sayangku, lidahmu yang cerdas terlalu banyak bicara,” kata Lady Chettam. “Aku yakin kau akan menjadi wanita terakhir yang menikah lagi sebelum waktunya, jika Rektor kita tercinta meninggal dunia.” “Oh, aku tidak mengucapkan sumpah; mungkin ini adalah penghematan yang diperlukan. Kurasa sah untuk menikah lagi; kalau tidak, kita lebih baik menjadi Hindu daripada Kristen. Tentu saja, jika seorang wanita menerima pria yang salah, dia harus menanggung konsekuensinya, dan seseorang yang melakukannya dua kali pantas menerima nasibnya. Tetapi jika dia bisa menikahi pria yang berdarah biru, cantik, dan pemberani—semakin cepat semakin baik.” “Menurutku topik pembicaraan kita ini sangat tidak tepat,” kata Sir James dengan ekspresi jijik. “Bagaimana kalau kita menggantinya?” “Bukan karena saya, Tuan James,” kata Dorothea, bertekad untuk tidak kehilangan kesempatan melepaskan diri dari beberapa sindiran tidak langsung tentang perjodohan yang ideal. “Jika Anda berbicara atas nama saya, saya dapat meyakinkan Anda bahwa tidak ada pertanyaan yang lebih acuh tak acuh dan tidak pribadi bagi saya daripada pernikahan kedua. Itu sama saja bagi saya seperti jika Anda berbicara tentang wanita yang pergi berburu rubah: apakah itu mengagumkan bagi mereka atau tidak, saya tidak akan mengikuti mereka. Biarkan Nyonya Cadwallader menikmati pembicaraan tentang hal itu seperti halnya tentang hal lainnya.” “Nyonya Casaubon yang terhormat,” kata Lady Chettam dengan gaya paling anggunnya, “semoga Anda tidak berpikir ada sindiran terhadap Anda ketika saya menyebut Nyonya Beevor. Itu hanya sebuah kejadian yang terlintas di benak saya. Dia adalah anak tiri Lord Grinsell: Lord Grinsell menikahi Nyonya Teveroy sebagai istri keduanya. Tidak mungkin ada sindiran terhadap Anda.” “Oh tidak,” kata Celia. “Tidak ada yang memilih topik itu; semuanya berasal dari topi Dodo. Nyonya Cadwallader hanya mengatakan apa yang memang benar. Seorang wanita tidak bisa menikah dengan mengenakan topi janda, James.” “Diamlah, sayangku!” kata Ny. Cadwallader. “Aku tidak akan menyinggung lagi. Aku bahkan tidak akan menyebut Dido atau Zenobia. Lagipula, apa yang akan kita bicarakan? Aku, untuk bagianku, keberatan dengan pembahasan tentang Sifat Manusia, karena itulah sifat istri-istri rektor.” Kemudian di malam hari, setelah Nyonya Cadwallader pergi, Celia berkata secara pribadi kepada Dorothea, “Sungguh, Dodo, melepas topimu membuatmu kembali seperti dirimu sendiri dalam banyak hal. Kau berbicara seperti biasa, ketika ada sesuatu yang dikatakan yang membuatmu tidak senang. Tapi aku hampir tidak bisa memastikan apakah kau menganggap James atau Nyonya Cadwallader salah.” “Tidak juga,” kata Dorothea. “James berbicara dengan penuh pertimbangan kepadaku, tetapi dia keliru mengira aku keberatan dengan apa yang dikatakan Nyonya Cadwallader. Aku hanya akan keberatan jika ada hukum yang mewajibkanku untuk menerima sepotong darah dan kecantikan yang direkomendasikan olehnya atau orang lain.” “Tapi kau tahu, Dodo, jika kau menikah, akan lebih baik jika kau memiliki darah daging dan kecantikan,” kata Celia, merenungkan bahwa Tuan Casaubon tidak diberkahi dengan begitu banyak anugerah tersebut, dan bahwa ada baiknya untuk memperingatkan Dorothea tepat waktu. “Jangan khawatir, Kitty; aku punya rencana lain tentang hidupku. Aku tidak akan pernah menikah lagi,” kata Dorothea, sambil menyentuh dagu adiknya, dan menatapnya dengan penuh kasih sayang. Celia sedang menyusui bayinya, dan Dorothea datang untuk mengucapkan selamat malam kepadanya. “Benarkah—benar-benar?” kata Celia. “Bukan siapa-siapa—kalau dia memang sangat luar biasa?” Dorothea menggelengkan kepalanya perlahan. “Bukan siapa pun. Aku punya rencana yang menyenangkan. Aku ingin mengambil sebidang tanah yang luas, mengeringkannya, dan membuat koloni kecil, di mana semua orang akan bekerja, dan semua pekerjaan akan dilakukan dengan baik. Aku akan mengenal setiap orang di sana dan menjadi teman mereka. Aku akan berkonsultasi panjang lebar dengan Tuan Garth: dia bisa memberitahuku hampir semua yang ingin aku ketahui.” “Kalau begitu, kamu akan bahagia jika punya rencana, Dodo?” kata Celia. “Mungkin Arthur kecil akan menyukai rencana saat ia besar nanti, dan ia bisa membantumu.” Pada malam itu juga, Sir James diberitahu bahwa Dorothea benar-benar menolak untuk menikah dengan siapa pun, dan akan membuat "segala macam rencana," seperti yang biasa ia lakukan. Sir James tidak berkomentar. Secara diam-diam, ia merasa ada sesuatu yang menjijikkan dalam pernikahan kedua seorang wanita, dan tidak ada perjodohan yang akan mencegahnya merasa bahwa itu semacam penodaan bagi Dorothea. Ia menyadari bahwa dunia akan menganggap sentimen seperti itu sebagai hal yang menggelikan, terutama berkaitan dengan seorang wanita berusia dua puluh satu tahun; kebiasaan "dunia" adalah menganggap pernikahan kedua seorang janda muda sebagai sesuatu yang pasti dan mungkin akan segera terjadi, dan tersenyum penuh arti jika janda tersebut bertindak sesuai dengan itu. Tetapi jika Dorothea memilih untuk menjalani kesendiriannya, ia merasa bahwa keputusan itu akan sangat cocok untuknya.</p>
-
-<div class="nav">
-  <a href="buku-vi-sang-janda-dan-istrinya-bab-liv.html">⬅ Buku Vi. Sang Janda Dan Istrinya  - Bab Liv.</a>
-  <a href="bab-lvi.html">Bab Lvi. ➡</a>
-</div>
 
 </body>
 </html>

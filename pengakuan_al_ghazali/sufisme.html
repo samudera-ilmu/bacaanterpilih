@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>SUFISME</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="SUFISME - Bacaan digital klasik">
+<title>Sufisme — Pengakuan Al-Ghazali</title>
+<meta name="description" content="Baca Sufisme dari buku Pengakuan Al-Ghazali karya Al Ghazali secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/pengakuan_al_ghazali/sufisme.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Sufisme — Pengakuan Al-Ghazali">
+  <meta property="og:description" content="Baca Sufisme dari buku Pengakuan Al-Ghazali karya Al Ghazali secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/pengakuan_al_ghazali/sufisme.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/pengakuan_al_ghazali/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Sufisme — Pengakuan Al-Ghazali">
+  <meta name="twitter:description" content="Baca Sufisme dari Pengakuan Al-Ghazali karya Al Ghazali gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/pengakuan_al_ghazali/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sufisme",
+    "name": "Sufisme — Pengakuan Al-Ghazali",
+    "author": {
+      "@type": "Person",
+      "name": "Al Ghazali"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Pengakuan Al-Ghazali",
+      "author": {
+        "@type": "Person",
+        "name": "Al Ghazali"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/pengakuan_al_ghazali/sufisme.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Pengakuan Al-Ghazali</a>
+    </div>
+    <h1 class="chapter-title">Sufisme</h1>
+    <div class="chapter-info">
+      <span>✍️ Al Ghazali</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Setelah menyelesaikan kajian saya terhadap doktrin-doktrin tersebut , saya mendalami studi Sufisme. Saya menyadari bahwa untuk memahaminya secara menyeluruh, seseorang harus menggabungkan teori dengan praktik. Tujuan yang ditetapkan oleh para Sufi adalah sebagai berikut: Membebaskan jiwa dari kuk nafsu yang menindas, melepaskannya dari kecenderungan yang salah dan naluri jahat, agar di dalam hati yang telah disucikan hanya tersisa tempat bagi Tuhan dan seruan akan nama-Nya yang suci.</p><p>Karena lebih mudah mempelajari ajaran mereka daripada mempraktikkannya , pertama-tama saya mempelajari buku-buku mereka yang memuat ajaran tersebut: &quot;Penguatan Hati&quot; karya Abu Talib dari Mekah, karya-karya Hareth el Muhasibi, dan fragmen-fragmen yang masih tersisa dari Junaid, Shibli, Abu Yezid Bustami dan para pemimpin lainnya (semoga Allah menyucikan jiwa mereka). Saya memperoleh pengetahuan yang mendalam tentang penelitian mereka, dan saya mempelajari semua yang mungkin dipelajari tentang metode mereka melalui studi dan pengajaran lisan. Menjadi jelas bagi saya bahwa tahap terakhir tidak dapat dicapai hanya dengan instruksi, tetapi hanya melalui ekstase, kegembiraan, dan transformasi moral.</p><p>Mendefinisikan kesehatan dan rasa kenyang, memahami penyebab dan kondisinya, adalah hal yang sangat berbeda dari sekadar sehat dan puas. Mendefinisikan mabuk, <a id="pgepubid00042"></a><a id="Page_42"></a>mengetahui bahwa itu disebabkan oleh uap yang naik dari perut dan mengaburkan pusat kecerdasan, adalah hal yang sangat berbeda dari sekadar mabuk. Orang mabuk tidak memiliki gagasan tentang sifat mabuk, hanya karena dia mabuk dan tidak dalam kondisi untuk memahami apa pun, sementara dokter, yang tidak berada di bawah pengaruh mabuk, mengetahui karakter dan hukumnya. Atau jika dokter jatuh sakit, dia memiliki pengetahuan teoritis tentang kesehatan yang hilang darinya.</p><p>Dengan cara yang sama, terdapat perbedaan yang cukup besar antara mengetahui pelepasan diri, memahami syarat dan penyebabnya, dan mempraktikkan pelepasan diri dan keterpisahan dari hal-hal duniawi. Saya melihat bahwa Sufisme terdiri dari pengalaman daripada definisi, dan bahwa apa yang saya kurang termasuk dalam ranah, bukan pengajaran, tetapi ekstasi dan inisiasi.</p><p>Penelitian yang telah saya tekuni, jalan yang telah saya tempuh dalam mempelajari cabang-cabang ilmu agama dan spekulatif, telah memberi saya keyakinan yang teguh pada tiga hal—Tuhan, Inspirasi, dan Hari Penghakiman Terakhir. Ketiga pokok keyakinan mendasar ini diteguhkan dalam diri saya, bukan hanya oleh argumen-argumen tertentu, tetapi oleh rangkaian sebab, keadaan, dan bukti yang mustahil untuk diceritakan. Saya melihat bahwa seseorang hanya dapat berharap untuk keselamatan melalui pengabdian dan penaklukan nafsu, suatu prosedur yang mensyaratkan pelepasan dan keterpisahan dari <a id="pgepubid00043"></a><a id="Page_43"></a>dunia kepalsuan ini untuk berpaling kepada keabadian dan meditasi kepada Tuhan. Akhirnya, saya melihat bahwa satu-satunya syarat keberhasilan adalah mengorbankan kehormatan dan kekayaan serta memutuskan ikatan dan keterikatan kehidupan duniawi.</p><p>Setelah merenungkan keadaan saya dengan serius, saya mendapati diri saya terbelenggu di semua sisi oleh belenggu-belenggu ini. Memeriksa tindakan saya, yang paling tampak baik di antaranya adalah pekerjaan saya sebagai dosen dan profesor, saya terkejut mendapati bahwa saya sibuk dengan beberapa studi yang nilainya kecil, dan tidak bermanfaat bagi keselamatan saya. Saya menyelidiki motif pengajaran saya dan menemukan bahwa, alih-alih dengan tulus mengabdikan diri kepada Tuhan, itu hanya didorong oleh keinginan sia-sia akan kehormatan dan reputasi. Saya menyadari bahwa saya berada di tepi jurang, dan bahwa tanpa pertobatan segera saya akan dihukum dengan api abadi. Dalam refleksi ini saya menghabiskan waktu lama. Masih diliputi ketidakpastian, suatu hari saya memutuskan untuk meninggalkan Bagdad dan meninggalkan segalanya; keesokan harinya saya mengingkari tekad saya. Saya melangkah satu langkah dan segera kembali terjerumus. Di pagi hari saya dengan tulus bertekad hanya untuk menyibukkan diri dengan kehidupan masa depan; di malam hari sekumpulan pikiran duniawi menyerang dan menghancurkan tekad saya. Di satu sisi, dunia mengikatku pada posisiku dalam rantai keserakahan, di sisi lain suara agama berseru kepadaku, “Bangun! Bangun! Hidupmu hampir berakhir, dan kau masih harus menempuh perjalanan panjang. <a id="pgepubid00044"></a><a id="Page_44"></a>Semua pengetahuanmu yang kau klaim hanyalah kebohongan dan fantasi. Jika kau tidak memikirkan keselamatanmu sekarang, kapan kau akan memikirkannya? Jika kau tidak memutuskan rantaimu hari ini, kapan kau akan memutuskannya?” Kemudian tekadku semakin kuat, aku ingin meninggalkan semuanya dan melarikan diri; tetapi Penggoda, kembali menyerang, berkata, “Kau menderita perasaan sementara; jangan menyerah padanya, karena itu akan segera berlalu. Jika kau menurutinya, jika kau meninggalkan posisi yang baik ini, jabatan terhormat ini yang bebas dari masalah dan persaingan, kursi otoritas yang aman dari serangan, kau akan menyesalinya nanti tanpa bisa mendapatkannya kembali.”</p><p>Demikianlah aku tetap berada, terombang-ambing oleh kekuatan yang berlawanan antara nafsu duniawi dan aspirasi keagamaan, selama kurang lebih enam bulan sejak bulan Rajab tahun 1096 M. Pada akhirnya, keinginanku menyerah dan aku pasrah pada takdir. Tuhan menyebabkan suatu halangan untuk membelenggu lidahku dan mencegahku untuk mengajar. Dengan sia-sia aku ingin, demi kepentingan murid-muridku, untuk melanjutkan pengajaranku, tetapi mulutku menjadi bisu. Keheningan yang menimpaku membuatku putus asa; perutku menjadi lemah; aku kehilangan nafsu makan; aku tidak dapat menelan sepotong roti pun atau minum setetes air pun.</p><p>Kelemahan fisik saya begitu parah sehingga para dokter, yang putus asa untuk menyelamatkan saya, berkata, “Kerusakannya ada di jantung, dan telah menular ke seluruh tubuh; tidak ada <a id="pgepubid00045"></a><a id="Page_45"></a>harapan kecuali penyebab kesedihan yang mendalam ini dihentikan.”</p><p>Akhirnya, menyadari kelemahan dan kerendahan hati saya, saya berlindung kepada Allah sebagai manusia yang berada di ujung jurang keputusasaan dan tanpa sumber daya. “Dia yang mendengar orang-orang yang sengsara ketika mereka menangis” ( Al-Qur'an , 27:63) berkenan mendengarkan saya; Dia memudahkan saya dalam mengorbankan kehormatan , harta benda, dan keluarga. Saya mengumumkan secara terbuka bahwa saya bermaksud melakukan ibadah haji ke Mekah, sementara secara diam-diam saya memutuskan untuk pergi ke Suriah, tidak ingin Khalifah (semoga Allah memujanya) atau teman - teman saya mengetahui niat saya untuk menetap di negara itu. Saya membuat berbagai alasan cerdas untuk meninggalkan Baghdad dengan niat tetap untuk tidak kembali ke sana. Para Imam Irak Mereka mengkritikku dengan serempak. Tak seorang pun dari mereka dapat mengakui bahwa pengorbanan ini memiliki motif keagamaan, karena mereka menganggap posisiku sebagai posisi tertinggi yang dapat dicapai dalam komunitas keagamaan. “Lihatlah betapa luasnya pengetahuan mereka!” ( Al-Qur'an , liii. 31). Berbagai macam penjelasan tentang perilakuku pun bermunculan. Mereka yang berada di luar wilayah Irak mengaitkannya dengan rasa takut yang ditanamkan pemerintah kepadaku. Mereka yang berada di tempat kejadian dan melihat bagaimana pihak berwenang ingin menahanku, ketidakpuasan mereka atas keputusanku dan penolakanku terhadap permintaan mereka, berkata dalam hati mereka, “Ini adalah musibah yang hanya dapat dikaitkan dengan nasib yang menimpa orang-orang yang beriman dan berilmu!”</p><p><a id="pgepubid00046"></a><a id="Page_46"></a></p><p>Akhirnya aku meninggalkan Bagdad, melepaskan seluruh kekayaanku. Hanya saja, karena tanah dan harta benda di Irak dapat dijadikan wakaf untuk tujuan keagamaan, aku memperoleh izin resmi untuk menyimpan sebanyak yang diperlukan untuk menghidupi diriku dan anak - anakku; karena sesungguhnya tidak ada yang lebih halal di dunia ini selain seorang cendekiawan menyediakan cukup untuk menghidupi keluarganya. Kemudian aku pergi ke Suriah, di mana aku tinggal selama dua tahun, yang kucurahkan untuk menyendiri, bermeditasi, dan melakukan latihan-latihan keagamaan. Aku hanya memikirkan peningkatan diri dan disiplin diri serta penyucian hati melalui doa dengan menjalani bentuk-bentuk ibadah yang telah diajarkan para Sufi kepadaku. Aku biasa hidup menyendiri di Masjid Damaskus, dan terbiasa menghabiskan hari-hariku di menara setelah menutup pintu di belakangku.</p><p>Dari sana saya melanjutkan perjalanan ke Yerusalem, dan setiap hari mengasingkan diri di Kuil Batu. <a id="FNanchor_2"></a><a href="#Footnote_2">[2] </a>Setelah itu saya merasa ingin menyelesaikan Ziarah, dan menerima limpahan rahmat sepenuhnya dengan mengunjungi Mekah, Madinah, dan Makam Nabi. Setelah mengunjungi makam Sahabat Allah (Abraham), saya pergi ke Hedjaz . Akhirnya, kerinduan hati saya dan doa anak-anak saya membawa saya kembali ke negara saya, meskipun pada awalnya saya sangat bertekad untuk tidak pernah mengunjunginya lagi. Setidaknya saya bermaksud, jika saya kembali, untuk tinggal di sana sendirian dan dalam meditasi keagamaan; <a id="pgepubid00047"></a><a id="Page_47"></a>tetapi peristiwa, masalah keluarga, dan perubahan hidup mengubah tekad saya dan mengganggu ketenangan meditasi saya. Betapapun tidak teraturnya interval yang dapat saya berikan untuk ekstasi devosi, kepercayaan saya padanya tidak berkurang; dan semakin saya teralihkan oleh rintangan, semakin teguh saya kembali kepadanya.</p><p>Sepuluh tahun berlalu dengan cara ini. Selama periode meditasi saya yang berturut-turut, terungkap kepada saya hal-hal yang mustahil untuk diceritakan. Yang akan saya katakan untuk pencerahan pembaca hanyalah ini: Saya belajar dari sumber yang terpercaya bahwa kaum Sufi adalah pelopor sejati di jalan Tuhan; bahwa tidak ada yang lebih indah daripada kehidupan mereka, tidak ada yang lebih terpuji daripada aturan perilaku mereka, dan tidak ada yang lebih murni daripada moralitas mereka. Kecerdasan para pemikir, kebijaksanaan para filsuf, pengetahuan para ahli hukum yang paling terpelajar akan sia-sia menggabungkan upaya mereka untuk memodifikasi atau meningkatkan doktrin dan moral mereka; itu tidak mungkin. Dengan kaum Sufi, ketenangan dan gerakan, lahiriah maupun batiniah, diterangi oleh cahaya yang berasal dari Pancaran Inspirasi Pusat. Dan cahaya apa lagi yang dapat bersinar di muka bumi? Singkatnya, apa yang dapat dikritik dari mereka? Membersihkan hati dari semua yang tidak termasuk Tuhan adalah langkah pertama dalam metode katarsis mereka. Pengangkatan hati melalui doa adalah landasan utamanya, sebagaimana seruan “Allahu Akbar” (Allah Maha Besar) adalah landasan utama <a id="pgepubid00048"></a><a id="Page_48"></a>doa, dan tahap terakhir adalah tenggelam dalam Tuhan. Saya katakan tahap terakhir, merujuk pada apa yang dapat dicapai dengan usaha kemauan; tetapi, sejujurnya, itu hanyalah tahap pertama dalam kehidupan kontemplasi, serambi tempat para yang telah diinisiasi memasuki jalan tersebut.</p><p>Sejak mereka memulai jalan ini, wahyu mulai berdatangan bagi mereka. Mereka melihat malaikat dan jiwa para nabi dalam keadaan sadar; mereka mendengar suara dan nasihat bijak mereka. Melalui perenungan akan bentuk dan gambaran surgawi ini, mereka secara bertahap naik ke ketinggian yang tidak dapat dicapai oleh bahasa manusia, yang bahkan tidak dapat diungkapkan tanpa jatuh ke dalam kesalahan besar dan tak terelakkan. Tingkat kedekatan dengan Tuhan yang mereka capai dianggap oleh sebagian orang sebagai percampuran wujud ( haloul ), oleh sebagian lainnya sebagai identifikasi ( ittihād ), oleh sebagian lainnya sebagai persatuan intim ( wasl ). Tetapi semua ungkapan ini salah, seperti yang telah kami jelaskan dalam karya kami yang berjudul Tujuan Utama . Mereka yang telah mencapai tahap itu hendaknya membatasi diri untuk mengulangi ayat—</p><p> </p><p>Apa yang saya alami, tak akan saya coba ceritakan;</p><p>Sebut saja aku bahagia, tapi jangan tanya aku lebih dari itu.</p><p> </p><p>Singkatnya, siapa pun yang tidak sampai pada intuisi kebenaran ini melalui ekstasi, hanya mengenal nama inspirasi . Mukjizat yang dilakukan oleh para santo, pada kenyataannya, hanyalah bentuk-bentuk awal dari manifestasi kenabian. Demikianlah <a id="pgepubid00049"></a><a id="Page_49"></a>keadaan Rasulullah SAW ketika, sebelum menerima penugasannya, beliau mengasingkan diri ke Gunung Hira untuk menyerahkan diri pada intensitas doa dan meditasi sedemikian rupa sehingga orang-orang Arab berkata: “Muhammad telah jatuh cinta kepada Allah.”</p><p>Keadaan ini, kemudian, dapat diungkapkan kepada mereka yang telah diinisiasi dalam ekstasi, dan kepada mereka yang tidak mampu mengalami ekstasi, melalui ketaatan dan perhatian, dengan syarat bahwa mereka sering bergaul dengan kaum Sufi hingga mereka mencapai, bisa dikatakan, inisiasi imitasi. Demikianlah iman yang dapat diperoleh seseorang dengan tetap berada di antara mereka, dan pergaulan dengan mereka tidak pernah menyakitkan.</p><p>Namun, bahkan ketika kita kehilangan keuntungan dari pergaulan mereka, kita dapat memahami kemungkinan keadaan ini (wahyu melalui ekstasi) melalui serangkaian bukti yang nyata. Kami telah menjelaskan hal ini dalam risalah berjudul Keajaiban Hati , yang merupakan bagian dari karya kami, Kebangkitan Ilmu-Ilmu Agama . Kepastian yang diperoleh dari bukti disebut &quot;pengetahuan&quot;; memasuki keadaan yang kami gambarkan disebut &quot;kegembiraan&quot;; mempercayai pengalaman orang lain dan transmisi lisan adalah &quot;iman.&quot; Demikianlah tiga tingkatan pengetahuan, sebagaimana tertulis, &quot;Tuhan akan mengangkat derajat orang-orang di antara kamu yang beriman dan orang-orang yang memperoleh ilmu dari-Nya&quot; ( Al-Qur'an , lviii. 12).</p><p>Namun di balik orang-orang yang beriman, terdapat sekelompok orang bodoh yang mengingkari realitas Sufisme, mendengarkan ceramah tentangnya dengan ironi yang tidak percaya, dan <a id="pgepubid00050"></a><a id="Page_50"></a>memperlakukan orang-orang yang menganutnya sebagai penipu. Kepada kelompok orang bodoh inilah ayat ini berlaku: “Ada di antara mereka yang datang untuk mendengarkanmu, lalu ketika mereka pergi, mereka bertanya kepada orang-orang yang berilmu, ‘Apa yang baru saja dikatakannya?’ Mereka itulah orang-orang yang hatinya telah ditutup Allah dengan kebutaan dan mereka hanya mengikuti hawa nafsu mereka.”</p><p>Di antara sejumlah keyakinan yang saya peroleh berkat praktik ajaran Sufi adalah pengetahuan tentang hakikat sejati ilham. Pengetahuan ini sangat penting sehingga saya akan menjelaskannya secara rinci.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="divisi-divisi-ilmu-filsafat.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Divisi-Divisi Ilmu Filsafat</span>
+    </a>
+    <a href="realita-inspirasi-pentingnya-bagi-umat-manusia.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Realita Inspirasi: Pentingnya Bagi Umat Manusia</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,154 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>SUFISME</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Setelah menyelesaikan kajian saya terhadap doktrin-doktrin tersebut , saya mendalami studi Sufisme. Saya menyadari bahwa untuk memahaminya secara menyeluruh, seseorang harus menggabungkan teori dengan praktik. Tujuan yang ditetapkan oleh para Sufi adalah sebagai berikut: Membebaskan jiwa dari kuk nafsu yang menindas, melepaskannya dari kecenderungan yang salah dan naluri jahat, agar di dalam hati yang telah disucikan hanya tersisa tempat bagi Tuhan dan seruan akan nama-Nya yang suci. Karena lebih mudah mempelajari ajaran mereka daripada mempraktikkannya , pertama-tama saya mempelajari buku-buku mereka yang memuat ajaran tersebut: "Penguatan Hati" karya Abu Talib dari Mekah, karya-karya Hareth el Muhasibi, dan fragmen-fragmen yang masih tersisa dari Junaid, Shibli, Abu Yezid Bustami dan para pemimpin lainnya (semoga Allah menyucikan jiwa mereka). Saya memperoleh pengetahuan yang mendalam tentang penelitian mereka, dan saya mempelajari semua yang mungkin dipelajari tentang metode mereka melalui studi dan pengajaran lisan. Menjadi jelas bagi saya bahwa tahap terakhir tidak dapat dicapai hanya dengan instruksi, tetapi hanya melalui ekstase, kegembiraan, dan transformasi moral. Mendefinisikan kesehatan dan rasa kenyang, memahami penyebab dan kondisinya, adalah hal yang sangat berbeda dari sekadar sehat dan puas. Mendefinisikan mabuk, mengetahui bahwa itu disebabkan oleh uap yang naik dari perut dan mengaburkan pusat kecerdasan, adalah hal yang sangat berbeda dari sekadar mabuk. Orang mabuk tidak memiliki gagasan tentang sifat mabuk, hanya karena dia mabuk dan tidak dalam kondisi untuk memahami apa pun, sementara dokter, yang tidak berada di bawah pengaruh mabuk, mengetahui karakter dan hukumnya. Atau jika dokter jatuh sakit, dia memiliki pengetahuan teoritis tentang kesehatan yang hilang darinya. Dengan cara yang sama, terdapat perbedaan yang cukup besar antara mengetahui pelepasan diri, memahami syarat dan penyebabnya, dan mempraktikkan pelepasan diri dan keterpisahan dari hal-hal duniawi. Saya melihat bahwa Sufisme terdiri dari pengalaman daripada definisi, dan bahwa apa yang saya kurang termasuk dalam ranah, bukan pengajaran, tetapi ekstasi dan inisiasi. Penelitian yang telah saya tekuni, jalan yang telah saya tempuh dalam mempelajari cabang-cabang ilmu agama dan spekulatif, telah memberi saya keyakinan yang teguh pada tiga hal—Tuhan, Inspirasi, dan Hari Penghakiman Terakhir. Ketiga pokok keyakinan mendasar ini diteguhkan dalam diri saya, bukan hanya oleh argumen-argumen tertentu, tetapi oleh rangkaian sebab, keadaan, dan bukti yang mustahil untuk diceritakan. Saya melihat bahwa seseorang hanya dapat berharap untuk keselamatan melalui pengabdian dan penaklukan nafsu, suatu prosedur yang mensyaratkan pelepasan dan keterpisahan dari dunia kepalsuan ini untuk berpaling kepada keabadian dan meditasi kepada Tuhan. Akhirnya, saya melihat bahwa satu-satunya syarat keberhasilan adalah mengorbankan kehormatan dan kekayaan serta memutuskan ikatan dan keterikatan kehidupan duniawi. Setelah merenungkan keadaan saya dengan serius, saya mendapati diri saya terbelenggu di semua sisi oleh belenggu-belenggu ini. Memeriksa tindakan saya, yang paling tampak baik di antaranya adalah pekerjaan saya sebagai dosen dan profesor, saya terkejut mendapati bahwa saya sibuk dengan beberapa studi yang nilainya kecil, dan tidak bermanfaat bagi keselamatan saya. Saya menyelidiki motif pengajaran saya dan menemukan bahwa, alih-alih dengan tulus mengabdikan diri kepada Tuhan, itu hanya didorong oleh keinginan sia-sia akan kehormatan dan reputasi. Saya menyadari bahwa saya berada di tepi jurang, dan bahwa tanpa pertobatan segera saya akan dihukum dengan api abadi. Dalam refleksi ini saya menghabiskan waktu lama. Masih diliputi ketidakpastian, suatu hari saya memutuskan untuk meninggalkan Bagdad dan meninggalkan segalanya; keesokan harinya saya mengingkari tekad saya. Saya melangkah satu langkah dan segera kembali terjerumus. Di pagi hari saya dengan tulus bertekad hanya untuk menyibukkan diri dengan kehidupan masa depan; di malam hari sekumpulan pikiran duniawi menyerang dan menghancurkan tekad saya. Di satu sisi, dunia mengikatku pada posisiku dalam rantai keserakahan, di sisi lain suara agama berseru kepadaku, “Bangun! Bangun! Hidupmu hampir berakhir, dan kau masih harus menempuh perjalanan panjang. Semua pengetahuanmu yang kau klaim hanyalah kebohongan dan fantasi. Jika kau tidak memikirkan keselamatanmu sekarang, kapan kau akan memikirkannya? Jika kau tidak memutuskan rantaimu hari ini, kapan kau akan memutuskannya?” Kemudian tekadku semakin kuat, aku ingin meninggalkan semuanya dan melarikan diri; tetapi Penggoda, kembali menyerang, berkata, “Kau menderita perasaan sementara; jangan menyerah padanya, karena itu akan segera berlalu. Jika kau menurutinya, jika kau meninggalkan posisi yang baik ini, jabatan terhormat ini yang bebas dari masalah dan persaingan, kursi otoritas yang aman dari serangan, kau akan menyesalinya nanti tanpa bisa mendapatkannya kembali.” Demikianlah aku tetap berada, terombang-ambing oleh kekuatan yang berlawanan antara nafsu duniawi dan aspirasi keagamaan, selama kurang lebih enam bulan sejak bulan Rajab tahun 1096 M. Pada akhirnya, keinginanku menyerah dan aku pasrah pada takdir. Tuhan menyebabkan suatu halangan untuk membelenggu lidahku dan mencegahku untuk mengajar. Dengan sia-sia aku ingin, demi kepentingan murid-muridku, untuk melanjutkan pengajaranku, tetapi mulutku menjadi bisu. Keheningan yang menimpaku membuatku putus asa; perutku menjadi lemah; aku kehilangan nafsu makan; aku tidak dapat menelan sepotong roti pun atau minum setetes air pun. Kelemahan fisik saya begitu parah sehingga para dokter, yang putus asa untuk menyelamatkan saya, berkata, “Kerusakannya ada di jantung, dan telah menular ke seluruh tubuh; tidak ada harapan kecuali penyebab kesedihan yang mendalam ini dihentikan.” Akhirnya, menyadari kelemahan dan kerendahan hati saya, saya berlindung kepada Allah sebagai manusia yang berada di ujung jurang keputusasaan dan tanpa sumber daya. “Dia yang mendengar orang-orang yang sengsara ketika mereka menangis” ( Al-Qur'an , 27:63) berkenan mendengarkan saya; Dia memudahkan saya dalam mengorbankan kehormatan , harta benda, dan keluarga. Saya mengumumkan secara terbuka bahwa saya bermaksud melakukan ibadah haji ke Mekah, sementara secara diam-diam saya memutuskan untuk pergi ke Suriah, tidak ingin Khalifah (semoga Allah memujanya) atau teman - teman saya mengetahui niat saya untuk menetap di negara itu. Saya membuat berbagai alasan cerdas untuk meninggalkan Baghdad dengan niat tetap untuk tidak kembali ke sana. Para Imam Irak Mereka mengkritikku dengan serempak. Tak seorang pun dari mereka dapat mengakui bahwa pengorbanan ini memiliki motif keagamaan, karena mereka menganggap posisiku sebagai posisi tertinggi yang dapat dicapai dalam komunitas keagamaan. “Lihatlah betapa luasnya pengetahuan mereka!” ( Al-Qur'an , liii. 31). Berbagai macam penjelasan tentang perilakuku pun bermunculan. Mereka yang berada di luar wilayah Irak mengaitkannya dengan rasa takut yang ditanamkan pemerintah kepadaku. Mereka yang berada di tempat kejadian dan melihat bagaimana pihak berwenang ingin menahanku, ketidakpuasan mereka atas keputusanku dan penolakanku terhadap permintaan mereka, berkata dalam hati mereka, “Ini adalah musibah yang hanya dapat dikaitkan dengan nasib yang menimpa orang-orang yang beriman dan berilmu!”</p>
-<p>Akhirnya aku meninggalkan Bagdad, melepaskan seluruh kekayaanku. Hanya saja, karena tanah dan harta benda di Irak dapat dijadikan wakaf untuk tujuan keagamaan, aku memperoleh izin resmi untuk menyimpan sebanyak yang diperlukan untuk menghidupi diriku dan anak - anakku; karena sesungguhnya tidak ada yang lebih halal di dunia ini selain seorang cendekiawan menyediakan cukup untuk menghidupi keluarganya. Kemudian aku pergi ke Suriah, di mana aku tinggal selama dua tahun, yang kucurahkan untuk menyendiri, bermeditasi, dan melakukan latihan-latihan keagamaan. Aku hanya memikirkan peningkatan diri dan disiplin diri serta penyucian hati melalui doa dengan menjalani bentuk-bentuk ibadah yang telah diajarkan para Sufi kepadaku. Aku biasa hidup menyendiri di Masjid Damaskus, dan terbiasa menghabiskan hari-hariku di menara setelah menutup pintu di belakangku. Dari sana saya melanjutkan perjalanan ke Yerusalem, dan setiap hari mengasingkan diri di Kuil Batu. [2] Setelah itu saya merasa ingin menyelesaikan Ziarah, dan menerima limpahan rahmat sepenuhnya dengan mengunjungi Mekah, Madinah, dan Makam Nabi. Setelah mengunjungi makam Sahabat Allah (Abraham), saya pergi ke Hedjaz . Akhirnya, kerinduan hati saya dan doa anak-anak saya membawa saya kembali ke negara saya, meskipun pada awalnya saya sangat bertekad untuk tidak pernah mengunjunginya lagi. Setidaknya saya bermaksud, jika saya kembali, untuk tinggal di sana sendirian dan dalam meditasi keagamaan; tetapi peristiwa, masalah keluarga, dan perubahan hidup mengubah tekad saya dan mengganggu ketenangan meditasi saya. Betapapun tidak teraturnya interval yang dapat saya berikan untuk ekstasi devosi, kepercayaan saya padanya tidak berkurang; dan semakin saya teralihkan oleh rintangan, semakin teguh saya kembali kepadanya. Sepuluh tahun berlalu dengan cara ini. Selama periode meditasi saya yang berturut-turut, terungkap kepada saya hal-hal yang mustahil untuk diceritakan. Yang akan saya katakan untuk pencerahan pembaca hanyalah ini: Saya belajar dari sumber yang terpercaya bahwa kaum Sufi adalah pelopor sejati di jalan Tuhan; bahwa tidak ada yang lebih indah daripada kehidupan mereka, tidak ada yang lebih terpuji daripada aturan perilaku mereka, dan tidak ada yang lebih murni daripada moralitas mereka. Kecerdasan para pemikir, kebijaksanaan para filsuf, pengetahuan para ahli hukum yang paling terpelajar akan sia-sia menggabungkan upaya mereka untuk memodifikasi atau meningkatkan doktrin dan moral mereka; itu tidak mungkin. Dengan kaum Sufi, ketenangan dan gerakan, lahiriah maupun batiniah, diterangi oleh cahaya yang berasal dari Pancaran Inspirasi Pusat. Dan cahaya apa lagi yang dapat bersinar di muka bumi? Singkatnya, apa yang dapat dikritik dari mereka? Membersihkan hati dari semua yang tidak termasuk Tuhan adalah langkah pertama dalam metode katarsis mereka. Pengangkatan hati melalui doa adalah landasan utamanya, sebagaimana seruan “Allahu Akbar” (Allah Maha Besar) adalah landasan utama doa, dan tahap terakhir adalah tenggelam dalam Tuhan. Saya katakan tahap terakhir, merujuk pada apa yang dapat dicapai dengan usaha kemauan; tetapi, sejujurnya, itu hanyalah tahap pertama dalam kehidupan kontemplasi, serambi tempat para yang telah diinisiasi memasuki jalan tersebut. Sejak mereka memulai jalan ini, wahyu mulai berdatangan bagi mereka. Mereka melihat malaikat dan jiwa para nabi dalam keadaan sadar; mereka mendengar suara dan nasihat bijak mereka. Melalui perenungan akan bentuk dan gambaran surgawi ini, mereka secara bertahap naik ke ketinggian yang tidak dapat dicapai oleh bahasa manusia, yang bahkan tidak dapat diungkapkan tanpa jatuh ke dalam kesalahan besar dan tak terelakkan. Tingkat kedekatan dengan Tuhan yang mereka capai dianggap oleh sebagian orang sebagai percampuran wujud ( haloul ), oleh sebagian lainnya sebagai identifikasi ( ittihād ), oleh sebagian lainnya sebagai persatuan intim ( wasl ). Tetapi semua ungkapan ini salah, seperti yang telah kami jelaskan dalam karya kami yang berjudul Tujuan Utama . Mereka yang telah mencapai tahap itu hendaknya membatasi diri untuk mengulangi ayat—</p>
-<p>Apa yang saya alami, tak akan saya coba ceritakan; Sebut saja aku bahagia, tapi jangan tanya aku lebih dari itu.</p>
-<p>Singkatnya, siapa pun yang tidak sampai pada intuisi kebenaran ini melalui ekstasi, hanya mengenal nama inspirasi . Mukjizat yang dilakukan oleh para santo, pada kenyataannya, hanyalah bentuk-bentuk awal dari manifestasi kenabian. Demikianlah keadaan Rasulullah SAW ketika, sebelum menerima penugasannya, beliau mengasingkan diri ke Gunung Hira untuk menyerahkan diri pada intensitas doa dan meditasi sedemikian rupa sehingga orang-orang Arab berkata: “Muhammad telah jatuh cinta kepada Allah.” Keadaan ini, kemudian, dapat diungkapkan kepada mereka yang telah diinisiasi dalam ekstasi, dan kepada mereka yang tidak mampu mengalami ekstasi, melalui ketaatan dan perhatian, dengan syarat bahwa mereka sering bergaul dengan kaum Sufi hingga mereka mencapai, bisa dikatakan, inisiasi imitasi. Demikianlah iman yang dapat diperoleh seseorang dengan tetap berada di antara mereka, dan pergaulan dengan mereka tidak pernah menyakitkan. Namun, bahkan ketika kita kehilangan keuntungan dari pergaulan mereka, kita dapat memahami kemungkinan keadaan ini (wahyu melalui ekstasi) melalui serangkaian bukti yang nyata. Kami telah menjelaskan hal ini dalam risalah berjudul Keajaiban Hati , yang merupakan bagian dari karya kami, Kebangkitan Ilmu-Ilmu Agama . Kepastian yang diperoleh dari bukti disebut "pengetahuan"; memasuki keadaan yang kami gambarkan disebut "kegembiraan"; mempercayai pengalaman orang lain dan transmisi lisan adalah "iman." Demikianlah tiga tingkatan pengetahuan, sebagaimana tertulis, "Tuhan akan mengangkat derajat orang-orang di antara kamu yang beriman dan orang-orang yang memperoleh ilmu dari-Nya" ( Al-Qur'an , lviii. 12). Namun di balik orang-orang yang beriman, terdapat sekelompok orang bodoh yang mengingkari realitas Sufisme, mendengarkan ceramah tentangnya dengan ironi yang tidak percaya, dan memperlakukan orang-orang yang menganutnya sebagai penipu. Kepada kelompok orang bodoh inilah ayat ini berlaku: “Ada di antara mereka yang datang untuk mendengarkanmu, lalu ketika mereka pergi, mereka bertanya kepada orang-orang yang berilmu, ‘Apa yang baru saja dikatakannya?’ Mereka itulah orang-orang yang hatinya telah ditutup Allah dengan kebutaan dan mereka hanya mengikuti hawa nafsu mereka.” Di antara sejumlah keyakinan yang saya peroleh berkat praktik ajaran Sufi adalah pengetahuan tentang hakikat sejati ilham. Pengetahuan ini sangat penting sehingga saya akan menjelaskannya secara rinci.</p>
-
-<div class="nav">
-  <a href="divisi-divisi-ilmu-filsafat.html">⬅ Divisi-Divisi Ilmu Filsafat</a>
-  <a href="realita-inspirasi-pentingnya-bagi-umat-manusia.html">Realita Inspirasi: Pentingnya Bagi Umat Manusia ➡</a>
-</div>
 
 </body>
 </html>

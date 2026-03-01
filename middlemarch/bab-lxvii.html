@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB LXVII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB LXVII. - Bacaan digital klasik">
+<title>Bab LXVII — Middlemarch</title>
+<meta name="description" content="Baca Bab LXVII dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-lxvii.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab LXVII — Middlemarch">
+  <meta property="og:description" content="Baca Bab LXVII dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-lxvii.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab LXVII — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab LXVII dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab LXVII",
+    "name": "Bab LXVII — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-lxvii.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab LXVII</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Kini terjadi perang saudara di dalam jiwa: <br />Keteguhan hati terguling dari takhta suci oleh Kebutuhan yang ribut, dan Kesombongan sang wazir agung membuat perjanjian yang rendah hati, memainkan peran yang luwes sebagai utusan dan pembela yang pandai berbicara bagi para pemberontak yang kelaparan.</p><p>Untungnya Lydgate akhirnya kalah di ruang biliar, dan tidak mendapat dorongan untuk mencoba peruntungan lagi. Sebaliknya, ia merasa sangat jijik pada dirinya sendiri keesokan harinya ketika harus membayar empat atau lima pound lebih dari keuntungannya, dan ia membawa serta bayangan yang sangat tidak menyenangkan tentang sosok yang telah ia buat, tidak hanya bergaul dengan orang-orang di Green Dragon tetapi juga berperilaku seperti mereka. Seorang filsuf yang jatuh ke dalam perjudian hampir tidak dapat dibedakan dari seorang Filistin dalam keadaan yang sama: perbedaannya terutama akan ditemukan dalam refleksi selanjutnya, dan Lydgate merenungkan hal itu dengan sangat tidak menyenangkan. Akal sehatnya mengatakan kepadanya bagaimana urusan itu bisa menjadi kehancuran hanya dengan sedikit perubahan suasana—jika ia pergi ke rumah judi, di mana peluang dapat digenggam dengan kedua tangan alih-alih diambil dengan ibu jari dan jari telunjuk. Meskipun demikian, meskipun akal sehat menekan keinginan untuk berjudi, tetap ada perasaan bahwa, dengan jaminan keberuntungan yang cukup, ia ingin berjudi, daripada mengambil alternatif yang mulai muncul sebagai sesuatu yang tak terhindarkan.</p><p>Alternatif itu harus diterapkan pada Tuan Bulstrode. Lydgate telah berkali-kali membual, baik kepada dirinya sendiri maupun orang lain, bahwa ia sepenuhnya independen dari Bulstrode, yang rencananya ia ikuti semata-mata karena hal itu memungkinkannya untuk melaksanakan ide-idenya sendiri tentang pekerjaan profesional dan manfaat publik—ia selalu mempertahankan kebanggaannya dalam interaksi pribadi mereka dengan perasaan bahwa ia memanfaatkan bankir yang berpengaruh ini dengan baik secara sosial, yang pendapatnya ia anggap hina dan motifnya sering kali tampak baginya sebagai campuran absurd dari kesan-kesan yang kontradiktif—sehingga ia telah menciptakan hambatan ideal yang kuat bagi dirinya sendiri untuk mengajukan permintaan yang cukup besar kepadanya atas nama dirinya sendiri.</p><p>Namun, pada awal Maret, keadaannya telah mencapai titik di mana orang mulai mengatakan bahwa sumpah mereka diucapkan dalam ketidaktahuan, dan menyadari bahwa tindakan yang mereka sebut mustahil bagi mereka menjadi jelas mungkin. Dengan jaminan Dover yang buruk akan segera diberlakukan, dengan hasil praktiknya langsung terserap untuk membayar hutang, dan dengan kemungkinan, jika yang terburuk terjadi, pasokan harian ditolak secara kredit, dan terutama dengan bayangan ketidakpuasan Rosamond yang tak berujung terus menghantuinya, Lydgate mulai menyadari bahwa ia pasti harus meminta bantuan dari seseorang. Awalnya ia mempertimbangkan apakah ia harus menulis surat kepada Tuan Vincy; tetapi setelah menanyai Rosamond, ia menemukan bahwa, seperti yang ia duga, Rosamond telah meminta bantuan ayahnya dua kali, terakhir kali setelah kekecewaan dari Sir Godwin; dan ayahnya mengatakan bahwa Lydgate harus mengurus dirinya sendiri. “Ayah berkata bahwa ia datang ke sini, dengan tahun-tahun buruk yang berturut- turut, untuk berdagang semakin banyak dengan modal pinjaman, dan harus melepaskan banyak kemewahan; ia tidak dapat menyisihkan satu ratus pun dari biaya keluarganya. Ia berkata, suruh Lydgate meminta Bulstrode: mereka selalu bekerja sama erat.”</p><p>Memang, Lydgate sendiri telah sampai pada kesimpulan bahwa jika ia harus meminta pinjaman tanpa imbalan, hubungannya dengan Bulstrode, setidaknya lebih dari dengan orang lain mana pun, mungkin akan berbentuk klaim yang bukan semata-mata bersifat pribadi. Bulstrode secara tidak langsung telah membantu menyebabkan kegagalan praktiknya, dan juga sangat senang mendapatkan mitra medis dalam rencananya:—tetapi siapa di antara kita yang pernah merendahkan diri hingga bergantung seperti yang dialami Lydgate sekarang, tanpa mencoba percaya bahwa ia memiliki klaim yang mengurangi rasa malu karena meminta? Memang benar bahwa akhir-akhir ini tampaknya ada kelesuan baru dalam minat Bulstrode terhadap Rumah Sakit; tetapi kesehatannya memburuk, dan menunjukkan tanda-tanda gangguan saraf yang mendalam. Dalam hal lain, ia tampaknya tidak berubah: ia selalu sangat sopan, tetapi Lydgate telah mengamati sejak awal sikap dingin yang nyata dalam pernikahannya dan keadaan pribadi lainnya, sikap dingin yang selama ini lebih disukainya daripada kehangatan keakraban di antara mereka. Ia menunda niatnya dari hari ke hari, kebiasaannya bertindak berdasarkan kesimpulannya menjadi lemah karena rasa jijiknya terhadap setiap kemungkinan kesimpulan dan tindakan yang diakibatkannya. Ia sering bertemu Tuan Bulstrode, tetapi ia tidak mencoba memanfaatkan setiap kesempatan untuk kepentingan pribadinya. Pada suatu saat ia berpikir, “Saya akan menulis surat: saya lebih suka itu daripada pembicaraan yang bertele-tele;” pada saat lain ia berpikir, “Tidak; jika saya berbicara dengannya, saya bisa mundur sebelum menunjukkan tanda-tanda ketidakminatan.”</p><p>Namun hari-hari berlalu dan tidak ada surat yang ditulis, tidak ada wawancara khusus yang dicari. Dalam keengganannya untuk merasa malu karena sikap bergantungnya pada Bulstrode, ia mulai membiasakan imajinasinya dengan langkah lain yang bahkan lebih berbeda dari dirinya yang diingat. Ia mulai secara spontan mempertimbangkan apakah mungkin untuk melaksanakan gagasan kekanak-kanakan Rosamond yang sering membuatnya marah, yaitu, bahwa mereka harus meninggalkan Middlemarch tanpa melihat apa pun selain kata pengantar itu. Pertanyaan itu muncul—&quot;Apakah ada orang yang mau membeli praktik saya bahkan sekarang, dengan harga serendah itu? Maka penjualan itu bisa terjadi sebagai persiapan yang diperlukan untuk pergi.&quot;</p><p>Namun, yang menghalanginya untuk mengambil langkah ini, yang masih ia rasakan sebagai pengabaian yang hina terhadap pekerjaan saat ini, sebuah penyimpangan yang penuh rasa bersalah dari apa yang merupakan saluran nyata dan mungkin akan memperluas kegiatan yang bermanfaat, untuk memulai lagi tanpa tujuan yang dapat dibenarkan, ada hambatan ini, yaitu pembeli, jika memang dapat ditemukan, mungkin tidak akan segera muncul. Dan setelah itu? Rosamond di tempat tinggal yang sederhana, meskipun di kota terbesar atau kota terpencil sekalipun, tidak akan menemukan kehidupan yang dapat menyelamatkannya dari kesedihan, dan menyelamatkannya dari celaan karena telah menjerumuskannya ke dalam kesedihan itu. Karena ketika seseorang berada di puncak keberuntungannya, ia dapat tinggal di sana untuk waktu yang lama meskipun memiliki prestasi profesional. Dalam iklim Inggris, tidak ada ketidaksesuaian antara wawasan ilmiah dan tempat tinggal yang dilengkapi perabotan: ketidaksesuaian terutama terjadi antara ambisi ilmiah dan seorang istri yang keberatan dengan jenis tempat tinggal seperti itu.</p><p>Namun di tengah keraguannya, kesempatan datang untuk memutuskannya. Sebuah catatan dari Tuan Bulstrode meminta Lydgate untuk menemuinya di Bank. Kecenderungan hipokondria telah muncul dalam kondisi kesehatan bankir itu akhir-akhir ini; dan kurang tidur, yang sebenarnya hanya sedikit berlebihan dari gejala dispepsia yang biasa, telah ia pikirkan sebagai tanda kegilaan yang mengancam. Ia ingin berkonsultasi dengan Lydgate tanpa penundaan pada pagi itu, meskipun ia tidak memiliki apa pun untuk diceritakan selain apa yang telah ia ceritakan sebelumnya. Ia mendengarkan dengan penuh harap apa yang dikatakan Lydgate untuk menghilangkan ketakutannya, meskipun ini pun hanya pengulangan; dan momen di mana Bulstrode menerima pendapat medis dengan perasaan nyaman, tampaknya membuat penyampaian kebutuhan pribadi kepadanya lebih mudah daripada yang telah dipikirkan Lydgate sebelumnya. Ia telah bersikeras bahwa akan lebih baik bagi Tuan Bulstrode untuk mengurangi perhatiannya pada bisnis.</p><p>“Kita bisa melihat bagaimana tekanan mental sekecil apa pun dapat memengaruhi tubuh yang rapuh,” kata Lydgate pada tahap konsultasi ketika pembicaraan cenderung beralih dari hal pribadi ke hal umum, “dari dampak mendalam yang ditimbulkan kecemasan, bahkan pada orang muda dan kuat sekalipun. Saya pada dasarnya sangat kuat; namun saya telah benar-benar terguncang akhir-akhir ini oleh akumulasi masalah.”</p><p>“Saya kira, kondisi tubuh saya yang rentan seperti sekarang ini, akan sangat mudah terserang kolera jika penyakit itu menyerang daerah kita. Dan karena kemunculannya di dekat London, kita mungkin perlu mengepung Mercy-seat untuk perlindungan kita,” kata Tuan Bulstrode, bukan bermaksud menghindari sindiran Lydgate, tetapi sebenarnya lebih mengkhawatirkan dirinya sendiri.</p><p>“Bagaimanapun juga, Anda telah mengambil bagian dalam menerapkan tindakan pencegahan praktis yang baik untuk kota ini, dan itulah cara terbaik untuk meminta perlindungan,” kata Lydgate, dengan rasa jijik yang kuat terhadap metafora yang rusak dan logika buruk dari agama para bankir, yang sedikit meningkat karena ketidakpeduliannya terhadap simpati. Tetapi pikirannya telah mulai bergerak menuju upaya mendapatkan bantuan, dan belum terhenti. Dia menambahkan, “Kota ini telah berbuat baik dalam hal pembersihan dan penyediaan peralatan; dan saya pikir jika kolera datang, bahkan musuh kita akan mengakui bahwa pengaturan di Rumah Sakit adalah untuk kepentingan umum.”</p><p>“Sungguh,” kata Tuan Bulstrode dengan sedikit dingin. “Mengenai apa yang Anda katakan, Tuan Lydgate, tentang relaksasi kerja mental saya, saya telah lama memiliki tujuan ke arah itu—tujuan yang sangat tegas. Saya mempertimbangkan setidaknya untuk sementara waktu mengundurkan diri dari pengelolaan banyak bisnis, baik yang bersifat amal maupun komersial. Saya juga berpikir untuk pindah tempat tinggal untuk sementara waktu: mungkin saya akan menutup atau menyewakan 'The Shrubs,' dan pindah ke tempat di dekat pantai—tentu saja dengan mempertimbangkan kesehatan. Apakah itu tindakan yang akan Anda rekomendasikan?”</p><p>“Oh ya,” kata Lydgate, sambil menjatuhkan diri ke belakang di kursinya, dengan ketidaksabaran yang sulit ditahan di bawah tatapan mata bankir yang pucat dan serius serta perhatian yang begitu besar pada dirinya sendiri.</p><p>“Sudah sejak lama saya merasa perlu membuka pembicaraan ini dengan Anda terkait Rumah Sakit kita,” lanjut Bulstrode. “Dalam keadaan yang telah saya sebutkan, tentu saja saya harus berhenti memiliki peran pribadi dalam pengelolaannya, dan bertentangan dengan pandangan saya tentang tanggung jawab untuk terus mengalokasikan dana besar-besaran untuk sebuah institusi yang tidak dapat saya awasi dan atur sampai batas tertentu. Oleh karena itu, jika saya akhirnya memutuskan untuk meninggalkan Middlemarch, saya akan mempertimbangkan untuk menarik dukungan lain kepada Rumah Sakit Baru selain dukungan yang akan tetap ada karena saya terutama menanggung biaya pembangunannya, dan telah menyumbangkan sejumlah besar uang untuk keberhasilan operasionalnya.”</p><p>Ketika Bulstrode berhenti berbicara seperti biasanya, Lydgate berpikir, “Mungkin dia telah kehilangan banyak uang.” Ini adalah penjelasan yang paling masuk akal untuk pidato yang telah menyebabkan perubahan yang cukup mengejutkan dalam harapannya. Ia menjawab—</p><p>“Saya khawatir, kerugian yang dialami rumah sakit hampir tidak bisa diganti.”</p><p>“Hampir tidak mungkin,” jawab Bulstrode, dengan nada tenang dan penuh perhitungan; “kecuali dengan beberapa perubahan rencana. Satu-satunya orang yang dapat diandalkan untuk meningkatkan kontribusinya adalah Ny. Casaubon. Saya telah berbicara dengannya tentang masalah ini, dan saya telah menunjukkan kepadanya, seperti yang akan saya lakukan kepada Anda, bahwa akan lebih baik untuk mendapatkan dukungan yang lebih luas bagi Rumah Sakit Baru dengan perubahan sistem.” Hening sejenak, tetapi Lydgate tidak berbicara.</p><p>“Perubahan yang saya maksud adalah penggabungan dengan Rumah Sakit, sehingga Rumah Sakit Baru akan dianggap sebagai tambahan khusus untuk lembaga yang lebih tua, dengan dewan direksi yang sama. Selain itu, manajemen medis keduanya juga perlu digabungkan. Dengan cara ini, setiap kesulitan terkait pemeliharaan yang memadai untuk lembaga baru kita akan teratasi; kepentingan amal kota tidak akan lagi terpecah.”</p><p>Tuan Bulstrode mengalihkan pandangannya dari wajah Lydgate ke kancing mantelnya saat ia kembali berhenti.</p><p>“Tidak diragukan lagi itu adalah cara dan sarana yang baik,” kata Lydgate, dengan sedikit ironi dalam nada bicaranya. “Tetapi saya tidak bisa diharapkan untuk langsung bersukacita karenanya, karena salah satu akibat pertama adalah para dokter lain akan mengganggu atau menyela metode saya, hanya karena metode itu adalah milik saya.”</p><p>“Seperti yang Anda ketahui, Tuan Lydgate, saya sendiri sangat menghargai kesempatan untuk menerapkan prosedur baru dan independen yang telah Anda terapkan dengan tekun: rencana awal, saya akui, adalah rencana yang sangat saya sukai, dengan tunduk pada Kehendak Ilahi. Tetapi karena petunjuk ilahi menuntut saya untuk melepaskannya, maka saya melepaskannya.”</p><p>Bulstrode menunjukkan kemampuan yang agak menjengkelkan dalam percakapan ini. Metafora yang patah dan logika motif yang buruk yang telah membangkitkan rasa jijik pendengarnya sangat konsisten dengan cara penyampaian fakta yang membuat Lydgate sulit untuk melampiaskan kemarahan dan kekecewaannya sendiri. Setelah beberapa pertimbangan cepat, dia hanya bertanya—</p><p>“Apa yang dikatakan Nyonya Casaubon?”</p><p>“Itulah pernyataan lebih lanjut yang ingin saya sampaikan kepada Anda,” kata Bulstrode, yang telah mempersiapkan penjelasan menterinya dengan matang. “Anda tahu, dia adalah seorang wanita yang sangat dermawan, dan beruntung memiliki—bukan kekayaan yang besar, tetapi dana yang dapat ia sisihkan dengan baik. Dia telah memberi tahu saya bahwa meskipun dia telah mengalokasikan sebagian besar dana tersebut untuk tujuan lain, dia bersedia mempertimbangkan apakah dia dapat sepenuhnya menggantikan posisi saya dalam kaitannya dengan Rumah Sakit. Tetapi dia menginginkan waktu yang cukup untuk mematangkan pikirannya tentang hal itu, dan saya telah mengatakan kepadanya bahwa tidak perlu terburu-buru—bahwa, sebenarnya, rencana saya sendiri belum mutlak.”</p><p>Lydgate siap berkata, “Jika Nyonya Casaubon mau menggantikan Anda, akan ada keuntungan, bukan kerugian.” Tetapi masih ada beban di benaknya yang menghentikan kejujuran cerianya itu. Dia menjawab, “Kalau begitu, saya kira saya boleh membicarakan hal ini dengan Nyonya Casaubon.”</p><p>“Tepat sekali; itulah yang secara tegas diinginkannya. Keputusannya, katanya, akan sangat bergantung pada apa yang dapat Anda sampaikan kepadanya. Tetapi tidak untuk saat ini: saya yakin dia baru saja akan memulai perjalanan. Saya punya suratnya di sini,” kata Tuan Bulstrode, sambil mengeluarkannya dan membacanya. “'Saya sedang sibuk dengan urusan lain,' katanya. 'Saya akan pergi ke Yorkshire bersama Sir James dan Lady Chettam; dan kesimpulan yang saya dapatkan tentang beberapa lahan yang akan saya lihat di sana mungkin akan memengaruhi kemampuan saya untuk menyumbang ke Rumah Sakit.' Jadi, Tuan Lydgate, tidak perlu terburu-buru dalam hal ini; tetapi saya ingin memberi tahu Anda sebelumnya tentang apa yang mungkin terjadi.”</p><p>Tuan Bulstrode mengembalikan surat itu ke saku sampingnya, dan mengubah sikapnya seolah-olah urusannya sudah selesai. Lydgate, yang harapannya yang baru tentang Rumah Sakit hanya membuatnya lebih sadar akan fakta-fakta yang meracuni harapannya, merasa bahwa upayanya untuk meminta bantuan, jika memang harus dilakukan, harus dilakukan sekarang dan dengan sungguh-sungguh.</p><p>“Saya sangat berterima kasih kepada Anda karena telah memberi saya pemberitahuan penuh,” katanya, dengan nada tegas, namun dengan jeda dalam penyampaiannya yang menunjukkan bahwa ia berbicara dengan enggan. “Tujuan tertinggi bagi saya adalah profesi saya, dan saya telah mengidentifikasi Rumah Sakit dengan penggunaan terbaik yang dapat saya lakukan saat ini untuk profesi saya. Tetapi penggunaan terbaik tidak selalu sama dengan kesuksesan finansial. Segala sesuatu yang membuat Rumah Sakit tidak populer telah membantu penyebab lain—saya pikir semuanya terkait dengan semangat profesional saya—untuk membuat saya tidak populer sebagai praktisi. Saya kebanyakan mendapatkan pasien yang tidak mampu membayar saya. Saya akan lebih menyukai mereka, jika saya tidak memiliki siapa pun yang harus dibayar di pihak saya sendiri.” Lydgate menunggu sebentar, tetapi Bulstrode hanya membungkuk, menatapnya dengan tajam, dan ia melanjutkan dengan pengucapan yang sama terputus-putusnya—seolah-olah ia sedang menggigit daun bawang yang tidak disukainya.</p><p>“Saya mengalami kesulitan keuangan yang tidak dapat saya atasi, kecuali jika seseorang yang mempercayai saya dan masa depan saya bersedia memberi saya sejumlah uang tanpa jaminan lain. Saya hanya memiliki sedikit harta ketika datang ke sini. Saya tidak memiliki prospek uang dari keluarga saya sendiri. Pengeluaran saya, akibat pernikahan saya, jauh lebih besar dari yang saya perkirakan. Akibatnya saat ini, saya membutuhkan seribu pound untuk melunasi hutang saya. Maksud saya, untuk membebaskan saya dari risiko semua barang saya dijual sebagai jaminan hutang terbesar saya—serta untuk membayar hutang-hutang saya yang lain—dan menyisakan sedikit uang untuk menghidupi kami sedikit dengan penghasilan kami yang kecil. Saya rasa ayah mertua saya tidak mungkin memberikan uang muka sebesar itu. Itulah mengapa saya menceritakan keadaan saya kepada—kepada satu-satunya orang lain yang mungkin memiliki hubungan pribadi dengan kemakmuran atau kehancuran saya.”</p><p>Lydgate benci mendengar suaranya sendiri. Tetapi dia sudah berbicara, dan berbicara dengan ketegasan yang tak salah lagi. Tuan Bulstrode menjawab tanpa tergesa-gesa, tetapi juga tanpa ragu-ragu.</p><p>“Saya sedih, meskipun, jujur saja, saya tidak terkejut dengan informasi ini, Tuan Lydgate. Saya sendiri menyesali persekutuan Anda dengan keluarga saudara ipar saya, yang selalu memiliki kebiasaan boros, dan yang telah banyak berhutang budi kepada saya untuk menopang posisi mereka saat ini. Saran saya kepada Anda, Tuan Lydgate, adalah, daripada melibatkan diri dalam kewajiban lebih lanjut, dan melanjutkan perjuangan yang meragukan, Anda sebaiknya langsung saja menyatakan diri bangkrut.”</p><p>“Itu tidak akan memperbaiki prospek saya,” kata Lydgate, sambil berdiri dan berbicara dengan getir, “bahkan jika itu sendiri merupakan hal yang lebih menyenangkan.”</p><p>“Ini selalu merupakan cobaan,” kata Tuan Bulstrode; “tetapi cobaan, Tuan yang terhormat, adalah bagian kita di sini, dan merupakan koreksi yang dibutuhkan. Saya menyarankan Anda untuk mempertimbangkan nasihat yang telah saya berikan.”</p><p>“Terima kasih,” kata Lydgate, yang sebenarnya tidak tahu persis apa yang dia katakan. “Saya telah menyita waktu Anda terlalu lama. Selamat siang.”</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-lxvi.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Lxvi</span>
+    </a>
+    <a href="bab-lxiii.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Lxiii</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB LXVII.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Kini terjadi perang saudara di dalam jiwa: Keteguhan hati terguling dari takhta suci oleh Kebutuhan yang ribut, dan Kesombongan sang wazir agung membuat perjanjian yang rendah hati, memainkan peran yang luwes sebagai utusan dan pembela yang pandai berbicara bagi para pemberontak yang kelaparan. Untungnya Lydgate akhirnya kalah di ruang biliar, dan tidak mendapat dorongan untuk mencoba peruntungan lagi. Sebaliknya, ia merasa sangat jijik pada dirinya sendiri keesokan harinya ketika harus membayar empat atau lima pound lebih dari keuntungannya, dan ia membawa serta bayangan yang sangat tidak menyenangkan tentang sosok yang telah ia buat, tidak hanya bergaul dengan orang-orang di Green Dragon tetapi juga berperilaku seperti mereka. Seorang filsuf yang jatuh ke dalam perjudian hampir tidak dapat dibedakan dari seorang Filistin dalam keadaan yang sama: perbedaannya terutama akan ditemukan dalam refleksi selanjutnya, dan Lydgate merenungkan hal itu dengan sangat tidak menyenangkan. Akal sehatnya mengatakan kepadanya bagaimana urusan itu bisa menjadi kehancuran hanya dengan sedikit perubahan suasana—jika ia pergi ke rumah judi, di mana peluang dapat digenggam dengan kedua tangan alih-alih diambil dengan ibu jari dan jari telunjuk. Meskipun demikian, meskipun akal sehat menekan keinginan untuk berjudi, tetap ada perasaan bahwa, dengan jaminan keberuntungan yang cukup, ia ingin berjudi, daripada mengambil alternatif yang mulai muncul sebagai sesuatu yang tak terhindarkan. Alternatif itu harus diterapkan pada Tuan Bulstrode. Lydgate telah berkali-kali membual, baik kepada dirinya sendiri maupun orang lain, bahwa ia sepenuhnya independen dari Bulstrode, yang rencananya ia ikuti semata-mata karena hal itu memungkinkannya untuk melaksanakan ide-idenya sendiri tentang pekerjaan profesional dan manfaat publik—ia selalu mempertahankan kebanggaannya dalam interaksi pribadi mereka dengan perasaan bahwa ia memanfaatkan bankir yang berpengaruh ini dengan baik secara sosial, yang pendapatnya ia anggap hina dan motifnya sering kali tampak baginya sebagai campuran absurd dari kesan-kesan yang kontradiktif—sehingga ia telah menciptakan hambatan ideal yang kuat bagi dirinya sendiri untuk mengajukan permintaan yang cukup besar kepadanya atas nama dirinya sendiri. Namun, pada awal Maret, keadaannya telah mencapai titik di mana orang mulai mengatakan bahwa sumpah mereka diucapkan dalam ketidaktahuan, dan menyadari bahwa tindakan yang mereka sebut mustahil bagi mereka menjadi jelas mungkin. Dengan jaminan Dover yang buruk akan segera diberlakukan, dengan hasil praktiknya langsung terserap untuk membayar hutang, dan dengan kemungkinan, jika yang terburuk terjadi, pasokan harian ditolak secara kredit, dan terutama dengan bayangan ketidakpuasan Rosamond yang tak berujung terus menghantuinya, Lydgate mulai menyadari bahwa ia pasti harus meminta bantuan dari seseorang. Awalnya ia mempertimbangkan apakah ia harus menulis surat kepada Tuan Vincy; tetapi setelah menanyai Rosamond, ia menemukan bahwa, seperti yang ia duga, Rosamond telah meminta bantuan ayahnya dua kali, terakhir kali setelah kekecewaan dari Sir Godwin; dan ayahnya mengatakan bahwa Lydgate harus mengurus dirinya sendiri. “Ayah berkata bahwa ia datang ke sini, dengan tahun-tahun buruk yang berturut- turut, untuk berdagang semakin banyak dengan modal pinjaman, dan harus melepaskan banyak kemewahan; ia tidak dapat menyisihkan satu ratus pun dari biaya keluarganya. Ia berkata, suruh Lydgate meminta Bulstrode: mereka selalu bekerja sama erat.” Memang, Lydgate sendiri telah sampai pada kesimpulan bahwa jika ia harus meminta pinjaman tanpa imbalan, hubungannya dengan Bulstrode, setidaknya lebih dari dengan orang lain mana pun, mungkin akan berbentuk klaim yang bukan semata-mata bersifat pribadi. Bulstrode secara tidak langsung telah membantu menyebabkan kegagalan praktiknya, dan juga sangat senang mendapatkan mitra medis dalam rencananya:—tetapi siapa di antara kita yang pernah merendahkan diri hingga bergantung seperti yang dialami Lydgate sekarang, tanpa mencoba percaya bahwa ia memiliki klaim yang mengurangi rasa malu karena meminta? Memang benar bahwa akhir-akhir ini tampaknya ada kelesuan baru dalam minat Bulstrode terhadap Rumah Sakit; tetapi kesehatannya memburuk, dan menunjukkan tanda-tanda gangguan saraf yang mendalam. Dalam hal lain, ia tampaknya tidak berubah: ia selalu sangat sopan, tetapi Lydgate telah mengamati sejak awal sikap dingin yang nyata dalam pernikahannya dan keadaan pribadi lainnya, sikap dingin yang selama ini lebih disukainya daripada kehangatan keakraban di antara mereka. Ia menunda niatnya dari hari ke hari, kebiasaannya bertindak berdasarkan kesimpulannya menjadi lemah karena rasa jijiknya terhadap setiap kemungkinan kesimpulan dan tindakan yang diakibatkannya. Ia sering bertemu Tuan Bulstrode, tetapi ia tidak mencoba memanfaatkan setiap kesempatan untuk kepentingan pribadinya. Pada suatu saat ia berpikir, “Saya akan menulis surat: saya lebih suka itu daripada pembicaraan yang bertele-tele;” pada saat lain ia berpikir, “Tidak; jika saya berbicara dengannya, saya bisa mundur sebelum menunjukkan tanda-tanda ketidakminatan.” Namun hari-hari berlalu dan tidak ada surat yang ditulis, tidak ada wawancara khusus yang dicari. Dalam keengganannya untuk merasa malu karena sikap bergantungnya pada Bulstrode, ia mulai membiasakan imajinasinya dengan langkah lain yang bahkan lebih berbeda dari dirinya yang diingat. Ia mulai secara spontan mempertimbangkan apakah mungkin untuk melaksanakan gagasan kekanak-kanakan Rosamond yang sering membuatnya marah, yaitu, bahwa mereka harus meninggalkan Middlemarch tanpa melihat apa pun selain kata pengantar itu. Pertanyaan itu muncul—"Apakah ada orang yang mau membeli praktik saya bahkan sekarang, dengan harga serendah itu? Maka penjualan itu bisa terjadi sebagai persiapan yang diperlukan untuk pergi." Namun, yang menghalanginya untuk mengambil langkah ini, yang masih ia rasakan sebagai pengabaian yang hina terhadap pekerjaan saat ini, sebuah penyimpangan yang penuh rasa bersalah dari apa yang merupakan saluran nyata dan mungkin akan memperluas kegiatan yang bermanfaat, untuk memulai lagi tanpa tujuan yang dapat dibenarkan, ada hambatan ini, yaitu pembeli, jika memang dapat ditemukan, mungkin tidak akan segera muncul. Dan setelah itu? Rosamond di tempat tinggal yang sederhana, meskipun di kota terbesar atau kota terpencil sekalipun, tidak akan menemukan kehidupan yang dapat menyelamatkannya dari kesedihan, dan menyelamatkannya dari celaan karena telah menjerumuskannya ke dalam kesedihan itu. Karena ketika seseorang berada di puncak keberuntungannya, ia dapat tinggal di sana untuk waktu yang lama meskipun memiliki prestasi profesional. Dalam iklim Inggris, tidak ada ketidaksesuaian antara wawasan ilmiah dan tempat tinggal yang dilengkapi perabotan: ketidaksesuaian terutama terjadi antara ambisi ilmiah dan seorang istri yang keberatan dengan jenis tempat tinggal seperti itu. Namun di tengah keraguannya, kesempatan datang untuk memutuskannya. Sebuah catatan dari Tuan Bulstrode meminta Lydgate untuk menemuinya di Bank. Kecenderungan hipokondria telah muncul dalam kondisi kesehatan bankir itu akhir-akhir ini; dan kurang tidur, yang sebenarnya hanya sedikit berlebihan dari gejala dispepsia yang biasa, telah ia pikirkan sebagai tanda kegilaan yang mengancam. Ia ingin berkonsultasi dengan Lydgate tanpa penundaan pada pagi itu, meskipun ia tidak memiliki apa pun untuk diceritakan selain apa yang telah ia ceritakan sebelumnya. Ia mendengarkan dengan penuh harap apa yang dikatakan Lydgate untuk menghilangkan ketakutannya, meskipun ini pun hanya pengulangan; dan momen di mana Bulstrode menerima pendapat medis dengan perasaan nyaman, tampaknya membuat penyampaian kebutuhan pribadi kepadanya lebih mudah daripada yang telah dipikirkan Lydgate sebelumnya. Ia telah bersikeras bahwa akan lebih baik bagi Tuan Bulstrode untuk mengurangi perhatiannya pada bisnis. “Kita bisa melihat bagaimana tekanan mental sekecil apa pun dapat memengaruhi tubuh yang rapuh,” kata Lydgate pada tahap konsultasi ketika pembicaraan cenderung beralih dari hal pribadi ke hal umum, “dari dampak mendalam yang ditimbulkan kecemasan, bahkan pada orang muda dan kuat sekalipun. Saya pada dasarnya sangat kuat; namun saya telah benar-benar terguncang akhir-akhir ini oleh akumulasi masalah.” “Saya kira, kondisi tubuh saya yang rentan seperti sekarang ini, akan sangat mudah terserang kolera jika penyakit itu menyerang daerah kita. Dan karena kemunculannya di dekat London, kita mungkin perlu mengepung Mercy-seat untuk perlindungan kita,” kata Tuan Bulstrode, bukan bermaksud menghindari sindiran Lydgate, tetapi sebenarnya lebih mengkhawatirkan dirinya sendiri. “Bagaimanapun juga, Anda telah mengambil bagian dalam menerapkan tindakan pencegahan praktis yang baik untuk kota ini, dan itulah cara terbaik untuk meminta perlindungan,” kata Lydgate, dengan rasa jijik yang kuat terhadap metafora yang rusak dan logika buruk dari agama para bankir, yang sedikit meningkat karena ketidakpeduliannya terhadap simpati. Tetapi pikirannya telah mulai bergerak menuju upaya mendapatkan bantuan, dan belum terhenti. Dia menambahkan, “Kota ini telah berbuat baik dalam hal pembersihan dan penyediaan peralatan; dan saya pikir jika kolera datang, bahkan musuh kita akan mengakui bahwa pengaturan di Rumah Sakit adalah untuk kepentingan umum.” “Sungguh,” kata Tuan Bulstrode dengan sedikit dingin. “Mengenai apa yang Anda katakan, Tuan Lydgate, tentang relaksasi kerja mental saya, saya telah lama memiliki tujuan ke arah itu—tujuan yang sangat tegas. Saya mempertimbangkan setidaknya untuk sementara waktu mengundurkan diri dari pengelolaan banyak bisnis, baik yang bersifat amal maupun komersial. Saya juga berpikir untuk pindah tempat tinggal untuk sementara waktu: mungkin saya akan menutup atau menyewakan 'The Shrubs,' dan pindah ke tempat di dekat pantai—tentu saja dengan mempertimbangkan kesehatan. Apakah itu tindakan yang akan Anda rekomendasikan?” “Oh ya,” kata Lydgate, sambil menjatuhkan diri ke belakang di kursinya, dengan ketidaksabaran yang sulit ditahan di bawah tatapan mata bankir yang pucat dan serius serta perhatian yang begitu besar pada dirinya sendiri. “Sudah sejak lama saya merasa perlu membuka pembicaraan ini dengan Anda terkait Rumah Sakit kita,” lanjut Bulstrode. “Dalam keadaan yang telah saya sebutkan, tentu saja saya harus berhenti memiliki peran pribadi dalam pengelolaannya, dan bertentangan dengan pandangan saya tentang tanggung jawab untuk terus mengalokasikan dana besar-besaran untuk sebuah institusi yang tidak dapat saya awasi dan atur sampai batas tertentu. Oleh karena itu, jika saya akhirnya memutuskan untuk meninggalkan Middlemarch, saya akan mempertimbangkan untuk menarik dukungan lain kepada Rumah Sakit Baru selain dukungan yang akan tetap ada karena saya terutama menanggung biaya pembangunannya, dan telah menyumbangkan sejumlah besar uang untuk keberhasilan operasionalnya.” Ketika Bulstrode berhenti berbicara seperti biasanya, Lydgate berpikir, “Mungkin dia telah kehilangan banyak uang.” Ini adalah penjelasan yang paling masuk akal untuk pidato yang telah menyebabkan perubahan yang cukup mengejutkan dalam harapannya. Ia menjawab— “Saya khawatir, kerugian yang dialami rumah sakit hampir tidak bisa diganti.” “Hampir tidak mungkin,” jawab Bulstrode, dengan nada tenang dan penuh perhitungan; “kecuali dengan beberapa perubahan rencana. Satu-satunya orang yang dapat diandalkan untuk meningkatkan kontribusinya adalah Ny. Casaubon. Saya telah berbicara dengannya tentang masalah ini, dan saya telah menunjukkan kepadanya, seperti yang akan saya lakukan kepada Anda, bahwa akan lebih baik untuk mendapatkan dukungan yang lebih luas bagi Rumah Sakit Baru dengan perubahan sistem.” Hening sejenak, tetapi Lydgate tidak berbicara. “Perubahan yang saya maksud adalah penggabungan dengan Rumah Sakit, sehingga Rumah Sakit Baru akan dianggap sebagai tambahan khusus untuk lembaga yang lebih tua, dengan dewan direksi yang sama. Selain itu, manajemen medis keduanya juga perlu digabungkan. Dengan cara ini, setiap kesulitan terkait pemeliharaan yang memadai untuk lembaga baru kita akan teratasi; kepentingan amal kota tidak akan lagi terpecah.” Tuan Bulstrode mengalihkan pandangannya dari wajah Lydgate ke kancing mantelnya saat ia kembali berhenti. “Tidak diragukan lagi itu adalah cara dan sarana yang baik,” kata Lydgate, dengan sedikit ironi dalam nada bicaranya. “Tetapi saya tidak bisa diharapkan untuk langsung bersukacita karenanya, karena salah satu akibat pertama adalah para dokter lain akan mengganggu atau menyela metode saya, hanya karena metode itu adalah milik saya.” “Seperti yang Anda ketahui, Tuan Lydgate, saya sendiri sangat menghargai kesempatan untuk menerapkan prosedur baru dan independen yang telah Anda terapkan dengan tekun: rencana awal, saya akui, adalah rencana yang sangat saya sukai, dengan tunduk pada Kehendak Ilahi. Tetapi karena petunjuk ilahi menuntut saya untuk melepaskannya, maka saya melepaskannya.” Bulstrode menunjukkan kemampuan yang agak menjengkelkan dalam percakapan ini. Metafora yang patah dan logika motif yang buruk yang telah membangkitkan rasa jijik pendengarnya sangat konsisten dengan cara penyampaian fakta yang membuat Lydgate sulit untuk melampiaskan kemarahan dan kekecewaannya sendiri. Setelah beberapa pertimbangan cepat, dia hanya bertanya— “Apa yang dikatakan Nyonya Casaubon?” “Itulah pernyataan lebih lanjut yang ingin saya sampaikan kepada Anda,” kata Bulstrode, yang telah mempersiapkan penjelasan menterinya dengan matang. “Anda tahu, dia adalah seorang wanita yang sangat dermawan, dan beruntung memiliki—bukan kekayaan yang besar, tetapi dana yang dapat ia sisihkan dengan baik. Dia telah memberi tahu saya bahwa meskipun dia telah mengalokasikan sebagian besar dana tersebut untuk tujuan lain, dia bersedia mempertimbangkan apakah dia dapat sepenuhnya menggantikan posisi saya dalam kaitannya dengan Rumah Sakit. Tetapi dia menginginkan waktu yang cukup untuk mematangkan pikirannya tentang hal itu, dan saya telah mengatakan kepadanya bahwa tidak perlu terburu-buru—bahwa, sebenarnya, rencana saya sendiri belum mutlak.” Lydgate siap berkata, “Jika Nyonya Casaubon mau menggantikan Anda, akan ada keuntungan, bukan kerugian.” Tetapi masih ada beban di benaknya yang menghentikan kejujuran cerianya itu. Dia menjawab, “Kalau begitu, saya kira saya boleh membicarakan hal ini dengan Nyonya Casaubon.” “Tepat sekali; itulah yang secara tegas diinginkannya. Keputusannya, katanya, akan sangat bergantung pada apa yang dapat Anda sampaikan kepadanya. Tetapi tidak untuk saat ini: saya yakin dia baru saja akan memulai perjalanan. Saya punya suratnya di sini,” kata Tuan Bulstrode, sambil mengeluarkannya dan membacanya. “'Saya sedang sibuk dengan urusan lain,' katanya. 'Saya akan pergi ke Yorkshire bersama Sir James dan Lady Chettam; dan kesimpulan yang saya dapatkan tentang beberapa lahan yang akan saya lihat di sana mungkin akan memengaruhi kemampuan saya untuk menyumbang ke Rumah Sakit.' Jadi, Tuan Lydgate, tidak perlu terburu-buru dalam hal ini; tetapi saya ingin memberi tahu Anda sebelumnya tentang apa yang mungkin terjadi.” Tuan Bulstrode mengembalikan surat itu ke saku sampingnya, dan mengubah sikapnya seolah-olah urusannya sudah selesai. Lydgate, yang harapannya yang baru tentang Rumah Sakit hanya membuatnya lebih sadar akan fakta-fakta yang meracuni harapannya, merasa bahwa upayanya untuk meminta bantuan, jika memang harus dilakukan, harus dilakukan sekarang dan dengan sungguh-sungguh. “Saya sangat berterima kasih kepada Anda karena telah memberi saya pemberitahuan penuh,” katanya, dengan nada tegas, namun dengan jeda dalam penyampaiannya yang menunjukkan bahwa ia berbicara dengan enggan. “Tujuan tertinggi bagi saya adalah profesi saya, dan saya telah mengidentifikasi Rumah Sakit dengan penggunaan terbaik yang dapat saya lakukan saat ini untuk profesi saya. Tetapi penggunaan terbaik tidak selalu sama dengan kesuksesan finansial. Segala sesuatu yang membuat Rumah Sakit tidak populer telah membantu penyebab lain—saya pikir semuanya terkait dengan semangat profesional saya—untuk membuat saya tidak populer sebagai praktisi. Saya kebanyakan mendapatkan pasien yang tidak mampu membayar saya. Saya akan lebih menyukai mereka, jika saya tidak memiliki siapa pun yang harus dibayar di pihak saya sendiri.” Lydgate menunggu sebentar, tetapi Bulstrode hanya membungkuk, menatapnya dengan tajam, dan ia melanjutkan dengan pengucapan yang sama terputus-putusnya—seolah-olah ia sedang menggigit daun bawang yang tidak disukainya. “Saya mengalami kesulitan keuangan yang tidak dapat saya atasi, kecuali jika seseorang yang mempercayai saya dan masa depan saya bersedia memberi saya sejumlah uang tanpa jaminan lain. Saya hanya memiliki sedikit harta ketika datang ke sini. Saya tidak memiliki prospek uang dari keluarga saya sendiri. Pengeluaran saya, akibat pernikahan saya, jauh lebih besar dari yang saya perkirakan. Akibatnya saat ini, saya membutuhkan seribu pound untuk melunasi hutang saya. Maksud saya, untuk membebaskan saya dari risiko semua barang saya dijual sebagai jaminan hutang terbesar saya—serta untuk membayar hutang-hutang saya yang lain—dan menyisakan sedikit uang untuk menghidupi kami sedikit dengan penghasilan kami yang kecil. Saya rasa ayah mertua saya tidak mungkin memberikan uang muka sebesar itu. Itulah mengapa saya menceritakan keadaan saya kepada—kepada satu-satunya orang lain yang mungkin memiliki hubungan pribadi dengan kemakmuran atau kehancuran saya.” Lydgate benci mendengar suaranya sendiri. Tetapi dia sudah berbicara, dan berbicara dengan ketegasan yang tak salah lagi. Tuan Bulstrode menjawab tanpa tergesa-gesa, tetapi juga tanpa ragu-ragu. “Saya sedih, meskipun, jujur saja, saya tidak terkejut dengan informasi ini, Tuan Lydgate. Saya sendiri menyesali persekutuan Anda dengan keluarga saudara ipar saya, yang selalu memiliki kebiasaan boros, dan yang telah banyak berhutang budi kepada saya untuk menopang posisi mereka saat ini. Saran saya kepada Anda, Tuan Lydgate, adalah, daripada melibatkan diri dalam kewajiban lebih lanjut, dan melanjutkan perjuangan yang meragukan, Anda sebaiknya langsung saja menyatakan diri bangkrut.” “Itu tidak akan memperbaiki prospek saya,” kata Lydgate, sambil berdiri dan berbicara dengan getir, “bahkan jika itu sendiri merupakan hal yang lebih menyenangkan.” “Ini selalu merupakan cobaan,” kata Tuan Bulstrode; “tetapi cobaan, Tuan yang terhormat, adalah bagian kita di sini, dan merupakan koreksi yang dibutuhkan. Saya menyarankan Anda untuk mempertimbangkan nasihat yang telah saya berikan.” “Terima kasih,” kata Lydgate, yang sebenarnya tidak tahu persis apa yang dia katakan. “Saya telah menyita waktu Anda terlalu lama. Selamat siang.”</p>
-
-<div class="nav">
-  <a href="bab-lxvi.html">⬅ Bab Lxvi.</a>
-  <a href="bab-lxviii.html">Bab Lxviii. ➡</a>
-</div>
 
 </body>
 </html>

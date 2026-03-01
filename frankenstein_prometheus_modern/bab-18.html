@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 18</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 18 - Bacaan digital klasik">
+<title>BAB 18 — Frankenstein</title>
+<meta name="description" content="Baca BAB 18 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-18.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 18 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 18 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-18.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 18 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 18 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 18",
+    "name": "BAB 18 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-18.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 18</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Hari demi hari, minggu demi minggu, berlalu setelah saya kembali ke Jenewa; dan saya tidak dapat mengumpulkan keberanian untuk memulai kembali pekerjaan saya. Saya takut akan pembalasan dari iblis yang kecewa, namun saya tidak mampu mengatasi rasa jijik saya terhadap tugas yang diperintahkan kepada saya. Saya mendapati bahwa saya tidak dapat menulis karakter perempuan tanpa kembali menghabiskan beberapa bulan untuk studi mendalam dan pembahasan yang melelahkan. Saya telah mendengar tentang beberapa penemuan yang telah dilakukan oleh seorang filsuf Inggris, yang pengetahuannya sangat penting bagi keberhasilan saya, dan saya kadang-kadang berpikir untuk mendapatkan persetujuan ayah saya untuk mengunjungi Inggris untuk tujuan ini; tetapi saya berpegang teguh pada setiap alasan penundaan dan menghindar dari mengambil langkah pertama dalam suatu usaha yang kebutuhan mendesaknya mulai tampak kurang mutlak bagi saya. Memang telah terjadi perubahan dalam diri saya; kesehatan saya, yang sebelumnya menurun, kini jauh lebih baik; dan semangat saya, ketika tidak terhambat oleh ingatan akan janji saya yang tidak bahagia, meningkat secara proporsional. Ayahku melihat perubahan ini dengan senang hati, dan ia memikirkan cara terbaik untuk memberantas sisa-sisa kesedihanku, yang sesekali kembali menyerang dan menyelimuti sinar matahari yang akan datang dengan kegelapan yang mencekam. Pada saat-saat seperti itu, aku berlindung dalam kesendirian yang sempurna. Aku menghabiskan berhari-hari di danau sendirian di perahu kecil, mengamati awan dan mendengarkan deburan ombak, diam dan lesu. Tetapi udara segar dan matahari yang cerah jarang gagal mengembalikan ketenanganku, dan saat kembali aku menyambut sapaan teman-temanku dengan senyum yang lebih ramah dan hati yang lebih ceria.</p><p>Setelah saya kembali dari salah satu perjalanan tersebut, ayah saya memanggil saya ke samping dan berkata demikian kepada saya,</p><p>“Ayah senang mendengar, anakku sayang, bahwa kau telah kembali menikmati kesenanganmu dulu dan tampaknya kembali menjadi dirimu sendiri. Namun kau masih tidak bahagia dan masih menghindari pergaulan kita. Untuk beberapa waktu Ayah bingung memikirkan penyeBABnya, tetapi kemarin sebuah ide terlintas di benak Ayah, dan jika itu beralasan, Ayah memintamu untuk mengakuinya. Sikap tertutup mengenai hal ini tidak hanya tidak berguna, tetapi juga akan mendatangkan tiga kali lipat kesengsaraan bagi kita semua.”</p><p>Aku gemetar hebat mendengar kata-katanya yang pembuka, dan ayahku melanjutkan—</p><p>“Aku akui, anakku, bahwa aku selalu menantikan pernikahanmu dengan Elizabeth tersayang sebagai ikatan kenyamanan rumah tangga kita dan penopang masa tuaku. Kalian berdua terikat satu sama lain sejak kecil; kalian belajar bersama, dan tampak, dalam watak dan selera, sangat cocok satu sama lain. Tetapi pengalaman manusia begitu buta sehingga apa yang kupikir sebagai pembantu terbaik untuk rencanaku mungkin telah menghancurkannya sepenuhnya. Mungkin kau menganggapnya sebagai saudara perempuanmu, tanpa keinginan agar dia menjadi istrimu. Bahkan, kau mungkin telah bertemu dengan orang lain yang kau cintai; dan karena menganggap dirimu terikat kehormatan kepada Elizabeth, pergumulan ini dapat menyeBABkan penderitaan yang memilukan yang tampaknya kau rasakan.”</p><p>“Ayahku tersayang, tenangkan dirimu. Aku mencintai sepupuku dengan tulus dan sepenuh hati. Aku belum pernah melihat wanita mana pun yang membangkitkan kekaguman dan kasih sayangku yang terhangat seperti Elizabeth. Harapan dan prospek masa depanku sepenuhnya terikat pada harapan akan persatuan kita.”</p><p>“Ungkapan perasaanmu tentang hal ini, Victor sayangku, memberiku lebih banyak kegembiraan daripada yang pernah kurasakan selama beberapa waktu. Jika kau merasa demikian, kita pasti akan bahagia, meskipun peristiwa saat ini mungkin menyelimuti kita dengan kesedihan. Tetapi kesedihan inilah yang tampaknya telah begitu kuat menguasai pikiranmu sehingga aku ingin menghilangkannya. Karena itu, katakan padaku apakah kau keberatan dengan upacara pernikahan yang akan segera dilaksanakan. Kita telah mengalami banyak kemalangan, dan peristiwa baru-baru ini telah menjauhkan kita dari ketenangan sehari-hari yang sesuai dengan usia dan kelemahanku. Kau lebih muda; namun aku tidak mengira, mengingat kau memiliki kekayaan yang cukup, bahwa pernikahan dini akan mengganggu rencana masa depanmu yang terhormat dan bermanfaat. Namun, jangan mengira bahwa aku ingin mendikte kebahagiaanmu atau bahwa penundaan dari pihakmu akan menyeBABkanku sangat khawatir. Tafsirkan kata-kataku dengan jujur dan jawablah aku, kumohon, dengan percaya diri dan tulus.”</p><p>Aku mendengarkan ayahku dalam diam dan untuk beberapa waktu tetap tak mampu memberikan jawaban apa pun. Banyak sekali pikiran yang berputar-putar di benakku dan aku berusaha untuk sampai pada suatu kesimpulan. Celakalah! Bagiku, gagasan untuk segera bersatu dengan Elizabeth adalah sesuatu yang mengerikan dan membuatku cemas. Aku terikat oleh janji suci yang belum kupenuhi dan tak berani kulanggar, atau jika kulanggar, betapa banyak kesengsaraan yang mungkin menimpa diriku dan keluargaku yang tercinta! Bisakah aku memasuki sebuah perayaan dengan beban mematikan ini masih menggantung di leherku dan membuatku tertunduk? Aku harus memenuhi janjiku dan membiarkan monster itu pergi bersama pasangannya sebelum aku membiarkan diriku menikmati kebahagiaan sebuah persatuan yang kuharapkan akan membawa kedamaian.</p><p>Aku juga teringat akan keharusan yang dipaksakan kepadaku untuk melakukan perjalanan ke Inggris atau menjalin korespondensi panjang dengan para filsuf di negara itu yang pengetahuan dan penemuannya sangat berguna bagiku dalam usaha yang sedang kulakukan. Metode terakhir untuk mendapatkan informasi yang diinginkan itu berlarut-larut dan tidak memuaskan; selain itu, aku memiliki rasa jijik yang tak teratasi terhadap gagasan untuk terlibat dalam tugas menjijikkan ini di rumah ayahku sementara aku terbiasa bergaul dengan orang-orang yang kucintai. Aku tahu bahwa seribu kecelakaan mengerikan mungkin terjadi, yang terkecil sekalipun akan mengungkap kisah yang akan membuat semua orang yang berhubungan denganku merinding ketakutan. Aku juga menyadari bahwa aku akan sering kehilangan kendali diri, semua kemampuan untuk menyembunyikan perasaan mengerikan yang akan menguasai diriku selama berlangsungnya pekerjaan yang tidak wajar ini. Aku harus menjauhkan diri dari semua yang kucintai selama melakukan pekerjaan ini. Setelah dimulai, pekerjaan ini akan cepat selesai, dan aku dapat kembali kepada keluargaku dengan damai dan bahagia. Janjiku terpenuhi, monster itu akan pergi selamanya. Atau (begitulah khayalan indahku) mungkin saja terjadi kecelakaan yang akan menghancurkannya dan mengakhiri perbudakanku selamanya.</p><p>Perasaan-perasaan inilah yang menentukan jawaban saya kepada ayah saya. Saya menyatakan keinginan untuk mengunjungi Inggris, tetapi menyembunyikan alasan sebenarnya dari permintaan ini, saya menyamarkan keinginan saya di balik kedok yang tidak menimbulkan kecurigaan, sementara saya mendesak keinginan saya dengan sungguh-sungguh yang dengan mudah membuat ayah saya setuju. Setelah sekian lama mengalami kesedihan yang mendalam yang menyerupai kegilaan dalam intensitas dan dampaknya, ia senang mengetahui bahwa saya mampu menikmati gagasan perjalanan seperti itu, dan ia berharap bahwa perubahan pemandangan dan hiburan yang beragam akan, sebelum saya kembali, mengembalikan saya sepenuhnya ke diri saya sendiri.</p><p>Lamanya ketidakhadiranku diserahkan pada pilihanku sendiri; beberapa bulan, atau paling lama setahun, adalah periode yang direncanakan. Satu tindakan pencegahan baik hati yang dilakukannya adalah memastikan aku memiliki teman. Tanpa berkomunikasi denganku sebelumnya, ia, bersama Elizabeth, telah mengatur agar Clerval bergabung denganku di Strasburgh. Ini mengganggu kesendirian yang kuinginkan untuk menjalankan tugasku; namun pada awal perjalananku, kehadiran temanku sama sekali tidak akan menjadi penghalang, dan sungguh aku bersukacita karena dengan demikian aku akan terhindar dari berjam-jam perenungan yang kesepian dan menyiksa. Bahkan, Henry bisa saja berdiri di antara aku dan gangguan musuhku. Jika aku sendirian, bukankah ia akan sesekali memaksakan kehadirannya yang dibencinya kepadaku untuk mengingatkanku tentang tugasku atau untuk merenungkan kemajuannya?</p><p>Oleh karena itu, aku terikat untuk pergi ke Inggris, dan telah dipahami bahwa pernikahanku dengan Elizabeth akan berlangsung segera setelah aku kembali. Usia ayahku membuatnya sangat tidak menyukai penundaan. Untuk diriku sendiri, ada satu hadiah yang kujanjikan dari kerja keras yang kubenci—satu penghiburan atas penderitaanku yang tak tertandingi; itu adalah prospek hari ketika, terbebas dari perbudakan yang menyedihkan, aku dapat mengklaim Elizabeth dan melupakan masa lalu dalam pernikahanku dengannya.</p><p>Aku kini mengatur perjalananku, tetapi satu perasaan menghantui pikiranku, membuatku takut dan gelisah. Selama ketidakhadiranku, aku akan meninggalkan teman-temanku tanpa menyadari keberadaan musuh mereka dan tanpa perlindungan dari serangannya, yang mungkin akan marah karena kepergianku. Tetapi dia telah berjanji untuk mengikutiku ke mana pun aku pergi, dan maukah dia menemaniku ke Inggris? Bayangan ini mengerikan, tetapi menenangkan karena menganggap teman-temanku aman. Aku tersiksa dengan kemungkinan bahwa kebalikannya mungkin terjadi. Tetapi selama seluruh periode di mana aku menjadi budak makhluk ciptaanku, aku membiarkan diriku dikendalikan oleh dorongan sesaat; dan perasaanku saat ini sangat mengisyaratkan bahwa si iblis akan mengikutiku dan menyelamatkan keluargaku dari bahaya tipu dayanya.</p><p>Pada akhir September itulah aku kembali meninggalkan tanah kelahiranku. Perjalananku adalah usulanku sendiri, dan Elizabeth pun menyetujuinya, tetapi ia dipenuhi kekhawatiran membayangkan penderitaanku, jauh darinya, dan kesengsaraan serta kesedihan yang menghampiriku. Kepeduliannyalah yang memberiku teman di Clerval—namun seorang pria buta terhadap ribuan detail kecil yang menuntut perhatian seorang wanita. Ia ingin sekali menyuruhku segera kembali; ribuan emosi yang bertentangan membuatnya terdiam saat ia mengucapkan selamat tinggal dengan berlinang air mata dan tanpa suara.</p><p>Aku melemparkan diriku ke dalam kereta yang akan membawaku pergi, hampir tidak tahu ke mana aku akan pergi, dan acuh tak acuh terhadap apa yang terjadi di sekitarku. Yang kuingat hanyalah, dan dengan kesedihan yang mendalam saat aku merenungkannya, untuk memerintahkan agar peralatan kimiaku dikemas untuk dibawa bersamaku. Dipenuhi dengan imajinasi yang suram, aku melewati banyak pemandangan yang indah dan megah, tetapi mataku terpaku dan tidak mengamati apa pun. Aku hanya bisa memikirkan tujuan perjalananku dan pekerjaan yang akan kulakukan selama perjalanan itu berlangsung.</p><p>Setelah beberapa hari bermalas-malasan tanpa semangat, di mana aku menempuh jarak yang jauh, aku tiba di Strasbourg, tempat aku menunggu Clerval selama dua hari. Dia datang. Sayang sekali, betapa kontrasnya kami! Dia begitu antusias dengan setiap pemandangan baru, gembira ketika melihat keindahan matahari terbenam, dan lebih bahagia lagi ketika melihatnya terbit dan memulai hari baru. Dia menunjukkan kepadaku perubahan warna lanskap dan penampakan langit. “Inilah arti hidup,” serunya; “sekarang aku menikmati keberadaan! Tapi kau, Frankenstein sayangku, mengapa kau begitu putus asa dan sedih!” Sejujurnya, aku disibukkan oleh pikiran-pikiran suram dan tidak melihat terbenamnya bintang senja maupun matahari terbit keemasan yang terpantul di Sungai Rhine. Dan kau, temanku, akan jauh lebih terhibur dengan jurnal Clerval, yang mengamati pemandangan dengan mata penuh perasaan dan kegembiraan, daripada mendengarkan renunganku. Aku, seorang yang malang, dihantui oleh kutukan yang menutup setiap jalan menuju kenikmatan.</p><p>Kami telah sepakat untuk menyusuri Sungai Rhine dengan perahu dari Strasbourg ke Rotterdam, dari sana kami dapat naik kapal menuju London. Selama perjalanan ini, kami melewati banyak pulau yang dipenuhi pohon willow dan melihat beberapa kota yang indah. Kami tinggal sehari di Mannheim, dan pada hari kelima setelah keberangkatan kami dari Strasbourg, kami tiba di Mainz. Aliran Sungai Rhine di bawah Mainz menjadi jauh lebih indah. Sungai itu menurun dengan cepat dan berkelok-kelok di antara perbukitan, tidak tinggi, tetapi curam, dan berbentuk indah. Kami melihat banyak reruntuhan kastil yang berdiri di tepi jurang, dikelilingi oleh hutan lebat, tinggi dan tidak terjangkau. Bagian Sungai Rhine ini, memang, menyajikan lanskap yang sangat beragam. Di satu tempat Anda melihat perbukitan terjal, reruntuhan kastil yang menghadap jurang yang sangat curam, dengan Sungai Rhine yang gelap mengalir di bawahnya; dan di tikungan tanjung yang tiba-tiba, kebun anggur yang subur dengan lereng hijau dan sungai yang berkelok-kelok serta kota-kota yang padat penduduk memenuhi pemandangan.</p><p>Kami melakukan perjalanan pada musim panen anggur dan mendengar nyanyian para buruh saat kami meluncur menyusuri sungai. Bahkan aku, yang hatinya tertekan dan semangatku terus-menerus terguncang oleh perasaan suram, bahkan aku merasa senang. Aku berbaring di dasar perahu, dan saat aku menatap langit biru tanpa awan, aku seolah menikmati ketenangan yang sudah lama asing bagiku. Dan jika ini adalah perasaanku, siapa yang dapat menggambarkan perasaan Henry? Dia merasa seolah-olah telah dibawa ke Negeri Dongeng dan menikmati kebahagiaan yang jarang dirasakan manusia. “Aku telah melihat,” katanya, “pemandangan terindah di negeriku sendiri; aku telah mengunjungi danau Lucerne dan Uri, di mana pegunungan bersalju turun hampir tegak lurus ke air, menciptakan bayangan hitam dan tak tembus pandang, yang akan menimbulkan penampilan suram dan menyedihkan jika bukan karena pulau-pulau yang sangat hijau yang menyegarkan mata dengan penampilannya yang ceria; aku telah melihat danau ini diguncang badai, ketika angin menerjang pusaran air dan memberi Anda gambaran tentang seperti apa pusaran air di samudra luas; dan ombak menghantam dengan dahsyat dasar gunung, tempat pendeta dan kekasihnya tertimpa longsoran salju dan di mana suara-suara sekarat mereka konon masih terdengar di antara jeda angin malam; aku telah melihat pegunungan La Valais, dan Pays de Vaud; tetapi negeri ini, Victor, lebih menyenangkan hatiku daripada semua keajaiban itu. Pegunungan Swiss lebih megah dan aneh, tetapi ada pesona di tepi sungai suci ini yang belum pernah kulihat sebelumnya. Lihatlah kastil itu.” yang menjulang di atas tebing itu; dan juga di pulau itu, hampir tersembunyi di antara dedaunan pohon-pohon yang indah itu; dan sekarang sekelompok buruh yang datang dari antara kebun anggur mereka; dan desa itu setengah tersembunyi di ceruk gunung. Oh, sungguh roh yang menghuni dan menjaga tempat ini memiliki jiwa yang lebih selaras dengan manusia daripada mereka yang menumpuk gletser atau mengasingkan diri ke puncak-puncak gunung yang tak terjangkau di negara kita sendiri.”</p><p>Clerval! Sahabatku tersayang! Bahkan sekarang pun aku senang mencatat kata-katamu dan merenungkan pujian yang sangat pantas kau terima. Ia adalah makhluk yang terbentuk dalam &quot;puisi alam itu sendiri.&quot; Imajinasi liarnya yang antusias diredam oleh kepekaan hatinya. Jiwanya meluap dengan kasih sayang yang membara, dan persahabatannya bersifat tulus dan menakjubkan, yang oleh orang-orang yang berpikiran duniawi hanya dapat kita temukan dalam imajinasi. Tetapi bahkan simpati manusia pun tidak cukup untuk memuaskan pikirannya yang bersemangat. Pemandangan alam luar, yang orang lain hanya memandang dengan kagum, ia cintai dengan penuh semangat:—</p><p>——Suara gemuruh air terjun itu <br />menghantuinya seperti sebuah hasrat: batu karang yang tinggi, <br />gunung, dan hutan yang gelap dan suram, <br />warna dan bentuknya, saat itu baginya adalah <br />sebuah keinginan; sebuah perasaan, dan sebuah cinta, <br />yang tidak membutuhkan daya tarik yang lebih jauh, <br />yang diberikan oleh pikiran, atau minat apa pun <br />yang tidak dipinjam dari mata.<br /> <br />[Puisi Wordsworth “Tintern Abbey”.]</p><p>Dan di manakah dia sekarang? Apakah makhluk yang lembut dan menawan ini telah hilang selamanya? Apakah pikiran ini, yang begitu penuh dengan ide, imajinasi yang fantastis dan luar biasa, yang membentuk sebuah dunia, yang keberadaannya bergantung pada kehidupan penciptanya;—apakah pikiran ini telah binasa? Apakah sekarang hanya ada dalam ingatanku? Tidak, bukan begitu; wujudmu yang begitu indah dan bersinar dengan keindahan telah hancur, tetapi rohmu masih mengunjungi dan menghibur temanmu yang malang.</p><p>Maafkan luapan kesedihan ini; kata-kata yang tidak berarti ini hanyalah sedikit penghormatan terhadap nilai Henry yang tak tertandingi, tetapi kata-kata ini menenangkan hatiku, yang meluap dengan kesedihan yang ditimbulkan oleh kenangan akan dirinya. Aku akan melanjutkan kisahku.</p><p>Setelah melewati Cologne, kami turun ke dataran Belanda; dan kami memutuskan untuk melanjutkan perjalanan dengan menggunakan jasa penjaga hutan, karena angin berlawanan arah dan arus sungai terlalu lemah untuk membantu kami.</p><p>Perjalanan kami ke sini kehilangan daya tarik yang timbul dari pemandangan indah, tetapi kami tiba dalam beberapa hari di Rotterdam, dari sana kami melanjutkan perjalanan laut ke Inggris. Pada suatu pagi yang cerah, di penghujung bulan Desember, saya pertama kali melihat tebing-tebing putih Britania. Tepian Sungai Thames menampilkan pemandangan baru; datar tetapi subur, dan hampir setiap kota ditandai dengan kenangan akan suatu kisah. Kami melihat Benteng Tilbury dan mengingat Armada Spanyol, Gravesend, Woolwich, dan Greenwich—tempat-tempat yang pernah saya dengar bahkan di negara saya sendiri.</p><p>Akhirnya kami melihat banyak menara gereja di London, Katedral St. Paul menjulang tinggi di atas semuanya, dan Menara London yang terkenal dalam sejarah Inggris.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-17.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 17</span>
+    </a>
+    <a href="bab-19.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 19</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,152 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 18</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Hari demi hari, minggu demi minggu, berlalu setelah saya kembali ke Jenewa; dan saya tidak dapat mengumpulkan keberanian untuk memulai kembali pekerjaan saya. Saya takut akan pembalasan dari iblis yang kecewa, namun saya tidak mampu mengatasi rasa jijik saya terhadap tugas yang diperintahkan kepada saya. Saya mendapati bahwa saya tidak dapat menulis karakter perempuan tanpa kembali menghabiskan beberapa bulan untuk studi mendalam dan pembahasan yang melelahkan. Saya telah mendengar tentang beberapa penemuan yang telah dilakukan oleh seorang filsuf Inggris, yang pengetahuannya sangat penting bagi keberhasilan saya, dan saya kadang-kadang berpikir untuk mendapatkan persetujuan ayah saya untuk mengunjungi Inggris untuk tujuan ini; tetapi saya berpegang teguh pada setiap alasan penundaan dan menghindar dari mengambil langkah pertama dalam suatu usaha yang kebutuhan mendesaknya mulai tampak kurang mutlak bagi saya. Memang telah terjadi perubahan dalam diri saya; kesehatan saya, yang sebelumnya menurun, kini jauh lebih baik; dan semangat saya, ketika tidak terhambat oleh ingatan akan janji saya yang tidak bahagia, meningkat secara proporsional. Ayahku melihat perubahan ini dengan senang hati, dan ia memikirkan cara terbaik untuk memberantas sisa-sisa kesedihanku, yang sesekali kembali menyerang dan menyelimuti sinar matahari yang akan datang dengan kegelapan yang mencekam. Pada saat-saat seperti itu, aku berlindung dalam kesendirian yang sempurna. Aku menghabiskan berhari-hari di danau sendirian di perahu kecil, mengamati awan dan mendengarkan deburan ombak, diam dan lesu. Tetapi udara segar dan matahari yang cerah jarang gagal mengembalikan ketenanganku, dan saat kembali aku menyambut sapaan teman-temanku dengan senyum yang lebih ramah dan hati yang lebih ceria. Setelah saya kembali dari salah satu perjalanan tersebut, ayah saya memanggil saya ke samping dan berkata demikian kepada saya, “Ayah senang mendengar, anakku sayang, bahwa kau telah kembali menikmati kesenanganmu dulu dan tampaknya kembali menjadi dirimu sendiri. Namun kau masih tidak bahagia dan masih menghindari pergaulan kita. Untuk beberapa waktu Ayah bingung memikirkan penyeBABnya, tetapi kemarin sebuah ide terlintas di benak Ayah, dan jika itu beralasan, Ayah memintamu untuk mengakuinya. Sikap tertutup mengenai hal ini tidak hanya tidak berguna, tetapi juga akan mendatangkan tiga kali lipat kesengsaraan bagi kita semua.” Aku gemetar hebat mendengar kata-katanya yang pembuka, dan ayahku melanjutkan— “Aku akui, anakku, bahwa aku selalu menantikan pernikahanmu dengan Elizabeth tersayang sebagai ikatan kenyamanan rumah tangga kita dan penopang masa tuaku. Kalian berdua terikat satu sama lain sejak kecil; kalian belajar bersama, dan tampak, dalam watak dan selera, sangat cocok satu sama lain. Tetapi pengalaman manusia begitu buta sehingga apa yang kupikir sebagai pembantu terbaik untuk rencanaku mungkin telah menghancurkannya sepenuhnya. Mungkin kau menganggapnya sebagai saudara perempuanmu, tanpa keinginan agar dia menjadi istrimu. Bahkan, kau mungkin telah bertemu dengan orang lain yang kau cintai; dan karena menganggap dirimu terikat kehormatan kepada Elizabeth, pergumulan ini dapat menyeBABkan penderitaan yang memilukan yang tampaknya kau rasakan.” “Ayahku tersayang, tenangkan dirimu. Aku mencintai sepupuku dengan tulus dan sepenuh hati. Aku belum pernah melihat wanita mana pun yang membangkitkan kekaguman dan kasih sayangku yang terhangat seperti Elizabeth. Harapan dan prospek masa depanku sepenuhnya terikat pada harapan akan persatuan kita.” “Ungkapan perasaanmu tentang hal ini, Victor sayangku, memberiku lebih banyak kegembiraan daripada yang pernah kurasakan selama beberapa waktu. Jika kau merasa demikian, kita pasti akan bahagia, meskipun peristiwa saat ini mungkin menyelimuti kita dengan kesedihan. Tetapi kesedihan inilah yang tampaknya telah begitu kuat menguasai pikiranmu sehingga aku ingin menghilangkannya. Karena itu, katakan padaku apakah kau keberatan dengan upacara pernikahan yang akan segera dilaksanakan. Kita telah mengalami banyak kemalangan, dan peristiwa baru-baru ini telah menjauhkan kita dari ketenangan sehari-hari yang sesuai dengan usia dan kelemahanku. Kau lebih muda; namun aku tidak mengira, mengingat kau memiliki kekayaan yang cukup, bahwa pernikahan dini akan mengganggu rencana masa depanmu yang terhormat dan bermanfaat. Namun, jangan mengira bahwa aku ingin mendikte kebahagiaanmu atau bahwa penundaan dari pihakmu akan menyeBABkanku sangat khawatir. Tafsirkan kata-kataku dengan jujur dan jawablah aku, kumohon, dengan percaya diri dan tulus.” Aku mendengarkan ayahku dalam diam dan untuk beberapa waktu tetap tak mampu memberikan jawaban apa pun. Banyak sekali pikiran yang berputar-putar di benakku dan aku berusaha untuk sampai pada suatu kesimpulan. Celakalah! Bagiku, gagasan untuk segera bersatu dengan Elizabeth adalah sesuatu yang mengerikan dan membuatku cemas. Aku terikat oleh janji suci yang belum kupenuhi dan tak berani kulanggar, atau jika kulanggar, betapa banyak kesengsaraan yang mungkin menimpa diriku dan keluargaku yang tercinta! Bisakah aku memasuki sebuah perayaan dengan beban mematikan ini masih menggantung di leherku dan membuatku tertunduk? Aku harus memenuhi janjiku dan membiarkan monster itu pergi bersama pasangannya sebelum aku membiarkan diriku menikmati kebahagiaan sebuah persatuan yang kuharapkan akan membawa kedamaian. Aku juga teringat akan keharusan yang dipaksakan kepadaku untuk melakukan perjalanan ke Inggris atau menjalin korespondensi panjang dengan para filsuf di negara itu yang pengetahuan dan penemuannya sangat berguna bagiku dalam usaha yang sedang kulakukan. Metode terakhir untuk mendapatkan informasi yang diinginkan itu berlarut-larut dan tidak memuaskan; selain itu, aku memiliki rasa jijik yang tak teratasi terhadap gagasan untuk terlibat dalam tugas menjijikkan ini di rumah ayahku sementara aku terbiasa bergaul dengan orang-orang yang kucintai. Aku tahu bahwa seribu kecelakaan mengerikan mungkin terjadi, yang terkecil sekalipun akan mengungkap kisah yang akan membuat semua orang yang berhubungan denganku merinding ketakutan. Aku juga menyadari bahwa aku akan sering kehilangan kendali diri, semua kemampuan untuk menyembunyikan perasaan mengerikan yang akan menguasai diriku selama berlangsungnya pekerjaan yang tidak wajar ini. Aku harus menjauhkan diri dari semua yang kucintai selama melakukan pekerjaan ini. Setelah dimulai, pekerjaan ini akan cepat selesai, dan aku dapat kembali kepada keluargaku dengan damai dan bahagia. Janjiku terpenuhi, monster itu akan pergi selamanya. Atau (begitulah khayalan indahku) mungkin saja terjadi kecelakaan yang akan menghancurkannya dan mengakhiri perbudakanku selamanya. Perasaan-perasaan inilah yang menentukan jawaban saya kepada ayah saya. Saya menyatakan keinginan untuk mengunjungi Inggris, tetapi menyembunyikan alasan sebenarnya dari permintaan ini, saya menyamarkan keinginan saya di balik kedok yang tidak menimbulkan kecurigaan, sementara saya mendesak keinginan saya dengan sungguh-sungguh yang dengan mudah membuat ayah saya setuju. Setelah sekian lama mengalami kesedihan yang mendalam yang menyerupai kegilaan dalam intensitas dan dampaknya, ia senang mengetahui bahwa saya mampu menikmati gagasan perjalanan seperti itu, dan ia berharap bahwa perubahan pemandangan dan hiburan yang beragam akan, sebelum saya kembali, mengembalikan saya sepenuhnya ke diri saya sendiri. Lamanya ketidakhadiranku diserahkan pada pilihanku sendiri; beberapa bulan, atau paling lama setahun, adalah periode yang direncanakan. Satu tindakan pencegahan baik hati yang dilakukannya adalah memastikan aku memiliki teman. Tanpa berkomunikasi denganku sebelumnya, ia, bersama Elizabeth, telah mengatur agar Clerval bergabung denganku di Strasburgh. Ini mengganggu kesendirian yang kuinginkan untuk menjalankan tugasku; namun pada awal perjalananku, kehadiran temanku sama sekali tidak akan menjadi penghalang, dan sungguh aku bersukacita karena dengan demikian aku akan terhindar dari berjam-jam perenungan yang kesepian dan menyiksa. Bahkan, Henry bisa saja berdiri di antara aku dan gangguan musuhku. Jika aku sendirian, bukankah ia akan sesekali memaksakan kehadirannya yang dibencinya kepadaku untuk mengingatkanku tentang tugasku atau untuk merenungkan kemajuannya? Oleh karena itu, aku terikat untuk pergi ke Inggris, dan telah dipahami bahwa pernikahanku dengan Elizabeth akan berlangsung segera setelah aku kembali. Usia ayahku membuatnya sangat tidak menyukai penundaan. Untuk diriku sendiri, ada satu hadiah yang kujanjikan dari kerja keras yang kubenci—satu penghiburan atas penderitaanku yang tak tertandingi; itu adalah prospek hari ketika, terbebas dari perbudakan yang menyedihkan, aku dapat mengklaim Elizabeth dan melupakan masa lalu dalam pernikahanku dengannya. Aku kini mengatur perjalananku, tetapi satu perasaan menghantui pikiranku, membuatku takut dan gelisah. Selama ketidakhadiranku, aku akan meninggalkan teman-temanku tanpa menyadari keberadaan musuh mereka dan tanpa perlindungan dari serangannya, yang mungkin akan marah karena kepergianku. Tetapi dia telah berjanji untuk mengikutiku ke mana pun aku pergi, dan maukah dia menemaniku ke Inggris? Bayangan ini mengerikan, tetapi menenangkan karena menganggap teman-temanku aman. Aku tersiksa dengan kemungkinan bahwa kebalikannya mungkin terjadi. Tetapi selama seluruh periode di mana aku menjadi budak makhluk ciptaanku, aku membiarkan diriku dikendalikan oleh dorongan sesaat; dan perasaanku saat ini sangat mengisyaratkan bahwa si iblis akan mengikutiku dan menyelamatkan keluargaku dari bahaya tipu dayanya. Pada akhir September itulah aku kembali meninggalkan tanah kelahiranku. Perjalananku adalah usulanku sendiri, dan Elizabeth pun menyetujuinya, tetapi ia dipenuhi kekhawatiran membayangkan penderitaanku, jauh darinya, dan kesengsaraan serta kesedihan yang menghampiriku. Kepeduliannyalah yang memberiku teman di Clerval—namun seorang pria buta terhadap ribuan detail kecil yang menuntut perhatian seorang wanita. Ia ingin sekali menyuruhku segera kembali; ribuan emosi yang bertentangan membuatnya terdiam saat ia mengucapkan selamat tinggal dengan berlinang air mata dan tanpa suara. Aku melemparkan diriku ke dalam kereta yang akan membawaku pergi, hampir tidak tahu ke mana aku akan pergi, dan acuh tak acuh terhadap apa yang terjadi di sekitarku. Yang kuingat hanyalah, dan dengan kesedihan yang mendalam saat aku merenungkannya, untuk memerintahkan agar peralatan kimiaku dikemas untuk dibawa bersamaku. Dipenuhi dengan imajinasi yang suram, aku melewati banyak pemandangan yang indah dan megah, tetapi mataku terpaku dan tidak mengamati apa pun. Aku hanya bisa memikirkan tujuan perjalananku dan pekerjaan yang akan kulakukan selama perjalanan itu berlangsung. Setelah beberapa hari bermalas-malasan tanpa semangat, di mana aku menempuh jarak yang jauh, aku tiba di Strasbourg, tempat aku menunggu Clerval selama dua hari. Dia datang. Sayang sekali, betapa kontrasnya kami! Dia begitu antusias dengan setiap pemandangan baru, gembira ketika melihat keindahan matahari terbenam, dan lebih bahagia lagi ketika melihatnya terbit dan memulai hari baru. Dia menunjukkan kepadaku perubahan warna lanskap dan penampakan langit. “Inilah arti hidup,” serunya; “sekarang aku menikmati keberadaan! Tapi kau, Frankenstein sayangku, mengapa kau begitu putus asa dan sedih!” Sejujurnya, aku disibukkan oleh pikiran-pikiran suram dan tidak melihat terbenamnya bintang senja maupun matahari terbit keemasan yang terpantul di Sungai Rhine. Dan kau, temanku, akan jauh lebih terhibur dengan jurnal Clerval, yang mengamati pemandangan dengan mata penuh perasaan dan kegembiraan, daripada mendengarkan renunganku. Aku, seorang yang malang, dihantui oleh kutukan yang menutup setiap jalan menuju kenikmatan. Kami telah sepakat untuk menyusuri Sungai Rhine dengan perahu dari Strasbourg ke Rotterdam, dari sana kami dapat naik kapal menuju London. Selama perjalanan ini, kami melewati banyak pulau yang dipenuhi pohon willow dan melihat beberapa kota yang indah. Kami tinggal sehari di Mannheim, dan pada hari kelima setelah keberangkatan kami dari Strasbourg, kami tiba di Mainz. Aliran Sungai Rhine di bawah Mainz menjadi jauh lebih indah. Sungai itu menurun dengan cepat dan berkelok-kelok di antara perbukitan, tidak tinggi, tetapi curam, dan berbentuk indah. Kami melihat banyak reruntuhan kastil yang berdiri di tepi jurang, dikelilingi oleh hutan lebat, tinggi dan tidak terjangkau. Bagian Sungai Rhine ini, memang, menyajikan lanskap yang sangat beragam. Di satu tempat Anda melihat perbukitan terjal, reruntuhan kastil yang menghadap jurang yang sangat curam, dengan Sungai Rhine yang gelap mengalir di bawahnya; dan di tikungan tanjung yang tiba-tiba, kebun anggur yang subur dengan lereng hijau dan sungai yang berkelok-kelok serta kota-kota yang padat penduduk memenuhi pemandangan. Kami melakukan perjalanan pada musim panen anggur dan mendengar nyanyian para buruh saat kami meluncur menyusuri sungai. Bahkan aku, yang hatinya tertekan dan semangatku terus-menerus terguncang oleh perasaan suram, bahkan aku merasa senang. Aku berbaring di dasar perahu, dan saat aku menatap langit biru tanpa awan, aku seolah menikmati ketenangan yang sudah lama asing bagiku. Dan jika ini adalah perasaanku, siapa yang dapat menggambarkan perasaan Henry? Dia merasa seolah-olah telah dibawa ke Negeri Dongeng dan menikmati kebahagiaan yang jarang dirasakan manusia. “Aku telah melihat,” katanya, “pemandangan terindah di negeriku sendiri; aku telah mengunjungi danau Lucerne dan Uri, di mana pegunungan bersalju turun hampir tegak lurus ke air, menciptakan bayangan hitam dan tak tembus pandang, yang akan menimbulkan penampilan suram dan menyedihkan jika bukan karena pulau-pulau yang sangat hijau yang menyegarkan mata dengan penampilannya yang ceria; aku telah melihat danau ini diguncang badai, ketika angin menerjang pusaran air dan memberi Anda gambaran tentang seperti apa pusaran air di samudra luas; dan ombak menghantam dengan dahsyat dasar gunung, tempat pendeta dan kekasihnya tertimpa longsoran salju dan di mana suara-suara sekarat mereka konon masih terdengar di antara jeda angin malam; aku telah melihat pegunungan La Valais, dan Pays de Vaud; tetapi negeri ini, Victor, lebih menyenangkan hatiku daripada semua keajaiban itu. Pegunungan Swiss lebih megah dan aneh, tetapi ada pesona di tepi sungai suci ini yang belum pernah kulihat sebelumnya. Lihatlah kastil itu.” yang menjulang di atas tebing itu; dan juga di pulau itu, hampir tersembunyi di antara dedaunan pohon-pohon yang indah itu; dan sekarang sekelompok buruh yang datang dari antara kebun anggur mereka; dan desa itu setengah tersembunyi di ceruk gunung. Oh, sungguh roh yang menghuni dan menjaga tempat ini memiliki jiwa yang lebih selaras dengan manusia daripada mereka yang menumpuk gletser atau mengasingkan diri ke puncak-puncak gunung yang tak terjangkau di negara kita sendiri.” Clerval! Sahabatku tersayang! Bahkan sekarang pun aku senang mencatat kata-katamu dan merenungkan pujian yang sangat pantas kau terima. Ia adalah makhluk yang terbentuk dalam "puisi alam itu sendiri." Imajinasi liarnya yang antusias diredam oleh kepekaan hatinya. Jiwanya meluap dengan kasih sayang yang membara, dan persahabatannya bersifat tulus dan menakjubkan, yang oleh orang-orang yang berpikiran duniawi hanya dapat kita temukan dalam imajinasi. Tetapi bahkan simpati manusia pun tidak cukup untuk memuaskan pikirannya yang bersemangat. Pemandangan alam luar, yang orang lain hanya memandang dengan kagum, ia cintai dengan penuh semangat:— ——Suara gemuruh air terjun itu menghantuinya seperti sebuah hasrat: batu karang yang tinggi, gunung, dan hutan yang gelap dan suram, warna dan bentuknya, saat itu baginya adalah sebuah keinginan; sebuah perasaan, dan sebuah cinta, yang tidak membutuhkan daya tarik yang lebih jauh, yang diberikan oleh pikiran, atau minat apa pun yang tidak dipinjam dari mata.</p>
-<p>[Puisi Wordsworth “Tintern Abbey”.] Dan di manakah dia sekarang? Apakah makhluk yang lembut dan menawan ini telah hilang selamanya? Apakah pikiran ini, yang begitu penuh dengan ide, imajinasi yang fantastis dan luar biasa, yang membentuk sebuah dunia, yang keberadaannya bergantung pada kehidupan penciptanya;—apakah pikiran ini telah binasa? Apakah sekarang hanya ada dalam ingatanku? Tidak, bukan begitu; wujudmu yang begitu indah dan bersinar dengan keindahan telah hancur, tetapi rohmu masih mengunjungi dan menghibur temanmu yang malang. Maafkan luapan kesedihan ini; kata-kata yang tidak berarti ini hanyalah sedikit penghormatan terhadap nilai Henry yang tak tertandingi, tetapi kata-kata ini menenangkan hatiku, yang meluap dengan kesedihan yang ditimbulkan oleh kenangan akan dirinya. Aku akan melanjutkan kisahku. Setelah melewati Cologne, kami turun ke dataran Belanda; dan kami memutuskan untuk melanjutkan perjalanan dengan menggunakan jasa penjaga hutan, karena angin berlawanan arah dan arus sungai terlalu lemah untuk membantu kami. Perjalanan kami ke sini kehilangan daya tarik yang timbul dari pemandangan indah, tetapi kami tiba dalam beberapa hari di Rotterdam, dari sana kami melanjutkan perjalanan laut ke Inggris. Pada suatu pagi yang cerah, di penghujung bulan Desember, saya pertama kali melihat tebing-tebing putih Britania. Tepian Sungai Thames menampilkan pemandangan baru; datar tetapi subur, dan hampir setiap kota ditandai dengan kenangan akan suatu kisah. Kami melihat Benteng Tilbury dan mengingat Armada Spanyol, Gravesend, Woolwich, dan Greenwich—tempat-tempat yang pernah saya dengar bahkan di negara saya sendiri. Akhirnya kami melihat banyak menara gereja di London, Katedral St. Paul menjulang tinggi di atas semuanya, dan Menara London yang terkenal dalam sejarah Inggris.</p>
-
-<div class="nav">
-  <a href="bab-17.html">⬅ Bab 17</a>
-  <a href="bab-19.html">Bab 19 ➡</a>
-</div>
 
 </body>
 </html>

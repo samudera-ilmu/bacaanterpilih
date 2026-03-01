@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XII</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XII - Bacaan digital klasik">
+<title>BAB XII — Wuthering Heights</title>
+<meta name="description" content="Baca BAB XII dari buku Wuthering Heights karya Emily Brontë secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/wuthering_heights/bab-xii.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB XII — Wuthering Heights">
+  <meta property="og:description" content="Baca BAB XII dari buku Wuthering Heights karya Emily Brontë secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/wuthering_heights/bab-xii.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/wuthering_heights/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB XII — Wuthering Heights">
+  <meta name="twitter:description" content="Baca BAB XII dari Wuthering Heights karya Emily Brontë gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/wuthering_heights/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB XII",
+    "name": "BAB XII — Wuthering Heights",
+    "author": {
+      "@type": "Person",
+      "name": "Emily Brontë"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Wuthering Heights",
+      "author": {
+        "@type": "Person",
+        "name": "Emily Brontë"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/wuthering_heights/bab-xii.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Wuthering Heights</a>
+    </div>
+    <h1 class="chapter-title">BAB XII</h1>
+    <div class="chapter-info">
+      <span>✍️ Emily Brontë</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Sementara Nona Linton merenung di taman dan kebun, selalu diam, dan hampir selalu menangis; dan saudara laki-lakinya mengurung diri di antara buku-buku yang tidak pernah dibukanya—lelah, kurasa, dengan harapan samar yang terus-menerus bahwa Catherine, menyesali perilakunya, akan datang dengan sendirinya untuk meminta maaf, dan mencari rekonsiliasi—dan dia berpuasa dengan gigih, mungkin dengan anggapan bahwa setiap kali makan Edgar siap tersedak karena ketidakhadirannya, dan hanya harga diri yang menahannya untuk berlari dan bersujud di kakinya; aku menjalankan tugas-tugas rumah tanggaku, yakin bahwa Grange hanya memiliki satu jiwa yang peka di dalam dindingnya, dan itu bersemayam di tubuhku. Aku tidak mencurahkan belasungkawa kepada Nona, atau protes apa pun kepada majikanku; aku juga tidak terlalu memperhatikan desahan tuanku, yang merindukan untuk mendengar nama istrinya, karena dia tidak dapat mendengar suaranya. Aku memutuskan bahwa semuanya akan terjadi sesuai keinginan mereka untukku; dan meskipun itu adalah proses yang sangat lambat dan melelahkan, akhirnya aku mulai bersukacita dalam fajar samar kemajuannya: seperti yang kupikirkan pada awalnya.</p><p>Pada hari ketiga, Nyonya Linton membuka pintunya, dan setelah menghabiskan air di kendi dan tekonya, ia meminta persediaan air baru dan semangkuk bubur, karena ia percaya dirinya akan meninggal. Saya mencatat itu sebagai ucapan yang ditujukan untuk telinga Edgar; saya tidak percaya hal seperti itu, jadi saya menyimpannya sendiri dan membawakannya teh dan roti panggang kering. Ia makan dan minum dengan lahap, lalu kembali berbaring di bantalnya, mengepalkan tangannya dan mengerang. “Oh, aku akan mati,” serunya, “karena tidak ada yang peduli padaku. Aku menyesal telah meminum obat itu.” Kemudian beberapa saat kemudian saya mendengar ia bergumam, “Tidak, aku tidak akan mati—ia akan senang—ia sama sekali tidak mencintaiku—ia tidak akan pernah merindukanku!”</p><p>“Apakah Anda membutuhkan sesuatu, Bu?” tanyaku, tetap menjaga ketenangan di luar, meskipun wajahnya mengerikan dan tingkah lakunya aneh dan berlebihan.</p><p>“Apa yang sedang dilakukan makhluk apatis itu?” tanyanya, sambil menyingkirkan rambutnya yang tebal dan kusut dari wajahnya yang kurus. “Apakah dia jatuh ke dalam kelesuan, atau dia sudah mati?”</p><p>“Bukan keduanya,” jawabku; “jika yang kau maksud adalah Tuan Linton. Kurasa dia cukup sehat, meskipun studinya menyita waktunya lebih dari seharusnya: dia selalu berada di antara buku-bukunya, karena dia tidak punya teman lain.”</p><p>Seharusnya aku tidak berbicara seperti itu jika aku tahu kondisi sebenarnya, tetapi aku tidak bisa menghilangkan anggapan bahwa dia berakting sebagai bagian dari gangguannya.</p><p>“Di antara buku-bukunya!” serunya, bingung. “Dan aku sekarat! Aku di ambang kematian! Ya Tuhan! Apakah dia tahu bagaimana aku berubah?” lanjutnya, menatap bayangannya di cermin yang tergantung di dinding seberang. “Apakah itu Catherine Linton? Dia membayangkan aku sebagai hewan peliharaan—mungkin dalam permainan. Tidak bisakah kau memberitahunya bahwa itu sangat serius? Nelly, jika belum terlambat, begitu aku tahu bagaimana perasaannya, aku akan memilih antara dua ini: mati kelaparan—itu bukanlah hukuman kecuali dia punya hati—atau sembuh, dan meninggalkan negara ini. Apakah kau mengatakan yang sebenarnya tentang dia sekarang? Hati-hati. Apakah dia benar-benar acuh tak acuh terhadap hidupku?”</p><p>“Nyonya,” jawabku, “tuan tidak tahu sama sekali bahwa Anda gila; dan tentu saja dia tidak takut Anda akan membiarkan diri Anda mati kelaparan.”</p><p>“Kau pikir tidak? Tidak bisakah kau katakan padanya bahwa aku akan melakukannya?” balasnya. “Bujuk dia! Ungkapkan isi hatimu: katakan kau yakin aku akan melakukannya!”</p><p>“Tidak, Anda lupa, Nyonya Linton,” saya menyarankan, “bahwa Anda telah menyantap makanan yang lezat malam ini, dan besok Anda akan merasakan efek baiknya.”</p><p>“Seandainya aku yakin itu akan membunuhnya,” sela dia, “aku akan langsung bunuh diri! Tiga malam mengerikan ini aku tak pernah memejamkan mata—dan oh, aku tersiksa! Aku dihantui, Nelly! Tapi aku mulai merasa kau tidak menyukaiku. Aneh sekali! Kupikir, meskipun semua orang saling membenci dan meremehkan, mereka tidak bisa menghindari mencintaiku. Dan mereka semua berubah menjadi musuh dalam beberapa jam. Aku yakin; orang-orang di sini ... Betapa suramnya menghadapi kematian, dikelilingi oleh wajah-wajah dingin mereka! Isabella, ketakutan dan jijik, takut memasuki ruangan, akan sangat mengerikan melihat Catherine pergi. Dan Edgar berdiri dengan khidmat untuk menyaksikan semuanya berakhir; lalu memanjatkan doa syukur kepada Tuhan karena telah memulihkan kedamaian di rumahnya, dan kembali membaca buku-bukunya ! Apa hubungannya dia dengan buku , sementara aku sedang sekarat?”</p><p>Ia tak tahan dengan gagasan yang telah kutanamkan di kepalanya tentang sikap pasrah filosofis Tuan Linton. Ia gelisah, meningkatkan kebingungannya yang demam hingga menjadi gila, dan merobek bantal dengan giginya; lalu bangkit dengan tubuh yang terbakar, meminta agar aku membuka jendela. Saat itu tengah musim dingin, angin bertiup kencang dari timur laut, dan aku menolak. Baik ekspresi yang terlintas di wajahnya, maupun perubahan suasana hatinya, mulai membuatku sangat khawatir; dan mengingatkanku pada penyakitnya sebelumnya, dan perintah dokter agar ia tidak boleh ditentang. Semenit sebelumnya ia bersikap kasar; sekarang, dengan bertumpu pada satu lengan, dan tidak memperhatikan penolakanku untuk menurutinya, ia tampak menemukan hiburan kekanak-kanakan dengan mencabut bulu-bulu dari robekan yang baru saja dibuatnya, dan menyusunnya di atas seprai sesuai jenisnya: pikirannya telah melayang ke hal-hal lain.</p><p>“Itu bulu kalkun,” gumamnya pada diri sendiri; “dan ini bulu bebek liar; dan ini bulu merpati. Ah, mereka menaruh bulu merpati di bantal—pantas saja aku tidak bisa mati! Biar kupastikan untuk membuangnya ke lantai saat aku berbaring. Dan ini bulu ayam hutan; dan ini—aku pasti mengenalnya di antara seribu bulu—ini bulu burung lapwing. Burung yang cantik; berputar-putar di atas kepala kami di tengah padang rumput. Ia ingin kembali ke sarangnya, karena awan telah menyentuh ombak, dan ia merasakan hujan akan datang. Bulu ini dipungut dari semak belukar, burung itu tidak ditembak: kami melihat sarangnya di musim dingin, penuh dengan kerangka kecil. Heathcliff memasang perangkap di atasnya, dan burung-burung tua tidak berani datang. Aku membuatnya berjanji bahwa dia tidak akan pernah menembak burung lapwing lagi setelah itu, dan dia menepati janjinya. Ya, ini ada lagi! Apakah dia menembak burung lapwingku, Nelly? Apakah ada yang berwarna merah? Biar kulihat.”</p><p>“Hentikan saja pekerjaan mengurus bayi itu!” sela saya, sambil menarik bantal itu menjauh, dan membalikkan lubangnya ke arah kasur, karena dia mengeluarkan isinya sedikit demi sedikit. “Berbaringlah dan pejamkan matamu: kamu melamun. Berantakan sekali! Bulu-bulu halus beterbangan seperti salju.”</p><p>Saya pergi ke sana kemari untuk mengumpulkannya.</p><p>“Aku melihat dirimu, Nelly,” lanjutnya dengan nada melamun, “seorang wanita tua: rambutmu beruban dan bahumu membungkuk. Ranjang ini adalah gua peri di bawah Penistone Crags, dan kau sedang mengumpulkan anak panah peri untuk menyakiti sapi-sapi betina kita; berpura-pura, selagi aku di dekatmu, bahwa itu hanyalah gumpalan wol. Itulah yang akan kau lakukan lima puluh tahun lagi: aku tahu kau tidak seperti itu sekarang. Aku tidak sedang melamun: kau salah, kalau tidak aku akan percaya kau benar-benar nenek sihir tua yang layu itu, dan aku akan berpikir aku berada di bawah Penistone Crags; dan aku sadar ini malam, dan ada dua lilin di atas meja yang membuat lemari hitam itu bersinar seperti batu jet.”</p><p>“Pers kulit hitam? Di mana itu?” tanyaku. “Kau bicara sambil tidur!”</p><p>“Lokasinya di dekat dinding, seperti biasanya,” jawabnya. “Memang terlihat aneh—aku melihat wajah di dalamnya!”</p><p>“Tidak ada wartawan di ruangan ini, dan memang tidak pernah ada,” kataku, sambil kembali duduk dan menaikkan tirai agar aku bisa mengamatinya.</p><p>“Apa kau tidak melihat wajah itu?” tanyanya, menatap cermin dengan sungguh-sungguh.</p><p>Dan apa pun yang kukatakan, aku tak mampu membuatnya mengerti bahwa itu adalah miliknya sendiri; jadi aku bangkit dan menutupinya dengan selendang.</p><p>“Itu masih di belakang sana!” tanyanya dengan cemas. “Dan itu bergerak. Siapakah itu? Kuharap ia tidak akan keluar saat kau pergi! Oh! Nelly, ruangan ini berhantu! Aku takut sendirian!”</p><p>Aku menggenggam tangannya, dan memintanya untuk tenang; karena serangkaian getaran mengguncang tubuhnya, dan dia terus -menerus memicingkan matanya ke arah kaca.</p><p>“Tidak ada siapa pun di sini!” tegasku. “Itu Anda sendiri , Nyonya Linton: Anda sudah mengetahuinya sejak beberapa waktu lalu.”</p><p>“Aku sendiri!” serunya terengah-engah, “dan jam menunjukkan pukul dua belas! Benar sekali! Itu mengerikan!”</p><p>Jari-jarinya mencengkeram pakaian itu, dan menutupi matanya dengan kain tersebut. Aku mencoba menyelinap ke pintu dengan maksud memanggil suaminya; tetapi aku dipanggil kembali oleh jeritan melengking—selendang itu jatuh dari kusen pintu.</p><p>“Kenapa, ada apa ? ” seruku. “Siapa yang pengecut sekarang? Bangun! Itu cermin, Nyonya Linton; dan Anda melihat diri Anda di dalamnya, dan saya juga ada di samping Anda.”</p><p>Dengan gemetar dan kebingungan, dia memelukku erat, tetapi kengerian itu perlahan-lahan hilang dari wajahnya; pucatnya digantikan oleh rona malu.</p><p>“Oh, astaga! Kukira aku di rumah,” desahnya. “Kukira aku sedang berbaring di kamarku di Wuthering Heights. Karena aku lemah, otakku jadi bingung, dan aku berteriak tanpa sadar. Jangan berkata apa-apa; tapi tetaplah bersamaku. Aku takut tidur: mimpi-mimpiku menakutkan.”</p><p>“Tidur nyenyak akan bermanfaat bagi Anda, Bu,” jawabku: “dan kuharap penderitaan ini akan mencegah Anda mencoba kelaparan lagi.”</p><p>“Oh, seandainya aku berada di tempat tidurku sendiri di rumah tua itu!” lanjutnya dengan getir, sambil meremas-remas tangannya. “Dan suara angin yang berhembus di antara pohon cemara di dekat jendela. Biarkan aku merasakannya—angin itu datang langsung dari padang rumput—biarkan aku menghirup satu napas!”</p><p>Untuk menenangkannya, aku membiarkan jendela sedikit terbuka selama beberapa detik. Hembusan angin dingin menerobos masuk; aku menutupnya, dan kembali ke tempatku. Ia kini terbaring diam, wajahnya bermandikan air mata. Kelelahan fisik telah sepenuhnya menundukkan semangatnya: Catherine kita yang berapi-api tak lebih baik dari seorang anak kecil yang menangis.</p><p>“Sudah berapa lama aku mengurung diri di sini?” tanyanya, tiba-tiba tersadar.</p><p>“Itu Senin malam,” jawabku, “dan sekarang sudah Kamis malam, atau lebih tepatnya Jumat pagi.”</p><p>“Apa! Di minggu yang sama?” serunya. “Hanya waktu singkat itu?”</p><p>“Cukup lama untuk hidup hanya dengan air dingin dan sifat pemarah,” ujarku.</p><p>“Yah, sepertinya sudah berjam-jam lamanya,” gumamnya ragu-ragu: “pasti lebih lama. Aku ingat berada di ruang tamu setelah mereka bertengkar, dan Edgar sangat memprovokasi, dan aku berlari ke ruangan ini dengan putus asa. Begitu aku mengunci pintu, kegelapan total menyelimutiku, dan aku jatuh ke lantai. Aku tidak bisa menjelaskan kepada Edgar betapa yakinnya aku akan kejang, atau menjadi gila, jika dia terus menggodaku! Aku kehilangan kendali atas lidah dan otakku, dan mungkin dia tidak menduga penderitaanku: aku hampir tidak sadar untuk mencoba melarikan diri darinya dan suaranya. Sebelum aku cukup pulih untuk melihat dan mendengar, fajar mulai menyingsing, dan, Nelly, akan kuceritakan apa yang kupikirkan, dan apa yang terus berulang hingga aku takut akan kewarasanku. Saat aku berbaring di sana, dengan kepala bersandar pada kaki meja itu, dan mataku samar-samar melihat persegi abu-abu jendela, aku berpikir bahwa aku terkurung di tempat tidur berpanel kayu ek di rumah; dan hatiku sakit Kesedihan mendalam yang, saat baru bangun tidur, tidak dapat kuingat. Aku merenung dan berusaha keras mencari tahu apa itu, dan, yang paling aneh, seluruh tujuh tahun terakhir hidupku menjadi kosong! Aku sama sekali tidak ingat bahwa itu pernah terjadi. Aku masih kecil; ayahku baru saja dimakamkan, dan kesengsaraanku muncul dari perpisahan yang diperintahkan Hindley antara aku dan Heathcliff. Aku dibaringkan sendirian, untuk pertama kalinya; dan, terbangun dari tidur lelap yang menyedihkan setelah semalaman menangis, aku mengangkat tanganku untuk menyingkirkan panel-panel itu: tanganku mengenai permukaan meja! Aku menyapunya di sepanjang karpet, dan kemudian ingatan tiba-tiba muncul: kesedihanku yang terakhir ditelan dalam serangan keputusasaan. Aku tidak bisa mengatakan mengapa aku merasa sangat sengsara: itu pasti gangguan sementara; karena hampir tidak ada penyebabnya. Tetapi, seandainya pada usia dua belas tahun aku telah dipisahkan dari Heights, dan setiap kenangan masa kecilku, dan segalanya bagiku, seperti Heathcliff pada waktu itu, dan langsung berubah menjadi Nyonya... Linton, nyonya Thrushcross Grange, dan istri orang asing: seorang pengasingan, dan orang buangan, sejak saat itu, dari apa yang dulunya adalah duniaku. Kau mungkin membayangkan sekilas jurang tempat aku merendahkan diri! Gelengkan kepalamu sesukamu, Nelly, kau telah membantuku gelisah! Seharusnya kau berbicara dengan Edgar, sungguh seharusnya, dan memaksanya untuk membiarkanku tenang! Oh, aku terbakar! Aku berharap aku berada di luar ruangan! Aku berharap aku menjadi seorang gadis lagi, setengah liar dan tangguh, dan bebas; dan menertawakan luka, bukan marah karenanya! Mengapa aku begitu berubah? Mengapa darahku mengalir deras ke neraka kekacauan hanya karena beberapa kata? Aku yakin aku akan menjadi diriku sendiri jika aku pernah berada di antara semak belukar di bukit-bukit itu. Buka jendela lagi lebar-lebar: kunci agar tetap terbuka! Cepat, kenapa kau tidak bergerak?”</p><p>“Karena aku tidak akan membiarkanmu mati kedinginan,” jawabku.</p><p>“Maksudmu, kau tak akan memberiku kesempatan untuk hidup,” katanya dengan muram. “Namun, aku belum tak berdaya; aku akan membukanya sendiri.”</p><p>Dan sebelum aku sempat menghentikannya, ia meluncur dari tempat tidur, menyeberangi ruangan dengan langkah yang sangat ragu-ragu, merebahkan tempat tidurnya, dan membungkuk, tanpa mempedulikan udara dingin yang menusuk bahunya setajam pisau. Aku memohon, dan akhirnya mencoba memaksanya untuk beristirahat. Tetapi aku segera menyadari bahwa kekuatannya yang mengigau jauh melebihi kekuatanku (aku yakin ia mengigau berdasarkan tindakan dan ocehannya selanjutnya). Tidak ada bulan, dan segala sesuatu di bawahnya diselimuti kegelapan berkabut: tidak ada cahaya yang bersinar dari rumah mana pun, jauh atau dekat; semuanya telah padam sejak lama: dan lampu-lampu di Wuthering Heights tidak pernah terlihat—namun ia bersikeras bahwa ia melihat cahayanya.</p><p>“Lihat!” serunya penuh semangat, “itu kamarku dengan lilin di dalamnya, dan pepohonan yang bergoyang di depannya; dan lilin lainnya ada di loteng Joseph. Joseph begadang sampai larut, ya? Dia menunggu sampai aku pulang agar dia bisa mengunci gerbang. Yah, dia akan menunggu sebentar lagi. Perjalanan ini berat, dan hati yang sedih untuk menempuhnya; dan kita harus melewati Gereja Gimmerton untuk melakukan perjalanan itu! Kita sering menantang hantu-hantunya bersama-sama, dan saling menantang untuk berdiri di antara kuburan dan meminta mereka untuk datang. Tapi, Heathcliff, jika aku menantangmu sekarang, maukah kau melakukannya? Jika kau melakukannya, aku akan menjagamu. Aku tidak akan berbaring di sana sendirian: mereka boleh menguburku sedalam dua belas kaki, dan meruntuhkan gereja di atasku, tetapi aku tidak akan beristirahat sampai kau bersamaku. Aku tidak akan pernah!”</p><p>Dia berhenti sejenak, lalu melanjutkan dengan senyum aneh. “Dia sedang mempertimbangkan—dia lebih suka aku yang datang kepadanya! Kalau begitu, temukan jalan! Jangan lewat halaman gereja itu. Kau lambat! Bersyukurlah, kau selalu mengikutiku!”</p><p>Menyadari percuma saja membantah kegilaannya, saya sedang merencanakan bagaimana saya bisa meraih sesuatu untuk membungkusnya, tanpa melepaskan pegangan saya padanya (karena saya tidak bisa mempercayainya sendirian di dekat jeruji yang menganga), ketika, yang membuat saya terkejut, saya mendengar bunyi gemerincing gagang pintu, dan Tuan Linton masuk. Dia baru saja datang dari perpustakaan; dan, saat melewati lobi, dia memperhatikan percakapan kami dan tertarik oleh rasa ingin tahu, atau takut, untuk memeriksa apa artinya, pada jam selarut itu.</p><p>“Oh, Tuan!” seruku, menahan seruan yang hampir keluar dari bibirnya saat melihat pemandangan yang menyambutnya, dan suasana suram di ruangan itu. “Nyonya saya yang malang sedang sakit, dan dia benar-benar menguasai saya: saya tidak bisa mengendalikannya sama sekali; tolong, datang dan bujuk dia untuk beristirahat. Lupakan amarahmu, karena dia sulit dibimbing selain ke caranya sendiri.”</p><p>“Catherine sakit?” katanya, bergegas menghampiri kami. “Tutup jendela, Ellen! Catherine! kenapa—”</p><p>Dia terdiam. Wajah Nyonya Linton yang tampak lesu membuatnya terdiam, dan dia hanya bisa melirik dari wanita itu ke arahku dengan ngeri dan takjub.</p><p>“Dia gelisah di sini,” lanjutku, “dan hampir tidak makan apa pun, dan tidak pernah mengeluh: dia tidak mengizinkan kami masuk sampai malam ini, jadi kami tidak bisa memberi tahu Anda tentang keadaannya, karena kami sendiri tidak mengetahuinya; tapi itu bukan apa-apa.”</p><p>Aku merasa penjelasanku terdengar canggung; sang majikan mengerutkan kening. “Bukan apa-apa, kan, Ellen Dean?” katanya tegas. “Kau harus menjelaskan lebih jelas mengapa kau merahasiakan ini dariku!” Lalu ia memeluk istrinya dan menatapnya dengan sedih.</p><p>Awalnya dia tidak meliriknya dengan tanda pengenalan: dia tak terlihat oleh pandangannya yang kosong. Namun, delusi itu tidak menetap; setelah mengalihkan pandangannya dari kegelapan di luar, secara bertahap dia memusatkan perhatiannya padanya, dan menemukan siapa yang menahannya.</p><p>“Ah! Kau datang, ya, Edgar Linton?” katanya dengan penuh amarah. “Kau salah satu dari orang-orang yang selalu ditemukan saat paling tidak dibutuhkan, dan saat dibutuhkan, kau tak pernah datang! Kurasa kita akan banyak meratap sekarang—aku tahu memang begitu—tapi itu tak bisa mencegahku pergi ke rumahku yang sempit di sana: tempat peristirahatanku, tempat aku akan dimakamkan sebelum musim semi berakhir! Di sana: bukan di antara keluarga Linton, ingat, di bawah atap kapel, tetapi di udara terbuka, dengan batu nisan; dan kau boleh memilih mau pergi ke mereka atau datang kepadaku!”</p><p>“Catherine, apa yang telah kau lakukan?” tanya sang guru. “Apakah aku bukan apa-apa lagi bagimu? Apakah kau mencintai si brengsek Heath—”</p><p>“Diam!” teriak Nyonya Linton. “Diam, saat ini juga! Jika kau menyebut nama itu, aku akan mengakhiri semuanya seketika dengan melompat dari jendela! Apa yang kau sentuh sekarang boleh kau dapatkan; tetapi jiwaku akan berada di puncak bukit itu sebelum kau menyentuhku lagi. Aku tidak menginginkanmu, Edgar: aku sudah tidak menginginkanmu lagi. Kembalilah ke buku-bukumu. Aku senang kau memiliki penghiburan, karena semua yang kau miliki dalam diriku telah hilang.”</p><p>“Pikirannya melayang-layang, Pak,” sela saya. “Dia sudah bicara omong kosong sepanjang malam; tapi biarkan dia tenang dan mendapat perhatian yang layak, dan dia akan pulih. Mulai sekarang, kita harus berhati-hati bagaimana kita mengganggunya.”</p><p>“Saya tidak menginginkan nasihat lebih lanjut dari Anda,” jawab Tuan Linton. “Anda tahu sifat majikan Anda, dan Anda mendorong saya untuk mengganggunya. Dan tidak memberi saya petunjuk sedikit pun tentang bagaimana keadaannya selama tiga hari ini! Itu tidak berperasaan! Sakit selama berbulan-bulan tidak mungkin menyebabkan perubahan seperti itu!”</p><p>Aku mulai membela diri, berpikir bahwa terlalu buruk untuk disalahkan atas kenakalan orang lain. “Aku tahu sifat Nyonya Linton yang keras kepala dan suka mendominasi,” seruku: “tetapi aku tidak tahu bahwa kau ingin memupuk amarahnya yang hebat! Aku tidak tahu bahwa, untuk menyenangkan hatinya, aku harus mengedipkan mata kepada Tuan Heathcliff. Aku telah menjalankan tugas sebagai pelayan yang setia dengan memberitahumu, dan aku telah mendapatkan upah sebagai pelayan yang setia! Yah, ini akan menjadi pelajaran bagiku untuk lebih berhati-hati lain kali. Lain kali kau boleh mengumpulkan informasi sendiri!”</p><p>“Lain kali kau menceritakan kisah kepadaku, kau akan dipecat dari pekerjaanku, Ellen Dean,” jawabnya.</p><p>“Kurasa Anda lebih suka tidak mendengar apa pun tentang itu, Tuan Linton?” tanyaku. “Heathcliff mendapat izin Anda untuk datang melamar Nona, dan mampir setiap kali Anda tidak ada, dengan tujuan untuk meracuni pikiran nyonya rumah terhadap Anda?”</p><p>Meskipun Catherine bingung, kecerdasannya tetap tajam dalam menerapkan apa yang kami bicarakan.</p><p>“Ah! Nelly telah berkhianat,” serunya dengan penuh semangat. “Nelly adalah musuh tersembunyiku. Dasar penyihir! Jadi kau mencari panah peri untuk menyakiti kami! Lepaskan aku, dan aku akan membuatnya menyesal! Aku akan membuatnya meraung-raung menarik kembali sumpahnya!”</p><p>Kemarahan yang membara terpancar di bawah alisnya; dia berjuang mati-matian untuk melepaskan diri dari pelukan Linton. Aku tidak ingin berlama-lama menyaksikan kejadian itu; dan, bertekad untuk mencari pertolongan medis atas tanggung jawabku sendiri, aku meninggalkan ruangan.</p><p>Saat melewati taman untuk menuju jalan, di tempat di mana kait kekang ditancapkan ke dinding, saya melihat sesuatu berwarna putih bergerak tidak beraturan, jelas karena pengaruh selain angin. Meskipun terburu-buru, saya berhenti untuk memeriksanya, agar saya tidak pernah lagi yakin bahwa itu adalah makhluk dari dunia lain. Kejutan dan kebingungan saya sangat besar ketika menemukan, melalui sentuhan lebih daripada penglihatan, kuda poni Miss Isabella, Fanny, tergantung pada sapu tangan, dan hampir sekarat. Saya segera melepaskan hewan itu, dan mengangkatnya ke taman. Saya pernah melihatnya mengikuti majikannya ke lantai atas ketika dia pergi tidur; dan sangat heran bagaimana ia bisa sampai di sana, dan orang jahat mana yang memperlakukannya seperti itu. Saat melepaskan simpul di sekitar kait, saya berulang kali mendengar derap kaki kuda yang berlari kencang di kejauhan; tetapi ada begitu banyak hal yang menyibukkan pikiran saya sehingga saya hampir tidak memikirkan hal itu: meskipun itu suara yang aneh, di tempat itu, pukul dua pagi.</p><p>Untungnya, Tuan Kenneth baru saja keluar dari rumahnya untuk menemui seorang pasien di desa ketika saya berjalan di jalan; dan cerita saya tentang penyakit Catherine Linton membuatnya segera menemani saya kembali. Dia adalah pria yang sederhana dan kasar; dan dia tidak ragu-ragu untuk mengungkapkan keraguannya tentang apakah Catherine akan selamat dari serangan kedua ini; kecuali jika dia lebih patuh pada arahannya daripada yang telah dia tunjukkan sebelumnya.</p><p>“Nelly Dean,” katanya, “aku tidak bisa menahan diri untuk tidak menduga ada penyebab lain di balik ini. Apa yang terjadi di Grange? Kami mendapat laporan aneh di sini. Gadis yang tegap dan sehat seperti Catherine tidak mudah sakit; dan orang seperti itu seharusnya juga tidak. Merawat mereka saat demam dan hal-hal semacam itu memang pekerjaan berat. Bagaimana ini bermula?”</p><p>“Tuan akan memberi tahu Anda,” jawab saya; “tetapi Anda sudah tahu watak keluarga Earnshaw yang mudah marah, dan Nyonya Linton adalah yang terburuk. Bisa saya katakan begini; semuanya berawal dari pertengkaran. Saat emosinya meluap, ia tiba-tiba mengalami semacam serangan panik. Setidaknya itulah penjelasannya: karena ia melarikan diri di tengah amarahnya dan mengurung diri. Setelah itu, ia menolak makan, dan sekarang ia bergantian mengoceh dan berada dalam keadaan setengah sadar; mengenal orang-orang di sekitarnya, tetapi pikirannya dipenuhi dengan berbagai macam ide dan ilusi aneh.”</p><p>“Apakah Tuan Linton akan menyesal?” tanya Kenneth dengan nada bertanya.</p><p>“Maaf? Dia akan patah hati jika terjadi sesuatu!” jawabku. “Jangan membuatnya khawatir lebih dari yang diperlukan.”</p><p>“Nah, aku sudah memperingatkannya,” kata temanku; “dan dia harus menanggung akibat dari mengabaikan peringatanku! Bukankah dia akhir-akhir ini akrab dengan Tuan Heathcliff?”</p><p>“Heathcliff sering berkunjung ke Grange,” jawabku, “meskipun lebih karena nyonya rumah mengenalnya sejak kecil, daripada karena tuan rumah menyukai kehadirannya. Saat ini dia dibebaskan dari tugas berkunjung; karena beberapa aspirasi lancangnya terhadap Nona Linton yang dia tunjukkan. Kurasa dia tidak akan diterima lagi.”</p><p>“Dan apakah Nona Linton bersikap dingin padanya?” adalah pertanyaan dokter selanjutnya.</p><p>“Aku bukan orang kepercayaannya,” jawabku, enggan melanjutkan pembicaraan.</p><p>“Tidak, dia licik,” ujarnya sambil menggelengkan kepala. “Dia menyimpan rahasianya sendiri! Tapi dia benar-benar bodoh. Saya mendapat informasi dari sumber yang dapat dipercaya bahwa tadi malam (dan malam yang indah!) dia dan Heathcliff berjalan-jalan di perkebunan di belakang rumah Anda selama lebih dari dua jam; dan Heathcliff mendesaknya untuk tidak masuk lagi, tetapi langsung menaiki kudanya dan pergi bersamanya! Informan saya mengatakan bahwa dia hanya bisa menolaknya dengan berjanji untuk bersiap pada pertemuan pertama mereka setelah itu: ketika pertemuan itu akan terjadi, Heathcliff tidak mendengarnya; tetapi Anda mendesak Tuan Linton untuk segera bertindak!”</p><p>Kabar ini membuatku semakin takut; aku mendahului Kenneth, dan berlari hampir sepanjang jalan kembali. Anjing kecil itu masih melolong di taman. Aku menyempatkan diri sebentar untuk membukakan gerbang untuknya, tetapi alih-alih pergi ke pintu rumah, ia berlarian mondar-mandir mengendus rumput, dan akan kabur ke jalan jika aku tidak menangkapnya dan membawanya masuk bersamaku. Saat naik ke kamar Isabella, kecurigaanku terkonfirmasi: kamar itu kosong. Seandainya aku datang beberapa jam lebih awal, penyakit Nyonya Linton mungkin bisa menghentikan langkah gegabahnya. Tapi apa yang bisa dilakukan sekarang? Ada kemungkinan kecil untuk menyusul mereka jika dikejar segera. Namun, aku tidak bisa mengejar mereka; dan aku tidak berani membangunkan keluarga, dan membuat tempat itu kacau; apalagi menceritakan masalah ini kepada tuanku, yang sedang sibuk dengan musibahnya saat ini, dan tidak punya hati untuk berduka lagi! Aku tidak melihat jalan keluar lain selain diam, dan membiarkan semuanya berjalan apa adanya; Dan ketika Kenneth tiba, aku pergi dengan wajah yang tampak tidak tenang untuk mengumumkannya. Catherine terbaring dalam tidur yang gelisah: suaminya telah berhasil menenangkan kegelisahan yang berlebihan; sekarang ia membungkuk di atas bantalnya, mengamati setiap rona dan setiap perubahan ekspresi wajahnya yang sangat menyakitkan.</p><p>Dokter, setelah memeriksa kasus itu sendiri, dengan penuh harap mengatakan kepadanya bahwa penyakit ini akan berakhir dengan baik, jika kita dapat menjaga ketenangan yang sempurna dan konstan di sekitarnya. Bagiku, yang dia maksud adalah bahaya yang mengancam bukanlah kematian, melainkan keterasingan intelektual yang permanen.</p><p>Aku tidak memejamkan mata malam itu, begitu pula Tuan Linton: bahkan, kami tidak pernah tidur; dan para pelayan semuanya sudah bangun jauh sebelum jam biasanya, bergerak di seluruh rumah dengan langkah diam-diam, dan saling berbisik ketika mereka bertemu satu sama lain dalam pekerjaan mereka. Semua orang aktif kecuali Nona Isabella; dan mereka mulai memperhatikan betapa nyenyaknya dia tidur: saudara laki-lakinya juga bertanya apakah dia sudah bangun, dan tampak tidak sabar menunggu kehadirannya, dan merasa sakit hati karena dia menunjukkan sedikit kekhawatiran terhadap saudara iparnya. Aku gemetar takut dia akan menyuruhku memanggilnya; tetapi aku terhindar dari rasa sakit menjadi orang pertama yang mengumumkan kepergiannya. Salah satu pelayan, seorang gadis yang ceroboh, yang telah melakukan tugas pagi-pagi ke Gimmerton, datang terengah-engah ke atas, dengan mulut terbuka lebar, dan bergegas masuk ke kamar, sambil berteriak: “Oh, astaga! Siapa pelayan kita selanjutnya? Tuan, tuan, nona muda kita—”</p><p>“Diam!” teriakku tergesa-gesa, marah karena tingkahnya yang berisik.</p><p>“Bicaralah lebih pelan, Mary—Ada apa?” tanya Tuan Linton. “Apa yang sedang terjadi pada nona muda Anda?”</p><p>“Dia sudah pergi, dia sudah pergi! Heathcliff itu kabur bersamanya!” seru gadis itu terengah-engah.</p><p>“Itu tidak benar!” seru Linton, berdiri dengan gelisah. “Tidak mungkin: bagaimana ide itu bisa terlintas di kepalamu? Ellen Dean, pergi dan temui dia. Ini tidak masuk akal: tidak mungkin.”</p><p>Sambil berbicara, ia mengantar pelayan itu ke pintu, lalu mengulangi permintaannya untuk mengetahui alasan pelayan itu membuat pernyataan tersebut.</p><p>“Begini, aku bertemu dengan seorang pemuda pengantar susu di sini di jalan,” katanya terbata-bata, “dan dia bertanya apakah kami tidak sedang dalam masalah di Grange. Kupikir dia maksudkan karena penyakit istriku, jadi aku menjawab, ya. Lalu dia berkata, 'Sepertinya ada seseorang yang mengejar mereka?'” Aku menatapnya. Ia melihat aku tidak tahu apa-apa tentang itu, dan ia menceritakan bagaimana seorang pria dan wanita berhenti untuk memasang tapal kuda di bengkel pandai besi, dua mil di luar Gimmerton, tidak lama setelah tengah malam! Dan bagaimana gadis pandai besi itu bangun untuk mengintip siapa mereka: ia mengenal mereka berdua dengan baik. Dan ia memperhatikan pria itu—Heathcliff, ia yakin: tidak ada yang bisa salah mengenalinya—memberikan uang satu sovereign kepada ayahnya sebagai pembayaran. Wanita itu mengenakan jubah di wajahnya; tetapi setelah meminta minum air, saat ia minum, jubah itu tersingkap, dan ia terlihat sangat jelas. Heathcliff memegang kedua kendali kuda saat mereka berkuda, dan mereka meninggalkan desa, dan pergi secepat yang memungkinkan jalanan yang kasar itu. Gadis itu tidak mengatakan apa pun kepada ayahnya, tetapi ia menceritakan semuanya ke seluruh Gimmerton pagi ini.”</p><p>Aku berlari dan mengintip, sekadar formalitas, ke kamar Isabella; membenarkan pernyataan pelayan itu ketika aku kembali. Tuan Linton telah kembali duduk di samping tempat tidur; saat aku masuk kembali, dia mengangkat matanya, membaca arti tatapan kosongku, dan menurunkannya tanpa memberi perintah, atau mengucapkan sepatah kata pun.</p><p>“Apakah kita perlu mencoba berbagai cara untuk mengejar dan membawanya kembali?” tanyaku. “Bagaimana sebaiknya kita melakukannya?”</p><p>“Dia pergi atas kemauannya sendiri,” jawab sang tuan; “dia berhak pergi jika dia mau. Jangan ganggu aku lagi soal dia. Mulai sekarang dia hanya saudara perempuanku dalam nama saja: bukan karena aku menolaknya, tetapi karena dia telah menolakku.”</p><p>Dan hanya itu yang dia katakan tentang masalah itu: dia tidak mengajukan pertanyaan lebih lanjut, atau menyebutkannya dengan cara apa pun, kecuali mengarahkan saya untuk mengirimkan semua barang miliknya yang ada di rumah ke rumah barunya, di mana pun itu, ketika saya mengetahuinya.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-xi.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Xi</span>
+    </a>
+    <a href="bab-xiii.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xiii</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XII</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Sementara Nona Linton merenung di taman dan kebun, selalu diam, dan hampir selalu menangis; dan saudara laki-lakinya mengurung diri di antara buku-buku yang tidak pernah dibukanya—lelah, kurasa, dengan harapan samar yang terus-menerus bahwa Catherine, menyesali perilakunya, akan datang dengan sendirinya untuk meminta maaf, dan mencari rekonsiliasi—dan dia berpuasa dengan gigih, mungkin dengan anggapan bahwa setiap kali makan Edgar siap tersedak karena ketidakhadirannya, dan hanya harga diri yang menahannya untuk berlari dan bersujud di kakinya; aku menjalankan tugas-tugas rumah tanggaku, yakin bahwa Grange hanya memiliki satu jiwa yang peka di dalam dindingnya, dan itu bersemayam di tubuhku. Aku tidak mencurahkan belasungkawa kepada Nona, atau protes apa pun kepada majikanku; aku juga tidak terlalu memperhatikan desahan tuanku, yang merindukan untuk mendengar nama istrinya, karena dia tidak dapat mendengar suaranya. Aku memutuskan bahwa semuanya akan terjadi sesuai keinginan mereka untukku; dan meskipun itu adalah proses yang sangat lambat dan melelahkan, akhirnya aku mulai bersukacita dalam fajar samar kemajuannya: seperti yang kupikirkan pada awalnya. Pada hari ketiga, Nyonya Linton membuka pintunya, dan setelah menghabiskan air di kendi dan tekonya, ia meminta persediaan air baru dan semangkuk bubur, karena ia percaya dirinya akan meninggal. Saya mencatat itu sebagai ucapan yang ditujukan untuk telinga Edgar; saya tidak percaya hal seperti itu, jadi saya menyimpannya sendiri dan membawakannya teh dan roti panggang kering. Ia makan dan minum dengan lahap, lalu kembali berbaring di bantalnya, mengepalkan tangannya dan mengerang. “Oh, aku akan mati,” serunya, “karena tidak ada yang peduli padaku. Aku menyesal telah meminum obat itu.” Kemudian beberapa saat kemudian saya mendengar ia bergumam, “Tidak, aku tidak akan mati—ia akan senang—ia sama sekali tidak mencintaiku—ia tidak akan pernah merindukanku!” “Apakah Anda membutuhkan sesuatu, Bu?” tanyaku, tetap menjaga ketenangan di luar, meskipun wajahnya mengerikan dan tingkah lakunya aneh dan berlebihan. “Apa yang sedang dilakukan makhluk apatis itu?” tanyanya, sambil menyingkirkan rambutnya yang tebal dan kusut dari wajahnya yang kurus. “Apakah dia jatuh ke dalam kelesuan, atau dia sudah mati?” “Bukan keduanya,” jawabku; “jika yang kau maksud adalah Tuan Linton. Kurasa dia cukup sehat, meskipun studinya menyita waktunya lebih dari seharusnya: dia selalu berada di antara buku-bukunya, karena dia tidak punya teman lain.” Seharusnya aku tidak berbicara seperti itu jika aku tahu kondisi sebenarnya, tetapi aku tidak bisa menghilangkan anggapan bahwa dia berakting sebagai bagian dari gangguannya. “Di antara buku-bukunya!” serunya, bingung. “Dan aku sekarat! Aku di ambang kematian! Ya Tuhan! Apakah dia tahu bagaimana aku berubah?” lanjutnya, menatap bayangannya di cermin yang tergantung di dinding seberang. “Apakah itu Catherine Linton? Dia membayangkan aku sebagai hewan peliharaan—mungkin dalam permainan. Tidak bisakah kau memberitahunya bahwa itu sangat serius? Nelly, jika belum terlambat, begitu aku tahu bagaimana perasaannya, aku akan memilih antara dua ini: mati kelaparan—itu bukanlah hukuman kecuali dia punya hati—atau sembuh, dan meninggalkan negara ini. Apakah kau mengatakan yang sebenarnya tentang dia sekarang? Hati-hati. Apakah dia benar-benar acuh tak acuh terhadap hidupku?” “Nyonya,” jawabku, “tuan tidak tahu sama sekali bahwa Anda gila; dan tentu saja dia tidak takut Anda akan membiarkan diri Anda mati kelaparan.” “Kau pikir tidak? Tidak bisakah kau katakan padanya bahwa aku akan melakukannya?” balasnya. “Bujuk dia! Ungkapkan isi hatimu: katakan kau yakin aku akan melakukannya!” “Tidak, Anda lupa, Nyonya Linton,” saya menyarankan, “bahwa Anda telah menyantap makanan yang lezat malam ini, dan besok Anda akan merasakan efek baiknya.” “Seandainya aku yakin itu akan membunuhnya,” sela dia, “aku akan langsung bunuh diri! Tiga malam mengerikan ini aku tak pernah memejamkan mata—dan oh, aku tersiksa! Aku dihantui, Nelly! Tapi aku mulai merasa kau tidak menyukaiku. Aneh sekali! Kupikir, meskipun semua orang saling membenci dan meremehkan, mereka tidak bisa menghindari mencintaiku. Dan mereka semua berubah menjadi musuh dalam beberapa jam. Aku yakin; orang-orang di sini ... Betapa suramnya menghadapi kematian, dikelilingi oleh wajah-wajah dingin mereka! Isabella, ketakutan dan jijik, takut memasuki ruangan, akan sangat mengerikan melihat Catherine pergi. Dan Edgar berdiri dengan khidmat untuk menyaksikan semuanya berakhir; lalu memanjatkan doa syukur kepada Tuhan karena telah memulihkan kedamaian di rumahnya, dan kembali membaca buku-bukunya ! Apa hubungannya dia dengan buku , sementara aku sedang sekarat?” Ia tak tahan dengan gagasan yang telah kutanamkan di kepalanya tentang sikap pasrah filosofis Tuan Linton. Ia gelisah, meningkatkan kebingungannya yang demam hingga menjadi gila, dan merobek bantal dengan giginya; lalu bangkit dengan tubuh yang terbakar, meminta agar aku membuka jendela. Saat itu tengah musim dingin, angin bertiup kencang dari timur laut, dan aku menolak. Baik ekspresi yang terlintas di wajahnya, maupun perubahan suasana hatinya, mulai membuatku sangat khawatir; dan mengingatkanku pada penyakitnya sebelumnya, dan perintah dokter agar ia tidak boleh ditentang. Semenit sebelumnya ia bersikap kasar; sekarang, dengan bertumpu pada satu lengan, dan tidak memperhatikan penolakanku untuk menurutinya, ia tampak menemukan hiburan kekanak-kanakan dengan mencabut bulu-bulu dari robekan yang baru saja dibuatnya, dan menyusunnya di atas seprai sesuai jenisnya: pikirannya telah melayang ke hal-hal lain. “Itu bulu kalkun,” gumamnya pada diri sendiri; “dan ini bulu bebek liar; dan ini bulu merpati. Ah, mereka menaruh bulu merpati di bantal—pantas saja aku tidak bisa mati! Biar kupastikan untuk membuangnya ke lantai saat aku berbaring. Dan ini bulu ayam hutan; dan ini—aku pasti mengenalnya di antara seribu bulu—ini bulu burung lapwing. Burung yang cantik; berputar-putar di atas kepala kami di tengah padang rumput. Ia ingin kembali ke sarangnya, karena awan telah menyentuh ombak, dan ia merasakan hujan akan datang. Bulu ini dipungut dari semak belukar, burung itu tidak ditembak: kami melihat sarangnya di musim dingin, penuh dengan kerangka kecil. Heathcliff memasang perangkap di atasnya, dan burung-burung tua tidak berani datang. Aku membuatnya berjanji bahwa dia tidak akan pernah menembak burung lapwing lagi setelah itu, dan dia menepati janjinya. Ya, ini ada lagi! Apakah dia menembak burung lapwingku, Nelly? Apakah ada yang berwarna merah? Biar kulihat.” “Hentikan saja pekerjaan mengurus bayi itu!” sela saya, sambil menarik bantal itu menjauh, dan membalikkan lubangnya ke arah kasur, karena dia mengeluarkan isinya sedikit demi sedikit. “Berbaringlah dan pejamkan matamu: kamu melamun. Berantakan sekali! Bulu-bulu halus beterbangan seperti salju.” Saya pergi ke sana kemari untuk mengumpulkannya. “Aku melihat dirimu, Nelly,” lanjutnya dengan nada melamun, “seorang wanita tua: rambutmu beruban dan bahumu membungkuk. Ranjang ini adalah gua peri di bawah Penistone Crags, dan kau sedang mengumpulkan anak panah peri untuk menyakiti sapi-sapi betina kita; berpura-pura, selagi aku di dekatmu, bahwa itu hanyalah gumpalan wol. Itulah yang akan kau lakukan lima puluh tahun lagi: aku tahu kau tidak seperti itu sekarang. Aku tidak sedang melamun: kau salah, kalau tidak aku akan percaya kau benar-benar nenek sihir tua yang layu itu, dan aku akan berpikir aku berada di bawah Penistone Crags; dan aku sadar ini malam, dan ada dua lilin di atas meja yang membuat lemari hitam itu bersinar seperti batu jet.” “Pers kulit hitam? Di mana itu?” tanyaku. “Kau bicara sambil tidur!” “Lokasinya di dekat dinding, seperti biasanya,” jawabnya. “Memang terlihat aneh—aku melihat wajah di dalamnya!” “Tidak ada wartawan di ruangan ini, dan memang tidak pernah ada,” kataku, sambil kembali duduk dan menaikkan tirai agar aku bisa mengamatinya. “Apa kau tidak melihat wajah itu?” tanyanya, menatap cermin dengan sungguh-sungguh. Dan apa pun yang kukatakan, aku tak mampu membuatnya mengerti bahwa itu adalah miliknya sendiri; jadi aku bangkit dan menutupinya dengan selendang. “Itu masih di belakang sana!” tanyanya dengan cemas. “Dan itu bergerak. Siapakah itu? Kuharap ia tidak akan keluar saat kau pergi! Oh! Nelly, ruangan ini berhantu! Aku takut sendirian!” Aku menggenggam tangannya, dan memintanya untuk tenang; karena serangkaian getaran mengguncang tubuhnya, dan dia terus -menerus memicingkan matanya ke arah kaca. “Tidak ada siapa pun di sini!” tegasku. “Itu Anda sendiri , Nyonya Linton: Anda sudah mengetahuinya sejak beberapa waktu lalu.” “Aku sendiri!” serunya terengah-engah, “dan jam menunjukkan pukul dua belas! Benar sekali! Itu mengerikan!” Jari-jarinya mencengkeram pakaian itu, dan menutupi matanya dengan kain tersebut. Aku mencoba menyelinap ke pintu dengan maksud memanggil suaminya; tetapi aku dipanggil kembali oleh jeritan melengking—selendang itu jatuh dari kusen pintu. “Kenapa, ada apa ? ” seruku. “Siapa yang pengecut sekarang? Bangun! Itu cermin, Nyonya Linton; dan Anda melihat diri Anda di dalamnya, dan saya juga ada di samping Anda.” Dengan gemetar dan kebingungan, dia memelukku erat, tetapi kengerian itu perlahan-lahan hilang dari wajahnya; pucatnya digantikan oleh rona malu. “Oh, astaga! Kukira aku di rumah,” desahnya. “Kukira aku sedang berbaring di kamarku di Wuthering Heights. Karena aku lemah, otakku jadi bingung, dan aku berteriak tanpa sadar. Jangan berkata apa-apa; tapi tetaplah bersamaku. Aku takut tidur: mimpi-mimpiku menakutkan.” “Tidur nyenyak akan bermanfaat bagi Anda, Bu,” jawabku: “dan kuharap penderitaan ini akan mencegah Anda mencoba kelaparan lagi.” “Oh, seandainya aku berada di tempat tidurku sendiri di rumah tua itu!” lanjutnya dengan getir, sambil meremas-remas tangannya. “Dan suara angin yang berhembus di antara pohon cemara di dekat jendela. Biarkan aku merasakannya—angin itu datang langsung dari padang rumput—biarkan aku menghirup satu napas!” Untuk menenangkannya, aku membiarkan jendela sedikit terbuka selama beberapa detik. Hembusan angin dingin menerobos masuk; aku menutupnya, dan kembali ke tempatku. Ia kini terbaring diam, wajahnya bermandikan air mata. Kelelahan fisik telah sepenuhnya menundukkan semangatnya: Catherine kita yang berapi-api tak lebih baik dari seorang anak kecil yang menangis. “Sudah berapa lama aku mengurung diri di sini?” tanyanya, tiba-tiba tersadar. “Itu Senin malam,” jawabku, “dan sekarang sudah Kamis malam, atau lebih tepatnya Jumat pagi.” “Apa! Di minggu yang sama?” serunya. “Hanya waktu singkat itu?” “Cukup lama untuk hidup hanya dengan air dingin dan sifat pemarah,” ujarku. “Yah, sepertinya sudah berjam-jam lamanya,” gumamnya ragu-ragu: “pasti lebih lama. Aku ingat berada di ruang tamu setelah mereka bertengkar, dan Edgar sangat memprovokasi, dan aku berlari ke ruangan ini dengan putus asa. Begitu aku mengunci pintu, kegelapan total menyelimutiku, dan aku jatuh ke lantai. Aku tidak bisa menjelaskan kepada Edgar betapa yakinnya aku akan kejang, atau menjadi gila, jika dia terus menggodaku! Aku kehilangan kendali atas lidah dan otakku, dan mungkin dia tidak menduga penderitaanku: aku hampir tidak sadar untuk mencoba melarikan diri darinya dan suaranya. Sebelum aku cukup pulih untuk melihat dan mendengar, fajar mulai menyingsing, dan, Nelly, akan kuceritakan apa yang kupikirkan, dan apa yang terus berulang hingga aku takut akan kewarasanku. Saat aku berbaring di sana, dengan kepala bersandar pada kaki meja itu, dan mataku samar-samar melihat persegi abu-abu jendela, aku berpikir bahwa aku terkurung di tempat tidur berpanel kayu ek di rumah; dan hatiku sakit Kesedihan mendalam yang, saat baru bangun tidur, tidak dapat kuingat. Aku merenung dan berusaha keras mencari tahu apa itu, dan, yang paling aneh, seluruh tujuh tahun terakhir hidupku menjadi kosong! Aku sama sekali tidak ingat bahwa itu pernah terjadi. Aku masih kecil; ayahku baru saja dimakamkan, dan kesengsaraanku muncul dari perpisahan yang diperintahkan Hindley antara aku dan Heathcliff. Aku dibaringkan sendirian, untuk pertama kalinya; dan, terbangun dari tidur lelap yang menyedihkan setelah semalaman menangis, aku mengangkat tanganku untuk menyingkirkan panel-panel itu: tanganku mengenai permukaan meja! Aku menyapunya di sepanjang karpet, dan kemudian ingatan tiba-tiba muncul: kesedihanku yang terakhir ditelan dalam serangan keputusasaan. Aku tidak bisa mengatakan mengapa aku merasa sangat sengsara: itu pasti gangguan sementara; karena hampir tidak ada penyebabnya. Tetapi, seandainya pada usia dua belas tahun aku telah dipisahkan dari Heights, dan setiap kenangan masa kecilku, dan segalanya bagiku, seperti Heathcliff pada waktu itu, dan langsung berubah menjadi Nyonya... Linton, nyonya Thrushcross Grange, dan istri orang asing: seorang pengasingan, dan orang buangan, sejak saat itu, dari apa yang dulunya adalah duniaku. Kau mungkin membayangkan sekilas jurang tempat aku merendahkan diri! Gelengkan kepalamu sesukamu, Nelly, kau telah membantuku gelisah! Seharusnya kau berbicara dengan Edgar, sungguh seharusnya, dan memaksanya untuk membiarkanku tenang! Oh, aku terbakar! Aku berharap aku berada di luar ruangan! Aku berharap aku menjadi seorang gadis lagi, setengah liar dan tangguh, dan bebas; dan menertawakan luka, bukan marah karenanya! Mengapa aku begitu berubah? Mengapa darahku mengalir deras ke neraka kekacauan hanya karena beberapa kata? Aku yakin aku akan menjadi diriku sendiri jika aku pernah berada di antara semak belukar di bukit-bukit itu. Buka jendela lagi lebar-lebar: kunci agar tetap terbuka! Cepat, kenapa kau tidak bergerak?” “Karena aku tidak akan membiarkanmu mati kedinginan,” jawabku. “Maksudmu, kau tak akan memberiku kesempatan untuk hidup,” katanya dengan muram. “Namun, aku belum tak berdaya; aku akan membukanya sendiri.” Dan sebelum aku sempat menghentikannya, ia meluncur dari tempat tidur, menyeberangi ruangan dengan langkah yang sangat ragu-ragu, merebahkan tempat tidurnya, dan membungkuk, tanpa mempedulikan udara dingin yang menusuk bahunya setajam pisau. Aku memohon, dan akhirnya mencoba memaksanya untuk beristirahat. Tetapi aku segera menyadari bahwa kekuatannya yang mengigau jauh melebihi kekuatanku (aku yakin ia mengigau berdasarkan tindakan dan ocehannya selanjutnya). Tidak ada bulan, dan segala sesuatu di bawahnya diselimuti kegelapan berkabut: tidak ada cahaya yang bersinar dari rumah mana pun, jauh atau dekat; semuanya telah padam sejak lama: dan lampu-lampu di Wuthering Heights tidak pernah terlihat—namun ia bersikeras bahwa ia melihat cahayanya. “Lihat!” serunya penuh semangat, “itu kamarku dengan lilin di dalamnya, dan pepohonan yang bergoyang di depannya; dan lilin lainnya ada di loteng Joseph. Joseph begadang sampai larut, ya? Dia menunggu sampai aku pulang agar dia bisa mengunci gerbang. Yah, dia akan menunggu sebentar lagi. Perjalanan ini berat, dan hati yang sedih untuk menempuhnya; dan kita harus melewati Gereja Gimmerton untuk melakukan perjalanan itu! Kita sering menantang hantu-hantunya bersama-sama, dan saling menantang untuk berdiri di antara kuburan dan meminta mereka untuk datang. Tapi, Heathcliff, jika aku menantangmu sekarang, maukah kau melakukannya? Jika kau melakukannya, aku akan menjagamu. Aku tidak akan berbaring di sana sendirian: mereka boleh menguburku sedalam dua belas kaki, dan meruntuhkan gereja di atasku, tetapi aku tidak akan beristirahat sampai kau bersamaku. Aku tidak akan pernah!” Dia berhenti sejenak, lalu melanjutkan dengan senyum aneh. “Dia sedang mempertimbangkan—dia lebih suka aku yang datang kepadanya! Kalau begitu, temukan jalan! Jangan lewat halaman gereja itu. Kau lambat! Bersyukurlah, kau selalu mengikutiku!” Menyadari percuma saja membantah kegilaannya, saya sedang merencanakan bagaimana saya bisa meraih sesuatu untuk membungkusnya, tanpa melepaskan pegangan saya padanya (karena saya tidak bisa mempercayainya sendirian di dekat jeruji yang menganga), ketika, yang membuat saya terkejut, saya mendengar bunyi gemerincing gagang pintu, dan Tuan Linton masuk. Dia baru saja datang dari perpustakaan; dan, saat melewati lobi, dia memperhatikan percakapan kami dan tertarik oleh rasa ingin tahu, atau takut, untuk memeriksa apa artinya, pada jam selarut itu. “Oh, Tuan!” seruku, menahan seruan yang hampir keluar dari bibirnya saat melihat pemandangan yang menyambutnya, dan suasana suram di ruangan itu. “Nyonya saya yang malang sedang sakit, dan dia benar-benar menguasai saya: saya tidak bisa mengendalikannya sama sekali; tolong, datang dan bujuk dia untuk beristirahat. Lupakan amarahmu, karena dia sulit dibimbing selain ke caranya sendiri.” “Catherine sakit?” katanya, bergegas menghampiri kami. “Tutup jendela, Ellen! Catherine! kenapa—” Dia terdiam. Wajah Nyonya Linton yang tampak lesu membuatnya terdiam, dan dia hanya bisa melirik dari wanita itu ke arahku dengan ngeri dan takjub. “Dia gelisah di sini,” lanjutku, “dan hampir tidak makan apa pun, dan tidak pernah mengeluh: dia tidak mengizinkan kami masuk sampai malam ini, jadi kami tidak bisa memberi tahu Anda tentang keadaannya, karena kami sendiri tidak mengetahuinya; tapi itu bukan apa-apa.” Aku merasa penjelasanku terdengar canggung; sang majikan mengerutkan kening. “Bukan apa-apa, kan, Ellen Dean?” katanya tegas. “Kau harus menjelaskan lebih jelas mengapa kau merahasiakan ini dariku!” Lalu ia memeluk istrinya dan menatapnya dengan sedih. Awalnya dia tidak meliriknya dengan tanda pengenalan: dia tak terlihat oleh pandangannya yang kosong. Namun, delusi itu tidak menetap; setelah mengalihkan pandangannya dari kegelapan di luar, secara bertahap dia memusatkan perhatiannya padanya, dan menemukan siapa yang menahannya. “Ah! Kau datang, ya, Edgar Linton?” katanya dengan penuh amarah. “Kau salah satu dari orang-orang yang selalu ditemukan saat paling tidak dibutuhkan, dan saat dibutuhkan, kau tak pernah datang! Kurasa kita akan banyak meratap sekarang—aku tahu memang begitu—tapi itu tak bisa mencegahku pergi ke rumahku yang sempit di sana: tempat peristirahatanku, tempat aku akan dimakamkan sebelum musim semi berakhir! Di sana: bukan di antara keluarga Linton, ingat, di bawah atap kapel, tetapi di udara terbuka, dengan batu nisan; dan kau boleh memilih mau pergi ke mereka atau datang kepadaku!” “Catherine, apa yang telah kau lakukan?” tanya sang guru. “Apakah aku bukan apa-apa lagi bagimu? Apakah kau mencintai si brengsek Heath—” “Diam!” teriak Nyonya Linton. “Diam, saat ini juga! Jika kau menyebut nama itu, aku akan mengakhiri semuanya seketika dengan melompat dari jendela! Apa yang kau sentuh sekarang boleh kau dapatkan; tetapi jiwaku akan berada di puncak bukit itu sebelum kau menyentuhku lagi. Aku tidak menginginkanmu, Edgar: aku sudah tidak menginginkanmu lagi. Kembalilah ke buku-bukumu. Aku senang kau memiliki penghiburan, karena semua yang kau miliki dalam diriku telah hilang.” “Pikirannya melayang-layang, Pak,” sela saya. “Dia sudah bicara omong kosong sepanjang malam; tapi biarkan dia tenang dan mendapat perhatian yang layak, dan dia akan pulih. Mulai sekarang, kita harus berhati-hati bagaimana kita mengganggunya.” “Saya tidak menginginkan nasihat lebih lanjut dari Anda,” jawab Tuan Linton. “Anda tahu sifat majikan Anda, dan Anda mendorong saya untuk mengganggunya. Dan tidak memberi saya petunjuk sedikit pun tentang bagaimana keadaannya selama tiga hari ini! Itu tidak berperasaan! Sakit selama berbulan-bulan tidak mungkin menyebabkan perubahan seperti itu!” Aku mulai membela diri, berpikir bahwa terlalu buruk untuk disalahkan atas kenakalan orang lain. “Aku tahu sifat Nyonya Linton yang keras kepala dan suka mendominasi,” seruku: “tetapi aku tidak tahu bahwa kau ingin memupuk amarahnya yang hebat! Aku tidak tahu bahwa, untuk menyenangkan hatinya, aku harus mengedipkan mata kepada Tuan Heathcliff. Aku telah menjalankan tugas sebagai pelayan yang setia dengan memberitahumu, dan aku telah mendapatkan upah sebagai pelayan yang setia! Yah, ini akan menjadi pelajaran bagiku untuk lebih berhati-hati lain kali. Lain kali kau boleh mengumpulkan informasi sendiri!” “Lain kali kau menceritakan kisah kepadaku, kau akan dipecat dari pekerjaanku, Ellen Dean,” jawabnya. “Kurasa Anda lebih suka tidak mendengar apa pun tentang itu, Tuan Linton?” tanyaku. “Heathcliff mendapat izin Anda untuk datang melamar Nona, dan mampir setiap kali Anda tidak ada, dengan tujuan untuk meracuni pikiran nyonya rumah terhadap Anda?” Meskipun Catherine bingung, kecerdasannya tetap tajam dalam menerapkan apa yang kami bicarakan. “Ah! Nelly telah berkhianat,” serunya dengan penuh semangat. “Nelly adalah musuh tersembunyiku. Dasar penyihir! Jadi kau mencari panah peri untuk menyakiti kami! Lepaskan aku, dan aku akan membuatnya menyesal! Aku akan membuatnya meraung-raung menarik kembali sumpahnya!” Kemarahan yang membara terpancar di bawah alisnya; dia berjuang mati-matian untuk melepaskan diri dari pelukan Linton. Aku tidak ingin berlama-lama menyaksikan kejadian itu; dan, bertekad untuk mencari pertolongan medis atas tanggung jawabku sendiri, aku meninggalkan ruangan. Saat melewati taman untuk menuju jalan, di tempat di mana kait kekang ditancapkan ke dinding, saya melihat sesuatu berwarna putih bergerak tidak beraturan, jelas karena pengaruh selain angin. Meskipun terburu-buru, saya berhenti untuk memeriksanya, agar saya tidak pernah lagi yakin bahwa itu adalah makhluk dari dunia lain. Kejutan dan kebingungan saya sangat besar ketika menemukan, melalui sentuhan lebih daripada penglihatan, kuda poni Miss Isabella, Fanny, tergantung pada sapu tangan, dan hampir sekarat. Saya segera melepaskan hewan itu, dan mengangkatnya ke taman. Saya pernah melihatnya mengikuti majikannya ke lantai atas ketika dia pergi tidur; dan sangat heran bagaimana ia bisa sampai di sana, dan orang jahat mana yang memperlakukannya seperti itu. Saat melepaskan simpul di sekitar kait, saya berulang kali mendengar derap kaki kuda yang berlari kencang di kejauhan; tetapi ada begitu banyak hal yang menyibukkan pikiran saya sehingga saya hampir tidak memikirkan hal itu: meskipun itu suara yang aneh, di tempat itu, pukul dua pagi. Untungnya, Tuan Kenneth baru saja keluar dari rumahnya untuk menemui seorang pasien di desa ketika saya berjalan di jalan; dan cerita saya tentang penyakit Catherine Linton membuatnya segera menemani saya kembali. Dia adalah pria yang sederhana dan kasar; dan dia tidak ragu-ragu untuk mengungkapkan keraguannya tentang apakah Catherine akan selamat dari serangan kedua ini; kecuali jika dia lebih patuh pada arahannya daripada yang telah dia tunjukkan sebelumnya. “Nelly Dean,” katanya, “aku tidak bisa menahan diri untuk tidak menduga ada penyebab lain di balik ini. Apa yang terjadi di Grange? Kami mendapat laporan aneh di sini. Gadis yang tegap dan sehat seperti Catherine tidak mudah sakit; dan orang seperti itu seharusnya juga tidak. Merawat mereka saat demam dan hal-hal semacam itu memang pekerjaan berat. Bagaimana ini bermula?” “Tuan akan memberi tahu Anda,” jawab saya; “tetapi Anda sudah tahu watak keluarga Earnshaw yang mudah marah, dan Nyonya Linton adalah yang terburuk. Bisa saya katakan begini; semuanya berawal dari pertengkaran. Saat emosinya meluap, ia tiba-tiba mengalami semacam serangan panik. Setidaknya itulah penjelasannya: karena ia melarikan diri di tengah amarahnya dan mengurung diri. Setelah itu, ia menolak makan, dan sekarang ia bergantian mengoceh dan berada dalam keadaan setengah sadar; mengenal orang-orang di sekitarnya, tetapi pikirannya dipenuhi dengan berbagai macam ide dan ilusi aneh.” “Apakah Tuan Linton akan menyesal?” tanya Kenneth dengan nada bertanya. “Maaf? Dia akan patah hati jika terjadi sesuatu!” jawabku. “Jangan membuatnya khawatir lebih dari yang diperlukan.” “Nah, aku sudah memperingatkannya,” kata temanku; “dan dia harus menanggung akibat dari mengabaikan peringatanku! Bukankah dia akhir-akhir ini akrab dengan Tuan Heathcliff?” “Heathcliff sering berkunjung ke Grange,” jawabku, “meskipun lebih karena nyonya rumah mengenalnya sejak kecil, daripada karena tuan rumah menyukai kehadirannya. Saat ini dia dibebaskan dari tugas berkunjung; karena beberapa aspirasi lancangnya terhadap Nona Linton yang dia tunjukkan. Kurasa dia tidak akan diterima lagi.” “Dan apakah Nona Linton bersikap dingin padanya?” adalah pertanyaan dokter selanjutnya. “Aku bukan orang kepercayaannya,” jawabku, enggan melanjutkan pembicaraan. “Tidak, dia licik,” ujarnya sambil menggelengkan kepala. “Dia menyimpan rahasianya sendiri! Tapi dia benar-benar bodoh. Saya mendapat informasi dari sumber yang dapat dipercaya bahwa tadi malam (dan malam yang indah!) dia dan Heathcliff berjalan-jalan di perkebunan di belakang rumah Anda selama lebih dari dua jam; dan Heathcliff mendesaknya untuk tidak masuk lagi, tetapi langsung menaiki kudanya dan pergi bersamanya! Informan saya mengatakan bahwa dia hanya bisa menolaknya dengan berjanji untuk bersiap pada pertemuan pertama mereka setelah itu: ketika pertemuan itu akan terjadi, Heathcliff tidak mendengarnya; tetapi Anda mendesak Tuan Linton untuk segera bertindak!” Kabar ini membuatku semakin takut; aku mendahului Kenneth, dan berlari hampir sepanjang jalan kembali. Anjing kecil itu masih melolong di taman. Aku menyempatkan diri sebentar untuk membukakan gerbang untuknya, tetapi alih-alih pergi ke pintu rumah, ia berlarian mondar-mandir mengendus rumput, dan akan kabur ke jalan jika aku tidak menangkapnya dan membawanya masuk bersamaku. Saat naik ke kamar Isabella, kecurigaanku terkonfirmasi: kamar itu kosong. Seandainya aku datang beberapa jam lebih awal, penyakit Nyonya Linton mungkin bisa menghentikan langkah gegabahnya. Tapi apa yang bisa dilakukan sekarang? Ada kemungkinan kecil untuk menyusul mereka jika dikejar segera. Namun, aku tidak bisa mengejar mereka; dan aku tidak berani membangunkan keluarga, dan membuat tempat itu kacau; apalagi menceritakan masalah ini kepada tuanku, yang sedang sibuk dengan musibahnya saat ini, dan tidak punya hati untuk berduka lagi! Aku tidak melihat jalan keluar lain selain diam, dan membiarkan semuanya berjalan apa adanya; Dan ketika Kenneth tiba, aku pergi dengan wajah yang tampak tidak tenang untuk mengumumkannya. Catherine terbaring dalam tidur yang gelisah: suaminya telah berhasil menenangkan kegelisahan yang berlebihan; sekarang ia membungkuk di atas bantalnya, mengamati setiap rona dan setiap perubahan ekspresi wajahnya yang sangat menyakitkan. Dokter, setelah memeriksa kasus itu sendiri, dengan penuh harap mengatakan kepadanya bahwa penyakit ini akan berakhir dengan baik, jika kita dapat menjaga ketenangan yang sempurna dan konstan di sekitarnya. Bagiku, yang dia maksud adalah bahaya yang mengancam bukanlah kematian, melainkan keterasingan intelektual yang permanen. Aku tidak memejamkan mata malam itu, begitu pula Tuan Linton: bahkan, kami tidak pernah tidur; dan para pelayan semuanya sudah bangun jauh sebelum jam biasanya, bergerak di seluruh rumah dengan langkah diam-diam, dan saling berbisik ketika mereka bertemu satu sama lain dalam pekerjaan mereka. Semua orang aktif kecuali Nona Isabella; dan mereka mulai memperhatikan betapa nyenyaknya dia tidur: saudara laki-lakinya juga bertanya apakah dia sudah bangun, dan tampak tidak sabar menunggu kehadirannya, dan merasa sakit hati karena dia menunjukkan sedikit kekhawatiran terhadap saudara iparnya. Aku gemetar takut dia akan menyuruhku memanggilnya; tetapi aku terhindar dari rasa sakit menjadi orang pertama yang mengumumkan kepergiannya. Salah satu pelayan, seorang gadis yang ceroboh, yang telah melakukan tugas pagi-pagi ke Gimmerton, datang terengah-engah ke atas, dengan mulut terbuka lebar, dan bergegas masuk ke kamar, sambil berteriak: “Oh, astaga! Siapa pelayan kita selanjutnya? Tuan, tuan, nona muda kita—” “Diam!” teriakku tergesa-gesa, marah karena tingkahnya yang berisik. “Bicaralah lebih pelan, Mary—Ada apa?” tanya Tuan Linton. “Apa yang sedang terjadi pada nona muda Anda?” “Dia sudah pergi, dia sudah pergi! Heathcliff itu kabur bersamanya!” seru gadis itu terengah-engah. “Itu tidak benar!” seru Linton, berdiri dengan gelisah. “Tidak mungkin: bagaimana ide itu bisa terlintas di kepalamu? Ellen Dean, pergi dan temui dia. Ini tidak masuk akal: tidak mungkin.” Sambil berbicara, ia mengantar pelayan itu ke pintu, lalu mengulangi permintaannya untuk mengetahui alasan pelayan itu membuat pernyataan tersebut. “Begini, aku bertemu dengan seorang pemuda pengantar susu di sini di jalan,” katanya terbata-bata, “dan dia bertanya apakah kami tidak sedang dalam masalah di Grange. Kupikir dia maksudkan karena penyakit istriku, jadi aku menjawab, ya. Lalu dia berkata, 'Sepertinya ada seseorang yang mengejar mereka?'” Aku menatapnya. Ia melihat aku tidak tahu apa-apa tentang itu, dan ia menceritakan bagaimana seorang pria dan wanita berhenti untuk memasang tapal kuda di bengkel pandai besi, dua mil di luar Gimmerton, tidak lama setelah tengah malam! Dan bagaimana gadis pandai besi itu bangun untuk mengintip siapa mereka: ia mengenal mereka berdua dengan baik. Dan ia memperhatikan pria itu—Heathcliff, ia yakin: tidak ada yang bisa salah mengenalinya—memberikan uang satu sovereign kepada ayahnya sebagai pembayaran. Wanita itu mengenakan jubah di wajahnya; tetapi setelah meminta minum air, saat ia minum, jubah itu tersingkap, dan ia terlihat sangat jelas. Heathcliff memegang kedua kendali kuda saat mereka berkuda, dan mereka meninggalkan desa, dan pergi secepat yang memungkinkan jalanan yang kasar itu. Gadis itu tidak mengatakan apa pun kepada ayahnya, tetapi ia menceritakan semuanya ke seluruh Gimmerton pagi ini.” Aku berlari dan mengintip, sekadar formalitas, ke kamar Isabella; membenarkan pernyataan pelayan itu ketika aku kembali. Tuan Linton telah kembali duduk di samping tempat tidur; saat aku masuk kembali, dia mengangkat matanya, membaca arti tatapan kosongku, dan menurunkannya tanpa memberi perintah, atau mengucapkan sepatah kata pun. “Apakah kita perlu mencoba berbagai cara untuk mengejar dan membawanya kembali?” tanyaku. “Bagaimana sebaiknya kita melakukannya?” “Dia pergi atas kemauannya sendiri,” jawab sang tuan; “dia berhak pergi jika dia mau. Jangan ganggu aku lagi soal dia. Mulai sekarang dia hanya saudara perempuanku dalam nama saja: bukan karena aku menolaknya, tetapi karena dia telah menolakku.” Dan hanya itu yang dia katakan tentang masalah itu: dia tidak mengajukan pertanyaan lebih lanjut, atau menyebutkannya dengan cara apa pun, kecuali mengarahkan saya untuk mengirimkan semua barang miliknya yang ada di rumah ke rumah barunya, di mana pun itu, ketika saya mengetahuinya.</p>
-
-<div class="nav">
-  <a href="bab-xi.html">⬅ Bab Xi</a>
-  <a href="bab-xiii.html">Bab Xiii ➡</a>
-</div>
 
 </body>
 </html>

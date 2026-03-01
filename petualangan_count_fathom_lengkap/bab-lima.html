@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB LIMA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB LIMA - Bacaan digital klasik">
+<title>BAB LIMA — Petualangan Ferdinand Count Fathom</title>
+<meta name="description" content="Baca BAB LIMA dari buku Petualangan Ferdinand Count Fathom karya T. Smollett secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/bab-lima.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB LIMA — Petualangan Ferdinand Count Fathom">
+  <meta property="og:description" content="Baca BAB LIMA dari buku Petualangan Ferdinand Count Fathom karya T. Smollett secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/bab-lima.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB LIMA — Petualangan Ferdinand Count Fathom">
+  <meta name="twitter:description" content="Baca BAB LIMA dari Petualangan Ferdinand Count Fathom karya T. Smollett gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB LIMA",
+    "name": "BAB LIMA — Petualangan Ferdinand Count Fathom",
+    "author": {
+      "@type": "Person",
+      "name": "T. Smollett"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Petualangan Ferdinand Count Fathom",
+      "author": {
+        "@type": "Person",
+        "name": "T. Smollett"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/bab-lima.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Petualangan Ferdinand Count Fathom</a>
+    </div>
+    <h1 class="chapter-title">BAB LIMA</h1>
+    <div class="chapter-info">
+      <span>✍️ T. Smollett</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="keahlian-dan-kematian-ibunya-bersama-dengan-beberapa-contoh-kebijaksanaannya-sendiri.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Keahlian Dan Kematian Ibunya; Bersama Dengan Beberapa Contoh Kebijaksanaannya Sendiri.</span>
+    </a>
+    <a href="rincian-singkat-tentang-pendidikannya.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Rincian Singkat Tentang Pendidikannya.</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB LIMA</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>rincian singkat tentang pendidikannya. Tidak ada yang lebih tepat waktu untuk mengukuhkan pendapat baik yang dimiliki kolonel tentang prinsip-prinsip Ferdinand. Niatnya terhadap anak laki-laki itu semakin hari semakin hangat; dan, segera setelah perdamaian Passarowitz, ia pensiun ke rumahnya sendiri di Presburg, dan memperkenalkan Fathom muda kepada istrinya, bukan hanya sebagai putra dari seseorang yang kepadanya ia berutang nyawa, tetapi juga sebagai seorang pemuda yang pantas mendapatkan perlindungan dan perhatian khusus darinya karena kebajikan pribadinya sendiri. Sang Countess, yang merupakan orang Hongaria, menerimanya dengan sangat ramah dan baik hati, dan putranya sangat gembira dengan prospek memiliki teman seperti itu. Singkatnya, keberuntungan tampaknya telah menyediakan tempat perlindungan baginya, di mana ia dapat dididik dengan aman, dan dipersiapkan dengan baik untuk menghadapi peristiwa-peristiwa penting dalam hidup yang belum pernah dialami oleh leluhurnya. Ia tidak sepenuhnya diperlakukan setara dengan tuan mudanya; namun ia ikut serta dalam semua pendidikan dan hiburan tuannya, sebagai seseorang yang oleh tuan tua itu bertekad untuk dipersiapkan menjadi seorang perwira dalam dinas; dan, jika ia tidak makan bersama Count, ia setiap hari disuguhi makanan pilihan dari meja tuannya; seolah-olah, ia berada di posisi tengah antara kerabat dan pelayan kesayangan. Meskipun pelindungnya mempekerjakan seorang tutor di rumah untuk mengawasi perilaku ahli warisnya, ia mempercayakan pendidikannya kepada sekolah negeri; di mana ia membayangkan anak itu akan menyerap semangat persaingan yang terpuji di antara teman-temannya, yang pasti akan menguntungkan pendidikannya. Ferdinand terdaftar di akademi yang sama; dan kedua anak laki-laki itu sama-sama menempuh jalan pendidikan; persahabatan dan keintiman timbal balik segera terjalin, dan, terlepas dari sifat ceria dan seenaknya yang biasa terlihat dalam perilaku anak laki-laki seperti itu, sangat sedikit atau bahkan tidak ada pertengkaran yang terjadi selama komunikasi mereka. Namun, watak mereka sangat berbeda, dan bakat mereka pun tidak sama. Bahkan, perbedaan inilah yang menjadi ikatan persatuan mereka; karena hal itu mencegah kecemburuan dan persaingan yang sering mengganggu keharmonisan dua orang sezaman yang akrab. Sang Pangeran muda membuat kemajuan luar biasa dalam latihan-latihan di sekolah, meskipun ia tampaknya kurang tekun dalam mempelajari ilmunya; dan menjadi pahlawan sejati dalam semua kegiatan atletik teman-teman sekelasnya; tetapi, pada saat yang sama, ia menunjukkan penampilan yang begitu pemalu dan tutur kata yang kasar, sehingga ibunya putus asa untuk melihatnya berkembang menjadi sosok yang sopan. Di sisi lain, Fathom, yang dalam hal pembelajaran hanyalah seorang yang bodoh, bahkan sejak kecil, menjadi terkenal di kalangan wanita karena tingkah lakunya yang sopan dan keceriaannya; mereka mengagumi kemahiran yang ia tunjukkan di bawah arahan guru tarinya, sikapnya saat memberi hormat ketika masuk dan keluar; dan terpesona dengan kepercayaan diri yang menyenangkan dan percakapan yang hidup; sementara mereka menyatakan keprihatinan dan rasa jijik yang mendalam terhadap tingkah laku kasar temannya, yang gerakan membungkuknya menyerupai cakaran keledai, yang menundukkan kepala dalam diam seperti pencuri domba yang ketahuan, yang duduk bersama dengan ekspresi canggung karena terpaksa, dan yang ucapannya tidak pernah melebihi suku kata tunggal sederhana berupa penolakan dan persetujuan. Percuma saja semua perempuan dalam keluarga itu menjadikan Fathom muda sebagai panutan sekaligus celaan. Ia tetap tidak berubah oleh semua upaya dan teguran mereka, dan membiarkan petualang kita menikmati kemenangan pujiannya, sementara ia sendiri menyadari keunggulannya dalam kualifikasi yang tampaknya lebih penting daripada sekadar penampilan luar dan bentuk kehidupan. Ambisinya saat ini bukanlah untuk menjadi tokoh penting di meja makan ayahnya, tetapi untuk mengungguli saingannya di sekolah, dan untuk memperoleh pengaruh dan otoritas di antara sekutu-sekutunya. Meskipun demikian, Fathom mungkin saja akan jatuh di bawah ketidaksenangannya atau penghinaannya, seandainya jenius yang mudah dibentuk itu tidak menemukan cara untuk mempertahankan persahabatannya dengan kepatuhan dan penyerahan diri yang tepat waktu; karena satu-satunya tujuan, atau setidaknya tujuan utama Ferdinand, adalah untuk membuat dirinya dibutuhkan dan disukai oleh orang-orang yang bergantung padanya. Bakatnya dalam hal ini sesuai dengan kecenderungannya; ia tampaknya mewarisinya sejak dari rahim ibunya; Dan, tanpa ragu sedikit pun, ia pasti akan membangun kekayaan dan pujian yang sangat mengagumkan di atasnya, seandainya saja hal itu tidak terikat erat dengan prinsip cinta diri yang sangat berbahaya, yang tumbuh bersamanya sejak kecil, dan tidak menyisakan ruang di hatinya untuk sedikit pun kebajikan sosial. Namun, kebajikan sosial inilah yang ia kuasai dengan sangat baik, melalui banyak kelicikan dan kepura-puraan, sehingga, tentu saja, ia secara alami mampu menipu bahkan orang yang paling berhati-hati sekalipun, dan memuaskan nafsunya, dengan memungut pajak dari seluruh umat manusia. Para pengajar muda pada umumnya sangat kurang memenuhi syarat untuk menilai kemampuan murid-murid di bawah bimbingan dan pengawasan mereka, sehingga Fathom, dengan menggunakan taktik liciknya, berhasil menyamar sebagai anak yang cerdas dan pandai, meskipun ia memiliki bakat alami untuk mengingat pelajaran, yang tidak pernah bisa diatasi oleh semua kerja kerasnya. Untuk memperbaiki, atau lebih tepatnya menutupi kekurangan pemahamannya ini, ia selalu meminta bantuan persahabatan dari Pangeran muda, yang dengan bebas mengizinkannya menyalin latihan-latihannya, hingga terjadi sebuah kecelakaan kecil yang hampir menghentikan tindakan kemurahan hatinya ini. —Petualangan itu, meskipun tidak berarti, akan kita catat sebagai tindakan nyata pertama dari karakter Ferdinand yang sebenarnya, serta sebagai ilustrasi dari pendapat yang telah kita kemukakan mengenai keputusan yang buta dan tidak bijaksana dari seorang pendidik yang benar. Di antara tugas-tugas lain yang diberikan oleh guru kepada kelas tempat kedua teman kami berada, suatu malam mereka diperintahkan untuk menerjemahkan sebuah bab dari Komentar Caesar. Sesuai perintah, Pangeran muda itu mulai bekerja, dan menyelesaikan tugas tersebut dengan sangat elegan dan cepat. Fathom, setelah menghabiskan malam dengan hiburan yang lebih feminin, keesokan paginya begitu terburu-buru karena kekurangan waktu, sehingga dalam transkripsinya ia lupa memasukkan beberapa variasi dari teks, karena variasi inilah yang diizinkan untuk digunakannya; sehingga hasilnya adalah salinan kata demi kata dari aslinya. Karena latihan-latihan itu selalu diserahkan secara bersamaan, ditandatangani dengan nama-nama anak laki-laki yang mengerjakannya, kepala sekolah kebetulan membaca terjemahan Ferdinand sebelum melihat terjemahan yang lain, dan mau tidak mau memberikan pujian khusus kepadanya. Berikutnya yang diperiksanya adalah milik Pangeran muda, dan ia segera menyadari kesamaannya. Alih-alih menganggapnya sebagai penyebab sebenarnya, ia malah menegurnya karena meniru tindakan petualang kita, dan bersikeras menghukumnya di tempat karena kurangnya ketekunan. Seandainya pemuda itu tidak menganggap kehormatannya dipertaruhkan, ia pasti akan menerima hukuman itu tanpa mengeluh; tetapi ia mewarisi, dari orang tuanya, kebanggaan dua bangsa yang ganas, dan, karena diliputi celaan atas apa yang menurutnya seharusnya mendatangkan kemuliaan baginya, ia tidak dapat menerima penghinaan itu, dan dengan berani menegaskan bahwa dialah pencipta aslinya, kepada siapa Ferdinand berhutang budi atas pekerjaannya. Kepala sekolah, yang kesal karena mendapati dirinya salah dalam penilaiannya, memutuskan bahwa Pangeran tidak boleh berbangga atas penemuan yang telah ia buat, dan, seperti seorang pencambuk sejati, benar-benar mencambuknya karena telah membiarkan Fathom menyalin latihannya. Bahkan, dengan harapan untuk membuktikan kecerdasannya sendiri, ia mengambil kesempatan untuk menanyai Ferdinand secara pribadi tentang keadaan terjemahan tersebut, dan pahlawan kita, menyadari maksudnya, memberinya jawaban yang licik dan ambigu, yang meyakinkannya bahwa Pangeran muda itu telah berperan sebagai penjiplak, dan bahwa yang lain telah dicegah untuk berbuat baik karena mempertimbangkan ketergantungannya sendiri. Sutradara yang bijaksana ini, demi menghormati kebijaksanaannya sendiri, tidak lupa membisikkan tentang kesalahpahaman tersebut, sebagai contoh kelancangan Pangeran muda, dan kerendahan hati serta akal sehat Fathom. Kisah itu beredar di antara para pelayan, terutama para pelayan wanita milik keluarga tersebut, yang telah mendapatkan simpati pahlawan kita karena perilakunya yang ramah; dan akhirnya sampai ke telinga majikannya, yang, marah atas kelancangan dan ketidakramahan putranya, menuntut pertanggungjawabannya dengan keras, ketika pemuda itu dengan tegas menyangkal kebenaran tuduhan tersebut, dan meminta bukti dari Fathom sendiri. Petualang kita kemudian dipanggil oleh ayahnya, dan didorong untuk menyatakan kebenaran, dengan jaminan perlindungan yang akan selalu diberikan; setelah itu Ferdinand dengan sangat bijaksana berlutut, dan, sambil air mata mengalir dari matanya, membebaskan Pangeran muda dari tuduhan tersebut, dan menyatakan kekhawatirannya bahwa laporan itu telah disebarkan oleh beberapa musuhnya, yang ingin mempengaruhinya di mata majikannya. Pria tua itu tidak yakin akan integritas putranya berdasarkan pernyataan tersebut; karena pada dasarnya ia memiliki sifat yang murah hati, sangat berpihak pada anak yatim piatu yang miskin, dan merasa kecewa dengan penampilan pewarisnya yang tidak menjanjikan, ia menduga bahwa Fathom diliputi rasa takut menyinggung perasaan, dan bahwa, terlepas dari apa yang telah dikatakannya, keadaan sebenarnya seperti yang telah digambarkan. Dengan keyakinan ini, ia dengan sungguh-sungguh mendesak putranya untuk menolak dan melawan setiap dorongan yang mungkin dirasakannya dalam dirinya, yang cenderung pada keegoisan, penipuan, atau pemerasan; untuk mendorong setiap sentimen kejujuran dan kebajikan, dan untuk berperilaku dengan moderasi dan ramah kepada semua sesamanya. Ia memberinya perintah yang tegas, tidak tanpa campuran ancaman, untuk menganggap Fathom sebagai objek perhatian khususnya; untuk menghormatinya sebagai putra pelindung Count, sebagai orang Britania, orang asing, dan, di atas segalanya, seorang anak yatim piatu yang tidak berdaya, yang kepadanya hak keramahan dua kali lipat harus diberikan. Nasihat-nasihat tersebut tidak diabaikan oleh pemuda itu, yang, di balik penampilan luarnya yang kasar, memiliki kepekaan yang besar dan murah hati. Tanpa pengakuan formal apa pun kepada ayahnya, ia memutuskan untuk mengatur dirinya sendiri sesuai dengan tegurannya; dan, jauh dari membayangkan sedikit pun permusuhan terhadap Fathom, ia memandang anak laki-laki malang itu sebagai penyebab tak bersalah dari aibnya, dan melipatgandakan kebaikannya terhadapnya, agar kehormatannya tidak pernah lagi dipertanyakan, dalam hal yang sama. Tidak ada yang lebih rentan disalahartikan daripada tindakan kemurahan hati yang luar biasa; separuh dunia salah mengartikan motifnya, karena kurangnya gagasan untuk memahami contoh kebajikan yang begitu tinggi di atas tingkat sentimen mereka sendiri; dan sisanya mencurigainya sebagai sesuatu yang jahat atau egois, dari sugesti kecenderungan mereka yang kotor dan jahat. Pangeran muda itu membiarkan dirinya disalahartikan seperti itu, di antara mereka yang mengamati peningkatan kehangatan kesopanan dan keramahan dalam perilakunya terhadap Ferdinand. Mereka menganggapnya sebagai keinginan Ferdinand untuk tetap mengambil keuntungan dari bakat unggul petualang kita, yang menurut mereka hanya berkat bakat itulah ia mampu mempertahankan reputasi di sekolah; atau karena takut dituduh melakukan kesalahan yang ia sendiri akui telah dilakukannya. Kecurigaan ini tidak hilang oleh perilaku Ferdinand, yang, ketika ditanyai tentang hal itu, mengatur jawabannya sedemikian rupa sehingga menguatkan dugaan mereka, sementara ia berpura-pura membantahnya, dan pada saat yang sama mendapatkan pujian atas kebijaksanaan dan penyangkalan dirinya yang luar biasa. Jika ia menunjukkan bukti kebijaksanaan seperti itu pada usia dua belas tahun, apa yang tidak dapat diharapkan dari kehalusannya di masa dewasanya dan pengalamannya? Dengan demikian, ia mendapatkan restu dari seluruh keluarga, dan ia menjalani masa kecilnya dengan penuh kasih sayang dan hiburan yang menyenangkan. Ia tidak pernah benar-benar terjun ke arus pendidikan sekolah, tetapi, dengan mengapung di permukaan, ia menyerap sedikit pengetahuan tentang berbagai ilmu yang diajarkan gurunya. Singkatnya, ia menyerupai burung layang-layang pengembara yang meluncur di permukaan kolam atau sungai, tanpa berani membasahi sehelai bulu pun di sayapnya, kecuali dalam pengejaran lalat kecil secara tidak sengaja. Namun, meskipun kemampuan atau kecenderungannya tidak cocok untuk studi semacam ini, ia tidak gagal menunjukkan kejeniusan yang sempurna dalam penguasaan seni lain yang lebih bermanfaat. Selain kemampuan berpidato yang telah membuatnya terkenal, ia unggul dari semua teman-temannya dalam keahlian bermain fives dan biliar; sama sekali tak tertandingi dalam keterampilan bermain catur dan backgammon; bahkan di usia ini, ia mulai memahami langkah dan strategi catur; dan menjadikan dirinya ahli dalam seluk-beluk permainan kartu, yang ia pelajari melalui ketekunannya dan perhatiannya pada para wanita di rumah.</p>
-
-<div class="nav">
-  <a href="bab-empat.html">⬅ Bab Empat</a>
-  <a href="bab-enam.html">Bab Enam ➡</a>
-</div>
 
 </body>
 </html>

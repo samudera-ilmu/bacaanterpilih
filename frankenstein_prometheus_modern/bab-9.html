@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 9</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 9 - Bacaan digital klasik">
+<title>BAB 9 — Frankenstein</title>
+<meta name="description" content="Baca BAB 9 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-9.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 9 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 9 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-9.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 9 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 9 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 9",
+    "name": "BAB 9 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-9.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 9</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Tidak ada yang lebih menyakitkan bagi pikiran manusia selain, setelah perasaan teraduk oleh serangkaian peristiwa yang cepat, ketenangan mati rasa dan kepastian yang mengikutinya dan merampas jiwa dari harapan dan ketakutan. Justine meninggal, dia beristirahat, dan aku hidup. Darah mengalir deras di pembuluh darahku, tetapi beban keputusasaan dan penyesalan menekan hatiku yang tak dapat dihilangkan. Tidur menjauh dari mataku; aku mengembara seperti roh jahat, karena aku telah melakukan perbuatan jahat yang mengerikan, dan lebih banyak lagi (aku meyakinkan diriku sendiri) masih ada di belakangku. Namun hatiku meluap dengan kebaikan dan cinta akan kebajikan. Aku memulai hidup dengan niat baik dan mendambakan saat di mana aku akan mempraktikkannya dan membuat diriku berguna bagi sesama manusia. Sekarang semuanya hancur; Alih-alih ketenangan hati nurani yang memungkinkan saya untuk menengok masa lalu dengan kepuasan diri, dan dari sana mengumpulkan janji harapan baru, saya diliputi penyesalan dan rasa bersalah, yang membawa saya ke neraka siksaan hebat yang tak dapat digambarkan dengan kata-kata.</p><p>Kondisi pikiran ini menggerogoti kesehatan saya, yang mungkin tidak pernah sepenuhnya pulih dari guncangan pertama yang dialaminya. Saya menghindari wajah manusia; semua suara kegembiraan atau kepuasan adalah siksaan bagi saya; kesendirian adalah satu-satunya penghiburan saya—kesendirian yang dalam, gelap, dan seperti kematian.</p><p>Ayahku dengan sedih mengamati perubahan yang terlihat pada watak dan kebiasaanku, dan berusaha dengan argumen yang diambil dari perasaan hati nuraninya yang tenang dan kehidupannya yang tanpa rasa bersalah untuk menanamkan ketabahan dalam diriku dan membangkitkan keberanian dalam diriku untuk menghilangkan awan gelap yang menyelimutiku. “Apakah kau pikir, Victor,” katanya, “aku juga tidak menderita? Tak seorang pun bisa mencintai seorang anak lebih dari aku mencintai saudaramu”—air mata menggenang di matanya saat ia berbicara—“tetapi bukankah merupakan kewajiban kepada para penyintas bahwa kita harus menahan diri dari menambah kesedihan mereka dengan menunjukkan kesedihan yang berlebihan? Itu juga merupakan kewajiban yang harus kau penuhi terhadap dirimu sendiri, karena kesedihan yang berlebihan mencegah peningkatan atau kenikmatan, atau bahkan pelaksanaan kemanfaatan sehari-hari, yang tanpanya tidak seorang pun layak untuk hidup di masyarakat.”</p><p>Nasihat ini, meskipun baik, sama sekali tidak berlaku untuk kasus saya; saya pasti akan menjadi orang pertama yang menyembunyikan kesedihan saya dan menghibur teman-teman saya jika penyesalan tidak mencampurkan kepahitannya, dan ketakutan mencampurkan rasa takutnya, dengan perasaan saya yang lain. Sekarang saya hanya bisa menjawab ayah saya dengan tatapan putus asa dan berusaha menyembunyikan diri dari pandangannya.</p><p>Sekitar waktu itu kami kembali ke rumah kami di Belrive. Perubahan ini sangat menyenangkan bagi saya. Penutupan gerbang secara teratur pukul sepuluh dan ketidakmungkinan untuk tetap berada di danau setelah jam itu membuat tinggal kami di dalam tembok Jenewa sangat menjengkelkan bagi saya. Sekarang saya bebas. Seringkali, setelah anggota keluarga lainnya beristirahat di malam hari, saya mengambil perahu dan menghabiskan berjam-jam di atas air. Terkadang, dengan layar terpasang, saya terbawa angin; dan terkadang, setelah mendayung ke tengah danau, saya meninggalkan perahu untuk mengikuti arusnya sendiri dan membiarkan diri tenggelam dalam renungan-renungan menyedihkan saya sendiri. Saya sering tergoda, ketika semuanya damai di sekitar saya, dan saya satu-satunya hal yang gelisah berkeliaran tanpa tujuan di pemandangan yang begitu indah dan surgawi—jika saya mengecualikan beberapa kelelawar, atau katak, yang suara seraknya yang terputus-putus hanya terdengar ketika saya mendekati pantai—seringkali, saya katakan, saya tergoda untuk terjun ke danau yang sunyi, agar airnya dapat menutupi saya dan kesengsaraan saya selamanya. Namun aku tertahan, ketika aku memikirkan Elizabeth yang heroik dan menderita, yang sangat kusayangi, dan yang keberadaannya terikat dengan keberadaanku. Aku juga memikirkan ayahku dan saudaraku yang masih hidup; haruskah aku dengan pengkhianatanku yang keji membiarkan mereka terekspos dan tidak terlindungi dari kejahatan iblis yang telah kulepaskan di antara mereka?</p><p>Pada saat-saat itu aku menangis tersedu-sedu dan berharap kedamaian akan kembali ke pikiranku agar aku bisa memberi mereka penghiburan dan kebahagiaan. Tapi itu tidak mungkin. Penyesalan memadamkan setiap harapan. Aku telah menjadi penyeBAB kejahatan yang tak terelakkan, dan aku hidup dalam ketakutan setiap hari jangan-jangan monster yang telah kuciptakan akan melakukan kejahatan baru. Aku memiliki perasaan samar bahwa semuanya belum berakhir dan bahwa dia masih akan melakukan kejahatan besar, yang karena kebesarannya hampir akan menghapus ingatan masa lalu. Selalu ada ruang untuk rasa takut selama masih ada sesuatu yang kucintai. Kebencianku terhadap iblis ini tak terbayangkan. Ketika aku memikirkannya, aku menggertakkan gigi, mataku berkaca-kaca, dan aku sangat ingin memadamkan kehidupan yang telah kuberikan dengan begitu ceroboh. Ketika aku merenungkan kejahatan dan kedengkiannya, kebencian dan balas dendamku melampaui batas kewajaran. Aku akan melakukan ziarah ke puncak tertinggi Andes, seandainya aku, ketika di sana, bisa menjatuhkannya ke kaki gunung itu. Aku ingin bertemu dengannya lagi, agar aku bisa melampiaskan kebencianku yang sebesar-besarnya padanya dan membalaskan dendam atas kematian William dan Justine.</p><p>Rumah kami menjadi rumah duka. Kesehatan ayahku sangat terguncang oleh kengerian peristiwa baru-baru ini. Elizabeth sedih dan putus asa; dia tidak lagi menikmati kegiatan sehari-harinya; semua kesenangan baginya tampak seperti penistaan terhadap orang mati; kesedihan dan air mata abadi, pikirnya, adalah penghormatan yang pantas dia berikan kepada orang-orang tak berdosa yang telah hancur dan binasa. Dia bukan lagi makhluk bahagia yang di masa mudanya berjalan-jalan bersamaku di tepi danau dan berbicara dengan gembira tentang prospek masa depan kita. Kesedihan pertama yang dikirim untuk melepaskan kita dari bumi telah menghampirinya, dan pengaruhnya yang meredup memadamkan senyum terindahnya.</p><p>“Ketika aku merenungkan, sepupuku tersayang,” katanya, “tentang kematian tragis Justine Moritz, aku tidak lagi melihat dunia dan segala isinya seperti yang tampak sebelumnya. Sebelumnya, aku memandang kisah-kisah kejahatan dan ketidakadilan yang kubaca di buku atau kudengar dari orang lain sebagai dongeng zaman dahulu atau kejahatan khayalan; setidaknya itu jauh dan lebih akrab dengan akal daripada imajinasi; tetapi sekarang penderitaan telah datang, dan manusia tampak bagiku sebagai monster yang haus darah satu sama lain. Namun aku tentu saja tidak adil. Semua orang percaya bahwa gadis malang itu bersalah; dan jika dia bisa melakukan kejahatan yang membuatnya menderita, tentu dia akan menjadi makhluk manusia yang paling bejat. Demi beberapa perhiasan, membunuh putra dermawan dan temannya, seorang anak yang telah dia rawat sejak lahir, dan tampak dicintainya seolah-olah itu anaknya sendiri! Aku tidak bisa menyetujui kematian manusia mana pun, tetapi tentu saja aku akan menganggap makhluk seperti itu tidak pantas untuk tetap berada di masyarakat manusia. Tetapi dia tidak bersalah. Aku tahu, aku merasa dia tidak bersalah. Tidak bersalah; kau sependapat, dan itu menguatkanku. Sayang sekali! Victor, ketika kebohongan bisa tampak begitu mirip dengan kebenaran, siapa yang bisa memastikan kebahagiaannya? Aku merasa seperti sedang berjalan di tepi jurang, di mana ribuan orang berkerumun dan berusaha menjerumuskanku ke dalam jurang. William dan Justine dibunuh, dan pembunuhnya lolos; dia berkeliaran di dunia dengan bebas, dan mungkin dihormati. Tetapi bahkan jika aku dihukum untuk menderita di tiang gantungan karena kejahatan yang sama, aku tidak akan bertukar tempat dengan orang hina seperti itu.”</p><p>Aku mendengarkan percakapan ini dengan penderitaan yang sangat hebat. Aku, bukan dalam perbuatan, tetapi dalam perasaan, adalah pembunuh sebenarnya. Elizabeth membaca penderitaanku di wajahku, dan dengan ramah memegang tanganku, berkata, “Sahabatku tersayang, kau harus tenang. Peristiwa ini telah mempengaruhiku, Tuhan tahu betapa dalamnya; tetapi aku tidak sengsara sepertimu. Ada ekspresi keputusasaan, dan terkadang keinginan balas dendam, di wajahmu yang membuatku gemetar. Victor tersayang, singkirkan nafsu gelap ini. Ingatlah teman-teman di sekitarmu, yang menaruh semua harapan mereka padamu. Apakah kita telah kehilangan kekuatan untuk membuatmu bahagia? Ah! Selama kita saling mencintai, selama kita setia satu sama lain, di negeri yang damai dan indah ini, tanah kelahiranmu, kita dapat menuai setiap berkah yang menenangkan—apa yang dapat mengganggu kedamaian kita?”</p><p>Bukankah kata-kata seperti itu dari dia yang sangat kusayangi melebihi setiap anugerah keberuntungan lainnya sudah cukup untuk mengusir iblis yang bersembunyi di hatiku? Bahkan saat dia berbicara, aku mendekat padanya, seolah-olah ketakutan, jangan-jangan pada saat itu juga sang penghancur telah mendekat untuk merenggutnya dariku.</p><p>Maka, kelembutan persahabatan, keindahan bumi, atau langit, bukanlah sesuatu yang dapat menyelamatkan jiwaku dari kesedihan; bahkan ungkapan cinta pun tak berdaya. Aku diselimuti awan yang tak dapat ditembus oleh pengaruh baik apa pun. Rusa yang terluka menyeret anggota tubuhnya yang lemah ke semak belukar yang tak terjamah, di sana menatap panah yang telah menusuknya, dan mati, hanyalah gambaran diriku.</p><p>Terkadang aku mampu mengatasi keputusasaan yang suram yang melanda diriku, tetapi terkadang gejolak nafsu jiwaku mendorongku untuk mencari, melalui olahraga dan perubahan tempat, sedikit kelegaan dari perasaanku yang tak tertahankan. Pada saat seperti itulah aku tiba-tiba meninggalkan rumahku, dan melangkah menuju lembah-lembah Alpen di dekatnya, mencari dalam kemegahan, keabadian pemandangan-pemandangan tersebut, untuk melupakan diriku sendiri dan kesedihan-kesedihanku yang fana, karena sifat manusiawiku. Pengembaraanku mengarah ke lembah Chamounix. Aku sering mengunjunginya selama masa kecilku. Enam tahun telah berlalu sejak itu: aku hancur, tetapi tidak ada yang berubah di pemandangan-pemandangan liar dan abadi itu.</p><p>Saya menempuh bagian pertama perjalanan saya dengan menunggang kuda. Setelah itu, saya menyewa seekor keledai, karena lebih mantap dan paling kecil kemungkinannya terluka di jalanan yang terjal ini. Cuaca cerah; saat itu sekitar pertengahan bulan Agustus, hampir dua bulan setelah kematian Justine, masa menyedihkan yang menjadi awal dari semua kesengsaraan saya. Beban di jiwa saya terasa lebih ringan saat saya semakin masuk ke jurang Arve. Pegunungan dan tebing-tebing besar yang menjulang di sekeliling saya, suara sungai yang mengamuk di antara bebatuan, dan deru air terjun di sekitar saya berbicara tentang kekuatan yang maha dahsyat—dan saya berhenti takut atau tunduk di hadapan makhluk yang kurang maha kuasa daripada yang telah menciptakan dan mengatur unsur-unsur alam, yang di sini ditampilkan dalam wujudnya yang paling mengerikan. Namun, saat saya mendaki lebih tinggi, lembah itu tampak semakin megah dan menakjubkan. Reruntuhan kastil yang tergantung di tebing-tebing pegunungan pinus, Sungai Arve yang deras, dan pondok-pondok yang muncul di sana-sini dari antara pepohonan membentuk pemandangan yang sangat indah. Namun, keindahan itu semakin bertambah dan menjadi agung berkat Pegunungan Alpen yang perkasa, yang piramida dan kubahnya yang putih dan berkilauan menjulang di atas segalanya, seolah-olah milik bumi lain, tempat tinggal ras makhluk lain.</p><p>Aku melewati jembatan Pélissier, tempat jurang yang dibentuk oleh sungai terbuka di hadapanku, dan aku mulai mendaki gunung yang menjulang di atasnya. Tak lama kemudian, aku memasuki lembah Chamounix. Lembah ini lebih indah dan megah, tetapi tidak seindah dan seindah lembah Servox, yang baru saja kulewati. Pegunungan tinggi dan bersalju menjadi batas terdekatnya, tetapi aku tidak lagi melihat reruntuhan kastil dan ladang yang subur. Gletser yang sangat besar mendekati jalan; aku mendengar gemuruh guntur longsoran salju dan melihat asap yang ditinggalkannya. Mont Blanc, Mont Blanc yang agung dan megah, menjulang dari puncak-puncak di sekitarnya , dan kubahnya yang luar biasa menghadap lembah.</p><p>Sensasi menyenangkan yang telah lama hilang sering menghampiri saya selama perjalanan ini. Beberapa tikungan di jalan, beberapa objek baru yang tiba-tiba terlihat dan dikenali, mengingatkan saya pada hari-hari yang telah berlalu, dan dikaitkan dengan keceriaan masa kecil yang riang. Angin pun berbisik dengan lembut, dan Alam yang penuh kasih sayang menyuruh saya untuk tidak menangis lagi. Kemudian pengaruh baik itu berhenti bekerja—saya mendapati diri saya kembali terbelenggu oleh kesedihan dan tenggelam dalam segala kesengsaraan perenungan. Lalu saya memacu hewan tunggangan saya, berusaha untuk melupakan dunia, ketakutan saya, dan yang terpenting, diri saya sendiri—atau, dengan cara yang lebih putus asa, saya turun dan menjatuhkan diri di rumput, terbebani oleh kengerian dan keputusasaan.</p><p>Akhirnya aku tiba di desa Chamounix. Kelelahan menggantikan rasa lelah yang luar biasa, baik fisik maupun mental, yang telah kualami. Untuk beberapa saat aku berdiri di dekat jendela, menyaksikan kilat pucat yang bermain di atas Mont Blanc dan mendengarkan deru Sungai Arve yang mengalir deras di bawahnya. Suara-suara menenangkan itu bertindak sebagai pengantar tidur bagi perasaanku yang terlalu tajam; ketika aku meletakkan kepalaku di atas bantal, tidur merayapiku; aku merasakannya saat datang dan mengucap syukur kepada pemberi kelupaan.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-8.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 8</span>
+    </a>
+    <a href="bab-10.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 10</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 9</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Tidak ada yang lebih menyakitkan bagi pikiran manusia selain, setelah perasaan teraduk oleh serangkaian peristiwa yang cepat, ketenangan mati rasa dan kepastian yang mengikutinya dan merampas jiwa dari harapan dan ketakutan. Justine meninggal, dia beristirahat, dan aku hidup. Darah mengalir deras di pembuluh darahku, tetapi beban keputusasaan dan penyesalan menekan hatiku yang tak dapat dihilangkan. Tidur menjauh dari mataku; aku mengembara seperti roh jahat, karena aku telah melakukan perbuatan jahat yang mengerikan, dan lebih banyak lagi (aku meyakinkan diriku sendiri) masih ada di belakangku. Namun hatiku meluap dengan kebaikan dan cinta akan kebajikan. Aku memulai hidup dengan niat baik dan mendambakan saat di mana aku akan mempraktikkannya dan membuat diriku berguna bagi sesama manusia. Sekarang semuanya hancur; Alih-alih ketenangan hati nurani yang memungkinkan saya untuk menengok masa lalu dengan kepuasan diri, dan dari sana mengumpulkan janji harapan baru, saya diliputi penyesalan dan rasa bersalah, yang membawa saya ke neraka siksaan hebat yang tak dapat digambarkan dengan kata-kata. Kondisi pikiran ini menggerogoti kesehatan saya, yang mungkin tidak pernah sepenuhnya pulih dari guncangan pertama yang dialaminya. Saya menghindari wajah manusia; semua suara kegembiraan atau kepuasan adalah siksaan bagi saya; kesendirian adalah satu-satunya penghiburan saya—kesendirian yang dalam, gelap, dan seperti kematian. Ayahku dengan sedih mengamati perubahan yang terlihat pada watak dan kebiasaanku, dan berusaha dengan argumen yang diambil dari perasaan hati nuraninya yang tenang dan kehidupannya yang tanpa rasa bersalah untuk menanamkan ketabahan dalam diriku dan membangkitkan keberanian dalam diriku untuk menghilangkan awan gelap yang menyelimutiku. “Apakah kau pikir, Victor,” katanya, “aku juga tidak menderita? Tak seorang pun bisa mencintai seorang anak lebih dari aku mencintai saudaramu”—air mata menggenang di matanya saat ia berbicara—“tetapi bukankah merupakan kewajiban kepada para penyintas bahwa kita harus menahan diri dari menambah kesedihan mereka dengan menunjukkan kesedihan yang berlebihan? Itu juga merupakan kewajiban yang harus kau penuhi terhadap dirimu sendiri, karena kesedihan yang berlebihan mencegah peningkatan atau kenikmatan, atau bahkan pelaksanaan kemanfaatan sehari-hari, yang tanpanya tidak seorang pun layak untuk hidup di masyarakat.” Nasihat ini, meskipun baik, sama sekali tidak berlaku untuk kasus saya; saya pasti akan menjadi orang pertama yang menyembunyikan kesedihan saya dan menghibur teman-teman saya jika penyesalan tidak mencampurkan kepahitannya, dan ketakutan mencampurkan rasa takutnya, dengan perasaan saya yang lain. Sekarang saya hanya bisa menjawab ayah saya dengan tatapan putus asa dan berusaha menyembunyikan diri dari pandangannya. Sekitar waktu itu kami kembali ke rumah kami di Belrive. Perubahan ini sangat menyenangkan bagi saya. Penutupan gerbang secara teratur pukul sepuluh dan ketidakmungkinan untuk tetap berada di danau setelah jam itu membuat tinggal kami di dalam tembok Jenewa sangat menjengkelkan bagi saya. Sekarang saya bebas. Seringkali, setelah anggota keluarga lainnya beristirahat di malam hari, saya mengambil perahu dan menghabiskan berjam-jam di atas air. Terkadang, dengan layar terpasang, saya terbawa angin; dan terkadang, setelah mendayung ke tengah danau, saya meninggalkan perahu untuk mengikuti arusnya sendiri dan membiarkan diri tenggelam dalam renungan-renungan menyedihkan saya sendiri. Saya sering tergoda, ketika semuanya damai di sekitar saya, dan saya satu-satunya hal yang gelisah berkeliaran tanpa tujuan di pemandangan yang begitu indah dan surgawi—jika saya mengecualikan beberapa kelelawar, atau katak, yang suara seraknya yang terputus-putus hanya terdengar ketika saya mendekati pantai—seringkali, saya katakan, saya tergoda untuk terjun ke danau yang sunyi, agar airnya dapat menutupi saya dan kesengsaraan saya selamanya. Namun aku tertahan, ketika aku memikirkan Elizabeth yang heroik dan menderita, yang sangat kusayangi, dan yang keberadaannya terikat dengan keberadaanku. Aku juga memikirkan ayahku dan saudaraku yang masih hidup; haruskah aku dengan pengkhianatanku yang keji membiarkan mereka terekspos dan tidak terlindungi dari kejahatan iblis yang telah kulepaskan di antara mereka? Pada saat-saat itu aku menangis tersedu-sedu dan berharap kedamaian akan kembali ke pikiranku agar aku bisa memberi mereka penghiburan dan kebahagiaan. Tapi itu tidak mungkin. Penyesalan memadamkan setiap harapan. Aku telah menjadi penyeBAB kejahatan yang tak terelakkan, dan aku hidup dalam ketakutan setiap hari jangan-jangan monster yang telah kuciptakan akan melakukan kejahatan baru. Aku memiliki perasaan samar bahwa semuanya belum berakhir dan bahwa dia masih akan melakukan kejahatan besar, yang karena kebesarannya hampir akan menghapus ingatan masa lalu. Selalu ada ruang untuk rasa takut selama masih ada sesuatu yang kucintai. Kebencianku terhadap iblis ini tak terbayangkan. Ketika aku memikirkannya, aku menggertakkan gigi, mataku berkaca-kaca, dan aku sangat ingin memadamkan kehidupan yang telah kuberikan dengan begitu ceroboh. Ketika aku merenungkan kejahatan dan kedengkiannya, kebencian dan balas dendamku melampaui batas kewajaran. Aku akan melakukan ziarah ke puncak tertinggi Andes, seandainya aku, ketika di sana, bisa menjatuhkannya ke kaki gunung itu. Aku ingin bertemu dengannya lagi, agar aku bisa melampiaskan kebencianku yang sebesar-besarnya padanya dan membalaskan dendam atas kematian William dan Justine. Rumah kami menjadi rumah duka. Kesehatan ayahku sangat terguncang oleh kengerian peristiwa baru-baru ini. Elizabeth sedih dan putus asa; dia tidak lagi menikmati kegiatan sehari-harinya; semua kesenangan baginya tampak seperti penistaan terhadap orang mati; kesedihan dan air mata abadi, pikirnya, adalah penghormatan yang pantas dia berikan kepada orang-orang tak berdosa yang telah hancur dan binasa. Dia bukan lagi makhluk bahagia yang di masa mudanya berjalan-jalan bersamaku di tepi danau dan berbicara dengan gembira tentang prospek masa depan kita. Kesedihan pertama yang dikirim untuk melepaskan kita dari bumi telah menghampirinya, dan pengaruhnya yang meredup memadamkan senyum terindahnya. “Ketika aku merenungkan, sepupuku tersayang,” katanya, “tentang kematian tragis Justine Moritz, aku tidak lagi melihat dunia dan segala isinya seperti yang tampak sebelumnya. Sebelumnya, aku memandang kisah-kisah kejahatan dan ketidakadilan yang kubaca di buku atau kudengar dari orang lain sebagai dongeng zaman dahulu atau kejahatan khayalan; setidaknya itu jauh dan lebih akrab dengan akal daripada imajinasi; tetapi sekarang penderitaan telah datang, dan manusia tampak bagiku sebagai monster yang haus darah satu sama lain. Namun aku tentu saja tidak adil. Semua orang percaya bahwa gadis malang itu bersalah; dan jika dia bisa melakukan kejahatan yang membuatnya menderita, tentu dia akan menjadi makhluk manusia yang paling bejat. Demi beberapa perhiasan, membunuh putra dermawan dan temannya, seorang anak yang telah dia rawat sejak lahir, dan tampak dicintainya seolah-olah itu anaknya sendiri! Aku tidak bisa menyetujui kematian manusia mana pun, tetapi tentu saja aku akan menganggap makhluk seperti itu tidak pantas untuk tetap berada di masyarakat manusia. Tetapi dia tidak bersalah. Aku tahu, aku merasa dia tidak bersalah. Tidak bersalah; kau sependapat, dan itu menguatkanku. Sayang sekali! Victor, ketika kebohongan bisa tampak begitu mirip dengan kebenaran, siapa yang bisa memastikan kebahagiaannya? Aku merasa seperti sedang berjalan di tepi jurang, di mana ribuan orang berkerumun dan berusaha menjerumuskanku ke dalam jurang. William dan Justine dibunuh, dan pembunuhnya lolos; dia berkeliaran di dunia dengan bebas, dan mungkin dihormati. Tetapi bahkan jika aku dihukum untuk menderita di tiang gantungan karena kejahatan yang sama, aku tidak akan bertukar tempat dengan orang hina seperti itu.” Aku mendengarkan percakapan ini dengan penderitaan yang sangat hebat. Aku, bukan dalam perbuatan, tetapi dalam perasaan, adalah pembunuh sebenarnya. Elizabeth membaca penderitaanku di wajahku, dan dengan ramah memegang tanganku, berkata, “Sahabatku tersayang, kau harus tenang. Peristiwa ini telah mempengaruhiku, Tuhan tahu betapa dalamnya; tetapi aku tidak sengsara sepertimu. Ada ekspresi keputusasaan, dan terkadang keinginan balas dendam, di wajahmu yang membuatku gemetar. Victor tersayang, singkirkan nafsu gelap ini. Ingatlah teman-teman di sekitarmu, yang menaruh semua harapan mereka padamu. Apakah kita telah kehilangan kekuatan untuk membuatmu bahagia? Ah! Selama kita saling mencintai, selama kita setia satu sama lain, di negeri yang damai dan indah ini, tanah kelahiranmu, kita dapat menuai setiap berkah yang menenangkan—apa yang dapat mengganggu kedamaian kita?” Bukankah kata-kata seperti itu dari dia yang sangat kusayangi melebihi setiap anugerah keberuntungan lainnya sudah cukup untuk mengusir iblis yang bersembunyi di hatiku? Bahkan saat dia berbicara, aku mendekat padanya, seolah-olah ketakutan, jangan-jangan pada saat itu juga sang penghancur telah mendekat untuk merenggutnya dariku. Maka, kelembutan persahabatan, keindahan bumi, atau langit, bukanlah sesuatu yang dapat menyelamatkan jiwaku dari kesedihan; bahkan ungkapan cinta pun tak berdaya. Aku diselimuti awan yang tak dapat ditembus oleh pengaruh baik apa pun. Rusa yang terluka menyeret anggota tubuhnya yang lemah ke semak belukar yang tak terjamah, di sana menatap panah yang telah menusuknya, dan mati, hanyalah gambaran diriku. Terkadang aku mampu mengatasi keputusasaan yang suram yang melanda diriku, tetapi terkadang gejolak nafsu jiwaku mendorongku untuk mencari, melalui olahraga dan perubahan tempat, sedikit kelegaan dari perasaanku yang tak tertahankan. Pada saat seperti itulah aku tiba-tiba meninggalkan rumahku, dan melangkah menuju lembah-lembah Alpen di dekatnya, mencari dalam kemegahan, keabadian pemandangan-pemandangan tersebut, untuk melupakan diriku sendiri dan kesedihan-kesedihanku yang fana, karena sifat manusiawiku. Pengembaraanku mengarah ke lembah Chamounix. Aku sering mengunjunginya selama masa kecilku. Enam tahun telah berlalu sejak itu: aku hancur, tetapi tidak ada yang berubah di pemandangan-pemandangan liar dan abadi itu. Saya menempuh bagian pertama perjalanan saya dengan menunggang kuda. Setelah itu, saya menyewa seekor keledai, karena lebih mantap dan paling kecil kemungkinannya terluka di jalanan yang terjal ini. Cuaca cerah; saat itu sekitar pertengahan bulan Agustus, hampir dua bulan setelah kematian Justine, masa menyedihkan yang menjadi awal dari semua kesengsaraan saya. Beban di jiwa saya terasa lebih ringan saat saya semakin masuk ke jurang Arve. Pegunungan dan tebing-tebing besar yang menjulang di sekeliling saya, suara sungai yang mengamuk di antara bebatuan, dan deru air terjun di sekitar saya berbicara tentang kekuatan yang maha dahsyat—dan saya berhenti takut atau tunduk di hadapan makhluk yang kurang maha kuasa daripada yang telah menciptakan dan mengatur unsur-unsur alam, yang di sini ditampilkan dalam wujudnya yang paling mengerikan. Namun, saat saya mendaki lebih tinggi, lembah itu tampak semakin megah dan menakjubkan. Reruntuhan kastil yang tergantung di tebing-tebing pegunungan pinus, Sungai Arve yang deras, dan pondok-pondok yang muncul di sana-sini dari antara pepohonan membentuk pemandangan yang sangat indah. Namun, keindahan itu semakin bertambah dan menjadi agung berkat Pegunungan Alpen yang perkasa, yang piramida dan kubahnya yang putih dan berkilauan menjulang di atas segalanya, seolah-olah milik bumi lain, tempat tinggal ras makhluk lain. Aku melewati jembatan Pélissier, tempat jurang yang dibentuk oleh sungai terbuka di hadapanku, dan aku mulai mendaki gunung yang menjulang di atasnya. Tak lama kemudian, aku memasuki lembah Chamounix. Lembah ini lebih indah dan megah, tetapi tidak seindah dan seindah lembah Servox, yang baru saja kulewati. Pegunungan tinggi dan bersalju menjadi batas terdekatnya, tetapi aku tidak lagi melihat reruntuhan kastil dan ladang yang subur. Gletser yang sangat besar mendekati jalan; aku mendengar gemuruh guntur longsoran salju dan melihat asap yang ditinggalkannya. Mont Blanc, Mont Blanc yang agung dan megah, menjulang dari puncak-puncak di sekitarnya , dan kubahnya yang luar biasa menghadap lembah. Sensasi menyenangkan yang telah lama hilang sering menghampiri saya selama perjalanan ini. Beberapa tikungan di jalan, beberapa objek baru yang tiba-tiba terlihat dan dikenali, mengingatkan saya pada hari-hari yang telah berlalu, dan dikaitkan dengan keceriaan masa kecil yang riang. Angin pun berbisik dengan lembut, dan Alam yang penuh kasih sayang menyuruh saya untuk tidak menangis lagi. Kemudian pengaruh baik itu berhenti bekerja—saya mendapati diri saya kembali terbelenggu oleh kesedihan dan tenggelam dalam segala kesengsaraan perenungan. Lalu saya memacu hewan tunggangan saya, berusaha untuk melupakan dunia, ketakutan saya, dan yang terpenting, diri saya sendiri—atau, dengan cara yang lebih putus asa, saya turun dan menjatuhkan diri di rumput, terbebani oleh kengerian dan keputusasaan. Akhirnya aku tiba di desa Chamounix. Kelelahan menggantikan rasa lelah yang luar biasa, baik fisik maupun mental, yang telah kualami. Untuk beberapa saat aku berdiri di dekat jendela, menyaksikan kilat pucat yang bermain di atas Mont Blanc dan mendengarkan deru Sungai Arve yang mengalir deras di bawahnya. Suara-suara menenangkan itu bertindak sebagai pengantar tidur bagi perasaanku yang terlalu tajam; ketika aku meletakkan kepalaku di atas bantal, tidur merayapiku; aku merasakannya saat datang dan mengucap syukur kepada pemberi kelupaan.</p>
-
-<div class="nav">
-  <a href="bab-8.html">⬅ Bab 8</a>
-  <a href="bab-10.html">Bab 10 ➡</a>
-</div>
 
 </body>
 </html>

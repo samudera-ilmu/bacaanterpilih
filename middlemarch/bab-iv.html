@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB IV.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB IV. - Bacaan digital klasik">
+<title>Bab IV — Middlemarch</title>
+<meta name="description" content="Baca Bab IV dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-iv.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab IV — Middlemarch">
+  <meta property="og:description" content="Baca Bab IV dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-iv.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab IV — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab IV dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab IV",
+    "name": "Bab IV — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-iv.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab IV</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>1. Perbuatan kita adalah belenggu yang kita tempa sendiri. <br />2. Ya , benar: tetapi saya pikir dunialah <br />yang membawa besi itu.</p><p>“Sir James tampaknya bertekad untuk melakukan semua yang Anda inginkan,” kata Celia, saat mereka berkendara pulang dari inspeksi lokasi pembangunan gedung baru.</p><p>“Dia adalah makhluk yang baik, dan lebih bijaksana daripada yang dibayangkan siapa pun,” kata Dorothea dengan acuh tak acuh.</p><p>“Maksudmu, dia tampak bodoh.”</p><p>“Tidak, tidak,” kata Dorothea, setelah menenangkan diri dan meletakkan tangannya di tangan saudara perempuannya sejenak, “tetapi dia tidak berbicara dengan baik tentang semua hal.”</p><p>“Kurasa hanya orang-orang menyebalkan yang melakukannya,” kata Celia, dengan nada mendesah seperti biasanya. “Pasti sangat mengerikan tinggal bersama mereka. Bayangkan saja! Saat sarapan, dan selalu.”</p><p>Dorothea tertawa. “Oh Kitty, kau makhluk yang luar biasa!” Ia mencubit dagu Celia, karena saat itu ia sedang dalam suasana hati yang menganggapnya sangat menawan dan cantik—pantas menjadi malaikat abadi, dan jika tidak salah secara doktrin untuk mengatakannya, ia hampir tidak lebih membutuhkan keselamatan daripada seekor tupai. “Tentu saja orang tidak perlu selalu berbicara dengan baik. Kita hanya bisa mengetahui kualitas pikiran mereka ketika mereka mencoba berbicara dengan baik.”</p><p>“Maksudmu Sir James mencoba dan gagal.”</p><p>“Saya berbicara secara umum. Mengapa Anda menggurui saya tentang Sir James? Tujuan hidupnya bukanlah untuk menyenangkan saya.”</p><p>“Nah, Dodo, kau benar-benar percaya itu?”</p><p>“Tentu saja. Dia menganggapku sebagai calon saudara perempuannya—hanya itu.” Dorothea belum pernah mengisyaratkan hal ini sebelumnya, menunggu, karena rasa malu yang sama-sama dirasakan kedua saudara perempuan itu mengenai topik-topik semacam itu, sampai hal itu terungkap oleh suatu peristiwa penting. Celia tersipu, tetapi langsung berkata—</p><p>“Kumohon jangan ulangi kesalahan itu lagi, Dodo. Saat Tantripp menyisir rambutku beberapa hari yang lalu, dia bilang bahwa orang kepercayaan Sir James tahu dari pelayan Nyonya Cadwallader bahwa Sir James akan menikahi Nona Brooke yang tertua.”</p><p>“Bagaimana kau bisa membiarkan Tantripp membicarakan gosip seperti itu padamu, Celia?” kata Dorothea dengan geram, kemarahannya tak berkurang karena detail-detail yang selama ini terpendam dalam ingatannya kini terbangun untuk mengkonfirmasi pengungkapan yang tidak diinginkan itu. “Kau pasti telah menanyakan beberapa hal padanya. Itu sangat merendahkan.”</p><p>“Aku sama sekali tidak melihat ada salahnya jika Tantripp berbicara denganku. Lebih baik mendengarkan apa yang orang katakan. Kau lihat kesalahan apa yang kau buat dengan mengambil gagasan-gagasan itu. Aku yakin Sir James bermaksud memberimu tawaran; dan dia percaya kau akan menerimanya, terutama karena kau sangat senang dengannya tentang rencana-rencana itu. Dan paman juga—aku tahu dia mengharapkannya. Semua orang bisa melihat bahwa Sir James sangat mencintaimu.”</p><p>Rasa jijik dan muak itu begitu kuat dan menyakitkan di benak Dorothea sehingga air matanya menggenang dan mengalir deras. Semua rencana kesayangannya menjadi pahit, dan ia merasa jijik memikirkan Sir James yang mengira ia mengenalinya sebagai kekasihnya. Ada juga kekesalan karena Celia.</p><p>“Bagaimana mungkin dia mengharapkan itu?” serunya dengan nada paling impulsif. “Aku tidak pernah setuju dengannya tentang apa pun kecuali pondok-pondok itu: aku bahkan hampir tidak bersikap sopan kepadanya sebelumnya.”</p><p>“Namun sejak saat itu, Anda sangat senang dengannya; dia mulai merasa yakin bahwa Anda menyukainya.”</p><p>“Kau menyukainya, Celia! Bagaimana bisa kau memilih ungkapan yang begitu menjijikkan?” kata Dorothea dengan penuh semangat.</p><p>“Ya ampun, Dorothea, kurasa wajar jika kau menyukai pria yang kau terima sebagai suami.”</p><p>“Rasanya tersinggung jika Sir James mengira saya menyukainya. Lagipula, itu bukan kata yang tepat untuk perasaan yang saya miliki terhadap pria yang akan saya terima sebagai suami.”</p><p>“Yah, aku turut prihatin untuk Sir James. Kupikir sudah tepat untuk memberitahumu, karena kau terus saja seperti biasa, tak pernah melihat ke tempatmu berada, dan menginjak tempat yang salah. Kau selalu melihat apa yang tak dilihat orang lain; mustahil untuk memuaskanmu; namun kau tak pernah melihat apa yang jelas-jelas terlihat. Begitulah caramu, Dodo.” Sesuatu memang memberi Celia keberanian yang luar biasa; dan dia tidak mengampuni saudara perempuannya yang terkadang membuatnya kagum. Siapa yang tahu kritik apa yang mungkin dilontarkan Murr si Kucing kepada kita, makhluk yang memiliki spekulasi lebih luas?</p><p>“Ini sangat menyakitkan,” kata Dorothea, merasa tersiksa. “Aku tidak bisa lagi berurusan dengan pondok-pondok itu. Aku harus bersikap tidak sopan kepadanya. Aku harus mengatakan kepadanya bahwa aku tidak akan terlibat lagi dengan pondok-pondok itu. Ini sangat menyakitkan.” Matanya kembali berlinang air mata.</p><p>“Tunggu sebentar. Pikirkan baik-baik. Kau tahu dia akan pergi selama satu atau dua hari untuk menemui saudara perempuannya. Tidak akan ada orang lain selain Lovegood.” Celia tak kuasa menahan diri untuk tidak mengalah. “Kasihan Dodo,” lanjutnya dengan nada ramah dan terputus-putus. “Ini sangat sulit: hobi favoritmu adalah menggambar denah.”</p><p>“ Gaya menggambar denah! Apa kau pikir aku hanya peduli pada rumah sesama makhlukku dengan cara kekanak-kanakan seperti itu? Aku mungkin saja melakukan kesalahan. Bagaimana mungkin seseorang dapat melakukan sesuatu yang mulia secara Kristen, hidup di antara orang-orang dengan pemikiran picik seperti itu?”</p><p>Tidak ada lagi yang dikatakan; Dorothea terlalu terguncang untuk menenangkan diri dan bersikap seolah-olah ia mengakui kesalahannya sendiri. Ia lebih cenderung menyalahkan kesempitan yang tak tertahankan dan hati nurani yang buta dari masyarakat di sekitarnya: dan Celia bukan lagi malaikat abadi, tetapi duri dalam jiwanya, seorang nullifidian merah muda dan putih, lebih buruk daripada kehadiran yang mengecewakan dalam &quot;Pilgrim's Progress.&quot; Kegemaran menggambar rencana! Apa gunanya hidup—iman besar apa yang mungkin terjadi ketika seluruh dampak tindakan seseorang dapat layu menjadi sampah kering seperti itu? Ketika ia keluar dari kereta, pipinya pucat dan kelopak matanya merah. Ia adalah gambaran kesedihan, dan pamannya yang menemuinya di aula akan khawatir, jika Celia tidak berada di dekatnya tampak begitu cantik dan tenang, sehingga ia langsung menyimpulkan bahwa air mata Dorothea berasal dari religiusitasnya yang berlebihan. Selama mereka pergi, ia telah kembali dari perjalanan ke kota kabupaten, terkait permohonan pengampunan bagi seorang penjahat.</p><p>“Baiklah, sayang-sayangku,” katanya dengan ramah, saat mereka mendekat untuk menciumnya, “semoga tidak ada hal yang tidak menyenangkan terjadi selama aku pergi.”</p><p>“Tidak, paman,” kata Celia, “kami sudah pergi ke Freshitt untuk melihat-lihat pondok-pondok. Kami kira paman sudah ada di rumah untuk makan siang.”</p><p>“Aku mampir ke Lowick untuk makan siang—kau tidak tahu aku mampir ke Lowick. Dan aku membawakan beberapa pamflet untukmu, Dorothea—di perpustakaan, kau tahu; pamflet itu ada di atas meja di perpustakaan.”</p><p>Seolah-olah aliran listrik mengalir melalui Dorothea, membangkitkannya dari keputusasaan menuju harapan. Itu adalah pamflet-pamflet tentang Gereja mula-mula. Beban yang ditimbulkan oleh Celia, Tantripp, dan Sir James pun sirna, dan ia langsung berjalan ke perpustakaan. Celia naik ke atas. Tuan Brooke tertahan oleh sebuah pesan, tetapi ketika ia kembali ke perpustakaan, ia mendapati Dorothea duduk dan sudah asyik membaca salah satu pamflet yang berisi manuskrip tambahan dari Tuan Casaubon,—menerimanya dengan penuh antusias seperti ia menghirup aroma buket bunga segar setelah berjalan-jalan di jalan yang kering, panas, dan suram.</p><p>Dia menjauh dari Tipton dan Freshitt, dan dari kelemahannya sendiri karena cenderung melangkah ke tempat yang salah dalam perjalanannya menuju Yerusalem Baru.</p><p>Tuan Brooke duduk di kursi berlengan, meregangkan kakinya ke arah perapian kayu, yang telah berubah menjadi tumpukan dadu bercahaya yang menakjubkan di antara anjing-anjing itu, dan menggosok tangannya perlahan, memandang Dorothea dengan sangat lembut, tetapi dengan sikap santai yang netral, seolah-olah dia tidak memiliki sesuatu yang khusus untuk dikatakan. Dorothea menutup pamfletnya segera setelah dia menyadari kehadiran pamannya, dan bangkit seolah-olah akan pergi. Biasanya dia akan tertarik dengan misi belas kasih pamannya atas nama penjahat itu, tetapi kegelisahannya baru-baru ini telah membuatnya linglung.</p><p>“Aku baru pulang lewat Lowick, kau tahu,” kata Tuan Brooke, bukan seolah bermaksud untuk menghentikan kepergiannya, tetapi tampaknya karena kecenderungannya yang biasa untuk mengatakan apa yang telah dia katakan sebelumnya. Prinsip dasar ucapan manusia ini tampak jelas pada Tuan Brooke. “Aku makan siang di sana dan melihat perpustakaan Casaubon, dan hal-hal semacam itu. Udaranya dingin sekali. Mau duduk, sayang? Kau terlihat kedinginan.”</p><p>Dorothea merasa cukup tertarik untuk menerima undangan itu. Terkadang, ketika sikap santai pamannya tidak menjengkelkan, justru terasa menenangkan. Ia melepas jubah dan topinya, lalu duduk berhadapan dengannya, menikmati kehangatan, tetapi mengangkat kedua tangannya yang indah sebagai penutup. Tangan itu bukanlah tangan yang kurus atau kecil; melainkan tangan yang kuat, feminin, dan keibuan. Ia tampak mengangkatnya sebagai permohonan untuk keinginannya yang mendalam untuk mengetahui dan berpikir, yang dalam perantaraan yang tidak ramah dari Tipton dan Freshitt telah berujung pada tangisan dan kelopak mata merah.</p><p>Ia kemudian teringat pada penjahat yang dihukum mati itu. &quot;Kabar apa yang Paman bawa tentang pencuri domba itu?&quot;</p><p>“Kasihan Bunch?—sepertinya kita tidak bisa membebaskannya—dia akan digantung.”</p><p>Dahi Dorothea menunjukkan ekspresi celaan dan belas kasihan.</p><p>“Digantung, kau tahu,” kata Tuan Brooke sambil mengangguk pelan. “Kasihan Romilly! Dia pasti akan membantu kita. Aku kenal Romilly. Casaubon tidak kenal Romilly. Dia agak tenggelam dalam buku, kau tahu, Casaubon memang begitu.”</p><p>“Ketika seseorang memiliki pendidikan yang hebat dan sedang menulis karya besar, tentu saja ia harus mengorbankan kesempatan untuk melihat banyak hal di dunia. Bagaimana ia bisa menjalin kenalan?”</p><p>“Itu benar. Tapi seorang pria memang bisa murung, kau tahu. Aku juga selalu melajang, tapi aku punya watak seperti itu, aku tidak pernah murung; caraku adalah pergi ke mana-mana dan menikmati segalanya. Aku tidak pernah murung: tapi aku bisa melihat Casaubon melakukannya, kau tahu. Dia menginginkan seorang teman—seorang teman, kau tahu.”</p><p>“Akan menjadi suatu kehormatan besar bagi siapa pun untuk menjadi pendampingnya,” kata Dorothea dengan penuh semangat.</p><p>“Kau menyukainya, ya?” kata Tuan Brooke, tanpa menunjukkan keterkejutan atau emosi lainnya. “Begini, aku sudah mengenal Casaubon selama sepuluh tahun, sejak dia datang ke Lowick. Tapi aku tidak pernah mendapatkan apa pun darinya—ide apa pun, kau tahu. Namun, dia adalah pria yang hebat dan mungkin akan menjadi uskup—hal semacam itu, kau tahu, jika Peel tetap menjabat. Dan dia sangat menghargai dirimu, sayangku.”</p><p>Dorothea tidak bisa berbicara.</p><p>“Faktanya, dia memang sangat menghargai Anda. Dan dia berbicara dengan sangat baik—Casaubon. Dia telah menghormati saya, karena Anda belum cukup umur. Singkatnya, saya telah berjanji untuk berbicara dengan Anda, meskipun saya mengatakan kepadanya bahwa saya pikir tidak banyak peluang. Saya wajib mengatakan itu kepadanya. Saya berkata, keponakan saya masih sangat muda, dan hal-hal semacam itu. Tapi saya rasa tidak perlu menjelaskan semuanya. Namun, intinya adalah, dia telah meminta izin saya untuk melamar Anda—melamar pernikahan, Anda tahu,” kata Tuan Brooke, sambil mengangguk menjelaskan. “Saya pikir lebih baik saya memberi tahu Anda, sayangku.”</p><p>Tak seorang pun dapat mendeteksi kecemasan dalam sikap Tuan Brooke, tetapi ia benar-benar ingin mengetahui sesuatu tentang pikiran keponakannya, agar, jika diperlukan nasihat, ia dapat memberikannya tepat waktu. Perasaan apa pun yang dapat ia ungkapkan, sebagai seorang hakim yang telah menyerap begitu banyak ide, adalah perasaan yang murni baik. Karena Dorothea tidak segera berbicara, ia mengulangi, &quot;Kupikir lebih baik kukatakan padamu, sayangku.&quot;</p><p>“Terima kasih, paman,” kata Dorothea dengan nada yang jelas dan tegas. “Saya sangat berterima kasih kepada Tuan Casaubon. Jika beliau memberi saya tawaran, saya akan menerimanya. Saya mengagumi dan menghormatinya lebih dari siapa pun yang pernah saya lihat.”</p><p>Tuan Brooke terdiam sejenak, lalu berkata dengan nada rendah yang panjang, “Ah? … Baiklah! Dia memang pasangan yang cocok dalam beberapa hal. Tapi sekarang, Chettam juga pasangan yang cocok. Dan tanah kita berdekatan. Aku tidak akan pernah ikut campur dalam keinginanmu, sayangku. Orang-orang seharusnya memiliki keinginan mereka sendiri dalam pernikahan, dan hal semacam itu—sampai batas tertentu, kau tahu. Aku selalu mengatakan itu, sampai batas tertentu. Aku ingin kau menikah dengan baik; dan aku punya alasan kuat untuk percaya bahwa Chettam ingin menikahimu. Aku menyebutkannya, kau tahu.”</p><p>“Mustahil aku akan menikah dengan Sir James Chettam,” kata Dorothea. “Jika dia berpikir untuk menikahiku, dia telah melakukan kesalahan besar.”</p><p>“Begitulah, kau tahu. Kita tidak pernah tahu. Seharusnya aku mengira Chettam adalah tipe pria yang disukai wanita.”</p><p>“Kumohon jangan sebut-sebut dia dalam konteks itu lagi, paman,” kata Dorothea, merasakan sebagian kekesalannya yang sebelumnya muncul kembali.</p><p>Tuan Brooke bertanya-tanya, dan merasa bahwa perempuan adalah subjek penelitian yang tak ada habisnya, karena bahkan dia di usianya pun belum berada dalam keadaan prediksi ilmiah yang sempurna tentang mereka. Di sini ada orang seperti Chettam yang sama sekali tidak punya peluang.</p><p>“Baiklah, tapi Casaubon, sekarang. Tidak perlu terburu-buru—maksudku untukmu. Memang benar, setiap tahun akan memengaruhinya. Usianya sudah lebih dari empat puluh lima tahun, kau tahu. Kurasa dia dua puluh tujuh tahun lebih tua darimu. Tentu saja,—jika kau menyukai pendidikan dan kedudukan, dan hal-hal semacam itu, kita tidak bisa memiliki semuanya. Dan penghasilannya bagus—dia memiliki properti yang cukup besar yang independen dari Gereja—penghasilannya bagus. Namun dia tidak muda, dan aku tidak boleh menyembunyikan darimu, sayangku, bahwa menurutku kesehatannya tidak terlalu kuat. Aku tidak tahu hal lain yang buruk tentangnya.”</p><p>“Aku tidak ingin memiliki suami yang usianya hampir sama denganku,” kata Dorothea dengan tegas. “Aku ingin memiliki suami yang lebih bijaksana dan berpengetahuan luas dariku.”</p><p>Tuan Brooke mengulangi ucapannya dengan nada lirih, “Ah?—Kupikir kau lebih punya pendapat sendiri daripada kebanyakan gadis. Kupikir kau menyukai pendapatmu sendiri—menyukainya, kau tahu.”</p><p>“Saya tidak bisa membayangkan hidup tanpa beberapa pendapat, tetapi saya ingin memiliki alasan yang baik untuk pendapat-pendapat itu, dan orang bijak dapat membantu saya melihat pendapat mana yang memiliki dasar terbaik, dan akan membantu saya untuk hidup sesuai dengan pendapat-pendapat tersebut.”</p><p>“Benar sekali. Kau tidak bisa mengungkapkannya lebih baik lagi—bahkan sebelumnya pun tidak bisa, kau tahu. Tapi memang ada keanehan dalam segala hal,” lanjut Tuan Brooke, yang hati nuraninya benar-benar tergerak untuk melakukan yang terbaik bagi keponakannya pada kesempatan ini. “Hidup tidak dicetak dalam cetakan—tidak dipotong oleh aturan dan garis, dan hal-hal semacam itu. Aku sendiri tidak pernah menikah, dan itu akan lebih baik untukmu dan keluargamu. Faktanya, aku tidak pernah mencintai siapa pun cukup dalam untuk menjerat diriku sendiri demi mereka. Itu adalah jerat, kau tahu. Nah, emosi itu penting. Dan seorang suami suka menjadi penguasa.”</p><p>“Aku tahu aku harus menghadapi cobaan, paman. Pernikahan adalah keadaan dengan kewajiban yang lebih tinggi. Aku tidak pernah menganggapnya hanya sebagai kemudahan pribadi semata,” kata Dorothea yang malang.</p><p>“Yah, kau tidak menyukai kemewahan, tempat yang megah, pesta dansa, makan malam, hal-hal semacam itu. Aku bisa melihat bahwa cara Casaubon mungkin lebih cocok untukmu daripada Chettam. Dan kau boleh melakukan apa pun yang kau suka, sayangku. Aku tidak akan menghalangi Casaubon; aku langsung mengatakannya; karena tidak ada yang tahu bagaimana semuanya akan berakhir. Seleramu tidak sama dengan setiap wanita muda; dan seorang pendeta dan cendekiawan—yang mungkin seorang uskup—hal semacam itu—mungkin lebih cocok untukmu daripada Chettam. Chettam adalah orang yang baik, orang yang baik dan berhati tulus, kau tahu; tetapi dia tidak terlalu mendalami ide-ide. Aku dulu begitu, ketika aku seusianya. Tapi mata Casaubon, sekarang. Kurasa dia sedikit merusak matanya karena terlalu banyak membaca.”</p><p>“Aku akan jauh lebih bahagia, paman, jika ada lebih banyak ruang bagiku untuk membantunya,” kata Dorothea dengan penuh semangat.</p><p>“Kau tampaknya sudah mengambil keputusan. Baiklah, sayangku, sebenarnya, aku punya surat untukmu di saku bajuku.” Tuan Brooke menyerahkan surat itu kepada Dorothea, tetapi saat Dorothea bangkit untuk pergi, ia menambahkan, “Tidak perlu terburu-buru, sayangku. Pikirkanlah baik-baik.”</p><p>Setelah Dorothea meninggalkannya, ia merenungkan bahwa ia memang telah berbicara dengan tegas: ia telah memaparkan risiko pernikahan kepadanya dengan cara yang mencolok. Itu adalah kewajibannya untuk melakukannya. Tetapi mengenai berpura-pura menjadi bijak bagi kaum muda,—tidak ada paman, betapapun banyaknya ia bepergian di masa mudanya , menyerap ide-ide baru, dan makan malam dengan para selebriti yang kini telah meninggal, yang dapat berpura-pura menilai jenis pernikahan seperti apa yang akan berhasil bagi seorang gadis muda yang lebih menyukai Casaubon daripada Chettam. Singkatnya, wanita adalah masalah yang, karena pikiran Tuan Brooke terasa kosong di hadapannya, hampir tidak bisa kurang rumit daripada putaran benda padat yang tidak beraturan.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-iii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Iii</span>
+    </a>
+    <a href="bab-v.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab V</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB IV.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>1. Perbuatan kita adalah belenggu yang kita tempa sendiri. 2. Ya , benar: tetapi saya pikir dunialah yang membawa besi itu. “Sir James tampaknya bertekad untuk melakukan semua yang Anda inginkan,” kata Celia, saat mereka berkendara pulang dari inspeksi lokasi pembangunan gedung baru. “Dia adalah makhluk yang baik, dan lebih bijaksana daripada yang dibayangkan siapa pun,” kata Dorothea dengan acuh tak acuh. “Maksudmu, dia tampak bodoh.” “Tidak, tidak,” kata Dorothea, setelah menenangkan diri dan meletakkan tangannya di tangan saudara perempuannya sejenak, “tetapi dia tidak berbicara dengan baik tentang semua hal.” “Kurasa hanya orang-orang menyebalkan yang melakukannya,” kata Celia, dengan nada mendesah seperti biasanya. “Pasti sangat mengerikan tinggal bersama mereka. Bayangkan saja! Saat sarapan, dan selalu.” Dorothea tertawa. “Oh Kitty, kau makhluk yang luar biasa!” Ia mencubit dagu Celia, karena saat itu ia sedang dalam suasana hati yang menganggapnya sangat menawan dan cantik—pantas menjadi malaikat abadi, dan jika tidak salah secara doktrin untuk mengatakannya, ia hampir tidak lebih membutuhkan keselamatan daripada seekor tupai. “Tentu saja orang tidak perlu selalu berbicara dengan baik. Kita hanya bisa mengetahui kualitas pikiran mereka ketika mereka mencoba berbicara dengan baik.” “Maksudmu Sir James mencoba dan gagal.” “Saya berbicara secara umum. Mengapa Anda menggurui saya tentang Sir James? Tujuan hidupnya bukanlah untuk menyenangkan saya.” “Nah, Dodo, kau benar-benar percaya itu?” “Tentu saja. Dia menganggapku sebagai calon saudara perempuannya—hanya itu.” Dorothea belum pernah mengisyaratkan hal ini sebelumnya, menunggu, karena rasa malu yang sama-sama dirasakan kedua saudara perempuan itu mengenai topik-topik semacam itu, sampai hal itu terungkap oleh suatu peristiwa penting. Celia tersipu, tetapi langsung berkata— “Kumohon jangan ulangi kesalahan itu lagi, Dodo. Saat Tantripp menyisir rambutku beberapa hari yang lalu, dia bilang bahwa orang kepercayaan Sir James tahu dari pelayan Nyonya Cadwallader bahwa Sir James akan menikahi Nona Brooke yang tertua.” “Bagaimana kau bisa membiarkan Tantripp membicarakan gosip seperti itu padamu, Celia?” kata Dorothea dengan geram, kemarahannya tak berkurang karena detail-detail yang selama ini terpendam dalam ingatannya kini terbangun untuk mengkonfirmasi pengungkapan yang tidak diinginkan itu. “Kau pasti telah menanyakan beberapa hal padanya. Itu sangat merendahkan.” “Aku sama sekali tidak melihat ada salahnya jika Tantripp berbicara denganku. Lebih baik mendengarkan apa yang orang katakan. Kau lihat kesalahan apa yang kau buat dengan mengambil gagasan-gagasan itu. Aku yakin Sir James bermaksud memberimu tawaran; dan dia percaya kau akan menerimanya, terutama karena kau sangat senang dengannya tentang rencana-rencana itu. Dan paman juga—aku tahu dia mengharapkannya. Semua orang bisa melihat bahwa Sir James sangat mencintaimu.” Rasa jijik dan muak itu begitu kuat dan menyakitkan di benak Dorothea sehingga air matanya menggenang dan mengalir deras. Semua rencana kesayangannya menjadi pahit, dan ia merasa jijik memikirkan Sir James yang mengira ia mengenalinya sebagai kekasihnya. Ada juga kekesalan karena Celia. “Bagaimana mungkin dia mengharapkan itu?” serunya dengan nada paling impulsif. “Aku tidak pernah setuju dengannya tentang apa pun kecuali pondok-pondok itu: aku bahkan hampir tidak bersikap sopan kepadanya sebelumnya.” “Namun sejak saat itu, Anda sangat senang dengannya; dia mulai merasa yakin bahwa Anda menyukainya.” “Kau menyukainya, Celia! Bagaimana bisa kau memilih ungkapan yang begitu menjijikkan?” kata Dorothea dengan penuh semangat. “Ya ampun, Dorothea, kurasa wajar jika kau menyukai pria yang kau terima sebagai suami.” “Rasanya tersinggung jika Sir James mengira saya menyukainya. Lagipula, itu bukan kata yang tepat untuk perasaan yang saya miliki terhadap pria yang akan saya terima sebagai suami.” “Yah, aku turut prihatin untuk Sir James. Kupikir sudah tepat untuk memberitahumu, karena kau terus saja seperti biasa, tak pernah melihat ke tempatmu berada, dan menginjak tempat yang salah. Kau selalu melihat apa yang tak dilihat orang lain; mustahil untuk memuaskanmu; namun kau tak pernah melihat apa yang jelas-jelas terlihat. Begitulah caramu, Dodo.” Sesuatu memang memberi Celia keberanian yang luar biasa; dan dia tidak mengampuni saudara perempuannya yang terkadang membuatnya kagum. Siapa yang tahu kritik apa yang mungkin dilontarkan Murr si Kucing kepada kita, makhluk yang memiliki spekulasi lebih luas? “Ini sangat menyakitkan,” kata Dorothea, merasa tersiksa. “Aku tidak bisa lagi berurusan dengan pondok-pondok itu. Aku harus bersikap tidak sopan kepadanya. Aku harus mengatakan kepadanya bahwa aku tidak akan terlibat lagi dengan pondok-pondok itu. Ini sangat menyakitkan.” Matanya kembali berlinang air mata. “Tunggu sebentar. Pikirkan baik-baik. Kau tahu dia akan pergi selama satu atau dua hari untuk menemui saudara perempuannya. Tidak akan ada orang lain selain Lovegood.” Celia tak kuasa menahan diri untuk tidak mengalah. “Kasihan Dodo,” lanjutnya dengan nada ramah dan terputus-putus. “Ini sangat sulit: hobi favoritmu adalah menggambar denah.” “ Gaya menggambar denah! Apa kau pikir aku hanya peduli pada rumah sesama makhlukku dengan cara kekanak-kanakan seperti itu? Aku mungkin saja melakukan kesalahan. Bagaimana mungkin seseorang dapat melakukan sesuatu yang mulia secara Kristen, hidup di antara orang-orang dengan pemikiran picik seperti itu?” Tidak ada lagi yang dikatakan; Dorothea terlalu terguncang untuk menenangkan diri dan bersikap seolah-olah ia mengakui kesalahannya sendiri. Ia lebih cenderung menyalahkan kesempitan yang tak tertahankan dan hati nurani yang buta dari masyarakat di sekitarnya: dan Celia bukan lagi malaikat abadi, tetapi duri dalam jiwanya, seorang nullifidian merah muda dan putih, lebih buruk daripada kehadiran yang mengecewakan dalam "Pilgrim's Progress." Kegemaran menggambar rencana! Apa gunanya hidup—iman besar apa yang mungkin terjadi ketika seluruh dampak tindakan seseorang dapat layu menjadi sampah kering seperti itu? Ketika ia keluar dari kereta, pipinya pucat dan kelopak matanya merah. Ia adalah gambaran kesedihan, dan pamannya yang menemuinya di aula akan khawatir, jika Celia tidak berada di dekatnya tampak begitu cantik dan tenang, sehingga ia langsung menyimpulkan bahwa air mata Dorothea berasal dari religiusitasnya yang berlebihan. Selama mereka pergi, ia telah kembali dari perjalanan ke kota kabupaten, terkait permohonan pengampunan bagi seorang penjahat. “Baiklah, sayang-sayangku,” katanya dengan ramah, saat mereka mendekat untuk menciumnya, “semoga tidak ada hal yang tidak menyenangkan terjadi selama aku pergi.” “Tidak, paman,” kata Celia, “kami sudah pergi ke Freshitt untuk melihat-lihat pondok-pondok. Kami kira paman sudah ada di rumah untuk makan siang.” “Aku mampir ke Lowick untuk makan siang—kau tidak tahu aku mampir ke Lowick. Dan aku membawakan beberapa pamflet untukmu, Dorothea—di perpustakaan, kau tahu; pamflet itu ada di atas meja di perpustakaan.” Seolah-olah aliran listrik mengalir melalui Dorothea, membangkitkannya dari keputusasaan menuju harapan. Itu adalah pamflet-pamflet tentang Gereja mula-mula. Beban yang ditimbulkan oleh Celia, Tantripp, dan Sir James pun sirna, dan ia langsung berjalan ke perpustakaan. Celia naik ke atas. Tuan Brooke tertahan oleh sebuah pesan, tetapi ketika ia kembali ke perpustakaan, ia mendapati Dorothea duduk dan sudah asyik membaca salah satu pamflet yang berisi manuskrip tambahan dari Tuan Casaubon,—menerimanya dengan penuh antusias seperti ia menghirup aroma buket bunga segar setelah berjalan-jalan di jalan yang kering, panas, dan suram. Dia menjauh dari Tipton dan Freshitt, dan dari kelemahannya sendiri karena cenderung melangkah ke tempat yang salah dalam perjalanannya menuju Yerusalem Baru. Tuan Brooke duduk di kursi berlengan, meregangkan kakinya ke arah perapian kayu, yang telah berubah menjadi tumpukan dadu bercahaya yang menakjubkan di antara anjing-anjing itu, dan menggosok tangannya perlahan, memandang Dorothea dengan sangat lembut, tetapi dengan sikap santai yang netral, seolah-olah dia tidak memiliki sesuatu yang khusus untuk dikatakan. Dorothea menutup pamfletnya segera setelah dia menyadari kehadiran pamannya, dan bangkit seolah-olah akan pergi. Biasanya dia akan tertarik dengan misi belas kasih pamannya atas nama penjahat itu, tetapi kegelisahannya baru-baru ini telah membuatnya linglung. “Aku baru pulang lewat Lowick, kau tahu,” kata Tuan Brooke, bukan seolah bermaksud untuk menghentikan kepergiannya, tetapi tampaknya karena kecenderungannya yang biasa untuk mengatakan apa yang telah dia katakan sebelumnya. Prinsip dasar ucapan manusia ini tampak jelas pada Tuan Brooke. “Aku makan siang di sana dan melihat perpustakaan Casaubon, dan hal-hal semacam itu. Udaranya dingin sekali. Mau duduk, sayang? Kau terlihat kedinginan.” Dorothea merasa cukup tertarik untuk menerima undangan itu. Terkadang, ketika sikap santai pamannya tidak menjengkelkan, justru terasa menenangkan. Ia melepas jubah dan topinya, lalu duduk berhadapan dengannya, menikmati kehangatan, tetapi mengangkat kedua tangannya yang indah sebagai penutup. Tangan itu bukanlah tangan yang kurus atau kecil; melainkan tangan yang kuat, feminin, dan keibuan. Ia tampak mengangkatnya sebagai permohonan untuk keinginannya yang mendalam untuk mengetahui dan berpikir, yang dalam perantaraan yang tidak ramah dari Tipton dan Freshitt telah berujung pada tangisan dan kelopak mata merah. Ia kemudian teringat pada penjahat yang dihukum mati itu. "Kabar apa yang Paman bawa tentang pencuri domba itu?" “Kasihan Bunch?—sepertinya kita tidak bisa membebaskannya—dia akan digantung.” Dahi Dorothea menunjukkan ekspresi celaan dan belas kasihan. “Digantung, kau tahu,” kata Tuan Brooke sambil mengangguk pelan. “Kasihan Romilly! Dia pasti akan membantu kita. Aku kenal Romilly. Casaubon tidak kenal Romilly. Dia agak tenggelam dalam buku, kau tahu, Casaubon memang begitu.” “Ketika seseorang memiliki pendidikan yang hebat dan sedang menulis karya besar, tentu saja ia harus mengorbankan kesempatan untuk melihat banyak hal di dunia. Bagaimana ia bisa menjalin kenalan?” “Itu benar. Tapi seorang pria memang bisa murung, kau tahu. Aku juga selalu melajang, tapi aku punya watak seperti itu, aku tidak pernah murung; caraku adalah pergi ke mana-mana dan menikmati segalanya. Aku tidak pernah murung: tapi aku bisa melihat Casaubon melakukannya, kau tahu. Dia menginginkan seorang teman—seorang teman, kau tahu.” “Akan menjadi suatu kehormatan besar bagi siapa pun untuk menjadi pendampingnya,” kata Dorothea dengan penuh semangat. “Kau menyukainya, ya?” kata Tuan Brooke, tanpa menunjukkan keterkejutan atau emosi lainnya. “Begini, aku sudah mengenal Casaubon selama sepuluh tahun, sejak dia datang ke Lowick. Tapi aku tidak pernah mendapatkan apa pun darinya—ide apa pun, kau tahu. Namun, dia adalah pria yang hebat dan mungkin akan menjadi uskup—hal semacam itu, kau tahu, jika Peel tetap menjabat. Dan dia sangat menghargai dirimu, sayangku.” Dorothea tidak bisa berbicara. “Faktanya, dia memang sangat menghargai Anda. Dan dia berbicara dengan sangat baik—Casaubon. Dia telah menghormati saya, karena Anda belum cukup umur. Singkatnya, saya telah berjanji untuk berbicara dengan Anda, meskipun saya mengatakan kepadanya bahwa saya pikir tidak banyak peluang. Saya wajib mengatakan itu kepadanya. Saya berkata, keponakan saya masih sangat muda, dan hal-hal semacam itu. Tapi saya rasa tidak perlu menjelaskan semuanya. Namun, intinya adalah, dia telah meminta izin saya untuk melamar Anda—melamar pernikahan, Anda tahu,” kata Tuan Brooke, sambil mengangguk menjelaskan. “Saya pikir lebih baik saya memberi tahu Anda, sayangku.” Tak seorang pun dapat mendeteksi kecemasan dalam sikap Tuan Brooke, tetapi ia benar-benar ingin mengetahui sesuatu tentang pikiran keponakannya, agar, jika diperlukan nasihat, ia dapat memberikannya tepat waktu. Perasaan apa pun yang dapat ia ungkapkan, sebagai seorang hakim yang telah menyerap begitu banyak ide, adalah perasaan yang murni baik. Karena Dorothea tidak segera berbicara, ia mengulangi, "Kupikir lebih baik kukatakan padamu, sayangku." “Terima kasih, paman,” kata Dorothea dengan nada yang jelas dan tegas. “Saya sangat berterima kasih kepada Tuan Casaubon. Jika beliau memberi saya tawaran, saya akan menerimanya. Saya mengagumi dan menghormatinya lebih dari siapa pun yang pernah saya lihat.” Tuan Brooke terdiam sejenak, lalu berkata dengan nada rendah yang panjang, “Ah? … Baiklah! Dia memang pasangan yang cocok dalam beberapa hal. Tapi sekarang, Chettam juga pasangan yang cocok. Dan tanah kita berdekatan. Aku tidak akan pernah ikut campur dalam keinginanmu, sayangku. Orang-orang seharusnya memiliki keinginan mereka sendiri dalam pernikahan, dan hal semacam itu—sampai batas tertentu, kau tahu. Aku selalu mengatakan itu, sampai batas tertentu. Aku ingin kau menikah dengan baik; dan aku punya alasan kuat untuk percaya bahwa Chettam ingin menikahimu. Aku menyebutkannya, kau tahu.” “Mustahil aku akan menikah dengan Sir James Chettam,” kata Dorothea. “Jika dia berpikir untuk menikahiku, dia telah melakukan kesalahan besar.” “Begitulah, kau tahu. Kita tidak pernah tahu. Seharusnya aku mengira Chettam adalah tipe pria yang disukai wanita.” “Kumohon jangan sebut-sebut dia dalam konteks itu lagi, paman,” kata Dorothea, merasakan sebagian kekesalannya yang sebelumnya muncul kembali. Tuan Brooke bertanya-tanya, dan merasa bahwa perempuan adalah subjek penelitian yang tak ada habisnya, karena bahkan dia di usianya pun belum berada dalam keadaan prediksi ilmiah yang sempurna tentang mereka. Di sini ada orang seperti Chettam yang sama sekali tidak punya peluang. “Baiklah, tapi Casaubon, sekarang. Tidak perlu terburu-buru—maksudku untukmu. Memang benar, setiap tahun akan memengaruhinya. Usianya sudah lebih dari empat puluh lima tahun, kau tahu. Kurasa dia dua puluh tujuh tahun lebih tua darimu. Tentu saja,—jika kau menyukai pendidikan dan kedudukan, dan hal-hal semacam itu, kita tidak bisa memiliki semuanya. Dan penghasilannya bagus—dia memiliki properti yang cukup besar yang independen dari Gereja—penghasilannya bagus. Namun dia tidak muda, dan aku tidak boleh menyembunyikan darimu, sayangku, bahwa menurutku kesehatannya tidak terlalu kuat. Aku tidak tahu hal lain yang buruk tentangnya.” “Aku tidak ingin memiliki suami yang usianya hampir sama denganku,” kata Dorothea dengan tegas. “Aku ingin memiliki suami yang lebih bijaksana dan berpengetahuan luas dariku.” Tuan Brooke mengulangi ucapannya dengan nada lirih, “Ah?—Kupikir kau lebih punya pendapat sendiri daripada kebanyakan gadis. Kupikir kau menyukai pendapatmu sendiri—menyukainya, kau tahu.” “Saya tidak bisa membayangkan hidup tanpa beberapa pendapat, tetapi saya ingin memiliki alasan yang baik untuk pendapat-pendapat itu, dan orang bijak dapat membantu saya melihat pendapat mana yang memiliki dasar terbaik, dan akan membantu saya untuk hidup sesuai dengan pendapat-pendapat tersebut.” “Benar sekali. Kau tidak bisa mengungkapkannya lebih baik lagi—bahkan sebelumnya pun tidak bisa, kau tahu. Tapi memang ada keanehan dalam segala hal,” lanjut Tuan Brooke, yang hati nuraninya benar-benar tergerak untuk melakukan yang terbaik bagi keponakannya pada kesempatan ini. “Hidup tidak dicetak dalam cetakan—tidak dipotong oleh aturan dan garis, dan hal-hal semacam itu. Aku sendiri tidak pernah menikah, dan itu akan lebih baik untukmu dan keluargamu. Faktanya, aku tidak pernah mencintai siapa pun cukup dalam untuk menjerat diriku sendiri demi mereka. Itu adalah jerat, kau tahu. Nah, emosi itu penting. Dan seorang suami suka menjadi penguasa.” “Aku tahu aku harus menghadapi cobaan, paman. Pernikahan adalah keadaan dengan kewajiban yang lebih tinggi. Aku tidak pernah menganggapnya hanya sebagai kemudahan pribadi semata,” kata Dorothea yang malang. “Yah, kau tidak menyukai kemewahan, tempat yang megah, pesta dansa, makan malam, hal-hal semacam itu. Aku bisa melihat bahwa cara Casaubon mungkin lebih cocok untukmu daripada Chettam. Dan kau boleh melakukan apa pun yang kau suka, sayangku. Aku tidak akan menghalangi Casaubon; aku langsung mengatakannya; karena tidak ada yang tahu bagaimana semuanya akan berakhir. Seleramu tidak sama dengan setiap wanita muda; dan seorang pendeta dan cendekiawan—yang mungkin seorang uskup—hal semacam itu—mungkin lebih cocok untukmu daripada Chettam. Chettam adalah orang yang baik, orang yang baik dan berhati tulus, kau tahu; tetapi dia tidak terlalu mendalami ide-ide. Aku dulu begitu, ketika aku seusianya. Tapi mata Casaubon, sekarang. Kurasa dia sedikit merusak matanya karena terlalu banyak membaca.” “Aku akan jauh lebih bahagia, paman, jika ada lebih banyak ruang bagiku untuk membantunya,” kata Dorothea dengan penuh semangat. “Kau tampaknya sudah mengambil keputusan. Baiklah, sayangku, sebenarnya, aku punya surat untukmu di saku bajuku.” Tuan Brooke menyerahkan surat itu kepada Dorothea, tetapi saat Dorothea bangkit untuk pergi, ia menambahkan, “Tidak perlu terburu-buru, sayangku. Pikirkanlah baik-baik.” Setelah Dorothea meninggalkannya, ia merenungkan bahwa ia memang telah berbicara dengan tegas: ia telah memaparkan risiko pernikahan kepadanya dengan cara yang mencolok. Itu adalah kewajibannya untuk melakukannya. Tetapi mengenai berpura-pura menjadi bijak bagi kaum muda,—tidak ada paman, betapapun banyaknya ia bepergian di masa mudanya , menyerap ide-ide baru, dan makan malam dengan para selebriti yang kini telah meninggal, yang dapat berpura-pura menilai jenis pernikahan seperti apa yang akan berhasil bagi seorang gadis muda yang lebih menyukai Casaubon daripada Chettam. Singkatnya, wanita adalah masalah yang, karena pikiran Tuan Brooke terasa kosong di hadapannya, hampir tidak bisa kurang rumit daripada putaran benda padat yang tidak beraturan.</p>
-
-<div class="nav">
-  <a href="bab-iii.html">⬅ Bab Iii.</a>
-  <a href="bab-v.html">Bab V. ➡</a>
-</div>
 
 </body>
 </html>

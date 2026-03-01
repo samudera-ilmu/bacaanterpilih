@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB LXXV.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB LXXV. - Bacaan digital klasik">
+<title>Bab LXXV — Middlemarch</title>
+<meta name="description" content="Baca Bab LXXV dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-lxxv.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab LXXV — Middlemarch">
+  <meta property="og:description" content="Baca Bab LXXV dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-lxxv.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab LXXV — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab LXXV dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab LXXV",
+    "name": "Bab LXXV — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-lxxv.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab LXXV</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Le sentiment de la fausseté des plaisirs present, dan l'ignorance de la vanité des plaisirs absens menyebabkan l'inconstance.”—PASCAL.</p><p>Rosamond kembali berseri-seri ketika rumah itu terbebas dari sosok yang mengancam, dan ketika semua kreditor yang menyebalkan telah dibayar. Tetapi dia tidak gembira: kehidupan pernikahannya tidak memenuhi satu pun harapannya, dan telah benar-benar hancur dalam imajinasinya. Dalam jeda singkat ketenangan ini, Lydgate, mengingat bahwa dia sering kali marah-marah di saat-saat gelisahnya, dan mengingat penderitaan yang harus ditanggung Rosamond, bersikap lembut dan hati-hati terhadapnya; tetapi dia juga telah kehilangan sebagian semangat lamanya, dan dia masih merasa perlu untuk merujuk pada perubahan gaya hidup hemat mereka sebagai hal yang wajar, mencoba untuk mendamaikannya secara bertahap, dan menekan amarahnya ketika Rosamond menjawab dengan berharap agar dia pergi tinggal di London. Ketika Rosamond tidak memberikan jawaban itu, dia mendengarkan dengan lesu, dan bertanya-tanya apa yang dimilikinya yang layak untuk diperjuangkan. Kata-kata kasar dan menghina yang keluar dari mulut suaminya dalam kemarahannya telah sangat menyinggung kesombongan yang awalnya dia nikmati; Dan apa yang dianggapnya sebagai cara pandangnya yang menyimpang, terus memicu rasa jijik yang terpendam, yang membuatnya menerima semua kelembutannya sebagai pengganti yang buruk untuk kebahagiaan yang gagal diberikannya. Mereka berada dalam posisi yang kurang menguntungkan dengan tetangga mereka, dan tidak ada lagi harapan ke arah Quallingham—tidak ada harapan ke mana pun kecuali dalam surat sesekali dari Will Ladislaw. Dia merasa tersinggung dan kecewa dengan keputusan Will untuk meninggalkan Middlemarch, karena terlepas dari apa yang dia ketahui dan duga tentang kekagumannya pada Dorothea, dia diam-diam menyimpan keyakinan bahwa Will telah, atau pasti akan, memiliki kekaguman yang jauh lebih besar padanya; Rosamond adalah salah satu wanita yang hidup dengan gagasan bahwa setiap pria yang mereka temui akan lebih menyukai mereka jika preferensi itu tidak sia-sia. Nyonya Casaubon memang baik; tetapi ketertarikan Will padanya sudah ada sebelum dia mengenal Nyonya Lydgate. Rosamond menganggap cara Will berbicara kepada dirinya sendiri, yang merupakan campuran dari kritik main-main dan kesopanan yang berlebihan, sebagai penyamaran dari perasaan yang lebih dalam; Dan di hadapannya, ia merasakan kembali gairah dan rasa drama romantis yang menyenangkan, yang kehadiran Lydgate tak lagi mampu ciptakan. Ia bahkan membayangkan—apa yang tidak akan dibayangkan pria dan wanita dalam hal ini?—bahwa Will melebih-lebihkan kekagumannya pada Nyonya Casaubon untuk memancing rasa irinya. Dengan cara inilah pikiran Rosamond yang malang telah sibuk sebelum kepergian Will. Ia berpikir, Will akan menjadi suami yang jauh lebih cocok baginya daripada yang ia temukan pada Lydgate. Tidak ada anggapan yang lebih salah dari ini, karena ketidakpuasan Rosamond dalam pernikahannya disebabkan oleh kondisi pernikahan itu sendiri, tuntutannya akan pengekangan diri dan toleransi, dan bukan karena sifat suaminya; tetapi khayalan tentang sosok yang lebih baik yang tidak nyata memiliki daya tarik sentimental yang mengalihkan kebosanannya. Ia menciptakan sebuah kisah romantis kecil yang akan mengubah kebosanan hidupnya: Will Ladislaw akan selalu menjadi bujangan dan tinggal di dekatnya, selalu siap sedia atas perintahnya, dan memiliki hasrat yang dipahami meskipun tidak pernah sepenuhnya diungkapkan untuknya, yang akan memancarkan nyala api yang lembut sesekali dalam adegan-adegan yang menarik. Kepergiannya merupakan kekecewaan yang sebanding, dan sangat menambah kebosanannya terhadap Middlemarch; tetapi pada awalnya ia memiliki mimpi alternatif tentang kesenangan yang akan didapatnya dari pergaulannya dengan keluarga di Quallingham. Sejak itu, masalah dalam kehidupan pernikahannya semakin dalam, dan ketiadaan bantuan lain mendorongnya untuk merenungkan dengan penuh penyesalan tentang kisah romantis tipis yang pernah ia nikmati. Pria dan wanita membuat kesalahan besar tentang gejala mereka sendiri, menganggap kerinduan mereka yang samar dan gelisah, terkadang untuk kejeniusan, terkadang untuk agama, dan lebih sering lagi untuk cinta yang besar. Will Ladislaw telah menulis surat-surat yang ramah, setengah untuknya dan setengah untuk Lydgate, dan ia telah membalasnya: perpisahan mereka, menurutnya, kemungkinan besar tidak akan final, dan perubahan yang paling ia dambakan sekarang adalah agar Lydgate pergi tinggal di London; Segalanya akan menyenangkan di London; dan dia telah mulai bekerja dengan tekad yang tenang untuk meraih hasil ini, ketika tiba-tiba datang sebuah janji yang menyenangkan yang membangkitkan semangatnya.</p><p>Surat itu datang sesaat sebelum pertemuan penting di balai kota, dan tak lain adalah surat dari Will Ladislaw kepada Lydgate, yang terutama membahas minat barunya pada rencana kolonisasi, tetapi secara tidak langsung menyebutkan bahwa ia mungkin perlu mengunjungi Middlemarch dalam beberapa minggu ke depan—suatu kebutuhan yang sangat menyenangkan, katanya, hampir sama baiknya dengan liburan bagi seorang anak sekolah. Ia berharap ada tempat lamanya di karpet, dan banyak musik menantinya. Tetapi ia sama sekali tidak yakin tentang waktunya. Saat Lydgate membacakan surat itu kepada Rosamond, wajahnya tampak seperti bunga yang kembali segar—menjadi lebih cantik dan lebih mekar. Tidak ada lagi yang tak tertahankan sekarang: hutang telah dibayar, Tuan Ladislaw akan datang, dan Lydgate akan dibujuk untuk meninggalkan Middlemarch dan menetap di London, yang &quot;sangat berbeda dari kota provinsi.&quot;</p><p>Pagi itu cerah sekali. Namun tak lama kemudian langit menjadi gelap di atas Rosamond yang malang. Kehadiran kesedihan baru pada suaminya, yang selama ini ia rahasiakan sepenuhnya darinya—karena ia takut memperlihatkan perasaannya yang terluka kepada sikap netral dan kesalahpahaman istrinya—segera mendapat penjelasan yang sangat aneh dan menyakitkan, asing bagi semua gagasan sebelumnya tentang apa yang dapat memengaruhi kebahagiaannya. Dalam keceriaan barunya, berpikir bahwa Lydgate hanya mengalami suasana hati yang lebih buruk dari biasanya, yang menyebabkannya mengabaikan ucapannya, dan jelas-jelas menjauhinya sebisa mungkin, ia memilih, beberapa hari setelah pertemuan itu, dan tanpa berbicara dengannya tentang hal itu, untuk mengirimkan undangan untuk pesta kecil di malam hari, merasa yakin bahwa ini adalah langkah yang bijaksana, karena orang-orang tampaknya telah menjauh dari mereka, dan ingin mengembalikan kebiasaan lama untuk berinteraksi. Setelah undangan diterima, ia akan memberi tahu Lydgate, dan memberinya nasihat bijak tentang bagaimana seorang dokter harus berperilaku terhadap tetangganya; Karena Rosamond memiliki sikap yang sangat serius mengenai tugas orang lain. Namun semua undangan ditolak, dan jawaban terakhir sampai ke tangan Lydgate.</p><p>“Ini coretan Chichely. Dia menulis tentang apa kepadamu?” kata Lydgate dengan heran sambil menyerahkan catatan itu kepadanya. Ia terpaksa memperlihatkannya kepada Lydgate, dan menatapnya dengan tajam, lalu berkata—</p><p>“Mengapa kau mengirimkan undangan tanpa memberitahuku, Rosamond? Kumohon, aku bersikeras agar kau tidak mengundang siapa pun ke rumah ini. Kurasa kau telah mengundang orang lain, dan mereka juga menolak.” Ia tidak berkata apa-apa.</p><p>“Kau dengar aku?” bentak Lydgate.</p><p>“Ya, tentu saja aku mendengarmu,” kata Rosamond, menolehkan kepalanya dengan gerakan anggun seperti burung berleher panjang.</p><p>Lydgate menggelengkan kepalanya tanpa anggun dan berjalan keluar ruangan, merasa dirinya berbahaya. Pikiran Rosamond adalah bahwa ia semakin lama semakin tak tertahankan—bukan karena ada alasan khusus baru untuk sikapnya yang tegas ini. Keengganannya untuk menceritakan apa pun yang ia yakini sebelumnya tidak akan menarik minatnya telah berkembang menjadi kebiasaan tanpa berpikir, dan Rosamond tidak tahu apa pun yang berkaitan dengan seribu pound kecuali bahwa pinjaman itu berasal dari pamannya, Bulstrode. Sifat Lydgate yang menjengkelkan dan penghindaran tetangga mereka terhadapnya memiliki kesamaan yang tak dapat dijelaskan baginya dalam hal meringankan kesulitan keuangan. Jika undangan itu diterima, ia akan pergi untuk mengundang ibunya dan yang lainnya, yang sudah beberapa hari tidak ia temui; dan sekarang ia mengenakan topinya untuk pergi dan menanyakan apa yang terjadi pada mereka semua, tiba-tiba merasa seolah-olah ada konspirasi untuk meninggalkannya dalam isolasi dengan suami yang cenderung menyinggung perasaan semua orang. Saat itu sudah lewat jam makan siang, dan ia mendapati ayah dan ibunya duduk bersama sendirian di ruang tamu. Mereka menyambutnya dengan tatapan sedih, berkata “Ya ampun, sayangku!” dan tidak lebih. Ia belum pernah melihat ayahnya tampak begitu murung; dan sambil duduk di dekatnya, ia berkata—</p><p>“Ada apa, Ayah?”</p><p>Dia tidak menjawab, tetapi Nyonya Vincy berkata, “Oh, sayangku, apakah kamu belum mendengar kabar apa pun? Tidak lama lagi kabar itu akan sampai kepadamu.”</p><p>“Apakah ini ada hubungannya dengan Tertius?” tanya Rosamond, wajahnya pucat pasi. Pikiran tentang masalah langsung terhubung dengan hal yang selama ini tidak dapat ia pahami dari pria itu.</p><p>“Oh, sayangku, ya. Membayangkan kau menikah dan terjebak dalam masalah ini. Hutang saja sudah cukup buruk, tapi ini akan lebih buruk.”</p><p>“Tunggu, tunggu, Lucy,” kata Tuan Vincy. “Apakah kau belum mendengar kabar apa pun tentang pamanmu Bulstrode, Rosamond?”</p><p>“Tidak, ayah,” kata si kecil yang malang, merasa seolah-olah masalah bukanlah sesuatu yang pernah dialaminya sebelumnya, melainkan kekuatan tak terlihat dengan cengkeraman besi yang membuat jiwanya lemas.</p><p>Ayahnya menceritakan semuanya padanya, dan di akhir cerita berkata, “Lebih baik kau tahu, sayangku. Kurasa Lydgate harus meninggalkan kota ini. Keadaan telah berbalik melawannya. Kurasa dia tidak bisa berbuat apa-apa. Aku tidak menuduhnya melakukan kesalahan apa pun,” kata Tuan Vincy. Sebelumnya, ia selalu cenderung mencari-cari kesalahan Lydgate.</p><p>Kejutan yang dialami Rosamond sangat mengerikan. Baginya, rasanya tidak ada nasib yang sekejam dan seburuk nasibnya, yaitu menikahi seorang pria yang telah menjadi pusat kecurigaan yang memalukan. Dalam banyak kasus, rasa malu adalah bagian terburuk dari kejahatan; dan dibutuhkan banyak refleksi mendalam, yang belum pernah terlintas dalam kehidupan Rosamond, agar ia pada saat-saat ini merasa bahwa masalahnya lebih ringan daripada jika suaminya diketahui telah melakukan sesuatu yang kriminal. Semua rasa malu itu seolah ada di sana. Dan ia telah menikahi pria ini dengan polosnya, dengan keyakinan bahwa ia dan keluarganya adalah kebanggaan baginya! Ia menunjukkan sikap pendiamnya yang biasa kepada orang tuanya, dan hanya mengatakan bahwa jika Lydgate melakukan seperti yang diinginkannya, ia pasti sudah meninggalkan Middlemarch sejak lama.</p><p>“Dia menanggungnya melebihi apa pun,” kata ibunya saat dia tiada.</p><p>“Ah, syukurlah!” kata Tuan Vincy, yang sangat terpukul.</p><p>Namun Rosamond pulang dengan perasaan jijik yang beralasan terhadap suaminya. Apa yang sebenarnya telah dilakukannya—bagaimana sebenarnya perilakunya? Dia tidak tahu. Mengapa dia tidak menceritakan semuanya padanya? Dia tidak berbicara dengannya tentang hal itu, dan tentu saja dia tidak bisa berbicara dengannya. Pernah terlintas di benaknya bahwa dia akan meminta ayahnya untuk mengizinkannya pulang lagi; tetapi memikirkan prospek itu membuatnya tampak sangat suram: seorang wanita yang sudah menikah kembali tinggal bersama orang tuanya—hidup tampaknya tidak memiliki arti baginya dalam posisi seperti itu: dia tidak dapat membayangkan dirinya berada di dalamnya.</p><p>Dua hari berikutnya, Lydgate mengamati perubahan pada dirinya, dan percaya bahwa dia telah mendengar kabar buruk itu. Akankah dia berbicara kepadanya tentang hal itu, atau akankah dia terus berdiam diri selamanya, yang seolah menyiratkan bahwa dia percaya Lydgate bersalah? Kita harus ingat bahwa Lydgate berada dalam keadaan pikiran yang buruk, di mana hampir semua kontak terasa menyakitkan. Tentu saja, dalam hal ini Rosamond memiliki alasan yang sama untuk mengeluh tentang sikap tertutup dan kurangnya kepercayaan dari pihak Lydgate; tetapi dalam kepahitan jiwanya, dia memaafkan dirinya sendiri;—bukankah dia berhak untuk menghindar dari tugas memberi tahu Rosamond, karena sekarang Rosamond tahu kebenarannya sehingga dia tidak memiliki dorongan untuk berbicara kepadanya? Tetapi kesadaran yang lebih dalam bahwa dia bersalah membuatnya gelisah, dan keheningan di antara mereka menjadi tak tertahankan baginya; seolah-olah mereka berdua terombang-ambing di satu bangkai kapal dan saling memalingkan muka.</p><p>Ia berpikir, “Aku bodoh. Bukankah aku sudah menyerah mengharapkan apa pun? Aku punya tanggung jawab pernikahan, bukan bantuan.” Dan malam itu ia berkata—</p><p>“Rosamond, apakah kamu mendengar sesuatu yang membuatmu sedih?”</p><p>“Ya,” jawabnya, sambil meletakkan pekerjaannya yang sedang ia kerjakan dengan lesu dan setengah sadar, sangat berbeda dengan dirinya yang biasanya.</p><p>“Apa yang telah kamu dengar?”</p><p>“Semuanya, kurasa. Papa yang memberitahuku.”</p><p>“Orang-orang mengira aku telah dipermalukan?”</p><p>“Ya,” kata Rosamond lemah, mulai menjahit lagi secara otomatis.</p><p>Keheningan menyelimuti ruangan. Lydgate berpikir, &quot;Jika dia masih percaya padaku—sekadar tahu siapa aku sebenarnya, seharusnya dia berbicara sekarang dan mengatakan bahwa dia tidak percaya aku pantas dipermalukan.&quot;</p><p>Namun Rosamond di sisi lain terus menggerakkan jari-jarinya dengan lesu. Apa pun yang akan dikatakan tentang masalah itu, dia mengharapkan akan datang dari Tertius. Apa yang dia ketahui? Dan jika dia tidak bersalah, mengapa dia tidak melakukan sesuatu untuk membersihkan namanya?</p><p>Keheningan wanita itu kembali menambah kepahitan dalam suasana hati Lydgate yang muram, di mana ia terus berkata pada dirinya sendiri bahwa tak seorang pun percaya padanya—bahkan Farebrother pun tidak muncul. Ia mulai menanyai wanita itu dengan maksud agar percakapan mereka dapat menghilangkan kabut dingin yang menyelimuti mereka, tetapi ia merasa tekadnya terhambat oleh rasa kesal yang putus asa. Bahkan masalah ini, seperti yang lainnya, tampaknya dianggap wanita itu hanya miliknya sendiri. Baginya, ia selalu menjadi sosok yang terpisah, melakukan apa yang ditentangnya. Ia bangkit dari kursinya dengan dorongan marah, dan sambil memasukkan tangannya ke dalam saku, berjalan mondar-mandir di ruangan itu. Sepanjang waktu, ada kesadaran yang mendasari bahwa ia harus mengendalikan amarah ini, menceritakan semuanya kepada wanita itu, dan meyakinkannya tentang fakta-fakta tersebut. Karena ia hampir mempelajari pelajaran bahwa ia harus menyesuaikan diri dengan sifat wanita itu, dan karena wanita itu kurang bersimpati, ia harus memberi lebih banyak. Tak lama kemudian, ia kembali pada niatnya untuk membuka diri: kesempatan ini tidak boleh hilang. Jika ia bisa membuatnya merasa sungguh-sungguh bahwa ini adalah fitnah yang harus dihadapi dan bukan dihindari, dan bahwa seluruh masalah ini muncul karena kebutuhan uangnya yang sangat mendesak, maka itu akan menjadi saat yang tepat untuk mendesaknya dengan kuat agar mereka bersatu dalam tekad untuk hidup dengan uang seminimal mungkin, sehingga mereka dapat melewati masa sulit dan tetap mandiri. Ia akan menyebutkan langkah-langkah pasti yang ingin ia ambil, dan membujuknya untuk berbaik hati. Ia wajib mencoba ini—dan apa lagi yang bisa ia lakukan?</p><p>Ia tidak tahu sudah berapa lama ia berjalan mondar-mandir dengan gelisah, tetapi Rosamond merasa itu sudah lama, dan berharap ia mau duduk. Ia pun mulai menganggap ini sebagai kesempatan untuk mendesak Tertius tentang apa yang seharusnya ia lakukan. Apa pun kebenaran di balik semua penderitaan ini, ada satu ketakutan yang muncul.</p><p>Lydgate akhirnya duduk, bukan di kursi biasanya, tetapi di kursi yang lebih dekat dengan Rosamond, mencondongkan tubuh ke arahnya, dan menatapnya dengan serius sebelum kembali membahas topik yang menyedihkan itu. Ia telah mengendalikan dirinya sejauh ini, dan hendak berbicara dengan penuh kesungguhan, seolah-olah pada kesempatan yang tidak akan terulang lagi. Ia bahkan baru saja membuka bibirnya, ketika Rosamond, sambil menurunkan tangannya, menatapnya dan berkata—</p><p>“Tentu saja, Tertius—”</p><p>&quot;Dengan baik?&quot;</p><p>“Tentu saja sekarang akhirnya kau sudah menyerah untuk tinggal di Middlemarch. Aku tidak bisa terus tinggal di sini. Ayo kita pergi ke London. Papa, dan semua orang, bilang sebaiknya kau pergi. Apa pun penderitaan yang harus kutanggung, akan lebih mudah jika aku berada di luar sini.”</p><p>Lydgate merasa sangat terganggu. Alih-alih curahan kritik yang telah ia persiapkan dengan susah payah, di sini ia harus mengulangi hal yang sama lagi. Ia tidak tahan. Dengan perubahan ekspresi yang cepat, ia bangkit dan keluar dari ruangan.</p><p>Mungkin jika ia cukup kuat untuk tetap teguh pada tekadnya untuk menjadi lebih baik karena Rosamond lebih lemah, malam itu mungkin akan berakhir lebih baik. Jika energinya mampu mengatasi hambatan itu, ia mungkin masih bisa memengaruhi visi dan keinginan Rosamond. Kita tidak bisa memastikan bahwa sifat apa pun, betapapun kaku atau uniknya, akan menolak pengaruh dari makhluk yang lebih besar daripada diri mereka sendiri. Mereka mungkin akan terombang-ambing dan untuk sementara waktu berubah, menjadi bagian dari jiwa yang membungkus mereka dalam semangat pergerakannya. Tetapi Lydgate yang malang merasakan sakit yang berdenyut di dalam dirinya, dan energinya tidak cukup untuk menyelesaikan tugasnya.</p><p>Awal dari pemahaman dan tekad bersama tampak masih sangat jauh; bahkan, tampaknya terhalang oleh rasa usaha yang tidak berhasil. Mereka menjalani hidup dari hari ke hari dengan pikiran yang masih terpisah, Lydgate mengerjakan pekerjaannya dengan suasana putus asa, dan Rosamond merasa, dengan alasan yang cukup kuat, bahwa ia bersikap kejam. Tidak ada gunanya mengatakan apa pun kepada Tertius; tetapi ketika Will Ladislaw datang, ia bertekad untuk menceritakan semuanya kepadanya. Terlepas dari sifatnya yang pendiam, ia membutuhkan seseorang yang akan mengakui kesalahannya.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-lxxiv.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Lxxiv</span>
+    </a>
+    <a href="bab-lxxvi.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Lxxvi</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB LXXV.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Le sentiment de la fausseté des plaisirs present, dan l'ignorance de la vanité des plaisirs absens menyebabkan l'inconstance.”—PASCAL. Rosamond kembali berseri-seri ketika rumah itu terbebas dari sosok yang mengancam, dan ketika semua kreditor yang menyebalkan telah dibayar. Tetapi dia tidak gembira: kehidupan pernikahannya tidak memenuhi satu pun harapannya, dan telah benar-benar hancur dalam imajinasinya. Dalam jeda singkat ketenangan ini, Lydgate, mengingat bahwa dia sering kali marah-marah di saat-saat gelisahnya, dan mengingat penderitaan yang harus ditanggung Rosamond, bersikap lembut dan hati-hati terhadapnya; tetapi dia juga telah kehilangan sebagian semangat lamanya, dan dia masih merasa perlu untuk merujuk pada perubahan gaya hidup hemat mereka sebagai hal yang wajar, mencoba untuk mendamaikannya secara bertahap, dan menekan amarahnya ketika Rosamond menjawab dengan berharap agar dia pergi tinggal di London. Ketika Rosamond tidak memberikan jawaban itu, dia mendengarkan dengan lesu, dan bertanya-tanya apa yang dimilikinya yang layak untuk diperjuangkan. Kata-kata kasar dan menghina yang keluar dari mulut suaminya dalam kemarahannya telah sangat menyinggung kesombongan yang awalnya dia nikmati; Dan apa yang dianggapnya sebagai cara pandangnya yang menyimpang, terus memicu rasa jijik yang terpendam, yang membuatnya menerima semua kelembutannya sebagai pengganti yang buruk untuk kebahagiaan yang gagal diberikannya. Mereka berada dalam posisi yang kurang menguntungkan dengan tetangga mereka, dan tidak ada lagi harapan ke arah Quallingham—tidak ada harapan ke mana pun kecuali dalam surat sesekali dari Will Ladislaw. Dia merasa tersinggung dan kecewa dengan keputusan Will untuk meninggalkan Middlemarch, karena terlepas dari apa yang dia ketahui dan duga tentang kekagumannya pada Dorothea, dia diam-diam menyimpan keyakinan bahwa Will telah, atau pasti akan, memiliki kekaguman yang jauh lebih besar padanya; Rosamond adalah salah satu wanita yang hidup dengan gagasan bahwa setiap pria yang mereka temui akan lebih menyukai mereka jika preferensi itu tidak sia-sia. Nyonya Casaubon memang baik; tetapi ketertarikan Will padanya sudah ada sebelum dia mengenal Nyonya Lydgate. Rosamond menganggap cara Will berbicara kepada dirinya sendiri, yang merupakan campuran dari kritik main-main dan kesopanan yang berlebihan, sebagai penyamaran dari perasaan yang lebih dalam; Dan di hadapannya, ia merasakan kembali gairah dan rasa drama romantis yang menyenangkan, yang kehadiran Lydgate tak lagi mampu ciptakan. Ia bahkan membayangkan—apa yang tidak akan dibayangkan pria dan wanita dalam hal ini?—bahwa Will melebih-lebihkan kekagumannya pada Nyonya Casaubon untuk memancing rasa irinya. Dengan cara inilah pikiran Rosamond yang malang telah sibuk sebelum kepergian Will. Ia berpikir, Will akan menjadi suami yang jauh lebih cocok baginya daripada yang ia temukan pada Lydgate. Tidak ada anggapan yang lebih salah dari ini, karena ketidakpuasan Rosamond dalam pernikahannya disebabkan oleh kondisi pernikahan itu sendiri, tuntutannya akan pengekangan diri dan toleransi, dan bukan karena sifat suaminya; tetapi khayalan tentang sosok yang lebih baik yang tidak nyata memiliki daya tarik sentimental yang mengalihkan kebosanannya. Ia menciptakan sebuah kisah romantis kecil yang akan mengubah kebosanan hidupnya: Will Ladislaw akan selalu menjadi bujangan dan tinggal di dekatnya, selalu siap sedia atas perintahnya, dan memiliki hasrat yang dipahami meskipun tidak pernah sepenuhnya diungkapkan untuknya, yang akan memancarkan nyala api yang lembut sesekali dalam adegan-adegan yang menarik. Kepergiannya merupakan kekecewaan yang sebanding, dan sangat menambah kebosanannya terhadap Middlemarch; tetapi pada awalnya ia memiliki mimpi alternatif tentang kesenangan yang akan didapatnya dari pergaulannya dengan keluarga di Quallingham. Sejak itu, masalah dalam kehidupan pernikahannya semakin dalam, dan ketiadaan bantuan lain mendorongnya untuk merenungkan dengan penuh penyesalan tentang kisah romantis tipis yang pernah ia nikmati. Pria dan wanita membuat kesalahan besar tentang gejala mereka sendiri, menganggap kerinduan mereka yang samar dan gelisah, terkadang untuk kejeniusan, terkadang untuk agama, dan lebih sering lagi untuk cinta yang besar. Will Ladislaw telah menulis surat-surat yang ramah, setengah untuknya dan setengah untuk Lydgate, dan ia telah membalasnya: perpisahan mereka, menurutnya, kemungkinan besar tidak akan final, dan perubahan yang paling ia dambakan sekarang adalah agar Lydgate pergi tinggal di London; Segalanya akan menyenangkan di London; dan dia telah mulai bekerja dengan tekad yang tenang untuk meraih hasil ini, ketika tiba-tiba datang sebuah janji yang menyenangkan yang membangkitkan semangatnya. Surat itu datang sesaat sebelum pertemuan penting di balai kota, dan tak lain adalah surat dari Will Ladislaw kepada Lydgate, yang terutama membahas minat barunya pada rencana kolonisasi, tetapi secara tidak langsung menyebutkan bahwa ia mungkin perlu mengunjungi Middlemarch dalam beberapa minggu ke depan—suatu kebutuhan yang sangat menyenangkan, katanya, hampir sama baiknya dengan liburan bagi seorang anak sekolah. Ia berharap ada tempat lamanya di karpet, dan banyak musik menantinya. Tetapi ia sama sekali tidak yakin tentang waktunya. Saat Lydgate membacakan surat itu kepada Rosamond, wajahnya tampak seperti bunga yang kembali segar—menjadi lebih cantik dan lebih mekar. Tidak ada lagi yang tak tertahankan sekarang: hutang telah dibayar, Tuan Ladislaw akan datang, dan Lydgate akan dibujuk untuk meninggalkan Middlemarch dan menetap di London, yang "sangat berbeda dari kota provinsi." Pagi itu cerah sekali. Namun tak lama kemudian langit menjadi gelap di atas Rosamond yang malang. Kehadiran kesedihan baru pada suaminya, yang selama ini ia rahasiakan sepenuhnya darinya—karena ia takut memperlihatkan perasaannya yang terluka kepada sikap netral dan kesalahpahaman istrinya—segera mendapat penjelasan yang sangat aneh dan menyakitkan, asing bagi semua gagasan sebelumnya tentang apa yang dapat memengaruhi kebahagiaannya. Dalam keceriaan barunya, berpikir bahwa Lydgate hanya mengalami suasana hati yang lebih buruk dari biasanya, yang menyebabkannya mengabaikan ucapannya, dan jelas-jelas menjauhinya sebisa mungkin, ia memilih, beberapa hari setelah pertemuan itu, dan tanpa berbicara dengannya tentang hal itu, untuk mengirimkan undangan untuk pesta kecil di malam hari, merasa yakin bahwa ini adalah langkah yang bijaksana, karena orang-orang tampaknya telah menjauh dari mereka, dan ingin mengembalikan kebiasaan lama untuk berinteraksi. Setelah undangan diterima, ia akan memberi tahu Lydgate, dan memberinya nasihat bijak tentang bagaimana seorang dokter harus berperilaku terhadap tetangganya; Karena Rosamond memiliki sikap yang sangat serius mengenai tugas orang lain. Namun semua undangan ditolak, dan jawaban terakhir sampai ke tangan Lydgate. “Ini coretan Chichely. Dia menulis tentang apa kepadamu?” kata Lydgate dengan heran sambil menyerahkan catatan itu kepadanya. Ia terpaksa memperlihatkannya kepada Lydgate, dan menatapnya dengan tajam, lalu berkata— “Mengapa kau mengirimkan undangan tanpa memberitahuku, Rosamond? Kumohon, aku bersikeras agar kau tidak mengundang siapa pun ke rumah ini. Kurasa kau telah mengundang orang lain, dan mereka juga menolak.” Ia tidak berkata apa-apa. “Kau dengar aku?” bentak Lydgate. “Ya, tentu saja aku mendengarmu,” kata Rosamond, menolehkan kepalanya dengan gerakan anggun seperti burung berleher panjang. Lydgate menggelengkan kepalanya tanpa anggun dan berjalan keluar ruangan, merasa dirinya berbahaya. Pikiran Rosamond adalah bahwa ia semakin lama semakin tak tertahankan—bukan karena ada alasan khusus baru untuk sikapnya yang tegas ini. Keengganannya untuk menceritakan apa pun yang ia yakini sebelumnya tidak akan menarik minatnya telah berkembang menjadi kebiasaan tanpa berpikir, dan Rosamond tidak tahu apa pun yang berkaitan dengan seribu pound kecuali bahwa pinjaman itu berasal dari pamannya, Bulstrode. Sifat Lydgate yang menjengkelkan dan penghindaran tetangga mereka terhadapnya memiliki kesamaan yang tak dapat dijelaskan baginya dalam hal meringankan kesulitan keuangan. Jika undangan itu diterima, ia akan pergi untuk mengundang ibunya dan yang lainnya, yang sudah beberapa hari tidak ia temui; dan sekarang ia mengenakan topinya untuk pergi dan menanyakan apa yang terjadi pada mereka semua, tiba-tiba merasa seolah-olah ada konspirasi untuk meninggalkannya dalam isolasi dengan suami yang cenderung menyinggung perasaan semua orang. Saat itu sudah lewat jam makan siang, dan ia mendapati ayah dan ibunya duduk bersama sendirian di ruang tamu. Mereka menyambutnya dengan tatapan sedih, berkata “Ya ampun, sayangku!” dan tidak lebih. Ia belum pernah melihat ayahnya tampak begitu murung; dan sambil duduk di dekatnya, ia berkata— “Ada apa, Ayah?” Dia tidak menjawab, tetapi Nyonya Vincy berkata, “Oh, sayangku, apakah kamu belum mendengar kabar apa pun? Tidak lama lagi kabar itu akan sampai kepadamu.” “Apakah ini ada hubungannya dengan Tertius?” tanya Rosamond, wajahnya pucat pasi. Pikiran tentang masalah langsung terhubung dengan hal yang selama ini tidak dapat ia pahami dari pria itu. “Oh, sayangku, ya. Membayangkan kau menikah dan terjebak dalam masalah ini. Hutang saja sudah cukup buruk, tapi ini akan lebih buruk.” “Tunggu, tunggu, Lucy,” kata Tuan Vincy. “Apakah kau belum mendengar kabar apa pun tentang pamanmu Bulstrode, Rosamond?” “Tidak, ayah,” kata si kecil yang malang, merasa seolah-olah masalah bukanlah sesuatu yang pernah dialaminya sebelumnya, melainkan kekuatan tak terlihat dengan cengkeraman besi yang membuat jiwanya lemas. Ayahnya menceritakan semuanya padanya, dan di akhir cerita berkata, “Lebih baik kau tahu, sayangku. Kurasa Lydgate harus meninggalkan kota ini. Keadaan telah berbalik melawannya. Kurasa dia tidak bisa berbuat apa-apa. Aku tidak menuduhnya melakukan kesalahan apa pun,” kata Tuan Vincy. Sebelumnya, ia selalu cenderung mencari-cari kesalahan Lydgate. Kejutan yang dialami Rosamond sangat mengerikan. Baginya, rasanya tidak ada nasib yang sekejam dan seburuk nasibnya, yaitu menikahi seorang pria yang telah menjadi pusat kecurigaan yang memalukan. Dalam banyak kasus, rasa malu adalah bagian terburuk dari kejahatan; dan dibutuhkan banyak refleksi mendalam, yang belum pernah terlintas dalam kehidupan Rosamond, agar ia pada saat-saat ini merasa bahwa masalahnya lebih ringan daripada jika suaminya diketahui telah melakukan sesuatu yang kriminal. Semua rasa malu itu seolah ada di sana. Dan ia telah menikahi pria ini dengan polosnya, dengan keyakinan bahwa ia dan keluarganya adalah kebanggaan baginya! Ia menunjukkan sikap pendiamnya yang biasa kepada orang tuanya, dan hanya mengatakan bahwa jika Lydgate melakukan seperti yang diinginkannya, ia pasti sudah meninggalkan Middlemarch sejak lama. “Dia menanggungnya melebihi apa pun,” kata ibunya saat dia tiada. “Ah, syukurlah!” kata Tuan Vincy, yang sangat terpukul. Namun Rosamond pulang dengan perasaan jijik yang beralasan terhadap suaminya. Apa yang sebenarnya telah dilakukannya—bagaimana sebenarnya perilakunya? Dia tidak tahu. Mengapa dia tidak menceritakan semuanya padanya? Dia tidak berbicara dengannya tentang hal itu, dan tentu saja dia tidak bisa berbicara dengannya. Pernah terlintas di benaknya bahwa dia akan meminta ayahnya untuk mengizinkannya pulang lagi; tetapi memikirkan prospek itu membuatnya tampak sangat suram: seorang wanita yang sudah menikah kembali tinggal bersama orang tuanya—hidup tampaknya tidak memiliki arti baginya dalam posisi seperti itu: dia tidak dapat membayangkan dirinya berada di dalamnya. Dua hari berikutnya, Lydgate mengamati perubahan pada dirinya, dan percaya bahwa dia telah mendengar kabar buruk itu. Akankah dia berbicara kepadanya tentang hal itu, atau akankah dia terus berdiam diri selamanya, yang seolah menyiratkan bahwa dia percaya Lydgate bersalah? Kita harus ingat bahwa Lydgate berada dalam keadaan pikiran yang buruk, di mana hampir semua kontak terasa menyakitkan. Tentu saja, dalam hal ini Rosamond memiliki alasan yang sama untuk mengeluh tentang sikap tertutup dan kurangnya kepercayaan dari pihak Lydgate; tetapi dalam kepahitan jiwanya, dia memaafkan dirinya sendiri;—bukankah dia berhak untuk menghindar dari tugas memberi tahu Rosamond, karena sekarang Rosamond tahu kebenarannya sehingga dia tidak memiliki dorongan untuk berbicara kepadanya? Tetapi kesadaran yang lebih dalam bahwa dia bersalah membuatnya gelisah, dan keheningan di antara mereka menjadi tak tertahankan baginya; seolah-olah mereka berdua terombang-ambing di satu bangkai kapal dan saling memalingkan muka. Ia berpikir, “Aku bodoh. Bukankah aku sudah menyerah mengharapkan apa pun? Aku punya tanggung jawab pernikahan, bukan bantuan.” Dan malam itu ia berkata— “Rosamond, apakah kamu mendengar sesuatu yang membuatmu sedih?” “Ya,” jawabnya, sambil meletakkan pekerjaannya yang sedang ia kerjakan dengan lesu dan setengah sadar, sangat berbeda dengan dirinya yang biasanya. “Apa yang telah kamu dengar?” “Semuanya, kurasa. Papa yang memberitahuku.” “Orang-orang mengira aku telah dipermalukan?” “Ya,” kata Rosamond lemah, mulai menjahit lagi secara otomatis. Keheningan menyelimuti ruangan. Lydgate berpikir, "Jika dia masih percaya padaku—sekadar tahu siapa aku sebenarnya, seharusnya dia berbicara sekarang dan mengatakan bahwa dia tidak percaya aku pantas dipermalukan." Namun Rosamond di sisi lain terus menggerakkan jari-jarinya dengan lesu. Apa pun yang akan dikatakan tentang masalah itu, dia mengharapkan akan datang dari Tertius. Apa yang dia ketahui? Dan jika dia tidak bersalah, mengapa dia tidak melakukan sesuatu untuk membersihkan namanya? Keheningan wanita itu kembali menambah kepahitan dalam suasana hati Lydgate yang muram, di mana ia terus berkata pada dirinya sendiri bahwa tak seorang pun percaya padanya—bahkan Farebrother pun tidak muncul. Ia mulai menanyai wanita itu dengan maksud agar percakapan mereka dapat menghilangkan kabut dingin yang menyelimuti mereka, tetapi ia merasa tekadnya terhambat oleh rasa kesal yang putus asa. Bahkan masalah ini, seperti yang lainnya, tampaknya dianggap wanita itu hanya miliknya sendiri. Baginya, ia selalu menjadi sosok yang terpisah, melakukan apa yang ditentangnya. Ia bangkit dari kursinya dengan dorongan marah, dan sambil memasukkan tangannya ke dalam saku, berjalan mondar-mandir di ruangan itu. Sepanjang waktu, ada kesadaran yang mendasari bahwa ia harus mengendalikan amarah ini, menceritakan semuanya kepada wanita itu, dan meyakinkannya tentang fakta-fakta tersebut. Karena ia hampir mempelajari pelajaran bahwa ia harus menyesuaikan diri dengan sifat wanita itu, dan karena wanita itu kurang bersimpati, ia harus memberi lebih banyak. Tak lama kemudian, ia kembali pada niatnya untuk membuka diri: kesempatan ini tidak boleh hilang. Jika ia bisa membuatnya merasa sungguh-sungguh bahwa ini adalah fitnah yang harus dihadapi dan bukan dihindari, dan bahwa seluruh masalah ini muncul karena kebutuhan uangnya yang sangat mendesak, maka itu akan menjadi saat yang tepat untuk mendesaknya dengan kuat agar mereka bersatu dalam tekad untuk hidup dengan uang seminimal mungkin, sehingga mereka dapat melewati masa sulit dan tetap mandiri. Ia akan menyebutkan langkah-langkah pasti yang ingin ia ambil, dan membujuknya untuk berbaik hati. Ia wajib mencoba ini—dan apa lagi yang bisa ia lakukan? Ia tidak tahu sudah berapa lama ia berjalan mondar-mandir dengan gelisah, tetapi Rosamond merasa itu sudah lama, dan berharap ia mau duduk. Ia pun mulai menganggap ini sebagai kesempatan untuk mendesak Tertius tentang apa yang seharusnya ia lakukan. Apa pun kebenaran di balik semua penderitaan ini, ada satu ketakutan yang muncul. Lydgate akhirnya duduk, bukan di kursi biasanya, tetapi di kursi yang lebih dekat dengan Rosamond, mencondongkan tubuh ke arahnya, dan menatapnya dengan serius sebelum kembali membahas topik yang menyedihkan itu. Ia telah mengendalikan dirinya sejauh ini, dan hendak berbicara dengan penuh kesungguhan, seolah-olah pada kesempatan yang tidak akan terulang lagi. Ia bahkan baru saja membuka bibirnya, ketika Rosamond, sambil menurunkan tangannya, menatapnya dan berkata— “Tentu saja, Tertius—” "Dengan baik?" “Tentu saja sekarang akhirnya kau sudah menyerah untuk tinggal di Middlemarch. Aku tidak bisa terus tinggal di sini. Ayo kita pergi ke London. Papa, dan semua orang, bilang sebaiknya kau pergi. Apa pun penderitaan yang harus kutanggung, akan lebih mudah jika aku berada di luar sini.” Lydgate merasa sangat terganggu. Alih-alih curahan kritik yang telah ia persiapkan dengan susah payah, di sini ia harus mengulangi hal yang sama lagi. Ia tidak tahan. Dengan perubahan ekspresi yang cepat, ia bangkit dan keluar dari ruangan. Mungkin jika ia cukup kuat untuk tetap teguh pada tekadnya untuk menjadi lebih baik karena Rosamond lebih lemah, malam itu mungkin akan berakhir lebih baik. Jika energinya mampu mengatasi hambatan itu, ia mungkin masih bisa memengaruhi visi dan keinginan Rosamond. Kita tidak bisa memastikan bahwa sifat apa pun, betapapun kaku atau uniknya, akan menolak pengaruh dari makhluk yang lebih besar daripada diri mereka sendiri. Mereka mungkin akan terombang-ambing dan untuk sementara waktu berubah, menjadi bagian dari jiwa yang membungkus mereka dalam semangat pergerakannya. Tetapi Lydgate yang malang merasakan sakit yang berdenyut di dalam dirinya, dan energinya tidak cukup untuk menyelesaikan tugasnya. Awal dari pemahaman dan tekad bersama tampak masih sangat jauh; bahkan, tampaknya terhalang oleh rasa usaha yang tidak berhasil. Mereka menjalani hidup dari hari ke hari dengan pikiran yang masih terpisah, Lydgate mengerjakan pekerjaannya dengan suasana putus asa, dan Rosamond merasa, dengan alasan yang cukup kuat, bahwa ia bersikap kejam. Tidak ada gunanya mengatakan apa pun kepada Tertius; tetapi ketika Will Ladislaw datang, ia bertekad untuk menceritakan semuanya kepadanya. Terlepas dari sifatnya yang pendiam, ia membutuhkan seseorang yang akan mengakui kesalahannya.</p>
-
-<div class="nav">
-  <a href="bab-lxxiv.html">⬅ Bab Lxxiv.</a>
-  <a href="bab-lxxvi.html">Bab Lxxvi. ➡</a>
-</div>
 
 </body>
 </html>

@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>AIR DITEMUKAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AIR DITEMUKAN - Bacaan digital klasik">
+<title>AIR DITEMUKAN — Perjalanan ke Dalam Perut Bumi</title>
+<meta name="description" content="Baca AIR DITEMUKAN dari buku Perjalanan ke Dalam Perut Bumi karya Jules Verne secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/air-ditemukan.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="AIR DITEMUKAN — Perjalanan ke Dalam Perut Bumi">
+  <meta property="og:description" content="Baca AIR DITEMUKAN dari buku Perjalanan ke Dalam Perut Bumi karya Jules Verne secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/air-ditemukan.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="AIR DITEMUKAN — Perjalanan ke Dalam Perut Bumi">
+  <meta name="twitter:description" content="Baca AIR DITEMUKAN dari Perjalanan ke Dalam Perut Bumi karya Jules Verne gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AIR DITEMUKAN",
+    "name": "AIR DITEMUKAN — Perjalanan ke Dalam Perut Bumi",
+    "author": {
+      "@type": "Person",
+      "name": "Jules Verne"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Perjalanan ke Dalam Perut Bumi",
+      "author": {
+        "@type": "Person",
+        "name": "Jules Verne"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/perjalanan_kedalam_perut_bumi/air-ditemukan.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Perjalanan ke Dalam Perut Bumi</a>
+    </div>
+    <h1 class="chapter-title">AIR DITEMUKAN</h1>
+    <div class="chapter-info">
+      <span>✍️ Jules Verne</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p><a id="For_a_whole_hour_I_was_trying_to"></a>Selama satu jam penuh aku mencoba memikirkan dalam otakku yang kacau balau alasan-alasan yang mungkin memengaruhi pemburu yang tampaknya tenang ini. Gagasan-gagasan paling absurd berputar-putar dalam kebingungan di benakku. Kupikir aku akan menjadi gila!</p><p><a id="But_at_last_a_noise_of_footsteps"></a>Namun akhirnya terdengar suara langkah kaki di jurang gelap itu. Hans sedang mendekat. Cahaya yang berkedip-kedip mulai berkilauan di dinding penjara kami yang gelap; lalu cahaya itu muncul sepenuhnya di mulut lorong. Hans muncul.</p><p><a id="He_drew_close_to_my_uncle__laid"></a>Dia mendekati pamanku, meletakkan tangannya di bahu pamanku, dan dengan lembut membangunkannya. Pamanku pun bangun.</p><p><a id="_What_is_the_matter___he_asked"></a>&quot;Ada apa?&quot; tanyanya.</p><p><a id="_Watten___replied_the_huntsman"></a>&quot; Watten! &quot; jawab si pemburu.</p><p><a id="No_doubt_under_the_inspiration_o"></a>Tidak diragukan lagi, di bawah pengaruh rasa sakit yang hebat, setiap orang dikaruniai kemampuan berbahasa beragam. Saya tidak tahu sepatah kata pun bahasa Denmark, namun secara naluriah saya mengerti kata yang diucapkannya.</p><p><a id="_Water__water___I_cried__clappin"></a>&quot;Air! Air!&quot; teriakku sambil bertepuk tangan dan meng gesturing seperti orang gila.</p><p><a id="_Water___repeated_my_uncle___Hva"></a>&quot;Air!&quot; ulang pamanku. &quot;Hvar?&quot; tanyanya, dalam bahasa Islandia.</p><p><a id="_Nedat___replied_Hans"></a>&quot; Nedat, &quot; jawab Hans.</p><p><a id="_Where__Down_below___I_understoo"></a>&quot;Di mana? Di bawah!&quot; Aku mengerti semuanya. Aku meraih tangan pemburu itu, dan meremasnya sementara dia menatapku tanpa menggerakkan otot wajahnya sedikit pun.</p><p><a id="The_preparations_for_our_departu_1"></a>Persiapan keberangkatan kami tidak memakan waktu lama, dan kami segera berangkat menyusuri jalan yang miring dua kaki dalam tujuh putaran. Dalam satu jam kami telah menempuh satu mil seperempat, dan turun dua ribu kaki.</p><p><a id="Then_I_began_to_hear_distinctly"></a>Kemudian aku mulai mendengar dengan jelas suara baru yang samar-samar, suara sesuatu yang bergerak di dalam dinding granit yang tebal, semacam gemuruh tumpul dan mati, seperti guntur di kejauhan. Selama bagian pertama perjalanan kami, karena tidak menemukan mata air yang dijanjikan, aku merasakan penderitaanku kembali; tetapi kemudian pamanku memberitahuku penyebab suara aneh itu.</p><p><a id="_Hans_was_not_mistaken___he_said"></a>&quot;Hans tidak salah,&quot; katanya. &quot;Yang Anda dengar adalah deru aliran air deras.&quot;</p><p><a id="_A_torrent___I_exclaimed"></a>&quot;Sebuah arus deras?&quot; seruku.</p><p><a id="_There_can_be_no_doubt__a_subter"></a>&quot;Tidak ada keraguan; sebuah sungai bawah tanah mengalir di sekitar kita.&quot;</p><p><a id="We_hurried_forward_in_the_greate"></a>Kami bergegas maju dengan penuh semangat. Aku tak lagi merasakan kelelahan. Gemuruh air di dekat kami sudah menyegarkanku. Suaranya semakin keras. Arus deras, setelah beberapa saat mengalir di atas kepala kami, kini mengalir di dalam dinding sebelah kiri, bergemuruh dan deras. Seringkali aku menyentuh dinding, berharap merasakan tanda-tanda kelembapan: Tetapi tidak ada harapan di sini.</p><p><a id="Yet_another_half_hour__another_h"></a>Namun setengah jam lagi, setengah liga lagi telah terlewati.</p><p><a id="Then_it_became_clear_that_the_hu"></a>Kemudian menjadi jelas bahwa pemburu itu tidak melangkah lebih jauh. Dipandu oleh naluri khas para pendaki gunung, ia seolah-olah merasakan aliran deras itu menembus bebatuan; tetapi ia tentu saja tidak melihat cairan berharga itu; ia sendiri tidak meminum apa pun.</p><p><a id="Soon_it_became_evident_that_if_w"></a>Segera menjadi jelas bahwa jika kami melanjutkan perjalanan, kami akan memperlebar jarak antara kami dan aliran sungai, yang suara gemericiknya semakin meredam.</p><p><a id="We_returned__Hans_stopped_where"></a>Kami kembali. Hans berhenti di tempat yang tampak paling dekat dengan arus deras. Aku duduk di dekat tembok, sementara air mengalir melewati diriku dengan jarak dua kaki dengan sangat deras. Tetapi ada tembok granit tebal di antara kami dan objek keinginan kami.</p><p><a id="Without_reflection__without_aski"></a>Tanpa berpikir panjang, tanpa bertanya apakah ada cara untuk mendapatkan air, aku menyerah pada keputusasaan.</p><p><a id="Hans_glanced_at_me_with__I_thoug"></a>Hans melirikku dengan, kupikir, senyum penuh belas kasihan.</p><p><a id="He_rose_and_took_the_lamp__I_fol"></a>Ia bangkit dan mengambil lampu. Aku mengikutinya. Ia bergerak menuju dinding. Aku mengamati. Ia menempelkan telinganya ke batu kering, dan menggerakkannya perlahan maju mundur, mendengarkan dengan saksama. Aku langsung menyadari bahwa ia sedang memeriksa untuk menemukan tempat tepat di mana suara aliran air terdengar paling keras. Ia menemukan titik itu di sisi kiri terowongan, sekitar tiga kaki dari tanah.</p><p><a id="I_was_stirred_up_with_excitement"></a>Aku diliputi kegembiraan. Aku hampir tak berani menebak apa yang akan dilakukan pemburu itu. Tetapi aku tak bisa tidak mengerti, dan bertepuk tangan serta menyemangatinya, ketika aku melihatnya memegang beliung untuk menyerang batu karang itu.</p><p><a id="_We_are_saved___I_cried"></a>&quot;Kita selamat!&quot; seruku.</p><p><a id="_Yes___cried_my_uncle__almost_fr"></a>&quot;Ya,&quot; seru pamanku, hampir histeris karena kegembiraan. &quot;Hans benar. Orang hebat! Siapa lagi kalau bukan dia yang akan memikirkan itu?&quot;</p><p><a id="Yes__who_but_he__Such_an_expedie"></a>Ya; siapa lagi kalau bukan dia? Cara seperti itu, betapapun sederhananya, tidak akan pernah terlintas dalam pikiran kami. Memang, tampaknya sangat berbahaya untuk memukul bagian struktur bumi ini dengan palu. Bayangkan jika terjadi pergeseran dan menghancurkan kita semua! Bayangkan jika arus deras menerobos dan menenggelamkan kita dalam banjir tiba-tiba! Tidak ada yang sia-sia dalam khayalan-khayalan ini. Tetapi tetap saja, ketakutan akan bebatuan yang jatuh atau banjir yang deras tidak dapat menghentikan kami sekarang; dan dahaga kami begitu hebat sehingga, untuk memuaskannya, kami akan berani menghadapi gelombang Atlantik Utara.</p><p><a id="Hans_set_about_the_task_which_my"></a>Hans mulai mengerjakan tugas yang tidak mungkin kami selesaikan bersama paman saya. Jika ketidaksabaran kami telah memberi kami kekuatan, kami pasti akan menghancurkan batu itu menjadi ribuan keping. Tapi tidak demikian dengan Hans. Dengan penuh percaya diri, ia dengan tenang menembus batu itu dengan serangkaian pukulan ringan dan terampil, membuat celah selebar enam inci di bagian luar. Saya bisa mendengar suara air mengalir yang lebih keras, dan saya membayangkan bisa merasakan cairan yang menyegarkan itu melegakan bibir saya yang kering.</p><p><a id="The_pick_had_soon_penetrated_two"></a>Alat beliung itu segera menembus sedalam dua kaki ke dalam partisi granit, dan orang kami telah bekerja selama lebih dari satu jam. Saya sangat tidak sabar. Paman saya ingin menggunakan tindakan yang lebih keras, dan saya agak kesulitan membujuknya; namun dia baru saja mengambil beliung di tangannya, ketika tiba-tiba terdengar desisan, dan semburan air menyembur dengan keras ke dinding seberang.</p><p><a id="Hans__almost_thrown_off_his_feet"></a>Hans, yang hampir terlempar karena guncangan hebat itu, mengeluarkan teriakan kesedihan dan kekecewaan, yang segera kupahami penyebabnya, ketika aku mencelupkan tanganku ke dalam semburan air yang deras, lalu menariknya kembali dengan tergesa-gesa, karena airnya sangat panas.</p><p><a id="_The_water_is_at_the_boiling_poi"></a>&quot;Airnya sudah mendidih,&quot; teriakku.</p><p><a id="_Well__never_mind__let_it_cool"></a>&quot;Ya sudahlah, biarkan saja dingin,&quot; jawab pamanku.</p><p><a id="The_tunnel_was_filling_with_stea"></a>Terowongan itu dipenuhi uap, sementara aliran air terbentuk, yang secara bertahap mengalir ke liku-liku bawah tanah, dan tak lama kemudian kami merasakan kepuasan meneguk tegukan pertama kami.</p><p><a id="Could_anything_be_more_delicious"></a>Adakah yang lebih nikmat daripada sensasi bahwa rasa haus kita yang membakar dan tak tertahankan perlahan menghilang, dan membiarkan kita menikmati kenyamanan dan kesenangan? Tapi dari mana air ini berasal? Tak masalah. Itu air; dan meskipun masih hangat, air itu menghidupkan kembali orang yang sekarat. Aku terus minum tanpa henti, dan hampir tanpa merasakan rasanya.</p><p><a id="At_last_after_a_most_delightful"></a>Akhirnya, setelah menikmati waktu yang menyenangkan dan memulihkan energi, saya berseru, <br />&quot;Wah, ini mata air yang mengandung zat besi!&quot;<br /> </p><p><a id="_Nothing_could_be_better_for_the"></a>&quot;Tidak ada yang lebih baik untuk pencernaan,&quot; kata pamanku. &quot;Kandungan zat besinya sangat tinggi. Ini akan sama baiknya bagi kita seperti pergi ke Spa, atau ke Töplitz.&quot;</p><p><a id="_Well__it_is_delicious"></a>&quot;Wah, ini enak sekali!&quot;</p><p><a id="_Of_course_it_is__water_should_b"></a>&quot;Tentu saja, air memang seharusnya begitu, karena ditemukan enam mil di bawah tanah. Rasanya seperti tinta, yang sama sekali tidak tidak enak. Betapa hebatnya sumber kekuatan yang telah ditemukan Hans untuk kita di sini. Kita akan menamainya sesuai namanya.&quot;</p><p><a id="_Agreed___I_cried"></a>&quot;Setuju,&quot; seruku.</p><p><a id="And_Hansbach_it_was_from_that_mo"></a>Dan sejak saat itu, namanya menjadi Hansbach.</p><p><a id="Hans_was_none_the_prouder__After"></a>Hans tidak merasa lebih bangga. Setelah minum sedikit, dia pergi dengan tenang ke sudut untuk beristirahat.</p><p><a id="_Now___I_said___we_must_not_lose"></a>&quot;Sekarang,&quot; kataku, &quot;kita tidak boleh kehilangan air ini.&quot;</p><p><a id="_What_is_the_use_of_troubling_ou"></a>&quot;Apa gunanya kita repot-repot?&quot; jawab pamanku. &quot;Kurasa ini tidak akan pernah gagal.&quot;</p><p><a id="_Never_mind__we_cannot_be_sure"></a>&quot;Tidak apa-apa, kita tidak bisa memastikan; mari kita isi botol air dan termos kita, lalu tutup lubangnya.&quot;</p><p><a id="My_advice_was_followed_so_far_as"></a>Saran saya diikuti sejauh mendapatkan pasokan; tetapi menutup lubang itu tidak mudah dilakukan. Percuma saja kami mengambil pecahan granit dan memasukkannya bersama benang, kami hanya melepuh tangan tanpa berhasil. Tekanannya terlalu besar, dan usaha kami sia-sia.</p><p><a id="_It_is_quite_plain___said_I___th"></a>&quot;Jelas sekali,&quot; kataku, &quot;bahwa bagian air yang lebih tinggi ini berada di ketinggian yang cukup besar. Kekuatan pancaran airnya menunjukkan hal itu.&quot;</p><p><a id="_No_doubt___answered_my_uncle"></a>&quot;Tidak diragukan lagi,&quot; jawab pamanku. &quot;Jika kolom air ini setinggi 32.000 kaki—yaitu, dari permukaan bumi, beratnya sama dengan seribu atmosfer. Tapi aku punya ide.&quot;</p><p><a id="_Well_4"></a>&quot;Dengan baik?&quot;</p><p><a id="_Why_should_we_trouble_ourselves"></a>&quot;Mengapa kita harus bersusah payah menghentikan aliran air agar tidak keluar sama sekali?&quot;</p><p><a id="_Because____Well__I_could_not_as"></a>&quot;Karena—&quot; Yah, aku tidak bisa memberikan alasan.</p><p><a id="_When_our_flasks_are_empty__wher"></a>&quot;Ketika labu kita kosong, dari mana kita akan mengisinya lagi? Bisakah kita mengetahuinya?&quot;</p><p><a id="No__there_was_no_certainty"></a>Tidak; tidak ada kepastian.</p><p><a id="_Well__let_us_allow_the_water_to"></a>&quot;Baiklah, mari kita biarkan air terus mengalir. Air itu akan mengalir ke bawah, dan akan membimbing serta menyegarkan kita.&quot;</p><p><a id="_That_is_well_planned___I_cried"></a>&quot;Rencananya sudah matang,&quot; seruku. &quot;Dengan aliran sungai ini sebagai penunjuk jalan, tidak ada alasan mengapa kita tidak akan berhasil dalam usaha kita.&quot;</p><p><a id="_Ah__my_boy__you_agree_with_me_n"></a>&quot;Ah, anakku! Sekarang kau setuju denganku,&quot; seru Profesor sambil tertawa.</p><p><a id="_I_agree_with_you_most_heartily"></a>&quot;Saya sangat setuju dengan Anda.&quot;</p><p><a id="_Well__let_us_rest_awhile__and_t"></a>&quot;Baiklah, mari kita istirahat sejenak; lalu kita akan mulai lagi.&quot;</p><p><a id="I_was_forgetting_that_it_was_nig"></a>Aku lupa bahwa saat itu sudah malam. Jam segera mengingatkanku akan hal itu; dan dalam waktu singkat, dengan perasaan segar dan bersyukur, kami bertiga pun tertidur lelap.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="kegagalan-total-air.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Kegagalan Total Air</span>
+    </a>
+    <a href="bagus-sekali-tikus-tanah-tua-apakah-kau-bisa-bekerja-di-tanah-secepat-itu.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bagus Sekali, Tikus Tanah Tua! Apakah Kau Bisa Bekerja Di Tanah Secepat Itu?</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,152 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>AIR DITEMUKAN</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Selama satu jam penuh aku mencoba memikirkan dalam otakku yang kacau balau alasan-alasan yang mungkin memengaruhi pemburu yang tampaknya tenang ini. Gagasan-gagasan paling absurd berputar-putar dalam kebingungan di benakku. Kupikir aku akan menjadi gila! Namun akhirnya terdengar suara langkah kaki di jurang gelap itu. Hans sedang mendekat. Cahaya yang berkedip-kedip mulai berkilauan di dinding penjara kami yang gelap; lalu cahaya itu muncul sepenuhnya di mulut lorong. Hans muncul. Dia mendekati pamanku, meletakkan tangannya di bahu pamanku, dan dengan lembut membangunkannya. Pamanku pun bangun. "Ada apa?" tanyanya. " Watten! " jawab si pemburu. Tidak diragukan lagi, di bawah pengaruh rasa sakit yang hebat, setiap orang dikaruniai kemampuan berbahasa beragam. Saya tidak tahu sepatah kata pun bahasa Denmark, namun secara naluriah saya mengerti kata yang diucapkannya. "Air! Air!" teriakku sambil bertepuk tangan dan meng gesturing seperti orang gila. "Air!" ulang pamanku. "Hvar?" tanyanya, dalam bahasa Islandia. " Nedat, " jawab Hans. "Di mana? Di bawah!" Aku mengerti semuanya. Aku meraih tangan pemburu itu, dan meremasnya sementara dia menatapku tanpa menggerakkan otot wajahnya sedikit pun. Persiapan keberangkatan kami tidak memakan waktu lama, dan kami segera berangkat menyusuri jalan yang miring dua kaki dalam tujuh putaran. Dalam satu jam kami telah menempuh satu mil seperempat, dan turun dua ribu kaki. Kemudian aku mulai mendengar dengan jelas suara baru yang samar-samar, suara sesuatu yang bergerak di dalam dinding granit yang tebal, semacam gemuruh tumpul dan mati, seperti guntur di kejauhan. Selama bagian pertama perjalanan kami, karena tidak menemukan mata air yang dijanjikan, aku merasakan penderitaanku kembali; tetapi kemudian pamanku memberitahuku penyebab suara aneh itu. "Hans tidak salah," katanya. "Yang Anda dengar adalah deru aliran air deras." "Sebuah arus deras?" seruku. "Tidak ada keraguan; sebuah sungai bawah tanah mengalir di sekitar kita." Kami bergegas maju dengan penuh semangat. Aku tak lagi merasakan kelelahan. Gemuruh air di dekat kami sudah menyegarkanku. Suaranya semakin keras. Arus deras, setelah beberapa saat mengalir di atas kepala kami, kini mengalir di dalam dinding sebelah kiri, bergemuruh dan deras. Seringkali aku menyentuh dinding, berharap merasakan tanda-tanda kelembapan: Tetapi tidak ada harapan di sini. Namun setengah jam lagi, setengah liga lagi telah terlewati. Kemudian menjadi jelas bahwa pemburu itu tidak melangkah lebih jauh. Dipandu oleh naluri khas para pendaki gunung, ia seolah-olah merasakan aliran deras itu menembus bebatuan; tetapi ia tentu saja tidak melihat cairan berharga itu; ia sendiri tidak meminum apa pun. Segera menjadi jelas bahwa jika kami melanjutkan perjalanan, kami akan memperlebar jarak antara kami dan aliran sungai, yang suara gemericiknya semakin meredam. Kami kembali. Hans berhenti di tempat yang tampak paling dekat dengan arus deras. Aku duduk di dekat tembok, sementara air mengalir melewati diriku dengan jarak dua kaki dengan sangat deras. Tetapi ada tembok granit tebal di antara kami dan objek keinginan kami. Tanpa berpikir panjang, tanpa bertanya apakah ada cara untuk mendapatkan air, aku menyerah pada keputusasaan. Hans melirikku dengan, kupikir, senyum penuh belas kasihan. Ia bangkit dan mengambil lampu. Aku mengikutinya. Ia bergerak menuju dinding. Aku mengamati. Ia menempelkan telinganya ke batu kering, dan menggerakkannya perlahan maju mundur, mendengarkan dengan saksama. Aku langsung menyadari bahwa ia sedang memeriksa untuk menemukan tempat tepat di mana suara aliran air terdengar paling keras. Ia menemukan titik itu di sisi kiri terowongan, sekitar tiga kaki dari tanah. Aku diliputi kegembiraan. Aku hampir tak berani menebak apa yang akan dilakukan pemburu itu. Tetapi aku tak bisa tidak mengerti, dan bertepuk tangan serta menyemangatinya, ketika aku melihatnya memegang beliung untuk menyerang batu karang itu. "Kita selamat!" seruku. "Ya," seru pamanku, hampir histeris karena kegembiraan. "Hans benar. Orang hebat! Siapa lagi kalau bukan dia yang akan memikirkan itu?" Ya; siapa lagi kalau bukan dia? Cara seperti itu, betapapun sederhananya, tidak akan pernah terlintas dalam pikiran kami. Memang, tampaknya sangat berbahaya untuk memukul bagian struktur bumi ini dengan palu. Bayangkan jika terjadi pergeseran dan menghancurkan kita semua! Bayangkan jika arus deras menerobos dan menenggelamkan kita dalam banjir tiba-tiba! Tidak ada yang sia-sia dalam khayalan-khayalan ini. Tetapi tetap saja, ketakutan akan bebatuan yang jatuh atau banjir yang deras tidak dapat menghentikan kami sekarang; dan dahaga kami begitu hebat sehingga, untuk memuaskannya, kami akan berani menghadapi gelombang Atlantik Utara. Hans mulai mengerjakan tugas yang tidak mungkin kami selesaikan bersama paman saya. Jika ketidaksabaran kami telah memberi kami kekuatan, kami pasti akan menghancurkan batu itu menjadi ribuan keping. Tapi tidak demikian dengan Hans. Dengan penuh percaya diri, ia dengan tenang menembus batu itu dengan serangkaian pukulan ringan dan terampil, membuat celah selebar enam inci di bagian luar. Saya bisa mendengar suara air mengalir yang lebih keras, dan saya membayangkan bisa merasakan cairan yang menyegarkan itu melegakan bibir saya yang kering. Alat beliung itu segera menembus sedalam dua kaki ke dalam partisi granit, dan orang kami telah bekerja selama lebih dari satu jam. Saya sangat tidak sabar. Paman saya ingin menggunakan tindakan yang lebih keras, dan saya agak kesulitan membujuknya; namun dia baru saja mengambil beliung di tangannya, ketika tiba-tiba terdengar desisan, dan semburan air menyembur dengan keras ke dinding seberang. Hans, yang hampir terlempar karena guncangan hebat itu, mengeluarkan teriakan kesedihan dan kekecewaan, yang segera kupahami penyebabnya, ketika aku mencelupkan tanganku ke dalam semburan air yang deras, lalu menariknya kembali dengan tergesa-gesa, karena airnya sangat panas. "Airnya sudah mendidih," teriakku. "Ya sudahlah, biarkan saja dingin," jawab pamanku. Terowongan itu dipenuhi uap, sementara aliran air terbentuk, yang secara bertahap mengalir ke liku-liku bawah tanah, dan tak lama kemudian kami merasakan kepuasan meneguk tegukan pertama kami. Adakah yang lebih nikmat daripada sensasi bahwa rasa haus kita yang membakar dan tak tertahankan perlahan menghilang, dan membiarkan kita menikmati kenyamanan dan kesenangan? Tapi dari mana air ini berasal? Tak masalah. Itu air; dan meskipun masih hangat, air itu menghidupkan kembali orang yang sekarat. Aku terus minum tanpa henti, dan hampir tanpa merasakan rasanya. Akhirnya, setelah menikmati waktu yang menyenangkan dan memulihkan energi, saya berseru, "Wah, ini mata air yang mengandung zat besi!"</p>
-<p>"Tidak ada yang lebih baik untuk pencernaan," kata pamanku. "Kandungan zat besinya sangat tinggi. Ini akan sama baiknya bagi kita seperti pergi ke Spa, atau ke Töplitz." "Wah, ini enak sekali!" "Tentu saja, air memang seharusnya begitu, karena ditemukan enam mil di bawah tanah. Rasanya seperti tinta, yang sama sekali tidak tidak enak. Betapa hebatnya sumber kekuatan yang telah ditemukan Hans untuk kita di sini. Kita akan menamainya sesuai namanya." "Setuju," seruku. Dan sejak saat itu, namanya menjadi Hansbach. Hans tidak merasa lebih bangga. Setelah minum sedikit, dia pergi dengan tenang ke sudut untuk beristirahat. "Sekarang," kataku, "kita tidak boleh kehilangan air ini." "Apa gunanya kita repot-repot?" jawab pamanku. "Kurasa ini tidak akan pernah gagal." "Tidak apa-apa, kita tidak bisa memastikan; mari kita isi botol air dan termos kita, lalu tutup lubangnya." Saran saya diikuti sejauh mendapatkan pasokan; tetapi menutup lubang itu tidak mudah dilakukan. Percuma saja kami mengambil pecahan granit dan memasukkannya bersama benang, kami hanya melepuh tangan tanpa berhasil. Tekanannya terlalu besar, dan usaha kami sia-sia. "Jelas sekali," kataku, "bahwa bagian air yang lebih tinggi ini berada di ketinggian yang cukup besar. Kekuatan pancaran airnya menunjukkan hal itu." "Tidak diragukan lagi," jawab pamanku. "Jika kolom air ini setinggi 32.000 kaki—yaitu, dari permukaan bumi, beratnya sama dengan seribu atmosfer. Tapi aku punya ide." "Dengan baik?" "Mengapa kita harus bersusah payah menghentikan aliran air agar tidak keluar sama sekali?" "Karena—" Yah, aku tidak bisa memberikan alasan. "Ketika labu kita kosong, dari mana kita akan mengisinya lagi? Bisakah kita mengetahuinya?" Tidak; tidak ada kepastian. "Baiklah, mari kita biarkan air terus mengalir. Air itu akan mengalir ke bawah, dan akan membimbing serta menyegarkan kita." "Rencananya sudah matang," seruku. "Dengan aliran sungai ini sebagai penunjuk jalan, tidak ada alasan mengapa kita tidak akan berhasil dalam usaha kita." "Ah, anakku! Sekarang kau setuju denganku," seru Profesor sambil tertawa. "Saya sangat setuju dengan Anda." "Baiklah, mari kita istirahat sejenak; lalu kita akan mulai lagi." Aku lupa bahwa saat itu sudah malam. Jam segera mengingatkanku akan hal itu; dan dalam waktu singkat, dengan perasaan segar dan bersyukur, kami bertiga pun tertidur lelap.</p>
-
-<div class="nav">
-  <a href="kegagalan-total-air.html">⬅ Kegagalan Total Air</a>
-  <a href="bagus-sekali-tikus-tanah-tua-apakah-kau-bisa-bekerja-di-tanah-secepat-itu.html">Bagus Sekali, Tikus Tanah Tua! Apakah Kau Bisa Bekerja Di Tanah Secepat Itu? ➡</a>
-</div>
 
 </body>
 </html>

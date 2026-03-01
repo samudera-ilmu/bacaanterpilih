@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB III</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB III - Bacaan digital klasik">
+<title>BAB III — Wuthering Heights</title>
+<meta name="description" content="Baca BAB III dari buku Wuthering Heights karya Emily Brontë secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/wuthering_heights/bab-iii.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB III — Wuthering Heights">
+  <meta property="og:description" content="Baca BAB III dari buku Wuthering Heights karya Emily Brontë secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/wuthering_heights/bab-iii.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/wuthering_heights/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB III — Wuthering Heights">
+  <meta name="twitter:description" content="Baca BAB III dari Wuthering Heights karya Emily Brontë gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/wuthering_heights/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB III",
+    "name": "BAB III — Wuthering Heights",
+    "author": {
+      "@type": "Person",
+      "name": "Emily Brontë"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Wuthering Heights",
+      "author": {
+        "@type": "Person",
+        "name": "Emily Brontë"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/wuthering_heights/bab-iii.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Wuthering Heights</a>
+    </div>
+    <h1 class="chapter-title">BAB III</h1>
+    <div class="chapter-info">
+      <span>✍️ Emily Brontë</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Sambil menuntunku ke lantai atas, dia menyarankan agar aku menyembunyikan lilin dan tidak membuat suara; karena majikannya punya gagasan aneh tentang kamar yang akan dia tempatkan untukku, dan tidak pernah membiarkan siapa pun tinggal di sana dengan sukarela. Aku bertanya alasannya. Dia tidak tahu, jawabnya: dia baru tinggal di sana satu atau dua tahun; dan mereka memiliki begitu banyak kejadian aneh, dia tidak mungkin penasaran.</p><p>Terlalu tercengang untuk merasa penasaran, saya mengunci pintu dan melirik ke sekeliling mencari tempat tidur. Seluruh perabotannya terdiri dari sebuah kursi, lemari pakaian, dan sebuah lemari kayu ek besar, dengan lubang-lubang persegi di dekat bagian atasnya yang menyerupai jendela kereta kuda. Setelah mendekati bangunan itu, saya melihat ke dalamnya, dan menyadari bahwa itu adalah semacam sofa kuno yang unik, dirancang dengan sangat nyaman untuk menghilangkan kebutuhan setiap anggota keluarga memiliki kamar sendiri. Bahkan, itu berfungsi sebagai lemari kecil, dan ambang jendela yang dikelilinginya berfungsi sebagai meja.</p><p>Aku menggeser sisi-sisi yang berpanel ke belakang, masuk dengan lampuku, menyatukannya kembali, dan merasa aman dari kewaspadaan Heathcliff, dan semua orang lainnya.</p><p>Di tepian tempat saya meletakkan lilin, terdapat beberapa buku berjamur yang menumpuk di salah satu sudutnya; dan permukaannya dipenuhi coretan tulisan di cat. Namun, tulisan itu hanyalah sebuah nama yang diulang-ulang dalam berbagai macam huruf, besar dan kecil— Catherine Earnshaw , di sana-sini berubah menjadi Catherine Heathcliff , dan kemudian lagi menjadi Catherine Linton .</p><p>Dalam kelesuan yang hambar, aku menyandarkan kepalaku ke jendela, dan terus mengeja Catherine Earnshaw—Heathcliff—Linton, sampai mataku terpejam; tetapi belum lima menit berlalu ketika seberkas huruf putih muncul dari kegelapan, sejelas hantu—udara dipenuhi dengan nama-nama Catherine; dan untuk mengusir nama yang mengganggu itu, aku mendapati sumbu lilinku tergeletak di salah satu buku antik, dan mengharumkan tempat itu dengan aroma kulit sapi panggang.</p><p>Aku memadamkannya, dan, merasa sangat tidak nyaman karena pengaruh flu dan mual yang berkepanjangan, aku duduk dan membuka buku yang rusak di pangkuanku. Itu adalah Perjanjian Baru, dengan huruf tipis, dan baunya sangat apak: halaman pembuka bertuliskan—&quot;Catherine Earnshaw, bukunya,&quot; dan tanggal sekitar seperempat abad yang lalu.</p><p>Aku menutupnya, lalu mengambil buku lain dan buku lainnya lagi, sampai aku memeriksa semuanya. Perpustakaan Catherine adalah koleksi pilihan, dan kondisinya yang lusuh membuktikan bahwa perpustakaan itu telah digunakan dengan baik, meskipun tidak sepenuhnya untuk tujuan yang sah: hampir tidak ada satu bab pun yang luput dari komentar tulisan tangan—setidaknya tampak seperti itu—yang menutupi setiap bagian kosong yang ditinggalkan oleh pencetak. Beberapa berupa kalimat terpisah; bagian lain berbentuk buku harian biasa, ditulis dengan tulisan tangan yang belum terbentuk dan kekanak-kanakan. Di bagian atas halaman tambahan (yang mungkin merupakan harta karun ketika pertama kali ditemukan), aku sangat terhibur melihat karikatur yang sangat bagus dari temanku Joseph,—digambar secara kasar, namun penuh kekuatan. Ketertarikan langsung muncul dalam diriku terhadap Catherine yang tidak kukenal, dan aku segera mulai menguraikan hieroglifnya yang pudar.</p><p>“Hari Minggu yang mengerikan,” demikian paragraf di bawahnya dimulai. “Aku berharap ayahku kembali lagi. Hindley adalah pengganti yang menjijikkan—perilakunya terhadap Heathcliff sangat buruk—H. dan aku akan memberontak—kami telah mengambil langkah pertama kami malam ini.”</p><p>“Seharian hujan deras mengguyur; kami tidak bisa pergi ke gereja, jadi Joseph harus mengumpulkan jemaat di loteng; dan, sementara Hindley dan istrinya bersantai di lantai bawah di depan perapian yang nyaman—melakukan apa pun kecuali membaca Alkitab mereka, saya jamin—Heathcliff, saya sendiri, dan si anak petani yang malang diperintahkan untuk mengambil buku doa kami, dan naik: kami berbaris di atas karung jagung, mengerang dan menggigil, dan berharap Joseph juga akan menggigil, sehingga dia bisa memberi kami khotbah singkat demi dirinya sendiri. Ide yang sia-sia! Ibadah berlangsung tepat tiga jam; namun saudara laki-laki saya masih berani berseru, ketika dia melihat kami turun, 'Apa, sudah selesai?' Pada Minggu malam kami biasanya diizinkan bermain, jika kami tidak membuat banyak kebisingan; sekarang hanya tawa kecil saja sudah cukup untuk membuat kami disuruh ke pojok ruangan.”</p><p>“'Kau lupa kau punya tuan di sini,' kata si tiran. 'Aku akan menghancurkan siapa pun yang membuatku marah! Aku bersikeras untuk selalu tenang dan diam. Oh, Nak! Apakah itu kau? Frances sayang, tarik rambutnya saat kau lewat: Aku mendengar dia menjentikkan jarinya.' Frances menarik rambutnya dengan penuh semangat, lalu pergi dan duduk di pangkuan suaminya, dan di sana mereka berdua, seperti dua bayi, berciuman dan berbicara omong kosong berjam-jam—obrolan bodoh yang seharusnya kita malu. Kami membuat diri kami senyaman mungkin di lengkungan lemari. Aku baru saja mengikat celemek kami bersama-sama, dan menggantungnya sebagai tirai, ketika Joseph masuk, dalam perjalanan dari kandang. Dia merobek hasil kerjaku, memukul telingaku, dan berteriak:</p><p>“'T' maister nobbut just buried, and Sabbath not o'ered, und t' sound o' t' gospel still i' yer lugs, and ye darr be laiking! Malu kalian! Duduklah, anak-anak nakal! Ada banyak buku bagus jika kalian mau membacanya: duduklah, dan pikirkan jiwa kalian!'</p><p>“Setelah mengatakan itu, dia memaksa kami untuk mengatur posisi kami sedemikian rupa sehingga kami dapat menerima sinar redup dari api yang jauh untuk menunjukkan kepada kami teks buku tebal yang dia berikan kepada kami. Aku tidak tahan dengan pekerjaan itu. Aku mengambil buku lusuhku dari pegangannya, dan melemparkannya ke kandang anjing, bersumpah bahwa aku membenci buku yang bagus. Heathcliff menendang bukunya ke tempat yang sama. Lalu terjadilah keributan!”</p><p>“'Tuan Hindley!' teriak pendeta kami. 'Tuan, kemarilah! Nona Cathy merobek bagian belakang 'Helm Keselamatan', dan Heathcliff menyeret kakinya ke bagian pertama 'Jalan Lebar Menuju Kehancuran'! Sungguh menjijikkan kau membiarkan mereka berjalan seperti ini. Eh! Orang tua itu seharusnya mengikatnya dengan benar—tapi dia sudah pergi!'</p><p>“Hindley bergegas dari surganya di perapian, dan mencengkeram kerah salah satu dari kami, dan lengan yang lain, lalu melemparkan keduanya ke dapur belakang; di mana, Joseph menegaskan, 'Nick tua' pasti akan menjemput kami: dan, merasa terhibur, kami masing-masing mencari tempat tersisih untuk menunggu kedatangannya. Aku mengambil buku ini, dan sebotol tinta dari rak, lalu mendorong pintu rumah sedikit agar mendapat penerangan, dan aku mulai menulis selama dua puluh menit; tetapi temanku tidak sabar, dan mengusulkan agar kita mengambil jubah wanita pemerah susu, dan berlarian di padang rumput, di bawah naungannya. Sebuah saran yang menyenangkan—dan kemudian, jika lelaki tua yang pemarah itu masuk, dia mungkin percaya ramalannya telah terbukti—kita tidak akan lebih basah, atau lebih dingin, di tengah hujan daripada di sini.”</p><p>*** * * * *</p><p>Kurasa Catherine telah menyelesaikan proyeknya, karena kalimat berikutnya membahas topik lain: dia menangis tersedu-sedu.</p><p>“Betapa tak pernah kubayangkan Hindley akan membuatku menangis seperti ini!” tulisnya. “Kepalaku sakit sekali, sampai aku tak bisa meletakkannya di bantal; dan aku masih tak bisa menyerah. Kasihan Heathcliff! Hindley menyebutnya gelandangan, dan tak mengizinkannya duduk bersama kami, atau makan bersama kami lagi; dan, katanya, aku dan dia tidak boleh bermain bersama, dan mengancam akan mengusirnya dari rumah jika kami melanggar perintahnya. Dia menyalahkan ayah kami (beraninya dia?) karena memperlakukan H. terlalu murah hati; dan bersumpah akan menempatkannya pada tempatnya yang seharusnya—”</p><p>*** * * * *</p><p>Aku mulai mengangguk-angguk lesu di atas halaman yang redup: mataku berkelana dari manuskrip ke cetakan. Aku melihat judul berhias merah—&quot;Tujuh Puluh Kali Tujuh, dan Yang Pertama dari Tujuh Puluh Satu. Sebuah Ceramah Saleh yang disampaikan oleh Pendeta Jabez Branderham, di Kapel Gimmerden Sough.&quot; Dan sementara aku, setengah sadar, memeras otakku untuk menebak apa yang akan Jabez Branderham pikirkan tentang subjeknya, aku kembali berbaring di tempat tidur, dan tertidur. Sayang sekali, akibat teh yang buruk dan suasana hati yang buruk! Apa lagi yang bisa membuatku melewati malam yang mengerikan seperti itu? Aku tidak ingat malam lain yang bisa kubandingkan dengannya sejak aku mampu menderita.</p><p>Aku mulai bermimpi, hampir sebelum aku kehilangan kesadaran akan tempatku berada. Kupikir sudah pagi; dan aku telah berangkat pulang, dengan Joseph sebagai pemandu. Salju menumpuk setinggi beberapa meter di jalan kami; dan, saat kami tertatih-tatih, temanku terus-menerus mencelaku karena tidak membawa tongkat peziarah: mengatakan bahwa aku tidak akan pernah bisa masuk rumah tanpa tongkat itu, dan dengan sombong mengacungkan tongkat berat berkepala besar, yang kupahami sebagai tongkat peziarah. Untuk sesaat aku menganggapnya tidak masuk akal bahwa aku membutuhkan senjata seperti itu untuk masuk ke rumahku sendiri. Kemudian sebuah ide baru terlintas di benakku. Aku tidak akan pergi ke sana: kami sedang dalam perjalanan untuk mendengarkan khotbah Jabez Branderham yang terkenal, dari teks—&quot;Tujuh Puluh Kali Tujuh&quot;; dan entah Joseph, sang pengkhotbah, atau aku telah melakukan &quot;Yang Pertama dari Tujuh Puluh Satu,&quot; dan akan diungkapkan secara publik dan dikucilkan.</p><p>Kami sampai di kapel. Aku sudah melewatinya saat berjalan-jalan, dua atau tiga kali; letaknya di lembah, di antara dua bukit: lembah yang tinggi, dekat rawa, yang konon kelembapan gambutnya sangat cocok untuk mengawetkan beberapa mayat yang dimakamkan di sana. Atapnya masih utuh sampai sekarang; tetapi karena gaji pendeta hanya dua puluh pound per tahun, dan rumah dengan dua kamar, yang terancam segera menjadi satu kamar, tidak ada pendeta yang mau menjalankan tugas sebagai pastor: terutama karena saat ini dilaporkan bahwa jemaatnya lebih memilih membiarkannya kelaparan daripada menambah penghasilannya satu sen pun dari kantong mereka sendiri. Namun, dalam mimpiku, Jabez memiliki jemaat yang penuh dan penuh perhatian; dan dia berkhotbah—ya Tuhan! khotbah yang luar biasa; dibagi menjadi empat ratus sembilan puluh bagian, masing-masing sama persis dengan pidato biasa dari mimbar, dan masing-masing membahas dosa yang berbeda! Di mana dia mencarinya, aku tidak tahu. Dia memiliki cara sendiri untuk menafsirkan ungkapan itu, dan tampaknya perlu bagi saudara itu untuk melakukan dosa yang berbeda pada setiap kesempatan. Tindakan-tindakan itu sangat aneh: pelanggaran-pelanggaran ganjil yang tidak pernah saya bayangkan sebelumnya.</p><p>Oh, betapa lelahnya aku. Betapa aku menggeliat, menguap, mengangguk, dan kemudian pulih! Betapa aku mencubit dan menusuk diriku sendiri, menggosok mataku, berdiri, dan duduk lagi, dan menyenggol Joseph untuk memberitahuku apakah dia akan pernah selesai. Aku terpaksa mendengarkan semuanya: akhirnya, dia sampai pada &quot; Yang Pertama dari Tujuh Puluh Satu &quot;. Pada saat kritis itu, sebuah inspirasi tiba-tiba turun kepadaku; aku tergerak untuk bangkit dan mengecam Jabez Branderham sebagai pendosa dari dosa yang tidak perlu diampuni oleh seorang Kristen pun.</p><p>“Tuan,” seruku, “duduk di sini di dalam empat dinding ini, tanpa henti, aku telah menanggung dan memaafkan empat ratus sembilan puluh poin dari ceramahmu. Tujuh puluh kali tujuh kali aku telah mengangkat topi dan hendak pergi—Tujuh puluh kali tujuh kali kau dengan tidak masuk akal memaksaku untuk kembali duduk. Poin ke empat ratus sembilan puluh satu sudah terlalu banyak. Saudara-saudari martir, serang dia! Seret dia ke bawah, dan hancurkan dia sampai berkeping-keping, agar tempat yang mengenalnya tidak mengenalnya lagi!”</p><p>“ Engkaulah Manusia itu! ” seru Yabes, setelah terdiam sejenak, sambil mencondongkan tubuh di atas bantalnya. “Tujuh puluh kali tujuh kali engkau memutar-mutar wajahmu dengan mulut ternganga—tujuh puluh kali tujuh kali aku berunding dengan jiwaku—Lihatlah, ini adalah kelemahan manusia: ini pun dapat diampuni! Yang Pertama dari Tujuh Puluh Satu telah datang. Saudara-saudara, laksanakanlah penghakiman yang tertulis atas Dia. Kehormatan seperti itulah yang dimiliki oleh semua orang kudus-Nya!”</p><p>Dengan kata penutup itu, seluruh jemaah, sambil mengangkat tongkat peziarah mereka, bergegas mengelilingi saya; dan saya, karena tidak memiliki senjata untuk membela diri, mulai bergulat dengan Joseph, penyerang terdekat dan paling ganas saya, untuk merebut senjatanya. Di tengah kerumunan, beberapa tongkat saling beradu; pukulan yang ditujukan kepada saya mengenai dinding-dinding lainnya. Tak lama kemudian seluruh kapel bergema dengan ketukan dan balasan ketukan: setiap tangan orang melawan tetangganya; dan Branderham, yang tidak ingin berdiam diri, melampiaskan semangatnya dengan serangkaian ketukan keras pada papan mimbar, yang merespons dengan sangat cepat sehingga, akhirnya, dengan rasa lega yang tak terkatakan, mereka membangunkan saya. Dan apa yang telah memicu keributan hebat itu? Apa peran Jabez dalam keributan itu? Hanya cabang pohon cemara yang menyentuh kisi-kisi saya saat angin bertiup kencang, dan menggoyangkan kerucut keringnya ke kaca jendela! Aku mendengarkan dengan ragu sejenak; mendeteksi sumber gangguan, lalu berbalik dan tertidur, dan bermimpi lagi: jika mungkin, lebih mengerikan dari sebelumnya.</p><p>Kali ini, aku ingat aku sedang berbaring di lemari kayu ek, dan aku mendengar dengan jelas angin kencang dan deru salju; aku juga mendengar dahan pohon cemara itu mengulangi suara mengganggunya, dan aku menganggapnya sebagai penyebab yang tepat: tetapi itu sangat menggangguku, sehingga aku memutuskan untuk membungkamnya, jika mungkin; dan, pikirku, aku bangkit dan berusaha membuka kait jendela. Kait itu disolder ke staples: suatu hal yang kuamati saat terjaga, tetapi kulupakan. &quot;Aku harus menghentikannya!&quot; gumamku, mengetuk-ngetuk buku jariku menembus kaca, dan mengulurkan tangan untuk meraih dahan yang mengganggu itu; alih-alih meraihnya, jari-jariku malah mencengkeram jari-jari tangan kecil yang dingin seperti es!</p><p>Kengerian mimpi buruk yang mencekam menghampiriku: aku mencoba menarik lenganku, tetapi tangan itu mencengkeramnya, dan suara yang sangat melankolis terisak-isak,</p><p>“Biarkan aku masuk—biarkan aku masuk!”</p><p>“Siapakah kamu?” tanyaku, sambil berusaha melepaskan diri.</p><p>“Catherine Linton,” jawabnya sambil gemetar (mengapa aku teringat Linton ? Aku sudah membaca karya Earnshaw dua puluh kali hanya untuk mencari Linton)—“Aku pulang: aku tersesat di padang rumput!”</p><p>Saat ia berbicara, samar-samar aku melihat wajah seorang anak mengintip dari jendela. Rasa takut membuatku kejam; dan, karena tidak ada gunanya mencoba melepaskan makhluk itu, aku menarik pergelangan tangannya ke kaca jendela yang pecah, dan menggosoknya bolak-balik sampai darah mengalir dan membasahi seprai: ia masih merengek, “Biarkan aku masuk!” dan terus mencengkeram dengan kuat, hampir membuatku gila karena takut.</p><p>“Bagaimana mungkin!” kataku akhirnya. “Lepaskan aku , jika kau ingin aku membiarkanmu masuk!”</p><p>Jari-jariku rileks, aku menarik jariku melalui lubang itu, buru-buru menumpuk buku-buku itu menjadi piramida di depannya, dan menutup telingaku untuk menahan suara doa yang menyedihkan itu.</p><p>Aku sepertinya menutup telingaku selama lebih dari seperempat jam; namun, begitu aku mendengarkan lagi, terdengar lagi tangisan memilukan yang menyedihkan!</p><p>“Pergi!” teriakku. “Aku tidak akan pernah membiarkanmu masuk, tidak meskipun kau memohon selama dua puluh tahun.”</p><p>“Sudah dua puluh tahun,” ratap suara itu: “dua puluh tahun. Aku telah menjadi anak yatim piatu selama dua puluh tahun!”</p><p>Kemudian terdengar suara garukan lemah di luar, dan tumpukan buku itu bergerak seolah didorong ke depan.</p><p>Aku mencoba melompat; tetapi tidak bisa menggerakkan anggota tubuhku; lalu berteriak keras, dalam keadaan ketakutan yang luar biasa.</p><p>Aku bingung, aku menyadari teriakan itu tidak tepat: langkah kaki tergesa-gesa mendekati pintu kamarku; seseorang mendorongnya hingga terbuka dengan kuat, dan cahaya berkilauan menembus celah-celah di bagian atas tempat tidur. Aku masih duduk gemetar, sambil menyeka keringat dari dahiku: penyusup itu tampak ragu-ragu, dan bergumam sendiri.</p><p>Akhirnya, katanya, dengan suara setengah berbisik, jelas tidak mengharapkan jawaban,</p><p>“Apakah ada orang di sini?”</p><p>Saya merasa lebih baik mengakui keberadaan saya; karena saya mengenal aksen Heathcliff, dan takut dia akan menyelidiki lebih lanjut jika saya tetap diam.</p><p>Dengan niat itu, aku berbalik dan membuka panel-panel tersebut. Aku tidak akan segera melupakan dampak yang dihasilkan oleh tindakanku itu.</p><p>Heathcliff berdiri di dekat pintu masuk, hanya mengenakan kemeja dan celana; lilin menetes di jari-jarinya, dan wajahnya sepucat dinding di belakangnya. Derit pertama kayu ek itu mengejutkannya seperti sengatan listrik: cahaya itu melesat dari genggamannya hingga beberapa meter jauhnya, dan kegelisahannya begitu hebat sehingga ia hampir tidak dapat menangkapnya.</p><p>“Ini hanya tamu Anda, Tuan,” seru saya, ingin menyelamatkannya dari penghinaan lebih lanjut karena menunjukkan rasa pengecutnya. “Saya sialnya berteriak dalam tidur saya, karena mimpi buruk yang mengerikan. Maaf telah mengganggu Anda.”</p><p>“Ya Tuhan, sialan kau, Tuan Lockwood! Kuharap kau ada di—” tuan rumahku memulai, meletakkan lilin di atas kursi, karena ia kesulitan memegangnya dengan stabil. “Dan siapa yang membawamu ke ruangan ini?” lanjutnya, mencengkeram telapak tangannya dengan kuku, dan menggertakkan giginya untuk meredakan kejang rahangnya. “Siapa itu? Aku ingin sekali mengusirnya dari rumah ini sekarang juga!”</p><p>“Itu pelayanmu, Zillah,” jawabku, sambil menjatuhkan diri ke lantai dan segera mengenakan kembali pakaianku. “Aku tidak peduli jika kau peduli, Tuan Heathcliff; dia memang pantas mendapatkannya. Kurasa dia ingin mendapatkan bukti lain bahwa tempat ini berhantu, dengan mengorbankanku. Ya, memang berhantu—penuh dengan hantu dan goblin! Kau punya alasan untuk menutupnya, aku jamin. Tidak ada yang akan berterima kasih padamu karena bisa tidur siang di sarang seperti itu!”</p><p>“Apa maksudmu?” tanya Heathcliff, “dan apa yang kau lakukan? Berbaringlah dan habiskan malam ini, karena kau sudah di sini; tapi, demi Tuhan! jangan ulangi suara mengerikan itu: tidak ada yang bisa membenarkannya, kecuali jika lehermu sedang digorok!”</p><p>“Kalau si iblis kecil itu masuk lewat jendela, dia mungkin sudah mencekikku!” jawabku. “Aku tidak akan menanggung penganiayaan dari leluhurmu yang ramah itu lagi. Bukankah Pendeta Jabez Branderham kerabatmu dari pihak ibu? Dan si jalang itu, Catherine Linton, atau Earnshaw, atau apa pun namanya—dia pasti anak yang tertukar—jiwa kecil yang jahat! Dia bilang dia sudah berkeliaran di bumi selama dua puluh tahun: hukuman yang setimpal atas pelanggaran fana yang dilakukannya, aku yakin!”</p><p>Kata-kata itu belum selesai terucap ketika saya teringat akan keterkaitan nama Heathcliff dengan nama Catherine di dalam buku itu, yang sama sekali telah hilang dari ingatan saya, hingga saya terbangun karena hal ini. Saya tersipu karena ketidakpedulian saya: tetapi, tanpa menunjukkan kesadaran lebih lanjut akan kesalahan itu, saya segera menambahkan—&quot;Sejujurnya, Tuan, saya menghabiskan sebagian besar malam dengan—&quot; Di sini saya berhenti lagi—saya hendak mengatakan &quot;membaca buku-buku tua itu,&quot; karena itu akan mengungkapkan pengetahuan saya tentang isi tertulis maupun tercetaknya; jadi, mengoreksi diri sendiri, saya melanjutkan—&quot;mengeja nama yang tergores di ambang jendela itu. Suatu kegiatan yang monoton, yang bisa membuat saya tertidur, seperti menghitung, atau—&quot;</p><p>“Apa maksudmu bicara seperti ini padaku ! ” bentak Heathcliff dengan amarah yang meluap-luap. “Bagaimana—bagaimana kau berani , di bawah atapku?—Astaga! Dia gila bicara seperti itu!” Dan dia memukul dahinya dengan marah.</p><p>Aku tidak tahu apakah harus tersinggung dengan bahasa itu atau melanjutkan penjelasanku; tetapi dia tampak begitu terpengaruh sehingga aku merasa kasihan dan melanjutkan mimpiku; menegaskan bahwa aku belum pernah mendengar sebutan &quot;Catherine Linton&quot; sebelumnya, tetapi membacanya berulang kali menghasilkan kesan yang menjadi nyata ketika imajinasiku tidak lagi terkendali. Heathcliff perlahan-lahan kembali ke tempat tidur, saat aku berbicara; akhirnya duduk hampir tersembunyi di baliknya. Namun, aku menduga, dari napasnya yang tidak teratur dan terputus-putus, bahwa dia berjuang untuk mengatasi luapan emosi yang hebat. Karena tidak ingin menunjukkan kepadanya bahwa aku telah mendengar pertengkaran itu, aku melanjutkan berdandanku agak berisik, melihat arlojiku, dan merenung tentang lamanya malam: &quot;Belum jam tiga! Aku yakin sudah jam enam. Waktu terasa stagnan di sini: kita pasti sudah tidur jam delapan!&quot;</p><p>“Selalu jam sembilan di musim dingin, dan bangun jam empat,” kata tuan rumahku, menahan erangan: dan, seperti yang kurasakan, dari gerakan bayangan lengannya, air mata menetes dari matanya. “Tuan Lockwood,” tambahnya, “Anda boleh masuk ke kamar saya: Anda hanya akan menghalangi, turun ke bawah sepagi ini: dan tangisan kekanak-kanakan Anda telah membuat saya tidak bisa tidur.”</p><p>“Dan untukku juga,” jawabku. “Aku akan berjalan-jalan di halaman sampai subuh, lalu aku akan pergi; dan kau tak perlu khawatir akan gangguanku lagi. Aku sekarang sudah sembuh dari kecanduan mencari kesenangan di masyarakat, baik di pedesaan maupun di kota. Orang yang bijaksana seharusnya menemukan cukup teman dalam dirinya sendiri.”</p><p>“Teman yang menyenangkan!” gumam Heathcliff. “Ambil lilinnya, dan pergilah ke mana pun kau mau. Aku akan segera menyusulmu. Tapi, jangan masuk halaman, anjing-anjingnya tidak dirantai; dan rumah—Juno berjaga di sana, dan—tidak, kau hanya bisa berkeliaran di tangga dan lorong-lorong. Tapi, pergilah! Aku akan menyusul dalam dua menit!”</p><p>Aku menurut, sampai akhirnya meninggalkan kamar; ketika, karena tidak tahu ke mana lorong sempit itu mengarah, aku berdiri diam, dan tanpa sengaja menyaksikan sebuah takhayul dari tuan tanahku yang anehnya bertentangan dengan akal sehatnya. Dia naik ke tempat tidur, dan membuka paksa jendela berjeruji, sambil menariknya, ia menangis tersedu-sedu. “Masuk! Masuk!” isaknya. “Cathy, masuklah. Oh, masuklah— sekali lagi! Oh! Sayangku! Dengarkan aku kali ini , Catherine, akhirnya!” Hantu itu menunjukkan sifat hantu yang biasa: ia tidak menunjukkan tanda-tanda keberadaannya; tetapi salju dan angin berputar liar, bahkan mencapai tempatku, dan memadamkan lampu.</p><p>Ada begitu banyak kesedihan dalam luapan duka yang menyertai ocehan itu, sehingga rasa iba membuatku mengabaikan kebodohannya, dan aku pun pergi, setengah marah karena telah mendengarkannya, dan kesal karena telah menceritakan mimpi burukku yang menggelikan, karena hal itu menimbulkan penderitaan seperti itu; meskipun alasannya di luar pemahamanku. Aku turun dengan hati-hati ke lantai bawah, dan mendarat di dapur belakang, di mana secercah api yang terkumpul rapat memungkinkanku untuk menyalakan kembali lilinku. Tidak ada yang bergerak kecuali seekor kucing belang abu-abu, yang merayap keluar dari abu, dan menyapaku dengan meong yang rewel.</p><p>Dua bangku, berbentuk potongan lingkaran, hampir mengelilingi perapian; di salah satu bangku itu aku merebahkan diri, dan Grimalkin naik ke bangku yang lain. Kami berdua sudah mengantuk sebelum ada yang mengganggu tempat peristirahatan kami, dan kemudian Joseph datang, menuruni tangga kayu yang menghilang di atap, melalui sebuah lubang jebakan: mungkin tangga menuju lotengnya. Dia melirik sinis ke arah nyala api kecil yang telah kupancing untuk bermain di antara rusuk-rusuk perapian, menyingkirkan kucing dari tempatnya, dan menempati tempat kosong itu, mulai mengisi pipa sepanjang tiga inci dengan tembakau. Kehadiranku di tempat sucinya jelas dianggap sebagai tindakan kurang ajar yang terlalu memalukan untuk dibicarakan: dia diam-diam menempelkan pipa ke bibirnya, melipat tangannya, dan menghisapnya. Aku membiarkannya menikmati kemewahan itu tanpa terganggu; dan setelah menghisap tembakau terakhirnya, dan menghela napas panjang, dia bangkit, dan pergi dengan khidmat seperti saat dia datang.</p><p>Langkah kaki yang lebih lincah terdengar selanjutnya; dan sekarang aku membuka mulutku untuk mengucapkan &quot;selamat pagi,&quot; tetapi menutupnya lagi, salam itu tak terucap; karena Hareton Earnshaw sedang melantunkan doanya dalam hati , serangkaian kutukan yang ditujukan kepada setiap benda yang disentuhnya, sambil mencari sekop atau cangkul di sudut untuk menggali tumpukan salju. Dia melirik ke belakang bangku, melebarkan lubang hidungnya, dan sama sekali tidak memikirkan untuk bertukar sapa denganku seperti halnya dengan temanku, kucingku. Aku menduga, dari persiapannya, bahwa jalan keluar diperbolehkan, dan, meninggalkan tempat tidurku yang keras, aku bergerak untuk mengikutinya. Dia menyadari ini, dan mendorong pintu bagian dalam dengan ujung sekopnya, mengisyaratkan dengan suara yang tidak jelas bahwa di situlah tempat yang harus kutuju, jika aku pindah tempat.</p><p>Pintu itu terbuka ke arah rumah, di mana para wanita sudah mulai beraktivitas; Zillah sedang mendorong percikan api ke cerobong asap dengan alat peniup api yang besar; dan Nyonya Heathcliff, berlutut di perapian, membaca buku dengan bantuan nyala api. Ia meletakkan tangannya di antara panas perapian dan matanya, dan tampak asyik dengan pekerjaannya; hanya berhenti sejenak untuk menegur pelayan karena menutupi dirinya dengan percikan api, atau untuk mengusir seekor anjing yang sesekali menjulurkan hidungnya terlalu dekat ke wajahnya. Saya terkejut melihat Heathcliff juga ada di sana. Ia berdiri di dekat api, membelakangi saya, baru saja menyelesaikan pertengkaran sengit dengan Zillah yang malang; yang sesekali menghentikan pekerjaannya untuk menarik ujung celemeknya, dan mengerang kesal.</p><p>“Dan kau, kau tak berguna—” serunya saat aku masuk, menoleh ke menantunya, dan menggunakan kata hinaan yang tidak berbahaya seperti bebek, atau domba, tetapi umumnya diwakili oleh tanda hubung—. “Kau di sana lagi, dengan tingkah lakumu yang tidak berguna! Yang lain mencari nafkah sendiri—kau hidup dari sedekahku! Singkirkan sampahmu, dan cari pekerjaan. Kau akan membayarku atas penderitaan karena harus melihatmu selamanya—kau dengar, perempuan jalang terkutuk?”</p><p>“Aku akan membuang sampahku, karena kau bisa memaksaku jika aku menolak,” jawab gadis muda itu, menutup bukunya, dan melemparkannya ke kursi. “Tapi aku tidak akan melakukan apa pun, meskipun kau mengumpat sekeras-kerasnya, kecuali apa yang aku inginkan!”</p><p>Heathcliff mengangkat tangannya, dan pembicara itu melompat ke jarak yang lebih aman, jelas menyadari beratnya. Karena tidak ingin terlibat dalam pertengkaran seperti kucing dan anjing, saya melangkah maju dengan cepat, seolah-olah ingin menikmati kehangatan perapian, dan tidak mengetahui perselisihan yang ter interrupted tersebut. Masing-masing memiliki cukup kesopanan untuk menghentikan permusuhan lebih lanjut: Heathcliff memasukkan tinjunya ke dalam saku, karena tergoda; Nyonya Heathcliff mengerutkan bibir, dan berjalan ke tempat duduk yang jauh, di mana dia menepati janjinya dengan berperan seperti patung selama sisa waktu saya di sana. Itu tidak lama. Saya menolak untuk bergabung dengan sarapan mereka, dan, pada cahaya fajar pertama, mengambil kesempatan untuk melarikan diri ke udara bebas, yang sekarang jernih, tenang, dan dingin seperti es yang tak teraba.</p><p>Tuan tanahku memanggilku untuk berhenti sebelum aku sampai di ujung taman, dan menawarkan untuk menemaniku menyeberangi padang rumput. Untunglah dia melakukannya, karena seluruh punggung bukit itu adalah lautan putih yang bergelombang; gelombang dan surutnya tidak menunjukkan kenaikan dan penurunan yang sesuai di tanah: setidaknya banyak lubang yang terisi hingga rata; dan seluruh deretan gundukan, sisa-sisa penggalian, terhapus dari peta yang tergambar di benakku setelah berjalan kemarin. Saya memperhatikan di salah satu sisi jalan, dengan jarak enam atau tujuh yard, deretan batu tegak yang membentang di sepanjang lahan tandus: batu-batu ini didirikan dan dilumuri kapur dengan sengaja untuk berfungsi sebagai penunjuk jalan di kegelapan, dan juga ketika longsor, seperti yang terjadi sekarang, membuat rawa-rawa yang dalam di kedua sisi jalan bercampur dengan jalan yang lebih kokoh: tetapi, kecuali titik kotor yang menunjuk ke sana kemari, semua jejak keberadaannya telah lenyap: dan teman saya merasa perlu untuk sering memperingatkan saya untuk berbelok ke kanan atau kiri, ketika saya mengira saya mengikuti, dengan benar, liku-liku jalan.</p><p>Kami sedikit berbincang, dan dia berhenti di pintu masuk Taman Thrushcross, sambil berkata, &quot;Saya tidak mungkin salah jalan di sana.&quot; Perpisahan kami hanya sebatas membungkuk singkat, lalu saya melanjutkan perjalanan, mengandalkan kemampuan saya sendiri; karena pondok penjaga gerbang masih kosong. Jarak dari gerbang ke Grange adalah dua mil; saya rasa saya berhasil menempuhnya empat mil, karena tersesat di antara pepohonan, dan tenggelam hingga leher di salju: suatu keadaan yang hanya dapat dipahami oleh mereka yang pernah mengalaminya. Bagaimanapun, apa pun perjalanan saya, jam berdentang pukul dua belas saat saya memasuki rumah; dan itu tepat satu jam untuk setiap mil dari jalan biasa dari Wuthering Heights.</p><p>Para penghuni rumahku dan pengikutnya bergegas menyambutku; dengan riuh rendah mereka berseru bahwa mereka telah sepenuhnya kehilanganku: semua orang menduga aku tewas tadi malam; dan mereka bertanya-tanya bagaimana mereka harus mencari jasadku. Aku menyuruh mereka diam, sekarang setelah mereka melihatku kembali, dan, dengan perasaan mati rasa hingga ke lubuk hatiku, aku menyeret diri ke atas; dari sana, setelah mengenakan pakaian kering, dan mondar-mandir selama tiga puluh atau empat puluh menit, untuk mengembalikan kehangatan tubuhku, aku pergi ke ruang kerjaku, lemah seperti anak kucing: hampir terlalu lemah untuk menikmati api unggun yang hangat dan kopi panas yang telah disiapkan pelayan untuk menyegarkanku.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-ii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Ii</span>
+    </a>
+    <a href="bab-iv.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Iv</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB III</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Sambil menuntunku ke lantai atas, dia menyarankan agar aku menyembunyikan lilin dan tidak membuat suara; karena majikannya punya gagasan aneh tentang kamar yang akan dia tempatkan untukku, dan tidak pernah membiarkan siapa pun tinggal di sana dengan sukarela. Aku bertanya alasannya. Dia tidak tahu, jawabnya: dia baru tinggal di sana satu atau dua tahun; dan mereka memiliki begitu banyak kejadian aneh, dia tidak mungkin penasaran. Terlalu tercengang untuk merasa penasaran, saya mengunci pintu dan melirik ke sekeliling mencari tempat tidur. Seluruh perabotannya terdiri dari sebuah kursi, lemari pakaian, dan sebuah lemari kayu ek besar, dengan lubang-lubang persegi di dekat bagian atasnya yang menyerupai jendela kereta kuda. Setelah mendekati bangunan itu, saya melihat ke dalamnya, dan menyadari bahwa itu adalah semacam sofa kuno yang unik, dirancang dengan sangat nyaman untuk menghilangkan kebutuhan setiap anggota keluarga memiliki kamar sendiri. Bahkan, itu berfungsi sebagai lemari kecil, dan ambang jendela yang dikelilinginya berfungsi sebagai meja. Aku menggeser sisi-sisi yang berpanel ke belakang, masuk dengan lampuku, menyatukannya kembali, dan merasa aman dari kewaspadaan Heathcliff, dan semua orang lainnya. Di tepian tempat saya meletakkan lilin, terdapat beberapa buku berjamur yang menumpuk di salah satu sudutnya; dan permukaannya dipenuhi coretan tulisan di cat. Namun, tulisan itu hanyalah sebuah nama yang diulang-ulang dalam berbagai macam huruf, besar dan kecil— Catherine Earnshaw , di sana-sini berubah menjadi Catherine Heathcliff , dan kemudian lagi menjadi Catherine Linton . Dalam kelesuan yang hambar, aku menyandarkan kepalaku ke jendela, dan terus mengeja Catherine Earnshaw—Heathcliff—Linton, sampai mataku terpejam; tetapi belum lima menit berlalu ketika seberkas huruf putih muncul dari kegelapan, sejelas hantu—udara dipenuhi dengan nama-nama Catherine; dan untuk mengusir nama yang mengganggu itu, aku mendapati sumbu lilinku tergeletak di salah satu buku antik, dan mengharumkan tempat itu dengan aroma kulit sapi panggang. Aku memadamkannya, dan, merasa sangat tidak nyaman karena pengaruh flu dan mual yang berkepanjangan, aku duduk dan membuka buku yang rusak di pangkuanku. Itu adalah Perjanjian Baru, dengan huruf tipis, dan baunya sangat apak: halaman pembuka bertuliskan—"Catherine Earnshaw, bukunya," dan tanggal sekitar seperempat abad yang lalu. Aku menutupnya, lalu mengambil buku lain dan buku lainnya lagi, sampai aku memeriksa semuanya. Perpustakaan Catherine adalah koleksi pilihan, dan kondisinya yang lusuh membuktikan bahwa perpustakaan itu telah digunakan dengan baik, meskipun tidak sepenuhnya untuk tujuan yang sah: hampir tidak ada satu bab pun yang luput dari komentar tulisan tangan—setidaknya tampak seperti itu—yang menutupi setiap bagian kosong yang ditinggalkan oleh pencetak. Beberapa berupa kalimat terpisah; bagian lain berbentuk buku harian biasa, ditulis dengan tulisan tangan yang belum terbentuk dan kekanak-kanakan. Di bagian atas halaman tambahan (yang mungkin merupakan harta karun ketika pertama kali ditemukan), aku sangat terhibur melihat karikatur yang sangat bagus dari temanku Joseph,—digambar secara kasar, namun penuh kekuatan. Ketertarikan langsung muncul dalam diriku terhadap Catherine yang tidak kukenal, dan aku segera mulai menguraikan hieroglifnya yang pudar. “Hari Minggu yang mengerikan,” demikian paragraf di bawahnya dimulai. “Aku berharap ayahku kembali lagi. Hindley adalah pengganti yang menjijikkan—perilakunya terhadap Heathcliff sangat buruk—H. dan aku akan memberontak—kami telah mengambil langkah pertama kami malam ini.” “Seharian hujan deras mengguyur; kami tidak bisa pergi ke gereja, jadi Joseph harus mengumpulkan jemaat di loteng; dan, sementara Hindley dan istrinya bersantai di lantai bawah di depan perapian yang nyaman—melakukan apa pun kecuali membaca Alkitab mereka, saya jamin—Heathcliff, saya sendiri, dan si anak petani yang malang diperintahkan untuk mengambil buku doa kami, dan naik: kami berbaris di atas karung jagung, mengerang dan menggigil, dan berharap Joseph juga akan menggigil, sehingga dia bisa memberi kami khotbah singkat demi dirinya sendiri. Ide yang sia-sia! Ibadah berlangsung tepat tiga jam; namun saudara laki-laki saya masih berani berseru, ketika dia melihat kami turun, 'Apa, sudah selesai?' Pada Minggu malam kami biasanya diizinkan bermain, jika kami tidak membuat banyak kebisingan; sekarang hanya tawa kecil saja sudah cukup untuk membuat kami disuruh ke pojok ruangan.” “'Kau lupa kau punya tuan di sini,' kata si tiran. 'Aku akan menghancurkan siapa pun yang membuatku marah! Aku bersikeras untuk selalu tenang dan diam. Oh, Nak! Apakah itu kau? Frances sayang, tarik rambutnya saat kau lewat: Aku mendengar dia menjentikkan jarinya.' Frances menarik rambutnya dengan penuh semangat, lalu pergi dan duduk di pangkuan suaminya, dan di sana mereka berdua, seperti dua bayi, berciuman dan berbicara omong kosong berjam-jam—obrolan bodoh yang seharusnya kita malu. Kami membuat diri kami senyaman mungkin di lengkungan lemari. Aku baru saja mengikat celemek kami bersama-sama, dan menggantungnya sebagai tirai, ketika Joseph masuk, dalam perjalanan dari kandang. Dia merobek hasil kerjaku, memukul telingaku, dan berteriak: “'T' maister nobbut just buried, and Sabbath not o'ered, und t' sound o' t' gospel still i' yer lugs, and ye darr be laiking! Malu kalian! Duduklah, anak-anak nakal! Ada banyak buku bagus jika kalian mau membacanya: duduklah, dan pikirkan jiwa kalian!' “Setelah mengatakan itu, dia memaksa kami untuk mengatur posisi kami sedemikian rupa sehingga kami dapat menerima sinar redup dari api yang jauh untuk menunjukkan kepada kami teks buku tebal yang dia berikan kepada kami. Aku tidak tahan dengan pekerjaan itu. Aku mengambil buku lusuhku dari pegangannya, dan melemparkannya ke kandang anjing, bersumpah bahwa aku membenci buku yang bagus. Heathcliff menendang bukunya ke tempat yang sama. Lalu terjadilah keributan!” “'Tuan Hindley!' teriak pendeta kami. 'Tuan, kemarilah! Nona Cathy merobek bagian belakang 'Helm Keselamatan', dan Heathcliff menyeret kakinya ke bagian pertama 'Jalan Lebar Menuju Kehancuran'! Sungguh menjijikkan kau membiarkan mereka berjalan seperti ini. Eh! Orang tua itu seharusnya mengikatnya dengan benar—tapi dia sudah pergi!' “Hindley bergegas dari surganya di perapian, dan mencengkeram kerah salah satu dari kami, dan lengan yang lain, lalu melemparkan keduanya ke dapur belakang; di mana, Joseph menegaskan, 'Nick tua' pasti akan menjemput kami: dan, merasa terhibur, kami masing-masing mencari tempat tersisih untuk menunggu kedatangannya. Aku mengambil buku ini, dan sebotol tinta dari rak, lalu mendorong pintu rumah sedikit agar mendapat penerangan, dan aku mulai menulis selama dua puluh menit; tetapi temanku tidak sabar, dan mengusulkan agar kita mengambil jubah wanita pemerah susu, dan berlarian di padang rumput, di bawah naungannya. Sebuah saran yang menyenangkan—dan kemudian, jika lelaki tua yang pemarah itu masuk, dia mungkin percaya ramalannya telah terbukti—kita tidak akan lebih basah, atau lebih dingin, di tengah hujan daripada di sini.” *** * * * * Kurasa Catherine telah menyelesaikan proyeknya, karena kalimat berikutnya membahas topik lain: dia menangis tersedu-sedu. “Betapa tak pernah kubayangkan Hindley akan membuatku menangis seperti ini!” tulisnya. “Kepalaku sakit sekali, sampai aku tak bisa meletakkannya di bantal; dan aku masih tak bisa menyerah. Kasihan Heathcliff! Hindley menyebutnya gelandangan, dan tak mengizinkannya duduk bersama kami, atau makan bersama kami lagi; dan, katanya, aku dan dia tidak boleh bermain bersama, dan mengancam akan mengusirnya dari rumah jika kami melanggar perintahnya. Dia menyalahkan ayah kami (beraninya dia?) karena memperlakukan H. terlalu murah hati; dan bersumpah akan menempatkannya pada tempatnya yang seharusnya—” *** * * * * Aku mulai mengangguk-angguk lesu di atas halaman yang redup: mataku berkelana dari manuskrip ke cetakan. Aku melihat judul berhias merah—"Tujuh Puluh Kali Tujuh, dan Yang Pertama dari Tujuh Puluh Satu. Sebuah Ceramah Saleh yang disampaikan oleh Pendeta Jabez Branderham, di Kapel Gimmerden Sough." Dan sementara aku, setengah sadar, memeras otakku untuk menebak apa yang akan Jabez Branderham pikirkan tentang subjeknya, aku kembali berbaring di tempat tidur, dan tertidur. Sayang sekali, akibat teh yang buruk dan suasana hati yang buruk! Apa lagi yang bisa membuatku melewati malam yang mengerikan seperti itu? Aku tidak ingat malam lain yang bisa kubandingkan dengannya sejak aku mampu menderita. Aku mulai bermimpi, hampir sebelum aku kehilangan kesadaran akan tempatku berada. Kupikir sudah pagi; dan aku telah berangkat pulang, dengan Joseph sebagai pemandu. Salju menumpuk setinggi beberapa meter di jalan kami; dan, saat kami tertatih-tatih, temanku terus-menerus mencelaku karena tidak membawa tongkat peziarah: mengatakan bahwa aku tidak akan pernah bisa masuk rumah tanpa tongkat itu, dan dengan sombong mengacungkan tongkat berat berkepala besar, yang kupahami sebagai tongkat peziarah. Untuk sesaat aku menganggapnya tidak masuk akal bahwa aku membutuhkan senjata seperti itu untuk masuk ke rumahku sendiri. Kemudian sebuah ide baru terlintas di benakku. Aku tidak akan pergi ke sana: kami sedang dalam perjalanan untuk mendengarkan khotbah Jabez Branderham yang terkenal, dari teks—"Tujuh Puluh Kali Tujuh"; dan entah Joseph, sang pengkhotbah, atau aku telah melakukan "Yang Pertama dari Tujuh Puluh Satu," dan akan diungkapkan secara publik dan dikucilkan. Kami sampai di kapel. Aku sudah melewatinya saat berjalan-jalan, dua atau tiga kali; letaknya di lembah, di antara dua bukit: lembah yang tinggi, dekat rawa, yang konon kelembapan gambutnya sangat cocok untuk mengawetkan beberapa mayat yang dimakamkan di sana. Atapnya masih utuh sampai sekarang; tetapi karena gaji pendeta hanya dua puluh pound per tahun, dan rumah dengan dua kamar, yang terancam segera menjadi satu kamar, tidak ada pendeta yang mau menjalankan tugas sebagai pastor: terutama karena saat ini dilaporkan bahwa jemaatnya lebih memilih membiarkannya kelaparan daripada menambah penghasilannya satu sen pun dari kantong mereka sendiri. Namun, dalam mimpiku, Jabez memiliki jemaat yang penuh dan penuh perhatian; dan dia berkhotbah—ya Tuhan! khotbah yang luar biasa; dibagi menjadi empat ratus sembilan puluh bagian, masing-masing sama persis dengan pidato biasa dari mimbar, dan masing-masing membahas dosa yang berbeda! Di mana dia mencarinya, aku tidak tahu. Dia memiliki cara sendiri untuk menafsirkan ungkapan itu, dan tampaknya perlu bagi saudara itu untuk melakukan dosa yang berbeda pada setiap kesempatan. Tindakan-tindakan itu sangat aneh: pelanggaran-pelanggaran ganjil yang tidak pernah saya bayangkan sebelumnya. Oh, betapa lelahnya aku. Betapa aku menggeliat, menguap, mengangguk, dan kemudian pulih! Betapa aku mencubit dan menusuk diriku sendiri, menggosok mataku, berdiri, dan duduk lagi, dan menyenggol Joseph untuk memberitahuku apakah dia akan pernah selesai. Aku terpaksa mendengarkan semuanya: akhirnya, dia sampai pada " Yang Pertama dari Tujuh Puluh Satu ". Pada saat kritis itu, sebuah inspirasi tiba-tiba turun kepadaku; aku tergerak untuk bangkit dan mengecam Jabez Branderham sebagai pendosa dari dosa yang tidak perlu diampuni oleh seorang Kristen pun. “Tuan,” seruku, “duduk di sini di dalam empat dinding ini, tanpa henti, aku telah menanggung dan memaafkan empat ratus sembilan puluh poin dari ceramahmu. Tujuh puluh kali tujuh kali aku telah mengangkat topi dan hendak pergi—Tujuh puluh kali tujuh kali kau dengan tidak masuk akal memaksaku untuk kembali duduk. Poin ke empat ratus sembilan puluh satu sudah terlalu banyak. Saudara-saudari martir, serang dia! Seret dia ke bawah, dan hancurkan dia sampai berkeping-keping, agar tempat yang mengenalnya tidak mengenalnya lagi!” “ Engkaulah Manusia itu! ” seru Yabes, setelah terdiam sejenak, sambil mencondongkan tubuh di atas bantalnya. “Tujuh puluh kali tujuh kali engkau memutar-mutar wajahmu dengan mulut ternganga—tujuh puluh kali tujuh kali aku berunding dengan jiwaku—Lihatlah, ini adalah kelemahan manusia: ini pun dapat diampuni! Yang Pertama dari Tujuh Puluh Satu telah datang. Saudara-saudara, laksanakanlah penghakiman yang tertulis atas Dia. Kehormatan seperti itulah yang dimiliki oleh semua orang kudus-Nya!” Dengan kata penutup itu, seluruh jemaah, sambil mengangkat tongkat peziarah mereka, bergegas mengelilingi saya; dan saya, karena tidak memiliki senjata untuk membela diri, mulai bergulat dengan Joseph, penyerang terdekat dan paling ganas saya, untuk merebut senjatanya. Di tengah kerumunan, beberapa tongkat saling beradu; pukulan yang ditujukan kepada saya mengenai dinding-dinding lainnya. Tak lama kemudian seluruh kapel bergema dengan ketukan dan balasan ketukan: setiap tangan orang melawan tetangganya; dan Branderham, yang tidak ingin berdiam diri, melampiaskan semangatnya dengan serangkaian ketukan keras pada papan mimbar, yang merespons dengan sangat cepat sehingga, akhirnya, dengan rasa lega yang tak terkatakan, mereka membangunkan saya. Dan apa yang telah memicu keributan hebat itu? Apa peran Jabez dalam keributan itu? Hanya cabang pohon cemara yang menyentuh kisi-kisi saya saat angin bertiup kencang, dan menggoyangkan kerucut keringnya ke kaca jendela! Aku mendengarkan dengan ragu sejenak; mendeteksi sumber gangguan, lalu berbalik dan tertidur, dan bermimpi lagi: jika mungkin, lebih mengerikan dari sebelumnya. Kali ini, aku ingat aku sedang berbaring di lemari kayu ek, dan aku mendengar dengan jelas angin kencang dan deru salju; aku juga mendengar dahan pohon cemara itu mengulangi suara mengganggunya, dan aku menganggapnya sebagai penyebab yang tepat: tetapi itu sangat menggangguku, sehingga aku memutuskan untuk membungkamnya, jika mungkin; dan, pikirku, aku bangkit dan berusaha membuka kait jendela. Kait itu disolder ke staples: suatu hal yang kuamati saat terjaga, tetapi kulupakan. "Aku harus menghentikannya!" gumamku, mengetuk-ngetuk buku jariku menembus kaca, dan mengulurkan tangan untuk meraih dahan yang mengganggu itu; alih-alih meraihnya, jari-jariku malah mencengkeram jari-jari tangan kecil yang dingin seperti es! Kengerian mimpi buruk yang mencekam menghampiriku: aku mencoba menarik lenganku, tetapi tangan itu mencengkeramnya, dan suara yang sangat melankolis terisak-isak, “Biarkan aku masuk—biarkan aku masuk!” “Siapakah kamu?” tanyaku, sambil berusaha melepaskan diri. “Catherine Linton,” jawabnya sambil gemetar (mengapa aku teringat Linton ? Aku sudah membaca karya Earnshaw dua puluh kali hanya untuk mencari Linton)—“Aku pulang: aku tersesat di padang rumput!” Saat ia berbicara, samar-samar aku melihat wajah seorang anak mengintip dari jendela. Rasa takut membuatku kejam; dan, karena tidak ada gunanya mencoba melepaskan makhluk itu, aku menarik pergelangan tangannya ke kaca jendela yang pecah, dan menggosoknya bolak-balik sampai darah mengalir dan membasahi seprai: ia masih merengek, “Biarkan aku masuk!” dan terus mencengkeram dengan kuat, hampir membuatku gila karena takut. “Bagaimana mungkin!” kataku akhirnya. “Lepaskan aku , jika kau ingin aku membiarkanmu masuk!” Jari-jariku rileks, aku menarik jariku melalui lubang itu, buru-buru menumpuk buku-buku itu menjadi piramida di depannya, dan menutup telingaku untuk menahan suara doa yang menyedihkan itu. Aku sepertinya menutup telingaku selama lebih dari seperempat jam; namun, begitu aku mendengarkan lagi, terdengar lagi tangisan memilukan yang menyedihkan! “Pergi!” teriakku. “Aku tidak akan pernah membiarkanmu masuk, tidak meskipun kau memohon selama dua puluh tahun.” “Sudah dua puluh tahun,” ratap suara itu: “dua puluh tahun. Aku telah menjadi anak yatim piatu selama dua puluh tahun!” Kemudian terdengar suara garukan lemah di luar, dan tumpukan buku itu bergerak seolah didorong ke depan. Aku mencoba melompat; tetapi tidak bisa menggerakkan anggota tubuhku; lalu berteriak keras, dalam keadaan ketakutan yang luar biasa. Aku bingung, aku menyadari teriakan itu tidak tepat: langkah kaki tergesa-gesa mendekati pintu kamarku; seseorang mendorongnya hingga terbuka dengan kuat, dan cahaya berkilauan menembus celah-celah di bagian atas tempat tidur. Aku masih duduk gemetar, sambil menyeka keringat dari dahiku: penyusup itu tampak ragu-ragu, dan bergumam sendiri. Akhirnya, katanya, dengan suara setengah berbisik, jelas tidak mengharapkan jawaban, “Apakah ada orang di sini?” Saya merasa lebih baik mengakui keberadaan saya; karena saya mengenal aksen Heathcliff, dan takut dia akan menyelidiki lebih lanjut jika saya tetap diam. Dengan niat itu, aku berbalik dan membuka panel-panel tersebut. Aku tidak akan segera melupakan dampak yang dihasilkan oleh tindakanku itu. Heathcliff berdiri di dekat pintu masuk, hanya mengenakan kemeja dan celana; lilin menetes di jari-jarinya, dan wajahnya sepucat dinding di belakangnya. Derit pertama kayu ek itu mengejutkannya seperti sengatan listrik: cahaya itu melesat dari genggamannya hingga beberapa meter jauhnya, dan kegelisahannya begitu hebat sehingga ia hampir tidak dapat menangkapnya. “Ini hanya tamu Anda, Tuan,” seru saya, ingin menyelamatkannya dari penghinaan lebih lanjut karena menunjukkan rasa pengecutnya. “Saya sialnya berteriak dalam tidur saya, karena mimpi buruk yang mengerikan. Maaf telah mengganggu Anda.” “Ya Tuhan, sialan kau, Tuan Lockwood! Kuharap kau ada di—” tuan rumahku memulai, meletakkan lilin di atas kursi, karena ia kesulitan memegangnya dengan stabil. “Dan siapa yang membawamu ke ruangan ini?” lanjutnya, mencengkeram telapak tangannya dengan kuku, dan menggertakkan giginya untuk meredakan kejang rahangnya. “Siapa itu? Aku ingin sekali mengusirnya dari rumah ini sekarang juga!” “Itu pelayanmu, Zillah,” jawabku, sambil menjatuhkan diri ke lantai dan segera mengenakan kembali pakaianku. “Aku tidak peduli jika kau peduli, Tuan Heathcliff; dia memang pantas mendapatkannya. Kurasa dia ingin mendapatkan bukti lain bahwa tempat ini berhantu, dengan mengorbankanku. Ya, memang berhantu—penuh dengan hantu dan goblin! Kau punya alasan untuk menutupnya, aku jamin. Tidak ada yang akan berterima kasih padamu karena bisa tidur siang di sarang seperti itu!” “Apa maksudmu?” tanya Heathcliff, “dan apa yang kau lakukan? Berbaringlah dan habiskan malam ini, karena kau sudah di sini; tapi, demi Tuhan! jangan ulangi suara mengerikan itu: tidak ada yang bisa membenarkannya, kecuali jika lehermu sedang digorok!” “Kalau si iblis kecil itu masuk lewat jendela, dia mungkin sudah mencekikku!” jawabku. “Aku tidak akan menanggung penganiayaan dari leluhurmu yang ramah itu lagi. Bukankah Pendeta Jabez Branderham kerabatmu dari pihak ibu? Dan si jalang itu, Catherine Linton, atau Earnshaw, atau apa pun namanya—dia pasti anak yang tertukar—jiwa kecil yang jahat! Dia bilang dia sudah berkeliaran di bumi selama dua puluh tahun: hukuman yang setimpal atas pelanggaran fana yang dilakukannya, aku yakin!” Kata-kata itu belum selesai terucap ketika saya teringat akan keterkaitan nama Heathcliff dengan nama Catherine di dalam buku itu, yang sama sekali telah hilang dari ingatan saya, hingga saya terbangun karena hal ini. Saya tersipu karena ketidakpedulian saya: tetapi, tanpa menunjukkan kesadaran lebih lanjut akan kesalahan itu, saya segera menambahkan—"Sejujurnya, Tuan, saya menghabiskan sebagian besar malam dengan—" Di sini saya berhenti lagi—saya hendak mengatakan "membaca buku-buku tua itu," karena itu akan mengungkapkan pengetahuan saya tentang isi tertulis maupun tercetaknya; jadi, mengoreksi diri sendiri, saya melanjutkan—"mengeja nama yang tergores di ambang jendela itu. Suatu kegiatan yang monoton, yang bisa membuat saya tertidur, seperti menghitung, atau—" “Apa maksudmu bicara seperti ini padaku ! ” bentak Heathcliff dengan amarah yang meluap-luap. “Bagaimana—bagaimana kau berani , di bawah atapku?—Astaga! Dia gila bicara seperti itu!” Dan dia memukul dahinya dengan marah. Aku tidak tahu apakah harus tersinggung dengan bahasa itu atau melanjutkan penjelasanku; tetapi dia tampak begitu terpengaruh sehingga aku merasa kasihan dan melanjutkan mimpiku; menegaskan bahwa aku belum pernah mendengar sebutan "Catherine Linton" sebelumnya, tetapi membacanya berulang kali menghasilkan kesan yang menjadi nyata ketika imajinasiku tidak lagi terkendali. Heathcliff perlahan-lahan kembali ke tempat tidur, saat aku berbicara; akhirnya duduk hampir tersembunyi di baliknya. Namun, aku menduga, dari napasnya yang tidak teratur dan terputus-putus, bahwa dia berjuang untuk mengatasi luapan emosi yang hebat. Karena tidak ingin menunjukkan kepadanya bahwa aku telah mendengar pertengkaran itu, aku melanjutkan berdandanku agak berisik, melihat arlojiku, dan merenung tentang lamanya malam: "Belum jam tiga! Aku yakin sudah jam enam. Waktu terasa stagnan di sini: kita pasti sudah tidur jam delapan!" “Selalu jam sembilan di musim dingin, dan bangun jam empat,” kata tuan rumahku, menahan erangan: dan, seperti yang kurasakan, dari gerakan bayangan lengannya, air mata menetes dari matanya. “Tuan Lockwood,” tambahnya, “Anda boleh masuk ke kamar saya: Anda hanya akan menghalangi, turun ke bawah sepagi ini: dan tangisan kekanak-kanakan Anda telah membuat saya tidak bisa tidur.” “Dan untukku juga,” jawabku. “Aku akan berjalan-jalan di halaman sampai subuh, lalu aku akan pergi; dan kau tak perlu khawatir akan gangguanku lagi. Aku sekarang sudah sembuh dari kecanduan mencari kesenangan di masyarakat, baik di pedesaan maupun di kota. Orang yang bijaksana seharusnya menemukan cukup teman dalam dirinya sendiri.” “Teman yang menyenangkan!” gumam Heathcliff. “Ambil lilinnya, dan pergilah ke mana pun kau mau. Aku akan segera menyusulmu. Tapi, jangan masuk halaman, anjing-anjingnya tidak dirantai; dan rumah—Juno berjaga di sana, dan—tidak, kau hanya bisa berkeliaran di tangga dan lorong-lorong. Tapi, pergilah! Aku akan menyusul dalam dua menit!” Aku menurut, sampai akhirnya meninggalkan kamar; ketika, karena tidak tahu ke mana lorong sempit itu mengarah, aku berdiri diam, dan tanpa sengaja menyaksikan sebuah takhayul dari tuan tanahku yang anehnya bertentangan dengan akal sehatnya. Dia naik ke tempat tidur, dan membuka paksa jendela berjeruji, sambil menariknya, ia menangis tersedu-sedu. “Masuk! Masuk!” isaknya. “Cathy, masuklah. Oh, masuklah— sekali lagi! Oh! Sayangku! Dengarkan aku kali ini , Catherine, akhirnya!” Hantu itu menunjukkan sifat hantu yang biasa: ia tidak menunjukkan tanda-tanda keberadaannya; tetapi salju dan angin berputar liar, bahkan mencapai tempatku, dan memadamkan lampu. Ada begitu banyak kesedihan dalam luapan duka yang menyertai ocehan itu, sehingga rasa iba membuatku mengabaikan kebodohannya, dan aku pun pergi, setengah marah karena telah mendengarkannya, dan kesal karena telah menceritakan mimpi burukku yang menggelikan, karena hal itu menimbulkan penderitaan seperti itu; meskipun alasannya di luar pemahamanku. Aku turun dengan hati-hati ke lantai bawah, dan mendarat di dapur belakang, di mana secercah api yang terkumpul rapat memungkinkanku untuk menyalakan kembali lilinku. Tidak ada yang bergerak kecuali seekor kucing belang abu-abu, yang merayap keluar dari abu, dan menyapaku dengan meong yang rewel. Dua bangku, berbentuk potongan lingkaran, hampir mengelilingi perapian; di salah satu bangku itu aku merebahkan diri, dan Grimalkin naik ke bangku yang lain. Kami berdua sudah mengantuk sebelum ada yang mengganggu tempat peristirahatan kami, dan kemudian Joseph datang, menuruni tangga kayu yang menghilang di atap, melalui sebuah lubang jebakan: mungkin tangga menuju lotengnya. Dia melirik sinis ke arah nyala api kecil yang telah kupancing untuk bermain di antara rusuk-rusuk perapian, menyingkirkan kucing dari tempatnya, dan menempati tempat kosong itu, mulai mengisi pipa sepanjang tiga inci dengan tembakau. Kehadiranku di tempat sucinya jelas dianggap sebagai tindakan kurang ajar yang terlalu memalukan untuk dibicarakan: dia diam-diam menempelkan pipa ke bibirnya, melipat tangannya, dan menghisapnya. Aku membiarkannya menikmati kemewahan itu tanpa terganggu; dan setelah menghisap tembakau terakhirnya, dan menghela napas panjang, dia bangkit, dan pergi dengan khidmat seperti saat dia datang. Langkah kaki yang lebih lincah terdengar selanjutnya; dan sekarang aku membuka mulutku untuk mengucapkan "selamat pagi," tetapi menutupnya lagi, salam itu tak terucap; karena Hareton Earnshaw sedang melantunkan doanya dalam hati , serangkaian kutukan yang ditujukan kepada setiap benda yang disentuhnya, sambil mencari sekop atau cangkul di sudut untuk menggali tumpukan salju. Dia melirik ke belakang bangku, melebarkan lubang hidungnya, dan sama sekali tidak memikirkan untuk bertukar sapa denganku seperti halnya dengan temanku, kucingku. Aku menduga, dari persiapannya, bahwa jalan keluar diperbolehkan, dan, meninggalkan tempat tidurku yang keras, aku bergerak untuk mengikutinya. Dia menyadari ini, dan mendorong pintu bagian dalam dengan ujung sekopnya, mengisyaratkan dengan suara yang tidak jelas bahwa di situlah tempat yang harus kutuju, jika aku pindah tempat. Pintu itu terbuka ke arah rumah, di mana para wanita sudah mulai beraktivitas; Zillah sedang mendorong percikan api ke cerobong asap dengan alat peniup api yang besar; dan Nyonya Heathcliff, berlutut di perapian, membaca buku dengan bantuan nyala api. Ia meletakkan tangannya di antara panas perapian dan matanya, dan tampak asyik dengan pekerjaannya; hanya berhenti sejenak untuk menegur pelayan karena menutupi dirinya dengan percikan api, atau untuk mengusir seekor anjing yang sesekali menjulurkan hidungnya terlalu dekat ke wajahnya. Saya terkejut melihat Heathcliff juga ada di sana. Ia berdiri di dekat api, membelakangi saya, baru saja menyelesaikan pertengkaran sengit dengan Zillah yang malang; yang sesekali menghentikan pekerjaannya untuk menarik ujung celemeknya, dan mengerang kesal. “Dan kau, kau tak berguna—” serunya saat aku masuk, menoleh ke menantunya, dan menggunakan kata hinaan yang tidak berbahaya seperti bebek, atau domba, tetapi umumnya diwakili oleh tanda hubung—. “Kau di sana lagi, dengan tingkah lakumu yang tidak berguna! Yang lain mencari nafkah sendiri—kau hidup dari sedekahku! Singkirkan sampahmu, dan cari pekerjaan. Kau akan membayarku atas penderitaan karena harus melihatmu selamanya—kau dengar, perempuan jalang terkutuk?” “Aku akan membuang sampahku, karena kau bisa memaksaku jika aku menolak,” jawab gadis muda itu, menutup bukunya, dan melemparkannya ke kursi. “Tapi aku tidak akan melakukan apa pun, meskipun kau mengumpat sekeras-kerasnya, kecuali apa yang aku inginkan!” Heathcliff mengangkat tangannya, dan pembicara itu melompat ke jarak yang lebih aman, jelas menyadari beratnya. Karena tidak ingin terlibat dalam pertengkaran seperti kucing dan anjing, saya melangkah maju dengan cepat, seolah-olah ingin menikmati kehangatan perapian, dan tidak mengetahui perselisihan yang ter interrupted tersebut. Masing-masing memiliki cukup kesopanan untuk menghentikan permusuhan lebih lanjut: Heathcliff memasukkan tinjunya ke dalam saku, karena tergoda; Nyonya Heathcliff mengerutkan bibir, dan berjalan ke tempat duduk yang jauh, di mana dia menepati janjinya dengan berperan seperti patung selama sisa waktu saya di sana. Itu tidak lama. Saya menolak untuk bergabung dengan sarapan mereka, dan, pada cahaya fajar pertama, mengambil kesempatan untuk melarikan diri ke udara bebas, yang sekarang jernih, tenang, dan dingin seperti es yang tak teraba. Tuan tanahku memanggilku untuk berhenti sebelum aku sampai di ujung taman, dan menawarkan untuk menemaniku menyeberangi padang rumput. Untunglah dia melakukannya, karena seluruh punggung bukit itu adalah lautan putih yang bergelombang; gelombang dan surutnya tidak menunjukkan kenaikan dan penurunan yang sesuai di tanah: setidaknya banyak lubang yang terisi hingga rata; dan seluruh deretan gundukan, sisa-sisa penggalian, terhapus dari peta yang tergambar di benakku setelah berjalan kemarin. Saya memperhatikan di salah satu sisi jalan, dengan jarak enam atau tujuh yard, deretan batu tegak yang membentang di sepanjang lahan tandus: batu-batu ini didirikan dan dilumuri kapur dengan sengaja untuk berfungsi sebagai penunjuk jalan di kegelapan, dan juga ketika longsor, seperti yang terjadi sekarang, membuat rawa-rawa yang dalam di kedua sisi jalan bercampur dengan jalan yang lebih kokoh: tetapi, kecuali titik kotor yang menunjuk ke sana kemari, semua jejak keberadaannya telah lenyap: dan teman saya merasa perlu untuk sering memperingatkan saya untuk berbelok ke kanan atau kiri, ketika saya mengira saya mengikuti, dengan benar, liku-liku jalan. Kami sedikit berbincang, dan dia berhenti di pintu masuk Taman Thrushcross, sambil berkata, "Saya tidak mungkin salah jalan di sana." Perpisahan kami hanya sebatas membungkuk singkat, lalu saya melanjutkan perjalanan, mengandalkan kemampuan saya sendiri; karena pondok penjaga gerbang masih kosong. Jarak dari gerbang ke Grange adalah dua mil; saya rasa saya berhasil menempuhnya empat mil, karena tersesat di antara pepohonan, dan tenggelam hingga leher di salju: suatu keadaan yang hanya dapat dipahami oleh mereka yang pernah mengalaminya. Bagaimanapun, apa pun perjalanan saya, jam berdentang pukul dua belas saat saya memasuki rumah; dan itu tepat satu jam untuk setiap mil dari jalan biasa dari Wuthering Heights. Para penghuni rumahku dan pengikutnya bergegas menyambutku; dengan riuh rendah mereka berseru bahwa mereka telah sepenuhnya kehilanganku: semua orang menduga aku tewas tadi malam; dan mereka bertanya-tanya bagaimana mereka harus mencari jasadku. Aku menyuruh mereka diam, sekarang setelah mereka melihatku kembali, dan, dengan perasaan mati rasa hingga ke lubuk hatiku, aku menyeret diri ke atas; dari sana, setelah mengenakan pakaian kering, dan mondar-mandir selama tiga puluh atau empat puluh menit, untuk mengembalikan kehangatan tubuhku, aku pergi ke ruang kerjaku, lemah seperti anak kucing: hampir terlalu lemah untuk menikmati api unggun yang hangat dan kopi panas yang telah disiapkan pelayan untuk menyegarkanku.</p>
-
-<div class="nav">
-  <a href="bab-ii.html">⬅ Bab Ii</a>
-  <a href="bab-iv.html">Bab Iv ➡</a>
-</div>
 
 </body>
 </html>

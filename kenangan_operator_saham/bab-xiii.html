@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XIII</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XIII - Bacaan digital klasik">
+<title>BAB XIII — Kenangan Seorang Operator Saham</title>
+<meta name="description" content="Baca BAB XIII dari buku Kenangan Seorang Operator Saham karya Edwin Lefevre secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/kenangan_operator_saham/bab-xiii.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB XIII — Kenangan Seorang Operator Saham">
+  <meta property="og:description" content="Baca BAB XIII dari buku Kenangan Seorang Operator Saham karya Edwin Lefevre secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/kenangan_operator_saham/bab-xiii.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/kenangan_operator_saham/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB XIII — Kenangan Seorang Operator Saham">
+  <meta name="twitter:description" content="Baca BAB XIII dari Kenangan Seorang Operator Saham karya Edwin Lefevre gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/kenangan_operator_saham/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB XIII",
+    "name": "BAB XIII — Kenangan Seorang Operator Saham",
+    "author": {
+      "@type": "Person",
+      "name": "Edwin Lefevre"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Kenangan Seorang Operator Saham",
+      "author": {
+        "@type": "Person",
+        "name": "Edwin Lefevre"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/kenangan_operator_saham/bab-xiii.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Kenangan Seorang Operator Saham</a>
+    </div>
+    <h1 class="chapter-title">BAB XIII</h1>
+    <div class="chapter-info">
+      <span>✍️ Edwin Lefevre</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Di situlah aku berada, sekali lagi bangkrut, yang buruk, dan salah besar dalam perdagangan, yang jauh lebih buruk. Aku sakit, gugup, kesal, dan tidak mampu berpikir tenang. Artinya, aku berada dalam kondisi pikiran yang seharusnya tidak dimiliki oleh seorang spekulan saat berdagang. Semuanya berjalan salah denganku. Bahkan, aku mulai berpikir bahwa aku tidak dapat memulihkan akal sehatku yang hilang. Setelah terbiasa memperdagangkan dalam jumlah besar—katakanlah, lebih dari seratus ribu lembar saham—aku khawatir aku tidak akan menunjukkan penilaian yang baik saat berdagang dalam jumlah kecil. Rasanya hampir tidak ada gunanya untuk benar ketika yang kau bawa hanyalah seratus lembar saham. Setelah terbiasa mengambil keuntungan besar dari jumlah besar, aku tidak yakin aku akan tahu kapan harus mengambil keuntungan dari jumlah kecil. Aku tidak bisa menggambarkan betapa tak berdayanya perasaanku saat itu.</p><p>Bangkrut lagi dan tidak mampu mengambil inisiatif menyerang dengan giat. Terlilit hutang dan salah langkah! Setelah bertahun-tahun meraih kesuksesan, yang diwarnai kesalahan-kesalahan yang justru membuka jalan bagi kesuksesan yang lebih besar, kini keadaan saya lebih buruk daripada saat memulai di bursa saham. Saya telah belajar banyak tentang permainan spekulasi saham, tetapi saya belum banyak belajar tentang kelemahan manusia. Tidak ada pikiran yang begitu mekanis sehingga Anda dapat mengandalkannya untuk berfungsi dengan efisiensi yang sama setiap saat. Kini saya menyadari bahwa saya tidak dapat mempercayai diri sendiri untuk tetap tidak terpengaruh oleh orang lain dan kemalangan setiap saat.</p><p>Kerugian finansial tidak pernah membuat saya khawatir sedikit pun. Tetapi <a id="Page_161"></a>masalah lain bisa dan memang terjadi. Saya mempelajari bencana saya secara detail dan tentu saja tidak kesulitan untuk melihat di mana letak kebodohan saya. Saya menemukan waktu dan tempat yang tepat. Seseorang harus benar-benar mengenal dirinya sendiri jika ingin sukses dalam perdagangan di pasar spekulatif. Mengetahui apa yang mampu saya lakukan dalam hal kebodohan adalah langkah pendidikan yang panjang. Terkadang saya berpikir bahwa tidak ada harga yang terlalu tinggi bagi seorang spekulan untuk membayar demi mempelajari hal-hal yang akan mencegahnya menjadi sombong. Banyak sekali kegagalan yang dialami orang-orang brilian dapat ditelusuri langsung ke kesombongan—penyakit mahal di mana-mana bagi siapa pun, tetapi khususnya di Wall Street bagi seorang spekulan.</p><p>Saya tidak bahagia di New York, dengan perasaan yang saya rasakan. Saya tidak ingin berdagang, karena saya tidak dalam kondisi perdagangan yang baik. Saya memutuskan untuk pergi dan mencari peluang di tempat lain. Perubahan lingkungan dapat membantu saya menemukan jati diri saya kembali, pikir saya. Jadi sekali lagi saya meninggalkan New York, kalah dalam permainan spekulasi. Saya lebih buruk daripada bangkrut, karena saya berhutang lebih dari seratus ribu dolar yang tersebar di berbagai broker.</p><p>Saya pergi ke Chicago dan di sana menemukan modal. Modalnya memang tidak terlalu besar, tetapi itu hanya berarti saya membutuhkan sedikit lebih banyak waktu untuk mendapatkan kembali kekayaan saya. Sebuah perusahaan yang pernah bekerja sama dengan saya percaya pada kemampuan saya sebagai seorang trader dan mereka bersedia membuktikannya dengan mengizinkan saya untuk melakukan trading di kantor mereka dalam skala kecil.</p><p>Saya memulai dengan sangat hati-hati. Saya tidak tahu bagaimana nasib saya jika saya tetap tinggal di sana. Tetapi salah satu pengalaman paling luar biasa dalam karier saya mempersingkat masa tinggal saya di Chicago. Ini adalah kisah yang hampir sulit dipercaya.</p><p>Suatu hari saya menerima telegram dari Lucius Tucker. Saya mengenalnya ketika dia menjadi manajer kantor di sebuah perusahaan Bursa Saham yang kadang-kadang saya beri bisnis, tetapi saya telah kehilangan kontak dengannya. Telegram itu berbunyi:</p><p>Datanglah ke New York sekarang juga.<br /> L. Tucker.</p><p><a id="Page_162"></a>Saya tahu bahwa dia tahu dari teman-teman kami bagaimana keadaan saya, dan karena itu pasti dia punya rencana lain. Namun, saya tidak punya uang untuk menghamburkan uang untuk perjalanan yang tidak perlu ke New York; jadi, alih-alih melakukan apa yang dia minta, saya menghubunginya lewat jarak jauh.</p><p>“Saya sudah menerima telegram Anda,” kata saya. “Apa maksudnya?”</p><p>“Artinya, seorang bankir besar di New York ingin bertemu denganmu,” jawabnya.</p><p>“Siapakah itu?” tanyaku. Aku tak bisa membayangkan siapa orang itu.</p><p>“Akan kuberitahu saat kau datang ke New York. Kalau tidak, tidak ada gunanya.”</p><p>“Kau bilang dia ingin bertemu denganku?”</p><p>“Dia memang begitu.”</p><p>&quot;Bagaimana?&quot;</p><p>“Dia akan mengatakannya langsung padamu jika kau memberinya kesempatan,” kata Lucius.</p><p>“Tidak bisakah kamu menulis surat kepadaku?”</p><p>&quot;TIDAK.&quot;</p><p>“Kalau begitu, jelaskan lebih terus terang,” kataku.</p><p>“Aku tidak mau.”</p><p>“Dengar, Lucius,” kataku, “katakan saja ini padaku: Apakah ini perjalanan yang bodoh?”</p><p>“Tentu tidak. Akan lebih menguntungkan bagi Anda untuk datang.”</p><p>“Tidak bisakah kau memberiku sedikit petunjuk?”</p><p>“Tidak,” katanya. “Itu tidak adil baginya. Lagipula, aku tidak tahu seberapa besar keinginannya untukmu. Tapi dengarkan saranku: Datanglah, dan datanglah secepatnya.”</p><p>“Apakah Anda yakin dia ingin bertemu dengan saya?”</p><p>“Tidak ada orang lain selain kamu yang cocok. Lebih baik datang, kukatakan padamu. Kirimkan telegram kereta mana yang akan kamu naiki dan aku akan menjemputmu di stasiun.”</p><p>“Baiklah,” kataku, lalu menutup telepon.</p><p>Aku tidak terlalu menyukai misteri yang begitu banyak, tetapi aku tahu bahwa Lucius ramah dan pasti ada alasan bagus mengapa dia berbicara seperti itu. Kehidupanku di Chicago tidak begitu makmur sehingga akan membuatku sedih meninggalkannya. Dengan laju <a id="Page_163"></a>perdagangan yang kulakukan saat ini, akan butuh waktu lama sebelum aku bisa mengumpulkan cukup uang untuk beroperasi seperti dulu.</p><p>Aku kembali ke New York, tanpa mengetahui apa yang akan terjadi. Bahkan, lebih dari sekali selama perjalanan aku khawatir tidak akan terjadi apa-apa dan aku akan kehilangan uang tiket kereta api dan waktuku. Aku tidak menyangka bahwa aku akan mengalami pengalaman paling aneh dalam hidupku.</p><p>Lucius menemui saya di stasiun dan tanpa basa-basi langsung memberi tahu saya bahwa ia telah memanggil saya atas permintaan mendesak dari Tuan Daniel Williamson, dari perusahaan Bursa Saham terkenal Williamson &amp; Brown. Tuan Williamson menyuruh Lucius untuk memberi tahu saya bahwa ia memiliki tawaran bisnis yang pasti akan saya terima karena akan sangat menguntungkan bagi saya. Lucius bersumpah bahwa ia tidak tahu apa tawaran itu. Reputasi perusahaan tersebut merupakan jaminan bahwa tidak akan ada tuntutan yang tidak pantas dari saya.</p><p>Dan Williamson adalah anggota senior firma tersebut, yang didirikan oleh Egbert Williamson pada tahun 70-an. Tidak ada Brown dan sudah bertahun-tahun tidak ada di firma tersebut. Firma itu sangat terkenal pada masa ayah Dan, dan Dan mewarisi kekayaan yang cukup besar dan tidak banyak mengejar bisnis di luar firma. Mereka memiliki satu pelanggan yang nilainya setara dengan seratus pelanggan biasa, yaitu Alvin Marquand, saudara ipar Williamson, yang selain menjadi direktur di selusin bank dan perusahaan kepercayaan, juga merupakan presiden dari sistem kereta api Chesapeake and Atlantic yang hebat. Dia adalah tokoh paling menarik di dunia kereta api setelah James J. Hill, dan merupakan juru bicara serta anggota dominan dari kelompok perbankan yang kuat yang dikenal sebagai geng Fort Dawson. Kekayaannya berkisar antara lima puluh juta hingga lima ratus juta dolar, perkiraan tersebut tergantung pada kondisi hati pembicara. Ketika dia meninggal, mereka mengetahui bahwa kekayaannya mencapai dua ratus lima puluh juta dolar, semuanya diperoleh di Wall Street. Jadi , Anda lihat, dia adalah pelanggan yang luar biasa.</p><p>Lucius memberi tahu saya bahwa dia baru saja menerima posisi di Williamson <a id="Page_164"></a>&amp; Brown—posisi yang memang dibuat untuknya. Dia seharusnya menjadi semacam pencari bisnis umum yang bertugas berkeliling. Firma tersebut menginginkan bisnis komisi umum dan Lucius telah membujuk Tuan Williamson untuk membuka beberapa kantor cabang, satu di salah satu hotel besar di pusat kota dan yang lainnya di Chicago. Saya menduga bahwa saya akan ditawari posisi di tempat yang terakhir, mungkin sebagai manajer kantor, yang tentu saja tidak akan saya terima. Saya tidak langsung menolak Lucius karena saya pikir lebih baik menunggu sampai tawaran itu diberikan sebelum saya menolaknya.</p><p>Lucius membawa saya ke kantor pribadi Tuan Williamson, memperkenalkan saya kepada atasannya, dan meninggalkan ruangan dengan tergesa-gesa, seolah-olah dia ingin menghindari dipanggil sebagai saksi dalam kasus di mana dia mengenal kedua belah pihak. Saya bersiap untuk mendengarkan dan kemudian mengatakan tidak.</p><p>Tuan Williamson sangat menyenangkan. Dia adalah seorang pria sejati, dengan tata krama yang halus dan senyum yang ramah. Saya dapat melihat bahwa dia mudah berteman dan mempertahankan pertemanannya. Mengapa tidak? Dia sehat dan karena itu selalu ceria. Dia memiliki banyak uang dan karena itu tidak dapat dicurigai memiliki motif yang kotor. Hal-hal ini, bersama dengan pendidikan dan pelatihan sosialnya, membuatnya mudah untuk tidak hanya bersikap sopan tetapi juga ramah, dan tidak hanya ramah tetapi juga suka membantu.</p><p>Saya tidak mengatakan apa-apa. Saya tidak punya apa-apa untuk dikatakan dan, lagipula, saya selalu membiarkan orang lain berbicara sepenuhnya sebelum saya mulai berbicara. Seseorang memberi tahu saya bahwa mendiang James Stillman, presiden National City Bank—yang, kebetulan, adalah teman dekat Williamson—memiliki kebiasaan untuk mendengarkan dalam diam, dengan wajah tanpa ekspresi, kepada siapa pun yang mengajukan proposal kepadanya. Setelah orang itu selesai berbicara, Tuan Stillman terus menatapnya, seolah-olah orang itu belum selesai. Jadi orang itu, merasa terdorong untuk mengatakan sesuatu lagi, melakukannya. Hanya dengan menatap dan mendengarkan, Stillman sering membuat orang itu menawarkan persyaratan yang jauh lebih menguntungkan bagi bank daripada yang ingin dia tawarkan ketika dia mulai berbicara.</p><p>Saya tidak diam hanya untuk mendorong orang menawarkan <a id="Page_165"></a>kesepakatan yang lebih baik, tetapi karena saya ingin mengetahui semua fakta kasus tersebut. Dengan membiarkan seseorang berbicara sepenuhnya, Anda dapat memutuskan sekaligus. Ini sangat menghemat waktu. Ini menghindari perdebatan dan diskusi panjang yang tidak menghasilkan apa-apa. Hampir setiap proposal bisnis yang diajukan kepada saya dapat diselesaikan, sejauh menyangkut partisipasi saya di dalamnya, dengan mengatakan ya atau tidak. Tetapi saya tidak dapat mengatakan ya atau tidak begitu saja kecuali saya memiliki proposal lengkap di hadapan saya.</p><p>Dan Williamson yang berbicara dan saya yang mendengarkan. Dia mengatakan bahwa dia telah banyak mendengar tentang operasi saya di pasar saham dan betapa dia menyesal bahwa saya telah keluar dari bidang keahlian saya dan mengalami kegagalan di bisnis kapas. Namun, itu adalah nasib buruk saya karena dia berkesempatan mewawancarai saya. Dia berpikir keahlian saya adalah pasar saham, bahwa saya dilahirkan untuk itu dan bahwa saya seharusnya tidak menyimpang darinya.</p><p>“Dan itulah alasannya, Tuan Livingston,” ia menyimpulkan dengan ramah, “mengapa kami ingin berbisnis dengan Anda.”</p><p>“Bagaimana cara berbisnis?” tanyaku padanya.</p><p>“Jadilah pialang Anda,” katanya. “Perusahaan saya ingin menangani bisnis saham Anda.”</p><p>“Aku ingin memberikannya padamu,” kataku, “tapi aku tidak bisa.”</p><p>“Kenapa tidak?” tanyanya.</p><p>“Saya tidak punya uang,” jawab saya.</p><p>“Bagian itu tidak masalah,” katanya sambil tersenyum ramah. “Akan saya sediakan.” Ia mengeluarkan buku cek saku, menulis cek senilai dua puluh lima ribu dolar atas nama saya, dan memberikannya kepada saya.</p><p>“Ini untuk apa?” tanyaku.</p><p>“Untuk Anda setorkan ke bank Anda sendiri. Anda akan membuat cek sendiri. Saya ingin Anda melakukan perdagangan di kantor kami. Saya tidak peduli apakah Anda menang atau kalah. Jika uang itu habis, saya akan memberi Anda cek pribadi lainnya. Jadi Anda tidak perlu terlalu berhati-hati dengan yang ini. Mengerti?”</p><p>Saya tahu bahwa perusahaan itu terlalu kaya dan makmur untuk membutuhkan bisnis siapa pun, apalagi memberikan uang kepada seseorang untuk <a id="Page_166"></a>dijadikan jaminan. Dan dia begitu baik hati! Alih-alih memberi saya kredit dengan rumah itu, dia memberi saya uang tunai, sehingga hanya dia yang tahu dari mana uang itu berasal, satu-satunya syarat adalah jika saya berdagang, saya harus melakukannya melalui perusahaannya. Dan kemudian janji bahwa akan ada lebih banyak lagi jika itu berhasil! Namun, pasti ada alasannya.</p><p>“Apa maksudnya?” tanyaku padanya.</p><p>“Idenya sederhana, kami ingin memiliki pelanggan di kantor ini yang dikenal sebagai trader aktif yang handal. Semua orang tahu bahwa Anda sering melakukan trading short yang besar, dan itulah yang sangat saya sukai dari Anda. Anda dikenal sebagai seorang 'plunger' (pemain yang memanfaatkan peluang).”</p><p>“Aku masih belum mengerti,” kataku.</p><p>“Saya akan jujur kepada Anda, Tuan Livingston. Kami memiliki dua atau tiga pelanggan yang sangat kaya yang membeli dan menjual saham dalam jumlah besar. Saya tidak ingin Wall Street mencurigai mereka menjual saham dalam jumlah besar setiap kali kami menjual sepuluh atau dua puluh ribu lembar saham apa pun. Jika Wall Street tahu bahwa Anda melakukan perdagangan di kantor kami, mereka tidak akan tahu apakah itu penjualan pendek Anda atau saham beli pelanggan lain yang masuk ke pasar.”</p><p>Saya langsung mengerti. Dia ingin menutupi operasi saudara iparnya dengan reputasi saya sebagai seorang spekulan! Kebetulan, saya telah menghasilkan keuntungan terbesar saya di sisi pasar bearish satu setengah tahun sebelumnya, dan, tentu saja, para penggosip di Wall Street dan para penyebar rumor bodoh telah terbiasa menyalahkan saya atas setiap penurunan harga. Sampai hari ini, ketika pasar sangat lemah, mereka mengatakan saya sedang menjarahnya.</p><p>Saya tidak perlu berpikir panjang. Sekilas saya melihat bahwa Dan Williamson menawarkan saya kesempatan untuk kembali, dan kembali dengan cepat. Saya mengambil cek itu, menyetorkannya ke bank, membuka rekening di perusahaannya, dan mulai berdagang. Pasarnya aktif dan bagus, cukup luas sehingga seseorang tidak perlu terpaku pada satu atau dua spesialisasi. Saya mulai khawatir, seperti yang sudah saya ceritakan, bahwa saya telah kehilangan kemampuan untuk meraih keuntungan. Tapi ternyata tidak. Dalam waktu tiga minggu, saya telah menghasilkan keuntungan seratus <a id="Page_167"></a>dua belas ribu dolar dari dua puluh lima ribu dolar yang dipinjamkan Dan Williamson kepada saya.</p><p>Saya mendatanginya dan berkata, “Saya datang untuk mengembalikan uang dua puluh lima ribu dolar itu.”</p><p>“Tidak, tidak!” katanya sambil mengusirku seolah-olah aku menawarinya minuman keras. “Tidak, tidak, Nak. Tunggu sampai saldo rekeningmu bertambah. Jangan dipikirkan dulu. Uangmu cuma sedikit.”</p><p>Di situlah saya membuat kesalahan yang paling saya sesali sepanjang karier saya di Wall Street. Kesalahan itu menyebabkan penderitaan yang panjang dan menyedihkan selama bertahun-tahun. Seharusnya saya bersikeras agar dia menerima uang itu. Saya sedang menuju kekayaan yang lebih besar daripada yang telah saya hilangkan dan berjalan cukup cepat. Selama tiga minggu, keuntungan rata-rata saya adalah 150 persen per minggu. Sejak saat itu, perdagangan saya akan terus meningkat. Tetapi alih-alih membebaskan diri dari semua kewajiban, saya membiarkannya melakukan keinginannya dan tidak memaksanya untuk menerima dua puluh lima ribu dolar. Tentu saja, karena dia tidak menarik dua puluh lima ribu dolar yang telah dia berikan kepada saya, saya merasa saya tidak bisa menarik keuntungan saya. Saya sangat berterima kasih kepadanya, tetapi saya memiliki sifat yang tidak suka berhutang uang atau bantuan . Saya dapat membayar kembali uang itu dengan uang, tetapi bantuan dan kebaikan harus saya balas dengan cara yang sama—dan Anda mungkin akan menemukan kewajiban moral ini sangat mahal pada saat-saat tertentu. Selain itu, tidak ada batasan waktu untuk menuntut.</p><p>Saya membiarkan uang itu tanpa diganggu dan melanjutkan perdagangan saya. Saya berjalan dengan sangat baik. Saya mulai mendapatkan kembali ketenangan saya dan saya yakin tidak akan lama lagi sebelum saya kembali ke performa terbaik saya di tahun 1907. Setelah itu, yang saya butuhkan hanyalah pasar bertahan sedikit lebih lama dan saya akan lebih dari sekadar menutup kerugian saya. Tetapi menghasilkan atau tidak menghasilkan uang tidak terlalu mengganggu saya. Yang membuat saya bahagia adalah saya kehilangan kebiasaan salah, kebiasaan tidak menjadi diri sendiri. Itu telah mengacaukan saya selama berbulan-bulan tetapi saya telah belajar dari kesalahan saya.</p><p><a id="Page_168"></a>Tepat pada saat itu saya mulai bersikap pesimis dan mulai menjual saham beberapa perusahaan kereta api secara short selling. Di antaranya adalah Chesapeake &amp; Atlantic. Saya rasa saya melakukan short selling di saham itu; sekitar delapan ribu lembar saham.</p><p>Suatu pagi ketika saya sampai di pusat kota, Dan Williamson memanggil saya ke kantor pribadinya sebelum pasar dibuka dan berkata kepada saya: “Larry, jangan melakukan apa pun di Chesapeake &amp; Atlantic sekarang. Itu langkah yang buruk, menjual saham dengan harga rendah delapan ribu. Saya menutup posisi itu untukmu pagi ini di London dan mengambil posisi beli.”</p><p>Saya yakin Chesapeake &amp; Atlantic akan turun. Data pergerakan harga menunjukkannya dengan sangat jelas; dan selain itu, saya bersikap pesimis terhadap seluruh pasar, bukan pesimis yang ekstrem atau gila-gilaan, tetapi cukup untuk merasa nyaman dengan posisi jual moderat. Saya berkata kepada Williamson, “Mengapa kamu melakukan itu? Saya bersikap pesimis terhadap seluruh pasar dan semuanya akan turun.”</p><p>Namun ia hanya menggelengkan kepala dan berkata, “Saya melakukannya karena kebetulan saya tahu sesuatu tentang Chesapeake &amp; Atlantic yang tidak mungkin Anda ketahui. Saran saya kepada Anda adalah jangan melakukan short selling saham itu sampai saya memberi tahu Anda bahwa aman untuk melakukannya.”</p><p>Apa yang bisa kulakukan? Itu bukan saran yang konyol. Itu adalah nasihat yang datang dari saudara ipar ketua dewan direksi. Dan bukan hanya teman terdekat Alvin Marquand, tetapi dia juga baik dan murah hati kepadaku. Dia telah menunjukkan kepercayaannya padaku dan keyakinannya pada kata-kataku. Aku tidak bisa berbuat kurang dari berterima kasih padanya. Dan sekali lagi perasaanku mengalahkan akal sehatku dan aku menyerah. Menundukkan akal sehatku pada keinginannya adalah kehancuranku. Rasa syukur adalah sesuatu yang tak bisa dihindari oleh orang baik, tetapi seseorang harus mencegahnya agar tidak sepenuhnya mengikatnya. Hal pertama yang kutahu adalah aku tidak hanya kehilangan semua keuntunganku, tetapi aku juga berhutang kepada perusahaan sebesar seratus lima puluh ribu dolar. Aku merasa sangat buruk tentang hal itu, tetapi Dan menyuruhku untuk tidak khawatir.</p><p>“Aku akan mengeluarkanmu dari lubang ini,” janjinya. “Aku tahu aku bisa. Tapi aku hanya bisa melakukannya jika kau mengizinkanku. Kau harus berhenti berbisnis atas kemauanmu sendiri. Aku tidak bisa bekerja untukmu <a id="Page_169"></a>lalu kau malah menghancurkan semua kerja kerasku untukmu. Berhentilah berbisnis dan beri aku kesempatan untuk menghasilkan uang untukmu. Mau iya, Larry?”</p><p>Sekali lagi saya bertanya kepada Anda: Apa yang bisa saya lakukan? Saya memikirkan kebaikannya dan saya tidak bisa melakukan apa pun yang mungkin dianggap sebagai kurangnya penghargaan. Saya telah menyukainya. Dia sangat menyenangkan dan ramah. Saya ingat bahwa yang saya dapatkan darinya hanyalah dorongan semangat. Dia terus meyakinkan saya bahwa semuanya akan baik-baik saja. Suatu hari, mungkin enam bulan kemudian, dia datang kepada saya dengan senyum puas dan memberi saya beberapa slip kredit.</p><p>“Sudah kubilang aku akan mengeluarkanmu dari lubang itu,” katanya, “dan aku sudah melakukannya.” Lalu aku menyadari bahwa dia tidak hanya menghapus seluruh utangku, tetapi aku juga masih memiliki saldo kredit kecil.</p><p>Saya pikir saya bisa saja menaikkan harga saham itu tanpa banyak kesulitan, karena pasar sedang tepat, tetapi dia berkata kepada saya, &quot;Saya telah membelikanmu sepuluh ribu lembar saham Southern Atlantic.&quot; Itu adalah jalan lain yang dikendalikan oleh saudara iparnya, Alvin Marquand, yang juga mengatur nasib pasar saham tersebut.</p><p>Ketika seseorang melakukan hal yang sama untuk Anda seperti yang Dan Williamson lakukan untuk saya, Anda tidak bisa berkata apa-apa selain &quot;Terima kasih&quot;—tidak peduli apa pun pandangan pasar Anda. Anda mungkin yakin Anda benar, tetapi seperti yang pernah dikatakan Pat Hearne: &quot;Anda tidak akan tahu sampai Anda bertaruh!&quot; dan Dan Williamson telah bertaruh untuk saya—dengan uangnya sendiri.</p><p>Nah, Southern Atlantic bangkrut dan tetap terpuruk, dan saya kehilangan, saya lupa berapa banyak, dari sepuluh ribu saham saya sebelum Dan menjual saham saya. Saya berutang padanya lebih banyak dari sebelumnya. Tetapi Anda tidak akan pernah melihat kreditor yang lebih baik atau kurang mendesak dalam hidup Anda. Tidak pernah ada keluhan darinya. Sebaliknya, kata-kata penyemangat dan peringatan untuk tidak khawatir. Pada akhirnya kerugian itu diganti untuk saya dengan cara yang sama murah hati namun misterius.</p><p>Dia tidak memberikan detail apa pun. Semuanya hanya berupa catatan bernomor. Dan Williamson hanya akan berkata kepada saya, “Kami menutupi kerugian Southern Atlantic Anda dengan keuntungan dari kesepakatan lain ini,” dan dia akan memberi tahu saya bagaimana dia telah menjual tujuh ribu lima ratus <a id="Page_170"></a>lembar saham lain dan menghasilkan keuntungan besar darinya. Sejujurnya, saya tidak pernah tahu apa pun tentang transaksi saya itu sampai saya diberi tahu bahwa hutang tersebut telah dihapus.</p><p>Setelah itu terjadi beberapa kali, saya mulai berpikir, dan saya bisa melihat kasus saya dari sudut pandang yang berbeda. Akhirnya saya terbongkar. Jelas bahwa saya telah dimanfaatkan oleh Dan Williamson. Saya marah memikirkannya, tetapi lebih marah lagi karena saya tidak menyadarinya lebih cepat. Begitu saya memikirkan semuanya, saya pergi ke Dan Williamson, mengatakan kepadanya bahwa saya sudah selesai dengan firma tersebut, dan saya mengundurkan diri dari kantor Williamson &amp; Brown. Saya tidak berbicara dengannya atau dengan rekan-rekannya. Apa gunanya itu bagi saya? Tetapi saya akui bahwa saya merasa sakit hati—pada diri saya sendiri sama seperti pada Williamson &amp; Brown.</p><p>Kehilangan uang itu tidak mengganggu saya. Setiap kali saya kehilangan uang di pasar saham , saya selalu menganggap bahwa saya telah belajar sesuatu; bahwa jika saya kehilangan uang, saya telah memperoleh pengalaman, sehingga uang itu sebenarnya digunakan untuk biaya pendidikan. Seseorang harus memiliki pengalaman dan dia harus membayarnya. Tetapi ada sesuatu yang sangat menyakitkan dalam pengalaman saya di kantor Dan Williamson, dan itu adalah kehilangan kesempatan besar. Uang yang hilang oleh seseorang bukanlah apa-apa; dia bisa mendapatkannya kembali. Tetapi kesempatan seperti yang saya miliki saat itu tidak datang setiap hari.</p><p>Anda lihat, pasar memang merupakan pasar perdagangan yang bagus. Saya benar; maksud saya, saya membacanya dengan akurat. Peluang untuk menghasilkan jutaan ada di sana. Tetapi saya membiarkan rasa syukur saya mengganggu permainan saya. Saya membatasi diri sendiri. Saya harus melakukan apa yang diinginkan Dan Williamson dengan kebaikannya. Secara keseluruhan, itu lebih tidak memuaskan daripada berbisnis dengan kerabat. Bisnis yang buruk!</p><p>Dan itu bukanlah hal terburuknya. Yang terburuk adalah setelah itu praktis tidak ada kesempatan bagi saya untuk menghasilkan banyak uang. Pasar stagnan. Keadaan semakin memburuk. Saya tidak hanya kehilangan semua yang saya miliki tetapi juga kembali berutang—lebih banyak dari sebelumnya. Itu adalah tahun-tahun yang panjang dan sulit, 1911, <a id="Page_171"></a>1912, 1913 dan 1914. Tidak ada uang yang bisa dihasilkan. Kesempatan itu sama sekali tidak ada dan akibatnya keadaan saya lebih buruk dari sebelumnya.</p><p>Tidaklah menyakitkan untuk kalah ketika kekalahan itu tidak disertai dengan bayangan pilu tentang apa yang seharusnya terjadi. Justru itulah yang terus menghantui pikiran saya, dan tentu saja hal itu semakin membuat saya gelisah. Saya menyadari bahwa kelemahan yang rentan dimiliki seorang spekulan hampir tak terhitung jumlahnya. Sebagai seorang pria, bertindak seperti yang saya lakukan di kantor Dan Williamson adalah hal yang tepat, tetapi sebagai seorang spekulan, membiarkan diri saya dipengaruhi oleh pertimbangan apa pun untuk bertindak melawan penilaian saya sendiri adalah tindakan yang tidak pantas dan tidak bijaksana. Noblesse oblige —tetapi tidak di pasar saham, karena pasar saham tidak menjunjung tinggi nilai-nilai kesatria dan terlebih lagi tidak menghargai loyalitas. Saya menyadari bahwa saya tidak bisa bertindak berbeda. Saya tidak bisa mengubah diri saya hanya karena saya ingin berdagang di pasar saham. Tetapi bisnis tetaplah bisnis, dan tugas saya sebagai spekulan adalah selalu mendukung penilaian saya sendiri.</p><p>Itu adalah pengalaman yang sangat aneh. Saya akan menceritakan apa yang menurut saya terjadi. Dan Williamson benar-benar tulus dalam apa yang dia katakan kepada saya ketika pertama kali bertemu saya. Setiap kali perusahaannya memperdagangkan beberapa ribu saham di satu perusahaan, Wall Street langsung menyimpulkan bahwa Alvin Marquand sedang membeli atau menjual. Dia memang pedagang besar di kantor itu, dan dia memberikan semua bisnisnya kepada perusahaan ini; dan dia adalah salah satu pedagang terbaik dan terbesar yang pernah mereka miliki di Wall Street. Nah, saya akan digunakan sebagai kedok, khususnya untuk penjualan Marquand.</p><p>Alvin Marquand jatuh sakit tak lama setelah saya masuk. Penyakitnya didiagnosis sejak dini sebagai penyakit yang tidak dapat disembuhkan, dan Dan Williamson tentu saja mengetahuinya jauh sebelum Marquand sendiri. Itulah mengapa Dan menanggung saham Chesapeake &amp; Atlantic saya. Dia telah mulai melikuidasi beberapa kepemilikan spekulatif saudara iparnya di saham itu dan saham lainnya.</p><p>Tentu saja, ketika Marquand meninggal, pihak pengelola harta warisan harus melikuidasi lini investasi spekulatif dan semi-spekulatifnya , dan pada saat itu kita telah memasuki pasar bearish. Dengan mengikat saya seperti yang dia lakukan, Dan sangat membantu pihak pengelola harta warisan. Saya tidak <a id="Page_172"></a>membual ketika mengatakan bahwa saya adalah seorang trader yang sangat aktif dan bahwa pandangan saya tentang pasar saham sangat tepat. Saya tahu bahwa Williamson mengingat operasi saya yang sukses di pasar bearish tahun 1907 dan dia tidak mampu mengambil risiko membiarkan saya bebas. Seandainya saya terus seperti itu, saya akan menghasilkan begitu banyak uang sehingga pada saat dia mencoba melikuidasi sebagian harta warisan Alvin Marquand, saya akan memperdagangkan ratusan ribu saham. Sebagai seorang trader bearish aktif, saya akan menyebabkan kerugian jutaan dolar bagi ahli waris Marquand, karena Alvin hanya meninggalkan sedikit lebih dari beberapa ratus juta dolar .</p><p>Jauh lebih murah bagi mereka untuk membiarkan saya berutang dan kemudian melunasi utang tersebut daripada menempatkan saya di kantor lain yang aktif beroperasi di sisi yang berlawanan. Itulah tepatnya yang akan saya lakukan, seandainya saya tidak merasa bahwa saya tidak boleh kalah dalam hal kesopanan dari Dan Williamson.</p><p>Saya selalu menganggap ini sebagai pengalaman paling menarik dan paling disayangkan dari semua pengalaman saya sebagai operator saham. Sebagai pelajaran, ini menelan biaya yang sangat mahal bagi saya. Ini menunda pemulihan saya selama beberapa tahun. Saya cukup muda untuk menunggu dengan sabar jutaan yang hilang itu kembali. Tetapi lima tahun adalah waktu yang lama bagi seseorang untuk menjadi miskin. Muda atau tua, itu bukanlah sesuatu yang menyenangkan. Saya bisa hidup tanpa kapal pesiar jauh lebih mudah daripada tanpa pasar untuk kembali. Kesempatan terbesar dalam hidup ada di depan mata saya, dompet yang telah hilang. Saya tidak bisa mengulurkan tangan dan meraihnya. Dan Williamson adalah anak yang sangat cerdik; selicik yang mereka bayangkan; berpandangan jauh, jenius, berani. Dia seorang pemikir, memiliki imajinasi, mendeteksi titik lemah pada siapa pun dan dapat merencanakan dengan dingin untuk menyerangnya. Dia melakukan penilaiannya sendiri dan segera mengetahui apa yang harus dilakukan kepada saya untuk membuat saya benar-benar tidak berdaya di pasar. Sebenarnya dia tidak mengambil uang saya. Sebaliknya, dari luar, dia tampak sangat baik. Dia menyayangi saudara perempuannya, Ny. Marquand, dan dia menjalankan kewajibannya terhadapnya sebagaimana yang dia pahami.</p><p><a id="Page_173"></a></p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-xii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Xii</span>
+    </a>
+    <a href="bab-xiv.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xiv</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XIII</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>DI SITULAH AKU BERADA, sekali lagi bangkrut, yang buruk, dan salah besar dalam perdagangan, yang jauh lebih buruk. Aku sakit, gugup, kesal, dan tidak mampu berpikir tenang. Artinya, aku berada dalam kondisi pikiran yang seharusnya tidak dimiliki oleh seorang spekulan saat berdagang. Semuanya berjalan salah denganku. Bahkan, aku mulai berpikir bahwa aku tidak dapat memulihkan akal sehatku yang hilang. Setelah terbiasa memperdagangkan dalam jumlah besar—katakanlah, lebih dari seratus ribu lembar saham—aku khawatir aku tidak akan menunjukkan penilaian yang baik saat berdagang dalam jumlah kecil. Rasanya hampir tidak ada gunanya untuk benar ketika yang kau bawa hanyalah seratus lembar saham. Setelah terbiasa mengambil keuntungan besar dari jumlah besar, aku tidak yakin aku akan tahu kapan harus mengambil keuntungan dari jumlah kecil. Aku tidak bisa menggambarkan betapa tak berdayanya perasaanku saat itu. Bangkrut lagi dan tidak mampu mengambil inisiatif menyerang dengan giat. Terlilit hutang dan salah langkah! Setelah bertahun-tahun meraih kesuksesan, yang diwarnai kesalahan-kesalahan yang justru membuka jalan bagi kesuksesan yang lebih besar, kini keadaan saya lebih buruk daripada saat memulai di bursa saham. Saya telah belajar banyak tentang permainan spekulasi saham, tetapi saya belum banyak belajar tentang kelemahan manusia. Tidak ada pikiran yang begitu mekanis sehingga Anda dapat mengandalkannya untuk berfungsi dengan efisiensi yang sama setiap saat. Kini saya menyadari bahwa saya tidak dapat mempercayai diri sendiri untuk tetap tidak terpengaruh oleh orang lain dan kemalangan setiap saat. Kerugian finansial tidak pernah membuat saya khawatir sedikit pun. Tetapi masalah lain bisa dan memang terjadi. Saya mempelajari bencana saya secara detail dan tentu saja tidak kesulitan untuk melihat di mana letak kebodohan saya. Saya menemukan waktu dan tempat yang tepat. Seseorang harus benar-benar mengenal dirinya sendiri jika ingin sukses dalam perdagangan di pasar spekulatif. Mengetahui apa yang mampu saya lakukan dalam hal kebodohan adalah langkah pendidikan yang panjang. Terkadang saya berpikir bahwa tidak ada harga yang terlalu tinggi bagi seorang spekulan untuk membayar demi mempelajari hal-hal yang akan mencegahnya menjadi sombong. Banyak sekali kegagalan yang dialami orang-orang brilian dapat ditelusuri langsung ke kesombongan—penyakit mahal di mana-mana bagi siapa pun, tetapi khususnya di Wall Street bagi seorang spekulan. Saya tidak bahagia di New York, dengan perasaan yang saya rasakan. Saya tidak ingin berdagang, karena saya tidak dalam kondisi perdagangan yang baik. Saya memutuskan untuk pergi dan mencari peluang di tempat lain. Perubahan lingkungan dapat membantu saya menemukan jati diri saya kembali, pikir saya. Jadi sekali lagi saya meninggalkan New York, kalah dalam permainan spekulasi. Saya lebih buruk daripada bangkrut, karena saya berhutang lebih dari seratus ribu dolar yang tersebar di berbagai broker. Saya pergi ke Chicago dan di sana menemukan modal. Modalnya memang tidak terlalu besar, tetapi itu hanya berarti saya membutuhkan sedikit lebih banyak waktu untuk mendapatkan kembali kekayaan saya. Sebuah perusahaan yang pernah bekerja sama dengan saya percaya pada kemampuan saya sebagai seorang trader dan mereka bersedia membuktikannya dengan mengizinkan saya untuk melakukan trading di kantor mereka dalam skala kecil. Saya memulai dengan sangat hati-hati. Saya tidak tahu bagaimana nasib saya jika saya tetap tinggal di sana. Tetapi salah satu pengalaman paling luar biasa dalam karier saya mempersingkat masa tinggal saya di Chicago. Ini adalah kisah yang hampir sulit dipercaya. Suatu hari saya menerima telegram dari Lucius Tucker. Saya mengenalnya ketika dia menjadi manajer kantor di sebuah perusahaan Bursa Saham yang kadang-kadang saya beri bisnis, tetapi saya telah kehilangan kontak dengannya. Telegram itu berbunyi: Datanglah ke New York sekarang juga. L. TUCKER. Saya tahu bahwa dia tahu dari teman-teman kami bagaimana keadaan saya, dan karena itu pasti dia punya rencana lain. Namun, saya tidak punya uang untuk menghamburkan uang untuk perjalanan yang tidak perlu ke New York; jadi, alih-alih melakukan apa yang dia minta, saya menghubunginya lewat jarak jauh. “Saya sudah menerima telegram Anda,” kata saya. “Apa maksudnya?” “Artinya, seorang bankir besar di New York ingin bertemu denganmu,” jawabnya. “Siapakah itu?” tanyaku. Aku tak bisa membayangkan siapa orang itu. “Akan kuberitahu saat kau datang ke New York. Kalau tidak, tidak ada gunanya.” “Kau bilang dia ingin bertemu denganku?” “Dia memang begitu.” "Bagaimana?" “Dia akan mengatakannya langsung padamu jika kau memberinya kesempatan,” kata Lucius. “Tidak bisakah kamu menulis surat kepadaku?” "Tidak." “Kalau begitu, jelaskan lebih terus terang,” kataku. “Aku tidak mau.” “Dengar, Lucius,” kataku, “katakan saja ini padaku: Apakah ini perjalanan yang bodoh?” “Tentu tidak. Akan lebih menguntungkan bagi Anda untuk datang.” “Tidak bisakah kau memberiku sedikit petunjuk?” “Tidak,” katanya. “Itu tidak adil baginya. Lagipula, aku tidak tahu seberapa besar keinginannya untukmu. Tapi dengarkan saranku: Datanglah, dan datanglah secepatnya.” “Apakah Anda yakin dia ingin bertemu dengan saya?” “Tidak ada orang lain selain kamu yang cocok. Lebih baik datang, kukatakan padamu. Kirimkan telegram kereta mana yang akan kamu naiki dan aku akan menjemputmu di stasiun.” “Baiklah,” kataku, lalu menutup telepon. Aku tidak terlalu menyukai misteri yang begitu banyak, tetapi aku tahu bahwa Lucius ramah dan pasti ada alasan bagus mengapa dia berbicara seperti itu. Kehidupanku di Chicago tidak begitu makmur sehingga akan membuatku sedih meninggalkannya. Dengan laju perdagangan yang kulakukan saat ini, akan butuh waktu lama sebelum aku bisa mengumpulkan cukup uang untuk beroperasi seperti dulu. Aku kembali ke New York, tanpa mengetahui apa yang akan terjadi. Bahkan, lebih dari sekali selama perjalanan aku khawatir tidak akan terjadi apa-apa dan aku akan kehilangan uang tiket kereta api dan waktuku. Aku tidak menyangka bahwa aku akan mengalami pengalaman paling aneh dalam hidupku. Lucius menemui saya di stasiun dan tanpa basa-basi langsung memberi tahu saya bahwa ia telah memanggil saya atas permintaan mendesak dari Tuan Daniel Williamson, dari perusahaan Bursa Saham terkenal Williamson & Brown. Tuan Williamson menyuruh Lucius untuk memberi tahu saya bahwa ia memiliki tawaran bisnis yang pasti akan saya terima karena akan sangat menguntungkan bagi saya. Lucius bersumpah bahwa ia tidak tahu apa tawaran itu. Reputasi perusahaan tersebut merupakan jaminan bahwa tidak akan ada tuntutan yang tidak pantas dari saya. Dan Williamson adalah anggota senior firma tersebut, yang didirikan oleh Egbert Williamson pada tahun 70-an. Tidak ada Brown dan sudah bertahun-tahun tidak ada di firma tersebut. Firma itu sangat terkenal pada masa ayah Dan, dan Dan mewarisi kekayaan yang cukup besar dan tidak banyak mengejar bisnis di luar firma. Mereka memiliki satu pelanggan yang nilainya setara dengan seratus pelanggan biasa, yaitu Alvin Marquand, saudara ipar Williamson, yang selain menjadi direktur di selusin bank dan perusahaan kepercayaan, juga merupakan presiden dari sistem kereta api Chesapeake and Atlantic yang hebat. Dia adalah tokoh paling menarik di dunia kereta api setelah James J. Hill, dan merupakan juru bicara serta anggota dominan dari kelompok perbankan yang kuat yang dikenal sebagai geng Fort Dawson. Kekayaannya berkisar antara lima puluh juta hingga lima ratus juta dolar, perkiraan tersebut tergantung pada kondisi hati pembicara. Ketika dia meninggal, mereka mengetahui bahwa kekayaannya mencapai dua ratus lima puluh juta dolar, semuanya diperoleh di Wall Street. Jadi , Anda lihat, dia adalah pelanggan yang luar biasa. Lucius memberi tahu saya bahwa dia baru saja menerima posisi di Williamson & Brown—posisi yang memang dibuat untuknya. Dia seharusnya menjadi semacam pencari bisnis umum yang bertugas berkeliling. Firma tersebut menginginkan bisnis komisi umum dan Lucius telah membujuk Tuan Williamson untuk membuka beberapa kantor cabang, satu di salah satu hotel besar di pusat kota dan yang lainnya di Chicago. Saya menduga bahwa saya akan ditawari posisi di tempat yang terakhir, mungkin sebagai manajer kantor, yang tentu saja tidak akan saya terima. Saya tidak langsung menolak Lucius karena saya pikir lebih baik menunggu sampai tawaran itu diberikan sebelum saya menolaknya. Lucius membawa saya ke kantor pribadi Tuan Williamson, memperkenalkan saya kepada atasannya, dan meninggalkan ruangan dengan tergesa-gesa, seolah-olah dia ingin menghindari dipanggil sebagai saksi dalam kasus di mana dia mengenal kedua belah pihak. Saya bersiap untuk mendengarkan dan kemudian mengatakan tidak. Tuan Williamson sangat menyenangkan. Dia adalah seorang pria sejati, dengan tata krama yang halus dan senyum yang ramah. Saya dapat melihat bahwa dia mudah berteman dan mempertahankan pertemanannya. Mengapa tidak? Dia sehat dan karena itu selalu ceria. Dia memiliki banyak uang dan karena itu tidak dapat dicurigai memiliki motif yang kotor. Hal-hal ini, bersama dengan pendidikan dan pelatihan sosialnya, membuatnya mudah untuk tidak hanya bersikap sopan tetapi juga ramah, dan tidak hanya ramah tetapi juga suka membantu. Saya tidak mengatakan apa-apa. Saya tidak punya apa-apa untuk dikatakan dan, lagipula, saya selalu membiarkan orang lain berbicara sepenuhnya sebelum saya mulai berbicara. Seseorang memberi tahu saya bahwa mendiang James Stillman, presiden National City Bank—yang, kebetulan, adalah teman dekat Williamson—memiliki kebiasaan untuk mendengarkan dalam diam, dengan wajah tanpa ekspresi, kepada siapa pun yang mengajukan proposal kepadanya. Setelah orang itu selesai berbicara, Tuan Stillman terus menatapnya, seolah-olah orang itu belum selesai. Jadi orang itu, merasa terdorong untuk mengatakan sesuatu lagi, melakukannya. Hanya dengan menatap dan mendengarkan, Stillman sering membuat orang itu menawarkan persyaratan yang jauh lebih menguntungkan bagi bank daripada yang ingin dia tawarkan ketika dia mulai berbicara. Saya tidak diam hanya untuk mendorong orang menawarkan kesepakatan yang lebih baik, tetapi karena saya ingin mengetahui semua fakta kasus tersebut. Dengan membiarkan seseorang berbicara sepenuhnya, Anda dapat memutuskan sekaligus. Ini sangat menghemat waktu. Ini menghindari perdebatan dan diskusi panjang yang tidak menghasilkan apa-apa. Hampir setiap proposal bisnis yang diajukan kepada saya dapat diselesaikan, sejauh menyangkut partisipasi saya di dalamnya, dengan mengatakan ya atau tidak. Tetapi saya tidak dapat mengatakan ya atau tidak begitu saja kecuali saya memiliki proposal lengkap di hadapan saya. Dan Williamson yang berbicara dan saya yang mendengarkan. Dia mengatakan bahwa dia telah banyak mendengar tentang operasi saya di pasar saham dan betapa dia menyesal bahwa saya telah keluar dari bidang keahlian saya dan mengalami kegagalan di bisnis kapas. Namun, itu adalah nasib buruk saya karena dia berkesempatan mewawancarai saya. Dia berpikir keahlian saya adalah pasar saham, bahwa saya dilahirkan untuk itu dan bahwa saya seharusnya tidak menyimpang darinya. “Dan itulah alasannya, Tuan Livingston,” ia menyimpulkan dengan ramah, “mengapa kami ingin berbisnis dengan Anda.” “Bagaimana cara berbisnis?” tanyaku padanya. “Jadilah pialang Anda,” katanya. “Perusahaan saya ingin menangani bisnis saham Anda.” “Aku ingin memberikannya padamu,” kataku, “tapi aku tidak bisa.” “Kenapa tidak?” tanyanya. “Saya tidak punya uang,” jawab saya. “Bagian itu tidak masalah,” katanya sambil tersenyum ramah. “Akan saya sediakan.” Ia mengeluarkan buku cek saku, menulis cek senilai dua puluh lima ribu dolar atas nama saya, dan memberikannya kepada saya. “Ini untuk apa?” tanyaku. “Untuk Anda setorkan ke bank Anda sendiri. Anda akan membuat cek sendiri. Saya ingin Anda melakukan perdagangan di kantor kami. Saya tidak peduli apakah Anda menang atau kalah. Jika uang itu habis, saya akan memberi Anda cek pribadi lainnya. Jadi Anda tidak perlu terlalu berhati-hati dengan yang ini. Mengerti?” Saya tahu bahwa perusahaan itu terlalu kaya dan makmur untuk membutuhkan bisnis siapa pun, apalagi memberikan uang kepada seseorang untuk dijadikan jaminan. Dan dia begitu baik hati! Alih-alih memberi saya kredit dengan rumah itu, dia memberi saya uang tunai, sehingga hanya dia yang tahu dari mana uang itu berasal, satu-satunya syarat adalah jika saya berdagang, saya harus melakukannya melalui perusahaannya. Dan kemudian janji bahwa akan ada lebih banyak lagi jika itu berhasil! Namun, pasti ada alasannya. “Apa maksudnya?” tanyaku padanya. “Idenya sederhana, kami ingin memiliki pelanggan di kantor ini yang dikenal sebagai trader aktif yang handal. Semua orang tahu bahwa Anda sering melakukan trading short yang besar, dan itulah yang sangat saya sukai dari Anda. Anda dikenal sebagai seorang 'plunger' (pemain yang memanfaatkan peluang).” “Aku masih belum mengerti,” kataku. “Saya akan jujur kepada Anda, Tuan Livingston. Kami memiliki dua atau tiga pelanggan yang sangat kaya yang membeli dan menjual saham dalam jumlah besar. Saya tidak ingin Wall Street mencurigai mereka menjual saham dalam jumlah besar setiap kali kami menjual sepuluh atau dua puluh ribu lembar saham apa pun. Jika Wall Street tahu bahwa Anda melakukan perdagangan di kantor kami, mereka tidak akan tahu apakah itu penjualan pendek Anda atau saham beli pelanggan lain yang masuk ke pasar.” Saya langsung mengerti. Dia ingin menutupi operasi saudara iparnya dengan reputasi saya sebagai seorang spekulan! Kebetulan, saya telah menghasilkan keuntungan terbesar saya di sisi pasar bearish satu setengah tahun sebelumnya, dan, tentu saja, para penggosip di Wall Street dan para penyebar rumor bodoh telah terbiasa menyalahkan saya atas setiap penurunan harga. Sampai hari ini, ketika pasar sangat lemah, mereka mengatakan saya sedang menjarahnya. Saya tidak perlu berpikir panjang. Sekilas saya melihat bahwa Dan Williamson menawarkan saya kesempatan untuk kembali, dan kembali dengan cepat. Saya mengambil cek itu, menyetorkannya ke bank, membuka rekening di perusahaannya, dan mulai berdagang. Pasarnya aktif dan bagus, cukup luas sehingga seseorang tidak perlu terpaku pada satu atau dua spesialisasi. Saya mulai khawatir, seperti yang sudah saya ceritakan, bahwa saya telah kehilangan kemampuan untuk meraih keuntungan. Tapi ternyata tidak. Dalam waktu tiga minggu, saya telah menghasilkan keuntungan seratus dua belas ribu dolar dari dua puluh lima ribu dolar yang dipinjamkan Dan Williamson kepada saya. Saya mendatanginya dan berkata, “Saya datang untuk mengembalikan uang dua puluh lima ribu dolar itu.” “Tidak, tidak!” katanya sambil mengusirku seolah-olah aku menawarinya minuman keras. “Tidak, tidak, Nak. Tunggu sampai saldo rekeningmu bertambah. Jangan dipikirkan dulu. Uangmu cuma sedikit.” Di situlah saya membuat kesalahan yang paling saya sesali sepanjang karier saya di Wall Street. Kesalahan itu menyebabkan penderitaan yang panjang dan menyedihkan selama bertahun-tahun. Seharusnya saya bersikeras agar dia menerima uang itu. Saya sedang menuju kekayaan yang lebih besar daripada yang telah saya hilangkan dan berjalan cukup cepat. Selama tiga minggu, keuntungan rata-rata saya adalah 150 persen per minggu. Sejak saat itu, perdagangan saya akan terus meningkat. Tetapi alih-alih membebaskan diri dari semua kewajiban, saya membiarkannya melakukan keinginannya dan tidak memaksanya untuk menerima dua puluh lima ribu dolar. Tentu saja, karena dia tidak menarik dua puluh lima ribu dolar yang telah dia berikan kepada saya, saya merasa saya tidak bisa menarik keuntungan saya. Saya sangat berterima kasih kepadanya, tetapi saya memiliki sifat yang tidak suka berhutang uang atau bantuan . Saya dapat membayar kembali uang itu dengan uang, tetapi bantuan dan kebaikan harus saya balas dengan cara yang sama—dan Anda mungkin akan menemukan kewajiban moral ini sangat mahal pada saat-saat tertentu. Selain itu, tidak ada batasan waktu untuk menuntut. Saya membiarkan uang itu tanpa diganggu dan melanjutkan perdagangan saya. Saya berjalan dengan sangat baik. Saya mulai mendapatkan kembali ketenangan saya dan saya yakin tidak akan lama lagi sebelum saya kembali ke performa terbaik saya di tahun 1907. Setelah itu, yang saya butuhkan hanyalah pasar bertahan sedikit lebih lama dan saya akan lebih dari sekadar menutup kerugian saya. Tetapi menghasilkan atau tidak menghasilkan uang tidak terlalu mengganggu saya. Yang membuat saya bahagia adalah saya kehilangan kebiasaan salah, kebiasaan tidak menjadi diri sendiri. Itu telah mengacaukan saya selama berbulan-bulan tetapi saya telah belajar dari kesalahan saya. Tepat pada saat itu saya mulai bersikap pesimis dan mulai menjual saham beberapa perusahaan kereta api secara short selling. Di antaranya adalah Chesapeake & Atlantic. Saya rasa saya melakukan short selling di saham itu; sekitar delapan ribu lembar saham. Suatu pagi ketika saya sampai di pusat kota, Dan Williamson memanggil saya ke kantor pribadinya sebelum pasar dibuka dan berkata kepada saya: “Larry, jangan melakukan apa pun di Chesapeake & Atlantic sekarang. Itu langkah yang buruk, menjual saham dengan harga rendah delapan ribu. Saya menutup posisi itu untukmu pagi ini di London dan mengambil posisi beli.” Saya yakin Chesapeake & Atlantic akan turun. Data pergerakan harga menunjukkannya dengan sangat jelas; dan selain itu, saya bersikap pesimis terhadap seluruh pasar, bukan pesimis yang ekstrem atau gila-gilaan, tetapi cukup untuk merasa nyaman dengan posisi jual moderat. Saya berkata kepada Williamson, “Mengapa kamu melakukan itu? Saya bersikap pesimis terhadap seluruh pasar dan semuanya akan turun.” Namun ia hanya menggelengkan kepala dan berkata, “Saya melakukannya karena kebetulan saya tahu sesuatu tentang Chesapeake & Atlantic yang tidak mungkin Anda ketahui. Saran saya kepada Anda adalah jangan melakukan short selling saham itu sampai saya memberi tahu Anda bahwa aman untuk melakukannya.” Apa yang bisa kulakukan? Itu bukan saran yang konyol. Itu adalah nasihat yang datang dari saudara ipar ketua dewan direksi. Dan bukan hanya teman terdekat Alvin Marquand, tetapi dia juga baik dan murah hati kepadaku. Dia telah menunjukkan kepercayaannya padaku dan keyakinannya pada kata-kataku. Aku tidak bisa berbuat kurang dari berterima kasih padanya. Dan sekali lagi perasaanku mengalahkan akal sehatku dan aku menyerah. Menundukkan akal sehatku pada keinginannya adalah kehancuranku. Rasa syukur adalah sesuatu yang tak bisa dihindari oleh orang baik, tetapi seseorang harus mencegahnya agar tidak sepenuhnya mengikatnya. Hal pertama yang kutahu adalah aku tidak hanya kehilangan semua keuntunganku, tetapi aku juga berhutang kepada perusahaan sebesar seratus lima puluh ribu dolar. Aku merasa sangat buruk tentang hal itu, tetapi Dan menyuruhku untuk tidak khawatir. “Aku akan mengeluarkanmu dari lubang ini,” janjinya. “Aku tahu aku bisa. Tapi aku hanya bisa melakukannya jika kau mengizinkanku. Kau harus berhenti berbisnis atas kemauanmu sendiri. Aku tidak bisa bekerja untukmu lalu kau malah menghancurkan semua kerja kerasku untukmu. Berhentilah berbisnis dan beri aku kesempatan untuk menghasilkan uang untukmu. Mau iya, Larry?” Sekali lagi saya bertanya kepada Anda: Apa yang bisa saya lakukan? Saya memikirkan kebaikannya dan saya tidak bisa melakukan apa pun yang mungkin dianggap sebagai kurangnya penghargaan. Saya telah menyukainya. Dia sangat menyenangkan dan ramah. Saya ingat bahwa yang saya dapatkan darinya hanyalah dorongan semangat. Dia terus meyakinkan saya bahwa semuanya akan baik-baik saja. Suatu hari, mungkin enam bulan kemudian, dia datang kepada saya dengan senyum puas dan memberi saya beberapa slip kredit. “Sudah kubilang aku akan mengeluarkanmu dari lubang itu,” katanya, “dan aku sudah melakukannya.” Lalu aku menyadari bahwa dia tidak hanya menghapus seluruh utangku, tetapi aku juga masih memiliki saldo kredit kecil. Saya pikir saya bisa saja menaikkan harga saham itu tanpa banyak kesulitan, karena pasar sedang tepat, tetapi dia berkata kepada saya, "Saya telah membelikanmu sepuluh ribu lembar saham Southern Atlantic." Itu adalah jalan lain yang dikendalikan oleh saudara iparnya, Alvin Marquand, yang juga mengatur nasib pasar saham tersebut. Ketika seseorang melakukan hal yang sama untuk Anda seperti yang Dan Williamson lakukan untuk saya, Anda tidak bisa berkata apa-apa selain "Terima kasih"—tidak peduli apa pun pandangan pasar Anda. Anda mungkin yakin Anda benar, tetapi seperti yang pernah dikatakan Pat Hearne: "Anda tidak akan tahu sampai Anda bertaruh!" dan Dan Williamson telah bertaruh untuk saya—dengan uangnya sendiri. Nah, Southern Atlantic bangkrut dan tetap terpuruk, dan saya kehilangan, saya lupa berapa banyak, dari sepuluh ribu saham saya sebelum Dan menjual saham saya. Saya berutang padanya lebih banyak dari sebelumnya. Tetapi Anda tidak akan pernah melihat kreditor yang lebih baik atau kurang mendesak dalam hidup Anda. Tidak pernah ada keluhan darinya. Sebaliknya, kata-kata penyemangat dan peringatan untuk tidak khawatir. Pada akhirnya kerugian itu diganti untuk saya dengan cara yang sama murah hati namun misterius. Dia tidak memberikan detail apa pun. Semuanya hanya berupa catatan bernomor. Dan Williamson hanya akan berkata kepada saya, “Kami menutupi kerugian Southern Atlantic Anda dengan keuntungan dari kesepakatan lain ini,” dan dia akan memberi tahu saya bagaimana dia telah menjual tujuh ribu lima ratus lembar saham lain dan menghasilkan keuntungan besar darinya. Sejujurnya, saya tidak pernah tahu apa pun tentang transaksi saya itu sampai saya diberi tahu bahwa hutang tersebut telah dihapus. Setelah itu terjadi beberapa kali, saya mulai berpikir, dan saya bisa melihat kasus saya dari sudut pandang yang berbeda. Akhirnya saya terbongkar. Jelas bahwa saya telah dimanfaatkan oleh Dan Williamson. Saya marah memikirkannya, tetapi lebih marah lagi karena saya tidak menyadarinya lebih cepat. Begitu saya memikirkan semuanya, saya pergi ke Dan Williamson, mengatakan kepadanya bahwa saya sudah selesai dengan firma tersebut, dan saya mengundurkan diri dari kantor Williamson & Brown. Saya tidak berbicara dengannya atau dengan rekan-rekannya. Apa gunanya itu bagi saya? Tetapi saya akui bahwa saya merasa sakit hati—pada diri saya sendiri sama seperti pada Williamson & Brown. Kehilangan uang itu tidak mengganggu saya. Setiap kali saya kehilangan uang di pasar saham , saya selalu menganggap bahwa saya telah belajar sesuatu; bahwa jika saya kehilangan uang, saya telah memperoleh pengalaman, sehingga uang itu sebenarnya digunakan untuk biaya pendidikan. Seseorang harus memiliki pengalaman dan dia harus membayarnya. Tetapi ada sesuatu yang sangat menyakitkan dalam pengalaman saya di kantor Dan Williamson, dan itu adalah kehilangan kesempatan besar. Uang yang hilang oleh seseorang bukanlah apa-apa; dia bisa mendapatkannya kembali. Tetapi kesempatan seperti yang saya miliki saat itu tidak datang setiap hari. Anda lihat, pasar memang merupakan pasar perdagangan yang bagus. Saya benar; maksud saya, saya membacanya dengan akurat. Peluang untuk menghasilkan jutaan ada di sana. Tetapi saya membiarkan rasa syukur saya mengganggu permainan saya. Saya membatasi diri sendiri. Saya harus melakukan apa yang diinginkan Dan Williamson dengan kebaikannya. Secara keseluruhan, itu lebih tidak memuaskan daripada berbisnis dengan kerabat. Bisnis yang buruk! Dan itu bukanlah hal terburuknya. Yang terburuk adalah setelah itu praktis tidak ada kesempatan bagi saya untuk menghasilkan banyak uang. Pasar stagnan. Keadaan semakin memburuk. Saya tidak hanya kehilangan semua yang saya miliki tetapi juga kembali berutang—lebih banyak dari sebelumnya. Itu adalah tahun-tahun yang panjang dan sulit, 1911, 1912, 1913 dan 1914. Tidak ada uang yang bisa dihasilkan. Kesempatan itu sama sekali tidak ada dan akibatnya keadaan saya lebih buruk dari sebelumnya. Tidaklah menyakitkan untuk kalah ketika kekalahan itu tidak disertai dengan bayangan pilu tentang apa yang seharusnya terjadi. Justru itulah yang terus menghantui pikiran saya, dan tentu saja hal itu semakin membuat saya gelisah. Saya menyadari bahwa kelemahan yang rentan dimiliki seorang spekulan hampir tak terhitung jumlahnya. Sebagai seorang pria, bertindak seperti yang saya lakukan di kantor Dan Williamson adalah hal yang tepat, tetapi sebagai seorang spekulan, membiarkan diri saya dipengaruhi oleh pertimbangan apa pun untuk bertindak melawan penilaian saya sendiri adalah tindakan yang tidak pantas dan tidak bijaksana. Noblesse oblige —tetapi tidak di pasar saham, karena pasar saham tidak menjunjung tinggi nilai-nilai kesatria dan terlebih lagi tidak menghargai loyalitas. Saya menyadari bahwa saya tidak bisa bertindak berbeda. Saya tidak bisa mengubah diri saya hanya karena saya ingin berdagang di pasar saham. Tetapi bisnis tetaplah bisnis, dan tugas saya sebagai spekulan adalah selalu mendukung penilaian saya sendiri. Itu adalah pengalaman yang sangat aneh. Saya akan menceritakan apa yang menurut saya terjadi. Dan Williamson benar-benar tulus dalam apa yang dia katakan kepada saya ketika pertama kali bertemu saya. Setiap kali perusahaannya memperdagangkan beberapa ribu saham di satu perusahaan, Wall Street langsung menyimpulkan bahwa Alvin Marquand sedang membeli atau menjual. Dia memang pedagang besar di kantor itu, dan dia memberikan semua bisnisnya kepada perusahaan ini; dan dia adalah salah satu pedagang terbaik dan terbesar yang pernah mereka miliki di Wall Street. Nah, saya akan digunakan sebagai kedok, khususnya untuk penjualan Marquand. Alvin Marquand jatuh sakit tak lama setelah saya masuk. Penyakitnya didiagnosis sejak dini sebagai penyakit yang tidak dapat disembuhkan, dan Dan Williamson tentu saja mengetahuinya jauh sebelum Marquand sendiri. Itulah mengapa Dan menanggung saham Chesapeake & Atlantic saya. Dia telah mulai melikuidasi beberapa kepemilikan spekulatif saudara iparnya di saham itu dan saham lainnya. Tentu saja, ketika Marquand meninggal, pihak pengelola harta warisan harus melikuidasi lini investasi spekulatif dan semi-spekulatifnya , dan pada saat itu kita telah memasuki pasar bearish. Dengan mengikat saya seperti yang dia lakukan, Dan sangat membantu pihak pengelola harta warisan. Saya tidak membual ketika mengatakan bahwa saya adalah seorang trader yang sangat aktif dan bahwa pandangan saya tentang pasar saham sangat tepat. Saya tahu bahwa Williamson mengingat operasi saya yang sukses di pasar bearish tahun 1907 dan dia tidak mampu mengambil risiko membiarkan saya bebas. Seandainya saya terus seperti itu, saya akan menghasilkan begitu banyak uang sehingga pada saat dia mencoba melikuidasi sebagian harta warisan Alvin Marquand, saya akan memperdagangkan ratusan ribu saham. Sebagai seorang trader bearish aktif, saya akan menyebabkan kerugian jutaan dolar bagi ahli waris Marquand, karena Alvin hanya meninggalkan sedikit lebih dari beberapa ratus juta dolar . Jauh lebih murah bagi mereka untuk membiarkan saya berutang dan kemudian melunasi utang tersebut daripada menempatkan saya di kantor lain yang aktif beroperasi di sisi yang berlawanan. Itulah tepatnya yang akan saya lakukan, seandainya saya tidak merasa bahwa saya tidak boleh kalah dalam hal kesopanan dari Dan Williamson. Saya selalu menganggap ini sebagai pengalaman paling menarik dan paling disayangkan dari semua pengalaman saya sebagai operator saham. Sebagai pelajaran, ini menelan biaya yang sangat mahal bagi saya. Ini menunda pemulihan saya selama beberapa tahun. Saya cukup muda untuk menunggu dengan sabar jutaan yang hilang itu kembali. Tetapi lima tahun adalah waktu yang lama bagi seseorang untuk menjadi miskin. Muda atau tua, itu bukanlah sesuatu yang menyenangkan. Saya bisa hidup tanpa kapal pesiar jauh lebih mudah daripada tanpa pasar untuk kembali. Kesempatan terbesar dalam hidup ada di depan mata saya, dompet yang telah hilang. Saya tidak bisa mengulurkan tangan dan meraihnya. Dan Williamson adalah anak yang sangat cerdik; selicik yang mereka bayangkan; berpandangan jauh, jenius, berani. Dia seorang pemikir, memiliki imajinasi, mendeteksi titik lemah pada siapa pun dan dapat merencanakan dengan dingin untuk menyerangnya. Dia melakukan penilaiannya sendiri dan segera mengetahui apa yang harus dilakukan kepada saya untuk membuat saya benar-benar tidak berdaya di pasar. Sebenarnya dia tidak mengambil uang saya. Sebaliknya, dari luar, dia tampak sangat baik. Dia menyayangi saudara perempuannya, Ny. Marquand, dan dia menjalankan kewajibannya terhadapnya sebagaimana yang dia pahami.</p>
-
-<div class="nav">
-  <a href="bab-xii.html">⬅ Bab Xii</a>
-  <a href="bab-xiv.html">Bab Xiv ➡</a>
-</div>
 
 </body>
 </html>

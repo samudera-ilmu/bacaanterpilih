@@ -2,10 +2,54 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Keliling Dunia dalam 80 Hari</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keliling Dunia dalam 80 Hari — Bacaan Terpilih</title>
+<meta name="description" content="Keliling Dunia dalam 80 Hari karya Jules Verne. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/keliling_dunia_dalam_80_hari/index.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="book">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Keliling Dunia dalam 80 Hari — Bacaan Terpilih">
+  <meta property="og:description" content="Keliling Dunia dalam 80 Hari karya Jules Verne. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/keliling_dunia_dalam_80_hari/index.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/keliling_dunia_dalam_80_hari/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <meta property="og:book:author" content="Jules Verne">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Keliling Dunia dalam 80 Hari — Bacaan Terpilih">
+  <meta name="twitter:description" content="Keliling Dunia dalam 80 Hari karya Jules Verne. Baca gratis dalam bahasa Indonesia.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/keliling_dunia_dalam_80_hari/images/img-001.jpg">
+  <!-- Schema.org: Book -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Keliling Dunia dalam 80 Hari",
+    "author": {
+      "@type": "Person",
+      "name": "Jules Verne"
+    },
+    "datePublished": "1879",
+    "inLanguage": "id",
+    "genre": "('Petualangan', 'Fiksi Ilmiah', 'Klasik')",
+    "url": "https://bacaanterpilih.pages.dev/keliling_dunia_dalam_80_hari/index.html",
+    "image": "https://bacaanterpilih.pages.dev/keliling_dunia_dalam_80_hari/images/img-001.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -15,72 +59,237 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
-
-function toggleTheme() {
-  document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
-}
 </script>
-
-
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #fafafa;
-  --text: #111;
-  --link: #1a73e8;
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
 }
 
 .dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 20px;
+  font-family: 'Source Serif 4', Georgia, serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
-.toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 14px;
-  opacity: 0.7;
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.book-hero {
+  max-width: 780px; margin: 0 auto;
+  padding: 48px 24px 0;
+  display: flex; gap: 40px; align-items: flex-start;
+}
+
+.book-cover-wrap { flex-shrink: 0; }
+
+.book-cover-img {
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  display: block;
+}
+
+.book-hero-text {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 12px;
+  padding-top: 8px;
+}
+
+.back-link {
+  font-size: 0.8rem; color: var(--accent);
+  text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.book-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.03em; color: var(--text);
+}
+
+.book-author { font-size: 1rem; color: var(--accent); font-weight: 600; }
+.book-year   { font-size: 0.82rem; color: var(--text3); }
+
+.book-divider {
+  max-width: 780px; margin: 32px auto 0;
+  border: none; border-top: 1px solid var(--border);
+}
+
+.toc-section {
+  max-width: 780px; margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.toc-label {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 20px;
+}
+
+.toc-list { list-style: none; counter-reset: toc; }
+
+.toc-list li {
+  counter-increment: toc;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-list li:first-child { border-top: 1px solid var(--border); }
+
+.toc-list a {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 14px 0;
+  text-decoration: none; color: var(--text);
+  font-size: 0.95rem; font-weight: 400;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.toc-list a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 0.72rem; color: var(--text3);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px; flex-shrink: 0;
+}
+
+.toc-list a:hover { color: var(--accent); padding-left: 6px; }
+
+@media (max-width: 600px) {
+  .book-hero { flex-direction: column; padding: 32px 16px 0; gap: 24px; }
+  .book-cover-img { width: 120px; }
+  .toc-section { padding: 24px 16px 60px; }
 }
 </style>
 </head>
 <body>
 
-<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
 
-<h1>Keliling Dunia dalam 80 Hari</h1>
+<div class="book-hero">
+  
+<div class="book-cover-wrap">
+  <img src="images/img-001.jpg" alt="Cover Keliling Dunia dalam 80 Hari" class="book-cover-img">
+</div>
+  <div class="book-hero-text">
+    <a href="../index.html" class="back-link">← Perpustakaan</a>
+    <h1 class="book-title">Keliling Dunia dalam 80 Hari</h1>
+    <div class="book-author">Jules Verne</div>
+    <div class="book-year">1879</div>
+  </div>
+</div>
 
-<ol>
-<li><a href="tentang-buku-ini.html">TENTANG BUKU INI</a></li><li><a href="bab-i-di-mana-phileas-fogg-dan-passepartout-saling-menerima-yang-satu-sebagai-tuan-yang-lain-sebagai-manusia.html">BAB I. DI MANA PHILEAS FOGG DAN PASSEPARTOUT SALING MENERIMA, YANG SATU SEBAGAI TUAN, YANG LAIN SEBAGAI MANUSIA</a></li><li><a href="bab-ii-di-mana-passepartout-yakin-bahwa-akhirnya-ia-telah-menemukan-cita-citanya.html">BAB II. DI MANA PASSEPARTOUT YAKIN BAHWA AKHIRNYA IA TELAH MENEMUKAN CITA-CITANYA</a></li><li><a href="bab-iii-di-mana-terjadi-percakapan-yang-sepertinya-akan-membuat-phileas-fogg-mahal.html">BAB III. DI MANA TERJADI PERCAKAPAN YANG SEPERTINYA AKAN MEMBUAT PHILEAS FOGG MAHAL</a></li><li><a href="bab-iv-di-mana-phileas-fogg-membuat-passepartout-pelayannya-terkejut.html">BAB IV. DI MANA PHILEAS FOGG MEMBUAT PASSEPARTOUT, PELAYANNYA, TERKEJUT</a></li><li><a href="bab-v-di-mana-jenis-dana-baru-yang-tidak-diketahui-oleh-orang-orang-berkaya-muncul-di-balik.html">BAB V. DI MANA JENIS DANA BARU, YANG TIDAK DIKETAHUI OLEH ORANG-ORANG BERKAYA, MUNCUL DI 'BALIK'</a></li><li><a href="bab-vi-di-mana-fix-sang-detektif-mengkhianati-ketidaksabaran-yang-sangat-alami.html">BAB VI. DI MANA FIX, SANG DETEKTIF, MENGKHIANATI KETIDAKSABARAN YANG SANGAT ALAMI</a></li><li><a href="bab-vii-yang-sekali-lagi-menunjukkan-ketidakmampuan-paspor-sebagai-alat-bantu-detektif.html">BAB VII. YANG SEKALI LAGI MENUNJUKKAN KETIDAKMAMPUAN PASPOR SEBAGAI ALAT BANTU DETEKTIF</a></li><li><a href="bab-viii-di-mana-passepartout-mungkin-lebih-banyak-berbicara-daripada-yang-bijak.html">BAB VIII. DI MANA PASSEPARTOUT MUNGKIN LEBIH BANYAK BERBICARA DARIPADA YANG BIJAK</a></li><li><a href="bab-ix-di-mana-laut-merah-dan-samudra-hindia-terbukti-menguntungkan-bagi-rencana-phileas-fogg.html">BAB IX. DI MANA LAUT MERAH DAN SAMUDRA HINDIA TERBUKTI MENGUNTUNGKAN BAGI RENCANA PHILEAS FOGG</a></li><li><a href="bab-x-di-mana-passepartout-sangat-senang-bisa-lolos-dari-hukuman-hanya-dengan-kehilangan-sepatunya.html">BAB X. DI MANA PASSEPARTOUT SANGAT SENANG BISA LOLOS DARI HUKUMAN HANYA DENGAN KEHILANGAN SEPATUNYA</a></li><li><a href="bab-xi-di-mana-phileas-fogg-mendapatkan-alat-transportasi-yang-unik-dengan-harga-yang-luar-biasa.html">BAB XI. DI MANA PHILEAS FOGG MENDAPATKAN ALAT TRANSPORTASI YANG UNIK DENGAN HARGA YANG LUAR BIASA</a></li><li><a href="bab-xii-di-mana-phileas-fogg-dan-para-sahabatnya-menjelajahi-hutan-india-dan-apa-yang-terjadi-setelahnya.html">BAB XII. DI MANA PHILEAS FOGG DAN PARA SAHABATNYA MENJELAJAHI HUTAN INDIA, DAN APA YANG TERJADI SETELAHNYA</a></li><li><a href="bab-xiii-di-mana-passepartout-menerima-bukti-baru-bahwa-keberuntungan-berpihak-pada-orang-yang-berani.html">BAB XIII. DI MANA PASSEPARTOUT MENERIMA BUKTI BARU BAHWA KEBERUNTUNGAN BERPIHAK PADA ORANG YANG BERANI</a></li><li><a href="bab-xiv-di-mana-phileas-fogg-menuruni-seluruh-lembah-indah-sungai-ganges-tanpa-pernah-berpikir-untuk-melihatnya.html">BAB XIV. DI MANA PHILEAS FOGG MENURUNI SELURUH LEMBAH INDAH SUNGAI GANGES TANPA PERNAH BERPIKIR UNTUK MELIHATNYA</a></li><li><a href="bab-xv-di-mana-kantung-uang-kertas-itu-mengungkapkan-beberapa-ribuan-poundsterling-lagi.html">BAB XV. DI MANA KANTUNG UANG KERTAS ITU MENGUNGKAPKAN BEBERAPA RIBUAN POUNDSTERLING LAGI</a></li><li><a href="bab-xvi-di-mana-fix-sepertinya-tidak-memahami-sama-sekali-apa-yang-dikatakan-kepadanya.html">BAB XVI. DI MANA FIX SEPERTINYA TIDAK MEMAHAMI SAMA SEKALI APA YANG DIKATAKAN KEPADANYA</a></li><li><a href="bab-xvii-menunjukkan-apa-yang-terjadi-dalam-perjalanan-dari-singapura-ke-hong-kong.html">BAB XVII. MENUNJUKKAN APA YANG TERJADI DALAM PERJALANAN DARI SINGAPURA KE HONG KONG</a></li><li><a href="bab-xviii-di-mana-phileas-fogg-passepartout-dan-fix-menjalani-urusan-mereka-masing-masing.html">BAB XVIII. DI MANA PHILEAS FOGG, PASSEPARTOUT, DAN FIX MENJALANI URUSAN MEREKA MASING-MASING</a></li><li><a href="bab-xix-di-mana-passepartout-terlalu-tertarik-pada-tuannya-dan-apa-akibatnya.html">BAB XIX. DI MANA PASSEPARTOUT TERLALU TERTARIK PADA TUANNYA, DAN APA AKIBATNYA</a></li><li><a href="bab-xx-di-mana-fix-bertemu-langsung-dengan-phileas-fogg.html">BAB XX. DI MANA FIX BERTEMU LANGSUNG DENGAN PHILEAS FOGG</a></li><li><a href="bab-xxi-di-mana-nahkoda-tankadere-menghadapi-risiko-besar-kehilangan-hadiah-sebesar-dua-ratus-poundsterling.html">BAB XXI. DI MANA NAHKODA "TANKADERE" MENGHADAPI RISIKO BESAR KEHILANGAN HADIAH SEBESAR DUA RATUS POUNDSTERLING</a></li><li><a href="bab-xxii-di-mana-passepartout-menemukan-bahwa-bahkan-di-antipoda-ada-baiknya-memiliki-uang-di-saku.html">BAB XXII. DI MANA PASSEPARTOUT MENEMUKAN BAHWA, BAHKAN DI ANTIPODA, ADA BAIKNYA MEMILIKI UANG DI SAKU</a></li><li><a href="bab-xxiii-di-mana-hidung-passepartout-menjadi-sangat-panjang.html">BAB XXIII. DI MANA HIDUNG PASSEPARTOUT MENJADI SANGAT PANJANG</a></li><li><a href="bab-xxiv-selama-perjalanan-mr-fogg-dan-rombongannya-menyeberangi-samudra-pasifik.html">BAB XXIV. SELAMA PERJALANAN MR. FOGG DAN ROMBONGANNYA MENYEBERANGI SAMUDRA PASIFIK</a></li><li><a href="bab-xxv-yang-menunjukkan-sekilas-tentang-san-francisco.html">BAB XXV. YANG MENUNJUKKAN SEKILAS TENTANG SAN FRANCISCO</a></li><li><a href="bab-xxvi-di-mana-phileas-fogg-dan-rombongannya-berperjalanan-dengan-kereta-api-pasifik.html">BAB XXVI. DI MANA PHILEAS FOGG DAN ROMBONGANNYA BERPERJALANAN DENGAN KERETA API PASIFIK</a></li><li><a href="bab-xxvii-di-mana-passepartout-menjalani-dengan-kecepatan-dua-puluh-mil-per-jam-sejarah-mormon.html">BAB XXVII. DI MANA PASSEPARTOUT MENJALANI, DENGAN KECEPATAN DUA PULUH MIL PER JAM, SEJARAH MORMON</a></li><li><a href="bab-xxviii-di-mana-passepartout-tidak-berhasil-membuat-siapa-pun-mendengarkan-akal-sehat.html">BAB XXVIII. DI MANA PASSEPARTOUT TIDAK BERHASIL MEMBUAT SIAPA PUN MENDENGARKAN AKAL SEHAT</a></li><li><a href="bab-xxix-yang-menceritakan-beberapa-insiden-yang-hanya-dapat-ditemukan-di-jalur-kereta-api-amerika.html">BAB XXIX. YANG MENCERITAKAN BEBERAPA INSIDEN YANG HANYA DAPAT DITEMUKAN DI JALUR KERETA API AMERIKA</a></li><li><a href="bab-xxx-di-mana-phileas-fogg-hanya-melakukan-tugasnya.html">BAB XXX. DI MANA PHILEAS FOGG HANYA MELAKUKAN TUGASNYA</a></li><li><a href="bab-xxxi-di-mana-fix-sang-detektif-secara-signifikan-memperjuangkan-kepentingan-phileas-fogg.html">BAB XXXI. DI MANA FIX, SANG DETEKTIF, SECARA SIGNIFIKAN MEMPERJUANGKAN KEPENTINGAN PHILEAS FOGG</a></li><li><a href="bab-xxxii-di-mana-phileas-fogg-terlibat-dalam-pergulatan-langsung-dengan-nasib-buruk.html">BAB XXXII. DI MANA PHILEAS FOGG TERLIBAT DALAM PERGULATAN LANGSUNG DENGAN NASIB BURUK</a></li><li><a href="bab-xxxiii-di-mana-phileas-fogg-membuktikan-dirinya-mampu-menghadapi-situasi-ini.html">BAB XXXIII. DI MANA PHILEAS FOGG MEMBUKTIKAN DIRINYA MAMPU MENGHADAPI SITUASI INI</a></li><li><a href="bab-xxxiv-di-mana-phileas-fogg-akhirnya-mencapai-london.html">BAB XXXIV. DI MANA PHILEAS FOGG AKHIRNYA MENCAPAI LONDON</a></li><li><a href="bab-xxxv-di-mana-phileas-fogg-tidak-perlu-mengulangi-perintahnya-kepada-passepartout-dua-kali.html">BAB XXXV. DI MANA PHILEAS FOGG TIDAK PERLU MENGULANGI PERINTAHNYA KEPADA PASSEPARTOUT DUA KALI</a></li><li><a href="bab-xxxvi-di-mana-nama-phileas-fogg-sekali-lagi-mendapatkan-perubahan-yang-sangat-penting.html">BAB XXXVI. DI MANA NAMA PHILEAS FOGG SEKALI LAGI MENDAPATKAN PERUBAHAN YANG SANGAT PENTING</a></li><li><a href="bab-xxxvii-yang-menunjukkan-bahwa-phileas-fogg-tidak-memperoleh-apa-pun-dari-perjalanan-keliling-dunianya-kecuali-kebahagiaan.html">BAB XXXVII. YANG MENUNJUKKAN BAHWA PHILEAS FOGG TIDAK MEMPEROLEH APA PUN DARI PERJALANAN KELILING DUNIANYA, KECUALI KEBAHAGIAAN.</a></li>
-</ol>
+<hr class="book-divider">
+
+<section class="toc-section">
+  <div class="toc-label">Daftar Isi</div>
+  <ol class="toc-list">
+    <li><a href="tentang-apa-buku-ini.html">Tentang Apa Buku Ini?</a></li>
+<li><a href="bab-i-di-mana-phileas-fogg-dan-passepartout-saling-menerima-yang-satu-sebagai-tuan-yang-lain-sebagai-manusia.html">Bab I.  Di Mana Phileas Fogg Dan Passepartout Saling Menerima, Yang Satu Sebagai Tuan, Yang Lain Sebagai Manusia</a></li>
+<li><a href="bab-ii-di-mana-passepartout-yakin-bahwa-akhirnya-ia-telah-menemukan-cita-citanya.html">Bab Ii. Di Mana Passepartout Yakin Bahwa Akhirnya Ia Telah Menemukan Cita-Citanya</a></li>
+<li><a href="bab-iii-di-mana-terjadi-percakapan-yang-sepertinya-akan-membuat-phileas-fogg-mahal.html">Bab Iii. Di Mana Terjadi Percakapan Yang Sepertinya Akan Membuat Phileas Fogg Mahal</a></li>
+<li><a href="bab-iv-di-mana-phileas-fogg-membuat-passepartout-pelayannya-terkejut.html">Bab Iv. Di Mana Phileas Fogg Membuat Passepartout, Pelayannya, Terkejut</a></li>
+<li><a href="bab-v-di-mana-jenis-dana-baru-yang-tidak-diketahui-oleh-orang-orang-berkaya-muncul-di-balik.html">Bab V. Di Mana Jenis Dana Baru, Yang Tidak Diketahui Oleh Orang-Orang Berkaya, Muncul Di 'Balik'</a></li>
+<li><a href="bab-vi-di-mana-fix-sang-detektif-mengkhianati-ketidaksabaran-yang-sangat-alami.html">Bab Vi. Di Mana Fix, Sang Detektif, Mengkhianati Ketidaksabaran Yang Sangat Alami</a></li>
+<li><a href="bab-vii-yang-sekali-lagi-menunjukkan-ketidakmampuan-paspor-sebagai-alat-bantu-detektif.html">Bab Vii. Yang Sekali Lagi Menunjukkan Ketidakmampuan Paspor Sebagai Alat Bantu Detektif</a></li>
+<li><a href="bab-viii-di-mana-passepartout-mungkin-lebih-banyak-berbicara-daripada-yang-bijak.html">Bab Viii. Di Mana Passepartout Mungkin Lebih Banyak Berbicara Daripada Yang Bijak</a></li>
+<li><a href="bab-ix-di-mana-laut-merah-dan-samudra-hindia-terbukti-menguntungkan-bagi-rencana-phileas-fogg.html">Bab Ix. Di Mana Laut Merah Dan Samudra Hindia Terbukti Menguntungkan Bagi Rencana Phileas Fogg</a></li>
+<li><a href="bab-x-di-mana-passepartout-sangat-senang-bisa-lolos-dari-hukuman-hanya-dengan-kehilangan-sepatunya.html">Bab X. Di Mana Passepartout Sangat Senang Bisa Lolos Dari Hukuman Hanya Dengan Kehilangan Sepatunya</a></li>
+<li><a href="bab-xi-di-mana-phileas-fogg-mendapatkan-alat-transportasi-yang-unik-dengan-harga-yang-luar-biasa.html">Bab Xi. Di Mana Phileas Fogg Mendapatkan Alat Transportasi Yang Unik Dengan Harga Yang Luar Biasa</a></li>
+<li><a href="bab-xii-di-mana-phileas-fogg-dan-para-sahabatnya-menjelajahi-hutan-india-dan-apa-yang-terjadi-setelahnya.html">Bab Xii. Di Mana Phileas Fogg Dan Para Sahabatnya Menjelajahi Hutan India, Dan Apa Yang Terjadi Setelahnya</a></li>
+<li><a href="bab-xiii-di-mana-passepartout-menerima-bukti-baru-bahwa-keberuntungan-berpihak-pada-orang-yang-berani.html">Bab Xiii. Di Mana Passepartout Menerima Bukti Baru Bahwa Keberuntungan Berpihak Pada Orang Yang Berani</a></li>
+<li><a href="bab-xiv-di-mana-phileas-fogg-menuruni-seluruh-lembah-indah-sungai-ganges-tanpa-pernah-berpikir-untuk-melihatnya.html">Bab Xiv. Di Mana Phileas Fogg Menuruni Seluruh Lembah Indah Sungai Ganges Tanpa Pernah Berpikir Untuk Melihatnya</a></li>
+<li><a href="bab-xv-di-mana-kantung-uang-kertas-itu-mengungkapkan-beberapa-ribuan-poundsterling-lagi.html">Bab Xv. Di Mana Kantung Uang Kertas Itu Mengungkapkan Beberapa Ribuan Poundsterling Lagi</a></li>
+<li><a href="bab-xvi-di-mana-fix-sepertinya-tidak-memahami-sama-sekali-apa-yang-dikatakan-kepadanya.html">Bab Xvi. Di Mana Fix Sepertinya Tidak Memahami Sama Sekali Apa Yang Dikatakan Kepadanya</a></li>
+<li><a href="bab-xvii-menunjukkan-apa-yang-terjadi-dalam-perjalanan-dari-singapura-ke-hong-kong.html">Bab Xvii. Menunjukkan Apa Yang Terjadi Dalam Perjalanan Dari Singapura Ke Hong Kong</a></li>
+<li><a href="bab-xviii-di-mana-phileas-fogg-passepartout-dan-fix-menjalani-urusan-mereka-masing-masing.html">Bab Xviii. Di Mana Phileas Fogg, Passepartout, Dan Fix Menjalani Urusan Mereka Masing-Masing</a></li>
+<li><a href="bab-xix-di-mana-passepartout-terlalu-tertarik-pada-tuannya-dan-apa-akibatnya.html">Bab Xix. Di Mana Passepartout Terlalu Tertarik Pada Tuannya, Dan Apa Akibatnya</a></li>
+<li><a href="bab-xx-di-mana-fix-bertemu-langsung-dengan-phileas-fogg.html">Bab Xx. Di Mana Fix Bertemu Langsung Dengan Phileas Fogg</a></li>
+<li><a href="bab-xxi-di-mana-nahkoda-quottankaderequot-menghadapi-risiko-besar-kehilangan-hadiah-sebesar-dua-ratus-poundsterling.html">Bab Xxi. Di Mana Nahkoda &Quot;Tankadere&Quot; Menghadapi Risiko Besar Kehilangan Hadiah Sebesar Dua Ratus Poundsterling</a></li>
+<li><a href="bab-xxii-di-mana-passepartout-menemukan-bahwa-bahkan-di-antipoda-ada-baiknya-memiliki-uang-di-saku.html">Bab Xxii. Di Mana Passepartout Menemukan Bahwa, Bahkan Di Antipoda, Ada Baiknya Memiliki Uang Di Saku</a></li>
+<li><a href="bab-xxiii-di-mana-hidung-passepartout-menjadi-sangat-panjang.html">Bab Xxiii. Di Mana Hidung Passepartout Menjadi Sangat Panjang</a></li>
+<li><a href="bab-xxiv-selama-perjalanan-mr-fogg-dan-rombongannya-menyeberangi-samudra-pasifik.html">Bab Xxiv. Selama Perjalanan Mr. Fogg Dan Rombongannya Menyeberangi Samudra Pasifik</a></li>
+<li><a href="bab-xxv-yang-menunjukkan-sekilas-tentang-san-francisco.html">Bab Xxv. Yang Menunjukkan Sekilas Tentang San Francisco</a></li>
+<li><a href="bab-xxvi-di-mana-phileas-fogg-dan-rombongannya-berperjalanan-dengan-kereta-api-pasifik.html">Bab Xxvi. Di Mana Phileas Fogg Dan Rombongannya Berperjalanan Dengan Kereta Api Pasifik</a></li>
+<li><a href="bab-xxvii-di-mana-passepartout-menjalani-dengan-kecepatan-dua-puluh-mil-per-jam-sejarah-mormon.html">Bab Xxvii. Di Mana Passepartout Menjalani, Dengan Kecepatan Dua Puluh Mil Per Jam, Sejarah Mormon</a></li>
+<li><a href="bab-xxviii-di-mana-passepartout-tidak-berhasil-membuat-siapa-pun-mendengarkan-akal-sehat.html">Bab Xxviii. Di Mana Passepartout Tidak Berhasil Membuat Siapa Pun Mendengarkan Akal Sehat</a></li>
+<li><a href="bab-xxix-yang-menceritakan-beberapa-insiden-yang-hanya-dapat-ditemukan-di-jalur-kereta-api-amerika.html">Bab Xxix. Yang Menceritakan Beberapa Insiden Yang Hanya Dapat Ditemukan Di Jalur Kereta Api Amerika</a></li>
+<li><a href="bab-xxx-di-mana-phileas-fogg-hanya-melakukan-tugasnya.html">Bab Xxx. Di Mana Phileas Fogg Hanya Melakukan Tugasnya</a></li>
+<li><a href="bab-xxxi-di-mana-fix-sang-detektif-secara-signifikan-memperjuangkan-kepentingan-phileas-fogg.html">Bab Xxxi. Di Mana Fix, Sang Detektif, Secara Signifikan Memperjuangkan Kepentingan Phileas Fogg</a></li>
+<li><a href="bab-xxxii-di-mana-phileas-fogg-terlibat-dalam-pergulatan-langsung-dengan-nasib-buruk.html">Bab Xxxii. Di Mana Phileas Fogg Terlibat Dalam Pergulatan Langsung Dengan Nasib Buruk</a></li>
+<li><a href="bab-xxxiii-di-mana-phileas-fogg-membuktikan-dirinya-mampu-menghadapi-situasi-ini.html">Bab Xxxiii. Di Mana Phileas Fogg Membuktikan Dirinya Mampu Menghadapi Situasi Ini</a></li>
+<li><a href="bab-xxxiv-di-mana-phileas-fogg-akhirnya-mencapai-london.html">Bab Xxxiv. Di Mana Phileas Fogg Akhirnya Mencapai London</a></li>
+<li><a href="bab-xxxv-di-mana-phileas-fogg-tidak-perlu-mengulangi-perintahnya-kepada-passepartout-dua-kali.html">Bab Xxxv. Di Mana Phileas Fogg Tidak Perlu Mengulangi Perintahnya Kepada Passepartout Dua Kali</a></li>
+<li><a href="bab-xxxvi-di-mana-nama-phileas-fogg-sekali-lagi-mendapatkan-perubahan-yang-sangat-penting.html">Bab Xxxvi. Di Mana Nama Phileas Fogg Sekali Lagi Mendapatkan Perubahan Yang Sangat Penting</a></li>
+<li><a href="bab-xxxvii-yang-menunjukkan-bahwa-phileas-fogg-tidak-memperoleh-apa-pun-dari-perjalanan-keliling-dunianya-kecuali-kebahagiaan.html">Bab Xxxvii. Yang Menunjukkan Bahwa Phileas Fogg Tidak Memperoleh Apa Pun Dari Perjalanan Keliling Dunianya, Kecuali Kebahagiaan.</a></li>
+  </ol>
+</section>
+
+
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
+}
+</script>
+
 
 </body>
 </html>

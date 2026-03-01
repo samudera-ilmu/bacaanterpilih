@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 10</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 10 - Bacaan digital klasik">
+<title>BAB 10 — Frankenstein</title>
+<meta name="description" content="Baca BAB 10 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-10.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 10 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 10 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-10.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 10 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 10 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 10",
+    "name": "BAB 10 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-10.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 10</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Keesokan harinya saya habiskan menjelajahi lembah. Saya berdiri di tepi sumber Sungai Arveiron, yang bermula dari gletser yang perlahan-lahan bergerak turun dari puncak bukit untuk membarikade lembah. Sisi-sisi curam pegunungan yang luas terbentang di hadapan saya; dinding es gletser menjulang di atas saya; beberapa pohon pinus yang hancur berserakan di sekitar; dan keheningan khidmat ruang hadir alam yang agung ini hanya terpecah oleh deburan ombak atau jatuhnya beberapa pecahan besar, suara guntur longsoran salju atau retakan yang bergema di sepanjang pegunungan, dari es yang terkumpul, yang, melalui kerja diam hukum yang tak berubah, terus-menerus terkoyak dan robek, seolah-olah itu hanyalah mainan di tangan mereka. Pemandangan yang agung dan megah ini memberi saya penghiburan terbesar yang mampu saya terima. Pemandangan itu mengangkat saya dari segala perasaan kecil, dan meskipun tidak menghilangkan kesedihan saya, pemandangan itu meredakan dan menenangkannya. Sampai batas tertentu, mereka juga mengalihkan pikiranku dari pikiran-pikiran yang telah kurenungkan selama sebulan terakhir. Aku beristirahat di malam hari; tidurku, seolah-olah, dilayani dan dibantu oleh kumpulan bentuk-bentuk agung yang telah kurenungkan sepanjang hari. Mereka berkumpul di sekelilingku; puncak gunung bersalju yang tak ternoda, puncak yang berkilauan, hutan pinus, dan jurang gersang yang terjal, elang yang melayang di antara awan—semuanya berkumpul di sekelilingku dan menyuruhku untuk tenang.</p><p>Ke mana mereka pergi ketika keesokan paginya aku terbangun? Semua yang membangkitkan jiwa lenyap bersama tidur, dan kesedihan yang gelap menyelimuti setiap pikiran. Hujan turun deras, dan kabut tebal menyembunyikan puncak-puncak gunung, sehingga aku bahkan tidak melihat wajah teman-temanku yang perkasa itu. Namun aku tetap ingin menembus tabir kabut mereka dan mencari mereka di tempat persembunyian mereka yang berawan. Apa artinya hujan dan badai bagiku? Keledaiku dibawa ke depan pintu, dan aku memutuskan untuk mendaki ke puncak Montanvert. Aku ingat efek yang ditimbulkan oleh pemandangan gletser yang luar biasa dan selalu bergerak itu pada pikiranku ketika pertama kali melihatnya. Saat itu, pemandangan itu memenuhi diriku dengan ekstasi yang agung yang memberi sayap pada jiwa dan memungkinkannya melayang dari dunia yang gelap menuju cahaya dan sukacita. Pemandangan yang menakjubkan dan megah di alam memang selalu memiliki efek menenangkan pikiranku dan membuatku melupakan kekhawatiran hidup yang sementara. Aku memutuskan untuk pergi tanpa pemandu, karena aku sudah sangat mengenal jalan setapak itu, dan kehadiran orang lain akan menghancurkan keagungan pemandangan yang sunyi itu.</p><p>Pendakiannya curam, tetapi jalannya berkelok-kelok pendek dan berkelanjutan, yang memungkinkan Anda untuk mengatasi kemiringan gunung yang tegak lurus. Pemandangannya sangat sunyi. Di ribuan tempat, jejak longsoran salju musim dingin dapat terlihat, di mana pohon-pohon tergeletak patah dan berserakan di tanah, beberapa hancur total, yang lain bengkok, bersandar pada bebatuan gunung yang menjorok atau melintang pada pohon lain. Jalan setapak, saat Anda mendaki lebih tinggi, diselingi oleh jurang-jurang salju, tempat batu-batu terus menerus menggelinding dari atas; salah satunya sangat berbahaya, karena suara sekecil apa pun, seperti berbicara dengan suara keras sekalipun, menghasilkan guncangan udara yang cukup untuk mendatangkan malapetaka pada kepala pembicara. Pohon-pohon pinus tidak tinggi atau rimbun, tetapi tampak suram dan menambah kesan keras pada pemandangan. Saya memandang lembah di bawah; Kabut tebal membubung dari sungai-sungai yang mengalir di sana dan melingkar tebal di sekitar pegunungan di seberangnya, yang puncaknya tersembunyi di dalam awan yang seragam, sementara hujan turun dari langit gelap dan menambah kesan melankolis yang saya terima dari objek-objek di sekitar saya. Sayang sekali! Mengapa manusia membanggakan kepekaan yang lebih unggul daripada yang tampak pada hewan; itu hanya menjadikan mereka makhluk yang lebih mendasar. Jika dorongan kita terbatas pada rasa lapar, haus, dan keinginan, kita mungkin hampir bebas; tetapi sekarang kita digerakkan oleh setiap angin yang bertiup dan kata atau pemandangan yang kebetulan disampaikan oleh kata itu kepada kita.</p><p>Kita beristirahat; mimpi memiliki kekuatan untuk meracuni tidur. <br />Kita bangun; satu pikiran yang mengembara mencemari hari. <br />Kita merasa, membayangkan, atau bernalar; tertawa atau menangis, <br />merangkul kesedihan yang mendalam, atau membuang kekhawatiran kita; <br />semuanya sama: karena, baik itu sukacita atau kesedihan, <br />jalan kepergiannya tetap bebas. <br />Hari kemarin manusia mungkin tidak akan pernah sama dengan hari esoknya; <br />tidak ada yang dapat bertahan kecuali perubahan!</p><p>Hampir tengah hari ketika saya tiba di puncak pendakian. Beberapa saat saya duduk di atas batu yang menghadap lautan es. Kabut menyelimuti batu itu dan pegunungan di sekitarnya. Tak lama kemudian, angin sepoi-sepoi menghilangkan kabut, dan saya turun ke gletser. Permukaannya sangat tidak rata, naik seperti gelombang laut yang bergejolak, turun rendah, dan diselingi oleh celah-celah yang dalam. Hamparan es itu hampir selebar satu liga, tetapi saya menghabiskan hampir dua jam untuk menyeberanginya. Gunung di seberangnya adalah batu tegak lurus yang gersang. Dari sisi tempat saya berdiri sekarang, Montanvert berada tepat di seberang, dengan jarak satu liga; dan di atasnya menjulang Mont Blanc, dengan keagungan yang menakutkan. Saya tetap berada di ceruk batu, menatap pemandangan yang menakjubkan dan luar biasa ini. Lautan, atau lebih tepatnya sungai es yang luas, berkelok-kelok di antara pegunungan yang bergantung padanya, yang puncak-puncaknya menjulang di atas ceruknya. Puncak-puncak es yang berkilauan itu bersinar di bawah sinar matahari di atas awan. Hati saya, yang sebelumnya sedih, kini dipenuhi dengan sesuatu seperti kegembiraan; Aku berseru, “Wahai roh-roh pengembara, jika memang kalian mengembara dan tidak beristirahat di tempat tidur kalian yang sempit, izinkan aku merasakan kebahagiaan kecil ini, atau bawalah aku, sebagai teman kalian, menjauh dari sukacita hidup.”</p><p>Saat aku mengatakan ini, tiba-tiba aku melihat sosok seorang pria, dari kejauhan, mendekatiku dengan kecepatan luar biasa. Dia melompati celah-celah es, di antara celah-celah itu aku berjalan dengan hati-hati; perawakannya juga, saat dia mendekat, tampak melebihi tinggi manusia. Aku gelisah; kabut menyelimuti mataku, dan aku merasa lemas, tetapi aku segera pulih oleh hembusan angin dingin pegunungan. Aku menyadari, saat sosok itu semakin dekat (pemandangan yang mengerikan dan menjijikkan!), bahwa itu adalah orang celaka yang telah kuciptakan. Aku gemetar karena amarah dan kengerian, bertekad untuk menunggu kedatangannya dan kemudian bertarung dengannya sampai mati. Dia mendekat; wajahnya menunjukkan penderitaan yang pahit, bercampur dengan penghinaan dan kebencian, sementara keburukannya yang tidak manusiawi membuatnya hampir terlalu mengerikan untuk mata manusia. Tetapi aku hampir tidak memperhatikan ini; amarah dan kebencian pada awalnya membuatku tidak bisa berkata-kata, dan aku pulih hanya untuk menghujaninya dengan kata-kata yang mengungkapkan kebencian dan penghinaan yang dahsyat.</p><p>“Setan,” seruku, “beraninya kau mendekatiku? Dan tidakkah kau takut akan pembalasan dahsyat lenganku yang akan menimpa kepalamu yang malang? Pergilah, serangga keji! Atau lebih baik, tetaplah di sini, agar aku dapat menginjak-injakmu hingga menjadi debu! Dan, oh! Seandainya aku dapat, dengan punahnya keberadaanmu yang menyedihkan, mengembalikan para korban yang telah kau bunuh dengan begitu keji!”</p><p>“Aku sudah menduga sambutan ini,” kata daemon itu. “Semua orang membenci orang yang malang; lalu, bagaimana mungkin aku dibenci, yang paling sengsara di antara semua makhluk hidup! Namun kau, penciptaku, membenci dan menolakku, makhluk ciptaanmu, yang terikat padamu oleh ikatan yang hanya dapat diputus oleh pemusnahan salah satu dari kita. Kau bermaksud membunuhku. Berani-beraninya kau mempermainkan hidup seperti ini? Lakukan kewajibanmu terhadapku, dan aku akan melakukan kewajibanku terhadapmu dan seluruh umat manusia. Jika kau memenuhi syarat-syaratku, aku akan membiarkan mereka dan kau hidup damai; tetapi jika kau menolak, aku akan memuaskan nafsu maut, sampai ia kenyang dengan darah teman-temanmu yang tersisa.”</p><p>“Monster menjijikkan! Iblis sejati! Siksaan neraka terlalu ringan untuk kejahatanmu. Setan celaka! Kau mencelaku dengan ciptaanmu, ayo, kalau begitu, agar aku dapat memadamkan percikan api yang dengan lalai kuberikan.”</p><p>Kemarahanku tak terkendali; aku menerjangnya, didorong oleh semua perasaan yang dapat mempersenjatai satu makhluk melawan keberadaan makhluk lain.</p><p>Dia dengan mudah menghindari saya dan berkata,</p><p>“Tenanglah! Kumohon dengarkan aku sebelum kau melampiaskan kebencianmu pada kepalaku yang malang. Bukankah aku sudah cukup menderita, sehingga kau ingin menambah penderitaanku? Hidup, meskipun hanya akumulasi kesengsaraan, sangat berharga bagiku, dan aku akan mempertahankannya. Ingatlah, kau telah membuatku lebih kuat dari dirimu; tinggi badanku lebih tinggi darimu, persendianku lebih lentur. Tetapi aku tidak akan tergoda untuk menentangmu. Aku adalah ciptaanmu, dan aku akan bersikap lembut dan patuh kepada tuan dan rajaku yang sebenarnya jika kau juga mau melaksanakan bagianmu, yang seharusnya kau lakukan padaku. Oh, Frankenstein, jangan adil kepada semua orang dan injak-injak aku seorang diri, kepada siapa keadilanmu, bahkan kemurahan hati dan kasih sayangmu, paling pantas diberikan. Ingatlah bahwa aku adalah ciptaanmu; aku seharusnya menjadi Adam-mu, tetapi aku lebih seperti malaikat yang jatuh, yang kau usir dari kebahagiaan tanpa kesalahan. Di mana-mana aku melihat kebahagiaan, dari mana aku Sendirian, aku tersisihkan secara permanen. Dulu aku baik hati dan berbudi luhur; penderitaan membuatku menjadi iblis. Bahagiakan aku, dan aku akan kembali menjadi orang yang berbudi luhur.”</p><p>“Pergilah! Aku tidak akan mendengarmu. Tidak mungkin ada hubungan antara kau dan aku; kita adalah musuh. Pergilah, atau mari kita uji kekuatan kita dalam pertarungan, di mana salah satu dari kita pasti akan kalah.”</p><p>“Bagaimana aku bisa menggerakkanmu? Tidakkah permohonanku akan membuatmu berpaling dengan pandangan baik kepada makhluk ciptaanmu ini, yang memohon kebaikan dan belas kasihanmu? Percayalah, Frankenstein, aku baik hati; jiwaku bersinar dengan cinta dan kemanusiaan; tetapi bukankah aku sendirian, sangat sendirian? Kau, penciptaku, membenciku; harapan apa yang bisa kukumpulkan dari sesama makhluk ciptaanmu, yang tidak berutang apa pun padaku? Mereka menolak dan membenciku. Pegunungan gurun dan gletser yang suram adalah tempat perlindunganku. Aku telah mengembara di sini selama berhari-hari; gua-gua es, yang hanya aku yang tidak takuti, adalah tempat tinggal bagiku, dan satu-satunya yang tidak dibenci manusia. Langit yang suram ini kucintai, karena mereka lebih baik kepadaku daripada sesama makhluk ciptaanmu. Jika banyak umat manusia mengetahui keberadaanku, mereka akan melakukan seperti yang kau lakukan, dan mempersenjatai diri untuk menghancurkanku. Bukankah aku akan membenci mereka yang membenciku? Aku tidak akan berdamai dengan musuh-musuhku. Aku sengsara, dan mereka akan berbagi kesengsaraanku. Namun, kau memiliki kuasa untuk Berikanlah ganti rugi kepadaku, dan bebaskan mereka dari kejahatan yang hanya tinggal kau perbesar sedemikian rupa sehingga bukan hanya kau dan keluargamu, tetapi ribuan orang lain, akan tertelan dalam pusaran amukannya. Biarkan belas kasihanmu tergerak, dan janganlah kau meremehkanku. Dengarkan kisahku; setelah kau mendengarnya, tinggalkan atau kasihanilah aku, sesuai dengan penilaianmu. Tetapi dengarkanlah aku. Orang yang bersalah diizinkan, menurut hukum manusia, betapapun kejamnya, untuk berbicara membela diri sebelum mereka dihukum. Dengarkan aku, Frankenstein. Kau menuduhku melakukan pembunuhan, namun kau, dengan hati nurani yang puas, ingin menghancurkan ciptaanmu sendiri. Oh, pujilah keadilan abadi manusia! Namun aku memintamu untuk tidak mengampuniku; dengarkan aku, dan kemudian, jika kau bisa, dan jika kau mau, hancurkanlah karya tanganmu sendiri.”</p><p>“Mengapa kau mengingatkanku,” jawabku, “tentang keadaan yang membuatku bergidik membayangkannya, bahwa akulah asal mula dan penyeBAB penderitaan ini? Terkutuklah hari itu, wahai iblis yang menjijikkan, di mana kau pertama kali melihat cahaya! Terkutuklah (walaupun aku mengutuk diriku sendiri) tangan-tangan yang membentukmu! Kau telah membuatku sengsara tak terlukiskan. Kau telah membuatku tak berdaya untuk mempertimbangkan apakah aku adil kepadamu atau tidak. Pergilah! Bebaskan aku dari pandangan wujudmu yang menjijikkan.”</p><p>“Demikianlah aku membebaskanmu, penciptaku,” katanya, lalu meletakkan tangannya yang dibencinya di depan mataku, yang kusingkirkan dengan keras; “demikianlah aku mengambil darimu pemandangan yang kau benci. Namun kau masih bisa mendengarku dan memberiku belas kasihanmu. Demi kebajikan yang pernah kumiliki, aku meminta ini darimu. Dengarkan kisahku; kisah ini panjang dan aneh, dan suhu tempat ini tidak sesuai dengan kepekaanmu yang halus; datanglah ke gubuk di atas gunung. Matahari masih tinggi di langit; sebelum ia turun untuk bersembunyi di balik tebing bersalju dan menerangi dunia lain, kau akan mendengar kisahku dan dapat memutuskan. Terserah padamu, apakah aku akan meninggalkan lingkungan manusia selamanya dan menjalani hidup yang tidak berbahaya, atau menjadi cambuk bagi sesama makhlukmu dan penyeBAB kehancuranmu sendiri.”</p><p>Sambil berkata demikian, ia memimpin jalan menyeberangi es; aku mengikutinya. Hatiku penuh, dan aku tidak menjawabnya, tetapi sambil berjalan, aku mempertimbangkan berbagai argumen yang telah ia gunakan dan memutuskan setidaknya untuk mendengarkan ceritanya. Sebagian didorong oleh rasa ingin tahu, dan rasa iba menguatkan tekadku. Selama ini aku mengira dialah pembunuh saudaraku, dan aku sangat ingin mendapatkan konfirmasi atau penolakan atas pendapat ini. Untuk pertama kalinya juga, aku merasakan apa kewajiban seorang pencipta terhadap ciptaannya, dan bahwa aku harus membuatnya bahagia sebelum mengeluh tentang kejahatannya. Motif-motif ini mendorongku untuk memenuhi permintaannya. Oleh karena itu, kami menyeberangi es dan mendaki batu di seberangnya. Udara terasa dingin, dan hujan kembali turun; kami memasuki gubuk, si iblis dengan suasana gembira, aku dengan hati yang berat dan semangat yang tertekan. Tetapi aku setuju untuk mendengarkan, dan duduk di dekat api yang telah dinyalakan oleh temanku yang menjijikkan itu, ia pun mulai bercerita.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-9.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 9</span>
+    </a>
+    <a href="bab-11.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 11</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 10</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Keesokan harinya saya habiskan menjelajahi lembah. Saya berdiri di tepi sumber Sungai Arveiron, yang bermula dari gletser yang perlahan-lahan bergerak turun dari puncak bukit untuk membarikade lembah. Sisi-sisi curam pegunungan yang luas terbentang di hadapan saya; dinding es gletser menjulang di atas saya; beberapa pohon pinus yang hancur berserakan di sekitar; dan keheningan khidmat ruang hadir alam yang agung ini hanya terpecah oleh deburan ombak atau jatuhnya beberapa pecahan besar, suara guntur longsoran salju atau retakan yang bergema di sepanjang pegunungan, dari es yang terkumpul, yang, melalui kerja diam hukum yang tak berubah, terus-menerus terkoyak dan robek, seolah-olah itu hanyalah mainan di tangan mereka. Pemandangan yang agung dan megah ini memberi saya penghiburan terbesar yang mampu saya terima. Pemandangan itu mengangkat saya dari segala perasaan kecil, dan meskipun tidak menghilangkan kesedihan saya, pemandangan itu meredakan dan menenangkannya. Sampai batas tertentu, mereka juga mengalihkan pikiranku dari pikiran-pikiran yang telah kurenungkan selama sebulan terakhir. Aku beristirahat di malam hari; tidurku, seolah-olah, dilayani dan dibantu oleh kumpulan bentuk-bentuk agung yang telah kurenungkan sepanjang hari. Mereka berkumpul di sekelilingku; puncak gunung bersalju yang tak ternoda, puncak yang berkilauan, hutan pinus, dan jurang gersang yang terjal, elang yang melayang di antara awan—semuanya berkumpul di sekelilingku dan menyuruhku untuk tenang. Ke mana mereka pergi ketika keesokan paginya aku terbangun? Semua yang membangkitkan jiwa lenyap bersama tidur, dan kesedihan yang gelap menyelimuti setiap pikiran. Hujan turun deras, dan kabut tebal menyembunyikan puncak-puncak gunung, sehingga aku bahkan tidak melihat wajah teman-temanku yang perkasa itu. Namun aku tetap ingin menembus tabir kabut mereka dan mencari mereka di tempat persembunyian mereka yang berawan. Apa artinya hujan dan badai bagiku? Keledaiku dibawa ke depan pintu, dan aku memutuskan untuk mendaki ke puncak Montanvert. Aku ingat efek yang ditimbulkan oleh pemandangan gletser yang luar biasa dan selalu bergerak itu pada pikiranku ketika pertama kali melihatnya. Saat itu, pemandangan itu memenuhi diriku dengan ekstasi yang agung yang memberi sayap pada jiwa dan memungkinkannya melayang dari dunia yang gelap menuju cahaya dan sukacita. Pemandangan yang menakjubkan dan megah di alam memang selalu memiliki efek menenangkan pikiranku dan membuatku melupakan kekhawatiran hidup yang sementara. Aku memutuskan untuk pergi tanpa pemandu, karena aku sudah sangat mengenal jalan setapak itu, dan kehadiran orang lain akan menghancurkan keagungan pemandangan yang sunyi itu. Pendakiannya curam, tetapi jalannya berkelok-kelok pendek dan berkelanjutan, yang memungkinkan Anda untuk mengatasi kemiringan gunung yang tegak lurus. Pemandangannya sangat sunyi. Di ribuan tempat, jejak longsoran salju musim dingin dapat terlihat, di mana pohon-pohon tergeletak patah dan berserakan di tanah, beberapa hancur total, yang lain bengkok, bersandar pada bebatuan gunung yang menjorok atau melintang pada pohon lain. Jalan setapak, saat Anda mendaki lebih tinggi, diselingi oleh jurang-jurang salju, tempat batu-batu terus menerus menggelinding dari atas; salah satunya sangat berbahaya, karena suara sekecil apa pun, seperti berbicara dengan suara keras sekalipun, menghasilkan guncangan udara yang cukup untuk mendatangkan malapetaka pada kepala pembicara. Pohon-pohon pinus tidak tinggi atau rimbun, tetapi tampak suram dan menambah kesan keras pada pemandangan. Saya memandang lembah di bawah; Kabut tebal membubung dari sungai-sungai yang mengalir di sana dan melingkar tebal di sekitar pegunungan di seberangnya, yang puncaknya tersembunyi di dalam awan yang seragam, sementara hujan turun dari langit gelap dan menambah kesan melankolis yang saya terima dari objek-objek di sekitar saya. Sayang sekali! Mengapa manusia membanggakan kepekaan yang lebih unggul daripada yang tampak pada hewan; itu hanya menjadikan mereka makhluk yang lebih mendasar. Jika dorongan kita terbatas pada rasa lapar, haus, dan keinginan, kita mungkin hampir bebas; tetapi sekarang kita digerakkan oleh setiap angin yang bertiup dan kata atau pemandangan yang kebetulan disampaikan oleh kata itu kepada kita. Kita beristirahat; mimpi memiliki kekuatan untuk meracuni tidur. Kita bangun; satu pikiran yang mengembara mencemari hari. Kita merasa, membayangkan, atau bernalar; tertawa atau menangis, merangkul kesedihan yang mendalam, atau membuang kekhawatiran kita; semuanya sama: karena, baik itu sukacita atau kesedihan, jalan kepergiannya tetap bebas. Hari kemarin manusia mungkin tidak akan pernah sama dengan hari esoknya; tidak ada yang dapat bertahan kecuali perubahan! Hampir tengah hari ketika saya tiba di puncak pendakian. Beberapa saat saya duduk di atas batu yang menghadap lautan es. Kabut menyelimuti batu itu dan pegunungan di sekitarnya. Tak lama kemudian, angin sepoi-sepoi menghilangkan kabut, dan saya turun ke gletser. Permukaannya sangat tidak rata, naik seperti gelombang laut yang bergejolak, turun rendah, dan diselingi oleh celah-celah yang dalam. Hamparan es itu hampir selebar satu liga, tetapi saya menghabiskan hampir dua jam untuk menyeberanginya. Gunung di seberangnya adalah batu tegak lurus yang gersang. Dari sisi tempat saya berdiri sekarang, Montanvert berada tepat di seberang, dengan jarak satu liga; dan di atasnya menjulang Mont Blanc, dengan keagungan yang menakutkan. Saya tetap berada di ceruk batu, menatap pemandangan yang menakjubkan dan luar biasa ini. Lautan, atau lebih tepatnya sungai es yang luas, berkelok-kelok di antara pegunungan yang bergantung padanya, yang puncak-puncaknya menjulang di atas ceruknya. Puncak-puncak es yang berkilauan itu bersinar di bawah sinar matahari di atas awan. Hati saya, yang sebelumnya sedih, kini dipenuhi dengan sesuatu seperti kegembiraan; Aku berseru, “Wahai roh-roh pengembara, jika memang kalian mengembara dan tidak beristirahat di tempat tidur kalian yang sempit, izinkan aku merasakan kebahagiaan kecil ini, atau bawalah aku, sebagai teman kalian, menjauh dari sukacita hidup.” Saat aku mengatakan ini, tiba-tiba aku melihat sosok seorang pria, dari kejauhan, mendekatiku dengan kecepatan luar biasa. Dia melompati celah-celah es, di antara celah-celah itu aku berjalan dengan hati-hati; perawakannya juga, saat dia mendekat, tampak melebihi tinggi manusia. Aku gelisah; kabut menyelimuti mataku, dan aku merasa lemas, tetapi aku segera pulih oleh hembusan angin dingin pegunungan. Aku menyadari, saat sosok itu semakin dekat (pemandangan yang mengerikan dan menjijikkan!), bahwa itu adalah orang celaka yang telah kuciptakan. Aku gemetar karena amarah dan kengerian, bertekad untuk menunggu kedatangannya dan kemudian bertarung dengannya sampai mati. Dia mendekat; wajahnya menunjukkan penderitaan yang pahit, bercampur dengan penghinaan dan kebencian, sementara keburukannya yang tidak manusiawi membuatnya hampir terlalu mengerikan untuk mata manusia. Tetapi aku hampir tidak memperhatikan ini; amarah dan kebencian pada awalnya membuatku tidak bisa berkata-kata, dan aku pulih hanya untuk menghujaninya dengan kata-kata yang mengungkapkan kebencian dan penghinaan yang dahsyat. “Setan,” seruku, “beraninya kau mendekatiku? Dan tidakkah kau takut akan pembalasan dahsyat lenganku yang akan menimpa kepalamu yang malang? Pergilah, serangga keji! Atau lebih baik, tetaplah di sini, agar aku dapat menginjak-injakmu hingga menjadi debu! Dan, oh! Seandainya aku dapat, dengan punahnya keberadaanmu yang menyedihkan, mengembalikan para korban yang telah kau bunuh dengan begitu keji!” “Aku sudah menduga sambutan ini,” kata daemon itu. “Semua orang membenci orang yang malang; lalu, bagaimana mungkin aku dibenci, yang paling sengsara di antara semua makhluk hidup! Namun kau, penciptaku, membenci dan menolakku, makhluk ciptaanmu, yang terikat padamu oleh ikatan yang hanya dapat diputus oleh pemusnahan salah satu dari kita. Kau bermaksud membunuhku. Berani-beraninya kau mempermainkan hidup seperti ini? Lakukan kewajibanmu terhadapku, dan aku akan melakukan kewajibanku terhadapmu dan seluruh umat manusia. Jika kau memenuhi syarat-syaratku, aku akan membiarkan mereka dan kau hidup damai; tetapi jika kau menolak, aku akan memuaskan nafsu maut, sampai ia kenyang dengan darah teman-temanmu yang tersisa.” “Monster menjijikkan! Iblis sejati! Siksaan neraka terlalu ringan untuk kejahatanmu. Setan celaka! Kau mencelaku dengan ciptaanmu, ayo, kalau begitu, agar aku dapat memadamkan percikan api yang dengan lalai kuberikan.” Kemarahanku tak terkendali; aku menerjangnya, didorong oleh semua perasaan yang dapat mempersenjatai satu makhluk melawan keberadaan makhluk lain. Dia dengan mudah menghindari saya dan berkata, “Tenanglah! Kumohon dengarkan aku sebelum kau melampiaskan kebencianmu pada kepalaku yang malang. Bukankah aku sudah cukup menderita, sehingga kau ingin menambah penderitaanku? Hidup, meskipun hanya akumulasi kesengsaraan, sangat berharga bagiku, dan aku akan mempertahankannya. Ingatlah, kau telah membuatku lebih kuat dari dirimu; tinggi badanku lebih tinggi darimu, persendianku lebih lentur. Tetapi aku tidak akan tergoda untuk menentangmu. Aku adalah ciptaanmu, dan aku akan bersikap lembut dan patuh kepada tuan dan rajaku yang sebenarnya jika kau juga mau melaksanakan bagianmu, yang seharusnya kau lakukan padaku. Oh, Frankenstein, jangan adil kepada semua orang dan injak-injak aku seorang diri, kepada siapa keadilanmu, bahkan kemurahan hati dan kasih sayangmu, paling pantas diberikan. Ingatlah bahwa aku adalah ciptaanmu; aku seharusnya menjadi Adam-mu, tetapi aku lebih seperti malaikat yang jatuh, yang kau usir dari kebahagiaan tanpa kesalahan. Di mana-mana aku melihat kebahagiaan, dari mana aku Sendirian, aku tersisihkan secara permanen. Dulu aku baik hati dan berbudi luhur; penderitaan membuatku menjadi iblis. Bahagiakan aku, dan aku akan kembali menjadi orang yang berbudi luhur.” “Pergilah! Aku tidak akan mendengarmu. Tidak mungkin ada hubungan antara kau dan aku; kita adalah musuh. Pergilah, atau mari kita uji kekuatan kita dalam pertarungan, di mana salah satu dari kita pasti akan kalah.” “Bagaimana aku bisa menggerakkanmu? Tidakkah permohonanku akan membuatmu berpaling dengan pandangan baik kepada makhluk ciptaanmu ini, yang memohon kebaikan dan belas kasihanmu? Percayalah, Frankenstein, aku baik hati; jiwaku bersinar dengan cinta dan kemanusiaan; tetapi bukankah aku sendirian, sangat sendirian? Kau, penciptaku, membenciku; harapan apa yang bisa kukumpulkan dari sesama makhluk ciptaanmu, yang tidak berutang apa pun padaku? Mereka menolak dan membenciku. Pegunungan gurun dan gletser yang suram adalah tempat perlindunganku. Aku telah mengembara di sini selama berhari-hari; gua-gua es, yang hanya aku yang tidak takuti, adalah tempat tinggal bagiku, dan satu-satunya yang tidak dibenci manusia. Langit yang suram ini kucintai, karena mereka lebih baik kepadaku daripada sesama makhluk ciptaanmu. Jika banyak umat manusia mengetahui keberadaanku, mereka akan melakukan seperti yang kau lakukan, dan mempersenjatai diri untuk menghancurkanku. Bukankah aku akan membenci mereka yang membenciku? Aku tidak akan berdamai dengan musuh-musuhku. Aku sengsara, dan mereka akan berbagi kesengsaraanku. Namun, kau memiliki kuasa untuk Berikanlah ganti rugi kepadaku, dan bebaskan mereka dari kejahatan yang hanya tinggal kau perbesar sedemikian rupa sehingga bukan hanya kau dan keluargamu, tetapi ribuan orang lain, akan tertelan dalam pusaran amukannya. Biarkan belas kasihanmu tergerak, dan janganlah kau meremehkanku. Dengarkan kisahku; setelah kau mendengarnya, tinggalkan atau kasihanilah aku, sesuai dengan penilaianmu. Tetapi dengarkanlah aku. Orang yang bersalah diizinkan, menurut hukum manusia, betapapun kejamnya, untuk berbicara membela diri sebelum mereka dihukum. Dengarkan aku, Frankenstein. Kau menuduhku melakukan pembunuhan, namun kau, dengan hati nurani yang puas, ingin menghancurkan ciptaanmu sendiri. Oh, pujilah keadilan abadi manusia! Namun aku memintamu untuk tidak mengampuniku; dengarkan aku, dan kemudian, jika kau bisa, dan jika kau mau, hancurkanlah karya tanganmu sendiri.” “Mengapa kau mengingatkanku,” jawabku, “tentang keadaan yang membuatku bergidik membayangkannya, bahwa akulah asal mula dan penyeBAB penderitaan ini? Terkutuklah hari itu, wahai iblis yang menjijikkan, di mana kau pertama kali melihat cahaya! Terkutuklah (walaupun aku mengutuk diriku sendiri) tangan-tangan yang membentukmu! Kau telah membuatku sengsara tak terlukiskan. Kau telah membuatku tak berdaya untuk mempertimbangkan apakah aku adil kepadamu atau tidak. Pergilah! Bebaskan aku dari pandangan wujudmu yang menjijikkan.” “Demikianlah aku membebaskanmu, penciptaku,” katanya, lalu meletakkan tangannya yang dibencinya di depan mataku, yang kusingkirkan dengan keras; “demikianlah aku mengambil darimu pemandangan yang kau benci. Namun kau masih bisa mendengarku dan memberiku belas kasihanmu. Demi kebajikan yang pernah kumiliki, aku meminta ini darimu. Dengarkan kisahku; kisah ini panjang dan aneh, dan suhu tempat ini tidak sesuai dengan kepekaanmu yang halus; datanglah ke gubuk di atas gunung. Matahari masih tinggi di langit; sebelum ia turun untuk bersembunyi di balik tebing bersalju dan menerangi dunia lain, kau akan mendengar kisahku dan dapat memutuskan. Terserah padamu, apakah aku akan meninggalkan lingkungan manusia selamanya dan menjalani hidup yang tidak berbahaya, atau menjadi cambuk bagi sesama makhlukmu dan penyeBAB kehancuranmu sendiri.” Sambil berkata demikian, ia memimpin jalan menyeberangi es; aku mengikutinya. Hatiku penuh, dan aku tidak menjawabnya, tetapi sambil berjalan, aku mempertimbangkan berbagai argumen yang telah ia gunakan dan memutuskan setidaknya untuk mendengarkan ceritanya. Sebagian didorong oleh rasa ingin tahu, dan rasa iba menguatkan tekadku. Selama ini aku mengira dialah pembunuh saudaraku, dan aku sangat ingin mendapatkan konfirmasi atau penolakan atas pendapat ini. Untuk pertama kalinya juga, aku merasakan apa kewajiban seorang pencipta terhadap ciptaannya, dan bahwa aku harus membuatnya bahagia sebelum mengeluh tentang kejahatannya. Motif-motif ini mendorongku untuk memenuhi permintaannya. Oleh karena itu, kami menyeberangi es dan mendaki batu di seberangnya. Udara terasa dingin, dan hujan kembali turun; kami memasuki gubuk, si iblis dengan suasana gembira, aku dengan hati yang berat dan semangat yang tertekan. Tetapi aku setuju untuk mendengarkan, dan duduk di dekat api yang telah dinyalakan oleh temanku yang menjijikkan itu, ia pun mulai bercerita.</p>
-
-<div class="nav">
-  <a href="bab-9.html">⬅ Bab 9</a>
-  <a href="bab-11.html">Bab 11 ➡</a>
-</div>
 
 </body>
 </html>

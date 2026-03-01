@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB LXXI.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB LXXI. - Bacaan digital klasik">
+<title>Bab LXXI — Middlemarch</title>
+<meta name="description" content="Baca Bab LXXI dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-lxxi.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab LXXI — Middlemarch">
+  <meta property="og:description" content="Baca Bab LXXI dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-lxxi.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab LXXI — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab LXXI dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab LXXI",
+    "name": "Bab LXXI — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-lxxi.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab LXXI</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Badut . . . . Itu di Gugusan Anggur, di mana, memang, <br />Anda senang duduk, bukan? Buih . Saya senang: karena itu ruangan terbuka, dan bagus untuk musim dingin.<br /> Clo . Baiklah kalau begitu: Kuharap di sini ada kebenaran. <br />— Measure for Measure .</p><p>Lima hari setelah kematian Raffles, Tuan Bambridge berdiri santai di bawah lengkungan besar yang menuju ke halaman Green Dragon. Ia tidak menyukai perenungan sendirian, tetapi ia baru saja keluar rumah, dan sosok manusia mana pun yang berdiri santai di bawah lengkungan di awal siang hari pasti akan menarik perhatian orang lain seperti seekor merpati yang menemukan sesuatu yang layak dipatuk. Dalam hal ini tidak ada objek material untuk dinikmati, tetapi mata akal sehat melihat kemungkinan mendapatkan makanan mental dalam bentuk gosip. Tuan Hopkins, penjual kain yang pendiam di seberangnya, adalah orang pertama yang bertindak berdasarkan visi batin ini, karena ia lebih bersemangat untuk sedikit bercakap-cakap dengan gaya maskulin karena pelanggannya sebagian besar adalah wanita. Tuan Bambridge agak kasar kepada penjual kain itu, merasa bahwa Hopkins tentu saja senang berbicara dengannya , tetapi ia tidak akan membuang banyak pembicaraannya untuk Hopkins. Namun, tak lama kemudian, muncul sekelompok kecil pendengar yang lebih penting, yang entah diantar oleh orang-orang yang lewat, atau sengaja datang ke tempat itu untuk melihat apakah ada sesuatu yang terjadi di Green Dragon; dan Tuan Bambridge merasa perlu untuk mengatakan banyak hal yang mengesankan tentang kuda-kuda pacuan yang bagus yang telah dilihatnya dan pembelian yang telah dilakukannya dalam perjalanan ke utara yang baru saja ia tinggalkan. Para Tuan yang hadir diyakinkan bahwa jika mereka dapat menunjukkan kepadanya kuda betina ras murni, berwarna cokelat, berusia hampir empat tahun, yang dapat dilihat di Doncaster jika mereka memilih untuk pergi dan melihatnya, Tuan Bambridge akan memuaskan mereka dengan menembaknya &quot;dari sini sampai Hereford.&quot; Selain itu, sepasang sepatu hitam yang akan ia kenakan saat istirahat mengingatkannya dengan jelas pada sepasang sepatu yang telah ia jual kepada Faulkner pada tahun 1919 seharga seratus guinea, dan yang kemudian dijual Faulkner seharga seratus enam puluh guinea dua bulan kemudian—siapa pun yang dapat membantah pernyataan ini akan diberi hak istimewa untuk memanggil Tuan Bambridge dengan nama yang sangat buruk sampai tenggorokannya kering.</p><p>Ketika percakapan mencapai titik yang meriah ini, datanglah Tuan Frank Hawley. Ia bukanlah orang yang akan mengorbankan harga dirinya dengan bersantai di Green Dragon, tetapi kebetulan lewat di sepanjang High Street dan melihat Bambridge di seberang jalan, ia melangkah dengan panjang untuk bertanya kepada pedagang kuda apakah ia telah menemukan kuda pacuan kelas satu yang telah ia janjikan untuk dicari. Tuan Hawley diminta untuk menunggu sampai ia melihat kuda abu-abu yang dipilih di Bilkley: jika itu tidak memenuhi keinginannya sama sekali, Bambridge tidak tahu kuda yang bagus ketika ia melihatnya, yang tampaknya merupakan kemungkinan yang paling kecil. Tuan Hawley, berdiri membelakangi jalan, sedang menentukan waktu untuk melihat kuda abu-abu itu dan mencobanya, ketika seorang penunggang kuda lewat perlahan.</p><p>“Bulstrode!” seru dua atau tiga suara serentak dengan nada rendah, salah satunya, suara si penjual kain, dengan hormat menambahkan “Tuan” di depan; tetapi tidak ada yang bermaksud lebih serius dalam penyebutan ini daripada jika mereka mengatakan “kereta Riverston” ketika kendaraan itu muncul di kejauhan. Tuan Hawley melirik sekilas ke punggung Bulstrode, tetapi saat mata Bambridge mengikutinya, ia membuat seringai sinis.</p><p>“Astaga! Itu mengingatkan saya,” ia memulai, sedikit merendahkan suaranya, “Saya menemukan sesuatu yang lain di Bilkley selain kuda tunggangan Anda, Tuan Hawley. Saya menemukan cerita bagus tentang Bulstrode. Tahukah Anda bagaimana ia mendapatkan kekayaannya? Tuan mana pun yang menginginkan sedikit informasi menarik, saya dapat memberikannya secara gratis. Jika semua orang mendapatkan makanan penutup mereka, Bulstrode mungkin harus berdoa di Botany Bay.”</p><p>“Apa maksudmu?” kata Tuan Hawley, sambil memasukkan tangannya ke dalam saku, dan sedikit maju ke bawah lengkungan pintu. Jika Bulstrode ternyata seorang bajingan, Frank Hawley memiliki jiwa seorang nabi.</p><p>“Aku mendapatkannya dari seseorang yang merupakan teman lama Bulstrode. Akan kuberitahu di mana aku pertama kali bertemu dengannya,” kata Bambridge, dengan gerakan tiba-tiba jari telunjuknya. “Dia ada di lelang Larcher, tapi aku tidak mengenalnya saat itu—dia lolos dari genggamanku—pasti dia mengincar Bulstrode. Dia bilang dia bisa memeras Bulstrode berapa pun jumlahnya, tahu semua rahasianya. Namun, dia membocorkan rahasia kepadaku di Bilkley: dia minum minuman keras. Sialan, aku rasa dia tidak bermaksud menjadi saksi raja; tapi dia tipe orang yang suka membual, keangkuhannya melampaui batas, sampai dia membual tentang seekor babi hutan seolah-olah itu akan menghasilkan uang. Seseorang harus tahu kapan harus berhenti.” Tuan Bambridge mengucapkan kalimat ini dengan nada jijik, puas bahwa keangkuhannya sendiri menunjukkan selera yang bagus dalam hal yang bisa dipasarkan.</p><p>“Siapa nama pria itu? Di mana dia bisa ditemukan?” tanya Tuan Hawley.</p><p>“Mengenai di mana dia dapat ditemukan, saya serahkan padanya untuk mencari tahu di Saracen's Head; tetapi namanya adalah Raffles.”</p><p>“Raffles!” seru Mr. Hopkins. “Saya yang mengurus pemakamannya kemarin. Dia dimakamkan di Lowick. Mr. Bulstrode yang mengurus pemakamannya. Pemakaman yang sangat layak.” Ada kehebohan yang kuat di antara para pendengar. Mr. Bambridge berseru dengan kata-kata kasar, dan Mr. Hawley, sambil mengerutkan kening dan menundukkan kepala, berseru, “Apa?—di mana orang itu meninggal?”</p><p>“Di Stone Court,” kata penjual kain itu. “Pengurus rumah tangga mengatakan dia adalah kerabat majikan. Dia datang ke sana dalam keadaan sakit pada hari Jumat.”</p><p>“Oh, tepatnya hari Rabu saya minum bersamanya,” sela Bambridge.</p><p>“Apakah ada dokter yang merawatnya?” tanya Tuan Hawley.</p><p>“Ya. Tuan Lydgate. Tuan Bulstrode menemaninya semalaman. Dia meninggal pada pagi hari ketiga.”</p><p>“Lanjutkan, Bambridge,” kata Tuan Hawley dengan tegas. “Apa yang dikatakan orang ini tentang Bulstrode?”</p><p>Kelompok itu sudah bertambah besar, kehadiran juru tulis kota menjadi jaminan bahwa sesuatu yang layak didengarkan sedang terjadi di sana; dan Tuan Bambridge menyampaikan narasinya di hadapan tujuh orang. Intinya adalah apa yang kita ketahui, termasuk fakta tentang Will Ladislaw, dengan beberapa tambahan warna dan keadaan lokal: itulah yang ditakutkan Bulstrode akan dikhianati—dan berharap untuk dikubur selamanya bersama mayat Raffles—itu adalah hantu yang menghantui kehidupannya sebelumnya yang, saat ia melewati gapura Naga Hijau, ia percaya bahwa takdir telah membebaskannya. Ya, takdir. Ia belum mengakui pada dirinya sendiri bahwa ia telah melakukan sesuatu yang mengarah pada tujuan ini; ia telah menerima apa yang tampaknya telah ditawarkan. Mustahil untuk membuktikan bahwa ia telah melakukan sesuatu yang mempercepat kepergian jiwa pria itu.</p><p>Namun gosip tentang Bulstrode menyebar di Middlemarch seperti bau api. Tuan Frank Hawley menindaklanjuti informasinya dengan mengirim seorang juru tulis yang dapat dipercayanya ke Stone Court dengan dalih menanyakan tentang jerami, tetapi sebenarnya untuk mengumpulkan semua informasi yang dapat diperoleh tentang Raffles dan penyakitnya dari Nyonya Abel. Dengan cara ini, ia mengetahui bahwa Tuan Garth telah membawa pria itu ke Stone Court dengan kereta kudanya; dan akibatnya, Tuan Hawley mengambil kesempatan untuk menemui Caleb, mampir ke kantornya untuk menanyakan apakah ia punya waktu untuk melakukan arbitrase jika diperlukan, dan kemudian secara tidak langsung menanyakan tentang Raffles. Caleb tidak diberi tahu secara langsung tentang hal yang merugikan Bulstrode selain fakta yang terpaksa ia akui, bahwa ia telah berhenti menjadi aktor untuknya dalam seminggu terakhir. Tuan Hawley menarik kesimpulannya, dan merasa yakin bahwa Raffles telah menceritakan kisahnya kepada Garth, dan bahwa Garth telah menghentikan urusan Bulstrode sebagai akibatnya, ia mengatakan hal itu beberapa jam kemudian kepada Tuan Toller. Pernyataan itu diteruskan hingga kehilangan ciri sebuah kesimpulan, dan dianggap sebagai informasi yang langsung berasal dari Garth, sehingga bahkan seorang sejarawan yang teliti pun mungkin menyimpulkan bahwa Caleb adalah penerbit utama pelanggaran yang dilakukan Bulstrode.</p><p>Tuan Hawley tidak lambat menyadari bahwa tidak ada celah hukum baik dalam pengungkapan yang dibuat oleh Raffles maupun dalam keadaan kematiannya. Ia sendiri telah pergi ke desa Lowick untuk melihat catatan dan membicarakan seluruh masalah dengan Tuan Farebrother, yang tidak lebih terkejut daripada pengacara itu bahwa rahasia buruk telah terungkap tentang Bulstrode, meskipun ia selalu memiliki cukup keadilan dalam dirinya untuk mencegah antipatinya berubah menjadi kesimpulan. Tetapi sementara mereka berbicara, kombinasi lain diam-diam muncul dalam pikiran Tuan Farebrother, yang meramalkan apa yang segera akan dibicarakan dengan lantang di Middlemarch sebagai &quot;penggabungan dua dan dua&quot; yang diperlukan. Bersamaan dengan alasan yang membuat Bulstrode takut pada Raffles, terlintas pikiran bahwa rasa takut itu mungkin ada hubungannya dengan kemurahan hatinya terhadap dokternya; Dan meskipun ia menolak anggapan bahwa hal itu telah diterima secara sadar sebagai suap, ia memiliki firasat bahwa kerumitan ini dapat berdampak buruk pada reputasi Lydgate. Ia menyadari bahwa Tuan Hawley saat ini tidak mengetahui apa pun tentang pembebasan utang secara tiba-tiba, dan ia sendiri berhati-hati untuk menghindari semua pendekatan terkait masalah tersebut.</p><p>“Yah,” katanya sambil menarik napas dalam-dalam, ingin mengakhiri diskusi tak berujung tentang apa yang mungkin terjadi, meskipun tidak ada yang bisa dibuktikan secara hukum, “ini adalah cerita yang aneh. Jadi, Ladislaw kita yang mudah berubah-ubah itu memiliki silsilah yang aneh! Seorang wanita muda yang bersemangat dan seorang patriot Polandia yang musikal cukup mungkin menjadi asal usulnya, tetapi saya tidak akan pernah menduga adanya campuran antara pemilik pegadaian Yahudi itu. Namun, tidak ada yang tahu sebelumnya seperti apa campuran itu akan menghasilkan sesuatu. Beberapa jenis kotoran berfungsi untuk memperjelasnya.”</p><p>“Ini memang sudah kuduga,” kata Tuan Hawley sambil menaiki kudanya. “Darah asing terkutuk, Yahudi, Korsika, atau Gipsi.”</p><p>“Saya tahu dia salah satu anak nakal Anda, Hawley. Tapi dia sebenarnya orang yang tidak mementingkan diri sendiri dan tidak duniawi,” kata Tuan Farebrother sambil tersenyum.</p><p>“Ah, ah, itu memang ciri khas Whig Anda,” kata Tuan Hawley, yang biasanya meminta maaf dengan mengatakan bahwa Farebrother adalah orang yang sangat menyenangkan dan baik hati sehingga Anda mungkin mengira dia seorang Tory.</p><p>Tuan Hawley pulang tanpa memikirkan kehadiran Lydgate di Raffles selain sebagai bukti yang mendukung Bulstrode. Namun, berita bahwa Lydgate tiba-tiba mampu tidak hanya menghindari eksekusi di rumahnya tetapi juga membayar semua utangnya di Middlemarch menyebar dengan cepat, mengumpulkan berbagai spekulasi dan komentar yang memberinya bobot dan dorongan baru, dan segera sampai ke telinga orang lain selain Tuan Hawley, yang dengan cepat melihat hubungan penting antara penguasaan uang yang tiba-tiba ini dan keinginan Bulstrode untuk membungkam skandal Raffles. Bahwa uang itu berasal dari Bulstrode pasti akan ditebak bahkan jika tidak ada bukti langsung; Karena sebelumnya telah beredar gosip tentang urusan Lydgate, bahwa baik ayah mertuanya maupun keluarganya sendiri tidak akan melakukan apa pun untuknya, dan bukti langsung diberikan tidak hanya oleh seorang pegawai di Bank, tetapi juga oleh Nyonya Bulstrode sendiri yang tidak bersalah, yang menyebutkan pinjaman itu kepada Nyonya Plymdale, yang kemudian menyebutkannya kepada menantunya dari keluarga Toller, yang kemudian menyebutkannya secara umum. Urusan ini dianggap begitu publik dan penting sehingga membutuhkan jamuan makan malam untuk memeriahkannya, dan banyak undangan dikeluarkan dan diterima saat itu juga berdasarkan skandal tentang Bulstrode dan Lydgate; para istri, janda, dan wanita lajang meninggalkan pekerjaan mereka dan pergi minum teh lebih sering dari biasanya; dan semua acara ramah tamah publik, dari Green Dragon hingga Dollop's, mendapatkan semangat yang tidak dapat diperoleh dari pertanyaan apakah Dewan Bangsawan akan menolak RUU Reformasi.</p><p>Karena hampir tidak ada yang meragukan bahwa ada alasan yang memalukan di balik kemurahan hati Bulstrode kepada Lydgate. Bahkan, Tuan Hawley, pada awalnya, mengundang sekelompok orang terpilih, termasuk kedua dokter, bersama Tuan Toller dan Tuan Wrench, secara khusus untuk mengadakan diskusi mendalam tentang kemungkinan penyakit Raffles, dengan menceritakan kepada mereka semua rincian yang telah dikumpulkan dari Nyonya Abel sehubungan dengan sertifikat Lydgate, bahwa kematian itu disebabkan oleh delirium tremens; dan para dokter, yang semuanya tetap teguh pada pendirian lama mereka terkait penyakit ini, menyatakan bahwa mereka tidak melihat apa pun dalam rincian ini yang dapat diubah menjadi dasar kecurigaan yang pasti. Tetapi dasar moral kecurigaan tetap ada: motif kuat yang jelas dimiliki Bulstrode untuk ingin menyingkirkan Raffles, dan fakta bahwa pada saat kritis ini ia telah memberi Lydgate bantuan yang pasti telah lama dibutuhkannya; Selain itu, kecenderungan untuk percaya bahwa Bulstrode akan tidak bermoral, dan tidak adanya keraguan untuk percaya bahwa Lydgate dapat dengan mudah disuap seperti orang-orang sombong lainnya ketika mereka membutuhkan uang. Bahkan jika uang itu diberikan hanya untuk membuatnya bungkam tentang skandal kehidupan Bulstrode sebelumnya, fakta itu memberikan citra buruk pada Lydgate, yang telah lama dicemooh karena tunduk pada bankir demi mendapatkan posisi dominan dan mendiskreditkan anggota senior dalam profesinya. Oleh karena itu, terlepas dari tidak adanya tanda-tanda langsung kesalahan terkait kematian di Stone Court, rombongan pilihan Tuan Hawley bubar dengan perasaan bahwa urusan itu memiliki &quot;tampilan yang buruk.&quot;</p><p>Namun keyakinan samar akan kesalahan yang tak dapat ditentukan ini, yang cukup untuk memicu banyak gelengan kepala dan sindiran tajam bahkan di antara para senior profesional yang berpengalaman, memiliki kekuatan misteri yang lebih unggul daripada fakta di benak masyarakat umum. Semua orang lebih suka menduga- duga bagaimana keadaan sebenarnya daripada sekadar mengetahuinya; karena dugaan segera menjadi lebih meyakinkan daripada pengetahuan, dan memiliki toleransi yang lebih besar terhadap hal-hal yang tidak sesuai. Bahkan skandal yang lebih pasti mengenai kehidupan awal Bulstrode, bagi sebagian orang, dilebur ke dalam massa misteri, seperti logam hidup yang dapat dicurahkan dalam dialog, dan mengambil bentuk-bentuk fantastis sesuka hati.</p><p>Inilah pola pikir yang terutama dianut oleh Ny. Dollop, pemilik penginapan Tankard di Slaughter Lane yang bersemangat, yang sering kali harus menolak pragmatisme dangkal para pelanggan yang cenderung berpikir bahwa laporan mereka dari dunia luar sama kuatnya dengan apa yang &quot;muncul&quot; dalam pikirannya. Bagaimana hal itu sampai kepadanya, dia tidak tahu, tetapi itu ada di hadapannya seolah-olah telah &quot;ditulis dengan kapur di papan perapian—&quot; seperti yang akan dikatakan Bulstrode, &quot;perasaannya begitu gelap seolah-olah rambut di kepalanya mengetahui pikiran hatinya, dia akan mencabutnya sampai ke akarnya.&quot;</p><p>“Aneh sekali,” kata Tuan Limp, seorang tukang sepatu yang sedang merenung, dengan mata lemah dan suara serak. “Begini, saya membaca di 'Trumpet' bahwa itulah yang dikatakan Duke of Wellington ketika ia membelot dan memihak Romawi.”</p><p>“Sangat mirip,” kata Ny. Dollop. “Jika satu orang kurang ajar mengatakan itu, itu semakin menjadi alasan mengapa orang lain juga harus mengatakannya. Tetapi karena dia munafik dan bersikap arogan, karena tidak ada pendeta di negeri ini yang cukup baik untuknya, dia terpaksa meminta nasihat Harry Tua, dan Harry Tua sudah terlalu banyak untuknya.”</p><p>“Ay, ay, dia adalah 'kaki tangan' yang tidak bisa kau kirim keluar negeri,” kata Tuan Crabbe, tukang kaca, yang mengumpulkan banyak berita dan mencoba memahaminya dengan samar-samar. “Tapi dari apa yang bisa kupahami, ada yang bilang Bulstrode akan melarikan diri, karena takut ketahuan, sebelum ini.”</p><p>“Dia akan diusir, mau atau tidak,” kata Tuan Dill, tukang cukur yang baru saja mampir. “Saya mencukur Fletcher, juru tulis Hawley, pagi ini—jarinya sakit—dan dia bilang mereka semua sepakat untuk menyingkirkan Bulstrode. Tuan Thesiger menentangnya, dan ingin dia keluar dari paroki. Dan ada beberapa pria di kota ini yang mengatakan mereka lebih suka makan malam dengan orang dari penjara kapal. 'Dan saya lebih suka,' kata Fletcher; 'karena apa yang lebih menjijikkan daripada seorang pria yang datang dan membuat dirinya menjadi teman yang buruk dengan agamanya, dan berteriak seolah-olah Sepuluh Perintah Tuhan tidak cukup baginya, dan sepanjang waktu dia lebih buruk daripada separuh pria di treadmill?' Fletcher sendiri yang mengatakannya.”</p><p>“Ini akan menjadi hal buruk bagi kota ini, jika uang Bulstrode keluar dari kota ini,” kata Tuan Limp dengan suara bergetar.</p><p>“Ah, ada orang yang lebih baik menghabiskan uang mereka dengan lebih buruk,” kata seorang tukang pewarna dengan suara tegas, yang tangannya yang merah padam tampak tidak sesuai dengan wajahnya yang ramah.</p><p>“Tapi dia tidak akan menyimpan uangnya, setidaknya menurutku,” kata tukang kaca itu. “Bukankah ada orang yang bisa mengambil semua uangnya? Setahuku, mereka bisa mengambil setiap sen darinya jika mereka mengajukan gugatan hukum.”</p><p>“Tidak mungkin!” kata tukang cukur itu, yang merasa dirinya sedikit lebih tinggi dari rekan-rekannya di Dollop's, tetapi tidak menyukainya. “Fletcher bilang itu tidak mungkin. Dia bilang mereka bisa membuktikan berulang kali siapa anak Ladislaw muda ini, dan itu tidak akan lebih baik daripada jika mereka membuktikan aku berasal dari Fens—dia tidak akan bisa menyentuh sepeser pun.”</p><p>“Lihat kau di sana!” kata Ny. Dollop dengan marah. “Aku bersyukur kepada Tuhan karena Dia mengambil anak-anakku untuk diri-Nya sendiri, jika hanya itu yang bisa dilakukan hukum untuk anak yatim. Maka dengan begitu, tidak ada gunanya siapa ayah dan ibumu. Tapi soal mendengarkan apa yang dikatakan seorang pengacara tanpa bertanya kepada pengacara lain—aku heran dengan orang sepintar Anda, Tuan Dill. Sudah diketahui umum bahwa selalu ada dua sisi, jika tidak lebih; kalau tidak, siapa yang akan pergi ke pengadilan, aku ingin tahu? Itu cerita yang menyedihkan, dengan semua hukum yang ada, jika tidak ada gunanya membuktikan anak siapa Anda. Fletcher boleh mengatakan itu jika dia mau, tapi kukatakan, jangan sebut aku Fletcher !”</p><p>Tuan Dill berpura-pura tertawa dengan nada memuji Nyonya Dollop, sebagai wanita yang lebih dari sekadar tandingan para pengacara; karena ia bersedia menerima banyak ejekan dari seorang pemilik penginapan yang sudah lama menyimpan dendam terhadapnya.</p><p>“Jika mereka sampai ke ranah hukum, dan itu semua benar seperti yang orang-orang katakan, ada lebih banyak hal yang perlu diperhatikan daripada uang,” kata tukang kaca itu. “Ada makhluk malang ini yang sudah meninggal; dari apa yang bisa kupahami, dia pernah mengalami masa ketika dia menjadi seorang pria yang jauh lebih baik daripada Bulstrode.”</p><p>“Lebih sopan! Saya jamin,” kata Ny. Dollop; “dan jauh lebih ramah, dari apa yang saya dengar. Seperti yang saya katakan ketika Tuan Baldwin, penagih pajak, masuk, berdiri di tempat Anda duduk, dan berkata, 'Bulstrode mendapatkan semua uangnya yang dibawanya ke kota ini dengan mencuri dan menipu,'—saya berkata, 'Anda tidak membuat saya lebih bijak, Tuan Baldwin: darah saya merinding melihatnya sejak dia datang ke Slaughter Lane ingin membeli rumah di atas kepala saya: orang-orang tidak akan terlihat pucat seperti wadah adonan dan menatap Anda seolah-olah mereka ingin melihat tulang punggung Anda tanpa alasan.' Itulah yang saya katakan, dan Tuan Baldwin dapat menjadi saksi saya.”</p><p>“Dan memang benar,” kata Tuan Crabbe. “Karena dari apa yang saya pahami, Raffles ini, begitu mereka memanggilnya, adalah pria yang gagah, segar, dan menyenangkan—meskipun sudah meninggal, ia dimakamkan di pemakaman gereja Lowick; dan dari apa yang saya mengerti, ada di antara mereka yang tahu lebih banyak daripada yang seharusnya tentang bagaimana ia sampai di sana.”</p><p>“Aku akan percaya padamu!” kata Ny. Dollop, dengan sedikit nada mengejek atas ketidakcermatan Tuan Crabbe. “Ketika seseorang terkurung di rumah terpencil, dan mereka yang mampu membayar rumah sakit dan perawat untuk separuh pedesaan memilih untuk berjaga siang dan malam, dan tidak ada seorang pun yang mau mendekat kecuali seorang dokter yang terkenal tidak pernah mau bekerja, dan sesulit apa pun ia bertahan, dan setelah itu begitu kaya raya sehingga ia dapat membayar tagihan Tuan Byles si tukang daging yang terus menumpuk untuk potongan daging terbaik sejak Michaelmas tahun lalu—aku tidak ingin ada orang yang datang dan memberitahuku bahwa ada hal lain yang terjadi atau buku doa tidak memiliki jadwal kebaktian untuk itu—aku tidak ingin berdiri sambil mengedipkan mata dan berpikir.”</p><p>Nyonya Dollop melihat sekeliling dengan sikap seorang pemilik penginapan yang terbiasa mendominasi tamunya. Terdengar seruan dukungan dari mereka yang lebih berani; tetapi Tuan Limp, setelah meneguk minumannya, menyatukan kedua telapak tangannya dan menekannya kuat-kuat di antara lututnya, menatapnya dengan tatapan kosong, seolah-olah kekuatan dahsyat dari ucapan Nyonya Dollop telah benar-benar mengering dan melumpuhkan pikirannya sampai ia bisa kembali sadar dengan sedikit minuman lagi.</p><p>“Mengapa mereka tidak menggali kubur orang itu dan mengambil Crowner?” kata tukang pewarna itu. “Itu sudah sering dilakukan. Jika ada kecurangan, mereka mungkin akan mengetahuinya.”</p><p>“Bukan mereka, Tuan Jonas!” kata Nyonya Dollop dengan tegas. “Saya tahu seperti apa dokter itu. Mereka terlalu licik untuk diketahui. Dan Dokter Lydgate yang telah membedah semua orang sebelum napas mereka benar-benar hilang—jelas sekali apa gunanya dia memeriksa bagian dalam tubuh orang-orang terhormat. Dia tahu tentang obat-obatan, Anda bisa yakin, karena Anda tidak bisa mencium atau melihatnya, baik sebelum ditelan maupun sesudahnya. Bahkan, saya sendiri pernah melihat obat tetes yang diresepkan oleh Dokter Gambit, dokter klub kita dan orang yang baik, dan telah melahirkan lebih banyak anak hidup daripada yang lain di Middlemarch—saya katakan saya sendiri pernah melihat obat tetes yang tidak berpengaruh apakah di dalam gelas atau di luar, namun membuat Anda sakit keesokan harinya. Jadi saya serahkan penilaian Anda sendiri. Jangan bilang! Yang saya katakan hanyalah, untunglah mereka tidak membawa Dokter Lydgate ke klub kita. Banyak anak ibu yang akan menyesalinya.”</p><p>Pokok-pokok diskusi di &quot;Dollop's&quot; telah menjadi tema umum di antara semua kalangan di kota itu, telah tersebar hingga ke Lowick Parsonage di satu sisi dan ke Tipton Grange di sisi lain, telah sampai ke telinga keluarga Vincy, dan telah dibicarakan dengan nada sedih yang merujuk pada &quot;Harriet yang malang&quot; oleh semua teman Nyonya Bulstrode, sebelum Lydgate mengetahui dengan jelas mengapa orang-orang memandangnya dengan aneh, dan sebelum Bulstrode sendiri mencurigai pengkhianatan rahasianya. Dia tidak terbiasa menjalin hubungan yang sangat ramah dengan tetangganya, dan karena itu dia tidak dapat mengabaikan tanda-tanda keramahan; terlebih lagi, dia telah melakukan perjalanan untuk berbagai urusan, karena sekarang telah memutuskan bahwa dia tidak perlu meninggalkan Middlemarch, dan merasa mampu untuk memutuskan hal-hal yang sebelumnya dia tunda.</p><p>“Kita akan melakukan perjalanan ke Cheltenham dalam waktu satu atau dua bulan,” katanya kepada istrinya. “Ada banyak keuntungan rohani yang bisa didapatkan di kota itu, bersama dengan udara dan airnya, dan enam minggu di sana akan sangat menyegarkan bagi kita.”</p><p>Dia benar-benar percaya pada manfaat spiritualnya, dan bermaksud agar hidupnya selanjutnya menjadi lebih taat karena dosa-dosa yang kemudian ia anggap sebagai hipotetis, berdoa secara hipotetis untuk pengampunannya: —&quot;jika aku telah melanggar hal ini.&quot;</p><p>Mengenai Rumah Sakit, ia menghindari mengatakan apa pun lebih lanjut kepada Lydgate, karena takut menunjukkan perubahan rencana yang terlalu mendadak segera setelah kematian Raffles. Dalam lubuk hatinya yang terdalam, ia percaya bahwa Lydgate mencurigai perintahnya telah sengaja dilanggar, dan dengan mencurigai hal ini, ia juga harus mencurigai adanya motif. Tetapi tidak ada yang dikhianati kepadanya mengenai riwayat Raffles, dan Bulstrode cemas untuk tidak melakukan apa pun yang akan memperkuat kecurigaannya yang belum jelas. Mengenai kepastian bahwa metode pengobatan tertentu akan menyelamatkan atau membunuh, Lydgate sendiri terus-menerus membantah dogmatisme semacam itu; ia tidak berhak untuk berbicara, dan ia memiliki alasan untuk tetap diam. Karena itu, Bulstrode merasa dirinya terlindungi oleh takdir. Satu-satunya insiden yang sangat membuatnya ngeri adalah pertemuan sesekali dengan Caleb Garth, yang, bagaimanapun, mengangkat topinya dengan sedikit serius.</p><p>Sementara itu, di kalangan tokoh-tokoh utama kota, tekad yang kuat untuk menentangnya semakin tumbuh.</p><p>Sebuah pertemuan akan diadakan di Balai Kota untuk membahas masalah sanitasi yang telah menjadi sangat penting karena terjadinya kasus kolera di kota tersebut. Sejak Undang-Undang Parlemen, yang telah disahkan secara tergesa-gesa, yang mengizinkan pungutan untuk tindakan sanitasi, telah ada Dewan untuk mengawasi tindakan tersebut yang ditunjuk di Middlemarch, dan banyak pembersihan dan persiapan telah disepakati oleh kaum Whig dan Tory. Pertanyaannya sekarang adalah, apakah sebidang tanah di luar kota harus diamankan sebagai tempat pemakaman melalui pungutan atau melalui sumbangan pribadi. Pertemuan itu akan terbuka untuk umum, dan hampir semua orang penting di kota diharapkan hadir.</p><p>Tuan Bulstrode adalah anggota Dewan, dan tepat sebelum pukul dua belas siang ia berangkat dari Bank dengan maksud untuk mendesak rencana penggalangan dana swasta. Karena ragu-ragu dengan proyek-proyeknya, ia telah beberapa waktu menjauh dari sorotan publik, dan ia merasa bahwa pagi ini ia harus kembali ke posisi lamanya sebagai orang yang aktif dan berpengaruh dalam urusan publik kota tempat ia berharap akan menghabiskan sisa hidupnya. Di antara berbagai orang yang berjalan ke arah yang sama, ia melihat Lydgate; mereka bergabung, membicarakan tujuan pertemuan, dan memasuki ruangan bersama-sama.</p><p>Tampaknya semua orang penting telah datang lebih awal dari mereka. Tetapi masih ada tempat kosong di dekat ujung meja besar di tengah, dan mereka pun menuju ke sana. Tuan Farebrother duduk di seberang, tidak jauh dari Tuan Hawley; semua dokter ada di sana; Tuan Thesiger duduk di kursi, dan Tuan Brooke dari Tipton duduk di sebelah kanannya.</p><p>Lydgate memperhatikan pertukaran pandangan yang aneh ketika dia dan Bulstrode duduk.</p><p>Setelah rapat dibuka sepenuhnya oleh ketua, yang menyoroti keuntungan membeli sebidang tanah yang cukup luas untuk nantinya digunakan sebagai pemakaman umum melalui sistem berlangganan, Tuan Bulstrode, yang suaranya agak tinggi tetapi tenang dan lancar, suara yang biasa didengar warga kota dalam pertemuan semacam ini, berdiri dan meminta izin untuk menyampaikan pendapatnya. Warga Lydgate dapat melihat kembali pertukaran pandangan yang aneh sebelum Tuan Hawley berdiri, dan berkata dengan suara tegas dan berwibawa, “Tuan Ketua, saya mohon agar sebelum siapa pun menyampaikan pendapatnya tentang hal ini, saya diizinkan untuk berbicara tentang sebuah pertanyaan yang menyangkut perasaan publik, yang tidak hanya oleh saya sendiri, tetapi juga oleh banyak Tuan yang hadir, dianggap sebagai hal yang penting.”</p><p>Cara bicara Tuan Hawley, bahkan ketika kesopanan publik menahan &quot;bahasa kasarnya,&quot; sangat mengesankan dalam kesingkatan dan ketenangannya. Tuan Thesiger menyetujui permintaan tersebut, Tuan Bulstrode duduk, dan Tuan Hawley melanjutkan.</p><p>“Dalam apa yang akan saya sampaikan, Tuan Ketua, saya tidak hanya berbicara atas nama saya sendiri: saya berbicara dengan persetujuan dan atas permintaan tegas dari tidak kurang dari delapan warga kota saya, yang berada di sekitar kita. Kami sepakat bahwa Tuan Bulstrode harus diminta—dan saya sekarang memintanya—untuk mengundurkan diri dari jabatan publik yang dipegangnya bukan hanya sebagai pembayar pajak, tetapi sebagai seorang pria terhormat di antara para pria terhormat. Ada praktik dan tindakan yang, karena keadaan, tidak dapat dihukum oleh hukum, meskipun mungkin lebih buruk daripada banyak hal yang dapat dihukum secara hukum. Orang-orang jujur dan terhormat, jika mereka tidak ingin bergaul dengan orang-orang yang melakukan tindakan tersebut, harus membela diri sebaik mungkin, dan itulah yang saya dan teman-teman yang dapat saya sebut sebagai klien saya dalam urusan ini bertekad untuk lakukan. Saya tidak mengatakan bahwa Tuan Bulstrode telah melakukan tindakan yang memalukan, tetapi saya memintanya untuk secara publik menyangkal dan membantah pernyataan-pernyataan yang memfitnah yang dibuat terhadapnya oleh seorang pria yang sekarang telah meninggal, dan yang meninggal dalam keadaan terhormatnya.” rumah—pernyataan bahwa dia selama bertahun-tahun terlibat dalam praktik-praktik jahat, dan bahwa dia memperoleh kekayaannya melalui prosedur yang tidak jujur—atau mengundurkan diri dari posisi yang hanya dapat diberikan kepadanya sebagai seorang pria terhormat di antara para pria terhormat.”</p><p>Semua mata di ruangan itu tertuju pada Tuan Bulstrode, yang sejak pertama kali namanya disebut, telah mengalami krisis perasaan yang hampir terlalu hebat untuk ditanggung oleh tubuhnya yang rapuh. Lydgate, yang sendiri sedang mengalami guncangan seolah-olah dari penafsiran praktis yang mengerikan dari suatu pertanda samar, merasa, bagaimanapun, bahwa gerakan kebenciannya yang penuh dendam diredam oleh naluri Penyembuh yang pertama-tama memikirkan untuk memberikan penyelamatan atau pertolongan kepada yang menderita, ketika ia melihat kesengsaraan yang menyusut di wajah Bulstrode yang pucat pasi.</p><p>Kesadaran mendadak bahwa hidupnya pada akhirnya adalah sebuah kegagalan, bahwa ia adalah orang yang tercela, dan harus gentar di hadapan tatapan orang-orang yang kepadanya ia biasa bersikap sebagai pencela—bahwa Tuhan telah menolaknya di hadapan manusia dan membiarkannya tanpa perlindungan terhadap cemoohan kemenangan dari mereka yang senang kebencian mereka dibenarkan—perasaan kesia-siaan total dalam keraguannya dengan hati nuraninya dalam menangani nyawa kaki tangannya, keraguan yang kini berbalik menyerangnya dengan ganas seperti taring kebohongan yang terungkap:—semua ini menerjangnya seperti penderitaan teror yang gagal membunuh, dan membuat telinga tetap terbuka terhadap gelombang kutukan yang kembali. Perasaan tiba-tiba akan terekspos setelah rasa aman yang dipulihkan datang—bukan pada organisasi kasar seorang kriminal, tetapi pada saraf yang peka dari seorang pria yang keberadaannya yang paling intens terletak pada penguasaan dan dominasi seperti yang telah dibentuk oleh kondisi hidupnya.</p><p>Namun di balik keberadaan yang intens itu tersembunyi kekuatan reaksi. Di balik semua kelemahan fisiknya, mengalir saraf yang gigih berupa kemauan keras untuk mempertahankan diri, yang terus-menerus muncul seperti nyala api, menghancurkan semua ketakutan doktrinal, dan yang, bahkan ketika ia duduk sebagai objek belas kasihan bagi orang-orang yang berbelas kasih, mulai bergejolak dan menyala di bawah pucatnya yang keabu-abuan. Sebelum kata-kata terakhir keluar dari mulut Tuan Hawley, Bulstrode merasa bahwa ia harus menjawab, dan bahwa jawabannya akan berupa bantahan. Ia tidak berani berdiri dan berkata, “Saya tidak bersalah, seluruh cerita itu palsu”—bahkan jika ia berani melakukan ini, baginya, di bawah rasa pengkhianatan yang begitu tajam saat ini, akan terasa sia-sia seperti menarik kain tipis yang akan robek setiap kali ditarik untuk menutupi ketelanjangannya.</p><p>Selama beberapa saat, suasana menjadi hening total, sementara setiap orang di ruangan itu menatap Bulstrode. Ia duduk diam, bersandar kuat di sandaran kursinya; ia tidak berani berdiri, dan ketika mulai berbicara, ia menekan kedua tangannya di sandaran kursi di kedua sisinya. Namun suaranya terdengar jelas, meskipun lebih serak dari biasanya, dan kata-katanya diucapkan dengan jelas, meskipun ia berhenti sejenak di antara kalimat seolah-olah kehabisan napas. Ia berkata, pertama-tama menoleh ke arah Tuan Thesiger, lalu menatap Tuan Hawley—</p><p>“Saya memprotes di hadapan Anda, Tuan, sebagai seorang pendeta Kristen, terhadap pengesahan tindakan terhadap saya yang didikte oleh kebencian yang ganas. Mereka yang memusuhi saya senang mempercayai fitnah apa pun yang diucapkan oleh lidah yang tidak terkendali terhadap saya. Dan hati nurani mereka menjadi keras terhadap saya. Katakanlah bahwa fitnah yang akan menimpa saya menuduh saya melakukan kesalahan—” di sini suara Bulstrode meninggi dan menjadi lebih tajam, hingga terdengar seperti jeritan rendah—“siapa yang akan menjadi penuduh saya? Bukan orang-orang yang hidupnya sendiri tidak Kristen, bahkan memalukan—bukan orang-orang yang menggunakan alat-alat rendah untuk mencapai tujuan mereka—yang profesinya adalah jalinan tipu daya—yang telah menghabiskan penghasilan mereka untuk kenikmatan indria mereka sendiri, sementara saya telah mengabdikan penghasilan saya untuk memajukan tujuan-tujuan terbaik sehubungan dengan kehidupan ini dan kehidupan selanjutnya.”</p><p>Setelah kata &quot;kecurangan&quot; terdengar suara yang semakin keras, setengah berupa gumaman dan setengah berupa desisan, sementara empat orang langsung berdiri—Tuan Hawley, Tuan Toller, Tuan Chichely, dan Tuan Hackbutt; tetapi ledakan amarah Tuan Hawley terjadi seketika, dan membuat yang lain terdiam.</p><p>“Jika yang Anda maksud adalah saya, Tuan, saya meminta Anda dan semua orang untuk memeriksa kehidupan profesional saya. Mengenai Kristen atau bukan Kristen, saya menolak kekristenan Anda yang munafik dan bertele-tele; dan mengenai cara saya membelanjakan penghasilan saya, bukan prinsip saya untuk mendukung pencuri dan menipu anak-anak dari warisan mereka yang seharusnya mereka terima demi mendukung agama dan menjadikan diri saya sebagai orang suci yang suka merusak suasana. Saya tidak berpura-pura berhati nurani—saya belum menemukan standar yang tepat untuk mengukur tindakan Anda, Tuan. Dan sekali lagi saya meminta Anda untuk memberikan penjelasan yang memuaskan mengenai skandal yang menimpa Anda, atau mengundurkan diri dari jabatan di mana kami setidaknya menolak Anda sebagai kolega. Saya katakan, Tuan, kami menolak untuk bekerja sama dengan seseorang yang karakternya tidak bersih dari sorotan buruk yang dilemparkan kepadanya, bukan hanya oleh laporan tetapi juga oleh tindakan baru-baru ini.”</p><p>“Izinkan saya, Tuan Hawley,” kata ketua; dan Tuan Hawley, masih marah, membungkuk setengah tidak sabar, lalu duduk dengan tangan dimasukkan dalam-dalam ke saku celananya.</p><p>“Tuan Bulstrode, menurut saya tidak pantas untuk memperpanjang diskusi ini,” kata Tuan Thesiger, menoleh ke pria pucat yang gemetar itu; “Saya harus setuju dengan apa yang telah disampaikan Tuan Hawley sebagai ungkapan perasaan umum, bahwa sudah sepatutnya Anda, sebagai penganut Kristen, membersihkan diri dari tuduhan yang tidak menyenangkan. Saya sendiri bersedia memberi Anda kesempatan dan pendengaran penuh. Tetapi saya harus mengatakan bahwa sikap Anda saat ini sangat tidak konsisten dengan prinsip-prinsip yang telah Anda coba identifikasikan dengan diri Anda sendiri, dan demi kehormatan prinsip-prinsip itulah saya wajib memperhatikannya. Saat ini, sebagai pendeta Anda, dan seseorang yang berharap agar Anda dikembalikan ke posisi terhormat, saya menyarankan Anda untuk meninggalkan ruangan ini, dan menghindari hambatan lebih lanjut dalam urusan ini.”</p><p>Bulstrode, setelah ragu sejenak, mengambil topinya dari lantai dan perlahan bangkit, tetapi ia berpegangan pada sudut kursi dengan sangat goyah sehingga Lydgate yakin bahwa ia tidak memiliki cukup kekuatan untuk berjalan pergi tanpa bantuan. Apa yang bisa ia lakukan? Ia tidak tahan melihat seseorang jatuh di dekatnya karena kekurangan pertolongan. Ia bangkit dan mengulurkan lengannya kepada Bulstrode, dan dengan cara itu membimbingnya keluar dari ruangan; namun tindakan ini, yang mungkin merupakan tindakan kewajiban yang lembut dan belas kasihan murni, pada saat ini terasa sangat pahit baginya. Seolah-olah ia sedang memberi isyarat pada hubungannya dengan Bulstrode, yang sekarang ia pahami sepenuhnya maknanya sebagaimana yang mungkin telah dipahami oleh orang lain. Ia sekarang merasa yakin bahwa pria yang bersandar gemetar di lengannya itu telah memberinya seribu pound sebagai suap, dan bahwa entah bagaimana perlakuan terhadap Raffles telah dimanipulasi dengan motif jahat. Kesimpulannya cukup terkait erat; kota itu mengetahui tentang pinjaman tersebut, percaya itu adalah suap, dan percaya bahwa ia menerimanya sebagai suap.</p><p>Lydgate yang malang, pikirannya bergelut di bawah cengkeraman mengerikan dari wahyu ini, sepanjang waktu secara moral dipaksa untuk mengantar Tuan Bulstrode ke Bank, mengirim seseorang untuk mengambil keretanya, dan menunggu untuk menemaninya pulang.</p><p>Sementara itu, agenda rapat diselesaikan, dan beralih ke diskusi yang penuh semangat di antara berbagai kelompok mengenai urusan Bulstrode dan Lydgate ini.</p><p>Tuan Brooke, yang sebelumnya hanya mendengar sedikit petunjuk tentang hal itu, dan sangat gelisah karena merasa telah &quot;bertindak terlalu jauh&quot; dalam mendukung Bulstrode, kini mendapatkan informasi lengkap, dan merasakan kesedihan yang tulus saat berbicara dengan Tuan Farebrother tentang citra buruk yang melekat pada Lydgate. Tuan Farebrother akan berjalan kembali ke Lowick.</p><p>“Masuklah ke kereta saya,” kata Tuan Brooke. “Saya akan mengunjungi Nyonya Casaubon. Dia seharusnya kembali dari Yorkshire tadi malam. Dia pasti ingin bertemu saya, lho.”</p><p>Jadi mereka pun berkendara, Tuan Brooke mengobrol dengan harapan yang baik hati bahwa sebenarnya tidak ada hal buruk dalam perilaku Lydgate—seorang pemuda yang menurutnya jauh di atas rata-rata, ketika ia membawa surat dari pamannya, Sir Godwin. Tuan Farebrother sedikit bicara: ia sangat berduka: dengan persepsi yang tajam tentang kelemahan manusia, ia tidak yakin bahwa di bawah tekanan kebutuhan yang memalukan, Lydgate tidak jatuh ke tingkat yang lebih rendah dari dirinya sendiri.</p><p>Ketika kereta kuda tiba di gerbang Manor, Dorothea sudah berada di luar di atas kerikil, dan datang untuk menyambut mereka.</p><p>“Nah, sayangku,” kata Tuan Brooke, “kami baru saja pulang dari sebuah pertemuan—pertemuan tentang sanitasi, kau tahu.”</p><p>“Apakah Tuan Lydgate ada di sana?” tanya Dorothea, yang tampak sehat dan bersemangat, berdiri dengan kepala terbuka di bawah cahaya lampu bulan April yang berkilauan. “Aku ingin menemuinya dan berkonsultasi panjang lebar dengannya tentang Rumah Sakit. Aku sudah berjanji kepada Tuan Bulstrode untuk melakukannya.”</p><p>“Oh, sayangku,” kata Tuan Brooke, “kami telah mendengar kabar buruk—kabar buruk, kau tahu.”</p><p>Mereka berjalan melewati taman menuju gerbang halaman gereja, Tuan Farebrother ingin melanjutkan perjalanan ke rumah pendeta; dan Dorothea mendengar seluruh kisah sedih itu.</p><p>Ia mendengarkan dengan penuh minat, dan memohon untuk mendengar dua kali lagi fakta dan kesan mengenai Lydgate. Setelah hening sejenak, berhenti di gerbang halaman gereja, dan berbicara kepada Tuan Farebrother, ia berkata dengan penuh semangat—</p><p>“Anda tidak percaya bahwa Tuan Lydgate bersalah atas sesuatu yang hina? Saya tidak akan mempercayainya. Mari kita cari tahu kebenarannya dan bersihkan namanya!”</p><p><a id="book08"></a></p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-lxx.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Lxx</span>
+    </a>
+    <a href="buku-viii-matahari-terbit-bab-lxxii.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Buku Viii Matahari Terbit Bab Lxxii</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB LXXI.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Badut . . . . Itu di Gugusan Anggur, di mana, memang, Anda senang duduk, bukan? Buih . Saya senang: karena itu ruangan terbuka, dan bagus untuk musim dingin. Clo . Baiklah kalau begitu: Kuharap di sini ada kebenaran. — Measure for Measure . Lima hari setelah kematian Raffles, Tuan Bambridge berdiri santai di bawah lengkungan besar yang menuju ke halaman Green Dragon. Ia tidak menyukai perenungan sendirian, tetapi ia baru saja keluar rumah, dan sosok manusia mana pun yang berdiri santai di bawah lengkungan di awal siang hari pasti akan menarik perhatian orang lain seperti seekor merpati yang menemukan sesuatu yang layak dipatuk. Dalam hal ini tidak ada objek material untuk dinikmati, tetapi mata akal sehat melihat kemungkinan mendapatkan makanan mental dalam bentuk gosip. Tuan Hopkins, penjual kain yang pendiam di seberangnya, adalah orang pertama yang bertindak berdasarkan visi batin ini, karena ia lebih bersemangat untuk sedikit bercakap-cakap dengan gaya maskulin karena pelanggannya sebagian besar adalah wanita. Tuan Bambridge agak kasar kepada penjual kain itu, merasa bahwa Hopkins tentu saja senang berbicara dengannya , tetapi ia tidak akan membuang banyak pembicaraannya untuk Hopkins. Namun, tak lama kemudian, muncul sekelompok kecil pendengar yang lebih penting, yang entah diantar oleh orang-orang yang lewat, atau sengaja datang ke tempat itu untuk melihat apakah ada sesuatu yang terjadi di Green Dragon; dan Tuan Bambridge merasa perlu untuk mengatakan banyak hal yang mengesankan tentang kuda-kuda pacuan yang bagus yang telah dilihatnya dan pembelian yang telah dilakukannya dalam perjalanan ke utara yang baru saja ia tinggalkan. Para Tuan yang hadir diyakinkan bahwa jika mereka dapat menunjukkan kepadanya kuda betina ras murni, berwarna cokelat, berusia hampir empat tahun, yang dapat dilihat di Doncaster jika mereka memilih untuk pergi dan melihatnya, Tuan Bambridge akan memuaskan mereka dengan menembaknya "dari sini sampai Hereford." Selain itu, sepasang sepatu hitam yang akan ia kenakan saat istirahat mengingatkannya dengan jelas pada sepasang sepatu yang telah ia jual kepada Faulkner pada tahun 1919 seharga seratus guinea, dan yang kemudian dijual Faulkner seharga seratus enam puluh guinea dua bulan kemudian—siapa pun yang dapat membantah pernyataan ini akan diberi hak istimewa untuk memanggil Tuan Bambridge dengan nama yang sangat buruk sampai tenggorokannya kering. Ketika percakapan mencapai titik yang meriah ini, datanglah Tuan Frank Hawley. Ia bukanlah orang yang akan mengorbankan harga dirinya dengan bersantai di Green Dragon, tetapi kebetulan lewat di sepanjang High Street dan melihat Bambridge di seberang jalan, ia melangkah dengan panjang untuk bertanya kepada pedagang kuda apakah ia telah menemukan kuda pacuan kelas satu yang telah ia janjikan untuk dicari. Tuan Hawley diminta untuk menunggu sampai ia melihat kuda abu-abu yang dipilih di Bilkley: jika itu tidak memenuhi keinginannya sama sekali, Bambridge tidak tahu kuda yang bagus ketika ia melihatnya, yang tampaknya merupakan kemungkinan yang paling kecil. Tuan Hawley, berdiri membelakangi jalan, sedang menentukan waktu untuk melihat kuda abu-abu itu dan mencobanya, ketika seorang penunggang kuda lewat perlahan. “Bulstrode!” seru dua atau tiga suara serentak dengan nada rendah, salah satunya, suara si penjual kain, dengan hormat menambahkan “Tuan” di depan; tetapi tidak ada yang bermaksud lebih serius dalam penyebutan ini daripada jika mereka mengatakan “kereta Riverston” ketika kendaraan itu muncul di kejauhan. Tuan Hawley melirik sekilas ke punggung Bulstrode, tetapi saat mata Bambridge mengikutinya, ia membuat seringai sinis. “Astaga! Itu mengingatkan saya,” ia memulai, sedikit merendahkan suaranya, “Saya menemukan sesuatu yang lain di Bilkley selain kuda tunggangan Anda, Tuan Hawley. Saya menemukan cerita bagus tentang Bulstrode. Tahukah Anda bagaimana ia mendapatkan kekayaannya? Tuan mana pun yang menginginkan sedikit informasi menarik, saya dapat memberikannya secara gratis. Jika semua orang mendapatkan makanan penutup mereka, Bulstrode mungkin harus berdoa di Botany Bay.” “Apa maksudmu?” kata Tuan Hawley, sambil memasukkan tangannya ke dalam saku, dan sedikit maju ke bawah lengkungan pintu. Jika Bulstrode ternyata seorang bajingan, Frank Hawley memiliki jiwa seorang nabi. “Aku mendapatkannya dari seseorang yang merupakan teman lama Bulstrode. Akan kuberitahu di mana aku pertama kali bertemu dengannya,” kata Bambridge, dengan gerakan tiba-tiba jari telunjuknya. “Dia ada di lelang Larcher, tapi aku tidak mengenalnya saat itu—dia lolos dari genggamanku—pasti dia mengincar Bulstrode. Dia bilang dia bisa memeras Bulstrode berapa pun jumlahnya, tahu semua rahasianya. Namun, dia membocorkan rahasia kepadaku di Bilkley: dia minum minuman keras. Sialan, aku rasa dia tidak bermaksud menjadi saksi raja; tapi dia tipe orang yang suka membual, keangkuhannya melampaui batas, sampai dia membual tentang seekor babi hutan seolah-olah itu akan menghasilkan uang. Seseorang harus tahu kapan harus berhenti.” Tuan Bambridge mengucapkan kalimat ini dengan nada jijik, puas bahwa keangkuhannya sendiri menunjukkan selera yang bagus dalam hal yang bisa dipasarkan. “Siapa nama pria itu? Di mana dia bisa ditemukan?” tanya Tuan Hawley. “Mengenai di mana dia dapat ditemukan, saya serahkan padanya untuk mencari tahu di Saracen's Head; tetapi namanya adalah Raffles.” “Raffles!” seru Mr. Hopkins. “Saya yang mengurus pemakamannya kemarin. Dia dimakamkan di Lowick. Mr. Bulstrode yang mengurus pemakamannya. Pemakaman yang sangat layak.” Ada kehebohan yang kuat di antara para pendengar. Mr. Bambridge berseru dengan kata-kata kasar, dan Mr. Hawley, sambil mengerutkan kening dan menundukkan kepala, berseru, “Apa?—di mana orang itu meninggal?” “Di Stone Court,” kata penjual kain itu. “Pengurus rumah tangga mengatakan dia adalah kerabat majikan. Dia datang ke sana dalam keadaan sakit pada hari Jumat.” “Oh, tepatnya hari Rabu saya minum bersamanya,” sela Bambridge. “Apakah ada dokter yang merawatnya?” tanya Tuan Hawley. “Ya. Tuan Lydgate. Tuan Bulstrode menemaninya semalaman. Dia meninggal pada pagi hari ketiga.” “Lanjutkan, Bambridge,” kata Tuan Hawley dengan tegas. “Apa yang dikatakan orang ini tentang Bulstrode?” Kelompok itu sudah bertambah besar, kehadiran juru tulis kota menjadi jaminan bahwa sesuatu yang layak didengarkan sedang terjadi di sana; dan Tuan Bambridge menyampaikan narasinya di hadapan tujuh orang. Intinya adalah apa yang kita ketahui, termasuk fakta tentang Will Ladislaw, dengan beberapa tambahan warna dan keadaan lokal: itulah yang ditakutkan Bulstrode akan dikhianati—dan berharap untuk dikubur selamanya bersama mayat Raffles—itu adalah hantu yang menghantui kehidupannya sebelumnya yang, saat ia melewati gapura Naga Hijau, ia percaya bahwa takdir telah membebaskannya. Ya, takdir. Ia belum mengakui pada dirinya sendiri bahwa ia telah melakukan sesuatu yang mengarah pada tujuan ini; ia telah menerima apa yang tampaknya telah ditawarkan. Mustahil untuk membuktikan bahwa ia telah melakukan sesuatu yang mempercepat kepergian jiwa pria itu. Namun gosip tentang Bulstrode menyebar di Middlemarch seperti bau api. Tuan Frank Hawley menindaklanjuti informasinya dengan mengirim seorang juru tulis yang dapat dipercayanya ke Stone Court dengan dalih menanyakan tentang jerami, tetapi sebenarnya untuk mengumpulkan semua informasi yang dapat diperoleh tentang Raffles dan penyakitnya dari Nyonya Abel. Dengan cara ini, ia mengetahui bahwa Tuan Garth telah membawa pria itu ke Stone Court dengan kereta kudanya; dan akibatnya, Tuan Hawley mengambil kesempatan untuk menemui Caleb, mampir ke kantornya untuk menanyakan apakah ia punya waktu untuk melakukan arbitrase jika diperlukan, dan kemudian secara tidak langsung menanyakan tentang Raffles. Caleb tidak diberi tahu secara langsung tentang hal yang merugikan Bulstrode selain fakta yang terpaksa ia akui, bahwa ia telah berhenti menjadi aktor untuknya dalam seminggu terakhir. Tuan Hawley menarik kesimpulannya, dan merasa yakin bahwa Raffles telah menceritakan kisahnya kepada Garth, dan bahwa Garth telah menghentikan urusan Bulstrode sebagai akibatnya, ia mengatakan hal itu beberapa jam kemudian kepada Tuan Toller. Pernyataan itu diteruskan hingga kehilangan ciri sebuah kesimpulan, dan dianggap sebagai informasi yang langsung berasal dari Garth, sehingga bahkan seorang sejarawan yang teliti pun mungkin menyimpulkan bahwa Caleb adalah penerbit utama pelanggaran yang dilakukan Bulstrode. Tuan Hawley tidak lambat menyadari bahwa tidak ada celah hukum baik dalam pengungkapan yang dibuat oleh Raffles maupun dalam keadaan kematiannya. Ia sendiri telah pergi ke desa Lowick untuk melihat catatan dan membicarakan seluruh masalah dengan Tuan Farebrother, yang tidak lebih terkejut daripada pengacara itu bahwa rahasia buruk telah terungkap tentang Bulstrode, meskipun ia selalu memiliki cukup keadilan dalam dirinya untuk mencegah antipatinya berubah menjadi kesimpulan. Tetapi sementara mereka berbicara, kombinasi lain diam-diam muncul dalam pikiran Tuan Farebrother, yang meramalkan apa yang segera akan dibicarakan dengan lantang di Middlemarch sebagai "penggabungan dua dan dua" yang diperlukan. Bersamaan dengan alasan yang membuat Bulstrode takut pada Raffles, terlintas pikiran bahwa rasa takut itu mungkin ada hubungannya dengan kemurahan hatinya terhadap dokternya; Dan meskipun ia menolak anggapan bahwa hal itu telah diterima secara sadar sebagai suap, ia memiliki firasat bahwa kerumitan ini dapat berdampak buruk pada reputasi Lydgate. Ia menyadari bahwa Tuan Hawley saat ini tidak mengetahui apa pun tentang pembebasan utang secara tiba-tiba, dan ia sendiri berhati-hati untuk menghindari semua pendekatan terkait masalah tersebut. “Yah,” katanya sambil menarik napas dalam-dalam, ingin mengakhiri diskusi tak berujung tentang apa yang mungkin terjadi, meskipun tidak ada yang bisa dibuktikan secara hukum, “ini adalah cerita yang aneh. Jadi, Ladislaw kita yang mudah berubah-ubah itu memiliki silsilah yang aneh! Seorang wanita muda yang bersemangat dan seorang patriot Polandia yang musikal cukup mungkin menjadi asal usulnya, tetapi saya tidak akan pernah menduga adanya campuran antara pemilik pegadaian Yahudi itu. Namun, tidak ada yang tahu sebelumnya seperti apa campuran itu akan menghasilkan sesuatu. Beberapa jenis kotoran berfungsi untuk memperjelasnya.” “Ini memang sudah kuduga,” kata Tuan Hawley sambil menaiki kudanya. “Darah asing terkutuk, Yahudi, Korsika, atau Gipsi.” “Saya tahu dia salah satu anak nakal Anda, Hawley. Tapi dia sebenarnya orang yang tidak mementingkan diri sendiri dan tidak duniawi,” kata Tuan Farebrother sambil tersenyum. “Ah, ah, itu memang ciri khas Whig Anda,” kata Tuan Hawley, yang biasanya meminta maaf dengan mengatakan bahwa Farebrother adalah orang yang sangat menyenangkan dan baik hati sehingga Anda mungkin mengira dia seorang Tory. Tuan Hawley pulang tanpa memikirkan kehadiran Lydgate di Raffles selain sebagai bukti yang mendukung Bulstrode. Namun, berita bahwa Lydgate tiba-tiba mampu tidak hanya menghindari eksekusi di rumahnya tetapi juga membayar semua utangnya di Middlemarch menyebar dengan cepat, mengumpulkan berbagai spekulasi dan komentar yang memberinya bobot dan dorongan baru, dan segera sampai ke telinga orang lain selain Tuan Hawley, yang dengan cepat melihat hubungan penting antara penguasaan uang yang tiba-tiba ini dan keinginan Bulstrode untuk membungkam skandal Raffles. Bahwa uang itu berasal dari Bulstrode pasti akan ditebak bahkan jika tidak ada bukti langsung; Karena sebelumnya telah beredar gosip tentang urusan Lydgate, bahwa baik ayah mertuanya maupun keluarganya sendiri tidak akan melakukan apa pun untuknya, dan bukti langsung diberikan tidak hanya oleh seorang pegawai di Bank, tetapi juga oleh Nyonya Bulstrode sendiri yang tidak bersalah, yang menyebutkan pinjaman itu kepada Nyonya Plymdale, yang kemudian menyebutkannya kepada menantunya dari keluarga Toller, yang kemudian menyebutkannya secara umum. Urusan ini dianggap begitu publik dan penting sehingga membutuhkan jamuan makan malam untuk memeriahkannya, dan banyak undangan dikeluarkan dan diterima saat itu juga berdasarkan skandal tentang Bulstrode dan Lydgate; para istri, janda, dan wanita lajang meninggalkan pekerjaan mereka dan pergi minum teh lebih sering dari biasanya; dan semua acara ramah tamah publik, dari Green Dragon hingga Dollop's, mendapatkan semangat yang tidak dapat diperoleh dari pertanyaan apakah Dewan Bangsawan akan menolak RUU Reformasi. Karena hampir tidak ada yang meragukan bahwa ada alasan yang memalukan di balik kemurahan hati Bulstrode kepada Lydgate. Bahkan, Tuan Hawley, pada awalnya, mengundang sekelompok orang terpilih, termasuk kedua dokter, bersama Tuan Toller dan Tuan Wrench, secara khusus untuk mengadakan diskusi mendalam tentang kemungkinan penyakit Raffles, dengan menceritakan kepada mereka semua rincian yang telah dikumpulkan dari Nyonya Abel sehubungan dengan sertifikat Lydgate, bahwa kematian itu disebabkan oleh delirium tremens; dan para dokter, yang semuanya tetap teguh pada pendirian lama mereka terkait penyakit ini, menyatakan bahwa mereka tidak melihat apa pun dalam rincian ini yang dapat diubah menjadi dasar kecurigaan yang pasti. Tetapi dasar moral kecurigaan tetap ada: motif kuat yang jelas dimiliki Bulstrode untuk ingin menyingkirkan Raffles, dan fakta bahwa pada saat kritis ini ia telah memberi Lydgate bantuan yang pasti telah lama dibutuhkannya; Selain itu, kecenderungan untuk percaya bahwa Bulstrode akan tidak bermoral, dan tidak adanya keraguan untuk percaya bahwa Lydgate dapat dengan mudah disuap seperti orang-orang sombong lainnya ketika mereka membutuhkan uang. Bahkan jika uang itu diberikan hanya untuk membuatnya bungkam tentang skandal kehidupan Bulstrode sebelumnya, fakta itu memberikan citra buruk pada Lydgate, yang telah lama dicemooh karena tunduk pada bankir demi mendapatkan posisi dominan dan mendiskreditkan anggota senior dalam profesinya. Oleh karena itu, terlepas dari tidak adanya tanda-tanda langsung kesalahan terkait kematian di Stone Court, rombongan pilihan Tuan Hawley bubar dengan perasaan bahwa urusan itu memiliki "tampilan yang buruk." Namun keyakinan samar akan kesalahan yang tak dapat ditentukan ini, yang cukup untuk memicu banyak gelengan kepala dan sindiran tajam bahkan di antara para senior profesional yang berpengalaman, memiliki kekuatan misteri yang lebih unggul daripada fakta di benak masyarakat umum. Semua orang lebih suka menduga- duga bagaimana keadaan sebenarnya daripada sekadar mengetahuinya; karena dugaan segera menjadi lebih meyakinkan daripada pengetahuan, dan memiliki toleransi yang lebih besar terhadap hal-hal yang tidak sesuai. Bahkan skandal yang lebih pasti mengenai kehidupan awal Bulstrode, bagi sebagian orang, dilebur ke dalam massa misteri, seperti logam hidup yang dapat dicurahkan dalam dialog, dan mengambil bentuk-bentuk fantastis sesuka hati. Inilah pola pikir yang terutama dianut oleh Ny. Dollop, pemilik penginapan Tankard di Slaughter Lane yang bersemangat, yang sering kali harus menolak pragmatisme dangkal para pelanggan yang cenderung berpikir bahwa laporan mereka dari dunia luar sama kuatnya dengan apa yang "muncul" dalam pikirannya. Bagaimana hal itu sampai kepadanya, dia tidak tahu, tetapi itu ada di hadapannya seolah-olah telah "ditulis dengan kapur di papan perapian—" seperti yang akan dikatakan Bulstrode, "perasaannya begitu gelap seolah-olah rambut di kepalanya mengetahui pikiran hatinya, dia akan mencabutnya sampai ke akarnya." “Aneh sekali,” kata Tuan Limp, seorang tukang sepatu yang sedang merenung, dengan mata lemah dan suara serak. “Begini, saya membaca di 'Trumpet' bahwa itulah yang dikatakan Duke of Wellington ketika ia membelot dan memihak Romawi.” “Sangat mirip,” kata Ny. Dollop. “Jika satu orang kurang ajar mengatakan itu, itu semakin menjadi alasan mengapa orang lain juga harus mengatakannya. Tetapi karena dia munafik dan bersikap arogan, karena tidak ada pendeta di negeri ini yang cukup baik untuknya, dia terpaksa meminta nasihat Harry Tua, dan Harry Tua sudah terlalu banyak untuknya.” “Ay, ay, dia adalah 'kaki tangan' yang tidak bisa kau kirim keluar negeri,” kata Tuan Crabbe, tukang kaca, yang mengumpulkan banyak berita dan mencoba memahaminya dengan samar-samar. “Tapi dari apa yang bisa kupahami, ada yang bilang Bulstrode akan melarikan diri, karena takut ketahuan, sebelum ini.” “Dia akan diusir, mau atau tidak,” kata Tuan Dill, tukang cukur yang baru saja mampir. “Saya mencukur Fletcher, juru tulis Hawley, pagi ini—jarinya sakit—dan dia bilang mereka semua sepakat untuk menyingkirkan Bulstrode. Tuan Thesiger menentangnya, dan ingin dia keluar dari paroki. Dan ada beberapa pria di kota ini yang mengatakan mereka lebih suka makan malam dengan orang dari penjara kapal. 'Dan saya lebih suka,' kata Fletcher; 'karena apa yang lebih menjijikkan daripada seorang pria yang datang dan membuat dirinya menjadi teman yang buruk dengan agamanya, dan berteriak seolah-olah Sepuluh Perintah Tuhan tidak cukup baginya, dan sepanjang waktu dia lebih buruk daripada separuh pria di treadmill?' Fletcher sendiri yang mengatakannya.” “Ini akan menjadi hal buruk bagi kota ini, jika uang Bulstrode keluar dari kota ini,” kata Tuan Limp dengan suara bergetar. “Ah, ada orang yang lebih baik menghabiskan uang mereka dengan lebih buruk,” kata seorang tukang pewarna dengan suara tegas, yang tangannya yang merah padam tampak tidak sesuai dengan wajahnya yang ramah. “Tapi dia tidak akan menyimpan uangnya, setidaknya menurutku,” kata tukang kaca itu. “Bukankah ada orang yang bisa mengambil semua uangnya? Setahuku, mereka bisa mengambil setiap sen darinya jika mereka mengajukan gugatan hukum.” “Tidak mungkin!” kata tukang cukur itu, yang merasa dirinya sedikit lebih tinggi dari rekan-rekannya di Dollop's, tetapi tidak menyukainya. “Fletcher bilang itu tidak mungkin. Dia bilang mereka bisa membuktikan berulang kali siapa anak Ladislaw muda ini, dan itu tidak akan lebih baik daripada jika mereka membuktikan aku berasal dari Fens—dia tidak akan bisa menyentuh sepeser pun.” “Lihat kau di sana!” kata Ny. Dollop dengan marah. “Aku bersyukur kepada Tuhan karena Dia mengambil anak-anakku untuk diri-Nya sendiri, jika hanya itu yang bisa dilakukan hukum untuk anak yatim. Maka dengan begitu, tidak ada gunanya siapa ayah dan ibumu. Tapi soal mendengarkan apa yang dikatakan seorang pengacara tanpa bertanya kepada pengacara lain—aku heran dengan orang sepintar Anda, Tuan Dill. Sudah diketahui umum bahwa selalu ada dua sisi, jika tidak lebih; kalau tidak, siapa yang akan pergi ke pengadilan, aku ingin tahu? Itu cerita yang menyedihkan, dengan semua hukum yang ada, jika tidak ada gunanya membuktikan anak siapa Anda. Fletcher boleh mengatakan itu jika dia mau, tapi kukatakan, jangan sebut aku Fletcher !” Tuan Dill berpura-pura tertawa dengan nada memuji Nyonya Dollop, sebagai wanita yang lebih dari sekadar tandingan para pengacara; karena ia bersedia menerima banyak ejekan dari seorang pemilik penginapan yang sudah lama menyimpan dendam terhadapnya. “Jika mereka sampai ke ranah hukum, dan itu semua benar seperti yang orang-orang katakan, ada lebih banyak hal yang perlu diperhatikan daripada uang,” kata tukang kaca itu. “Ada makhluk malang ini yang sudah meninggal; dari apa yang bisa kupahami, dia pernah mengalami masa ketika dia menjadi seorang pria yang jauh lebih baik daripada Bulstrode.” “Lebih sopan! Saya jamin,” kata Ny. Dollop; “dan jauh lebih ramah, dari apa yang saya dengar. Seperti yang saya katakan ketika Tuan Baldwin, penagih pajak, masuk, berdiri di tempat Anda duduk, dan berkata, 'Bulstrode mendapatkan semua uangnya yang dibawanya ke kota ini dengan mencuri dan menipu,'—saya berkata, 'Anda tidak membuat saya lebih bijak, Tuan Baldwin: darah saya merinding melihatnya sejak dia datang ke Slaughter Lane ingin membeli rumah di atas kepala saya: orang-orang tidak akan terlihat pucat seperti wadah adonan dan menatap Anda seolah-olah mereka ingin melihat tulang punggung Anda tanpa alasan.' Itulah yang saya katakan, dan Tuan Baldwin dapat menjadi saksi saya.” “Dan memang benar,” kata Tuan Crabbe. “Karena dari apa yang saya pahami, Raffles ini, begitu mereka memanggilnya, adalah pria yang gagah, segar, dan menyenangkan—meskipun sudah meninggal, ia dimakamkan di pemakaman gereja Lowick; dan dari apa yang saya mengerti, ada di antara mereka yang tahu lebih banyak daripada yang seharusnya tentang bagaimana ia sampai di sana.” “Aku akan percaya padamu!” kata Ny. Dollop, dengan sedikit nada mengejek atas ketidakcermatan Tuan Crabbe. “Ketika seseorang terkurung di rumah terpencil, dan mereka yang mampu membayar rumah sakit dan perawat untuk separuh pedesaan memilih untuk berjaga siang dan malam, dan tidak ada seorang pun yang mau mendekat kecuali seorang dokter yang terkenal tidak pernah mau bekerja, dan sesulit apa pun ia bertahan, dan setelah itu begitu kaya raya sehingga ia dapat membayar tagihan Tuan Byles si tukang daging yang terus menumpuk untuk potongan daging terbaik sejak Michaelmas tahun lalu—aku tidak ingin ada orang yang datang dan memberitahuku bahwa ada hal lain yang terjadi atau buku doa tidak memiliki jadwal kebaktian untuk itu—aku tidak ingin berdiri sambil mengedipkan mata dan berpikir.” Nyonya Dollop melihat sekeliling dengan sikap seorang pemilik penginapan yang terbiasa mendominasi tamunya. Terdengar seruan dukungan dari mereka yang lebih berani; tetapi Tuan Limp, setelah meneguk minumannya, menyatukan kedua telapak tangannya dan menekannya kuat-kuat di antara lututnya, menatapnya dengan tatapan kosong, seolah-olah kekuatan dahsyat dari ucapan Nyonya Dollop telah benar-benar mengering dan melumpuhkan pikirannya sampai ia bisa kembali sadar dengan sedikit minuman lagi. “Mengapa mereka tidak menggali kubur orang itu dan mengambil Crowner?” kata tukang pewarna itu. “Itu sudah sering dilakukan. Jika ada kecurangan, mereka mungkin akan mengetahuinya.” “Bukan mereka, Tuan Jonas!” kata Nyonya Dollop dengan tegas. “Saya tahu seperti apa dokter itu. Mereka terlalu licik untuk diketahui. Dan Dokter Lydgate yang telah membedah semua orang sebelum napas mereka benar-benar hilang—jelas sekali apa gunanya dia memeriksa bagian dalam tubuh orang-orang terhormat. Dia tahu tentang obat-obatan, Anda bisa yakin, karena Anda tidak bisa mencium atau melihatnya, baik sebelum ditelan maupun sesudahnya. Bahkan, saya sendiri pernah melihat obat tetes yang diresepkan oleh Dokter Gambit, dokter klub kita dan orang yang baik, dan telah melahirkan lebih banyak anak hidup daripada yang lain di Middlemarch—saya katakan saya sendiri pernah melihat obat tetes yang tidak berpengaruh apakah di dalam gelas atau di luar, namun membuat Anda sakit keesokan harinya. Jadi saya serahkan penilaian Anda sendiri. Jangan bilang! Yang saya katakan hanyalah, untunglah mereka tidak membawa Dokter Lydgate ke klub kita. Banyak anak ibu yang akan menyesalinya.” Pokok-pokok diskusi di "Dollop's" telah menjadi tema umum di antara semua kalangan di kota itu, telah tersebar hingga ke Lowick Parsonage di satu sisi dan ke Tipton Grange di sisi lain, telah sampai ke telinga keluarga Vincy, dan telah dibicarakan dengan nada sedih yang merujuk pada "Harriet yang malang" oleh semua teman Nyonya Bulstrode, sebelum Lydgate mengetahui dengan jelas mengapa orang-orang memandangnya dengan aneh, dan sebelum Bulstrode sendiri mencurigai pengkhianatan rahasianya. Dia tidak terbiasa menjalin hubungan yang sangat ramah dengan tetangganya, dan karena itu dia tidak dapat mengabaikan tanda-tanda keramahan; terlebih lagi, dia telah melakukan perjalanan untuk berbagai urusan, karena sekarang telah memutuskan bahwa dia tidak perlu meninggalkan Middlemarch, dan merasa mampu untuk memutuskan hal-hal yang sebelumnya dia tunda. “Kita akan melakukan perjalanan ke Cheltenham dalam waktu satu atau dua bulan,” katanya kepada istrinya. “Ada banyak keuntungan rohani yang bisa didapatkan di kota itu, bersama dengan udara dan airnya, dan enam minggu di sana akan sangat menyegarkan bagi kita.” Dia benar-benar percaya pada manfaat spiritualnya, dan bermaksud agar hidupnya selanjutnya menjadi lebih taat karena dosa-dosa yang kemudian ia anggap sebagai hipotetis, berdoa secara hipotetis untuk pengampunannya: —"jika aku telah melanggar hal ini." Mengenai Rumah Sakit, ia menghindari mengatakan apa pun lebih lanjut kepada Lydgate, karena takut menunjukkan perubahan rencana yang terlalu mendadak segera setelah kematian Raffles. Dalam lubuk hatinya yang terdalam, ia percaya bahwa Lydgate mencurigai perintahnya telah sengaja dilanggar, dan dengan mencurigai hal ini, ia juga harus mencurigai adanya motif. Tetapi tidak ada yang dikhianati kepadanya mengenai riwayat Raffles, dan Bulstrode cemas untuk tidak melakukan apa pun yang akan memperkuat kecurigaannya yang belum jelas. Mengenai kepastian bahwa metode pengobatan tertentu akan menyelamatkan atau membunuh, Lydgate sendiri terus-menerus membantah dogmatisme semacam itu; ia tidak berhak untuk berbicara, dan ia memiliki alasan untuk tetap diam. Karena itu, Bulstrode merasa dirinya terlindungi oleh takdir. Satu-satunya insiden yang sangat membuatnya ngeri adalah pertemuan sesekali dengan Caleb Garth, yang, bagaimanapun, mengangkat topinya dengan sedikit serius. Sementara itu, di kalangan tokoh-tokoh utama kota, tekad yang kuat untuk menentangnya semakin tumbuh. Sebuah pertemuan akan diadakan di Balai Kota untuk membahas masalah sanitasi yang telah menjadi sangat penting karena terjadinya kasus kolera di kota tersebut. Sejak Undang-Undang Parlemen, yang telah disahkan secara tergesa-gesa, yang mengizinkan pungutan untuk tindakan sanitasi, telah ada Dewan untuk mengawasi tindakan tersebut yang ditunjuk di Middlemarch, dan banyak pembersihan dan persiapan telah disepakati oleh kaum Whig dan Tory. Pertanyaannya sekarang adalah, apakah sebidang tanah di luar kota harus diamankan sebagai tempat pemakaman melalui pungutan atau melalui sumbangan pribadi. Pertemuan itu akan terbuka untuk umum, dan hampir semua orang penting di kota diharapkan hadir. Tuan Bulstrode adalah anggota Dewan, dan tepat sebelum pukul dua belas siang ia berangkat dari Bank dengan maksud untuk mendesak rencana penggalangan dana swasta. Karena ragu-ragu dengan proyek-proyeknya, ia telah beberapa waktu menjauh dari sorotan publik, dan ia merasa bahwa pagi ini ia harus kembali ke posisi lamanya sebagai orang yang aktif dan berpengaruh dalam urusan publik kota tempat ia berharap akan menghabiskan sisa hidupnya. Di antara berbagai orang yang berjalan ke arah yang sama, ia melihat Lydgate; mereka bergabung, membicarakan tujuan pertemuan, dan memasuki ruangan bersama-sama. Tampaknya semua orang penting telah datang lebih awal dari mereka. Tetapi masih ada tempat kosong di dekat ujung meja besar di tengah, dan mereka pun menuju ke sana. Tuan Farebrother duduk di seberang, tidak jauh dari Tuan Hawley; semua dokter ada di sana; Tuan Thesiger duduk di kursi, dan Tuan Brooke dari Tipton duduk di sebelah kanannya. Lydgate memperhatikan pertukaran pandangan yang aneh ketika dia dan Bulstrode duduk. Setelah rapat dibuka sepenuhnya oleh ketua, yang menyoroti keuntungan membeli sebidang tanah yang cukup luas untuk nantinya digunakan sebagai pemakaman umum melalui sistem berlangganan, Tuan Bulstrode, yang suaranya agak tinggi tetapi tenang dan lancar, suara yang biasa didengar warga kota dalam pertemuan semacam ini, berdiri dan meminta izin untuk menyampaikan pendapatnya. Warga Lydgate dapat melihat kembali pertukaran pandangan yang aneh sebelum Tuan Hawley berdiri, dan berkata dengan suara tegas dan berwibawa, “Tuan Ketua, saya mohon agar sebelum siapa pun menyampaikan pendapatnya tentang hal ini, saya diizinkan untuk berbicara tentang sebuah pertanyaan yang menyangkut perasaan publik, yang tidak hanya oleh saya sendiri, tetapi juga oleh banyak Tuan yang hadir, dianggap sebagai hal yang penting.” Cara bicara Tuan Hawley, bahkan ketika kesopanan publik menahan "bahasa kasarnya," sangat mengesankan dalam kesingkatan dan ketenangannya. Tuan Thesiger menyetujui permintaan tersebut, Tuan Bulstrode duduk, dan Tuan Hawley melanjutkan. “Dalam apa yang akan saya sampaikan, Tuan Ketua, saya tidak hanya berbicara atas nama saya sendiri: saya berbicara dengan persetujuan dan atas permintaan tegas dari tidak kurang dari delapan warga kota saya, yang berada di sekitar kita. Kami sepakat bahwa Tuan Bulstrode harus diminta—dan saya sekarang memintanya—untuk mengundurkan diri dari jabatan publik yang dipegangnya bukan hanya sebagai pembayar pajak, tetapi sebagai seorang pria terhormat di antara para pria terhormat. Ada praktik dan tindakan yang, karena keadaan, tidak dapat dihukum oleh hukum, meskipun mungkin lebih buruk daripada banyak hal yang dapat dihukum secara hukum. Orang-orang jujur dan terhormat, jika mereka tidak ingin bergaul dengan orang-orang yang melakukan tindakan tersebut, harus membela diri sebaik mungkin, dan itulah yang saya dan teman-teman yang dapat saya sebut sebagai klien saya dalam urusan ini bertekad untuk lakukan. Saya tidak mengatakan bahwa Tuan Bulstrode telah melakukan tindakan yang memalukan, tetapi saya memintanya untuk secara publik menyangkal dan membantah pernyataan-pernyataan yang memfitnah yang dibuat terhadapnya oleh seorang pria yang sekarang telah meninggal, dan yang meninggal dalam keadaan terhormatnya.” rumah—pernyataan bahwa dia selama bertahun-tahun terlibat dalam praktik-praktik jahat, dan bahwa dia memperoleh kekayaannya melalui prosedur yang tidak jujur—atau mengundurkan diri dari posisi yang hanya dapat diberikan kepadanya sebagai seorang pria terhormat di antara para pria terhormat.” Semua mata di ruangan itu tertuju pada Tuan Bulstrode, yang sejak pertama kali namanya disebut, telah mengalami krisis perasaan yang hampir terlalu hebat untuk ditanggung oleh tubuhnya yang rapuh. Lydgate, yang sendiri sedang mengalami guncangan seolah-olah dari penafsiran praktis yang mengerikan dari suatu pertanda samar, merasa, bagaimanapun, bahwa gerakan kebenciannya yang penuh dendam diredam oleh naluri Penyembuh yang pertama-tama memikirkan untuk memberikan penyelamatan atau pertolongan kepada yang menderita, ketika ia melihat kesengsaraan yang menyusut di wajah Bulstrode yang pucat pasi. Kesadaran mendadak bahwa hidupnya pada akhirnya adalah sebuah kegagalan, bahwa ia adalah orang yang tercela, dan harus gentar di hadapan tatapan orang-orang yang kepadanya ia biasa bersikap sebagai pencela—bahwa Tuhan telah menolaknya di hadapan manusia dan membiarkannya tanpa perlindungan terhadap cemoohan kemenangan dari mereka yang senang kebencian mereka dibenarkan—perasaan kesia-siaan total dalam keraguannya dengan hati nuraninya dalam menangani nyawa kaki tangannya, keraguan yang kini berbalik menyerangnya dengan ganas seperti taring kebohongan yang terungkap:—semua ini menerjangnya seperti penderitaan teror yang gagal membunuh, dan membuat telinga tetap terbuka terhadap gelombang kutukan yang kembali. Perasaan tiba-tiba akan terekspos setelah rasa aman yang dipulihkan datang—bukan pada organisasi kasar seorang kriminal, tetapi pada saraf yang peka dari seorang pria yang keberadaannya yang paling intens terletak pada penguasaan dan dominasi seperti yang telah dibentuk oleh kondisi hidupnya. Namun di balik keberadaan yang intens itu tersembunyi kekuatan reaksi. Di balik semua kelemahan fisiknya, mengalir saraf yang gigih berupa kemauan keras untuk mempertahankan diri, yang terus-menerus muncul seperti nyala api, menghancurkan semua ketakutan doktrinal, dan yang, bahkan ketika ia duduk sebagai objek belas kasihan bagi orang-orang yang berbelas kasih, mulai bergejolak dan menyala di bawah pucatnya yang keabu-abuan. Sebelum kata-kata terakhir keluar dari mulut Tuan Hawley, Bulstrode merasa bahwa ia harus menjawab, dan bahwa jawabannya akan berupa bantahan. Ia tidak berani berdiri dan berkata, “Saya tidak bersalah, seluruh cerita itu palsu”—bahkan jika ia berani melakukan ini, baginya, di bawah rasa pengkhianatan yang begitu tajam saat ini, akan terasa sia-sia seperti menarik kain tipis yang akan robek setiap kali ditarik untuk menutupi ketelanjangannya. Selama beberapa saat, suasana menjadi hening total, sementara setiap orang di ruangan itu menatap Bulstrode. Ia duduk diam, bersandar kuat di sandaran kursinya; ia tidak berani berdiri, dan ketika mulai berbicara, ia menekan kedua tangannya di sandaran kursi di kedua sisinya. Namun suaranya terdengar jelas, meskipun lebih serak dari biasanya, dan kata-katanya diucapkan dengan jelas, meskipun ia berhenti sejenak di antara kalimat seolah-olah kehabisan napas. Ia berkata, pertama-tama menoleh ke arah Tuan Thesiger, lalu menatap Tuan Hawley— “Saya memprotes di hadapan Anda, Tuan, sebagai seorang pendeta Kristen, terhadap pengesahan tindakan terhadap saya yang didikte oleh kebencian yang ganas. Mereka yang memusuhi saya senang mempercayai fitnah apa pun yang diucapkan oleh lidah yang tidak terkendali terhadap saya. Dan hati nurani mereka menjadi keras terhadap saya. Katakanlah bahwa fitnah yang akan menimpa saya menuduh saya melakukan kesalahan—” di sini suara Bulstrode meninggi dan menjadi lebih tajam, hingga terdengar seperti jeritan rendah—“siapa yang akan menjadi penuduh saya? Bukan orang-orang yang hidupnya sendiri tidak Kristen, bahkan memalukan—bukan orang-orang yang menggunakan alat-alat rendah untuk mencapai tujuan mereka—yang profesinya adalah jalinan tipu daya—yang telah menghabiskan penghasilan mereka untuk kenikmatan indria mereka sendiri, sementara saya telah mengabdikan penghasilan saya untuk memajukan tujuan-tujuan terbaik sehubungan dengan kehidupan ini dan kehidupan selanjutnya.” Setelah kata "kecurangan" terdengar suara yang semakin keras, setengah berupa gumaman dan setengah berupa desisan, sementara empat orang langsung berdiri—Tuan Hawley, Tuan Toller, Tuan Chichely, dan Tuan Hackbutt; tetapi ledakan amarah Tuan Hawley terjadi seketika, dan membuat yang lain terdiam. “Jika yang Anda maksud adalah saya, Tuan, saya meminta Anda dan semua orang untuk memeriksa kehidupan profesional saya. Mengenai Kristen atau bukan Kristen, saya menolak kekristenan Anda yang munafik dan bertele-tele; dan mengenai cara saya membelanjakan penghasilan saya, bukan prinsip saya untuk mendukung pencuri dan menipu anak-anak dari warisan mereka yang seharusnya mereka terima demi mendukung agama dan menjadikan diri saya sebagai orang suci yang suka merusak suasana. Saya tidak berpura-pura berhati nurani—saya belum menemukan standar yang tepat untuk mengukur tindakan Anda, Tuan. Dan sekali lagi saya meminta Anda untuk memberikan penjelasan yang memuaskan mengenai skandal yang menimpa Anda, atau mengundurkan diri dari jabatan di mana kami setidaknya menolak Anda sebagai kolega. Saya katakan, Tuan, kami menolak untuk bekerja sama dengan seseorang yang karakternya tidak bersih dari sorotan buruk yang dilemparkan kepadanya, bukan hanya oleh laporan tetapi juga oleh tindakan baru-baru ini.” “Izinkan saya, Tuan Hawley,” kata ketua; dan Tuan Hawley, masih marah, membungkuk setengah tidak sabar, lalu duduk dengan tangan dimasukkan dalam-dalam ke saku celananya. “Tuan Bulstrode, menurut saya tidak pantas untuk memperpanjang diskusi ini,” kata Tuan Thesiger, menoleh ke pria pucat yang gemetar itu; “Saya harus setuju dengan apa yang telah disampaikan Tuan Hawley sebagai ungkapan perasaan umum, bahwa sudah sepatutnya Anda, sebagai penganut Kristen, membersihkan diri dari tuduhan yang tidak menyenangkan. Saya sendiri bersedia memberi Anda kesempatan dan pendengaran penuh. Tetapi saya harus mengatakan bahwa sikap Anda saat ini sangat tidak konsisten dengan prinsip-prinsip yang telah Anda coba identifikasikan dengan diri Anda sendiri, dan demi kehormatan prinsip-prinsip itulah saya wajib memperhatikannya. Saat ini, sebagai pendeta Anda, dan seseorang yang berharap agar Anda dikembalikan ke posisi terhormat, saya menyarankan Anda untuk meninggalkan ruangan ini, dan menghindari hambatan lebih lanjut dalam urusan ini.” Bulstrode, setelah ragu sejenak, mengambil topinya dari lantai dan perlahan bangkit, tetapi ia berpegangan pada sudut kursi dengan sangat goyah sehingga Lydgate yakin bahwa ia tidak memiliki cukup kekuatan untuk berjalan pergi tanpa bantuan. Apa yang bisa ia lakukan? Ia tidak tahan melihat seseorang jatuh di dekatnya karena kekurangan pertolongan. Ia bangkit dan mengulurkan lengannya kepada Bulstrode, dan dengan cara itu membimbingnya keluar dari ruangan; namun tindakan ini, yang mungkin merupakan tindakan kewajiban yang lembut dan belas kasihan murni, pada saat ini terasa sangat pahit baginya. Seolah-olah ia sedang memberi isyarat pada hubungannya dengan Bulstrode, yang sekarang ia pahami sepenuhnya maknanya sebagaimana yang mungkin telah dipahami oleh orang lain. Ia sekarang merasa yakin bahwa pria yang bersandar gemetar di lengannya itu telah memberinya seribu pound sebagai suap, dan bahwa entah bagaimana perlakuan terhadap Raffles telah dimanipulasi dengan motif jahat. Kesimpulannya cukup terkait erat; kota itu mengetahui tentang pinjaman tersebut, percaya itu adalah suap, dan percaya bahwa ia menerimanya sebagai suap. Lydgate yang malang, pikirannya bergelut di bawah cengkeraman mengerikan dari wahyu ini, sepanjang waktu secara moral dipaksa untuk mengantar Tuan Bulstrode ke Bank, mengirim seseorang untuk mengambil keretanya, dan menunggu untuk menemaninya pulang. Sementara itu, agenda rapat diselesaikan, dan beralih ke diskusi yang penuh semangat di antara berbagai kelompok mengenai urusan Bulstrode dan Lydgate ini. Tuan Brooke, yang sebelumnya hanya mendengar sedikit petunjuk tentang hal itu, dan sangat gelisah karena merasa telah "bertindak terlalu jauh" dalam mendukung Bulstrode, kini mendapatkan informasi lengkap, dan merasakan kesedihan yang tulus saat berbicara dengan Tuan Farebrother tentang citra buruk yang melekat pada Lydgate. Tuan Farebrother akan berjalan kembali ke Lowick. “Masuklah ke kereta saya,” kata Tuan Brooke. “Saya akan mengunjungi Nyonya Casaubon. Dia seharusnya kembali dari Yorkshire tadi malam. Dia pasti ingin bertemu saya, lho.” Jadi mereka pun berkendara, Tuan Brooke mengobrol dengan harapan yang baik hati bahwa sebenarnya tidak ada hal buruk dalam perilaku Lydgate—seorang pemuda yang menurutnya jauh di atas rata-rata, ketika ia membawa surat dari pamannya, Sir Godwin. Tuan Farebrother sedikit bicara: ia sangat berduka: dengan persepsi yang tajam tentang kelemahan manusia, ia tidak yakin bahwa di bawah tekanan kebutuhan yang memalukan, Lydgate tidak jatuh ke tingkat yang lebih rendah dari dirinya sendiri. Ketika kereta kuda tiba di gerbang Manor, Dorothea sudah berada di luar di atas kerikil, dan datang untuk menyambut mereka. “Nah, sayangku,” kata Tuan Brooke, “kami baru saja pulang dari sebuah pertemuan—pertemuan tentang sanitasi, kau tahu.” “Apakah Tuan Lydgate ada di sana?” tanya Dorothea, yang tampak sehat dan bersemangat, berdiri dengan kepala terbuka di bawah cahaya lampu bulan April yang berkilauan. “Aku ingin menemuinya dan berkonsultasi panjang lebar dengannya tentang Rumah Sakit. Aku sudah berjanji kepada Tuan Bulstrode untuk melakukannya.” “Oh, sayangku,” kata Tuan Brooke, “kami telah mendengar kabar buruk—kabar buruk, kau tahu.” Mereka berjalan melewati taman menuju gerbang halaman gereja, Tuan Farebrother ingin melanjutkan perjalanan ke rumah pendeta; dan Dorothea mendengar seluruh kisah sedih itu. Ia mendengarkan dengan penuh minat, dan memohon untuk mendengar dua kali lagi fakta dan kesan mengenai Lydgate. Setelah hening sejenak, berhenti di gerbang halaman gereja, dan berbicara kepada Tuan Farebrother, ia berkata dengan penuh semangat— “Anda tidak percaya bahwa Tuan Lydgate bersalah atas sesuatu yang hina? Saya tidak akan mempercayainya. Mari kita cari tahu kebenarannya dan bersihkan namanya!”</p>
-
-<div class="nav">
-  <a href="bab-lxx.html">⬅ Bab Lxx.</a>
-  <a href="buku-viii-matahari-terbit-bab-lxxii.html">Buku Viii. Matahari Terbit - Bab Lxxii. ➡</a>
-</div>
 
 </body>
 </html>

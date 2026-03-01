@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XLVII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XLVII. - Bacaan digital klasik">
+<title>Bab XLVII — Middlemarch</title>
+<meta name="description" content="Baca Bab XLVII dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-xlvii.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab XLVII — Middlemarch">
+  <meta property="og:description" content="Baca Bab XLVII dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-xlvii.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab XLVII — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab XLVII dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab XLVII",
+    "name": "Bab XLVII — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-xlvii.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab XLVII</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Cinta sejati tak pernah sia-sia, <br />karena cinta sejati adalah keuntungan tertinggi. Tak ada seni yang dapat menciptakannya: ia harus tumbuh di tempat unsur-unsur mendukungnya. Begitu pula di tempat dan waktu surga, tumbuhlah bunga asli yang kecil, berakar ke bawah dan bermata ke atas, dibentuk oleh bumi dan langit.</p><p>Kebetulan pada Sabtu malam itulah Will Ladislaw terlibat diskusi singkat dengan Lydgate. Dampaknya ketika ia kembali ke kamarnya adalah membuatnya terjaga hampir sepanjang malam, memikirkan kembali, dengan rasa jengkel yang baru, semua yang pernah ia pikirkan tentang keputusannya untuk menetap di Middlemarch dan bekerja sama dengan Tuan Brooke. Keraguan sebelum ia mengambil langkah itu telah berubah menjadi kepekaan terhadap setiap petunjuk bahwa akan lebih bijaksana jika ia tidak mengambil langkah tersebut; dan dari situlah muncul kemarahannya terhadap Lydgate—kemarahan yang masih membuatnya gelisah. Bukankah ia sedang mempermalukan dirinya sendiri?—dan pada saat ia lebih sadar dari sebelumnya bahwa dirinya lebih dari sekadar orang bodoh? Dan untuk apa?</p><p>Yah, tanpa tujuan yang pasti. Memang benar, ia memiliki visi-visi khayalan tentang berbagai kemungkinan: tidak ada manusia yang memiliki hasrat dan pikiran, namun tidak berpikir berdasarkan hasratnya—tidak menemukan gambaran-gambaran yang muncul dalam pikirannya yang menenangkan hasrat dengan harapan atau menyengatnya dengan ketakutan. Tetapi hal ini, yang terjadi pada kita semua, terjadi pada sebagian orang dengan perbedaan yang sangat besar; dan Will bukanlah salah satu dari mereka yang kecerdasannya &quot;tetap berada di jalan utama&quot;: ia memiliki jalan-jalan kecil di mana ada sedikit kegembiraan pilihannya sendiri, yang mungkin dianggap agak bodoh oleh para bangsawan yang berpacu di jalan raya. Cara ia menciptakan semacam kebahagiaan untuk dirinya sendiri dari perasaannya terhadap Dorothea adalah contoh dari hal ini. Mungkin tampak aneh, tetapi kenyataannya, visi vulgar biasa yang dicurigai Tuan Casaubon padanya—yaitu, bahwa Dorothea mungkin menjadi janda, dan bahwa ketertarikan yang telah ia tanamkan dalam pikirannya mungkin berubah menjadi penerimaannya sebagai suami—tidak memiliki kekuatan yang menggoda atau menahannya; Ia tidak hidup dalam suasana peristiwa semacam itu, dan mengikutinya, seperti yang kita semua lakukan dengan &quot;sebaliknya&quot; yang dibayangkan, yang merupakan surga praktis kita. Bukan hanya karena ia tidak mau memikirkan hal-hal yang dapat dituduh sebagai hal yang hina, dan sudah merasa tidak nyaman karena harus membenarkan dirinya dari tuduhan tidak tahu berterima kasih—kesadaran laten akan banyak hambatan lain antara dirinya dan Dorothea selain keberadaan suaminya, telah membantu mengalihkan imajinasinya dari spekulasi tentang apa yang mungkin terjadi pada Tuan Casaubon. Dan masih ada alasan lain. Kita tahu, Will tidak tahan memikirkan adanya kekurangan yang muncul dalam dirinya: ia sekaligus jengkel dan gembira dengan kebebasan tenang yang ditunjukkan Dorothea saat memandang dan berbicara kepadanya, dan ada sesuatu yang begitu indah dalam memikirkan Dorothea apa adanya, sehingga ia tidak dapat menginginkan perubahan yang entah bagaimana akan mengubahnya. Bukankah kita menghindari versi jalanan dari melodi yang indah?—atau menghindar dari kabar bahwa hal yang langka—mungkin sedikit ukiran atau pahatan —yang telah kita kagumi bahkan dengan kegembiraan atas kesulitan yang telah kita alami untuk mendapatkan sekilasnya, sebenarnya bukanlah hal yang langka, dan dapat diperoleh sebagai barang sehari-hari? Kebaikan kita bergantung pada kualitas dan luasnya emosi kita; dan bagi Will, makhluk yang kurang peduli pada apa yang disebut hal-hal nyata dalam hidup dan sangat peduli pada pengaruhnya yang lebih halus, memiliki perasaan seperti yang dia miliki terhadap Dorothea, seperti warisan kekayaan. Apa yang orang lain mungkin sebut sebagai kesia-siaan hasratnya, justru menjadi kesenangan tambahan bagi imajinasinya: dia menyadari adanya gerakan yang murah hati, dan memverifikasi dalam pengalamannya sendiri puisi cinta yang lebih tinggi yang telah memikat imajinasinya. Dorothea, katanya pada dirinya sendiri, selamanya bertahta di jiwanya: tidak ada wanita lain yang dapat duduk lebih tinggi dari alas kakinya; dan seandainya dia bisa menuliskan dalam suku kata abadi pengaruh yang ditimbulkan wanita itu dalam dirinya, dia mungkin akan menyombongkan diri mengikuti contoh Drayton tua, bahwa,—</p><p>“Ratu-ratu di masa mendatang mungkin akan senang hidup <br />dari sedekah pujiannya yang berlebihan.”</p><p>Namun hasil ini patut dipertanyakan. Dan apa lagi yang bisa dia lakukan untuk Dorothea? Seberapa berharga pengabdiannya bagi Dorothea? Mustahil untuk mengetahuinya. Dia tidak akan menjauh dari jangkauannya. Dia tidak melihat satu pun makhluk di antara teman-temannya yang kepadanya dia bisa percaya bahwa Dorothea berbicara dengan kepercayaan diri yang sama sederhananya seperti kepadanya. Dorothea pernah berkata bahwa dia ingin dia tinggal; dan dia akan tinggal, apa pun yang mungkin terjadi di sekitar Dorothea, meskipun naga-naga penyembur api mengancam.</p><p>Ini selalu menjadi kesimpulan dari keraguan Will. Namun, ia bukannya tanpa kontradiksi dan pemberontakan bahkan terhadap tekadnya sendiri. Ia sering merasa jengkel, seperti pada malam itu, oleh demonstrasi dari luar yang menunjukkan bahwa upaya publiknya bersama Tuan Brooke sebagai seorang kepala suku tidak tampak seheroik yang ia inginkan, dan ini selalu dikaitkan dengan alasan jengkel lainnya—bahwa meskipun ia mengorbankan harga dirinya demi Dorothea, ia hampir tidak pernah bisa bertemu dengannya. Karena tidak mampu membantah fakta-fakta yang tidak menyenangkan ini, ia membantah prasangka terkuatnya sendiri dan berkata, &quot;Aku bodoh.&quot;</p><p>Namun demikian, karena perdebatan batin itu mau tidak mau berpusat pada Dorothea, ia akhirnya, seperti yang telah ia lakukan sebelumnya, hanya mendapatkan pemahaman yang lebih jelas tentang arti kehadiran Dorothea baginya; dan tiba-tiba teringat bahwa besok adalah hari Minggu, ia memutuskan untuk pergi ke Gereja Lowick dan menemuinya. Ia memikirkan ide itu semalaman, tetapi ketika ia sedang berpakaian di pagi hari yang jernih, Keberatan itu berkata—</p><p>“Itu akan menjadi pembangkangan terhadap larangan Tuan Casaubon untuk mengunjungi Lowick, dan Dorothea akan merasa tidak senang.”</p><p>“Omong kosong!” bantah Inclination, “akan terlalu mengerikan jika dia menghalangi saya untuk pergi ke gereja pedesaan yang indah di pagi hari musim semi. Dan Dorothea akan senang.”</p><p>“Tuan Casaubon akan mengerti bahwa Anda datang untuk mengganggunya atau untuk menemui Dorothea.”</p><p>“Tidak benar bahwa aku pergi untuk mengganggunya, dan mengapa aku tidak boleh pergi menemui Dorothea? Apakah dia harus memiliki segalanya untuk dirinya sendiri dan selalu nyaman? Biarkan dia sedikit menderita, seperti yang harus dialami orang lain. Aku selalu menyukai keunikan gereja dan jemaatnya; selain itu, aku kenal keluarga Tucker: aku akan duduk di bangku mereka.”</p><p>Setelah membungkam Keberatan dengan kekuatan yang tidak masuk akal, Will berjalan ke Lowick seolah-olah dia sedang dalam perjalanan ke Surga, menyeberangi Halsell Common dan menyusuri hutan, di mana sinar matahari jatuh dengan luas di bawah dahan-dahan yang bertunas, menonjolkan keindahan lumut dan liken, serta pertumbuhan hijau segar yang menembus warna cokelat. Segala sesuatu tampaknya tahu bahwa itu hari Minggu, dan menyetujui kepergiannya ke Gereja Lowick. Will mudah merasa bahagia ketika tidak ada yang mengganggu suasana hatinya, dan pada saat ini pikiran untuk membuat Tuan Casaubon kesal telah menjadi agak lucu baginya, membuat wajahnya tersenyum riang, menyenangkan untuk dilihat seperti sinar matahari yang menerpa air—meskipun kesempatan itu bukanlah contoh yang baik. Tetapi kebanyakan dari kita cenderung menetapkan dalam diri kita sendiri bahwa orang yang menghalangi jalan kita itu menjijikkan, dan tidak keberatan menyebabkan sedikit rasa jijik yang ditimbulkan oleh kepribadiannya dalam diri kita. Will berjalan dengan sebuah buku kecil di bawah lengannya dan satu tangan di setiap saku sampingnya, tidak pernah membaca, tetapi sedikit melantunkan, sambil membayangkan apa yang akan terjadi di gereja dan setelah keluar. Dia bereksperimen dengan melodi untuk menyesuaikan beberapa kata-katanya sendiri, terkadang mencoba melodi yang sudah jadi, terkadang berimprovisasi. Kata-katanya bukanlah himne, tetapi tentu saja sesuai dengan pengalamannya di hari Minggu:—</p><p>“Oh aku, oh aku, betapa sederhananya penghiburan <br />yang menjadi santapan cintaku! Sentuhan, sinar, yang tak ada di sini, bayangan yang telah lenyap: “Mimpi napas yang mungkin dekat, nada yang bergema di dalam hati, pikiran bahwa seseorang mungkin menganggapku sayang, tempat di mana seseorang dikenal, “Getaran ketakutan yang telah sirna, kejahatan yang tak dilakukan— Oh aku, oh aku, betapa sederhananya penghiburan yang menjadi santapan cintaku!”</p><p>Terkadang, ketika dia melepas topinya, menggelengkan kepalanya ke belakang, dan memperlihatkan tenggorokannya yang halus saat bernyanyi, dia tampak seperti perwujudan musim semi yang semangatnya memenuhi udara—makhluk yang cerah, penuh dengan janji-janji yang tak pasti.</p><p>Lonceng masih berdering ketika dia sampai di Lowick, dan dia masuk ke bangku pendeta sebelum orang lain tiba di sana. Tetapi dia masih sendirian di sana ketika jemaat telah berkumpul. Bangku pendeta berada di seberang bangku rektor di pintu masuk ruang paduan suara kecil, dan Will sempat khawatir Dorothea mungkin tidak datang sementara dia melihat sekeliling pada sekelompok wajah pedesaan yang membentuk jemaat dari tahun ke tahun di dalam dinding bercat putih dan bangku-bangku tua yang gelap, hampir tidak berubah seperti yang kita lihat pada dahan pohon yang patah di sana-sini karena usia, tetapi masih memiliki tunas muda. Wajah katak Tuan Rigg adalah sesuatu yang asing dan tidak dapat dijelaskan, tetapi terlepas dari guncangan terhadap tatanan ini, masih ada keluarga Waules dan penduduk pedesaan dari keluarga Powderell di bangku mereka berdampingan; Pipi saudara Samuel masih merah keunguan seperti biasanya, dan tiga generasi penduduk desa yang terhormat datang seperti dulu dengan rasa tanggung jawab kepada orang-orang yang lebih tinggi kedudukannya secara umum— anak-anak yang lebih kecil menganggap Tuan Casaubon, yang mengenakan jubah hitam dan naik ke kotak paling atas, sebagai mungkin kepala dari semua orang yang lebih tinggi kedudukannya, dan orang yang paling ditakuti jika tersinggung. Bahkan pada tahun 1831, Lowick dalam keadaan damai, tidak lebih terganggu oleh Reformasi daripada oleh nada khidmat khotbah Minggu. Jemaat sudah terbiasa melihat Will di gereja pada masa lalu, dan tidak ada yang terlalu memperhatikannya kecuali paduan suara, yang mengharapkan dia untuk tampil dalam nyanyian.</p><p>Dorothea akhirnya muncul di latar belakang yang unik ini, berjalan menyusuri lorong pendek dengan topi bulu berang-berang putih dan jubah abu-abu—sama seperti yang dikenakannya di Vatikan. Karena wajahnya, dari saat masuk, menghadap ke altar, bahkan matanya yang rabun pun segera mengenali Will, tetapi tidak ada tanda-tanda perasaan yang ditunjukkannya kecuali sedikit pucat dan membungkuk dengan serius saat ia melewatinya. Yang mengejutkan dirinya sendiri, Will tiba-tiba merasa tidak nyaman, dan tidak berani menatapnya setelah mereka saling membungkuk. Dua menit kemudian, ketika Tuan Casaubon keluar dari ruang sakristi, dan memasuki bangku gereja, lalu duduk di hadapan Dorothea, Will merasa kelumpuhannya semakin lengkap. Ia tidak bisa melihat ke mana pun kecuali ke arah paduan suara di galeri kecil di atas pintu sakristi: Dorothea mungkin merasa sedih, dan ia telah melakukan kesalahan besar. Mengganggu Tuan Casaubon tidak lagi menyenangkan, karena ia mungkin memiliki keuntungan mengawasinya dan melihat bahwa ia tidak berani menoleh. Mengapa dia tidak membayangkan ini sebelumnya?—tetapi dia tidak bisa mengharapkan bahwa dia akan duduk di bangku persegi itu sendirian, tanpa ditemani oleh keluarga Tucker, yang tampaknya telah meninggalkan Lowick sama sekali, karena seorang pendeta baru telah duduk di meja. Namun dia menyebut dirinya bodoh sekarang karena tidak meramalkan bahwa akan mustahil baginya untuk melihat ke arah Dorothea—bahkan, bahwa Dorothea mungkin merasa kedatangannya sebagai suatu kelancangan. Namun, tidak ada cara untuk melepaskan diri dari sangkarnya; dan Will menemukan tempatnya dan melihat bukunya seolah-olah dia adalah seorang guru perempuan, merasa bahwa kebaktian pagi tidak pernah selama ini, bahwa dia benar-benar konyol, marah, dan sengsara. Inilah yang didapat seorang pria karena memuja penampilan seorang wanita! Juru tulis itu mengamati dengan heran bahwa Tuan Ladislaw tidak ikut serta dalam lagu Hanover, dan menduga bahwa dia mungkin sedang flu.</p><p>Pak Casaubon tidak berkhotbah pagi itu, dan tidak ada perubahan dalam situasi Will sampai berkat diucapkan dan semua orang berdiri. Sudah menjadi kebiasaan di Lowick bagi &quot;orang-orang yang lebih terhormat&quot; untuk keluar lebih dulu. Dengan tekad tiba-tiba untuk mematahkan mantra yang menyelimutinya, Will menatap langsung ke arah Pak Casaubon. Tetapi mata pria itu tertuju pada tombol pintu bangku, yang dibukanya, membiarkan Dorothea lewat, dan segera mengikutinya tanpa mengangkat kelopak matanya. Pandangan Will bertemu dengan pandangan Dorothea saat ia berbalik dari bangku, dan sekali lagi ia membungkuk, tetapi kali ini dengan ekspresi gelisah, seolah-olah ia menahan air mata. Will berjalan keluar mengikuti mereka, tetapi mereka terus berjalan menuju gerbang kecil yang mengarah keluar dari halaman gereja ke semak-semak, tanpa pernah menoleh.</p><p>Mustahil baginya untuk mengikuti mereka, dan dia hanya bisa berjalan kembali dengan sedih di tengah hari menyusuri jalan yang sama yang telah dilaluinya dengan penuh harapan di pagi hari. Lampu-lampu telah berubah untuknya, baik di luar maupun di dalam.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-xlvi.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Xlvi</span>
+    </a>
+    <a href="bab-xlviii.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xlviii</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XLVII.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Cinta sejati tak pernah sia-sia, karena cinta sejati adalah keuntungan tertinggi. Tak ada seni yang dapat menciptakannya: ia harus tumbuh di tempat unsur-unsur mendukungnya. Begitu pula di tempat dan waktu surga, tumbuhlah bunga asli yang kecil, berakar ke bawah dan bermata ke atas, dibentuk oleh bumi dan langit. Kebetulan pada Sabtu malam itulah Will Ladislaw terlibat diskusi singkat dengan Lydgate. Dampaknya ketika ia kembali ke kamarnya adalah membuatnya terjaga hampir sepanjang malam, memikirkan kembali, dengan rasa jengkel yang baru, semua yang pernah ia pikirkan tentang keputusannya untuk menetap di Middlemarch dan bekerja sama dengan Tuan Brooke. Keraguan sebelum ia mengambil langkah itu telah berubah menjadi kepekaan terhadap setiap petunjuk bahwa akan lebih bijaksana jika ia tidak mengambil langkah tersebut; dan dari situlah muncul kemarahannya terhadap Lydgate—kemarahan yang masih membuatnya gelisah. Bukankah ia sedang mempermalukan dirinya sendiri?—dan pada saat ia lebih sadar dari sebelumnya bahwa dirinya lebih dari sekadar orang bodoh? Dan untuk apa? Yah, tanpa tujuan yang pasti. Memang benar, ia memiliki visi-visi khayalan tentang berbagai kemungkinan: tidak ada manusia yang memiliki hasrat dan pikiran, namun tidak berpikir berdasarkan hasratnya—tidak menemukan gambaran-gambaran yang muncul dalam pikirannya yang menenangkan hasrat dengan harapan atau menyengatnya dengan ketakutan. Tetapi hal ini, yang terjadi pada kita semua, terjadi pada sebagian orang dengan perbedaan yang sangat besar; dan Will bukanlah salah satu dari mereka yang kecerdasannya "tetap berada di jalan utama": ia memiliki jalan-jalan kecil di mana ada sedikit kegembiraan pilihannya sendiri, yang mungkin dianggap agak bodoh oleh para bangsawan yang berpacu di jalan raya. Cara ia menciptakan semacam kebahagiaan untuk dirinya sendiri dari perasaannya terhadap Dorothea adalah contoh dari hal ini. Mungkin tampak aneh, tetapi kenyataannya, visi vulgar biasa yang dicurigai Tuan Casaubon padanya—yaitu, bahwa Dorothea mungkin menjadi janda, dan bahwa ketertarikan yang telah ia tanamkan dalam pikirannya mungkin berubah menjadi penerimaannya sebagai suami—tidak memiliki kekuatan yang menggoda atau menahannya; Ia tidak hidup dalam suasana peristiwa semacam itu, dan mengikutinya, seperti yang kita semua lakukan dengan "sebaliknya" yang dibayangkan, yang merupakan surga praktis kita. Bukan hanya karena ia tidak mau memikirkan hal-hal yang dapat dituduh sebagai hal yang hina, dan sudah merasa tidak nyaman karena harus membenarkan dirinya dari tuduhan tidak tahu berterima kasih—kesadaran laten akan banyak hambatan lain antara dirinya dan Dorothea selain keberadaan suaminya, telah membantu mengalihkan imajinasinya dari spekulasi tentang apa yang mungkin terjadi pada Tuan Casaubon. Dan masih ada alasan lain. Kita tahu, Will tidak tahan memikirkan adanya kekurangan yang muncul dalam dirinya: ia sekaligus jengkel dan gembira dengan kebebasan tenang yang ditunjukkan Dorothea saat memandang dan berbicara kepadanya, dan ada sesuatu yang begitu indah dalam memikirkan Dorothea apa adanya, sehingga ia tidak dapat menginginkan perubahan yang entah bagaimana akan mengubahnya. Bukankah kita menghindari versi jalanan dari melodi yang indah?—atau menghindar dari kabar bahwa hal yang langka—mungkin sedikit ukiran atau pahatan —yang telah kita kagumi bahkan dengan kegembiraan atas kesulitan yang telah kita alami untuk mendapatkan sekilasnya, sebenarnya bukanlah hal yang langka, dan dapat diperoleh sebagai barang sehari-hari? Kebaikan kita bergantung pada kualitas dan luasnya emosi kita; dan bagi Will, makhluk yang kurang peduli pada apa yang disebut hal-hal nyata dalam hidup dan sangat peduli pada pengaruhnya yang lebih halus, memiliki perasaan seperti yang dia miliki terhadap Dorothea, seperti warisan kekayaan. Apa yang orang lain mungkin sebut sebagai kesia-siaan hasratnya, justru menjadi kesenangan tambahan bagi imajinasinya: dia menyadari adanya gerakan yang murah hati, dan memverifikasi dalam pengalamannya sendiri puisi cinta yang lebih tinggi yang telah memikat imajinasinya. Dorothea, katanya pada dirinya sendiri, selamanya bertahta di jiwanya: tidak ada wanita lain yang dapat duduk lebih tinggi dari alas kakinya; dan seandainya dia bisa menuliskan dalam suku kata abadi pengaruh yang ditimbulkan wanita itu dalam dirinya, dia mungkin akan menyombongkan diri mengikuti contoh Drayton tua, bahwa,— “Ratu-ratu di masa mendatang mungkin akan senang hidup dari sedekah pujiannya yang berlebihan.” Namun hasil ini patut dipertanyakan. Dan apa lagi yang bisa dia lakukan untuk Dorothea? Seberapa berharga pengabdiannya bagi Dorothea? Mustahil untuk mengetahuinya. Dia tidak akan menjauh dari jangkauannya. Dia tidak melihat satu pun makhluk di antara teman-temannya yang kepadanya dia bisa percaya bahwa Dorothea berbicara dengan kepercayaan diri yang sama sederhananya seperti kepadanya. Dorothea pernah berkata bahwa dia ingin dia tinggal; dan dia akan tinggal, apa pun yang mungkin terjadi di sekitar Dorothea, meskipun naga-naga penyembur api mengancam. Ini selalu menjadi kesimpulan dari keraguan Will. Namun, ia bukannya tanpa kontradiksi dan pemberontakan bahkan terhadap tekadnya sendiri. Ia sering merasa jengkel, seperti pada malam itu, oleh demonstrasi dari luar yang menunjukkan bahwa upaya publiknya bersama Tuan Brooke sebagai seorang kepala suku tidak tampak seheroik yang ia inginkan, dan ini selalu dikaitkan dengan alasan jengkel lainnya—bahwa meskipun ia mengorbankan harga dirinya demi Dorothea, ia hampir tidak pernah bisa bertemu dengannya. Karena tidak mampu membantah fakta-fakta yang tidak menyenangkan ini, ia membantah prasangka terkuatnya sendiri dan berkata, "Aku bodoh." Namun demikian, karena perdebatan batin itu mau tidak mau berpusat pada Dorothea, ia akhirnya, seperti yang telah ia lakukan sebelumnya, hanya mendapatkan pemahaman yang lebih jelas tentang arti kehadiran Dorothea baginya; dan tiba-tiba teringat bahwa besok adalah hari Minggu, ia memutuskan untuk pergi ke Gereja Lowick dan menemuinya. Ia memikirkan ide itu semalaman, tetapi ketika ia sedang berpakaian di pagi hari yang jernih, Keberatan itu berkata— “Itu akan menjadi pembangkangan terhadap larangan Tuan Casaubon untuk mengunjungi Lowick, dan Dorothea akan merasa tidak senang.” “Omong kosong!” bantah Inclination, “akan terlalu mengerikan jika dia menghalangi saya untuk pergi ke gereja pedesaan yang indah di pagi hari musim semi. Dan Dorothea akan senang.” “Tuan Casaubon akan mengerti bahwa Anda datang untuk mengganggunya atau untuk menemui Dorothea.” “Tidak benar bahwa aku pergi untuk mengganggunya, dan mengapa aku tidak boleh pergi menemui Dorothea? Apakah dia harus memiliki segalanya untuk dirinya sendiri dan selalu nyaman? Biarkan dia sedikit menderita, seperti yang harus dialami orang lain. Aku selalu menyukai keunikan gereja dan jemaatnya; selain itu, aku kenal keluarga Tucker: aku akan duduk di bangku mereka.” Setelah membungkam Keberatan dengan kekuatan yang tidak masuk akal, Will berjalan ke Lowick seolah-olah dia sedang dalam perjalanan ke Surga, menyeberangi Halsell Common dan menyusuri hutan, di mana sinar matahari jatuh dengan luas di bawah dahan-dahan yang bertunas, menonjolkan keindahan lumut dan liken, serta pertumbuhan hijau segar yang menembus warna cokelat. Segala sesuatu tampaknya tahu bahwa itu hari Minggu, dan menyetujui kepergiannya ke Gereja Lowick. Will mudah merasa bahagia ketika tidak ada yang mengganggu suasana hatinya, dan pada saat ini pikiran untuk membuat Tuan Casaubon kesal telah menjadi agak lucu baginya, membuat wajahnya tersenyum riang, menyenangkan untuk dilihat seperti sinar matahari yang menerpa air—meskipun kesempatan itu bukanlah contoh yang baik. Tetapi kebanyakan dari kita cenderung menetapkan dalam diri kita sendiri bahwa orang yang menghalangi jalan kita itu menjijikkan, dan tidak keberatan menyebabkan sedikit rasa jijik yang ditimbulkan oleh kepribadiannya dalam diri kita. Will berjalan dengan sebuah buku kecil di bawah lengannya dan satu tangan di setiap saku sampingnya, tidak pernah membaca, tetapi sedikit melantunkan, sambil membayangkan apa yang akan terjadi di gereja dan setelah keluar. Dia bereksperimen dengan melodi untuk menyesuaikan beberapa kata-katanya sendiri, terkadang mencoba melodi yang sudah jadi, terkadang berimprovisasi. Kata-katanya bukanlah himne, tetapi tentu saja sesuai dengan pengalamannya di hari Minggu:— “Oh aku, oh aku, betapa sederhananya penghiburan yang menjadi santapan cintaku! Sentuhan, sinar, yang tak ada di sini, bayangan yang telah lenyap: “Mimpi napas yang mungkin dekat, nada yang bergema di dalam hati, pikiran bahwa seseorang mungkin menganggapku sayang, tempat di mana seseorang dikenal, “Getaran ketakutan yang telah sirna, kejahatan yang tak dilakukan— Oh aku, oh aku, betapa sederhananya penghiburan yang menjadi santapan cintaku!” Terkadang, ketika dia melepas topinya, menggelengkan kepalanya ke belakang, dan memperlihatkan tenggorokannya yang halus saat bernyanyi, dia tampak seperti perwujudan musim semi yang semangatnya memenuhi udara—makhluk yang cerah, penuh dengan janji-janji yang tak pasti. Lonceng masih berdering ketika dia sampai di Lowick, dan dia masuk ke bangku pendeta sebelum orang lain tiba di sana. Tetapi dia masih sendirian di sana ketika jemaat telah berkumpul. Bangku pendeta berada di seberang bangku rektor di pintu masuk ruang paduan suara kecil, dan Will sempat khawatir Dorothea mungkin tidak datang sementara dia melihat sekeliling pada sekelompok wajah pedesaan yang membentuk jemaat dari tahun ke tahun di dalam dinding bercat putih dan bangku-bangku tua yang gelap, hampir tidak berubah seperti yang kita lihat pada dahan pohon yang patah di sana-sini karena usia, tetapi masih memiliki tunas muda. Wajah katak Tuan Rigg adalah sesuatu yang asing dan tidak dapat dijelaskan, tetapi terlepas dari guncangan terhadap tatanan ini, masih ada keluarga Waules dan penduduk pedesaan dari keluarga Powderell di bangku mereka berdampingan; Pipi saudara Samuel masih merah keunguan seperti biasanya, dan tiga generasi penduduk desa yang terhormat datang seperti dulu dengan rasa tanggung jawab kepada orang-orang yang lebih tinggi kedudukannya secara umum— anak-anak yang lebih kecil menganggap Tuan Casaubon, yang mengenakan jubah hitam dan naik ke kotak paling atas, sebagai mungkin kepala dari semua orang yang lebih tinggi kedudukannya, dan orang yang paling ditakuti jika tersinggung. Bahkan pada tahun 1831, Lowick dalam keadaan damai, tidak lebih terganggu oleh Reformasi daripada oleh nada khidmat khotbah Minggu. Jemaat sudah terbiasa melihat Will di gereja pada masa lalu, dan tidak ada yang terlalu memperhatikannya kecuali paduan suara, yang mengharapkan dia untuk tampil dalam nyanyian. Dorothea akhirnya muncul di latar belakang yang unik ini, berjalan menyusuri lorong pendek dengan topi bulu berang-berang putih dan jubah abu-abu—sama seperti yang dikenakannya di Vatikan. Karena wajahnya, dari saat masuk, menghadap ke altar, bahkan matanya yang rabun pun segera mengenali Will, tetapi tidak ada tanda-tanda perasaan yang ditunjukkannya kecuali sedikit pucat dan membungkuk dengan serius saat ia melewatinya. Yang mengejutkan dirinya sendiri, Will tiba-tiba merasa tidak nyaman, dan tidak berani menatapnya setelah mereka saling membungkuk. Dua menit kemudian, ketika Tuan Casaubon keluar dari ruang sakristi, dan memasuki bangku gereja, lalu duduk di hadapan Dorothea, Will merasa kelumpuhannya semakin lengkap. Ia tidak bisa melihat ke mana pun kecuali ke arah paduan suara di galeri kecil di atas pintu sakristi: Dorothea mungkin merasa sedih, dan ia telah melakukan kesalahan besar. Mengganggu Tuan Casaubon tidak lagi menyenangkan, karena ia mungkin memiliki keuntungan mengawasinya dan melihat bahwa ia tidak berani menoleh. Mengapa dia tidak membayangkan ini sebelumnya?—tetapi dia tidak bisa mengharapkan bahwa dia akan duduk di bangku persegi itu sendirian, tanpa ditemani oleh keluarga Tucker, yang tampaknya telah meninggalkan Lowick sama sekali, karena seorang pendeta baru telah duduk di meja. Namun dia menyebut dirinya bodoh sekarang karena tidak meramalkan bahwa akan mustahil baginya untuk melihat ke arah Dorothea—bahkan, bahwa Dorothea mungkin merasa kedatangannya sebagai suatu kelancangan. Namun, tidak ada cara untuk melepaskan diri dari sangkarnya; dan Will menemukan tempatnya dan melihat bukunya seolah-olah dia adalah seorang guru perempuan, merasa bahwa kebaktian pagi tidak pernah selama ini, bahwa dia benar-benar konyol, marah, dan sengsara. Inilah yang didapat seorang pria karena memuja penampilan seorang wanita! Juru tulis itu mengamati dengan heran bahwa Tuan Ladislaw tidak ikut serta dalam lagu Hanover, dan menduga bahwa dia mungkin sedang flu. Pak Casaubon tidak berkhotbah pagi itu, dan tidak ada perubahan dalam situasi Will sampai berkat diucapkan dan semua orang berdiri. Sudah menjadi kebiasaan di Lowick bagi "orang-orang yang lebih terhormat" untuk keluar lebih dulu. Dengan tekad tiba-tiba untuk mematahkan mantra yang menyelimutinya, Will menatap langsung ke arah Pak Casaubon. Tetapi mata pria itu tertuju pada tombol pintu bangku, yang dibukanya, membiarkan Dorothea lewat, dan segera mengikutinya tanpa mengangkat kelopak matanya. Pandangan Will bertemu dengan pandangan Dorothea saat ia berbalik dari bangku, dan sekali lagi ia membungkuk, tetapi kali ini dengan ekspresi gelisah, seolah-olah ia menahan air mata. Will berjalan keluar mengikuti mereka, tetapi mereka terus berjalan menuju gerbang kecil yang mengarah keluar dari halaman gereja ke semak-semak, tanpa pernah menoleh. Mustahil baginya untuk mengikuti mereka, dan dia hanya bisa berjalan kembali dengan sedih di tengah hari menyusuri jalan yang sama yang telah dilaluinya dengan penuh harapan di pagi hari. Lampu-lampu telah berubah untuknya, baik di luar maupun di dalam.</p>
-
-<div class="nav">
-  <a href="bab-xlvi.html">⬅ Bab Xlvi.</a>
-  <a href="bab-xlviii.html">Bab Xlviii. ➡</a>
-</div>
 
 </body>
 </html>

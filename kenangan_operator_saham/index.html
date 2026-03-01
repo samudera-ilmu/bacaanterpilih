@@ -2,10 +2,54 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Kenangan Operator Saham</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kenangan Seorang Operator Saham — Bacaan Terpilih</title>
+<meta name="description" content="Kenangan Seorang Operator Saham karya Edwin Lefevre. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/kenangan_operator_saham/index.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="book">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Kenangan Seorang Operator Saham — Bacaan Terpilih">
+  <meta property="og:description" content="Kenangan Seorang Operator Saham karya Edwin Lefevre. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/kenangan_operator_saham/index.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/kenangan_operator_saham/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <meta property="og:book:author" content="Edwin Lefevre">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Kenangan Seorang Operator Saham — Bacaan Terpilih">
+  <meta name="twitter:description" content="Kenangan Seorang Operator Saham karya Edwin Lefevre. Baca gratis dalam bahasa Indonesia.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/kenangan_operator_saham/images/img-001.jpg">
+  <!-- Schema.org: Book -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Kenangan Seorang Operator Saham",
+    "author": {
+      "@type": "Person",
+      "name": "Edwin Lefevre"
+    },
+    "datePublished": "1923",
+    "inLanguage": "id",
+    "genre": "('Bisnis', 'Biografi', 'Klasik')",
+    "url": "https://bacaanterpilih.pages.dev/kenangan_operator_saham/index.html",
+    "image": "https://bacaanterpilih.pages.dev/kenangan_operator_saham/images/img-001.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -15,72 +59,224 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
-
-function toggleTheme() {
-  document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
-}
 </script>
-
-
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #fafafa;
-  --text: #111;
-  --link: #1a73e8;
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
 }
 
 .dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 20px;
+  font-family: 'Source Serif 4', Georgia, serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
-.toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 14px;
-  opacity: 0.7;
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.book-hero {
+  max-width: 780px; margin: 0 auto;
+  padding: 48px 24px 0;
+  display: flex; gap: 40px; align-items: flex-start;
+}
+
+.book-cover-wrap { flex-shrink: 0; }
+
+.book-cover-img {
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  display: block;
+}
+
+.book-hero-text {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 12px;
+  padding-top: 8px;
+}
+
+.back-link {
+  font-size: 0.8rem; color: var(--accent);
+  text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.book-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.03em; color: var(--text);
+}
+
+.book-author { font-size: 1rem; color: var(--accent); font-weight: 600; }
+.book-year   { font-size: 0.82rem; color: var(--text3); }
+
+.book-divider {
+  max-width: 780px; margin: 32px auto 0;
+  border: none; border-top: 1px solid var(--border);
+}
+
+.toc-section {
+  max-width: 780px; margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.toc-label {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 20px;
+}
+
+.toc-list { list-style: none; counter-reset: toc; }
+
+.toc-list li {
+  counter-increment: toc;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-list li:first-child { border-top: 1px solid var(--border); }
+
+.toc-list a {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 14px 0;
+  text-decoration: none; color: var(--text);
+  font-size: 0.95rem; font-weight: 400;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.toc-list a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 0.72rem; color: var(--text3);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px; flex-shrink: 0;
+}
+
+.toc-list a:hover { color: var(--accent); padding-left: 6px; }
+
+@media (max-width: 600px) {
+  .book-hero { flex-direction: column; padding: 32px 16px 0; gap: 24px; }
+  .book-cover-img { width: 120px; }
+  .toc-section { padding: 24px 16px 60px; }
 }
 </style>
 </head>
 <body>
 
-<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
 
-<h1>Kenangan Operator Saham</h1>
+<div class="book-hero">
+  
+<div class="book-cover-wrap">
+  <img src="images/img-001.jpg" alt="Cover Kenangan Seorang Operator Saham" class="book-cover-img">
+</div>
+  <div class="book-hero-text">
+    <a href="../index.html" class="back-link">← Perpustakaan</a>
+    <h1 class="book-title">Kenangan Seorang Operator Saham</h1>
+    <div class="book-author">Edwin Lefevre</div>
+    <div class="book-year">1923</div>
+  </div>
+</div>
 
-<ol>
-<li><a href="tentang-apa-buku-ini.html">TENTANG APA BUKU INI ??</a></li><li><a href="bab-i.html">BAB I</a></li><li><a href="bab-ii.html">BAB II</a></li><li><a href="bab-iii.html">BAB III</a></li><li><a href="bab-iv.html">BAB IV</a></li><li><a href="bab-v.html">BAB V</a></li><li><a href="bab-vi.html">BAB VI</a></li><li><a href="bab-vii.html">BAB VII</a></li><li><a href="bab-viii.html">BAB VIII</a></li><li><a href="bab-ix.html">BAB IX</a></li><li><a href="bab-x.html">BAB X</a></li><li><a href="bab-xi.html">BAB XI</a></li><li><a href="bab-xii.html">BAB XII</a></li><li><a href="bab-xiii.html">BAB XIII</a></li><li><a href="bab-xiv.html">BAB XIV</a></li><li><a href="bab-xv.html">BAB XV</a></li><li><a href="bab-xvi.html">BAB XVI</a></li><li><a href="bab-xvii.html">BAB XVII</a></li><li><a href="bab-xviii.html">BAB XVIII</a></li><li><a href="bab-xix.html">BAB XIX</a></li><li><a href="bab-xx.html">BAB XX</a></li><li><a href="bab-xxi.html">BAB XXI</a></li><li><a href="bab-xxii.html">BAB XXII</a></li><li><a href="bab-xxiii.html">BAB XXIII</a></li><li><a href="bab-xxiv.html">BAB XXIV</a></li>
-</ol>
+<hr class="book-divider">
+
+<section class="toc-section">
+  <div class="toc-label">Daftar Isi</div>
+  <ol class="toc-list">
+    <li><a href="tentang-apa-buku-ini.html">Tentang Apa Buku Ini ??</a></li>
+<li><a href="bab-i.html">Bab I</a></li>
+<li><a href="bab-ii.html">Bab Ii</a></li>
+<li><a href="bab-iii.html">Bab Iii</a></li>
+<li><a href="bab-iv.html">Bab Iv</a></li>
+<li><a href="bab-v.html">Bab V</a></li>
+<li><a href="bab-vi.html">Bab Vi</a></li>
+<li><a href="bab-vii.html">Bab Vii</a></li>
+<li><a href="bab-viii.html">Bab Viii</a></li>
+<li><a href="bab-ix.html">Bab Ix</a></li>
+<li><a href="bab-x.html">Bab X</a></li>
+<li><a href="bab-xi.html">Bab Xi</a></li>
+<li><a href="bab-xii.html">Bab Xii</a></li>
+<li><a href="bab-xiii.html">Bab Xiii</a></li>
+<li><a href="bab-xiv.html">Bab Xiv</a></li>
+<li><a href="bab-xv.html">Bab Xv</a></li>
+<li><a href="bab-xvi.html">Bab Xvi</a></li>
+<li><a href="bab-xvii.html">Bab Xvii</a></li>
+<li><a href="bab-xviii.html">Bab Xviii</a></li>
+<li><a href="bab-xix.html">Bab Xix</a></li>
+<li><a href="bab-xx.html">Bab Xx</a></li>
+<li><a href="bab-xxi.html">Bab Xxi</a></li>
+<li><a href="bab-xxii.html">Bab Xxii</a></li>
+<li><a href="bab-xxiii.html">Bab Xxiii</a></li>
+<li><a href="bab-xxiv.html">Bab Xxiv</a></li>
+  </ol>
+</section>
+
+
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
+}
+</script>
+
 
 </body>
 </html>

@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XXX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XXX - Bacaan digital klasik">
+<title>BAB XXX — Wuthering Heights</title>
+<meta name="description" content="Baca BAB XXX dari buku Wuthering Heights karya Emily Brontë secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/wuthering_heights/bab-xxx.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB XXX — Wuthering Heights">
+  <meta property="og:description" content="Baca BAB XXX dari buku Wuthering Heights karya Emily Brontë secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/wuthering_heights/bab-xxx.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/wuthering_heights/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB XXX — Wuthering Heights">
+  <meta name="twitter:description" content="Baca BAB XXX dari Wuthering Heights karya Emily Brontë gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/wuthering_heights/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB XXX",
+    "name": "BAB XXX — Wuthering Heights",
+    "author": {
+      "@type": "Person",
+      "name": "Emily Brontë"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Wuthering Heights",
+      "author": {
+        "@type": "Person",
+        "name": "Emily Brontë"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/wuthering_heights/bab-xxx.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Wuthering Heights</a>
+    </div>
+    <h1 class="chapter-title">BAB XXX</h1>
+    <div class="chapter-info">
+      <span>✍️ Emily Brontë</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Saya telah mengunjungi Heights, tetapi saya belum melihatnya sejak dia pergi: Joseph menahan pintu ketika saya datang untuk menanyakan keberadaannya, dan tidak mengizinkan saya lewat. Dia mengatakan Nyonya Linton sedang &quot;di luar,&quot; dan tuan rumah tidak ada di rumah. Zillah telah memberi tahu saya sesuatu tentang cara mereka menjalani hidup, jika tidak, saya hampir tidak akan tahu siapa yang sudah meninggal dan siapa yang masih hidup. Dia menganggap Catherine sombong, dan tidak menyukainya, saya bisa menebak dari cara bicaranya. Nona muda saya meminta bantuannya ketika dia pertama kali datang; tetapi Tuan Heathcliff menyuruhnya untuk mengurus urusannya sendiri, dan membiarkan menantunya mengurus dirinya sendiri; dan Zillah dengan senang hati menurutinya, karena dia adalah wanita yang berpikiran sempit dan egois. Catherine menunjukkan kekesalan seperti anak kecil atas pengabaian ini; membalasnya dengan penghinaan, dan dengan demikian menjadikan informan saya sebagai musuhnya, seolah-olah dia telah melakukan kesalahan besar padanya. Saya sempat berbincang panjang lebar dengan Zillah sekitar enam minggu yang lalu, tak lama sebelum Anda datang, suatu hari ketika kami berkumpul di padang rumput; dan inilah yang dia ceritakan kepada saya.</p><p>“Hal pertama yang dilakukan Nyonya Linton,” katanya, “setibanya di Heights, adalah berlari ke atas, tanpa mengucapkan selamat malam kepada saya dan Joseph; dia mengunci diri di kamar Linton, dan tetap di sana sampai pagi. Kemudian, sementara tuan rumah dan Earnshaw sedang sarapan, dia masuk ke rumah, dan dengan gugup bertanya apakah dokter bisa dipanggil? Sepupunya sakit parah.”</p><p>“'Kami tahu itu!' jawab Heathcliff; 'tetapi nyawanya tidak berharga sepeser pun, dan aku tidak akan menghabiskan sepeser pun untuknya.'&quot;</p><p>“‘Tapi aku tidak tahu bagaimana caranya,’ katanya; ‘dan jika tidak ada yang mau membantuku, dia akan mati!’”</p><p>“'Keluar dari ruangan,' teriak sang majikan, 'dan jangan sampai aku mendengar sepatah kata pun lagi tentang dia! Tak seorang pun di sini peduli apa yang terjadi padanya; jika kau peduli, bertindaklah seperti perawat; jika tidak, kurung dia dan tinggalkan dia.'&quot;</p><p>“Lalu dia mulai mengganggu saya, dan saya berkata bahwa saya sudah muak dengan gangguan yang membosankan itu; kami masing-masing punya tugas, dan tugasnya adalah melayani Linton: Tuan Heathcliff menyuruh saya menyerahkan pekerjaan itu kepadanya.</p><p>“Bagaimana mereka bisa bertahan bersama, aku tidak tahu. Kurasa dia sangat gelisah dan merintih siang dan malam; dan dia hampir tidak punya waktu istirahat: bisa ditebak dari wajahnya yang pucat dan matanya yang berat. Terkadang dia datang ke dapur dengan keadaan linglung, dan tampak seperti ingin meminta bantuan; tetapi aku tidak akan membantah tuan rumah: aku tidak pernah berani membantahnya, Nyonya Dean; dan, meskipun aku pikir salah jika Kenneth tidak dipanggil, itu bukan urusanku untuk memberi nasihat atau mengeluh, dan aku selalu menolak untuk ikut campur. Satu atau dua kali, setelah kami tidur, aku kebetulan membuka pintu lagi dan melihatnya duduk menangis di atas tangga; dan kemudian aku segera mengunci diri, karena takut tergerak untuk ikut campur. Aku memang mengasihaninya saat itu, aku yakin: tetapi aku tidak ingin kehilangan posisiku, kau tahu.”</p><p>“Akhirnya, suatu malam dia dengan berani masuk ke kamarku, dan membuatku sangat ketakutan, dengan berkata, 'Katakan pada Tuan Heathcliff bahwa putranya sedang sekarat—aku yakin kali ini. Bangun, segera, dan beritahu dia.'&quot;</p><p>“Setelah mengucapkan kata-kata itu, dia menghilang lagi. Aku berbaring seperempat jam mendengarkan dan gemetar. Tidak ada yang bergerak—rumah itu sunyi.”</p><p>“Dia salah paham,” kataku dalam hati. “Dia sudah melupakannya. Aku tidak perlu mengganggu mereka,” dan aku mulai tertidur. Namun tidurku terganggu untuk kedua kalinya oleh bunyi lonceng yang nyaring—satu-satunya lonceng yang kami miliki, dipasang khusus untuk Linton; dan kepala pelayan memanggilku untuk melihat apa yang terjadi, dan memberi tahu mereka bahwa dia tidak akan membiarkan suara itu terulang lagi.</p><p>“Aku menyampaikan pesan Catherine. Ia mengumpat dalam hati, dan beberapa menit kemudian keluar dengan lilin menyala, lalu menuju kamar mereka. Aku mengikutinya. Nyonya Heathcliff duduk di samping tempat tidur, dengan tangan terlipat di lututnya. Ayah mertuanya mendekat, mengarahkan cahaya ke wajah Linton, menatapnya, dan menyentuhnya; setelah itu ia menoleh ke arah istrinya.”</p><p>“'Sekarang—Catherine,' katanya, 'bagaimana perasaanmu?'&quot;</p><p>“Dia bodoh.”</p><p>“'Bagaimana perasaanmu, Catherine?' dia mengulangi pertanyaannya.</p><p>“'Dia aman, dan aku bebas,' jawabnya: 'Seharusnya aku merasa baik-baik saja—tetapi,' lanjutnya, dengan kepahitan yang tak bisa disembunyikannya, 'kau telah meninggalkanku begitu lama berjuang melawan kematian sendirian, sehingga aku hanya merasakan dan melihat kematian! Aku merasa seperti kematian!'&quot;</p><p>“Dan memang terlihat seperti itu! Aku memberinya sedikit anggur. Hareton dan Joseph, yang terbangun oleh dering telepon dan suara langkah kaki, dan mendengar percakapan kami dari luar, kini masuk. Kurasa Joseph ingin anak itu dipindahkan; Hareton tampak sedikit terganggu: meskipun ia lebih sibuk menatap Catherine daripada memikirkan Linton. Tetapi tuan rumah menyuruhnya kembali tidur: kami tidak membutuhkan bantuannya. Setelah itu, ia menyuruh Joseph memindahkan jenazah ke kamarnya, dan menyuruhku kembali ke kamarku, dan Nyonya Heathcliff tetap sendirian.”</p><p>“Pagi harinya, ia menyuruhku memberitahunya bahwa ia harus turun untuk sarapan: ia telah melepas pakaiannya, dan tampak hendak tidur, dan mengatakan bahwa ia sakit; yang mana aku hampir tidak heran. Aku memberi tahu Tuan Heathcliff, dan ia menjawab, —'Baiklah, biarkan saja dia sampai setelah pemakaman; dan naiklah sesekali untuk mengambilkan apa yang dibutuhkannya; dan, begitu ia tampak lebih baik, beritahu aku.'&quot;</p><p>Menurut Zillah, Cathy tinggal di lantai atas selama dua minggu; ia mengunjungi Cathy dua kali sehari, dan sebenarnya ingin lebih ramah, tetapi upayanya untuk meningkatkan kebaikan selalu ditolak dengan keras dan segera.</p><p>Heathcliff pernah datang untuk menunjukkan surat wasiat Linton kepadanya. Ia telah mewariskan seluruh harta miliknya, dan harta bergerak yang dulunya milik istrinya, kepada ayahnya: wanita malang itu diancam, atau dibujuk, untuk melakukan hal itu selama seminggu ketidakhadirannya, ketika pamannya meninggal. Karena masih di bawah umur, ia tidak dapat ikut campur dalam urusan tanah tersebut. Namun, Tuan Heathcliff telah mengklaim dan mempertahankan tanah itu atas hak istrinya dan juga haknya sendiri: saya kira secara hukum; bagaimanapun juga, Catherine, yang kekurangan uang dan teman, tidak dapat mengganggu kepemilikannya.</p><p>“Tidak seorang pun,” kata Zillah, “pernah mendekati pintunya, kecuali sekali itu, kecuali aku; dan tidak ada yang bertanya apa pun tentangnya. Pertama kali dia turun ke rumah adalah pada suatu Minggu sore. Dia berteriak, ketika aku membawakan makan siangnya, bahwa dia tidak tahan lagi kedinginan; dan aku memberitahunya bahwa tuan rumah akan pergi ke Thrushcross Grange, dan Earnshaw dan aku tidak perlu menghalanginya untuk turun; jadi, begitu dia mendengar kuda Heathcliff berderap pergi, dia muncul, mengenakan pakaian hitam, dan rambut ikalnya yang berwarna kuning disisir ke belakang telinganya seperti orang Quaker: dia tidak bisa menyisirnya.”</p><p>“Joseph dan saya biasanya pergi ke kapel pada hari Minggu:” gereja, (Anda tahu, sekarang tidak ada pendeta, jelas Ny. Dean; dan mereka menyebut tempat jemaat Metodis atau Baptis, saya tidak tahu yang mana, di Gimmerton, sebagai kapel.) “Joseph sudah pergi,” lanjutnya, “tetapi saya pikir lebih baik tinggal di rumah. Anak muda selalu lebih baik jika diawasi oleh orang yang lebih tua; dan Hareton, dengan segala rasa malunya, bukanlah contoh perilaku yang baik. Saya memberi tahu dia bahwa sepupunya kemungkinan besar akan duduk bersama kami, dan dia selalu terbiasa melihat hari Minggu dihormati; jadi dia sebaiknya meninggalkan senjata dan pekerjaan rumah tangganya, sementara sepupunya tinggal. Wajahnya memerah mendengar berita itu, dan dia memeriksa tangan dan pakaiannya. Minyak kereta api dan bubuk mesiu disingkirkan dalam sekejap. Saya melihat dia bermaksud menemani sepupunya; dan saya menduga, dari tingkahnya, dia ingin tampil rapi; jadi, sambil tertawa, sekeras yang tidak berani saya tertawa Ketika sang majikan datang, saya menawarkan bantuan kepadanya, jika dia mau, dan saya bercanda melihat kebingungannya. Dia menjadi cemberut, dan mulai mengumpat.</p><p>“Nah, Nyonya Dean,” lanjut Zillah, melihat saya tidak senang dengan sikapnya, “Anda kebetulan berpikir putri Anda terlalu anggun untuk Tuan Hareton; dan kebetulan Anda benar: tetapi saya akui saya ingin sekali menurunkan sedikit kesombongannya. Dan apa gunanya semua ilmu dan keanggunannya sekarang? Dia sama miskinnya dengan Anda atau saya: lebih miskin, saya yakin: Anda menabung, dan saya melakukan sedikit usaha saya di jalan itu.”</p><p>Hareton mengizinkan Zillah untuk membantunya; dan Zillah merayunya hingga ia merasa senang; jadi, ketika Catherine datang, setengah melupakan penghinaan sebelumnya, ia mencoba membuat dirinya menyenangkan, menurut keterangan pengurus rumah tangga.</p><p>“Nyonya masuk,” katanya, “sedingin es batu, dan setinggi putri raja. Saya berdiri dan menawarkan tempat duduk saya di kursi berlengan. Tidak, dia menolak kesopanan saya. Earnshaw juga berdiri, dan menyuruhnya datang ke bangku panjang, dan duduk dekat perapian: dia yakin istrinya kelaparan.”</p><p>“'Aku sudah kelaparan selama sebulan lebih,' jawabnya, menekankan kata itu dengan nada menghina sebisa mungkin.</p><p>“Lalu ia mengambil kursi untuk dirinya sendiri, dan meletakkannya agak jauh dari kami berdua. Setelah duduk hingga merasa hangat, ia mulai melihat sekeliling, dan menemukan sejumlah buku di atas meja rias; ia segera berdiri lagi, berusaha meraihnya: tetapi buku-buku itu terlalu tinggi. Sepupunya, setelah mengamati usahanya sejenak, akhirnya memberanikan diri untuk membantunya; ia memegang gaunnya, dan sepupunya mengisi gaun itu dengan buku pertama yang ada di dekatnya.”</p><p>“Itu adalah kemajuan besar bagi pemuda itu. Dia tidak berterima kasih padanya; namun, dia merasa senang karena wanita itu menerima bantuannya, dan memberanikan diri untuk berdiri di belakang saat wanita itu memeriksa buku-buku itu, bahkan membungkuk dan menunjukkan apa yang menarik perhatiannya pada beberapa gambar lama yang ada di dalamnya; dia juga tidak gentar dengan gaya kurang ajar wanita itu saat menarik halaman dari jarinya: dia merasa cukup dengan mundur sedikit dan memandangi wanita itu alih-alih buku itu. Wanita itu terus membaca, atau mencari sesuatu untuk dibaca. Perhatiannya, secara bertahap, menjadi terpusat pada pengamatan rambut ikal tebal dan lembutnya: wajahnya tidak bisa dilihatnya, dan wanita itu tidak bisa melihatnya. Dan, mungkin, tidak sepenuhnya sadar akan apa yang dilakukannya, tetapi tertarik seperti anak kecil pada lilin, akhirnya dia beralih dari menatap ke menyentuh; dia mengulurkan tangannya dan membelai salah satu ikal, selembut seolah-olah itu adalah burung. Dia bisa saja menusuk lehernya dengan pisau, wanita itu tersentak saat menyentuhnya.”</p><p>“'Pergi sekarang juga! Berani-beraninya kau menyentuhku? Kenapa kau berhenti di situ?' teriaknya dengan nada jijik. 'Aku tak tahan lagi denganmu! Aku akan naik ke atas lagi jika kau mendekatiku.'&quot;</p><p>“Tuan Hareton mundur, tampak sebodoh mungkin: dia duduk di bangku panjang dengan tenang, dan wanita itu terus membolak-balik bukunya selama setengah jam lagi; akhirnya, Earnshaw menyeberang dan berbisik kepadaku.</p><p>“'Bisakah kau memintanya membacakan untuk kita, Zillah? Aku bosan tidak melakukan apa-apa; dan aku suka—aku ingin sekali mendengarnya! Jangan bilang aku menginginkannya, tapi mintalah sendiri.'&quot;</p><p>“'Tuan Hareton ingin Anda membacakan untuk kami, Bu,' kataku segera. 'Beliau akan sangat senang—beliau akan sangat berterima kasih.'&quot;</p><p>“Dia mengerutkan kening; dan sambil mendongak, menjawab—</p><p>“'Tuan Hareton, dan kalian semua, mohon pahami bahwa saya menolak segala kepura-puraan kebaikan yang kalian tunjukkan dengan munafik itu! Saya membenci kalian, dan tidak akan berbicara dengan siapa pun di antara kalian! Ketika saya rela mengorbankan hidup saya untuk satu kata baik, bahkan hanya untuk melihat salah satu wajah kalian, kalian semua menjauh. Tapi saya tidak akan mengeluh kepada kalian! Saya terpaksa datang ke sini karena kedinginan; bukan untuk menghibur kalian atau menikmati kebersamaan kalian.'&quot;</p><p>“'Apa yang bisa kulakukan?' Earnshaw memulai. 'Bagaimana mungkin aku yang disalahkan?'&quot;</p><p>“'Oh! Anda adalah pengecualian,' jawab Nyonya Heathcliff. 'Saya tidak pernah merindukan perhatian seperti Anda.'&quot;</p><p>“'Tapi aku sudah menawarkan lebih dari sekali, dan meminta,' katanya, sambil tersipu mendengar kelancangan wanita itu, 'aku meminta Tuan Heathcliff untuk mengizinkanku berjaga untukmu—'&quot;</p><p>“'Diam! Aku akan keluar rumah, atau ke mana saja, daripada mendengar suaramu yang menyebalkan itu di telingaku!' kata nyonya rumahku.</p><p>“Hareton bergumam bahwa dia mungkin akan masuk neraka karena dirinya! dan sambil melepaskan senapannya, ia tak lagi menahan diri dari kegiatan hari Minggunya. Ia kini berbicara dengan cukup bebas; dan wanita itu segera merasa perlu untuk menyendiri: tetapi embun beku telah tiba, dan, meskipun ia bangga, ia terpaksa semakin sering bergaul dengan kami. Namun, saya berhati-hati agar tidak ada lagi yang mencemooh kebaikan hati saya: sejak saat itu, saya menjadi kaku seperti dirinya; dan ia tidak memiliki kekasih atau orang yang menyukainya di antara kami: dan ia tidak pantas mendapatkannya; karena, biarkan mereka mengucapkan sepatah kata pun kepadanya, dan ia akan membalas tanpa menghormati siapa pun. Ia akan membentak majikannya sendiri, dan seolah menantangnya untuk memukulinya; dan semakin ia terluka, semakin ganas ia jadinya.”</p><p>Awalnya, setelah mendengar cerita ini dari Zillah, saya memutuskan untuk meninggalkan pekerjaan saya, menyewa sebuah pondok, dan mengajak Catherine untuk tinggal bersama saya: tetapi Tuan Heathcliff sama sekali tidak akan mengizinkan hal itu, sama seperti ia tidak akan mengizinkan Hareton tinggal di rumah terpisah; dan saat ini saya tidak melihat jalan keluar lain, kecuali jika dia bisa menikah lagi; dan rencana itu bukanlah wewenang saya untuk mengaturnya.</p><p>*** * * *</p><p>Demikianlah berakhir kisah Nyonya Dean. Terlepas dari ramalan dokter, saya pulih dengan cepat; dan meskipun baru minggu kedua bulan Januari, saya berencana untuk menunggang kuda dalam satu atau dua hari lagi, dan pergi ke Wuthering Heights, untuk memberi tahu tuan tanah saya bahwa saya akan menghabiskan enam bulan berikutnya di London; dan, jika dia mau, dia dapat mencari penyewa lain untuk menggantikan saya setelah bulan Oktober. Saya tidak akan mau melewati musim dingin lagi di sini untuk hal lain.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-xxix.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Xxix</span>
+    </a>
+    <a href="bab-xxxi.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xxxi</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XXX</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Saya telah mengunjungi Heights, tetapi saya belum melihatnya sejak dia pergi: Joseph menahan pintu ketika saya datang untuk menanyakan keberadaannya, dan tidak mengizinkan saya lewat. Dia mengatakan Nyonya Linton sedang "di luar," dan tuan rumah tidak ada di rumah. Zillah telah memberi tahu saya sesuatu tentang cara mereka menjalani hidup, jika tidak, saya hampir tidak akan tahu siapa yang sudah meninggal dan siapa yang masih hidup. Dia menganggap Catherine sombong, dan tidak menyukainya, saya bisa menebak dari cara bicaranya. Nona muda saya meminta bantuannya ketika dia pertama kali datang; tetapi Tuan Heathcliff menyuruhnya untuk mengurus urusannya sendiri, dan membiarkan menantunya mengurus dirinya sendiri; dan Zillah dengan senang hati menurutinya, karena dia adalah wanita yang berpikiran sempit dan egois. Catherine menunjukkan kekesalan seperti anak kecil atas pengabaian ini; membalasnya dengan penghinaan, dan dengan demikian menjadikan informan saya sebagai musuhnya, seolah-olah dia telah melakukan kesalahan besar padanya. Saya sempat berbincang panjang lebar dengan Zillah sekitar enam minggu yang lalu, tak lama sebelum Anda datang, suatu hari ketika kami berkumpul di padang rumput; dan inilah yang dia ceritakan kepada saya. “Hal pertama yang dilakukan Nyonya Linton,” katanya, “setibanya di Heights, adalah berlari ke atas, tanpa mengucapkan selamat malam kepada saya dan Joseph; dia mengunci diri di kamar Linton, dan tetap di sana sampai pagi. Kemudian, sementara tuan rumah dan Earnshaw sedang sarapan, dia masuk ke rumah, dan dengan gugup bertanya apakah dokter bisa dipanggil? Sepupunya sakit parah.” “'Kami tahu itu!' jawab Heathcliff; 'tetapi nyawanya tidak berharga sepeser pun, dan aku tidak akan menghabiskan sepeser pun untuknya.'" “‘Tapi aku tidak tahu bagaimana caranya,’ katanya; ‘dan jika tidak ada yang mau membantuku, dia akan mati!’” “'Keluar dari ruangan,' teriak sang majikan, 'dan jangan sampai aku mendengar sepatah kata pun lagi tentang dia! Tak seorang pun di sini peduli apa yang terjadi padanya; jika kau peduli, bertindaklah seperti perawat; jika tidak, kurung dia dan tinggalkan dia.'" “Lalu dia mulai mengganggu saya, dan saya berkata bahwa saya sudah muak dengan gangguan yang membosankan itu; kami masing-masing punya tugas, dan tugasnya adalah melayani Linton: Tuan Heathcliff menyuruh saya menyerahkan pekerjaan itu kepadanya. “Bagaimana mereka bisa bertahan bersama, aku tidak tahu. Kurasa dia sangat gelisah dan merintih siang dan malam; dan dia hampir tidak punya waktu istirahat: bisa ditebak dari wajahnya yang pucat dan matanya yang berat. Terkadang dia datang ke dapur dengan keadaan linglung, dan tampak seperti ingin meminta bantuan; tetapi aku tidak akan membantah tuan rumah: aku tidak pernah berani membantahnya, Nyonya Dean; dan, meskipun aku pikir salah jika Kenneth tidak dipanggil, itu bukan urusanku untuk memberi nasihat atau mengeluh, dan aku selalu menolak untuk ikut campur. Satu atau dua kali, setelah kami tidur, aku kebetulan membuka pintu lagi dan melihatnya duduk menangis di atas tangga; dan kemudian aku segera mengunci diri, karena takut tergerak untuk ikut campur. Aku memang mengasihaninya saat itu, aku yakin: tetapi aku tidak ingin kehilangan posisiku, kau tahu.” “Akhirnya, suatu malam dia dengan berani masuk ke kamarku, dan membuatku sangat ketakutan, dengan berkata, 'Katakan pada Tuan Heathcliff bahwa putranya sedang sekarat—aku yakin kali ini. Bangun, segera, dan beritahu dia.'" “Setelah mengucapkan kata-kata itu, dia menghilang lagi. Aku berbaring seperempat jam mendengarkan dan gemetar. Tidak ada yang bergerak—rumah itu sunyi.” “Dia salah paham,” kataku dalam hati. “Dia sudah melupakannya. Aku tidak perlu mengganggu mereka,” dan aku mulai tertidur. Namun tidurku terganggu untuk kedua kalinya oleh bunyi lonceng yang nyaring—satu-satunya lonceng yang kami miliki, dipasang khusus untuk Linton; dan kepala pelayan memanggilku untuk melihat apa yang terjadi, dan memberi tahu mereka bahwa dia tidak akan membiarkan suara itu terulang lagi. “Aku menyampaikan pesan Catherine. Ia mengumpat dalam hati, dan beberapa menit kemudian keluar dengan lilin menyala, lalu menuju kamar mereka. Aku mengikutinya. Nyonya Heathcliff duduk di samping tempat tidur, dengan tangan terlipat di lututnya. Ayah mertuanya mendekat, mengarahkan cahaya ke wajah Linton, menatapnya, dan menyentuhnya; setelah itu ia menoleh ke arah istrinya.” “'Sekarang—Catherine,' katanya, 'bagaimana perasaanmu?'" “Dia bodoh.” “'Bagaimana perasaanmu, Catherine?' dia mengulangi pertanyaannya. “'Dia aman, dan aku bebas,' jawabnya: 'Seharusnya aku merasa baik-baik saja—tetapi,' lanjutnya, dengan kepahitan yang tak bisa disembunyikannya, 'kau telah meninggalkanku begitu lama berjuang melawan kematian sendirian, sehingga aku hanya merasakan dan melihat kematian! Aku merasa seperti kematian!'" “Dan memang terlihat seperti itu! Aku memberinya sedikit anggur. Hareton dan Joseph, yang terbangun oleh dering telepon dan suara langkah kaki, dan mendengar percakapan kami dari luar, kini masuk. Kurasa Joseph ingin anak itu dipindahkan; Hareton tampak sedikit terganggu: meskipun ia lebih sibuk menatap Catherine daripada memikirkan Linton. Tetapi tuan rumah menyuruhnya kembali tidur: kami tidak membutuhkan bantuannya. Setelah itu, ia menyuruh Joseph memindahkan jenazah ke kamarnya, dan menyuruhku kembali ke kamarku, dan Nyonya Heathcliff tetap sendirian.” “Pagi harinya, ia menyuruhku memberitahunya bahwa ia harus turun untuk sarapan: ia telah melepas pakaiannya, dan tampak hendak tidur, dan mengatakan bahwa ia sakit; yang mana aku hampir tidak heran. Aku memberi tahu Tuan Heathcliff, dan ia menjawab, —'Baiklah, biarkan saja dia sampai setelah pemakaman; dan naiklah sesekali untuk mengambilkan apa yang dibutuhkannya; dan, begitu ia tampak lebih baik, beritahu aku.'" Menurut Zillah, Cathy tinggal di lantai atas selama dua minggu; ia mengunjungi Cathy dua kali sehari, dan sebenarnya ingin lebih ramah, tetapi upayanya untuk meningkatkan kebaikan selalu ditolak dengan keras dan segera. Heathcliff pernah datang untuk menunjukkan surat wasiat Linton kepadanya. Ia telah mewariskan seluruh harta miliknya, dan harta bergerak yang dulunya milik istrinya, kepada ayahnya: wanita malang itu diancam, atau dibujuk, untuk melakukan hal itu selama seminggu ketidakhadirannya, ketika pamannya meninggal. Karena masih di bawah umur, ia tidak dapat ikut campur dalam urusan tanah tersebut. Namun, Tuan Heathcliff telah mengklaim dan mempertahankan tanah itu atas hak istrinya dan juga haknya sendiri: saya kira secara hukum; bagaimanapun juga, Catherine, yang kekurangan uang dan teman, tidak dapat mengganggu kepemilikannya. “Tidak seorang pun,” kata Zillah, “pernah mendekati pintunya, kecuali sekali itu, kecuali aku; dan tidak ada yang bertanya apa pun tentangnya. Pertama kali dia turun ke rumah adalah pada suatu Minggu sore. Dia berteriak, ketika aku membawakan makan siangnya, bahwa dia tidak tahan lagi kedinginan; dan aku memberitahunya bahwa tuan rumah akan pergi ke Thrushcross Grange, dan Earnshaw dan aku tidak perlu menghalanginya untuk turun; jadi, begitu dia mendengar kuda Heathcliff berderap pergi, dia muncul, mengenakan pakaian hitam, dan rambut ikalnya yang berwarna kuning disisir ke belakang telinganya seperti orang Quaker: dia tidak bisa menyisirnya.” “Joseph dan saya biasanya pergi ke kapel pada hari Minggu:” gereja, (Anda tahu, sekarang tidak ada pendeta, jelas Ny. Dean; dan mereka menyebut tempat jemaat Metodis atau Baptis, saya tidak tahu yang mana, di Gimmerton, sebagai kapel.) “Joseph sudah pergi,” lanjutnya, “tetapi saya pikir lebih baik tinggal di rumah. Anak muda selalu lebih baik jika diawasi oleh orang yang lebih tua; dan Hareton, dengan segala rasa malunya, bukanlah contoh perilaku yang baik. Saya memberi tahu dia bahwa sepupunya kemungkinan besar akan duduk bersama kami, dan dia selalu terbiasa melihat hari Minggu dihormati; jadi dia sebaiknya meninggalkan senjata dan pekerjaan rumah tangganya, sementara sepupunya tinggal. Wajahnya memerah mendengar berita itu, dan dia memeriksa tangan dan pakaiannya. Minyak kereta api dan bubuk mesiu disingkirkan dalam sekejap. Saya melihat dia bermaksud menemani sepupunya; dan saya menduga, dari tingkahnya, dia ingin tampil rapi; jadi, sambil tertawa, sekeras yang tidak berani saya tertawa Ketika sang majikan datang, saya menawarkan bantuan kepadanya, jika dia mau, dan saya bercanda melihat kebingungannya. Dia menjadi cemberut, dan mulai mengumpat. “Nah, Nyonya Dean,” lanjut Zillah, melihat saya tidak senang dengan sikapnya, “Anda kebetulan berpikir putri Anda terlalu anggun untuk Tuan Hareton; dan kebetulan Anda benar: tetapi saya akui saya ingin sekali menurunkan sedikit kesombongannya. Dan apa gunanya semua ilmu dan keanggunannya sekarang? Dia sama miskinnya dengan Anda atau saya: lebih miskin, saya yakin: Anda menabung, dan saya melakukan sedikit usaha saya di jalan itu.” Hareton mengizinkan Zillah untuk membantunya; dan Zillah merayunya hingga ia merasa senang; jadi, ketika Catherine datang, setengah melupakan penghinaan sebelumnya, ia mencoba membuat dirinya menyenangkan, menurut keterangan pengurus rumah tangga. “Nyonya masuk,” katanya, “sedingin es batu, dan setinggi putri raja. Saya berdiri dan menawarkan tempat duduk saya di kursi berlengan. Tidak, dia menolak kesopanan saya. Earnshaw juga berdiri, dan menyuruhnya datang ke bangku panjang, dan duduk dekat perapian: dia yakin istrinya kelaparan.” “'Aku sudah kelaparan selama sebulan lebih,' jawabnya, menekankan kata itu dengan nada menghina sebisa mungkin. “Lalu ia mengambil kursi untuk dirinya sendiri, dan meletakkannya agak jauh dari kami berdua. Setelah duduk hingga merasa hangat, ia mulai melihat sekeliling, dan menemukan sejumlah buku di atas meja rias; ia segera berdiri lagi, berusaha meraihnya: tetapi buku-buku itu terlalu tinggi. Sepupunya, setelah mengamati usahanya sejenak, akhirnya memberanikan diri untuk membantunya; ia memegang gaunnya, dan sepupunya mengisi gaun itu dengan buku pertama yang ada di dekatnya.” “Itu adalah kemajuan besar bagi pemuda itu. Dia tidak berterima kasih padanya; namun, dia merasa senang karena wanita itu menerima bantuannya, dan memberanikan diri untuk berdiri di belakang saat wanita itu memeriksa buku-buku itu, bahkan membungkuk dan menunjukkan apa yang menarik perhatiannya pada beberapa gambar lama yang ada di dalamnya; dia juga tidak gentar dengan gaya kurang ajar wanita itu saat menarik halaman dari jarinya: dia merasa cukup dengan mundur sedikit dan memandangi wanita itu alih-alih buku itu. Wanita itu terus membaca, atau mencari sesuatu untuk dibaca. Perhatiannya, secara bertahap, menjadi terpusat pada pengamatan rambut ikal tebal dan lembutnya: wajahnya tidak bisa dilihatnya, dan wanita itu tidak bisa melihatnya. Dan, mungkin, tidak sepenuhnya sadar akan apa yang dilakukannya, tetapi tertarik seperti anak kecil pada lilin, akhirnya dia beralih dari menatap ke menyentuh; dia mengulurkan tangannya dan membelai salah satu ikal, selembut seolah-olah itu adalah burung. Dia bisa saja menusuk lehernya dengan pisau, wanita itu tersentak saat menyentuhnya.” “'Pergi sekarang juga! Berani-beraninya kau menyentuhku? Kenapa kau berhenti di situ?' teriaknya dengan nada jijik. 'Aku tak tahan lagi denganmu! Aku akan naik ke atas lagi jika kau mendekatiku.'" “Tuan Hareton mundur, tampak sebodoh mungkin: dia duduk di bangku panjang dengan tenang, dan wanita itu terus membolak-balik bukunya selama setengah jam lagi; akhirnya, Earnshaw menyeberang dan berbisik kepadaku. “'Bisakah kau memintanya membacakan untuk kita, Zillah? Aku bosan tidak melakukan apa-apa; dan aku suka—aku ingin sekali mendengarnya! Jangan bilang aku menginginkannya, tapi mintalah sendiri.'" “'Tuan Hareton ingin Anda membacakan untuk kami, Bu,' kataku segera. 'Beliau akan sangat senang—beliau akan sangat berterima kasih.'" “Dia mengerutkan kening; dan sambil mendongak, menjawab— “'Tuan Hareton, dan kalian semua, mohon pahami bahwa saya menolak segala kepura-puraan kebaikan yang kalian tunjukkan dengan munafik itu! Saya membenci kalian, dan tidak akan berbicara dengan siapa pun di antara kalian! Ketika saya rela mengorbankan hidup saya untuk satu kata baik, bahkan hanya untuk melihat salah satu wajah kalian, kalian semua menjauh. Tapi saya tidak akan mengeluh kepada kalian! Saya terpaksa datang ke sini karena kedinginan; bukan untuk menghibur kalian atau menikmati kebersamaan kalian.'" “'Apa yang bisa kulakukan?' Earnshaw memulai. 'Bagaimana mungkin aku yang disalahkan?'" “'Oh! Anda adalah pengecualian,' jawab Nyonya Heathcliff. 'Saya tidak pernah merindukan perhatian seperti Anda.'" “'Tapi aku sudah menawarkan lebih dari sekali, dan meminta,' katanya, sambil tersipu mendengar kelancangan wanita itu, 'aku meminta Tuan Heathcliff untuk mengizinkanku berjaga untukmu—'" “'Diam! Aku akan keluar rumah, atau ke mana saja, daripada mendengar suaramu yang menyebalkan itu di telingaku!' kata nyonya rumahku. “Hareton bergumam bahwa dia mungkin akan masuk neraka karena dirinya! dan sambil melepaskan senapannya, ia tak lagi menahan diri dari kegiatan hari Minggunya. Ia kini berbicara dengan cukup bebas; dan wanita itu segera merasa perlu untuk menyendiri: tetapi embun beku telah tiba, dan, meskipun ia bangga, ia terpaksa semakin sering bergaul dengan kami. Namun, saya berhati-hati agar tidak ada lagi yang mencemooh kebaikan hati saya: sejak saat itu, saya menjadi kaku seperti dirinya; dan ia tidak memiliki kekasih atau orang yang menyukainya di antara kami: dan ia tidak pantas mendapatkannya; karena, biarkan mereka mengucapkan sepatah kata pun kepadanya, dan ia akan membalas tanpa menghormati siapa pun. Ia akan membentak majikannya sendiri, dan seolah menantangnya untuk memukulinya; dan semakin ia terluka, semakin ganas ia jadinya.” Awalnya, setelah mendengar cerita ini dari Zillah, saya memutuskan untuk meninggalkan pekerjaan saya, menyewa sebuah pondok, dan mengajak Catherine untuk tinggal bersama saya: tetapi Tuan Heathcliff sama sekali tidak akan mengizinkan hal itu, sama seperti ia tidak akan mengizinkan Hareton tinggal di rumah terpisah; dan saat ini saya tidak melihat jalan keluar lain, kecuali jika dia bisa menikah lagi; dan rencana itu bukanlah wewenang saya untuk mengaturnya. *** * * * Demikianlah berakhir kisah Nyonya Dean. Terlepas dari ramalan dokter, saya pulih dengan cepat; dan meskipun baru minggu kedua bulan Januari, saya berencana untuk menunggang kuda dalam satu atau dua hari lagi, dan pergi ke Wuthering Heights, untuk memberi tahu tuan tanah saya bahwa saya akan menghabiskan enam bulan berikutnya di London; dan, jika dia mau, dia dapat mencari penyewa lain untuk menggantikan saya setelah bulan Oktober. Saya tidak akan mau melewati musim dingin lagi di sini untuk hal lain.</p>
-
-<div class="nav">
-  <a href="bab-xxix.html">⬅ Bab Xxix</a>
-  <a href="bab-xxxi.html">Bab Xxxi ➡</a>
-</div>
 
 </body>
 </html>

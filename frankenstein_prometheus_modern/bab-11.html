@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 11</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 11 - Bacaan digital klasik">
+<title>BAB 11 — Frankenstein</title>
+<meta name="description" content="Baca BAB 11 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-11.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 11 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 11 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-11.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 11 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 11 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 11",
+    "name": "BAB 11 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-11.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 11</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Dengan susah payah saya mengingat era awal keberadaan saya; semua peristiwa pada periode itu tampak membingungkan dan tidak jelas. Berbagai sensasi aneh menyelimuti saya, dan saya melihat, merasakan, mendengar, dan mencium pada saat yang bersamaan; dan memang butuh waktu lama sebelum saya belajar membedakan antara kerja berbagai indra saya. Secara bertahap, saya ingat, cahaya yang lebih kuat menekan saraf saya, sehingga saya terpaksa menutup mata. Kegelapan kemudian menyelimuti saya dan mengganggu saya, tetapi hampir belum saya merasakannya ketika, dengan membuka mata saya, seperti yang saya duga sekarang, cahaya kembali menyinari saya. Saya berjalan dan, saya yakin, turun, tetapi saya segera menemukan perubahan besar dalam sensasi saya. Sebelumnya, benda-benda gelap dan buram mengelilingi saya, kebal terhadap sentuhan atau penglihatan saya; tetapi sekarang saya mendapati bahwa saya dapat berkeliaran dengan bebas, tanpa hambatan yang tidak dapat saya atasi atau hindari. Cahaya menjadi semakin menyengat bagi saya, dan panasnya membuat saya lelah saat berjalan, saya mencari tempat di mana saya bisa menerima Naungan. Ini adalah hutan di dekat Ingolstadt; dan di sinilah aku berbaring di tepi sungai kecil, beristirahat dari kelelahan, sampai aku merasa tersiksa oleh rasa lapar dan haus. Hal ini membangunkan aku dari keadaan hampir tertidur, dan aku memakan beberapa buah beri yang kutemukan tergantung di pohon atau tergeletak di tanah. Aku memuaskan dahagaku di sungai kecil itu, lalu berbaring, dan tertidur lelap.</p><p>“Saat aku terbangun, hari sudah gelap; aku juga merasa kedinginan, dan setengah ketakutan, seolah-olah secara naluriah, mendapati diriku begitu kesepian. Sebelum meninggalkan apartemenmu, karena merasa kedinginan, aku menutupi diriku dengan beberapa pakaian, tetapi itu tidak cukup untuk melindungiku dari embun malam. Aku adalah orang yang malang, tak berdaya, dan sengsara; aku tidak tahu, dan tidak bisa membedakan, apa pun; tetapi merasakan sakit menyerangku dari segala sisi, aku duduk dan menangis.”</p><p>“Tak lama kemudian, cahaya lembut menyelimuti langit dan memberiku perasaan senang. Aku tersentak bangun dan melihat sosok bercahaya muncul dari antara pepohonan. [Bulan] kupandang dengan rasa takjub. Bulan bergerak perlahan, tetapi menerangi jalanku, dan aku kembali keluar mencari buah beri. Aku masih kedinginan ketika di bawah salah satu pohon aku menemukan jubah besar, yang kupakai untuk menutupi tubuhku, dan duduk di tanah. Tidak ada gagasan yang jelas yang memenuhi pikiranku; semuanya bercampur aduk. Aku merasakan cahaya, dan rasa lapar, dan haus, dan kegelapan; suara yang tak terhitung jumlahnya berdering di telingaku, dan di semua sisi berbagai aroma menyapaku; satu-satunya objek yang dapat kubedakan adalah bulan yang terang, dan aku menatapnya dengan senang hati.</p><p>“Beberapa pergantian siang dan malam berlalu, dan lingkaran malam telah sangat berkurang, ketika saya mulai membedakan sensasi saya satu sama lain. Perlahan-lahan saya melihat dengan jelas aliran jernih yang menyediakan air minum bagi saya dan pepohonan yang menaungi saya dengan dedaunan mereka. Saya senang ketika pertama kali menemukan bahwa suara yang menyenangkan, yang sering menyapa telinga saya, berasal dari tenggorokan hewan-hewan bersayap kecil yang sering menghalangi cahaya dari mata saya. Saya juga mulai mengamati, dengan lebih akurat, bentuk-bentuk yang mengelilingi saya dan merasakan batas-batas atap cahaya yang bersinar yang menaungi saya. Terkadang saya mencoba meniru nyanyian burung yang menyenangkan tetapi tidak mampu. Terkadang saya ingin mengungkapkan sensasi saya dengan cara saya sendiri, tetapi suara-suara kasar dan tidak jelas yang keluar dari saya membuat saya takut dan kembali terdiam.”</p><p>“Bulan telah menghilang dari malam, dan sekali lagi, dengan bentuk yang lebih redup, muncul kembali, sementara aku masih berada di hutan. Pada saat itu, sensasiku telah menjadi lebih jelas, dan pikiranku menerima ide-ide tambahan setiap hari. Mataku terbiasa dengan cahaya dan mampu melihat objek dalam bentuk aslinya; aku membedakan serangga dari tumbuhan, dan secara bertahap, satu tumbuhan dari tumbuhan lainnya. Aku mendapati bahwa burung pipit hanya mengeluarkan suara-suara kasar, sementara suara burung jalak dan burung murai manis dan memikat.”</p><p>“Suatu hari, ketika aku kedinginan, aku menemukan api yang ditinggalkan oleh beberapa pengemis yang berkeliaran, dan aku sangat gembira dengan kehangatan yang kurasakan darinya. Dalam kegembiraanku, aku memasukkan tanganku ke dalam bara api yang menyala, tetapi dengan cepat menariknya kembali sambil berteriak kesakitan. Betapa anehnya, pikirku, bahwa penyeBAB yang sama dapat menghasilkan efek yang berlawanan! Aku memeriksa bahan-bahan api itu, dan dengan gembira mendapati bahwa api itu terbuat dari kayu. Aku segera mengumpulkan beberapa ranting, tetapi ranting-ranting itu basah dan tidak mau terbakar. Aku sedih karenanya dan duduk diam mengamati cara kerja api itu. Kayu basah yang kuletakkan di dekat sumber panas mengering dan menjadi menyala. Aku merenungkan hal ini, dan dengan menyentuh berbagai ranting, aku menemukan penyeBABnya dan segera mengumpulkan banyak kayu, agar aku dapat mengeringkannya dan memiliki persediaan api yang melimpah. Ketika malam tiba dan membawa tidur bersamanya, aku sangat takut apiku akan padam. Aku menutupinya dengan hati-hati dengan kayu kering dan dedaunan dan meletakkan ranting-ranting basah di atasnya; dan kemudian, menyebarkan Dengan mengenakan jubah, aku berbaring di tanah dan tertidur lelap.</p><p>“Pagi hari ketika aku terbangun, dan hal pertama yang kulakukan adalah memeriksa api. Aku membuka penutupnya, dan angin sepoi-sepoi dengan cepat mengipasinya hingga menyala. Aku juga mengamati ini dan membuat kipas dari ranting, yang mengobarkan bara api ketika hampir padam. Ketika malam tiba kembali, aku dengan senang hati menemukan bahwa api memberikan cahaya sekaligus kehangatan dan penemuan unsur ini berguna bagiku dalam makanan, karena aku menemukan beberapa jeroan yang ditinggalkan para pelancong telah dipanggang, dan rasanya jauh lebih enak daripada buah beri yang kupetik dari pohon. Oleh karena itu, aku mencoba mengolah makananku dengan cara yang sama, meletakkannya di atas bara api yang menyala. Aku menemukan bahwa buah beri menjadi busuk karena cara ini, dan kacang-kacangan serta akar-akaran menjadi jauh lebih enak.”</p><p>“Namun, makanan menjadi langka, dan saya sering menghabiskan sepanjang hari mencari beberapa biji ek untuk meredakan rasa lapar. Ketika saya menemukannya, saya memutuskan untuk meninggalkan tempat yang selama ini saya huni, untuk mencari tempat di mana kebutuhan saya yang sedikit akan lebih mudah terpenuhi. Dalam pengasingan ini, saya sangat menyesali hilangnya api yang saya peroleh secara tidak sengaja dan tidak tahu bagaimana cara membuatnya kembali. Saya menghabiskan beberapa jam untuk mempertimbangkan kesulitan ini dengan serius, tetapi saya terpaksa menyerah untuk mencoba membuatnya, dan membungkus diri dengan jubah saya, saya berjalan melintasi hutan menuju matahari terbenam. Saya menghabiskan tiga hari dalam pengembaraan ini dan akhirnya menemukan daerah terbuka. Salju lebat telah turun semalam sebelumnya, dan ladang-ladang berwarna putih seragam; pemandangannya suram, dan kaki saya terasa dingin karena zat lembap dingin yang menutupi tanah.”</p><p>“Saat itu sekitar pukul tujuh pagi, dan saya sangat ingin mendapatkan makanan dan tempat berlindung; akhirnya saya melihat sebuah gubuk kecil di tanah yang agak tinggi, yang pastinya dibangun untuk kenyamanan seorang gembala. Pemandangan itu baru bagi saya, dan saya memeriksa bangunan itu dengan penuh rasa ingin tahu. Karena pintunya terbuka, saya masuk. Seorang lelaki tua duduk di dalamnya, dekat api, di mana ia sedang menyiapkan sarapannya. Ia menoleh ketika mendengar suara, dan menyadari kehadiran saya, berteriak keras, dan meninggalkan gubuk itu, berlari melintasi ladang dengan kecepatan yang hampir tidak mungkin dilakukan oleh tubuhnya yang lemah. Penampilannya, berbeda dari siapa pun yang pernah saya lihat sebelumnya, dan pelariannya agak mengejutkan saya. Tetapi saya terpesona oleh penampilan gubuk itu; di sini salju dan hujan tidak dapat menembus; tanahnya kering; dan itu tampak bagi saya sebagai tempat peristirahatan yang indah dan suci seperti Pandemonium yang tampak bagi iblis-iblis neraka setelah penderitaan mereka di lautan api. Saya dengan rakus melahap sisa-sisa sarapan gembala itu, yang terdiri dari roti, keju, susu, dan anggur; Namun, yang terakhir itu tidak saya sukai. Kemudian, karena kelelahan, saya berbaring di antara jerami dan tertidur.</p><p>“Saat itu tengah hari ketika saya terbangun, dan terpikat oleh kehangatan matahari yang bersinar terang di tanah putih, saya memutuskan untuk melanjutkan perjalanan; dan, menyimpan sisa sarapan petani di dompet yang saya temukan, saya melanjutkan perjalanan melintasi ladang selama beberapa jam, hingga saat matahari terbenam saya tiba di sebuah desa. Betapa menakjubkannya desa ini! Gubuk-gubuk, pondok-pondok yang lebih rapi, dan rumah-rumah megah secara bergantian memikat kekaguman saya. Sayuran di kebun, susu dan keju yang saya lihat diletakkan di jendela beberapa pondok, membangkitkan selera makan saya. Saya memasuki salah satu pondok terbaik, tetapi saya hampir belum sempat melangkahkan kaki ke dalam pintu ketika anak-anak menjerit, dan salah satu wanita pingsan. Seluruh desa gempar; beberapa melarikan diri, beberapa menyerang saya, hingga, dengan luka memar parah akibat batu dan berbagai macam senjata lempar lainnya, saya melarikan diri ke pedesaan terbuka dan dengan ketakutan berlindung di sebuah gubuk rendah, benar-benar kosong, dan tampak menyedihkan setelah istana-istana yang telah saya lihat di desa. Gubuk ini Namun, saya bergabung dengan sebuah pondok yang tampak rapi dan menyenangkan, tetapi setelah pengalaman pahit yang baru saja saya alami, saya tidak berani masuk ke dalamnya. Tempat perlindungan saya terbuat dari kayu, tetapi sangat rendah sehingga saya kesulitan duduk tegak di dalamnya. Namun, tidak ada kayu yang diletakkan di atas tanah yang membentuk lantai, tetapi tanah itu kering; dan meskipun angin masuk melalui celah-celah yang tak terhitung jumlahnya, saya merasa itu adalah tempat berlindung yang nyaman dari salju dan hujan.</p><p>“Di sinilah aku mundur dan berbaring, senang telah menemukan tempat berlindung, betapapun menyedihkannya, dari cuaca buruk musim ini, dan terlebih lagi dari kebiadaban manusia. Begitu fajar menyingsing, aku merangkak keluar dari kandangku, agar aku dapat melihat pondok di sebelahnya dan mengetahui apakah aku dapat tetap tinggal di tempat tinggal yang telah kutemukan. Tempat itu terletak di belakang pondok dan dikelilingi di sisi-sisi yang terbuka oleh kandang BABi dan kolam air jernih. Satu bagian terbuka, dan melalui itu aku merangkak masuk; tetapi sekarang aku menutupi setiap celah yang mungkin membuatku terlihat dengan batu dan kayu, namun sedemikian rupa sehingga aku dapat memindahkannya jika perlu untuk keluar; semua cahaya yang kuterima berasal dari dalam kandang, dan itu sudah cukup bagiku.</p><p>“Setelah mengatur tempat tinggalku dan melapisinya dengan jerami bersih, aku pun beristirahat, karena aku melihat sosok seorang pria dari kejauhan, dan aku masih ingat betul perlakuan yang kuterima malam sebelumnya sehingga aku tidak bisa mempercayai kekuatannya. Namun, sebelumnya aku telah menyiapkan bekal untuk hari itu berupa sepotong roti kasar yang kucuri, dan sebuah cangkir agar aku bisa minum air bersih yang mengalir di dekat tempat persembunyianku dengan lebih nyaman daripada menggunakan tanganku. Lantainya sedikit ditinggikan, sehingga tetap kering, dan karena letaknya dekat dengan cerobong asap pondok, tempat itu cukup hangat.”</p><p>“Dengan bekal yang ada, saya memutuskan untuk tinggal di gubuk ini sampai sesuatu terjadi yang dapat mengubah keputusan saya. Memang, tempat ini bagaikan surga dibandingkan dengan hutan yang suram, tempat tinggal saya sebelumnya, ranting-ranting yang meneteskan air hujan, dan tanah yang lembap. Saya menikmati sarapan saya dan hendak menyingkirkan papan untuk mengambil sedikit air ketika saya mendengar langkah kaki, dan mengintip melalui celah kecil, saya melihat seorang gadis muda, dengan ember di kepalanya, lewat di depan gubuk saya. Gadis itu masih muda dan berperilaku lembut, tidak seperti yang saya temukan pada para penghuni pondok dan pelayan rumah pertanian. Namun, pakaiannya sangat sederhana, hanya rok biru kasar dan jaket linen; rambut pirangnya dikepang tetapi tidak dihiasi: dia tampak sabar namun sedih. Saya kehilangan jejaknya, dan sekitar seperempat jam kemudian dia kembali membawa ember, yang sekarang sebagian terisi susu. Saat dia berjalan, tampak terbebani oleh beban itu, seorang pemuda menemuinya, yang wajahnya menunjukkan kesedihan yang lebih dalam. Mengucapkan beberapa kata Dengan suara bernada melankolis, ia mengambil ember dari kepala gadis itu dan membawanya sendiri ke pondok. Gadis itu mengikutinya, dan mereka menghilang. Tak lama kemudian aku melihat pemuda itu lagi, dengan beberapa peralatan di tangannya, menyeberangi ladang di belakang pondok; dan gadis itu juga sibuk, kadang di dalam rumah dan kadang di halaman.</p><p>“Saat memeriksa tempat tinggalku, aku menemukan bahwa salah satu jendela pondok itu dulunya menempati sebagian darinya, tetapi kaca-kacanya telah ditutup dengan kayu. Di salah satu kaca itu terdapat celah kecil yang hampir tak terlihat, yang hanya bisa ditembus mata. Melalui celah ini terlihat sebuah ruangan kecil, bercat putih dan bersih tetapi sangat kosong tanpa perabot. Di salah satu sudut, dekat perapian kecil, duduk seorang lelaki tua, menyandarkan kepalanya di tangannya dengan sikap sedih. Gadis muda itu sibuk merapikan pondok; tetapi kemudian ia mengambil sesuatu dari laci, yang menyibukkan tangannya, dan ia duduk di samping lelaki tua itu, yang, mengambil sebuah alat musik, mulai bermain dan menghasilkan suara yang lebih merdu daripada suara burung murai atau burung bulbul. Itu pemandangan yang indah, bahkan bagiku, orang malang yang belum pernah melihat sesuatu yang indah sebelumnya. Rambut perak dan wajah ramah penghuni pondok tua itu membuatku kagum, sementara tingkah laku lembut gadis itu memikat hatiku. Ia memainkan melodi sedih yang manis yang kurasakan menarik Air mata mengalir dari mata temannya yang ramah, yang tidak diperhatikan oleh lelaki tua itu, sampai wanita itu terisak-isak; kemudian ia mengucapkan beberapa suara, dan wanita cantik itu, meninggalkan pekerjaannya, berlutut di kakinya. Ia mengangkatnya dan tersenyum dengan kebaikan dan kasih sayang sedemikian rupa sehingga aku merasakan sensasi yang aneh dan luar biasa; itu adalah campuran rasa sakit dan kesenangan, yang belum pernah kualami sebelumnya, baik karena lapar atau dingin, hangat atau makanan; dan aku menjauh dari jendela, tidak mampu menahan emosi ini.</p><p>“Tak lama kemudian pemuda itu kembali, membawa beban kayu di pundaknya. Gadis itu menemuinya di pintu, membantunya meringankan bebannya, dan membawa sebagian kayu bakar ke dalam pondok, lalu menaruhnya di perapian; kemudian ia dan pemuda itu pergi ke sudut pondok, dan pemuda itu menunjukkan kepadanya sepotong roti besar dan sepotong keju. Gadis itu tampak senang dan pergi ke kebun untuk mengambil beberapa akar dan tanaman, yang kemudian ia masukkan ke dalam air, dan kemudian ke atas perapian. Setelah itu ia melanjutkan pekerjaannya, sementara pemuda itu pergi ke kebun dan tampak sibuk menggali dan mencabut akar. Setelah ia sibuk melakukan itu sekitar satu jam, gadis muda itu bergabung dengannya dan mereka masuk ke pondok bersama-sama.</p><p>“Sementara itu, lelaki tua itu termenung, tetapi saat melihat teman-temannya, ia tampak lebih ceria, dan mereka duduk untuk makan. Makanan pun cepat habis. Wanita muda itu kembali sibuk merapikan pondok, lelaki tua itu berjalan di depan pondok di bawah sinar matahari selama beberapa menit, bersandar pada lengan pemuda itu. Tidak ada yang dapat menandingi keindahan kontras antara dua makhluk luar biasa ini. Yang satu tua, dengan rambut perak dan wajah yang berseri-seri penuh kebaikan dan kasih sayang; yang lebih muda bertubuh ramping dan anggun, dan fitur wajahnya dibentuk dengan simetri yang sangat indah, namun mata dan sikapnya mengungkapkan kesedihan dan keputusasaan yang mendalam. Lelaki tua itu kembali ke pondok, dan pemuda itu, dengan peralatan yang berbeda dari yang digunakannya di pagi hari, melangkah melintasi ladang.”</p><p>“Malam dengan cepat tiba, tetapi yang sangat mengejutkan saya, saya menemukan bahwa para penghuni pondok memiliki cara untuk memperpanjang waktu terang dengan menggunakan lilin, dan saya senang menemukan bahwa terbenamnya matahari tidak mengakhiri kesenangan yang saya alami dalam mengamati tetangga manusia saya. Di malam hari, gadis muda dan temannya sibuk dengan berbagai pekerjaan yang tidak saya mengerti; dan lelaki tua itu kembali memainkan alat musik yang menghasilkan suara-suara ilahi yang telah mempesona saya di pagi hari. Begitu selesai, pemuda itu mulai, bukan bermain, tetapi mengeluarkan suara-suara yang monoton, dan tidak menyerupai harmoni alat musik lelaki tua itu maupun nyanyian burung; saya kemudian mengetahui bahwa dia membaca dengan keras, tetapi pada saat itu saya tidak tahu apa pun tentang ilmu kata atau huruf.”</p><p>“Setelah beberapa saat sibuk dengan hal itu, keluarga tersebut mematikan lampu mereka dan, seperti yang saya duga, pergi beristirahat.”</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-10.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 10</span>
+    </a>
+    <a href="bab-12.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 12</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 11</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Dengan susah payah saya mengingat era awal keberadaan saya; semua peristiwa pada periode itu tampak membingungkan dan tidak jelas. Berbagai sensasi aneh menyelimuti saya, dan saya melihat, merasakan, mendengar, dan mencium pada saat yang bersamaan; dan memang butuh waktu lama sebelum saya belajar membedakan antara kerja berbagai indra saya. Secara bertahap, saya ingat, cahaya yang lebih kuat menekan saraf saya, sehingga saya terpaksa menutup mata. Kegelapan kemudian menyelimuti saya dan mengganggu saya, tetapi hampir belum saya merasakannya ketika, dengan membuka mata saya, seperti yang saya duga sekarang, cahaya kembali menyinari saya. Saya berjalan dan, saya yakin, turun, tetapi saya segera menemukan perubahan besar dalam sensasi saya. Sebelumnya, benda-benda gelap dan buram mengelilingi saya, kebal terhadap sentuhan atau penglihatan saya; tetapi sekarang saya mendapati bahwa saya dapat berkeliaran dengan bebas, tanpa hambatan yang tidak dapat saya atasi atau hindari. Cahaya menjadi semakin menyengat bagi saya, dan panasnya membuat saya lelah saat berjalan, saya mencari tempat di mana saya bisa menerima Naungan. Ini adalah hutan di dekat Ingolstadt; dan di sinilah aku berbaring di tepi sungai kecil, beristirahat dari kelelahan, sampai aku merasa tersiksa oleh rasa lapar dan haus. Hal ini membangunkan aku dari keadaan hampir tertidur, dan aku memakan beberapa buah beri yang kutemukan tergantung di pohon atau tergeletak di tanah. Aku memuaskan dahagaku di sungai kecil itu, lalu berbaring, dan tertidur lelap. “Saat aku terbangun, hari sudah gelap; aku juga merasa kedinginan, dan setengah ketakutan, seolah-olah secara naluriah, mendapati diriku begitu kesepian. Sebelum meninggalkan apartemenmu, karena merasa kedinginan, aku menutupi diriku dengan beberapa pakaian, tetapi itu tidak cukup untuk melindungiku dari embun malam. Aku adalah orang yang malang, tak berdaya, dan sengsara; aku tidak tahu, dan tidak bisa membedakan, apa pun; tetapi merasakan sakit menyerangku dari segala sisi, aku duduk dan menangis.” “Tak lama kemudian, cahaya lembut menyelimuti langit dan memberiku perasaan senang. Aku tersentak bangun dan melihat sosok bercahaya muncul dari antara pepohonan. [Bulan] kupandang dengan rasa takjub. Bulan bergerak perlahan, tetapi menerangi jalanku, dan aku kembali keluar mencari buah beri. Aku masih kedinginan ketika di bawah salah satu pohon aku menemukan jubah besar, yang kupakai untuk menutupi tubuhku, dan duduk di tanah. Tidak ada gagasan yang jelas yang memenuhi pikiranku; semuanya bercampur aduk. Aku merasakan cahaya, dan rasa lapar, dan haus, dan kegelapan; suara yang tak terhitung jumlahnya berdering di telingaku, dan di semua sisi berbagai aroma menyapaku; satu-satunya objek yang dapat kubedakan adalah bulan yang terang, dan aku menatapnya dengan senang hati. “Beberapa pergantian siang dan malam berlalu, dan lingkaran malam telah sangat berkurang, ketika saya mulai membedakan sensasi saya satu sama lain. Perlahan-lahan saya melihat dengan jelas aliran jernih yang menyediakan air minum bagi saya dan pepohonan yang menaungi saya dengan dedaunan mereka. Saya senang ketika pertama kali menemukan bahwa suara yang menyenangkan, yang sering menyapa telinga saya, berasal dari tenggorokan hewan-hewan bersayap kecil yang sering menghalangi cahaya dari mata saya. Saya juga mulai mengamati, dengan lebih akurat, bentuk-bentuk yang mengelilingi saya dan merasakan batas-batas atap cahaya yang bersinar yang menaungi saya. Terkadang saya mencoba meniru nyanyian burung yang menyenangkan tetapi tidak mampu. Terkadang saya ingin mengungkapkan sensasi saya dengan cara saya sendiri, tetapi suara-suara kasar dan tidak jelas yang keluar dari saya membuat saya takut dan kembali terdiam.” “Bulan telah menghilang dari malam, dan sekali lagi, dengan bentuk yang lebih redup, muncul kembali, sementara aku masih berada di hutan. Pada saat itu, sensasiku telah menjadi lebih jelas, dan pikiranku menerima ide-ide tambahan setiap hari. Mataku terbiasa dengan cahaya dan mampu melihat objek dalam bentuk aslinya; aku membedakan serangga dari tumbuhan, dan secara bertahap, satu tumbuhan dari tumbuhan lainnya. Aku mendapati bahwa burung pipit hanya mengeluarkan suara-suara kasar, sementara suara burung jalak dan burung murai manis dan memikat.” “Suatu hari, ketika aku kedinginan, aku menemukan api yang ditinggalkan oleh beberapa pengemis yang berkeliaran, dan aku sangat gembira dengan kehangatan yang kurasakan darinya. Dalam kegembiraanku, aku memasukkan tanganku ke dalam bara api yang menyala, tetapi dengan cepat menariknya kembali sambil berteriak kesakitan. Betapa anehnya, pikirku, bahwa penyeBAB yang sama dapat menghasilkan efek yang berlawanan! Aku memeriksa bahan-bahan api itu, dan dengan gembira mendapati bahwa api itu terbuat dari kayu. Aku segera mengumpulkan beberapa ranting, tetapi ranting-ranting itu basah dan tidak mau terbakar. Aku sedih karenanya dan duduk diam mengamati cara kerja api itu. Kayu basah yang kuletakkan di dekat sumber panas mengering dan menjadi menyala. Aku merenungkan hal ini, dan dengan menyentuh berbagai ranting, aku menemukan penyeBABnya dan segera mengumpulkan banyak kayu, agar aku dapat mengeringkannya dan memiliki persediaan api yang melimpah. Ketika malam tiba dan membawa tidur bersamanya, aku sangat takut apiku akan padam. Aku menutupinya dengan hati-hati dengan kayu kering dan dedaunan dan meletakkan ranting-ranting basah di atasnya; dan kemudian, menyebarkan Dengan mengenakan jubah, aku berbaring di tanah dan tertidur lelap. “Pagi hari ketika aku terbangun, dan hal pertama yang kulakukan adalah memeriksa api. Aku membuka penutupnya, dan angin sepoi-sepoi dengan cepat mengipasinya hingga menyala. Aku juga mengamati ini dan membuat kipas dari ranting, yang mengobarkan bara api ketika hampir padam. Ketika malam tiba kembali, aku dengan senang hati menemukan bahwa api memberikan cahaya sekaligus kehangatan dan penemuan unsur ini berguna bagiku dalam makanan, karena aku menemukan beberapa jeroan yang ditinggalkan para pelancong telah dipanggang, dan rasanya jauh lebih enak daripada buah beri yang kupetik dari pohon. Oleh karena itu, aku mencoba mengolah makananku dengan cara yang sama, meletakkannya di atas bara api yang menyala. Aku menemukan bahwa buah beri menjadi busuk karena cara ini, dan kacang-kacangan serta akar-akaran menjadi jauh lebih enak.” “Namun, makanan menjadi langka, dan saya sering menghabiskan sepanjang hari mencari beberapa biji ek untuk meredakan rasa lapar. Ketika saya menemukannya, saya memutuskan untuk meninggalkan tempat yang selama ini saya huni, untuk mencari tempat di mana kebutuhan saya yang sedikit akan lebih mudah terpenuhi. Dalam pengasingan ini, saya sangat menyesali hilangnya api yang saya peroleh secara tidak sengaja dan tidak tahu bagaimana cara membuatnya kembali. Saya menghabiskan beberapa jam untuk mempertimbangkan kesulitan ini dengan serius, tetapi saya terpaksa menyerah untuk mencoba membuatnya, dan membungkus diri dengan jubah saya, saya berjalan melintasi hutan menuju matahari terbenam. Saya menghabiskan tiga hari dalam pengembaraan ini dan akhirnya menemukan daerah terbuka. Salju lebat telah turun semalam sebelumnya, dan ladang-ladang berwarna putih seragam; pemandangannya suram, dan kaki saya terasa dingin karena zat lembap dingin yang menutupi tanah.” “Saat itu sekitar pukul tujuh pagi, dan saya sangat ingin mendapatkan makanan dan tempat berlindung; akhirnya saya melihat sebuah gubuk kecil di tanah yang agak tinggi, yang pastinya dibangun untuk kenyamanan seorang gembala. Pemandangan itu baru bagi saya, dan saya memeriksa bangunan itu dengan penuh rasa ingin tahu. Karena pintunya terbuka, saya masuk. Seorang lelaki tua duduk di dalamnya, dekat api, di mana ia sedang menyiapkan sarapannya. Ia menoleh ketika mendengar suara, dan menyadari kehadiran saya, berteriak keras, dan meninggalkan gubuk itu, berlari melintasi ladang dengan kecepatan yang hampir tidak mungkin dilakukan oleh tubuhnya yang lemah. Penampilannya, berbeda dari siapa pun yang pernah saya lihat sebelumnya, dan pelariannya agak mengejutkan saya. Tetapi saya terpesona oleh penampilan gubuk itu; di sini salju dan hujan tidak dapat menembus; tanahnya kering; dan itu tampak bagi saya sebagai tempat peristirahatan yang indah dan suci seperti Pandemonium yang tampak bagi iblis-iblis neraka setelah penderitaan mereka di lautan api. Saya dengan rakus melahap sisa-sisa sarapan gembala itu, yang terdiri dari roti, keju, susu, dan anggur; Namun, yang terakhir itu tidak saya sukai. Kemudian, karena kelelahan, saya berbaring di antara jerami dan tertidur. “Saat itu tengah hari ketika saya terbangun, dan terpikat oleh kehangatan matahari yang bersinar terang di tanah putih, saya memutuskan untuk melanjutkan perjalanan; dan, menyimpan sisa sarapan petani di dompet yang saya temukan, saya melanjutkan perjalanan melintasi ladang selama beberapa jam, hingga saat matahari terbenam saya tiba di sebuah desa. Betapa menakjubkannya desa ini! Gubuk-gubuk, pondok-pondok yang lebih rapi, dan rumah-rumah megah secara bergantian memikat kekaguman saya. Sayuran di kebun, susu dan keju yang saya lihat diletakkan di jendela beberapa pondok, membangkitkan selera makan saya. Saya memasuki salah satu pondok terbaik, tetapi saya hampir belum sempat melangkahkan kaki ke dalam pintu ketika anak-anak menjerit, dan salah satu wanita pingsan. Seluruh desa gempar; beberapa melarikan diri, beberapa menyerang saya, hingga, dengan luka memar parah akibat batu dan berbagai macam senjata lempar lainnya, saya melarikan diri ke pedesaan terbuka dan dengan ketakutan berlindung di sebuah gubuk rendah, benar-benar kosong, dan tampak menyedihkan setelah istana-istana yang telah saya lihat di desa. Gubuk ini Namun, saya bergabung dengan sebuah pondok yang tampak rapi dan menyenangkan, tetapi setelah pengalaman pahit yang baru saja saya alami, saya tidak berani masuk ke dalamnya. Tempat perlindungan saya terbuat dari kayu, tetapi sangat rendah sehingga saya kesulitan duduk tegak di dalamnya. Namun, tidak ada kayu yang diletakkan di atas tanah yang membentuk lantai, tetapi tanah itu kering; dan meskipun angin masuk melalui celah-celah yang tak terhitung jumlahnya, saya merasa itu adalah tempat berlindung yang nyaman dari salju dan hujan. “Di sinilah aku mundur dan berbaring, senang telah menemukan tempat berlindung, betapapun menyedihkannya, dari cuaca buruk musim ini, dan terlebih lagi dari kebiadaban manusia. Begitu fajar menyingsing, aku merangkak keluar dari kandangku, agar aku dapat melihat pondok di sebelahnya dan mengetahui apakah aku dapat tetap tinggal di tempat tinggal yang telah kutemukan. Tempat itu terletak di belakang pondok dan dikelilingi di sisi-sisi yang terbuka oleh kandang BABi dan kolam air jernih. Satu bagian terbuka, dan melalui itu aku merangkak masuk; tetapi sekarang aku menutupi setiap celah yang mungkin membuatku terlihat dengan batu dan kayu, namun sedemikian rupa sehingga aku dapat memindahkannya jika perlu untuk keluar; semua cahaya yang kuterima berasal dari dalam kandang, dan itu sudah cukup bagiku. “Setelah mengatur tempat tinggalku dan melapisinya dengan jerami bersih, aku pun beristirahat, karena aku melihat sosok seorang pria dari kejauhan, dan aku masih ingat betul perlakuan yang kuterima malam sebelumnya sehingga aku tidak bisa mempercayai kekuatannya. Namun, sebelumnya aku telah menyiapkan bekal untuk hari itu berupa sepotong roti kasar yang kucuri, dan sebuah cangkir agar aku bisa minum air bersih yang mengalir di dekat tempat persembunyianku dengan lebih nyaman daripada menggunakan tanganku. Lantainya sedikit ditinggikan, sehingga tetap kering, dan karena letaknya dekat dengan cerobong asap pondok, tempat itu cukup hangat.” “Dengan bekal yang ada, saya memutuskan untuk tinggal di gubuk ini sampai sesuatu terjadi yang dapat mengubah keputusan saya. Memang, tempat ini bagaikan surga dibandingkan dengan hutan yang suram, tempat tinggal saya sebelumnya, ranting-ranting yang meneteskan air hujan, dan tanah yang lembap. Saya menikmati sarapan saya dan hendak menyingkirkan papan untuk mengambil sedikit air ketika saya mendengar langkah kaki, dan mengintip melalui celah kecil, saya melihat seorang gadis muda, dengan ember di kepalanya, lewat di depan gubuk saya. Gadis itu masih muda dan berperilaku lembut, tidak seperti yang saya temukan pada para penghuni pondok dan pelayan rumah pertanian. Namun, pakaiannya sangat sederhana, hanya rok biru kasar dan jaket linen; rambut pirangnya dikepang tetapi tidak dihiasi: dia tampak sabar namun sedih. Saya kehilangan jejaknya, dan sekitar seperempat jam kemudian dia kembali membawa ember, yang sekarang sebagian terisi susu. Saat dia berjalan, tampak terbebani oleh beban itu, seorang pemuda menemuinya, yang wajahnya menunjukkan kesedihan yang lebih dalam. Mengucapkan beberapa kata Dengan suara bernada melankolis, ia mengambil ember dari kepala gadis itu dan membawanya sendiri ke pondok. Gadis itu mengikutinya, dan mereka menghilang. Tak lama kemudian aku melihat pemuda itu lagi, dengan beberapa peralatan di tangannya, menyeberangi ladang di belakang pondok; dan gadis itu juga sibuk, kadang di dalam rumah dan kadang di halaman. “Saat memeriksa tempat tinggalku, aku menemukan bahwa salah satu jendela pondok itu dulunya menempati sebagian darinya, tetapi kaca-kacanya telah ditutup dengan kayu. Di salah satu kaca itu terdapat celah kecil yang hampir tak terlihat, yang hanya bisa ditembus mata. Melalui celah ini terlihat sebuah ruangan kecil, bercat putih dan bersih tetapi sangat kosong tanpa perabot. Di salah satu sudut, dekat perapian kecil, duduk seorang lelaki tua, menyandarkan kepalanya di tangannya dengan sikap sedih. Gadis muda itu sibuk merapikan pondok; tetapi kemudian ia mengambil sesuatu dari laci, yang menyibukkan tangannya, dan ia duduk di samping lelaki tua itu, yang, mengambil sebuah alat musik, mulai bermain dan menghasilkan suara yang lebih merdu daripada suara burung murai atau burung bulbul. Itu pemandangan yang indah, bahkan bagiku, orang malang yang belum pernah melihat sesuatu yang indah sebelumnya. Rambut perak dan wajah ramah penghuni pondok tua itu membuatku kagum, sementara tingkah laku lembut gadis itu memikat hatiku. Ia memainkan melodi sedih yang manis yang kurasakan menarik Air mata mengalir dari mata temannya yang ramah, yang tidak diperhatikan oleh lelaki tua itu, sampai wanita itu terisak-isak; kemudian ia mengucapkan beberapa suara, dan wanita cantik itu, meninggalkan pekerjaannya, berlutut di kakinya. Ia mengangkatnya dan tersenyum dengan kebaikan dan kasih sayang sedemikian rupa sehingga aku merasakan sensasi yang aneh dan luar biasa; itu adalah campuran rasa sakit dan kesenangan, yang belum pernah kualami sebelumnya, baik karena lapar atau dingin, hangat atau makanan; dan aku menjauh dari jendela, tidak mampu menahan emosi ini. “Tak lama kemudian pemuda itu kembali, membawa beban kayu di pundaknya. Gadis itu menemuinya di pintu, membantunya meringankan bebannya, dan membawa sebagian kayu bakar ke dalam pondok, lalu menaruhnya di perapian; kemudian ia dan pemuda itu pergi ke sudut pondok, dan pemuda itu menunjukkan kepadanya sepotong roti besar dan sepotong keju. Gadis itu tampak senang dan pergi ke kebun untuk mengambil beberapa akar dan tanaman, yang kemudian ia masukkan ke dalam air, dan kemudian ke atas perapian. Setelah itu ia melanjutkan pekerjaannya, sementara pemuda itu pergi ke kebun dan tampak sibuk menggali dan mencabut akar. Setelah ia sibuk melakukan itu sekitar satu jam, gadis muda itu bergabung dengannya dan mereka masuk ke pondok bersama-sama. “Sementara itu, lelaki tua itu termenung, tetapi saat melihat teman-temannya, ia tampak lebih ceria, dan mereka duduk untuk makan. Makanan pun cepat habis. Wanita muda itu kembali sibuk merapikan pondok, lelaki tua itu berjalan di depan pondok di bawah sinar matahari selama beberapa menit, bersandar pada lengan pemuda itu. Tidak ada yang dapat menandingi keindahan kontras antara dua makhluk luar biasa ini. Yang satu tua, dengan rambut perak dan wajah yang berseri-seri penuh kebaikan dan kasih sayang; yang lebih muda bertubuh ramping dan anggun, dan fitur wajahnya dibentuk dengan simetri yang sangat indah, namun mata dan sikapnya mengungkapkan kesedihan dan keputusasaan yang mendalam. Lelaki tua itu kembali ke pondok, dan pemuda itu, dengan peralatan yang berbeda dari yang digunakannya di pagi hari, melangkah melintasi ladang.” “Malam dengan cepat tiba, tetapi yang sangat mengejutkan saya, saya menemukan bahwa para penghuni pondok memiliki cara untuk memperpanjang waktu terang dengan menggunakan lilin, dan saya senang menemukan bahwa terbenamnya matahari tidak mengakhiri kesenangan yang saya alami dalam mengamati tetangga manusia saya. Di malam hari, gadis muda dan temannya sibuk dengan berbagai pekerjaan yang tidak saya mengerti; dan lelaki tua itu kembali memainkan alat musik yang menghasilkan suara-suara ilahi yang telah mempesona saya di pagi hari. Begitu selesai, pemuda itu mulai, bukan bermain, tetapi mengeluarkan suara-suara yang monoton, dan tidak menyerupai harmoni alat musik lelaki tua itu maupun nyanyian burung; saya kemudian mengetahui bahwa dia membaca dengan keras, tetapi pada saat itu saya tidak tahu apa pun tentang ilmu kata atau huruf.” “Setelah beberapa saat sibuk dengan hal itu, keluarga tersebut mematikan lampu mereka dan, seperti yang saya duga, pergi beristirahat.”</p>
-
-<div class="nav">
-  <a href="bab-10.html">⬅ Bab 10</a>
-  <a href="bab-12.html">Bab 12 ➡</a>
-</div>
 
 </body>
 </html>

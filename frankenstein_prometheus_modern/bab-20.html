@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 20</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 20 - Bacaan digital klasik">
+<title>BAB 20 — Frankenstein</title>
+<meta name="description" content="Baca BAB 20 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-20.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 20 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 20 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-20.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 20 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 20 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 20",
+    "name": "BAB 20 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-20.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 20</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Suatu malam aku duduk di laboratoriumku; matahari telah terbenam, dan bulan baru saja terbit dari laut; aku tidak memiliki cukup cahaya untuk pekerjaanku, dan aku tetap diam, berhenti sejenak mempertimbangkan apakah aku harus meninggalkan pekerjaanku untuk malam itu atau mempercepat penyelesaiannya dengan perhatian tanpa henti. Saat aku duduk, serangkaian pemikiran muncul dalam benakku yang membawaku untuk mempertimbangkan dampak dari apa yang sedang kulakukan sekarang. Tiga tahun sebelumnya, aku terlibat dalam hal yang sama dan telah menciptakan makhluk jahat yang kebiadabannya yang tak tertandingi telah menghancurkan hatiku dan selamanya memenuhinya dengan penyesalan yang paling pahit. Sekarang aku akan membentuk makhluk lain yang wataknya sama-sama tidak kuketahui; dia mungkin menjadi sepuluh ribu kali lebih jahat daripada pasangannya dan menikmati, demi dirinya sendiri, pembunuhan dan kesengsaraan. Dia telah bersumpah untuk meninggalkan lingkungan manusia dan bersembunyi di padang pasir, tetapi dia tidak; dan dia, yang kemungkinan besar akan menjadi hewan yang berpikir dan bernalar, mungkin menolak untuk mematuhi perjanjian yang dibuat sebelum penciptaannya. Mereka bahkan mungkin saling membenci; Makhluk yang sudah hidup itu membenci kecacatannya sendiri, dan bukankah ia mungkin akan lebih jijik lagi ketika kecacatan itu muncul di hadapannya dalam wujud perempuan? Perempuan itu pun mungkin akan berpaling dengan jijik darinya kepada keindahan laki-laki yang lebih unggul; ia mungkin akan meninggalkannya, dan ia akan kembali sendirian, jengkel karena provokasi baru berupa ditinggalkan oleh sesama jenisnya.</p><p>Sekalipun mereka meninggalkan Eropa dan mendiami gurun-gurun dunia baru, salah satu hasil pertama dari simpati yang didambakan iblis itu adalah anak-anak, dan ras iblis akan berkembang biak di bumi yang dapat membuat keberadaan spesies manusia menjadi kondisi yang genting dan penuh teror. Apakah aku berhak, demi keuntunganku sendiri, untuk menimpakan kutukan ini kepada generasi-generasi abadi? Sebelumnya aku telah tergerak oleh sofisme makhluk yang telah kuciptakan; aku telah dibuat tak sadarkan diri oleh ancaman-ancaman jahatnya; tetapi sekarang, untuk pertama kalinya, kejahatan janjiku menghantamku; aku bergidik membayangkan bahwa generasi-generasi mendatang mungkin akan mengutukku sebagai hama mereka, yang keegoisannya tidak ragu-ragu untuk membeli kedamaiannya sendiri dengan harga, mungkin, keberadaan seluruh umat manusia.</p><p>Aku gemetar dan jantungku berdebar kencang, ketika, saat mendongak, aku melihat iblis itu di jendela dengan cahaya bulan. Senyum mengerikan terukir di bibirnya saat ia menatapku, di tempatku duduk menyelesaikan tugas yang telah ia berikan kepadaku. Ya, ia telah mengikutiku dalam perjalananku; ia telah berkeliaran di hutan, bersembunyi di gua-gua, atau berlindung di padang rumput yang luas dan tandus; dan sekarang ia datang untuk mengamati kemajuanku dan menuntut pemenuhan janjiku.</p><p>Saat aku menatapnya, raut wajahnya menunjukkan kebencian dan pengkhianatan yang sangat besar. Dengan perasaan gila, aku memikirkan janjiku untuk menciptakan makhluk lain yang mirip dengannya, dan gemetar karena amarah, aku mencabik-cabik benda yang sedang kukerjakan. Si bajingan itu melihatku menghancurkan makhluk yang masa depannya bergantung pada kebahagiaannya, dan dengan lolongan keputusasaan dan dendam yang mengerikan, ia pergi.</p><p>Aku meninggalkan ruangan, dan mengunci pintu, lalu bersumpah dalam hatiku untuk tidak pernah melanjutkan pekerjaanku; kemudian, dengan langkah gemetar, aku menuju kamarku. Aku sendirian; tidak ada seorang pun di dekatku untuk menghilangkan kesuraman dan membebaskanku dari tekanan mengerikan dari lamunan yang paling menakutkan.</p><p>Beberapa jam berlalu, dan aku tetap berada di dekat jendela, menatap laut; laut hampir tak bergerak, karena angin telah reda, dan seluruh alam beristirahat di bawah cahaya bulan yang tenang. Hanya beberapa kapal nelayan yang terlihat di permukaan air, dan sesekali angin sepoi-sepoi membawa suara-suara nelayan yang saling memanggil. Aku merasakan keheningan itu, meskipun aku hampir tidak menyadari kedalamannya yang luar biasa, sampai telingaku tiba-tiba dikejutkan oleh suara dayung di dekat pantai, dan seseorang mendarat di dekat rumahku.</p><p>Beberapa menit kemudian, saya mendengar derit pintu saya, seolah-olah seseorang berusaha membukanya perlahan. Saya gemetar dari ujung kepala hingga ujung kaki; saya merasa ada firasat siapa itu dan ingin membangunkan salah satu petani yang tinggal di pondok tidak jauh dari tempat saya; tetapi saya diliputi perasaan tak berdaya, yang sering dirasakan dalam mimpi buruk, ketika Anda sia-sia berusaha melarikan diri dari bahaya yang mengancam, dan terpaku di tempat.</p><p>Tak lama kemudian aku mendengar suara langkah kaki di sepanjang lorong; pintu terbuka, dan makhluk mengerikan yang kutakuti muncul. Setelah menutup pintu, dia mendekatiku dan berkata dengan suara tertahan,</p><p>“Kau telah menghancurkan pekerjaan yang telah kau mulai; apa yang kau rencanakan? Apakah kau berani mengingkari janjimu? Aku telah menanggung kerja keras dan penderitaan; aku meninggalkan Swiss bersamamu; aku merayap di sepanjang tepi Sungai Rhine, di antara pulau-pulau pohon willow dan melewati puncak-puncak bukitnya. Aku telah tinggal berbulan-bulan di padang rumput Inggris dan di antara gurun Skotlandia. Aku telah menanggung kelelahan, kedinginan, dan kelaparan yang tak terhitung jumlahnya; apakah kau berani menghancurkan harapanku?”</p><p>“Pergilah! Aku mengingkari janjiku; aku tak akan pernah menciptakan makhluk lain seperti dirimu, yang sama buruk rupa dan jahatnya.”</p><p>“Hamba, sebelumnya aku telah berunding denganmu, tetapi kau telah membuktikan dirimu tidak layak menerima belas kasihanku. Ingatlah bahwa aku memiliki kekuasaan; kau menganggap dirimu sengsara, tetapi aku dapat membuatmu begitu sengsara sehingga cahaya siang hari akan menjadi kebencian bagimu. Kau adalah penciptaku, tetapi aku adalah tuanmu; patuhilah!”</p><p>“Saat keraguanku telah berlalu, dan masa kekuasaanmu telah tiba. Ancamanmu tidak dapat menggerakkan hatiku untuk melakukan perbuatan jahat; tetapi ancaman itu justru menguatkan tekadku untuk tidak menjadikanmu sekutu dalam kejahatan. Akankah aku, dengan tenang, melepaskan ke bumi iblis yang senang dengan kematian dan kesengsaraan? Pergilah! Aku teguh, dan kata-katamu hanya akan memperburuk amarahku.”</p><p>Monster itu melihat tekadku di wajahku dan menggertakkan giginya karena amarah yang tak berdaya. “Apakah setiap orang,” serunya, “akan menemukan istri untuk dadanya, dan setiap binatang memiliki pasangannya, dan aku sendirian? Aku memiliki perasaan sayang, dan itu dibalas dengan kebencian dan penghinaan. Manusia! Kau boleh membenci, tetapi waspadalah! Jam-jammu akan berlalu dalam ketakutan dan kesengsaraan, dan segera petir akan menyambar yang akan merenggut kebahagiaanmu selamanya. Apakah kau akan bahagia sementara aku merengek dalam kesengsaraan yang mendalam? Kau dapat menghancurkan nafsuku yang lain, tetapi balas dendam tetap ada—balas dendam, mulai sekarang lebih berharga daripada cahaya atau makanan! Aku mungkin mati, tetapi pertama-tama kau, tiran dan penyiksaku, akan mengutuk matahari yang menatap kesengsaraanmu. Waspadalah, karena aku tak kenal takut dan karena itu kuat. Aku akan mengawasi dengan kelicikan ular, agar aku dapat menyengat dengan bisanya. Manusia, kau akan menyesali luka yang kau timbulkan.”</p><p>“Setan, hentikan; dan jangan meracuni udara dengan suara-suara kebencian ini. Aku telah menyatakan tekadku padamu, dan aku bukanlah seorang pengecut yang akan tunduk pada kata-kata. Tinggalkan aku; aku tak tergoyahkan.”</p><p>“Baiklah. Aku pergi; tetapi ingat, aku akan bersamamu di malam pernikahanmu.”</p><p>Aku melangkah maju dan berseru, “Penjahat! Sebelum kau menandatangani SURAT perintah kematianku, pastikan kau sendiri dalam keadaan aman.”</p><p>Aku hendak menangkapnya, tetapi dia lolos dan meninggalkan rumah dengan tergesa-gesa. Beberapa saat kemudian aku melihatnya di perahunya, yang melaju di atas air dengan kecepatan seperti anak panah dan segera menghilang di tengah ombak.</p><p>Semuanya kembali hening, tetapi kata-katanya masih terngiang di telingaku. Aku terbakar amarah untuk mengejar pembunuh kedamaianku dan melemparkannya ke laut. Aku mondar-mandir di kamarku dengan tergesa-gesa dan gelisah, sementara imajinasiku memunculkan seribu bayangan untuk menyiksa dan menyengatku. Mengapa aku tidak mengikutinya dan melawannya sampai mati? Tetapi aku membiarkannya pergi, dan dia mengarahkan jalannya ke daratan. Aku bergidik membayangkan siapa yang mungkin menjadi korban berikutnya yang dikorbankan untuk balas dendamnya yang tak terpuaskan. Dan kemudian aku teringat lagi kata-katanya—&quot; Aku akan bersamamu di malam pernikahanmu. &quot; Itulah periode yang ditetapkan untuk pemenuhan takdirku. Pada saat itu aku akan mati dan sekaligus memuaskan serta memadamkan kebenciannya. Prospek itu tidak membuatku takut; Namun ketika aku memikirkan Elizabeth tercintaku, air matanya dan kesedihannya yang tak berujung, ketika ia mendapati kekasihnya direnggut darinya dengan begitu kejam, air mata, yang pertama kali kutumpahkan selama beberapa bulan, mengalir dari mataku, dan aku bertekad untuk tidak menyerah di hadapan musuhku tanpa perlawanan sengit.</p><p>Malam berlalu, dan matahari terbit dari lautan; perasaanku menjadi lebih tenang, jika itu bisa disebut tenang ketika amarah yang meluap-luap tenggelam ke dalam jurang keputusasaan. Aku meninggalkan rumah, tempat mengerikan pertengkaran semalam, dan berjalan di pantai laut, yang hampir kuanggap sebagai penghalang tak teratasi antara aku dan sesama makhluk; bahkan, sebuah keinginan agar hal itu terbukti benar terlintas di benakku. Aku berharap dapat menghabiskan hidupku di atas batu karang tandus itu, dengan lelah, memang, tetapi tanpa terganggu oleh guncangan penderitaan yang tiba-tiba. Jika aku kembali, itu untuk dikorbankan atau untuk melihat orang-orang yang paling kucintai mati di bawah cengkeraman iblis yang telah kuciptakan sendiri.</p><p>Aku berjalan mengelilingi pulau itu seperti hantu yang gelisah, terpisah dari semua yang dicintainya dan menderita dalam perpisahan itu. Ketika tengah hari tiba, dan matahari semakin tinggi, aku berbaring di rumput dan diliputi tidur nyenyak. Aku telah terjaga sepanjang malam sebelumnya, sarafku tegang, dan mataku merah karena terjaga dan menderita. Tidur yang kini merasukiku menyegarkanku; dan ketika aku terbangun, aku kembali merasa seolah-olah aku termasuk dalam ras manusia seperti diriku, dan aku mulai merenungkan apa yang telah terjadi dengan lebih tenang; namun kata-kata iblis itu masih terngiang di telingaku seperti lonceng kematian; kata-kata itu tampak seperti mimpi, namun jelas dan menekan seperti kenyataan.</p><p>Matahari sudah terbenam, dan aku masih duduk di tepi pantai, memuaskan nafsu makanku yang sudah sangat besar dengan kue oat, ketika aku melihat sebuah perahu nelayan mendarat di dekatku, dan salah seorang awaknya membawakan sebuah paket; paket itu berisi SURAT-SURAT dari Jenewa, dan satu dari Clerval yang memohon agar aku bergabung dengannya. Dia mengatakan bahwa dia menghabiskan waktunya dengan sia-sia di tempatnya sekarang, bahwa SURAT-SURAT dari teman-teman yang telah dia kenal di London menginginkan kepulangannya untuk menyelesaikan negosiasi yang telah mereka lakukan untuk usahanya di India. Dia tidak bisa lagi menunda keberangkatannya; tetapi karena perjalanannya ke London mungkin akan diikuti, bahkan lebih cepat dari yang dia perkirakan sekarang, oleh perjalanan yang lebih panjang, dia memohon agar aku meluangkan waktu sebanyak yang aku bisa untuk bersamanya. Oleh karena itu, dia memohon agar aku meninggalkan pulauku yang terpencil dan menemuinya di Perth, agar kami dapat melanjutkan perjalanan ke selatan bersama-sama. SURAT ini sedikit banyak membangkitkan semangatku, dan aku memutuskan untuk meninggalkan pulauku setelah dua hari.</p><p>Namun, sebelum saya pergi, ada tugas yang harus saya selesaikan, yang membuat saya bergidik membayangkannya; saya harus mengemasi peralatan kimia saya, dan untuk tujuan itu saya harus memasuki ruangan yang telah menjadi tempat pekerjaan menjijikkan saya, dan saya harus memegang peralatan yang pemandangannya membuat saya mual. Keesokan paginya, saat fajar menyingsing, saya mengumpulkan keberanian dan membuka pintu laboratorium saya. Sisa-sisa makhluk setengah jadi yang telah saya hancurkan tergeletak berserakan di lantai, dan saya hampir merasa seolah-olah telah mencabik-cabik daging manusia yang masih hidup. Saya berhenti sejenak untuk menenangkan diri dan kemudian memasuki ruangan. Dengan tangan gemetar saya membawa peralatan itu keluar dari ruangan, tetapi saya berpikir bahwa saya seharusnya tidak meninggalkan sisa-sisa pekerjaan saya untuk membangkitkan kengerian dan kecurigaan para petani; dan karenanya saya memasukkannya ke dalam keranjang, dengan sejumlah besar batu, dan menumpuknya, bertekad untuk membuangnya ke laut malam itu juga; dan sementara itu saya duduk di pantai, sibuk membersihkan dan mengatur peralatan kimia saya.</p><p>Tidak ada yang lebih lengkap daripada perubahan yang terjadi dalam perasaan saya sejak malam kemunculan daemon itu. Sebelumnya saya memandang janji saya dengan keputusasaan yang suram sebagai sesuatu yang, dengan konsekuensi apa pun, harus dipenuhi; tetapi sekarang saya merasa seolah-olah sebuah lapisan telah disingkirkan dari depan mata saya dan untuk pertama kalinya saya melihat dengan jelas. Gagasan untuk melanjutkan pekerjaan saya tidak terlintas dalam pikiran saya sedetik pun; ancaman yang saya dengar membebani pikiran saya, tetapi saya tidak berpikir bahwa tindakan sukarela saya dapat mencegahnya. Saya telah memutuskan dalam pikiran saya sendiri bahwa menciptakan makhluk lain seperti iblis yang pertama kali saya buat akan menjadi tindakan egois yang paling hina dan keji, dan saya menyingkirkan dari pikiran saya setiap pikiran yang dapat mengarah pada kesimpulan yang berbeda.</p><p>Antara pukul dua dan tiga pagi bulan terbit; dan kemudian, setelah meletakkan keranjangku di atas perahu kecil, aku berlayar sekitar empat mil dari pantai. Pemandangannya benar-benar sunyi; beberapa perahu kembali ke darat, tetapi aku berlayar menjauh dari mereka. Aku merasa seolah-olah akan melakukan kejahatan yang mengerikan dan dengan cemas menghindari pertemuan dengan sesama makhluk. Pada suatu saat bulan, yang sebelumnya cerah, tiba-tiba tertutup awan tebal, dan aku memanfaatkan momen kegelapan itu dan melemparkan keranjangku ke laut; aku mendengarkan suara gemericik saat tenggelam dan kemudian berlayar menjauh dari tempat itu. Langit menjadi berawan, tetapi udaranya bersih, meskipun dingin karena angin timur laut yang saat itu bertiup. Tetapi itu menyegarkanku dan memenuhi diriku dengan sensasi yang menyenangkan sehingga aku memutuskan untuk memperpanjang waktu tinggalku di air, dan memasang kemudi pada posisi langsung, merebahkan diri di dasar perahu. Awan menutupi bulan, semuanya kabur, dan aku hanya mendengar suara perahu saat lunasnya membelah ombak; Gumaman itu meninabobokan saya, dan dalam waktu singkat saya tertidur lelap.</p><p>Saya tidak tahu berapa lama saya berada dalam situasi ini, tetapi ketika saya terbangun, saya mendapati matahari sudah cukup tinggi. Angin bertiup kencang, dan ombak terus-menerus mengancam keselamatan perahu kecil saya. Saya mendapati angin bertiup dari timur laut dan pasti telah membawa saya jauh dari pantai tempat saya memulai perjalanan. Saya berusaha mengubah haluan, tetapi dengan cepat menyadari bahwa jika saya mencoba lagi, perahu akan langsung terisi air. Dalam situasi seperti itu, satu-satunya jalan keluar saya adalah berlayar searah angin. Saya akui bahwa saya merasakan beberapa sensasi ketakutan. Saya tidak membawa kompas dan pengetahuan saya tentang geografi bagian dunia ini sangat minim sehingga matahari tidak banyak membantu saya. Saya bisa saja terdorong ke Samudra Atlantik yang luas dan merasakan semua siksaan kelaparan atau ditelan oleh air yang tak terukur yang bergemuruh dan menghantam di sekitar saya. Saya sudah berada di laut selama berjam-jam dan merasakan siksaan haus yang membakar, pendahuluan dari penderitaan saya yang lain. Saya memandang langit, yang tertutup awan yang berterbangan mengikuti angin, hanya untuk digantikan oleh awan lain; Aku memandang laut; itu akan menjadi kuburanku. “Iblis,” seruku, “tugasmu sudah selesai!” Aku memikirkan Elizabeth, ayahku, dan Clerval—semua yang tertinggal, kepada siapa monster itu dapat memuaskan nafsu haus darah dan tanpa ampunnya. Gagasan ini menjerumuskanku ke dalam lamunan yang begitu putus asa dan menakutkan sehingga bahkan sekarang, ketika pemandangan itu akan segera berakhir di hadapanku selamanya, aku bergidik memikirkannya.</p><p>Beberapa jam berlalu seperti itu; tetapi perlahan-lahan, saat matahari mulai terbenam, angin mereda menjadi hembusan lembut dan laut menjadi tenang tanpa ombak besar. Namun ombak itu kembali berubah menjadi gelombang besar; saya merasa mual dan hampir tidak mampu memegang kemudi, ketika tiba-tiba saya melihat deretan daratan tinggi di sebelah selatan.</p><p>Hampir kehabisan tenaga, karena kelelahan dan ketegangan mengerikan yang kualami selama beberapa jam, kepastian hidup yang tiba-tiba ini mengalir seperti banjir sukacita hangat ke hatiku, dan air mata mengalir deras dari mataku.</p><p>Betapa mudah berubahnya perasaan kita, dan betapa anehnya cinta yang kita miliki terhadap kehidupan bahkan di tengah penderitaan yang luar biasa! Aku membuat layar lain dengan sebagian pakaianku dan dengan penuh semangat mengarahkan haluanku menuju daratan. Daratan itu tampak liar dan berbatu, tetapi saat aku mendekat, aku dengan mudah melihat jejak-jejak pertanian. Aku melihat kapal-kapal di dekat pantai dan tiba-tiba merasa seperti kembali ke lingkungan manusia yang beradab. Aku dengan hati-hati menelusuri liku-liku daratan dan menyapa sebuah menara gereja yang akhirnya kulihat muncul dari balik tanjung kecil. Karena aku dalam keadaan sangat lemah, aku memutuskan untuk berlayar langsung menuju kota, sebagai tempat di mana aku dapat dengan mudah mendapatkan makanan. Untungnya aku membawa uang. Saat aku melewati tanjung, aku melihat sebuah kota kecil yang rapi dan pelabuhan yang bagus, yang kumasuki, hatiku berdebar gembira atas pelarianku yang tak terduga.</p><p>Saat saya sibuk memperbaiki perahu dan mengatur layar, beberapa orang berkerumun mendekati tempat itu. Mereka tampak sangat terkejut dengan kehadiran saya, tetapi alih-alih menawarkan bantuan, mereka berbisik-bisik sambil memberi isyarat yang mungkin akan membuat saya sedikit khawatir. Namun, saya hanya berkomentar bahwa mereka berbicara bahasa Inggris, dan karena itu saya berbicara kepada mereka dalam bahasa itu. &quot;Teman-teman baikku,&quot; kataku, &quot;maukah kalian berbaik hati memberi tahu saya nama kota ini dan memberi tahu saya di mana saya berada?&quot;</p><p>“Kau akan segera mengetahuinya,” jawab seorang pria dengan suara serak. “Mungkin kau datang ke tempat yang tidak akan sesuai dengan seleramu, tetapi aku jamin kau tidak akan dimintai pendapat soal tempat tinggalmu.”</p><p>Saya sangat terkejut menerima jawaban yang begitu kasar dari orang asing, dan saya juga merasa bingung melihat wajah-wajah cemberut dan marah dari teman-temannya. “Mengapa kalian menjawab saya dengan begitu kasar?” jawab saya. “Tentu saja bukan kebiasaan orang Inggris untuk menerima orang asing dengan tidak ramah seperti itu.”</p><p>“Saya tidak tahu,” kata pria itu, “apa kebiasaan orang Inggris, tetapi sudah menjadi kebiasaan orang Irlandia untuk membenci penjahat.”</p><p>Sementara dialog aneh ini berlanjut, saya melihat kerumunan orang semakin bertambah dengan cepat. Wajah mereka menunjukkan campuran rasa ingin tahu dan marah, yang membuat saya kesal dan agak khawatir. Saya bertanya arah menuju penginapan, tetapi tidak ada yang menjawab. Kemudian saya bergerak maju, dan terdengar gumaman dari kerumunan saat mereka mengikuti dan mengelilingi saya, ketika seorang pria berwajah buruk mendekat dan menepuk bahu saya sambil berkata, “Mari, Tuan, Anda harus ikut saya ke tempat Tuan Kirwin untuk memberi keterangan tentang diri Anda.”</p><p>“Siapakah Tuan Kirwin? Mengapa saya harus mempertanggungjawabkan diri saya? Bukankah ini negara yang bebas?”</p><p>“Ya, Pak, cukup bebas untuk orang jujur. Tuan Kirwin adalah seorang hakim, dan Anda harus memberikan keterangan tentang kematian seorang pria yang ditemukan tewas dibunuh di sini tadi malam.”</p><p>Jawaban itu mengejutkan saya, tetapi saya segera menenangkan diri. Saya tidak bersalah; itu mudah dibuktikan; oleh karena itu saya mengikuti pemandu saya dalam diam dan dibawa ke salah satu rumah terbaik di kota. Saya hampir pingsan karena kelelahan dan kelaparan, tetapi karena dikelilingi oleh banyak orang, saya pikir lebih bijaksana untuk mengerahkan seluruh kekuatan saya, agar kelemahan fisik tidak dianggap sebagai ketakutan atau rasa bersalah. Saat itu saya sama sekali tidak menyangka malapetaka yang dalam beberapa saat akan menimpa saya dan memadamkan semua rasa takut akan aib atau kematian dengan kengerian dan keputusasaan.</p><p>Saya harus berhenti sejenak di sini, karena dibutuhkan seluruh ketabahan saya untuk mengingat kembali peristiwa-peristiwa mengerikan yang akan saya ceritakan secara rinci sesuai ingatan saya.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-19.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 19</span>
+    </a>
+    <a href="bab-21.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 21</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 20</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Suatu malam aku duduk di laboratoriumku; matahari telah terbenam, dan bulan baru saja terbit dari laut; aku tidak memiliki cukup cahaya untuk pekerjaanku, dan aku tetap diam, berhenti sejenak mempertimbangkan apakah aku harus meninggalkan pekerjaanku untuk malam itu atau mempercepat penyelesaiannya dengan perhatian tanpa henti. Saat aku duduk, serangkaian pemikiran muncul dalam benakku yang membawaku untuk mempertimbangkan dampak dari apa yang sedang kulakukan sekarang. Tiga tahun sebelumnya, aku terlibat dalam hal yang sama dan telah menciptakan makhluk jahat yang kebiadabannya yang tak tertandingi telah menghancurkan hatiku dan selamanya memenuhinya dengan penyesalan yang paling pahit. Sekarang aku akan membentuk makhluk lain yang wataknya sama-sama tidak kuketahui; dia mungkin menjadi sepuluh ribu kali lebih jahat daripada pasangannya dan menikmati, demi dirinya sendiri, pembunuhan dan kesengsaraan. Dia telah bersumpah untuk meninggalkan lingkungan manusia dan bersembunyi di padang pasir, tetapi dia tidak; dan dia, yang kemungkinan besar akan menjadi hewan yang berpikir dan bernalar, mungkin menolak untuk mematuhi perjanjian yang dibuat sebelum penciptaannya. Mereka bahkan mungkin saling membenci; Makhluk yang sudah hidup itu membenci kecacatannya sendiri, dan bukankah ia mungkin akan lebih jijik lagi ketika kecacatan itu muncul di hadapannya dalam wujud perempuan? Perempuan itu pun mungkin akan berpaling dengan jijik darinya kepada keindahan laki-laki yang lebih unggul; ia mungkin akan meninggalkannya, dan ia akan kembali sendirian, jengkel karena provokasi baru berupa ditinggalkan oleh sesama jenisnya. Sekalipun mereka meninggalkan Eropa dan mendiami gurun-gurun dunia baru, salah satu hasil pertama dari simpati yang didambakan iblis itu adalah anak-anak, dan ras iblis akan berkembang biak di bumi yang dapat membuat keberadaan spesies manusia menjadi kondisi yang genting dan penuh teror. Apakah aku berhak, demi keuntunganku sendiri, untuk menimpakan kutukan ini kepada generasi-generasi abadi? Sebelumnya aku telah tergerak oleh sofisme makhluk yang telah kuciptakan; aku telah dibuat tak sadarkan diri oleh ancaman-ancaman jahatnya; tetapi sekarang, untuk pertama kalinya, kejahatan janjiku menghantamku; aku bergidik membayangkan bahwa generasi-generasi mendatang mungkin akan mengutukku sebagai hama mereka, yang keegoisannya tidak ragu-ragu untuk membeli kedamaiannya sendiri dengan harga, mungkin, keberadaan seluruh umat manusia. Aku gemetar dan jantungku berdebar kencang, ketika, saat mendongak, aku melihat iblis itu di jendela dengan cahaya bulan. Senyum mengerikan terukir di bibirnya saat ia menatapku, di tempatku duduk menyelesaikan tugas yang telah ia berikan kepadaku. Ya, ia telah mengikutiku dalam perjalananku; ia telah berkeliaran di hutan, bersembunyi di gua-gua, atau berlindung di padang rumput yang luas dan tandus; dan sekarang ia datang untuk mengamati kemajuanku dan menuntut pemenuhan janjiku. Saat aku menatapnya, raut wajahnya menunjukkan kebencian dan pengkhianatan yang sangat besar. Dengan perasaan gila, aku memikirkan janjiku untuk menciptakan makhluk lain yang mirip dengannya, dan gemetar karena amarah, aku mencabik-cabik benda yang sedang kukerjakan. Si bajingan itu melihatku menghancurkan makhluk yang masa depannya bergantung pada kebahagiaannya, dan dengan lolongan keputusasaan dan dendam yang mengerikan, ia pergi. Aku meninggalkan ruangan, dan mengunci pintu, lalu bersumpah dalam hatiku untuk tidak pernah melanjutkan pekerjaanku; kemudian, dengan langkah gemetar, aku menuju kamarku. Aku sendirian; tidak ada seorang pun di dekatku untuk menghilangkan kesuraman dan membebaskanku dari tekanan mengerikan dari lamunan yang paling menakutkan. Beberapa jam berlalu, dan aku tetap berada di dekat jendela, menatap laut; laut hampir tak bergerak, karena angin telah reda, dan seluruh alam beristirahat di bawah cahaya bulan yang tenang. Hanya beberapa kapal nelayan yang terlihat di permukaan air, dan sesekali angin sepoi-sepoi membawa suara-suara nelayan yang saling memanggil. Aku merasakan keheningan itu, meskipun aku hampir tidak menyadari kedalamannya yang luar biasa, sampai telingaku tiba-tiba dikejutkan oleh suara dayung di dekat pantai, dan seseorang mendarat di dekat rumahku. Beberapa menit kemudian, saya mendengar derit pintu saya, seolah-olah seseorang berusaha membukanya perlahan. Saya gemetar dari ujung kepala hingga ujung kaki; saya merasa ada firasat siapa itu dan ingin membangunkan salah satu petani yang tinggal di pondok tidak jauh dari tempat saya; tetapi saya diliputi perasaan tak berdaya, yang sering dirasakan dalam mimpi buruk, ketika Anda sia-sia berusaha melarikan diri dari bahaya yang mengancam, dan terpaku di tempat. Tak lama kemudian aku mendengar suara langkah kaki di sepanjang lorong; pintu terbuka, dan makhluk mengerikan yang kutakuti muncul. Setelah menutup pintu, dia mendekatiku dan berkata dengan suara tertahan, “Kau telah menghancurkan pekerjaan yang telah kau mulai; apa yang kau rencanakan? Apakah kau berani mengingkari janjimu? Aku telah menanggung kerja keras dan penderitaan; aku meninggalkan Swiss bersamamu; aku merayap di sepanjang tepi Sungai Rhine, di antara pulau-pulau pohon willow dan melewati puncak-puncak bukitnya. Aku telah tinggal berbulan-bulan di padang rumput Inggris dan di antara gurun Skotlandia. Aku telah menanggung kelelahan, kedinginan, dan kelaparan yang tak terhitung jumlahnya; apakah kau berani menghancurkan harapanku?” “Pergilah! Aku mengingkari janjiku; aku tak akan pernah menciptakan makhluk lain seperti dirimu, yang sama buruk rupa dan jahatnya.” “Hamba, sebelumnya aku telah berunding denganmu, tetapi kau telah membuktikan dirimu tidak layak menerima belas kasihanku. Ingatlah bahwa aku memiliki kekuasaan; kau menganggap dirimu sengsara, tetapi aku dapat membuatmu begitu sengsara sehingga cahaya siang hari akan menjadi kebencian bagimu. Kau adalah penciptaku, tetapi aku adalah tuanmu; patuhilah!” “Saat keraguanku telah berlalu, dan masa kekuasaanmu telah tiba. Ancamanmu tidak dapat menggerakkan hatiku untuk melakukan perbuatan jahat; tetapi ancaman itu justru menguatkan tekadku untuk tidak menjadikanmu sekutu dalam kejahatan. Akankah aku, dengan tenang, melepaskan ke bumi iblis yang senang dengan kematian dan kesengsaraan? Pergilah! Aku teguh, dan kata-katamu hanya akan memperburuk amarahku.” Monster itu melihat tekadku di wajahku dan menggertakkan giginya karena amarah yang tak berdaya. “Apakah setiap orang,” serunya, “akan menemukan istri untuk dadanya, dan setiap binatang memiliki pasangannya, dan aku sendirian? Aku memiliki perasaan sayang, dan itu dibalas dengan kebencian dan penghinaan. Manusia! Kau boleh membenci, tetapi waspadalah! Jam-jammu akan berlalu dalam ketakutan dan kesengsaraan, dan segera petir akan menyambar yang akan merenggut kebahagiaanmu selamanya. Apakah kau akan bahagia sementara aku merengek dalam kesengsaraan yang mendalam? Kau dapat menghancurkan nafsuku yang lain, tetapi balas dendam tetap ada—balas dendam, mulai sekarang lebih berharga daripada cahaya atau makanan! Aku mungkin mati, tetapi pertama-tama kau, tiran dan penyiksaku, akan mengutuk matahari yang menatap kesengsaraanmu. Waspadalah, karena aku tak kenal takut dan karena itu kuat. Aku akan mengawasi dengan kelicikan ular, agar aku dapat menyengat dengan bisanya. Manusia, kau akan menyesali luka yang kau timbulkan.” “Setan, hentikan; dan jangan meracuni udara dengan suara-suara kebencian ini. Aku telah menyatakan tekadku padamu, dan aku bukanlah seorang pengecut yang akan tunduk pada kata-kata. Tinggalkan aku; aku tak tergoyahkan.” “Baiklah. Aku pergi; tetapi ingat, aku akan bersamamu di malam pernikahanmu.” Aku melangkah maju dan berseru, “Penjahat! Sebelum kau menandatangani SURAT perintah kematianku, pastikan kau sendiri dalam keadaan aman.” Aku hendak menangkapnya, tetapi dia lolos dan meninggalkan rumah dengan tergesa-gesa. Beberapa saat kemudian aku melihatnya di perahunya, yang melaju di atas air dengan kecepatan seperti anak panah dan segera menghilang di tengah ombak. Semuanya kembali hening, tetapi kata-katanya masih terngiang di telingaku. Aku terbakar amarah untuk mengejar pembunuh kedamaianku dan melemparkannya ke laut. Aku mondar-mandir di kamarku dengan tergesa-gesa dan gelisah, sementara imajinasiku memunculkan seribu bayangan untuk menyiksa dan menyengatku. Mengapa aku tidak mengikutinya dan melawannya sampai mati? Tetapi aku membiarkannya pergi, dan dia mengarahkan jalannya ke daratan. Aku bergidik membayangkan siapa yang mungkin menjadi korban berikutnya yang dikorbankan untuk balas dendamnya yang tak terpuaskan. Dan kemudian aku teringat lagi kata-katanya—" Aku akan bersamamu di malam pernikahanmu. " Itulah periode yang ditetapkan untuk pemenuhan takdirku. Pada saat itu aku akan mati dan sekaligus memuaskan serta memadamkan kebenciannya. Prospek itu tidak membuatku takut; Namun ketika aku memikirkan Elizabeth tercintaku, air matanya dan kesedihannya yang tak berujung, ketika ia mendapati kekasihnya direnggut darinya dengan begitu kejam, air mata, yang pertama kali kutumpahkan selama beberapa bulan, mengalir dari mataku, dan aku bertekad untuk tidak menyerah di hadapan musuhku tanpa perlawanan sengit. Malam berlalu, dan matahari terbit dari lautan; perasaanku menjadi lebih tenang, jika itu bisa disebut tenang ketika amarah yang meluap-luap tenggelam ke dalam jurang keputusasaan. Aku meninggalkan rumah, tempat mengerikan pertengkaran semalam, dan berjalan di pantai laut, yang hampir kuanggap sebagai penghalang tak teratasi antara aku dan sesama makhluk; bahkan, sebuah keinginan agar hal itu terbukti benar terlintas di benakku. Aku berharap dapat menghabiskan hidupku di atas batu karang tandus itu, dengan lelah, memang, tetapi tanpa terganggu oleh guncangan penderitaan yang tiba-tiba. Jika aku kembali, itu untuk dikorbankan atau untuk melihat orang-orang yang paling kucintai mati di bawah cengkeraman iblis yang telah kuciptakan sendiri. Aku berjalan mengelilingi pulau itu seperti hantu yang gelisah, terpisah dari semua yang dicintainya dan menderita dalam perpisahan itu. Ketika tengah hari tiba, dan matahari semakin tinggi, aku berbaring di rumput dan diliputi tidur nyenyak. Aku telah terjaga sepanjang malam sebelumnya, sarafku tegang, dan mataku merah karena terjaga dan menderita. Tidur yang kini merasukiku menyegarkanku; dan ketika aku terbangun, aku kembali merasa seolah-olah aku termasuk dalam ras manusia seperti diriku, dan aku mulai merenungkan apa yang telah terjadi dengan lebih tenang; namun kata-kata iblis itu masih terngiang di telingaku seperti lonceng kematian; kata-kata itu tampak seperti mimpi, namun jelas dan menekan seperti kenyataan. Matahari sudah terbenam, dan aku masih duduk di tepi pantai, memuaskan nafsu makanku yang sudah sangat besar dengan kue oat, ketika aku melihat sebuah perahu nelayan mendarat di dekatku, dan salah seorang awaknya membawakan sebuah paket; paket itu berisi SURAT-SURAT dari Jenewa, dan satu dari Clerval yang memohon agar aku bergabung dengannya. Dia mengatakan bahwa dia menghabiskan waktunya dengan sia-sia di tempatnya sekarang, bahwa SURAT-SURAT dari teman-teman yang telah dia kenal di London menginginkan kepulangannya untuk menyelesaikan negosiasi yang telah mereka lakukan untuk usahanya di India. Dia tidak bisa lagi menunda keberangkatannya; tetapi karena perjalanannya ke London mungkin akan diikuti, bahkan lebih cepat dari yang dia perkirakan sekarang, oleh perjalanan yang lebih panjang, dia memohon agar aku meluangkan waktu sebanyak yang aku bisa untuk bersamanya. Oleh karena itu, dia memohon agar aku meninggalkan pulauku yang terpencil dan menemuinya di Perth, agar kami dapat melanjutkan perjalanan ke selatan bersama-sama. SURAT ini sedikit banyak membangkitkan semangatku, dan aku memutuskan untuk meninggalkan pulauku setelah dua hari. Namun, sebelum saya pergi, ada tugas yang harus saya selesaikan, yang membuat saya bergidik membayangkannya; saya harus mengemasi peralatan kimia saya, dan untuk tujuan itu saya harus memasuki ruangan yang telah menjadi tempat pekerjaan menjijikkan saya, dan saya harus memegang peralatan yang pemandangannya membuat saya mual. Keesokan paginya, saat fajar menyingsing, saya mengumpulkan keberanian dan membuka pintu laboratorium saya. Sisa-sisa makhluk setengah jadi yang telah saya hancurkan tergeletak berserakan di lantai, dan saya hampir merasa seolah-olah telah mencabik-cabik daging manusia yang masih hidup. Saya berhenti sejenak untuk menenangkan diri dan kemudian memasuki ruangan. Dengan tangan gemetar saya membawa peralatan itu keluar dari ruangan, tetapi saya berpikir bahwa saya seharusnya tidak meninggalkan sisa-sisa pekerjaan saya untuk membangkitkan kengerian dan kecurigaan para petani; dan karenanya saya memasukkannya ke dalam keranjang, dengan sejumlah besar batu, dan menumpuknya, bertekad untuk membuangnya ke laut malam itu juga; dan sementara itu saya duduk di pantai, sibuk membersihkan dan mengatur peralatan kimia saya. Tidak ada yang lebih lengkap daripada perubahan yang terjadi dalam perasaan saya sejak malam kemunculan daemon itu. Sebelumnya saya memandang janji saya dengan keputusasaan yang suram sebagai sesuatu yang, dengan konsekuensi apa pun, harus dipenuhi; tetapi sekarang saya merasa seolah-olah sebuah lapisan telah disingkirkan dari depan mata saya dan untuk pertama kalinya saya melihat dengan jelas. Gagasan untuk melanjutkan pekerjaan saya tidak terlintas dalam pikiran saya sedetik pun; ancaman yang saya dengar membebani pikiran saya, tetapi saya tidak berpikir bahwa tindakan sukarela saya dapat mencegahnya. Saya telah memutuskan dalam pikiran saya sendiri bahwa menciptakan makhluk lain seperti iblis yang pertama kali saya buat akan menjadi tindakan egois yang paling hina dan keji, dan saya menyingkirkan dari pikiran saya setiap pikiran yang dapat mengarah pada kesimpulan yang berbeda. Antara pukul dua dan tiga pagi bulan terbit; dan kemudian, setelah meletakkan keranjangku di atas perahu kecil, aku berlayar sekitar empat mil dari pantai. Pemandangannya benar-benar sunyi; beberapa perahu kembali ke darat, tetapi aku berlayar menjauh dari mereka. Aku merasa seolah-olah akan melakukan kejahatan yang mengerikan dan dengan cemas menghindari pertemuan dengan sesama makhluk. Pada suatu saat bulan, yang sebelumnya cerah, tiba-tiba tertutup awan tebal, dan aku memanfaatkan momen kegelapan itu dan melemparkan keranjangku ke laut; aku mendengarkan suara gemericik saat tenggelam dan kemudian berlayar menjauh dari tempat itu. Langit menjadi berawan, tetapi udaranya bersih, meskipun dingin karena angin timur laut yang saat itu bertiup. Tetapi itu menyegarkanku dan memenuhi diriku dengan sensasi yang menyenangkan sehingga aku memutuskan untuk memperpanjang waktu tinggalku di air, dan memasang kemudi pada posisi langsung, merebahkan diri di dasar perahu. Awan menutupi bulan, semuanya kabur, dan aku hanya mendengar suara perahu saat lunasnya membelah ombak; Gumaman itu meninabobokan saya, dan dalam waktu singkat saya tertidur lelap. Saya tidak tahu berapa lama saya berada dalam situasi ini, tetapi ketika saya terbangun, saya mendapati matahari sudah cukup tinggi. Angin bertiup kencang, dan ombak terus-menerus mengancam keselamatan perahu kecil saya. Saya mendapati angin bertiup dari timur laut dan pasti telah membawa saya jauh dari pantai tempat saya memulai perjalanan. Saya berusaha mengubah haluan, tetapi dengan cepat menyadari bahwa jika saya mencoba lagi, perahu akan langsung terisi air. Dalam situasi seperti itu, satu-satunya jalan keluar saya adalah berlayar searah angin. Saya akui bahwa saya merasakan beberapa sensasi ketakutan. Saya tidak membawa kompas dan pengetahuan saya tentang geografi bagian dunia ini sangat minim sehingga matahari tidak banyak membantu saya. Saya bisa saja terdorong ke Samudra Atlantik yang luas dan merasakan semua siksaan kelaparan atau ditelan oleh air yang tak terukur yang bergemuruh dan menghantam di sekitar saya. Saya sudah berada di laut selama berjam-jam dan merasakan siksaan haus yang membakar, pendahuluan dari penderitaan saya yang lain. Saya memandang langit, yang tertutup awan yang berterbangan mengikuti angin, hanya untuk digantikan oleh awan lain; Aku memandang laut; itu akan menjadi kuburanku. “Iblis,” seruku, “tugasmu sudah selesai!” Aku memikirkan Elizabeth, ayahku, dan Clerval—semua yang tertinggal, kepada siapa monster itu dapat memuaskan nafsu haus darah dan tanpa ampunnya. Gagasan ini menjerumuskanku ke dalam lamunan yang begitu putus asa dan menakutkan sehingga bahkan sekarang, ketika pemandangan itu akan segera berakhir di hadapanku selamanya, aku bergidik memikirkannya. Beberapa jam berlalu seperti itu; tetapi perlahan-lahan, saat matahari mulai terbenam, angin mereda menjadi hembusan lembut dan laut menjadi tenang tanpa ombak besar. Namun ombak itu kembali berubah menjadi gelombang besar; saya merasa mual dan hampir tidak mampu memegang kemudi, ketika tiba-tiba saya melihat deretan daratan tinggi di sebelah selatan. Hampir kehabisan tenaga, karena kelelahan dan ketegangan mengerikan yang kualami selama beberapa jam, kepastian hidup yang tiba-tiba ini mengalir seperti banjir sukacita hangat ke hatiku, dan air mata mengalir deras dari mataku. Betapa mudah berubahnya perasaan kita, dan betapa anehnya cinta yang kita miliki terhadap kehidupan bahkan di tengah penderitaan yang luar biasa! Aku membuat layar lain dengan sebagian pakaianku dan dengan penuh semangat mengarahkan haluanku menuju daratan. Daratan itu tampak liar dan berbatu, tetapi saat aku mendekat, aku dengan mudah melihat jejak-jejak pertanian. Aku melihat kapal-kapal di dekat pantai dan tiba-tiba merasa seperti kembali ke lingkungan manusia yang beradab. Aku dengan hati-hati menelusuri liku-liku daratan dan menyapa sebuah menara gereja yang akhirnya kulihat muncul dari balik tanjung kecil. Karena aku dalam keadaan sangat lemah, aku memutuskan untuk berlayar langsung menuju kota, sebagai tempat di mana aku dapat dengan mudah mendapatkan makanan. Untungnya aku membawa uang. Saat aku melewati tanjung, aku melihat sebuah kota kecil yang rapi dan pelabuhan yang bagus, yang kumasuki, hatiku berdebar gembira atas pelarianku yang tak terduga. Saat saya sibuk memperbaiki perahu dan mengatur layar, beberapa orang berkerumun mendekati tempat itu. Mereka tampak sangat terkejut dengan kehadiran saya, tetapi alih-alih menawarkan bantuan, mereka berbisik-bisik sambil memberi isyarat yang mungkin akan membuat saya sedikit khawatir. Namun, saya hanya berkomentar bahwa mereka berbicara bahasa Inggris, dan karena itu saya berbicara kepada mereka dalam bahasa itu. "Teman-teman baikku," kataku, "maukah kalian berbaik hati memberi tahu saya nama kota ini dan memberi tahu saya di mana saya berada?" “Kau akan segera mengetahuinya,” jawab seorang pria dengan suara serak. “Mungkin kau datang ke tempat yang tidak akan sesuai dengan seleramu, tetapi aku jamin kau tidak akan dimintai pendapat soal tempat tinggalmu.” Saya sangat terkejut menerima jawaban yang begitu kasar dari orang asing, dan saya juga merasa bingung melihat wajah-wajah cemberut dan marah dari teman-temannya. “Mengapa kalian menjawab saya dengan begitu kasar?” jawab saya. “Tentu saja bukan kebiasaan orang Inggris untuk menerima orang asing dengan tidak ramah seperti itu.” “Saya tidak tahu,” kata pria itu, “apa kebiasaan orang Inggris, tetapi sudah menjadi kebiasaan orang Irlandia untuk membenci penjahat.” Sementara dialog aneh ini berlanjut, saya melihat kerumunan orang semakin bertambah dengan cepat. Wajah mereka menunjukkan campuran rasa ingin tahu dan marah, yang membuat saya kesal dan agak khawatir. Saya bertanya arah menuju penginapan, tetapi tidak ada yang menjawab. Kemudian saya bergerak maju, dan terdengar gumaman dari kerumunan saat mereka mengikuti dan mengelilingi saya, ketika seorang pria berwajah buruk mendekat dan menepuk bahu saya sambil berkata, “Mari, Tuan, Anda harus ikut saya ke tempat Tuan Kirwin untuk memberi keterangan tentang diri Anda.” “Siapakah Tuan Kirwin? Mengapa saya harus mempertanggungjawabkan diri saya? Bukankah ini negara yang bebas?” “Ya, Pak, cukup bebas untuk orang jujur. Tuan Kirwin adalah seorang hakim, dan Anda harus memberikan keterangan tentang kematian seorang pria yang ditemukan tewas dibunuh di sini tadi malam.” Jawaban itu mengejutkan saya, tetapi saya segera menenangkan diri. Saya tidak bersalah; itu mudah dibuktikan; oleh karena itu saya mengikuti pemandu saya dalam diam dan dibawa ke salah satu rumah terbaik di kota. Saya hampir pingsan karena kelelahan dan kelaparan, tetapi karena dikelilingi oleh banyak orang, saya pikir lebih bijaksana untuk mengerahkan seluruh kekuatan saya, agar kelemahan fisik tidak dianggap sebagai ketakutan atau rasa bersalah. Saat itu saya sama sekali tidak menyangka malapetaka yang dalam beberapa saat akan menimpa saya dan memadamkan semua rasa takut akan aib atau kematian dengan kengerian dan keputusasaan. Saya harus berhenti sejenak di sini, karena dibutuhkan seluruh ketabahan saya untuk mengingat kembali peristiwa-peristiwa mengerikan yang akan saya ceritakan secara rinci sesuai ingatan saya.</p>
-
-<div class="nav">
-  <a href="bab-19.html">⬅ Bab 19</a>
-  <a href="bab-21.html">Bab 21 ➡</a>
-</div>
 
 </body>
 </html>

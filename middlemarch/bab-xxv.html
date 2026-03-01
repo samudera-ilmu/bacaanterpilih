@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XXV.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XXV. - Bacaan digital klasik">
+<title>Bab XXV — Middlemarch</title>
+<meta name="description" content="Baca Bab XXV dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-xxv.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab XXV — Middlemarch">
+  <meta property="og:description" content="Baca Bab XXV dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-xxv.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab XXV — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab XXV dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab XXV",
+    "name": "Bab XXV — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-xxv.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab XXV</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Cinta tidak mencari kesenangan untuk dirinya sendiri, <br />Tidak pula mempedulikan dirinya sendiri, Tetapi memberikan kenyamanannya untuk orang lain Dan membangun surga di tengah keputusasaan neraka. . . . . . . . Cinta hanya mencari kesenangan untuk dirinya sendiri, Untuk mengikat orang lain pada kesenangannya, Bersukacita atas hilangnya kenyamanan orang lain, Dan membangun neraka di tengah ketidakpedulian terhadap surga.” —W. BLAKE: Songs of Experience .</p><p>Fred Vincy ingin tiba di Stone Court saat Mary tidak menduganya, dan saat pamannya tidak ada di lantai bawah: dalam hal itu, Mary bisa duduk sendirian di ruang tamu berpanel kayu. Ia meninggalkan kudanya di halaman untuk menghindari suara bising di kerikil di depan, dan memasuki ruang tamu tanpa pemberitahuan selain suara gagang pintu. Mary berada di sudut biasanya, tertawa terbahak-bahak mendengar kenangan Nyonya Piozzi tentang Johnson, dan mendongak dengan ekspresi geli masih terpancar di wajahnya. Ekspresi itu perlahan memudar saat ia melihat Fred mendekatinya tanpa berbicara, dan berdiri di depannya dengan siku di atas perapian, tampak sakit. Ia pun diam, hanya mengangkat matanya ke arah Fred dengan penuh pertanyaan.</p><p>“Mary,” dia memulai, “aku ini bajingan tak berguna.”</p><p>“Kupikir salah satu julukan itu sudah cukup untuk saat ini,” kata Mary, mencoba tersenyum, tetapi merasa khawatir.</p><p>“Aku tahu kau tak akan pernah berpikir baik tentangku lagi. Kau akan menganggapku pembohong. Kau akan menganggapku tidak jujur. Kau akan berpikir aku tidak peduli padamu, atau pada ayah dan ibumu. Kau selalu menganggapku sebagai orang yang terburuk, aku tahu.”</p><p>“Aku tak bisa menyangkal bahwa aku akan berpikir seperti itu tentangmu, Fred, jika kau memberiku alasan yang bagus. Tapi tolong segera beritahu aku apa yang telah kau lakukan. Aku lebih suka mengetahui kebenaran yang menyakitkan daripada membayangkannya.”</p><p>“Aku berhutang uang—seratus enam puluh pound. Aku meminta ayahmu untuk mencantumkan namanya di tagihan. Kupikir itu tidak akan menjadi masalah baginya. Aku memastikan untuk membayar uang itu sendiri, dan aku telah berusaha sekeras mungkin. Dan sekarang, aku sangat tidak beruntung—kuda yang kudanya bermasalah—aku hanya bisa membayar lima puluh pound. Dan aku tidak bisa meminta uang kepada ayahku: dia tidak mau memberiku sepeser pun. Dan pamanku memberiku seratus pound beberapa waktu lalu. Jadi apa yang bisa kulakukan? Dan sekarang ayahmu tidak punya uang tunai untuk diberikan, dan ibumu harus membayarkan sembilan puluh dua pound yang telah dia tabung, dan dia bilang tabunganmu juga harus habis. Kau lihat betapa—”</p><p>“Oh, kasihan ibu, kasihan ayah!” kata Mary, matanya berkaca-kaca, dan isak tangis kecil muncul yang berusaha ia tahan. Ia menatap lurus ke depan dan mengabaikan Fred, semua konsekuensi di rumah menjadi nyata baginya. Fred pun terdiam beberapa saat, merasa lebih sengsara dari sebelumnya. “Aku tidak akan menyakitimu demi apa pun di dunia ini, Mary,” katanya akhirnya. “Kau tidak akan pernah memaafkanku.”</p><p>“Apa bedanya jika aku memaafkanmu?” kata Mary dengan penuh emosi. “Apakah itu akan membuat keadaan lebih baik bagi ibuku jika ia kehilangan uang yang telah ia peroleh dari les selama empat tahun, agar bisa menyekolahkan Alfred ke tempat Tuan Hanmer? Apakah menurutmu itu cukup menyenangkan jika aku memaafkanmu?”</p><p>“Katakan apa saja yang kau mau, Mary. Aku pantas menerima semuanya.”</p><p>“Aku tidak ingin mengatakan apa pun,” kata Mary, dengan suara lebih pelan, “dan kemarahanku tidak ada gunanya.” Dia mengusap air matanya, melempar bukunya, bangkit dan mengambil alat jahitnya.</p><p>Fred mengikutinya dengan matanya, berharap matanya akan bertemu dengan mata Mary, dan dengan cara itu menemukan jalan untuk permohonan pertobatannya. Tapi tidak! Mary dengan mudah menghindari menatap ke atas.</p><p>“Aku memang peduli dengan uang ibumu,” katanya, ketika Mary sudah duduk kembali dan menjahit dengan cepat. “Aku ingin bertanya padamu, Mary—tidakkah menurutmu Tuan Featherstone—jika kau memberitahunya—maksudku, memberitahunya tentang Alfred yang magang—akan memberikan uang muka?”</p><p>“Keluarga saya tidak suka mengemis, Fred. Kami lebih suka bekerja untuk mendapatkan uang. Lagipula, kau bilang Tuan Featherstone baru-baru ini memberimu seratus pound. Dia jarang memberi hadiah; dia tidak pernah memberi hadiah kepada kami. Saya yakin ayah saya tidak akan meminta apa pun darinya; dan bahkan jika saya memilih untuk mengemis darinya, itu tidak akan ada gunanya.”</p><p>“Aku sangat menderita, Mary—jika kau tahu betapa menderitanya aku, kau pasti akan merasa kasihan padaku.”</p><p>“Ada hal lain yang lebih patut disesali daripada itu. Tetapi orang-orang egois selalu menganggap ketidaknyamanan mereka sendiri lebih penting daripada apa pun di dunia ini. Saya cukup sering melihat hal itu setiap hari.”</p><p>“Rasanya tidak adil menyebutku egois. Jika kau tahu apa yang dilakukan pria muda lainnya, kau akan menganggapku jauh dari yang terburuk.”</p><p>“Saya tahu bahwa orang-orang yang menghabiskan banyak uang untuk diri mereka sendiri tanpa mengetahui bagaimana mereka akan membayarnya, pasti egois. Mereka selalu memikirkan apa yang bisa mereka dapatkan untuk diri mereka sendiri, dan bukan apa yang mungkin hilang dari orang lain.”</p><p>“Siapa pun bisa saja bernasib sial, Mary, dan mendapati dirinya tidak mampu membayar padahal ia bermaksud melakukannya. Tidak ada orang yang lebih baik di dunia ini daripada ayahmu, namun ia pun mengalami kesulitan.”</p><p>“Beraninya kau membandingkan ayahku dengan dirimu, Fred?” kata Mary dengan nada marah yang dalam. “Dia tidak pernah mendapat masalah karena memikirkan kesenangan pribadinya, tetapi karena dia selalu memikirkan pekerjaan yang dia lakukan untuk orang lain. Dan dia telah berjuang keras, dan bekerja keras untuk mengganti kerugian semua orang.”</p><p>“Dan kau pikir aku tidak akan pernah berusaha memperbaiki apa pun, Mary. Tidaklah murah hati untuk mempercayai hal terburuk dari seorang pria. Ketika kau memiliki kekuasaan atas dirinya, kupikir kau bisa mencoba menggunakannya untuk membuatnya lebih baik; tetapi itu yang tidak pernah kau lakukan. Namun, aku pergi,” Fred mengakhiri dengan lesu. “Aku tidak akan pernah berbicara lagi padamu tentang apa pun. Aku sangat menyesal atas semua masalah yang telah kusebabkan—hanya itu.”</p><p>Mary menjatuhkan pekerjaannya dan mendongak. Seringkali ada sesuatu yang keibuan bahkan dalam cinta seorang gadis, dan pengalaman pahit Mary telah membentuk sifatnya menjadi sangat mudah terpengaruh, berbeda dari hal keras dan lemah yang kita sebut kekanak-kanakan. Mendengar kata-kata terakhir Fred, dia merasakan kepedihan seketika, sesuatu seperti yang dirasakan seorang ibu saat membayangkan isak tangis atau tangisan anaknya yang nakal dan bolos sekolah, yang mungkin akan tersesat dan celaka. Dan ketika, mendongak, matanya bertemu dengan tatapan putus asa Fred yang lesu, rasa ibanya terhadap Fred melampaui amarah dan semua kecemasannya yang lain.</p><p>“Oh, Fred, kau tampak sakit sekali! Duduklah sebentar. Jangan pergi dulu. Biar kuberitahu paman bahwa kau di sini. Dia heran karena sudah seminggu tidak melihatmu.” Mary berbicara terburu-buru, mengucapkan kata-kata yang pertama kali terlintas di benaknya tanpa benar-benar tahu apa maksudnya, tetapi mengucapkannya dengan nada setengah menenangkan setengah memohon, lalu berdiri seolah hendak pergi menemui Tuan Featherstone. Tentu saja Fred merasa seolah awan telah terbelah dan secercah cahaya muncul: dia bergerak dan menghalangi jalannya.</p><p>“Katakan satu kata saja, Mary, dan aku akan melakukan apa saja. Katakan bahwa kau tidak akan berpikir yang terburuk tentangku—tidak akan meninggalkanku sepenuhnya.”</p><p>“Seolah-olah aku senang berpikir buruk tentangmu,” kata Mary dengan nada sedih. “Seolah-olah tidak menyakitkan bagiku melihatmu menjadi makhluk yang malas dan sembrono. Bagaimana kau bisa tahan menjadi begitu hina, sementara orang lain bekerja dan berjuang, dan ada begitu banyak hal yang harus dilakukan—bagaimana kau bisa tahan menjadi tidak berguna di dunia ini? Dan dengan begitu banyak kebaikan dalam watakmu, Fred,—kau bisa menjadi orang yang sangat berharga.”</p><p>“Aku akan berusaha menjadi apa pun yang kau inginkan, Mary, asalkan kau mengatakan bahwa kau mencintaiku.”</p><p>“Aku akan malu mengakui bahwa aku mencintai seorang pria yang selalu bergantung pada orang lain, dan mengharapkan apa yang akan mereka lakukan untuknya. Kamu akan jadi apa ketika berusia empat puluh tahun? Seperti Tuan Bowyer, kurasa—sama malasnya, tinggal di ruang tamu depan Nyonya Beck—gemuk dan lusuh, berharap seseorang akan mengundangmu makan malam—menghabiskan pagimu untuk mempelajari lagu komik—oh tidak! mempelajari melodi seruling.”</p><p>Bibir Mary mulai melengkung membentuk senyum begitu dia menanyakan pertanyaan tentang masa depan Fred (jiwa muda memang mudah berubah), dan sebelum dia selesai bicara, wajahnya sudah sepenuhnya berseri-seri karena geli. Baginya, itu seperti berakhirnya rasa sakit karena Mary bisa menertawakannya, dan dengan senyum pasif dia mencoba meraih tangannya; tetapi Mary dengan cepat menjauh ke arah pintu dan berkata, “Aku akan memberi tahu paman. Kau harus menemuinya sebentar.”</p><p>Diam-diam Fred merasa bahwa masa depannya terjamin terlepas dari terwujudnya ramalan sarkastik Mary, kecuali &quot;apa pun&quot; yang siap dia lakukan jika Mary mau mendefinisikannya. Dia tidak pernah berani di hadapan Mary membahas harapannya kepada Tuan Featherstone, dan Mary selalu mengabaikannya, seolah-olah semuanya bergantung padanya. Tetapi jika dia benar-benar mendapatkan properti itu, Mary pasti akan menyadari perubahan posisinya. Semua ini terlintas dalam pikirannya dengan agak lesu, sebelum dia pergi menemui pamannya. Dia hanya tinggal sebentar, beralasan bahwa dia sedang flu; dan Mary tidak muncul kembali sebelum dia meninggalkan rumah. Tetapi saat dia berkuda pulang, dia mulai lebih menyadari bahwa dia sakit, daripada merasa melankolis.</p><p>Ketika Caleb Garth tiba di Stone Court tak lama setelah senja, Mary tidak terkejut, meskipun ia jarang punya waktu luang untuk mengunjunginya, dan sama sekali tidak suka harus berbicara dengan Tuan Featherstone. Di sisi lain, lelaki tua itu merasa tidak nyaman dengan saudara ipar yang tidak bisa ia ganggu, yang tidak keberatan dianggap miskin, tidak punya permintaan apa pun darinya, dan lebih memahami segala macam bisnis pertanian dan pertambangan daripada dirinya. Tetapi Mary yakin bahwa orang tuanya ingin bertemu dengannya, dan jika ayahnya tidak datang, ia akan meminta izin untuk pulang selama satu atau dua jam keesokan harinya. Setelah membahas harga sambil minum teh dengan Tuan Featherstone, Caleb bangkit untuk mengucapkan selamat tinggal, dan berkata, &quot;Aku ingin berbicara denganmu, Mary.&quot;</p><p>Ia membawa lilin ke ruang tamu besar lainnya, di mana tidak ada perapian, dan meletakkan cahaya redup itu di atas meja mahoni gelap, lalu berbalik menghadap ayahnya, dan merangkul lehernya, menciumnya dengan ciuman kekanak-kanakan yang sangat disukainya—ekspresi alisnya yang besar melunak seperti ekspresi anjing besar yang cantik melunak ketika dibelai. Mary adalah anak kesayangannya, dan apa pun yang mungkin dikatakan Susan, dan meskipun ia benar dalam semua hal lainnya, Caleb menganggap wajar jika Fred atau siapa pun menganggap Mary lebih disayangi daripada gadis-gadis lain.</p><p>“Aku punya sesuatu untuk kukatakan padamu, sayangku,” kata Caleb dengan ragu-ragu. “Bukan kabar baik; tapi bisa jadi lebih buruk.”</p><p>“Soal uang, ayah? Kurasa aku tahu apa itu.”</p><p>“Eh? Bagaimana bisa begitu? Begini, aku agak bodoh lagi, dan membubuhkan namaku di tagihan, dan sekarang saatnya membayar; dan ibumu harus menggunakan tabungannya, itu yang terburuk, dan bahkan itu pun tidak cukup untuk menutupi semuanya. Kami butuh seratus sepuluh pound: ibumu punya sembilan puluh dua pound, dan aku tidak punya uang lebih di bank; dan dia pikir kamu punya tabungan.”</p><p>“Oh ya; aku punya lebih dari dua puluh empat pound. Kupikir Ayah akan datang, jadi aku memasukkannya ke dalam tas. Lihat! Uang kertas putih yang indah dan emas.”</p><p>Mary mengeluarkan uang yang dilipat dari tas tangannya dan meletakkannya ke tangan ayahnya.</p><p>“Baiklah, tapi bagaimana—kita hanya butuh delapan belas—ini, kembalikan sisanya, Nak,—tapi bagaimana kau tahu tentang itu?” kata Caleb, yang, dengan ketidakpeduliannya yang tak terkalahkan terhadap uang, mulai terutama mengkhawatirkan hubungan urusan itu dengan perasaan Mary.</p><p>“Fred memberitahuku pagi ini.”</p><p>“Ah! Apakah dia datang dengan sengaja?”</p><p>“Ya, saya rasa begitu. Dia sangat tertekan.”</p><p>“Aku khawatir Fred tidak bisa dipercaya, Mary,” kata sang ayah dengan kelembutan yang bercampur keraguan. “Mungkin niatnya lebih baik daripada tingkah lakunya. Tapi menurutku sayang sekali jika kebahagiaan siapa pun bergantung padanya, dan ibumu pun pasti setuju.”</p><p>“Dan aku juga seharusnya begitu, ayah,” kata Mary, tanpa mendongak, tetapi menempelkan punggung tangan ayahnya ke pipinya.</p><p>“Aku tidak ingin ikut campur, sayangku. Tapi aku khawatir mungkin ada sesuatu di antara kau dan Fred, dan aku ingin memperingatkanmu. Begini, Mary”—di sini suara Caleb menjadi lebih lembut; ia tadi membolak-balik topinya di atas meja dan memandanginya, tetapi akhirnya ia mengalihkan pandangannya kepada putrinya—“seorang wanita, sebaik apa pun dia, harus menerima kehidupan yang diciptakan suaminya untuknya. Ibumu telah banyak menanggung penderitaan karena aku.”</p><p>Mary membalikkan punggung tangan ayahnya ke bibirnya dan tersenyum padanya.</p><p>“Yah, yah, tak seorang pun sempurna, tapi”—di sini Tuan Garth menggelengkan kepalanya untuk menutupi kekurangan kata-kata—“yang kupikirkan adalah—bagaimana rasanya menjadi seorang istri ketika ia tak pernah yakin pada suaminya, ketika suaminya tak memiliki prinsip yang membuatnya lebih takut berbuat salah kepada orang lain daripada takut kakinya dicubit. Itulah intinya, Mary. Anak muda mungkin saling menyayangi sebelum mereka tahu apa itu kehidupan, dan mereka mungkin menganggapnya seperti liburan jika mereka bisa bersama; tetapi itu segera berubah menjadi hari kerja, sayangku. Namun, kau lebih bijaksana daripada kebanyakan orang, dan kau tidak dimanjakan: mungkin tidak perlu bagiku untuk mengatakan ini, tetapi seorang ayah gemetar untuk putrinya, dan kau sendirian di sini.”</p><p>“Ayah, jangan khawatirkan aku,” kata Mary, menatap serius ke mata ayahnya; “Fred selalu baik padaku; dia baik hati dan penyayang, dan kurasa tidak munafik dengan semua kesenangan dirinya. Tapi aku tidak akan pernah bertunangan dengan seseorang yang tidak memiliki kemandirian layaknya seorang pria, dan yang terus-menerus bermalas-malasan dengan harapan orang lain akan menafkahinya. Ayah dan ibuku telah mengajarkan terlalu banyak harga diri padaku untuk itu.”</p><p>“Benar—benar. Kalau begitu saya tidak keberatan,” kata Tuan Garth sambil mengambil topinya. “Tapi sulit untuk melarikan diri dengan penghasilanmu, ya nak.”</p><p>“Ayah!” kata Mary, dengan nada protes yang paling dalam. “Bawalah juga banyak kasih sayang untuk mereka semua di rumah,” adalah kata terakhirnya sebelum ia menutup pintu luar.</p><p>“Kurasa ayahmu menginginkan penghasilanmu,” kata Tuan Featherstone tua, dengan kemampuan menduganya yang tidak menyenangkan seperti biasanya, ketika Mary kembali kepadanya. “Kurasa dia tidak cukup kuat dalam hal itu. Kau sudah dewasa sekarang; seharusnya kau menabung untuk dirimu sendiri.”</p><p>“Saya menganggap ayah dan ibu saya sebagai bagian terbaik dari diri saya, Tuan,” kata Mary dingin.</p><p>Tuan Featherstone mendengus: dia tidak dapat menyangkal bahwa gadis biasa seperti dia mungkin diharapkan berguna, jadi dia memikirkan balasan lain, yang cukup tidak menyenangkan namun selalu tepat. &quot;Jika Fred Vincy datang besok, jangan biarkan dia terus mengoceh: biarkan dia datang menghampiriku.&quot;</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-xxiv.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Xxiv</span>
+    </a>
+    <a href="bab-xxvi.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xxvi</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XXV.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Cinta tidak mencari kesenangan untuk dirinya sendiri, Tidak pula mempedulikan dirinya sendiri, Tetapi memberikan kenyamanannya untuk orang lain Dan membangun surga di tengah keputusasaan neraka. . . . . . . . Cinta hanya mencari kesenangan untuk dirinya sendiri, Untuk mengikat orang lain pada kesenangannya, Bersukacita atas hilangnya kenyamanan orang lain, Dan membangun neraka di tengah ketidakpedulian terhadap surga.” —W. BLAKE: Songs of Experience . Fred Vincy ingin tiba di Stone Court saat Mary tidak menduganya, dan saat pamannya tidak ada di lantai bawah: dalam hal itu, Mary bisa duduk sendirian di ruang tamu berpanel kayu. Ia meninggalkan kudanya di halaman untuk menghindari suara bising di kerikil di depan, dan memasuki ruang tamu tanpa pemberitahuan selain suara gagang pintu. Mary berada di sudut biasanya, tertawa terbahak-bahak mendengar kenangan Nyonya Piozzi tentang Johnson, dan mendongak dengan ekspresi geli masih terpancar di wajahnya. Ekspresi itu perlahan memudar saat ia melihat Fred mendekatinya tanpa berbicara, dan berdiri di depannya dengan siku di atas perapian, tampak sakit. Ia pun diam, hanya mengangkat matanya ke arah Fred dengan penuh pertanyaan. “Mary,” dia memulai, “aku ini bajingan tak berguna.” “Kupikir salah satu julukan itu sudah cukup untuk saat ini,” kata Mary, mencoba tersenyum, tetapi merasa khawatir. “Aku tahu kau tak akan pernah berpikir baik tentangku lagi. Kau akan menganggapku pembohong. Kau akan menganggapku tidak jujur. Kau akan berpikir aku tidak peduli padamu, atau pada ayah dan ibumu. Kau selalu menganggapku sebagai orang yang terburuk, aku tahu.” “Aku tak bisa menyangkal bahwa aku akan berpikir seperti itu tentangmu, Fred, jika kau memberiku alasan yang bagus. Tapi tolong segera beritahu aku apa yang telah kau lakukan. Aku lebih suka mengetahui kebenaran yang menyakitkan daripada membayangkannya.” “Aku berhutang uang—seratus enam puluh pound. Aku meminta ayahmu untuk mencantumkan namanya di tagihan. Kupikir itu tidak akan menjadi masalah baginya. Aku memastikan untuk membayar uang itu sendiri, dan aku telah berusaha sekeras mungkin. Dan sekarang, aku sangat tidak beruntung—kuda yang kudanya bermasalah—aku hanya bisa membayar lima puluh pound. Dan aku tidak bisa meminta uang kepada ayahku: dia tidak mau memberiku sepeser pun. Dan pamanku memberiku seratus pound beberapa waktu lalu. Jadi apa yang bisa kulakukan? Dan sekarang ayahmu tidak punya uang tunai untuk diberikan, dan ibumu harus membayarkan sembilan puluh dua pound yang telah dia tabung, dan dia bilang tabunganmu juga harus habis. Kau lihat betapa—” “Oh, kasihan ibu, kasihan ayah!” kata Mary, matanya berkaca-kaca, dan isak tangis kecil muncul yang berusaha ia tahan. Ia menatap lurus ke depan dan mengabaikan Fred, semua konsekuensi di rumah menjadi nyata baginya. Fred pun terdiam beberapa saat, merasa lebih sengsara dari sebelumnya. “Aku tidak akan menyakitimu demi apa pun di dunia ini, Mary,” katanya akhirnya. “Kau tidak akan pernah memaafkanku.” “Apa bedanya jika aku memaafkanmu?” kata Mary dengan penuh emosi. “Apakah itu akan membuat keadaan lebih baik bagi ibuku jika ia kehilangan uang yang telah ia peroleh dari les selama empat tahun, agar bisa menyekolahkan Alfred ke tempat Tuan Hanmer? Apakah menurutmu itu cukup menyenangkan jika aku memaafkanmu?” “Katakan apa saja yang kau mau, Mary. Aku pantas menerima semuanya.” “Aku tidak ingin mengatakan apa pun,” kata Mary, dengan suara lebih pelan, “dan kemarahanku tidak ada gunanya.” Dia mengusap air matanya, melempar bukunya, bangkit dan mengambil alat jahitnya. Fred mengikutinya dengan matanya, berharap matanya akan bertemu dengan mata Mary, dan dengan cara itu menemukan jalan untuk permohonan pertobatannya. Tapi tidak! Mary dengan mudah menghindari menatap ke atas. “Aku memang peduli dengan uang ibumu,” katanya, ketika Mary sudah duduk kembali dan menjahit dengan cepat. “Aku ingin bertanya padamu, Mary—tidakkah menurutmu Tuan Featherstone—jika kau memberitahunya—maksudku, memberitahunya tentang Alfred yang magang—akan memberikan uang muka?” “Keluarga saya tidak suka mengemis, Fred. Kami lebih suka bekerja untuk mendapatkan uang. Lagipula, kau bilang Tuan Featherstone baru-baru ini memberimu seratus pound. Dia jarang memberi hadiah; dia tidak pernah memberi hadiah kepada kami. Saya yakin ayah saya tidak akan meminta apa pun darinya; dan bahkan jika saya memilih untuk mengemis darinya, itu tidak akan ada gunanya.” “Aku sangat menderita, Mary—jika kau tahu betapa menderitanya aku, kau pasti akan merasa kasihan padaku.” “Ada hal lain yang lebih patut disesali daripada itu. Tetapi orang-orang egois selalu menganggap ketidaknyamanan mereka sendiri lebih penting daripada apa pun di dunia ini. Saya cukup sering melihat hal itu setiap hari.” “Rasanya tidak adil menyebutku egois. Jika kau tahu apa yang dilakukan pria muda lainnya, kau akan menganggapku jauh dari yang terburuk.” “Saya tahu bahwa orang-orang yang menghabiskan banyak uang untuk diri mereka sendiri tanpa mengetahui bagaimana mereka akan membayarnya, pasti egois. Mereka selalu memikirkan apa yang bisa mereka dapatkan untuk diri mereka sendiri, dan bukan apa yang mungkin hilang dari orang lain.” “Siapa pun bisa saja bernasib sial, Mary, dan mendapati dirinya tidak mampu membayar padahal ia bermaksud melakukannya. Tidak ada orang yang lebih baik di dunia ini daripada ayahmu, namun ia pun mengalami kesulitan.” “Beraninya kau membandingkan ayahku dengan dirimu, Fred?” kata Mary dengan nada marah yang dalam. “Dia tidak pernah mendapat masalah karena memikirkan kesenangan pribadinya, tetapi karena dia selalu memikirkan pekerjaan yang dia lakukan untuk orang lain. Dan dia telah berjuang keras, dan bekerja keras untuk mengganti kerugian semua orang.” “Dan kau pikir aku tidak akan pernah berusaha memperbaiki apa pun, Mary. Tidaklah murah hati untuk mempercayai hal terburuk dari seorang pria. Ketika kau memiliki kekuasaan atas dirinya, kupikir kau bisa mencoba menggunakannya untuk membuatnya lebih baik; tetapi itu yang tidak pernah kau lakukan. Namun, aku pergi,” Fred mengakhiri dengan lesu. “Aku tidak akan pernah berbicara lagi padamu tentang apa pun. Aku sangat menyesal atas semua masalah yang telah kusebabkan—hanya itu.” Mary menjatuhkan pekerjaannya dan mendongak. Seringkali ada sesuatu yang keibuan bahkan dalam cinta seorang gadis, dan pengalaman pahit Mary telah membentuk sifatnya menjadi sangat mudah terpengaruh, berbeda dari hal keras dan lemah yang kita sebut kekanak-kanakan. Mendengar kata-kata terakhir Fred, dia merasakan kepedihan seketika, sesuatu seperti yang dirasakan seorang ibu saat membayangkan isak tangis atau tangisan anaknya yang nakal dan bolos sekolah, yang mungkin akan tersesat dan celaka. Dan ketika, mendongak, matanya bertemu dengan tatapan putus asa Fred yang lesu, rasa ibanya terhadap Fred melampaui amarah dan semua kecemasannya yang lain. “Oh, Fred, kau tampak sakit sekali! Duduklah sebentar. Jangan pergi dulu. Biar kuberitahu paman bahwa kau di sini. Dia heran karena sudah seminggu tidak melihatmu.” Mary berbicara terburu-buru, mengucapkan kata-kata yang pertama kali terlintas di benaknya tanpa benar-benar tahu apa maksudnya, tetapi mengucapkannya dengan nada setengah menenangkan setengah memohon, lalu berdiri seolah hendak pergi menemui Tuan Featherstone. Tentu saja Fred merasa seolah awan telah terbelah dan secercah cahaya muncul: dia bergerak dan menghalangi jalannya. “Katakan satu kata saja, Mary, dan aku akan melakukan apa saja. Katakan bahwa kau tidak akan berpikir yang terburuk tentangku—tidak akan meninggalkanku sepenuhnya.” “Seolah-olah aku senang berpikir buruk tentangmu,” kata Mary dengan nada sedih. “Seolah-olah tidak menyakitkan bagiku melihatmu menjadi makhluk yang malas dan sembrono. Bagaimana kau bisa tahan menjadi begitu hina, sementara orang lain bekerja dan berjuang, dan ada begitu banyak hal yang harus dilakukan—bagaimana kau bisa tahan menjadi tidak berguna di dunia ini? Dan dengan begitu banyak kebaikan dalam watakmu, Fred,—kau bisa menjadi orang yang sangat berharga.” “Aku akan berusaha menjadi apa pun yang kau inginkan, Mary, asalkan kau mengatakan bahwa kau mencintaiku.” “Aku akan malu mengakui bahwa aku mencintai seorang pria yang selalu bergantung pada orang lain, dan mengharapkan apa yang akan mereka lakukan untuknya. Kamu akan jadi apa ketika berusia empat puluh tahun? Seperti Tuan Bowyer, kurasa—sama malasnya, tinggal di ruang tamu depan Nyonya Beck—gemuk dan lusuh, berharap seseorang akan mengundangmu makan malam—menghabiskan pagimu untuk mempelajari lagu komik—oh tidak! mempelajari melodi seruling.” Bibir Mary mulai melengkung membentuk senyum begitu dia menanyakan pertanyaan tentang masa depan Fred (jiwa muda memang mudah berubah), dan sebelum dia selesai bicara, wajahnya sudah sepenuhnya berseri-seri karena geli. Baginya, itu seperti berakhirnya rasa sakit karena Mary bisa menertawakannya, dan dengan senyum pasif dia mencoba meraih tangannya; tetapi Mary dengan cepat menjauh ke arah pintu dan berkata, “Aku akan memberi tahu paman. Kau harus menemuinya sebentar.” Diam-diam Fred merasa bahwa masa depannya terjamin terlepas dari terwujudnya ramalan sarkastik Mary, kecuali "apa pun" yang siap dia lakukan jika Mary mau mendefinisikannya. Dia tidak pernah berani di hadapan Mary membahas harapannya kepada Tuan Featherstone, dan Mary selalu mengabaikannya, seolah-olah semuanya bergantung padanya. Tetapi jika dia benar-benar mendapatkan properti itu, Mary pasti akan menyadari perubahan posisinya. Semua ini terlintas dalam pikirannya dengan agak lesu, sebelum dia pergi menemui pamannya. Dia hanya tinggal sebentar, beralasan bahwa dia sedang flu; dan Mary tidak muncul kembali sebelum dia meninggalkan rumah. Tetapi saat dia berkuda pulang, dia mulai lebih menyadari bahwa dia sakit, daripada merasa melankolis. Ketika Caleb Garth tiba di Stone Court tak lama setelah senja, Mary tidak terkejut, meskipun ia jarang punya waktu luang untuk mengunjunginya, dan sama sekali tidak suka harus berbicara dengan Tuan Featherstone. Di sisi lain, lelaki tua itu merasa tidak nyaman dengan saudara ipar yang tidak bisa ia ganggu, yang tidak keberatan dianggap miskin, tidak punya permintaan apa pun darinya, dan lebih memahami segala macam bisnis pertanian dan pertambangan daripada dirinya. Tetapi Mary yakin bahwa orang tuanya ingin bertemu dengannya, dan jika ayahnya tidak datang, ia akan meminta izin untuk pulang selama satu atau dua jam keesokan harinya. Setelah membahas harga sambil minum teh dengan Tuan Featherstone, Caleb bangkit untuk mengucapkan selamat tinggal, dan berkata, "Aku ingin berbicara denganmu, Mary." Ia membawa lilin ke ruang tamu besar lainnya, di mana tidak ada perapian, dan meletakkan cahaya redup itu di atas meja mahoni gelap, lalu berbalik menghadap ayahnya, dan merangkul lehernya, menciumnya dengan ciuman kekanak-kanakan yang sangat disukainya—ekspresi alisnya yang besar melunak seperti ekspresi anjing besar yang cantik melunak ketika dibelai. Mary adalah anak kesayangannya, dan apa pun yang mungkin dikatakan Susan, dan meskipun ia benar dalam semua hal lainnya, Caleb menganggap wajar jika Fred atau siapa pun menganggap Mary lebih disayangi daripada gadis-gadis lain. “Aku punya sesuatu untuk kukatakan padamu, sayangku,” kata Caleb dengan ragu-ragu. “Bukan kabar baik; tapi bisa jadi lebih buruk.” “Soal uang, ayah? Kurasa aku tahu apa itu.” “Eh? Bagaimana bisa begitu? Begini, aku agak bodoh lagi, dan membubuhkan namaku di tagihan, dan sekarang saatnya membayar; dan ibumu harus menggunakan tabungannya, itu yang terburuk, dan bahkan itu pun tidak cukup untuk menutupi semuanya. Kami butuh seratus sepuluh pound: ibumu punya sembilan puluh dua pound, dan aku tidak punya uang lebih di bank; dan dia pikir kamu punya tabungan.” “Oh ya; aku punya lebih dari dua puluh empat pound. Kupikir Ayah akan datang, jadi aku memasukkannya ke dalam tas. Lihat! Uang kertas putih yang indah dan emas.” Mary mengeluarkan uang yang dilipat dari tas tangannya dan meletakkannya ke tangan ayahnya. “Baiklah, tapi bagaimana—kita hanya butuh delapan belas—ini, kembalikan sisanya, Nak,—tapi bagaimana kau tahu tentang itu?” kata Caleb, yang, dengan ketidakpeduliannya yang tak terkalahkan terhadap uang, mulai terutama mengkhawatirkan hubungan urusan itu dengan perasaan Mary. “Fred memberitahuku pagi ini.” “Ah! Apakah dia datang dengan sengaja?” “Ya, saya rasa begitu. Dia sangat tertekan.” “Aku khawatir Fred tidak bisa dipercaya, Mary,” kata sang ayah dengan kelembutan yang bercampur keraguan. “Mungkin niatnya lebih baik daripada tingkah lakunya. Tapi menurutku sayang sekali jika kebahagiaan siapa pun bergantung padanya, dan ibumu pun pasti setuju.” “Dan aku juga seharusnya begitu, ayah,” kata Mary, tanpa mendongak, tetapi menempelkan punggung tangan ayahnya ke pipinya. “Aku tidak ingin ikut campur, sayangku. Tapi aku khawatir mungkin ada sesuatu di antara kau dan Fred, dan aku ingin memperingatkanmu. Begini, Mary”—di sini suara Caleb menjadi lebih lembut; ia tadi membolak-balik topinya di atas meja dan memandanginya, tetapi akhirnya ia mengalihkan pandangannya kepada putrinya—“seorang wanita, sebaik apa pun dia, harus menerima kehidupan yang diciptakan suaminya untuknya. Ibumu telah banyak menanggung penderitaan karena aku.” Mary membalikkan punggung tangan ayahnya ke bibirnya dan tersenyum padanya. “Yah, yah, tak seorang pun sempurna, tapi”—di sini Tuan Garth menggelengkan kepalanya untuk menutupi kekurangan kata-kata—“yang kupikirkan adalah—bagaimana rasanya menjadi seorang istri ketika ia tak pernah yakin pada suaminya, ketika suaminya tak memiliki prinsip yang membuatnya lebih takut berbuat salah kepada orang lain daripada takut kakinya dicubit. Itulah intinya, Mary. Anak muda mungkin saling menyayangi sebelum mereka tahu apa itu kehidupan, dan mereka mungkin menganggapnya seperti liburan jika mereka bisa bersama; tetapi itu segera berubah menjadi hari kerja, sayangku. Namun, kau lebih bijaksana daripada kebanyakan orang, dan kau tidak dimanjakan: mungkin tidak perlu bagiku untuk mengatakan ini, tetapi seorang ayah gemetar untuk putrinya, dan kau sendirian di sini.” “Ayah, jangan khawatirkan aku,” kata Mary, menatap serius ke mata ayahnya; “Fred selalu baik padaku; dia baik hati dan penyayang, dan kurasa tidak munafik dengan semua kesenangan dirinya. Tapi aku tidak akan pernah bertunangan dengan seseorang yang tidak memiliki kemandirian layaknya seorang pria, dan yang terus-menerus bermalas-malasan dengan harapan orang lain akan menafkahinya. Ayah dan ibuku telah mengajarkan terlalu banyak harga diri padaku untuk itu.” “Benar—benar. Kalau begitu saya tidak keberatan,” kata Tuan Garth sambil mengambil topinya. “Tapi sulit untuk melarikan diri dengan penghasilanmu, ya nak.” “Ayah!” kata Mary, dengan nada protes yang paling dalam. “Bawalah juga banyak kasih sayang untuk mereka semua di rumah,” adalah kata terakhirnya sebelum ia menutup pintu luar. “Kurasa ayahmu menginginkan penghasilanmu,” kata Tuan Featherstone tua, dengan kemampuan menduganya yang tidak menyenangkan seperti biasanya, ketika Mary kembali kepadanya. “Kurasa dia tidak cukup kuat dalam hal itu. Kau sudah dewasa sekarang; seharusnya kau menabung untuk dirimu sendiri.” “Saya menganggap ayah dan ibu saya sebagai bagian terbaik dari diri saya, Tuan,” kata Mary dingin. Tuan Featherstone mendengus: dia tidak dapat menyangkal bahwa gadis biasa seperti dia mungkin diharapkan berguna, jadi dia memikirkan balasan lain, yang cukup tidak menyenangkan namun selalu tepat. "Jika Fred Vincy datang besok, jangan biarkan dia terus mengoceh: biarkan dia datang menghampiriku."</p>
-
-<div class="nav">
-  <a href="bab-xxiv.html">⬅ Bab Xxiv.</a>
-  <a href="bab-xxvi.html">Bab Xxvi. ➡</a>
-</div>
 
 </body>
 </html>

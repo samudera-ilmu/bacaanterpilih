@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 19</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 19 - Bacaan digital klasik">
+<title>BAB 19 — Frankenstein</title>
+<meta name="description" content="Baca BAB 19 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-19.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 19 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 19 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-19.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 19 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 19 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 19",
+    "name": "BAB 19 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-19.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 19</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>London adalah tempat peristirahatan kami saat itu; kami memutuskan untuk tinggal beberapa bulan di kota yang indah dan terkenal ini. Clerval menginginkan pergaulan dengan orang-orang jenius dan berbakat yang berkembang pada masa itu, tetapi bagi saya ini adalah tujuan sekunder; saya terutama sibuk dengan cara memperoleh informasi yang diperlukan untuk menyelesaikan janji saya dan dengan cepat memanfaatkan SURAT pengantar yang telah saya bawa, yang ditujukan kepada para filsuf alam paling terkemuka.</p><p>Seandainya perjalanan ini terjadi selama masa studi dan kebahagiaanku, itu akan memberiku kesenangan yang tak terungkapkan. Tetapi malapetaka telah menimpa hidupku, dan aku hanya mengunjungi orang-orang ini demi informasi yang mungkin mereka berikan kepadaku tentang subjek yang sangat menarik minatku. Keramaian menggangguku; ketika sendirian, aku bisa memenuhi pikiranku dengan pemandangan langit dan bumi; suara Henry menenangkanku, dan dengan demikian aku bisa menipu diriku sendiri untuk mendapatkan kedamaian sementara. Tetapi wajah-wajah yang sibuk, tidak menarik, dan gembira itu membawa kembali keputusasaan ke hatiku. Aku melihat penghalang yang tak teratasi ditempatkan antara aku dan sesama manusia; penghalang ini disegel dengan darah William dan Justine, dan merenungkan peristiwa yang terkait dengan nama-nama itu memenuhi jiwaku dengan kesedihan.</p><p>Namun dalam diri Clerval, saya melihat bayangan diri saya yang dulu; ia ingin tahu dan bersemangat untuk mendapatkan pengalaman dan pengetahuan. Perbedaan perilaku yang ia amati merupakan sumber pembelajaran dan hiburan yang tak habis-habisnya baginya. Ia juga mengejar tujuan yang telah lama ia impikan. Rencananya adalah mengunjungi India, dengan keyakinan bahwa pengetahuannya tentang berbagai bahasa di sana, dan pandangan yang telah ia peroleh tentang masyarakatnya, memiliki sarana untuk membantu kemajuan kolonisasi dan perdagangan Eropa secara signifikan. Hanya di Inggris ia dapat mewujudkan rencananya. Ia selalu sibuk, dan satu-satunya penghalang bagi kesenangannya adalah pikiran saya yang sedih dan murung. Saya mencoba menyembunyikan hal ini sebisa mungkin, agar saya tidak menghalanginya dari kesenangan yang wajar bagi seseorang yang memasuki BABak baru kehidupan, tanpa terganggu oleh kekhawatiran atau kenangan pahit. Saya sering menolak untuk menemaninya, dengan alasan ada janji lain, agar saya bisa tetap sendirian. Aku pun mulai mengumpulkan bahan-bahan yang dibutuhkan untuk kreasi baruku, dan ini bagiku seperti siksaan tetesan air yang terus menerus jatuh di kepala. Setiap pikiran yang tertuju padanya adalah penderitaan yang luar biasa, dan setiap kata yang kuucapkan terkait hal itu membuat bibirku gemetar, dan jantungku berdebar kencang.</p><p>Setelah beberapa bulan tinggal di London, kami menerima SURAT dari seseorang di Skotlandia yang sebelumnya pernah mengunjungi kami di Jenewa. Ia menyebutkan keindahan negara asalnya dan bertanya kepada kami apakah keindahan itu tidak cukup menarik untuk membujuk kami memperpanjang perjalanan hingga ke utara, ke Perth, tempat ia tinggal. Clerval sangat ingin menerima undangan ini, dan saya, meskipun saya membenci keramaian, ingin melihat kembali gunung dan sungai serta semua karya menakjubkan yang digunakan Alam untuk menghiasi tempat tinggal pilihannya.</p><p>Kami tiba di Inggris pada awal Oktober, dan sekarang sudah Februari. Oleh karena itu, kami memutuskan untuk memulai perjalanan kami ke utara setelah satu bulan lagi. Dalam ekspedisi ini, kami tidak bermaksud mengikuti jalan utama menuju Edinburgh, tetapi mengunjungi Windsor, Oxford, Matlock, dan danau-danau Cumberland, dengan tekad untuk menyelesaikan perjalanan ini sekitar akhir Juli. Saya mengemasi instrumen kimia dan bahan-bahan yang telah saya kumpulkan, bertekad untuk menyelesaikan pekerjaan saya di suatu tempat terpencil di dataran tinggi utara Skotlandia.</p><p>Kami meninggalkan London pada tanggal 27 Maret dan tinggal beberapa hari di Windsor, menjelajahi hutannya yang indah. Ini adalah pemandangan baru bagi kami para pendaki gunung; pohon-pohon ek yang megah, banyaknya hewan buruan, dan kawanan rusa yang anggun semuanya merupakan hal baru bagi kami.</p><p>Dari sana kami melanjutkan perjalanan ke Oxford. Saat memasuki kota ini, pikiran kami dipenuhi dengan kenangan akan peristiwa yang telah terjadi di sana lebih dari satu setengah abad sebelumnya. Di sinilah Charles I mengumpulkan pasukannya. Kota ini tetap setia kepadanya, setelah seluruh bangsa meninggalkan perjuangannya untuk bergabung dengan panji Parlemen dan kebebasan. Kenangan akan raja yang malang itu dan para pengikutnya, Falkland yang ramah, Goring yang kurang ajar, ratunya, dan putranya, memberikan daya tarik tersendiri pada setiap bagian kota yang mungkin pernah mereka huni. Semangat masa lalu bersemayam di sini, dan kami senang menelusuri jejaknya. Sekalipun perasaan ini tidak menemukan kepuasan imajiner, penampilan kota itu sendiri sudah cukup indah untuk mendapatkan kekaguman kami. Perguruan tingginya kuno dan indah; jalan-jalannya hampir megah; dan sungai Isis yang indah, yang mengalir di sampingnya melalui padang rumput dengan kehijauan yang mempesona, terbentang menjadi hamparan air yang tenang, yang memantulkan kumpulan menara, puncak menara, dan kubah yang megah, yang terbungkus di antara pepohonan tua.</p><p>Aku menikmati pemandangan ini, namun kenikmatanku ternoda oleh kenangan masa lalu dan antisipasi masa depan. Aku diciptakan untuk kebahagiaan yang damai. Selama masa mudaku, ketidakpuasan tak pernah menghampiri pikiranku, dan jika aku pernah diliputi kebosanan , pemandangan keindahan alam atau studi tentang hal-hal yang unggul dan luhur dalam hasil karya manusia selalu dapat menarik hatiku dan memberi semangat baru pada jiwaku. Tetapi aku adalah pohon yang hancur; petir telah menembus jiwaku; dan saat itu aku merasa bahwa aku harus bertahan hidup untuk menunjukkan apa yang akan segera kutinggalkan—sebuah pemandangan menyedihkan dari kemanusiaan yang hancur, yang patut dikasihani oleh orang lain dan tak tertahankan bagi diriku sendiri.</p><p>Kami menghabiskan waktu yang cukup lama di Oxford, menjelajahi sekitarnya dan berusaha mengidentifikasi setiap tempat yang mungkin terkait dengan zaman paling bersemangat dalam sejarah Inggris. Perjalanan penemuan kecil kami sering kali diperpanjang oleh objek-objek yang muncul secara berurutan. Kami mengunjungi makam Hampden yang terkenal dan medan perang tempat patriot itu gugur. Untuk sesaat jiwaku terangkat dari ketakutan yang merendahkan dan menyedihkan untuk merenungkan gagasan ilahi tentang kebebasan dan pengorbanan diri yang mana pemandangan-pemandangan ini adalah monumen dan pengingatnya. Untuk sesaat aku berani melepaskan belenggu dan melihat sekelilingku dengan semangat yang bebas dan luhur, tetapi besi itu telah menggerogoti dagingku, dan aku kembali tenggelam, gemetar dan tanpa harapan, ke dalam diriku yang menyedihkan.</p><p>Kami meninggalkan Oxford dengan berat hati dan melanjutkan perjalanan ke Matlock, tempat peristirahatan kami berikutnya. Pemandangan di sekitar desa ini lebih mirip dengan pemandangan Swiss; tetapi semuanya berskala lebih kecil, dan perbukitan hijau tidak memiliki mahkota Pegunungan Alpen putih yang selalu menyertai pegunungan pinus di negara asal saya. Kami mengunjungi gua yang menakjubkan dan lemari-lemari kecil sejarah alam, di mana benda-benda aneh disusun dengan cara yang sama seperti di koleksi di Servox dan Chamounix. Nama terakhir itu membuat saya gemetar ketika diucapkan oleh Henry, dan saya segera meninggalkan Matlock, yang terkait dengan pemandangan mengerikan itu.</p><p>Dari Derby, masih melanjutkan perjalanan ke utara, kami menghabiskan dua bulan di Cumberland dan Westmorland. Sekarang aku hampir bisa membayangkan diriku berada di antara pegunungan Swiss. Gumpalan salju kecil yang masih tersisa di sisi utara pegunungan, danau-danau, dan deru aliran sungai berbatu semuanya merupakan pemandangan yang familiar dan menyenangkan bagiku. Di sini juga kami berkenalan dengan beberapa orang, yang hampir berhasil menipuku agar bahagia. Kegembiraan Clerval jauh lebih besar daripada kegembiraanku; pikirannya berkembang dalam pergaulan dengan orang-orang berbakat, dan ia menemukan dalam dirinya sendiri kapasitas dan sumber daya yang lebih besar daripada yang pernah ia bayangkan sebelumnya saat bergaul dengan orang-orang yang lebih rendah darinya. &quot;Aku bisa menghabiskan hidupku di sini,&quot; katanya kepadaku; &quot;dan di antara pegunungan ini aku hampir tidak akan menyesali Swiss dan Rhine.&quot;</p><p>Namun ia mendapati bahwa kehidupan seorang pengembara adalah kehidupan yang penuh dengan penderitaan di tengah kenikmatannya. Perasaannya selalu bergejolak; dan ketika ia mulai merasa tenang, ia merasa terpaksa meninggalkan hal yang memberinya kesenangan demi sesuatu yang baru, yang kembali menarik perhatiannya, dan yang juga ia tinggalkan demi hal-hal baru lainnya.</p><p>Kami hampir belum sempat mengunjungi berbagai danau di Cumberland dan Westmorland dan mulai menyukai beberapa penduduknya ketika waktu pertemuan kami dengan teman Skotlandia kami semakin dekat, dan kami meninggalkan mereka untuk melanjutkan perjalanan. Saya sendiri tidak menyesal. Saya telah mengabaikan janji saya untuk beberapa waktu, dan saya takut akan dampak kekecewaan iblis itu. Dia mungkin tetap tinggal di Swiss dan membalas dendam kepada kerabat saya. Pikiran ini menghantui dan menyiksa saya setiap saat, di saat-saat yang seharusnya saya bisa menikmati ketenangan dan kedamaian. Saya menunggu SURAT-SURAT saya dengan tidak sabar; jika SURAT-SURAT itu terlambat, saya merasa sengsara dan diliputi seribu ketakutan; dan ketika SURAT-SURAT itu tiba dan saya melihat tulisan Elizabeth atau ayah saya, saya hampir tidak berani membaca dan memastikan nasib saya. Terkadang saya berpikir bahwa iblis itu mengikuti saya dan mungkin mempercepat kelalaian saya dengan membunuh teman saya. Ketika pikiran-pikiran ini menguasai saya, saya tidak akan meninggalkan Henry sedetik pun, tetapi mengikutinya seperti bayangannya, untuk melindunginya dari amarah yang saya bayangkan dari sang penghancur. Aku merasa seolah-olah telah melakukan kejahatan besar, dan kesadaran akan hal itu terus menghantuiku. Aku tidak bersalah, tetapi aku memang telah mendatangkan kutukan mengerikan ke atas kepalaku, sama mematikannya dengan kejahatan.</p><p>Aku mengunjungi Edinburgh dengan mata dan pikiran yang lesu; namun kota itu mungkin akan menarik minat makhluk yang paling malang sekalipun. Clerval tidak menyukainya sebaik Oxford, karena kekunoan kota yang terakhir lebih menyenangkan baginya. Tetapi keindahan dan keteraturan kota baru Edinburgh, kastilnya yang romantis dan sekitarnya, yang paling indah di dunia, Arthur's Seat, Sumur St. Bernard, dan Bukit Pentland, mengimbangi perubahan itu dan membuatnya dipenuhi dengan keceriaan dan kekaguman. Tetapi aku tidak sabar untuk sampai ke akhir perjalananku.</p><p>Kami meninggalkan Edinburgh dalam seminggu, melewati Coupar, St. Andrew's, dan sepanjang tepian Sungai Tay, menuju Perth, tempat teman kami menunggu kami. Tetapi saya tidak dalam suasana hati untuk tertawa dan berbicara dengan orang asing atau ikut campur dalam perasaan atau rencana mereka dengan humor yang diharapkan dari seorang tamu; dan karenanya saya memberi tahu Clerval bahwa saya ingin melakukan tur Skotlandia sendirian. &quot;Nikmatilah,&quot; kataku, &quot;dan anggap ini sebagai pertemuan kita. Saya mungkin akan pergi selama satu atau dua bulan; tetapi jangan mengganggu keinginan saya, saya mohon; biarkan saya menikmati kedamaian dan kesendirian untuk sementara waktu; dan ketika saya kembali, saya harap saya akan kembali dengan hati yang lebih ringan, lebih sesuai dengan watak Anda.&quot;</p><p>Henry ingin membujukku agar mengurungkan niat, tetapi melihatku tetap teguh pada rencana ini, ia berhenti membantah. Ia memintaku untuk sering menulis SURAT. “Aku lebih suka bersamamu,” katanya, “dalam perjalananmu yang sendirian, daripada bersama orang-orang Skotlandia ini, yang tidak kukenal; cepatlah kembali, sahabatku, agar aku bisa merasa seperti di rumah lagi, sesuatu yang tidak bisa kurasakan saat kau tidak ada.”</p><p>Setelah berpisah dari temanku, aku memutuskan untuk mengunjungi suatu tempat terpencil di Skotlandia dan menyelesaikan pekerjaanku dalam kesendirian. Aku yakin bahwa monster itu mengikutiku dan akan menampakkan diri kepadaku setelah aku selesai, agar ia dapat bertemu kembali dengan temannya.</p><p>Dengan tekad ini, saya menjelajahi dataran tinggi utara dan menetapkan salah satu pulau terpencil di Orkney sebagai lokasi pekerjaan saya. Tempat itu cocok untuk pekerjaan semacam itu, karena hampir tidak lebih dari sebuah batu karang yang sisi-sisinya yang tinggi terus-menerus dihantam ombak. Tanahnya tandus, hampir tidak cukup untuk merumput bagi beberapa sapi yang malang, dan bubur gandum untuk penduduknya, yang terdiri dari lima orang, yang anggota tubuhnya yang kurus dan lemah menjadi tanda-tanda kehidupan mereka yang menyedihkan. Sayuran dan roti, jika mereka menikmati kemewahan tersebut, dan bahkan air tawar, harus diperoleh dari daratan utama, yang berjarak sekitar lima mil.</p><p>Di seluruh pulau itu hanya ada tiga gubuk kumuh, dan salah satunya kosong ketika saya tiba. Gubuk itu saya sewa. Gubuk itu hanya berisi dua kamar, dan kamar-kamar itu menunjukkan semua kekotoran kemiskinan yang paling menyedihkan. Atap jerami telah roboh, dindingnya belum diplester, dan pintunya lepas dari engselnya. Saya memerintahkan agar gubuk itu diperbaiki, membeli beberapa perabot, dan menempatinya, sebuah kejadian yang pasti akan menimbulkan kejutan seandainya semua indra penghuni gubuk itu tidak mati rasa karena kekurangan dan kemiskinan yang kumuh. Namun demikian, saya hidup tanpa dipandangi dan tanpa diganggu, hampir tidak mendapat ucapan terima kasih atas sedikit makanan dan pakaian yang saya berikan, begitulah penderitaan menumpulkan bahkan sensasi manusia yang paling kasar sekalipun.</p><p>Di tempat peristirahatan ini, saya menghabiskan pagi hari untuk bekerja; tetapi di malam hari, ketika cuaca memungkinkan, saya berjalan di pantai berbatu untuk mendengarkan deburan ombak yang menerjang kaki saya. Itu adalah pemandangan yang monoton namun selalu berubah. Saya teringat Swiss; sangat berbeda dari lanskap yang sunyi dan mengerikan ini. Bukit-bukitnya ditutupi tanaman anggur, dan pondok-pondoknya tersebar rapat di dataran. Danau-danau yang indah memantulkan langit biru yang lembut, dan ketika diterpa angin, riuhnya hanya seperti permainan bayi yang lincah jika dibandingkan dengan deru samudra raksasa.</p><p>Dengan cara inilah saya membagi pekerjaan saya ketika pertama kali tiba, tetapi seiring berjalannya pekerjaan saya, setiap hari pekerjaan itu menjadi semakin mengerikan dan menjengkelkan bagi saya. Terkadang saya tidak dapat memaksakan diri untuk masuk ke laboratorium saya selama beberapa hari, dan di waktu lain saya bekerja siang dan malam untuk menyelesaikan pekerjaan saya. Itu memang proses yang kotor yang saya lakukan. Selama percobaan pertama saya, semacam kegilaan antusias telah membutakan saya terhadap kengerian pekerjaan saya; pikiran saya terfokus pada penyelesaian pekerjaan saya, dan mata saya tertutup terhadap kengerian proses yang saya jalani. Tetapi sekarang saya melakukannya dengan tenang, dan hati saya sering merasa mual melihat pekerjaan tangan saya.</p><p>Dalam situasi seperti itu, bekerja dalam pekerjaan yang paling menjijikkan, tenggelam dalam kesunyian di mana tidak ada yang dapat mengalihkan perhatianku dari kejadian sebenarnya yang sedang kuhadapi, semangatku menjadi tidak stabil; aku menjadi gelisah dan gugup. Setiap saat aku takut bertemu dengan penganiayaku. Terkadang aku duduk dengan mata tertuju ke tanah, takut mengangkatnya karena khawatir akan bertemu dengan objek yang sangat kutakuti. Aku takut menjauh dari pandangan sesama manusia karena takut ketika sendirian dia akan datang untuk menjemput temannya.</p><p>Sementara itu, saya terus bekerja, dan pekerjaan saya sudah cukup maju. Saya menantikan penyelesaiannya dengan harapan yang bergetar dan penuh semangat, yang tidak berani saya pertanyakan pada diri sendiri, tetapi bercampur dengan firasat buruk yang samar-samar yang membuat hati saya mual.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-18.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 18</span>
+    </a>
+    <a href="bab-20.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 20</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 19</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>London adalah tempat peristirahatan kami saat itu; kami memutuskan untuk tinggal beberapa bulan di kota yang indah dan terkenal ini. Clerval menginginkan pergaulan dengan orang-orang jenius dan berbakat yang berkembang pada masa itu, tetapi bagi saya ini adalah tujuan sekunder; saya terutama sibuk dengan cara memperoleh informasi yang diperlukan untuk menyelesaikan janji saya dan dengan cepat memanfaatkan SURAT pengantar yang telah saya bawa, yang ditujukan kepada para filsuf alam paling terkemuka. Seandainya perjalanan ini terjadi selama masa studi dan kebahagiaanku, itu akan memberiku kesenangan yang tak terungkapkan. Tetapi malapetaka telah menimpa hidupku, dan aku hanya mengunjungi orang-orang ini demi informasi yang mungkin mereka berikan kepadaku tentang subjek yang sangat menarik minatku. Keramaian menggangguku; ketika sendirian, aku bisa memenuhi pikiranku dengan pemandangan langit dan bumi; suara Henry menenangkanku, dan dengan demikian aku bisa menipu diriku sendiri untuk mendapatkan kedamaian sementara. Tetapi wajah-wajah yang sibuk, tidak menarik, dan gembira itu membawa kembali keputusasaan ke hatiku. Aku melihat penghalang yang tak teratasi ditempatkan antara aku dan sesama manusia; penghalang ini disegel dengan darah William dan Justine, dan merenungkan peristiwa yang terkait dengan nama-nama itu memenuhi jiwaku dengan kesedihan. Namun dalam diri Clerval, saya melihat bayangan diri saya yang dulu; ia ingin tahu dan bersemangat untuk mendapatkan pengalaman dan pengetahuan. Perbedaan perilaku yang ia amati merupakan sumber pembelajaran dan hiburan yang tak habis-habisnya baginya. Ia juga mengejar tujuan yang telah lama ia impikan. Rencananya adalah mengunjungi India, dengan keyakinan bahwa pengetahuannya tentang berbagai bahasa di sana, dan pandangan yang telah ia peroleh tentang masyarakatnya, memiliki sarana untuk membantu kemajuan kolonisasi dan perdagangan Eropa secara signifikan. Hanya di Inggris ia dapat mewujudkan rencananya. Ia selalu sibuk, dan satu-satunya penghalang bagi kesenangannya adalah pikiran saya yang sedih dan murung. Saya mencoba menyembunyikan hal ini sebisa mungkin, agar saya tidak menghalanginya dari kesenangan yang wajar bagi seseorang yang memasuki BABak baru kehidupan, tanpa terganggu oleh kekhawatiran atau kenangan pahit. Saya sering menolak untuk menemaninya, dengan alasan ada janji lain, agar saya bisa tetap sendirian. Aku pun mulai mengumpulkan bahan-bahan yang dibutuhkan untuk kreasi baruku, dan ini bagiku seperti siksaan tetesan air yang terus menerus jatuh di kepala. Setiap pikiran yang tertuju padanya adalah penderitaan yang luar biasa, dan setiap kata yang kuucapkan terkait hal itu membuat bibirku gemetar, dan jantungku berdebar kencang. Setelah beberapa bulan tinggal di London, kami menerima SURAT dari seseorang di Skotlandia yang sebelumnya pernah mengunjungi kami di Jenewa. Ia menyebutkan keindahan negara asalnya dan bertanya kepada kami apakah keindahan itu tidak cukup menarik untuk membujuk kami memperpanjang perjalanan hingga ke utara, ke Perth, tempat ia tinggal. Clerval sangat ingin menerima undangan ini, dan saya, meskipun saya membenci keramaian, ingin melihat kembali gunung dan sungai serta semua karya menakjubkan yang digunakan Alam untuk menghiasi tempat tinggal pilihannya. Kami tiba di Inggris pada awal Oktober, dan sekarang sudah Februari. Oleh karena itu, kami memutuskan untuk memulai perjalanan kami ke utara setelah satu bulan lagi. Dalam ekspedisi ini, kami tidak bermaksud mengikuti jalan utama menuju Edinburgh, tetapi mengunjungi Windsor, Oxford, Matlock, dan danau-danau Cumberland, dengan tekad untuk menyelesaikan perjalanan ini sekitar akhir Juli. Saya mengemasi instrumen kimia dan bahan-bahan yang telah saya kumpulkan, bertekad untuk menyelesaikan pekerjaan saya di suatu tempat terpencil di dataran tinggi utara Skotlandia. Kami meninggalkan London pada tanggal 27 Maret dan tinggal beberapa hari di Windsor, menjelajahi hutannya yang indah. Ini adalah pemandangan baru bagi kami para pendaki gunung; pohon-pohon ek yang megah, banyaknya hewan buruan, dan kawanan rusa yang anggun semuanya merupakan hal baru bagi kami. Dari sana kami melanjutkan perjalanan ke Oxford. Saat memasuki kota ini, pikiran kami dipenuhi dengan kenangan akan peristiwa yang telah terjadi di sana lebih dari satu setengah abad sebelumnya. Di sinilah Charles I mengumpulkan pasukannya. Kota ini tetap setia kepadanya, setelah seluruh bangsa meninggalkan perjuangannya untuk bergabung dengan panji Parlemen dan kebebasan. Kenangan akan raja yang malang itu dan para pengikutnya, Falkland yang ramah, Goring yang kurang ajar, ratunya, dan putranya, memberikan daya tarik tersendiri pada setiap bagian kota yang mungkin pernah mereka huni. Semangat masa lalu bersemayam di sini, dan kami senang menelusuri jejaknya. Sekalipun perasaan ini tidak menemukan kepuasan imajiner, penampilan kota itu sendiri sudah cukup indah untuk mendapatkan kekaguman kami. Perguruan tingginya kuno dan indah; jalan-jalannya hampir megah; dan sungai Isis yang indah, yang mengalir di sampingnya melalui padang rumput dengan kehijauan yang mempesona, terbentang menjadi hamparan air yang tenang, yang memantulkan kumpulan menara, puncak menara, dan kubah yang megah, yang terbungkus di antara pepohonan tua. Aku menikmati pemandangan ini, namun kenikmatanku ternoda oleh kenangan masa lalu dan antisipasi masa depan. Aku diciptakan untuk kebahagiaan yang damai. Selama masa mudaku, ketidakpuasan tak pernah menghampiri pikiranku, dan jika aku pernah diliputi kebosanan , pemandangan keindahan alam atau studi tentang hal-hal yang unggul dan luhur dalam hasil karya manusia selalu dapat menarik hatiku dan memberi semangat baru pada jiwaku. Tetapi aku adalah pohon yang hancur; petir telah menembus jiwaku; dan saat itu aku merasa bahwa aku harus bertahan hidup untuk menunjukkan apa yang akan segera kutinggalkan—sebuah pemandangan menyedihkan dari kemanusiaan yang hancur, yang patut dikasihani oleh orang lain dan tak tertahankan bagi diriku sendiri. Kami menghabiskan waktu yang cukup lama di Oxford, menjelajahi sekitarnya dan berusaha mengidentifikasi setiap tempat yang mungkin terkait dengan zaman paling bersemangat dalam sejarah Inggris. Perjalanan penemuan kecil kami sering kali diperpanjang oleh objek-objek yang muncul secara berurutan. Kami mengunjungi makam Hampden yang terkenal dan medan perang tempat patriot itu gugur. Untuk sesaat jiwaku terangkat dari ketakutan yang merendahkan dan menyedihkan untuk merenungkan gagasan ilahi tentang kebebasan dan pengorbanan diri yang mana pemandangan-pemandangan ini adalah monumen dan pengingatnya. Untuk sesaat aku berani melepaskan belenggu dan melihat sekelilingku dengan semangat yang bebas dan luhur, tetapi besi itu telah menggerogoti dagingku, dan aku kembali tenggelam, gemetar dan tanpa harapan, ke dalam diriku yang menyedihkan. Kami meninggalkan Oxford dengan berat hati dan melanjutkan perjalanan ke Matlock, tempat peristirahatan kami berikutnya. Pemandangan di sekitar desa ini lebih mirip dengan pemandangan Swiss; tetapi semuanya berskala lebih kecil, dan perbukitan hijau tidak memiliki mahkota Pegunungan Alpen putih yang selalu menyertai pegunungan pinus di negara asal saya. Kami mengunjungi gua yang menakjubkan dan lemari-lemari kecil sejarah alam, di mana benda-benda aneh disusun dengan cara yang sama seperti di koleksi di Servox dan Chamounix. Nama terakhir itu membuat saya gemetar ketika diucapkan oleh Henry, dan saya segera meninggalkan Matlock, yang terkait dengan pemandangan mengerikan itu. Dari Derby, masih melanjutkan perjalanan ke utara, kami menghabiskan dua bulan di Cumberland dan Westmorland. Sekarang aku hampir bisa membayangkan diriku berada di antara pegunungan Swiss. Gumpalan salju kecil yang masih tersisa di sisi utara pegunungan, danau-danau, dan deru aliran sungai berbatu semuanya merupakan pemandangan yang familiar dan menyenangkan bagiku. Di sini juga kami berkenalan dengan beberapa orang, yang hampir berhasil menipuku agar bahagia. Kegembiraan Clerval jauh lebih besar daripada kegembiraanku; pikirannya berkembang dalam pergaulan dengan orang-orang berbakat, dan ia menemukan dalam dirinya sendiri kapasitas dan sumber daya yang lebih besar daripada yang pernah ia bayangkan sebelumnya saat bergaul dengan orang-orang yang lebih rendah darinya. "Aku bisa menghabiskan hidupku di sini," katanya kepadaku; "dan di antara pegunungan ini aku hampir tidak akan menyesali Swiss dan Rhine." Namun ia mendapati bahwa kehidupan seorang pengembara adalah kehidupan yang penuh dengan penderitaan di tengah kenikmatannya. Perasaannya selalu bergejolak; dan ketika ia mulai merasa tenang, ia merasa terpaksa meninggalkan hal yang memberinya kesenangan demi sesuatu yang baru, yang kembali menarik perhatiannya, dan yang juga ia tinggalkan demi hal-hal baru lainnya. Kami hampir belum sempat mengunjungi berbagai danau di Cumberland dan Westmorland dan mulai menyukai beberapa penduduknya ketika waktu pertemuan kami dengan teman Skotlandia kami semakin dekat, dan kami meninggalkan mereka untuk melanjutkan perjalanan. Saya sendiri tidak menyesal. Saya telah mengabaikan janji saya untuk beberapa waktu, dan saya takut akan dampak kekecewaan iblis itu. Dia mungkin tetap tinggal di Swiss dan membalas dendam kepada kerabat saya. Pikiran ini menghantui dan menyiksa saya setiap saat, di saat-saat yang seharusnya saya bisa menikmati ketenangan dan kedamaian. Saya menunggu SURAT-SURAT saya dengan tidak sabar; jika SURAT-SURAT itu terlambat, saya merasa sengsara dan diliputi seribu ketakutan; dan ketika SURAT-SURAT itu tiba dan saya melihat tulisan Elizabeth atau ayah saya, saya hampir tidak berani membaca dan memastikan nasib saya. Terkadang saya berpikir bahwa iblis itu mengikuti saya dan mungkin mempercepat kelalaian saya dengan membunuh teman saya. Ketika pikiran-pikiran ini menguasai saya, saya tidak akan meninggalkan Henry sedetik pun, tetapi mengikutinya seperti bayangannya, untuk melindunginya dari amarah yang saya bayangkan dari sang penghancur. Aku merasa seolah-olah telah melakukan kejahatan besar, dan kesadaran akan hal itu terus menghantuiku. Aku tidak bersalah, tetapi aku memang telah mendatangkan kutukan mengerikan ke atas kepalaku, sama mematikannya dengan kejahatan. Aku mengunjungi Edinburgh dengan mata dan pikiran yang lesu; namun kota itu mungkin akan menarik minat makhluk yang paling malang sekalipun. Clerval tidak menyukainya sebaik Oxford, karena kekunoan kota yang terakhir lebih menyenangkan baginya. Tetapi keindahan dan keteraturan kota baru Edinburgh, kastilnya yang romantis dan sekitarnya, yang paling indah di dunia, Arthur's Seat, Sumur St. Bernard, dan Bukit Pentland, mengimbangi perubahan itu dan membuatnya dipenuhi dengan keceriaan dan kekaguman. Tetapi aku tidak sabar untuk sampai ke akhir perjalananku. Kami meninggalkan Edinburgh dalam seminggu, melewati Coupar, St. Andrew's, dan sepanjang tepian Sungai Tay, menuju Perth, tempat teman kami menunggu kami. Tetapi saya tidak dalam suasana hati untuk tertawa dan berbicara dengan orang asing atau ikut campur dalam perasaan atau rencana mereka dengan humor yang diharapkan dari seorang tamu; dan karenanya saya memberi tahu Clerval bahwa saya ingin melakukan tur Skotlandia sendirian. "Nikmatilah," kataku, "dan anggap ini sebagai pertemuan kita. Saya mungkin akan pergi selama satu atau dua bulan; tetapi jangan mengganggu keinginan saya, saya mohon; biarkan saya menikmati kedamaian dan kesendirian untuk sementara waktu; dan ketika saya kembali, saya harap saya akan kembali dengan hati yang lebih ringan, lebih sesuai dengan watak Anda." Henry ingin membujukku agar mengurungkan niat, tetapi melihatku tetap teguh pada rencana ini, ia berhenti membantah. Ia memintaku untuk sering menulis SURAT. “Aku lebih suka bersamamu,” katanya, “dalam perjalananmu yang sendirian, daripada bersama orang-orang Skotlandia ini, yang tidak kukenal; cepatlah kembali, sahabatku, agar aku bisa merasa seperti di rumah lagi, sesuatu yang tidak bisa kurasakan saat kau tidak ada.” Setelah berpisah dari temanku, aku memutuskan untuk mengunjungi suatu tempat terpencil di Skotlandia dan menyelesaikan pekerjaanku dalam kesendirian. Aku yakin bahwa monster itu mengikutiku dan akan menampakkan diri kepadaku setelah aku selesai, agar ia dapat bertemu kembali dengan temannya. Dengan tekad ini, saya menjelajahi dataran tinggi utara dan menetapkan salah satu pulau terpencil di Orkney sebagai lokasi pekerjaan saya. Tempat itu cocok untuk pekerjaan semacam itu, karena hampir tidak lebih dari sebuah batu karang yang sisi-sisinya yang tinggi terus-menerus dihantam ombak. Tanahnya tandus, hampir tidak cukup untuk merumput bagi beberapa sapi yang malang, dan bubur gandum untuk penduduknya, yang terdiri dari lima orang, yang anggota tubuhnya yang kurus dan lemah menjadi tanda-tanda kehidupan mereka yang menyedihkan. Sayuran dan roti, jika mereka menikmati kemewahan tersebut, dan bahkan air tawar, harus diperoleh dari daratan utama, yang berjarak sekitar lima mil. Di seluruh pulau itu hanya ada tiga gubuk kumuh, dan salah satunya kosong ketika saya tiba. Gubuk itu saya sewa. Gubuk itu hanya berisi dua kamar, dan kamar-kamar itu menunjukkan semua kekotoran kemiskinan yang paling menyedihkan. Atap jerami telah roboh, dindingnya belum diplester, dan pintunya lepas dari engselnya. Saya memerintahkan agar gubuk itu diperbaiki, membeli beberapa perabot, dan menempatinya, sebuah kejadian yang pasti akan menimbulkan kejutan seandainya semua indra penghuni gubuk itu tidak mati rasa karena kekurangan dan kemiskinan yang kumuh. Namun demikian, saya hidup tanpa dipandangi dan tanpa diganggu, hampir tidak mendapat ucapan terima kasih atas sedikit makanan dan pakaian yang saya berikan, begitulah penderitaan menumpulkan bahkan sensasi manusia yang paling kasar sekalipun. Di tempat peristirahatan ini, saya menghabiskan pagi hari untuk bekerja; tetapi di malam hari, ketika cuaca memungkinkan, saya berjalan di pantai berbatu untuk mendengarkan deburan ombak yang menerjang kaki saya. Itu adalah pemandangan yang monoton namun selalu berubah. Saya teringat Swiss; sangat berbeda dari lanskap yang sunyi dan mengerikan ini. Bukit-bukitnya ditutupi tanaman anggur, dan pondok-pondoknya tersebar rapat di dataran. Danau-danau yang indah memantulkan langit biru yang lembut, dan ketika diterpa angin, riuhnya hanya seperti permainan bayi yang lincah jika dibandingkan dengan deru samudra raksasa. Dengan cara inilah saya membagi pekerjaan saya ketika pertama kali tiba, tetapi seiring berjalannya pekerjaan saya, setiap hari pekerjaan itu menjadi semakin mengerikan dan menjengkelkan bagi saya. Terkadang saya tidak dapat memaksakan diri untuk masuk ke laboratorium saya selama beberapa hari, dan di waktu lain saya bekerja siang dan malam untuk menyelesaikan pekerjaan saya. Itu memang proses yang kotor yang saya lakukan. Selama percobaan pertama saya, semacam kegilaan antusias telah membutakan saya terhadap kengerian pekerjaan saya; pikiran saya terfokus pada penyelesaian pekerjaan saya, dan mata saya tertutup terhadap kengerian proses yang saya jalani. Tetapi sekarang saya melakukannya dengan tenang, dan hati saya sering merasa mual melihat pekerjaan tangan saya. Dalam situasi seperti itu, bekerja dalam pekerjaan yang paling menjijikkan, tenggelam dalam kesunyian di mana tidak ada yang dapat mengalihkan perhatianku dari kejadian sebenarnya yang sedang kuhadapi, semangatku menjadi tidak stabil; aku menjadi gelisah dan gugup. Setiap saat aku takut bertemu dengan penganiayaku. Terkadang aku duduk dengan mata tertuju ke tanah, takut mengangkatnya karena khawatir akan bertemu dengan objek yang sangat kutakuti. Aku takut menjauh dari pandangan sesama manusia karena takut ketika sendirian dia akan datang untuk menjemput temannya. Sementara itu, saya terus bekerja, dan pekerjaan saya sudah cukup maju. Saya menantikan penyelesaiannya dengan harapan yang bergetar dan penuh semangat, yang tidak berani saya pertanyakan pada diri sendiri, tetapi bercampur dengan firasat buruk yang samar-samar yang membuat hati saya mual.</p>
-
-<div class="nav">
-  <a href="bab-18.html">⬅ Bab 18</a>
-  <a href="bab-20.html">Bab 20 ➡</a>
-</div>
 
 </body>
 </html>

@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB LIX.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB LIX. - Bacaan digital klasik">
+<title>Bab LIX — Middlemarch</title>
+<meta name="description" content="Baca Bab LIX dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-lix.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab LIX — Middlemarch">
+  <meta property="og:description" content="Baca Bab LIX dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-lix.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab LIX — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab LIX dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab LIX",
+    "name": "Bab LIX — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-lix.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab LIX</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Mereka bilang dahulu kala Jiwa berwujud manusia, <br />Tetapi lebih kecil, lebih halus daripada wujud jasmani, Maka ia berkelana keluar untuk menghirup udara segar ketika ia suka. Dan lihat! di samping wajahnya yang seperti malaikat melayang Sebuah wujud berbibir pucat yang berbisik di telinga cangkang kecilnya itu.”</p><p>Berita sering kali tersebar tanpa pikir panjang dan seefektif serbuk sari yang dibawa lebah (tanpa menyadari betapa halusnya serbuk sari itu) ketika mereka berdengung mencari nektar tertentu. Perbandingan yang bagus ini merujuk pada Fred Vincy, yang pada malam itu di Lowick Parsonage mendengar diskusi yang meriah di antara para wanita tentang berita yang didapat pelayan tua mereka dari Tantripp mengenai penyebutan aneh Tuan Casaubon tentang Tuan Ladislaw dalam tambahan surat wasiatnya yang dibuat tidak lama sebelum kematiannya. Nona Winifred terkejut mengetahui bahwa saudara laki-lakinya telah mengetahui fakta itu sebelumnya, dan mengamati bahwa Camden adalah orang yang paling luar biasa karena mengetahui banyak hal tetapi tidak menceritakannya; kemudian Mary Garth berkata bahwa tambahan surat wasiat itu mungkin telah bercampur dengan kebiasaan laba-laba, yang tidak pernah didengarkan oleh Nona Winifred. Nyonya Farebrother menganggap bahwa berita itu ada hubungannya dengan fakta bahwa mereka hanya sekali melihat Tuan Ladislaw di Lowick, dan Nona Noble mengeluarkan banyak suara mengeong penuh belas kasihan.</p><p>Fred tidak banyak tahu dan tidak terlalu peduli tentang Ladislaw dan keluarga Casaubon, dan pikirannya tidak pernah kembali ke diskusi itu sampai suatu hari, atas permintaan ibunya, saat mengunjungi Rosamond untuk menyampaikan pesan, ia kebetulan melihat Ladislaw pergi. Fred dan Rosamond tidak banyak bicara satu sama lain sekarang karena pernikahan telah menjauhkan Rosamond dari perselisihan dengan saudara-saudaranya yang tidak menyenangkan, dan terutama sekarang karena Fred telah mengambil langkah yang menurut Rosamond bodoh dan bahkan tercela, yaitu meninggalkan Gereja untuk terjun ke bisnis seperti milik Tuan Garth. Karena itu, Fred lebih memilih membicarakan berita yang dianggapnya tidak penting, dan &quot;berkaitan dengan Ladislaw muda itu,&quot; ia menyebutkan apa yang telah didengarnya di Rumah Pendeta Lowick.</p><p>Sekarang Lydgate, seperti Tuan Farebrother, tahu jauh lebih banyak daripada yang dia ceritakan, dan ketika dia mulai memikirkan hubungan antara Will dan Dorothea, dugaannya telah melampaui fakta. Dia membayangkan bahwa ada keterikatan yang penuh gairah di kedua belah pihak, dan ini terasa terlalu serius untuk digosipkan. Dia ingat kejengkelan Will ketika dia menyebutkan Nyonya Casaubon, dan menjadi lebih berhati-hati. Secara keseluruhan, dugaannya, di samping apa yang dia ketahui tentang fakta, meningkatkan keramahan dan toleransinya terhadap Ladislaw, dan membuatnya mengerti keraguan yang membuatnya tetap di Middlemarch setelah dia mengatakan bahwa dia akan pergi. Hal itu menunjukkan perbedaan antara pikiran Lydgate dan Rosamond sehingga dia tidak memiliki dorongan untuk berbicara dengannya tentang masalah itu; memang, dia tidak sepenuhnya mempercayai sikap pendiamnya terhadap Will. Dan dia benar; meskipun dia tidak memiliki gambaran tentang bagaimana pikiran Rosamond akan bertindak dalam mendorongnya untuk berbicara.</p><p>Ketika Rosy menyampaikan kabar Fred kepada Lydgate, pria itu berkata, “Hati-hati jangan sampai kau memberi petunjuk sedikit pun kepada Ladislaw, Rosy. Dia mungkin akan marah besar seolah-olah kau menghinanya. Tentu saja ini masalah yang menyakitkan.”</p><p>Rosamond menoleh dan menepuk-nepuk rambutnya, tampak acuh tak acuh. Tetapi ketika Will datang lagi saat Lydgate sedang pergi, dia berbicara dengan sinis tentang Will yang tidak akan pergi ke London seperti yang telah diancamnya.</p><p>“Aku tahu semua tentang itu. Aku punya informan rahasia,” katanya, sambil mengangkat kepalanya dengan gaya anggun di atas hasil pekerjaannya yang dipegang tinggi di antara jari-jarinya yang aktif. “Ada magnet yang sangat kuat di lingkungan ini.”</p><p>“Tentu saja ada. Tidak ada yang lebih tahu itu selain kau,” kata Will, dengan sedikit kesopanan, tetapi dalam hati siap marah.</p><p>“Ini benar-benar kisah romantis yang paling menawan: Tuan Casaubon cemburu, dan meramalkan bahwa tidak ada orang lain yang begitu ingin dinikahi Nyonya Casaubon, dan tidak ada orang yang begitu ingin menikahinya selain seorang pria tertentu; lalu menyusun rencana untuk merusak semuanya dengan membuatnya kehilangan hartanya jika dia menikahi pria itu—dan kemudian—dan kemudian—dan kemudian—oh, saya yakin akhirnya akan sangat romantis.”</p><p>“Ya Tuhan! Apa maksudmu?” kata Will, wajah dan telinganya memerah, raut wajahnya tampak berubah seolah-olah dia baru saja terguncang hebat. “Jangan bercanda; katakan padaku apa maksudmu.”</p><p>“Kau sebenarnya tidak tahu?” kata Rosamond, yang sudah tidak lagi bermain-main, dan tidak menginginkan apa pun selain memberi tahu agar ia dapat menimbulkan efek tertentu.</p><p>“Tidak!” jawabnya dengan tidak sabar.</p><p>“Tidak tahukah Anda bahwa Tuan Casaubon telah mencantumkan dalam wasiatnya bahwa jika Nyonya Casaubon menikahi Anda, dia harus kehilangan semua hartanya?”</p><p>“Bagaimana kau tahu itu benar?” tanya Will dengan antusias.</p><p>“Saudaraku Fred mendengarnya dari Farebrothers.” Will tersentak dari kursinya dan meraih topinya.</p><p>“Kurasa dia lebih menyukaimu daripada properti itu,” kata Rosamond, memandanginya dari kejauhan.</p><p>“Kumohon jangan bicarakan itu lagi,” kata Will, dengan suara serak yang sangat berbeda dari suara ringannya yang biasa. “Itu penghinaan yang keji baginya dan bagiku.” Kemudian dia duduk dengan linglung, menatap ke depan, tetapi tidak melihat apa pun.</p><p>“Sekarang kau marah padaku , ” kata Rosamond. “Tidak baik menyimpan dendam padaku . Seharusnya kau berterima kasih padaku karena telah memberitahumu.”</p><p>“Jadi, memang benar,” kata Will tiba-tiba, berbicara dengan semacam jiwa ganda yang dimiliki para pemimpi yang menjawab pertanyaan.</p><p>“Aku berharap segera mendengar kabar pernikahan itu,” kata Rosamond sambil bercanda.</p><p>“Tidak akan pernah! Kau tidak akan pernah mendengar tentang pernikahan itu!”</p><p>Setelah mengucapkan kata-kata itu dengan terburu-buru, Will bangkit, mengulurkan tangannya kepada Rosamond, masih dengan sikap seperti orang yang berjalan dalam tidur, lalu pergi.</p><p>Setelah ia pergi, Rosamond meninggalkan kursinya dan berjalan ke ujung ruangan yang lain, bersandar pada lemari kecil saat sampai di sana, dan memandang keluar jendela dengan lelah. Ia diliputi kebosanan, dan ketidakpuasan yang dalam pikiran perempuan terus berubah menjadi kecemburuan sepele, yang tidak mengacu pada tuntutan nyata, muncul dari hasrat yang lebih dalam daripada tuntutan egoisme yang samar, namun mampu mendorong tindakan maupun ucapan. “Sebenarnya tidak ada yang perlu dipedulikan,” kata Rosamond dalam hati, memikirkan keluarga di Quallingham, yang tidak menulis surat kepadanya; dan mungkin Tertius ketika pulang akan menggodanya tentang pengeluaran. Ia sudah diam-diam tidak mematuhinya dengan meminta ayahnya untuk membantu mereka, dan ayahnya mengakhiri dengan tegas dengan berkata, “Aku sendiri lebih mungkin membutuhkan bantuan.”</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-lviii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Lviii</span>
+    </a>
+    <a href="bab-lx.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Lx</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB LIX.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Mereka bilang dahulu kala Jiwa berwujud manusia, Tetapi lebih kecil, lebih halus daripada wujud jasmani, Maka ia berkelana keluar untuk menghirup udara segar ketika ia suka. Dan lihat! di samping wajahnya yang seperti malaikat melayang Sebuah wujud berbibir pucat yang berbisik di telinga cangkang kecilnya itu.” Berita sering kali tersebar tanpa pikir panjang dan seefektif serbuk sari yang dibawa lebah (tanpa menyadari betapa halusnya serbuk sari itu) ketika mereka berdengung mencari nektar tertentu. Perbandingan yang bagus ini merujuk pada Fred Vincy, yang pada malam itu di Lowick Parsonage mendengar diskusi yang meriah di antara para wanita tentang berita yang didapat pelayan tua mereka dari Tantripp mengenai penyebutan aneh Tuan Casaubon tentang Tuan Ladislaw dalam tambahan surat wasiatnya yang dibuat tidak lama sebelum kematiannya. Nona Winifred terkejut mengetahui bahwa saudara laki-lakinya telah mengetahui fakta itu sebelumnya, dan mengamati bahwa Camden adalah orang yang paling luar biasa karena mengetahui banyak hal tetapi tidak menceritakannya; kemudian Mary Garth berkata bahwa tambahan surat wasiat itu mungkin telah bercampur dengan kebiasaan laba-laba, yang tidak pernah didengarkan oleh Nona Winifred. Nyonya Farebrother menganggap bahwa berita itu ada hubungannya dengan fakta bahwa mereka hanya sekali melihat Tuan Ladislaw di Lowick, dan Nona Noble mengeluarkan banyak suara mengeong penuh belas kasihan. Fred tidak banyak tahu dan tidak terlalu peduli tentang Ladislaw dan keluarga Casaubon, dan pikirannya tidak pernah kembali ke diskusi itu sampai suatu hari, atas permintaan ibunya, saat mengunjungi Rosamond untuk menyampaikan pesan, ia kebetulan melihat Ladislaw pergi. Fred dan Rosamond tidak banyak bicara satu sama lain sekarang karena pernikahan telah menjauhkan Rosamond dari perselisihan dengan saudara-saudaranya yang tidak menyenangkan, dan terutama sekarang karena Fred telah mengambil langkah yang menurut Rosamond bodoh dan bahkan tercela, yaitu meninggalkan Gereja untuk terjun ke bisnis seperti milik Tuan Garth. Karena itu, Fred lebih memilih membicarakan berita yang dianggapnya tidak penting, dan "berkaitan dengan Ladislaw muda itu," ia menyebutkan apa yang telah didengarnya di Rumah Pendeta Lowick. Sekarang Lydgate, seperti Tuan Farebrother, tahu jauh lebih banyak daripada yang dia ceritakan, dan ketika dia mulai memikirkan hubungan antara Will dan Dorothea, dugaannya telah melampaui fakta. Dia membayangkan bahwa ada keterikatan yang penuh gairah di kedua belah pihak, dan ini terasa terlalu serius untuk digosipkan. Dia ingat kejengkelan Will ketika dia menyebutkan Nyonya Casaubon, dan menjadi lebih berhati-hati. Secara keseluruhan, dugaannya, di samping apa yang dia ketahui tentang fakta, meningkatkan keramahan dan toleransinya terhadap Ladislaw, dan membuatnya mengerti keraguan yang membuatnya tetap di Middlemarch setelah dia mengatakan bahwa dia akan pergi. Hal itu menunjukkan perbedaan antara pikiran Lydgate dan Rosamond sehingga dia tidak memiliki dorongan untuk berbicara dengannya tentang masalah itu; memang, dia tidak sepenuhnya mempercayai sikap pendiamnya terhadap Will. Dan dia benar; meskipun dia tidak memiliki gambaran tentang bagaimana pikiran Rosamond akan bertindak dalam mendorongnya untuk berbicara. Ketika Rosy menyampaikan kabar Fred kepada Lydgate, pria itu berkata, “Hati-hati jangan sampai kau memberi petunjuk sedikit pun kepada Ladislaw, Rosy. Dia mungkin akan marah besar seolah-olah kau menghinanya. Tentu saja ini masalah yang menyakitkan.” Rosamond menoleh dan menepuk-nepuk rambutnya, tampak acuh tak acuh. Tetapi ketika Will datang lagi saat Lydgate sedang pergi, dia berbicara dengan sinis tentang Will yang tidak akan pergi ke London seperti yang telah diancamnya. “Aku tahu semua tentang itu. Aku punya informan rahasia,” katanya, sambil mengangkat kepalanya dengan gaya anggun di atas hasil pekerjaannya yang dipegang tinggi di antara jari-jarinya yang aktif. “Ada magnet yang sangat kuat di lingkungan ini.” “Tentu saja ada. Tidak ada yang lebih tahu itu selain kau,” kata Will, dengan sedikit kesopanan, tetapi dalam hati siap marah. “Ini benar-benar kisah romantis yang paling menawan: Tuan Casaubon cemburu, dan meramalkan bahwa tidak ada orang lain yang begitu ingin dinikahi Nyonya Casaubon, dan tidak ada orang yang begitu ingin menikahinya selain seorang pria tertentu; lalu menyusun rencana untuk merusak semuanya dengan membuatnya kehilangan hartanya jika dia menikahi pria itu—dan kemudian—dan kemudian—dan kemudian—oh, saya yakin akhirnya akan sangat romantis.” “Ya Tuhan! Apa maksudmu?” kata Will, wajah dan telinganya memerah, raut wajahnya tampak berubah seolah-olah dia baru saja terguncang hebat. “Jangan bercanda; katakan padaku apa maksudmu.” “Kau sebenarnya tidak tahu?” kata Rosamond, yang sudah tidak lagi bermain-main, dan tidak menginginkan apa pun selain memberi tahu agar ia dapat menimbulkan efek tertentu. “Tidak!” jawabnya dengan tidak sabar. “Tidak tahukah Anda bahwa Tuan Casaubon telah mencantumkan dalam wasiatnya bahwa jika Nyonya Casaubon menikahi Anda, dia harus kehilangan semua hartanya?” “Bagaimana kau tahu itu benar?” tanya Will dengan antusias. “Saudaraku Fred mendengarnya dari Farebrothers.” Will tersentak dari kursinya dan meraih topinya. “Kurasa dia lebih menyukaimu daripada properti itu,” kata Rosamond, memandanginya dari kejauhan. “Kumohon jangan bicarakan itu lagi,” kata Will, dengan suara serak yang sangat berbeda dari suara ringannya yang biasa. “Itu penghinaan yang keji baginya dan bagiku.” Kemudian dia duduk dengan linglung, menatap ke depan, tetapi tidak melihat apa pun. “Sekarang kau marah padaku , ” kata Rosamond. “Tidak baik menyimpan dendam padaku . Seharusnya kau berterima kasih padaku karena telah memberitahumu.” “Jadi, memang benar,” kata Will tiba-tiba, berbicara dengan semacam jiwa ganda yang dimiliki para pemimpi yang menjawab pertanyaan. “Aku berharap segera mendengar kabar pernikahan itu,” kata Rosamond sambil bercanda. “Tidak akan pernah! Kau tidak akan pernah mendengar tentang pernikahan itu!” Setelah mengucapkan kata-kata itu dengan terburu-buru, Will bangkit, mengulurkan tangannya kepada Rosamond, masih dengan sikap seperti orang yang berjalan dalam tidur, lalu pergi. Setelah ia pergi, Rosamond meninggalkan kursinya dan berjalan ke ujung ruangan yang lain, bersandar pada lemari kecil saat sampai di sana, dan memandang keluar jendela dengan lelah. Ia diliputi kebosanan, dan ketidakpuasan yang dalam pikiran perempuan terus berubah menjadi kecemburuan sepele, yang tidak mengacu pada tuntutan nyata, muncul dari hasrat yang lebih dalam daripada tuntutan egoisme yang samar, namun mampu mendorong tindakan maupun ucapan. “Sebenarnya tidak ada yang perlu dipedulikan,” kata Rosamond dalam hati, memikirkan keluarga di Quallingham, yang tidak menulis surat kepadanya; dan mungkin Tertius ketika pulang akan menggodanya tentang pengeluaran. Ia sudah diam-diam tidak mematuhinya dengan meminta ayahnya untuk membantu mereka, dan ayahnya mengakhiri dengan tegas dengan berkata, “Aku sendiri lebih mungkin membutuhkan bantuan.”</p>
-
-<div class="nav">
-  <a href="bab-lviii.html">⬅ Bab Lviii.</a>
-  <a href="bab-lx.html">Bab Lx. ➡</a>
-</div>
 
 </body>
 </html>

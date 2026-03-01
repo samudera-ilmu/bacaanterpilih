@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 23</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 23 - Bacaan digital klasik">
+<title>BAB 23 — Frankenstein</title>
+<meta name="description" content="Baca BAB 23 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-23.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 23 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 23 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-23.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 23 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 23 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 23",
+    "name": "BAB 23 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-23.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 23</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Pukul delapan kami mendarat; kami berjalan sebentar di tepi pantai, menikmati cahaya yang sesaat, lalu kembali ke penginapan dan merenungkan pemandangan indah perairan, hutan, dan pegunungan, yang diselimuti kegelapan, namun masih memperlihatkan garis-garis hitamnya.</p><p>Angin yang tadinya mereda di selatan, kini bertiup kencang di barat. Bulan telah mencapai puncaknya di langit dan mulai terbenam; awan menyapu bulan lebih cepat daripada penerbangan burung nasar dan meredupkan sinarnya, sementara danau memantulkan pemandangan langit yang sibuk, yang semakin sibuk karena gelombang tak menentu yang mulai naik. Tiba-tiba badai hujan lebat turun.</p><p>Aku tenang sepanjang hari, tetapi begitu malam menyelimuti dan mengaburkan bentuk benda-benda, seribu ketakutan muncul dalam pikiranku. Aku cemas dan waspada, sementara tangan kananku menggenggam pistol yang tersembunyi di dadaku; setiap suara membuatku takut, tetapi aku bertekad akan mempertaruhkan nyawaku dan tidak akan mundur dari konflik sampai nyawaku sendiri atau nyawa lawanku padam.</p><p>Elizabeth mengamati kegelisahanku untuk beberapa saat dalam keheningan yang malu-malu dan penuh ketakutan, tetapi ada sesuatu dalam tatapanku yang menyampaikan rasa takut kepadanya, dan dengan gemetar, dia bertanya, “Apa yang membuatmu gelisah, Victor sayang? Apa yang kau takutkan?”</p><p>“Oh! Damai, damai, sayangku,” jawabku; “malam ini, dan semuanya akan aman; tetapi malam ini mengerikan, sangat mengerikan.”</p><p>Aku menghabiskan satu jam dalam keadaan pikiran seperti itu, ketika tiba-tiba aku menyadari betapa menakutkannya pertempuran yang akan segera kuhadapi bagi istriku, dan aku dengan sungguh-sungguh memohon padanya untuk mundur, bertekad untuk tidak bergabung dengannya sampai aku mendapatkan informasi tentang situasi musuhku.</p><p>Ia meninggalkanku, dan aku melanjutkan beberapa waktu berjalan bolak-balik di lorong-lorong rumah dan memeriksa setiap sudut yang mungkin menjadi tempat persembunyian musuhku. Tetapi aku tidak menemukan jejaknya dan mulai menduga bahwa suatu keberuntungan telah mencegah terlaksananya ancamannya ketika tiba-tiba aku mendengar jeritan melengking dan mengerikan. Jeritan itu berasal dari ruangan tempat Elizabeth mengasingkan diri. Saat aku mendengarnya, seluruh kebenaran terlintas di benakku, lenganku terkulai, gerakan setiap otot dan serat terhenti; aku bisa merasakan darah mengalir di pembuluh darahku dan terasa geli di ujung-ujung anggota tubuhku. Keadaan ini hanya berlangsung sesaat; jeritan itu terulang, dan aku bergegas masuk ke ruangan itu.</p><p>Ya Tuhan! Mengapa aku tidak mati saat itu! Mengapa aku di sini untuk menceritakan kehancuran harapan terbaik dan makhluk paling murni di bumi? Dia ada di sana, tak bernyawa dan tak bergerak, tergeletak di atas tempat tidur, kepalanya terkulai dan wajahnya yang pucat dan terdistorsi sebagian tertutup oleh rambutnya. Ke mana pun aku berpaling, aku melihat sosok yang sama—lengannya yang pucat dan tubuhnya yang lemas dilemparkan oleh pembunuh di atas peti matinya. Bisakah aku menyaksikan ini dan tetap hidup? Celaka! Hidup itu keras kepala dan paling erat melekat di tempat yang paling dibenci. Hanya sesaat aku kehilangan ingatan; aku jatuh tak sadarkan diri ke tanah.</p><p>Ketika aku tersadar, aku mendapati diriku dikelilingi oleh orang-orang di penginapan; wajah mereka menunjukkan ketakutan yang mencekam, tetapi kengerian orang lain tampak hanya sebagai ejekan, bayangan dari perasaan yang menekan diriku. Aku melarikan diri dari mereka ke kamar tempat terbaring jasad Elizabeth, kekasihku, istriku, yang baru saja hidup, begitu sayang, begitu berharga. Ia telah dipindahkan dari posisi pertama kali aku melihatnya, dan sekarang, saat ia terbaring, kepalanya di atas lengannya dan saputangan menutupi wajah dan lehernya, aku mungkin mengira ia sedang tidur. Aku bergegas menghampirinya dan memeluknya dengan penuh gairah, tetapi kelemahan dan dinginnya anggota tubuhnya yang mematikan memberitahuku bahwa apa yang sekarang kupeluk telah berhenti menjadi Elizabeth yang kucintai dan sayangi. Bekas cengkeraman iblis yang mematikan ada di lehernya, dan napas telah berhenti keluar dari bibirnya.</p><p>Saat aku masih terhimpit di sisinya dalam penderitaan keputusasaan, aku kebetulan mendongak. Jendela-jendela kamar sebelumnya telah digelapkan, dan aku merasakan semacam kepanikan saat melihat cahaya kuning pucat bulan menerangi ruangan. Jendela-jendela telah dibuka, dan dengan perasaan ngeri yang tak terlukiskan, aku melihat di jendela yang terbuka sesosok makhluk yang paling mengerikan dan menjijikkan. Sebuah seringai terlukis di wajah monster itu; dia tampak mengejek, sambil menunjuk dengan jari jahatnya ke arah mayat istriku. Aku bergegas ke jendela, dan menarik pistol dari dadaku, menembak; tetapi dia lolos dariku, melompat dari tempatnya, dan berlari secepat kilat, terjun ke danau.</p><p>Suara tembakan pistol menarik perhatian banyak orang ke ruangan itu. Saya menunjuk ke tempat dia menghilang, dan kami mengikuti jejaknya dengan perahu; jaring ditebar, tetapi sia-sia. Setelah beberapa jam berlalu, kami kembali tanpa harapan, sebagian besar teman saya percaya itu hanyalah sosok khayalan saya. Setelah mendarat, mereka mulai mencari di daerah tersebut, kelompok-kelompok pergi ke arah yang berbeda di antara hutan dan tanaman merambat.</p><p>Aku mencoba menemani mereka dan berjalan sedikit menjauh dari rumah, tetapi kepalaku berputar, langkahku seperti orang mabuk, akhirnya aku jatuh karena kelelahan yang luar biasa; selaput menutupi mataku, dan kulitku kering karena demam. Dalam keadaan seperti itu aku dibawa kembali dan dibaringkan di tempat tidur, hampir tidak sadar akan apa yang telah terjadi; mataku berkeliling ruangan seolah mencari sesuatu yang telah hilang.</p><p>Setelah beberapa saat, aku bangkit, dan seolah-olah secara naluriah, merangkak ke ruangan tempat jenazah kekasihku terbaring. Ada beberapa wanita yang menangis di sekitar; aku membungkuk di atasnya dan ikut menangis bersama mereka; sepanjang waktu itu tidak ada gagasan yang jelas muncul di benakku, tetapi pikiranku mengembara ke berbagai subjek, merenungkan kemalangan dan penyeBABnya secara membingungkan. Aku bingung, dalam awan keheranan dan kengerian. Kematian William, eksekusi Justine, pembunuhan Clerval, dan terakhir istriku; bahkan pada saat itu aku tidak tahu bahwa satu-satunya temanku yang tersisa aman dari kejahatan iblis itu; ayahku mungkin sekarang sedang menggeliat di bawah cengkeramannya, dan Ernest mungkin mati di kakinya. Gagasan ini membuatku bergidik dan mendorongku untuk bertindak. Aku bangkit dan bertekad untuk kembali ke Jenewa secepat mungkin.</p><p>Tidak ada kuda yang bisa didapatkan, dan aku harus kembali melalui danau; tetapi anginnya tidak menguntungkan, dan hujan turun deras. Namun, hari masih pagi, dan aku bisa berharap tiba di malam hari. Aku menyewa orang untuk mendayung dan ikut mendayung sendiri, karena aku selalu merasa lega dari siksaan mental dengan berolahraga. Tetapi penderitaan yang meluap-luap yang kurasakan sekarang, dan kegelisahan yang berlebihan membuatku tidak mampu melakukan usaha apa pun. Aku melempar dayung, dan menyandarkan kepala di tangan, menyerah pada setiap pikiran suram yang muncul. Jika aku mendongak, aku melihat pemandangan yang familiar bagiku di masa-masa bahagiaku dan yang telah kubayangkan sehari sebelumnya bersama dia yang sekarang hanya bayangan dan kenangan. Air mata mengalir dari mataku. Hujan berhenti sejenak, dan aku melihat ikan bermain di air seperti yang mereka lakukan beberapa jam sebelumnya; saat itu Elizabeth telah mengamati mereka. Tidak ada yang lebih menyakitkan bagi pikiran manusia selain perubahan besar dan tiba-tiba. Matahari mungkin bersinar atau awan mungkin turun, tetapi tidak ada yang tampak bagiku seperti kemarin. Iblis telah merenggut dariku setiap harapan akan kebahagiaan masa depan; tidak ada makhluk yang pernah sengsara seperti aku; peristiwa mengerikan seperti itu hanya terjadi sekali dalam sejarah manusia.</p><p>Tetapi mengapa saya harus membahas kejadian-kejadian yang mengikuti peristiwa mengerikan terakhir ini? Kisah saya penuh dengan kengerian; saya telah mencapai puncaknya , dan apa yang harus saya ceritakan sekarang hanya akan membosankan bagi Anda. Ketahuilah bahwa, satu per satu, teman-teman saya direnggut; saya ditinggalkan sendirian. Kekuatan saya sendiri telah habis, dan saya harus menceritakan, dalam beberapa kata, apa yang tersisa dari kisah mengerikan saya.</p><p>Aku tiba di Jenewa. Ayahku dan Ernest masih hidup, tetapi ayahku telah terpuruk di bawah kabar yang kubawa. Kini aku melihatnya, lelaki tua yang baik dan terhormat! Matanya melayang kosong, karena telah kehilangan pesona dan kegembiraannya—Elizabeth-nya, yang lebih dari sekadar putrinya, yang sangat disayanginya dengan segala kasih sayang yang dirasakan seorang pria, yang di masa senja hidupnya, karena memiliki sedikit kasih sayang, lebih sungguh-sungguh berpegang teguh pada kasih sayang yang tersisa. Terkutuklah, terkutuklah iblis yang mendatangkan kesengsaraan pada rambutnya yang beruban dan menjerumuskannya ke dalam kesengsaraan! Ia tidak dapat hidup di bawah kengerian yang menumpuk di sekitarnya; sumber kehidupan tiba-tiba padam; ia tidak mampu bangkit dari tempat tidurnya, dan beberapa hari kemudian ia meninggal dalam pelukanku.</p><p>Lalu apa yang terjadi padaku? Aku tidak tahu; aku kehilangan sensasi, dan rantai serta kegelapan adalah satu-satunya hal yang menekanku. Kadang-kadang, memang, aku bermimpi bahwa aku mengembara di padang rumput berbunga dan lembah yang menyenangkan bersama teman-teman masa mudaku, tetapi aku terbangun dan mendapati diriku berada di penjara bawah tanah. Kesedihan menyusul, tetapi secara bertahap aku memperoleh pemahaman yang jelas tentang penderitaan dan situasiku dan kemudian dibebaskan dari penjara. Karena mereka menyebutku gila, dan selama berbulan-bulan, seperti yang kupahami, sel terpencil telah menjadi tempat tinggalku.</p><p>Namun, kebebasan akan menjadi hadiah yang sia-sia bagiku, seandainya aku tidak, saat aku mulai sadar, juga membangkitkan keinginan untuk membalas dendam. Ketika ingatan akan kemalangan masa lalu menghantuiku, aku mulai merenungkan penyeBABnya—monster yang telah kuciptakan, iblis malang yang telah kukirim ke dunia untuk menghancurkanku. Aku diliputi amarah yang mengamuk ketika memikirkannya, dan menginginkan serta berdoa dengan sungguh-sungguh agar aku dapat menangkapnya untuk membalas dendam besar dan telak pada kepalanya yang terkutuk.</p><p>Kebencianku tak lama kemudian hanya sebatas keinginan yang sia-sia; aku mulai memikirkan cara terbaik untuk menangkapnya; dan untuk tujuan ini, sekitar sebulan setelah pembebasanku, aku pergi ke hakim kriminal di kota itu dan mengatakan kepadanya bahwa aku memiliki tuduhan yang ingin kusampaikan, bahwa aku mengenal orang yang menghancurkan keluargaku, dan bahwa aku meminta dia untuk mengerahkan seluruh wewenangnya untuk menangkap pembunuh tersebut.</p><p>Hakim itu mendengarkan saya dengan penuh perhatian dan ramah. &quot;Yakinlah, Tuan,&quot; katanya, &quot;saya tidak akan mengabaikan upaya atau kerja keras apa pun untuk mengungkap penjahatnya.&quot;</p><p>“Terima kasih,” jawabku; “maka dengarkanlah kesaksian yang akan kusampaikan. Ini memang kisah yang begitu aneh sehingga aku khawatir kau tidak akan mempercayainya jika tidak ada sesuatu dalam kebenaran yang, betapapun menakjubkannya, memaksa keyakinan. Kisah ini terlalu terhubung untuk disalahartikan sebagai mimpi, dan aku tidak punya motif untuk berbohong.” Sikapku saat berbicara kepadanya tampak mengesankan tetapi tenang; aku telah membentuk tekad dalam hatiku untuk mengejar si penghancurku sampai mati, dan tujuan ini meredakan penderitaanku dan untuk sementara waktu mendamaikanku dengan kehidupan. Sekarang aku menceritakan kisahku secara singkat tetapi dengan tegas dan tepat, menandai tanggal dengan akurat dan tidak pernah menyimpang ke dalam cercaan atau seruan.</p><p>Pada awalnya, hakim tampak sama sekali tidak percaya, tetapi seiring saya melanjutkan cerita, ia menjadi lebih внимательный dan tertarik; saya melihatnya kadang-kadang gemetar ketakutan; di lain waktu, ekspresi terkejut yang jelas, tanpa bercampur dengan ketidakpercayaan, terpancar di wajahnya.</p><p>Setelah menyelesaikan narasi saya, saya berkata, “Inilah orang yang saya tuduh dan untuk penangkapan serta penghukumannya saya meminta Anda untuk mengerahkan seluruh kekuatan Anda. Ini adalah tugas Anda sebagai hakim, dan saya percaya dan berharap bahwa perasaan Anda sebagai manusia tidak akan memberontak terhadap pelaksanaan fungsi-fungsi tersebut pada kesempatan ini.”</p><p>Pidato ini menyeBABkan perubahan yang cukup besar pada raut wajah pendengar saya. Ia mendengar cerita saya dengan setengah percaya, seperti yang biasa terjadi pada kisah tentang roh dan kejadian supernatural; tetapi ketika ia diminta untuk bertindak secara resmi sebagai konsekuensinya, ketidakpercayaannya kembali sepenuhnya. Namun, ia menjawab dengan lembut, “Saya dengan senang hati akan memberikan Anda setiap bantuan dalam pengejaran Anda, tetapi makhluk yang Anda bicarakan tampaknya memiliki kekuatan yang akan menantang semua upaya saya. Siapa yang dapat mengikuti hewan yang dapat melintasi lautan es dan menghuni gua dan sarang di mana tidak ada manusia yang berani masuk? Selain itu, beberapa bulan telah berlalu sejak kejahatannya dilakukan, dan tidak ada yang dapat menduga ke mana ia telah mengembara atau wilayah mana yang mungkin sekarang ia huni.”</p><p>“Aku tidak ragu bahwa dia berkeliaran di dekat tempat tinggalku, dan jika dia memang berlindung di Pegunungan Alpen, dia mungkin akan diburu seperti kambing gunung dan dimusnahkan seperti binatang buas. Tetapi aku memahami pikiranmu; kau tidak mempercayai ceritaku dan tidak berniat mengejar musuhku dengan hukuman yang pantas diterimanya.”</p><p>Saat aku berbicara, amarah berkobar di mataku; hakim itu merasa terintimidasi. “Kau salah,” katanya. “Aku akan berusaha sekuat tenaga, dan jika aku mampu menangkap monster itu, yakinlah bahwa dia akan menerima hukuman yang setimpal dengan kejahatannya. Tetapi aku khawatir, dari apa yang telah kau gambarkan sendiri tentang sifat-sifatnya, hal ini akan terbukti tidak mungkin; dan dengan demikian, sementara setiap tindakan yang tepat dilakukan, kau harus menerima kekecewaan.”</p><p>“Itu tidak mungkin; tetapi semua yang dapat kukatakan tidak akan banyak berguna. Balas dendamku tidak berarti apa-apa bagimu; namun, meskipun aku mengakui itu adalah keburukan, aku mengaku bahwa itu adalah hasrat yang melahap dan satu-satunya jiwaku. Kemarahanku tak terkatakan ketika aku merenungkan bahwa si pembunuh, yang telah kulepaskan ke masyarakat, masih ada. Kau menolak tuntutanku yang adil; aku hanya punya satu jalan keluar, dan aku mengabdikan diriku, baik dalam hidup atau mati, untuk menghancurkannya.”</p><p>Aku gemetar karena terlalu gelisah saat mengatakan ini; ada kegilaan dalam tingkah lakuku, dan sesuatu, aku tidak ragu, dari kegarangan dan kesombongan yang konon dimiliki para martir zaman dahulu. Tetapi bagi seorang hakim Jenewa, yang pikirannya dipenuhi oleh gagasan yang jauh berbeda dari pengabdian dan kepahlawanan, peningkatan pikiran ini tampak seperti kegilaan. Dia berusaha menenangkanku seperti seorang perawat menenangkan seorang anak dan kembali menganggap ceritaku sebagai akibat dari delirium.</p><p>“Hei,” seruku, “betapa bodohnya kau dengan kesombonganmu akan kebijaksanaan! Hentikan; kau tidak tahu apa yang kau katakan.”</p><p>Aku meninggalkan rumah dengan marah dan gelisah, lalu menyendiri untuk merenungkan cara bertindak lain.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-22.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 22</span>
+    </a>
+    <a href="bab-24.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 24</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 23</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Pukul delapan kami mendarat; kami berjalan sebentar di tepi pantai, menikmati cahaya yang sesaat, lalu kembali ke penginapan dan merenungkan pemandangan indah perairan, hutan, dan pegunungan, yang diselimuti kegelapan, namun masih memperlihatkan garis-garis hitamnya. Angin yang tadinya mereda di selatan, kini bertiup kencang di barat. Bulan telah mencapai puncaknya di langit dan mulai terbenam; awan menyapu bulan lebih cepat daripada penerbangan burung nasar dan meredupkan sinarnya, sementara danau memantulkan pemandangan langit yang sibuk, yang semakin sibuk karena gelombang tak menentu yang mulai naik. Tiba-tiba badai hujan lebat turun. Aku tenang sepanjang hari, tetapi begitu malam menyelimuti dan mengaburkan bentuk benda-benda, seribu ketakutan muncul dalam pikiranku. Aku cemas dan waspada, sementara tangan kananku menggenggam pistol yang tersembunyi di dadaku; setiap suara membuatku takut, tetapi aku bertekad akan mempertaruhkan nyawaku dan tidak akan mundur dari konflik sampai nyawaku sendiri atau nyawa lawanku padam. Elizabeth mengamati kegelisahanku untuk beberapa saat dalam keheningan yang malu-malu dan penuh ketakutan, tetapi ada sesuatu dalam tatapanku yang menyampaikan rasa takut kepadanya, dan dengan gemetar, dia bertanya, “Apa yang membuatmu gelisah, Victor sayang? Apa yang kau takutkan?” “Oh! Damai, damai, sayangku,” jawabku; “malam ini, dan semuanya akan aman; tetapi malam ini mengerikan, sangat mengerikan.” Aku menghabiskan satu jam dalam keadaan pikiran seperti itu, ketika tiba-tiba aku menyadari betapa menakutkannya pertempuran yang akan segera kuhadapi bagi istriku, dan aku dengan sungguh-sungguh memohon padanya untuk mundur, bertekad untuk tidak bergabung dengannya sampai aku mendapatkan informasi tentang situasi musuhku. Ia meninggalkanku, dan aku melanjutkan beberapa waktu berjalan bolak-balik di lorong-lorong rumah dan memeriksa setiap sudut yang mungkin menjadi tempat persembunyian musuhku. Tetapi aku tidak menemukan jejaknya dan mulai menduga bahwa suatu keberuntungan telah mencegah terlaksananya ancamannya ketika tiba-tiba aku mendengar jeritan melengking dan mengerikan. Jeritan itu berasal dari ruangan tempat Elizabeth mengasingkan diri. Saat aku mendengarnya, seluruh kebenaran terlintas di benakku, lenganku terkulai, gerakan setiap otot dan serat terhenti; aku bisa merasakan darah mengalir di pembuluh darahku dan terasa geli di ujung-ujung anggota tubuhku. Keadaan ini hanya berlangsung sesaat; jeritan itu terulang, dan aku bergegas masuk ke ruangan itu. Ya Tuhan! Mengapa aku tidak mati saat itu! Mengapa aku di sini untuk menceritakan kehancuran harapan terbaik dan makhluk paling murni di bumi? Dia ada di sana, tak bernyawa dan tak bergerak, tergeletak di atas tempat tidur, kepalanya terkulai dan wajahnya yang pucat dan terdistorsi sebagian tertutup oleh rambutnya. Ke mana pun aku berpaling, aku melihat sosok yang sama—lengannya yang pucat dan tubuhnya yang lemas dilemparkan oleh pembunuh di atas peti matinya. Bisakah aku menyaksikan ini dan tetap hidup? Celaka! Hidup itu keras kepala dan paling erat melekat di tempat yang paling dibenci. Hanya sesaat aku kehilangan ingatan; aku jatuh tak sadarkan diri ke tanah. Ketika aku tersadar, aku mendapati diriku dikelilingi oleh orang-orang di penginapan; wajah mereka menunjukkan ketakutan yang mencekam, tetapi kengerian orang lain tampak hanya sebagai ejekan, bayangan dari perasaan yang menekan diriku. Aku melarikan diri dari mereka ke kamar tempat terbaring jasad Elizabeth, kekasihku, istriku, yang baru saja hidup, begitu sayang, begitu berharga. Ia telah dipindahkan dari posisi pertama kali aku melihatnya, dan sekarang, saat ia terbaring, kepalanya di atas lengannya dan saputangan menutupi wajah dan lehernya, aku mungkin mengira ia sedang tidur. Aku bergegas menghampirinya dan memeluknya dengan penuh gairah, tetapi kelemahan dan dinginnya anggota tubuhnya yang mematikan memberitahuku bahwa apa yang sekarang kupeluk telah berhenti menjadi Elizabeth yang kucintai dan sayangi. Bekas cengkeraman iblis yang mematikan ada di lehernya, dan napas telah berhenti keluar dari bibirnya. Saat aku masih terhimpit di sisinya dalam penderitaan keputusasaan, aku kebetulan mendongak. Jendela-jendela kamar sebelumnya telah digelapkan, dan aku merasakan semacam kepanikan saat melihat cahaya kuning pucat bulan menerangi ruangan. Jendela-jendela telah dibuka, dan dengan perasaan ngeri yang tak terlukiskan, aku melihat di jendela yang terbuka sesosok makhluk yang paling mengerikan dan menjijikkan. Sebuah seringai terlukis di wajah monster itu; dia tampak mengejek, sambil menunjuk dengan jari jahatnya ke arah mayat istriku. Aku bergegas ke jendela, dan menarik pistol dari dadaku, menembak; tetapi dia lolos dariku, melompat dari tempatnya, dan berlari secepat kilat, terjun ke danau. Suara tembakan pistol menarik perhatian banyak orang ke ruangan itu. Saya menunjuk ke tempat dia menghilang, dan kami mengikuti jejaknya dengan perahu; jaring ditebar, tetapi sia-sia. Setelah beberapa jam berlalu, kami kembali tanpa harapan, sebagian besar teman saya percaya itu hanyalah sosok khayalan saya. Setelah mendarat, mereka mulai mencari di daerah tersebut, kelompok-kelompok pergi ke arah yang berbeda di antara hutan dan tanaman merambat. Aku mencoba menemani mereka dan berjalan sedikit menjauh dari rumah, tetapi kepalaku berputar, langkahku seperti orang mabuk, akhirnya aku jatuh karena kelelahan yang luar biasa; selaput menutupi mataku, dan kulitku kering karena demam. Dalam keadaan seperti itu aku dibawa kembali dan dibaringkan di tempat tidur, hampir tidak sadar akan apa yang telah terjadi; mataku berkeliling ruangan seolah mencari sesuatu yang telah hilang. Setelah beberapa saat, aku bangkit, dan seolah-olah secara naluriah, merangkak ke ruangan tempat jenazah kekasihku terbaring. Ada beberapa wanita yang menangis di sekitar; aku membungkuk di atasnya dan ikut menangis bersama mereka; sepanjang waktu itu tidak ada gagasan yang jelas muncul di benakku, tetapi pikiranku mengembara ke berbagai subjek, merenungkan kemalangan dan penyeBABnya secara membingungkan. Aku bingung, dalam awan keheranan dan kengerian. Kematian William, eksekusi Justine, pembunuhan Clerval, dan terakhir istriku; bahkan pada saat itu aku tidak tahu bahwa satu-satunya temanku yang tersisa aman dari kejahatan iblis itu; ayahku mungkin sekarang sedang menggeliat di bawah cengkeramannya, dan Ernest mungkin mati di kakinya. Gagasan ini membuatku bergidik dan mendorongku untuk bertindak. Aku bangkit dan bertekad untuk kembali ke Jenewa secepat mungkin. Tidak ada kuda yang bisa didapatkan, dan aku harus kembali melalui danau; tetapi anginnya tidak menguntungkan, dan hujan turun deras. Namun, hari masih pagi, dan aku bisa berharap tiba di malam hari. Aku menyewa orang untuk mendayung dan ikut mendayung sendiri, karena aku selalu merasa lega dari siksaan mental dengan berolahraga. Tetapi penderitaan yang meluap-luap yang kurasakan sekarang, dan kegelisahan yang berlebihan membuatku tidak mampu melakukan usaha apa pun. Aku melempar dayung, dan menyandarkan kepala di tangan, menyerah pada setiap pikiran suram yang muncul. Jika aku mendongak, aku melihat pemandangan yang familiar bagiku di masa-masa bahagiaku dan yang telah kubayangkan sehari sebelumnya bersama dia yang sekarang hanya bayangan dan kenangan. Air mata mengalir dari mataku. Hujan berhenti sejenak, dan aku melihat ikan bermain di air seperti yang mereka lakukan beberapa jam sebelumnya; saat itu Elizabeth telah mengamati mereka. Tidak ada yang lebih menyakitkan bagi pikiran manusia selain perubahan besar dan tiba-tiba. Matahari mungkin bersinar atau awan mungkin turun, tetapi tidak ada yang tampak bagiku seperti kemarin. Iblis telah merenggut dariku setiap harapan akan kebahagiaan masa depan; tidak ada makhluk yang pernah sengsara seperti aku; peristiwa mengerikan seperti itu hanya terjadi sekali dalam sejarah manusia. Tetapi mengapa saya harus membahas kejadian-kejadian yang mengikuti peristiwa mengerikan terakhir ini? Kisah saya penuh dengan kengerian; saya telah mencapai puncaknya , dan apa yang harus saya ceritakan sekarang hanya akan membosankan bagi Anda. Ketahuilah bahwa, satu per satu, teman-teman saya direnggut; saya ditinggalkan sendirian. Kekuatan saya sendiri telah habis, dan saya harus menceritakan, dalam beberapa kata, apa yang tersisa dari kisah mengerikan saya. Aku tiba di Jenewa. Ayahku dan Ernest masih hidup, tetapi ayahku telah terpuruk di bawah kabar yang kubawa. Kini aku melihatnya, lelaki tua yang baik dan terhormat! Matanya melayang kosong, karena telah kehilangan pesona dan kegembiraannya—Elizabeth-nya, yang lebih dari sekadar putrinya, yang sangat disayanginya dengan segala kasih sayang yang dirasakan seorang pria, yang di masa senja hidupnya, karena memiliki sedikit kasih sayang, lebih sungguh-sungguh berpegang teguh pada kasih sayang yang tersisa. Terkutuklah, terkutuklah iblis yang mendatangkan kesengsaraan pada rambutnya yang beruban dan menjerumuskannya ke dalam kesengsaraan! Ia tidak dapat hidup di bawah kengerian yang menumpuk di sekitarnya; sumber kehidupan tiba-tiba padam; ia tidak mampu bangkit dari tempat tidurnya, dan beberapa hari kemudian ia meninggal dalam pelukanku. Lalu apa yang terjadi padaku? Aku tidak tahu; aku kehilangan sensasi, dan rantai serta kegelapan adalah satu-satunya hal yang menekanku. Kadang-kadang, memang, aku bermimpi bahwa aku mengembara di padang rumput berbunga dan lembah yang menyenangkan bersama teman-teman masa mudaku, tetapi aku terbangun dan mendapati diriku berada di penjara bawah tanah. Kesedihan menyusul, tetapi secara bertahap aku memperoleh pemahaman yang jelas tentang penderitaan dan situasiku dan kemudian dibebaskan dari penjara. Karena mereka menyebutku gila, dan selama berbulan-bulan, seperti yang kupahami, sel terpencil telah menjadi tempat tinggalku. Namun, kebebasan akan menjadi hadiah yang sia-sia bagiku, seandainya aku tidak, saat aku mulai sadar, juga membangkitkan keinginan untuk membalas dendam. Ketika ingatan akan kemalangan masa lalu menghantuiku, aku mulai merenungkan penyeBABnya—monster yang telah kuciptakan, iblis malang yang telah kukirim ke dunia untuk menghancurkanku. Aku diliputi amarah yang mengamuk ketika memikirkannya, dan menginginkan serta berdoa dengan sungguh-sungguh agar aku dapat menangkapnya untuk membalas dendam besar dan telak pada kepalanya yang terkutuk. Kebencianku tak lama kemudian hanya sebatas keinginan yang sia-sia; aku mulai memikirkan cara terbaik untuk menangkapnya; dan untuk tujuan ini, sekitar sebulan setelah pembebasanku, aku pergi ke hakim kriminal di kota itu dan mengatakan kepadanya bahwa aku memiliki tuduhan yang ingin kusampaikan, bahwa aku mengenal orang yang menghancurkan keluargaku, dan bahwa aku meminta dia untuk mengerahkan seluruh wewenangnya untuk menangkap pembunuh tersebut. Hakim itu mendengarkan saya dengan penuh perhatian dan ramah. "Yakinlah, Tuan," katanya, "saya tidak akan mengabaikan upaya atau kerja keras apa pun untuk mengungkap penjahatnya." “Terima kasih,” jawabku; “maka dengarkanlah kesaksian yang akan kusampaikan. Ini memang kisah yang begitu aneh sehingga aku khawatir kau tidak akan mempercayainya jika tidak ada sesuatu dalam kebenaran yang, betapapun menakjubkannya, memaksa keyakinan. Kisah ini terlalu terhubung untuk disalahartikan sebagai mimpi, dan aku tidak punya motif untuk berbohong.” Sikapku saat berbicara kepadanya tampak mengesankan tetapi tenang; aku telah membentuk tekad dalam hatiku untuk mengejar si penghancurku sampai mati, dan tujuan ini meredakan penderitaanku dan untuk sementara waktu mendamaikanku dengan kehidupan. Sekarang aku menceritakan kisahku secara singkat tetapi dengan tegas dan tepat, menandai tanggal dengan akurat dan tidak pernah menyimpang ke dalam cercaan atau seruan. Pada awalnya, hakim tampak sama sekali tidak percaya, tetapi seiring saya melanjutkan cerita, ia menjadi lebih внимательный dan tertarik; saya melihatnya kadang-kadang gemetar ketakutan; di lain waktu, ekspresi terkejut yang jelas, tanpa bercampur dengan ketidakpercayaan, terpancar di wajahnya. Setelah menyelesaikan narasi saya, saya berkata, “Inilah orang yang saya tuduh dan untuk penangkapan serta penghukumannya saya meminta Anda untuk mengerahkan seluruh kekuatan Anda. Ini adalah tugas Anda sebagai hakim, dan saya percaya dan berharap bahwa perasaan Anda sebagai manusia tidak akan memberontak terhadap pelaksanaan fungsi-fungsi tersebut pada kesempatan ini.” Pidato ini menyeBABkan perubahan yang cukup besar pada raut wajah pendengar saya. Ia mendengar cerita saya dengan setengah percaya, seperti yang biasa terjadi pada kisah tentang roh dan kejadian supernatural; tetapi ketika ia diminta untuk bertindak secara resmi sebagai konsekuensinya, ketidakpercayaannya kembali sepenuhnya. Namun, ia menjawab dengan lembut, “Saya dengan senang hati akan memberikan Anda setiap bantuan dalam pengejaran Anda, tetapi makhluk yang Anda bicarakan tampaknya memiliki kekuatan yang akan menantang semua upaya saya. Siapa yang dapat mengikuti hewan yang dapat melintasi lautan es dan menghuni gua dan sarang di mana tidak ada manusia yang berani masuk? Selain itu, beberapa bulan telah berlalu sejak kejahatannya dilakukan, dan tidak ada yang dapat menduga ke mana ia telah mengembara atau wilayah mana yang mungkin sekarang ia huni.” “Aku tidak ragu bahwa dia berkeliaran di dekat tempat tinggalku, dan jika dia memang berlindung di Pegunungan Alpen, dia mungkin akan diburu seperti kambing gunung dan dimusnahkan seperti binatang buas. Tetapi aku memahami pikiranmu; kau tidak mempercayai ceritaku dan tidak berniat mengejar musuhku dengan hukuman yang pantas diterimanya.” Saat aku berbicara, amarah berkobar di mataku; hakim itu merasa terintimidasi. “Kau salah,” katanya. “Aku akan berusaha sekuat tenaga, dan jika aku mampu menangkap monster itu, yakinlah bahwa dia akan menerima hukuman yang setimpal dengan kejahatannya. Tetapi aku khawatir, dari apa yang telah kau gambarkan sendiri tentang sifat-sifatnya, hal ini akan terbukti tidak mungkin; dan dengan demikian, sementara setiap tindakan yang tepat dilakukan, kau harus menerima kekecewaan.” “Itu tidak mungkin; tetapi semua yang dapat kukatakan tidak akan banyak berguna. Balas dendamku tidak berarti apa-apa bagimu; namun, meskipun aku mengakui itu adalah keburukan, aku mengaku bahwa itu adalah hasrat yang melahap dan satu-satunya jiwaku. Kemarahanku tak terkatakan ketika aku merenungkan bahwa si pembunuh, yang telah kulepaskan ke masyarakat, masih ada. Kau menolak tuntutanku yang adil; aku hanya punya satu jalan keluar, dan aku mengabdikan diriku, baik dalam hidup atau mati, untuk menghancurkannya.” Aku gemetar karena terlalu gelisah saat mengatakan ini; ada kegilaan dalam tingkah lakuku, dan sesuatu, aku tidak ragu, dari kegarangan dan kesombongan yang konon dimiliki para martir zaman dahulu. Tetapi bagi seorang hakim Jenewa, yang pikirannya dipenuhi oleh gagasan yang jauh berbeda dari pengabdian dan kepahlawanan, peningkatan pikiran ini tampak seperti kegilaan. Dia berusaha menenangkanku seperti seorang perawat menenangkan seorang anak dan kembali menganggap ceritaku sebagai akibat dari delirium. “Hei,” seruku, “betapa bodohnya kau dengan kesombonganmu akan kebijaksanaan! Hentikan; kau tidak tahu apa yang kau katakan.” Aku meninggalkan rumah dengan marah dan gelisah, lalu menyendiri untuk merenungkan cara bertindak lain.</p>
-
-<div class="nav">
-  <a href="bab-22.html">⬅ Bab 22</a>
-  <a href="bab-24.html">Bab 24 ➡</a>
-</div>
 
 </body>
 </html>

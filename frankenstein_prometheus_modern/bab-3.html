@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 3 - Bacaan digital klasik">
+<title>BAB 3 — Frankenstein</title>
+<meta name="description" content="Baca BAB 3 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-3.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 3 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 3 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-3.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 3 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 3 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 3",
+    "name": "BAB 3 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-3.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 3</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Ketika saya mencapai usia tujuh belas tahun, orang tua saya memutuskan bahwa saya harus menjadi mahasiswa di Universitas Ingolstadt. Sebelumnya saya bersekolah di Jenewa, tetapi ayah saya menganggap perlu untuk melengkapi pendidikan saya agar saya mengenal adat istiadat lain selain adat istiadat negara asal saya. Oleh karena itu, keberangkatan saya ditetapkan pada tanggal yang lebih awal, tetapi sebelum hari yang telah ditentukan tiba, kemalangan pertama dalam hidup saya terjadi—sebuah pertanda, seolah-olah, dari kesengsaraan saya di masa depan.</p><p>Elizabeth terserang demam scarlet; penyakitnya parah, dan ia berada dalam bahaya besar. Selama sakitnya, banyak argumen telah disampaikan untuk membujuk ibuku agar tidak merawatnya. Awalnya ia mengalah pada permohonan kami, tetapi ketika ia mendengar bahwa nyawa kesayangannya terancam, ia tidak dapat lagi mengendalikan kecemasannya. Ia merawat Elizabeth di ranjang sakitnya; perhatiannya yang penuh kewaspadaan mengalahkan keganasan penyakit itu—Elizabeth selamat, tetapi konsekuensi dari ketidakhati-hatiannya ini berakibat fatal bagi penyelamatnya. Pada hari ketiga, ibuku jatuh sakit; demamnya disertai gejala yang sangat mengkhawatirkan, dan tatapan para perawatnya meramalkan hal terburuk. Di ranjang kematiannya, ketabahan dan kebaikan hati wanita terbaik ini tidak meninggalkannya. Ia menggenggam tangan Elizabeth dan aku. “Anak-anakku,” katanya, “harapan terbesarku akan kebahagiaan masa depan tertumpu pada prospek persatuan kalian. Harapan ini sekarang akan menjadi penghiburan bagi ayahmu. Elizabeth, sayangku, kau harus menggantikan posisiku bagi anak-anakku yang lebih muda. Sayang sekali! Aku menyesal telah diambil dari kalian; dan, sebahagia dan terkasihnya aku selama ini, bukankah sulit untuk meninggalkan kalian semua? Tetapi ini bukanlah pikiran yang pantas untukku; aku akan berusaha untuk menerima kematian dengan gembira dan akan membiarkan diriku berharap untuk bertemu kalian di dunia lain.”</p><p>Ia meninggal dengan tenang, dan raut wajahnya menunjukkan kasih sayang bahkan dalam kematian. Saya tidak perlu menggambarkan perasaan mereka yang ikatan terkasihnya terputus oleh kejahatan yang paling tak terperbaiki itu, kekosongan yang hadir di jiwa, dan keputusasaan yang terpancar di wajah. Butuh waktu lama sebelum pikiran dapat meyakinkan diri sendiri bahwa dia yang kita lihat setiap hari dan yang keberadaannya tampak sebagai bagian dari diri kita sendiri telah pergi selamanya—bahwa kecerahan mata yang tercinta telah padam dan suara yang begitu akrab dan disayangi telinga telah terdiam, tak akan pernah terdengar lagi. Ini adalah refleksi hari-hari pertama; tetapi ketika berlalunya waktu membuktikan kenyataan kejahatan itu, maka kepedihan duka yang sebenarnya dimulai. Namun dari siapa tangan kasar itu tidak pernah merenggut beberapa ikatan terkasih? Dan mengapa saya harus menggambarkan kesedihan yang dirasakan dan harus dirasakan oleh semua orang? Akhirnya tiba saatnya ketika duka lebih merupakan kesenangan daripada kebutuhan; dan senyum yang terukir di bibir, meskipun mungkin dianggap sebagai penistaan, tidak dihilangkan. Ibu saya telah meninggal, tetapi kami masih memiliki kewajiban yang harus kami laksanakan; kami harus melanjutkan perjalanan kami bersama yang lain dan belajar untuk menganggap diri kami beruntung selama masih ada seseorang yang belum direbut oleh si perusak.</p><p>Keberangkatanku ke Ingolstadt, yang telah ditunda karena peristiwa-peristiwa ini, kini kembali diputuskan. Aku memperoleh penangguhan beberapa minggu dari ayahku. Rasanya seperti penistaan jika aku begitu cepat meninggalkan ketenangan, yang mirip dengan kematian, di rumah duka dan bergegas ke tengah kehidupan. Aku masih baru dalam kesedihan, tetapi itu tidak mengurangi kekhawatiranku. Aku enggan meninggalkan orang-orang yang masih bersamaku, dan yang terpenting, aku ingin melihat Elizabeth tersayangku sedikit terhibur.</p><p>Ia memang menyembunyikan kesedihannya dan berusaha menjadi penghibur bagi kita semua. Ia memandang hidup dengan tenang dan menjalankan tugas-tugasnya dengan keberanian dan semangat. Ia mengabdikan dirinya kepada mereka yang telah diajarkan untuk dipanggil paman dan sepupunya. Ia tak pernah secantik saat ini, ketika ia mengenang kembali keceriaan senyumnya dan membagikannya kepada kita. Ia bahkan melupakan penyesalannya sendiri dalam upayanya untuk membuat kita melupakannya.</p><p>Hari keberangkatanku akhirnya tiba. Clerval menghabiskan malam terakhir bersama kami. Ia telah berusaha membujuk ayahnya untuk mengizinkannya menemaniku dan menjadi teman kuliahku, tetapi sia-sia. Ayahnya adalah seorang pedagang yang berpikiran sempit dan melihat kemalasan dan kehancuran dalam aspirasi dan ambisi putranya. Henry sangat merasakan kemalangan karena dilarang mendapatkan pendidikan liberal. Ia sedikit bicara, tetapi ketika ia berbicara, aku membaca di matanya yang berbinar dan tatapannya yang bersemangat sebuah tekad yang terkendali namun teguh untuk tidak terikat pada detail-detail menyedihkan dari perdagangan.</p><p>Kami duduk hingga larut malam. Kami tidak bisa melepaskan diri satu sama lain, juga tidak bisa mengucapkan kata &quot;Selamat tinggal!&quot; Kata itu terucap, dan kami pun pergi dengan alasan ingin beristirahat, masing-masing mengira yang lain telah tertipu; tetapi ketika fajar menyingsing saya turun ke kereta yang akan membawa saya pergi, mereka semua ada di sana—ayah saya kembali memberkati saya, Clerval kembali menggenggam tangan saya, Elizabeth kembali memohon agar saya sering menulis dan memberikan perhatian feminin terakhir kepada teman bermain dan sahabatnya.</p><p>Aku menjatuhkan diri ke kursi panjang yang akan membawaku pergi dan tenggelam dalam renungan yang paling melankolis. Aku, yang selalu dikelilingi oleh teman-teman yang ramah, terus-menerus berusaha untuk saling memberi kesenangan—kini aku sendirian. Di universitas tempat aku akan pergi, aku harus mencari teman sendiri dan menjadi pelindungku sendiri. Hidupku selama ini sangat terisolasi dan domestik, dan ini telah memberiku rasa jijik yang tak terkalahkan terhadap wajah-wajah baru. Aku menyayangi saudara-saudaraku, Elizabeth, dan Clerval; mereka adalah &quot;wajah-wajah lama yang familiar,&quot; tetapi aku merasa diriku sama sekali tidak cocok untuk bergaul dengan orang asing. Begitulah renunganku saat memulai perjalanan; tetapi saat aku melanjutkan perjalanan, semangat dan harapanku meningkat. Aku sangat menginginkan perolehan pengetahuan. Aku sering, ketika di rumah, merasa sulit untuk tetap terkurung di satu tempat selama masa mudaku dan merindukan untuk memasuki dunia dan mengambil tempatku di antara manusia lain. Sekarang keinginanku telah terpenuhi, dan memang akan menjadi kebodohan untuk menyesalinya.</p><p>Saya memiliki cukup waktu luang untuk merenungkan hal-hal ini dan banyak hal lainnya selama perjalanan saya ke Ingolstadt, yang panjang dan melelahkan. Akhirnya, menara lonceng putih tinggi kota itu menyambut pandangan saya. Saya turun dan diantar ke apartemen saya yang sepi untuk menghabiskan malam sesuai keinginan saya.</p><p>Keesokan paginya saya menyerahkan SURAT pengantar saya dan mengunjungi beberapa profesor utama. Kebetulan—atau lebih tepatnya pengaruh jahat, Malaikat Penghancur, yang menunjukkan kekuasaan mutlak atas saya sejak saat saya dengan enggan meninggalkan pintu rumah ayah saya—pertama-tama membawa saya kepada M. Krempe, profesor filsafat alam. Dia adalah pria yang kasar, tetapi sangat mendalami rahasia ilmunya. Dia menanyakan beberapa pertanyaan kepada saya mengenai kemajuan saya dalam berbagai cabang ilmu yang berkaitan dengan filsafat alam. Saya menjawab dengan acuh tak acuh, dan sebagian dengan nada meremehkan, menyebutkan nama-nama alkemis saya sebagai penulis utama yang telah saya pelajari. Profesor itu menatap saya. &quot;Apakah kamu,&quot; katanya, &quot;benar-benar menghabiskan waktumu untuk mempelajari hal-hal yang tidak masuk akal seperti itu?&quot;</p><p>Saya menjawab dengan утвердительно. “Setiap menit,” lanjut M. Krempe dengan hangat, “setiap detik yang Anda sia-siakan untuk buku-buku itu benar-benar hilang. Anda telah membebani ingatan Anda dengan sistem yang sudah usang dan nama-nama yang tidak berguna. Ya Tuhan! Di negeri gurun mana Anda tinggal, di mana tidak ada seorang pun yang cukup baik untuk memberi tahu Anda bahwa khayalan yang telah Anda serap dengan rakus itu sudah berusia seribu tahun dan sudah usang seperti zaman kuno? Saya tidak menyangka, di zaman yang tercerahkan dan ilmiah ini, akan menemukan seorang murid Albertus Magnus dan Paracelsus. Tuan yang terhormat, Anda harus memulai studi Anda sepenuhnya dari awal.”</p><p>Setelah berkata demikian, ia menyingkir dan menuliskan daftar beberapa buku tentang filsafat alam yang ia minta saya dapatkan, lalu menyuruh saya pergi setelah menyebutkan bahwa pada awal minggu berikutnya ia bermaksud memulai serangkaian kuliah tentang filsafat alam secara umum, dan bahwa M. Waldman, sesama profesor, akan memberikan kuliah tentang kimia pada hari-hari alternatif yang ia lewatkan.</p><p>Saya pulang ke rumah tanpa merasa kecewa, karena saya telah mengatakan bahwa saya telah lama menganggap para penulis yang dicela profesor itu tidak berguna; tetapi saya kembali sama sekali tidak lebih tertarik untuk kembali mempelajari hal-hal ini dalam bentuk apa pun. M. Krempe adalah seorang pria kecil dan pendek dengan suara serak dan wajah yang menjijikkan; oleh karena itu, guru itu tidak membuat saya tertarik pada bidang studinya. Mungkin dengan nada yang agak terlalu filosofis dan terhubung, saya telah memberikan uraian tentang kesimpulan yang telah saya capai mengenai hal-hal tersebut di masa muda saya. Sebagai seorang anak, saya tidak puas dengan hasil yang dijanjikan oleh para profesor ilmu alam modern. Dengan kebingungan ide yang hanya dapat dijelaskan oleh usia saya yang masih sangat muda dan kurangnya pembimbing dalam hal-hal tersebut, saya telah memundurkan langkah-langkah pengetahuan di sepanjang jalan waktu dan menukar penemuan para peneliti baru-baru ini dengan mimpi para alkemis yang terlupakan. Selain itu, saya meremehkan kegunaan filsafat alam modern. Sangat berbeda ketika para ahli ilmu pengetahuan mencari keabadian dan kekuasaan; pandangan-pandangan seperti itu, meskipun sia-sia, sangat agung; Namun kini situasinya telah berubah. Ambisi sang peneliti tampaknya terbatas pada penghancuran visi-visi yang menjadi dasar utama minat saya terhadap sains. Saya dituntut untuk menukar khayalan-khayalan yang tak terbatas dengan realitas yang nilainya kecil.</p><p>Demikianlah renungan saya selama dua atau tiga hari pertama tinggal di Ingolstadt, yang sebagian besar dihabiskan untuk berkenalan dengan daerah-daerah dan penduduk utama di tempat tinggal baru saya. Tetapi ketika minggu berikutnya dimulai, saya teringat informasi yang diberikan M. Krempe kepada saya tentang ceramah-ceramah tersebut. Dan meskipun saya tidak dapat setuju untuk pergi dan mendengarkan orang yang sedikit sombong itu menyampaikan kalimat-kalimat dari mimbar, saya teringat apa yang telah dia katakan tentang M. Waldman, yang belum pernah saya lihat, karena dia selama ini sedang berada di luar kota.</p><p>Sebagian karena rasa ingin tahu dan sebagian karena iseng, saya masuk ke ruang kuliah, yang kemudian dimasuki oleh M. Waldman. Profesor ini sangat berbeda dengan rekannya. Ia tampak berusia sekitar lima puluh tahun, tetapi dengan raut wajah yang menunjukkan kebaikan hati yang luar biasa; beberapa uban menutupi pelipisnya, tetapi rambut di bagian belakang kepalanya hampir hitam. Tubuhnya pendek tetapi sangat tegak dan suaranya adalah yang paling merdu yang pernah saya dengar. Ia memulai kuliahnya dengan mengulas sejarah kimia dan berbagai peningkatan yang dilakukan oleh berbagai cendekiawan, dengan penuh semangat menyebutkan nama-nama penemu yang paling terkemuka. Kemudian ia meninjau secara singkat keadaan ilmu pengetahuan saat ini dan menjelaskan banyak istilah dasarnya. Setelah melakukan beberapa percobaan pendahuluan, ia menyimpulkan dengan pujian terhadap kimia modern, yang kata-katanya tidak akan pernah saya lupakan:</p><p>“Para guru kuno ilmu ini,” katanya, “menjanjikan hal-hal yang mustahil dan tidak melakukan apa pun. Para ahli modern hanya menjanjikan sedikit; mereka tahu bahwa logam tidak dapat diubah dan bahwa ramuan kehidupan abadi adalah khayalan, tetapi para filsuf ini, yang tangan mereka tampaknya hanya diciptakan untuk bermain-main dengan tanah, dan mata mereka untuk meneliti mikroskop atau wadah peleburan, memang telah melakukan mukjizat. Mereka menembus ke dalam relung alam dan menunjukkan bagaimana alam bekerja di tempat-tempat persembunyiannya. Mereka naik ke surga; mereka telah menemukan bagaimana darah beredar, dan sifat udara yang kita hirup. Mereka telah memperoleh kekuatan baru dan hampir tak terbatas; mereka dapat mengendalikan guntur di langit, meniru gempa bumi, dan bahkan mengejek dunia yang tak terlihat dengan bayangannya sendiri.”</p><p>Demikianlah kata-kata profesor itu—atau lebih tepatnya, kata-kata takdir—yang diucapkan untuk menghancurkanku. Saat ia melanjutkan, aku merasa seolah jiwaku sedang bergulat dengan musuh yang nyata; satu per satu berbagai kunci disentuh yang membentuk mekanisme keberadaanku; nada demi nada dibunyikan, dan segera pikiranku dipenuhi dengan satu pikiran, satu konsepsi, satu tujuan. Begitu banyak yang telah dilakukan, seru jiwa Frankenstein—lebih banyak, jauh lebih banyak, akan kucapai; mengikuti jejak yang telah ditandai, aku akan merintis jalan baru, menjelajahi kekuatan yang belum diketahui, dan mengungkap kepada dunia misteri penciptaan yang terdalam.</p><p>Malam itu aku tak memejamkan mata. Batinku bergejolak dan kacau; aku merasa ketertiban akan muncul dari sana, tetapi aku tak berdaya untuk mewujudkannya. Perlahan, setelah fajar menyingsing, tidur pun datang. Aku terbangun, dan pikiranku semalam terasa seperti mimpi. Yang tersisa hanyalah tekad untuk kembali mempelajari ilmu lama dan mengabdikan diri pada ilmu pengetahuan yang kupercayai sebagai bakat alamiku. Pada hari yang sama, aku mengunjungi M. Waldman. Sikapnya secara pribadi bahkan lebih lembut dan menarik daripada di depan umum, karena ada martabat tertentu dalam sikapnya selama kuliah yang di rumahnya sendiri digantikan oleh keramahan dan kebaikan yang luar biasa. Aku menceritakan hampir sama tentang kegiatanku sebelumnya seperti yang kuceritakan kepada rekan profesornya. Ia mendengarkan dengan saksama sedikit narasi tentang studiku dan tersenyum mendengar nama Cornelius Agrippa dan Paracelsus, tetapi tanpa rasa jijik yang ditunjukkan M. Krempe. Ia berkata bahwa “Mereka adalah orang-orang yang semangatnya tak kenal lelah telah memberikan banyak landasan pengetahuan bagi para filsuf modern. Mereka telah meninggalkan tugas yang lebih mudah bagi kita, yaitu memberi nama baru dan menyusun fakta-fakta yang sebagian besar telah mereka ungkapkan dalam klasifikasi yang saling terkait. Namun, kerja keras orang-orang jenius, betapapun keliru arahnya, hampir tidak pernah gagal pada akhirnya memberikan manfaat nyata bagi umat manusia.” Saya mendengarkan pernyataannya, yang disampaikan tanpa kesombongan atau kepura-puraan, dan kemudian menambahkan bahwa kuliahnya telah menghilangkan prasangka saya terhadap para ahli kimia modern; saya mengungkapkan diri saya dengan tenang, dengan kerendahan hati dan rasa hormat yang pantas diberikan seorang pemuda kepada pengajarnya, tanpa membiarkan (kurangnya pengalaman hidup akan membuat saya malu) antusiasme yang mendorong kerja keras saya. Saya meminta nasihatnya mengenai buku-buku yang harus saya beli.</p><p>“Saya senang,” kata M. Waldman, “telah mendapatkan seorang murid; dan jika ketekunanmu sebanding dengan kemampuanmu, saya tidak ragu akan keberhasilanmu. Kimia adalah cabang filsafat alam di mana kemajuan terbesar telah dan dapat dicapai; karena alasan itulah saya menjadikannya bidang studi khusus saya; tetapi pada saat yang sama, saya tidak mengabaikan cabang-cabang ilmu pengetahuan lainnya. Seseorang akan menjadi ahli kimia yang sangat buruk jika ia hanya menekuni bidang pengetahuan manusia itu saja. Jika keinginanmu adalah untuk benar-benar menjadi seorang ilmuwan dan bukan hanya seorang eksperimen kecil, saya sarankan kamu untuk mempelajari setiap cabang filsafat alam, termasuk matematika.”</p><p>Kemudian ia membawa saya ke laboratoriumnya dan menjelaskan kegunaan berbagai mesinnya, memberi tahu saya apa yang harus saya peroleh dan menjanjikan penggunaan mesin-mesinnya sendiri ketika saya telah cukup maju dalam ilmu pengetahuan sehingga tidak merusak mekanisme mesin tersebut. Ia juga memberi saya daftar buku yang telah saya minta, dan saya pun berpamitan.</p><p>Demikianlah berakhir hari yang tak terlupakan bagiku; hari itu menentukan takdir masa depanku.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-2.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 2</span>
+    </a>
+    <a href="bab-4.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 4</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 3</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Ketika saya mencapai usia tujuh belas tahun, orang tua saya memutuskan bahwa saya harus menjadi mahasiswa di Universitas Ingolstadt. Sebelumnya saya bersekolah di Jenewa, tetapi ayah saya menganggap perlu untuk melengkapi pendidikan saya agar saya mengenal adat istiadat lain selain adat istiadat negara asal saya. Oleh karena itu, keberangkatan saya ditetapkan pada tanggal yang lebih awal, tetapi sebelum hari yang telah ditentukan tiba, kemalangan pertama dalam hidup saya terjadi—sebuah pertanda, seolah-olah, dari kesengsaraan saya di masa depan. Elizabeth terserang demam scarlet; penyakitnya parah, dan ia berada dalam bahaya besar. Selama sakitnya, banyak argumen telah disampaikan untuk membujuk ibuku agar tidak merawatnya. Awalnya ia mengalah pada permohonan kami, tetapi ketika ia mendengar bahwa nyawa kesayangannya terancam, ia tidak dapat lagi mengendalikan kecemasannya. Ia merawat Elizabeth di ranjang sakitnya; perhatiannya yang penuh kewaspadaan mengalahkan keganasan penyakit itu—Elizabeth selamat, tetapi konsekuensi dari ketidakhati-hatiannya ini berakibat fatal bagi penyelamatnya. Pada hari ketiga, ibuku jatuh sakit; demamnya disertai gejala yang sangat mengkhawatirkan, dan tatapan para perawatnya meramalkan hal terburuk. Di ranjang kematiannya, ketabahan dan kebaikan hati wanita terbaik ini tidak meninggalkannya. Ia menggenggam tangan Elizabeth dan aku. “Anak-anakku,” katanya, “harapan terbesarku akan kebahagiaan masa depan tertumpu pada prospek persatuan kalian. Harapan ini sekarang akan menjadi penghiburan bagi ayahmu. Elizabeth, sayangku, kau harus menggantikan posisiku bagi anak-anakku yang lebih muda. Sayang sekali! Aku menyesal telah diambil dari kalian; dan, sebahagia dan terkasihnya aku selama ini, bukankah sulit untuk meninggalkan kalian semua? Tetapi ini bukanlah pikiran yang pantas untukku; aku akan berusaha untuk menerima kematian dengan gembira dan akan membiarkan diriku berharap untuk bertemu kalian di dunia lain.” Ia meninggal dengan tenang, dan raut wajahnya menunjukkan kasih sayang bahkan dalam kematian. Saya tidak perlu menggambarkan perasaan mereka yang ikatan terkasihnya terputus oleh kejahatan yang paling tak terperbaiki itu, kekosongan yang hadir di jiwa, dan keputusasaan yang terpancar di wajah. Butuh waktu lama sebelum pikiran dapat meyakinkan diri sendiri bahwa dia yang kita lihat setiap hari dan yang keberadaannya tampak sebagai bagian dari diri kita sendiri telah pergi selamanya—bahwa kecerahan mata yang tercinta telah padam dan suara yang begitu akrab dan disayangi telinga telah terdiam, tak akan pernah terdengar lagi. Ini adalah refleksi hari-hari pertama; tetapi ketika berlalunya waktu membuktikan kenyataan kejahatan itu, maka kepedihan duka yang sebenarnya dimulai. Namun dari siapa tangan kasar itu tidak pernah merenggut beberapa ikatan terkasih? Dan mengapa saya harus menggambarkan kesedihan yang dirasakan dan harus dirasakan oleh semua orang? Akhirnya tiba saatnya ketika duka lebih merupakan kesenangan daripada kebutuhan; dan senyum yang terukir di bibir, meskipun mungkin dianggap sebagai penistaan, tidak dihilangkan. Ibu saya telah meninggal, tetapi kami masih memiliki kewajiban yang harus kami laksanakan; kami harus melanjutkan perjalanan kami bersama yang lain dan belajar untuk menganggap diri kami beruntung selama masih ada seseorang yang belum direbut oleh si perusak. Keberangkatanku ke Ingolstadt, yang telah ditunda karena peristiwa-peristiwa ini, kini kembali diputuskan. Aku memperoleh penangguhan beberapa minggu dari ayahku. Rasanya seperti penistaan jika aku begitu cepat meninggalkan ketenangan, yang mirip dengan kematian, di rumah duka dan bergegas ke tengah kehidupan. Aku masih baru dalam kesedihan, tetapi itu tidak mengurangi kekhawatiranku. Aku enggan meninggalkan orang-orang yang masih bersamaku, dan yang terpenting, aku ingin melihat Elizabeth tersayangku sedikit terhibur. Ia memang menyembunyikan kesedihannya dan berusaha menjadi penghibur bagi kita semua. Ia memandang hidup dengan tenang dan menjalankan tugas-tugasnya dengan keberanian dan semangat. Ia mengabdikan dirinya kepada mereka yang telah diajarkan untuk dipanggil paman dan sepupunya. Ia tak pernah secantik saat ini, ketika ia mengenang kembali keceriaan senyumnya dan membagikannya kepada kita. Ia bahkan melupakan penyesalannya sendiri dalam upayanya untuk membuat kita melupakannya. Hari keberangkatanku akhirnya tiba. Clerval menghabiskan malam terakhir bersama kami. Ia telah berusaha membujuk ayahnya untuk mengizinkannya menemaniku dan menjadi teman kuliahku, tetapi sia-sia. Ayahnya adalah seorang pedagang yang berpikiran sempit dan melihat kemalasan dan kehancuran dalam aspirasi dan ambisi putranya. Henry sangat merasakan kemalangan karena dilarang mendapatkan pendidikan liberal. Ia sedikit bicara, tetapi ketika ia berbicara, aku membaca di matanya yang berbinar dan tatapannya yang bersemangat sebuah tekad yang terkendali namun teguh untuk tidak terikat pada detail-detail menyedihkan dari perdagangan. Kami duduk hingga larut malam. Kami tidak bisa melepaskan diri satu sama lain, juga tidak bisa mengucapkan kata "Selamat tinggal!" Kata itu terucap, dan kami pun pergi dengan alasan ingin beristirahat, masing-masing mengira yang lain telah tertipu; tetapi ketika fajar menyingsing saya turun ke kereta yang akan membawa saya pergi, mereka semua ada di sana—ayah saya kembali memberkati saya, Clerval kembali menggenggam tangan saya, Elizabeth kembali memohon agar saya sering menulis dan memberikan perhatian feminin terakhir kepada teman bermain dan sahabatnya. Aku menjatuhkan diri ke kursi panjang yang akan membawaku pergi dan tenggelam dalam renungan yang paling melankolis. Aku, yang selalu dikelilingi oleh teman-teman yang ramah, terus-menerus berusaha untuk saling memberi kesenangan—kini aku sendirian. Di universitas tempat aku akan pergi, aku harus mencari teman sendiri dan menjadi pelindungku sendiri. Hidupku selama ini sangat terisolasi dan domestik, dan ini telah memberiku rasa jijik yang tak terkalahkan terhadap wajah-wajah baru. Aku menyayangi saudara-saudaraku, Elizabeth, dan Clerval; mereka adalah "wajah-wajah lama yang familiar," tetapi aku merasa diriku sama sekali tidak cocok untuk bergaul dengan orang asing. Begitulah renunganku saat memulai perjalanan; tetapi saat aku melanjutkan perjalanan, semangat dan harapanku meningkat. Aku sangat menginginkan perolehan pengetahuan. Aku sering, ketika di rumah, merasa sulit untuk tetap terkurung di satu tempat selama masa mudaku dan merindukan untuk memasuki dunia dan mengambil tempatku di antara manusia lain. Sekarang keinginanku telah terpenuhi, dan memang akan menjadi kebodohan untuk menyesalinya. Saya memiliki cukup waktu luang untuk merenungkan hal-hal ini dan banyak hal lainnya selama perjalanan saya ke Ingolstadt, yang panjang dan melelahkan. Akhirnya, menara lonceng putih tinggi kota itu menyambut pandangan saya. Saya turun dan diantar ke apartemen saya yang sepi untuk menghabiskan malam sesuai keinginan saya. Keesokan paginya saya menyerahkan SURAT pengantar saya dan mengunjungi beberapa profesor utama. Kebetulan—atau lebih tepatnya pengaruh jahat, Malaikat Penghancur, yang menunjukkan kekuasaan mutlak atas saya sejak saat saya dengan enggan meninggalkan pintu rumah ayah saya—pertama-tama membawa saya kepada M. Krempe, profesor filsafat alam. Dia adalah pria yang kasar, tetapi sangat mendalami rahasia ilmunya. Dia menanyakan beberapa pertanyaan kepada saya mengenai kemajuan saya dalam berbagai cabang ilmu yang berkaitan dengan filsafat alam. Saya menjawab dengan acuh tak acuh, dan sebagian dengan nada meremehkan, menyebutkan nama-nama alkemis saya sebagai penulis utama yang telah saya pelajari. Profesor itu menatap saya. "Apakah kamu," katanya, "benar-benar menghabiskan waktumu untuk mempelajari hal-hal yang tidak masuk akal seperti itu?" Saya menjawab dengan утвердительно. “Setiap menit,” lanjut M. Krempe dengan hangat, “setiap detik yang Anda sia-siakan untuk buku-buku itu benar-benar hilang. Anda telah membebani ingatan Anda dengan sistem yang sudah usang dan nama-nama yang tidak berguna. Ya Tuhan! Di negeri gurun mana Anda tinggal, di mana tidak ada seorang pun yang cukup baik untuk memberi tahu Anda bahwa khayalan yang telah Anda serap dengan rakus itu sudah berusia seribu tahun dan sudah usang seperti zaman kuno? Saya tidak menyangka, di zaman yang tercerahkan dan ilmiah ini, akan menemukan seorang murid Albertus Magnus dan Paracelsus. Tuan yang terhormat, Anda harus memulai studi Anda sepenuhnya dari awal.” Setelah berkata demikian, ia menyingkir dan menuliskan daftar beberapa buku tentang filsafat alam yang ia minta saya dapatkan, lalu menyuruh saya pergi setelah menyebutkan bahwa pada awal minggu berikutnya ia bermaksud memulai serangkaian kuliah tentang filsafat alam secara umum, dan bahwa M. Waldman, sesama profesor, akan memberikan kuliah tentang kimia pada hari-hari alternatif yang ia lewatkan. Saya pulang ke rumah tanpa merasa kecewa, karena saya telah mengatakan bahwa saya telah lama menganggap para penulis yang dicela profesor itu tidak berguna; tetapi saya kembali sama sekali tidak lebih tertarik untuk kembali mempelajari hal-hal ini dalam bentuk apa pun. M. Krempe adalah seorang pria kecil dan pendek dengan suara serak dan wajah yang menjijikkan; oleh karena itu, guru itu tidak membuat saya tertarik pada bidang studinya. Mungkin dengan nada yang agak terlalu filosofis dan terhubung, saya telah memberikan uraian tentang kesimpulan yang telah saya capai mengenai hal-hal tersebut di masa muda saya. Sebagai seorang anak, saya tidak puas dengan hasil yang dijanjikan oleh para profesor ilmu alam modern. Dengan kebingungan ide yang hanya dapat dijelaskan oleh usia saya yang masih sangat muda dan kurangnya pembimbing dalam hal-hal tersebut, saya telah memundurkan langkah-langkah pengetahuan di sepanjang jalan waktu dan menukar penemuan para peneliti baru-baru ini dengan mimpi para alkemis yang terlupakan. Selain itu, saya meremehkan kegunaan filsafat alam modern. Sangat berbeda ketika para ahli ilmu pengetahuan mencari keabadian dan kekuasaan; pandangan-pandangan seperti itu, meskipun sia-sia, sangat agung; Namun kini situasinya telah berubah. Ambisi sang peneliti tampaknya terbatas pada penghancuran visi-visi yang menjadi dasar utama minat saya terhadap sains. Saya dituntut untuk menukar khayalan-khayalan yang tak terbatas dengan realitas yang nilainya kecil. Demikianlah renungan saya selama dua atau tiga hari pertama tinggal di Ingolstadt, yang sebagian besar dihabiskan untuk berkenalan dengan daerah-daerah dan penduduk utama di tempat tinggal baru saya. Tetapi ketika minggu berikutnya dimulai, saya teringat informasi yang diberikan M. Krempe kepada saya tentang ceramah-ceramah tersebut. Dan meskipun saya tidak dapat setuju untuk pergi dan mendengarkan orang yang sedikit sombong itu menyampaikan kalimat-kalimat dari mimbar, saya teringat apa yang telah dia katakan tentang M. Waldman, yang belum pernah saya lihat, karena dia selama ini sedang berada di luar kota. Sebagian karena rasa ingin tahu dan sebagian karena iseng, saya masuk ke ruang kuliah, yang kemudian dimasuki oleh M. Waldman. Profesor ini sangat berbeda dengan rekannya. Ia tampak berusia sekitar lima puluh tahun, tetapi dengan raut wajah yang menunjukkan kebaikan hati yang luar biasa; beberapa uban menutupi pelipisnya, tetapi rambut di bagian belakang kepalanya hampir hitam. Tubuhnya pendek tetapi sangat tegak dan suaranya adalah yang paling merdu yang pernah saya dengar. Ia memulai kuliahnya dengan mengulas sejarah kimia dan berbagai peningkatan yang dilakukan oleh berbagai cendekiawan, dengan penuh semangat menyebutkan nama-nama penemu yang paling terkemuka. Kemudian ia meninjau secara singkat keadaan ilmu pengetahuan saat ini dan menjelaskan banyak istilah dasarnya. Setelah melakukan beberapa percobaan pendahuluan, ia menyimpulkan dengan pujian terhadap kimia modern, yang kata-katanya tidak akan pernah saya lupakan: “Para guru kuno ilmu ini,” katanya, “menjanjikan hal-hal yang mustahil dan tidak melakukan apa pun. Para ahli modern hanya menjanjikan sedikit; mereka tahu bahwa logam tidak dapat diubah dan bahwa ramuan kehidupan abadi adalah khayalan, tetapi para filsuf ini, yang tangan mereka tampaknya hanya diciptakan untuk bermain-main dengan tanah, dan mata mereka untuk meneliti mikroskop atau wadah peleburan, memang telah melakukan mukjizat. Mereka menembus ke dalam relung alam dan menunjukkan bagaimana alam bekerja di tempat-tempat persembunyiannya. Mereka naik ke surga; mereka telah menemukan bagaimana darah beredar, dan sifat udara yang kita hirup. Mereka telah memperoleh kekuatan baru dan hampir tak terbatas; mereka dapat mengendalikan guntur di langit, meniru gempa bumi, dan bahkan mengejek dunia yang tak terlihat dengan bayangannya sendiri.” Demikianlah kata-kata profesor itu—atau lebih tepatnya, kata-kata takdir—yang diucapkan untuk menghancurkanku. Saat ia melanjutkan, aku merasa seolah jiwaku sedang bergulat dengan musuh yang nyata; satu per satu berbagai kunci disentuh yang membentuk mekanisme keberadaanku; nada demi nada dibunyikan, dan segera pikiranku dipenuhi dengan satu pikiran, satu konsepsi, satu tujuan. Begitu banyak yang telah dilakukan, seru jiwa Frankenstein—lebih banyak, jauh lebih banyak, akan kucapai; mengikuti jejak yang telah ditandai, aku akan merintis jalan baru, menjelajahi kekuatan yang belum diketahui, dan mengungkap kepada dunia misteri penciptaan yang terdalam. Malam itu aku tak memejamkan mata. Batinku bergejolak dan kacau; aku merasa ketertiban akan muncul dari sana, tetapi aku tak berdaya untuk mewujudkannya. Perlahan, setelah fajar menyingsing, tidur pun datang. Aku terbangun, dan pikiranku semalam terasa seperti mimpi. Yang tersisa hanyalah tekad untuk kembali mempelajari ilmu lama dan mengabdikan diri pada ilmu pengetahuan yang kupercayai sebagai bakat alamiku. Pada hari yang sama, aku mengunjungi M. Waldman. Sikapnya secara pribadi bahkan lebih lembut dan menarik daripada di depan umum, karena ada martabat tertentu dalam sikapnya selama kuliah yang di rumahnya sendiri digantikan oleh keramahan dan kebaikan yang luar biasa. Aku menceritakan hampir sama tentang kegiatanku sebelumnya seperti yang kuceritakan kepada rekan profesornya. Ia mendengarkan dengan saksama sedikit narasi tentang studiku dan tersenyum mendengar nama Cornelius Agrippa dan Paracelsus, tetapi tanpa rasa jijik yang ditunjukkan M. Krempe. Ia berkata bahwa “Mereka adalah orang-orang yang semangatnya tak kenal lelah telah memberikan banyak landasan pengetahuan bagi para filsuf modern. Mereka telah meninggalkan tugas yang lebih mudah bagi kita, yaitu memberi nama baru dan menyusun fakta-fakta yang sebagian besar telah mereka ungkapkan dalam klasifikasi yang saling terkait. Namun, kerja keras orang-orang jenius, betapapun keliru arahnya, hampir tidak pernah gagal pada akhirnya memberikan manfaat nyata bagi umat manusia.” Saya mendengarkan pernyataannya, yang disampaikan tanpa kesombongan atau kepura-puraan, dan kemudian menambahkan bahwa kuliahnya telah menghilangkan prasangka saya terhadap para ahli kimia modern; saya mengungkapkan diri saya dengan tenang, dengan kerendahan hati dan rasa hormat yang pantas diberikan seorang pemuda kepada pengajarnya, tanpa membiarkan (kurangnya pengalaman hidup akan membuat saya malu) antusiasme yang mendorong kerja keras saya. Saya meminta nasihatnya mengenai buku-buku yang harus saya beli. “Saya senang,” kata M. Waldman, “telah mendapatkan seorang murid; dan jika ketekunanmu sebanding dengan kemampuanmu, saya tidak ragu akan keberhasilanmu. Kimia adalah cabang filsafat alam di mana kemajuan terbesar telah dan dapat dicapai; karena alasan itulah saya menjadikannya bidang studi khusus saya; tetapi pada saat yang sama, saya tidak mengabaikan cabang-cabang ilmu pengetahuan lainnya. Seseorang akan menjadi ahli kimia yang sangat buruk jika ia hanya menekuni bidang pengetahuan manusia itu saja. Jika keinginanmu adalah untuk benar-benar menjadi seorang ilmuwan dan bukan hanya seorang eksperimen kecil, saya sarankan kamu untuk mempelajari setiap cabang filsafat alam, termasuk matematika.” Kemudian ia membawa saya ke laboratoriumnya dan menjelaskan kegunaan berbagai mesinnya, memberi tahu saya apa yang harus saya peroleh dan menjanjikan penggunaan mesin-mesinnya sendiri ketika saya telah cukup maju dalam ilmu pengetahuan sehingga tidak merusak mekanisme mesin tersebut. Ia juga memberi saya daftar buku yang telah saya minta, dan saya pun berpamitan. Demikianlah berakhir hari yang tak terlupakan bagiku; hari itu menentukan takdir masa depanku.</p>
-
-<div class="nav">
-  <a href="bab-2.html">⬅ Bab 2</a>
-  <a href="bab-4.html">Bab 4 ➡</a>
-</div>
 
 </body>
 </html>

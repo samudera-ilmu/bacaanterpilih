@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XIX.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XIX. - Bacaan digital klasik">
+<title>Bab XIX — Middlemarch</title>
+<meta name="description" content="Baca Bab XIX dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-xix.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab XIX — Middlemarch">
+  <meta property="og:description" content="Baca Bab XIX dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-xix.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab XIX — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab XIX dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab XIX",
+    "name": "Bab XIX — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-xix.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab XIX</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“L' altra vedete ch'ha fatto alla guancia <br />Della sua palma, sospirando, letto.” — Api Penyucian , vii.</p><p>Ketika George IV masih berkuasa atas privasi Windsor, ketika Duke of Wellington menjadi Perdana Menteri, dan Mr. Vincy adalah walikota dari korporasi lama di Middlemarch, Mrs. Casaubon, yang lahir dengan nama Dorothea Brooke, telah melakukan perjalanan bulan madunya ke Roma. Pada masa itu, dunia secara umum lebih tidak mengetahui tentang kebaikan dan kejahatan selama empat puluh tahun dibandingkan saat ini. Para pelancong tidak sering membawa informasi lengkap tentang seni Kristen baik di kepala maupun di saku mereka; dan bahkan kritikus Inggris paling brilian pada masa itu salah mengira makam Perawan Maria yang naik ke surga yang dihiasi bunga sebagai vas hias karena imajinasi pelukis. Romantisisme, yang telah membantu mengisi beberapa kekosongan yang membosankan dengan cinta dan pengetahuan, belum menembus zaman dengan ragi dan masuk ke dalam makanan setiap orang; itu masih bergejolak sebagai antusiasme yang kuat dan dapat dibedakan pada beberapa seniman Jerman berambut panjang di Roma, dan kaum muda dari bangsa lain yang bekerja atau menganggur di dekat mereka kadang-kadang terperangkap dalam gerakan yang menyebar itu.</p><p>Suatu pagi yang cerah, seorang pemuda dengan rambut tidak terlalu panjang, tetapi lebat dan keriting, dan yang penampilannya khas Inggris, baru saja membelakangi Patung Belvedere di Vatikan dan sedang memandang pemandangan pegunungan yang megah dari serambi bundar di sebelahnya. Ia begitu asyik sehingga tidak menyadari kedatangan seorang pria Jerman bermata gelap dan bersemangat yang menghampirinya dan meletakkan tangannya di bahunya, lalu berkata dengan aksen yang kuat, &quot;Kemarilah, cepat! Kalau tidak, dia akan mengubah posenya.&quot;</p><p>Quickness siap sedia menanggapi panggilan itu, dan kedua sosok itu berjalan ringan melewati Meleager, menuju aula tempat Ariadne yang sedang berbaring, yang saat itu disebut Cleopatra, terbaring dalam keindahan marmer yang mempesona, kainnya terlipat di sekelilingnya dengan mudah dan lembut seperti kelopak bunga. Mereka tepat waktu untuk melihat sosok lain berdiri di dekat alas di dekat marmer tempat berbaring itu: seorang gadis muda yang sedang mekar, yang bentuknya, tidak kalah dengan Ariadne, mengenakan kain abu-abu ala Quaker; jubah panjangnya, yang diikat di leher, tersampir ke belakang dari lengannya, dan satu tangan cantiknya yang tanpa sarung tangan menopang pipinya, sedikit mendorong ke belakang topi bulu berang-berang putih yang membentuk semacam lingkaran cahaya di wajahnya di sekitar rambut cokelat gelap yang dikepang sederhana. Dia tidak melihat patung itu, mungkin tidak memikirkannya: matanya yang besar tertuju dengan melamun pada seberkas sinar matahari yang jatuh di lantai. Namun, ia menyadari kehadiran dua orang asing yang tiba-tiba berhenti seolah-olah sedang mengagumi Cleopatra, dan tanpa memandang mereka, ia segera berbalik untuk bergabung dengan seorang pelayan dan kurir yang sedang berjalan-jalan di sepanjang aula agak jauh.</p><p>“Bagaimana menurutmu tentang perpaduan kontras yang indah ini?” kata pria Jerman itu, mencari respons kekaguman di wajah temannya, tetapi terus berbicara tanpa menunggu jawaban lain. “Di sana terbaring keindahan kuno, bahkan dalam kematian pun tidak seperti mayat, tetapi terhenti dalam kepuasan sempurna dari kesempurnaan sensualnya: dan di sini berdiri keindahan dalam kehidupannya yang bernapas , dengan kesadaran akan berabad-abad Kekristenan di dadanya. Tapi dia seharusnya berpakaian seperti biarawati; menurutku dia hampir terlihat seperti yang kau sebut Quaker; aku akan mendandaninya sebagai biarawati dalam lukisanku. Namun, dia sudah menikah; aku melihat cincin pernikahannya di tangan kirinya yang indah itu, kalau tidak aku akan mengira Geistlicher yang pucat itu adalah ayahnya. Aku melihatnya berpisah darinya beberapa waktu lalu, dan barusan aku menemukannya dalam pose yang luar biasa itu. Bayangkan saja! mungkin dia kaya, dan ingin potretnya dibuat. Ah! tidak ada gunanya menjaganya—dia pergi! Mari kita ikuti dia pulang!”</p><p>“Tidak, tidak,” kata temannya sambil sedikit mengerutkan kening.</p><p>“Kau aneh, Ladislaw. Kau tampak seperti orang yang terkejut. Apakah kau mengenalnya?”</p><p>“Aku tahu dia menikah dengan sepupuku,” kata Will Ladislaw, berjalan santai menyusuri lorong dengan ekspresi acuh tak acuh, sementara teman Jermannya tetap di sisinya dan mengawasinya dengan penuh harap.</p><p>“Apa! Si Geistlicher ? Dia lebih mirip paman—kerabat yang lebih berguna.”</p><p>“Dia bukan pamanku. Kukatakan padamu, dia sepupuku yang kedua,” kata Ladislaw dengan sedikit kesal.</p><p>“Bagus, bagus. Jangan marah. Anda tidak marah kepada saya karena menganggap Nyonya Sepupu Kedua sebagai Madonna muda paling sempurna yang pernah saya lihat?”</p><p>“Marah? Omong kosong. Aku hanya pernah bertemu dengannya sekali sebelumnya, selama beberapa menit, ketika sepupuku mengenalkannya padaku, tepat sebelum aku meninggalkan Inggris. Mereka belum menikah saat itu. Aku tidak tahu mereka akan datang ke Roma.”</p><p>“Tapi sekarang kau akan pergi menemui mereka—kau akan mencari tahu alamat mereka—karena kau sudah tahu namanya. Bagaimana kalau kita pergi ke kantor pos? Dan kau bisa membicarakan tentang potret itu.”</p><p>“Sialan kau, Naumann! Aku tidak tahu apa yang harus kulakukan. Aku tidak seberani dirimu.”</p><p>“Bah! Itu karena kau seorang amatir dan tidak berpengalaman. Jika kau seorang seniman, kau akan menganggap Nyonya Sepupu Kedua sebagai bentuk kuno yang dijiwai oleh sentimen Kristen—semacam Antigone versi Kristen—kekuatan sensual yang dikendalikan oleh gairah spiritual.”</p><p>“Ya, dan bahwa lukisanmu tentang dirinya adalah hasil utama dari keberadaannya—keilahian yang mencapai kesempurnaan yang lebih tinggi dan hampir habis dalam tindakan menutupi sebagian kanvasmu. Aku amatir, jika boleh dibilang begitu: aku tidak berpikir bahwa seluruh alam semesta berupaya mencapai makna yang samar dari lukisanmu.”</p><p>“Tapi memang begitu, sayangku!—sejauh itu ia menjulur melalui diriku, Adolf Naumann: itu sudah pasti,” kata pelukis yang ramah itu, sambil meletakkan tangannya di bahu Ladislaw, dan sama sekali tidak terganggu oleh nada kesal yang tak dapat dijelaskan dalam suaranya. “Lihat sekarang! Keberadaanku mengandaikan keberadaan seluruh alam semesta—bukan begitu ? dan fungsiku adalah melukis—dan sebagai pelukis aku memiliki konsepsi yang benar-benar jenius , tentang bibi buyutmu atau nenek keduamu sebagai subjek lukisan; oleh karena itu, alam semesta menjulur ke arah lukisan itu melalui kait atau cakar khusus yang dikeluarkannya dalam bentuk diriku—bukan begitu?”</p><p>“Tetapi bagaimana jika cakar lain yang berbentuk seperti diriku berusaha untuk menggagalkannya?—maka masalahnya menjadi sedikit lebih rumit.”</p><p>“Sama sekali tidak: hasil dari perjuangan itu tetap sama—ada gambar atau tidak—secara logis.”</p><p>Will tak mampu menahan sifatnya yang tenang ini, dan raut wajahnya yang muram berubah menjadi tawa riang.</p><p>“Ayo, temanku—kau mau membantu?” kata Naumann dengan nada penuh harap.</p><p>“Tidak; omong kosong, Naumann! Wanita Inggris tidak siap sedia menjadi model untuk semua orang. Dan kau ingin mengekspresikan terlalu banyak hal dengan lukisanmu. Kau hanya akan membuat potret yang lebih baik atau lebih buruk dengan latar belakang yang setiap penikmat seni akan memberikan alasan yang berbeda untuk atau menentangnya. Dan apa itu potret seorang wanita? Lukisan dan Plastikmu pada akhirnya adalah karya yang buruk. Mereka mengganggu dan menumpulkan konsepsi alih-alih mengangkatnya. Bahasa adalah media yang lebih halus.”</p><p>“Ya, untuk mereka yang tidak bisa melukis,” kata Naumann. “Kau benar sekali. Aku tidak menyarankanmu untuk melukis, temanku.”</p><p>Seniman yang ramah itu menyampaikan sindirannya, tetapi Ladislaw tidak memilih untuk terlihat tersinggung. Dia melanjutkan seolah-olah tidak mendengar apa pun.</p><p>“Bahasa memberikan gambaran yang lebih lengkap, yang justru lebih baik karena sifatnya yang samar. Lagipula, penglihatan sejati ada di dalam; dan lukisan menatap Anda dengan ketidaksempurnaan yang terus-menerus. Saya merasakan hal itu terutama pada representasi perempuan. Seolah-olah seorang perempuan hanyalah permukaan berwarna! Anda harus menunggu gerakan dan intonasi. Ada perbedaan dalam setiap tarikan napas mereka: mereka berubah dari saat ke saat.—Perempuan yang baru saja Anda lihat ini, misalnya: bagaimana Anda akan melukis suaranya, coba bayangkan? Tetapi suaranya jauh lebih agung daripada apa pun yang telah Anda lihat darinya.”</p><p>“Aku mengerti, aku mengerti. Kau cemburu. Tak seorang pun boleh mengira dirinya bisa melukis sosok idealmu. Ini serius, temanku! Bibi buyutmu! 'Der Neffe als Onkel' dalam arti tragis— ungeheuer! ”</p><p>“Kau dan aku akan bertengkar, Naumann, jika kau memanggil wanita itu bibiku lagi.”</p><p>“Lalu, dia harus dipanggil apa?”</p><p>“Nyonya Casaubon.”</p><p>“Bagus. Bagaimana jika aku berkenalan dengannya tanpa sepengetahuanmu, dan mendapati bahwa dia sangat ingin dilukis?”</p><p>“Ya, anggap saja begitu!” kata Will Ladislaw, dengan nada meremehkan, bermaksud untuk mengabaikan masalah itu. Ia sadar dirinya kesal karena hal-hal sepele yang konyol, yang sebagian merupakan ciptaannya sendiri. Mengapa ia membuat keributan tentang Nyonya Casaubon? Namun ia merasa seolah-olah sesuatu telah terjadi padanya terkait dengan wanita itu. Ada karakter-karakter yang terus-menerus menciptakan benturan dan konflik bagi diri mereka sendiri dalam drama yang tidak ada seorang pun siap untuk berakting bersama mereka. Kepekaan mereka akan berbenturan dengan objek-objek yang tetap tenang tanpa bersalah.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-xviii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Xviii</span>
+    </a>
+    <a href="bab-xx.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xx</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XIX.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“L' altra vedete ch'ha fatto alla guancia Della sua palma, sospirando, letto.” — Api Penyucian , vii. Ketika George IV masih berkuasa atas privasi Windsor, ketika Duke of Wellington menjadi Perdana Menteri, dan Mr. Vincy adalah walikota dari korporasi lama di Middlemarch, Mrs. Casaubon, yang lahir dengan nama Dorothea Brooke, telah melakukan perjalanan bulan madunya ke Roma. Pada masa itu, dunia secara umum lebih tidak mengetahui tentang kebaikan dan kejahatan selama empat puluh tahun dibandingkan saat ini. Para pelancong tidak sering membawa informasi lengkap tentang seni Kristen baik di kepala maupun di saku mereka; dan bahkan kritikus Inggris paling brilian pada masa itu salah mengira makam Perawan Maria yang naik ke surga yang dihiasi bunga sebagai vas hias karena imajinasi pelukis. Romantisisme, yang telah membantu mengisi beberapa kekosongan yang membosankan dengan cinta dan pengetahuan, belum menembus zaman dengan ragi dan masuk ke dalam makanan setiap orang; itu masih bergejolak sebagai antusiasme yang kuat dan dapat dibedakan pada beberapa seniman Jerman berambut panjang di Roma, dan kaum muda dari bangsa lain yang bekerja atau menganggur di dekat mereka kadang-kadang terperangkap dalam gerakan yang menyebar itu. Suatu pagi yang cerah, seorang pemuda dengan rambut tidak terlalu panjang, tetapi lebat dan keriting, dan yang penampilannya khas Inggris, baru saja membelakangi Patung Belvedere di Vatikan dan sedang memandang pemandangan pegunungan yang megah dari serambi bundar di sebelahnya. Ia begitu asyik sehingga tidak menyadari kedatangan seorang pria Jerman bermata gelap dan bersemangat yang menghampirinya dan meletakkan tangannya di bahunya, lalu berkata dengan aksen yang kuat, "Kemarilah, cepat! Kalau tidak, dia akan mengubah posenya." Quickness siap sedia menanggapi panggilan itu, dan kedua sosok itu berjalan ringan melewati Meleager, menuju aula tempat Ariadne yang sedang berbaring, yang saat itu disebut Cleopatra, terbaring dalam keindahan marmer yang mempesona, kainnya terlipat di sekelilingnya dengan mudah dan lembut seperti kelopak bunga. Mereka tepat waktu untuk melihat sosok lain berdiri di dekat alas di dekat marmer tempat berbaring itu: seorang gadis muda yang sedang mekar, yang bentuknya, tidak kalah dengan Ariadne, mengenakan kain abu-abu ala Quaker; jubah panjangnya, yang diikat di leher, tersampir ke belakang dari lengannya, dan satu tangan cantiknya yang tanpa sarung tangan menopang pipinya, sedikit mendorong ke belakang topi bulu berang-berang putih yang membentuk semacam lingkaran cahaya di wajahnya di sekitar rambut cokelat gelap yang dikepang sederhana. Dia tidak melihat patung itu, mungkin tidak memikirkannya: matanya yang besar tertuju dengan melamun pada seberkas sinar matahari yang jatuh di lantai. Namun, ia menyadari kehadiran dua orang asing yang tiba-tiba berhenti seolah-olah sedang mengagumi Cleopatra, dan tanpa memandang mereka, ia segera berbalik untuk bergabung dengan seorang pelayan dan kurir yang sedang berjalan-jalan di sepanjang aula agak jauh. “Bagaimana menurutmu tentang perpaduan kontras yang indah ini?” kata pria Jerman itu, mencari respons kekaguman di wajah temannya, tetapi terus berbicara tanpa menunggu jawaban lain. “Di sana terbaring keindahan kuno, bahkan dalam kematian pun tidak seperti mayat, tetapi terhenti dalam kepuasan sempurna dari kesempurnaan sensualnya: dan di sini berdiri keindahan dalam kehidupannya yang bernapas , dengan kesadaran akan berabad-abad Kekristenan di dadanya. Tapi dia seharusnya berpakaian seperti biarawati; menurutku dia hampir terlihat seperti yang kau sebut Quaker; aku akan mendandaninya sebagai biarawati dalam lukisanku. Namun, dia sudah menikah; aku melihat cincin pernikahannya di tangan kirinya yang indah itu, kalau tidak aku akan mengira Geistlicher yang pucat itu adalah ayahnya. Aku melihatnya berpisah darinya beberapa waktu lalu, dan barusan aku menemukannya dalam pose yang luar biasa itu. Bayangkan saja! mungkin dia kaya, dan ingin potretnya dibuat. Ah! tidak ada gunanya menjaganya—dia pergi! Mari kita ikuti dia pulang!” “Tidak, tidak,” kata temannya sambil sedikit mengerutkan kening. “Kau aneh, Ladislaw. Kau tampak seperti orang yang terkejut. Apakah kau mengenalnya?” “Aku tahu dia menikah dengan sepupuku,” kata Will Ladislaw, berjalan santai menyusuri lorong dengan ekspresi acuh tak acuh, sementara teman Jermannya tetap di sisinya dan mengawasinya dengan penuh harap. “Apa! Si Geistlicher ? Dia lebih mirip paman—kerabat yang lebih berguna.” “Dia bukan pamanku. Kukatakan padamu, dia sepupuku yang kedua,” kata Ladislaw dengan sedikit kesal. “Bagus, bagus. Jangan marah. Anda tidak marah kepada saya karena menganggap Nyonya Sepupu Kedua sebagai Madonna muda paling sempurna yang pernah saya lihat?” “Marah? Omong kosong. Aku hanya pernah bertemu dengannya sekali sebelumnya, selama beberapa menit, ketika sepupuku mengenalkannya padaku, tepat sebelum aku meninggalkan Inggris. Mereka belum menikah saat itu. Aku tidak tahu mereka akan datang ke Roma.” “Tapi sekarang kau akan pergi menemui mereka—kau akan mencari tahu alamat mereka—karena kau sudah tahu namanya. Bagaimana kalau kita pergi ke kantor pos? Dan kau bisa membicarakan tentang potret itu.” “Sialan kau, Naumann! Aku tidak tahu apa yang harus kulakukan. Aku tidak seberani dirimu.” “Bah! Itu karena kau seorang amatir dan tidak berpengalaman. Jika kau seorang seniman, kau akan menganggap Nyonya Sepupu Kedua sebagai bentuk kuno yang dijiwai oleh sentimen Kristen—semacam Antigone versi Kristen—kekuatan sensual yang dikendalikan oleh gairah spiritual.” “Ya, dan bahwa lukisanmu tentang dirinya adalah hasil utama dari keberadaannya—keilahian yang mencapai kesempurnaan yang lebih tinggi dan hampir habis dalam tindakan menutupi sebagian kanvasmu. Aku amatir, jika boleh dibilang begitu: aku tidak berpikir bahwa seluruh alam semesta berupaya mencapai makna yang samar dari lukisanmu.” “Tapi memang begitu, sayangku!—sejauh itu ia menjulur melalui diriku, Adolf Naumann: itu sudah pasti,” kata pelukis yang ramah itu, sambil meletakkan tangannya di bahu Ladislaw, dan sama sekali tidak terganggu oleh nada kesal yang tak dapat dijelaskan dalam suaranya. “Lihat sekarang! Keberadaanku mengandaikan keberadaan seluruh alam semesta—bukan begitu ? dan fungsiku adalah melukis—dan sebagai pelukis aku memiliki konsepsi yang benar-benar jenius , tentang bibi buyutmu atau nenek keduamu sebagai subjek lukisan; oleh karena itu, alam semesta menjulur ke arah lukisan itu melalui kait atau cakar khusus yang dikeluarkannya dalam bentuk diriku—bukan begitu?” “Tetapi bagaimana jika cakar lain yang berbentuk seperti diriku berusaha untuk menggagalkannya?—maka masalahnya menjadi sedikit lebih rumit.” “Sama sekali tidak: hasil dari perjuangan itu tetap sama—ada gambar atau tidak—secara logis.” Will tak mampu menahan sifatnya yang tenang ini, dan raut wajahnya yang muram berubah menjadi tawa riang. “Ayo, temanku—kau mau membantu?” kata Naumann dengan nada penuh harap. “Tidak; omong kosong, Naumann! Wanita Inggris tidak siap sedia menjadi model untuk semua orang. Dan kau ingin mengekspresikan terlalu banyak hal dengan lukisanmu. Kau hanya akan membuat potret yang lebih baik atau lebih buruk dengan latar belakang yang setiap penikmat seni akan memberikan alasan yang berbeda untuk atau menentangnya. Dan apa itu potret seorang wanita? Lukisan dan Plastikmu pada akhirnya adalah karya yang buruk. Mereka mengganggu dan menumpulkan konsepsi alih-alih mengangkatnya. Bahasa adalah media yang lebih halus.” “Ya, untuk mereka yang tidak bisa melukis,” kata Naumann. “Kau benar sekali. Aku tidak menyarankanmu untuk melukis, temanku.” Seniman yang ramah itu menyampaikan sindirannya, tetapi Ladislaw tidak memilih untuk terlihat tersinggung. Dia melanjutkan seolah-olah tidak mendengar apa pun. “Bahasa memberikan gambaran yang lebih lengkap, yang justru lebih baik karena sifatnya yang samar. Lagipula, penglihatan sejati ada di dalam; dan lukisan menatap Anda dengan ketidaksempurnaan yang terus-menerus. Saya merasakan hal itu terutama pada representasi perempuan. Seolah-olah seorang perempuan hanyalah permukaan berwarna! Anda harus menunggu gerakan dan intonasi. Ada perbedaan dalam setiap tarikan napas mereka: mereka berubah dari saat ke saat.—Perempuan yang baru saja Anda lihat ini, misalnya: bagaimana Anda akan melukis suaranya, coba bayangkan? Tetapi suaranya jauh lebih agung daripada apa pun yang telah Anda lihat darinya.” “Aku mengerti, aku mengerti. Kau cemburu. Tak seorang pun boleh mengira dirinya bisa melukis sosok idealmu. Ini serius, temanku! Bibi buyutmu! 'Der Neffe als Onkel' dalam arti tragis— ungeheuer! ” “Kau dan aku akan bertengkar, Naumann, jika kau memanggil wanita itu bibiku lagi.” “Lalu, dia harus dipanggil apa?” “Nyonya Casaubon.” “Bagus. Bagaimana jika aku berkenalan dengannya tanpa sepengetahuanmu, dan mendapati bahwa dia sangat ingin dilukis?” “Ya, anggap saja begitu!” kata Will Ladislaw, dengan nada meremehkan, bermaksud untuk mengabaikan masalah itu. Ia sadar dirinya kesal karena hal-hal sepele yang konyol, yang sebagian merupakan ciptaannya sendiri. Mengapa ia membuat keributan tentang Nyonya Casaubon? Namun ia merasa seolah-olah sesuatu telah terjadi padanya terkait dengan wanita itu. Ada karakter-karakter yang terus-menerus menciptakan benturan dan konflik bagi diri mereka sendiri dalam drama yang tidak ada seorang pun siap untuk berakting bersama mereka. Kepekaan mereka akan berbenturan dengan objek-objek yang tetap tenang tanpa bersalah.</p>
-
-<div class="nav">
-  <a href="bab-xviii.html">⬅ Bab Xviii.</a>
-  <a href="bab-xx.html">Bab Xx. ➡</a>
-</div>
 
 </body>
 </html>

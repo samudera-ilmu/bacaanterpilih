@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XVIII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XVIII. - Bacaan digital klasik">
+<title>Bab XVIII — Middlemarch</title>
+<meta name="description" content="Baca Bab XVIII dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-xviii.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab XVIII — Middlemarch">
+  <meta property="og:description" content="Baca Bab XVIII dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-xviii.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab XVIII — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab XVIII dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab XVIII",
+    "name": "Bab XVIII — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-xviii.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab XVIII</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Oh, Tuan, harapan tertinggi di bumi <br />Berundi dengan harapan yang lebih rendah: dada yang heroik, Menghirup udara buruk, berisiko terkena wabah penyakit; Atau, kekurangan air jeruk nipis ketika mereka melewati Garis Khatulistiwa, Mungkin merana karena penyakit kudis.”</p><p>Beberapa minggu berlalu setelah percakapan ini sebelum masalah jabatan pendeta menjadi penting bagi Lydgate, dan tanpa menjelaskan alasannya pada dirinya sendiri, ia menunda penentuan terlebih dahulu pihak mana yang akan ia pilih. Sebenarnya itu akan menjadi hal yang sama sekali tidak penting baginya—artinya, ia akan mengambil pihak yang lebih mudah, dan memberikan suaranya untuk pengangkatan Tyke tanpa ragu-ragu—jika ia tidak peduli secara pribadi kepada Tuan Farebrother.</p><p>Namun, rasa sukanya pada Vikaris St. Botolph tumbuh seiring bertambahnya perkenalan. Bahwa, memasuki posisi Lydgate sebagai pendatang baru yang memiliki tujuan profesionalnya sendiri untuk dicapai, Tuan Farebrother lebih memilih untuk mencegah daripada mendapatkan minatnya, menunjukkan kepekaan dan kemurahan hati yang luar biasa, yang sangat disadari oleh sifat Lydgate. Hal itu sejalan dengan poin-poin perilaku lain dalam diri Tuan Farebrother yang sangat baik, dan membuat karakternya menyerupai lanskap selatan yang tampak terbagi antara keindahan alam dan kecerobohan sosial. Sangat sedikit pria yang bisa begitu berbakti dan ksatria seperti dia kepada ibu, bibi, dan saudara perempuannya, yang ketergantungannya padanya dalam banyak hal telah membentuk hidupnya dengan agak tidak nyaman; sedikit pria yang merasakan tekanan kebutuhan kecil begitu mulia dan teguh untuk tidak menyamarkan keinginan mereka yang pasti mementingkan diri sendiri dengan dalih motif yang lebih baik. Dalam hal-hal ini, ia menyadari bahwa hidupnya akan menjalani pengawasan yang paling ketat; Dan mungkin kesadaran itu mendorong sedikit pembangkangan terhadap kekakuan kritis dari orang-orang yang keintiman surgawinya tampaknya tidak memperbaiki tata krama domestik mereka, dan yang tujuan luhurnya tidak diperlukan untuk menjelaskan tindakan mereka. Kemudian, khotbahnya cerdas dan ringkas, seperti khotbah Gereja Inggris pada masa kejayaannya, dan khotbahnya disampaikan tanpa buku. Orang-orang di luar parokinya datang untuk mendengarnya; dan, karena mengisi gereja selalu menjadi bagian tersulit dari fungsi seorang pendeta, di sinilah alasan lain untuk rasa superioritas yang ceroboh. Selain itu, dia adalah pria yang menyenangkan: berwatak manis, cerdas, jujur, tanpa seringai kepahitan yang terpendam atau corak percakapan lain yang membuat separuh dari kita menjadi gangguan bagi teman-teman kita. Lydgate sangat menyukainya, dan menginginkan persahabatannya.</p><p>Dengan perasaan inilah ia terus mengabaikan masalah jabatan pendeta, dan meyakinkan dirinya sendiri bahwa itu bukan hanya bukan urusannya, tetapi juga kemungkinan besar tidak akan pernah membuatnya repot dengan permintaan suaranya. Lydgate, atas permintaan Tuan Bulstrode, sedang menyusun rencana untuk pengaturan internal rumah sakit baru, dan keduanya sering berkonsultasi. Bankir itu selalu berasumsi bahwa ia secara umum dapat mengandalkan Lydgate sebagai rekan kerja, tetapi tidak secara khusus menyinggung keputusan yang akan datang antara Tyke dan Farebrother. Namun, ketika Dewan Umum Rumah Sakit telah bertemu, dan Lydgate mendapat pemberitahuan bahwa masalah jabatan pendeta diserahkan kepada dewan direksi dan dokter, yang akan bertemu pada hari Jumat berikutnya, ia merasa gelisah karena harus mengambil keputusan tentang urusan sepele di Middlemarch ini. Ia tidak dapat menahan diri untuk tidak mendengar dalam dirinya pernyataan yang jelas bahwa Bulstrode adalah perdana menteri, dan bahwa urusan Tyke adalah masalah jabatan atau tidak; Dan ia pun tak dapat menahan rasa tidak suka yang sama kuatnya terhadap kemungkinan melepaskan prospek jabatan. Karena pengamatannya terus-menerus menguatkan jaminan Tuan Farebrother bahwa bankir itu tidak akan mengabaikan oposisi. &quot;Sialan politik picik mereka!&quot; adalah salah satu pikirannya selama tiga pagi dalam proses meditasi sambil bercukur, ketika ia mulai merasa bahwa ia benar-benar harus mengadakan pengadilan hati nurani tentang masalah ini. Tentu saja ada hal-hal yang valid untuk dikatakan menentang pemilihan Tuan Farebrother: ia sudah terlalu banyak pekerjaan, terutama mengingat berapa banyak waktu yang ia habiskan untuk pekerjaan non-klerikal. Kemudian lagi, itu adalah kejutan yang terus-menerus berulang, yang mengganggu harga diri Lydgate, bahwa Vikaris jelas-jelas bermain demi uang, memang menyukai permainan itu, tetapi jelas menyukai tujuan tertentu yang dilayaninya. Tuan Farebrother berpendapat secara teori tentang keinginan semua permainan, dan mengatakan bahwa kecerdasan orang Inggris stagnan karena kurangnya permainan; tetapi Lydgate yakin bahwa ia akan bermain jauh lebih sedikit jika bukan karena uang. Terdapat ruang biliar di Green Dragon, yang oleh beberapa ibu dan istri yang cemas dianggap sebagai godaan utama di Middlemarch. Pendeta itu adalah pemain biliar kelas satu, dan meskipun ia tidak sering mengunjungi Green Dragon, ada laporan bahwa ia kadang-kadang berada di sana pada siang hari dan memenangkan uang. Dan mengenai jabatan pendeta, ia tidak berpura-pura peduli akan hal itu, kecuali demi empat puluh pound. Lydgate bukanlah seorang Puritan, tetapi ia tidak menyukai permainan, dan memenangkan uang dari permainan selalu tampak sebagai hal yang hina baginya; selain itu, ia memiliki idealisme hidup yang membuat sikap tunduk pada perolehan sejumlah kecil uang ini sangat dibencinya. Hingga saat ini dalam hidupnya, kebutuhannya telah terpenuhi tanpa kesulitan apa pun baginya, dan dorongan pertamanya selalu untuk bermurah hati dengan uang setengah mahkota sebagai hal yang tidak penting bagi seorang bangsawan; tidak pernah terlintas dalam pikirannya untuk merancang rencana untuk mendapatkan uang setengah mahkota. Ia selalu menyadari secara umum bahwa ia tidak kaya, tetapi ia tidak pernah merasa miskin, dan ia tidak mampu membayangkan peran yang dimainkan oleh kekurangan uang dalam menentukan tindakan manusia. Uang tidak pernah menjadi motivasi baginya. Karena itu, ia tidak siap untuk membuat alasan atas pengejaran keuntungan kecil yang disengaja ini. Hal itu sama sekali menjijikkan baginya, dan ia tidak pernah menghitung rasio antara pendapatan Vikaris dan pengeluaran yang kurang lebih diperlukan. Mungkin ia tidak akan melakukan perhitungan seperti itu dalam kasusnya sendiri.</p><p>Dan sekarang, ketika pertanyaan tentang pemungutan suara muncul, fakta menjijikkan ini lebih kuat menentang Tuan Farebrother daripada sebelumnya. Orang akan lebih tahu apa yang harus dilakukan jika karakter orang lebih konsisten, dan terutama jika teman-teman seseorang selalu cocok untuk fungsi apa pun yang ingin mereka lakukan! Lydgate yakin bahwa jika tidak ada keberatan yang sah terhadap Tuan Farebrother, dia akan memilihnya, apa pun yang mungkin dirasakan Bulstrode tentang masalah ini: dia tidak bermaksud menjadi bawahan Bulstrode. Di sisi lain, ada Tyke, seorang pria yang sepenuhnya mengabdikan diri pada jabatan klerikalnya, yang hanya seorang asisten pendeta di kapel kecil di paroki St. Peter, dan memiliki waktu untuk tugas tambahan. Tidak ada yang mengatakan apa pun yang menentang Tuan Tyke, kecuali bahwa mereka tidak tahan dengannya, dan mencurigainya munafik. Sungguh, dari sudut pandangnya, Bulstrode sepenuhnya dibenarkan.</p><p>Namun, ke mana pun Lydgate mulai condong, selalu ada sesuatu yang membuatnya meringis; dan sebagai pria yang bangga, ia sedikit kesal karena terpaksa meringis. Ia tidak suka menggagalkan tujuan terbaiknya sendiri dengan berselisih dengan Bulstrode; ia tidak suka memilih menentang Farebrother, dan membantu merampas jabatan dan gajinya; dan muncul pertanyaan apakah tambahan empat puluh pound itu tidak akan membebaskan Vikaris dari kekhawatiran yang hina tentang memenangkan permainan kartu. Terlebih lagi, Lydgate tidak suka menyadari bahwa dengan memilih Tyke, ia akan memilih pihak yang jelas-jelas menguntungkan dirinya sendiri. Tetapi apakah tujuan akhirnya benar-benar untuk kenyamanannya sendiri? Orang lain akan mengatakan demikian, dan akan menuduh bahwa ia sedang mencari muka dengan Bulstrode demi membuat dirinya penting dan maju dalam kehidupan. Lalu bagaimana? Ia sendiri tahu bahwa jika prospek pribadinya yang menjadi perhatian, ia tidak akan peduli sedikit pun dengan persahabatan atau permusuhan bankir itu. Yang benar-benar ia pedulikan adalah media untuk karyanya, wahana untuk ide-idenya; dan lagipula, bukankah ia seharusnya lebih memilih tujuan mendapatkan rumah sakit yang baik, di mana ia dapat menunjukkan perbedaan spesifik demam dan menguji hasil terapi, sebelum hal lain yang berkaitan dengan tugas kependetaan ini? Untuk pertama kalinya Lydgate merasakan tekanan yang menghambat dan seperti benang tipis dari kondisi sosial yang sempit, dan kompleksitasnya yang membuat frustrasi. Di akhir perdebatan batinnya, ketika ia berangkat ke rumah sakit, harapannya sebenarnya terletak pada kemungkinan bahwa diskusi entah bagaimana dapat memberikan aspek baru pada pertanyaan tersebut, dan membuat skala turun sehingga tidak perlu lagi melakukan pemungutan suara. Saya pikir ia juga sedikit mempercayai energi yang dihasilkan oleh keadaan—beberapa perasaan yang mengalir hangat dan memudahkan pengambilan keputusan, sementara perdebatan dalam keadaan tenang hanya membuatnya lebih sulit. Namun demikian, ia tidak secara jelas mengatakan pada dirinya sendiri di pihak mana ia akan memilih; dan sepanjang waktu ia secara batiniah membenci penundukan yang telah dipaksakan kepadanya. Sebelumnya akan tampak seperti logika yang konyol dan keliru bahwa dia, dengan tekad kemerdekaannya yang teguh dan tujuan-tujuan pilihannya, akan mendapati dirinya sejak awal berada dalam cengkeraman alternatif-alternatif picik, yang masing-masing menjijikkan baginya. Di kamar mahasiswanya, ia telah merencanakan tindakan sosialnya dengan cara yang sangat berbeda.</p><p>Lydgate terlambat berangkat, tetapi Dr. Sprague, dua ahli bedah lainnya, dan beberapa direktur telah tiba lebih awal; Tuan Bulstrode, bendahara dan ketua, termasuk di antara mereka yang masih belum hadir. Percakapan itu tampaknya menyiratkan bahwa masalahnya rumit, dan bahwa mayoritas untuk Tyke tidak sepasti yang umumnya diperkirakan. Kedua dokter itu, sungguh menakjubkan, ternyata sepakat, atau lebih tepatnya, meskipun berbeda pendapat, mereka sepakat dalam bertindak. Dr. Sprague, yang berbadan tegap dan besar, seperti yang telah diramalkan semua orang, adalah pendukung Tuan Farebrother. Dokter itu lebih dari sekadar dicurigai tidak beragama, tetapi entah bagaimana Middlemarch mentolerir kekurangan ini padanya seolah-olah dia adalah seorang Lord Chancellor; memang mungkin bobot profesionalnya lebih dipercaya, karena asosiasi lama antara kecerdasan dengan prinsip jahat masih kuat di benak bahkan pasien wanita yang memiliki gagasan paling ketat tentang hiasan dan sentimen. Mungkin penolakan dalam diri Dokter inilah yang membuat tetangganya menyebutnya keras kepala dan kurang cerdas; sifat-sifat yang juga dianggap mendukung penyimpanan penilaian yang berkaitan dengan obat-obatan. Bagaimanapun, sudah pasti bahwa jika ada dokter yang datang ke Middlemarch dengan reputasi memiliki pandangan keagamaan yang sangat tegas, rajin berdoa, dan menunjukkan kesalehan yang aktif, akan ada prasangka umum terhadap kemampuan medisnya.</p><p>Oleh karena itu, (secara profesional) beruntung bagi Dr. Minchin bahwa simpati keagamaannya bersifat umum, dan memberikan dukungan medis yang luas kepada semua sentimen serius, baik dari Gereja maupun kelompok Dissenting, daripada berpegang teguh pada ajaran tertentu. Jika Tuan Bulstrode bersikeras, seperti yang sering dilakukannya, pada doktrin Lutheran tentang pembenaran, sebagai dasar yang menentukan keberlangsungan atau kehancuran sebuah Gereja, Dr. Minchin pada gilirannya sangat yakin bahwa manusia bukanlah sekadar mesin atau gabungan atom yang kebetulan; jika Nyonya Wimple bersikeras pada providensi tertentu terkait dengan keluhan perutnya, Dr. Minchin sendiri lebih suka membuka wawasan dan menolak batasan yang tetap; jika pemilik pabrik bir Unitarian itu bercanda tentang Kredo Athanasius, Dr. Minchin mengutip &quot;Esai tentang Manusia&quot; karya Pope. Ia keberatan dengan gaya bercerita yang agak bebas yang digunakan Dr. Sprague, lebih menyukai kutipan yang terpercaya, dan menyukai kehalusan dalam segala hal: secara umum diketahui bahwa ia memiliki hubungan kekerabatan dengan seorang uskup, dan terkadang menghabiskan liburannya di &quot;istana.&quot;</p><p>Dr. Minchin bertangan lembut, berkulit pucat, dan berwajah bulat, penampilannya tidak bisa dibedakan dari seorang pendeta yang lembut: sedangkan Dr. Sprague terlalu tinggi; celananya kusut di lutut, dan memperlihatkan sepatu bot yang terlalu besar pada saat tali pengikat sepatu tampaknya diperlukan untuk menjaga martabat; Anda bisa mendengar dia keluar masuk, dan naik turun, seolah-olah dia datang untuk memeriksa atap. Singkatnya, dia bertubuh besar, dan diharapkan mampu mengatasi penyakit dan menyingkirkannya; sementara Dr. Minchin mungkin lebih mampu mendeteksi penyakit yang bersembunyi dan menghindarinya. Mereka sama-sama menikmati hak istimewa misterius dari reputasi medis, dan menyembunyikan rasa jijik mereka terhadap keahlian satu sama lain dengan penuh sopan santun. Menganggap diri mereka sebagai institusi Middlemarch, mereka siap bersatu melawan semua inovator, dan melawan non-profesional yang suka ikut campur. Atas dasar ini, dalam hati mereka berdua sama-sama membenci Tuan Bulstrode, meskipun Dr. Minchin tidak pernah secara terbuka bermusuhan dengannya, dan tidak pernah berbeda pendapat dengannya tanpa penjelasan panjang lebar kepada Nyonya Bulstrode, yang mendapati bahwa hanya Dr. Minchin yang memahami kondisi kesehatannya. Seorang awam yang mencampuri perilaku profesional para dokter, dan selalu memaksakan reformasinya,—meskipun ia kurang secara langsung mengganggu kedua dokter tersebut daripada para ahli bedah-apoteker yang merawat orang miskin berdasarkan kontrak, tetap saja menyinggung perasaan para profesional; dan Dr. Minchin sepenuhnya ikut merasakan kekesalan baru terhadap Bulstrode, yang dipicu oleh tekadnya yang tampak untuk menjadi pelindung Lydgate. Para praktisi yang sudah lama berkecimpung, Tuan Wrench dan Tuan Toller; saat itu sedang berdiri terpisah dan berbincang ramah, di mana mereka sepakat bahwa Lydgate adalah orang bodoh, yang memang dibuat untuk melayani tujuan Bulstrode. Kepada teman-teman non-medis, mereka telah sepakat memuji praktisi muda lainnya, yang datang ke kota setelah pensiunnya Tuan Peacock tanpa rekomendasi lebih lanjut selain berdasarkan kemampuannya sendiri dan argumen tentang penguasaan profesional yang solid yang dapat disimpulkan dari fakta bahwa ia tampaknya tidak membuang waktu untuk cabang ilmu pengetahuan lain. Jelas bahwa Lydgate, dengan tidak memberikan obat-obatan, bermaksud untuk menuduh rekan-rekannya, dan juga untuk mengaburkan batasan antara kedudukannya sebagai dokter umum dan para dokter, yang, demi kepentingan profesi, merasa berkewajiban untuk mempertahankan berbagai tingkatan profesi,—terutama terhadap seorang pria yang belum pernah kuliah di salah satu universitas Inggris dan menikmati kurangnya studi anatomi dan studi di samping tempat tidur pasien di sana, tetapi datang dengan klaim yang memfitnah tentang pengalaman di Edinburgh dan Paris, di mana pengamatan mungkin memang berlimpah, tetapi hampir tidak akurat.</p><p>Maka terjadilah bahwa pada kesempatan ini Bulstrode disamakan dengan Lydgate, dan Lydgate dengan Tyke; dan karena beragamnya nama yang dapat dipertukarkan untuk masalah kerohanian ini, berbagai pemikiran dapat membentuk penilaian yang sama mengenainya.</p><p>Dr. Sprague langsung berkata terus terang kepada kelompok yang berkumpul ketika ia masuk, “Saya mendukung Farebrother. Gaji, sepenuh hati saya. Tapi mengapa mengambilnya dari Vikaris? Dia tidak punya banyak—harus mengasuransikan jiwanya, selain mengurus rumah tangga, dan melakukan kegiatan amal sebagai seorang vikaris. Berikan dia empat puluh pound dan Anda tidak akan merugikannya. Farebrother adalah orang yang baik, dengan sedikit sifat pendeta yang cukup untuk menjalankan perintah.”</p><p>“Ho, ho! Dokter,” kata Tuan Powderell tua, seorang pensiunan pedagang besi yang cukup terhormat—interupsinya terdengar seperti gabungan antara tawa dan ketidaksetujuan ala Parlemen; “kita harus membiarkan Anda berbicara. Tetapi yang harus kita pertimbangkan bukanlah pendapatan siapa pun—melainkan jiwa orang-orang miskin yang sakit”—di sini suara dan wajah Tuan Powderell menunjukkan ketulusan yang mendalam. “Tuan Tyke adalah seorang pengkhotbah Injil sejati. Saya akan menentang hati nurani saya jika saya menentang Tuan Tyke—sungguh.”</p><p>“Saya yakin lawan-lawan Tuan Tyke tidak meminta siapa pun untuk memilih bertentangan dengan hati nuraninya,” kata Tuan Hackbutt, seorang penyamak kulit kaya yang fasih berbicara, yang kacamata berkilauan dan rambutnya yang tegak menoleh dengan agak tegas ke arah Tuan Powderell yang tidak bersalah. “Namun menurut penilaian saya, sebagai Direktur, kita perlu mempertimbangkan apakah kita akan menganggap seluruh tugas kita adalah melaksanakan usulan yang berasal dari satu pihak saja. Apakah ada anggota komite yang akan menyatakan bahwa ia akan mempertimbangkan gagasan untuk mengganti pria yang selalu menjalankan fungsi sebagai pendeta di sini, jika hal itu tidak disarankan kepadanya oleh pihak-pihak yang cenderung menganggap setiap lembaga di kota ini sebagai mesin untuk melaksanakan pandangan mereka sendiri? Saya tidak menanyakan motif siapa pun: biarlah itu menjadi urusan antara dirinya dan Kekuatan yang lebih tinggi; tetapi saya katakan, bahwa ada pengaruh yang bekerja di sini yang tidak sesuai dengan kemerdekaan sejati, dan bahwa sikap menjilat biasanya didikte oleh keadaan yang tidak mampu diakui oleh para pria yang berperilaku seperti itu, baik secara moral maupun finansial. Saya sendiri adalah seorang awam, tetapi saya telah memberikan perhatian yang cukup besar pada perpecahan di Gereja dan—”</p><p>“Oh, persetan dengan perpecahan itu!” seru Frank Hawley, pengacara dan juru tulis kota, yang jarang hadir di rapat dewan, tetapi kali ini muncul dengan tergesa-gesa, cambuk di tangan. “Kita tidak ada hubungannya dengan mereka di sini. Farebrother telah mengerjakan pekerjaan—apa pun yang ada—tanpa bayaran, dan jika bayaran harus diberikan, seharusnya diberikan kepadanya. Saya menyebutnya pekerjaan yang tidak masuk akal untuk mengambil pekerjaan itu dari Farebrother.”</p><p>“Saya rasa akan lebih baik jika para pria tidak memberikan komentar yang bersifat pribadi,” kata Tuan Plymdale. “Saya akan memilih untuk pengangkatan Tuan Tyke, tetapi saya tidak akan tahu, jika Tuan Hackbutt tidak memberi isyarat, bahwa saya adalah seorang penjilat yang patuh.”</p><p>“Saya menolak menyebut nama siapa pun. Saya sudah mengatakan dengan tegas, jika saya diizinkan untuk mengulangi, atau bahkan untuk menyimpulkan apa yang akan saya katakan—”</p><p>“Ah, ini dia Minchin!” kata Tuan Frank Hawley; yang membuat semua orang berpaling dari Tuan Hackbutt, meninggalkannya untuk merasakan kesia-siaan bakat unggulnya di Middlemarch. “Ayo, Dokter, saya harus menempatkan Anda di sisi kanan, ya?”</p><p>“Saya harap begitu,” kata Dr. Minchin, sambil mengangguk dan menjabat tangan di sana-sini; “apa pun harga yang harus saya bayar untuk perasaan saya.”</p><p>“Jika ada perasaan yang perlu ditonjolkan di sini, menurut saya seharusnya adalah perasaan untuk pria yang dipecat,” kata Bapak Frank Hawley.</p><p>“Saya akui saya juga memiliki perasaan yang berbeda. Saya memiliki penilaian yang terbagi,” kata Dr. Minchin, sambil menggosok-gosok tangannya. “Saya menganggap Tuan Tyke sebagai orang yang patut dicontoh—tidak ada yang lebih baik darinya—dan saya percaya dia diusulkan dengan motif yang tidak tercela. Saya sendiri berharap dapat memberikan suara saya kepadanya. Tetapi saya terpaksa mengambil pandangan yang lebih condong kepada klaim Tuan Farebrother. Dia adalah orang yang ramah, seorang pengkhotbah yang cakap, dan telah lebih lama berada di antara kita.”</p><p>Tuan Powderell tua memandang dengan sedih dan diam. Tuan Plymdale membetulkan dasinya dengan gelisah.</p><p>“Saya harap Anda tidak menjadikan Farebrother sebagai contoh bagaimana seharusnya seorang pendeta,” kata Tuan Larcher, seorang pengangkut barang terkemuka yang baru saja masuk. “Saya tidak menyimpan dendam terhadapnya, tetapi saya pikir kita berhutang sesuatu kepada publik, apalagi kepada hal yang lebih tinggi, dalam penunjukan ini. Menurut pendapat saya, Farebrother terlalu longgar untuk seorang pendeta. Saya tidak ingin membahas detailnya; tetapi dia akan memanfaatkan kehadiran yang sedikit di sini sebaik mungkin.”</p><p>“Dan kesepakatan yang buruk itu jauh lebih baik daripada terlalu banyak,” kata Tuan Hawley, yang terkenal dengan bahasa kasarnya di daerah itu. “Orang sakit tidak tahan dengan begitu banyak doa dan khotbah. Dan agama yang metodis semacam itu buruk bagi jiwa—buruk bagi bagian dalam, ya?” tambahnya, sambil cepat-cepat menoleh ke empat dokter yang berkumpul.</p><p>Namun, jawaban apa pun tidak diperlukan lagi karena kedatangan tiga orang pria, yang mereka sapa dengan ramah. Mereka adalah Pendeta Edward Thesiger, Rektor St. Peter's, Tuan Bulstrode, dan teman kita Tuan Brooke dari Tipton, yang baru-baru ini bersedia menjadi anggota dewan direksi, tetapi belum pernah hadir sebelumnya, kehadirannya sekarang disebabkan oleh upaya Tuan Bulstrode. Lydgate adalah satu-satunya orang yang masih ditunggu.</p><p>Semua orang kini duduk, dipimpin oleh Bapak Bulstrode, pucat dan terkendali seperti biasanya. Bapak Thesiger, seorang evangelis moderat, menginginkan pengangkatan temannya, Bapak Tyke, seorang pria yang bersemangat dan cakap, yang, bertugas di sebuah kapel kecil, tidak memiliki tugas pelayanan yang terlalu banyak sehingga masih memiliki cukup waktu untuk tugas baru tersebut. Diharapkan bahwa jabatan pendeta semacam ini harus diemban dengan niat yang sungguh-sungguh: ini adalah kesempatan khusus untuk pengaruh spiritual; dan meskipun baik jika gaji diberikan, diperlukan pengawasan yang cermat agar jabatan tersebut tidak disalahgunakan menjadi sekadar masalah gaji. Sikap Bapak Thesiger begitu tenang dan pantas sehingga para penentang hanya bisa diam saja.</p><p>Tuan Brooke percaya bahwa semua orang bermaksud baik dalam masalah ini. Ia sendiri tidak mengurus urusan Rumah Sakit, meskipun ia sangat tertarik pada apa pun yang bermanfaat bagi Middlemarch, dan sangat senang bertemu dengan para pria yang hadir dalam masalah publik apa pun—&quot;masalah publik apa pun, Anda tahu,&quot; Tuan Brooke mengulangi, dengan anggukan penuh pengertian. &quot;Saya cukup sibuk sebagai hakim, dan dalam pengumpulan bukti dokumenter, tetapi saya menganggap waktu saya dapat digunakan untuk kepentingan publik—dan, singkatnya, teman-teman saya telah meyakinkan saya bahwa seorang pendeta dengan gaji—gaji, Anda tahu—adalah hal yang sangat baik, dan saya senang dapat datang ke sini dan memberikan suara untuk pengangkatan Tuan Tyke, yang, saya pahami, adalah orang yang tidak tercela, saleh dan fasih dan segala sesuatu yang seperti itu—dan saya adalah orang terakhir yang akan menahan suara saya—dalam keadaan seperti ini, Anda tahu.&quot;</p><p>“Sepertinya Anda hanya dijejali dengan satu sisi permasalahan, Tuan Brooke,” kata Tuan Frank Hawley, yang tidak takut pada siapa pun, dan merupakan seorang Tory yang curiga terhadap niat kampanye pemilu. “Anda tampaknya tidak tahu bahwa salah satu orang paling terhormat yang kita miliki telah bertugas sebagai pendeta di sini selama bertahun-tahun tanpa bayaran, dan bahwa Tuan Tyke diusulkan untuk menggantikannya.”</p><p>“Maaf, Tuan Hawley,” kata Tuan Bulstrode. “Tuan Brooke telah sepenuhnya diberi tahu tentang karakter dan kedudukan Tuan Farebrother.”</p><p>“Oleh musuh-musuhnya,” seru Mr. Hawley dengan cepat.</p><p>“Saya yakin tidak ada permusuhan pribadi di sini,” kata Bapak Thesiger.</p><p>“Saya bersumpah memang ada,” balas Tuan Hawley.</p><p>“Tuan-tuan,” kata Tuan Bulstrode dengan nada tenang, “pokok permasalahan ini dapat diuraikan secara singkat, dan jika ada di antara hadirin yang ragu bahwa setiap Tuan yang akan memberikan suaranya belum sepenuhnya mendapat informasi, saya sekarang dapat merangkum pertimbangan-pertimbangan yang harus dipertimbangkan oleh kedua belah pihak.”</p><p>“Saya tidak melihat manfaatnya,” kata Tuan Hawley. “Saya kira kita semua tahu siapa yang akan kita pilih. Siapa pun yang ingin menegakkan keadilan tidak akan menunggu sampai menit terakhir untuk mendengarkan kedua belah pihak. Saya tidak punya waktu untuk disia-siakan, dan saya mengusulkan agar masalah ini segera diputuskan melalui pemungutan suara.”</p><p>Diskusi singkat namun tetap hangat pun terjadi sebelum setiap orang menulis &quot;Tyke&quot; atau &quot;Farebrother&quot; di selembar kertas dan memasukkannya ke dalam gelas; dan sementara itu Tuan Bulstrode melihat Lydgate masuk.</p><p>“Saya melihat bahwa suara saat ini terbagi rata,” kata Tuan Bulstrode dengan suara tajam dan jelas. Kemudian, sambil menatap Lydgate—</p><p>“Masih ada satu suara penentu yang harus diberikan. Itu giliran Anda, Tuan Lydgate: maukah Anda berbaik hati untuk menulis surat?”</p><p>“Masalah ini sudah diputuskan sekarang,” kata Tuan Wrench sambil berdiri. “Kita semua tahu bagaimana Tuan Lydgate akan memberikan suara.”</p><p>“Sepertinya Anda berbicara dengan maksud yang aneh, Tuan,” kata Lydgate, agak menantang, sambil tetap mengangkat pensilnya.</p><p>“Saya hanya bermaksud bahwa Anda diharapkan untuk memberikan suara bersama Tuan Bulstrode. Apakah Anda menganggap maksud tersebut menyinggung?”</p><p>“Mungkin ini menyinggung perasaan orang lain. Tapi saya tidak akan berhenti memberikan suara bersamanya karena alasan itu.” Lydgate segera menuliskan “Tyke.”</p><p>Maka Pendeta Walter Tyke menjadi pendeta di Rumah Sakit, dan Lydgate terus bekerja dengan Tuan Bulstrode. Ia sebenarnya tidak yakin apakah Tyke bukan kandidat yang lebih cocok, namun hati nuraninya mengatakan kepadanya bahwa jika ia benar-benar bebas dari bias tidak langsung, ia seharusnya memilih Tuan Farebrother. Urusan jabatan pendeta tetap menjadi titik sakit dalam ingatannya sebagai kasus di mana perantara kecil dari Middlemarch ini terlalu kuat baginya. Bagaimana mungkin seseorang merasa puas dengan keputusan di antara alternatif seperti itu dan dalam keadaan seperti itu? Sama seperti ia tidak bisa merasa puas dengan topinya, yang telah ia pilih dari antara bentuk-bentuk yang ditawarkan oleh sumber daya zaman itu, memakainya paling banter dengan pasrah yang terutama didukung oleh perbandingan.</p><p>Namun, Tuan Farebrother menemuinya dengan keramahan yang sama seperti sebelumnya. Karakter pemungut pajak dan orang berdosa tidak selalu secara praktis tidak sesuai dengan karakter orang Farisi modern, karena sebagian besar dari kita hampir tidak melihat kesalahan perilaku kita sendiri dengan lebih jelas daripada kesalahan argumen kita sendiri, atau kekonyolan lelucon kita sendiri. Tetapi Vikaris St. Botolph jelas telah terhindar dari sedikit pun sifat orang Farisi, dan dengan mengakui kepada dirinya sendiri bahwa ia terlalu mirip dengan orang lain, ia menjadi sangat berbeda dari mereka dalam hal ini—bahwa ia dapat memaafkan orang lain karena meremehkannya, dan dapat menilai perilaku mereka secara tidak memihak bahkan ketika perilaku itu merugikannya.</p><p>“Dunia ini terlalu keras bagiku , aku tahu,” katanya suatu hari kepada Lydgate. “Tapi aku bukanlah orang yang perkasa—aku tidak akan pernah menjadi orang yang terkenal. Pilihan Hercules adalah dongeng yang indah; tetapi Prodicus membuatnya mudah bagi sang pahlawan, seolah-olah tekad pertama sudah cukup. Kisah lain mengatakan bahwa ia akhirnya memegang alat pemintal benang, dan akhirnya mengenakan baju Nessus. Kurasa satu tekad yang baik mungkin bisa membuat seseorang tetap berada di jalan yang benar jika tekad orang lain membantunya.”</p><p>Ceramah Vikaris tidak selalu membangkitkan semangat: ia memang terhindar dari menjadi seorang Farisi, tetapi ia tidak terhindar dari penilaian rendah terhadap kemungkinan yang dengan tergesa-gesa kita simpulkan dari kegagalan kita sendiri. Lydgate berpendapat bahwa ada kelemahan kemauan yang menyedihkan pada diri Tuan Farebrother.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-xvii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Xvii</span>
+    </a>
+    <a href="bab-xix.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xix</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XVIII.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Oh, Tuan, harapan tertinggi di bumi Berundi dengan harapan yang lebih rendah: dada yang heroik, Menghirup udara buruk, berisiko terkena wabah penyakit; Atau, kekurangan air jeruk nipis ketika mereka melewati Garis Khatulistiwa, Mungkin merana karena penyakit kudis.” Beberapa minggu berlalu setelah percakapan ini sebelum masalah jabatan pendeta menjadi penting bagi Lydgate, dan tanpa menjelaskan alasannya pada dirinya sendiri, ia menunda penentuan terlebih dahulu pihak mana yang akan ia pilih. Sebenarnya itu akan menjadi hal yang sama sekali tidak penting baginya—artinya, ia akan mengambil pihak yang lebih mudah, dan memberikan suaranya untuk pengangkatan Tyke tanpa ragu-ragu—jika ia tidak peduli secara pribadi kepada Tuan Farebrother. Namun, rasa sukanya pada Vikaris St. Botolph tumbuh seiring bertambahnya perkenalan. Bahwa, memasuki posisi Lydgate sebagai pendatang baru yang memiliki tujuan profesionalnya sendiri untuk dicapai, Tuan Farebrother lebih memilih untuk mencegah daripada mendapatkan minatnya, menunjukkan kepekaan dan kemurahan hati yang luar biasa, yang sangat disadari oleh sifat Lydgate. Hal itu sejalan dengan poin-poin perilaku lain dalam diri Tuan Farebrother yang sangat baik, dan membuat karakternya menyerupai lanskap selatan yang tampak terbagi antara keindahan alam dan kecerobohan sosial. Sangat sedikit pria yang bisa begitu berbakti dan ksatria seperti dia kepada ibu, bibi, dan saudara perempuannya, yang ketergantungannya padanya dalam banyak hal telah membentuk hidupnya dengan agak tidak nyaman; sedikit pria yang merasakan tekanan kebutuhan kecil begitu mulia dan teguh untuk tidak menyamarkan keinginan mereka yang pasti mementingkan diri sendiri dengan dalih motif yang lebih baik. Dalam hal-hal ini, ia menyadari bahwa hidupnya akan menjalani pengawasan yang paling ketat; Dan mungkin kesadaran itu mendorong sedikit pembangkangan terhadap kekakuan kritis dari orang-orang yang keintiman surgawinya tampaknya tidak memperbaiki tata krama domestik mereka, dan yang tujuan luhurnya tidak diperlukan untuk menjelaskan tindakan mereka. Kemudian, khotbahnya cerdas dan ringkas, seperti khotbah Gereja Inggris pada masa kejayaannya, dan khotbahnya disampaikan tanpa buku. Orang-orang di luar parokinya datang untuk mendengarnya; dan, karena mengisi gereja selalu menjadi bagian tersulit dari fungsi seorang pendeta, di sinilah alasan lain untuk rasa superioritas yang ceroboh. Selain itu, dia adalah pria yang menyenangkan: berwatak manis, cerdas, jujur, tanpa seringai kepahitan yang terpendam atau corak percakapan lain yang membuat separuh dari kita menjadi gangguan bagi teman-teman kita. Lydgate sangat menyukainya, dan menginginkan persahabatannya. Dengan perasaan inilah ia terus mengabaikan masalah jabatan pendeta, dan meyakinkan dirinya sendiri bahwa itu bukan hanya bukan urusannya, tetapi juga kemungkinan besar tidak akan pernah membuatnya repot dengan permintaan suaranya. Lydgate, atas permintaan Tuan Bulstrode, sedang menyusun rencana untuk pengaturan internal rumah sakit baru, dan keduanya sering berkonsultasi. Bankir itu selalu berasumsi bahwa ia secara umum dapat mengandalkan Lydgate sebagai rekan kerja, tetapi tidak secara khusus menyinggung keputusan yang akan datang antara Tyke dan Farebrother. Namun, ketika Dewan Umum Rumah Sakit telah bertemu, dan Lydgate mendapat pemberitahuan bahwa masalah jabatan pendeta diserahkan kepada dewan direksi dan dokter, yang akan bertemu pada hari Jumat berikutnya, ia merasa gelisah karena harus mengambil keputusan tentang urusan sepele di Middlemarch ini. Ia tidak dapat menahan diri untuk tidak mendengar dalam dirinya pernyataan yang jelas bahwa Bulstrode adalah perdana menteri, dan bahwa urusan Tyke adalah masalah jabatan atau tidak; Dan ia pun tak dapat menahan rasa tidak suka yang sama kuatnya terhadap kemungkinan melepaskan prospek jabatan. Karena pengamatannya terus-menerus menguatkan jaminan Tuan Farebrother bahwa bankir itu tidak akan mengabaikan oposisi. "Sialan politik picik mereka!" adalah salah satu pikirannya selama tiga pagi dalam proses meditasi sambil bercukur, ketika ia mulai merasa bahwa ia benar-benar harus mengadakan pengadilan hati nurani tentang masalah ini. Tentu saja ada hal-hal yang valid untuk dikatakan menentang pemilihan Tuan Farebrother: ia sudah terlalu banyak pekerjaan, terutama mengingat berapa banyak waktu yang ia habiskan untuk pekerjaan non-klerikal. Kemudian lagi, itu adalah kejutan yang terus-menerus berulang, yang mengganggu harga diri Lydgate, bahwa Vikaris jelas-jelas bermain demi uang, memang menyukai permainan itu, tetapi jelas menyukai tujuan tertentu yang dilayaninya. Tuan Farebrother berpendapat secara teori tentang keinginan semua permainan, dan mengatakan bahwa kecerdasan orang Inggris stagnan karena kurangnya permainan; tetapi Lydgate yakin bahwa ia akan bermain jauh lebih sedikit jika bukan karena uang. Terdapat ruang biliar di Green Dragon, yang oleh beberapa ibu dan istri yang cemas dianggap sebagai godaan utama di Middlemarch. Pendeta itu adalah pemain biliar kelas satu, dan meskipun ia tidak sering mengunjungi Green Dragon, ada laporan bahwa ia kadang-kadang berada di sana pada siang hari dan memenangkan uang. Dan mengenai jabatan pendeta, ia tidak berpura-pura peduli akan hal itu, kecuali demi empat puluh pound. Lydgate bukanlah seorang Puritan, tetapi ia tidak menyukai permainan, dan memenangkan uang dari permainan selalu tampak sebagai hal yang hina baginya; selain itu, ia memiliki idealisme hidup yang membuat sikap tunduk pada perolehan sejumlah kecil uang ini sangat dibencinya. Hingga saat ini dalam hidupnya, kebutuhannya telah terpenuhi tanpa kesulitan apa pun baginya, dan dorongan pertamanya selalu untuk bermurah hati dengan uang setengah mahkota sebagai hal yang tidak penting bagi seorang bangsawan; tidak pernah terlintas dalam pikirannya untuk merancang rencana untuk mendapatkan uang setengah mahkota. Ia selalu menyadari secara umum bahwa ia tidak kaya, tetapi ia tidak pernah merasa miskin, dan ia tidak mampu membayangkan peran yang dimainkan oleh kekurangan uang dalam menentukan tindakan manusia. Uang tidak pernah menjadi motivasi baginya. Karena itu, ia tidak siap untuk membuat alasan atas pengejaran keuntungan kecil yang disengaja ini. Hal itu sama sekali menjijikkan baginya, dan ia tidak pernah menghitung rasio antara pendapatan Vikaris dan pengeluaran yang kurang lebih diperlukan. Mungkin ia tidak akan melakukan perhitungan seperti itu dalam kasusnya sendiri. Dan sekarang, ketika pertanyaan tentang pemungutan suara muncul, fakta menjijikkan ini lebih kuat menentang Tuan Farebrother daripada sebelumnya. Orang akan lebih tahu apa yang harus dilakukan jika karakter orang lebih konsisten, dan terutama jika teman-teman seseorang selalu cocok untuk fungsi apa pun yang ingin mereka lakukan! Lydgate yakin bahwa jika tidak ada keberatan yang sah terhadap Tuan Farebrother, dia akan memilihnya, apa pun yang mungkin dirasakan Bulstrode tentang masalah ini: dia tidak bermaksud menjadi bawahan Bulstrode. Di sisi lain, ada Tyke, seorang pria yang sepenuhnya mengabdikan diri pada jabatan klerikalnya, yang hanya seorang asisten pendeta di kapel kecil di paroki St. Peter, dan memiliki waktu untuk tugas tambahan. Tidak ada yang mengatakan apa pun yang menentang Tuan Tyke, kecuali bahwa mereka tidak tahan dengannya, dan mencurigainya munafik. Sungguh, dari sudut pandangnya, Bulstrode sepenuhnya dibenarkan. Namun, ke mana pun Lydgate mulai condong, selalu ada sesuatu yang membuatnya meringis; dan sebagai pria yang bangga, ia sedikit kesal karena terpaksa meringis. Ia tidak suka menggagalkan tujuan terbaiknya sendiri dengan berselisih dengan Bulstrode; ia tidak suka memilih menentang Farebrother, dan membantu merampas jabatan dan gajinya; dan muncul pertanyaan apakah tambahan empat puluh pound itu tidak akan membebaskan Vikaris dari kekhawatiran yang hina tentang memenangkan permainan kartu. Terlebih lagi, Lydgate tidak suka menyadari bahwa dengan memilih Tyke, ia akan memilih pihak yang jelas-jelas menguntungkan dirinya sendiri. Tetapi apakah tujuan akhirnya benar-benar untuk kenyamanannya sendiri? Orang lain akan mengatakan demikian, dan akan menuduh bahwa ia sedang mencari muka dengan Bulstrode demi membuat dirinya penting dan maju dalam kehidupan. Lalu bagaimana? Ia sendiri tahu bahwa jika prospek pribadinya yang menjadi perhatian, ia tidak akan peduli sedikit pun dengan persahabatan atau permusuhan bankir itu. Yang benar-benar ia pedulikan adalah media untuk karyanya, wahana untuk ide-idenya; dan lagipula, bukankah ia seharusnya lebih memilih tujuan mendapatkan rumah sakit yang baik, di mana ia dapat menunjukkan perbedaan spesifik demam dan menguji hasil terapi, sebelum hal lain yang berkaitan dengan tugas kependetaan ini? Untuk pertama kalinya Lydgate merasakan tekanan yang menghambat dan seperti benang tipis dari kondisi sosial yang sempit, dan kompleksitasnya yang membuat frustrasi. Di akhir perdebatan batinnya, ketika ia berangkat ke rumah sakit, harapannya sebenarnya terletak pada kemungkinan bahwa diskusi entah bagaimana dapat memberikan aspek baru pada pertanyaan tersebut, dan membuat skala turun sehingga tidak perlu lagi melakukan pemungutan suara. Saya pikir ia juga sedikit mempercayai energi yang dihasilkan oleh keadaan—beberapa perasaan yang mengalir hangat dan memudahkan pengambilan keputusan, sementara perdebatan dalam keadaan tenang hanya membuatnya lebih sulit. Namun demikian, ia tidak secara jelas mengatakan pada dirinya sendiri di pihak mana ia akan memilih; dan sepanjang waktu ia secara batiniah membenci penundukan yang telah dipaksakan kepadanya. Sebelumnya akan tampak seperti logika yang konyol dan keliru bahwa dia, dengan tekad kemerdekaannya yang teguh dan tujuan-tujuan pilihannya, akan mendapati dirinya sejak awal berada dalam cengkeraman alternatif-alternatif picik, yang masing-masing menjijikkan baginya. Di kamar mahasiswanya, ia telah merencanakan tindakan sosialnya dengan cara yang sangat berbeda. Lydgate terlambat berangkat, tetapi Dr. Sprague, dua ahli bedah lainnya, dan beberapa direktur telah tiba lebih awal; Tuan Bulstrode, bendahara dan ketua, termasuk di antara mereka yang masih belum hadir. Percakapan itu tampaknya menyiratkan bahwa masalahnya rumit, dan bahwa mayoritas untuk Tyke tidak sepasti yang umumnya diperkirakan. Kedua dokter itu, sungguh menakjubkan, ternyata sepakat, atau lebih tepatnya, meskipun berbeda pendapat, mereka sepakat dalam bertindak. Dr. Sprague, yang berbadan tegap dan besar, seperti yang telah diramalkan semua orang, adalah pendukung Tuan Farebrother. Dokter itu lebih dari sekadar dicurigai tidak beragama, tetapi entah bagaimana Middlemarch mentolerir kekurangan ini padanya seolah-olah dia adalah seorang Lord Chancellor; memang mungkin bobot profesionalnya lebih dipercaya, karena asosiasi lama antara kecerdasan dengan prinsip jahat masih kuat di benak bahkan pasien wanita yang memiliki gagasan paling ketat tentang hiasan dan sentimen. Mungkin penolakan dalam diri Dokter inilah yang membuat tetangganya menyebutnya keras kepala dan kurang cerdas; sifat-sifat yang juga dianggap mendukung penyimpanan penilaian yang berkaitan dengan obat-obatan. Bagaimanapun, sudah pasti bahwa jika ada dokter yang datang ke Middlemarch dengan reputasi memiliki pandangan keagamaan yang sangat tegas, rajin berdoa, dan menunjukkan kesalehan yang aktif, akan ada prasangka umum terhadap kemampuan medisnya. Oleh karena itu, (secara profesional) beruntung bagi Dr. Minchin bahwa simpati keagamaannya bersifat umum, dan memberikan dukungan medis yang luas kepada semua sentimen serius, baik dari Gereja maupun kelompok Dissenting, daripada berpegang teguh pada ajaran tertentu. Jika Tuan Bulstrode bersikeras, seperti yang sering dilakukannya, pada doktrin Lutheran tentang pembenaran, sebagai dasar yang menentukan keberlangsungan atau kehancuran sebuah Gereja, Dr. Minchin pada gilirannya sangat yakin bahwa manusia bukanlah sekadar mesin atau gabungan atom yang kebetulan; jika Nyonya Wimple bersikeras pada providensi tertentu terkait dengan keluhan perutnya, Dr. Minchin sendiri lebih suka membuka wawasan dan menolak batasan yang tetap; jika pemilik pabrik bir Unitarian itu bercanda tentang Kredo Athanasius, Dr. Minchin mengutip "Esai tentang Manusia" karya Pope. Ia keberatan dengan gaya bercerita yang agak bebas yang digunakan Dr. Sprague, lebih menyukai kutipan yang terpercaya, dan menyukai kehalusan dalam segala hal: secara umum diketahui bahwa ia memiliki hubungan kekerabatan dengan seorang uskup, dan terkadang menghabiskan liburannya di "istana." Dr. Minchin bertangan lembut, berkulit pucat, dan berwajah bulat, penampilannya tidak bisa dibedakan dari seorang pendeta yang lembut: sedangkan Dr. Sprague terlalu tinggi; celananya kusut di lutut, dan memperlihatkan sepatu bot yang terlalu besar pada saat tali pengikat sepatu tampaknya diperlukan untuk menjaga martabat; Anda bisa mendengar dia keluar masuk, dan naik turun, seolah-olah dia datang untuk memeriksa atap. Singkatnya, dia bertubuh besar, dan diharapkan mampu mengatasi penyakit dan menyingkirkannya; sementara Dr. Minchin mungkin lebih mampu mendeteksi penyakit yang bersembunyi dan menghindarinya. Mereka sama-sama menikmati hak istimewa misterius dari reputasi medis, dan menyembunyikan rasa jijik mereka terhadap keahlian satu sama lain dengan penuh sopan santun. Menganggap diri mereka sebagai institusi Middlemarch, mereka siap bersatu melawan semua inovator, dan melawan non-profesional yang suka ikut campur. Atas dasar ini, dalam hati mereka berdua sama-sama membenci Tuan Bulstrode, meskipun Dr. Minchin tidak pernah secara terbuka bermusuhan dengannya, dan tidak pernah berbeda pendapat dengannya tanpa penjelasan panjang lebar kepada Nyonya Bulstrode, yang mendapati bahwa hanya Dr. Minchin yang memahami kondisi kesehatannya. Seorang awam yang mencampuri perilaku profesional para dokter, dan selalu memaksakan reformasinya,—meskipun ia kurang secara langsung mengganggu kedua dokter tersebut daripada para ahli bedah-apoteker yang merawat orang miskin berdasarkan kontrak, tetap saja menyinggung perasaan para profesional; dan Dr. Minchin sepenuhnya ikut merasakan kekesalan baru terhadap Bulstrode, yang dipicu oleh tekadnya yang tampak untuk menjadi pelindung Lydgate. Para praktisi yang sudah lama berkecimpung, Tuan Wrench dan Tuan Toller; saat itu sedang berdiri terpisah dan berbincang ramah, di mana mereka sepakat bahwa Lydgate adalah orang bodoh, yang memang dibuat untuk melayani tujuan Bulstrode. Kepada teman-teman non-medis, mereka telah sepakat memuji praktisi muda lainnya, yang datang ke kota setelah pensiunnya Tuan Peacock tanpa rekomendasi lebih lanjut selain berdasarkan kemampuannya sendiri dan argumen tentang penguasaan profesional yang solid yang dapat disimpulkan dari fakta bahwa ia tampaknya tidak membuang waktu untuk cabang ilmu pengetahuan lain. Jelas bahwa Lydgate, dengan tidak memberikan obat-obatan, bermaksud untuk menuduh rekan-rekannya, dan juga untuk mengaburkan batasan antara kedudukannya sebagai dokter umum dan para dokter, yang, demi kepentingan profesi, merasa berkewajiban untuk mempertahankan berbagai tingkatan profesi,—terutama terhadap seorang pria yang belum pernah kuliah di salah satu universitas Inggris dan menikmati kurangnya studi anatomi dan studi di samping tempat tidur pasien di sana, tetapi datang dengan klaim yang memfitnah tentang pengalaman di Edinburgh dan Paris, di mana pengamatan mungkin memang berlimpah, tetapi hampir tidak akurat. Maka terjadilah bahwa pada kesempatan ini Bulstrode disamakan dengan Lydgate, dan Lydgate dengan Tyke; dan karena beragamnya nama yang dapat dipertukarkan untuk masalah kerohanian ini, berbagai pemikiran dapat membentuk penilaian yang sama mengenainya. Dr. Sprague langsung berkata terus terang kepada kelompok yang berkumpul ketika ia masuk, “Saya mendukung Farebrother. Gaji, sepenuh hati saya. Tapi mengapa mengambilnya dari Vikaris? Dia tidak punya banyak—harus mengasuransikan jiwanya, selain mengurus rumah tangga, dan melakukan kegiatan amal sebagai seorang vikaris. Berikan dia empat puluh pound dan Anda tidak akan merugikannya. Farebrother adalah orang yang baik, dengan sedikit sifat pendeta yang cukup untuk menjalankan perintah.” “Ho, ho! Dokter,” kata Tuan Powderell tua, seorang pensiunan pedagang besi yang cukup terhormat—interupsinya terdengar seperti gabungan antara tawa dan ketidaksetujuan ala Parlemen; “kita harus membiarkan Anda berbicara. Tetapi yang harus kita pertimbangkan bukanlah pendapatan siapa pun—melainkan jiwa orang-orang miskin yang sakit”—di sini suara dan wajah Tuan Powderell menunjukkan ketulusan yang mendalam. “Tuan Tyke adalah seorang pengkhotbah Injil sejati. Saya akan menentang hati nurani saya jika saya menentang Tuan Tyke—sungguh.” “Saya yakin lawan-lawan Tuan Tyke tidak meminta siapa pun untuk memilih bertentangan dengan hati nuraninya,” kata Tuan Hackbutt, seorang penyamak kulit kaya yang fasih berbicara, yang kacamata berkilauan dan rambutnya yang tegak menoleh dengan agak tegas ke arah Tuan Powderell yang tidak bersalah. “Namun menurut penilaian saya, sebagai Direktur, kita perlu mempertimbangkan apakah kita akan menganggap seluruh tugas kita adalah melaksanakan usulan yang berasal dari satu pihak saja. Apakah ada anggota komite yang akan menyatakan bahwa ia akan mempertimbangkan gagasan untuk mengganti pria yang selalu menjalankan fungsi sebagai pendeta di sini, jika hal itu tidak disarankan kepadanya oleh pihak-pihak yang cenderung menganggap setiap lembaga di kota ini sebagai mesin untuk melaksanakan pandangan mereka sendiri? Saya tidak menanyakan motif siapa pun: biarlah itu menjadi urusan antara dirinya dan Kekuatan yang lebih tinggi; tetapi saya katakan, bahwa ada pengaruh yang bekerja di sini yang tidak sesuai dengan kemerdekaan sejati, dan bahwa sikap menjilat biasanya didikte oleh keadaan yang tidak mampu diakui oleh para pria yang berperilaku seperti itu, baik secara moral maupun finansial. Saya sendiri adalah seorang awam, tetapi saya telah memberikan perhatian yang cukup besar pada perpecahan di Gereja dan—” “Oh, persetan dengan perpecahan itu!” seru Frank Hawley, pengacara dan juru tulis kota, yang jarang hadir di rapat dewan, tetapi kali ini muncul dengan tergesa-gesa, cambuk di tangan. “Kita tidak ada hubungannya dengan mereka di sini. Farebrother telah mengerjakan pekerjaan—apa pun yang ada—tanpa bayaran, dan jika bayaran harus diberikan, seharusnya diberikan kepadanya. Saya menyebutnya pekerjaan yang tidak masuk akal untuk mengambil pekerjaan itu dari Farebrother.” “Saya rasa akan lebih baik jika para pria tidak memberikan komentar yang bersifat pribadi,” kata Tuan Plymdale. “Saya akan memilih untuk pengangkatan Tuan Tyke, tetapi saya tidak akan tahu, jika Tuan Hackbutt tidak memberi isyarat, bahwa saya adalah seorang penjilat yang patuh.” “Saya menolak menyebut nama siapa pun. Saya sudah mengatakan dengan tegas, jika saya diizinkan untuk mengulangi, atau bahkan untuk menyimpulkan apa yang akan saya katakan—” “Ah, ini dia Minchin!” kata Tuan Frank Hawley; yang membuat semua orang berpaling dari Tuan Hackbutt, meninggalkannya untuk merasakan kesia-siaan bakat unggulnya di Middlemarch. “Ayo, Dokter, saya harus menempatkan Anda di sisi kanan, ya?” “Saya harap begitu,” kata Dr. Minchin, sambil mengangguk dan menjabat tangan di sana-sini; “apa pun harga yang harus saya bayar untuk perasaan saya.” “Jika ada perasaan yang perlu ditonjolkan di sini, menurut saya seharusnya adalah perasaan untuk pria yang dipecat,” kata Bapak Frank Hawley. “Saya akui saya juga memiliki perasaan yang berbeda. Saya memiliki penilaian yang terbagi,” kata Dr. Minchin, sambil menggosok-gosok tangannya. “Saya menganggap Tuan Tyke sebagai orang yang patut dicontoh—tidak ada yang lebih baik darinya—dan saya percaya dia diusulkan dengan motif yang tidak tercela. Saya sendiri berharap dapat memberikan suara saya kepadanya. Tetapi saya terpaksa mengambil pandangan yang lebih condong kepada klaim Tuan Farebrother. Dia adalah orang yang ramah, seorang pengkhotbah yang cakap, dan telah lebih lama berada di antara kita.” Tuan Powderell tua memandang dengan sedih dan diam. Tuan Plymdale membetulkan dasinya dengan gelisah. “Saya harap Anda tidak menjadikan Farebrother sebagai contoh bagaimana seharusnya seorang pendeta,” kata Tuan Larcher, seorang pengangkut barang terkemuka yang baru saja masuk. “Saya tidak menyimpan dendam terhadapnya, tetapi saya pikir kita berhutang sesuatu kepada publik, apalagi kepada hal yang lebih tinggi, dalam penunjukan ini. Menurut pendapat saya, Farebrother terlalu longgar untuk seorang pendeta. Saya tidak ingin membahas detailnya; tetapi dia akan memanfaatkan kehadiran yang sedikit di sini sebaik mungkin.” “Dan kesepakatan yang buruk itu jauh lebih baik daripada terlalu banyak,” kata Tuan Hawley, yang terkenal dengan bahasa kasarnya di daerah itu. “Orang sakit tidak tahan dengan begitu banyak doa dan khotbah. Dan agama yang metodis semacam itu buruk bagi jiwa—buruk bagi bagian dalam, ya?” tambahnya, sambil cepat-cepat menoleh ke empat dokter yang berkumpul. Namun, jawaban apa pun tidak diperlukan lagi karena kedatangan tiga orang pria, yang mereka sapa dengan ramah. Mereka adalah Pendeta Edward Thesiger, Rektor St. Peter's, Tuan Bulstrode, dan teman kita Tuan Brooke dari Tipton, yang baru-baru ini bersedia menjadi anggota dewan direksi, tetapi belum pernah hadir sebelumnya, kehadirannya sekarang disebabkan oleh upaya Tuan Bulstrode. Lydgate adalah satu-satunya orang yang masih ditunggu. Semua orang kini duduk, dipimpin oleh Bapak Bulstrode, pucat dan terkendali seperti biasanya. Bapak Thesiger, seorang evangelis moderat, menginginkan pengangkatan temannya, Bapak Tyke, seorang pria yang bersemangat dan cakap, yang, bertugas di sebuah kapel kecil, tidak memiliki tugas pelayanan yang terlalu banyak sehingga masih memiliki cukup waktu untuk tugas baru tersebut. Diharapkan bahwa jabatan pendeta semacam ini harus diemban dengan niat yang sungguh-sungguh: ini adalah kesempatan khusus untuk pengaruh spiritual; dan meskipun baik jika gaji diberikan, diperlukan pengawasan yang cermat agar jabatan tersebut tidak disalahgunakan menjadi sekadar masalah gaji. Sikap Bapak Thesiger begitu tenang dan pantas sehingga para penentang hanya bisa diam saja. Tuan Brooke percaya bahwa semua orang bermaksud baik dalam masalah ini. Ia sendiri tidak mengurus urusan Rumah Sakit, meskipun ia sangat tertarik pada apa pun yang bermanfaat bagi Middlemarch, dan sangat senang bertemu dengan para pria yang hadir dalam masalah publik apa pun—"masalah publik apa pun, Anda tahu," Tuan Brooke mengulangi, dengan anggukan penuh pengertian. "Saya cukup sibuk sebagai hakim, dan dalam pengumpulan bukti dokumenter, tetapi saya menganggap waktu saya dapat digunakan untuk kepentingan publik—dan, singkatnya, teman-teman saya telah meyakinkan saya bahwa seorang pendeta dengan gaji—gaji, Anda tahu—adalah hal yang sangat baik, dan saya senang dapat datang ke sini dan memberikan suara untuk pengangkatan Tuan Tyke, yang, saya pahami, adalah orang yang tidak tercela, saleh dan fasih dan segala sesuatu yang seperti itu—dan saya adalah orang terakhir yang akan menahan suara saya—dalam keadaan seperti ini, Anda tahu." “Sepertinya Anda hanya dijejali dengan satu sisi permasalahan, Tuan Brooke,” kata Tuan Frank Hawley, yang tidak takut pada siapa pun, dan merupakan seorang Tory yang curiga terhadap niat kampanye pemilu. “Anda tampaknya tidak tahu bahwa salah satu orang paling terhormat yang kita miliki telah bertugas sebagai pendeta di sini selama bertahun-tahun tanpa bayaran, dan bahwa Tuan Tyke diusulkan untuk menggantikannya.” “Maaf, Tuan Hawley,” kata Tuan Bulstrode. “Tuan Brooke telah sepenuhnya diberi tahu tentang karakter dan kedudukan Tuan Farebrother.” “Oleh musuh-musuhnya,” seru Mr. Hawley dengan cepat. “Saya yakin tidak ada permusuhan pribadi di sini,” kata Bapak Thesiger. “Saya bersumpah memang ada,” balas Tuan Hawley. “Tuan-tuan,” kata Tuan Bulstrode dengan nada tenang, “pokok permasalahan ini dapat diuraikan secara singkat, dan jika ada di antara hadirin yang ragu bahwa setiap Tuan yang akan memberikan suaranya belum sepenuhnya mendapat informasi, saya sekarang dapat merangkum pertimbangan-pertimbangan yang harus dipertimbangkan oleh kedua belah pihak.” “Saya tidak melihat manfaatnya,” kata Tuan Hawley. “Saya kira kita semua tahu siapa yang akan kita pilih. Siapa pun yang ingin menegakkan keadilan tidak akan menunggu sampai menit terakhir untuk mendengarkan kedua belah pihak. Saya tidak punya waktu untuk disia-siakan, dan saya mengusulkan agar masalah ini segera diputuskan melalui pemungutan suara.” Diskusi singkat namun tetap hangat pun terjadi sebelum setiap orang menulis "Tyke" atau "Farebrother" di selembar kertas dan memasukkannya ke dalam gelas; dan sementara itu Tuan Bulstrode melihat Lydgate masuk. “Saya melihat bahwa suara saat ini terbagi rata,” kata Tuan Bulstrode dengan suara tajam dan jelas. Kemudian, sambil menatap Lydgate— “Masih ada satu suara penentu yang harus diberikan. Itu giliran Anda, Tuan Lydgate: maukah Anda berbaik hati untuk menulis surat?” “Masalah ini sudah diputuskan sekarang,” kata Tuan Wrench sambil berdiri. “Kita semua tahu bagaimana Tuan Lydgate akan memberikan suara.” “Sepertinya Anda berbicara dengan maksud yang aneh, Tuan,” kata Lydgate, agak menantang, sambil tetap mengangkat pensilnya. “Saya hanya bermaksud bahwa Anda diharapkan untuk memberikan suara bersama Tuan Bulstrode. Apakah Anda menganggap maksud tersebut menyinggung?” “Mungkin ini menyinggung perasaan orang lain. Tapi saya tidak akan berhenti memberikan suara bersamanya karena alasan itu.” Lydgate segera menuliskan “Tyke.” Maka Pendeta Walter Tyke menjadi pendeta di Rumah Sakit, dan Lydgate terus bekerja dengan Tuan Bulstrode. Ia sebenarnya tidak yakin apakah Tyke bukan kandidat yang lebih cocok, namun hati nuraninya mengatakan kepadanya bahwa jika ia benar-benar bebas dari bias tidak langsung, ia seharusnya memilih Tuan Farebrother. Urusan jabatan pendeta tetap menjadi titik sakit dalam ingatannya sebagai kasus di mana perantara kecil dari Middlemarch ini terlalu kuat baginya. Bagaimana mungkin seseorang merasa puas dengan keputusan di antara alternatif seperti itu dan dalam keadaan seperti itu? Sama seperti ia tidak bisa merasa puas dengan topinya, yang telah ia pilih dari antara bentuk-bentuk yang ditawarkan oleh sumber daya zaman itu, memakainya paling banter dengan pasrah yang terutama didukung oleh perbandingan. Namun, Tuan Farebrother menemuinya dengan keramahan yang sama seperti sebelumnya. Karakter pemungut pajak dan orang berdosa tidak selalu secara praktis tidak sesuai dengan karakter orang Farisi modern, karena sebagian besar dari kita hampir tidak melihat kesalahan perilaku kita sendiri dengan lebih jelas daripada kesalahan argumen kita sendiri, atau kekonyolan lelucon kita sendiri. Tetapi Vikaris St. Botolph jelas telah terhindar dari sedikit pun sifat orang Farisi, dan dengan mengakui kepada dirinya sendiri bahwa ia terlalu mirip dengan orang lain, ia menjadi sangat berbeda dari mereka dalam hal ini—bahwa ia dapat memaafkan orang lain karena meremehkannya, dan dapat menilai perilaku mereka secara tidak memihak bahkan ketika perilaku itu merugikannya. “Dunia ini terlalu keras bagiku , aku tahu,” katanya suatu hari kepada Lydgate. “Tapi aku bukanlah orang yang perkasa—aku tidak akan pernah menjadi orang yang terkenal. Pilihan Hercules adalah dongeng yang indah; tetapi Prodicus membuatnya mudah bagi sang pahlawan, seolah-olah tekad pertama sudah cukup. Kisah lain mengatakan bahwa ia akhirnya memegang alat pemintal benang, dan akhirnya mengenakan baju Nessus. Kurasa satu tekad yang baik mungkin bisa membuat seseorang tetap berada di jalan yang benar jika tekad orang lain membantunya.” Ceramah Vikaris tidak selalu membangkitkan semangat: ia memang terhindar dari menjadi seorang Farisi, tetapi ia tidak terhindar dari penilaian rendah terhadap kemungkinan yang dengan tergesa-gesa kita simpulkan dari kegagalan kita sendiri. Lydgate berpendapat bahwa ada kelemahan kemauan yang menyedihkan pada diri Tuan Farebrother.</p>
-
-<div class="nav">
-  <a href="bab-xvii.html">⬅ Bab Xvii.</a>
-  <a href="bab-xix.html">Bab Xix. ➡</a>
-</div>
 
 </body>
 </html>

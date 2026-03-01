@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB VI.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB VI. - Bacaan digital klasik">
+<title>Bab VI — Middlemarch</title>
+<meta name="description" content="Baca Bab VI dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-vi.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab VI — Middlemarch">
+  <meta property="og:description" content="Baca Bab VI dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-vi.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab VI — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab VI dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab VI",
+    "name": "Bab VI — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-vi.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab VI</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Lidah wanitaku bagaikan bilah rumput di padang rumput, <br />yang melukaimu saat kau membelainya dengan tangan yang tak berdaya. Fungsinya adalah memotong dengan indah: ia membagi biji millet dengan ketajaman spiritual, dan menciptakan penghematan yang tak berwujud.</p><p>Saat kereta Tuan Casaubon melewati gerbang, kereta itu menghentikan laju kereta kuda poni yang dikendarai seorang wanita dengan seorang pelayan duduk di belakangnya. Diragukan apakah saling mengenali, karena Tuan Casaubon tampak melamun; tetapi wanita itu bermata tajam, dan mengangguk serta berkata &quot;Apa kabar?&quot; tepat pada waktunya. Meskipun mengenakan topi lusuh dan selendang India yang sangat tua, jelas bahwa penjaga pondok menganggapnya sebagai orang penting, dari gerakan membungkuk rendah yang dilakukannya saat memasuki kereta kecil itu.</p><p>“Nah, Nyonya Fitchett, bagaimana kabar ayam-ayam Anda bertelur sekarang?” tanya wanita berkulit gelap dan bermata gelap itu dengan suara yang jelas dan tegas.</p><p>“Lumayan bagus untuk bertelur, Nyonya, tapi mereka mulai memakan telurnya: Saya sama sekali tidak tenang dengan mereka.”</p><p>“Oh, para kanibal! Lebih baik jual mereka murah sekarang juga. Mau jual sepasang? Kita tidak bisa makan unggas berkualitas buruk dengan harga mahal.”</p><p>“Baiklah, Nyonya, setengah mahkota: Saya tidak bisa membiarkan mereka pergi, tidak di bawah.”</p><p>“Setengah mahkota, zaman sekarang! Ayo sekarang—untuk kaldu ayam Rektor di hari Minggu. Dia sudah menghabiskan semua kaldu kita yang bisa saya sisihkan. Anda dibayar setengah dari khotbah, Nyonya Fitchett, ingat itu. Bawalah sepasang merpati akrobat untuk mereka—cantik sekali. Anda harus datang dan melihatnya. Anda tidak punya merpati akrobat di antara merpati Anda.”</p><p>“Baiklah, Nyonya, Tuan Fitchett akan pergi menemui mereka setelah bekerja. Dia sangat tertarik pada orang-orang baru; untuk membantu Anda.”</p><p>“Terima kasih! Ini akan menjadi kesepakatan terbaik yang pernah dia buat. Sepasang merpati gereja untuk sepasang ayam Spanyol jahat yang memakan telurnya sendiri! Jangan kau dan Fitchett terlalu membual, itu saja!”</p><p>Kereta kuda itu melaju dengan kata-kata terakhir, meninggalkan Nyonya Fitchett tertawa dan menggelengkan kepalanya perlahan, dengan seruan &quot;Tentu saja , tentu saja !&quot;—dari mana dapat disimpulkan bahwa ia akan merasa pedesaan agak lebih membosankan jika istri Rektor itu tidak terlalu banyak bicara dan tidak terlalu pelit. Memang, baik petani maupun buruh di paroki Freshitt dan Tipton akan merasakan kekurangan percakapan yang menyedihkan jika bukan karena cerita tentang apa yang dikatakan dan dilakukan Nyonya Cadwallader: seorang wanita dengan kelahiran yang sangat tinggi, seolah-olah keturunan dari bangsawan yang tidak dikenal, samar seperti kerumunan arwah pahlawan—yang mengaku miskin, menurunkan harga, dan melontarkan lelucon dengan cara yang paling ramah, meskipun dengan gaya bicara yang menunjukkan siapa dia. Wanita seperti itu memberikan keramahan pada pangkat dan agama, dan mengurangi kepahitan persepuluhan yang tidak dikonversi. Sosok yang jauh lebih teladan dengan sedikit sikap angkuh tidak akan meningkatkan pemahaman mereka tentang Tiga Puluh Sembilan Pasal, dan akan kurang mempersatukan secara sosial.</p><p>Tuan Brooke, yang melihat kelebihan Nyonya Cadwallader dari sudut pandang yang berbeda, sedikit tersentak ketika namanya diumumkan di perpustakaan, tempat dia duduk sendirian.</p><p>“Saya lihat Anda telah kedatangan Lowick Cicero di sini,” katanya, sambil duduk dengan nyaman, menyibakkan selendangnya, dan memperlihatkan sosoknya yang kurus namun tegap. “Saya curiga Anda dan dia sedang merencanakan sesuatu yang buruk, kalau tidak, Anda tidak akan sering melihat pria yang begitu bersemangat ini. Saya akan melaporkan Anda: ingat, kalian berdua adalah tokoh yang mencurigakan sejak kalian memihak Peel tentang RUU Katolik. Saya akan memberi tahu semua orang bahwa Anda akan mencalonkan diri di Middlemarch dari pihak Whig ketika Pinkerton tua mengundurkan diri, dan bahwa Casaubon akan membantu Anda dengan cara yang licik: akan menyuap para pemilih dengan pamflet, dan membuka kedai-kedai minuman untuk mendistribusikannya. Ayo, mengakulah!”</p><p>“Tidak seperti itu sama sekali,” kata Tuan Brooke, sambil tersenyum dan menggosok kacamatanya, tetapi sebenarnya sedikit tersipu karena tuduhan pemakzulan itu. “Saya dan Casaubon tidak banyak membicarakan politik. Dia tidak terlalu peduli dengan sisi filantropi; hukuman, dan hal-hal semacam itu. Dia hanya peduli dengan masalah Gereja. Itu bukan bidang saya, Anda tahu.”</p><p>“Terlalu berlebihan, temanku. Aku sudah mendengar tentang perbuatanmu. Siapa yang menjual sebidang tanahnya kepada kaum Katolik di Middlemarch? Aku yakin kau membelinya dengan sengaja. Kau benar-benar seperti Guy Faux. Lihat saja, kau akan dibakar dalam bentuk patung pada tanggal 5 November mendatang. Humphrey tidak mau berdebat denganmu tentang hal itu, jadi aku datang.”</p><p>“Bagus sekali. Saya siap dianiaya karena tidak menganiaya—tidak menganiaya, Anda tahu.”</p><p>“Nah, itu dia! Itu cuma omong kosong yang sudah kau siapkan untuk kampanye. Sekarang, jangan biarkan mereka memikatmu ke arena kampanye, Tuan Brooke yang terhormat. Seseorang selalu mempermalukan dirinya sendiri dengan berpidato: tidak ada alasan selain berada di pihak yang benar, sehingga kau bisa meminta berkat atas keragu-raguanmu. Kau akan kehilangan dirimu sendiri, aku peringatkan. Kau akan menghancurkan opini semua partai, dan dilempari oleh semua orang.”</p><p>“Itulah yang saya harapkan, Anda tahu,” kata Tuan Brooke, tidak ingin menunjukkan betapa sedikitnya ia menikmati sketsa profetik ini—“itulah yang saya harapkan sebagai seorang pria yang mandiri. Mengenai kaum Whig, seorang pria yang berpihak pada para pemikir tidak mungkin terikat pada partai mana pun. Ia mungkin akan berpihak pada mereka sampai titik tertentu—sampai titik tertentu, Anda tahu. Tapi itulah yang tidak pernah dipahami oleh Anda para wanita.”</p><p>“Di mana titik pasti Anda? Tidak. Saya ingin diberi tahu bagaimana seseorang dapat memiliki titik pasti ketika dia tidak tergabung dalam partai mana pun—menjalani kehidupan nomaden, dan tidak pernah memberi tahu teman-temannya alamatnya. 'Tidak ada yang tahu di mana Brooke akan berada—tidak ada yang bisa mengandalkan Brooke'—itulah yang orang katakan tentang Anda, jujur saja. Sekarang, bersikaplah terhormat. Bagaimana perasaan Anda jika pergi ke Sidang Pengadilan dengan semua orang memandang Anda dengan malu-malu, dan Anda dengan hati nurani yang buruk dan kantong kosong?”</p><p>“Saya tidak berpura-pura berdebat dengan seorang wanita tentang politik,” kata Tuan Brooke, dengan sikap acuh tak acuh sambil tersenyum, tetapi merasa agak tidak nyaman karena serangan Nyonya Cadwallader ini telah membuka kampanye defensif yang telah membuatnya terpapar oleh beberapa langkah gegabah. “Kaum wanita bukanlah pemikir, kau tahu— varium et mutabile semper —hal semacam itu. Kau tidak mengenal Virgil. Saya tahu”—Tuan Brooke kemudian merenungkan bahwa ia tidak mengenal penyair Augustan itu secara pribadi—“Saya akan mengatakan, kasihan Stoddart, kau tahu. Itulah yang dia katakan. Kalian para wanita selalu menentang sikap independen—seorang pria yang hanya peduli pada kebenaran, dan hal semacam itu. Dan tidak ada bagian di wilayah ini di mana opini lebih sempit daripada di sini—saya tidak bermaksud melempar batu, kau tahu, tetapi seseorang dibutuhkan untuk mengambil garis independen; dan jika saya tidak mengambilnya, siapa yang akan melakukannya?”</p><p>“Siapa? Kenapa, siapa saja yang baru muncul dan tidak punya darah bangsawan maupun kedudukan. Orang-orang terhormat seharusnya menghabiskan omong kosong mereka di rumah, bukan menjajakannya ke mana-mana. Dan kau! yang akan menikahkan keponakanmu, yang sama baiknya dengan putrimu, dengan salah satu orang terbaik kita. Sir James akan sangat marah: akan terlalu berat baginya jika kau berbalik sekarang dan menjadikan dirimu papan nama Partai Whig.”</p><p>Tuan Brooke kembali meringis dalam hati, karena pertunangan Dorothea belum lama diputuskan, ketika ia sudah memikirkan ejekan Nyonya Cadwallader yang mungkin akan dilontarkan. Bagi pengamat yang tidak tahu apa-apa, mudah saja untuk berkata, &quot;Bertengkarlah dengan Nyonya Cadwallader;&quot; tetapi ke mana seorang bangsawan desa akan pergi jika ia bertengkar dengan tetangga lamanya? Siapa yang bisa merasakan kelezatan nama Brooke jika diucapkan begitu saja, seperti anggur tanpa segel? Tentu saja, seseorang hanya bisa menjadi kosmopolitan sampai batas tertentu.</p><p>“Saya harap Chettam dan saya akan selalu menjadi teman baik; tetapi saya menyesal mengatakan bahwa tidak ada kemungkinan dia akan menikahi keponakan saya,” kata Tuan Brooke, merasa sangat lega melihat Celia masuk melalui jendela.</p><p>“Kenapa tidak?” kata Ny. Cadwallader, dengan nada terkejut. “Belum genap dua minggu sejak kita membicarakan hal itu.”</p><p>“Keponakanku telah memilih pelamar lain—telah memilih dia, kau tahu. Aku tidak ada hubungannya dengan itu. Seharusnya aku lebih menyukai Chettam; dan seharusnya aku mengatakan bahwa Chettam adalah pria yang akan dipilih oleh gadis mana pun. Tapi hal-hal seperti ini memang sulit diprediksi. Kaum wanita itu mudah berubah-ubah, kau tahu.”</p><p>“Lalu, siapa yang kau maksud akan kau izinkan dia nikahi?” Pikiran Nyonya Cadwallader dengan cepat menimbang berbagai kemungkinan pilihan untuk Dorothea.</p><p>Namun, Celia masuk, tampak segar setelah berjalan-jalan di taman, dan sapaannya membebaskan Tuan Brooke dari keharusan untuk segera menjawab. Ia bangkit dengan tergesa-gesa, dan berkata, &quot;Ngomong-ngomong, saya harus berbicara dengan Wright tentang kuda-kuda itu,&quot; lalu bergegas keluar ruangan.</p><p>“Anakku sayang, apa ini?—tentang pertunangan kakakmu?” tanya Ny. Cadwallader.</p><p>“Dia bertunangan dan akan menikah dengan Tuan Casaubon,” kata Celia, seperti biasa, menggunakan pernyataan fakta yang paling sederhana, dan menikmati kesempatan berbicara hanya dengan istri Rektor.</p><p>“Ini mengerikan. Sudah berapa lama ini terjadi?”</p><p>“Aku baru tahu kemarin. Mereka akan menikah enam minggu lagi.”</p><p>“Baiklah, sayangku, aku berharap kamu berbahagia dengan saudara iparmu.”</p><p>“Aku sangat menyesal atas apa yang terjadi pada Dorothea.”</p><p>“Maaf! Kurasa ini perbuatannya.”</p><p>“Ya; dia bilang Tuan Casaubon memiliki jiwa yang mulia.”</p><p>“Dengan sepenuh hatiku.”</p><p>“Oh, Nyonya Cadwallader, saya rasa tidak menyenangkan menikahi pria dengan jiwa yang agung.”</p><p>“Baiklah, sayangku, berhati-hatilah. Kau sudah tahu seperti apa rupa orang seperti itu; ketika orang berikutnya datang dan ingin menikahimu, jangan terima dia.”</p><p>“Aku yakin aku seharusnya tidak pernah melakukannya.”</p><p>“Tidak; satu orang seperti itu dalam keluarga sudah cukup. Jadi, adikmu tidak pernah peduli dengan Sir James Chettam? Apa yang akan kau katakan padanya jika dia menjadi saudara iparmu?”</p><p>“Aku pasti akan sangat menyukainya. Aku yakin dia akan menjadi suami yang baik. Hanya saja,” tambah Celia, dengan sedikit rona merah di pipi (kadang-kadang dia tampak tersipu saat bernapas), “aku rasa dia tidak akan cocok untuk Dorothea.”</p><p>“Kurang muluk-muluk?”</p><p>“Dodo sangat ketat. Dia terlalu banyak berpikir tentang segala hal, dan sangat teliti tentang apa yang dikatakan orang. Sir James sepertinya tidak pernah bisa menyenangkan hatinya.”</p><p>“Dia pasti telah mendorongnya, saya yakin. Itu bukanlah tindakan yang terpuji.”</p><p>“Tolong jangan marah pada Dodo; dia tidak melihat hal-hal yang sebenarnya. Dia terlalu banyak memikirkan pondok-pondok itu, dan terkadang dia bersikap kasar kepada Sir James; tetapi Sir James sangat baik, dia tidak pernah menyadarinya.”</p><p>“Baiklah,” kata Ny. Cadwallader, sambil mengenakan selendangnya, dan bangkit seolah terburu-buru, “Saya harus segera pergi ke Sir James dan memberitahunya. Dia pasti sudah membawa ibunya kembali sekarang, dan saya harus mampir. Pamanmu tidak akan pernah memberitahunya. Kita semua kecewa, sayangku. Anak muda seharusnya memikirkan keluarga mereka saat menikah. Saya memberi contoh buruk—menikahi seorang pendeta miskin, dan membuat diri saya menjadi objek yang menyedihkan di antara keluarga De Bracy—terpaksa mendapatkan arang dengan tipu daya, dan berdoa kepada Tuhan untuk minyak salad saya. Namun, Casaubon punya cukup uang; saya harus bersikap adil kepadanya. Mengenai darahnya, saya kira pembagian keluarganya adalah tiga sotong sable, dan seorang komentator yang merajalela. Ngomong-ngomong, sebelum saya pergi, sayangku, saya harus berbicara dengan Ny. Carter tentang kue. Saya ingin mengirim juru masak muda saya untuk belajar darinya. Orang miskin dengan empat anak, seperti kita, kau tahu, tidak mampu mempekerjakan juru masak yang baik. Saya yakin Ny. Carter akan membantu.” Saya. Koki Sir James adalah naga yang sempurna.”</p><p>Dalam waktu kurang dari satu jam, Ny. Cadwallader telah melewati Ny. Carter dan berkendara ke Freshitt Hall, yang tidak jauh dari rumah dinasnya sendiri, karena suaminya tinggal di Freshitt dan memiliki seorang asisten pendeta di Tipton.</p><p>Sir James Chettam telah kembali dari perjalanan singkat yang membuatnya absen selama beberapa hari, dan telah berganti pakaian, berniat untuk berkuda ke Tipton Grange. Kudanya berdiri di depan pintu ketika Nyonya Cadwallader datang, dan ia segera muncul di sana, dengan cambuk di tangan. Nyonya Chettam belum kembali, tetapi urusan Nyonya Cadwallader tidak dapat diselesaikan di hadapan para pelayan, jadi ia meminta untuk dibawa ke rumah kaca di dekatnya, untuk melihat tanaman baru; dan setelah berdiri termenung, ia berkata—</p><p>“Aku punya kabar mengejutkan untukmu; kuharap kau tidak begitu tergila-gila pada cinta seperti yang kau pura-pura.”</p><p>Percuma saja memprotes cara Nyonya Cadwallader menyampaikan sesuatu. Namun, raut wajah Sir James sedikit berubah. Ia merasakan sedikit kekhawatiran.</p><p>“Saya yakin Brooke pada akhirnya akan membongkar kedoknya sendiri. Saya menuduhnya bermaksud mencalonkan diri untuk Middlemarch di pihak Liberal, dan dia terlihat bodoh dan tidak pernah membantahnya—dia malah berbicara tentang jalur independen, dan omong kosong seperti biasanya.”</p><p>“Hanya itu saja?” kata Sir James, merasa sangat lega.</p><p>“Mengapa,” balas Ny. Cadwallader dengan nada lebih tajam, “Anda tidak bermaksud mengatakan bahwa Anda ingin dia menjadi tokoh publik seperti itu—menjadi semacam Cheap Jack politik?”</p><p>“Kurasa dia mungkin akan berubah pikiran. Dia tidak akan menyukai biayanya.”</p><p>“Itulah yang kukatakan padanya. Dia rentan terhadap akal sehat—selalu ada sedikit akal sehat dalam secuil kekikiran. Kekikiran adalah sifat utama yang diwariskan dalam keluarga; itu adalah sisi aman bagi kegilaan untuk muncul. Dan pasti ada sedikit celah dalam keluarga Brooke, jika tidak, kita tidak akan melihat apa yang akan kita lihat.”</p><p>“Apa? Brooke mewakili Middlemarch?”</p><p>“Lebih buruk dari itu. Aku benar-benar merasa sedikit bertanggung jawab. Aku selalu bilang padamu bahwa Nona Brooke akan menjadi pasangan yang cocok. Aku tahu ada banyak hal yang tidak masuk akal dalam dirinya—semacam sifat Metodis yang plin-plan. Tapi hal-hal seperti itu akan hilang dari gadis-gadis. Namun, untuk kali ini aku terkejut.”</p><p>“Apa maksudmu, Nyonya Cadwallader?” tanya Sir James. Kekhawatirannya, kalau-kalau Nona Brooke melarikan diri untuk bergabung dengan Persaudaraan Moravia, atau sekte aneh yang tidak dikenal di masyarakat terhormat, sedikit mereda karena ia tahu bahwa Nyonya Cadwallader selalu membesar-besarkan masalah. “Apa yang terjadi pada Nona Brooke? Tolong jelaskan.”</p><p>“Baiklah. Dia sudah bertunangan.” Nyonya Cadwallader terdiam beberapa saat, mengamati ekspresi sedih di wajah temannya, yang berusaha disembunyikannya dengan senyum gugup sambil mencambuk sepatunya; tetapi ia segera menambahkan, “Bertunangan dengan Casaubon.”</p><p>Sir James membiarkan cambuknya jatuh dan membungkuk untuk mengambilnya. Mungkin wajahnya belum pernah menunjukkan rasa jijik yang begitu pekat seperti ketika dia menoleh ke Nyonya Cadwallader dan mengulangi, &quot;Casaubon?&quot;</p><p>“Meskipun begitu. Sekarang kau sudah tahu tujuanku.”</p><p>“Ya Tuhan! Ini mengerikan! Dia tidak lebih baik dari mumi!” (Sudut pandang ini harus dipertimbangkan, sebagai sudut pandang seorang pesaing yang sedang berkembang dan kecewa.)</p><p>“Dia bilang, dia adalah jiwa yang agung.—Seperti kantung besar tempat kacang polong kering bergemuruh di dalamnya!” kata Ny. Cadwallader.</p><p>“Untuk apa seorang bujangan tua seperti itu menikah?” kata Sir James. “Dia sudah setengah mati.”</p><p>&quot;Kurasa dia bermaksud memperpanjangnya lagi.&quot;</p><p>“Brooke seharusnya tidak mengizinkannya: dia harus bersikeras agar hal itu ditunda sampai putrinya cukup umur. Saat itu putrinya akan mempertimbangkannya lebih baik. Untuk apa ada wali?”</p><p>“Seolah-olah kau bisa memeras sebuah resolusi dari Brooke!”</p><p>“Cadwallader mungkin akan berbicara dengannya.”</p><p>“Bukan dia! Humphrey menganggap semua orang menawan. Aku tidak pernah bisa membuatnya menjelek-jelekkan Casaubon. Dia bahkan akan berbicara baik tentang uskup, meskipun aku mengatakan kepadanya bahwa itu tidak wajar bagi seorang pendeta yang mendapat jabatan tinggi; apa yang bisa dilakukan seseorang dengan suami yang begitu kurang memperhatikan kesopanan? Aku menyembunyikannya sebaik mungkin dengan menjelek-jelekkan semua orang sendiri. Ayo, ayo, cerialah! Kau beruntung telah terbebas dari Nona Brooke, seorang gadis yang akan membuatmu ingin melihat bintang-bintang di siang hari. Jujur saja, Celia kecil lebih berharga daripada dia, dan kemungkinan besar akan menjadi jodoh yang lebih baik. Karena pernikahan dengan Casaubon ini sama saja dengan masuk biara.”</p><p>“Oh, atas inisiatif saya sendiri—saya pikir demi Nona Brooke, teman-temannya harus mencoba menggunakan pengaruh mereka.”</p><p>“Yah, Humphrey belum tahu. Tapi ketika aku memberitahunya, yakinlah dia akan berkata, 'Kenapa tidak? Casaubon orang baik—dan muda—cukup muda.' Orang-orang dermawan ini tidak pernah tahu perbedaan antara cuka dan anggur sampai mereka menelannya dan sakit perut. Namun, jika aku seorang pria, aku akan lebih menyukai Celia, terutama setelah Dorothea pergi. Sejujurnya, kau telah mendekati yang satu dan telah memenangkan yang lain. Aku bisa melihat bahwa dia mengagumimu hampir sama seperti yang diharapkan seorang pria untuk dikagumi. Jika bukan aku yang mengatakan demikian, kau mungkin menganggapnya berlebihan. Selamat tinggal!”</p><p>Sir James mengantar Nyonya Cadwallader ke kereta kuda, lalu melompat ke atas kudanya. Dia tidak akan membatalkan perjalanannya karena kabar buruk dari temannya—hanya ingin berkuda lebih cepat ke arah lain selain Tipton Grange.</p><p>Sekarang, mengapa Nyonya Cadwallader begitu sibuk mengurus pernikahan Nona Brooke; dan mengapa, ketika satu perjodohan yang menurutnya ia bantu gagal, ia langsung merencanakan perjodohan lain? Apakah ada rencana cerdik, taktik petak umpet, yang dapat dideteksi dengan pengamatan teleskop yang cermat? Sama sekali tidak: teleskop dapat menyapu paroki Tipton dan Freshitt, seluruh area yang dikunjungi Nyonya Cadwallader dengan kereta kudanya, tanpa menyaksikan pertemuan apa pun yang dapat menimbulkan kecurigaan, atau pemandangan apa pun yang darinya ia tidak kembali dengan ketajaman mata yang sama dan warna kulit alami yang sama. Bahkan, jika kendaraan yang nyaman itu ada di zaman Tujuh Orang Bijak, salah satu dari mereka pasti akan berkomentar, bahwa Anda hanya dapat mengetahui sedikit tentang wanita dengan mengikuti mereka di kereta kuda mereka. Bahkan dengan mikroskop yang diarahkan pada setetes air, kita mendapati diri kita membuat interpretasi yang ternyata agak kasar; Karena di bawah lensa yang lemah Anda mungkin tampak melihat makhluk yang menunjukkan kerakusan aktif di mana makhluk-makhluk kecil lainnya secara aktif bermain seolah-olah mereka adalah koin pajak yang hidup, lensa yang lebih kuat mengungkapkan kepada Anda helai rambut terkecil yang menciptakan pusaran bagi korban-korban ini sementara si penelan menunggu secara pasif untuk menerima pelanggan. Dengan cara ini, secara metaforis, lensa yang kuat yang diterapkan pada perjodohan Nyonya Cadwallader akan menunjukkan permainan sebab-sebab kecil yang menghasilkan apa yang dapat disebut pusaran pikiran dan ucapan untuk memberinya jenis makanan yang dia butuhkan. Kehidupannya sederhana di pedesaan, cukup bebas dari rahasia yang kotor, berbahaya, atau penting lainnya, dan tidak secara sadar terpengaruh oleh urusan-urusan besar dunia. Terlebih lagi urusan-urusan besar dunia menarik minatnya, ketika dikomunikasikan dalam surat-surat kerabat bangsawan: bagaimana putra-putra bungsu yang memesona telah jatuh ke jurang kehancuran dengan menikahi selir mereka; kebodohan tua yang hebat dari Tuan Tapir muda, dan humor asam urat yang ganas dari Tuan Megatherium tua; Persilangan silsilah yang tepat yang telah membawa mahkota ke cabang baru dan memperluas hubungan skandal—ini adalah topik-topik yang detailnya ia ingat dengan sangat akurat, dan ia reproduksi dalam kumpulan epigram yang sangat bagus, yang ia sendiri lebih nikmati karena ia percaya tanpa ragu pada kelahiran dan bukan kelahiran seperti halnya pada hewan buruan dan hama. Ia tidak akan pernah menolak siapa pun karena kemiskinan: seorang De Bracy yang terpaksa makan malam di baskom akan tampak baginya sebagai contoh kepedihan yang layak dibesar-besarkan, dan saya khawatir kebiasaan buruk aristokratnya tidak akan membuatnya ngeri. Tetapi perasaannya terhadap orang kaya yang vulgar adalah semacam kebencian religius: mereka mungkin menghasilkan semua uang mereka dari harga eceran yang tinggi, dan Nyonya Cadwallader membenci harga tinggi untuk segala sesuatu yang tidak dibayar dalam bentuk barang di Pastoran: orang-orang seperti itu bukanlah bagian dari rencana Tuhan dalam menciptakan dunia; dan aksen mereka sangat menyakitkan telinga. Kota tempat monster-monster semacam itu berlimpah ruah hampir tidak lebih dari semacam komedi murahan, yang tidak dapat diperhitungkan dalam skema alam semesta yang beradab. Biarlah wanita mana pun yang cenderung bersikap keras terhadap Ny. Cadwallader menyelidiki kelengkapan pandangan indahnya sendiri, dan yakinlah bahwa pandangan tersebut mengakomodasi semua kehidupan yang memiliki kehormatan untuk hidup berdampingan dengannya.</p><p>Dengan pikiran yang begitu tajam, seaktif fosfor, yang mampu membentuk segala sesuatu yang ada di dekatnya sesuai keinginannya, bagaimana mungkin Nyonya Cadwallader merasa bahwa Nona Brooke dan prospek pernikahan mereka asing baginya? Terutama karena selama bertahun-tahun ia terbiasa menegur Tuan Brooke dengan kejujuran yang ramah, dan memberitahunya secara rahasia bahwa ia menganggapnya sebagai makhluk yang malang. Sejak kedatangan pertama para wanita muda di Tipton, ia telah mengatur pernikahan Dorothea dengan Sir James, dan jika itu terjadi, ia akan yakin bahwa itu adalah hasil karyanya: bahwa pernikahan itu tidak terjadi setelah ia merencanakannya, menyebabkan kejengkelan yang akan dirasakan oleh setiap pemikir. Ia adalah diplomat Tipton dan Freshitt, dan jika sesuatu terjadi di luar kendalinya, itu adalah suatu penyimpangan yang menjengkelkan. Mengenai keanehan seperti yang dilakukan Nona Brooke ini, Nyonya Cadwallader tidak sabar menghadapinya, dan sekarang menyadari bahwa pendapatnya tentang gadis ini telah terkontaminasi oleh sedikit kebaikan hati suaminya: keanehan Metodis itu, sikapnya yang lebih religius daripada rektor dan asistennya, berasal dari penyakit yang lebih dalam dan lebih mendasar daripada yang selama ini ia yakini.</p><p>“Namun,” kata Ny. Cadwallader, pertama kepada dirinya sendiri dan kemudian kepada suaminya, “aku meninggalkannya: ada kemungkinan, jika dia menikahi Sir James, dia akan menjadi wanita yang waras dan bijaksana. Sir James tidak akan pernah membantahnya, dan ketika seorang wanita tidak dibantah, dia tidak punya alasan untuk keras kepala dalam kebodohannya. Tapi sekarang aku berharap dia menikmati jubah kasarnya.”</p><p>Oleh karena itu, Nyonya Cadwallader harus memutuskan jodoh lain untuk Sir James, dan setelah memutuskan bahwa jodohnya adalah Nona Brooke yang lebih muda, tidak ada langkah yang lebih cerdik untuk keberhasilan rencananya selain memberi isyarat kepada baron itu bahwa ia telah memikat hati Celia. Karena ia bukanlah salah satu dari para pria yang mendambakan apel Sappho yang tak terjangkau yang tertawa dari dahan teratas—pesona yang</p><p>“Tersenyumlah seperti rumpun bunga lip di tebing, <br />tak ingin didekati oleh tangan yang rela.”</p><p>Ia tidak punya soneta untuk ditulis, dan ia tidak merasa senang karena ia bukanlah objek pilihan wanita yang telah ia pilih. Pengetahuan bahwa Dorothea telah memilih Tuan Casaubon telah melukai rasa sayangnya dan melemahkannya. Meskipun Sir James adalah seorang olahragawan, ia memiliki perasaan lain terhadap wanita selain terhadap belibis dan rubah, dan tidak memandang calon istrinya sebagai mangsa, yang terutama berharga karena sensasi perburuannya. Ia juga tidak begitu mengenal kebiasaan ras primitif sehingga merasa bahwa pertarungan ideal untuknya, dengan kapak di tangan, bisa dikatakan, diperlukan untuk kesinambungan historis ikatan pernikahan. Sebaliknya, karena memiliki kesombongan yang ramah yang mengikat kita pada orang-orang yang menyayangi kita, dan menjauhkan kita dari orang-orang yang acuh tak acuh, dan juga sifat yang baik dan penuh rasa syukur, gagasan bahwa seorang wanita memiliki kebaikan terhadapnya saja sudah memunculkan benang-benang kelembutan dari hatinya ke hati wanita itu.</p><p>Maka terjadilah, setelah Sir James berkuda cukup cepat selama setengah jam ke arah yang menjauh dari Tipton Grange, ia memperlambat lajunya, dan akhirnya berbelok ke jalan yang akan membawanya kembali melalui jalan pintas. Berbagai perasaan mendorongnya untuk tetap pergi ke Grange hari ini seolah-olah tidak ada hal baru yang terjadi. Ia merasa senang karena tidak pernah mengajukan tawaran dan ditolak; hanya kesopanan persahabatan yang mengharuskannya untuk mengunjungi Dorothea di sekitar pondok, dan sekarang untungnya Nyonya Cadwallader telah mempersiapkannya untuk menyampaikan ucapan selamat, jika perlu, tanpa menunjukkan terlalu banyak kecanggungan. Ia sebenarnya tidak menyukainya: meninggalkan Dorothea sangat menyakitkan baginya; tetapi ada sesuatu dalam tekad untuk segera melakukan kunjungan ini dan menaklukkan semua pertunjukan perasaan, yang merupakan semacam penangkal dan penolak rasa jengkel. Dan tanpa ia menyadari dorongan itu secara jelas, tentu ada perasaan dalam dirinya bahwa Celia akan berada di sana, dan bahwa ia harus lebih memperhatikannya daripada sebelumnya.</p><p>Kita, manusia fana, pria dan wanita, menelan banyak kekecewaan antara waktu sarapan dan makan malam; menahan air mata dan tampak sedikit pucat di bibir, dan sebagai jawaban atas pertanyaan berkata, &quot;Oh, tidak apa-apa!&quot; Kesombongan membantu kita; dan kesombongan bukanlah hal yang buruk ketika hanya mendorong kita untuk menyembunyikan luka kita sendiri—bukan untuk menyakiti orang lain.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-v.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab V</span>
+    </a>
+    <a href="bab-vii.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Vii</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB VI.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Lidah wanitaku bagaikan bilah rumput di padang rumput, yang melukaimu saat kau membelainya dengan tangan yang tak berdaya. Fungsinya adalah memotong dengan indah: ia membagi biji millet dengan ketajaman spiritual, dan menciptakan penghematan yang tak berwujud. Saat kereta Tuan Casaubon melewati gerbang, kereta itu menghentikan laju kereta kuda poni yang dikendarai seorang wanita dengan seorang pelayan duduk di belakangnya. Diragukan apakah saling mengenali, karena Tuan Casaubon tampak melamun; tetapi wanita itu bermata tajam, dan mengangguk serta berkata "Apa kabar?" tepat pada waktunya. Meskipun mengenakan topi lusuh dan selendang India yang sangat tua, jelas bahwa penjaga pondok menganggapnya sebagai orang penting, dari gerakan membungkuk rendah yang dilakukannya saat memasuki kereta kecil itu. “Nah, Nyonya Fitchett, bagaimana kabar ayam-ayam Anda bertelur sekarang?” tanya wanita berkulit gelap dan bermata gelap itu dengan suara yang jelas dan tegas. “Lumayan bagus untuk bertelur, Nyonya, tapi mereka mulai memakan telurnya: Saya sama sekali tidak tenang dengan mereka.” “Oh, para kanibal! Lebih baik jual mereka murah sekarang juga. Mau jual sepasang? Kita tidak bisa makan unggas berkualitas buruk dengan harga mahal.” “Baiklah, Nyonya, setengah mahkota: Saya tidak bisa membiarkan mereka pergi, tidak di bawah.” “Setengah mahkota, zaman sekarang! Ayo sekarang—untuk kaldu ayam Rektor di hari Minggu. Dia sudah menghabiskan semua kaldu kita yang bisa saya sisihkan. Anda dibayar setengah dari khotbah, Nyonya Fitchett, ingat itu. Bawalah sepasang merpati akrobat untuk mereka—cantik sekali. Anda harus datang dan melihatnya. Anda tidak punya merpati akrobat di antara merpati Anda.” “Baiklah, Nyonya, Tuan Fitchett akan pergi menemui mereka setelah bekerja. Dia sangat tertarik pada orang-orang baru; untuk membantu Anda.” “Terima kasih! Ini akan menjadi kesepakatan terbaik yang pernah dia buat. Sepasang merpati gereja untuk sepasang ayam Spanyol jahat yang memakan telurnya sendiri! Jangan kau dan Fitchett terlalu membual, itu saja!” Kereta kuda itu melaju dengan kata-kata terakhir, meninggalkan Nyonya Fitchett tertawa dan menggelengkan kepalanya perlahan, dengan seruan "Tentu saja , tentu saja !"—dari mana dapat disimpulkan bahwa ia akan merasa pedesaan agak lebih membosankan jika istri Rektor itu tidak terlalu banyak bicara dan tidak terlalu pelit. Memang, baik petani maupun buruh di paroki Freshitt dan Tipton akan merasakan kekurangan percakapan yang menyedihkan jika bukan karena cerita tentang apa yang dikatakan dan dilakukan Nyonya Cadwallader: seorang wanita dengan kelahiran yang sangat tinggi, seolah-olah keturunan dari bangsawan yang tidak dikenal, samar seperti kerumunan arwah pahlawan—yang mengaku miskin, menurunkan harga, dan melontarkan lelucon dengan cara yang paling ramah, meskipun dengan gaya bicara yang menunjukkan siapa dia. Wanita seperti itu memberikan keramahan pada pangkat dan agama, dan mengurangi kepahitan persepuluhan yang tidak dikonversi. Sosok yang jauh lebih teladan dengan sedikit sikap angkuh tidak akan meningkatkan pemahaman mereka tentang Tiga Puluh Sembilan Pasal, dan akan kurang mempersatukan secara sosial. Tuan Brooke, yang melihat kelebihan Nyonya Cadwallader dari sudut pandang yang berbeda, sedikit tersentak ketika namanya diumumkan di perpustakaan, tempat dia duduk sendirian. “Saya lihat Anda telah kedatangan Lowick Cicero di sini,” katanya, sambil duduk dengan nyaman, menyibakkan selendangnya, dan memperlihatkan sosoknya yang kurus namun tegap. “Saya curiga Anda dan dia sedang merencanakan sesuatu yang buruk, kalau tidak, Anda tidak akan sering melihat pria yang begitu bersemangat ini. Saya akan melaporkan Anda: ingat, kalian berdua adalah tokoh yang mencurigakan sejak kalian memihak Peel tentang RUU Katolik. Saya akan memberi tahu semua orang bahwa Anda akan mencalonkan diri di Middlemarch dari pihak Whig ketika Pinkerton tua mengundurkan diri, dan bahwa Casaubon akan membantu Anda dengan cara yang licik: akan menyuap para pemilih dengan pamflet, dan membuka kedai-kedai minuman untuk mendistribusikannya. Ayo, mengakulah!” “Tidak seperti itu sama sekali,” kata Tuan Brooke, sambil tersenyum dan menggosok kacamatanya, tetapi sebenarnya sedikit tersipu karena tuduhan pemakzulan itu. “Saya dan Casaubon tidak banyak membicarakan politik. Dia tidak terlalu peduli dengan sisi filantropi; hukuman, dan hal-hal semacam itu. Dia hanya peduli dengan masalah Gereja. Itu bukan bidang saya, Anda tahu.” “Terlalu berlebihan, temanku. Aku sudah mendengar tentang perbuatanmu. Siapa yang menjual sebidang tanahnya kepada kaum Katolik di Middlemarch? Aku yakin kau membelinya dengan sengaja. Kau benar-benar seperti Guy Faux. Lihat saja, kau akan dibakar dalam bentuk patung pada tanggal 5 November mendatang. Humphrey tidak mau berdebat denganmu tentang hal itu, jadi aku datang.” “Bagus sekali. Saya siap dianiaya karena tidak menganiaya—tidak menganiaya, Anda tahu.” “Nah, itu dia! Itu cuma omong kosong yang sudah kau siapkan untuk kampanye. Sekarang, jangan biarkan mereka memikatmu ke arena kampanye, Tuan Brooke yang terhormat. Seseorang selalu mempermalukan dirinya sendiri dengan berpidato: tidak ada alasan selain berada di pihak yang benar, sehingga kau bisa meminta berkat atas keragu-raguanmu. Kau akan kehilangan dirimu sendiri, aku peringatkan. Kau akan menghancurkan opini semua partai, dan dilempari oleh semua orang.” “Itulah yang saya harapkan, Anda tahu,” kata Tuan Brooke, tidak ingin menunjukkan betapa sedikitnya ia menikmati sketsa profetik ini—“itulah yang saya harapkan sebagai seorang pria yang mandiri. Mengenai kaum Whig, seorang pria yang berpihak pada para pemikir tidak mungkin terikat pada partai mana pun. Ia mungkin akan berpihak pada mereka sampai titik tertentu—sampai titik tertentu, Anda tahu. Tapi itulah yang tidak pernah dipahami oleh Anda para wanita.” “Di mana titik pasti Anda? Tidak. Saya ingin diberi tahu bagaimana seseorang dapat memiliki titik pasti ketika dia tidak tergabung dalam partai mana pun—menjalani kehidupan nomaden, dan tidak pernah memberi tahu teman-temannya alamatnya. 'Tidak ada yang tahu di mana Brooke akan berada—tidak ada yang bisa mengandalkan Brooke'—itulah yang orang katakan tentang Anda, jujur saja. Sekarang, bersikaplah terhormat. Bagaimana perasaan Anda jika pergi ke Sidang Pengadilan dengan semua orang memandang Anda dengan malu-malu, dan Anda dengan hati nurani yang buruk dan kantong kosong?” “Saya tidak berpura-pura berdebat dengan seorang wanita tentang politik,” kata Tuan Brooke, dengan sikap acuh tak acuh sambil tersenyum, tetapi merasa agak tidak nyaman karena serangan Nyonya Cadwallader ini telah membuka kampanye defensif yang telah membuatnya terpapar oleh beberapa langkah gegabah. “Kaum wanita bukanlah pemikir, kau tahu— varium et mutabile semper —hal semacam itu. Kau tidak mengenal Virgil. Saya tahu”—Tuan Brooke kemudian merenungkan bahwa ia tidak mengenal penyair Augustan itu secara pribadi—“Saya akan mengatakan, kasihan Stoddart, kau tahu. Itulah yang dia katakan. Kalian para wanita selalu menentang sikap independen—seorang pria yang hanya peduli pada kebenaran, dan hal semacam itu. Dan tidak ada bagian di wilayah ini di mana opini lebih sempit daripada di sini—saya tidak bermaksud melempar batu, kau tahu, tetapi seseorang dibutuhkan untuk mengambil garis independen; dan jika saya tidak mengambilnya, siapa yang akan melakukannya?” “Siapa? Kenapa, siapa saja yang baru muncul dan tidak punya darah bangsawan maupun kedudukan. Orang-orang terhormat seharusnya menghabiskan omong kosong mereka di rumah, bukan menjajakannya ke mana-mana. Dan kau! yang akan menikahkan keponakanmu, yang sama baiknya dengan putrimu, dengan salah satu orang terbaik kita. Sir James akan sangat marah: akan terlalu berat baginya jika kau berbalik sekarang dan menjadikan dirimu papan nama Partai Whig.” Tuan Brooke kembali meringis dalam hati, karena pertunangan Dorothea belum lama diputuskan, ketika ia sudah memikirkan ejekan Nyonya Cadwallader yang mungkin akan dilontarkan. Bagi pengamat yang tidak tahu apa-apa, mudah saja untuk berkata, "Bertengkarlah dengan Nyonya Cadwallader;" tetapi ke mana seorang bangsawan desa akan pergi jika ia bertengkar dengan tetangga lamanya? Siapa yang bisa merasakan kelezatan nama Brooke jika diucapkan begitu saja, seperti anggur tanpa segel? Tentu saja, seseorang hanya bisa menjadi kosmopolitan sampai batas tertentu. “Saya harap Chettam dan saya akan selalu menjadi teman baik; tetapi saya menyesal mengatakan bahwa tidak ada kemungkinan dia akan menikahi keponakan saya,” kata Tuan Brooke, merasa sangat lega melihat Celia masuk melalui jendela. “Kenapa tidak?” kata Ny. Cadwallader, dengan nada terkejut. “Belum genap dua minggu sejak kita membicarakan hal itu.” “Keponakanku telah memilih pelamar lain—telah memilih dia, kau tahu. Aku tidak ada hubungannya dengan itu. Seharusnya aku lebih menyukai Chettam; dan seharusnya aku mengatakan bahwa Chettam adalah pria yang akan dipilih oleh gadis mana pun. Tapi hal-hal seperti ini memang sulit diprediksi. Kaum wanita itu mudah berubah-ubah, kau tahu.” “Lalu, siapa yang kau maksud akan kau izinkan dia nikahi?” Pikiran Nyonya Cadwallader dengan cepat menimbang berbagai kemungkinan pilihan untuk Dorothea. Namun, Celia masuk, tampak segar setelah berjalan-jalan di taman, dan sapaannya membebaskan Tuan Brooke dari keharusan untuk segera menjawab. Ia bangkit dengan tergesa-gesa, dan berkata, "Ngomong-ngomong, saya harus berbicara dengan Wright tentang kuda-kuda itu," lalu bergegas keluar ruangan. “Anakku sayang, apa ini?—tentang pertunangan kakakmu?” tanya Ny. Cadwallader. “Dia bertunangan dan akan menikah dengan Tuan Casaubon,” kata Celia, seperti biasa, menggunakan pernyataan fakta yang paling sederhana, dan menikmati kesempatan berbicara hanya dengan istri Rektor. “Ini mengerikan. Sudah berapa lama ini terjadi?” “Aku baru tahu kemarin. Mereka akan menikah enam minggu lagi.” “Baiklah, sayangku, aku berharap kamu berbahagia dengan saudara iparmu.” “Aku sangat menyesal atas apa yang terjadi pada Dorothea.” “Maaf! Kurasa ini perbuatannya.” “Ya; dia bilang Tuan Casaubon memiliki jiwa yang mulia.” “Dengan sepenuh hatiku.” “Oh, Nyonya Cadwallader, saya rasa tidak menyenangkan menikahi pria dengan jiwa yang agung.” “Baiklah, sayangku, berhati-hatilah. Kau sudah tahu seperti apa rupa orang seperti itu; ketika orang berikutnya datang dan ingin menikahimu, jangan terima dia.” “Aku yakin aku seharusnya tidak pernah melakukannya.” “Tidak; satu orang seperti itu dalam keluarga sudah cukup. Jadi, adikmu tidak pernah peduli dengan Sir James Chettam? Apa yang akan kau katakan padanya jika dia menjadi saudara iparmu?” “Aku pasti akan sangat menyukainya. Aku yakin dia akan menjadi suami yang baik. Hanya saja,” tambah Celia, dengan sedikit rona merah di pipi (kadang-kadang dia tampak tersipu saat bernapas), “aku rasa dia tidak akan cocok untuk Dorothea.” “Kurang muluk-muluk?” “Dodo sangat ketat. Dia terlalu banyak berpikir tentang segala hal, dan sangat teliti tentang apa yang dikatakan orang. Sir James sepertinya tidak pernah bisa menyenangkan hatinya.” “Dia pasti telah mendorongnya, saya yakin. Itu bukanlah tindakan yang terpuji.” “Tolong jangan marah pada Dodo; dia tidak melihat hal-hal yang sebenarnya. Dia terlalu banyak memikirkan pondok-pondok itu, dan terkadang dia bersikap kasar kepada Sir James; tetapi Sir James sangat baik, dia tidak pernah menyadarinya.” “Baiklah,” kata Ny. Cadwallader, sambil mengenakan selendangnya, dan bangkit seolah terburu-buru, “Saya harus segera pergi ke Sir James dan memberitahunya. Dia pasti sudah membawa ibunya kembali sekarang, dan saya harus mampir. Pamanmu tidak akan pernah memberitahunya. Kita semua kecewa, sayangku. Anak muda seharusnya memikirkan keluarga mereka saat menikah. Saya memberi contoh buruk—menikahi seorang pendeta miskin, dan membuat diri saya menjadi objek yang menyedihkan di antara keluarga De Bracy—terpaksa mendapatkan arang dengan tipu daya, dan berdoa kepada Tuhan untuk minyak salad saya. Namun, Casaubon punya cukup uang; saya harus bersikap adil kepadanya. Mengenai darahnya, saya kira pembagian keluarganya adalah tiga sotong sable, dan seorang komentator yang merajalela. Ngomong-ngomong, sebelum saya pergi, sayangku, saya harus berbicara dengan Ny. Carter tentang kue. Saya ingin mengirim juru masak muda saya untuk belajar darinya. Orang miskin dengan empat anak, seperti kita, kau tahu, tidak mampu mempekerjakan juru masak yang baik. Saya yakin Ny. Carter akan membantu.” Saya. Koki Sir James adalah naga yang sempurna.” Dalam waktu kurang dari satu jam, Ny. Cadwallader telah melewati Ny. Carter dan berkendara ke Freshitt Hall, yang tidak jauh dari rumah dinasnya sendiri, karena suaminya tinggal di Freshitt dan memiliki seorang asisten pendeta di Tipton. Sir James Chettam telah kembali dari perjalanan singkat yang membuatnya absen selama beberapa hari, dan telah berganti pakaian, berniat untuk berkuda ke Tipton Grange. Kudanya berdiri di depan pintu ketika Nyonya Cadwallader datang, dan ia segera muncul di sana, dengan cambuk di tangan. Nyonya Chettam belum kembali, tetapi urusan Nyonya Cadwallader tidak dapat diselesaikan di hadapan para pelayan, jadi ia meminta untuk dibawa ke rumah kaca di dekatnya, untuk melihat tanaman baru; dan setelah berdiri termenung, ia berkata— “Aku punya kabar mengejutkan untukmu; kuharap kau tidak begitu tergila-gila pada cinta seperti yang kau pura-pura.” Percuma saja memprotes cara Nyonya Cadwallader menyampaikan sesuatu. Namun, raut wajah Sir James sedikit berubah. Ia merasakan sedikit kekhawatiran. “Saya yakin Brooke pada akhirnya akan membongkar kedoknya sendiri. Saya menuduhnya bermaksud mencalonkan diri untuk Middlemarch di pihak Liberal, dan dia terlihat bodoh dan tidak pernah membantahnya—dia malah berbicara tentang jalur independen, dan omong kosong seperti biasanya.” “Hanya itu saja?” kata Sir James, merasa sangat lega. “Mengapa,” balas Ny. Cadwallader dengan nada lebih tajam, “Anda tidak bermaksud mengatakan bahwa Anda ingin dia menjadi tokoh publik seperti itu—menjadi semacam Cheap Jack politik?” “Kurasa dia mungkin akan berubah pikiran. Dia tidak akan menyukai biayanya.” “Itulah yang kukatakan padanya. Dia rentan terhadap akal sehat—selalu ada sedikit akal sehat dalam secuil kekikiran. Kekikiran adalah sifat utama yang diwariskan dalam keluarga; itu adalah sisi aman bagi kegilaan untuk muncul. Dan pasti ada sedikit celah dalam keluarga Brooke, jika tidak, kita tidak akan melihat apa yang akan kita lihat.” “Apa? Brooke mewakili Middlemarch?” “Lebih buruk dari itu. Aku benar-benar merasa sedikit bertanggung jawab. Aku selalu bilang padamu bahwa Nona Brooke akan menjadi pasangan yang cocok. Aku tahu ada banyak hal yang tidak masuk akal dalam dirinya—semacam sifat Metodis yang plin-plan. Tapi hal-hal seperti itu akan hilang dari gadis-gadis. Namun, untuk kali ini aku terkejut.” “Apa maksudmu, Nyonya Cadwallader?” tanya Sir James. Kekhawatirannya, kalau-kalau Nona Brooke melarikan diri untuk bergabung dengan Persaudaraan Moravia, atau sekte aneh yang tidak dikenal di masyarakat terhormat, sedikit mereda karena ia tahu bahwa Nyonya Cadwallader selalu membesar-besarkan masalah. “Apa yang terjadi pada Nona Brooke? Tolong jelaskan.” “Baiklah. Dia sudah bertunangan.” Nyonya Cadwallader terdiam beberapa saat, mengamati ekspresi sedih di wajah temannya, yang berusaha disembunyikannya dengan senyum gugup sambil mencambuk sepatunya; tetapi ia segera menambahkan, “Bertunangan dengan Casaubon.” Sir James membiarkan cambuknya jatuh dan membungkuk untuk mengambilnya. Mungkin wajahnya belum pernah menunjukkan rasa jijik yang begitu pekat seperti ketika dia menoleh ke Nyonya Cadwallader dan mengulangi, "Casaubon?" “Meskipun begitu. Sekarang kau sudah tahu tujuanku.” “Ya Tuhan! Ini mengerikan! Dia tidak lebih baik dari mumi!” (Sudut pandang ini harus dipertimbangkan, sebagai sudut pandang seorang pesaing yang sedang berkembang dan kecewa.) “Dia bilang, dia adalah jiwa yang agung.—Seperti kantung besar tempat kacang polong kering bergemuruh di dalamnya!” kata Ny. Cadwallader. “Untuk apa seorang bujangan tua seperti itu menikah?” kata Sir James. “Dia sudah setengah mati.” "Kurasa dia bermaksud memperpanjangnya lagi." “Brooke seharusnya tidak mengizinkannya: dia harus bersikeras agar hal itu ditunda sampai putrinya cukup umur. Saat itu putrinya akan mempertimbangkannya lebih baik. Untuk apa ada wali?” “Seolah-olah kau bisa memeras sebuah resolusi dari Brooke!” “Cadwallader mungkin akan berbicara dengannya.” “Bukan dia! Humphrey menganggap semua orang menawan. Aku tidak pernah bisa membuatnya menjelek-jelekkan Casaubon. Dia bahkan akan berbicara baik tentang uskup, meskipun aku mengatakan kepadanya bahwa itu tidak wajar bagi seorang pendeta yang mendapat jabatan tinggi; apa yang bisa dilakukan seseorang dengan suami yang begitu kurang memperhatikan kesopanan? Aku menyembunyikannya sebaik mungkin dengan menjelek-jelekkan semua orang sendiri. Ayo, ayo, cerialah! Kau beruntung telah terbebas dari Nona Brooke, seorang gadis yang akan membuatmu ingin melihat bintang-bintang di siang hari. Jujur saja, Celia kecil lebih berharga daripada dia, dan kemungkinan besar akan menjadi jodoh yang lebih baik. Karena pernikahan dengan Casaubon ini sama saja dengan masuk biara.” “Oh, atas inisiatif saya sendiri—saya pikir demi Nona Brooke, teman-temannya harus mencoba menggunakan pengaruh mereka.” “Yah, Humphrey belum tahu. Tapi ketika aku memberitahunya, yakinlah dia akan berkata, 'Kenapa tidak? Casaubon orang baik—dan muda—cukup muda.' Orang-orang dermawan ini tidak pernah tahu perbedaan antara cuka dan anggur sampai mereka menelannya dan sakit perut. Namun, jika aku seorang pria, aku akan lebih menyukai Celia, terutama setelah Dorothea pergi. Sejujurnya, kau telah mendekati yang satu dan telah memenangkan yang lain. Aku bisa melihat bahwa dia mengagumimu hampir sama seperti yang diharapkan seorang pria untuk dikagumi. Jika bukan aku yang mengatakan demikian, kau mungkin menganggapnya berlebihan. Selamat tinggal!” Sir James mengantar Nyonya Cadwallader ke kereta kuda, lalu melompat ke atas kudanya. Dia tidak akan membatalkan perjalanannya karena kabar buruk dari temannya—hanya ingin berkuda lebih cepat ke arah lain selain Tipton Grange. Sekarang, mengapa Nyonya Cadwallader begitu sibuk mengurus pernikahan Nona Brooke; dan mengapa, ketika satu perjodohan yang menurutnya ia bantu gagal, ia langsung merencanakan perjodohan lain? Apakah ada rencana cerdik, taktik petak umpet, yang dapat dideteksi dengan pengamatan teleskop yang cermat? Sama sekali tidak: teleskop dapat menyapu paroki Tipton dan Freshitt, seluruh area yang dikunjungi Nyonya Cadwallader dengan kereta kudanya, tanpa menyaksikan pertemuan apa pun yang dapat menimbulkan kecurigaan, atau pemandangan apa pun yang darinya ia tidak kembali dengan ketajaman mata yang sama dan warna kulit alami yang sama. Bahkan, jika kendaraan yang nyaman itu ada di zaman Tujuh Orang Bijak, salah satu dari mereka pasti akan berkomentar, bahwa Anda hanya dapat mengetahui sedikit tentang wanita dengan mengikuti mereka di kereta kuda mereka. Bahkan dengan mikroskop yang diarahkan pada setetes air, kita mendapati diri kita membuat interpretasi yang ternyata agak kasar; Karena di bawah lensa yang lemah Anda mungkin tampak melihat makhluk yang menunjukkan kerakusan aktif di mana makhluk-makhluk kecil lainnya secara aktif bermain seolah-olah mereka adalah koin pajak yang hidup, lensa yang lebih kuat mengungkapkan kepada Anda helai rambut terkecil yang menciptakan pusaran bagi korban-korban ini sementara si penelan menunggu secara pasif untuk menerima pelanggan. Dengan cara ini, secara metaforis, lensa yang kuat yang diterapkan pada perjodohan Nyonya Cadwallader akan menunjukkan permainan sebab-sebab kecil yang menghasilkan apa yang dapat disebut pusaran pikiran dan ucapan untuk memberinya jenis makanan yang dia butuhkan. Kehidupannya sederhana di pedesaan, cukup bebas dari rahasia yang kotor, berbahaya, atau penting lainnya, dan tidak secara sadar terpengaruh oleh urusan-urusan besar dunia. Terlebih lagi urusan-urusan besar dunia menarik minatnya, ketika dikomunikasikan dalam surat-surat kerabat bangsawan: bagaimana putra-putra bungsu yang memesona telah jatuh ke jurang kehancuran dengan menikahi selir mereka; kebodohan tua yang hebat dari Tuan Tapir muda, dan humor asam urat yang ganas dari Tuan Megatherium tua; Persilangan silsilah yang tepat yang telah membawa mahkota ke cabang baru dan memperluas hubungan skandal—ini adalah topik-topik yang detailnya ia ingat dengan sangat akurat, dan ia reproduksi dalam kumpulan epigram yang sangat bagus, yang ia sendiri lebih nikmati karena ia percaya tanpa ragu pada kelahiran dan bukan kelahiran seperti halnya pada hewan buruan dan hama. Ia tidak akan pernah menolak siapa pun karena kemiskinan: seorang De Bracy yang terpaksa makan malam di baskom akan tampak baginya sebagai contoh kepedihan yang layak dibesar-besarkan, dan saya khawatir kebiasaan buruk aristokratnya tidak akan membuatnya ngeri. Tetapi perasaannya terhadap orang kaya yang vulgar adalah semacam kebencian religius: mereka mungkin menghasilkan semua uang mereka dari harga eceran yang tinggi, dan Nyonya Cadwallader membenci harga tinggi untuk segala sesuatu yang tidak dibayar dalam bentuk barang di Pastoran: orang-orang seperti itu bukanlah bagian dari rencana Tuhan dalam menciptakan dunia; dan aksen mereka sangat menyakitkan telinga. Kota tempat monster-monster semacam itu berlimpah ruah hampir tidak lebih dari semacam komedi murahan, yang tidak dapat diperhitungkan dalam skema alam semesta yang beradab. Biarlah wanita mana pun yang cenderung bersikap keras terhadap Ny. Cadwallader menyelidiki kelengkapan pandangan indahnya sendiri, dan yakinlah bahwa pandangan tersebut mengakomodasi semua kehidupan yang memiliki kehormatan untuk hidup berdampingan dengannya. Dengan pikiran yang begitu tajam, seaktif fosfor, yang mampu membentuk segala sesuatu yang ada di dekatnya sesuai keinginannya, bagaimana mungkin Nyonya Cadwallader merasa bahwa Nona Brooke dan prospek pernikahan mereka asing baginya? Terutama karena selama bertahun-tahun ia terbiasa menegur Tuan Brooke dengan kejujuran yang ramah, dan memberitahunya secara rahasia bahwa ia menganggapnya sebagai makhluk yang malang. Sejak kedatangan pertama para wanita muda di Tipton, ia telah mengatur pernikahan Dorothea dengan Sir James, dan jika itu terjadi, ia akan yakin bahwa itu adalah hasil karyanya: bahwa pernikahan itu tidak terjadi setelah ia merencanakannya, menyebabkan kejengkelan yang akan dirasakan oleh setiap pemikir. Ia adalah diplomat Tipton dan Freshitt, dan jika sesuatu terjadi di luar kendalinya, itu adalah suatu penyimpangan yang menjengkelkan. Mengenai keanehan seperti yang dilakukan Nona Brooke ini, Nyonya Cadwallader tidak sabar menghadapinya, dan sekarang menyadari bahwa pendapatnya tentang gadis ini telah terkontaminasi oleh sedikit kebaikan hati suaminya: keanehan Metodis itu, sikapnya yang lebih religius daripada rektor dan asistennya, berasal dari penyakit yang lebih dalam dan lebih mendasar daripada yang selama ini ia yakini. “Namun,” kata Ny. Cadwallader, pertama kepada dirinya sendiri dan kemudian kepada suaminya, “aku meninggalkannya: ada kemungkinan, jika dia menikahi Sir James, dia akan menjadi wanita yang waras dan bijaksana. Sir James tidak akan pernah membantahnya, dan ketika seorang wanita tidak dibantah, dia tidak punya alasan untuk keras kepala dalam kebodohannya. Tapi sekarang aku berharap dia menikmati jubah kasarnya.” Oleh karena itu, Nyonya Cadwallader harus memutuskan jodoh lain untuk Sir James, dan setelah memutuskan bahwa jodohnya adalah Nona Brooke yang lebih muda, tidak ada langkah yang lebih cerdik untuk keberhasilan rencananya selain memberi isyarat kepada baron itu bahwa ia telah memikat hati Celia. Karena ia bukanlah salah satu dari para pria yang mendambakan apel Sappho yang tak terjangkau yang tertawa dari dahan teratas—pesona yang “Tersenyumlah seperti rumpun bunga lip di tebing, tak ingin didekati oleh tangan yang rela.” Ia tidak punya soneta untuk ditulis, dan ia tidak merasa senang karena ia bukanlah objek pilihan wanita yang telah ia pilih. Pengetahuan bahwa Dorothea telah memilih Tuan Casaubon telah melukai rasa sayangnya dan melemahkannya. Meskipun Sir James adalah seorang olahragawan, ia memiliki perasaan lain terhadap wanita selain terhadap belibis dan rubah, dan tidak memandang calon istrinya sebagai mangsa, yang terutama berharga karena sensasi perburuannya. Ia juga tidak begitu mengenal kebiasaan ras primitif sehingga merasa bahwa pertarungan ideal untuknya, dengan kapak di tangan, bisa dikatakan, diperlukan untuk kesinambungan historis ikatan pernikahan. Sebaliknya, karena memiliki kesombongan yang ramah yang mengikat kita pada orang-orang yang menyayangi kita, dan menjauhkan kita dari orang-orang yang acuh tak acuh, dan juga sifat yang baik dan penuh rasa syukur, gagasan bahwa seorang wanita memiliki kebaikan terhadapnya saja sudah memunculkan benang-benang kelembutan dari hatinya ke hati wanita itu. Maka terjadilah, setelah Sir James berkuda cukup cepat selama setengah jam ke arah yang menjauh dari Tipton Grange, ia memperlambat lajunya, dan akhirnya berbelok ke jalan yang akan membawanya kembali melalui jalan pintas. Berbagai perasaan mendorongnya untuk tetap pergi ke Grange hari ini seolah-olah tidak ada hal baru yang terjadi. Ia merasa senang karena tidak pernah mengajukan tawaran dan ditolak; hanya kesopanan persahabatan yang mengharuskannya untuk mengunjungi Dorothea di sekitar pondok, dan sekarang untungnya Nyonya Cadwallader telah mempersiapkannya untuk menyampaikan ucapan selamat, jika perlu, tanpa menunjukkan terlalu banyak kecanggungan. Ia sebenarnya tidak menyukainya: meninggalkan Dorothea sangat menyakitkan baginya; tetapi ada sesuatu dalam tekad untuk segera melakukan kunjungan ini dan menaklukkan semua pertunjukan perasaan, yang merupakan semacam penangkal dan penolak rasa jengkel. Dan tanpa ia menyadari dorongan itu secara jelas, tentu ada perasaan dalam dirinya bahwa Celia akan berada di sana, dan bahwa ia harus lebih memperhatikannya daripada sebelumnya. Kita, manusia fana, pria dan wanita, menelan banyak kekecewaan antara waktu sarapan dan makan malam; menahan air mata dan tampak sedikit pucat di bibir, dan sebagai jawaban atas pertanyaan berkata, "Oh, tidak apa-apa!" Kesombongan membantu kita; dan kesombongan bukanlah hal yang buruk ketika hanya mendorong kita untuk menyembunyikan luka kita sendiri—bukan untuk menyakiti orang lain.</p>
-
-<div class="nav">
-  <a href="bab-v.html">⬅ Bab V.</a>
-  <a href="bab-vii.html">Bab Vii. ➡</a>
-</div>
 
 </body>
 </html>

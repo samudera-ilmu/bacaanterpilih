@@ -2,10 +2,54 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Petualangan Count Fathom Lengkap</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Petualangan Ferdinand Count Fathom — Bacaan Terpilih</title>
+<meta name="description" content="Petualangan Ferdinand Count Fathom karya T. Smollett. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/index.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="book">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Petualangan Ferdinand Count Fathom — Bacaan Terpilih">
+  <meta property="og:description" content="Petualangan Ferdinand Count Fathom karya T. Smollett. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/index.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <meta property="og:book:author" content="T. Smollett">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Petualangan Ferdinand Count Fathom — Bacaan Terpilih">
+  <meta name="twitter:description" content="Petualangan Ferdinand Count Fathom karya T. Smollett. Baca gratis dalam bahasa Indonesia.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/images/img-001.jpg">
+  <!-- Schema.org: Book -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Petualangan Ferdinand Count Fathom",
+    "author": {
+      "@type": "Person",
+      "name": "T. Smollett"
+    },
+    "datePublished": "1753",
+    "inLanguage": "id",
+    "genre": "('Novel', 'Petualangan', 'Klasik')",
+    "url": "https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/index.html",
+    "image": "https://bacaanterpilih.pages.dev/petualangan_count_fathom_lengkap/images/img-001.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -15,72 +59,336 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
-
-function toggleTheme() {
-  document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
-}
 </script>
-
-
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #fafafa;
-  --text: #111;
-  --link: #1a73e8;
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
 }
 
 .dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 20px;
+  font-family: 'Source Serif 4', Georgia, serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
-.toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 14px;
-  opacity: 0.7;
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.book-hero {
+  max-width: 780px; margin: 0 auto;
+  padding: 48px 24px 0;
+  display: flex; gap: 40px; align-items: flex-start;
+}
+
+.book-cover-wrap { flex-shrink: 0; }
+
+.book-cover-img {
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  display: block;
+}
+
+.book-hero-text {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 12px;
+  padding-top: 8px;
+}
+
+.back-link {
+  font-size: 0.8rem; color: var(--accent);
+  text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.book-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.03em; color: var(--text);
+}
+
+.book-author { font-size: 1rem; color: var(--accent); font-weight: 600; }
+.book-year   { font-size: 0.82rem; color: var(--text3); }
+
+.book-divider {
+  max-width: 780px; margin: 32px auto 0;
+  border: none; border-top: 1px solid var(--border);
+}
+
+.toc-section {
+  max-width: 780px; margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.toc-label {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 20px;
+}
+
+.toc-list { list-style: none; counter-reset: toc; }
+
+.toc-list li {
+  counter-increment: toc;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-list li:first-child { border-top: 1px solid var(--border); }
+
+.toc-list a {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 14px 0;
+  text-decoration: none; color: var(--text);
+  font-size: 0.95rem; font-weight: 400;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.toc-list a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 0.72rem; color: var(--text3);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px; flex-shrink: 0;
+}
+
+.toc-list a:hover { color: var(--accent); padding-left: 6px; }
+
+@media (max-width: 600px) {
+  .book-hero { flex-direction: column; padding: 32px 16px 0; gap: 24px; }
+  .book-cover-img { width: 120px; }
+  .toc-section { padding: 24px 16px 60px; }
 }
 </style>
 </head>
 <body>
 
-<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
 
-<h1>Petualangan Count Fathom Lengkap</h1>
+<div class="book-hero">
+  
+<div class="book-cover-wrap">
+  <img src="images/img-001.jpg" alt="Cover Petualangan Ferdinand Count Fathom" class="book-cover-img">
+</div>
+  <div class="book-hero-text">
+    <a href="../index.html" class="back-link">← Perpustakaan</a>
+    <h1 class="book-title">Petualangan Ferdinand Count Fathom</h1>
+    <div class="book-author">T. Smollett</div>
+    <div class="book-year">1753</div>
+  </div>
+</div>
 
-<ol>
-<li><a href="tentang-buku-ini.html">TENTANG BUKU INI</a></li><li><a href="perkenalan.html">PERKENALAN</a></li><li><a href="petualangan-ferdinand-count-fathom-kepada-dokter.html">PETUALANGAN FERDINAND COUNT FATHOM - KEPADA DOKTER ———</a></li><li><a href="penulis.html">PENULIS.</a></li><li><a href="bab-satu.html">BAB SATU</a></li><li><a href="bab-dua.html">BAB DUA</a></li><li><a href="bab-tiga.html">BAB TIGA</a></li><li><a href="bab-empat.html">BAB EMPAT</a></li><li><a href="bab-lima.html">BAB LIMA</a></li><li><a href="bab-enam.html">BAB ENAM</a></li><li><a href="bab-tujuh.html">BAB TUJUH</a></li><li><a href="bab-delapan.html">BAB DELAPAN</a></li><li><a href="bab-sembilan.html">BAB SEMBILAN</a></li><li><a href="bab-sepuluh.html">BAB SEPULUH</a></li><li><a href="bab-sebelas.html">BAB SEBELAS</a></li><li><a href="bab-dua-belas.html">BAB DUA BELAS</a></li><li><a href="bab-tiga-belas.html">BAB TIGA BELAS</a></li><li><a href="bab-empat-belas.html">BAB EMPAT BELAS</a></li><li><a href="bab-lima-belas.html">BAB LIMA BELAS</a></li><li><a href="bab-enam-belas.html">BAB ENAM BELAS</a></li><li><a href="bab-tujuh-belas.html">BAB TUJUH BELAS</a></li><li><a href="bab-delapan-belas.html">BAB DELAPAN BELAS</a></li><li><a href="bab-sembilan-belas.html">BAB SEMBILAN BELAS</a></li><li><a href="bab-dua-puluh.html">BAB DUA PULUH</a></li><li><a href="bab-dua-puluh-satu.html">BAB DUA PULUH SATU</a></li><li><a href="bab-dua-puluh-dua.html">BAB DUA PULUH DUA</a></li><li><a href="bab-dua-puluh-tiga.html">BAB DUA PULUH TIGA</a></li><li><a href="bab-dua-puluh-empat.html">BAB DUA PULUH EMPAT</a></li><li><a href="bab-dua-puluh-lima.html">BAB DUA PULUH LIMA</a></li><li><a href="bab-dua-puluh-enam.html">BAB DUA PULUH ENAM</a></li><li><a href="bab-dua-puluh-tujuh.html">BAB DUA PULUH TUJUH</a></li><li><a href="bab-dua-puluh-delapan.html">BAB DUA PULUH DELAPAN</a></li><li><a href="bab-dua-puluh-sembilan.html">BAB DUA PULUH SEMBILAN</a></li><li><a href="bab-tiga-puluh.html">BAB TIGA PULUH</a></li><li><a href="bab-tiga-puluh-satu.html">BAB TIGA PULUH SATU</a></li><li><a href="bab-tiga-puluh-dua.html">BAB TIGA PULUH DUA</a></li><li><a href="bab-tiga-puluh-tiga.html">BAB TIGA PULUH TIGA</a></li><li><a href="bab-tiga-puluh-empat.html">BAB TIGA PULUH EMPAT</a></li><li><a href="bab-tiga-puluh-lima.html">BAB TIGA PULUH LIMA</a></li><li><a href="bab-tiga-puluh-enam.html">BAB TIGA PULUH ENAM</a></li><li><a href="bab-tiga-puluh-tujuh.html">BAB TIGA PULUH TUJUH</a></li><li><a href="bab-tiga-puluh-delapan.html">BAB TIGA PULUH DELAPAN</a></li><li><a href="bab-tiga-puluh-sembilan.html">BAB TIGA PULUH SEMBILAN</a></li><li><a href="bab-empat-puluh.html">BAB EMPAT PULUH</a></li><li><a href="bab-empat-puluh-satu.html">BAB EMPAT PULUH SATU</a></li><li><a href="bab-empat-puluh-dua.html">BAB EMPAT PULUH DUA</a></li><li><a href="bab-empat-puluh-tiga.html">BAB EMPAT PULUH TIGA</a></li><li><a href="bab-empat-puluh-empat.html">BAB EMPAT PULUH EMPAT</a></li><li><a href="bab-empat-puluh-lima.html">BAB EMPAT PULUH LIMA</a></li><li><a href="bab-empat-puluh-enam.html">BAB EMPAT PULUH ENAM</a></li><li><a href="bab-empat-puluh-tujuh.html">BAB EMPAT PULUH TUJUH</a></li><li><a href="bab-empat-puluh-delapan.html">BAB EMPAT PULUH DELAPAN</a></li><li><a href="bab-empat-puluh-sembilan.html">BAB EMPAT PULUH SEMBILAN</a></li><li><a href="bab-lima-puluh.html">BAB LIMA PULUH</a></li><li><a href="bab-lima-puluh-satu.html">BAB LIMA PULUH SATU</a></li><li><a href="bab-lima-puluh-dua.html">BAB LIMA PULUH DUA</a></li><li><a href="bab-lima-puluh-tiga.html">BAB LIMA PULUH TIGA</a></li><li><a href="bab-lima-puluh-empat.html">BAB LIMA PULUH EMPAT</a></li><li><a href="bab-lima-puluh-lima.html">BAB LIMA PULUH LIMA</a></li><li><a href="bab-lima-puluh-enam.html">BAB LIMA PULUH ENAM</a></li><li><a href="bab-lima-puluh-tujuh.html">BAB LIMA PULUH TUJUH</a></li><li><a href="bab-lima-puluh-delapan.html">BAB LIMA PULUH DELAPAN</a></li><li><a href="bab-lima-puluh-sembilan.html">BAB LIMA PULUH SEMBILAN</a></li><li><a href="bab-enam-puluh.html">BAB ENAM PULUH</a></li><li><a href="bab-enam-puluh-satu.html">BAB ENAM PULUH SATU</a></li><li><a href="bab-enam-puluh-dua.html">BAB ENAM PULUH DUA</a></li><li><a href="bab-enam-puluh-tiga.html">BAB ENAM PULUH TIGA</a></li><li><a href="bab-enam-puluh-empat.html">BAB ENAM PULUH EMPAT</a></li><li><a href="bab-enam-puluh-lima.html">BAB ENAM PULUH LIMA</a></li><li><a href="bab-enam-puluh-enam.html">BAB ENAM PULUH ENAM</a></li><li><a href="bab-enam-puluh-tujuh.html">BAB ENAM PULUH TUJUH</a></li>
-</ol>
+<hr class="book-divider">
+
+<section class="toc-section">
+  <div class="toc-label">Daftar Isi</div>
+  <ol class="toc-list">
+    <li><a href="tentang-apa-buku-ini.html">Tentang Apa Buku Ini?</a></li>
+<li><a href="perkenalan.html">Perkenalan</a></li>
+<li><a href="petualangan-ferdinand-count-fathom-kepada-dokter.html">Petualangan Ferdinand Count Fathom - Kepada Dokter ———</a></li>
+<li><a href="bab-satu.html">Bab Satu</a></li>
+<li><a href="beberapa-pengamatan-bijak-yang-secara-alami-memperkenalkan-sejarah-penting-kita.html">Beberapa Pengamatan Bijak Yang Secara Alami Memperkenalkan Sejarah Penting Kita.</a></li>
+<li><a href="bab-dua.html">Bab Dua</a></li>
+<li><a href="sebuah-pandangan-dangkal-tentang-masa-kanak-kanak-pahlawan-kita.html">Sebuah Pandangan Dangkal Tentang Masa Kanak-Kanak Pahlawan Kita.</a></li>
+<li><a href="bab-tiga.html">Bab Tiga</a></li>
+<li><a href="ia-didistribusikan-dalam-kehidupan-militer-dan-beruntung-mendapatkan-seorang-pelindung-yang-dermawan.html">Ia Didistribusikan Dalam Kehidupan Militer, Dan Beruntung Mendapatkan Seorang Pelindung Yang Dermawan.</a></li>
+<li><a href="bab-empat.html">Bab Empat</a></li>
+<li><a href="keahlian-dan-kematian-ibunya-bersama-dengan-beberapa-contoh-kebijaksanaannya-sendiri.html">Keahlian Dan Kematian Ibunya; Bersama Dengan Beberapa Contoh Kebijaksanaannya Sendiri.</a></li>
+<li><a href="bab-lima.html">Bab Lima</a></li>
+<li><a href="rincian-singkat-tentang-pendidikannya.html">Rincian Singkat Tentang Pendidikannya.</a></li>
+<li><a href="bab-enam.html">Bab Enam</a></li>
+<li><a href="dia-merenungkan-skema-skema-penting.html">Dia Merenungkan Skema-Skema Penting.</a></li>
+<li><a href="bab-tujuh.html">Bab Tujuh</a></li>
+<li><a href="bermitra-dengan-seorang-rekan-wanita-untuk-mengaktifkan-bakatnya.html">Bermitra Dengan Seorang Rekan Wanita, Untuk Mengaktifkan Bakatnya.</a></li>
+<li><a href="bab-delapan.html">Bab Delapan</a></li>
+<li><a href="upaya-pertama-mereka-dengan-penyimpangan-yang-mungkin-dianggap-tidak-relevan-oleh-sebagian-pembaca.html">Upaya Pertama Mereka; Dengan Penyimpangan Yang Mungkin Dianggap Tidak Relevan Oleh Sebagian Pembaca.</a></li>
+<li><a href="bab-sembilan.html">Bab Sembilan</a></li>
+<li><a href="pasukan-konfederasi-mengganti-baterai-mereka-dan-mencapai-petualangan-yang-luar-biasa.html">Pasukan Konfederasi Mengganti Baterai Mereka, Dan Mencapai Petualangan Yang Luar Biasa.</a></li>
+<li><a href="bab-sepuluh.html">Bab Sepuluh</a></li>
+<li><a href="mereka-melanjutkan-pengumpulan-sumber-daya-dengan-sukses-besar-hingga-pahlawan-kita-berangkat-bersama-sang-bangsawan-muda-ke-wina-di-mana-ia-bergabung-dengan-petualang-lainnya.html">Mereka Melanjutkan Pengumpulan Sumber Daya Dengan Sukses Besar, Hingga Pahlawan Kita Berangkat Bersama Sang Bangsawan Muda Ke Wina, Di Mana Ia Bergabung Dengan Petualang Lainnya.</a></li>
+<li><a href="bab-sebelas.html">Bab Sebelas</a></li>
+<li><a href="fathom-melakukan-berbagai-upaya-di-dunia-keberanian.html">Fathom Melakukan Berbagai Upaya Di Dunia Keberanian.</a></li>
+<li><a href="bab-dua-belas.html">Bab Dua Belas</a></li>
+<li><a href="dia-berhasil-mendapatkan-penginapan-di-rumah-seorang-pedagang-perhiasan-kaya.html">Dia Berhasil Mendapatkan Penginapan Di Rumah Seorang Pedagang Perhiasan Kaya.</a></li>
+<li><a href="bab-tiga-belas.html">Bab Tiga Belas</a></li>
+<li><a href="dia-terpapar-pada-insiden-yang-sangat-berbahaya-selama-intrignya-dengan-putrinya.html">Dia Terpapar Pada Insiden Yang Sangat Berbahaya Selama Intrignya Dengan Putrinya.</a></li>
+<li><a href="bab-empat-belas.html">Bab Empat Belas</a></li>
+<li><a href="dia-terjebak-dalam-dilema-yang-mengerikan-akibat-dari-perjanjian-dengan-istrinya.html">Dia Terjebak Dalam Dilema Yang Mengerikan, Akibat Dari Perjanjian Dengan Istrinya.</a></li>
+<li><a href="bab-lima-belas.html">Bab Lima Belas</a></li>
+<li><a href="tetapi-pada-akhirnya-ia-berhasil-dalam-upayanya-terhadap-kedua-hal-tersebut.html">Tetapi Pada Akhirnya Ia Berhasil Dalam Upayanya Terhadap Kedua Hal Tersebut.</a></li>
+<li><a href="bab-enam-belas.html">Bab Enam Belas</a></li>
+<li><a href="kesuksesannya-melahirkan-rasa-aman-yang-buta-yang-membuatnya-sekali-lagi-hampir-terperangkap-di-apartemen-dulcinea-miliknya.html">Kesuksesannya Melahirkan Rasa Aman Yang Buta, Yang Membuatnya Sekali Lagi Hampir Terperangkap Di Apartemen Dulcinea Miliknya.</a></li>
+<li><a href="bab-tujuh-belas.html">Bab Tujuh Belas</a></li>
+<li><a href="kecurigaan-ibu-tiri-itu-muncul-dan-dia-memasang-perangkap-untuk-petualang-kita-yang-darinya-dia-diselamatkan-oleh-campur-tangan-kejeniusannya.html">Kecurigaan Ibu Tiri Itu Muncul, Dan Dia Memasang Perangkap Untuk Petualang Kita, Yang Darinya Dia Diselamatkan Oleh Campur Tangan Kejeniusannya.</a></li>
+<li><a href="bab-delapan-belas.html">Bab Delapan Belas</a></li>
+<li><a href="pahlawan-kita-berangkat-dari-wina-dan-meninggalkan-wilayah-venus-menuju-medan-mars-yang-keras.html">Pahlawan Kita Berangkat Dari Wina, Dan Meninggalkan Wilayah Venus Menuju Medan Mars Yang Keras.</a></li>
+<li><a href="bab-sembilan-belas.html">Bab Sembilan Belas</a></li>
+<li><a href="dia-menempatkan-dirinya-di-bawah-bimbingan-rekannya-dan-secara-tak-sengaja-sampai-ke-kamp-prancis-tempat-dia-mengakhiri-karier-militernya.html">Dia Menempatkan Dirinya Di Bawah Bimbingan Rekannya, Dan Secara Tak Sengaja Sampai Ke Kamp Prancis, Tempat Dia Mengakhiri Karier Militernya.</a></li>
+<li><a href="bab-dua-puluh.html">Bab Dua Puluh</a></li>
+<li><a href="dia-menyusun-strategi-tetapi-mendapati-dirinya-digagalkanmelanjutkan-perjalanannya-dan-diterjang-badai-dahsyat.html">Dia Menyusun Strategi Tetapi Mendapati Dirinya Digagalkan—Melanjutkan Perjalanannya, Dan Diterjang Badai Dahsyat.</a></li>
+<li><a href="bab-dua-puluh-satu.html">Bab Dua Puluh Satu</a></li>
+<li><a href="dia-mendarat-di-atas-scylla-berusaha-menghindari-charybdis.html">Dia Mendarat Di Atas Scylla, Berusaha Menghindari Charybdis.</a></li>
+<li><a href="bab-dua-puluh-dua.html">Bab Dua Puluh Dua</a></li>
+<li><a href="ia-tiba-di-paris-dan-senang-dengan-sambutan-yang-diterima.html">Ia Tiba Di Paris, Dan Senang Dengan Sambutan Yang Diterima.</a></li>
+<li><a href="bab-dua-puluh-tiga.html">Bab Dua Puluh Tiga</a></li>
+<li><a href="membuktikan-kesalahannya-dalam-kasus-kerusuhan-malam-hari.html">Membuktikan Kesalahannya Dalam Kasus Kerusuhan Malam Hari.</a></li>
+<li><a href="bab-dua-puluh-empat.html">Bab Dua Puluh Empat</a></li>
+<li><a href="dia-mengabaikan-upaya-teman-temannya-dan-sangat-menyesal-atas-kelalaiannya.html">Dia Mengabaikan Upaya Teman-Temannya, Dan Sangat Menyesal Atas Kelalaiannya.</a></li>
+<li><a href="bab-dua-puluh-lima.html">Bab Dua Puluh Lima</a></li>
+<li><a href="ia-menerima-takdirnya-seperti-seorang-filsuf-dan-berkenalan-dengan-seorang-tokoh-yang-sangat-luar-biasa.html">Ia Menerima Takdirnya Seperti Seorang Filsuf; Dan Berkenalan Dengan Seorang Tokoh Yang Sangat Luar Biasa.</a></li>
+<li><a href="bab-dua-puluh-enam.html">Bab Dua Puluh Enam</a></li>
+<li><a href="sejarah-bangsa-kastilia-yang-mulia.html">Sejarah Bangsa Kastilia Yang Mulia.</a></li>
+<li><a href="bab-dua-puluh-tujuh.html">Bab Dua Puluh Tujuh</a></li>
+<li><a href="sebuah-contoh-nyata-dari-kebajikan-fathom-dalam-cara-kepulangannya-ke-inggris.html">Sebuah Contoh Nyata Dari Kebajikan Fathom, Dalam Cara Kepulangannya Ke Inggris.</a></li>
+<li><a href="bab-dua-puluh-delapan.html">Bab Dua Puluh Delapan</a></li>
+<li><a href="beberapa-keterangan-dari-rekan-rekan-perjalanannya.html">Beberapa Keterangan Dari Rekan-Rekan Perjalanannya.</a></li>
+<li><a href="bab-dua-puluh-sembilan.html">Bab Dua Puluh Sembilan</a></li>
+<li><a href="sebuah-lagi-penyelamatan-dari-dampak-spekulasi-cerdik-penyelundup-itu.html">Sebuah Lagi Penyelamatan Dari Dampak Spekulasi Cerdik Penyelundup Itu.</a></li>
+<li><a href="bab-tiga-puluh.html">Bab Tiga Puluh</a></li>
+<li><a href="cara-istimewa-serangan-dan-kemenangan-fathom-atas-kebajikan-elenor-yang-cantik.html">Cara Istimewa Serangan Dan Kemenangan Fathom Atas Kebajikan Elenor Yang Cantik.</a></li>
+<li><a href="bab-tiga-puluh-satu.html">Bab Tiga Puluh Satu</a></li>
+<li><a href="secara-tak-sengaja-ia-bertemu-dengan-teman-lamanya-yang-dengannya-ia-mengadakan-konferensi-dan-memperbarui-perjanjian.html">Secara Tak Sengaja Ia Bertemu Dengan Teman Lamanya, Yang Dengannya Ia Mengadakan Konferensi, Dan Memperbarui Perjanjian.</a></li>
+<li><a href="bab-tiga-puluh-dua.html">Bab Tiga Puluh Dua</a></li>
+<li><a href="ia-muncul-di-dunia-yang-luas-dengan-tepuk-tangan-dan-kekaguman-universal.html">Ia Muncul Di Dunia Yang Luas Dengan Tepuk Tangan Dan Kekaguman Universal.</a></li>
+<li><a href="bab-tiga-puluh-tiga.html">Bab Tiga Puluh Tiga</a></li>
+<li><a href="dia-membangkitkan-rasa-iri-dan-niat-jahat-dari-para-ksatria-rendahan-dari-ordonya-sendiri-yang-atas-mereka-dia-meraih-kemenangan-mutlak.html">Dia Membangkitkan Rasa Iri Dan Niat Jahat Dari Para Ksatria Rendahan Dari Ordonya Sendiri, Yang Atas Mereka Dia Meraih Kemenangan Mutlak.</a></li>
+<li><a href="bab-tiga-puluh-empat.html">Bab Tiga Puluh Empat</a></li>
+<li><a href="dia-melakukan-aksi-lain-yang-menyampaikan-gambaran-sejati-tentang-rasa-syukur-dan-kehormatannya.html">Dia Melakukan Aksi Lain Yang Menyampaikan Gambaran Sejati Tentang Rasa Syukur Dan Kehormatannya.</a></li>
+<li><a href="bab-tiga-puluh-lima.html">Bab Tiga Puluh Lima</a></li>
+<li><a href="dia-kembali-ke-bristol-spring-di-mana-dia-berkuasa-sebagai-yang-terbaik-selama-seluruh-musim.html">Dia Kembali Ke Bristol Spring, Di Mana Dia Berkuasa Sebagai Yang Terbaik Selama Seluruh Musim.</a></li>
+<li><a href="bab-tiga-puluh-enam.html">Bab Tiga Puluh Enam</a></li>
+<li><a href="dia-terpikat-oleh-pesona-seorang-petualang-wanita-yang-daya-pikatnya-membuatnya-mengalami-perubahan-nasib-yang-baru.html">Dia Terpikat Oleh Pesona Seorang Petualang Wanita, Yang Daya Pikatnya Membuatnya Mengalami Perubahan Nasib Yang Baru.</a></li>
+<li><a href="bab-tiga-puluh-tujuh.html">Bab Tiga Puluh Tujuh</a></li>
+<li><a href="alasan-baru-untuk-menunjukkan-ketenangan-dan-ketabihan-hatinya.html">Alasan Baru Untuk Menunjukkan Ketenangan Dan Ketabihan Hatinya.</a></li>
+<li><a href="bab-tiga-puluh-delapan.html">Bab Tiga Puluh Delapan</a></li>
+<li><a href="si-penggigit-digigit.html">Si Penggigit Digigit.</a></li>
+<li><a href="bab-tiga-puluh-sembilan.html">Bab Tiga Puluh Sembilan</a></li>
+<li><a href="petualang-kita-diperkenalkan-dengan-kehidupan-baru.html">Petualang Kita Diperkenalkan Dengan Kehidupan Baru.</a></li>
+<li><a href="bab-empat-puluh.html">Bab Empat Puluh</a></li>
+<li><a href="ia-merenungkan-keagungan-dan-satelit-satelitnya-dalam-gerhana.html">Ia Merenungkan Keagungan Dan Satelit-Satelitnya Dalam Gerhana.</a></li>
+<li><a href="bab-empat-puluh-satu.html">Bab Empat Puluh Satu</a></li>
+<li><a href="satu-pertengkaran-berakhir-dan-yang-lainnya-diputuskan-dengan-senjata-yang-tidak-biasa.html">Satu Pertengkaran Berakhir, Dan Yang Lainnya Diputuskan Dengan Senjata Yang Tidak Biasa.</a></li>
+<li><a href="bab-empat-puluh-dua.html">Bab Empat Puluh Dua</a></li>
+<li><a href="pertemuan-tak-terduga-dan-revolusi-bahagia-dalam-urusan-petualang-kita.html">Pertemuan Tak Terduga, Dan Revolusi Bahagia Dalam Urusan Petualang Kita.</a></li>
+<li><a href="bab-empat-puluh-tiga.html">Bab Empat Puluh Tiga</a></li>
+<li><a href="fathom-membenarkan-pepatah-apa-yang-tertanam-di-dalam-tulang-tidak-akan-pernah-keluar-dari-daging.html">Fathom Membenarkan Pepatah, “Apa Yang Tertanam Di Dalam Tulang Tidak Akan Pernah Keluar Dari Daging.”</a></li>
+<li><a href="bab-empat-puluh-empat.html">Bab Empat Puluh Empat</a></li>
+<li><a href="anecdotes-tentang-kemiskinan-dan-eksperimen-untuk-keuntungan-mereka-yang-mungkin-terkena.html">Anecdotes Tentang Kemiskinan, Dan Eksperimen Untuk Keuntungan Mereka Yang Mungkin Terkena.</a></li>
+<li><a href="bab-empat-puluh-lima.html">Bab Empat Puluh Lima</a></li>
+<li><a href="kesulitan-renaldo-semakin-dalam-dan-rencana-fathom-semakin-rumit.html">Kesulitan Renaldo Semakin Dalam, Dan Rencana Fathom Semakin Rumit.</a></li>
+<li><a href="bab-empat-puluh-enam.html">Bab Empat Puluh Enam</a></li>
+<li><a href="petualang-kita-menjadi-mutlak-dalam-kekuasaannya-atas-nafsu-sahabatnya-dan-mencapai-setengah-dari-tujuannya.html">Petualang Kita Menjadi Mutlak Dalam Kekuasaannya Atas Nafsu Sahabatnya, Dan Mencapai Setengah Dari Tujuannya.</a></li>
+<li><a href="bab-empat-puluh-tujuh.html">Bab Empat Puluh Tujuh</a></li>
+<li><a href="seni-meminjam-dijelaskan-lebih-lanjut-dan-sebuah-kisah-tentang-fenomena-aneh.html">Seni Meminjam Dijelaskan Lebih Lanjut, Dan Sebuah Kisah Tentang Fenomena Aneh.</a></li>
+<li><a href="bab-empat-puluh-delapan.html">Bab Empat Puluh Delapan</a></li>
+<li><a href="count-fathom-membongkar-senjatanya-namun-ditolak-dan-mengubah-ubah-operasinya-tanpa-hasil.html">Count Fathom Membongkar Senjatanya; Namun Ditolak; Dan Mengubah-Ubah Operasinya Tanpa Hasil.</a></li>
+<li><a href="bab-empat-puluh-sembilan.html">Bab Empat Puluh Sembilan</a></li>
+<li><a href="kehormatan-monimia-dilindungi-oleh-campur-tangan-surga.html">Kehormatan Monimia Dilindungi Oleh Campur Tangan Surga.</a></li>
+<li><a href="bab-lima-puluh.html">Bab Lima Puluh</a></li>
+<li><a href="fathom-mengubah-suasana-dan-muncul-sebagai-karakter-baru.html">Fathom Mengubah Suasana, Dan Muncul Sebagai Karakter Baru.</a></li>
+<li><a href="bab-lima-puluh-satu.html">Bab Lima Puluh Satu</a></li>
+<li><a href="mengalahkan-saingan-medis.html">Mengalahkan Saingan Medis.</a></li>
+<li><a href="bab-lima-puluh-dua.html">Bab Lima Puluh Dua</a></li>
+<li><a href="ia-memperbaiki-kota-metropolitan-dan-mendaftarkan-dirinya-di-antara-putra-putra-paean.html">Ia Memperbaiki Kota Metropolitan, Dan Mendaftarkan Dirinya Di Antara Putra-Putra Paean.</a></li>
+<li><a href="bab-lima-puluh-tiga.html">Bab Lima Puluh Tiga</a></li>
+<li><a href="memperoleh-pekerjaan-sebagai-akibat-dari-keguguran-yang-beruntung.html">Memperoleh Pekerjaan Sebagai Akibat Dari Keguguran Yang Beruntung.</a></li>
+<li><a href="bab-lima-puluh-empat.html">Bab Lima Puluh Empat</a></li>
+<li><a href="gerhananya-dan-penurunan-bertahapnya.html">Gerhananya, Dan Penurunan Bertahapnya.</a></li>
+<li><a href="bab-lima-puluh-lima.html">Bab Lima Puluh Lima</a></li>
+<li><a href="setelah-berbagai-upaya-yang-gagal-dia-terpaksa-menggunakan-jebakan-pernikahan.html">Setelah Berbagai Upaya Yang Gagal, Dia Terpaksa Menggunakan Jebakan Pernikahan.</a></li>
+<li><a href="bab-lima-puluh-enam.html">Bab Lima Puluh Enam</a></li>
+<li><a href="di-mana-keberuntungannya-secara-efektif-tercekik.html">Di Mana Keberuntungannya Secara Efektif Tercekik.</a></li>
+<li><a href="bab-lima-puluh-tujuh.html">Bab Lima Puluh Tujuh</a></li>
+<li><a href="setelah-fathom-ditempatkan-dengan-aman-pembaca-dihibur-dengan-kilas-balik.html">Setelah Fathom Ditempatkan Dengan Aman, Pembaca Dihibur Dengan Kilas Balik.</a></li>
+<li><a href="bab-lima-puluh-delapan.html">Bab Lima Puluh Delapan</a></li>
+<li><a href="renaldo-meringkas-proses-hukum-dan-menyatakan-dirinya-sebagai-putra-ayahnya.html">Renaldo Meringkas Proses Hukum, Dan Menyatakan Dirinya Sebagai Putra Ayahnya.</a></li>
+<li><a href="bab-lima-puluh-sembilan.html">Bab Lima Puluh Sembilan</a></li>
+<li><a href="dia-adalah-pembawa-kebahagiaan-bagi-saudarinya-yang-menghilangkan-lapisan-selaput-yang-telah-lama-menghalangi-penetrasinya-terkait-dengan-count-fathom.html">Dia Adalah Pembawa Kebahagiaan Bagi Saudarinya, Yang Menghilangkan Lapisan Selaput Yang Telah Lama Menghalangi Penetrasinya, Terkait Dengan Count Fathom.</a></li>
+<li><a href="bab-enam-puluh.html">Bab Enam Puluh</a></li>
+<li><a href="dia-membalas-keterikatan-sahabatnya-dan-menerima-sebuah-surat-yang-membuatnya-hampir-mati-dan-gila.html">Dia Membalas Keterikatan Sahabatnya; Dan Menerima Sebuah Surat Yang Membuatnya Hampir Mati Dan Gila.</a></li>
+<li><a href="bab-enam-puluh-satu.html">Bab Enam Puluh Satu</a></li>
+<li><a href="renaldo-bertemu-dengan-monumen-keadilan-yang-hidup-dan-bertemu-dengan-tokoh-penting-dalam-memoar-ini.html">Renaldo Bertemu Dengan Monumen Keadilan Yang Hidup, Dan Bertemu Dengan Tokoh Penting Dalam Memoar Ini.</a></li>
+<li><a href="bab-enam-puluh-dua.html">Bab Enam Puluh Dua</a></li>
+<li><a href="kepulangannya-ke-inggris-dan-ziarah-tengah-malam-ke-makam-monimia.html">Kepulangannya Ke Inggris, Dan Ziarah Tengah Malam Ke Makam Monimia.</a></li>
+<li><a href="bab-enam-puluh-tiga.html">Bab Enam Puluh Tiga</a></li>
+<li><a href="ia-memperbarui-ritus-kesedihan-dan-terpesona.html">Ia Memperbarui Ritus Kesedihan, Dan Terpesona.</a></li>
+<li><a href="bab-enam-puluh-empat.html">Bab Enam Puluh Empat</a></li>
+<li><a href="misteri-terungkapsebuah-pengakuan-lain-yang-semoga-pembaca-tidak-dapat-memprediksinya.html">Misteri Terungkap—Sebuah Pengakuan Lain, Yang, Semoga, Pembaca Tidak Dapat Memprediksinya.</a></li>
+<li><a href="bab-enam-puluh-lima.html">Bab Enam Puluh Lima</a></li>
+<li><a href="tautan-retrospektif-diperlukan-untuk-penggabungan-memoar-memoar-ini.html">Tautan Retrospektif, Diperlukan Untuk Penggabungan Memoar-Memoar Ini.</a></li>
+<li><a href="bab-enam-puluh-enam.html">Bab Enam Puluh Enam</a></li>
+<li><a href="sejarah-mendekati-suatu-periode.html">Sejarah Mendekati Suatu Periode.</a></li>
+<li><a href="bab-enam-puluh-tujuh.html">Bab Enam Puluh Tujuh</a></li>
+<li><a href="yang-terpanjang-dan-yang-terakhir.html">Yang Terpanjang Dan Yang Terakhir.</a></li>
+  </ol>
+</section>
+
+
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
+}
+</script>
+
 
 </body>
 </html>

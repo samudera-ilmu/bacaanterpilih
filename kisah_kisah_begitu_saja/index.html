@@ -2,10 +2,54 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Kisah Kisah Begitu Saja</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kisah-Kisah Begitu Saja — Bacaan Terpilih</title>
+<meta name="description" content="Kisah-Kisah Begitu Saja karya Rudyard Kipling. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/kisah_kisah_begitu_saja/index.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="book">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Kisah-Kisah Begitu Saja — Bacaan Terpilih">
+  <meta property="og:description" content="Kisah-Kisah Begitu Saja karya Rudyard Kipling. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/kisah_kisah_begitu_saja/index.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/kisah_kisah_begitu_saja/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <meta property="og:book:author" content="Rudyard Kipling">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Kisah-Kisah Begitu Saja — Bacaan Terpilih">
+  <meta name="twitter:description" content="Kisah-Kisah Begitu Saja karya Rudyard Kipling. Baca gratis dalam bahasa Indonesia.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/kisah_kisah_begitu_saja/images/img-001.jpg">
+  <!-- Schema.org: Book -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Kisah-Kisah Begitu Saja",
+    "author": {
+      "@type": "Person",
+      "name": "Rudyard Kipling"
+    },
+    "datePublished": "1902",
+    "inLanguage": "id",
+    "genre": "('Cerita Pendek', 'Anak', 'Klasik')",
+    "url": "https://bacaanterpilih.pages.dev/kisah_kisah_begitu_saja/index.html",
+    "image": "https://bacaanterpilih.pages.dev/kisah_kisah_begitu_saja/images/img-001.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -15,72 +59,212 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
-
-function toggleTheme() {
-  document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
-}
 </script>
-
-
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #fafafa;
-  --text: #111;
-  --link: #1a73e8;
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
 }
 
 .dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 20px;
+  font-family: 'Source Serif 4', Georgia, serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
-.toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 14px;
-  opacity: 0.7;
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.book-hero {
+  max-width: 780px; margin: 0 auto;
+  padding: 48px 24px 0;
+  display: flex; gap: 40px; align-items: flex-start;
+}
+
+.book-cover-wrap { flex-shrink: 0; }
+
+.book-cover-img {
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  display: block;
+}
+
+.book-hero-text {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 12px;
+  padding-top: 8px;
+}
+
+.back-link {
+  font-size: 0.8rem; color: var(--accent);
+  text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.book-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.03em; color: var(--text);
+}
+
+.book-author { font-size: 1rem; color: var(--accent); font-weight: 600; }
+.book-year   { font-size: 0.82rem; color: var(--text3); }
+
+.book-divider {
+  max-width: 780px; margin: 32px auto 0;
+  border: none; border-top: 1px solid var(--border);
+}
+
+.toc-section {
+  max-width: 780px; margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.toc-label {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 20px;
+}
+
+.toc-list { list-style: none; counter-reset: toc; }
+
+.toc-list li {
+  counter-increment: toc;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-list li:first-child { border-top: 1px solid var(--border); }
+
+.toc-list a {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 14px 0;
+  text-decoration: none; color: var(--text);
+  font-size: 0.95rem; font-weight: 400;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.toc-list a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 0.72rem; color: var(--text3);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px; flex-shrink: 0;
+}
+
+.toc-list a:hover { color: var(--accent); padding-left: 6px; }
+
+@media (max-width: 600px) {
+  .book-hero { flex-direction: column; padding: 32px 16px 0; gap: 24px; }
+  .book-cover-img { width: 120px; }
+  .toc-section { padding: 24px 16px 60px; }
 }
 </style>
 </head>
 <body>
 
-<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
 
-<h1>Kisah Kisah Begitu Saja</h1>
+<div class="book-hero">
+  
+<div class="book-cover-wrap">
+  <img src="images/img-001.jpg" alt="Cover Kisah-Kisah Begitu Saja" class="book-cover-img">
+</div>
+  <div class="book-hero-text">
+    <a href="../index.html" class="back-link">← Perpustakaan</a>
+    <h1 class="book-title">Kisah-Kisah Begitu Saja</h1>
+    <div class="book-author">Rudyard Kipling</div>
+    <div class="book-year">1902</div>
+  </div>
+</div>
 
-<ol>
-<li><a href="tentang-buku-ini.html">TENTANG BUKU INI</a></li><li><a href="bagaimana-ikan-paus-mendapatkan-tenggorokannya.html">BAGAIMANA IKAN PAUS MENDAPATKAN TENGGOROKANNYA</a></li><li><a href="bagaimana-unta-mendapatkan-punuknya.html">BAGAIMANA UNTA MENDAPATKAN PUNUKNYA</a></li><li><a href="bagaimana-badak-mendapatkan-kulitnya.html">BAGAIMANA BADAK MENDAPATKAN KULITNYA</a></li><li><a href="bagaimana-macan-tutul-mendapatkan-bintik-bintiknya.html">BAGAIMANA MACAN TUTUL MENDAPATKAN BINTIK-BINTIKNYA</a></li><li><a href="anak-gajah.html">ANAK GAJAH</a></li><li><a href="nyanyian-kanguru-tua.html">NYANYIAN KANGURU TUA</a></li><li><a href="awal-mula-armadillo.html">AWAL MULA ARMADILLO</a></li><li><a href="bagaimana-surat-pertama-ditulis.html">BAGAIMANA SURAT PERTAMA DITULIS</a></li><li><a href="bagaimana-alfabet-dibuat.html">BAGAIMANA ALFABET DIBUAT</a></li><li><a href="kepiting-yang-bermain-dengan-laut.html">KEPITING YANG BERMAIN DENGAN LAUT</a></li><li><a href="kucing-yang-berjalan-sendirian.html">KUCING YANG BERJALAN SENDIRIAN</a></li><li><a href="kupu-kupu-yang-mengecap.html">KUPU-KUPU YANG MENGECAP</a></li>
-</ol>
+<hr class="book-divider">
+
+<section class="toc-section">
+  <div class="toc-label">Daftar Isi</div>
+  <ol class="toc-list">
+    <li><a href="tentang-apa-buku-ini.html">Tentang Apa Buku Ini?</a></li>
+<li><a href="bagaimana-ikan-paus-mendapatkan-tenggorokannya.html">Bagaimana Ikan Paus Mendapatkan Tenggorokannya</a></li>
+<li><a href="bagaimana-unta-mendapatkan-punuknya.html">Bagaimana Unta Mendapatkan Punuknya</a></li>
+<li><a href="bagaimana-badak-mendapatkan-kulitnya.html">Bagaimana Badak Mendapatkan Kulitnya</a></li>
+<li><a href="bagaimana-macan-tutul-mendapatkan-bintik-bintiknya.html">Bagaimana Macan Tutul Mendapatkan Bintik-Bintiknya</a></li>
+<li><a href="anak-gajah.html">Anak Gajah</a></li>
+<li><a href="nyanyian-kanguru-tua.html">Nyanyian Kanguru Tua</a></li>
+<li><a href="awal-mula-armadillo.html">Awal Mula Armadillo</a></li>
+<li><a href="bagaimana-surat-pertama-ditulis.html">Bagaimana Surat Pertama Ditulis</a></li>
+<li><a href="bagaimana-alfabet-dibuat.html">Bagaimana Alfabet Dibuat</a></li>
+<li><a href="kepiting-yang-bermain-dengan-laut.html">Kepiting Yang Bermain Dengan Laut</a></li>
+<li><a href="kucing-yang-berjalan-sendirian.html">Kucing Yang Berjalan Sendirian</a></li>
+<li><a href="kupu-kupu-yang-mengecap.html">Kupu-Kupu Yang Mengecap</a></li>
+  </ol>
+</section>
+
+
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
+}
+</script>
+
 
 </body>
 </html>

@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB 12</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB 12 - Bacaan digital klasik">
+<title>BAB 12 — Frankenstein</title>
+<meta name="description" content="Baca BAB 12 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-12.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="BAB 12 — Frankenstein">
+  <meta property="og:description" content="Baca BAB 12 dari buku Frankenstein karya Mary Wollstonecraft Shelley secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-12.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BAB 12 — Frankenstein">
+  <meta name="twitter:description" content="Baca BAB 12 dari Frankenstein karya Mary Wollstonecraft Shelley gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BAB 12",
+    "name": "BAB 12 — Frankenstein",
+    "author": {
+      "@type": "Person",
+      "name": "Mary Wollstonecraft Shelley"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Frankenstein",
+      "author": {
+        "@type": "Person",
+        "name": "Mary Wollstonecraft Shelley"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/frankenstein_prometheus_modern/bab-12.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Frankenstein</a>
+    </div>
+    <h1 class="chapter-title">BAB 12</h1>
+    <div class="chapter-info">
+      <span>✍️ Mary Wollstonecraft Shelley</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Aku berbaring di atas jerami, tetapi aku tidak bisa tidur. Aku memikirkan kejadian hari itu. Yang paling membuatku terkesan adalah tingkah laku lembut orang-orang ini, dan aku ingin bergabung dengan mereka, tetapi tidak berani. Aku masih ingat betul perlakuan yang kuterima malam sebelumnya dari penduduk desa yang biadab, dan memutuskan, apa pun tindakan yang mungkin kupikirkan tepat untuk kulakukan di kemudian hari, untuk saat ini aku akan tetap tenang di gubukku, mengamati dan berusaha menemukan motif yang memengaruhi tindakan mereka.</p><p>“Para penghuni pondok bangun keesokan paginya sebelum matahari terbit. Wanita muda itu merapikan pondok dan menyiapkan makanan, dan pemuda itu pergi setelah makan pertama.</p><p>“Hari itu berlalu dengan rutinitas yang sama seperti hari sebelumnya. Pemuda itu terus-menerus sibuk di luar ruangan, dan gadis itu melakukan berbagai pekerjaan berat di dalam rumah. Lelaki tua itu, yang segera saya sadari buta, menghabiskan waktu luangnya dengan memainkan alat musiknya atau merenung. Tidak ada yang bisa melebihi kasih sayang dan rasa hormat yang ditunjukkan para penghuni pondok yang lebih muda terhadap teman mereka yang terhormat. Mereka melakukan setiap tugas kecil yang penuh kasih sayang dan kewajiban dengan lembut kepadanya, dan dia membalasnya dengan senyum ramahnya.”</p><p>“Mereka tidak sepenuhnya bahagia. Pemuda itu dan temannya sering menyendiri dan tampak menangis. Aku tidak melihat alasan ketidakbahagiaan mereka, tetapi aku sangat terpengaruh olehnya. Jika makhluk-makhluk yang begitu indah itu sengsara, tidak mengherankan jika aku, makhluk yang tidak sempurna dan kesepian, juga sengsara. Namun mengapa makhluk-makhluk lembut ini tidak bahagia? Mereka memiliki rumah yang indah (setidaknya begitulah di mataku) dan segala kemewahan; mereka memiliki perapian untuk menghangatkan mereka saat kedinginan dan makanan lezat saat lapar; mereka mengenakan pakaian yang bagus; dan, terlebih lagi, mereka menikmati kebersamaan dan percakapan satu sama lain, saling bertukar pandangan kasih sayang dan kebaikan setiap hari. Apa arti air mata mereka? Apakah mereka benar-benar mengungkapkan rasa sakit? Awalnya aku tidak dapat menjawab pertanyaan-pertanyaan ini, tetapi perhatian dan waktu yang terus-menerus menjelaskan kepadaku banyak penampakan yang awalnya membingungkan.”</p><p>“Waktu yang cukup lama berlalu sebelum saya menemukan salah satu penyeBAB kegelisahan keluarga yang ramah ini: yaitu kemiskinan, dan mereka menderita kemiskinan itu dengan sangat menyedihkan. Makanan mereka sepenuhnya terdiri dari sayuran dari kebun mereka dan susu dari seekor sapi, yang hanya menghasilkan sedikit susu selama musim dingin, ketika pemiliknya hampir tidak mampu menyediakan makanan untuk menghidupinya. Saya yakin mereka sering kali menderita kelaparan dengan sangat hebat, terutama kedua anak muda penghuni pondok itu, karena beberapa kali mereka memberikan makanan kepada orang tua itu padahal mereka tidak menyisakan makanan untuk diri mereka sendiri.”</p><p>“Sifat baik hati ini sangat menyentuh hati saya. Saya terbiasa, pada malam hari, mencuri sebagian persediaan mereka untuk konsumsi saya sendiri, tetapi ketika saya menyadari bahwa dengan melakukan itu saya menyakiti para penghuni pondok, saya berhenti dan merasa cukup dengan buah beri, kacang-kacangan, dan akar-akaran yang saya kumpulkan dari hutan di dekatnya.</p><p>“Saya juga menemukan cara lain yang memungkinkan saya untuk membantu pekerjaan mereka. Saya mendapati bahwa pemuda itu menghabiskan sebagian besar waktunya setiap hari untuk mengumpulkan kayu bakar untuk perapian keluarga, dan pada malam hari saya sering mengambil peralatannya, yang kegunaannya segera saya ketahui, dan membawa pulang kayu bakar yang cukup untuk beberapa hari.”</p><p>“Aku ingat, pertama kali aku melakukan ini, wanita muda itu, ketika membuka pintu di pagi hari, tampak sangat terkejut melihat tumpukan kayu besar di luar. Dia mengucapkan beberapa kata dengan suara keras, dan pemuda itu ikut serta, yang juga menyatakan keterkejutannya. Aku mengamati, dengan senang hati, bahwa dia tidak pergi ke hutan hari itu, tetapi menghabiskannya untuk memperbaiki pondok dan mengolah kebun.”</p><p>“Secara bertahap saya membuat penemuan yang lebih penting lagi. Saya menemukan bahwa orang-orang ini memiliki metode untuk mengkomunikasikan pengalaman dan perasaan mereka satu sama lain melalui suara yang jelas. Saya menyadari bahwa kata-kata yang mereka ucapkan terkadang menimbulkan kesenangan atau kesedihan, senyuman atau kepedihan, dalam pikiran dan wajah para pendengar. Ini memang ilmu yang seperti dewa, dan saya sangat ingin mempelajarinya. Tetapi saya selalu gagal dalam setiap upaya yang saya lakukan untuk tujuan ini. Pelafalan mereka cepat, dan kata-kata yang mereka ucapkan, karena tidak memiliki hubungan yang jelas dengan benda-benda yang terlihat, saya tidak dapat menemukan petunjuk apa pun yang dapat saya gunakan untuk mengungkap misteri rujukannya. Namun, dengan kerja keras, dan setelah tinggal selama beberapa putaran bulan di gubuk saya, saya menemukan nama-nama yang diberikan kepada beberapa benda yang paling umum dibicarakan; saya mempelajari dan menggunakan kata-kata, api, susu, roti, dan kayu. Saya juga mempelajari nama-nama penghuni gubuk itu sendiri. Pemuda dan temannya masing-masing memiliki beberapa nama, tetapi lelaki tua itu hanya memiliki satu nama, yaitu ayah. Gadis itu dipanggil saudari atau Agatha, dan pemuda Felix, saudara laki-laki, atau putra . Saya tidak dapat menggambarkan kegembiraan yang saya rasakan ketika saya mempelajari gagasan yang terkait dengan masing-masing bunyi ini dan mampu mengucapkannya. Saya membedakan beberapa kata lain tanpa dapat memahami atau menerapkannya, seperti baik, tersayang, tidak bahagia. </p><p>“Aku menghabiskan musim dingin dengan cara ini. Sikap lembut dan kecantikan para penghuni pondok sangat membuatku menyayangi mereka; ketika mereka tidak bahagia, aku merasa sedih; ketika mereka bersukacita, aku ikut merasakan kegembiraan mereka. Aku jarang melihat manusia selain mereka, dan jika ada orang lain yang kebetulan masuk ke pondok, sikap kasar dan gerak-gerik mereka yang tidak sopan justru semakin memperkuat kekagumanku pada kemampuan unggul teman-temanku. Lelaki tua itu, aku bisa melihat, sering berusaha menyemangati anak-anaknya, seperti yang kadang-kadang kudengar ia panggil, untuk menghilangkan kesedihan mereka. Ia berbicara dengan nada ceria, dengan ekspresi kebaikan yang bahkan menyenangkan hatiku. Agatha mendengarkan dengan hormat, matanya kadang-kadang berlinang air mata, yang ia coba seka tanpa disadari; tetapi secara umum aku mendapati wajah dan nada suaranya lebih ceria setelah mendengarkan nasihat ayahnya. Tidak demikian halnya dengan Felix. Ia selalu yang paling sedih di antara kelompok itu, dan bahkan menurut indraku yang belum terlatih, ia tampak lebih menderita daripada teman-temannya. Tetapi jika Raut wajahnya lebih sedih, suaranya lebih riang daripada suara saudara perempuannya, terutama ketika ia berbicara kepada lelaki tua itu.</p><p>“Saya bisa menyebutkan banyak sekali contoh yang, meskipun kecil, menandai watak para penghuni pondok yang ramah ini. Di tengah kemiskinan dan kekurangan, Felix dengan senang hati membawakan kepada saudara perempuannya bunga putih kecil pertama yang muncul dari bawah tanah yang tertutup salju. Pagi-pagi sekali, sebelum saudara perempuannya bangun, ia membersihkan salju yang menghalangi jalannya ke rumah susu, mengambil air dari sumur, dan membawa kayu dari gudang, di mana, yang selalu membuatnya takjub, ia mendapati persediaannya selalu terisi kembali oleh tangan yang tak terlihat. Di siang hari, saya yakin, ia kadang-kadang bekerja untuk seorang petani tetangga, karena ia sering pergi dan tidak kembali sampai waktu makan siang, namun tidak membawa kayu bersamanya. Di waktu lain ia bekerja di kebun, tetapi karena tidak banyak yang bisa dilakukan di musim dingin, ia membacakan cerita untuk lelaki tua dan Agatha.”</p><p>“Awalnya, bacaan ini sangat membingungkan saya, tetapi lambat laun saya menemukan bahwa ia mengucapkan banyak bunyi yang sama ketika membaca seperti ketika berbicara. Oleh karena itu, saya menduga bahwa ia menemukan tanda-tanda ucapan di atas kertas yang ia pahami, dan saya sangat ingin memahami tanda-tanda itu juga; tetapi bagaimana mungkin itu terjadi ketika saya bahkan tidak memahami bunyi-bunyi yang diwakili oleh tanda-tanda tersebut? Namun, saya mengalami peningkatan yang signifikan dalam ilmu ini, tetapi tidak cukup untuk mengikuti percakapan apa pun, meskipun saya mengerahkan seluruh pikiran saya untuk usaha itu, karena saya dengan mudah menyadari bahwa, meskipun saya sangat ingin memperkenalkan diri kepada penduduk desa, saya seharusnya tidak mencoba sampai saya terlebih dahulu menguasai bahasa mereka, pengetahuan yang mungkin memungkinkan saya untuk membuat mereka mengabaikan kekurangan bentuk tubuh saya, karena kontras yang terus-menerus terpampang di depan mata saya juga telah membuat saya menyadarinya.”</p><p>“Aku mengagumi bentuk tubuh sempurna para penghuni pondokku—keanggunan, kecantikan, dan kulit mereka yang halus; tetapi betapa takutnya aku ketika melihat diriku sendiri di kolam yang transparan! Awalnya aku tersentak mundur, tak percaya bahwa memang akulah yang terpantul di cermin; dan ketika aku sepenuhnya yakin bahwa aku sebenarnya adalah monster seperti diriku, aku dipenuhi dengan perasaan putus asa dan malu yang paling pahit. Celakalah! Aku belum sepenuhnya mengetahui dampak fatal dari kecacatan yang menyedihkan ini.”</p><p>“Saat matahari semakin hangat dan siang hari semakin panjang, salju pun lenyap, dan aku melihat pepohonan gundul dan tanah hitam. Sejak saat itu Felix lebih sibuk, dan pertanda-pertanda mengerikan akan datangnya kelaparan pun menghilang. Makanan mereka, seperti yang kuketahui kemudian, memang kasar, tetapi sehat; dan mereka memperolehnya dalam jumlah yang cukup. Beberapa jenis tanaman baru tumbuh di kebun, yang mereka rawat; dan tanda-tanda kenyamanan ini meningkat setiap hari seiring berjalannya musim.”</p><p>“Orang tua itu, sambil bersandar pada anaknya, berjalan setiap hari di siang hari, ketika tidak hujan, seperti yang saya ketahui disebut ketika langit mencurahkan airnya. Ini sering terjadi, tetapi angin kencang dengan cepat mengeringkan tanah, dan musim menjadi jauh lebih menyenangkan daripada sebelumnya.</p><p>“Kehidupan saya di gubuk saya monoton. Pagi hari saya memperhatikan aktivitas penghuni gubuk, dan ketika mereka berpencar melakukan berbagai pekerjaan, saya tidur; sisa hari dihabiskan untuk mengamati teman-teman saya. Ketika mereka sudah beristirahat, jika ada bulan atau malam bertabur bintang, saya pergi ke hutan dan mengumpulkan makanan dan kayu bakar untuk gubuk saya. Ketika saya kembali, sesering yang diperlukan, saya membersihkan jalan mereka dari salju dan melakukan pekerjaan yang pernah saya lihat dilakukan oleh Felix. Kemudian saya mendapati bahwa pekerjaan-pekerjaan ini, yang dilakukan oleh tangan yang tak terlihat, sangat membuat mereka takjub; dan sekali atau dua kali saya mendengar mereka, pada kesempatan itu, mengucapkan kata-kata ' roh baik, luar biasa' ; tetapi saat itu saya tidak mengerti arti dari istilah-istilah tersebut.</p><p>“Pikiranku kini menjadi lebih aktif, dan aku ingin sekali mengetahui motif dan perasaan makhluk-makhluk yang indah ini; aku ingin tahu mengapa Felix tampak begitu sengsara dan Agatha begitu sedih. Aku berpikir (dasar bodoh!) bahwa mungkin aku mampu mengembalikan kebahagiaan kepada orang-orang yang pantas mendapatkannya ini. Ketika aku tidur atau sedang pergi, sosok ayah buta yang terhormat, Agatha yang lembut, dan Felix yang baik hati terlintas di hadapanku. Aku memandang mereka sebagai makhluk yang lebih tinggi yang akan menjadi penentu takdirku di masa depan. Aku membentuk dalam imajinasiku seribu gambaran tentang bagaimana aku akan menghadap mereka, dan bagaimana mereka akan menerimaku. Aku membayangkan bahwa mereka akan merasa jijik, sampai, dengan sikapku yang lembut dan kata-kata yang menenangkan, aku pertama-tama akan memenangkan hati mereka dan kemudian cinta mereka.”</p><p>“Pikiran-pikiran ini membangkitkan semangatku dan mendorongku untuk kembali bersemangat mempelajari seni berbahasa. Organ-organ tubuhku memang kasar, tetapi lentur; dan meskipun suaraku sangat berbeda dengan alunan lembut nada mereka, namun aku mengucapkan kata-kata yang kupahami dengan cukup mudah. Itu seperti keledai dan anjing peliharaan; namun tentu saja keledai yang lembut dan bermaksud baik, meskipun tingkah lakunya kasar, pantas mendapatkan perlakuan yang lebih baik daripada pukulan dan cacian.”</p><p>“Hujan yang menyenangkan dan kehangatan musim semi yang ramah sangat mengubah rupa bumi. Orang-orang yang sebelum perubahan ini tampak bersembunyi di gua-gua, kini berpencar dan sibuk dengan berbagai kegiatan pertanian. Burung-burung bernyanyi dengan nada yang lebih riang, dan daun-daun mulai bertunas di pepohonan. Bumi yang bahagia! Tempat tinggal yang layak bagi para dewa, yang belum lama sebelumnya suram, lembap, dan tidak sehat. Semangatku terangkat oleh penampakan alam yang mempesona; masa lalu terhapus dari ingatanku, masa kini tenang, dan masa depan dihiasi oleh sinar harapan yang cerah dan antisipasi kegembiraan.”</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-11.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab 11</span>
+    </a>
+    <a href="bab-13.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab 13</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB 12</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Aku berbaring di atas jerami, tetapi aku tidak bisa tidur. Aku memikirkan kejadian hari itu. Yang paling membuatku terkesan adalah tingkah laku lembut orang-orang ini, dan aku ingin bergabung dengan mereka, tetapi tidak berani. Aku masih ingat betul perlakuan yang kuterima malam sebelumnya dari penduduk desa yang biadab, dan memutuskan, apa pun tindakan yang mungkin kupikirkan tepat untuk kulakukan di kemudian hari, untuk saat ini aku akan tetap tenang di gubukku, mengamati dan berusaha menemukan motif yang memengaruhi tindakan mereka. “Para penghuni pondok bangun keesokan paginya sebelum matahari terbit. Wanita muda itu merapikan pondok dan menyiapkan makanan, dan pemuda itu pergi setelah makan pertama. “Hari itu berlalu dengan rutinitas yang sama seperti hari sebelumnya. Pemuda itu terus-menerus sibuk di luar ruangan, dan gadis itu melakukan berbagai pekerjaan berat di dalam rumah. Lelaki tua itu, yang segera saya sadari buta, menghabiskan waktu luangnya dengan memainkan alat musiknya atau merenung. Tidak ada yang bisa melebihi kasih sayang dan rasa hormat yang ditunjukkan para penghuni pondok yang lebih muda terhadap teman mereka yang terhormat. Mereka melakukan setiap tugas kecil yang penuh kasih sayang dan kewajiban dengan lembut kepadanya, dan dia membalasnya dengan senyum ramahnya.” “Mereka tidak sepenuhnya bahagia. Pemuda itu dan temannya sering menyendiri dan tampak menangis. Aku tidak melihat alasan ketidakbahagiaan mereka, tetapi aku sangat terpengaruh olehnya. Jika makhluk-makhluk yang begitu indah itu sengsara, tidak mengherankan jika aku, makhluk yang tidak sempurna dan kesepian, juga sengsara. Namun mengapa makhluk-makhluk lembut ini tidak bahagia? Mereka memiliki rumah yang indah (setidaknya begitulah di mataku) dan segala kemewahan; mereka memiliki perapian untuk menghangatkan mereka saat kedinginan dan makanan lezat saat lapar; mereka mengenakan pakaian yang bagus; dan, terlebih lagi, mereka menikmati kebersamaan dan percakapan satu sama lain, saling bertukar pandangan kasih sayang dan kebaikan setiap hari. Apa arti air mata mereka? Apakah mereka benar-benar mengungkapkan rasa sakit? Awalnya aku tidak dapat menjawab pertanyaan-pertanyaan ini, tetapi perhatian dan waktu yang terus-menerus menjelaskan kepadaku banyak penampakan yang awalnya membingungkan.” “Waktu yang cukup lama berlalu sebelum saya menemukan salah satu penyeBAB kegelisahan keluarga yang ramah ini: yaitu kemiskinan, dan mereka menderita kemiskinan itu dengan sangat menyedihkan. Makanan mereka sepenuhnya terdiri dari sayuran dari kebun mereka dan susu dari seekor sapi, yang hanya menghasilkan sedikit susu selama musim dingin, ketika pemiliknya hampir tidak mampu menyediakan makanan untuk menghidupinya. Saya yakin mereka sering kali menderita kelaparan dengan sangat hebat, terutama kedua anak muda penghuni pondok itu, karena beberapa kali mereka memberikan makanan kepada orang tua itu padahal mereka tidak menyisakan makanan untuk diri mereka sendiri.” “Sifat baik hati ini sangat menyentuh hati saya. Saya terbiasa, pada malam hari, mencuri sebagian persediaan mereka untuk konsumsi saya sendiri, tetapi ketika saya menyadari bahwa dengan melakukan itu saya menyakiti para penghuni pondok, saya berhenti dan merasa cukup dengan buah beri, kacang-kacangan, dan akar-akaran yang saya kumpulkan dari hutan di dekatnya. “Saya juga menemukan cara lain yang memungkinkan saya untuk membantu pekerjaan mereka. Saya mendapati bahwa pemuda itu menghabiskan sebagian besar waktunya setiap hari untuk mengumpulkan kayu bakar untuk perapian keluarga, dan pada malam hari saya sering mengambil peralatannya, yang kegunaannya segera saya ketahui, dan membawa pulang kayu bakar yang cukup untuk beberapa hari.” “Aku ingat, pertama kali aku melakukan ini, wanita muda itu, ketika membuka pintu di pagi hari, tampak sangat terkejut melihat tumpukan kayu besar di luar. Dia mengucapkan beberapa kata dengan suara keras, dan pemuda itu ikut serta, yang juga menyatakan keterkejutannya. Aku mengamati, dengan senang hati, bahwa dia tidak pergi ke hutan hari itu, tetapi menghabiskannya untuk memperbaiki pondok dan mengolah kebun.” “Secara bertahap saya membuat penemuan yang lebih penting lagi. Saya menemukan bahwa orang-orang ini memiliki metode untuk mengkomunikasikan pengalaman dan perasaan mereka satu sama lain melalui suara yang jelas. Saya menyadari bahwa kata-kata yang mereka ucapkan terkadang menimbulkan kesenangan atau kesedihan, senyuman atau kepedihan, dalam pikiran dan wajah para pendengar. Ini memang ilmu yang seperti dewa, dan saya sangat ingin mempelajarinya. Tetapi saya selalu gagal dalam setiap upaya yang saya lakukan untuk tujuan ini. Pelafalan mereka cepat, dan kata-kata yang mereka ucapkan, karena tidak memiliki hubungan yang jelas dengan benda-benda yang terlihat, saya tidak dapat menemukan petunjuk apa pun yang dapat saya gunakan untuk mengungkap misteri rujukannya. Namun, dengan kerja keras, dan setelah tinggal selama beberapa putaran bulan di gubuk saya, saya menemukan nama-nama yang diberikan kepada beberapa benda yang paling umum dibicarakan; saya mempelajari dan menggunakan kata-kata, api, susu, roti, dan kayu. Saya juga mempelajari nama-nama penghuni gubuk itu sendiri. Pemuda dan temannya masing-masing memiliki beberapa nama, tetapi lelaki tua itu hanya memiliki satu nama, yaitu ayah. Gadis itu dipanggil saudari atau Agatha, dan pemuda Felix, saudara laki-laki, atau putra . Saya tidak dapat menggambarkan kegembiraan yang saya rasakan ketika saya mempelajari gagasan yang terkait dengan masing-masing bunyi ini dan mampu mengucapkannya. Saya membedakan beberapa kata lain tanpa dapat memahami atau menerapkannya, seperti baik, tersayang, tidak bahagia. “Aku menghabiskan musim dingin dengan cara ini. Sikap lembut dan kecantikan para penghuni pondok sangat membuatku menyayangi mereka; ketika mereka tidak bahagia, aku merasa sedih; ketika mereka bersukacita, aku ikut merasakan kegembiraan mereka. Aku jarang melihat manusia selain mereka, dan jika ada orang lain yang kebetulan masuk ke pondok, sikap kasar dan gerak-gerik mereka yang tidak sopan justru semakin memperkuat kekagumanku pada kemampuan unggul teman-temanku. Lelaki tua itu, aku bisa melihat, sering berusaha menyemangati anak-anaknya, seperti yang kadang-kadang kudengar ia panggil, untuk menghilangkan kesedihan mereka. Ia berbicara dengan nada ceria, dengan ekspresi kebaikan yang bahkan menyenangkan hatiku. Agatha mendengarkan dengan hormat, matanya kadang-kadang berlinang air mata, yang ia coba seka tanpa disadari; tetapi secara umum aku mendapati wajah dan nada suaranya lebih ceria setelah mendengarkan nasihat ayahnya. Tidak demikian halnya dengan Felix. Ia selalu yang paling sedih di antara kelompok itu, dan bahkan menurut indraku yang belum terlatih, ia tampak lebih menderita daripada teman-temannya. Tetapi jika Raut wajahnya lebih sedih, suaranya lebih riang daripada suara saudara perempuannya, terutama ketika ia berbicara kepada lelaki tua itu. “Saya bisa menyebutkan banyak sekali contoh yang, meskipun kecil, menandai watak para penghuni pondok yang ramah ini. Di tengah kemiskinan dan kekurangan, Felix dengan senang hati membawakan kepada saudara perempuannya bunga putih kecil pertama yang muncul dari bawah tanah yang tertutup salju. Pagi-pagi sekali, sebelum saudara perempuannya bangun, ia membersihkan salju yang menghalangi jalannya ke rumah susu, mengambil air dari sumur, dan membawa kayu dari gudang, di mana, yang selalu membuatnya takjub, ia mendapati persediaannya selalu terisi kembali oleh tangan yang tak terlihat. Di siang hari, saya yakin, ia kadang-kadang bekerja untuk seorang petani tetangga, karena ia sering pergi dan tidak kembali sampai waktu makan siang, namun tidak membawa kayu bersamanya. Di waktu lain ia bekerja di kebun, tetapi karena tidak banyak yang bisa dilakukan di musim dingin, ia membacakan cerita untuk lelaki tua dan Agatha.” “Awalnya, bacaan ini sangat membingungkan saya, tetapi lambat laun saya menemukan bahwa ia mengucapkan banyak bunyi yang sama ketika membaca seperti ketika berbicara. Oleh karena itu, saya menduga bahwa ia menemukan tanda-tanda ucapan di atas kertas yang ia pahami, dan saya sangat ingin memahami tanda-tanda itu juga; tetapi bagaimana mungkin itu terjadi ketika saya bahkan tidak memahami bunyi-bunyi yang diwakili oleh tanda-tanda tersebut? Namun, saya mengalami peningkatan yang signifikan dalam ilmu ini, tetapi tidak cukup untuk mengikuti percakapan apa pun, meskipun saya mengerahkan seluruh pikiran saya untuk usaha itu, karena saya dengan mudah menyadari bahwa, meskipun saya sangat ingin memperkenalkan diri kepada penduduk desa, saya seharusnya tidak mencoba sampai saya terlebih dahulu menguasai bahasa mereka, pengetahuan yang mungkin memungkinkan saya untuk membuat mereka mengabaikan kekurangan bentuk tubuh saya, karena kontras yang terus-menerus terpampang di depan mata saya juga telah membuat saya menyadarinya.” “Aku mengagumi bentuk tubuh sempurna para penghuni pondokku—keanggunan, kecantikan, dan kulit mereka yang halus; tetapi betapa takutnya aku ketika melihat diriku sendiri di kolam yang transparan! Awalnya aku tersentak mundur, tak percaya bahwa memang akulah yang terpantul di cermin; dan ketika aku sepenuhnya yakin bahwa aku sebenarnya adalah monster seperti diriku, aku dipenuhi dengan perasaan putus asa dan malu yang paling pahit. Celakalah! Aku belum sepenuhnya mengetahui dampak fatal dari kecacatan yang menyedihkan ini.” “Saat matahari semakin hangat dan siang hari semakin panjang, salju pun lenyap, dan aku melihat pepohonan gundul dan tanah hitam. Sejak saat itu Felix lebih sibuk, dan pertanda-pertanda mengerikan akan datangnya kelaparan pun menghilang. Makanan mereka, seperti yang kuketahui kemudian, memang kasar, tetapi sehat; dan mereka memperolehnya dalam jumlah yang cukup. Beberapa jenis tanaman baru tumbuh di kebun, yang mereka rawat; dan tanda-tanda kenyamanan ini meningkat setiap hari seiring berjalannya musim.” “Orang tua itu, sambil bersandar pada anaknya, berjalan setiap hari di siang hari, ketika tidak hujan, seperti yang saya ketahui disebut ketika langit mencurahkan airnya. Ini sering terjadi, tetapi angin kencang dengan cepat mengeringkan tanah, dan musim menjadi jauh lebih menyenangkan daripada sebelumnya. “Kehidupan saya di gubuk saya monoton. Pagi hari saya memperhatikan aktivitas penghuni gubuk, dan ketika mereka berpencar melakukan berbagai pekerjaan, saya tidur; sisa hari dihabiskan untuk mengamati teman-teman saya. Ketika mereka sudah beristirahat, jika ada bulan atau malam bertabur bintang, saya pergi ke hutan dan mengumpulkan makanan dan kayu bakar untuk gubuk saya. Ketika saya kembali, sesering yang diperlukan, saya membersihkan jalan mereka dari salju dan melakukan pekerjaan yang pernah saya lihat dilakukan oleh Felix. Kemudian saya mendapati bahwa pekerjaan-pekerjaan ini, yang dilakukan oleh tangan yang tak terlihat, sangat membuat mereka takjub; dan sekali atau dua kali saya mendengar mereka, pada kesempatan itu, mengucapkan kata-kata ' roh baik, luar biasa' ; tetapi saat itu saya tidak mengerti arti dari istilah-istilah tersebut. “Pikiranku kini menjadi lebih aktif, dan aku ingin sekali mengetahui motif dan perasaan makhluk-makhluk yang indah ini; aku ingin tahu mengapa Felix tampak begitu sengsara dan Agatha begitu sedih. Aku berpikir (dasar bodoh!) bahwa mungkin aku mampu mengembalikan kebahagiaan kepada orang-orang yang pantas mendapatkannya ini. Ketika aku tidur atau sedang pergi, sosok ayah buta yang terhormat, Agatha yang lembut, dan Felix yang baik hati terlintas di hadapanku. Aku memandang mereka sebagai makhluk yang lebih tinggi yang akan menjadi penentu takdirku di masa depan. Aku membentuk dalam imajinasiku seribu gambaran tentang bagaimana aku akan menghadap mereka, dan bagaimana mereka akan menerimaku. Aku membayangkan bahwa mereka akan merasa jijik, sampai, dengan sikapku yang lembut dan kata-kata yang menenangkan, aku pertama-tama akan memenangkan hati mereka dan kemudian cinta mereka.” “Pikiran-pikiran ini membangkitkan semangatku dan mendorongku untuk kembali bersemangat mempelajari seni berbahasa. Organ-organ tubuhku memang kasar, tetapi lentur; dan meskipun suaraku sangat berbeda dengan alunan lembut nada mereka, namun aku mengucapkan kata-kata yang kupahami dengan cukup mudah. Itu seperti keledai dan anjing peliharaan; namun tentu saja keledai yang lembut dan bermaksud baik, meskipun tingkah lakunya kasar, pantas mendapatkan perlakuan yang lebih baik daripada pukulan dan cacian.” “Hujan yang menyenangkan dan kehangatan musim semi yang ramah sangat mengubah rupa bumi. Orang-orang yang sebelum perubahan ini tampak bersembunyi di gua-gua, kini berpencar dan sibuk dengan berbagai kegiatan pertanian. Burung-burung bernyanyi dengan nada yang lebih riang, dan daun-daun mulai bertunas di pepohonan. Bumi yang bahagia! Tempat tinggal yang layak bagi para dewa, yang belum lama sebelumnya suram, lembap, dan tidak sehat. Semangatku terangkat oleh penampakan alam yang mempesona; masa lalu terhapus dari ingatanku, masa kini tenang, dan masa depan dihiasi oleh sinar harapan yang cerah dan antisipasi kegembiraan.”</p>
-
-<div class="nav">
-  <a href="bab-11.html">⬅ Bab 11</a>
-  <a href="bab-13.html">Bab 13 ➡</a>
-</div>
 
 </body>
 </html>

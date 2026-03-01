@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB LX.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB LX. - Bacaan digital klasik">
+<title>Bab LX — Middlemarch</title>
+<meta name="description" content="Baca Bab LX dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-lx.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab LX — Middlemarch">
+  <meta property="og:description" content="Baca Bab LX dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-lx.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab LX — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab LX dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab LX",
+    "name": "Bab LX — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-lx.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab LX</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Ungkapan yang baik memang selalu patut dipuji. <br />— Justice Shallow .</p><p>Beberapa hari kemudian—saat itu sudah akhir Agustus—terjadi sebuah peristiwa yang menimbulkan kehebohan di Middlemarch: masyarakat, jika mereka mau, akan mendapat kesempatan untuk membeli, di bawah naungan terhormat Tuan Borthrop Trumbull, perabotan, buku, dan lukisan yang menurut selebaran dapat dilihat sebagai yang terbaik dalam segala hal, milik Edwin Larcher, Esq. Ini bukanlah salah satu penjualan yang menunjukkan penurunan perdagangan; sebaliknya, hal itu disebabkan oleh kesuksesan besar Tuan Larcher dalam bisnis pengangkutan, yang membenarkan pembeliannya sebuah rumah besar di dekat Riverston yang sudah dilengkapi dengan perabotan mewah oleh seorang dokter Spa yang terkenal—bahkan dilengkapi dengan begitu banyak lukisan tubuh yang mahal di ruang makan, sehingga Nyonya Larcher merasa gugup sampai akhirnya tenang setelah mengetahui bahwa subjek lukisan tersebut adalah Kitab Suci. Oleh karena itu, peluang bagus bagi para pembeli ini ditunjukkan dengan baik dalam selebaran Tuan Borthrop Trumbull, yang pengetahuannya tentang sejarah seni memungkinkannya untuk menyatakan bahwa perabot aula, yang akan dijual tanpa syarat, termasuk sebuah ukiran karya seorang seniman sezaman dengan Gibbons.</p><p>Di Middlemarch pada masa itu, penjualan besar dianggap sebagai semacam festival. Ada meja yang dihidangkan dengan makanan dingin terbaik, seperti di pemakaman mewah; dan fasilitas disediakan untuk minum-minum dengan riang yang dapat mengarah pada penawaran yang meriah dan murah hati untuk barang-barang yang tidak diinginkan. Penjualan Tuan Larcher lebih menarik dalam cuaca cerah karena rumahnya terletak tepat di ujung kota, dengan taman dan kandang kuda yang terlampir, di jalan keluar yang menyenangkan dari Middlemarch yang disebut London Road, yang juga merupakan jalan menuju Rumah Sakit Baru dan kediaman pensiunan Tuan Bulstrode, yang dikenal sebagai Shrubs. Singkatnya, lelang itu sama baiknya dengan pameran, dan menarik semua kalangan yang memiliki waktu luang: bagi sebagian orang, yang mengambil risiko menawar hanya untuk menaikkan harga, itu hampir sama dengan bertaruh di pacuan kuda. Pada hari kedua, ketika furnitur terbaik akan dijual, &quot;semua orang&quot; ada di sana; Bahkan Tuan Thesiger, rektor St. Peter's, sempat mampir sebentar, ingin membeli meja ukir itu, dan sempat berbaur dengan Tuan Bambridge dan Tuan Horrock. Ada sekelompok wanita Middlemarch yang duduk mengelilingi meja besar di ruang makan, tempat Tuan Borthrop Trumbull duduk dengan meja tulis dan palu; tetapi barisan wajah-wajah yang sebagian besar laki-laki di belakang sering berubah karena orang-orang yang datang dan pergi baik dari pintu maupun jendela besar yang menghadap ke halaman rumput.</p><p>“Semua orang” pada hari itu tidak termasuk Tuan Bulstrode, yang kesehatannya tidak dapat menahan keramaian dan angin kencang. Tetapi Nyonya Bulstrode sangat ingin memiliki lukisan tertentu—sebuah “Perjamuan di Emmaus,” yang dalam katalog dikaitkan dengan Guido; dan pada saat-saat terakhir sebelum hari penjualan, Tuan Bulstrode telah mengunjungi kantor “Pioneer,” yang sekarang ia menjadi salah satu pemiliknya, untuk memohon kepada Tuan Ladislaw sebagai bantuan besar agar ia dengan senang hati menggunakan pengetahuannya yang luar biasa tentang lukisan untuk kepentingan Nyonya Bulstrode, dan menilai nilai lukisan tertentu ini—“jika,” tambah bankir yang sangat sopan itu, “kehadiran di penjualan tidak akan mengganggu pengaturan keberangkatan Anda, yang saya tahu sudah dekat.”</p><p>Ketentuan ini mungkin terdengar agak satir di telinga Will jika dia sedang ingin mempedulikan satir semacam itu. Ketentuan itu merujuk pada kesepakatan yang dibuat beberapa minggu sebelumnya dengan pemilik surat kabar, bahwa dia bebas kapan saja dia mau untuk menyerahkan manajemen kepada subeditor yang telah dia latih; karena dia ingin akhirnya meninggalkan Middlemarch. Tetapi visi ambisi yang tak terbatas lemah dibandingkan dengan kemudahan melakukan apa yang sudah menjadi kebiasaan atau sangat menyenangkan; dan kita semua tahu kesulitan melaksanakan tekad ketika kita diam-diam berharap itu mungkin tidak perlu. Dalam keadaan pikiran seperti itu, orang yang paling tidak percaya pun memiliki kecenderungan pribadi terhadap keajaiban: mustahil untuk membayangkan bagaimana keinginan kita dapat terpenuhi, namun—hal-hal yang sangat menakjubkan telah terjadi! Will tidak mengakui kelemahan ini pada dirinya sendiri, tetapi dia ragu-ragu. Apa gunanya pergi ke London pada waktu itu? Orang-orang Rugby yang akan mengingatnya tidak ada di sana; dan sejauh menyangkut penulisan politik, dia lebih suka melanjutkan beberapa minggu dengan &quot;Pioneer.&quot; Namun, saat ini, ketika Tuan Bulstrode berbicara kepadanya, ia memiliki tekad yang lebih kuat untuk pergi sekaligus tekad yang sama kuatnya untuk tidak pergi sampai ia bertemu kembali dengan Dorothea. Karena itu, ia menjawab bahwa ia memiliki alasan untuk menunda keberangkatannya sedikit, dan akan senang untuk pergi ke lelang.</p><p>Will sedang dalam suasana hati yang menantang, kesadarannya sangat terganggu oleh pikiran bahwa orang-orang yang memandanginya mungkin mengetahui fakta yang setara dengan tuduhan terhadapnya sebagai orang dengan niat buruk yang akan digagalkan dengan penjualan harta benda. Seperti kebanyakan orang yang menegaskan kebebasan mereka terkait perbedaan konvensional, ia siap untuk tiba-tiba dan cepat berdebat dengan siapa pun yang mungkin mengisyaratkan bahwa ia memiliki alasan pribadi untuk pernyataan itu—bahwa ada sesuatu dalam darahnya, sikapnya, atau karakternya yang ia tutupi dengan pendapat. Ketika ia berada di bawah kesan yang menjengkelkan seperti ini, ia akan berjalan-jalan selama berhari-hari dengan tatapan menantang, warna kulitnya yang transparan berubah seolah-olah ia sedang waspada , mengawasi sesuatu yang harus ia serang.</p><p>Ekspresi ini sangat mencolok pada dirinya saat lelang, dan mereka yang hanya pernah melihatnya dalam suasana hati yang lembut dan aneh atau penuh kegembiraan akan terkejut dengan kontrasnya. Ia tidak menyesal memiliki kesempatan ini untuk tampil di depan umum di hadapan suku Middlemarch, Toller, Hackbutt, dan yang lainnya, yang memandang rendah dirinya sebagai seorang petualang, dan berada dalam keadaan ketidaktahuan yang brutal tentang Dante—yang mencemooh darah Polandianya, dan mereka sendiri berasal dari ras yang sangat perlu diubah. Ia berdiri di tempat yang mencolok tidak jauh dari juru lelang, dengan jari telunjuk di setiap saku samping dan kepalanya mendongak ke belakang, tidak ingin berbicara dengan siapa pun, meskipun ia telah disambut dengan hangat sebagai seorang ahli oleh Tuan Trumbull, yang sedang menikmati aktivitas maksimal dari kemampuan hebatnya.</p><p>Dan tentu saja di antara semua orang yang pekerjaannya mengharuskan mereka untuk menunjukkan kemampuan berbicara mereka, yang paling bahagia adalah seorang juru lelang provinsi yang makmur, sangat menyadari leluconnya sendiri dan sadar akan pengetahuannya yang ensiklopedis. Beberapa orang yang murung dan berdarah masam mungkin keberatan untuk terus-menerus menekankan keunggulan semua barang, dari alat pembuka sepatu hingga &quot;Berghems&quot;; tetapi Tuan Borthrop Trumbull memiliki kebaikan hati yang mengalir dalam nadinya; dia adalah seorang pengagum sejati, dan ingin memiliki alam semesta di bawah palunya, karena merasa bahwa itu akan terjual dengan harga lebih tinggi karena rekomendasinya.</p><p>Sementara itu, perabotan ruang tamu Nyonya Larcher sudah cukup baginya. Ketika Will Ladislaw masuk, sebuah pelindung perapian kedua, yang konon terlupakan di tempat seharusnya, tiba-tiba menarik perhatian juru lelang, yang kemudian membagikannya berdasarkan prinsip keadilan, yaitu memuji hal-hal yang paling layak dipuji. Pelindung perapian itu terbuat dari baja yang dipoles, dengan banyak ukiran berbentuk tombak dan tepi yang tajam.</p><p>“Nah, Nyonya-nyonya,” katanya, “saya akan meminta pendapat Anda. Ini adalah sebuah pelindung perapian yang di penjualan lain hampir tidak akan ditawarkan tanpa syarat, karena, seperti yang dapat saya katakan, dari segi kualitas baja dan keunikan desainnya, ini adalah jenis barang”—di sini Tuan Trumbull merendahkan suaranya dan menjadi sedikit sengau, merapikan garis-garis wajahnya dengan jari kirinya—“yang mungkin tidak sesuai dengan selera umum. Izinkan saya memberi tahu Anda bahwa sebentar lagi gaya pengerjaan ini akan menjadi satu-satunya yang sedang tren—setengah mahkota, kata Anda? terima kasih—seharga setengah mahkota, pelindung perapian yang khas ini; dan saya memiliki informasi khusus bahwa gaya antik sangat dicari di kalangan atas. Tiga shilling—tiga shilling enam pence—angkat baik-baik, Joseph! Lihat, Nyonya-nyonya, kesederhanaan desainnya—saya sendiri tidak ragu bahwa itu dibuat pada abad lalu! Empat shilling, Tuan Mawmsey?—empat shilling.”</p><p>“Itu bukan barang yang akan saya pajang di ruang tamu saya ,” kata Ny. Mawmsey dengan suara lantang, sebagai peringatan bagi suami yang gegabah itu. “Saya heran dengan Ny. Larcher. Kepala setiap anak yang jatuh menimpanya akan terbelah dua. Tepinya seperti pisau.”</p><p>“Benar sekali,” jawab Tuan Trumbull dengan cepat, “dan sangat berguna untuk memiliki alat pemotong yang bisa digunakan jika Anda memiliki tali sepatu kulit atau seutas tali yang perlu dipotong dan tidak ada pisau di tangan: banyak orang yang tergantung karena tidak ada pisau untuk memotongnya. Tuan-tuan, ini alat pemotong yang jika Anda bernasib sial hingga tergantung, akan memotong Anda dalam sekejap—dengan kecepatan yang menakjubkan—empat shilling enam pence—lima—lima shilling enam pence—benda yang tepat untuk kamar tidur tamu yang memiliki tempat tidur empat tiang dan tamu yang sedikit linglung—enam shilling—terima kasih, Tuan Clintup—seharga enam shilling—sedang—habis!” Pandangan juru lelang, yang sebelumnya mengamati sekelilingnya dengan kepekaan luar biasa terhadap semua tanda penawaran, kini tertuju pada kertas di hadapannya, dan suaranya pun merendah menjadi nada acuh tak acuh saat ia berkata, “Tuan Clintup. Cepatlah, Joseph.”</p><p>“Harganya enam shilling untuk memiliki pelindung yang selalu bisa Anda gunakan untuk menceritakan lelucon itu,” kata Tuan Clintup, tertawa pelan dan meminta maaf kepada tetangganya. Dia adalah seorang tukang kebun yang pemalu namun terhormat, dan khawatir bahwa hadirin mungkin menganggap tawarannya sebagai hal yang bodoh.</p><p>Sementara itu, Joseph membawa nampan penuh barang-barang kecil. “Nah, Nyonya-nyonya,” kata Tuan Trumbull, sambil mengambil salah satu barang, “nampan ini berisi banyak barang yang sangat berharga—koleksi pernak-pernik untuk meja ruang tamu—dan pernak-perniklah yang membentuk inti dari segala hal manusia—tidak ada yang lebih penting daripada pernak-pernik—(ya, Tuan Ladislaw, ya, nanti saja)—tapi, Joseph, edarkan nampan ini—pernik-pernik ini harus diperiksa, Nyonya-nyonya. Yang saya pegang ini adalah alat yang cerdik—semacam teka-teki praktis, bisa saya sebut begitu: di sini, Anda lihat, ini tampak seperti kotak berbentuk hati yang elegan, portabel—untuk saku; di sana, lagi, ini menjadi seperti bunga ganda yang indah—hiasan untuk meja; dan sekarang”—Tuan Trumbull Trumbull membiarkan bunga itu jatuh dengan mengejutkan menjadi untaian daun berbentuk hati—&quot;sebuah buku teka-teki! Tidak kurang dari lima ratus teka-teki dicetak dengan warna merah yang indah. Tuan-tuan, jika saya tidak begitu berhati nurani, saya tidak akan ingin Anda menawar tinggi untuk barang ini—saya sendiri sangat menginginkannya. Apa yang dapat meningkatkan kegembiraan yang polos, dan mungkin saya katakan kebajikan, lebih dari teka-teki yang bagus?—itu mencegah bahasa yang tidak sopan, dan mengikat seseorang pada pergaulan wanita yang beradab. Barang cerdik ini sendiri, tanpa kotak domino yang elegan, keranjang kartu, dll., seharusnya sudah cukup untuk memberikan harga tinggi pada barang ini. Dibawa di saku, itu bisa membuat seseorang diterima di masyarakat mana pun. Empat shilling, Tuan?—empat shilling untuk koleksi teka-teki yang luar biasa ini dengan et caeteras. Berikut contohnya: 'Bagaimana Anda harus mengeja madu agar dapat menangkap kepik? Jawabannya—uang.'&quot; Kau dengar?—kumbang ladybug—uang madu. Ini adalah hiburan untuk mengasah kecerdasan; ada sindirannya—ada apa yang kita sebut satire, dan kecerdasan tanpa kecabulan. Empat shilling enam pence—lima shilling.”</p><p>Proses penawaran berlangsung dengan persaingan yang semakin memanas. Tuan Bowyer adalah salah satu penawar, dan ini sangat menjengkelkan. Bowyer tidak mampu membelinya, dan hanya ingin menghalangi orang lain untuk mendapatkan keuntungan. Arus penawaran bahkan menyeret Tuan Horrock ikut serta, tetapi komitmennya terhadap pendapat ini keluar dari mulutnya tanpa mengorbankan ekspresi netralnya, sehingga tawaran itu mungkin tidak akan terdeteksi sebagai miliknya jika bukan karena sumpah ramah Tuan Bambridge, yang ingin tahu apa yang akan dilakukan Horrock dengan barang rongsokan yang hanya cocok untuk toko pakaian yang telah jatuh ke dalam keadaan kehancuran yang dengan ramah diakui oleh pedagang kuda di sebagian besar kehidupan duniawi. Lot itu akhirnya terjual seharga satu guinea kepada Tuan Spilkins, seorang pemuda bernama Slender dari lingkungan sekitar, yang boros dengan uang sakunya dan merasa kurang ingat akan teka-teki.</p><p>“Ayolah, Trumbull, ini sangat disayangkan—kau telah memasukkan barang-barang tak berguna milik seorang wanita tua ke dalam lelang,” gumam Tuan Toller, mendekati juru lelang. “Aku ingin melihat bagaimana hasil cetakannya, dan aku harus segera pergi.”</p><p>“ Segera , Tuan Toller. Itu hanyalah tindakan kebaikan yang akan disetujui oleh hati mulia Anda. Joseph! Cepat dengan cetakannya—Lot 235. Nah, Tuan-tuan, Anda yang merupakan para penikmat seni , Anda akan mendapatkan suguhan istimewa. Ini adalah ukiran Duke of Wellington yang dikelilingi oleh stafnya di Medan Waterloo; dan terlepas dari peristiwa-peristiwa baru-baru ini yang, seolah-olah, telah menyelimuti Pahlawan besar kita dalam awan, saya akan berani mengatakan—karena orang seperti saya tidak boleh terombang-ambing oleh angin politik—bahwa subjek yang lebih indah—dari tatanan modern, yang termasuk dalam zaman dan era kita sendiri—pemahaman manusia hampir tidak dapat membayangkannya: malaikat mungkin bisa, tetapi bukan manusia, Tuan-tuan, bukan manusia.”</p><p>“Siapa yang melukisnya?” tanya Tuan Powderell, sangat terkesan.</p><p>“Ini adalah bukti sebelum surat itu, Tuan Powderell—pelukisnya tidak diketahui,” jawab Trumbull, dengan sedikit terengah-engah di kata-kata terakhirnya, setelah itu ia mengerutkan bibir dan menatap sekelilingnya.</p><p>“Saya akan menawar satu pound!” kata Tuan Powderell, dengan nada emosi yang mantap, seolah-olah dia siap mempertaruhkan dirinya. Entah karena kagum atau kasihan, tidak ada yang menaikkan harga untuknya.</p><p>Selanjutnya datang dua cetakan Belanda yang sangat diinginkan oleh Tuan Toller, dan setelah mendapatkannya, ia pun pergi. Cetakan lain, dan kemudian beberapa lukisan, dijual kepada para pedagang terkemuka Middlemarch yang datang dengan keinginan khusus untuk mendapatkannya, dan terjadi pergerakan yang lebih aktif dari pengunjung yang keluar masuk; beberapa, yang telah membeli apa yang mereka inginkan, pergi, yang lain datang, baik baru saja datang atau hanya berkunjung sementara untuk menikmati hidangan yang disajikan di bawah tenda di halaman rumput. Tenda inilah yang ingin dibeli oleh Tuan Bambridge, dan ia tampak suka melihat ke dalamnya berulang kali, sebagai pendahuluan kepemilikannya. Pada kesempatan terakhirnya kembali dari sana, ia terlihat membawa serta seorang teman baru, orang asing bagi Tuan Trumbull dan semua orang lainnya, yang penampilannya, bagaimanapun, menimbulkan dugaan bahwa ia mungkin kerabat pedagang kuda—yang juga &quot;suka berfoya-foya.&quot; Kumisnya yang lebat, gaya berjalannya yang gagah, dan ayunan kakinya, membuatnya menjadi sosok yang mencolok; Namun, setelan hitamnya yang agak lusuh di bagian tepinya menimbulkan kesan yang bias bahwa ia tidak mampu memanjakan dirinya sendiri sebanyak yang ia inginkan.</p><p>“Siapa yang kau jemput, Bam?” tanya Tuan Horrock pelan.</p><p>“Tanyakan sendiri padanya,” jawab Tuan Bambridge. “Dia bilang dia baru saja berbelok dari jalan.”</p><p>Tuan Horrock mengamati orang asing itu, yang bersandar pada tongkatnya dengan satu tangan, menggunakan tusuk giginya dengan tangan lainnya, dan melihat sekelilingnya dengan kegelisahan tertentu yang tampaknya disebabkan oleh keheningan yang dipaksakan kepadanya oleh keadaan.</p><p>Akhirnya, &quot;Perjamuan di Emmaus&quot; pun dibawakan, yang sangat melegakan Will, karena ia sudah sangat lelah dengan jalannya acara sehingga ia sedikit mundur dan menyandarkan bahunya ke dinding tepat di belakang juru lelang. Ia kemudian maju lagi, dan matanya tertuju pada orang asing yang mencolok itu, yang, agak mengejutkannya, sedang menatapnya dengan tajam. Namun, Will segera dipanggil oleh Tuan Trumbull.</p><p>“Ya, Tuan Ladislaw, ya; saya rasa ini menarik bagi Anda sebagai seorang penikmat seni . Sungguh menyenangkan,” lanjut juru lelang dengan semangat yang meningkat, “untuk memperlihatkan lukisan seperti ini kepada sekelompok wanita dan pria—lukisan yang bernilai berapa pun bagi seseorang yang memiliki kemampuan dan penilaian yang seimbang. Ini adalah lukisan aliran Italia—karya Guydo yang terkenal , pelukis terhebat di dunia, pemimpin para Maestro Lama, begitu mereka disebut—saya kira, karena mereka mampu melakukan sesuatu yang lebih dari kebanyakan kita—memiliki rahasia yang kini hilang dari sebagian besar umat manusia. Izinkan saya memberi tahu Anda, Tuan-tuan, saya telah melihat banyak lukisan karya para Maestro Lama, dan tidak semuanya setara dengan lukisan ini—beberapa di antaranya lebih gelap dari yang Anda inginkan dan bukan bertema keluarga. Tetapi di sini ada karya Guydo — bingkainya saja bernilai ratusan pound—yang dapat dibanggakan oleh wanita mana pun untuk dipajang—benda yang cocok untuk apa yang kita sebut ruang makan di lembaga amal, jika ada pria dari Dewan yang ingin memamerkannya.” kemurahan hati . Putar sedikit, Pak? Ya. Joseph, putar sedikit ke arah Tuan Ladislaw—Tuan Ladislaw, karena pernah ke luar negeri, memahami manfaat dari hal-hal ini, Anda perhatikan.”</p><p>Sejenak semua mata tertuju pada Will, yang dengan tenang berkata, &quot;Lima pound.&quot; Juru lelang pun langsung protes keras.</p><p>“Ah! Tuan Ladislaw! Bingkainya saja sudah bernilai segitu. Hadirin sekalian, demi kehormatan kota ini! Bayangkan jika nanti ditemukan bahwa sebuah karya seni yang berharga telah berada di antara kita di kota ini, dan tidak ada seorang pun di Middlemarch yang menyadarinya. Lima guinea—lima tujuh-enam—lima sepuluh. Tetap saja, hadirin sekalian, tetap saja! Ini adalah permata, dan 'Banyak permata,' seperti kata penyair, telah dibiarkan terjual dengan harga nominal karena masyarakat tidak tahu lebih baik, karena ditawarkan di kalangan di mana ada—saya akan mengatakan perasaan rendah, tetapi tidak!—Enam pound—enam guinea—sebuah lukisan Guydo kelas satu dijual seharga enam guinea—ini penghinaan terhadap agama, hadirin sekalian; ini menyentuh kita semua sebagai orang Kristen, hadirin sekalian, bahwa barang seperti ini dijual dengan harga serendah itu—enam pound sepuluh—tujuh—”</p><p>Penawaran berlangsung cepat, dan Will terus ikut serta, mengingat bahwa Nyonya Bulstrode sangat menginginkan lukisan itu, dan berpikir bahwa ia mungkin bisa menaikkan harganya hingga dua belas pound. Tetapi harga akhirnya turun menjadi sepuluh guinea, lalu ia menerobos ke arah jendela lengkung dan keluar. Ia memilih untuk pergi ke bawah tenda untuk mengambil segelas air, karena merasa panas dan haus: tenda itu kosong dari pengunjung lain, dan ia meminta wanita yang bertugas untuk mengambilkannya air segar; tetapi sebelum wanita itu pergi, ia merasa kesal melihat orang asing berwajah merah yang telah menatapnya masuk. Pada saat itu, Will berpikir bahwa pria itu mungkin salah satu dari serangga parasit politik yang gemuk yang pernah atau dua kali mengaku mengenalnya karena pernah mendengarnya berbicara tentang masalah Reformasi, dan yang mungkin berpikir untuk mendapatkan satu shilling dengan berita. Dalam konteks ini, sosoknya, yang sudah agak panas untuk dilihat di hari musim panas, tampak semakin tidak menyenangkan; dan Will, setengah duduk di sandaran kursi taman, dengan hati-hati memalingkan pandangannya dari orang di sudut ruangan. Namun hal ini tidak berarti banyak bagi kenalan kami, Tuan Raffles, yang tidak pernah ragu untuk memaksakan diri mengamati orang yang tidak diinginkan, jika itu sesuai dengan tujuannya. Dia melangkah satu atau dua langkah hingga berada di depan Will, dan berkata dengan tergesa-gesa sambil mengunyah makanan, &quot;Permisi, Tuan Ladislaw—apakah nama ibu Anda Sarah Dunkirk?&quot;</p><p>Will, yang hendak berdiri, mundur selangkah sambil mengerutkan kening dan berkata dengan agak galak, “Ya, Pak, memang benar. Dan apa urusannya dengan itu?”</p><p>Sudah menjadi sifat Will bahwa percikan pertama yang muncul adalah jawaban langsung atas pertanyaan dan tantangan terhadap konsekuensinya. Jika dia mengatakan, &quot;Apa urusannya denganmu?&quot; sejak awal, itu akan tampak seperti mengelak—seolah-olah dia peduli siapa pun yang tahu tentang asal-usulnya!</p><p>Raffles sendiri tidak memiliki keinginan yang sama untuk berkonfrontasi seperti yang tersirat dalam sikap mengancam Ladislaw. Pemuda kurus dengan kulit seperti perempuan itu tampak seperti kucing macan yang siap menerkamnya. Dalam keadaan seperti itu, kesenangan Tuan Raffles untuk mengganggu teman-temannya tertahan.</p><p>“Tidak bermaksud menyinggung, Tuan, tidak bermaksud menyinggung! Saya hanya ingat ibu Anda—mengenalnya ketika ia masih kecil. Tetapi ayah Anda yang Anda tampilkan, Tuan. Saya juga berkesempatan bertemu ayah Anda. Apakah orang tua Anda masih hidup, Tuan Ladislaw?”</p><p>“Tidak!” bentak Will, dengan sikap yang sama seperti sebelumnya.</p><p>“Saya akan senang membantu Anda, Tuan Ladislaw—demi Tuhan, saya akan senang! Semoga kita bertemu lagi.”</p><p>Kemudian Raffles, yang telah mengangkat topinya saat mengucapkan kata-kata terakhir, berbalik dengan ayunan kakinya dan berjalan pergi. Will memperhatikannya sejenak, dan dapat melihat bahwa dia tidak kembali ke ruang lelang, tetapi tampak berjalan menuju jalan raya. Sejenak ia berpikir bahwa ia telah bodoh karena tidak membiarkan pria itu terus berbicara;—tetapi tidak! secara keseluruhan ia lebih memilih untuk tidak mendapatkan informasi dari sumber itu.</p><p>Namun, menjelang malam, Raffles menyusulnya di jalan, dan tampaknya telah melupakan kekasaran sambutan sebelumnya atau bermaksud membalasnya dengan keakraban yang lebih ramah, menyapanya dengan riang dan berjalan di sisinya, awalnya mengomentari keindahan kota dan lingkungan sekitarnya. Will menduga bahwa pria itu telah minum dan sedang mempertimbangkan cara untuk melepaskannya ketika Raffles berkata—</p><p>“Saya sendiri pernah ke luar negeri, Tuan Ladislaw—saya sudah melihat dunia—dulu sering berbincang dengan Anda. Di Boulogne saya melihat ayah Anda—Anda sangat mirip dengannya, demi Tuhan! Mulut—hidung—mata—rambut yang menjuntai dari dahi Anda persis seperti miliknya—sedikit bergaya asing. John Bull tidak banyak melakukan hal itu. Tapi ayah Anda sangat sakit ketika saya melihatnya. Ya Tuhan! Tangannya sangat tipis. Anda masih kecil saat itu. Apakah dia sudah sembuh?”</p><p>“Tidak,” kata Will singkat.</p><p>“Ah! Wah! Aku sering bertanya-tanya apa yang terjadi pada ibumu. Dia melarikan diri dari teman-temannya ketika masih muda—gadis yang bersemangat dan cantik, demi Tuhan! Aku tahu alasan mengapa dia melarikan diri,” kata Raffles, mengedipkan mata perlahan sambil melirik Will dari samping.</p><p>“Anda tidak tahu hal yang memalukan tentang dia, Tuan,” kata Will, menoleh ke arahnya dengan agak kasar. Tetapi Tuan Raffles saat itu tidak peka terhadap nuansa perilaku.</p><p>“Sama sekali tidak!” katanya sambil menggelengkan kepalanya dengan tegas. “Dia terlalu terhormat untuk menyukai teman-temannya—itu saja!” Di sini Raffles kembali mengedipkan mata perlahan. “Ya Tuhan, aku tahu segalanya tentang mereka—sedikit tentang apa yang bisa kau sebut sebagai pencurian yang terhormat—rumah penerima tamu kelas atas—tanpa lubang dan sudut—kelas satu. Toko mewah, keuntungan tinggi, tidak salah lagi. Tapi Tuhan! Sarah tidak akan tahu apa-apa tentang itu—dia seorang wanita muda yang gagah—sekolah berasrama yang bagus—cocok untuk istri seorang bangsawan—hanya saja Archie Duncan memberikannya padanya karena dendam, karena dia tidak mau berhubungan dengannya. Dan karena itu dia melarikan diri dari seluruh urusan itu. Aku bepergian untuk mereka, Tuan, dengan cara yang sopan—dengan gaji tinggi. Awalnya mereka tidak keberatan dia melarikan diri—orang-orang saleh, Tuan, sangat saleh—dan dia untuk panggung. Putranya masih hidup saat itu, dan putrinya dengan harga diskon. Halo! Kita di sini di Blue Bull. Bagaimana menurutmu, Tuan Ladislaw?—apakah kita mampir dan minum segelas?”</p><p>“Tidak, aku harus mengucapkan selamat malam,” kata Will, bergegas menyusuri lorong yang menuju ke Gerbang Lowick, dan hampir berlari untuk menghindari jangkauan Raffles.</p><p>Ia berjalan cukup lama di jalan Lowick menjauh dari kota, merasa lega ketika kegelapan bertabur bintang tiba. Ia merasa seolah-olah telah dilempari tanah di tengah teriakan cemoohan. Ada hal ini yang menguatkan pernyataan orang itu—bahwa ibunya tidak pernah mau memberitahunya alasan mengapa ia melarikan diri dari keluarganya.</p><p>Nah! Apa salahnya Will Ladislaw, kalau mengira kebenaran tentang keluarga itu adalah yang terburuk? Ibunya telah berjuang melewati kesulitan untuk memisahkan diri dari keluarga itu. Tetapi jika teman-teman Dorothea mengetahui cerita ini—jika keluarga Chettam mengetahuinya—mereka akan memiliki alasan yang kuat untuk mencurigainya dan menganggapnya tidak pantas mendekatinya. Namun, biarlah mereka mencurigai apa pun yang mereka inginkan, mereka akan mendapati diri mereka salah. Mereka akan menemukan bahwa darah dalam dirinya sama bersihnya dari noda kejahatan seperti darah mereka.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-lix.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Lix</span>
+    </a>
+    <a href="bab-lxi.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Lxi</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB LX.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>Ungkapan yang baik memang selalu patut dipuji. — Justice Shallow . Beberapa hari kemudian—saat itu sudah akhir Agustus—terjadi sebuah peristiwa yang menimbulkan kehebohan di Middlemarch: masyarakat, jika mereka mau, akan mendapat kesempatan untuk membeli, di bawah naungan terhormat Tuan Borthrop Trumbull, perabotan, buku, dan lukisan yang menurut selebaran dapat dilihat sebagai yang terbaik dalam segala hal, milik Edwin Larcher, Esq. Ini bukanlah salah satu penjualan yang menunjukkan penurunan perdagangan; sebaliknya, hal itu disebabkan oleh kesuksesan besar Tuan Larcher dalam bisnis pengangkutan, yang membenarkan pembeliannya sebuah rumah besar di dekat Riverston yang sudah dilengkapi dengan perabotan mewah oleh seorang dokter Spa yang terkenal—bahkan dilengkapi dengan begitu banyak lukisan tubuh yang mahal di ruang makan, sehingga Nyonya Larcher merasa gugup sampai akhirnya tenang setelah mengetahui bahwa subjek lukisan tersebut adalah Kitab Suci. Oleh karena itu, peluang bagus bagi para pembeli ini ditunjukkan dengan baik dalam selebaran Tuan Borthrop Trumbull, yang pengetahuannya tentang sejarah seni memungkinkannya untuk menyatakan bahwa perabot aula, yang akan dijual tanpa syarat, termasuk sebuah ukiran karya seorang seniman sezaman dengan Gibbons. Di Middlemarch pada masa itu, penjualan besar dianggap sebagai semacam festival. Ada meja yang dihidangkan dengan makanan dingin terbaik, seperti di pemakaman mewah; dan fasilitas disediakan untuk minum-minum dengan riang yang dapat mengarah pada penawaran yang meriah dan murah hati untuk barang-barang yang tidak diinginkan. Penjualan Tuan Larcher lebih menarik dalam cuaca cerah karena rumahnya terletak tepat di ujung kota, dengan taman dan kandang kuda yang terlampir, di jalan keluar yang menyenangkan dari Middlemarch yang disebut London Road, yang juga merupakan jalan menuju Rumah Sakit Baru dan kediaman pensiunan Tuan Bulstrode, yang dikenal sebagai Shrubs. Singkatnya, lelang itu sama baiknya dengan pameran, dan menarik semua kalangan yang memiliki waktu luang: bagi sebagian orang, yang mengambil risiko menawar hanya untuk menaikkan harga, itu hampir sama dengan bertaruh di pacuan kuda. Pada hari kedua, ketika furnitur terbaik akan dijual, "semua orang" ada di sana; Bahkan Tuan Thesiger, rektor St. Peter's, sempat mampir sebentar, ingin membeli meja ukir itu, dan sempat berbaur dengan Tuan Bambridge dan Tuan Horrock. Ada sekelompok wanita Middlemarch yang duduk mengelilingi meja besar di ruang makan, tempat Tuan Borthrop Trumbull duduk dengan meja tulis dan palu; tetapi barisan wajah-wajah yang sebagian besar laki-laki di belakang sering berubah karena orang-orang yang datang dan pergi baik dari pintu maupun jendela besar yang menghadap ke halaman rumput. “Semua orang” pada hari itu tidak termasuk Tuan Bulstrode, yang kesehatannya tidak dapat menahan keramaian dan angin kencang. Tetapi Nyonya Bulstrode sangat ingin memiliki lukisan tertentu—sebuah “Perjamuan di Emmaus,” yang dalam katalog dikaitkan dengan Guido; dan pada saat-saat terakhir sebelum hari penjualan, Tuan Bulstrode telah mengunjungi kantor “Pioneer,” yang sekarang ia menjadi salah satu pemiliknya, untuk memohon kepada Tuan Ladislaw sebagai bantuan besar agar ia dengan senang hati menggunakan pengetahuannya yang luar biasa tentang lukisan untuk kepentingan Nyonya Bulstrode, dan menilai nilai lukisan tertentu ini—“jika,” tambah bankir yang sangat sopan itu, “kehadiran di penjualan tidak akan mengganggu pengaturan keberangkatan Anda, yang saya tahu sudah dekat.” Ketentuan ini mungkin terdengar agak satir di telinga Will jika dia sedang ingin mempedulikan satir semacam itu. Ketentuan itu merujuk pada kesepakatan yang dibuat beberapa minggu sebelumnya dengan pemilik surat kabar, bahwa dia bebas kapan saja dia mau untuk menyerahkan manajemen kepada subeditor yang telah dia latih; karena dia ingin akhirnya meninggalkan Middlemarch. Tetapi visi ambisi yang tak terbatas lemah dibandingkan dengan kemudahan melakukan apa yang sudah menjadi kebiasaan atau sangat menyenangkan; dan kita semua tahu kesulitan melaksanakan tekad ketika kita diam-diam berharap itu mungkin tidak perlu. Dalam keadaan pikiran seperti itu, orang yang paling tidak percaya pun memiliki kecenderungan pribadi terhadap keajaiban: mustahil untuk membayangkan bagaimana keinginan kita dapat terpenuhi, namun—hal-hal yang sangat menakjubkan telah terjadi! Will tidak mengakui kelemahan ini pada dirinya sendiri, tetapi dia ragu-ragu. Apa gunanya pergi ke London pada waktu itu? Orang-orang Rugby yang akan mengingatnya tidak ada di sana; dan sejauh menyangkut penulisan politik, dia lebih suka melanjutkan beberapa minggu dengan "Pioneer." Namun, saat ini, ketika Tuan Bulstrode berbicara kepadanya, ia memiliki tekad yang lebih kuat untuk pergi sekaligus tekad yang sama kuatnya untuk tidak pergi sampai ia bertemu kembali dengan Dorothea. Karena itu, ia menjawab bahwa ia memiliki alasan untuk menunda keberangkatannya sedikit, dan akan senang untuk pergi ke lelang. Will sedang dalam suasana hati yang menantang, kesadarannya sangat terganggu oleh pikiran bahwa orang-orang yang memandanginya mungkin mengetahui fakta yang setara dengan tuduhan terhadapnya sebagai orang dengan niat buruk yang akan digagalkan dengan penjualan harta benda. Seperti kebanyakan orang yang menegaskan kebebasan mereka terkait perbedaan konvensional, ia siap untuk tiba-tiba dan cepat berdebat dengan siapa pun yang mungkin mengisyaratkan bahwa ia memiliki alasan pribadi untuk pernyataan itu—bahwa ada sesuatu dalam darahnya, sikapnya, atau karakternya yang ia tutupi dengan pendapat. Ketika ia berada di bawah kesan yang menjengkelkan seperti ini, ia akan berjalan-jalan selama berhari-hari dengan tatapan menantang, warna kulitnya yang transparan berubah seolah-olah ia sedang waspada , mengawasi sesuatu yang harus ia serang. Ekspresi ini sangat mencolok pada dirinya saat lelang, dan mereka yang hanya pernah melihatnya dalam suasana hati yang lembut dan aneh atau penuh kegembiraan akan terkejut dengan kontrasnya. Ia tidak menyesal memiliki kesempatan ini untuk tampil di depan umum di hadapan suku Middlemarch, Toller, Hackbutt, dan yang lainnya, yang memandang rendah dirinya sebagai seorang petualang, dan berada dalam keadaan ketidaktahuan yang brutal tentang Dante—yang mencemooh darah Polandianya, dan mereka sendiri berasal dari ras yang sangat perlu diubah. Ia berdiri di tempat yang mencolok tidak jauh dari juru lelang, dengan jari telunjuk di setiap saku samping dan kepalanya mendongak ke belakang, tidak ingin berbicara dengan siapa pun, meskipun ia telah disambut dengan hangat sebagai seorang ahli oleh Tuan Trumbull, yang sedang menikmati aktivitas maksimal dari kemampuan hebatnya. Dan tentu saja di antara semua orang yang pekerjaannya mengharuskan mereka untuk menunjukkan kemampuan berbicara mereka, yang paling bahagia adalah seorang juru lelang provinsi yang makmur, sangat menyadari leluconnya sendiri dan sadar akan pengetahuannya yang ensiklopedis. Beberapa orang yang murung dan berdarah masam mungkin keberatan untuk terus-menerus menekankan keunggulan semua barang, dari alat pembuka sepatu hingga "Berghems"; tetapi Tuan Borthrop Trumbull memiliki kebaikan hati yang mengalir dalam nadinya; dia adalah seorang pengagum sejati, dan ingin memiliki alam semesta di bawah palunya, karena merasa bahwa itu akan terjual dengan harga lebih tinggi karena rekomendasinya. Sementara itu, perabotan ruang tamu Nyonya Larcher sudah cukup baginya. Ketika Will Ladislaw masuk, sebuah pelindung perapian kedua, yang konon terlupakan di tempat seharusnya, tiba-tiba menarik perhatian juru lelang, yang kemudian membagikannya berdasarkan prinsip keadilan, yaitu memuji hal-hal yang paling layak dipuji. Pelindung perapian itu terbuat dari baja yang dipoles, dengan banyak ukiran berbentuk tombak dan tepi yang tajam. “Nah, Nyonya-nyonya,” katanya, “saya akan meminta pendapat Anda. Ini adalah sebuah pelindung perapian yang di penjualan lain hampir tidak akan ditawarkan tanpa syarat, karena, seperti yang dapat saya katakan, dari segi kualitas baja dan keunikan desainnya, ini adalah jenis barang”—di sini Tuan Trumbull merendahkan suaranya dan menjadi sedikit sengau, merapikan garis-garis wajahnya dengan jari kirinya—“yang mungkin tidak sesuai dengan selera umum. Izinkan saya memberi tahu Anda bahwa sebentar lagi gaya pengerjaan ini akan menjadi satu-satunya yang sedang tren—setengah mahkota, kata Anda? terima kasih—seharga setengah mahkota, pelindung perapian yang khas ini; dan saya memiliki informasi khusus bahwa gaya antik sangat dicari di kalangan atas. Tiga shilling—tiga shilling enam pence—angkat baik-baik, Joseph! Lihat, Nyonya-nyonya, kesederhanaan desainnya—saya sendiri tidak ragu bahwa itu dibuat pada abad lalu! Empat shilling, Tuan Mawmsey?—empat shilling.” “Itu bukan barang yang akan saya pajang di ruang tamu saya ,” kata Ny. Mawmsey dengan suara lantang, sebagai peringatan bagi suami yang gegabah itu. “Saya heran dengan Ny. Larcher. Kepala setiap anak yang jatuh menimpanya akan terbelah dua. Tepinya seperti pisau.” “Benar sekali,” jawab Tuan Trumbull dengan cepat, “dan sangat berguna untuk memiliki alat pemotong yang bisa digunakan jika Anda memiliki tali sepatu kulit atau seutas tali yang perlu dipotong dan tidak ada pisau di tangan: banyak orang yang tergantung karena tidak ada pisau untuk memotongnya. Tuan-tuan, ini alat pemotong yang jika Anda bernasib sial hingga tergantung, akan memotong Anda dalam sekejap—dengan kecepatan yang menakjubkan—empat shilling enam pence—lima—lima shilling enam pence—benda yang tepat untuk kamar tidur tamu yang memiliki tempat tidur empat tiang dan tamu yang sedikit linglung—enam shilling—terima kasih, Tuan Clintup—seharga enam shilling—sedang—habis!” Pandangan juru lelang, yang sebelumnya mengamati sekelilingnya dengan kepekaan luar biasa terhadap semua tanda penawaran, kini tertuju pada kertas di hadapannya, dan suaranya pun merendah menjadi nada acuh tak acuh saat ia berkata, “Tuan Clintup. Cepatlah, Joseph.” “Harganya enam shilling untuk memiliki pelindung yang selalu bisa Anda gunakan untuk menceritakan lelucon itu,” kata Tuan Clintup, tertawa pelan dan meminta maaf kepada tetangganya. Dia adalah seorang tukang kebun yang pemalu namun terhormat, dan khawatir bahwa hadirin mungkin menganggap tawarannya sebagai hal yang bodoh. Sementara itu, Joseph membawa nampan penuh barang-barang kecil. “Nah, Nyonya-nyonya,” kata Tuan Trumbull, sambil mengambil salah satu barang, “nampan ini berisi banyak barang yang sangat berharga—koleksi pernak-pernik untuk meja ruang tamu—dan pernak-perniklah yang membentuk inti dari segala hal manusia—tidak ada yang lebih penting daripada pernak-pernik—(ya, Tuan Ladislaw, ya, nanti saja)—tapi, Joseph, edarkan nampan ini—pernik-pernik ini harus diperiksa, Nyonya-nyonya. Yang saya pegang ini adalah alat yang cerdik—semacam teka-teki praktis, bisa saya sebut begitu: di sini, Anda lihat, ini tampak seperti kotak berbentuk hati yang elegan, portabel—untuk saku; di sana, lagi, ini menjadi seperti bunga ganda yang indah—hiasan untuk meja; dan sekarang”—Tuan Trumbull Trumbull membiarkan bunga itu jatuh dengan mengejutkan menjadi untaian daun berbentuk hati—"sebuah buku teka-teki! Tidak kurang dari lima ratus teka-teki dicetak dengan warna merah yang indah. Tuan-tuan, jika saya tidak begitu berhati nurani, saya tidak akan ingin Anda menawar tinggi untuk barang ini—saya sendiri sangat menginginkannya. Apa yang dapat meningkatkan kegembiraan yang polos, dan mungkin saya katakan kebajikan, lebih dari teka-teki yang bagus?—itu mencegah bahasa yang tidak sopan, dan mengikat seseorang pada pergaulan wanita yang beradab. Barang cerdik ini sendiri, tanpa kotak domino yang elegan, keranjang kartu, dll., seharusnya sudah cukup untuk memberikan harga tinggi pada barang ini. Dibawa di saku, itu bisa membuat seseorang diterima di masyarakat mana pun. Empat shilling, Tuan?—empat shilling untuk koleksi teka-teki yang luar biasa ini dengan et caeteras. Berikut contohnya: 'Bagaimana Anda harus mengeja madu agar dapat menangkap kepik? Jawabannya—uang.'" Kau dengar?—kumbang ladybug—uang madu. Ini adalah hiburan untuk mengasah kecerdasan; ada sindirannya—ada apa yang kita sebut satire, dan kecerdasan tanpa kecabulan. Empat shilling enam pence—lima shilling.” Proses penawaran berlangsung dengan persaingan yang semakin memanas. Tuan Bowyer adalah salah satu penawar, dan ini sangat menjengkelkan. Bowyer tidak mampu membelinya, dan hanya ingin menghalangi orang lain untuk mendapatkan keuntungan. Arus penawaran bahkan menyeret Tuan Horrock ikut serta, tetapi komitmennya terhadap pendapat ini keluar dari mulutnya tanpa mengorbankan ekspresi netralnya, sehingga tawaran itu mungkin tidak akan terdeteksi sebagai miliknya jika bukan karena sumpah ramah Tuan Bambridge, yang ingin tahu apa yang akan dilakukan Horrock dengan barang rongsokan yang hanya cocok untuk toko pakaian yang telah jatuh ke dalam keadaan kehancuran yang dengan ramah diakui oleh pedagang kuda di sebagian besar kehidupan duniawi. Lot itu akhirnya terjual seharga satu guinea kepada Tuan Spilkins, seorang pemuda bernama Slender dari lingkungan sekitar, yang boros dengan uang sakunya dan merasa kurang ingat akan teka-teki. “Ayolah, Trumbull, ini sangat disayangkan—kau telah memasukkan barang-barang tak berguna milik seorang wanita tua ke dalam lelang,” gumam Tuan Toller, mendekati juru lelang. “Aku ingin melihat bagaimana hasil cetakannya, dan aku harus segera pergi.” “ Segera , Tuan Toller. Itu hanyalah tindakan kebaikan yang akan disetujui oleh hati mulia Anda. Joseph! Cepat dengan cetakannya—Lot 235. Nah, Tuan-tuan, Anda yang merupakan para penikmat seni , Anda akan mendapatkan suguhan istimewa. Ini adalah ukiran Duke of Wellington yang dikelilingi oleh stafnya di Medan Waterloo; dan terlepas dari peristiwa-peristiwa baru-baru ini yang, seolah-olah, telah menyelimuti Pahlawan besar kita dalam awan, saya akan berani mengatakan—karena orang seperti saya tidak boleh terombang-ambing oleh angin politik—bahwa subjek yang lebih indah—dari tatanan modern, yang termasuk dalam zaman dan era kita sendiri—pemahaman manusia hampir tidak dapat membayangkannya: malaikat mungkin bisa, tetapi bukan manusia, Tuan-tuan, bukan manusia.” “Siapa yang melukisnya?” tanya Tuan Powderell, sangat terkesan. “Ini adalah bukti sebelum surat itu, Tuan Powderell—pelukisnya tidak diketahui,” jawab Trumbull, dengan sedikit terengah-engah di kata-kata terakhirnya, setelah itu ia mengerutkan bibir dan menatap sekelilingnya. “Saya akan menawar satu pound!” kata Tuan Powderell, dengan nada emosi yang mantap, seolah-olah dia siap mempertaruhkan dirinya. Entah karena kagum atau kasihan, tidak ada yang menaikkan harga untuknya. Selanjutnya datang dua cetakan Belanda yang sangat diinginkan oleh Tuan Toller, dan setelah mendapatkannya, ia pun pergi. Cetakan lain, dan kemudian beberapa lukisan, dijual kepada para pedagang terkemuka Middlemarch yang datang dengan keinginan khusus untuk mendapatkannya, dan terjadi pergerakan yang lebih aktif dari pengunjung yang keluar masuk; beberapa, yang telah membeli apa yang mereka inginkan, pergi, yang lain datang, baik baru saja datang atau hanya berkunjung sementara untuk menikmati hidangan yang disajikan di bawah tenda di halaman rumput. Tenda inilah yang ingin dibeli oleh Tuan Bambridge, dan ia tampak suka melihat ke dalamnya berulang kali, sebagai pendahuluan kepemilikannya. Pada kesempatan terakhirnya kembali dari sana, ia terlihat membawa serta seorang teman baru, orang asing bagi Tuan Trumbull dan semua orang lainnya, yang penampilannya, bagaimanapun, menimbulkan dugaan bahwa ia mungkin kerabat pedagang kuda—yang juga "suka berfoya-foya." Kumisnya yang lebat, gaya berjalannya yang gagah, dan ayunan kakinya, membuatnya menjadi sosok yang mencolok; Namun, setelan hitamnya yang agak lusuh di bagian tepinya menimbulkan kesan yang bias bahwa ia tidak mampu memanjakan dirinya sendiri sebanyak yang ia inginkan. “Siapa yang kau jemput, Bam?” tanya Tuan Horrock pelan. “Tanyakan sendiri padanya,” jawab Tuan Bambridge. “Dia bilang dia baru saja berbelok dari jalan.” Tuan Horrock mengamati orang asing itu, yang bersandar pada tongkatnya dengan satu tangan, menggunakan tusuk giginya dengan tangan lainnya, dan melihat sekelilingnya dengan kegelisahan tertentu yang tampaknya disebabkan oleh keheningan yang dipaksakan kepadanya oleh keadaan. Akhirnya, "Perjamuan di Emmaus" pun dibawakan, yang sangat melegakan Will, karena ia sudah sangat lelah dengan jalannya acara sehingga ia sedikit mundur dan menyandarkan bahunya ke dinding tepat di belakang juru lelang. Ia kemudian maju lagi, dan matanya tertuju pada orang asing yang mencolok itu, yang, agak mengejutkannya, sedang menatapnya dengan tajam. Namun, Will segera dipanggil oleh Tuan Trumbull. “Ya, Tuan Ladislaw, ya; saya rasa ini menarik bagi Anda sebagai seorang penikmat seni . Sungguh menyenangkan,” lanjut juru lelang dengan semangat yang meningkat, “untuk memperlihatkan lukisan seperti ini kepada sekelompok wanita dan pria—lukisan yang bernilai berapa pun bagi seseorang yang memiliki kemampuan dan penilaian yang seimbang. Ini adalah lukisan aliran Italia—karya Guydo yang terkenal , pelukis terhebat di dunia, pemimpin para Maestro Lama, begitu mereka disebut—saya kira, karena mereka mampu melakukan sesuatu yang lebih dari kebanyakan kita—memiliki rahasia yang kini hilang dari sebagian besar umat manusia. Izinkan saya memberi tahu Anda, Tuan-tuan, saya telah melihat banyak lukisan karya para Maestro Lama, dan tidak semuanya setara dengan lukisan ini—beberapa di antaranya lebih gelap dari yang Anda inginkan dan bukan bertema keluarga. Tetapi di sini ada karya Guydo — bingkainya saja bernilai ratusan pound—yang dapat dibanggakan oleh wanita mana pun untuk dipajang—benda yang cocok untuk apa yang kita sebut ruang makan di lembaga amal, jika ada pria dari Dewan yang ingin memamerkannya.” kemurahan hati . Putar sedikit, Pak? Ya. Joseph, putar sedikit ke arah Tuan Ladislaw—Tuan Ladislaw, karena pernah ke luar negeri, memahami manfaat dari hal-hal ini, Anda perhatikan.” Sejenak semua mata tertuju pada Will, yang dengan tenang berkata, "Lima pound." Juru lelang pun langsung protes keras. “Ah! Tuan Ladislaw! Bingkainya saja sudah bernilai segitu. Hadirin sekalian, demi kehormatan kota ini! Bayangkan jika nanti ditemukan bahwa sebuah karya seni yang berharga telah berada di antara kita di kota ini, dan tidak ada seorang pun di Middlemarch yang menyadarinya. Lima guinea—lima tujuh-enam—lima sepuluh. Tetap saja, hadirin sekalian, tetap saja! Ini adalah permata, dan 'Banyak permata,' seperti kata penyair, telah dibiarkan terjual dengan harga nominal karena masyarakat tidak tahu lebih baik, karena ditawarkan di kalangan di mana ada—saya akan mengatakan perasaan rendah, tetapi tidak!—Enam pound—enam guinea—sebuah lukisan Guydo kelas satu dijual seharga enam guinea—ini penghinaan terhadap agama, hadirin sekalian; ini menyentuh kita semua sebagai orang Kristen, hadirin sekalian, bahwa barang seperti ini dijual dengan harga serendah itu—enam pound sepuluh—tujuh—” Penawaran berlangsung cepat, dan Will terus ikut serta, mengingat bahwa Nyonya Bulstrode sangat menginginkan lukisan itu, dan berpikir bahwa ia mungkin bisa menaikkan harganya hingga dua belas pound. Tetapi harga akhirnya turun menjadi sepuluh guinea, lalu ia menerobos ke arah jendela lengkung dan keluar. Ia memilih untuk pergi ke bawah tenda untuk mengambil segelas air, karena merasa panas dan haus: tenda itu kosong dari pengunjung lain, dan ia meminta wanita yang bertugas untuk mengambilkannya air segar; tetapi sebelum wanita itu pergi, ia merasa kesal melihat orang asing berwajah merah yang telah menatapnya masuk. Pada saat itu, Will berpikir bahwa pria itu mungkin salah satu dari serangga parasit politik yang gemuk yang pernah atau dua kali mengaku mengenalnya karena pernah mendengarnya berbicara tentang masalah Reformasi, dan yang mungkin berpikir untuk mendapatkan satu shilling dengan berita. Dalam konteks ini, sosoknya, yang sudah agak panas untuk dilihat di hari musim panas, tampak semakin tidak menyenangkan; dan Will, setengah duduk di sandaran kursi taman, dengan hati-hati memalingkan pandangannya dari orang di sudut ruangan. Namun hal ini tidak berarti banyak bagi kenalan kami, Tuan Raffles, yang tidak pernah ragu untuk memaksakan diri mengamati orang yang tidak diinginkan, jika itu sesuai dengan tujuannya. Dia melangkah satu atau dua langkah hingga berada di depan Will, dan berkata dengan tergesa-gesa sambil mengunyah makanan, "Permisi, Tuan Ladislaw—apakah nama ibu Anda Sarah Dunkirk?" Will, yang hendak berdiri, mundur selangkah sambil mengerutkan kening dan berkata dengan agak galak, “Ya, Pak, memang benar. Dan apa urusannya dengan itu?” Sudah menjadi sifat Will bahwa percikan pertama yang muncul adalah jawaban langsung atas pertanyaan dan tantangan terhadap konsekuensinya. Jika dia mengatakan, "Apa urusannya denganmu?" sejak awal, itu akan tampak seperti mengelak—seolah-olah dia peduli siapa pun yang tahu tentang asal-usulnya! Raffles sendiri tidak memiliki keinginan yang sama untuk berkonfrontasi seperti yang tersirat dalam sikap mengancam Ladislaw. Pemuda kurus dengan kulit seperti perempuan itu tampak seperti kucing macan yang siap menerkamnya. Dalam keadaan seperti itu, kesenangan Tuan Raffles untuk mengganggu teman-temannya tertahan. “Tidak bermaksud menyinggung, Tuan, tidak bermaksud menyinggung! Saya hanya ingat ibu Anda—mengenalnya ketika ia masih kecil. Tetapi ayah Anda yang Anda tampilkan, Tuan. Saya juga berkesempatan bertemu ayah Anda. Apakah orang tua Anda masih hidup, Tuan Ladislaw?” “Tidak!” bentak Will, dengan sikap yang sama seperti sebelumnya. “Saya akan senang membantu Anda, Tuan Ladislaw—demi Tuhan, saya akan senang! Semoga kita bertemu lagi.” Kemudian Raffles, yang telah mengangkat topinya saat mengucapkan kata-kata terakhir, berbalik dengan ayunan kakinya dan berjalan pergi. Will memperhatikannya sejenak, dan dapat melihat bahwa dia tidak kembali ke ruang lelang, tetapi tampak berjalan menuju jalan raya. Sejenak ia berpikir bahwa ia telah bodoh karena tidak membiarkan pria itu terus berbicara;—tetapi tidak! secara keseluruhan ia lebih memilih untuk tidak mendapatkan informasi dari sumber itu. Namun, menjelang malam, Raffles menyusulnya di jalan, dan tampaknya telah melupakan kekasaran sambutan sebelumnya atau bermaksud membalasnya dengan keakraban yang lebih ramah, menyapanya dengan riang dan berjalan di sisinya, awalnya mengomentari keindahan kota dan lingkungan sekitarnya. Will menduga bahwa pria itu telah minum dan sedang mempertimbangkan cara untuk melepaskannya ketika Raffles berkata— “Saya sendiri pernah ke luar negeri, Tuan Ladislaw—saya sudah melihat dunia—dulu sering berbincang dengan Anda. Di Boulogne saya melihat ayah Anda—Anda sangat mirip dengannya, demi Tuhan! Mulut—hidung—mata—rambut yang menjuntai dari dahi Anda persis seperti miliknya—sedikit bergaya asing. John Bull tidak banyak melakukan hal itu. Tapi ayah Anda sangat sakit ketika saya melihatnya. Ya Tuhan! Tangannya sangat tipis. Anda masih kecil saat itu. Apakah dia sudah sembuh?” “Tidak,” kata Will singkat. “Ah! Wah! Aku sering bertanya-tanya apa yang terjadi pada ibumu. Dia melarikan diri dari teman-temannya ketika masih muda—gadis yang bersemangat dan cantik, demi Tuhan! Aku tahu alasan mengapa dia melarikan diri,” kata Raffles, mengedipkan mata perlahan sambil melirik Will dari samping. “Anda tidak tahu hal yang memalukan tentang dia, Tuan,” kata Will, menoleh ke arahnya dengan agak kasar. Tetapi Tuan Raffles saat itu tidak peka terhadap nuansa perilaku. “Sama sekali tidak!” katanya sambil menggelengkan kepalanya dengan tegas. “Dia terlalu terhormat untuk menyukai teman-temannya—itu saja!” Di sini Raffles kembali mengedipkan mata perlahan. “Ya Tuhan, aku tahu segalanya tentang mereka—sedikit tentang apa yang bisa kau sebut sebagai pencurian yang terhormat—rumah penerima tamu kelas atas—tanpa lubang dan sudut—kelas satu. Toko mewah, keuntungan tinggi, tidak salah lagi. Tapi Tuhan! Sarah tidak akan tahu apa-apa tentang itu—dia seorang wanita muda yang gagah—sekolah berasrama yang bagus—cocok untuk istri seorang bangsawan—hanya saja Archie Duncan memberikannya padanya karena dendam, karena dia tidak mau berhubungan dengannya. Dan karena itu dia melarikan diri dari seluruh urusan itu. Aku bepergian untuk mereka, Tuan, dengan cara yang sopan—dengan gaji tinggi. Awalnya mereka tidak keberatan dia melarikan diri—orang-orang saleh, Tuan, sangat saleh—dan dia untuk panggung. Putranya masih hidup saat itu, dan putrinya dengan harga diskon. Halo! Kita di sini di Blue Bull. Bagaimana menurutmu, Tuan Ladislaw?—apakah kita mampir dan minum segelas?” “Tidak, aku harus mengucapkan selamat malam,” kata Will, bergegas menyusuri lorong yang menuju ke Gerbang Lowick, dan hampir berlari untuk menghindari jangkauan Raffles. Ia berjalan cukup lama di jalan Lowick menjauh dari kota, merasa lega ketika kegelapan bertabur bintang tiba. Ia merasa seolah-olah telah dilempari tanah di tengah teriakan cemoohan. Ada hal ini yang menguatkan pernyataan orang itu—bahwa ibunya tidak pernah mau memberitahunya alasan mengapa ia melarikan diri dari keluarganya. Nah! Apa salahnya Will Ladislaw, kalau mengira kebenaran tentang keluarga itu adalah yang terburuk? Ibunya telah berjuang melewati kesulitan untuk memisahkan diri dari keluarga itu. Tetapi jika teman-teman Dorothea mengetahui cerita ini—jika keluarga Chettam mengetahuinya—mereka akan memiliki alasan yang kuat untuk mencurigainya dan menganggapnya tidak pantas mendekatinya. Namun, biarlah mereka mencurigai apa pun yang mereka inginkan, mereka akan mendapati diri mereka salah. Mereka akan menemukan bahwa darah dalam dirinya sama bersihnya dari noda kejahatan seperti darah mereka.</p>
-
-<div class="nav">
-  <a href="bab-lix.html">⬅ Bab Lix.</a>
-  <a href="bab-lxi.html">Bab Lxi. ➡</a>
-</div>
 
 </body>
 </html>

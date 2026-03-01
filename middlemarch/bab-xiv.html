@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XIV.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XIV. - Bacaan digital klasik">
+<title>Bab XIV — Middlemarch</title>
+<meta name="description" content="Baca Bab XIV dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-xiv.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab XIV — Middlemarch">
+  <meta property="og:description" content="Baca Bab XIV dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-xiv.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab XIV — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab XIV dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab XIV",
+    "name": "Bab XIV — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-xiv.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab XIV</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Berikut ini resep yang tepat <br />Untuk saus daging lezat, Bernama Kemalasan, yang banyak orang makan karena suka, dan menyebutnya manis: Pertama-tama cari potongan-potongan kecil, seperti anjing pemburu <br />Campur rata dengan prasmanan, aduk rata Dengan minyak sanjungan yang kental, Dan buih dengan kebohongan yang memuji diri sendiri. Sajikan hangat: wadah yang harus Anda pilih Untuk menyimpannya adalah sepatu orang mati. ”</p><p>Konsultasi Tuan Bulstrode dengan Harriet tampaknya telah memberikan efek yang diinginkan oleh Tuan Vincy, karena pagi-pagi sekali keesokan harinya sebuah surat datang yang dapat dibawa Fred kepada Tuan Featherstone sebagai bukti yang dibutuhkan.</p><p>Pria tua itu sedang beristirahat di tempat tidur karena cuaca dingin, dan karena Mary Garth tidak terlihat di ruang tamu, Fred segera naik ke atas dan memberikan surat itu kepada pamannya, yang, sambil bersandar nyaman di tempat tidur, tetap dapat menikmati kesadarannya akan kebijaksanaan dalam mencurigai dan mengecewakan umat manusia. Ia mengenakan kacamatanya untuk membaca surat itu, mengerutkan bibir dan menarik sudut-sudutnya ke bawah.</p><p>“ Dalam keadaan seperti ini, saya tidak akan menolak untuk menyatakan keyakinan saya —tchah! betapa indahnya kata-kata orang itu! Dia sehalus juru lelang— bahwa putra Anda, Frederic, tidak memperoleh uang muka apa pun atas warisan yang dijanjikan oleh Tuan Featherstone —dijanjikan? siapa bilang saya pernah berjanji? Saya tidak menjanjikan apa pun—saya akan membuat tambahan wasiat selama yang saya suka— dan mengingat sifat dari proses tersebut, tidak masuk akal untuk berasumsi bahwa seorang pemuda yang berakal sehat dan berkarakter akan mencobanya —ah, tetapi Tuan itu tidak mengatakan Anda adalah seorang pemuda yang berakal sehat dan berkarakter, perhatikan itu, Tuan!—Mengenai keterlibatan saya sendiri dengan laporan apa pun yang bersifat seperti itu, saya dengan tegas menyatakan bahwa saya tidak pernah membuat pernyataan apa pun yang menyatakan bahwa putra Anda telah meminjam uang atas properti apa pun yang mungkin diperolehnya setelah kematian Tuan Featherstone —astaga! 'properti'—diperoleh—kematian! Pengacara Standish tidak ada apa-apanya dibandingkan dia. Dia tidak bisa berbicara lebih halus jika dia ingin meminjam. Nah,” Tuan Featherstone di sini melihat ke atas Sambil melirik Fred dengan kacamata, dan mengembalikan surat itu kepadanya dengan gerakan menghina, dia berkata, &quot;Kau pikir aku tidak percaya apa pun karena Bulstrode menulisnya dengan baik, kan?&quot;</p><p>Fred tersipu. “Anda ingin mendapatkan surat itu, Tuan. Saya rasa sangat mungkin bahwa penyangkalan Tuan Bulstrode sama baiknya dengan sumber yang memberi tahu Anda apa yang dia bantah.”</p><p>“Benar sekali. Saya tidak pernah mengatakan saya percaya salah satu atau yang lainnya. Dan sekarang apa yang Anda harapkan?” kata Tuan Featherstone dengan singkat, tetap mengenakan kacamatanya, tetapi menarik tangannya ke bawah selendangnya.</p><p>“Saya tidak mengharapkan apa pun, Tuan.” Fred dengan susah payah menahan diri untuk tidak melampiaskan kekesalannya. “Saya datang untuk membawakan surat ini. Jika Anda berkenan, saya akan mengucapkan selamat pagi.”</p><p>“Belum, belum. Bunyikan bel; aku ingin Nona datang.”</p><p>Seorang pelayanlah yang datang menjawab bunyi bel.</p><p>“Suruh Nona datang!” kata Tuan Featherstone dengan tidak sabar. “Ada urusan apa dia harus pergi?” Ia berbicara dengan nada yang sama ketika Mary datang.</p><p>“Kenapa kau tidak bisa duduk diam di sini sampai aku menyuruhmu pergi? Aku mau rompiku sekarang. Sudah kubilang selalu letakkan di atas tempat tidur.”</p><p>Mata Mary tampak agak merah, seolah-olah dia baru saja menangis. Jelas sekali bahwa Tuan Featherstone sedang dalam suasana hati yang sangat buruk pagi ini, dan meskipun Fred sekarang memiliki prospek untuk menerima hadiah uang yang sangat dibutuhkan, dia lebih suka bebas untuk berbalik kepada tiran tua itu dan mengatakan kepadanya bahwa Mary Garth terlalu baik untuk berada di bawah perintahnya. Meskipun Fred telah berdiri saat dia memasuki ruangan, dia hampir tidak memperhatikannya, dan tampak seolah-olah sarafnya gemetar karena mengantisipasi sesuatu akan dilemparkan kepadanya. Tetapi dia tidak pernah takut akan hal yang lebih buruk daripada kata-kata. Ketika dia hendak mengambil rompi dari gantungan, Fred menghampirinya dan berkata, &quot;Izinkan saya.&quot;</p><p>“Biarkan saja! Kau bawa saja, Nona, dan letakkan di sini,” kata Tuan Featherstone. “Sekarang pergilah lagi sampai aku memanggilmu,” tambahnya, ketika rompi itu diletakkan olehnya. Sudah menjadi kebiasaannya untuk membumbui kesenangannya dalam menunjukkan kebaikan kepada seseorang dengan bersikap sangat tidak menyenangkan kepada orang lain, dan Mary selalu siap sedia untuk menyediakan bumbu tersebut. Ketika kerabatnya sendiri datang, dia diperlakukan lebih baik. Perlahan-lahan dia mengeluarkan seikat kunci dari saku rompi, dan perlahan-lahan dia mengeluarkan sebuah kotak kaleng yang berada di bawah selimut.</p><p>“Kau berharap aku akan memberimu sedikit kekayaan, ya?” katanya, sambil melihat dari atas kacamatanya dan berhenti sejenak saat membuka tutupnya.</p><p>“Tidak sama sekali, Tuan. Anda cukup baik untuk membicarakan tentang memberi saya hadiah beberapa hari yang lalu, jika tidak, tentu saja, saya tidak akan memikirkan hal itu.” Tetapi Fred memiliki sifat yang penuh harapan, dan sebuah bayangan muncul tentang sejumlah uang yang cukup besar untuk membebaskannya dari kecemasan tertentu. Ketika Fred berhutang, baginya selalu tampak sangat mungkin bahwa sesuatu—ia tidak selalu membayangkan apa—akan terjadi sehingga ia dapat membayar tepat waktu. Dan sekarang kejadian yang menguntungkan itu tampaknya sudah dekat, akan menjadi hal yang sangat tidak masuk akal untuk berpikir bahwa persediaan itu akan kurang dari yang dibutuhkan: sama tidak masuk akalnya dengan iman yang percaya pada setengah mukjizat karena kurangnya kekuatan untuk percaya pada mukjizat yang utuh.</p><p>Tangan-tangan berurat dalam itu meraba banyak uang kertas satu demi satu, meletakkannya kembali rata, sementara Fred bersandar di kursinya, enggan terlihat bersemangat. Ia menganggap dirinya seorang pria terhormat, dan tidak suka merayu orang tua demi uangnya. Akhirnya, Tuan Featherstone menatapnya lagi dari balik kacamatanya dan memberinya seikat kecil uang kertas: Fred dapat melihat dengan jelas bahwa hanya ada lima lembar, karena tepi yang kurang penting terbuka ke arahnya. Tapi kemudian, masing-masing bisa bernilai lima puluh pound. Ia mengambilnya, sambil berkata—</p><p>“Saya sangat berterima kasih kepada Anda, Tuan,” katanya sambil hendak menggulung kertas-kertas itu tanpa memikirkan nilainya. Namun, hal itu tidak disukai oleh Tuan Featherstone, yang sedang mengawasinya dengan saksama.</p><p>“Ayo, bukankah menurutmu ada baiknya menghitungnya? Kau menerima uang seperti seorang bangsawan; kurasa kau juga menghamburkannya seperti seorang bangsawan.”</p><p>“Saya kira saya tidak boleh menolak rezeki yang datang, Tuan. Tapi saya akan sangat senang menghitungnya.”</p><p>Namun, Fred tidak begitu senang setelah menghitungnya. Karena kenyataannya, jumlah uang yang dimilikinya jauh lebih sedikit daripada yang diharapkannya. Apa arti kesesuaian segala sesuatu, jika bukan kesesuaiannya dengan harapan seseorang? Jika tidak, absurditas dan ateisme terbentang di belakangnya. Kejatuhan Fred sangat parah ketika ia mendapati bahwa ia hanya memiliki lima lembar uang dua puluh dolar, dan kontribusinya dalam pendidikan tinggi di negara ini tampaknya tidak membantunya. Meskipun demikian, katanya, dengan perubahan cepat pada wajahnya yang cerah—</p><p>“Anda sangat baik hati, Tuan.”</p><p>“Menurutku memang begitu,” kata Tuan Featherstone, mengunci kotaknya dan meletakkannya kembali, lalu dengan sengaja melepas kacamatanya, dan akhirnya, seolah-olah perenungannya telah lebih meyakinkannya, mengulangi, “Menurutku itu tampan.”</p><p>“Saya jamin, Pak, saya sangat berterima kasih,” kata Fred, yang telah sempat memulihkan sikap cerianya.</p><p>“Memang seharusnya begitu. Kau ingin dikenal di dunia, dan kurasa Peter Featherstone adalah satu-satunya orang yang bisa kau percayai.” Di sini mata lelaki tua itu berbinar dengan kepuasan yang bercampur aduk karena menyadari bahwa pemuda cerdas ini mengandalkannya, dan bahwa pemuda cerdas itu agak bodoh karena melakukan hal itu.</p><p>“Ya, memang benar: aku tidak dilahirkan dengan kesempatan yang sangat bagus. Hanya sedikit orang yang lebih menderita daripada aku,” kata Fred, dengan sedikit rasa terkejut atas kebaikannya sendiri, mengingat betapa kerasnya ia diperlakukan. “Rasanya agak menyedihkan harus menunggang kuda pemburu yang napasnya tersengal-sengal, dan melihat orang-orang, yang tidak sebaik dirimu dalam menilai, mampu membuang sejumlah uang untuk membeli barang murah yang tidak berharga.”</p><p>“Nah, sekarang kau bisa membeli kuda pemburu yang bagus. Kurasa delapan puluh pound sudah cukup untuk itu—dan kau masih punya dua puluh pound lagi untuk mengatasi masalah kecil apa pun,” kata Tuan Featherstone sambil sedikit terkekeh.</p><p>“Anda sangat baik, Pak,” kata Fred, dengan kepekaan yang tinggi dalam menciptakan kontras antara kata-kata dan perasaannya.</p><p>“Ah, paman yang lebih baik daripada pamanmu Bulstrode yang hebat itu. Kurasa kau tidak akan mendapatkan banyak manfaat dari spekulasinya. Kudengar dia punya pengaruh yang cukup kuat pada ayahmu, ya?”</p><p>“Ayah saya tidak pernah menceritakan apa pun tentang urusannya kepada saya, Pak.”</p><p>“Yah, dia menunjukkan sedikit akal sehat di situ. Tapi orang lain akan mengetahuinya tanpa sepengetahuannya. Dia tidak akan pernah meninggalkan banyak harta untukmu: kemungkinan besar dia akan meninggal tanpa wasiat—dia memang tipe orang seperti itu—biarkan mereka menjadikannya walikota Middlemarch sesuka mereka. Tapi kamu tidak akan mendapatkan banyak dari kematiannya tanpa wasiat, meskipun kamu adalah putra sulungnya.”</p><p>Fred berpikir bahwa Tuan Featherstone belum pernah seburuk ini sebelumnya. Memang benar, dia belum pernah memberinya uang sebanyak itu sekaligus sebelumnya.</p><p>“Haruskah saya membuang surat Tuan Bulstrode ini, Pak?” kata Fred, sambil berdiri dengan surat itu seolah-olah akan membakarnya.</p><p>“Ah, ah, aku tidak mau. Itu tidak bernilai uang bagiku.”</p><p>Fred membawa surat itu ke perapian, dan menusukkannya dengan penuh semangat menggunakan tongkat besi. Ia sangat ingin keluar dari ruangan itu, tetapi ia sedikit malu pada dirinya sendiri, serta pada pamannya, untuk segera melarikan diri setelah mengantongi uang itu. Tak lama kemudian, petugas pertanian datang untuk memberi laporan kepada tuannya, dan Fred, dengan rasa lega yang tak terkatakan, diizinkan pergi dengan perintah untuk segera kembali.</p><p>Ia sangat ingin tidak hanya terbebas dari pamannya, tetapi juga menemukan Mary Garth. Kini ia berada di tempat biasanya di dekat perapian, dengan jahitan di tangannya dan sebuah buku terbuka di meja kecil di sampingnya. Kelopak matanya sudah tidak terlalu merah lagi, dan ia tampak tenang dan percaya diri seperti biasanya.</p><p>“Apa aku dibutuhkan di lantai atas?” katanya, setengah berdiri saat Fred masuk.</p><p>“Tidak; saya hanya dipecat karena Simmons sudah dipromosikan.”</p><p>Mary duduk kembali dan melanjutkan pekerjaannya. Ia jelas memperlakukannya dengan lebih acuh tak acuh dari biasanya: ia tidak tahu betapa marahnya perasaan sayang yang dirasakannya atas namanya di lantai atas.</p><p>“Bolehkah aku tinggal di sini sebentar, Mary, atau aku akan membuatmu bosan?”</p><p>“Silakan duduk,” kata Mary; “kau tidak akan membosankan seperti Tuan John Waule, yang ada di sini kemarin, dan dia duduk tanpa meminta izin saya.”</p><p>“Kasihan dia! Kurasa dia jatuh cinta padamu.”</p><p>“Aku tidak menyadarinya. Dan bagiku itu adalah salah satu hal yang paling menjijikkan dalam kehidupan seorang gadis, bahwa selalu ada anggapan jatuh cinta yang menghalangi hubungannya dengan pria mana pun yang baik padanya, dan yang kepadanya dia berterima kasih. Kupikir setidaknya aku bisa terhindar dari semua itu. Aku tidak punya alasan untuk kesombongan yang tidak masuk akal dengan membayangkan setiap orang yang mendekatiku jatuh cinta padaku.”</p><p>Mary tidak bermaksud menunjukkan perasaan apa pun, tetapi tanpa disadari ia akhirnya berbicara dengan nada gemetar penuh kekesalan.</p><p>“Sialan John Waule! Aku tidak bermaksud membuatmu marah. Aku tidak tahu kau punya alasan untuk berterima kasih padaku. Aku lupa betapa besarnya jasa yang kau anggap jika seseorang memadamkan lilin untukmu.” Fred juga memiliki harga diri, dan tidak akan menunjukkan bahwa dia tahu apa yang memicu ledakan amarah Mary ini.</p><p>“Oh, aku tidak marah, kecuali dengan cara-cara dunia. Aku memang suka diperlakukan seolah-olah aku punya akal sehat. Aku sering merasa seolah-olah aku bisa mengerti sedikit lebih banyak daripada yang pernah kudengar, bahkan dari para pria muda yang telah kuliah.” Mary telah pulih, dan dia berbicara dengan tawa tertahan yang menyenangkan untuk didengar.</p><p>“Aku tak peduli betapa gembiranya kau pagi ini karena ulahku,” kata Fred, “Kupikir kau terlihat sangat sedih saat naik ke atas. Sayang sekali kau harus tetap di sini dan diperlakukan seperti itu.”</p><p>“Oh, hidupku mudah—jika dibandingkan. Aku pernah mencoba menjadi guru, dan aku tidak cocok untuk itu: pikiranku terlalu suka mengembara sendiri. Kurasa kesulitan apa pun lebih baik daripada berpura-pura melakukan apa yang dibayar untukku, dan tidak pernah benar-benar melakukannya. Semua yang ada di sini bisa kulakukan sebaik orang lain; mungkin lebih baik daripada beberapa orang—Rosy, misalnya. Meskipun dia hanyalah tipe makhluk cantik yang dipenjara bersama raksasa dalam dongeng.”</p><p>“ Rosy! ” seru Fred, dengan nada skeptisisme yang mendalam sebagai seorang kakak.</p><p>“Ayolah, Fred!” kata Mary dengan tegas; “kau tidak berhak bersikap begitu kritis.”</p><p>“Apakah Anda maksudkan sesuatu yang spesifik—tepat saat ini?”</p><p>“Tidak, maksud saya sesuatu yang umum—selalu.”</p><p>“Oh, betapa malas dan borosnya aku. Yah, aku memang tidak pantas menjadi orang miskin. Seandainya aku kaya, aku pasti tidak akan menjadi orang jahat.”</p><p>“Kamu pasti sudah menjalankan tugasmu dalam keadaan hidup yang tidak dikehendaki Tuhan bagimu,” kata Maria sambil tertawa.</p><p>“Yah, aku tidak bisa menjalankan tugasku sebagai pendeta, sama seperti kau tidak bisa menjalankan tugasmu sebagai pengasuh. Seharusnya kau punya sedikit rasa empati, Mary.”</p><p>“Aku tidak pernah mengatakan kau harus menjadi seorang pendeta. Ada jenis pekerjaan lain. Menurutku sangat menyedihkan jika tidak menentukan suatu jalan dan bertindak sesuai dengan itu.”</p><p>“Jadi aku bisa, jika—” Fred berhenti bicara, lalu berdiri dan bersandar di rak per fireplace.</p><p>“Bagaimana jika Anda yakin Anda tidak akan memiliki kekayaan?”</p><p>“Aku tidak mengatakan itu. Kamu ingin bertengkar denganku. Sungguh buruk jika kamu terpengaruh oleh apa yang orang lain katakan tentangku.”</p><p>“Bagaimana mungkin aku ingin bertengkar denganmu? Seharusnya aku bertengkar dengan semua buku baruku,” kata Mary, sambil mengangkat buku di atas meja. “Meskipun kau mungkin nakal terhadap orang lain, kau baik padaku.”</p><p>“Karena aku lebih menyukaimu daripada siapa pun. Tapi aku tahu kau membenciku.”</p><p>“Ya, sedikit,” kata Mary sambil mengangguk dan tersenyum.</p><p>“Anda akan mengagumi orang yang luar biasa, yang memiliki pendapat bijak tentang segala hal.”</p><p>“Ya, seharusnya begitu.” Mary menjahit dengan cepat, dan tampak dengan provokatif mengendalikan situasi. Ketika percakapan telah berbelok ke arah yang salah, kita hanya akan semakin terperangkap dalam kecanggungan. Itulah yang dirasakan Fred Vincy.</p><p>“Kurasa seorang wanita tidak pernah jatuh cinta pada seseorang yang sudah dikenalnya sejak lama—sejak ia masih kecil; tidak seperti pria yang sering terjadi. Selalu ada pria baru yang memikat hati seorang gadis.”</p><p>“Coba kupikirkan,” kata Mary, sudut-sudut bibirnya melengkung ke atas; “Aku harus mengingat kembali pengalamanku. Ada Juliet—dia tampaknya merupakan contoh dari apa yang kau katakan. Tapi kemudian Ophelia mungkin sudah mengenal Hamlet cukup lama; dan Brenda Troil—dia sudah mengenal Mordaunt Merton sejak mereka masih kecil; tapi kemudian dia tampaknya adalah seorang pemuda yang terhormat; dan Minna masih lebih mencintai Cleveland, yang merupakan orang asing. Waverley adalah orang baru bagi Flora MacIvor; tapi kemudian dia tidak jatuh cinta padanya. Dan ada Olivia dan Sophia Primrose, dan Corinne—mereka dapat dikatakan jatuh cinta pada pria baru. Secara keseluruhan, pengalamanku agak beragam.”</p><p>Mary mendongak dengan sedikit nakal ke arah Fred, dan tatapan itu sangat disukainya, meskipun matanya hanyalah jendela jernih tempat pengamatan duduk sambil tertawa. Dia memang seorang pria yang penyayang, dan seiring bertambahnya usia dari anak laki-laki menjadi pria dewasa, dia semakin mencintai teman bermain lamanya itu, terlepas dari pendidikan tinggi yang telah meningkatkan pandangannya tentang pangkat dan pendapatan.</p><p>“Ketika seseorang tidak dicintai, tidak ada gunanya baginya untuk mengatakan bahwa ia bisa menjadi orang yang lebih baik—bisa melakukan apa saja—maksudku, jika ia yakin akan dicintai sebagai balasannya.”</p><p>“Tidak ada gunanya sama sekali baginya untuk mengatakan bahwa dia bisa menjadi lebih baik. Mungkin, bisa, akan—itu semua hanyalah kata-kata bantu yang hina.”</p><p>“Saya tidak mengerti bagaimana seorang pria bisa berguna jika dia tidak memiliki seorang wanita yang sangat mencintainya.”</p><p>“Menurutku kebaikan harus datang terlebih dahulu sebelum dia mengharapkan hal itu.”</p><p>“Kau lebih tahu, Mary. Wanita tidak mencintai pria karena kebaikan mereka.”</p><p>“Mungkin tidak. Tapi jika mereka menyayangi mereka, mereka tidak pernah menganggap mereka buruk.”</p><p>“Rasanya tidak adil jika mengatakan saya jahat.”</p><p>“Aku sama sekali tidak mengatakan apa pun tentangmu.”</p><p>“Aku tak akan pernah berguna, Mary, jika kau tak mau mengatakan bahwa kau mencintaiku—jika kau tak mau berjanji untuk menikahiku—maksudku, saat aku sudah bisa menikah.”</p><p>“Jika aku mencintaimu, aku tidak akan menikahimu: aku tentu tidak akan pernah berjanji untuk menikahimu.”</p><p>“Menurutku itu sangat jahat, Mary. Jika kau mencintaiku, seharusnya kau berjanji untuk menikahiku.”</p><p>“Sebaliknya, menurutku akan menjadi perbuatan jahat jika aku menikahimu, meskipun aku mencintaimu.”</p><p>“Maksudmu, seperti aku sekarang, tanpa kemampuan untuk menghidupi seorang istri. Tentu saja: umurku baru dua puluh tiga tahun.”</p><p>“Pada poin terakhir itu kau akan berubah. Tapi aku tidak begitu yakin dengan perubahan lainnya. Ayahku bilang orang yang malas seharusnya tidak ada, apalagi menikah.”</p><p>“Lalu aku harus menembak kepalaku sendiri?”</p><p>“Tidak; secara keseluruhan saya rasa Anda akan lebih baik jika lulus ujian. Saya pernah mendengar Tuan Farebrother mengatakan bahwa ujian itu sangat mudah.”</p><p>“Itu semua sangat bagus. Segala sesuatu mudah baginya. Bukan berarti kecerdasan ada hubungannya dengan itu. Saya sepuluh kali lebih cerdas daripada banyak orang yang lewat.”</p><p>“Astaga!” kata Mary, tak mampu menahan sarkasmenya; “itu menjelaskan mengapa ada pendeta seperti Tuan Crowse. Bagilah kecerdasanmu dengan sepuluh, dan hasilnya—astaga!—bisa menghasilkan gelar. Tapi itu hanya menunjukkan bahwa kau sepuluh kali lebih malas daripada yang lain.”</p><p>“Nah, kalau aku lulus, kau tidak ingin aku masuk Gereja, kan?”</p><p>“Bukan itu masalahnya—bukan apa yang aku ingin kau lakukan. Kurasa kau punya hati nurani sendiri. Nah! Itu dia Tuan Lydgate. Aku harus pergi dan memberi tahu pamanku.”</p><p>“Mary,” kata Fred, sambil menggenggam tangannya saat ia berdiri; “jika kau tidak memberiku semangat, keadaanku akan semakin buruk, bukan membaik.”</p><p>“Aku tidak akan memberimu dukungan apa pun,” kata Mary sambil memerah. “Teman-temanmu tidak akan menyukainya, begitu juga teman-temanku. Ayahku akan menganggapnya sebagai aib bagiku jika aku menerima pria yang berhutang dan tidak mau bekerja!”</p><p>Fred merasa tersinggung, dan melepaskan tangannya. Ia berjalan ke pintu, tetapi di sana ia berbalik dan berkata: “Fred, kau selalu begitu baik, begitu murah hati kepadaku. Aku bukannya tidak tahu berterima kasih. Tapi jangan pernah berbicara kepadaku seperti itu lagi.”</p><p>“Baiklah,” kata Fred dengan cemberut, sambil mengambil topi dan cambuknya. Wajahnya menunjukkan bercak-bercak merah muda pucat dan putih pucat. Seperti banyak pemuda pengangguran yang patah hati, ia sangat jatuh cinta, dan dengan seorang gadis sederhana yang tidak punya uang! Tetapi dengan adanya tanah milik Tuan Featherstone sebagai jaminan, dan keyakinan bahwa, apa pun yang dikatakan Mary, ia benar-benar peduli padanya, Fred tidak sepenuhnya putus asa.</p><p>Ketika sampai di rumah, ia memberikan empat lembar uang dua puluh dolar kepada ibunya, dan memintanya untuk menyimpannya. “Aku tidak mau menghabiskan uang itu, Bu. Aku ingin menggunakannya untuk membayar utang. Jadi, simpanlah baik-baik agar tidak jatuh ke tanganku.”</p><p>“Semoga Tuhan memberkatimu, sayangku,” kata Ny. Vincy. Ia sangat menyayangi putra sulungnya dan putri bungsunya (anak berusia enam tahun), yang oleh orang lain dianggap sebagai dua anaknya yang paling nakal. Mata seorang ibu tidak selalu tertipu dalam keberpihakannya: setidaknya ia dapat menilai dengan lebih baik siapa anak yang lembut dan berhati penuh kasih sayang. Dan Fred tentu saja sangat menyayangi ibunya. Mungkin juga karena kasih sayangnya kepada orang lain yang membuatnya sangat ingin mengambil jaminan atas kewajibannya sendiri untuk membelanjakan seratus pound. Karena kreditor yang kepadanya ia berutang seratus enam puluh pound memiliki jaminan yang lebih kuat berupa surat berharga yang ditandatangani oleh ayah Mary.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="buku-ii-tua-dan-muda-bab-xiii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Buku Ii Tua Dan Muda Bab Xiii</span>
+    </a>
+    <a href="bab-xv.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xv</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XIV.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Berikut ini resep yang tepat Untuk saus daging lezat, Bernama Kemalasan, yang banyak orang makan karena suka, dan menyebutnya manis: Pertama-tama cari potongan-potongan kecil, seperti anjing pemburu Campur rata dengan prasmanan, aduk rata Dengan minyak sanjungan yang kental, Dan buih dengan kebohongan yang memuji diri sendiri. Sajikan hangat: wadah yang harus Anda pilih Untuk menyimpannya adalah sepatu orang mati. ” Konsultasi Tuan Bulstrode dengan Harriet tampaknya telah memberikan efek yang diinginkan oleh Tuan Vincy, karena pagi-pagi sekali keesokan harinya sebuah surat datang yang dapat dibawa Fred kepada Tuan Featherstone sebagai bukti yang dibutuhkan. Pria tua itu sedang beristirahat di tempat tidur karena cuaca dingin, dan karena Mary Garth tidak terlihat di ruang tamu, Fred segera naik ke atas dan memberikan surat itu kepada pamannya, yang, sambil bersandar nyaman di tempat tidur, tetap dapat menikmati kesadarannya akan kebijaksanaan dalam mencurigai dan mengecewakan umat manusia. Ia mengenakan kacamatanya untuk membaca surat itu, mengerutkan bibir dan menarik sudut-sudutnya ke bawah. “ Dalam keadaan seperti ini, saya tidak akan menolak untuk menyatakan keyakinan saya —tchah! betapa indahnya kata-kata orang itu! Dia sehalus juru lelang— bahwa putra Anda, Frederic, tidak memperoleh uang muka apa pun atas warisan yang dijanjikan oleh Tuan Featherstone —dijanjikan? siapa bilang saya pernah berjanji? Saya tidak menjanjikan apa pun—saya akan membuat tambahan wasiat selama yang saya suka— dan mengingat sifat dari proses tersebut, tidak masuk akal untuk berasumsi bahwa seorang pemuda yang berakal sehat dan berkarakter akan mencobanya —ah, tetapi Tuan itu tidak mengatakan Anda adalah seorang pemuda yang berakal sehat dan berkarakter, perhatikan itu, Tuan!—Mengenai keterlibatan saya sendiri dengan laporan apa pun yang bersifat seperti itu, saya dengan tegas menyatakan bahwa saya tidak pernah membuat pernyataan apa pun yang menyatakan bahwa putra Anda telah meminjam uang atas properti apa pun yang mungkin diperolehnya setelah kematian Tuan Featherstone —astaga! 'properti'—diperoleh—kematian! Pengacara Standish tidak ada apa-apanya dibandingkan dia. Dia tidak bisa berbicara lebih halus jika dia ingin meminjam. Nah,” Tuan Featherstone di sini melihat ke atas Sambil melirik Fred dengan kacamata, dan mengembalikan surat itu kepadanya dengan gerakan menghina, dia berkata, "Kau pikir aku tidak percaya apa pun karena Bulstrode menulisnya dengan baik, kan?" Fred tersipu. “Anda ingin mendapatkan surat itu, Tuan. Saya rasa sangat mungkin bahwa penyangkalan Tuan Bulstrode sama baiknya dengan sumber yang memberi tahu Anda apa yang dia bantah.” “Benar sekali. Saya tidak pernah mengatakan saya percaya salah satu atau yang lainnya. Dan sekarang apa yang Anda harapkan?” kata Tuan Featherstone dengan singkat, tetap mengenakan kacamatanya, tetapi menarik tangannya ke bawah selendangnya. “Saya tidak mengharapkan apa pun, Tuan.” Fred dengan susah payah menahan diri untuk tidak melampiaskan kekesalannya. “Saya datang untuk membawakan surat ini. Jika Anda berkenan, saya akan mengucapkan selamat pagi.” “Belum, belum. Bunyikan bel; aku ingin Nona datang.” Seorang pelayanlah yang datang menjawab bunyi bel. “Suruh Nona datang!” kata Tuan Featherstone dengan tidak sabar. “Ada urusan apa dia harus pergi?” Ia berbicara dengan nada yang sama ketika Mary datang. “Kenapa kau tidak bisa duduk diam di sini sampai aku menyuruhmu pergi? Aku mau rompiku sekarang. Sudah kubilang selalu letakkan di atas tempat tidur.” Mata Mary tampak agak merah, seolah-olah dia baru saja menangis. Jelas sekali bahwa Tuan Featherstone sedang dalam suasana hati yang sangat buruk pagi ini, dan meskipun Fred sekarang memiliki prospek untuk menerima hadiah uang yang sangat dibutuhkan, dia lebih suka bebas untuk berbalik kepada tiran tua itu dan mengatakan kepadanya bahwa Mary Garth terlalu baik untuk berada di bawah perintahnya. Meskipun Fred telah berdiri saat dia memasuki ruangan, dia hampir tidak memperhatikannya, dan tampak seolah-olah sarafnya gemetar karena mengantisipasi sesuatu akan dilemparkan kepadanya. Tetapi dia tidak pernah takut akan hal yang lebih buruk daripada kata-kata. Ketika dia hendak mengambil rompi dari gantungan, Fred menghampirinya dan berkata, "Izinkan saya." “Biarkan saja! Kau bawa saja, Nona, dan letakkan di sini,” kata Tuan Featherstone. “Sekarang pergilah lagi sampai aku memanggilmu,” tambahnya, ketika rompi itu diletakkan olehnya. Sudah menjadi kebiasaannya untuk membumbui kesenangannya dalam menunjukkan kebaikan kepada seseorang dengan bersikap sangat tidak menyenangkan kepada orang lain, dan Mary selalu siap sedia untuk menyediakan bumbu tersebut. Ketika kerabatnya sendiri datang, dia diperlakukan lebih baik. Perlahan-lahan dia mengeluarkan seikat kunci dari saku rompi, dan perlahan-lahan dia mengeluarkan sebuah kotak kaleng yang berada di bawah selimut. “Kau berharap aku akan memberimu sedikit kekayaan, ya?” katanya, sambil melihat dari atas kacamatanya dan berhenti sejenak saat membuka tutupnya. “Tidak sama sekali, Tuan. Anda cukup baik untuk membicarakan tentang memberi saya hadiah beberapa hari yang lalu, jika tidak, tentu saja, saya tidak akan memikirkan hal itu.” Tetapi Fred memiliki sifat yang penuh harapan, dan sebuah bayangan muncul tentang sejumlah uang yang cukup besar untuk membebaskannya dari kecemasan tertentu. Ketika Fred berhutang, baginya selalu tampak sangat mungkin bahwa sesuatu—ia tidak selalu membayangkan apa—akan terjadi sehingga ia dapat membayar tepat waktu. Dan sekarang kejadian yang menguntungkan itu tampaknya sudah dekat, akan menjadi hal yang sangat tidak masuk akal untuk berpikir bahwa persediaan itu akan kurang dari yang dibutuhkan: sama tidak masuk akalnya dengan iman yang percaya pada setengah mukjizat karena kurangnya kekuatan untuk percaya pada mukjizat yang utuh. Tangan-tangan berurat dalam itu meraba banyak uang kertas satu demi satu, meletakkannya kembali rata, sementara Fred bersandar di kursinya, enggan terlihat bersemangat. Ia menganggap dirinya seorang pria terhormat, dan tidak suka merayu orang tua demi uangnya. Akhirnya, Tuan Featherstone menatapnya lagi dari balik kacamatanya dan memberinya seikat kecil uang kertas: Fred dapat melihat dengan jelas bahwa hanya ada lima lembar, karena tepi yang kurang penting terbuka ke arahnya. Tapi kemudian, masing-masing bisa bernilai lima puluh pound. Ia mengambilnya, sambil berkata— “Saya sangat berterima kasih kepada Anda, Tuan,” katanya sambil hendak menggulung kertas-kertas itu tanpa memikirkan nilainya. Namun, hal itu tidak disukai oleh Tuan Featherstone, yang sedang mengawasinya dengan saksama. “Ayo, bukankah menurutmu ada baiknya menghitungnya? Kau menerima uang seperti seorang bangsawan; kurasa kau juga menghamburkannya seperti seorang bangsawan.” “Saya kira saya tidak boleh menolak rezeki yang datang, Tuan. Tapi saya akan sangat senang menghitungnya.” Namun, Fred tidak begitu senang setelah menghitungnya. Karena kenyataannya, jumlah uang yang dimilikinya jauh lebih sedikit daripada yang diharapkannya. Apa arti kesesuaian segala sesuatu, jika bukan kesesuaiannya dengan harapan seseorang? Jika tidak, absurditas dan ateisme terbentang di belakangnya. Kejatuhan Fred sangat parah ketika ia mendapati bahwa ia hanya memiliki lima lembar uang dua puluh dolar, dan kontribusinya dalam pendidikan tinggi di negara ini tampaknya tidak membantunya. Meskipun demikian, katanya, dengan perubahan cepat pada wajahnya yang cerah— “Anda sangat baik hati, Tuan.” “Menurutku memang begitu,” kata Tuan Featherstone, mengunci kotaknya dan meletakkannya kembali, lalu dengan sengaja melepas kacamatanya, dan akhirnya, seolah-olah perenungannya telah lebih meyakinkannya, mengulangi, “Menurutku itu tampan.” “Saya jamin, Pak, saya sangat berterima kasih,” kata Fred, yang telah sempat memulihkan sikap cerianya. “Memang seharusnya begitu. Kau ingin dikenal di dunia, dan kurasa Peter Featherstone adalah satu-satunya orang yang bisa kau percayai.” Di sini mata lelaki tua itu berbinar dengan kepuasan yang bercampur aduk karena menyadari bahwa pemuda cerdas ini mengandalkannya, dan bahwa pemuda cerdas itu agak bodoh karena melakukan hal itu. “Ya, memang benar: aku tidak dilahirkan dengan kesempatan yang sangat bagus. Hanya sedikit orang yang lebih menderita daripada aku,” kata Fred, dengan sedikit rasa terkejut atas kebaikannya sendiri, mengingat betapa kerasnya ia diperlakukan. “Rasanya agak menyedihkan harus menunggang kuda pemburu yang napasnya tersengal-sengal, dan melihat orang-orang, yang tidak sebaik dirimu dalam menilai, mampu membuang sejumlah uang untuk membeli barang murah yang tidak berharga.” “Nah, sekarang kau bisa membeli kuda pemburu yang bagus. Kurasa delapan puluh pound sudah cukup untuk itu—dan kau masih punya dua puluh pound lagi untuk mengatasi masalah kecil apa pun,” kata Tuan Featherstone sambil sedikit terkekeh. “Anda sangat baik, Pak,” kata Fred, dengan kepekaan yang tinggi dalam menciptakan kontras antara kata-kata dan perasaannya. “Ah, paman yang lebih baik daripada pamanmu Bulstrode yang hebat itu. Kurasa kau tidak akan mendapatkan banyak manfaat dari spekulasinya. Kudengar dia punya pengaruh yang cukup kuat pada ayahmu, ya?” “Ayah saya tidak pernah menceritakan apa pun tentang urusannya kepada saya, Pak.” “Yah, dia menunjukkan sedikit akal sehat di situ. Tapi orang lain akan mengetahuinya tanpa sepengetahuannya. Dia tidak akan pernah meninggalkan banyak harta untukmu: kemungkinan besar dia akan meninggal tanpa wasiat—dia memang tipe orang seperti itu—biarkan mereka menjadikannya walikota Middlemarch sesuka mereka. Tapi kamu tidak akan mendapatkan banyak dari kematiannya tanpa wasiat, meskipun kamu adalah putra sulungnya.” Fred berpikir bahwa Tuan Featherstone belum pernah seburuk ini sebelumnya. Memang benar, dia belum pernah memberinya uang sebanyak itu sekaligus sebelumnya. “Haruskah saya membuang surat Tuan Bulstrode ini, Pak?” kata Fred, sambil berdiri dengan surat itu seolah-olah akan membakarnya. “Ah, ah, aku tidak mau. Itu tidak bernilai uang bagiku.” Fred membawa surat itu ke perapian, dan menusukkannya dengan penuh semangat menggunakan tongkat besi. Ia sangat ingin keluar dari ruangan itu, tetapi ia sedikit malu pada dirinya sendiri, serta pada pamannya, untuk segera melarikan diri setelah mengantongi uang itu. Tak lama kemudian, petugas pertanian datang untuk memberi laporan kepada tuannya, dan Fred, dengan rasa lega yang tak terkatakan, diizinkan pergi dengan perintah untuk segera kembali. Ia sangat ingin tidak hanya terbebas dari pamannya, tetapi juga menemukan Mary Garth. Kini ia berada di tempat biasanya di dekat perapian, dengan jahitan di tangannya dan sebuah buku terbuka di meja kecil di sampingnya. Kelopak matanya sudah tidak terlalu merah lagi, dan ia tampak tenang dan percaya diri seperti biasanya. “Apa aku dibutuhkan di lantai atas?” katanya, setengah berdiri saat Fred masuk. “Tidak; saya hanya dipecat karena Simmons sudah dipromosikan.” Mary duduk kembali dan melanjutkan pekerjaannya. Ia jelas memperlakukannya dengan lebih acuh tak acuh dari biasanya: ia tidak tahu betapa marahnya perasaan sayang yang dirasakannya atas namanya di lantai atas. “Bolehkah aku tinggal di sini sebentar, Mary, atau aku akan membuatmu bosan?” “Silakan duduk,” kata Mary; “kau tidak akan membosankan seperti Tuan John Waule, yang ada di sini kemarin, dan dia duduk tanpa meminta izin saya.” “Kasihan dia! Kurasa dia jatuh cinta padamu.” “Aku tidak menyadarinya. Dan bagiku itu adalah salah satu hal yang paling menjijikkan dalam kehidupan seorang gadis, bahwa selalu ada anggapan jatuh cinta yang menghalangi hubungannya dengan pria mana pun yang baik padanya, dan yang kepadanya dia berterima kasih. Kupikir setidaknya aku bisa terhindar dari semua itu. Aku tidak punya alasan untuk kesombongan yang tidak masuk akal dengan membayangkan setiap orang yang mendekatiku jatuh cinta padaku.” Mary tidak bermaksud menunjukkan perasaan apa pun, tetapi tanpa disadari ia akhirnya berbicara dengan nada gemetar penuh kekesalan. “Sialan John Waule! Aku tidak bermaksud membuatmu marah. Aku tidak tahu kau punya alasan untuk berterima kasih padaku. Aku lupa betapa besarnya jasa yang kau anggap jika seseorang memadamkan lilin untukmu.” Fred juga memiliki harga diri, dan tidak akan menunjukkan bahwa dia tahu apa yang memicu ledakan amarah Mary ini. “Oh, aku tidak marah, kecuali dengan cara-cara dunia. Aku memang suka diperlakukan seolah-olah aku punya akal sehat. Aku sering merasa seolah-olah aku bisa mengerti sedikit lebih banyak daripada yang pernah kudengar, bahkan dari para pria muda yang telah kuliah.” Mary telah pulih, dan dia berbicara dengan tawa tertahan yang menyenangkan untuk didengar. “Aku tak peduli betapa gembiranya kau pagi ini karena ulahku,” kata Fred, “Kupikir kau terlihat sangat sedih saat naik ke atas. Sayang sekali kau harus tetap di sini dan diperlakukan seperti itu.” “Oh, hidupku mudah—jika dibandingkan. Aku pernah mencoba menjadi guru, dan aku tidak cocok untuk itu: pikiranku terlalu suka mengembara sendiri. Kurasa kesulitan apa pun lebih baik daripada berpura-pura melakukan apa yang dibayar untukku, dan tidak pernah benar-benar melakukannya. Semua yang ada di sini bisa kulakukan sebaik orang lain; mungkin lebih baik daripada beberapa orang—Rosy, misalnya. Meskipun dia hanyalah tipe makhluk cantik yang dipenjara bersama raksasa dalam dongeng.” “ Rosy! ” seru Fred, dengan nada skeptisisme yang mendalam sebagai seorang kakak. “Ayolah, Fred!” kata Mary dengan tegas; “kau tidak berhak bersikap begitu kritis.” “Apakah Anda maksudkan sesuatu yang spesifik—tepat saat ini?” “Tidak, maksud saya sesuatu yang umum—selalu.” “Oh, betapa malas dan borosnya aku. Yah, aku memang tidak pantas menjadi orang miskin. Seandainya aku kaya, aku pasti tidak akan menjadi orang jahat.” “Kamu pasti sudah menjalankan tugasmu dalam keadaan hidup yang tidak dikehendaki Tuhan bagimu,” kata Maria sambil tertawa. “Yah, aku tidak bisa menjalankan tugasku sebagai pendeta, sama seperti kau tidak bisa menjalankan tugasmu sebagai pengasuh. Seharusnya kau punya sedikit rasa empati, Mary.” “Aku tidak pernah mengatakan kau harus menjadi seorang pendeta. Ada jenis pekerjaan lain. Menurutku sangat menyedihkan jika tidak menentukan suatu jalan dan bertindak sesuai dengan itu.” “Jadi aku bisa, jika—” Fred berhenti bicara, lalu berdiri dan bersandar di rak per fireplace. “Bagaimana jika Anda yakin Anda tidak akan memiliki kekayaan?” “Aku tidak mengatakan itu. Kamu ingin bertengkar denganku. Sungguh buruk jika kamu terpengaruh oleh apa yang orang lain katakan tentangku.” “Bagaimana mungkin aku ingin bertengkar denganmu? Seharusnya aku bertengkar dengan semua buku baruku,” kata Mary, sambil mengangkat buku di atas meja. “Meskipun kau mungkin nakal terhadap orang lain, kau baik padaku.” “Karena aku lebih menyukaimu daripada siapa pun. Tapi aku tahu kau membenciku.” “Ya, sedikit,” kata Mary sambil mengangguk dan tersenyum. “Anda akan mengagumi orang yang luar biasa, yang memiliki pendapat bijak tentang segala hal.” “Ya, seharusnya begitu.” Mary menjahit dengan cepat, dan tampak dengan provokatif mengendalikan situasi. Ketika percakapan telah berbelok ke arah yang salah, kita hanya akan semakin terperangkap dalam kecanggungan. Itulah yang dirasakan Fred Vincy. “Kurasa seorang wanita tidak pernah jatuh cinta pada seseorang yang sudah dikenalnya sejak lama—sejak ia masih kecil; tidak seperti pria yang sering terjadi. Selalu ada pria baru yang memikat hati seorang gadis.” “Coba kupikirkan,” kata Mary, sudut-sudut bibirnya melengkung ke atas; “Aku harus mengingat kembali pengalamanku. Ada Juliet—dia tampaknya merupakan contoh dari apa yang kau katakan. Tapi kemudian Ophelia mungkin sudah mengenal Hamlet cukup lama; dan Brenda Troil—dia sudah mengenal Mordaunt Merton sejak mereka masih kecil; tapi kemudian dia tampaknya adalah seorang pemuda yang terhormat; dan Minna masih lebih mencintai Cleveland, yang merupakan orang asing. Waverley adalah orang baru bagi Flora MacIvor; tapi kemudian dia tidak jatuh cinta padanya. Dan ada Olivia dan Sophia Primrose, dan Corinne—mereka dapat dikatakan jatuh cinta pada pria baru. Secara keseluruhan, pengalamanku agak beragam.” Mary mendongak dengan sedikit nakal ke arah Fred, dan tatapan itu sangat disukainya, meskipun matanya hanyalah jendela jernih tempat pengamatan duduk sambil tertawa. Dia memang seorang pria yang penyayang, dan seiring bertambahnya usia dari anak laki-laki menjadi pria dewasa, dia semakin mencintai teman bermain lamanya itu, terlepas dari pendidikan tinggi yang telah meningkatkan pandangannya tentang pangkat dan pendapatan. “Ketika seseorang tidak dicintai, tidak ada gunanya baginya untuk mengatakan bahwa ia bisa menjadi orang yang lebih baik—bisa melakukan apa saja—maksudku, jika ia yakin akan dicintai sebagai balasannya.” “Tidak ada gunanya sama sekali baginya untuk mengatakan bahwa dia bisa menjadi lebih baik. Mungkin, bisa, akan—itu semua hanyalah kata-kata bantu yang hina.” “Saya tidak mengerti bagaimana seorang pria bisa berguna jika dia tidak memiliki seorang wanita yang sangat mencintainya.” “Menurutku kebaikan harus datang terlebih dahulu sebelum dia mengharapkan hal itu.” “Kau lebih tahu, Mary. Wanita tidak mencintai pria karena kebaikan mereka.” “Mungkin tidak. Tapi jika mereka menyayangi mereka, mereka tidak pernah menganggap mereka buruk.” “Rasanya tidak adil jika mengatakan saya jahat.” “Aku sama sekali tidak mengatakan apa pun tentangmu.” “Aku tak akan pernah berguna, Mary, jika kau tak mau mengatakan bahwa kau mencintaiku—jika kau tak mau berjanji untuk menikahiku—maksudku, saat aku sudah bisa menikah.” “Jika aku mencintaimu, aku tidak akan menikahimu: aku tentu tidak akan pernah berjanji untuk menikahimu.” “Menurutku itu sangat jahat, Mary. Jika kau mencintaiku, seharusnya kau berjanji untuk menikahiku.” “Sebaliknya, menurutku akan menjadi perbuatan jahat jika aku menikahimu, meskipun aku mencintaimu.” “Maksudmu, seperti aku sekarang, tanpa kemampuan untuk menghidupi seorang istri. Tentu saja: umurku baru dua puluh tiga tahun.” “Pada poin terakhir itu kau akan berubah. Tapi aku tidak begitu yakin dengan perubahan lainnya. Ayahku bilang orang yang malas seharusnya tidak ada, apalagi menikah.” “Lalu aku harus menembak kepalaku sendiri?” “Tidak; secara keseluruhan saya rasa Anda akan lebih baik jika lulus ujian. Saya pernah mendengar Tuan Farebrother mengatakan bahwa ujian itu sangat mudah.” “Itu semua sangat bagus. Segala sesuatu mudah baginya. Bukan berarti kecerdasan ada hubungannya dengan itu. Saya sepuluh kali lebih cerdas daripada banyak orang yang lewat.” “Astaga!” kata Mary, tak mampu menahan sarkasmenya; “itu menjelaskan mengapa ada pendeta seperti Tuan Crowse. Bagilah kecerdasanmu dengan sepuluh, dan hasilnya—astaga!—bisa menghasilkan gelar. Tapi itu hanya menunjukkan bahwa kau sepuluh kali lebih malas daripada yang lain.” “Nah, kalau aku lulus, kau tidak ingin aku masuk Gereja, kan?” “Bukan itu masalahnya—bukan apa yang aku ingin kau lakukan. Kurasa kau punya hati nurani sendiri. Nah! Itu dia Tuan Lydgate. Aku harus pergi dan memberi tahu pamanku.” “Mary,” kata Fred, sambil menggenggam tangannya saat ia berdiri; “jika kau tidak memberiku semangat, keadaanku akan semakin buruk, bukan membaik.” “Aku tidak akan memberimu dukungan apa pun,” kata Mary sambil memerah. “Teman-temanmu tidak akan menyukainya, begitu juga teman-temanku. Ayahku akan menganggapnya sebagai aib bagiku jika aku menerima pria yang berhutang dan tidak mau bekerja!” Fred merasa tersinggung, dan melepaskan tangannya. Ia berjalan ke pintu, tetapi di sana ia berbalik dan berkata: “Fred, kau selalu begitu baik, begitu murah hati kepadaku. Aku bukannya tidak tahu berterima kasih. Tapi jangan pernah berbicara kepadaku seperti itu lagi.” “Baiklah,” kata Fred dengan cemberut, sambil mengambil topi dan cambuknya. Wajahnya menunjukkan bercak-bercak merah muda pucat dan putih pucat. Seperti banyak pemuda pengangguran yang patah hati, ia sangat jatuh cinta, dan dengan seorang gadis sederhana yang tidak punya uang! Tetapi dengan adanya tanah milik Tuan Featherstone sebagai jaminan, dan keyakinan bahwa, apa pun yang dikatakan Mary, ia benar-benar peduli padanya, Fred tidak sepenuhnya putus asa. Ketika sampai di rumah, ia memberikan empat lembar uang dua puluh dolar kepada ibunya, dan memintanya untuk menyimpannya. “Aku tidak mau menghabiskan uang itu, Bu. Aku ingin menggunakannya untuk membayar utang. Jadi, simpanlah baik-baik agar tidak jatuh ke tanganku.” “Semoga Tuhan memberkatimu, sayangku,” kata Ny. Vincy. Ia sangat menyayangi putra sulungnya dan putri bungsunya (anak berusia enam tahun), yang oleh orang lain dianggap sebagai dua anaknya yang paling nakal. Mata seorang ibu tidak selalu tertipu dalam keberpihakannya: setidaknya ia dapat menilai dengan lebih baik siapa anak yang lembut dan berhati penuh kasih sayang. Dan Fred tentu saja sangat menyayangi ibunya. Mungkin juga karena kasih sayangnya kepada orang lain yang membuatnya sangat ingin mengambil jaminan atas kewajibannya sendiri untuk membelanjakan seratus pound. Karena kreditor yang kepadanya ia berutang seratus enam puluh pound memiliki jaminan yang lebih kuat berupa surat berharga yang ditandatangani oleh ayah Mary.</p>
-
-<div class="nav">
-  <a href="buku-ii-tua-dan-muda-bab-xiii.html">⬅ Buku Ii, Tua Dan Muda - Bab Xiii.</a>
-  <a href="bab-xv.html">Bab Xv. ➡</a>
-</div>
 
 </body>
 </html>

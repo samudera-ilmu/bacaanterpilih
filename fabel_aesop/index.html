@@ -2,10 +2,54 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Fabel Aesop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fabel Aesop — Bacaan Terpilih</title>
+<meta name="description" content="Fabel Aesop karya Aesop. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/fabel_aesop/index.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="book">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Fabel Aesop — Bacaan Terpilih">
+  <meta property="og:description" content="Fabel Aesop karya Aesop. Baca online gratis dalam bahasa Indonesia di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/fabel_aesop/index.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/fabel_aesop/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <meta property="og:book:author" content="Aesop">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Fabel Aesop — Bacaan Terpilih">
+  <meta name="twitter:description" content="Fabel Aesop karya Aesop. Baca gratis dalam bahasa Indonesia.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/fabel_aesop/images/img-001.jpg">
+  <!-- Schema.org: Book -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Fabel Aesop",
+    "author": {
+      "@type": "Person",
+      "name": "Aesop"
+    },
+    "datePublished": "1010",
+    "inLanguage": "id",
+    "genre": "Petualangan, Klasik, adventure, education",
+    "url": "https://bacaanterpilih.pages.dev/fabel_aesop/index.html",
+    "image": "https://bacaanterpilih.pages.dev/fabel_aesop/images/img-001.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -15,72 +59,486 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
-
-function toggleTheme() {
-  document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
-}
 </script>
-
-
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #fafafa;
-  --text: #111;
-  --link: #1a73e8;
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
 }
 
 .dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 20px;
+  font-family: 'Source Serif 4', Georgia, serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
-.toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 14px;
-  opacity: 0.7;
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.book-hero {
+  max-width: 780px; margin: 0 auto;
+  padding: 48px 24px 0;
+  display: flex; gap: 40px; align-items: flex-start;
+}
+
+.book-cover-wrap { flex-shrink: 0; }
+
+.book-cover-img {
+  width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  display: block;
+}
+
+.book-hero-text {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 12px;
+  padding-top: 8px;
+}
+
+.back-link {
+  font-size: 0.8rem; color: var(--accent);
+  text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.book-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.03em; color: var(--text);
+}
+
+.book-author { font-size: 1rem; color: var(--accent); font-weight: 600; }
+.book-year   { font-size: 0.82rem; color: var(--text3); }
+
+.book-divider {
+  max-width: 780px; margin: 32px auto 0;
+  border: none; border-top: 1px solid var(--border);
+}
+
+.toc-section {
+  max-width: 780px; margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.toc-label {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 20px;
+}
+
+.toc-list { list-style: none; counter-reset: toc; }
+
+.toc-list li {
+  counter-increment: toc;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-list li:first-child { border-top: 1px solid var(--border); }
+
+.toc-list a {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 14px 0;
+  text-decoration: none; color: var(--text);
+  font-size: 0.95rem; font-weight: 400;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.toc-list a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 0.72rem; color: var(--text3);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px; flex-shrink: 0;
+}
+
+.toc-list a:hover { color: var(--accent); padding-left: 6px; }
+
+@media (max-width: 600px) {
+  .book-hero { flex-direction: column; padding: 32px 16px 0; gap: 24px; }
+  .book-cover-img { width: 120px; }
+  .toc-section { padding: 24px 16px 60px; }
 }
 </style>
 </head>
 <body>
 
-<div class="toggle" onclick="toggleTheme()">🌙 / ☀</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
 
-<h1>Fabel Aesop</h1>
+<div class="book-hero">
+  
+<div class="book-cover-wrap">
+  <img src="images/img-001.jpg" alt="Cover Fabel Aesop" class="book-cover-img">
+</div>
+  <div class="book-hero-text">
+    <a href="../index.html" class="back-link">← Perpustakaan</a>
+    <h1 class="book-title">Fabel Aesop</h1>
+    <div class="book-author">Aesop</div>
+    <div class="book-year">1010</div>
+  </div>
+</div>
 
-<ol>
-<li><a href="tentang-buku-ini.html">TENTANG BUKU INI</a></li><li><a href="rubah-dan-anggur.html">RUBAH DAN ANGGUR</a></li><li><a href="angsa-yang-bertelur-emas.html">ANGSA YANG BERTELUR EMAS</a></li><li><a href="kucing-dan-tikus.html">KUCING DAN TIKUS</a></li><li><a href="anjing-yang-nakal.html">ANJING YANG NAKAL</a></li><li><a href="pembakar-arang-dan-pengisi.html">PEMBAKAR ARANG DAN PENGISI</a></li><li><a href="tikus-tikus-di-dewan.html">TIKUS-TIKUS DI DEWAN</a></li><li><a href="kelelawar-dan-musang.html">KELELAWAR DAN MUSANG</a></li><li><a href="anjing-dan-babi-induk.html">ANJING DAN BABI INDUK</a></li><li><a href="rubah-dan-gagak.html">RUBAH DAN GAGAK</a></li><li><a href="kuda-dan-pengasuh-kuda.html">KUDA DAN PENGASUH KUDA</a></li><li><a href="serigala-dan-anak-domba.html">SERIGALA DAN ANAK DOMBA</a></li><li><a href="burung-merak-dan-burung-bangau.html">BURUNG MERAK DAN BURUNG BANGAU</a></li><li><a href="kucing-dan-burung-burung.html">KUCING DAN BURUNG-BURUNG</a></li><li><a href="si-pemboros-dan-si-penangkap-air.html">SI PEMBOROS DAN SI PENANGKAP AIR</a></li><li><a href="wanita-tua-dan-dokter.html">WANITA TUA DAN DOKTER</a></li><li><a href="bulan-dan-ibunya.html">BULAN DAN IBUNYA</a></li><li><a href="merkuri-dan-tukang-kayu.html">MERKURI DAN TUKANG KAYU</a></li><li><a href="keledai-rubah-dan-singa.html">KELEDAI, RUBAH, DAN SINGA</a></li><li><a href="singa-dan-tikus.html">SINGA DAN TIKUS</a></li><li><a href="burung-gagak-dan-teko.html">BURUNG GAGAK DAN TEKO</a></li><li><a href="anak-laki-laki-dan-katak-katak.html">ANAK LAKI-LAKI DAN KATAK-KATAK</a></li><li><a href="angin-utara-dan-matahari.html">ANGIN UTARA DAN MATAHARI</a></li><li><a href="nyonya-dan-para-pelayannya.html">NYONYA DAN PARA PELAYANNYA</a></li><li><a href="sisi-baik-dan-sisi-buruknya.html">SISI BAIK DAN SISI BURUKNYA</a></li><li><a href="kelinci-dan-katak.html">KELINCI DAN KATAK</a></li><li><a href="rubah-dan-bangau.html">RUBAH DAN BANGAU</a></li><li><a href="serigala-berkedok-domba.html">SERIGALA BERKEDOK DOMBA</a></li><li><a href="rusa-jantan-di-kandang-sapi.html">RUSA JANTAN DI KANDANG SAPI</a></li><li><a href="gadis-pemerah-susu-dan-embernya.html">GADIS PEMERAH SUSU DAN EMBERNYA</a></li><li><a href="lumba-lumba-paus-dan-ikan-sprat.html">LUMBA LUMBA, PAUS DAN IKAN SPRAT</a></li><li><a href="rubah-dan-monyet.html">RUBAH DAN MONYET</a></li><li><a href="keledai-dan-anjing-kecil.html">KELEDAI DAN ANJING KECIL</a></li><li><a href="pohon-cemara-dan-semak-semak.html">POHON CEMARA DAN SEMAK-SEMAK</a></li><li><a href="keluhan-para-katak-terhadap-matahari.html">KELUHAN PARA KATAK TERHADAP MATAHARI</a></li><li><a href="anjing-ayam-jantan-dan-rubah.html">ANJING, AYAM JANTAN, DAN RUBAH</a></li><li><a href="nyamuk-dan-banteng.html">NYAMUK DAN BANTENG</a></li><li><a href="nyamuk-dan-banteng-2.html">NYAMUK DAN BANTENG</a></li><li><a href="beruang-dan-para-pengembara.html">BERUANG DAN PARA PENGEMBARA</a></li><li><a href="budak-dan-singa.html">BUDAK DAN SINGA</a></li><li><a href="kutu-dan-pria.html">KUTU DAN PRIA</a></li><li><a href="lebah-dan-jupiter.html">LEBAH DAN JUPITER</a></li><li><a href="pohon-ek-dan-rumput-rumput.html">POHON EK DAN RUMPUT-RUMPUT</a></li><li><a href="pria-buta-dan-anak-sapi.html">PRIA BUTA DAN ANAK SAPI</a></li><li><a href="anak-laki-laki-dan-siput.html">ANAK LAKI-LAKI DAN SIPUT</a></li><li><a href="kera-dan-dua-pengembara.html">KERA DAN DUA PENGEMBARA</a></li><li><a href="keledai-dan-bebannya.html">KELEDAI DAN BEBANNYA</a></li><li><a href="anak-gembala-dan-serigala.html">ANAK GEMBALA DAN SERIGALA</a></li><li><a href="rubah-dan-kambing.html">RUBAH DAN KAMBING</a></li><li><a href="nelayan-dan-ikan-sprat.html">NELAYAN DAN IKAN SPRAT</a></li><li><a href="wisatawan-yang-suka-memamerkan-diri.html">WISATAWAN YANG SUKA MEMAMERKAN DIRI</a></li><li><a href="kepiting-dan-ibunya.html">KEPITING DAN IBUNYA</a></li><li><a href="keledai-dan-bayangannya.html">KELEDAI DAN BAYANGANNYA</a></li><li><a href="petani-dan-anak-anaknya.html">PETANI DAN ANAK-ANAKNYA</a></li><li><a href="anjing-dan-koki.html">ANJING DAN KOKI</a></li><li><a href="monyet-sebagai-raja.html">MONYET SEBAGAI RAJA</a></li><li><a href="para-pencuri-dan-ayam-jantan.html">PARA PENCURI DAN AYAM JANTAN</a></li><li><a href="petani-dan-keberuntungan.html">PETANI DAN KEBERUNTUNGAN</a></li><li><a href="jupiter-dan-monyet.html">JUPITER DAN MONYET</a></li><li><a href="ayah-dan-anak-anak.html">AYAH DAN ANAK-ANAK</a></li><li><a href="lampu.html">LAMPU</a></li><li><a href="burung-hantu-dan-burung-burung.html">BURUNG HANTU DAN BURUNG-BURUNG</a></li><li><a href="keledai-dalam-kulit-singa.html">KELEDAI DALAM KULIT SINGA</a></li><li><a href="kambing-betina-dan-janggutnya.html">KAMBING BETINA DAN JANGGUTNYA</a></li><li><a href="singa-tua.html">SINGA TUA</a></li><li><a href="anak-laki-laki-sedang-mandi.html">ANAK LAKI-LAKI SEDANG MANDI</a></li><li><a href="katak-gemuruh.html">KATAK GEMURUH</a></li><li><a href="rubah-yang-bengkak.html">RUBAH YANG BENGKAK</a></li><li><a href="tikus-katak-dan-elang.html">TIKUS, KATAK, DAN ELANG</a></li><li><a href="anak-laki-laki-dan-jelatang.html">ANAK LAKI-LAKI DAN JELATANG</a></li><li><a href="petani-dan-pohon-apel.html">PETANI DAN POHON APEL</a></li><li><a href="burung-jagung-dan-merpati.html">BURUNG JAGUNG DAN MERPATI</a></li><li><a href="jupiter-dan-kura-kura.html">JUPITER DAN KURA-KURA</a></li><li><a href="anjing-di-palung.html">ANJING DI PALUNG</a></li><li><a href="dua-tas.html">DUA TAS</a></li><li><a href="lembu-dan-pohon-pohon.html">LEMBU DAN POHON-POHON</a></li><li><a href="anak-laki-laki-dan-keluarga-filberts.html">ANAK LAKI-LAKI DAN KELUARGA FILBERTS</a></li><li><a href="katak-katak-meminta-seorang-raja.html">KATAK-KATAK MEMINTA SEORANG RAJA</a></li><li><a href="pohon-zaitun-dan-pohon-ara.html">POHON ZAITUN DAN POHON ARA</a></li><li><a href="singa-dan-babi-hutan.html">SINGA DAN BABI HUTAN</a></li><li><a href="pohon-kenari.html">POHON KENARI</a></li><li><a href="pria-dan-singa.html">PRIA DAN SINGA</a></li><li><a href="kura-kura-dan-elang.html">KURA-KURA DAN ELANG</a></li><li><a href="anak-di-atas-atap-rumah.html">ANAK DI ATAS ATAP RUMAH</a></li><li><a href="rubah-tanpa-ekor.html">RUBAH TANPA EKOR</a></li><li><a href="jagung-yang-sombong.html">JAGUNG YANG SOMBONG</a></li><li><a href="pengembara-dan-anjingnya.html">PENGEMBARA DAN ANJINGNYA</a></li><li><a href="pria-yang-karam-dan-laut.html">PRIA YANG KARAM DAN LAUT</a></li><li><a href="babi-hutan-dan-rubiah.html">BABI HUTAN DAN RUBIAH</a></li><li><a href="merkurius-dan-pematung.html">MERKURIUS DAN PEMATUNG</a></li><li><a href="anak-rusa-dan-induknya.html">ANAK RUSA DAN INDUKNYA</a></li><li><a href="rubah-dan-singa.html">RUBAH DAN SINGA</a></li><li><a href="elang-dan-penangkapnya.html">ELANG DAN PENANGKAPNYA</a></li><li><a href="sang-pandai-besi-dan-anjingnya.html">SANG PANDAI BESI DAN ANJINGNYA</a></li><li><a href="pesta-bujang-di-kolam-renang.html">PESTA BUJANG DI KOLAM RENANG</a></li><li><a href="anjing-dan-bayangan.html">ANJING DAN BAYANGAN</a></li><li><a href="merkuri-dan-para-pedagang.html">MERKURI DAN PARA PEDAGANG</a></li><li><a href="tikus-dan-musang.html">TIKUS DAN MUSANG</a></li><li><a href="burung-merak-dan-juno.html">BURUNG MERAK DAN JUNO</a></li><li><a href="beruang-dan-ruby.html">BERUANG DAN RUBY</a></li><li><a href="keledai-dan-petani-tua.html">KELEDAI DAN PETANI TUA</a></li><li><a href="sapi-dan-katak.html">SAPI DAN KATAK</a></li><li><a href="pria-dan-citra.html">PRIA DAN CITRA</a></li><li><a href="hercules-dan-pengemudi-kereta.html">HERCULES DAN PENGEMUDI KERETA</a></li><li><a href="buah-delima-pohon-apel-dan-serangga-darah.html">BUAH DELIMA, POHON APEL, DAN SERANGGA DARAH</a></li><li><a href="singa-beruang-dan-rubah.html">SINGA, BERUANG, DAN RUBAH</a></li><li><a href="orang-blackamoor.html">ORANG BLACKAMOOR</a></li><li><a href="dua-tentara-dan-perampok.html">DUA TENTARA DAN PERAMPOK</a></li><li><a href="singa-dan-keledai-liar.html">SINGA DAN KELEDAI LIAR</a></li><li><a href="pria-dan-satyr.html">PRIA DAN SATYR</a></li><li><a href="pria-dan-satyr-2.html">PRIA DAN SATYR</a></li><li><a href="penjual-citra.html">PENJUAL CITRA</a></li><li><a href="elang-dan-panah.html">ELANG DAN PANAH</a></li><li><a href="orang-kaya-dan-penyamakan-kulit.html">ORANG KAYA DAN PENYAMAKAN KULIT</a></li><li><a href="serigala-ibu-dan-anaknya.html">SERIGALA, IBU, DAN ANAKNYA</a></li><li><a href="wanita-tua-dan-guci-anggur.html">WANITA TUA DAN GUCI ANGGUR</a></li><li><a href="wanita-tua-dan-guci-anggur-2.html">WANITA TUA DAN GUCI ANGGUR</a></li><li><a href="singa-betina-dan-rubah-betina.html">SINGA BETINA DAN RUBAH BETINA</a></li><li><a href="ular-berbisa-dan-tukang-kayu.html">ULAR BERBISA DAN TUKANG KAYU</a></li><li><a href="kucing-dan-ayam-jantan.html">KUCING DAN AYAM JANTAN</a></li><li><a href="kelinci-dan-kura-kura.html">KELINCI DAN KURA-KURA</a></li><li><a href="prajurit-dan-kudanya.html">PRAJURIT DAN KUDANYA</a></li><li><a href="lembu-dan-tukang-jagal.html">LEMBU DAN TUKANG JAGAL</a></li><li><a href="serigala-dan-singa.html">SERIGALA DAN SINGA</a></li><li><a href="domba-serigala-dan-rusa-jantan.html">DOMBA, SERIGALA, DAN RUSA JANTAN</a></li><li><a href="domba-serigala-dan-rusa-jantan-2.html">DOMBA, SERIGALA, DAN RUSA JANTAN</a></li><li><a href="singa-dan-tiga-banteng.html">SINGA DAN TIGA BANTENG</a></li><li><a href="kuda-dan-penunggangnya.html">KUDA DAN PENUNGGANGNYA</a></li><li><a href="kambing-dan-anggur.html">KAMBING DAN ANGGUR</a></li><li><a href="dua-panci.html">DUA PANCI</a></li><li><a href="anjing-tua.html">ANJING TUA</a></li><li><a href="badut-dan-orang-desa.html">BADUT DAN ORANG DESA</a></li><li><a href="burung-lark-dan-petani.html">BURUNG LARK DAN PETANI</a></li><li><a href="singa-dan-keledai.html">SINGA DAN KELEDAI</a></li><li><a href="nabi.html">NABI</a></li><li><a href="anjing-dan-kelinci.html">ANJING DAN KELINCI</a></li><li><a href="singa-tikus-dan-rubah.html">SINGA, TIKUS, DAN RUBAH</a></li><li><a href="serigala-dan-burung-bangau.html">SERIGALA DAN BURUNG BANGAU</a></li><li><a href="elang-kucing-dan-babi-hutan.html">ELANG, KUCING, DAN BABI HUTAN</a></li><li><a href="serigala-dan-domba.html">SERIGALA DAN DOMBA</a></li><li><a href="ikan-tuna-dan-lumba-lumba.html">IKAN TUNA DAN LUMBA-LUMBA</a></li><li><a href="tiga-pedagang.html">TIGA PEDAGANG</a></li><li><a href="tikus-dan-banteng.html">TIKUS DAN BANTENG</a></li><li><a href="kelinci-dan-anjing.html">KELINCI DAN ANJING</a></li><li><a href="tikus-kota-dan-tikus-desa.html">TIKUS KOTA DAN TIKUS DESA</a></li><li><a href="singa-dan-banteng.html">SINGA DAN BANTENG</a></li><li><a href="serigala-rubah-dan-kera.html">SERIGALA, RUBAH, DAN KERA</a></li><li><a href="elang-dan-ayam-jantan.html">ELANG DAN AYAM JANTAN</a></li><li><a href="jackdaw-yang-kabur.html">JACKDAW YANG KABUR</a></li><li><a href="petani-dan-serigala.html">PETANI DAN SERIGALA</a></li><li><a href="venus-dan-kucing.html">VENUS DAN KUCING</a></li><li><a href="venus-dan-kucing-2.html">VENUS DAN KUCING</a></li><li><a href="burung-gagak-dan-angsa.html">BURUNG GAGAK DAN ANGSA</a></li><li><a href="rusa-jantan-bermata-satu.html">RUSA JANTAN BERMATA SATU</a></li><li><a href="lalat-dan-keledai.html">LALAT DAN KELEDAI</a></li><li><a href="ayam-jantan-dan-permata.html">AYAM JANTAN DAN PERMATA</a></li><li><a href="serigala-dan-gembala.html">SERIGALA DAN GEMBALA</a></li><li><a href="petani-dan-burung-bangau.html">PETANI DAN BURUNG BANGAU</a></li><li><a href="pengisi-daya-dan-penggiling.html">PENGISI DAYA DAN PENGGILING</a></li><li><a href="belalang-dan-burung-hantu.html">BELALANG DAN BURUNG HANTU</a></li><li><a href="belalang-dan-semut.html">BELALANG DAN SEMUT</a></li><li><a href="belalang-dan-semut-2.html">BELALANG DAN SEMUT</a></li><li><a href="petani-dan-ular-berbisa.html">PETANI DAN ULAR BERBISA</a></li><li><a href="dua-katak.html">DUA KATAK</a></li><li><a href="tukang-sepatu-yang-menjadi-dokter.html">TUKANG SEPATU YANG MENJADI DOKTER</a></li><li><a href="keledai-kemaluan-pria-dan-singa.html">KELEDAI, KEMALUAN PRIA, DAN SINGA</a></li><li><a href="perut-dan-anggotanya.html">PERUT DAN ANGGOTANYA</a></li><li><a href="pria-botak-dan-lalat.html">PRIA BOTAK DAN LALAT</a></li><li><a href="keledai-dan-serigala.html">KELEDAI DAN SERIGALA</a></li><li><a href="monyet-dan-unta.html">MONYET DAN UNTA</a></li><li><a href="orang-sakit-dan-dokter.html">ORANG SAKIT DAN DOKTER</a></li><li><a href="para-pengembara-dan-pohon-plane.html">PARA PENGEMBARA DAN POHON PLANE</a></li><li><a href="para-pengembara-dan-pohon-plane-2.html">PARA PENGEMBARA DAN POHON PLANE</a></li><li><a href="kutu-dan-sapi-jantan.html">KUTU DAN SAPI JANTAN</a></li><li><a href="burung-burung-binatang-buas-dan-kelelawar.html">BURUNG-BURUNG, BINATANG BUAS, DAN KELELAWAR</a></li><li><a href="pria-itu-dan-dua-kekasihnya.html">PRIA ITU DAN DUA KEKASIHNYA</a></li><li><a href="elang-burung-jagung-dan-gembala.html">ELANG, BURUNG JAGUNG, DAN GEMBALA</a></li><li><a href="serigala-dan-anak-laki-laki.html">SERIGALA DAN ANAK LAKI-LAKI</a></li><li><a href="sang-penggilig-putranya-dan-keledai-mereka.html">SANG PENGGILIG, PUTRANYA , DAN KELEDAI MEREKA</a></li><li><a href="rusa-jantan-dan-anggur.html">RUSA JANTAN DAN ANGGUR</a></li><li><a href="anak-domba-yang-dikejar-serigala.html">ANAK DOMBA YANG DIKEJAR SERIGALA</a></li><li><a href="pemanah-dan-singa.html">PEMANAH DAN SINGA</a></li><li><a href="serigala-dan-kambing.html">SERIGALA DAN KAMBING</a></li><li><a href="rusa-yang-sakit.html">RUSA YANG SAKIT</a></li><li><a href="keledai-dan-balita.html">KELEDAI DAN BALITA</a></li><li><a href="kakak-laki-laki-dan-perempuan.html">KAKAK LAKI-LAKI DAN PEREMPUAN</a></li><li><a href="sapi-betina-muda-dan-sapi-jantan.html">SAPI BETINA MUDA DAN SAPI JANTAN</a></li><li><a href="kerajaan-singa.html">KERAJAAN SINGA</a></li><li><a href="kerajaan-singa-2.html">KERAJAAN SINGA</a></li><li><a href="keledai-dan-sopirnya.html">KELEDAI DAN SOPIRNYA</a></li><li><a href="singa-dan-kelinci.html">SINGA DAN KELINCI</a></li><li><a href="serigala-dan-anjing-anjing.html">SERIGALA DAN ANJING-ANJING</a></li><li><a href="anak-sapi-dan-anak-sapi.html">ANAK SAPI DAN ANAK SAPI</a></li><li><a href="pohon-pohon-dan-kapak.html">POHON-POHON DAN KAPAK</a></li><li><a href="astronom.html">ASTRONOM</a></li><li><a href="pekerja-dan-ular.html">PEKERJA DAN ULAR</a></li><li><a href="burung-dalam-sangkar-dan-kelelawar.html">BURUNG DALAM SANGKAR DAN KELELAWAR</a></li><li><a href="keledai-dan-pembelinya.html">KELEDAI DAN PEMBELINYA</a></li><li><a href="anak-kecil-dan-serigala.html">ANAK KECIL DAN SERIGALA</a></li><li><a href="debitur-dan-babinya.html">DEBITUR DAN BABINYA</a></li><li><a href="pemburu-botak.html">PEMBURU BOTAK</a></li><li><a href="sang-gembala-dan-banteng-yang-hilang.html">SANG GEMBALA DAN BANTENG YANG HILANG</a></li><li><a href="keledai.html">KELEDAI</a></li><li><a href="anjing-dan-singa.html">ANJING DAN SINGA</a></li><li><a href="ayah-dan-anak-anak-perempuannya.html">AYAH DAN ANAK-ANAK PEREMPUANNYA</a></li><li><a href="pencuri-dan-pemilik-penginapan.html">PENCURI DAN PEMILIK PENGINAPAN</a></li><li><a href="si-penyimpan-barang-dan-si-keledai-liar.html">SI PENYIMPAN BARANG DAN SI KELEDAI LIAR</a></li><li><a href="keledai-dan-tuannya.html">KELEDAI DAN TUANNYA</a></li><li><a href="si-penumpang-si-keledai-dan-si-singa.html">SI PENUMPANG, SI KELEDAI, DAN SI SINGA</a></li><li><a href="semut.html">SEMUT</a></li><li><a href="katak-dan-sumur.html">KATAK DAN SUMUR</a></li><li><a href="kepiting-dan-rubah.html">KEPITING DAN RUBAH</a></li><li><a href="ruba-dan-belalang.html">RUBA DAN BELALANG</a></li><li><a href="petani-anak-laki-lakinya-dan-burung-gagak.html">PETANI, ANAK LAKI-LAKINYA, DAN BURUNG GAGAK</a></li><li><a href="keledai-dan-anjing.html">KELEDAI DAN ANJING</a></li><li><a href="keledai-yang-membawa-gambaran-itu.html">KELEDAI YANG MEMBAWA GAMBARAN ITU</a></li><li><a href="orang-athena-dan-orang-thebe.html">ORANG ATHENA DAN ORANG THEBE</a></li><li><a href="penggembala-kambing-dan-kambing.html">PENGGEMBALA KAMBING DAN KAMBING</a></li><li><a href="domba-dan-anjing.html">DOMBA DAN ANJING</a></li><li><a href="gembala-dan-serigala.html">GEMBALA DAN SERIGALA</a></li><li><a href="singa-jupiter-dan-gajah.html">SINGA, JUPITER, DAN GAJAH</a></li><li><a href="babi-dan-domba.html">BABI DAN DOMBA</a></li><li><a href="tukang-kebun-dan-anjingnya.html">TUKANG KEBUN DAN ANJINGNYA</a></li><li><a href="sungai-dan-laut.html">SUNGAI DAN LAUT</a></li><li><a href="singa-yang-jatuh-cinta.html">SINGA YANG JATUH CINTA</a></li><li><a href="petugas-lebah.html">PETUGAS LEBAH</a></li><li><a href="serigala-dan-kuda.html">SERIGALA DAN KUDA</a></li><li><a href="kelelawar-duri-dan-burung-camar.html">KELELAWAR, DURI, DAN BURUNG CAMAR</a></li><li><a href="anjing-dan-serigala.html">ANJING DAN SERIGALA</a></li><li><a href="tawon-dan-ular.html">TAWON DAN ULAR</a></li><li><a href="elang-dan-kumbang.html">ELANG DAN KUMBANG</a></li><li><a href="si-pemburu-dan-burung-lark.html">SI PEMBURU DAN BURUNG LARK</a></li><li><a href="pipa-nelayan.html">PIPA NELAYAN</a></li><li><a href="si-musang-dan-pria.html">SI MUSANG DAN PRIA</a></li><li><a href="pemangkas-keledai-dan-lembu.html">PEMANGKAS, KELEDAI, DAN LEMBU</a></li><li><a href="demades-dan-fabelnya.html">DEMADES DAN FABELNYA</a></li><li><a href="monyet-dan-lumba-lumba.html">MONYET DAN LUMBA-LUMBA</a></li><li><a href="monyet-dan-lumba-lumba-2.html">MONYET DAN LUMBA-LUMBA</a></li><li><a href="burung-gagak-dan-ular.html">BURUNG GAGAK DAN ULAR</a></li><li><a href="anjing-dan-rubah.html">ANJING DAN RUBAH</a></li><li><a href="burung-nightingale-dan-elang.html">BURUNG NIGHTINGALE DAN ELANG</a></li><li><a href="mawar-dan-amaranth.html">MAWAR DAN AMARANTH</a></li><li><a href="pria-kuda-lembu-dan-anjing.html">PRIA, KUDA, LEMBU, DAN ANJING</a></li><li><a href="serigala-domba-dan-domba-jantan.html">SERIGALA, DOMBA, DAN DOMBA JANTAN</a></li><li><a href="angsa.html">ANGSA</a></li><li><a href="ular-dan-jupiter.html">ULAR DAN JUPITER</a></li><li><a href="serigala-dan-bayangannya.html">SERIGALA DAN BAYANGANNYA</a></li><li><a href="sang-petani-dan-sang-serigala.html">SANG PETANI DAN SANG SERIGALA</a></li><li><a href="merkuri-dan-pria-yang-digigit-semut.html">MERKURI DAN PRIA YANG DIGIGIT SEMUT</a></li><li><a href="singa-yang-licik.html">SINGA YANG LICIK</a></li><li><a href="burung-bebek-dan-kucing.html">BURUNG BEBEK DAN KUCING</a></li><li><a href="rusa-jantan-dan-singa.html">RUSA JANTAN DAN SINGA</a></li><li><a href="penipu.html">PENIPU</a></li><li><a href="anjing-dan-kulitnya.html">ANJING DAN KULITNYA</a></li><li><a href="singa-rubah-dan-keledai.html">SINGA, RUBAH, DAN KELEDAI</a></li><li><a href="ayam-burung-partridge-dan-ayam-jantan.html">AYAM, BURUNG PARTRIDGE, DAN AYAM JANTAN</a></li><li><a href="nyamuk-dan-singa.html">NYAMUK DAN SINGA</a></li><li><a href="petani-dan-anjing-anjingnya.html">PETANI DAN ANJING-ANJINGNYA</a></li><li><a href="elang-dan-rubah.html">ELANG DAN RUBAH</a></li><li><a href="tukang-jagal-dan-pelanggannya.html">TUKANG JAGAL DAN PELANGGANNYA</a></li><li><a href="hercules-dan-minerva.html">HERCULES DAN MINERVA</a></li><li><a href="serigala-yang-melayani-singa.html">SERIGALA YANG MELAYANI SINGA</a></li><li><a href="dokter-gagap.html">DOKTER GAGAP</a></li><li><a href="singa-serigala-dan-rubah.html">SINGA, SERIGALA, DAN RUBAH</a></li><li><a href="hercules-dan-plutus.html">HERCULES DAN PLUTUS</a></li><li><a href="rubah-dan-macan-tutul.html">RUBAH DAN MACAN TUTUL</a></li><li><a href="rubah-dan-landak.html">RUBAH DAN LANDAK</a></li><li><a href="burung-gagak-dan-burung-raven.html">BURUNG GAGAK DAN BURUNG RAVEN</a></li><li><a href="penyihir.html">PENYIHIR</a></li><li><a href="orang-tua-dan-kematian.html">ORANG TUA DAN KEMATIAN</a></li><li><a href="si-pelit.html">SI PELIT</a></li><li><a href="rubah-dan-sungai.html">RUBAH DAN SUNGAI</a></li><li><a href="kuda-dan-rusa-jantan.html">KUDA DAN RUSA JANTAN</a></li><li><a href="rubah-dan-duri.html">RUBAH DAN DURI</a></li><li><a href="rubah-dan-ular.html">RUBAH DAN ULAR</a></li><li><a href="singa-rubah-dan-rusa-jantan.html">SINGA, RUBAH, DAN RUSA JANTAN</a></li><li><a href="pria-yang-kehilangan-sekopnya.html">PRIA YANG KEHILANGAN SEKOPNYA</a></li><li><a href="burung-partridge-dan-fowler.html">BURUNG PARTRIDGE DAN FOWLER</a></li><li><a href="budak-yang-kabur.html">BUDAK YANG KABUR</a></li><li><a href="pemburu-dan-penebang-kayu.html">PEMBURU DAN PENEBANG KAYU</a></li><li><a href="ular-dan-elang.html">ULAR DAN ELANG</a></li><li><a href="si-penjahat-dan-sang-peramal.html">SI PENJAHAT DAN SANG PERAMAL</a></li><li><a href="kuda-dan-keledai.html">KUDA DAN KELEDAI</a></li><li><a href="anjing-mengejar-serigala.html">ANJING MENGEJAR SERIGALA</a></li><li><a href="kesedihan-dan-haknya.html">KESEDIHAN DAN HAKNYA</a></li><li><a href="elang-layang-layang-dan-merpati.html">ELANG, LAYANG-LAYANG, DAN MERPATI</a></li><li><a href="wanita-dan-petani.html">WANITA DAN PETANI</a></li><li><a href="prometheus-dan-pembuatan-manusia.html">PROMETHEUS DAN PEMBUATAN MANUSIA</a></li><li><a href="burung-walet-dan-burung-gagak.html">BURUNG WALET DAN BURUNG GAGAK</a></li><li><a href="pemburu-dan-penunggang-kuda.html">PEMBURU DAN PENUNGGANG KUDA</a></li><li><a href="penggembala-kambing-dan-kambing-liar.html">PENGGEMBALA KAMBING DAN KAMBING LIAR</a></li><li><a href="burung-nightingale-dan-burung-walet.html">BURUNG NIGHTINGALE DAN BURUNG WALET</a></li><li><a href="pengembara-dan-keberuntungan.html">PENGEMBARA DAN KEBERUNTUNGAN</a></li>
-</ol>
+<hr class="book-divider">
+
+<section class="toc-section">
+  <div class="toc-label">Daftar Isi</div>
+  <ol class="toc-list">
+    <li><a href="tentang-apa-buku-ini.html">Tentang Apa Buku Ini?</a></li>
+<li><a href="perkenalan.html">Perkenalan</a></li>
+<li><a href="rubah-dan-anggur.html">Rubah Dan Anggur</a></li>
+<li><a href="angsa-yang-bertelur-emas.html">Angsa Yang Bertelur Emas</a></li>
+<li><a href="kucing-dan-tikus.html">Kucing Dan Tikus</a></li>
+<li><a href="anjing-yang-nakal.html">Anjing Yang Nakal</a></li>
+<li><a href="pembakar-arang-dan-pengisi.html">Pembakar Arang Dan Pengisi</a></li>
+<li><a href="tikus-tikus-di-dewan.html">Tikus-Tikus Di Dewan</a></li>
+<li><a href="kelelawar-dan-musang.html">Kelelawar Dan Musang</a></li>
+<li><a href="anjing-dan-babi-induk.html">Anjing Dan Babi Induk</a></li>
+<li><a href="rubah-dan-gagak.html">Rubah Dan Gagak</a></li>
+<li><a href="kuda-dan-pengasuh-kuda.html">Kuda Dan Pengasuh Kuda</a></li>
+<li><a href="serigala-dan-anak-domba.html">Serigala Dan Anak Domba</a></li>
+<li><a href="burung-merak-dan-burung-bangau.html">Burung Merak Dan Burung Bangau</a></li>
+<li><a href="kucing-dan-burung-burung.html">Kucing Dan Burung-Burung</a></li>
+<li><a href="si-pemboros-dan-si-penangkap-air.html">Si Pemboros Dan Si Penangkap Air</a></li>
+<li><a href="wanita-tua-dan-dokter.html">Wanita Tua Dan Dokter</a></li>
+<li><a href="bulan-dan-ibunya.html">Bulan Dan Ibunya</a></li>
+<li><a href="merkuri-dan-tukang-kayu.html">Merkuri Dan Tukang Kayu</a></li>
+<li><a href="keledai-rubiah-dan-singa.html">Keledai, Rubiah, Dan Singa</a></li>
+<li><a href="singa-dan-tikus.html">Singa Dan Tikus</a></li>
+<li><a href="burung-gagak-dan-teko.html">Burung Gagak Dan Teko</a></li>
+<li><a href="anak-laki-laki-dan-katak-katak.html">Anak Laki-Laki Dan Katak-Katak</a></li>
+<li><a href="angin-utara-dan-matahari.html">Angin Utara Dan Matahari</a></li>
+<li><a href="nyonya-dan-para-pelayannya.html">Nyonya Dan Para Pelayannya</a></li>
+<li><a href="sisi-baik-dan-sisi-buruknya.html">Sisi Baik Dan Sisi Buruknya</a></li>
+<li><a href="kelinci-dan-katak.html">Kelinci Dan Katak</a></li>
+<li><a href="rubah-dan-bangau.html">Rubah Dan Bangau</a></li>
+<li><a href="serigala-berkedok-domba.html">Serigala Berkedok Domba</a></li>
+<li><a href="rusa-jantan-di-kandang-sapi.html">Rusa Jantan Di Kandang Sapi</a></li>
+<li><a href="gadis-pemerah-susu-dan-embernya.html">Gadis Pemerah Susu Dan Embernya</a></li>
+<li><a href="lumba-lumba-paus-dan-ikan-sprat.html">Lumba-Lumba, Paus, Dan Ikan Sprat</a></li>
+<li><a href="rubah-dan-monyet.html">Rubah Dan Monyet</a></li>
+<li><a href="keledai-dan-anjing-pangkuk.html">Keledai Dan Anjing Pangkuk</a></li>
+<li><a href="pohon-cemara-dan-semak-semak.html">Pohon Cemara Dan Semak-Semak</a></li>
+<li><a href="keluhan-para-katak-terhadap-matahari.html">Keluhan Para Katak Terhadap Matahari</a></li>
+<li><a href="anjing-ayam-jantan-dan-rubah.html">Anjing, Ayam Jantan, Dan Rubah</a></li>
+<li><a href="nyamuk-dan-banteng.html">Nyamuk Dan Banteng</a></li>
+<li><a href="beruang-dan-para-pengembara.html">Beruang Dan Para Pengembara</a></li>
+<li><a href="budak-dan-singa.html">Budak Dan Singa</a></li>
+<li><a href="kutu-dan-pria.html">Kutu Dan Pria</a></li>
+<li><a href="lebah-dan-jupiter.html">Lebah Dan Jupiter</a></li>
+<li><a href="pohon-ek-dan-rumput-rumput.html">Pohon Ek Dan Rumput-Rumput</a></li>
+<li><a href="pria-buta-dan-anak-sapi.html">Pria Buta Dan Anak Sapi</a></li>
+<li><a href="anak-laki-laki-dan-siput.html">Anak Laki-Laki Dan Siput</a></li>
+<li><a href="kera-dan-dua-pengembara.html">Kera Dan Dua Pengembara</a></li>
+<li><a href="keledai-dan-bebannya.html">Keledai Dan Bebannya</a></li>
+<li><a href="anak-gembala-dan-serigala.html">Anak Gembala Dan Serigala</a></li>
+<li><a href="rubah-dan-kambing.html">Rubah Dan Kambing</a></li>
+<li><a href="nelayan-dan-ikan-sprat.html">Nelayan Dan Ikan Sprat</a></li>
+<li><a href="wisatawan-yang-suka-memamerkan-diri.html">Wisatawan Yang Suka Memamerkan Diri</a></li>
+<li><a href="kepiting-dan-ibunya.html">Kepiting Dan Ibunya</a></li>
+<li><a href="keledai-dan-bayangannya.html">Keledai Dan Bayangannya</a></li>
+<li><a href="petani-dan-anak-anaknya.html">Petani Dan Anak-Anaknya</a></li>
+<li><a href="anjing-dan-koki.html">Anjing Dan Koki</a></li>
+<li><a href="monyet-sebagai-raja.html">Monyet Sebagai Raja</a></li>
+<li><a href="para-pencuri-dan-ayam-jantan.html">Para Pencuri Dan Ayam Jantan</a></li>
+<li><a href="petani-dan-keberuntungan.html">Petani Dan Keberuntungan</a></li>
+<li><a href="jupiter-dan-monyet.html">Jupiter Dan Monyet</a></li>
+<li><a href="ayah-dan-anak-anak.html">Ayah Dan Anak-Anak</a></li>
+<li><a href="lampu.html">Lampu</a></li>
+<li><a href="burung-hantu-dan-burung-burung.html">Burung Hantu Dan Burung-Burung</a></li>
+<li><a href="keledai-dalam-kulit-singa.html">Keledai Dalam Kulit Singa</a></li>
+<li><a href="kambing-betina-dan-janggutnya.html">Kambing Betina Dan Janggutnya</a></li>
+<li><a href="singa-tua.html">Singa Tua</a></li>
+<li><a href="anak-laki-laki-sedang-mandi.html">Anak Laki-Laki Sedang Mandi</a></li>
+<li><a href="katak-gemuruh.html">Katak Gemuruh</a></li>
+<li><a href="rubah-yang-bengkak.html">Rubah Yang Bengkak</a></li>
+<li><a href="tikus-katak-dan-elang.html">Tikus, Katak, Dan Elang</a></li>
+<li><a href="anak-laki-laki-dan-jelatang.html">Anak Laki-Laki Dan Jelatang</a></li>
+<li><a href="petani-dan-pohon-apel.html">Petani Dan Pohon Apel</a></li>
+<li><a href="burung-jagung-dan-merpati.html">Burung Jagung Dan Merpati</a></li>
+<li><a href="jupiter-dan-kura-kura.html">Jupiter Dan Kura-Kura</a></li>
+<li><a href="anjing-di-palung.html">Anjing Di Palung</a></li>
+<li><a href="dua-tas.html">Dua Tas</a></li>
+<li><a href="lembu-dan-pohon-pohon.html">Lembu Dan Pohon-Pohon</a></li>
+<li><a href="anak-laki-laki-dan-keluarga-filberts.html">Anak Laki-Laki Dan Keluarga Filberts</a></li>
+<li><a href="katak-katak-meminta-seorang-raja.html">Katak-Katak Meminta Seorang Raja</a></li>
+<li><a href="pohon-zaitun-dan-pohon-ara.html">Pohon Zaitun Dan Pohon Ara</a></li>
+<li><a href="singa-dan-babi-hutan.html">Singa Dan Babi Hutan</a></li>
+<li><a href="pohon-kenari.html">Pohon Kenari</a></li>
+<li><a href="pria-dan-singa.html">Pria Dan Singa</a></li>
+<li><a href="kura-kura-dan-elang.html">Kura-Kura Dan Elang</a></li>
+<li><a href="anak-di-atas-atap-rumah.html">Anak Di Atas Atap Rumah</a></li>
+<li><a href="rubah-tanpa-ekor.html">Rubah Tanpa Ekor</a></li>
+<li><a href="jagung-yang-sombong.html">Jagung Yang Sombong</a></li>
+<li><a href="pengembara-dan-anjingnya.html">Pengembara Dan Anjingnya</a></li>
+<li><a href="pria-yang-karam-dan-laut.html">Pria Yang Karam Dan Laut</a></li>
+<li><a href="babi-hutan-dan-rubiah.html">Babi Hutan Dan Rubiah</a></li>
+<li><a href="merkurius-dan-pematung.html">Merkurius Dan Pematung</a></li>
+<li><a href="anak-rusa-dan-induknya.html">Anak Rusa Dan Induknya</a></li>
+<li><a href="rubah-dan-singa.html">Rubah Dan Singa</a></li>
+<li><a href="elang-dan-penangkapnya.html">Elang Dan Penangkapnya</a></li>
+<li><a href="sang-pandai-besi-dan-anjingnya.html">Sang Pandai Besi Dan Anjingnya</a></li>
+<li><a href="pesta-bujang-di-kolam-renang.html">Pesta Bujang Di Kolam Renang</a></li>
+<li><a href="anjing-dan-bayangan.html">Anjing Dan Bayangan</a></li>
+<li><a href="merkuri-dan-para-pedagang.html">Merkuri Dan Para Pedagang</a></li>
+<li><a href="tikus-dan-musang.html">Tikus Dan Musang</a></li>
+<li><a href="burung-merak-dan-juno.html">Burung Merak Dan Juno</a></li>
+<li><a href="beruang-dan-ruby.html">Beruang Dan Ruby</a></li>
+<li><a href="keledai-dan-petani-tua.html">Keledai Dan Petani Tua</a></li>
+<li><a href="sapi-dan-katak.html">Sapi Dan Katak</a></li>
+<li><a href="pria-dan-citra.html">Pria Dan Citra</a></li>
+<li><a href="hercules-dan-pengemudi-kereta.html">Hercules Dan Pengemudi Kereta</a></li>
+<li><a href="buah-delima-pohon-apel-dan-serangga-darah.html">Buah Delima, Pohon Apel, Dan Serangga Darah</a></li>
+<li><a href="singa-beruang-dan-rubah.html">Singa, Beruang, Dan Rubah</a></li>
+<li><a href="orang-blackamoor.html">Orang Blackamoor</a></li>
+<li><a href="dua-tentara-dan-perampok.html">Dua Tentara Dan Perampok</a></li>
+<li><a href="singa-dan-keledai-liar.html">Singa Dan Keledai Liar</a></li>
+<li><a href="pria-dan-satyr.html">Pria Dan Satyr</a></li>
+<li><a href="penjual-citra.html">Penjual Citra</a></li>
+<li><a href="elang-dan-panah.html">Elang Dan Panah</a></li>
+<li><a href="orang-kaya-dan-penyamakan-kulit.html">Orang Kaya Dan Penyamakan Kulit</a></li>
+<li><a href="serigala-ibu-dan-anaknya.html">Serigala, Ibu, Dan Anaknya</a></li>
+<li><a href="wanita-tua-dan-guci-anggur.html">Wanita Tua Dan Guci Anggur</a></li>
+<li><a href="singa-betina-dan-rubah-betina.html">Singa Betina Dan Rubah Betina</a></li>
+<li><a href="ular-berbisa-dan-berkas.html">Ular Berbisa Dan Berkas</a></li>
+<li><a href="kucing-dan-ayam-jantan.html">Kucing Dan Ayam Jantan</a></li>
+<li><a href="kelinci-dan-kura-kura.html">Kelinci Dan Kura-Kura</a></li>
+<li><a href="prajurit-dan-kudanya.html">Prajurit Dan Kudanya</a></li>
+<li><a href="lembu-dan-tukang-jagal.html">Lembu Dan Tukang Jagal</a></li>
+<li><a href="serigala-dan-singa.html">Serigala Dan Singa</a></li>
+<li><a href="domba-serigala-dan-rusa-jantan.html">Domba, Serigala, Dan Rusa Jantan</a></li>
+<li><a href="singa-dan-tiga-banteng.html">Singa Dan Tiga Banteng</a></li>
+<li><a href="kuda-dan-penunggangnya.html">Kuda Dan Penunggangnya</a></li>
+<li><a href="kambing-dan-anggur.html">Kambing Dan Anggur</a></li>
+<li><a href="dua-panci.html">Dua Panci</a></li>
+<li><a href="anjing-tua.html">Anjing Tua</a></li>
+<li><a href="badut-dan-orang-desa.html">Badut Dan Orang Desa</a></li>
+<li><a href="burung-lark-dan-petani.html">Burung Lark Dan Petani</a></li>
+<li><a href="singa-dan-keledai.html">Singa Dan Keledai</a></li>
+<li><a href="nabi.html">Nabi</a></li>
+<li><a href="anjing-dan-kelinci.html">Anjing Dan Kelinci</a></li>
+<li><a href="singa-tikus-dan-rubah.html">Singa, Tikus, Dan Rubah</a></li>
+<li><a href="sang-penabuh-terompet-ditawan.html">Sang Penabuh Terompet Ditawan</a></li>
+<li><a href="serigala-dan-burung-bangau.html">Serigala Dan Burung Bangau</a></li>
+<li><a href="elang-kucing-dan-babi-hutan.html">Elang, Kucing, Dan Babi Hutan</a></li>
+<li><a href="serigala-dan-domba.html">Serigala Dan Domba</a></li>
+<li><a href="ikan-tuni-dan-lumba-lumba.html">Ikan Tuni Dan Lumba-Lumba</a></li>
+<li><a href="tiga-pedagang.html">Tiga Pedagang</a></li>
+<li><a href="tikus-dan-banteng.html">Tikus Dan Banteng</a></li>
+<li><a href="kelinci-dan-anjing.html">Kelinci Dan Anjing</a></li>
+<li><a href="tikus-kota-dan-tikus-desa.html">Tikus Kota Dan Tikus Desa</a></li>
+<li><a href="singa-dan-banteng.html">Singa Dan Banteng</a></li>
+<li><a href="serigala-rubiah-dan-kera.html">Serigala, Rubiah, Dan Kera</a></li>
+<li><a href="elang-dan-ayam-jantan.html">Elang Dan Ayam Jantan</a></li>
+<li><a href="jackdaw-yang-kabur.html">Jackdaw Yang Kabur</a></li>
+<li><a href="petani-dan-serigala.html">Petani Dan Serigala</a></li>
+<li><a href="venus-dan-kucing.html">Venus Dan Kucing</a></li>
+<li><a href="burung-gagak-dan-angsa.html">Burung Gagak Dan Angsa</a></li>
+<li><a href="rusa-jantan-bermata-satu.html">Rusa Jantan Bermata Satu</a></li>
+<li><a href="lalat-dan-keledai.html">Lalat Dan Keledai</a></li>
+<li><a href="ayam-jantan-dan-permata.html">Ayam Jantan Dan Permata</a></li>
+<li><a href="serigala-dan-gembala.html">Serigala Dan Gembala</a></li>
+<li><a href="petani-dan-burung-bangau.html">Petani Dan Burung Bangau</a></li>
+<li><a href="pengisi-daya-dan-penggiling.html">Pengisi Daya Dan Penggiling</a></li>
+<li><a href="belalang-dan-burung-hantu.html">Belalang Dan Burung Hantu</a></li>
+<li><a href="belalang-dan-semut.html">Belalang Dan Semut</a></li>
+<li><a href="petani-dan-ular-berbisa.html">Petani Dan Ular Berbisa</a></li>
+<li><a href="dua-katak.html">Dua Katak</a></li>
+<li><a href="tukang-sepatu-yang-menjadi-dokter.html">Tukang Sepatu Yang Menjadi Dokter</a></li>
+<li><a href="keledai-kemaluan-pria-dan-singa.html">Keledai, Kemaluan Pria, Dan Singa</a></li>
+<li><a href="perut-dan-anggotanya.html">Perut Dan Anggotanya</a></li>
+<li><a href="pria-botak-dan-lalat.html">Pria Botak Dan Lalat</a></li>
+<li><a href="keledai-dan-serigala.html">Keledai Dan Serigala</a></li>
+<li><a href="monyet-dan-unta.html">Monyet Dan Unta</a></li>
+<li><a href="orang-sakit-dan-dokter.html">Orang Sakit Dan Dokter</a></li>
+<li><a href="para-pengembara-dan-pohon-plane.html">Para Pengembara Dan Pohon Plane</a></li>
+<li><a href="kutu-dan-sapi-jantan.html">Kutu Dan Sapi Jantan</a></li>
+<li><a href="burung-burung-binatang-buas-dan-kelelawar.html">Burung-Burung, Binatang Buas, Dan Kelelawar</a></li>
+<li><a href="pria-itu-dan-dua-kekasihnya.html">Pria Itu Dan Dua Kekasihnya</a></li>
+<li><a href="elang-burung-jagung-dan-gembala.html">Elang, Burung Jagung, Dan Gembala</a></li>
+<li><a href="serigala-dan-anak-laki-laki.html">Serigala Dan Anak Laki-Laki</a></li>
+<li><a href="sang-penggiling-putranya-dan-keledai-mereka.html">Sang Penggiling, Putranya, Dan Keledai Mereka</a></li>
+<li><a href="rusa-jantan-dan-anggur.html">Rusa Jantan Dan Anggur</a></li>
+<li><a href="anak-domba-yang-dikejar-serigala.html">Anak Domba Yang Dikejar Serigala</a></li>
+<li><a href="pemanah-dan-singa.html">Pemanah Dan Singa</a></li>
+<li><a href="serigala-dan-kambing.html">Serigala Dan Kambing</a></li>
+<li><a href="rusa-yang-sakit.html">Rusa Yang Sakit</a></li>
+<li><a href="keledai-dan-balita.html">Keledai Dan Balita</a></li>
+<li><a href="kakak-laki-laki-dan-perempuan.html">Kakak Laki-Laki Dan Perempuan</a></li>
+<li><a href="sapi-betina-muda-dan-sapi-jantan.html">Sapi Betina Muda Dan Sapi Jantan</a></li>
+<li><a href="kerajaan-singa.html">Kerajaan Singa</a></li>
+<li><a href="keledai-dan-sopirnya.html">Keledai Dan Sopirnya</a></li>
+<li><a href="singa-dan-kelinci.html">Singa Dan Kelinci</a></li>
+<li><a href="serigala-dan-anjing-anjing.html">Serigala Dan Anjing-Anjing</a></li>
+<li><a href="anak-sapi-dan-anak-sapi.html">Anak Sapi Dan Anak Sapi</a></li>
+<li><a href="pohon-pohon-dan-kapak.html">Pohon-Pohon Dan Kapak</a></li>
+<li><a href="astronom.html">Astronom</a></li>
+<li><a href="pekerja-dan-ular.html">Pekerja Dan Ular</a></li>
+<li><a href="burung-dalam-sangkar-dan-kelelawar.html">Burung Dalam Sangkar Dan Kelelawar</a></li>
+<li><a href="keledai-dan-pembelinya.html">Keledai Dan Pembelinya</a></li>
+<li><a href="anak-kecil-dan-serigala.html">Anak Kecil Dan Serigala</a></li>
+<li><a href="debitur-dan-babinya.html">Debitur Dan Babinya</a></li>
+<li><a href="pemburu-botak.html">Pemburu Botak</a></li>
+<li><a href="sang-gembala-dan-banteng-yang-hilang.html">Sang Gembala Dan Banteng Yang Hilang</a></li>
+<li><a href="keledai.html">Keledai</a></li>
+<li><a href="anjing-dan-ruby.html">Anjing Dan Ruby</a></li>
+<li><a href="ayah-dan-anak-anak-perempuannya.html">Ayah Dan Anak-Anak Perempuannya</a></li>
+<li><a href="pencuri-dan-pemilik-penginapan.html">Pencuri Dan Pemilik Penginapan</a></li>
+<li><a href="si-penyimpan-barang-dan-si-keledai-liar.html">Si Penyimpan Barang Dan Si Keledai Liar</a></li>
+<li><a href="keledai-dan-tuannya.html">Keledai Dan Tuannya</a></li>
+<li><a href="si-penumpang-si-keledai-dan-si-singa.html">Si Penumpang, Si Keledai, Dan Si Singa</a></li>
+<li><a href="semut.html">Semut</a></li>
+<li><a href="katak-dan-sumur.html">Katak Dan Sumur</a></li>
+<li><a href="kepiting-dan-rubah.html">Kepiting Dan Rubah</a></li>
+<li><a href="rubah-dan-belalang.html">Rubah Dan Belalang</a></li>
+<li><a href="petani-anak-laki-lakinya-dan-burung-gagak.html">Petani, Anak Laki-Lakinya, Dan Burung Gagak</a></li>
+<li><a href="keledai-dan-anjing.html">Keledai Dan Anjing</a></li>
+<li><a href="keledai-yang-membawa-gambaran-itu.html">Keledai Yang Membawa Gambaran Itu</a></li>
+<li><a href="orang-athena-dan-orang-theban.html">Orang Athena Dan Orang Theban</a></li>
+<li><a href="penggembala-kambing-dan-kambing.html">Penggembala Kambing Dan Kambing</a></li>
+<li><a href="domba-dan-anjing.html">Domba Dan Anjing</a></li>
+<li><a href="gembala-dan-serigala.html">Gembala Dan Serigala</a></li>
+<li><a href="singa-jupiter-dan-gajah.html">Singa, Jupiter, Dan Gajah</a></li>
+<li><a href="babi-dan-domba.html">Babi Dan Domba</a></li>
+<li><a href="tukang-kebun-dan-anjingnya.html">Tukang Kebun Dan Anjingnya</a></li>
+<li><a href="sungai-dan-laut.html">Sungai Dan Laut</a></li>
+<li><a href="singa-yang-jatuh-cinta.html">Singa Yang Jatuh Cinta</a></li>
+<li><a href="petugas-lebah.html">Petugas Lebah</a></li>
+<li><a href="serigala-dan-kuda.html">Serigala Dan Kuda</a></li>
+<li><a href="kelelawar-duri-dan-burung-camar.html">Kelelawar, Duri, Dan Burung Camar</a></li>
+<li><a href="anjing-dan-serigala.html">Anjing Dan Serigala</a></li>
+<li><a href="tawon-dan-ular.html">Tawon Dan Ular</a></li>
+<li><a href="elang-dan-kumbang.html">Elang Dan Kumbang</a></li>
+<li><a href="si-pemburu-dan-burung-lark.html">Si Pemburu Dan Burung Lark</a></li>
+<li><a href="pipa-nelayan.html">Pipa Nelayan</a></li>
+<li><a href="si-musang-dan-pria.html">Si Musang Dan Pria</a></li>
+<li><a href="pemangkas-keledai-dan-lembu.html">Pemangkas, Keledai, Dan Lembu</a></li>
+<li><a href="demades-dan-fabelnya.html">Demades Dan Fabelnya</a></li>
+<li><a href="monyet-dan-lumba-lumba.html">Monyet Dan Lumba-Lumba</a></li>
+<li><a href="burung-gagak-dan-ular.html">Burung Gagak Dan Ular</a></li>
+<li><a href="anjing-dan-ruby-2.html">Anjing Dan Ruby</a></li>
+<li><a href="burung-nightingale-dan-elang.html">Burung Nightingale Dan Elang</a></li>
+<li><a href="mawar-dan-amaranth.html">Mawar Dan Amaranth</a></li>
+<li><a href="pria-kuda-lembu-dan-anjing.html">Pria, Kuda, Lembu, Dan Anjing</a></li>
+<li><a href="serigala-domba-dan-domba-jantan.html">Serigala, Domba, Dan Domba Jantan</a></li>
+<li><a href="angsa.html">Angsa</a></li>
+<li><a href="ular-dan-jupiter.html">Ular Dan Jupiter</a></li>
+<li><a href="serigala-dan-bayangannya.html">Serigala Dan Bayangannya</a></li>
+<li><a href="sang-petani-dan-sang-serigala.html">Sang Petani Dan Sang Serigala</a></li>
+<li><a href="merkuri-dan-pria-yang-digigit-semut.html">Merkuri Dan Pria Yang Digigit Semut</a></li>
+<li><a href="singa-yang-licik.html">Singa Yang Licik</a></li>
+<li><a href="burung-bebek-dan-kucing.html">Burung Bebek Dan Kucing</a></li>
+<li><a href="rusa-jantan-dan-singa.html">Rusa Jantan Dan Singa</a></li>
+<li><a href="penipu.html">Penipu</a></li>
+<li><a href="anjing-dan-kulitnya.html">Anjing Dan Kulitnya</a></li>
+<li><a href="singa-rubah-dan-keledai.html">Singa, Rubah, Dan Keledai</a></li>
+<li><a href="ayam-burung-partridge-dan-ayam-jantan.html">Ayam, Burung Partridge, Dan Ayam Jantan</a></li>
+<li><a href="nyamuk-dan-singa.html">Nyamuk Dan Singa</a></li>
+<li><a href="petani-dan-anjing-anjingnya.html">Petani Dan Anjing-Anjingnya</a></li>
+<li><a href="elang-dan-rubah.html">Elang Dan Rubah</a></li>
+<li><a href="tukang-jagal-dan-pelanggannya.html">Tukang Jagal Dan Pelanggannya</a></li>
+<li><a href="hercules-dan-minerva.html">Hercules Dan Minerva</a></li>
+<li><a href="serigala-yang-melayani-singa.html">Serigala Yang Melayani Singa</a></li>
+<li><a href="dokter-gagap.html">Dokter Gagap</a></li>
+<li><a href="singa-serigala-dan-rubah.html">Singa, Serigala, Dan Rubah</a></li>
+<li><a href="hercules-dan-plutus.html">Hercules Dan Plutus</a></li>
+<li><a href="rubah-dan-macan-tutul.html">Rubah Dan Macan Tutul</a></li>
+<li><a href="rubah-dan-landak.html">Rubah Dan Landak</a></li>
+<li><a href="burung-gagak-dan-burung-raven.html">Burung Gagak Dan Burung Raven</a></li>
+<li><a href="penyihir.html">Penyihir</a></li>
+<li><a href="orang-tua-dan-kematian.html">Orang Tua Dan Kematian</a></li>
+<li><a href="si-pelit.html">Si Pelit</a></li>
+<li><a href="rubah-dan-sungai.html">Rubah Dan Sungai</a></li>
+<li><a href="kuda-dan-rusa-jantan.html">Kuda Dan Rusa Jantan</a></li>
+<li><a href="rubah-dan-duri.html">Rubah Dan Duri</a></li>
+<li><a href="rubah-dan-ular.html">Rubah Dan Ular</a></li>
+<li><a href="singa-rubah-dan-rusa-jantan.html">Singa, Rubah, Dan Rusa Jantan</a></li>
+<li><a href="pria-yang-kehilangan-sekopnya.html">Pria Yang Kehilangan Sekopnya</a></li>
+<li><a href="burung-partridge-dan-fowler.html">Burung Partridge Dan Fowler</a></li>
+<li><a href="budak-yang-kabur.html">Budak Yang Kabur</a></li>
+<li><a href="pemburu-dan-penebang-kayu.html">Pemburu Dan Penebang Kayu</a></li>
+<li><a href="ular-dan-elang.html">Ular Dan Elang</a></li>
+<li><a href="si-penjahat-dan-sang-peramal.html">Si Penjahat Dan Sang Peramal</a></li>
+<li><a href="kuda-dan-keledai.html">Kuda Dan Keledai</a></li>
+<li><a href="anjing-mengejar-serigala.html">Anjing Mengejar Serigala</a></li>
+<li><a href="kesedihan-dan-haknya.html">Kesedihan Dan Haknya</a></li>
+<li><a href="elang-layang-layang-dan-merpati.html">Elang, Layang-Layang, Dan Merpati</a></li>
+<li><a href="wanita-dan-petani.html">Wanita Dan Petani</a></li>
+<li><a href="prometheus-dan-pembuatan-manusia.html">Prometheus Dan Pembuatan Manusia</a></li>
+<li><a href="burung-walet-dan-burung-gagak.html">Burung Walet Dan Burung Gagak</a></li>
+<li><a href="pemburu-dan-penunggang-kuda.html">Pemburu Dan Penunggang Kuda</a></li>
+<li><a href="penggembala-kambing-dan-kambing-liar.html">Penggembala Kambing Dan Kambing Liar</a></li>
+<li><a href="burung-nightingale-dan-burung-walet.html">Burung Nightingale Dan Burung Walet</a></li>
+<li><a href="pengembara-dan-keberuntungan.html">Pengembara Dan Keberuntungan</a></li>
+<li><a href="lisensi-lengkap-proyek-gutenberg.html">Lisensi Lengkap Proyek Gutenberg</a></li>
+  </ol>
+</section>
+
+
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
+}
+</script>
+
 
 </body>
 </html>

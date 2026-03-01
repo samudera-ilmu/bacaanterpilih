@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB VIII.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB VIII. - Bacaan digital klasik">
+<title>Bab VIII — Middlemarch</title>
+<meta name="description" content="Baca Bab VIII dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-viii.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab VIII — Middlemarch">
+  <meta property="og:description" content="Baca Bab VIII dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-viii.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab VIII — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab VIII dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab VIII",
+    "name": "Bab VIII — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-viii.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab VIII</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Oh, selamatkan dia! Aku sekarang adalah saudaranya, <br />dan kau adalah ayahnya. Setiap gadis bangsawan harus memiliki pelindung dalam diri setiap pria terhormat.”</p><p>Sungguh menakjubkan bagi Sir James Chettam betapa ia tetap menyukai pergi ke Grange setelah ia pernah mengalami kesulitan melihat Dorothea untuk pertama kalinya dalam sudut pandang seorang wanita yang bertunangan dengan pria lain. Tentu saja, kilat bercabang itu seolah menembus dirinya ketika ia pertama kali mendekatinya, dan ia tetap sadar sepanjang pertemuan itu menyembunyikan kegelisahannya; tetapi, sebaik apa pun dia, harus diakui bahwa kegelisahannya lebih ringan daripada jika ia menganggap saingannya sebagai pasangan yang brilian dan diinginkan. Ia tidak merasa tersaingi oleh Tuan Casaubon; ia hanya terkejut bahwa Dorothea berada di bawah ilusi yang menyedihkan, dan rasa malunya sedikit berkurang karena bercampur dengan rasa iba.</p><p>Meskipun demikian, sementara Sir James berkata dalam hati bahwa ia telah sepenuhnya pasrah dengan wanita itu, karena dengan kenakalan seorang Desdemona, wanita itu tidak mengajukan lamaran pernikahan yang jelas cocok dan sesuai dengan kodratnya; ia belum bisa sepenuhnya pasif dengan gagasan pertunangannya dengan Tuan Casaubon. Pada hari ketika ia pertama kali melihat mereka bersama dengan pengetahuan yang dimilikinya saat itu, ia merasa bahwa ia belum cukup serius menanggapi masalah ini. Brooke benar-benar bersalah; seharusnya ia mencegahnya. Siapa yang bisa berbicara dengannya? Mungkin sesuatu bisa dilakukan sekarang juga, setidaknya untuk menunda pernikahan itu. Dalam perjalanan pulang, ia mampir ke Pastoran dan menanyakan Tuan Cadwallader. Untungnya, Rektor ada di rumah, dan tamunya diantar ke ruang kerja, tempat semua peralatan memancing tergantung. Tetapi ia sendiri berada di ruangan kecil di sebelahnya, sedang bekerja dengan alat bubutnya, dan ia memanggil baron untuk bergabung dengannya di sana. Keduanya adalah teman yang lebih baik daripada pemilik tanah dan pendeta mana pun di daerah itu—fakta penting yang sesuai dengan ekspresi ramah di wajah mereka.</p><p>Tuan Cadwallader adalah pria bertubuh besar, dengan bibir penuh dan senyum manis; penampilannya sangat sederhana dan kasar, tetapi memiliki ketenangan dan keceriaan yang teguh dan tak tergoyahkan yang menular, dan seperti bukit-bukit berumput yang luas di bawah sinar matahari, menenangkan bahkan keegoisan yang jengkel, dan membuatnya agak malu pada dirinya sendiri. &quot;Nah, apa kabar?&quot; katanya, sambil menunjukkan tangan yang tidak begitu layak untuk digenggam. &quot;Maaf saya tidak bertemu Anda sebelumnya. Apakah ada sesuatu yang khusus? Anda tampak kesal.&quot;</p><p>Dahi Sir James sedikit berkerut, sedikit cekungan di bagian alisnya, yang tampaknya sengaja ia besar-besarkan saat menjawab.</p><p>“Hanya perilaku Brooke inilah yang membuatku berpikir seseorang harus berbicara dengannya.”</p><p>“Apa? Bermaksud mencalonkan diri?” kata Tuan Cadwallader, melanjutkan pengaturan gulungan yang baru saja diputarnya. “Kurasa dia tidak sungguh-sungguh. Tapi apa salahnya, jika dia menyukainya? Siapa pun yang menentang Whiggery seharusnya senang ketika kaum Whig tidak mencalonkan orang terkuat. Mereka tidak akan menggulingkan Konstitusi dengan kepala teman kita Brooke sebagai alat pendobrak.”</p><p>“Oh, bukan itu maksudku,” kata Sir James, yang setelah meletakkan topinya dan menjatuhkan diri ke kursi, mulai memegangi kakinya dan memeriksa telapak sepatunya dengan penuh kepedihan. “Maksudku pernikahan ini. Maksudku, dia membiarkan gadis muda yang cantik itu menikahi Casaubon.”</p><p>“Ada apa dengan Casaubon? Aku tidak melihat ada yang salah dengannya—jika gadis itu menyukainya.”</p><p>“Dia masih terlalu muda untuk tahu apa yang dia sukai. Walinya seharusnya ikut campur. Dia seharusnya tidak membiarkan hal itu dilakukan dengan cara yang gegabah ini. Aku heran seorang pria sepertimu, Cadwallader—seorang pria yang memiliki anak perempuan, dapat memandang masalah ini dengan acuh tak acuh: dan dengan hati seperti hatimu! Pikirkanlah dengan serius.”</p><p>“Aku tidak bercanda; aku seserius mungkin,” kata Rektor, sambil tertawa kecil dalam hati. “Kau sama buruknya dengan Elinor. Dia ingin aku pergi dan memberi ceramah kepada Brooke; dan aku sudah mengingatkannya bahwa teman-temannya memiliki pendapat yang sangat buruk tentang pernikahan yang dia buat ketika dia menikahiku.”</p><p>“Tapi lihatlah Casaubon,” kata Sir James dengan geram. “Dia pasti sudah lima puluh tahun, dan aku tidak percaya dia pernah menjadi lebih dari sekadar bayangan seorang pria. Lihatlah kakinya!”</p><p>“Sialan kalian, para pemuda tampan! Kalian pikir kalian bisa melakukan segalanya sesuka kalian di dunia ini. Kalian tidak mengerti wanita. Mereka tidak mengagumi kalian separuh pun seperti kalian mengagumi diri sendiri. Elinor dulu sering mengatakan kepada saudara perempuannya bahwa dia menikahiku karena kejelekanku—kejelekanku begitu beragam dan lucu sehingga benar-benar mengalahkan kehati-hatiannya.”</p><p>“Kau! Sangat mudah bagi seorang wanita untuk mencintaimu. Tapi ini bukan soal kecantikan. Aku tidak suka Casaubon.” Ini adalah cara terkuat Sir James untuk menyiratkan bahwa ia memiliki pandangan buruk tentang karakter seorang pria.</p><p>“Mengapa? Apa yang kau ketahui tentang dia?” kata Rektor sambil meletakkan gulungannya, dan memasukkan ibu jarinya ke dalam lubang lengan bajunya dengan ekspresi penuh perhatian.</p><p>Sir James terdiam sejenak. Biasanya ia kesulitan memberikan alasannya: baginya aneh bahwa orang lain tidak mengetahui alasannya tanpa diberitahu, karena ia hanya merasakan apa yang masuk akal. Akhirnya ia berkata—</p><p>“Nah, Cadwallader, apakah dia punya hati?”</p><p>“Ya, memang. Maksudku bukan yang mudah meleleh, tapi yang benar-benar tulus, itu pasti. Dia sangat baik kepada kerabatnya yang miskin: memberi tunjangan kepada beberapa wanita, dan mendidik seorang pemuda dengan biaya yang cukup besar. Casaubon bertindak sesuai dengan rasa keadilannya. Adik perempuan ibunya menikah dengan buruk—seorang Polandia, kurasa—kehilangan dirinya sendiri—setidaknya diusir oleh keluarganya. Jika bukan karena itu, Casaubon tidak akan memiliki uang sebanyak itu. Kurasa dia sendiri yang pergi mencari sepupu-sepupunya, dan melihat apa yang bisa dia lakukan untuk mereka. Tidak setiap orang akan sebaik itu, jika kau menguji ketulusan hatinya. Kau akan melakukannya, Chettam; tapi tidak setiap orang.”</p><p>“Saya tidak tahu,” kata Sir James, wajahnya memerah. “Saya tidak begitu yakin pada diri saya sendiri.” Dia berhenti sejenak, lalu menambahkan, “Itu adalah hal yang benar yang dilakukan Casaubon. Tetapi seorang pria mungkin ingin melakukan apa yang benar, namun tetap menjadi semacam kode etik. Seorang wanita mungkin tidak senang dengannya. Dan saya pikir ketika seorang gadis masih sangat muda seperti Nona Brooke, teman-temannya seharusnya sedikit ikut campur untuk mencegahnya melakukan hal-hal bodoh. Anda tertawa, karena Anda mengira saya memiliki perasaan atas nama saya sendiri. Tetapi demi kehormatan saya, bukan itu masalahnya. Saya akan merasakan hal yang sama jika saya adalah saudara laki-laki atau paman Nona Brooke.”</p><p>“Lalu, apa yang harus Anda lakukan?”</p><p>“Menurutku, pernikahan itu tidak boleh diputuskan sampai dia cukup umur. Dan percayalah, jika itu terjadi, pernikahan itu tidak akan pernah terwujud. Kuharap kau sependapat denganku—kuharap kau mau membicarakan hal ini dengan Brooke.”</p><p>Sir James bangkit saat menyelesaikan kalimatnya, karena ia melihat Ny. Cadwallader masuk dari ruang kerja. Ia menggandeng tangan anak perempuannya yang bungsu, yang berusia sekitar lima tahun, yang segera berlari ke arah ayahnya, dan didudukkan dengan nyaman di pangkuannya.</p><p>“Aku mengerti apa yang kau bicarakan,” kata sang istri. “Tapi kau tidak akan bisa mempengaruhi Humphrey. Selama ikan menyambar umpannya, semua orang akan tetap seperti seharusnya. Astaga, Casaubon punya sungai yang kaya ikan trout, dan dia tidak peduli untuk memancing di sana sendiri: adakah orang yang lebih baik darinya?”</p><p>“Ya, ada benarnya juga,” kata Rektor sambil tertawa pelan dalam hati. “Memiliki aliran sungai yang kaya ikan trout adalah kualitas yang sangat baik bagi seorang pria.”</p><p>“Tapi serius,” kata Sir James, yang kekesalannya belum reda, “tidakkah menurutmu Rektor bisa berbuat baik dengan berbicara?”</p><p>“Oh, sudah kubilang sebelumnya apa yang akan dia katakan,” jawab Ny. Cadwallader sambil mengangkat alisnya. “Aku sudah melakukan apa yang bisa kulakukan: aku lepas tangan dari pernikahan ini.”</p><p>“Pertama-tama,” kata Rektor, dengan wajah agak serius, “tidak masuk akal untuk mengharapkan saya dapat meyakinkan Brooke, dan membuatnya bertindak sesuai keinginan. Brooke adalah orang yang sangat baik, tetapi lembek; dia akan mudah terpengaruh oleh apa pun, tetapi dia tidak akan mempertahankan bentuknya.”</p><p>“Dia mungkin bisa menjaga kebugarannya cukup lama untuk menunda pernikahan,” kata Sir James.</p><p>“Tapi, Chettam sayangku, mengapa aku harus menggunakan pengaruhku untuk merugikan Casaubon, kecuali jika aku jauh lebih yakin daripada sekarang bahwa aku akan bertindak untuk keuntungan Nona Brooke? Aku tidak tahu apa-apa tentang Casaubon. Aku tidak peduli dengan Xisuthrus dan Fee-fo-fum-nya dan yang lainnya; tapi dia juga tidak peduli dengan peralatan memancingku. Mengenai sikapnya terhadap Masalah Katolik, itu tidak terduga; tetapi dia selalu bersikap sopan kepadaku, dan aku tidak mengerti mengapa aku harus merusak kesenangannya. Sejauh yang kutahu, Nona Brooke mungkin lebih bahagia dengannya daripada dengan pria lain mana pun.”</p><p>“Humphrey! Aku sudah tidak sabar lagi denganmu. Kau tahu kau lebih suka makan di bawah pagar daripada berduaan dengan Casaubon. Kalian tidak punya apa-apa untuk dibicarakan.”</p><p>“Apa hubungannya dengan Nona Brooke menikah dengannya? Dia tidak melakukannya untuk hiburan saya.”</p><p>“Dia tidak memiliki darah merah yang baik di tubuhnya,” kata Sir James.</p><p>“Tidak. Seseorang meneteskan sedikit di bawah kaca pembesar dan yang muncul hanyalah titik koma dan tanda kurung,” kata Ny. Cadwallader.</p><p>“Mengapa dia tidak menerbitkan bukunya saja, daripada menikah?” kata Sir James, dengan rasa jijik yang menurutnya beralasan sesuai dengan perasaan wajar seorang warga awam Inggris.</p><p>“Oh, dia memimpikan catatan kaki, dan itu menguasai seluruh otaknya. Konon, ketika masih kecil, dia membuat abstrak dari 'Hop o' my Thumb,' dan dia terus membuat abstrak sejak saat itu. Ugh! Dan itulah pria yang menurut Humphrey bisa membuat seorang wanita bahagia.”</p><p>“Yah, dia tipe pria yang disukai Nona Brooke,” kata Rektor. “Saya tidak mengaku mengerti selera setiap wanita muda.”</p><p>“Tapi bagaimana jika dia adalah putrimu sendiri?” tanya Sir James.</p><p>“Itu akan menjadi urusan yang berbeda. Dia bukan putriku, dan aku tidak merasa perlu untuk ikut campur. Casaubon sama baiknya dengan kebanyakan dari kita. Dia adalah seorang pendeta terpelajar, dan terhormat bagi gereja. Seorang tokoh Radikal yang berpidato di Middlemarch mengatakan bahwa Casaubon adalah pendeta terpelajar yang memotong jerami, dan Freke adalah pendeta yang membangun tembok, dan aku adalah pendeta yang memancing. Dan demi Tuhan, aku tidak melihat bahwa satu lebih buruk atau lebih baik daripada yang lain.” Sang Rektor mengakhiri dengan tawa pelan. Dia selalu melihat lelucon dari setiap sindiran terhadap dirinya sendiri. Hati nuraninya besar dan tenang, seperti bagian tubuhnya yang lain: ia hanya melakukan apa yang bisa dilakukannya tanpa kesulitan.</p><p>Jelas, tidak akan ada campur tangan dalam pernikahan Nona Brooke melalui Tuan Cadwallader; dan Sir James merasa agak sedih karena ia akan memiliki kebebasan penuh untuk salah menilai. Itu adalah tanda dari wataknya yang baik bahwa ia sama sekali tidak mengendur dalam niatnya untuk melaksanakan rencana Dorothea tentang pondok-pondok itu. Tidak diragukan lagi, kegigihan ini adalah jalan terbaik untuk martabatnya sendiri: tetapi kesombongan hanya membantu kita untuk menjadi murah hati; itu tidak pernah membuat kita demikian, sama seperti kesombongan tidak membuat kita cerdas. Ia sekarang cukup menyadari posisi Sir James sehubungan dengannya, untuk menghargai kebenaran ketekunannya dalam tugas sebagai tuan tanah, yang pada awalnya didorong oleh keramahan seorang kekasih, dan kegembiraannya akan hal itu cukup besar untuk diperhitungkan bahkan dalam kebahagiaannya saat ini. Mungkin ia memberikan semua perhatian yang bisa ia sisihkan dari Tuan Casaubon kepada pondok-pondok Sir James Chettam, atau lebih tepatnya dari simfoni mimpi-mimpi penuh harapan, kepercayaan yang mengagumkan, dan pengabdian diri yang penuh gairah yang telah dimainkan oleh pria terpelajar itu di dalam jiwanya. Karena itu, terjadilah bahwa dalam kunjungan-kunjungan berikutnya dari bangsawan yang baik itu, sementara ia mulai memberikan sedikit perhatian kepada Celia, ia mendapati dirinya berbicara dengan semakin senang kepada Dorothea. Dorothea kini benar-benar tidak terkekang dan tanpa rasa jengkel terhadapnya, dan ia secara bertahap menemukan kenikmatan yang ada dalam kebaikan dan persahabatan yang tulus antara seorang pria dan wanita yang tidak memiliki hasrat untuk disembunyikan atau diakui.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="bab-vii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Bab Vii</span>
+    </a>
+    <a href="bab-xi.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xi</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB VIII.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Oh, selamatkan dia! Aku sekarang adalah saudaranya, dan kau adalah ayahnya. Setiap gadis bangsawan harus memiliki pelindung dalam diri setiap pria terhormat.” Sungguh menakjubkan bagi Sir James Chettam betapa ia tetap menyukai pergi ke Grange setelah ia pernah mengalami kesulitan melihat Dorothea untuk pertama kalinya dalam sudut pandang seorang wanita yang bertunangan dengan pria lain. Tentu saja, kilat bercabang itu seolah menembus dirinya ketika ia pertama kali mendekatinya, dan ia tetap sadar sepanjang pertemuan itu menyembunyikan kegelisahannya; tetapi, sebaik apa pun dia, harus diakui bahwa kegelisahannya lebih ringan daripada jika ia menganggap saingannya sebagai pasangan yang brilian dan diinginkan. Ia tidak merasa tersaingi oleh Tuan Casaubon; ia hanya terkejut bahwa Dorothea berada di bawah ilusi yang menyedihkan, dan rasa malunya sedikit berkurang karena bercampur dengan rasa iba. Meskipun demikian, sementara Sir James berkata dalam hati bahwa ia telah sepenuhnya pasrah dengan wanita itu, karena dengan kenakalan seorang Desdemona, wanita itu tidak mengajukan lamaran pernikahan yang jelas cocok dan sesuai dengan kodratnya; ia belum bisa sepenuhnya pasif dengan gagasan pertunangannya dengan Tuan Casaubon. Pada hari ketika ia pertama kali melihat mereka bersama dengan pengetahuan yang dimilikinya saat itu, ia merasa bahwa ia belum cukup serius menanggapi masalah ini. Brooke benar-benar bersalah; seharusnya ia mencegahnya. Siapa yang bisa berbicara dengannya? Mungkin sesuatu bisa dilakukan sekarang juga, setidaknya untuk menunda pernikahan itu. Dalam perjalanan pulang, ia mampir ke Pastoran dan menanyakan Tuan Cadwallader. Untungnya, Rektor ada di rumah, dan tamunya diantar ke ruang kerja, tempat semua peralatan memancing tergantung. Tetapi ia sendiri berada di ruangan kecil di sebelahnya, sedang bekerja dengan alat bubutnya, dan ia memanggil baron untuk bergabung dengannya di sana. Keduanya adalah teman yang lebih baik daripada pemilik tanah dan pendeta mana pun di daerah itu—fakta penting yang sesuai dengan ekspresi ramah di wajah mereka. Tuan Cadwallader adalah pria bertubuh besar, dengan bibir penuh dan senyum manis; penampilannya sangat sederhana dan kasar, tetapi memiliki ketenangan dan keceriaan yang teguh dan tak tergoyahkan yang menular, dan seperti bukit-bukit berumput yang luas di bawah sinar matahari, menenangkan bahkan keegoisan yang jengkel, dan membuatnya agak malu pada dirinya sendiri. "Nah, apa kabar?" katanya, sambil menunjukkan tangan yang tidak begitu layak untuk digenggam. "Maaf saya tidak bertemu Anda sebelumnya. Apakah ada sesuatu yang khusus? Anda tampak kesal." Dahi Sir James sedikit berkerut, sedikit cekungan di bagian alisnya, yang tampaknya sengaja ia besar-besarkan saat menjawab. “Hanya perilaku Brooke inilah yang membuatku berpikir seseorang harus berbicara dengannya.” “Apa? Bermaksud mencalonkan diri?” kata Tuan Cadwallader, melanjutkan pengaturan gulungan yang baru saja diputarnya. “Kurasa dia tidak sungguh-sungguh. Tapi apa salahnya, jika dia menyukainya? Siapa pun yang menentang Whiggery seharusnya senang ketika kaum Whig tidak mencalonkan orang terkuat. Mereka tidak akan menggulingkan Konstitusi dengan kepala teman kita Brooke sebagai alat pendobrak.” “Oh, bukan itu maksudku,” kata Sir James, yang setelah meletakkan topinya dan menjatuhkan diri ke kursi, mulai memegangi kakinya dan memeriksa telapak sepatunya dengan penuh kepedihan. “Maksudku pernikahan ini. Maksudku, dia membiarkan gadis muda yang cantik itu menikahi Casaubon.” “Ada apa dengan Casaubon? Aku tidak melihat ada yang salah dengannya—jika gadis itu menyukainya.” “Dia masih terlalu muda untuk tahu apa yang dia sukai. Walinya seharusnya ikut campur. Dia seharusnya tidak membiarkan hal itu dilakukan dengan cara yang gegabah ini. Aku heran seorang pria sepertimu, Cadwallader—seorang pria yang memiliki anak perempuan, dapat memandang masalah ini dengan acuh tak acuh: dan dengan hati seperti hatimu! Pikirkanlah dengan serius.” “Aku tidak bercanda; aku seserius mungkin,” kata Rektor, sambil tertawa kecil dalam hati. “Kau sama buruknya dengan Elinor. Dia ingin aku pergi dan memberi ceramah kepada Brooke; dan aku sudah mengingatkannya bahwa teman-temannya memiliki pendapat yang sangat buruk tentang pernikahan yang dia buat ketika dia menikahiku.” “Tapi lihatlah Casaubon,” kata Sir James dengan geram. “Dia pasti sudah lima puluh tahun, dan aku tidak percaya dia pernah menjadi lebih dari sekadar bayangan seorang pria. Lihatlah kakinya!” “Sialan kalian, para pemuda tampan! Kalian pikir kalian bisa melakukan segalanya sesuka kalian di dunia ini. Kalian tidak mengerti wanita. Mereka tidak mengagumi kalian separuh pun seperti kalian mengagumi diri sendiri. Elinor dulu sering mengatakan kepada saudara perempuannya bahwa dia menikahiku karena kejelekanku—kejelekanku begitu beragam dan lucu sehingga benar-benar mengalahkan kehati-hatiannya.” “Kau! Sangat mudah bagi seorang wanita untuk mencintaimu. Tapi ini bukan soal kecantikan. Aku tidak suka Casaubon.” Ini adalah cara terkuat Sir James untuk menyiratkan bahwa ia memiliki pandangan buruk tentang karakter seorang pria. “Mengapa? Apa yang kau ketahui tentang dia?” kata Rektor sambil meletakkan gulungannya, dan memasukkan ibu jarinya ke dalam lubang lengan bajunya dengan ekspresi penuh perhatian. Sir James terdiam sejenak. Biasanya ia kesulitan memberikan alasannya: baginya aneh bahwa orang lain tidak mengetahui alasannya tanpa diberitahu, karena ia hanya merasakan apa yang masuk akal. Akhirnya ia berkata— “Nah, Cadwallader, apakah dia punya hati?” “Ya, memang. Maksudku bukan yang mudah meleleh, tapi yang benar-benar tulus, itu pasti. Dia sangat baik kepada kerabatnya yang miskin: memberi tunjangan kepada beberapa wanita, dan mendidik seorang pemuda dengan biaya yang cukup besar. Casaubon bertindak sesuai dengan rasa keadilannya. Adik perempuan ibunya menikah dengan buruk—seorang Polandia, kurasa—kehilangan dirinya sendiri—setidaknya diusir oleh keluarganya. Jika bukan karena itu, Casaubon tidak akan memiliki uang sebanyak itu. Kurasa dia sendiri yang pergi mencari sepupu-sepupunya, dan melihat apa yang bisa dia lakukan untuk mereka. Tidak setiap orang akan sebaik itu, jika kau menguji ketulusan hatinya. Kau akan melakukannya, Chettam; tapi tidak setiap orang.” “Saya tidak tahu,” kata Sir James, wajahnya memerah. “Saya tidak begitu yakin pada diri saya sendiri.” Dia berhenti sejenak, lalu menambahkan, “Itu adalah hal yang benar yang dilakukan Casaubon. Tetapi seorang pria mungkin ingin melakukan apa yang benar, namun tetap menjadi semacam kode etik. Seorang wanita mungkin tidak senang dengannya. Dan saya pikir ketika seorang gadis masih sangat muda seperti Nona Brooke, teman-temannya seharusnya sedikit ikut campur untuk mencegahnya melakukan hal-hal bodoh. Anda tertawa, karena Anda mengira saya memiliki perasaan atas nama saya sendiri. Tetapi demi kehormatan saya, bukan itu masalahnya. Saya akan merasakan hal yang sama jika saya adalah saudara laki-laki atau paman Nona Brooke.” “Lalu, apa yang harus Anda lakukan?” “Menurutku, pernikahan itu tidak boleh diputuskan sampai dia cukup umur. Dan percayalah, jika itu terjadi, pernikahan itu tidak akan pernah terwujud. Kuharap kau sependapat denganku—kuharap kau mau membicarakan hal ini dengan Brooke.” Sir James bangkit saat menyelesaikan kalimatnya, karena ia melihat Ny. Cadwallader masuk dari ruang kerja. Ia menggandeng tangan anak perempuannya yang bungsu, yang berusia sekitar lima tahun, yang segera berlari ke arah ayahnya, dan didudukkan dengan nyaman di pangkuannya. “Aku mengerti apa yang kau bicarakan,” kata sang istri. “Tapi kau tidak akan bisa mempengaruhi Humphrey. Selama ikan menyambar umpannya, semua orang akan tetap seperti seharusnya. Astaga, Casaubon punya sungai yang kaya ikan trout, dan dia tidak peduli untuk memancing di sana sendiri: adakah orang yang lebih baik darinya?” “Ya, ada benarnya juga,” kata Rektor sambil tertawa pelan dalam hati. “Memiliki aliran sungai yang kaya ikan trout adalah kualitas yang sangat baik bagi seorang pria.” “Tapi serius,” kata Sir James, yang kekesalannya belum reda, “tidakkah menurutmu Rektor bisa berbuat baik dengan berbicara?” “Oh, sudah kubilang sebelumnya apa yang akan dia katakan,” jawab Ny. Cadwallader sambil mengangkat alisnya. “Aku sudah melakukan apa yang bisa kulakukan: aku lepas tangan dari pernikahan ini.” “Pertama-tama,” kata Rektor, dengan wajah agak serius, “tidak masuk akal untuk mengharapkan saya dapat meyakinkan Brooke, dan membuatnya bertindak sesuai keinginan. Brooke adalah orang yang sangat baik, tetapi lembek; dia akan mudah terpengaruh oleh apa pun, tetapi dia tidak akan mempertahankan bentuknya.” “Dia mungkin bisa menjaga kebugarannya cukup lama untuk menunda pernikahan,” kata Sir James. “Tapi, Chettam sayangku, mengapa aku harus menggunakan pengaruhku untuk merugikan Casaubon, kecuali jika aku jauh lebih yakin daripada sekarang bahwa aku akan bertindak untuk keuntungan Nona Brooke? Aku tidak tahu apa-apa tentang Casaubon. Aku tidak peduli dengan Xisuthrus dan Fee-fo-fum-nya dan yang lainnya; tapi dia juga tidak peduli dengan peralatan memancingku. Mengenai sikapnya terhadap Masalah Katolik, itu tidak terduga; tetapi dia selalu bersikap sopan kepadaku, dan aku tidak mengerti mengapa aku harus merusak kesenangannya. Sejauh yang kutahu, Nona Brooke mungkin lebih bahagia dengannya daripada dengan pria lain mana pun.” “Humphrey! Aku sudah tidak sabar lagi denganmu. Kau tahu kau lebih suka makan di bawah pagar daripada berduaan dengan Casaubon. Kalian tidak punya apa-apa untuk dibicarakan.” “Apa hubungannya dengan Nona Brooke menikah dengannya? Dia tidak melakukannya untuk hiburan saya.” “Dia tidak memiliki darah merah yang baik di tubuhnya,” kata Sir James. “Tidak. Seseorang meneteskan sedikit di bawah kaca pembesar dan yang muncul hanyalah titik koma dan tanda kurung,” kata Ny. Cadwallader. “Mengapa dia tidak menerbitkan bukunya saja, daripada menikah?” kata Sir James, dengan rasa jijik yang menurutnya beralasan sesuai dengan perasaan wajar seorang warga awam Inggris. “Oh, dia memimpikan catatan kaki, dan itu menguasai seluruh otaknya. Konon, ketika masih kecil, dia membuat abstrak dari 'Hop o' my Thumb,' dan dia terus membuat abstrak sejak saat itu. Ugh! Dan itulah pria yang menurut Humphrey bisa membuat seorang wanita bahagia.” “Yah, dia tipe pria yang disukai Nona Brooke,” kata Rektor. “Saya tidak mengaku mengerti selera setiap wanita muda.” “Tapi bagaimana jika dia adalah putrimu sendiri?” tanya Sir James. “Itu akan menjadi urusan yang berbeda. Dia bukan putriku, dan aku tidak merasa perlu untuk ikut campur. Casaubon sama baiknya dengan kebanyakan dari kita. Dia adalah seorang pendeta terpelajar, dan terhormat bagi gereja. Seorang tokoh Radikal yang berpidato di Middlemarch mengatakan bahwa Casaubon adalah pendeta terpelajar yang memotong jerami, dan Freke adalah pendeta yang membangun tembok, dan aku adalah pendeta yang memancing. Dan demi Tuhan, aku tidak melihat bahwa satu lebih buruk atau lebih baik daripada yang lain.” Sang Rektor mengakhiri dengan tawa pelan. Dia selalu melihat lelucon dari setiap sindiran terhadap dirinya sendiri. Hati nuraninya besar dan tenang, seperti bagian tubuhnya yang lain: ia hanya melakukan apa yang bisa dilakukannya tanpa kesulitan. Jelas, tidak akan ada campur tangan dalam pernikahan Nona Brooke melalui Tuan Cadwallader; dan Sir James merasa agak sedih karena ia akan memiliki kebebasan penuh untuk salah menilai. Itu adalah tanda dari wataknya yang baik bahwa ia sama sekali tidak mengendur dalam niatnya untuk melaksanakan rencana Dorothea tentang pondok-pondok itu. Tidak diragukan lagi, kegigihan ini adalah jalan terbaik untuk martabatnya sendiri: tetapi kesombongan hanya membantu kita untuk menjadi murah hati; itu tidak pernah membuat kita demikian, sama seperti kesombongan tidak membuat kita cerdas. Ia sekarang cukup menyadari posisi Sir James sehubungan dengannya, untuk menghargai kebenaran ketekunannya dalam tugas sebagai tuan tanah, yang pada awalnya didorong oleh keramahan seorang kekasih, dan kegembiraannya akan hal itu cukup besar untuk diperhitungkan bahkan dalam kebahagiaannya saat ini. Mungkin ia memberikan semua perhatian yang bisa ia sisihkan dari Tuan Casaubon kepada pondok-pondok Sir James Chettam, atau lebih tepatnya dari simfoni mimpi-mimpi penuh harapan, kepercayaan yang mengagumkan, dan pengabdian diri yang penuh gairah yang telah dimainkan oleh pria terpelajar itu di dalam jiwanya. Karena itu, terjadilah bahwa dalam kunjungan-kunjungan berikutnya dari bangsawan yang baik itu, sementara ia mulai memberikan sedikit perhatian kepada Celia, ia mendapati dirinya berbicara dengan semakin senang kepada Dorothea. Dorothea kini benar-benar tidak terkekang dan tanpa rasa jengkel terhadapnya, dan ia secara bertahap menemukan kenikmatan yang ada dalam kebaikan dan persahabatan yang tulus antara seorang pria dan wanita yang tidak memiliki hasrat untuk disembunyikan atau diakui.</p>
-
-<div class="nav">
-  <a href="bab-vii.html">⬅ Bab Vii.</a>
-  <a href="bab-ix.html">Bab Ix. ➡</a>
-</div>
 
 </body>
 </html>

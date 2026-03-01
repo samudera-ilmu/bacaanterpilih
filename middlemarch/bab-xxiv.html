@@ -2,11 +2,59 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>BAB XXIV.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BAB XXIV. - Bacaan digital klasik">
+<title>Bab XXIV — Middlemarch</title>
+<meta name="description" content="Baca Bab XXIV dari buku Middlemarch karya George Eliot secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/middlemarch/bab-xxiv.html">
 
-<!-- Google Analytics -->
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Bab XXIV — Middlemarch">
+  <meta property="og:description" content="Baca Bab XXIV dari buku Middlemarch karya George Eliot secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/middlemarch/bab-xxiv.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Bab XXIV — Middlemarch">
+  <meta name="twitter:description" content="Baca Bab XXIV dari Middlemarch karya George Eliot gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/middlemarch/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bab XXIV",
+    "name": "Bab XXIV — Middlemarch",
+    "author": {
+      "@type": "Person",
+      "name": "George Eliot"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Middlemarch",
+      "author": {
+        "@type": "Person",
+        "name": "George Eliot"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/middlemarch/bab-xxiv.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -16,39 +64,309 @@ gtag('config', 'G-JCYRN8385S');
 </script>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <script>
-// APPLY THEME BEFORE PAGE RENDER (no white flash)
 (function() {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (localStorage.getItem("theme") === "dark")
     document.documentElement.classList.add("dark");
-  }
 })();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">Middlemarch</a>
+    </div>
+    <h1 class="chapter-title">Bab XXIV</h1>
+    <div class="chapter-info">
+      <span>✍️ George Eliot</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>“Kesedihan si pelanggar hanya membawa sedikit kelegaan <br />Bagi dia yang memikul salib pelanggaran yang berat.” —SHAKESPEARE: Soneta .</p><p>Dengan berat hati saya sampaikan bahwa hanya tiga hari setelah kejadian yang menguntungkan di Houndsley, Fred Vincy jatuh dalam suasana hati yang lebih buruk daripada yang pernah ia alami sebelumnya. Bukan karena ia kecewa dengan kemungkinan pasar untuk kudanya, tetapi karena sebelum kesepakatan dapat diselesaikan dengan orang kepercayaan Lord Medlicote, kuda bernama Diamond ini, yang telah diinvestasikan dengan harapan sebesar delapan puluh pound, tanpa peringatan sedikit pun menunjukkan energi yang sangat ganas di kandang dengan menendang, hampir saja membunuh pengurus kuda, dan akhirnya melukai dirinya sendiri dengan parah karena kakinya tersangkut tali yang menggantung di atas papan kandang. Tidak ada jalan keluar untuk ini selain penemuan sifat pemarah setelah menikah—yang tentu saja diketahui oleh teman-teman lamanya sebelum upacara. Karena alasan tertentu, Fred kehilangan ketabahan biasanya dalam menghadapi kesialan ini: ia hanya menyadari bahwa ia hanya memiliki lima puluh pound, bahwa tidak ada peluang untuk mendapatkan lebih banyak saat ini, dan bahwa tagihan sebesar seratus enam puluh pound akan datang dalam lima hari. Sekalipun ia telah meminta bantuan ayahnya dengan alasan agar Tuan Garth diselamatkan dari kerugian, Fred merasa kesal karena ayahnya akan dengan marah menolak untuk menyelamatkan Tuan Garth dari konsekuensi yang menurutnya justru mendorong pemborosan dan penipuan. Ia sangat sedih sehingga tidak dapat merencanakan hal lain selain langsung pergi ke Tuan Garth dan mengatakan kebenaran yang menyedihkan itu, membawa serta uang lima puluh pound, dan setidaknya mengeluarkan uang itu dengan aman dari tangannya sendiri. Ayahnya, yang berada di gudang, belum mengetahui kecelakaan itu: ketika ia mengetahuinya, ia akan mengamuk karena binatang buas itu dibawa ke kandangnya; dan sebelum menghadapi gangguan yang lebih kecil itu, Fred ingin pergi dengan segenap keberaniannya untuk menghadapi gangguan yang lebih besar. Ia mengambil kuda ayahnya, karena ia telah memutuskan bahwa setelah memberi tahu Tuan Garth, ia akan pergi ke Stone Court dan mengakui semuanya kepada Mary. Bahkan, kemungkinan besar, seandainya Mary tidak ada dan Fred tidak mencintainya, hati nuraninya akan jauh kurang aktif, baik dalam mendesaknya untuk melunasi hutang maupun mendorongnya untuk tidak menunda tugas yang tidak menyenangkan seperti biasanya, tetapi untuk bertindak sesederhana dan seefisien mungkin. Bahkan manusia yang jauh lebih kuat daripada Fred Vincy pun menaruh separuh kebenaran mereka pada pikiran orang yang paling mereka cintai. &quot;Panggung semua tindakanku telah runtuh,&quot; kata seorang tokoh lama ketika sahabat utamanya meninggal; dan mereka beruntung yang mendapatkan panggung di mana penonton menuntut yang terbaik dari mereka. Tentu saja, akan ada perbedaan besar bagi Fred saat itu jika Mary Garth tidak memiliki gagasan yang pasti tentang apa yang patut dikagumi dalam karakter.</p><p>Tuan Garth tidak ada di kantor, dan Fred melanjutkan perjalanan ke rumahnya, yang terletak agak jauh di luar kota—tempat yang sederhana dengan kebun buah di depannya, bangunan setengah kayu kuno yang luas, yang sebelum kota berkembang dulunya adalah rumah pertanian, tetapi sekarang dikelilingi oleh kebun pribadi penduduk kota. Kita lebih menyukai rumah kita jika rumah itu memiliki ciri khasnya sendiri, seperti rumah teman-teman kita. Keluarga Garth, yang cukup besar, karena Mary memiliki empat saudara laki-laki dan satu saudara perempuan, sangat menyukai rumah tua mereka, yang semua perabotan terbaiknya telah lama dijual. Fred juga menyukainya, ia hafal seluruh rumah itu bahkan sampai ke loteng yang berbau harum apel dan buah quince, dan sampai hari ini ia tidak pernah datang ke sana tanpa harapan yang menyenangkan; tetapi hatinya berdebar gelisah sekarang dengan perasaan bahwa ia mungkin harus mengaku di hadapan Nyonya Garth, yang lebih ia hormati daripada suaminya. Bukan berarti ia cenderung sarkastik dan melontarkan komentar impulsif, seperti Mary. Setidaknya di usianya yang sekarang sebagai seorang ibu, Ny. Garth tidak pernah membuat kesalahan dengan ucapan yang terburu-buru; seperti yang ia katakan, ia telah memikul beban di masa mudanya, dan belajar mengendalikan diri. Ia memiliki kepekaan langka yang membedakan apa yang tidak dapat diubah, dan menerimanya tanpa mengeluh. Mengagumi kebajikan suaminya, ia sejak dini telah memutuskan ketidakmampuan suaminya untuk memperhatikan kepentingannya sendiri, dan telah menghadapi konsekuensinya dengan riang. Ia cukup murah hati untuk melepaskan semua kebanggaan akan teko teh atau pakaian anak-anak, dan tidak pernah menceritakan rahasia menyedihkan kepada tetangga-tetangga perempuannya tentang kurangnya kebijaksanaan Tuan Garth dan jumlah uang yang mungkin dimilikinya jika ia seperti pria lain. Karena itu, para tetangga yang cantik ini menganggapnya sombong atau eksentrik, dan terkadang menyebutnya kepada suami mereka sebagai &quot;Ny. Garth Anda yang baik.&quot; Ia pun tidak luput mengkritik mereka sebagai balasan, karena ia lebih terdidik daripada kebanyakan ibu rumah tangga di Middlemarch, dan—di manakah wanita yang tak bercela?—cenderung sedikit keras terhadap kaumnya sendiri, yang menurutnya diciptakan untuk sepenuhnya tunduk. Di sisi lain, ia terlalu toleran terhadap kekurangan laki-laki, dan sering terdengar mengatakan bahwa itu wajar. Selain itu, harus diakui bahwa Ny. Garth agak terlalu tegas dalam penolakannya terhadap apa yang dianggapnya sebagai kebodohan: peralihan dari pengasuh menjadi ibu rumah tangga telah terlalu kuat memengaruhi kesadarannya, dan ia jarang lupa bahwa meskipun tata bahasa dan aksennya di atas standar kota, ia mengenakan topi sederhana, memasak makan malam keluarga, dan menambal semua kaus kaki. Ia terkadang menerima murid secara berpindah-pindah, menyuruh mereka mengikutinya di dapur dengan buku atau papan tulis mereka. Ia menganggap baik bagi mereka untuk melihat bahwa ia dapat membuat busa yang sangat baik sambil mengoreksi kesalahan mereka &quot;tanpa melihat&quot;—bahwa seorang wanita dengan lengan baju yang digulung di atas siku dapat mengetahui semua tentang Modus Subjungtif atau Zona Panas—bahwa, singkatnya, ia dapat memiliki &quot;pendidikan&quot; dan hal-hal baik lainnya yang berakhiran &quot;tion,&quot; dan layak untuk diucapkan dengan tegas, tanpa menjadi boneka yang tidak berguna. Ketika ia menyampaikan komentar yang mendidik ini, ia mengerutkan kening sedikit, yang meskipun demikian tidak menghalangi wajahnya untuk terlihat ramah, dan kata-katanya yang keluar seperti prosesi diucapkan dengan suara kontralto yang bersemangat dan menyenangkan. Tentu saja, Nyonya Garth yang patut dicontoh memiliki aspek-aspek lucunya, tetapi karakternya menopang keanehannya, seperti anggur yang sangat baik mempertahankan rasa kulitnya.</p><p>Terhadap Fred Vincy, ia memiliki perasaan keibuan, dan selalu cenderung memaafkan kesalahannya, meskipun ia mungkin tidak akan memaafkan Mary karena bertunangan dengannya, karena putrinya termasuk dalam penilaian yang lebih ketat yang ia terapkan pada kaum wanitanya sendiri. Tetapi fakta bahwa ia sangat toleran terhadap Fred justru membuat Fred semakin sulit menerima kenyataan bahwa ia pasti akan merosot dalam pandangannya. Dan keadaan kunjungannya ternyata lebih tidak menyenangkan daripada yang ia duga; karena Caleb Garth telah pergi lebih awal untuk melihat beberapa perbaikan di dekat situ. Nyonya Garth selalu berada di dapur pada jam-jam tertentu, dan pagi ini ia melakukan beberapa pekerjaan sekaligus di sana—membuat pai di meja kayu pinus yang bersih di satu sisi ruangan yang lapang itu, mengamati gerakan Sally di oven dan wadah adonan melalui pintu yang terbuka, dan memberi pelajaran kepada putra dan putri bungsunya, yang berdiri di seberangnya di meja dengan buku dan papan tulis di depan mereka. Sebuah bak dan jemuran di ujung dapur lainnya menunjukkan bahwa ada juga kegiatan mencuci barang-barang kecil yang sedang berlangsung.</p><p>Nyonya Garth, dengan lengan bajunya terlipat di atas siku, dengan cekatan mengolah kue-kuenya—menggunakan penggiling adonan dan mencubitnya dengan penuh hiasan, sambil dengan semangat menjelaskan pandangan yang benar tentang kesesuaian kata kerja dan kata ganti dengan &quot;kata benda yang banyak atau berarti banyak,&quot; adalah pemandangan yang menyenangkan dan menghibur. Ia memiliki tipe rambut keriting dan wajah persegi yang sama seperti Mary, tetapi lebih cantik, dengan fitur wajah yang lebih halus, kulit pucat, sosok ibu yang tegap, dan tatapan yang sangat tegas. Dengan topi berenda putihnya, ia mengingatkan kita pada wanita Prancis yang menyenangkan yang pernah kita lihat berbelanja, dengan keranjang di lengannya. Melihat sang ibu, kita mungkin berharap putrinya akan menjadi seperti dia, yang merupakan keuntungan prospektif yang setara dengan mas kawin—sang ibu terlalu sering berdiri di belakang putrinya seperti ramalan jahat—&quot;Seperti aku, dia akan segera menjadi sepertiku.&quot;</p><p>“Sekarang mari kita bahas itu sekali lagi,” kata Ny. Garth, sambil mencubit kue apel yang tampaknya mengalihkan perhatian Ben, seorang pemuda energik dengan dahi tebal, dari pelajaran yang seharusnya. “‘Bukan tanpa memperhatikan makna kata tersebut sebagai ungkapan kesatuan atau keberagaman gagasan’—katakan lagi apa artinya itu, Ben.”</p><p>(Nyonya Garth, seperti pendidik-pendidik terkenal lainnya, memiliki jalan-jalan kuno favoritnya, dan dalam kekacauan umum masyarakat, ia akan mencoba untuk mempertahankan &quot;Lindley Murray&quot;-nya di atas ombak.)</p><p>“Oh—maksudnya—kau harus memikirkan apa yang kau maksud,” kata Ben, agak kesal. “Aku benci tata bahasa. Apa gunanya?”</p><p>“Untuk mengajarimu berbicara dan menulis dengan benar, agar kamu bisa dimengerti,” kata Nyonya Garth dengan tegas. “Apakah kamu ingin berbicara seperti Ayub tua?”</p><p>“Ya,” kata Ben dengan tegas; “itu lebih lucu. Dia bilang, 'Yo goo'—itu sama bagusnya dengan 'You go.'”</p><p>“Tapi dia bilang, 'Ada kapal di taman,' bukannya 'seekor domba,'” kata Letty dengan nada angkuh. “Kau mungkin mengira dia maksudnya kapal di lepas pantai.”</p><p>“Tidak, kau tidak mungkin bisa, kalau kau tidak bodoh,” kata Ben. “Bagaimana mungkin sebuah kapal dari laut bisa sampai ke sana?”</p><p>“Hal-hal ini hanya berkaitan dengan pengucapan, yang merupakan bagian terkecil dari tata bahasa,” kata Ny. Garth. “Kulit apel itu akan dimakan oleh babi, Ben; jika kau memakannya, aku harus memberi mereka sepotong kue pastri milikmu. Ayub hanya perlu berbicara tentang hal-hal yang sangat sederhana. Bagaimana menurutmu kau akan menulis atau berbicara tentang sesuatu yang lebih sulit, jika kau tidak tahu lebih banyak tentang tata bahasa daripada dia? Kau akan menggunakan kata-kata yang salah, dan menempatkan kata-kata di tempat yang salah, dan bukannya membuat orang mengerti dirimu, mereka akan berpaling darimu sebagai orang yang membosankan. Lalu apa yang akan kau lakukan?”</p><p>“Aku tidak perlu peduli, aku sebaiknya berhenti saja,” kata Ben, dengan perasaan bahwa ini adalah masalah yang bisa disepakati jika menyangkut tata bahasa.</p><p>“Aku lihat kau mulai lelah dan bodoh, Ben,” kata Ny. Garth, yang sudah terbiasa dengan argumen-argumen yang menghalangi dari anak laki-lakinya. Setelah menghabiskan pai-nya, ia berjalan menuju jemuran pakaian, dan berkata, “Kemarilah dan ceritakan padaku kisah yang kuceritakan padamu hari Rabu lalu, tentang Cincinnatus.”</p><p>“Aku tahu! Dia seorang petani,” kata Ben.</p><p>“Nah, Ben, dia orang Romawi—biar kuceritakan ,” kata Letty, sambil menyikut dengan nada membantah.</p><p>“Dasar bodoh, dia adalah seorang petani Romawi, dan dia sedang membajak.”</p><p>“Ya, tapi sebelum itu—itu bukan yang pertama—orang-orang menginginkannya,” kata Letty.</p><p>“Baiklah, tapi Ibu harus mengatakan dulu seperti apa kepribadiannya,” desak Ben. “Dia orang yang bijaksana, seperti ayahku, dan itu membuat orang-orang menginginkan nasihatnya. Dan dia orang yang pemberani, dan bisa bertarung. Dan ayahku juga bisa—bukan begitu, Bu?”</p><p>“Nah, Ben, biar Ibu ceritakan kisahnya apa adanya, seperti yang Ibu ceritakan pada kita,” kata Letty sambil mengerutkan kening. “Ibu, tolong suruh Ben untuk tidak bicara.”</p><p>“Letty, Ibu malu padamu,” kata ibunya, sambil memeras tutup botol dari bak. “Ketika kakakmu mulai bercerita, seharusnya kau menunggu dan melihat apakah dia bisa menyelesaikan ceritanya. Betapa kasarnya penampilanmu, mendorong dan mengerutkan kening, seolah-olah kau ingin menaklukkan dengan siku! Cincinnatus, aku yakin, akan menyesal melihat putrinya berperilaku seperti itu.” (Nyonya Garth mengucapkan kalimat mengerikan ini dengan penuh keagungan, dan Letty merasa bahwa di antara kefasihan yang terpendam dan rasa tidak hormat secara umum, termasuk dari orang Romawi, hidup sudah menjadi urusan yang menyakitkan.) “Sekarang, Ben.”</p><p>“Yah—oh—yah—begini, terjadi banyak pertempuran, dan mereka semua bodoh, dan—aku tidak bisa menceritakannya persis seperti yang kau ceritakan—tapi mereka menginginkan seorang pria untuk menjadi kapten dan raja dan segalanya—”</p><p>“Sekarang jadi diktator,” kata Letty dengan ekspresi tersinggung, dan tak lupa berharap ibunya bertobat.</p><p>“Baiklah, diktator!” kata Ben dengan nada menghina. “Tapi itu bukan kata yang tepat: dia tidak menyuruh mereka menulis di papan tulis.”</p><p>“Ayolah, Ben, kau tidak sebodoh itu,” kata Nyonya Garth, dengan nada serius namun hati-hati. “Dengar, ada ketukan di pintu! Lari, Letty, dan bukalah.”</p><p>Ketukan itu milik Fred; dan ketika Letty mengatakan bahwa ayahnya belum pulang, tetapi ibunya ada di dapur, Fred tidak punya pilihan lain. Dia tidak bisa menyimpang dari kebiasaannya untuk menemui Nyonya Garth di dapur jika kebetulan dia sedang bekerja di sana. Dia merangkul leher Letty tanpa berkata-kata, dan membawanya ke dapur tanpa lelucon dan belaian seperti biasanya.</p><p>Nyonya Garth terkejut melihat Fred pada jam seperti ini, tetapi keterkejutan bukanlah perasaan yang biasa ia ungkapkan, dan ia hanya berkata, sambil melanjutkan pekerjaannya dengan tenang—</p><p>“Kamu, Fred, sepagi ini? Kamu terlihat pucat sekali. Apa terjadi sesuatu?”</p><p>“Saya ingin berbicara dengan Tuan Garth,” kata Fred, belum siap untuk mengatakan lebih banyak—“dan juga denganmu,” tambahnya, setelah jeda sejenak, karena ia yakin bahwa Nyonya Garth mengetahui segala sesuatu tentang RUU itu, dan pada akhirnya ia harus membicarakannya di hadapannya, jika bukan hanya kepadanya.</p><p>“Caleb akan kembali lagi dalam beberapa menit,” kata Ny. Garth, yang membayangkan ada masalah antara Fred dan ayahnya. “Dia pasti tidak akan lama, karena dia ada pekerjaan di mejanya yang harus diselesaikan pagi ini. Apakah Anda keberatan menemani saya, sementara saya menyelesaikan urusan saya di sini?”</p><p>“Tapi kita tidak perlu membahas Cincinnatus lagi, kan?” kata Ben, yang telah mengambil cambuk Fred dari tangannya, dan sedang mencoba keefektifannya pada kucing itu.</p><p>“Tidak, keluarlah sekarang. Tapi letakkan cambuk itu. Sungguh kejam kau mencambuk Kura-kura tua yang malang! Tolong ambil cambuk itu darinya, Fred.”</p><p>“Ayo, bung, berikan padaku,” kata Fred sambil mengulurkan tangannya.</p><p>“Maukah kau mengizinkanku menunggang kudamu hari ini?” kata Ben, sambil menyerahkan cambuknya, dengan sikap seolah tidak berkewajiban melakukannya.</p><p>“Bukan hari ini—lain kali saja. Aku tidak akan menunggang kudaku sendiri.”</p><p>“Apakah kamu akan menemui Mary hari ini?”</p><p>“Ya, kurasa begitu,” kata Fred, dengan sedikit rasa tidak nyaman.</p><p>“Katakan padanya untuk segera pulang, dan bermain dalam pertandingan hukuman, dan bersenang-senanglah.”</p><p>“Cukup, cukup, Ben! Lari!” kata Nyonya Garth, melihat Fred digoda.</p><p>“Apakah Letty dan Ben satu-satunya murid Anda sekarang, Nyonya Garth?” kata Fred, ketika anak-anak sudah pergi dan perlu mengatakan sesuatu untuk mengisi waktu. Dia belum yakin apakah dia harus menunggu Tuan Garth, atau menggunakan kesempatan yang baik dalam percakapan untuk mengaku kepada Nyonya Garth sendiri, memberinya uang, dan pergi.</p><p>“Satu—hanya satu. Fanny Hackbutt datang pukul setengah sebelas. Penghasilan saya sekarang tidak banyak,” kata Ny. Garth sambil tersenyum. “Saya sedang mengalami masa sulit dengan murid-murid. Tapi saya telah menabung sedikit uang saya untuk premi Alfred: saya punya sembilan puluh dua pound. Dia bisa pergi ke tempat Tuan Hanmer sekarang; usianya sudah tepat.”</p><p>Hal ini tidak mengarah pada kabar baik bahwa Tuan Garth hampir kehilangan sembilan puluh dua pon atau lebih berat badannya. Fred terdiam. “Para pemuda yang kuliah jauh lebih mahal dari itu,” lanjut Nyonya Garth dengan polos, sambil menarik pinggiran topi. “Dan Caleb berpikir bahwa Alfred akan menjadi insinyur yang hebat: dia ingin memberi anak itu kesempatan yang baik. Itu dia! Aku dengar dia masuk. Kita akan menemuinya di ruang tamu, ya?”</p><p>Ketika mereka memasuki ruang tamu, Caleb telah melemparkan topinya dan duduk di mejanya.</p><p>“Apa! Fred, anakku!” katanya dengan nada sedikit terkejut, sambil memegang pena yang belum dicelupkan; “kau datang lebih awal.” Namun, karena tidak melihat ekspresi sapaan ceria yang biasanya terpampang di wajah Fred, ia segera menambahkan, “Ada apa di rumah?—ada masalah apa?”</p><p>“Ya, Tuan Garth, saya datang untuk menyampaikan sesuatu yang saya khawatirkan akan membuat Anda memiliki pendapat buruk tentang saya. Saya datang untuk memberi tahu Anda dan Nyonya Garth bahwa saya tidak dapat menepati janji saya. Saya tidak dapat menemukan uang untuk membayar tagihan tersebut. Saya kurang beruntung; saya hanya memiliki lima puluh pound ini dari seratus enam puluh pound yang seharusnya.”</p><p>Saat Fred berbicara, ia mengeluarkan catatan-catatan itu dan meletakkannya di atas meja di depan Tuan Garth. Ia langsung melontarkan fakta yang sebenarnya, merasa sedih seperti anak kecil dan kehabisan kata-kata. Nyonya Garth terdiam takjub, dan menatap suaminya meminta penjelasan. Caleb tersipu, dan setelah jeda sejenak berkata—</p><p>“Oh, Susan, aku belum memberitahumu: Aku ikut membayar tagihan untuk Fred; jumlahnya seratus enam puluh pound. Dia memastikan dia bisa membayarnya sendiri.”</p><p>Terlihat perubahan nyata di wajah Ny. Garth, tetapi perubahan itu seperti perubahan di bawah permukaan air yang tetap tenang. Ia menatap Fred, sambil berkata—</p><p>“Kurasa kau sudah meminta sisa uang itu kepada ayahmu dan dia menolak.”</p><p>“Tidak,” kata Fred, menggigit bibirnya, dan berbicara dengan lebih susah payah; “tetapi saya tahu tidak akan ada gunanya bertanya padanya; dan kecuali jika itu berguna, saya tidak ingin menyebut nama Tuan Garth dalam masalah ini.”</p><p>“Ini datang di waktu yang kurang tepat,” kata Caleb dengan ragu-ragu, sambil menatap uang kertas itu dan dengan gugup meraba-raba kertasnya, “Natal sudah dekat—aku sedang kekurangan uang sekarang. Kau tahu, aku harus memotong semuanya seperti penjahit yang kekurangan ukuran. Apa yang bisa kita lakukan, Susan? Aku butuh semua uang receh yang kita punya di bank. Seratus sepuluh pound, ambil saja!”</p><p>“Saya harus memberikan Anda sembilan puluh dua pound yang telah saya sisihkan untuk premi Alfred,” kata Ny. Garth dengan serius dan tegas, meskipun pendengar yang jeli mungkin dapat mendengar sedikit getaran dalam beberapa kata. “Dan saya yakin Mary telah menabung dua puluh pound dari gajinya saat ini. Dia akan memberikannya di muka.”</p><p>Nyonya Garth tidak lagi menatap Fred, dan sama sekali tidak memperhitungkan kata-kata apa yang harus dia gunakan untuk menyakitinya secara paling efektif. Seperti wanita eksentrik pada umumnya, saat ini dia sedang sibuk mempertimbangkan apa yang harus dilakukan, dan tidak membayangkan bahwa tujuan dapat dicapai dengan lebih baik melalui komentar pedas atau ledakan amarah. Tetapi dia telah membuat Fred merasakan sesuatu seperti rasa penyesalan. Anehnya, rasa sakitnya dalam kejadian sebelumnya hampir seluruhnya terdiri dari perasaan bahwa dia akan tampak tidak terhormat, dan jatuh di mata keluarga Garth: dia tidak memikirkan ketidaknyamanan dan kemungkinan kerugian yang mungkin ditimbulkan oleh pelanggarannya, karena latihan imajinasi tentang kebutuhan orang lain ini tidak umum di kalangan pria muda yang penuh harapan. Memang, sebagian besar dari kita dibesarkan dengan gagasan bahwa motif tertinggi untuk tidak melakukan kesalahan adalah sesuatu yang tidak mempedulikan siapa yang akan menderita akibat kesalahan tersebut. Tetapi pada saat ini, dia tiba-tiba melihat dirinya sebagai seorang bajingan menyedihkan yang merampok tabungan dua wanita.</p><p>“Saya pasti akan membayar semuanya, Nyonya Garth—pada akhirnya,” ucapnya terbata-bata.</p><p>“Ya, pada akhirnya,” kata Ny. Garth, yang karena sangat tidak menyukai kata-kata indah di saat-saat yang tidak menyenangkan, tidak dapat menahan diri untuk tidak melontarkan epigram. “Tetapi anak laki-laki tidak bisa magang pada akhirnya: mereka seharusnya magang pada usia lima belas tahun.” Ia belum pernah merasa begitu enggan untuk membela Fred.</p><p>“Akulah yang paling salah, Susan,” kata Caleb. “Fred memastikan uang itu ditemukan. Tapi aku tidak seharusnya ikut campur urusan uang. Kurasa kau sudah mencari ke mana-mana dan mencoba semua cara yang jujur?” tambahnya, menatap Fred dengan mata abu-abunya yang penuh belas kasihan. Caleb terlalu halus untuk menyebutkan nama Tuan Featherstone.</p><p>“Ya, aku sudah mencoba segalanya—sungguh. Seharusnya aku sudah punya seratus tiga puluh pound siap, tapi sialnya kuda yang akan kujual kan terjadi. Pamanku memberiku delapan puluh pound, dan aku membayar tiga puluh pound dengan kuda lamaku untuk mendapatkan kuda lain yang akan kujual seharga delapan puluh pound atau lebih—aku bermaksud untuk hidup tanpa kuda—tapi sekarang kuda itu ternyata ganas dan pincang. Aku berharap aku dan kuda-kuda itu juga sudah pergi ke neraka sebelum aku mendatangkan masalah ini padamu. Tidak ada orang lain yang begitu kusayangi: kau dan Nyonya Garth selalu baik padaku. Namun, percuma saja mengatakan itu. Kau akan selalu menganggapku bajingan sekarang.”</p><p>Fred berbalik dan bergegas keluar ruangan, menyadari bahwa ia mulai bersikap seperti perempuan, dan merasa bingung karena permintaan maafnya tidak banyak berguna bagi keluarga Garth. Mereka bisa melihatnya menaiki kuda, dan dengan cepat melewati gerbang.</p><p>“Saya kecewa dengan Fred Vincy,” kata Ny. Garth. “Sebelumnya saya tidak akan percaya bahwa dia akan menyeret Anda ke dalam utangnya. Saya tahu dia boros, tetapi saya tidak menyangka dia akan begitu pelit hingga mempertaruhkan risikonya pada teman lamanya, yang paling tidak mampu menanggung kerugian.”</p><p>“Aku memang bodoh, Susan.”</p><p>“Memang benar,” kata sang istri, mengangguk dan tersenyum. “Tapi aku seharusnya tidak menyebarkannya di pasar. Mengapa kau menyembunyikan hal-hal seperti itu dariku? Sama seperti kancing bajumu: kau membiarkannya lepas tanpa memberitahuku, dan pergi dengan gelang tanganmu yang menggantung. Seandainya aku tahu, mungkin aku sudah siap dengan rencana yang lebih baik.”</p><p>“Aku tahu kau sangat sedih, Susan,” kata Caleb, menatapnya dengan penuh empati. “Aku tidak tega melihatmu kehilangan uang yang telah kau kumpulkan untuk Alfred.”</p><p>“Untunglah aku berhasil mengumpulkan uang itu; dan kaulah yang harus menderita, karena kaulah yang harus mengajari anak itu sendiri. Kau harus meninggalkan kebiasaan burukmu. Beberapa pria kecanduan minum, dan kau malah bekerja tanpa bayaran. Kau harus sedikit mengurangi kebiasaan itu. Dan kau harus pergi menemui Mary, dan tanyakan pada anak itu berapa banyak uang yang dimilikinya.”</p><p>Caleb telah mendorong kursinya ke belakang, dan mencondongkan tubuh ke depan, menggelengkan kepalanya perlahan, dan menyatukan ujung-ujung jarinya dengan sangat hati-hati.</p><p>“Kasihan Mary!” katanya. “Susan,” lanjutnya dengan nada lebih rendah, “aku khawatir dia mungkin menyukai Fred.”</p><p>“Oh tidak! Dia selalu menertawakannya; dan dia sepertinya tidak akan menganggapnya selain sebagai saudara.”</p><p>Caleb tidak menjawab, tetapi segera menurunkan kacamatanya, menarik kursinya ke meja, dan berkata, “Astaga—aku berharap ini terjadi di Hanover! Hal-hal seperti ini sangat mengganggu pekerjaan!”</p><p>Bagian pertama pidato ini mencakup seluruh koleksi ungkapan kutukannya, dan diucapkan dengan sedikit nada sinis yang mudah dibayangkan. Tetapi akan sulit untuk menyampaikan kepada mereka yang belum pernah mendengarnya mengucapkan kata &quot;bisnis,&quot; nada penghormatan yang penuh semangat, rasa hormat religius, yang menyelimutinya, seperti simbol suci yang dibungkus dengan kain linen berjumbai emas.</p><p>Caleb Garth sering menggelengkan kepalanya merenungkan nilai, kekuatan yang tak tergantikan dari kerja keras yang melibatkan banyak kepala dan banyak tangan, yang dengannya tubuh sosial diberi makan, pakaian, dan tempat tinggal. Hal itu telah menguasai imajinasinya sejak kecil. Gema palu besar saat atap atau lunas kapal dibuat, teriakan para pekerja, deru tungku, guntur dan percikan mesin, adalah musik yang agung baginya; penebangan dan pemuatan kayu, dan batang kayu besar yang bergetar seperti bintang di kejauhan di sepanjang jalan raya, derek yang bekerja di dermaga, hasil bumi yang menumpuk di gudang, ketelitian dan variasi upaya otot di mana pun pekerjaan yang tepat harus dilakukan,—semua pemandangan masa mudanya ini telah memengaruhinya seperti puisi tanpa bantuan para penyair, telah menciptakan filsafat baginya tanpa bantuan para filsuf, agama tanpa bantuan teologi. Ambisi awalnya adalah untuk memiliki peran yang seefektif mungkin dalam pekerjaan mulia ini, yang olehnya diberi nama &quot;bisnis&quot;; dan meskipun ia baru sebentar bekerja di bawah seorang surveyor, dan sebagian besar belajar sendiri, ia lebih memahami tentang tanah, bangunan, dan pertambangan daripada kebanyakan orang yang ahli di daerah tersebut.</p><p>Klasifikasinya tentang pekerjaan manusia agak kasar, dan, seperti kategori orang-orang yang lebih terkenal, tidak akan diterima di zaman yang maju ini. Ia membaginya menjadi &quot;bisnis, politik, khotbah, pembelajaran, dan hiburan.&quot; Ia tidak keberatan dengan empat yang terakhir; tetapi ia memandangnya seperti seorang pagan yang penuh hormat memandang dewa-dewa lain selain dewanya sendiri. Dengan cara yang sama, ia sangat menghargai semua tingkatan, tetapi ia sendiri tidak ingin berada di tingkatan mana pun di mana ia tidak memiliki kontak yang begitu dekat dengan &quot;bisnis&quot; sehingga seringkali mendapatkan tanda-tanda debu dan semen, kelembapan mesin, atau tanah subur hutan dan ladang yang terhormat. Meskipun ia tidak pernah menganggap dirinya selain sebagai seorang Kristen ortodoks, dan akan berdebat tentang anugerah pendahulu jika subjek itu diajukan kepadanya, saya pikir dewa-dewa virtualnya adalah skema praktis yang baik, pekerjaan yang akurat, dan penyelesaian usaha yang setia: pangeran kegelapannya adalah seorang pekerja yang malas. Namun, tidak ada semangat penolakan dalam diri Caleb, dan dunia tampak begitu menakjubkan baginya sehingga ia siap menerima sejumlah sistem apa pun, seperti sejumlah cakrawala apa pun, asalkan sistem tersebut tidak secara nyata mengganggu drainase lahan terbaik, bangunan yang kokoh, pengukuran yang tepat, dan pengeboran yang bijaksana (untuk batubara). Bahkan, ia memiliki jiwa yang penuh hormat dengan kecerdasan praktis yang kuat. Tetapi ia tidak dapat mengelola keuangan: ia memahami nilai dengan baik, tetapi ia tidak memiliki ketajaman imajinasi untuk hasil moneter dalam bentuk laba dan rugi: dan setelah menyadari hal ini dengan susah payah, ia memutuskan untuk meninggalkan semua bentuk &quot;bisnis&quot; kesayangannya yang membutuhkan bakat tersebut. Ia sepenuhnya menyerahkan diri pada berbagai jenis pekerjaan yang dapat ia lakukan tanpa menangani modal, dan merupakan salah satu orang berharga di distriknya sendiri yang akan dipilih oleh semua orang untuk bekerja bagi mereka, karena ia melakukan pekerjaannya dengan baik, mengenakan biaya yang sangat sedikit, dan seringkali menolak untuk mengenakan biaya sama sekali. Maka tidak heran jika keluarga Garth miskin, dan &quot;hidup sederhana.&quot; Namun, mereka tidak keberatan dengan hal itu.</p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="buku-iii-menunggu-kematian-bab-xxiii.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Buku Iii Menunggu Kematian Bab Xxiii</span>
+    </a>
+    <a href="bab-xxv.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Bab Xxv</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
 function toggleTheme() {
   document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.documentElement.classList.contains("dark") ? "dark" : "light"
-  );
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
 }
 </script>
 
 
 <script>
-// ===== AUTO BOOKMARK LAST READ POSITION =====
-
 const pageKey = "bookmark_" + location.pathname;
-
-// Restore posisi scroll saat halaman dibuka
 window.addEventListener("load", () => {
   const saved = localStorage.getItem(pageKey);
-  if (saved) {
-    window.scrollTo(0, parseInt(saved));
-  }
+  if (saved) window.scrollTo(0, parseInt(saved));
 });
-
-// Simpan posisi scroll otomatis (throttle ringan)
 let scrollTimer;
 window.addEventListener("scroll", () => {
   clearTimeout(scrollTimer);
@@ -56,151 +374,35 @@ window.addEventListener("scroll", () => {
     localStorage.setItem(pageKey, window.scrollY);
   }, 200);
 });
-</script>
 
-
-<script>
-
-// ===== ESTIMASI WAKTU BACA =====
 (function() {
-  const text = document.body.innerText || "";
-  const words = text.trim().split(/\s+/).length;
-  const wpm = 200; // kecepatan baca rata2
-  const minutes = Math.max(1, Math.round(words / wpm));
-
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
   const el = document.getElementById("readingTime");
-  if (el) el.innerText = "⏱ " + minutes + " menit baca";
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
 })();
 
-
-// ===== PROGRESS BACA (%) =====
 window.addEventListener("scroll", () => {
   const doc = document.documentElement;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const progress = Math.round((window.scrollY / total) * 100);
-
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
   const bar = document.getElementById("progressBar");
-  if (bar) bar.style.width = progress + "%";
-
-  localStorage.setItem("progress_" + location.pathname, progress);
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
 });
 
-
-// ===== TOMBOL LANJUTKAN MEMBACA =====
 window.addEventListener("load", () => {
-  const progress = localStorage.getItem("progress_" + location.pathname);
-
-  if (progress && progress > 5) {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
     const btn = document.getElementById("resumeBtn");
-    if (btn) btn.style.display = "block";
+    if (btn) btn.style.display = "flex";
   }
 });
 
 function resumeReading() {
   const saved = localStorage.getItem("bookmark_" + location.pathname);
-  if (saved) window.scrollTo(0, parseInt(saved));
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
 }
-
 </script>
 
-
-
-
-<style>
-:root {
-  --bg: #f5f5f5;
-  --text: #111;
-  --link: #1a73e8;
-  --border: #ddd;
-}
-
-.dark {
-  --bg: #0f1115;
-  --text: #e6e6e6;
-  --link: #8ab4f8;
-  --border: #2a2f36;
-}
-
-body {
-  font-family: Georgia, serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 22px;
-  line-height: 1.85;
-  font-size: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--link);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-.toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--border);
-  user-select: none;
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / ☀ Light</div>
-
-<div class="top-nav">
-  <a href="../index.html">⬅ Perpustakaan</a>
-  <a href="index.html">Index Buku</a>
-</div>
-
-<h1>BAB XXIV.</h1>
-
-<div id="readingTime" style="opacity:0.7;margin-bottom:10px"></div>
-
-<div style="position:fixed;top:0;left:0;width:100%;height:4px;background:#0001">
-  <div id="progressBar" style="height:100%;width:0;background:#1a73e8"></div>
-</div>
-
-<button id="resumeBtn"
-onclick="resumeReading()"
-style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 14px;border:none;border-radius:6px;cursor:pointer">
-📖 Lanjutkan membaca
-</button>
-
-<p>“Kesedihan si pelanggar hanya membawa sedikit kelegaan Bagi dia yang memikul salib pelanggaran yang berat.” —SHAKESPEARE: Soneta . Dengan berat hati saya sampaikan bahwa hanya tiga hari setelah kejadian yang menguntungkan di Houndsley, Fred Vincy jatuh dalam suasana hati yang lebih buruk daripada yang pernah ia alami sebelumnya. Bukan karena ia kecewa dengan kemungkinan pasar untuk kudanya, tetapi karena sebelum kesepakatan dapat diselesaikan dengan orang kepercayaan Lord Medlicote, kuda bernama Diamond ini, yang telah diinvestasikan dengan harapan sebesar delapan puluh pound, tanpa peringatan sedikit pun menunjukkan energi yang sangat ganas di kandang dengan menendang, hampir saja membunuh pengurus kuda, dan akhirnya melukai dirinya sendiri dengan parah karena kakinya tersangkut tali yang menggantung di atas papan kandang. Tidak ada jalan keluar untuk ini selain penemuan sifat pemarah setelah menikah—yang tentu saja diketahui oleh teman-teman lamanya sebelum upacara. Karena alasan tertentu, Fred kehilangan ketabahan biasanya dalam menghadapi kesialan ini: ia hanya menyadari bahwa ia hanya memiliki lima puluh pound, bahwa tidak ada peluang untuk mendapatkan lebih banyak saat ini, dan bahwa tagihan sebesar seratus enam puluh pound akan datang dalam lima hari. Sekalipun ia telah meminta bantuan ayahnya dengan alasan agar Tuan Garth diselamatkan dari kerugian, Fred merasa kesal karena ayahnya akan dengan marah menolak untuk menyelamatkan Tuan Garth dari konsekuensi yang menurutnya justru mendorong pemborosan dan penipuan. Ia sangat sedih sehingga tidak dapat merencanakan hal lain selain langsung pergi ke Tuan Garth dan mengatakan kebenaran yang menyedihkan itu, membawa serta uang lima puluh pound, dan setidaknya mengeluarkan uang itu dengan aman dari tangannya sendiri. Ayahnya, yang berada di gudang, belum mengetahui kecelakaan itu: ketika ia mengetahuinya, ia akan mengamuk karena binatang buas itu dibawa ke kandangnya; dan sebelum menghadapi gangguan yang lebih kecil itu, Fred ingin pergi dengan segenap keberaniannya untuk menghadapi gangguan yang lebih besar. Ia mengambil kuda ayahnya, karena ia telah memutuskan bahwa setelah memberi tahu Tuan Garth, ia akan pergi ke Stone Court dan mengakui semuanya kepada Mary. Bahkan, kemungkinan besar, seandainya Mary tidak ada dan Fred tidak mencintainya, hati nuraninya akan jauh kurang aktif, baik dalam mendesaknya untuk melunasi hutang maupun mendorongnya untuk tidak menunda tugas yang tidak menyenangkan seperti biasanya, tetapi untuk bertindak sesederhana dan seefisien mungkin. Bahkan manusia yang jauh lebih kuat daripada Fred Vincy pun menaruh separuh kebenaran mereka pada pikiran orang yang paling mereka cintai. "Panggung semua tindakanku telah runtuh," kata seorang tokoh lama ketika sahabat utamanya meninggal; dan mereka beruntung yang mendapatkan panggung di mana penonton menuntut yang terbaik dari mereka. Tentu saja, akan ada perbedaan besar bagi Fred saat itu jika Mary Garth tidak memiliki gagasan yang pasti tentang apa yang patut dikagumi dalam karakter. Tuan Garth tidak ada di kantor, dan Fred melanjutkan perjalanan ke rumahnya, yang terletak agak jauh di luar kota—tempat yang sederhana dengan kebun buah di depannya, bangunan setengah kayu kuno yang luas, yang sebelum kota berkembang dulunya adalah rumah pertanian, tetapi sekarang dikelilingi oleh kebun pribadi penduduk kota. Kita lebih menyukai rumah kita jika rumah itu memiliki ciri khasnya sendiri, seperti rumah teman-teman kita. Keluarga Garth, yang cukup besar, karena Mary memiliki empat saudara laki-laki dan satu saudara perempuan, sangat menyukai rumah tua mereka, yang semua perabotan terbaiknya telah lama dijual. Fred juga menyukainya, ia hafal seluruh rumah itu bahkan sampai ke loteng yang berbau harum apel dan buah quince, dan sampai hari ini ia tidak pernah datang ke sana tanpa harapan yang menyenangkan; tetapi hatinya berdebar gelisah sekarang dengan perasaan bahwa ia mungkin harus mengaku di hadapan Nyonya Garth, yang lebih ia hormati daripada suaminya. Bukan berarti ia cenderung sarkastik dan melontarkan komentar impulsif, seperti Mary. Setidaknya di usianya yang sekarang sebagai seorang ibu, Ny. Garth tidak pernah membuat kesalahan dengan ucapan yang terburu-buru; seperti yang ia katakan, ia telah memikul beban di masa mudanya, dan belajar mengendalikan diri. Ia memiliki kepekaan langka yang membedakan apa yang tidak dapat diubah, dan menerimanya tanpa mengeluh. Mengagumi kebajikan suaminya, ia sejak dini telah memutuskan ketidakmampuan suaminya untuk memperhatikan kepentingannya sendiri, dan telah menghadapi konsekuensinya dengan riang. Ia cukup murah hati untuk melepaskan semua kebanggaan akan teko teh atau pakaian anak-anak, dan tidak pernah menceritakan rahasia menyedihkan kepada tetangga-tetangga perempuannya tentang kurangnya kebijaksanaan Tuan Garth dan jumlah uang yang mungkin dimilikinya jika ia seperti pria lain. Karena itu, para tetangga yang cantik ini menganggapnya sombong atau eksentrik, dan terkadang menyebutnya kepada suami mereka sebagai "Ny. Garth Anda yang baik." Ia pun tidak luput mengkritik mereka sebagai balasan, karena ia lebih terdidik daripada kebanyakan ibu rumah tangga di Middlemarch, dan—di manakah wanita yang tak bercela?—cenderung sedikit keras terhadap kaumnya sendiri, yang menurutnya diciptakan untuk sepenuhnya tunduk. Di sisi lain, ia terlalu toleran terhadap kekurangan laki-laki, dan sering terdengar mengatakan bahwa itu wajar. Selain itu, harus diakui bahwa Ny. Garth agak terlalu tegas dalam penolakannya terhadap apa yang dianggapnya sebagai kebodohan: peralihan dari pengasuh menjadi ibu rumah tangga telah terlalu kuat memengaruhi kesadarannya, dan ia jarang lupa bahwa meskipun tata bahasa dan aksennya di atas standar kota, ia mengenakan topi sederhana, memasak makan malam keluarga, dan menambal semua kaus kaki. Ia terkadang menerima murid secara berpindah-pindah, menyuruh mereka mengikutinya di dapur dengan buku atau papan tulis mereka. Ia menganggap baik bagi mereka untuk melihat bahwa ia dapat membuat busa yang sangat baik sambil mengoreksi kesalahan mereka "tanpa melihat"—bahwa seorang wanita dengan lengan baju yang digulung di atas siku dapat mengetahui semua tentang Modus Subjungtif atau Zona Panas—bahwa, singkatnya, ia dapat memiliki "pendidikan" dan hal-hal baik lainnya yang berakhiran "tion," dan layak untuk diucapkan dengan tegas, tanpa menjadi boneka yang tidak berguna. Ketika ia menyampaikan komentar yang mendidik ini, ia mengerutkan kening sedikit, yang meskipun demikian tidak menghalangi wajahnya untuk terlihat ramah, dan kata-katanya yang keluar seperti prosesi diucapkan dengan suara kontralto yang bersemangat dan menyenangkan. Tentu saja, Nyonya Garth yang patut dicontoh memiliki aspek-aspek lucunya, tetapi karakternya menopang keanehannya, seperti anggur yang sangat baik mempertahankan rasa kulitnya. Terhadap Fred Vincy, ia memiliki perasaan keibuan, dan selalu cenderung memaafkan kesalahannya, meskipun ia mungkin tidak akan memaafkan Mary karena bertunangan dengannya, karena putrinya termasuk dalam penilaian yang lebih ketat yang ia terapkan pada kaum wanitanya sendiri. Tetapi fakta bahwa ia sangat toleran terhadap Fred justru membuat Fred semakin sulit menerima kenyataan bahwa ia pasti akan merosot dalam pandangannya. Dan keadaan kunjungannya ternyata lebih tidak menyenangkan daripada yang ia duga; karena Caleb Garth telah pergi lebih awal untuk melihat beberapa perbaikan di dekat situ. Nyonya Garth selalu berada di dapur pada jam-jam tertentu, dan pagi ini ia melakukan beberapa pekerjaan sekaligus di sana—membuat pai di meja kayu pinus yang bersih di satu sisi ruangan yang lapang itu, mengamati gerakan Sally di oven dan wadah adonan melalui pintu yang terbuka, dan memberi pelajaran kepada putra dan putri bungsunya, yang berdiri di seberangnya di meja dengan buku dan papan tulis di depan mereka. Sebuah bak dan jemuran di ujung dapur lainnya menunjukkan bahwa ada juga kegiatan mencuci barang-barang kecil yang sedang berlangsung. Nyonya Garth, dengan lengan bajunya terlipat di atas siku, dengan cekatan mengolah kue-kuenya—menggunakan penggiling adonan dan mencubitnya dengan penuh hiasan, sambil dengan semangat menjelaskan pandangan yang benar tentang kesesuaian kata kerja dan kata ganti dengan "kata benda yang banyak atau berarti banyak," adalah pemandangan yang menyenangkan dan menghibur. Ia memiliki tipe rambut keriting dan wajah persegi yang sama seperti Mary, tetapi lebih cantik, dengan fitur wajah yang lebih halus, kulit pucat, sosok ibu yang tegap, dan tatapan yang sangat tegas. Dengan topi berenda putihnya, ia mengingatkan kita pada wanita Prancis yang menyenangkan yang pernah kita lihat berbelanja, dengan keranjang di lengannya. Melihat sang ibu, kita mungkin berharap putrinya akan menjadi seperti dia, yang merupakan keuntungan prospektif yang setara dengan mas kawin—sang ibu terlalu sering berdiri di belakang putrinya seperti ramalan jahat—"Seperti aku, dia akan segera menjadi sepertiku." “Sekarang mari kita bahas itu sekali lagi,” kata Ny. Garth, sambil mencubit kue apel yang tampaknya mengalihkan perhatian Ben, seorang pemuda energik dengan dahi tebal, dari pelajaran yang seharusnya. “‘Bukan tanpa memperhatikan makna kata tersebut sebagai ungkapan kesatuan atau keberagaman gagasan’—katakan lagi apa artinya itu, Ben.” (Nyonya Garth, seperti pendidik-pendidik terkenal lainnya, memiliki jalan-jalan kuno favoritnya, dan dalam kekacauan umum masyarakat, ia akan mencoba untuk mempertahankan "Lindley Murray"-nya di atas ombak.) “Oh—maksudnya—kau harus memikirkan apa yang kau maksud,” kata Ben, agak kesal. “Aku benci tata bahasa. Apa gunanya?” “Untuk mengajarimu berbicara dan menulis dengan benar, agar kamu bisa dimengerti,” kata Nyonya Garth dengan tegas. “Apakah kamu ingin berbicara seperti Ayub tua?” “Ya,” kata Ben dengan tegas; “itu lebih lucu. Dia bilang, 'Yo goo'—itu sama bagusnya dengan 'You go.'” “Tapi dia bilang, 'Ada kapal di taman,' bukannya 'seekor domba,'” kata Letty dengan nada angkuh. “Kau mungkin mengira dia maksudnya kapal di lepas pantai.” “Tidak, kau tidak mungkin bisa, kalau kau tidak bodoh,” kata Ben. “Bagaimana mungkin sebuah kapal dari laut bisa sampai ke sana?” “Hal-hal ini hanya berkaitan dengan pengucapan, yang merupakan bagian terkecil dari tata bahasa,” kata Ny. Garth. “Kulit apel itu akan dimakan oleh babi, Ben; jika kau memakannya, aku harus memberi mereka sepotong kue pastri milikmu. Ayub hanya perlu berbicara tentang hal-hal yang sangat sederhana. Bagaimana menurutmu kau akan menulis atau berbicara tentang sesuatu yang lebih sulit, jika kau tidak tahu lebih banyak tentang tata bahasa daripada dia? Kau akan menggunakan kata-kata yang salah, dan menempatkan kata-kata di tempat yang salah, dan bukannya membuat orang mengerti dirimu, mereka akan berpaling darimu sebagai orang yang membosankan. Lalu apa yang akan kau lakukan?” “Aku tidak perlu peduli, aku sebaiknya berhenti saja,” kata Ben, dengan perasaan bahwa ini adalah masalah yang bisa disepakati jika menyangkut tata bahasa. “Aku lihat kau mulai lelah dan bodoh, Ben,” kata Ny. Garth, yang sudah terbiasa dengan argumen-argumen yang menghalangi dari anak laki-lakinya. Setelah menghabiskan pai-nya, ia berjalan menuju jemuran pakaian, dan berkata, “Kemarilah dan ceritakan padaku kisah yang kuceritakan padamu hari Rabu lalu, tentang Cincinnatus.” “Aku tahu! Dia seorang petani,” kata Ben. “Nah, Ben, dia orang Romawi—biar kuceritakan ,” kata Letty, sambil menyikut dengan nada membantah. “Dasar bodoh, dia adalah seorang petani Romawi, dan dia sedang membajak.” “Ya, tapi sebelum itu—itu bukan yang pertama—orang-orang menginginkannya,” kata Letty. “Baiklah, tapi Ibu harus mengatakan dulu seperti apa kepribadiannya,” desak Ben. “Dia orang yang bijaksana, seperti ayahku, dan itu membuat orang-orang menginginkan nasihatnya. Dan dia orang yang pemberani, dan bisa bertarung. Dan ayahku juga bisa—bukan begitu, Bu?” “Nah, Ben, biar Ibu ceritakan kisahnya apa adanya, seperti yang Ibu ceritakan pada kita,” kata Letty sambil mengerutkan kening. “Ibu, tolong suruh Ben untuk tidak bicara.” “Letty, Ibu malu padamu,” kata ibunya, sambil memeras tutup botol dari bak. “Ketika kakakmu mulai bercerita, seharusnya kau menunggu dan melihat apakah dia bisa menyelesaikan ceritanya. Betapa kasarnya penampilanmu, mendorong dan mengerutkan kening, seolah-olah kau ingin menaklukkan dengan siku! Cincinnatus, aku yakin, akan menyesal melihat putrinya berperilaku seperti itu.” (Nyonya Garth mengucapkan kalimat mengerikan ini dengan penuh keagungan, dan Letty merasa bahwa di antara kefasihan yang terpendam dan rasa tidak hormat secara umum, termasuk dari orang Romawi, hidup sudah menjadi urusan yang menyakitkan.) “Sekarang, Ben.” “Yah—oh—yah—begini, terjadi banyak pertempuran, dan mereka semua bodoh, dan—aku tidak bisa menceritakannya persis seperti yang kau ceritakan—tapi mereka menginginkan seorang pria untuk menjadi kapten dan raja dan segalanya—” “Sekarang jadi diktator,” kata Letty dengan ekspresi tersinggung, dan tak lupa berharap ibunya bertobat. “Baiklah, diktator!” kata Ben dengan nada menghina. “Tapi itu bukan kata yang tepat: dia tidak menyuruh mereka menulis di papan tulis.” “Ayolah, Ben, kau tidak sebodoh itu,” kata Nyonya Garth, dengan nada serius namun hati-hati. “Dengar, ada ketukan di pintu! Lari, Letty, dan bukalah.” Ketukan itu milik Fred; dan ketika Letty mengatakan bahwa ayahnya belum pulang, tetapi ibunya ada di dapur, Fred tidak punya pilihan lain. Dia tidak bisa menyimpang dari kebiasaannya untuk menemui Nyonya Garth di dapur jika kebetulan dia sedang bekerja di sana. Dia merangkul leher Letty tanpa berkata-kata, dan membawanya ke dapur tanpa lelucon dan belaian seperti biasanya. Nyonya Garth terkejut melihat Fred pada jam seperti ini, tetapi keterkejutan bukanlah perasaan yang biasa ia ungkapkan, dan ia hanya berkata, sambil melanjutkan pekerjaannya dengan tenang— “Kamu, Fred, sepagi ini? Kamu terlihat pucat sekali. Apa terjadi sesuatu?” “Saya ingin berbicara dengan Tuan Garth,” kata Fred, belum siap untuk mengatakan lebih banyak—“dan juga denganmu,” tambahnya, setelah jeda sejenak, karena ia yakin bahwa Nyonya Garth mengetahui segala sesuatu tentang RUU itu, dan pada akhirnya ia harus membicarakannya di hadapannya, jika bukan hanya kepadanya. “Caleb akan kembali lagi dalam beberapa menit,” kata Ny. Garth, yang membayangkan ada masalah antara Fred dan ayahnya. “Dia pasti tidak akan lama, karena dia ada pekerjaan di mejanya yang harus diselesaikan pagi ini. Apakah Anda keberatan menemani saya, sementara saya menyelesaikan urusan saya di sini?” “Tapi kita tidak perlu membahas Cincinnatus lagi, kan?” kata Ben, yang telah mengambil cambuk Fred dari tangannya, dan sedang mencoba keefektifannya pada kucing itu. “Tidak, keluarlah sekarang. Tapi letakkan cambuk itu. Sungguh kejam kau mencambuk Kura-kura tua yang malang! Tolong ambil cambuk itu darinya, Fred.” “Ayo, bung, berikan padaku,” kata Fred sambil mengulurkan tangannya. “Maukah kau mengizinkanku menunggang kudamu hari ini?” kata Ben, sambil menyerahkan cambuknya, dengan sikap seolah tidak berkewajiban melakukannya. “Bukan hari ini—lain kali saja. Aku tidak akan menunggang kudaku sendiri.” “Apakah kamu akan menemui Mary hari ini?” “Ya, kurasa begitu,” kata Fred, dengan sedikit rasa tidak nyaman. “Katakan padanya untuk segera pulang, dan bermain dalam pertandingan hukuman, dan bersenang-senanglah.” “Cukup, cukup, Ben! Lari!” kata Nyonya Garth, melihat Fred digoda. “Apakah Letty dan Ben satu-satunya murid Anda sekarang, Nyonya Garth?” kata Fred, ketika anak-anak sudah pergi dan perlu mengatakan sesuatu untuk mengisi waktu. Dia belum yakin apakah dia harus menunggu Tuan Garth, atau menggunakan kesempatan yang baik dalam percakapan untuk mengaku kepada Nyonya Garth sendiri, memberinya uang, dan pergi. “Satu—hanya satu. Fanny Hackbutt datang pukul setengah sebelas. Penghasilan saya sekarang tidak banyak,” kata Ny. Garth sambil tersenyum. “Saya sedang mengalami masa sulit dengan murid-murid. Tapi saya telah menabung sedikit uang saya untuk premi Alfred: saya punya sembilan puluh dua pound. Dia bisa pergi ke tempat Tuan Hanmer sekarang; usianya sudah tepat.” Hal ini tidak mengarah pada kabar baik bahwa Tuan Garth hampir kehilangan sembilan puluh dua pon atau lebih berat badannya. Fred terdiam. “Para pemuda yang kuliah jauh lebih mahal dari itu,” lanjut Nyonya Garth dengan polos, sambil menarik pinggiran topi. “Dan Caleb berpikir bahwa Alfred akan menjadi insinyur yang hebat: dia ingin memberi anak itu kesempatan yang baik. Itu dia! Aku dengar dia masuk. Kita akan menemuinya di ruang tamu, ya?” Ketika mereka memasuki ruang tamu, Caleb telah melemparkan topinya dan duduk di mejanya. “Apa! Fred, anakku!” katanya dengan nada sedikit terkejut, sambil memegang pena yang belum dicelupkan; “kau datang lebih awal.” Namun, karena tidak melihat ekspresi sapaan ceria yang biasanya terpampang di wajah Fred, ia segera menambahkan, “Ada apa di rumah?—ada masalah apa?” “Ya, Tuan Garth, saya datang untuk menyampaikan sesuatu yang saya khawatirkan akan membuat Anda memiliki pendapat buruk tentang saya. Saya datang untuk memberi tahu Anda dan Nyonya Garth bahwa saya tidak dapat menepati janji saya. Saya tidak dapat menemukan uang untuk membayar tagihan tersebut. Saya kurang beruntung; saya hanya memiliki lima puluh pound ini dari seratus enam puluh pound yang seharusnya.” Saat Fred berbicara, ia mengeluarkan catatan-catatan itu dan meletakkannya di atas meja di depan Tuan Garth. Ia langsung melontarkan fakta yang sebenarnya, merasa sedih seperti anak kecil dan kehabisan kata-kata. Nyonya Garth terdiam takjub, dan menatap suaminya meminta penjelasan. Caleb tersipu, dan setelah jeda sejenak berkata— “Oh, Susan, aku belum memberitahumu: Aku ikut membayar tagihan untuk Fred; jumlahnya seratus enam puluh pound. Dia memastikan dia bisa membayarnya sendiri.” Terlihat perubahan nyata di wajah Ny. Garth, tetapi perubahan itu seperti perubahan di bawah permukaan air yang tetap tenang. Ia menatap Fred, sambil berkata— “Kurasa kau sudah meminta sisa uang itu kepada ayahmu dan dia menolak.” “Tidak,” kata Fred, menggigit bibirnya, dan berbicara dengan lebih susah payah; “tetapi saya tahu tidak akan ada gunanya bertanya padanya; dan kecuali jika itu berguna, saya tidak ingin menyebut nama Tuan Garth dalam masalah ini.” “Ini datang di waktu yang kurang tepat,” kata Caleb dengan ragu-ragu, sambil menatap uang kertas itu dan dengan gugup meraba-raba kertasnya, “Natal sudah dekat—aku sedang kekurangan uang sekarang. Kau tahu, aku harus memotong semuanya seperti penjahit yang kekurangan ukuran. Apa yang bisa kita lakukan, Susan? Aku butuh semua uang receh yang kita punya di bank. Seratus sepuluh pound, ambil saja!” “Saya harus memberikan Anda sembilan puluh dua pound yang telah saya sisihkan untuk premi Alfred,” kata Ny. Garth dengan serius dan tegas, meskipun pendengar yang jeli mungkin dapat mendengar sedikit getaran dalam beberapa kata. “Dan saya yakin Mary telah menabung dua puluh pound dari gajinya saat ini. Dia akan memberikannya di muka.” Nyonya Garth tidak lagi menatap Fred, dan sama sekali tidak memperhitungkan kata-kata apa yang harus dia gunakan untuk menyakitinya secara paling efektif. Seperti wanita eksentrik pada umumnya, saat ini dia sedang sibuk mempertimbangkan apa yang harus dilakukan, dan tidak membayangkan bahwa tujuan dapat dicapai dengan lebih baik melalui komentar pedas atau ledakan amarah. Tetapi dia telah membuat Fred merasakan sesuatu seperti rasa penyesalan. Anehnya, rasa sakitnya dalam kejadian sebelumnya hampir seluruhnya terdiri dari perasaan bahwa dia akan tampak tidak terhormat, dan jatuh di mata keluarga Garth: dia tidak memikirkan ketidaknyamanan dan kemungkinan kerugian yang mungkin ditimbulkan oleh pelanggarannya, karena latihan imajinasi tentang kebutuhan orang lain ini tidak umum di kalangan pria muda yang penuh harapan. Memang, sebagian besar dari kita dibesarkan dengan gagasan bahwa motif tertinggi untuk tidak melakukan kesalahan adalah sesuatu yang tidak mempedulikan siapa yang akan menderita akibat kesalahan tersebut. Tetapi pada saat ini, dia tiba-tiba melihat dirinya sebagai seorang bajingan menyedihkan yang merampok tabungan dua wanita. “Saya pasti akan membayar semuanya, Nyonya Garth—pada akhirnya,” ucapnya terbata-bata. “Ya, pada akhirnya,” kata Ny. Garth, yang karena sangat tidak menyukai kata-kata indah di saat-saat yang tidak menyenangkan, tidak dapat menahan diri untuk tidak melontarkan epigram. “Tetapi anak laki-laki tidak bisa magang pada akhirnya: mereka seharusnya magang pada usia lima belas tahun.” Ia belum pernah merasa begitu enggan untuk membela Fred. “Akulah yang paling salah, Susan,” kata Caleb. “Fred memastikan uang itu ditemukan. Tapi aku tidak seharusnya ikut campur urusan uang. Kurasa kau sudah mencari ke mana-mana dan mencoba semua cara yang jujur?” tambahnya, menatap Fred dengan mata abu-abunya yang penuh belas kasihan. Caleb terlalu halus untuk menyebutkan nama Tuan Featherstone. “Ya, aku sudah mencoba segalanya—sungguh. Seharusnya aku sudah punya seratus tiga puluh pound siap, tapi sialnya kuda yang akan kujual kan terjadi. Pamanku memberiku delapan puluh pound, dan aku membayar tiga puluh pound dengan kuda lamaku untuk mendapatkan kuda lain yang akan kujual seharga delapan puluh pound atau lebih—aku bermaksud untuk hidup tanpa kuda—tapi sekarang kuda itu ternyata ganas dan pincang. Aku berharap aku dan kuda-kuda itu juga sudah pergi ke neraka sebelum aku mendatangkan masalah ini padamu. Tidak ada orang lain yang begitu kusayangi: kau dan Nyonya Garth selalu baik padaku. Namun, percuma saja mengatakan itu. Kau akan selalu menganggapku bajingan sekarang.” Fred berbalik dan bergegas keluar ruangan, menyadari bahwa ia mulai bersikap seperti perempuan, dan merasa bingung karena permintaan maafnya tidak banyak berguna bagi keluarga Garth. Mereka bisa melihatnya menaiki kuda, dan dengan cepat melewati gerbang. “Saya kecewa dengan Fred Vincy,” kata Ny. Garth. “Sebelumnya saya tidak akan percaya bahwa dia akan menyeret Anda ke dalam utangnya. Saya tahu dia boros, tetapi saya tidak menyangka dia akan begitu pelit hingga mempertaruhkan risikonya pada teman lamanya, yang paling tidak mampu menanggung kerugian.” “Aku memang bodoh, Susan.” “Memang benar,” kata sang istri, mengangguk dan tersenyum. “Tapi aku seharusnya tidak menyebarkannya di pasar. Mengapa kau menyembunyikan hal-hal seperti itu dariku? Sama seperti kancing bajumu: kau membiarkannya lepas tanpa memberitahuku, dan pergi dengan gelang tanganmu yang menggantung. Seandainya aku tahu, mungkin aku sudah siap dengan rencana yang lebih baik.” “Aku tahu kau sangat sedih, Susan,” kata Caleb, menatapnya dengan penuh empati. “Aku tidak tega melihatmu kehilangan uang yang telah kau kumpulkan untuk Alfred.” “Untunglah aku berhasil mengumpulkan uang itu; dan kaulah yang harus menderita, karena kaulah yang harus mengajari anak itu sendiri. Kau harus meninggalkan kebiasaan burukmu. Beberapa pria kecanduan minum, dan kau malah bekerja tanpa bayaran. Kau harus sedikit mengurangi kebiasaan itu. Dan kau harus pergi menemui Mary, dan tanyakan pada anak itu berapa banyak uang yang dimilikinya.” Caleb telah mendorong kursinya ke belakang, dan mencondongkan tubuh ke depan, menggelengkan kepalanya perlahan, dan menyatukan ujung-ujung jarinya dengan sangat hati-hati. “Kasihan Mary!” katanya. “Susan,” lanjutnya dengan nada lebih rendah, “aku khawatir dia mungkin menyukai Fred.” “Oh tidak! Dia selalu menertawakannya; dan dia sepertinya tidak akan menganggapnya selain sebagai saudara.” Caleb tidak menjawab, tetapi segera menurunkan kacamatanya, menarik kursinya ke meja, dan berkata, “Astaga—aku berharap ini terjadi di Hanover! Hal-hal seperti ini sangat mengganggu pekerjaan!” Bagian pertama pidato ini mencakup seluruh koleksi ungkapan kutukannya, dan diucapkan dengan sedikit nada sinis yang mudah dibayangkan. Tetapi akan sulit untuk menyampaikan kepada mereka yang belum pernah mendengarnya mengucapkan kata "bisnis," nada penghormatan yang penuh semangat, rasa hormat religius, yang menyelimutinya, seperti simbol suci yang dibungkus dengan kain linen berjumbai emas. Caleb Garth sering menggelengkan kepalanya merenungkan nilai, kekuatan yang tak tergantikan dari kerja keras yang melibatkan banyak kepala dan banyak tangan, yang dengannya tubuh sosial diberi makan, pakaian, dan tempat tinggal. Hal itu telah menguasai imajinasinya sejak kecil. Gema palu besar saat atap atau lunas kapal dibuat, teriakan para pekerja, deru tungku, guntur dan percikan mesin, adalah musik yang agung baginya; penebangan dan pemuatan kayu, dan batang kayu besar yang bergetar seperti bintang di kejauhan di sepanjang jalan raya, derek yang bekerja di dermaga, hasil bumi yang menumpuk di gudang, ketelitian dan variasi upaya otot di mana pun pekerjaan yang tepat harus dilakukan,—semua pemandangan masa mudanya ini telah memengaruhinya seperti puisi tanpa bantuan para penyair, telah menciptakan filsafat baginya tanpa bantuan para filsuf, agama tanpa bantuan teologi. Ambisi awalnya adalah untuk memiliki peran yang seefektif mungkin dalam pekerjaan mulia ini, yang olehnya diberi nama "bisnis"; dan meskipun ia baru sebentar bekerja di bawah seorang surveyor, dan sebagian besar belajar sendiri, ia lebih memahami tentang tanah, bangunan, dan pertambangan daripada kebanyakan orang yang ahli di daerah tersebut. Klasifikasinya tentang pekerjaan manusia agak kasar, dan, seperti kategori orang-orang yang lebih terkenal, tidak akan diterima di zaman yang maju ini. Ia membaginya menjadi "bisnis, politik, khotbah, pembelajaran, dan hiburan." Ia tidak keberatan dengan empat yang terakhir; tetapi ia memandangnya seperti seorang pagan yang penuh hormat memandang dewa-dewa lain selain dewanya sendiri. Dengan cara yang sama, ia sangat menghargai semua tingkatan, tetapi ia sendiri tidak ingin berada di tingkatan mana pun di mana ia tidak memiliki kontak yang begitu dekat dengan "bisnis" sehingga seringkali mendapatkan tanda-tanda debu dan semen, kelembapan mesin, atau tanah subur hutan dan ladang yang terhormat. Meskipun ia tidak pernah menganggap dirinya selain sebagai seorang Kristen ortodoks, dan akan berdebat tentang anugerah pendahulu jika subjek itu diajukan kepadanya, saya pikir dewa-dewa virtualnya adalah skema praktis yang baik, pekerjaan yang akurat, dan penyelesaian usaha yang setia: pangeran kegelapannya adalah seorang pekerja yang malas. Namun, tidak ada semangat penolakan dalam diri Caleb, dan dunia tampak begitu menakjubkan baginya sehingga ia siap menerima sejumlah sistem apa pun, seperti sejumlah cakrawala apa pun, asalkan sistem tersebut tidak secara nyata mengganggu drainase lahan terbaik, bangunan yang kokoh, pengukuran yang tepat, dan pengeboran yang bijaksana (untuk batubara). Bahkan, ia memiliki jiwa yang penuh hormat dengan kecerdasan praktis yang kuat. Tetapi ia tidak dapat mengelola keuangan: ia memahami nilai dengan baik, tetapi ia tidak memiliki ketajaman imajinasi untuk hasil moneter dalam bentuk laba dan rugi: dan setelah menyadari hal ini dengan susah payah, ia memutuskan untuk meninggalkan semua bentuk "bisnis" kesayangannya yang membutuhkan bakat tersebut. Ia sepenuhnya menyerahkan diri pada berbagai jenis pekerjaan yang dapat ia lakukan tanpa menangani modal, dan merupakan salah satu orang berharga di distriknya sendiri yang akan dipilih oleh semua orang untuk bekerja bagi mereka, karena ia melakukan pekerjaannya dengan baik, mengenakan biaya yang sangat sedikit, dan seringkali menolak untuk mengenakan biaya sama sekali. Maka tidak heran jika keluarga Garth miskin, dan "hidup sederhana." Namun, mereka tidak keberatan dengan hal itu.</p>
-
-<div class="nav">
-  <a href="buku-iii-menunggu-kematian-bab-xxiii.html">⬅ Buku Iii. Menunggu Kematian - Bab Xxiii.</a>
-  <a href="bab-xxv.html">Bab Xxv. ➡</a>
-</div>
 
 </body>
 </html>
