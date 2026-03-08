@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lottie — A Little Princess</title>
+<meta name="description" content="Baca Lottie dari buku A Little Princess karya Frances Hodgson Burnett secara gratis dalam bahasa Indonesia.">
+<link rel="canonical" href="https://bacaanterpilih.pages.dev/a_little_princess/lottie.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="Bacaan Terpilih">
+  <meta property="og:title"       content="Lottie — A Little Princess">
+  <meta property="og:description" content="Baca Lottie dari buku A Little Princess karya Frances Hodgson Burnett secara gratis di Bacaan Terpilih.">
+  <meta property="og:url"         content="https://bacaanterpilih.pages.dev/a_little_princess/lottie.html">
+  <meta property="og:image"       content="https://bacaanterpilih.pages.dev/a_little_princess/images/img-001.jpg">
+  <meta property="og:locale"      content="id_ID">
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Lottie — A Little Princess">
+  <meta name="twitter:description" content="Baca Lottie dari A Little Princess karya Frances Hodgson Burnett gratis.">
+  <meta name="twitter:image"       content="https://bacaanterpilih.pages.dev/a_little_princess/images/img-001.jpg">
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Lottie",
+    "name": "Lottie — A Little Princess",
+    "author": {
+      "@type": "Person",
+      "name": "Frances Hodgson Burnett"
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "name": "A Little Princess",
+      "author": {
+        "@type": "Person",
+        "name": "Frances Hodgson Burnett"
+      },
+      "inLanguage": "id",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bacaan Terpilih",
+        "url": "https://bacaanterpilih.pages.dev"
+      }
+    },
+    "inLanguage": "id",
+    "url": "https://bacaanterpilih.pages.dev/a_little_princess/lottie.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bacaan Terpilih",
+      "url": "https://bacaanterpilih.pages.dev"
+    }
+  }
+  </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JCYRN8385S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JCYRN8385S');
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<script>
+(function() {
+  if (localStorage.getItem("theme") === "dark")
+    document.documentElement.classList.add("dark");
+})();
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #faf9f7; --bg2: #f2f0ec; --text: #1a1a1a;
+  --text2: #6b6560; --text3: #9e9890; --accent: #c17f3e;
+  --border: #e5e0d8; --card-bg: #ffffff;
+}
+
+.dark {
+  --bg: #141210; --bg2: #1c1916; --text: #ede8e0;
+  --text2: #9e9488; --text3: #6b6258; --accent: #d4956a;
+  --border: #2a2520; --card-bg: #1e1b18;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 0.75rem; font-family: inherit;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+
+<style>
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: transparent; z-index: 200;
+}
+#progressBar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.content-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.chapter-meta {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+.chapter-body { line-height: 1.9; }
+
+.chapter-body p {
+  font-size: 1.05rem;
+  margin-bottom: 1.4em;
+  color: var(--text);
+  font-weight: 300;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.chapter-body h2, .chapter-body h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 2em 0 0.6em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.chapter-body h2 { font-size: 1.4rem; }
+.chapter-body h3 { font-size: 1.15rem; font-style: italic; }
+
+.chapter-body strong { font-weight: 600; }
+.chapter-body em { font-style: italic; }
+
+.chapter-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text2);
+}
+
+.chapter-body ul, .chapter-body ol {
+  margin: 0.5em 0 1.4em 1.8em;
+  line-height: 1.9;
+}
+
+.chapter-body li { margin-bottom: 0.3em; font-weight: 300; }
+
+.chapter-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+}
+
+.chapter-nav {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text2);
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  max-width: 48%;
+  background: var(--card-bg);
+}
+
+.nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+.nav-btn.next { text-align: right; margin-left: auto; }
+
+.nav-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+#resumeBtn {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(193,127,62,0.4);
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(193,127,62,0.5);
+}
+
+@media (max-width: 600px) {
+  .content-wrap { padding: 32px 16px 60px; }
+  .chapter-nav { flex-direction: column; }
+  .nav-btn { max-width: 100%; }
+  .nav-btn.next { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div id="progressBar"></div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="logo">Bacaan<span>Terpilih</span></a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </div>
+</header>
+
+<main class="content-wrap">
+  <div class="chapter-meta">
+    <div class="breadcrumb">
+      <a href="../../index.html">Perpustakaan</a> /
+      <a href="index.html">A Little Princess</a>
+    </div>
+    <h1 class="chapter-title">Lottie</h1>
+    <div class="chapter-info">
+      <span>✍️ Frances Hodgson Burnett</span>
+      <span id="readingTime">—</span>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p>Seandainya Sara adalah tipe anak yang berbeda, kehidupan yang dijalaninya di Seminari Pilihan Miss Minchin selama beberapa tahun berikutnya tidak akan baik sama sekali baginya. Ia diperlakukan lebih seperti tamu kehormatan di lembaga tersebut daripada seperti gadis kecil biasa. Jika ia adalah anak yang keras kepala dan mendominasi, ia mungkin akan menjadi sangat menyebalkan hingga tak tertahankan karena terlalu dimanjakan dan dipuji. Jika ia adalah anak yang malas, ia tidak akan belajar apa pun. Secara pribadi, Miss Minchin tidak menyukainya, tetapi ia adalah wanita yang terlalu berpengalaman untuk melakukan atau mengatakan apa pun yang dapat membuat murid yang begitu berharga ingin meninggalkan sekolahnya. Ia tahu betul bahwa jika Sara menulis surat kepada ayahnya untuk memberitahunya bahwa ia merasa tidak nyaman atau tidak bahagia, Kapten Crewe akan segera memindahkannya. Pendapat Miss Minchin adalah bahwa jika seorang anak terus-menerus dipuji dan tidak pernah dilarang melakukan apa yang disukainya, ia pasti akan menyukai tempat di mana ia diperlakukan seperti itu. Oleh karena itu, Sara dipuji karena kecepatan belajarnya, karena sopan santunnya, karena keramahannya kepada teman-teman sekelasnya, karena kemurahannya jika ia memberi enam pence kepada seorang pengemis dari dompet kecilnya yang penuh; hal paling sederhana yang dilakukannya diperlakukan seolah-olah itu adalah suatu kebajikan, dan jika ia tidak memiliki watak dan otak kecil yang cerdas, ia mungkin akan menjadi seorang anak muda yang sangat puas diri. Tetapi otak kecil yang cerdas itu memberitahunya banyak hal yang masuk akal dan benar tentang dirinya dan keadaannya, dan sesekali ia membicarakan hal-hal ini kepada Ermengarde seiring berjalannya waktu.</p><p>&quot;Hal-hal terjadi pada orang secara kebetulan,&quot; katanya dulu. &quot;Banyak kebetulan yang menyenangkan telah terjadi padaku. Kebetulan saja aku selalu menyukai pelajaran dan buku, dan bisa mengingat hal-hal ketika aku mempelajarinya. Kebetulan saja aku dilahirkan dengan seorang ayah yang tampan, baik, dan pintar, dan bisa memberiku semua yang kusuka. Mungkin aku sebenarnya tidak memiliki temperamen yang baik sama sekali, tetapi jika kamu memiliki semua yang kamu inginkan dan semua orang baik padamu, bagaimana mungkin kamu tidak memiliki temperamen yang baik? Aku tidak tahu&quot;—dengan wajah serius—&quot;bagaimana aku akan pernah mengetahui apakah aku benar-benar anak yang baik atau anak yang mengerikan. Mungkin aku anak yang MENGERIKAN, dan tidak ada yang akan pernah tahu, hanya karena aku tidak pernah mengalami cobaan.&quot;</p><p>&quot;Lavinia tidak pernah menghadapi cobaan,&quot; kata Ermengarde dengan tenang, &quot;dan dia sudah cukup mengerikan.&quot;</p><p>Sara mengusap ujung hidung kecilnya sambil berpikir keras, saat ia merenungkan masalah itu.</p><p>&quot;Yah,&quot; katanya akhirnya, &quot;mungkin—mungkin itu karena Lavinia sedang TUMBUH.&quot; Ini adalah hasil dari ingatan yang baik hati tentang pernah mendengar Nona Amelia mengatakan bahwa Lavinia tumbuh begitu cepat sehingga ia percaya hal itu memengaruhi kesehatan dan temperamennya.</p><p>Lavinia, sebenarnya, adalah orang yang pendendam. Dia sangat cemburu pada Sara. Hingga kedatangan murid baru itu, dia merasa dirinya adalah pemimpin di sekolah. Dia memimpin karena dia mampu membuat dirinya sangat tidak menyenangkan jika yang lain tidak mengikutinya. Dia mendominasi anak-anak kecil, dan bersikap angkuh kepada mereka yang cukup besar untuk menjadi temannya. Dia cukup cantik, dan merupakan murid berpakaian terbaik dalam prosesi ketika Seminari Pilihan berjalan keluar berpasangan, sampai mantel beludru dan sarung tangan bulu sable Sara muncul, dipadukan dengan bulu burung unta yang menjuntai, dan dipimpin oleh Miss Minchin di depan barisan. Pada awalnya, ini sudah cukup menyakitkan; tetapi seiring berjalannya waktu menjadi jelas bahwa Sara juga seorang pemimpin, dan bukan karena dia bisa membuat dirinya tidak menyenangkan, tetapi karena dia tidak pernah melakukannya.</p><p>&quot;Ada satu hal tentang Sara Crewe,&quot; Jessie membuat &quot;sahabatnya&quot; marah dengan mengatakan dengan jujur, &quot;dia tidak pernah 'sombong' sedikit pun, dan kau tahu dia mungkin memang sombong, Lavvie . Kurasa aku pun tak bisa menahan diri—sedikit saja—jika aku punya begitu banyak barang bagus dan selalu dimanjakan. Sungguh menjijikkan, cara Miss Minchin memamerkannya saat orang tua datang.&quot;</p><p>&quot;'Sara tersayang harus datang ke ruang tamu dan berbicara dengan Nyonya Musgrave tentang India,'&quot; tiru Lavinia, dengan imitasi Miss Minchin yang sangat berlebihan. &quot;'Sara tersayang harus berbicara bahasa Prancis kepada Lady Pitkin. Aksennya sangat sempurna.' Lagipula, dia tidak belajar bahasa Prancis di Seminari. Dan tidak ada yang begitu hebat dalam hal dia mengetahuinya. Dia sendiri mengatakan bahwa dia tidak mempelajarinya sama sekali. Dia hanya mempelajarinya begitu saja, karena dia selalu mendengar ayahnya berbicara bahasa itu. Dan, mengenai ayahnya, tidak ada yang begitu hebat dalam menjadi seorang perwira India.&quot;</p><p>&quot;Yah,&quot; kata Jessie perlahan, &quot;dia pernah membunuh harimau. Dia membunuh harimau yang kulitnya ada di kamar Sara. Itu sebabnya Sara menyukainya. Dia berbaring di atasnya dan mengelus kepalanya, dan berbicara dengannya seolah-olah itu adalah seekor kucing.&quot;</p><p>&quot;Dia selalu melakukan hal-hal konyol,&quot; bentak Lavinia. &quot;Ibuku bilang kebiasaannya berpura-pura itu konyol. Katanya dia akan tumbuh menjadi orang yang eksentrik.&quot;</p><p>Memang benar bahwa Sara tidak pernah &quot;sombong.&quot; Dia adalah sosok kecil yang ramah, dan dengan murah hati berbagi hak istimewa dan harta miliknya. Anak-anak kecil, yang terbiasa diremehkan dan disuruh minggir oleh para wanita dewasa berusia sepuluh dan dua belas tahun, tidak pernah dibuat menangis oleh sosok yang paling diirikan di antara mereka semua ini. Dia adalah seorang anak muda yang keibuan, dan ketika orang-orang jatuh dan lututnya tergores, dia berlari dan membantu mereka berdiri dan menepuk-nepuk mereka, atau menemukan permen atau barang lain yang menenangkan di sakunya. Dia tidak pernah mendorong mereka keluar dari jalannya atau menganggap usia mereka sebagai penghinaan dan noda pada karakter kecil mereka.</p><p>&quot;Kalau kau berumur empat tahun, ya kau memang berumur empat tahun,&quot; katanya tegas kepada Lavinia pada suatu kesempatan ketika Lavinia—harus diakui—menampar Lottie dan menyebutnya &quot;anak nakal&quot;; &quot;tapi kau akan berumur lima tahun tahun depan, dan enam tahun setelah itu. Dan,&quot; sambil membuka mata lebar yang penuh keyakinan, &quot;butuh enam belas tahun untuk membuatmu berumur dua puluh tahun.&quot;</p><p>&quot;Astaga,&quot; kata Lavinia, &quot;bagaimana kita bisa menghitungnya!&quot; Memang, tidak dapat disangkal bahwa enam belas ditambah empat sama dengan dua puluh—dan dua puluh adalah usia yang bahkan orang paling berani pun hampir tidak berani memimpikannya.</p><p>Jadi, anak-anak yang lebih kecil sangat menyayangi Sara. Lebih dari sekali ia pernah mengadakan pesta teh, yang dihadiri oleh anak-anak yang dibenci itu, di kamarnya sendiri. Dan Emily pun diajak bermain, dan perlengkapan teh Emily sendiri digunakan—yang cangkirnya berisi banyak teh manis encer dan berhiaskan bunga biru. Belum pernah ada yang melihat perlengkapan teh boneka yang begitu nyata sebelumnya. Sejak sore itu, Sara dianggap sebagai dewi dan ratu oleh seluruh kelas alfabet.</p><p>Lottie Legh sangat menyayangi Sara sehingga jika Sara bukan orang yang keibuan, ia pasti akan merasa bosan dengannya. Lottie disekolahkan oleh seorang ayah muda yang agak ceroboh yang tidak tahu harus berbuat apa lagi dengannya. Ibunya yang masih muda telah meninggal, dan karena anak itu diperlakukan seperti boneka kesayangan atau monyet peliharaan yang sangat manja atau anjing peliharaan kecil sejak jam pertama kehidupannya, ia menjadi makhluk kecil yang sangat menyebalkan. Ketika ia menginginkan sesuatu atau tidak menginginkan sesuatu, ia menangis dan meraung; dan, karena ia selalu menginginkan hal-hal yang tidak bisa ia miliki, dan tidak menginginkan hal-hal yang terbaik untuknya, suara kecilnya yang melengking biasanya terdengar melengking di satu bagian rumah atau bagian lainnya.</p><p>Senjata terkuatnya adalah, secara misterius, ia mengetahui bahwa seorang gadis kecil yang kehilangan ibunya adalah seseorang yang patut dikasihani dan dihargai. Ia mungkin pernah mendengar beberapa orang dewasa membicarakannya di hari-hari awal setelah kematian ibunya. Karena itu, ia terbiasa memanfaatkan pengetahuan ini sebaik-baiknya.</p><p>Pertama kali Sara mengambil alih pengasuhan itu adalah suatu pagi ketika, saat melewati ruang duduk, dia mendengar Nona Minchin dan Nona Amelia berusaha menahan tangisan marah seorang anak yang, rupanya, menolak untuk diam. Anak itu menolak dengan sangat keras sehingga Nona Minchin terpaksa hampir berteriak—dengan cara yang tegas dan keras—agar suaranya terdengar.</p><p>&quot;Kenapa dia menangis?&quot; dia hampir berteriak.</p><p>&quot;Oh—oh—oh!&quot; Sara mendengar; &quot;Aku tidak punya mam—ma-a!&quot;</p><p>&quot;Oh, Lottie!&quot; teriak Nona Amelia. &quot;Hentikan, sayang! Jangan menangis! Kumohon jangan!&quot;</p><p>&quot;Oh! Oh! Oh! Oh! Oh!&quot; Lottie meraung histeris. &quot;Tidak—punya—mam—ma-a!&quot;</p><p>&quot;Dia pantas dicambuk,&quot; seru Nona Minchin. &quot;Kau AKAN dicambuk, anak nakal!&quot;</p><p>Lottie meraung lebih keras dari sebelumnya. Nona Amelia mulai menangis. Suara Nona Minchin meninggi hingga hampir seperti guntur, lalu tiba-tiba ia melompat dari kursinya dengan kemarahan yang tak berdaya dan keluar dari ruangan, meninggalkan Nona Amelia untuk menyelesaikan masalah tersebut.</p><p>Sara berhenti sejenak di aula, bertanya-tanya apakah ia harus masuk ke kamar, karena ia baru-baru ini mulai akrab dengan Lottie dan mungkin bisa menenangkannya. Ketika Nona Minchin keluar dan melihatnya, ia tampak agak kesal. Ia menyadari bahwa suaranya, seperti yang terdengar dari dalam kamar, tidak mungkin terdengar bermartabat atau ramah.</p><p>&quot;Oh, Sara!&quot; serunya, berusaha menampilkan senyum yang pantas.</p><p>&quot;Saya berhenti,&quot; jelas Sara, &quot;karena saya tahu itu Lottie—dan saya pikir, mungkin—hanya mungkin, saya bisa membuatnya diam. Bolehkah saya mencoba, Nona Minchin?&quot;</p><p>&quot;Jika kau bisa, kau anak yang pintar,&quot; jawab Nona Minchin, sambil mengerutkan bibirnya tajam. Kemudian, melihat Sara tampak sedikit kedinginan karena ketegasannya, ia mengubah sikapnya. &quot;Tapi kau pintar dalam segala hal,&quot; katanya dengan nada setuju. &quot;Kurasa kau bisa mengatasinya. Masuklah.&quot; Dan ia meninggalkannya.</p><p>Ketika Sara memasuki ruangan, Lottie sedang berbaring di lantai, menjerit dan menendang-nendang kakinya yang kecil dan gemuk dengan keras, dan Nona Amelia membungkuk di atasnya dengan cemas dan putus asa, tampak sangat merah dan basah karena panas. Lottie selalu mendapati, ketika berada di kamar bayinya sendiri di rumah, bahwa tendangan dan jeritan akan selalu diredam dengan cara apa pun yang dia paksakan. Nona Amelia yang gemuk dan malang itu mencoba satu metode, lalu metode lainnya.</p><p>&quot;Kasihan sayangku,&quot; katanya sejenak, &quot;Aku tahu kau tidak punya ibu, kasihan—&quot; Lalu dengan nada yang sama sekali berbeda, &quot;Jika kau tidak berhenti, Lottie, aku akan mengguncangmu. Malaikat kecil yang malang! Nah—! Kau anak yang jahat, buruk, dan menjijikkan, aku akan memukulmu! Aku akan!&quot;</p><p>Sara menghampiri mereka dengan tenang. Ia sama sekali tidak tahu apa yang akan dilakukannya, tetapi ia memiliki keyakinan samar di dalam hatinya bahwa akan lebih baik untuk tidak mengatakan hal-hal yang berbeda seperti itu dengan begitu tak berdaya dan bersemangat.</p><p>&quot;Nona Amelia,&quot; katanya dengan suara rendah, &quot;Nona Minchin mengatakan saya boleh mencoba menghentikannya—bolehkah?&quot;</p><p>Nona Amelia menoleh dan menatapnya dengan putus asa. &quot;Oh, APA kau pikir kau bisa?&quot; serunya terengah-engah.</p><p>&quot;Aku tidak tahu apakah aku BISA,&quot; jawab Sara, masih dengan suara setengah berbisik; &quot;tapi aku akan mencoba.&quot;</p><p>Nona Amelia tertatih-tatih bangkit dari posisi berlutut sambil menghela napas berat, dan kaki kecil Lottie yang gemuk menendang sekuat biasanya.</p><p>&quot;Jika kau mau keluar dari ruangan ini diam-diam,&quot; kata Sara, &quot;aku akan tinggal bersamanya.&quot;</p><p>&quot;Oh, Sara!&quot; seru Nona Amelia hampir merintih. &quot;Kami belum pernah memiliki anak seburuk ini sebelumnya. Kurasa kita tidak bisa memeliharanya lagi.&quot;</p><p>Namun, dia diam-diam keluar dari ruangan, dan merasa sangat lega karena menemukan alasan untuk melakukannya.</p><p>Sara berdiri di samping anak yang meraung marah itu selama beberapa saat, dan menatapnya tanpa berkata apa-apa. Kemudian dia duduk telentang di lantai di sampingnya dan menunggu. Kecuali teriakan marah Lottie, ruangan itu cukup sunyi. Ini adalah keadaan baru bagi Nona Legh kecil, yang terbiasa, ketika dia berteriak, mendengar orang lain memprotes, memohon, memerintah, dan membujuk secara bergantian. Berbaring, menendang, dan menjerit, dan mendapati satu-satunya orang di dekatnya tampaknya tidak keberatan sama sekali, menarik perhatiannya. Dia membuka matanya yang tertutup rapat dan berair untuk melihat siapa orang itu. Dan itu hanyalah seorang gadis kecil lainnya. Tetapi itu adalah gadis yang memiliki Emily dan semua barang-barang bagus. Dan dia menatapnya dengan tenang dan seolah-olah dia hanya sedang berpikir. Setelah berhenti sejenak untuk mencari tahu hal ini, Lottie berpikir dia harus mulai lagi, tetapi kesunyian ruangan dan wajah Sara yang aneh dan tertarik membuat raungan pertamanya agak setengah hati.</p><p>&quot;Aku—tidak—punya—ma—ma—ma-a!&quot; serunya; tetapi suaranya tidak begitu lantang.</p><p>Sara menatapnya dengan lebih tenang, tetapi dengan semacam pemahaman di matanya.</p><p>&quot;Aku juga belum,&quot; katanya.</p><p>Hal ini sangat tak terduga sehingga membuat takjub. Lottie benar-benar menurunkan kakinya, menggeliat, lalu berbaring dan menatap kosong. Ide baru dapat menghentikan tangisan anak ketika tidak ada cara lain yang berhasil. Memang benar juga bahwa meskipun Lottie tidak menyukai Nona Minchin yang pemarah, dan Nona Amelia yang terlalu memanjakan, ia agak menyukai Sara, meskipun ia tidak begitu mengenalnya. Ia tidak ingin mengungkapkan keluhannya , tetapi pikirannya teralihkan dari hal itu, jadi ia menggeliat lagi, dan setelah terisak-isak, berkata, &quot;Di mana dia?&quot;</p><p>Sara terdiam sejenak. Karena ia telah diberitahu bahwa ibunya berada di surga, ia telah banyak memikirkan hal itu, dan pikirannya tidak sepenuhnya sama dengan pikiran orang lain.</p><p>&quot;Dia sudah pergi ke surga,&quot; katanya. &quot;Tapi aku yakin dia kadang-kadang keluar untuk menemuiku—meskipun aku tidak melihatnya. Begitu juga dengan arwahmu. Mungkin mereka berdua bisa melihat kita sekarang. Mungkin mereka berdua ada di ruangan ini.&quot;</p><p>Lottie duduk tegak, dan melihat sekelilingnya. Dia adalah makhluk kecil yang cantik dengan rambut keriting, dan matanya yang bulat seperti bunga forget-me-not yang basah. Jika ibunya melihatnya selama setengah jam terakhir, mungkin dia tidak akan menganggapnya sebagai anak yang pantas disebut sebagai anak seorang malaikat.</p><p>Sara terus berbicara. Mungkin sebagian orang akan berpikir bahwa apa yang dikatakannya agak seperti dongeng, tetapi semuanya terasa begitu nyata bagi imajinasinya sendiri sehingga Lottie mulai mendengarkan meskipun ia sendiri enggan. Ia pernah diceritakan bahwa ibunya memiliki sayap dan mahkota, dan ia telah diperlihatkan gambar-gambar wanita dengan gaun tidur putih yang indah, yang konon adalah malaikat. Tetapi Sara tampaknya menceritakan kisah nyata tentang sebuah negeri yang indah tempat orang-orang nyata berada.</p><p>&quot;Ada ladang-ladang bunga yang luas,&quot; katanya, seperti biasa, lupa diri saat mulai berbicara, dan berbicara seolah-olah sedang bermimpi, &quot;ladang-ladang bunga lili—dan ketika angin lembut bertiup di atasnya, aroma bunga itu menyebar ke udara—dan semua orang selalu menghirupnya, karena angin lembut selalu bertiup. Dan anak-anak kecil berlarian di ladang bunga lili dan memetiknya seikat penuh, tertawa, dan membuat karangan bunga kecil. Dan jalanan bersinar. Dan orang-orang tidak pernah lelah, seberapa jauh pun mereka berjalan. Mereka bisa melayang ke mana pun mereka suka. Dan ada tembok-tembok yang terbuat dari mutiara dan emas di sekeliling kota, tetapi tembok-tembok itu cukup rendah sehingga orang-orang dapat bersandar padanya, memandang ke bumi, tersenyum, dan mengirimkan pesan-pesan indah.&quot;</p><p>Apa pun cerita yang mulai diceritakannya, Lottie pasti akan berhenti menangis dan terpesona hingga mendengarkan; tetapi tidak dapat disangkal bahwa cerita ini lebih indah daripada kebanyakan cerita lainnya. Dia menyeret dirinya mendekat ke Sara, dan menyerap setiap kata sampai akhir tiba—terlalu cepat. Ketika itu terjadi, dia sangat sedih sehingga dia mengerutkan bibirnya dengan penuh firasat.</p><p>&quot;Aku ingin pergi ke sana,&quot; serunya. &quot;Aku—tidak punya ibu di sekolah ini.&quot;</p><p>Sara melihat tanda bahaya itu, dan tersadar dari mimpinya. Dia meraih tangan mungil itu dan menariknya mendekat sambil tertawa kecil membujuk.</p><p>&quot;Aku akan menjadi ibumu,&quot; katanya. &quot;Kita akan bermain peran bahwa kau adalah putri kecilku. Dan Emily akan menjadi adikmu.&quot;</p><p>Lesung pipi Lottie mulai terlihat.</p><p>&quot;Haruskah dia?&quot; katanya.</p><p>&quot;Ya,&quot; jawab Sara sambil melompat berdiri. &quot;Ayo kita pergi dan memberitahunya. Lalu aku akan membasuh wajahmu dan menyisir rambutmu.&quot;</p><p>Lottie pun menyetujuinya dengan riang, lalu berlari keluar ruangan dan naik ke atas bersamanya, tanpa tampak mengingat bahwa seluruh tragedi satu jam terakhir disebabkan oleh fakta bahwa dia menolak untuk dimandikan dan disikat untuk makan siang dan Nona Minchin dipanggil untuk menggunakan otoritasnya yang agung.</p><p>Dan sejak saat itu Sara menjadi ibu angkat.</p><p><br /> </p><p><br /> </p><p><br /> </p>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="ermengarde.html" class="nav-btn prev" >
+      <span class="nav-label">← Sebelumnya</span>
+      <span class="nav-title">Ermengarde</span>
+    </a>
+    <a href="becky.html" class="nav-btn next" >
+      <span class="nav-label">Berikutnya →</span>
+      <span class="nav-title">Becky</span>
+    </a>
+  </nav>
+</main>
+
+<button id="resumeBtn" onclick="resumeReading()">📖 Lanjutkan</button>
+
+
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.documentElement.classList.contains("dark") ? "dark" : "light");
+}
+</script>
+
+
+<script>
+const pageKey = "bookmark_" + location.pathname;
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem(pageKey);
+  if (saved) window.scrollTo(0, parseInt(saved));
+});
+let scrollTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    localStorage.setItem(pageKey, window.scrollY);
+  }, 200);
+});
+
+(function() {
+  const words = (document.body.innerText || "").trim().split(/\s+/).length;
+  const el = document.getElementById("readingTime");
+  if (el) el.textContent = Math.max(1, Math.round(words / 200)) + " menit baca";
+})();
+
+window.addEventListener("scroll", () => {
+  const doc = document.documentElement;
+  const pct = Math.round((window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100);
+  const bar = document.getElementById("progressBar");
+  if (bar) bar.style.width = pct + "%";
+  localStorage.setItem("progress_" + location.pathname, pct);
+});
+
+window.addEventListener("load", () => {
+  const pct = localStorage.getItem("progress_" + location.pathname);
+  if (pct && pct > 5) {
+    const btn = document.getElementById("resumeBtn");
+    if (btn) btn.style.display = "flex";
+  }
+});
+
+function resumeReading() {
+  const saved = localStorage.getItem("bookmark_" + location.pathname);
+  if (saved) window.scrollTo({ top: parseInt(saved), behavior: "smooth" });
+}
+</script>
+
+
+</body>
+</html>
